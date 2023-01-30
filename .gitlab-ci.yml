@@ -34,4 +34,6 @@ deploy-job:      # This job runs in the deploy stage.
   script:
     - echo "Deploying application..."
     - echo "Application successfully depl oyed."
+    - echo "This is a sample text file" > text_file.txt
+    - scp text_file.txt ubuntu@65.1.154.32:/home/ubuntu
 

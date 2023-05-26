@@ -1,92 +1,308 @@
-# HotelierPro UI library
+# React Component Library
 
+[![Build status](https://badge.buildkite.com/90ff98db996bb137c5be1bdce666c4b1ce68a25b17af0a6a04.svg?branch=master)](https://buildkite.com/harvey/react-component-library)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
+This project skeleton was created to help people get started with creating their own React component library using:
 
-## Getting started
+- [Rollup](https://github.com/rollup/rollup)
+- [TypeScript](https://www.typescriptlang.org/)
+- ~~Sass~~ (This dependency has been removed, see [Using CSS Preprocessors](#using-css-preprocessors) on how to support it)
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+It also features:
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- [Storybook](https://storybook.js.org/) to help you create and show off your components
+- [Jest](https://jestjs.io/) and [React Testing Library](https://github.com/testing-library/react-testing-library) enabling testing of the components
 
-## Add your files
+[**Read my blog post about why and how I created this project skeleton ▸**](https://blog.harveydelaney.com/creating-your-own-react-component-library/)
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+[Check out this CodeSandbox to see the component library in action ▸](https://codesandbox.io/s/harvey-component-library-example-y2b60)
+
+## Development
+
+### Testing
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/hotelierpro/hotelierpro-ui-library.git
-git branch -M main
-git push -uf origin main
+npm run test
 ```
 
-## Integrate with your tools
+### Building
 
-- [ ] [Set up project integrations](https://gitlab.com/hotelierpro/hotelierpro-ui-library/-/settings/integrations)
+```
+npm run build
+```
 
-## Collaborate with your team
+### Storybook
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+To run a live-reload Storybook server on your local machine:
 
-## Test and Deploy
+```
+npm run storybook
+```
 
-Use the built-in continuous integration in GitLab.
+To export your Storybook as static files:
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+```
+npm run storybook:export
+```
 
-***
+You can then serve the files under `storybook-static` using S3, GitHub pages, Express etc. I've hosted this library at: https://www.harveydelaney.com/react-component-library
 
-# Editing this README
+### Generating New Components
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+I've included a handy NodeJS util file under `util` called `create-component.js`. Instead of copy pasting components to create a new component, you can instead run this command to generate all the files you need to start building out a new component. To use it:
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+```
+npm run generate YourComponentName
+```
 
-## Name
-Choose a self-explaining name for your project.
+This will generate:
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+```
+/src
+  /YourComponentName
+    YourComponentName.tsx
+    YourComponentName.stories.tsx
+    YourComponentName.test.tsx
+    YourComponentName.types.ts
+    YourComponentName.css
+```
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+The default templates for each file can be modified under `util/templates`.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Don't forget to add the component to your `index.ts` exports if you want the library to export the component!
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+### Installing Component Library Locally
+
+Let's say you have another project (`test-app`) on your machine that you want to try installing the component library into without having to first publish the component library. In the `test-app` directory, you can run:
+
+```
+npm i --save ../react-component-library
+```
+
+which will install the local component library as a dependency in `test-app`. It'll then appear as a dependency in `package.json` like:
+
+```
+  ...
+  "dependencies": {
+    ...
+    "react-component-library": "file:../react-component-library",
+    ...
+  },
+  ...
+```
+
+Your components can then be imported and used in that project.
+
+**NOTE**: After installing the component library locally, you may run into:
+
+```
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+
+You might have mismatching versions of React and the renderer (such as React DOM)
+You might be breaking the Rules of Hooks
+You might have more than one copy of React in the same app See for tips about how to debug and fix this problem.
+```
+
+This is the most commonly encountered problem people face when installing the library locally. This is most likely due to the third reason: `You might have more than one copy of React in the app`.
+
+Normally when a library is published, dev dependencies are excluded. However, when the library is symlinked, all local dev depdendencies are persisted in the libraries `node_modules` (includes React). Your bundler may see two versions of React, one in the consuming app and one in the symlinked library. The solution is to have the component library use the React version in the consuming app. So from your component library folder, run:
+
+```
+npm link ../test-app/node_modules/react
+```
+
+**OR**, if you are using Webpack in app you can follow [this GitHub comment](https://github.com/facebook/react/issues/13991#issuecomment-435587809).
+
+Read more about this issue [here](https://reactjs.org/warnings/invalid-hook-call-warning.html).
+
+## Publishing
+
+### Hosting via NPM
+
+First, make sure you have an NPM account and are [logged into NPM using the `npm login` command.](https://docs.npmjs.com/creating-a-new-npm-user-account)
+
+Then update the `name` field in `package.json` to reflect your NPM package name in your private or public NPM registry. Then run:
+
+```
+npm publish
+```
+
+The `"prepublishOnly": "npm run build"` script in `package.json` will execute before publish occurs, ensuring the `build/` directory and the compiled component library exist.
+
+### Hosting via GitHub
+
+I recommend you host the component library using NPM. However, if you don't want to use NPM, you can use GitHub to host it instead.
+
+You'll need to remove `build/` from `.gitignore`, build the component library (`npm run build`), add, commit and push the contents of `build`. [See this branch for an example.](https://github.com/HarveyD/react-component-library/tree/host-via-github)
+
+You can then install your library into other projects by running:
+
+```
+npm i --save git+https://github.com/HarveyD/react-component-library.git#branch-name
+```
+
+OR
+
+```
+npm i --save github:harveyd/react-component-library#branch-name
+```
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+Let's say you created a public NPM package called `harvey-component-library` with the `TestComponent` component created in this repository.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+### Stylesheet
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+First, you'll need to import the `index.css` CSS file distributed by the package. This should be done at the root of your project (in `index.js` or `App.tsx` of your React app) and will look like:
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+```tsx
+import 'harvey-component-library/build/index.css';
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+...
+```
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+### Components
 
-## License
-For open source projects, say how it is licensed.
+Usage of components (after the library installed as a dependency into another project) will look like:
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+```TSX
+import React from "react";
+import { TestComponent } from "harvey-component-library";
+
+const App = () => (
+  <div className="app-container">
+    <h1>Hello I'm consuming the component library</h1>
+    <TestComponent heading={'Some heading'} content={<div>Some content</div>} />
+  </div>
+);
+
+export default App;
+```
+
+[Check out this Code Sandbox for a live example.](https://codesandbox.io/s/harvey-component-library-example-y2b60?file=/src/App.js)
+
+### Using Component Library CSS Variables
+
+Above we imported `index.css` into the root of our project. `index.css` contains a number of CSS variables that can be used across the project that consumes our component library.
+
+In your CSS, you can use the variables defined in `variables.css` like:
+
+```CSS
+.example-container {
+    color: var(--harvey-white);
+    background-color: var(--harvey-black);
+}
+```
+
+See: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties for more information about CSS Variables.
+
+## Additional Help
+
+### Dark Mode
+
+The example component `TestComponent` respects the user's dark mode operating system preferences and renders the component in the appropriate theme.
+
+This is achieved by using the media query: `@media (prefers-color-scheme: dark)` in combination with CSS variables. The colours that change depending on dark mode preference can be found in [`src/index.css`](src/index.css). Example usage of these variables can be found within [`src/TestComponent/TestComponent.css`](src/TestComponent/TestComponent.css).
+
+Read https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme for more details.
+
+### Using CSS Preprocessors
+
+The Rollup plugin [`rollup-plugin-postcss`](https://github.com/egoist/rollup-plugin-postcss) supports Sass, Less and Stylus:
+
+- For Sass, install less: `yarn add node-sass --dev`
+- For Stylus, install stylus: `yarn add stylus --dev`
+- For Less, install less: `yarn add less --dev`
+
+#### CSS Modules
+
+If you want to use CSS Modules, update `postcss` in `rollup-config.js` to:
+
+```
+postcss({
+  modules: true
+})
+```
+
+#### Styled Components
+
+If you want to use [`styled-components`](https://styled-components.com/), the changes required are a bit more involved. As such, I've created a branch where I've got `styled-components` working in this component library, [check it out here](https://github.com/HarveyD/react-component-library/tree/styled-components).
+
+### Component Code Splitting
+
+Code splitting of your components is not supported by default.
+
+[Read this section of my blog post](https://blog.harveydelaney.com/creating-your-own-react-component-library/#introducing-code-splitting-optional-) to find out how and why you would enable code splitting of your components. In summary, code splitting enables users to import components in isolation like:
+
+```
+import TestComponent from 'harvey-component-library/build/TestComponent';
+```
+
+This can reduce the bundle size for projects using older (CJS) module formats.
+
+You can check out [this branch](https://github.com/HarveyD/react-component-library/tree/code-splitting) or [this commit](https://github.com/HarveyD/react-component-library/commit/94631be5a871f3b39dbc3e9bd3e75a8ae5b3b759) to see what changes are neccesary to implement it.
+
+Please note, there's an issue with code splitting and using `rollup-plugin-postcss`. I recommend using `rollup-plugin-sass` instead alongside code splitting.
+
+### Supporting Image Imports
+
+Add the following library to your component library [@rollup/plugin-image](https://github.com/rollup/plugins/tree/master/packages/image):
+
+```
+npm i -D @rollup/plugin-image
+```
+
+Then add it to `rollup-config.js`:
+
+```
+...
+plugins:[
+  ...,
+  image(),
+  ...
+]
+...
+```
+
+You can then import and render images in your components like:
+
+```tsx
+import logo from "./rollup.png";
+
+export const ImageComponent = () => (
+  <div>
+    <img src={logo} />
+  </div>
+);
+```
+
+### Supporting JSON Imports
+
+Add the following library to your component library [@rollup/plugin-json](https://github.com/rollup/plugins/tree/master/packages/json):
+
+```
+npm i -D @rollup/plugin-json
+```
+
+Then add it to `rollup-config.js`:
+
+```
+...
+plugins:[
+  ...,
+  json(),
+  ...
+]
+...
+```
+
+You can then import and use JSON as ES6 Modules:
+
+```tsx
+import data from "./some-data.json";
+
+export const JsonDataComponent = () => <div>{data.description}</div>;
+```
+
+Checkout the [official Rollup plugin list](https://github.com/rollup/plugins) for additional helpful plugins.

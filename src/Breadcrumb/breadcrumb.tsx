@@ -5,10 +5,10 @@ interface Props {
     items: any[]
 }
 
-const Breadcrumbs: React.FC = (props: Props) => (
-    <AntBreadcrumb
+export default function (props: any): any {
+    return <AntBreadcrumb
         {...props}
     />
-);
+}
 
-export default Breadcrumbs;
+

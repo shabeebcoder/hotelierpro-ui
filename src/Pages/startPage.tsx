@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AppstoreOutlined, MailOutlined, MenuOutlined, SettingOutlined, HeartOutlined, EuroOutlined, CalculatorOutlined, BarsOutlined, LoginOutlined, } from '@ant-design/icons';
-import { Divider, Drawer, MenuProps, Typography, Layout, theme, Breadcrumb, Card, Space, Tabs } from 'antd';
+import { Divider, Drawer, MenuProps, Typography, Layout, theme, Breadcrumb, Card, Space, Tabs, Input } from 'antd';
 const { Header, Content, Footer } = Layout;
 import { Menu } from 'antd';
 import "./styles.css";
@@ -15,10 +15,16 @@ const App: React.FC = () => {
         setCurrent(e.key);
     };
     const gridStyle: React.CSSProperties = {
-        width: '25%',
+        width: '30%',
         textAlign: 'center',
     };
-    const { Title, Paragraph } = Typography
+    const gridStyle2: React.CSSProperties = {
+        width: '20%',
+        textAlign: 'center',
+    };
+    const { Title, Paragraph } = Typography;
+    const { Search } = Input;
+
     const {
         token: { colorBgContainer },
     } = theme.useToken();
@@ -88,8 +94,20 @@ const App: React.FC = () => {
                             <Space direction='vertical' size={'small'} >
                                 <Title style={{ margin: 0 }} level={2}>Elite private school self service portal</Title>
                                 <Paragraph style={{ margin: 0 }} level={5}>A unified system helping students, parents and employees find elite private school services</Paragraph>
+                                <Search
+                                    style={{ marginTop: 10 }}
+                                    placeholder="input search text"
+                                    allowClear
+                                    enterButton="Search"
+                                    size="large"
+                                    onSearch={() => console.log("on search")}
+                                />
+                                <Paragraph>Popular : <a href=''>HR Onnoarding</a>  </Paragraph>
+
                             </Space>
 
+                            <Space>
+                            </Space>
                         </Card.Grid>
 
                         {/* </Card.Grid>
@@ -105,34 +123,128 @@ const App: React.FC = () => {
 
 
                 </Content>
-                <Card.Grid style={{ borderRadius: '0px', border: '0px', padding: '0px', marginTop: '40px', backgroundColor: 'red' }}>
-                    <Space style={{ backgroundColor: 'yellow', width: '100% !important' }}>
-
+                <Card.Grid style={{ borderRadius: '0px', border: '0px', padding: '0px', marginTop: '40px', }}>
+                    <Card style={{ boxShadow: '0px', borderRadius: '0px', border: '0px', padding: 0 }}>
                         <Tabs
-                            style={{ width: '100%' }}
-                            onChange={() => alert()}
+                            onChange={(e) => console.log(e)}
                             type="card"
-                            items={new Array(3).fill(null).map((_, i) => {
+                            items={['Student Services', 'Employee services', 'Parent Services'].map((_, i) => {
                                 const id = String(i + 1);
                                 return {
-                                    label: `Tab ${id}`,
+                                    label: _,
                                     key: id,
-                                    children: <Card >
-                                        <Card.Grid style={gridStyle}>Content</Card.Grid>
-                                        <Card.Grid hoverable={false} style={gridStyle}>
-                                            Content
+                                    children: <Card style={{ boxShadow: 'none', border: '0px' }} >
+
+                                        <Card.Grid style={{ ...gridStyle2, textAlign: 'left', marginRight: 10, marginBottom: 10 }}>
+                                            <img style={{ width: 50 }} src='https://static.tamm.abudhabi/static-prod/Project/TAMM/AOL%20Mobile%20Icons/Individual/Identity%20Citizenship%20Labour.png' />
+                                            <Title style={{ marginTop: 0 }} level={5}>Indentity, Citizenship, and Human Resource</Title>
+                                            <Paragraph>Residency, Identity , Entry permit, and work</Paragraph>
                                         </Card.Grid>
-                                        <Card.Grid style={gridStyle}>Content</Card.Grid>
-                                        <Card.Grid style={gridStyle}>Content</Card.Grid>
-                                        <Card.Grid style={gridStyle}>Content</Card.Grid>
-                                        <Card.Grid style={gridStyle}>Content</Card.Grid>
-                                        <Card.Grid style={gridStyle}>Content</Card.Grid>
+                                        <Card.Grid style={{ ...gridStyle2, textAlign: 'left', marginRight: 10, marginBottom: 10 }}>
+                                            <img style={{ width: 50 }} src='https://static.tamm.abudhabi/static-prod/Project/TAMM/AOL%20Mobile%20Icons/Individual/Identity%20Citizenship%20Labour.png' />
+                                            <Title style={{ marginTop: 0 }} level={5}>Indentity, Citizenship, and Human Resource</Title>
+                                            <Paragraph>Residency, Identity , Entry permit, and work</Paragraph>
+                                        </Card.Grid>
+                                        <Card.Grid style={{ ...gridStyle2, textAlign: 'left', marginRight: 10, marginBottom: 10 }}>
+                                            <img style={{ width: 50 }} src='https://static.tamm.abudhabi/static-prod/Project/TAMM/AOL%20Mobile%20Icons/Individual/Identity%20Citizenship%20Labour.png' />
+                                            <Title style={{ marginTop: 0 }} level={5}>Indentity, Citizenship, and Human Resource</Title>
+                                            <Paragraph>Residency, Identity , Entry permit, and work</Paragraph>
+                                        </Card.Grid>
+                                        <Card.Grid style={{ ...gridStyle2, textAlign: 'left', marginRight: 10, marginBottom: 10 }}>
+                                            <img style={{ width: 50 }} src='https://static.tamm.abudhabi/static-prod/Project/TAMM/AOL%20Mobile%20Icons/Individual/Identity%20Citizenship%20Labour.png' />
+                                            <Title style={{ marginTop: 0 }} level={5}>Indentity, Citizenship, and Human Resource</Title>
+                                            <Paragraph>Residency, Identity , Entry permit, and work</Paragraph>
+                                        </Card.Grid>
+                                        <Card.Grid style={{ ...gridStyle2, textAlign: 'left', marginRight: 10, marginBottom: 10 }}>
+                                            <img style={{ width: 50 }} src='https://static.tamm.abudhabi/static-prod/Project/TAMM/AOL%20Mobile%20Icons/Individual/Identity%20Citizenship%20Labour.png' />
+                                            <Title style={{ marginTop: 0 }} level={5}>Indentity, Citizenship, and Human Resource</Title>
+                                            <Paragraph>Residency, Identity , Entry permit, and work</Paragraph>
+                                        </Card.Grid>
+                                        <Card.Grid style={{ ...gridStyle2, textAlign: 'left', marginRight: 10, marginBottom: 10 }}>
+                                            <img style={{ width: 50 }} src='https://static.tamm.abudhabi/static-prod/Project/TAMM/AOL%20Mobile%20Icons/Individual/Identity%20Citizenship%20Labour.png' />
+                                            <Title style={{ marginTop: 0 }} level={5}>Indentity, Citizenship, and Human Resource</Title>
+                                            <Paragraph>Residency, Identity , Entry permit, and work</Paragraph>
+                                        </Card.Grid>
+                                        <Card.Grid style={{ ...gridStyle2, textAlign: 'left', marginRight: 10, marginBottom: 10 }}>
+                                            <img style={{ width: 50 }} src='https://static.tamm.abudhabi/static-prod/Project/TAMM/AOL%20Mobile%20Icons/Individual/Identity%20Citizenship%20Labour.png' />
+                                            <Title style={{ marginTop: 0 }} level={5}>Indentity, Citizenship, and Human Resource</Title>
+                                            <Paragraph>Residency, Identity , Entry permit, and work</Paragraph>
+                                        </Card.Grid>
+                                        <Card.Grid style={{ ...gridStyle2, textAlign: 'left', marginRight: 10, marginBottom: 10 }}>
+                                            <img style={{ width: 50 }} src='https://static.tamm.abudhabi/static-prod/Project/TAMM/AOL%20Mobile%20Icons/Individual/Identity%20Citizenship%20Labour.png' />
+                                            <Title style={{ marginTop: 0 }} level={5}>Indentity, Citizenship, and Human Resource</Title>
+                                            <Paragraph>Residency, Identity , Entry permit, and work</Paragraph>
+                                        </Card.Grid>
+
+
                                     </Card>
+
                                 };
                             })}
                         />
-                    </Space>
+
+                    </Card>
                 </Card.Grid>
+                <Card.Grid style={{ borderRadius: '0px', border: '0px', padding: '0px', }}>
+
+                    <Card style={{ boxShadow: '0px', borderRadius: '0px', border: '0px', padding: 0 }}>
+                        <Title level={4}>Most Popular</Title>
+                        <Divider style={{ margin: '15px 0px' }} />
+                        <Card style={{ boxShadow: 'none', borderRadius: '0px', border: '0px', borderColor: 'white' }} >
+                            <Card.Grid style={{ ...gridStyle, padding: 0, display: 'block', textAlign: 'left', boxShadow: 'none', border: 'none', borderColor: 'white' }} >
+                                <Title level={5}>Passport renew</Title>
+                                <Paragraph style={{ lineHeight: 'normal' }}> this service, you can request the issuance of an ownership deed of land and real estate to prove ownership.</Paragraph>
+                            </Card.Grid>
+                            <Card.Grid style={{ ...gridStyle, padding: 0, display: 'block', textAlign: 'left', boxShadow: 'none', border: 'none', borderColor: 'white' }} >
+                                <Title level={5}>Renew Residency</Title>
+                                <Paragraph style={{ lineHeight: 'normal' }}> this service, you can request the issuance of an ownership deed of land and real estate to prove ownership.</Paragraph>
+                            </Card.Grid>   <Card.Grid style={{ ...gridStyle, padding: 0, display: 'block', textAlign: 'left', boxShadow: 'none', border: 'none', borderColor: 'white' }} >
+                                <Title level={5}>Maintance Request</Title>
+                                <Paragraph style={{ lineHeight: 'normal' }}> this service, you can request the issuance of an ownership deed of land and real estate to prove ownership.</Paragraph>
+                            </Card.Grid>   <Card.Grid style={{ ...gridStyle, padding: 0, display: 'block', textAlign: 'left', boxShadow: 'none', border: 'none', borderColor: 'white' }} >
+                                <Title level={5}>Request to ownership deed</Title>
+                                <Paragraph style={{ lineHeight: 'normal' }}> this service, you can request the issuance of an ownership deed of land and real estate to prove ownership.</Paragraph>
+                            </Card.Grid>   <Card.Grid style={{ ...gridStyle, padding: 0, display: 'block', textAlign: 'left', boxShadow: 'none', border: 'none', borderColor: 'white' }} >
+                                <Title level={5}>Annual report request</Title>
+                                <Paragraph style={{ lineHeight: 'normal' }}> this service, you can request the issuance of an ownership deed of land and real estate to prove ownership.</Paragraph>
+                            </Card.Grid>   <Card.Grid style={{ ...gridStyle, padding: 0, display: 'block', textAlign: 'left', boxShadow: 'none', border: 'none', borderColor: 'white' }} >
+                                <Title level={5}>Request to ownership deed</Title>
+                                <Paragraph style={{ lineHeight: 'normal' }}> this service, you can request the issuance of an ownership deed of land and real estate to prove ownership.</Paragraph>
+                            </Card.Grid>
+                        </Card>
+
+                    </Card>
+                </Card.Grid>
+                <Card hoverable={false} style={{ borderRadius: '0px', border: '0px', padding: 20, boxShadow: 'none' }}>
+                    <Card.Grid hoverable={false} style={{ boxShadow: 'none', borderRadius: '0px', border: '0px', padding: 0, width: '50%' }}>
+
+
+                        <Title level={3}>Best school Award</Title>
+                        <Paragraph style={{ lineHeight: 'normal' }}> Thrive in Abu Dhabi promotes long-term Golden Visas and a pathway to citizenship for individuals working, creating and studying in key sectors and specialties in Abu Dhabi. The UAE’s Golden Visa is available in Abu Dhabi for international talent and investors and top talent, providing them and their families with visas for 5 to 10 years. The programme targets professionals, researchers and students in the knowledge fields such as doctors, scientists and inventors. It is also open to talented creative and sporting individuals, and business, start-up and real estate investors. Long-term visas empower talented expats to set down roots in the emirate, contributing to growth in Abu Dhabi’s priority sectors such as culture, healthcare, research and development (R&D) and real estate</Paragraph>
+
+
+                    </Card.Grid>
+                    <Card.Grid style={{ boxShadow: 'none', borderRadius: '0px', border: '0px', padding: 0, width: '50%' }}>
+                        <img style={{ width: '100%' }} src='https://eps.ae/wp-content/uploads/2023/05/stop-bullying-school-895x430.jpg' />
+                    </Card.Grid>
+
+                </Card>
+                <Card hoverable={false} style={{ borderRadius: '0px', border: '0px', padding: 20, boxShadow: 'none' }}>
+                    <Card.Grid style={{ boxShadow: 'none', borderRadius: '0px', border: '0px', padding: 0, width: '50%' }}>
+                        <img style={{ width: '100%' }} src='https://eps.ae/wp-content/uploads/2023/05/stop-bullying-school-895x430.jpg' />
+                    </Card.Grid>
+                    <Card.Grid hoverable={false} style={{ boxShadow: 'none', borderRadius: '0px', border: '0px', padding: 0, width: '50%' }}>
+
+
+                        <Title level={3} style={{ padding: 30 }}>Best school Award</Title>
+                        <Paragraph style={{ lineHeight: 'normal' }}> Thrive in Abu Dhabi promotes long-term Golden Visas and a pathway to citizenship for individuals working, creating and studying in key sectors and specialties in Abu Dhabi. The UAE’s Golden Visa is available in Abu Dhabi for international talent and investors and top talent, providing them and their families with visas for 5 to 10 years. The programme targets professionals, researchers and students in the knowledge fields such as doctors, scientists and inventors. It is also open to talented creative and sporting individuals, and business, start-up and real estate investors. Long-term visas empower talented expats to set down roots in the emirate, contributing to growth in Abu Dhabi’s priority sectors such as culture, healthcare, research and development (R&D) and real estate</Paragraph>
+
+
+                    </Card.Grid>
+
+
+                </Card>
+
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2023 Created by Ant UED</Footer>
             </Layout>
         </div >

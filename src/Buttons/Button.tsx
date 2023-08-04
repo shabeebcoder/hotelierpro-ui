@@ -7,7 +7,7 @@ interface Props extends HTMLAttributes<HTMLButtonElement> {
     type: 'primary' | 'default' | 'dashed' | 'text' | 'link'
 }
 
-export default function ({ children, ...props }: Props) {
+export default function ({ children, ...props }: any) {
     return (
         <Space wrap>
             <Button {...props} >{children}</Button>

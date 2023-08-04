@@ -15,6 +15,6 @@ Headline1.args = {
 export const Headline2 = (args) => <Headline {...args} />
 Headline2.args = {
     children: "This is a title",
-    level: 2
+    level: 'five'
 }
 

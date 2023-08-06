@@ -9,12 +9,14 @@ export default {
 export const Primary = (args) => <Buttons {...args} />
 Primary.args = {
     children: "Primary Button",
-    type: 'default'
+    type: 'default',
+    style: { backgroundColor: '#3A7C7C', color: 'white' }
 }
 export const Default = (args) => <Buttons {...args} />
 Default.args = {
     children: "Primary Button",
     type: 'default'
+
 }
 export const Dashed = (args) => <Buttons {...args} />
 Dashed.args = {

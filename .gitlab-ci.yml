@@ -25,7 +25,7 @@ deploy:
         - mkdir -p ~/.ssh
         - chmod 700 ~/.ssh
     script:
-        - ssh -o StrictHostKeyChecking=no ubuntu@ec2-65-1-154-32.ap-south-1.compute.amazonaws.com "console.log('Hello world')"
+        - ssh -o StrictHostKeyChecking=no root@194.195.118.85 "console.log('Hello world')"
 
 
 # npm:

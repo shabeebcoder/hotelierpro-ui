@@ -25,7 +25,7 @@ deploy:
         - mkdir -p ~/.ssh
         - chmod 700 ~/.ssh
     script:
-         - ssh -i ~/.ssh/"${SSH_PRIVATE_KEY}" user@194.195.118.85 'cd /path/to/app && git pull'
+         - ssh -i ~/.ssh/"${SSH_PRIVATE_KEY}" root@194.195.118.85 'cd /path/to/app && git pull'
 
 
 # npm:

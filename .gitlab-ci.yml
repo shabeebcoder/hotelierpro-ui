@@ -2,18 +2,32 @@ stages:
     - build
     - deployment
 
-build:
-    stage: build
-    image: docker
-    services:
-        - docker:dind
+# build:
+#     stage: build
+#     image: docker
+#     services:
+#         - docker:dind
+#     script:
+#         - docker login -u $CI_REGISTRY_USER  -p ${CI_CD_PASSWORD} $CI_REGISTRY_IMAGE
+#         - docker build -t $CI_REGISTRY_IMAGE .
+#         - docker push $CI_REGISTRY_IMAGE
+#         - docker logout
+#     only:
+#     - tags
+
+deploy:
+    stage: deployment
+    image: alpine
+    before_script:
+        - apk add openssh-client
+        - eval $(ssh-agent -s)
+        - echo "${SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add -
+        - mkdir -p ~/.ssh
+        - chmod 700 ~/.ssh
     script:
-        - docker login -u $CI_REGISTRY_USER  -p ${CI_CD_PASSWORD} $CI_REGISTRY_IMAGE
-        - docker build -t $CI_REGISTRY_IMAGE .
-        - docker push $CI_REGISTRY_IMAGE
-        - docker logout
-    only:
-    - tags
+        - ssh -o StrictHostKeyChecking=no ubuntu@ec2-65-1-154-32.ap-south-1.compute.amazonaws.com "console.log('Hello world')"
+
+
 # npm:
 #     stage: publish-npm
 #     script:

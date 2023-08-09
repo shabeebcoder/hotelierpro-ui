@@ -18,14 +18,14 @@ stages:
 deploy:
     stage: deployment
     image: alpine
-    # before_script:
-    #     - apk add openssh-client
-    #     - eval $(ssh-agent -s)
-    #     - echo "${SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add -
-    #     - mkdir -p ~/.ssh
-    #     - chmod 700 ~/.ssh
+    before_script:
+        - apk add openssh-client
+        - eval $(ssh-agent -s)
+        - echo "${SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add -
+        - mkdir -p ~/.ssh
+        - chmod 700 ~/.ssh
     script:
-         - ssh root@194.195.118.85 
+         - ssh -o StrictHostKeyChecking=no root@194.195.118.85 
 
 
 # npm:

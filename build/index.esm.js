@@ -28459,7 +28459,7 @@ var Typography$1 = Typography;
 function Button (_a) {
     var children = _a.children, props = __rest$p(_a, ["children"]);
     return (React__default.createElement(Space$1, { wrap: true },
-        React__default.createElement(Button$2, __assign({}, props), children)));
+        React__default.createElement(Button$2, __assign({ style: props.style }, props), children)));
 }
 
 var Title = Typography$1.Title;

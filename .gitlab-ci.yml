@@ -25,7 +25,7 @@ deploy:
         - mkdir -p ~/.ssh
         - chmod 700 ~/.ssh
     script:
-         - ssh -o StrictHostKeyChecking=no root@194.195.118.85 "cd / && "sudo docker pull registry.gitlab.com/hotelierpro/ui-library && sudo docker stop ui-library || true && sudo docker rm ui-library || true &&sudo docker run -d --name ui-library -p 3000:3000 registry.gitlab.com/hotelierpro/ui-library"
+         - ssh -o StrictHostKeyChecking=no root@194.195.118.85 "sudo docker pull registry.gitlab.com/hotelierpro/ui-library && sudo docker stop ui-library || true && sudo docker rm ui-library || true &&sudo docker run -d --name ui-library -p 3000:3000 registry.gitlab.com/hotelierpro/ui-library"
 
 
 # npm:

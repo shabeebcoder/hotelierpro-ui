@@ -18,4 +18,4 @@ npm:
     script:
         - echo "//registry.npmjs.org/:_authToken=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" > .npmrc && npm publish
     only:
-    - main
+    - master

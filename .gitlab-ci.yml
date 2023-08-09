@@ -25,7 +25,7 @@ deploy:
         - mkdir -p ~/.ssh
         - chmod 700 ~/.ssh
     script:
-         - ssh -o StrictHostKeyChecking=no root@194.195.118.85 'console.log("Connected")'
+         - ssh -o StrictHostKeyChecking=no root@194.195.118.85 
 
 
 # npm:

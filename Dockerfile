@@ -23,8 +23,8 @@ COPY . .
 
 
 # Publish to npm
-RUN echo "//registry.npmjs.org/:_authToken=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" > .npmrc
-RUN npm publish
+# RUN echo "//registry.npmjs.org/:_authToken=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" > .npmrc
+# RUN npm publish
 
 # Final stage
 # FROM node:14-alpine

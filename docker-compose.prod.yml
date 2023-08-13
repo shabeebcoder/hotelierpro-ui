@@ -7,3 +7,4 @@ services:
       target: production
     ports:
       - "8080:6006"
+

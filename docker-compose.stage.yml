@@ -1,0 +1,8 @@
+version: '3'
+services:
+  storybook_production:
+    platform: linux/amd64
+    image: registry.gitlab.com/hotelierpro/ui-library
+    ports:
+      - "6006:6006"
+

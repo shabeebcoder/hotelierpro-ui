@@ -27,7 +27,7 @@ deploy:
     script:
          - ssh -o StrictHostKeyChecking=no root@172.105.58.58 "docker login -u $CI_REGISTRY_USER  -p ${CI_CD_PASSWORD} $CI_REGISTRY_IMAGE && sudo docker pull registry.gitlab.com/hotelierpro/ui-library && sudo docker stop ui-library || true && sudo docker rm ui-library || true && sudo docker run -d --name ui-library -p 3000:6006 registry.gitlab.com/hotelierpro/ui-library"
     only:
-    - tags
+    # - tags
 
 # npm:
 #     stage: publish-npm

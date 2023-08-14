@@ -5,8 +5,8 @@ COPY package*.json ./
 COPY postcss*.js ./
 COPY rollup*.js ./
 COPY tsconfig*.json ./
-RUN npm install
 COPY . ./
+RUN npm install
 CMD ["npm", "run", "dev"]
 
 

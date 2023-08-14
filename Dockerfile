@@ -1,5 +1,5 @@
 # Development stage
-FROM node:14
+FROM node:alpine
 WORKDIR /app
 COPY package*.json ./
 COPY postcss*.js ./
@@ -11,14 +11,14 @@ CMD ["npm", "run", "dev"]
 
 
 # Production stage
-FROM node:14 AS production
-WORKDIR /app
-COPY package*.json ./
-COPY postcss*.js ./
-COPY rollup*.js ./
-COPY tsconfig*.json ./
-RUN npm install --production
-COPY . .
+# FROM node:14 AS production
+# WORKDIR /app
+# COPY package*.json ./
+# COPY postcss*.js ./
+# COPY rollup*.js ./
+# COPY tsconfig*.json ./
+# RUN npm install --production
+# COPY . .
 # RUN npm run storybook:export
 
 
@@ -30,8 +30,8 @@ COPY . .
 # FROM node:14-alpine
 # WORKDIR /app
 # COPY --from=production /app /app
-EXPOSE 6006
-CMD ["npm", "run", "dev"]
+# EXPOSE 6006
+# CMD ["npm", "run", "dev"]
 
 
 

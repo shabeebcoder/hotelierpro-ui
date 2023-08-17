@@ -1,7 +1,8 @@
 import TestComponent from "./TestComponent";
 import { Button } from "./Buttons";
 import { Headline } from "./Typography";
+import { SuccessAlert } from "./Alert";
 
-import DLS from "./DLS"
+import DLS from "./DLS";
 
-export { Button, Headline, DLS };
+export { Button, Headline, DLS, SuccessAlert };

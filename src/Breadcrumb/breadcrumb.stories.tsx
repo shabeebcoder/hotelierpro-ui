@@ -3,7 +3,7 @@ import Breadcrumb from "./breadcrumb";
 
 
 export default {
-    title: "Breadcrumbs"
+    title: "elements/Breadcrumbs"
 }
 
 

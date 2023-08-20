@@ -3,7 +3,7 @@ import React from "react";
 import SuccessAlert from "./SuccessAlert";
 
 export default {
-  title: "Success Alert",
+  title: "elements/Success Alert",
 };
 
 export const Primary = (args: any) => <SuccessAlert {...args} />;

@@ -2,7 +2,7 @@ import React from "react";
 import Checkbox from "./checkbox"
 
 export default {
-    title: 'Check Box'
+    title: 'elements/Check Box'
 }
 
 

@@ -3,7 +3,7 @@ import React from "react";
 import Buttons from "./Button";
 
 export default {
-    title: "Buttons"
+    title: "elements/Buttons"
 };
 
 export const Primary = (args) => <Buttons {...args} />

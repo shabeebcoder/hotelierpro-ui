@@ -3,7 +3,7 @@ import Divider from "./divider";
 
 
 export default {
-    title: "Divider"
+    title: "elements/Divider"
 }
 
 

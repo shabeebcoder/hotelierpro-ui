@@ -3,7 +3,7 @@ import Radio from "./radio";
 
 
 export default {
-    title: "Radio"
+    title: "elements/Radio"
 }
 
 

@@ -4,7 +4,7 @@ import { Space, Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 
 export default {
-    title: "Tables"
+    title: "elements/Tables"
 }
 
 

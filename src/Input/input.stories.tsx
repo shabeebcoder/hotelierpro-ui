@@ -3,7 +3,7 @@ import Input from "./input"
 import SimpleInputs from "./simpleInput"
 
 export default {
-    title: "Input"
+    title: "elements/Input"
 }
 
 

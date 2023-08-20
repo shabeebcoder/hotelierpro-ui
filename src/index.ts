@@ -1,4 +1,3 @@
-import TestComponent from "./TestComponent";
 import { Button } from "./Buttons";
 import { Headline } from "./Typography";
 import { SuccessAlert } from "./Alert";

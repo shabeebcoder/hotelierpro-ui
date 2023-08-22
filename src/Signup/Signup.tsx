@@ -22,8 +22,8 @@ type FieldType = {
 export default function Login() {
     return <Card bordered={false} style={{ width: 478, display: 'flex', justifyContent: 'center' }}>
         <div style={{ display: 'flex', textAlign: 'center', flexDirection: 'column' }}>
-            <Title level={5} style={{ fontSize: 24, flexGrow: 1, marginBottom: '0px' }}>Welcome back, Olivia</Title>
-            <span style={{ fontSize: 16, fontWeight: 200, }}>Please enter your details</span>
+            <Title level={5} style={{ fontSize: 24, flexGrow: 1, marginBottom: '0px' }}>Create an account</Title>
+            <span style={{ fontSize: 16, fontWeight: 200, }}>Lets get Started with 14 days free trial!</span>
         </div>
         <Form
             name="basic"

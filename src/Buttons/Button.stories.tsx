@@ -10,7 +10,8 @@ export const Primary = (args) => <Buttons {...args} />
 Primary.args = {
     children: "Primary Button",
     type: 'default',
-    style: { backgroundColor: '#3A7jC7C', color: 'white' }
+    disabled: false,
+    style: { backgroundColor: '#3A7jC7C', color: 'white', }
 }
 export const Default = (args) => <Buttons {...args} />
 Default.args = {

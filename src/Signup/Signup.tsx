@@ -1,8 +1,9 @@
 import React from "react";
-import { Card, Space } from 'antd';
+import { Card, Space, Select } from 'antd';
 import { Typography } from 'antd';
 const { Title, Text, Link } = Typography;
 import { Button, Checkbox, Form, Input } from 'antd';
+const { Option } = Select;
 
 
 const onFinish = (values: any) => {
@@ -20,60 +21,103 @@ type FieldType = {
 };
 
 export default function Login() {
-    return <Card bordered={false} style={{ width: 478, display: 'flex', justifyContent: 'center' }}>
+
+    const prefixSelector = (
+        <Form.Item name="prefix" noStyle>
+            <Select defaultValue={"86"} style={{ width: 70 }}>
+                <Option value="86">+86</Option>
+                <Option value="87">+87</Option>
+            </Select>
+        </Form.Item>
+    );
+
+    return <Card bordered={false} style={{ width: 678, display: 'flex', justifyContent: 'center' }}>
         <div style={{ display: 'flex', textAlign: 'center', flexDirection: 'column' }}>
             <Title level={5} style={{ fontSize: 24, flexGrow: 1, marginBottom: '0px' }}>Create an account</Title>
             <span style={{ fontSize: 16, fontWeight: 200, }}>Lets get Started with 14 days free trial!</span>
         </div>
-        <Form
-            name="basic"
-            labelCol={{ span: 8 }}
-            wrapperCol={{ span: 16 }}
-            style={{ width: 300, paddingTop: 70, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-            initialValues={{ remember: true }}
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            autoComplete="off"
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
 
-        >
-            <Form.Item
+            <Form style={{ display: 'flex', marginTop: 72, justifyContent: 'center', }} name="horizontal_login" layout="inline" onFinish={onFinish}>
+                <Form.Item
+                    style={{ marginBottom: 32, minWidth: 280 }}
+                    name="username"
+                >
+                    <Input size="large" placeholder="First Name" />
+                </Form.Item>
+                <Form.Item
+                    style={{ marginBottom: 32, minWidth: 280 }}
+                    name="password"
 
-                style={{ width: 450, }}
-                rules={[{ required: true, message: 'username' }]}
-            >
-                <Input size="large" placeholder="Username" />
-            </Form.Item>
+                >
+                    <Input size="large"
+                        type="password"
+                        placeholder="Last Name"
+                    />
+                </Form.Item>
+                <Form.Item
+                    style={{ marginBottom: 32, minWidth: 280 }}
+                    name="username"
+                >
+                    <Input size="large" placeholder="email" />
+                </Form.Item>
+                <Form.Item
+                    style={{ marginBottom: 32, minWidth: 280 }}
+                    name="password"
 
-            <Form.Item
-                style={{ width: 450, marginBottom: 5 }}
+                >
+                    <Input
+                        style={{ width: '100%' }}
+                        addonAfter={prefixSelector}
+                        size="large"
+                        type="password"
+                        placeholder="Phone No"
+                    />
+                </Form.Item>
+                <Form.Item
+                    style={{ marginBottom: 32, minWidth: 280 }}
+                    name="username"
+                >
+                    <Input size="large" placeholder="Hotel Name" />
+                </Form.Item>
+                <Form.Item
+                    style={{ marginBottom: 32, minWidth: 280 }}
+                    name="password"
 
-                rules={[{ required: true, message: 'Please input your password!' }]}
-            >
-                <Input.Password placeholder="password" size="large" />
-            </Form.Item>
+                >
+                    <Input size="large"
+                        type="password"
+                        placeholder="Hotel Website"
+                    />
+                </Form.Item>
+                <Form.Item
+                    style={{ marginBottom: 32, minWidth: 280 }}
+                    name="username"
+                >
+                    <Input.Password size="large" placeholder="Password" />
+                </Form.Item>
+                <Form.Item
+                    style={{ marginBottom: 32, minWidth: 280 }}
+                    name="password"
+                    hasFeedback
 
-            <div
-                style={{ display: 'flex', justifyContent: 'space-between' }}
-            >
-                <Checkbox style={{ fontSize: 12 }} >Remember me</Checkbox>
-                <Link style={{ fontSize: 12 }}  >Forgot password</Link>
-            </div>
+                >
+                    <Input.Password size="large" placeholder="Confirm Passowrd" />
+                </Form.Item>
 
 
-            <Space direction="vertical" style={{ width: '100%', paddingTop: 70 }}>
+                <Space direction="vertical" style={{ width: '50%', paddingTop: 70 }}>
 
-                <Button type="primary" style={{ backgroundColor: '#3A7C7C' }} htmlType="submit" block>
-                    Submit
-                </Button>
-            </Space>
+                    <Button type="primary" style={{ backgroundColor: '#3A7C7C' }} htmlType="submit" block>
+                        Submit
+                    </Button>
+                </Space>
 
 
-            <div style={{ textAlign: 'center', }}>
 
-                <Text style={{ fontSize: 12 }}>Don't have an account ?</Text>   <Link style={{ fontSize: 12 }}>Login</Link>
+            </Form>
 
-            </div>
+        </div>
 
-        </Form>
     </Card >
 }

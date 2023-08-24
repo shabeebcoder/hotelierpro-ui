@@ -31,7 +31,7 @@ export default function Login() {
         </Form.Item>
     );
 
-    return <Card bordered={false} style={{ width: 678, display: 'flex', justifyContent: 'center' }}>
+    return <Card bordered={false} style={{ width: 678, display: 'flex', justifyContent: 'center', boxShadow: '0px 1.0612244606018066px 5.306122303009033px 0px rgba(0, 0, 0, 0.10)' }}>
         <div style={{ display: 'flex', textAlign: 'center', flexDirection: 'column' }}>
             <Title level={5} style={{ fontSize: 24, flexGrow: 1, marginBottom: '0px' }}>Create an account</Title>
             <span style={{ fontSize: 16, fontWeight: 200, }}>Lets get Started with 14 days free trial!</span>
@@ -106,11 +106,17 @@ export default function Login() {
                 </Form.Item>
 
 
-                <Space direction="vertical" style={{ width: '50%', paddingTop: 70 }}>
-
-                    <Button type="primary" style={{ backgroundColor: '#3A7C7C' }} htmlType="submit" block>
+                <Space direction="vertical" style={{ width: '50%', paddingTop: 70, textAlign: 'center' }}>
+                    <Checkbox style={{ fontSize: 12 }}>
+                        I Accept <Link style={{ fontSize: 12, color: '#3A7C7C' }}>Terms and Condition</Link>
+                    </Checkbox>
+                    <Button type="primary" style={{ backgroundColor: '#3A7C7C', marginTop: -2 }} htmlType="submit" block>
                         Submit
                     </Button>
+                    <div style={{ marginTop: -4 }} >
+
+                        <Text style={{ fontSize: 12 }}>Already have an accout?</Text> <Link style={{ fontSize: 12, textDecoration: 'underline', color: '#3A7C7C' }}>Login</Link>
+                    </div>
                 </Space>
 
 

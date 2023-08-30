@@ -101,7 +101,6 @@ const columns = [
 export const Primary = (args) => <Tables {...args} />;
 
 Primary.args = {
-  columns: columns,
+  type: 'room',
   dataSource: data,
-
 };

@@ -40,84 +40,119 @@ interface RoomTableDataType {
 
 const Tables: any = (props: Props) => {
 
-
+  const RoomTableColumns: ColumnsType<RoomTableDataType> = [
+    {
+      title: "Room Name",
+      dataIndex: "roomName",
+      key: "roomName",
+      render: (text) => <>{text}</>,
+      sorter: (a, b) => a.roomName.length - b.roomName.length,
+    },
+    {
+      title: "Room Type",
+      dataIndex: "roomType",
+      key: "roomType",
+      render: (items: any) => {
+        return (
+          <>
+            <Select
+              defaultValue={items[0]?.label}
+              style={{ width: 120 }}
+              options={items}
+            />
+          </>
+        );
+      },
+    },
+    {
+      title: () => {
+        return (
+          <>
+            Max Persons
+            <br />
+            (per rooms)
+          </>
+        );
+      },
+      dataIndex: "maxPersons",
+      key: "maxPersons",
+      sorter: (a, b) => a.maxPersons - b.maxPersons,
+    },
+    {
+      title: () => {
+        return (
+          <>
+            Room Price
+            <br />
+            (regular use)
+          </>
+        );
+      },
+      dataIndex: "regularUseRoomPrice",
+      key: "regularUseRoomPrice",
+      sorter: (a, b) => a.regularUseRoomPrice - b.regularUseRoomPrice,
+    },
+    {
+      title: () => {
+        return (
+          <>
+            Room Price
+            <br />
+            (single use)
+          </>
+        );
+      },
+      dataIndex: "singleUseRoomPrice",
+      key: "singleUseRoomPrice",
+      sorter: (a, b) => a.singleUseRoomPrice - b.singleUseRoomPrice,
+    },
+    {
+      title: "",
+      key: "action",
+      render: (_, record) => (
+        <Space size="middle">
+          <div
+            style={{
+              height: "25px",
+              width: "25px",
+              backgroundColor: "#2496FF2E",
+              borderRadius: "50%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <a onClick={() => alert(`${record.roomName} edited`)}>
+              <EditOutlined />
+            </a>
+          </div>
+          <div
+            style={{
+              height: "25px",
+              width: "25px",
+              backgroundColor: "#F4636D2E",
+              borderRadius: "50%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <a onClick={() => alert(`${record.roomName} deleted`)}>
+              <DeleteOutlined style={{ color: "#F04551" }} />
+            </a>
+          </div>
+        </Space>
+      ),
+    },
+  ];
 
   let columns = [];
+  if (props.type == 'room') {
 
 
 
-  const handleRender = ({ data, component, row }) => {
-    if (component === "select") {
-      return (
-        <>
-          <Select
-            defaultValue={data[0]?.label}
-            style={{ width: 120 }}
-            options={data}
-          />
-        </>
-      );
-    }
-    else if (component === "action") {
-
-      return (<Space size="middle">
-        <div
-          style={{
-            height: "25px",
-            width: "25px",
-            backgroundColor: "#2496FF2E",
-            borderRadius: "50%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <a onClick={() => alert(`edited`)}>
-            <EditOutlined />
-          </a>
-        </div>
-        <div
-          style={{
-            height: "25px",
-            width: "25px",
-            backgroundColor: "#F4636D2E",
-            borderRadius: "50%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <a onClick={() => alert(JSON.stringify(row))}>
-            <DeleteOutlined style={{ color: "#F04551" }} />
-          </a>
-        </div>
-      </Space>)
-    }
-
-    else {
-      return data || ''
-    }
-
+    columns = RoomTableColumns
   }
-
-
-
-  props.columns.map((row: any) => {
-    columns.push(
-      {
-        title: row['title'],
-        dataIndex: row['key'],
-        key: row['key'],
-        render: (data) => handleRender({
-          component: row?.component || 'text',
-          data,
-          row
-        }),
-        ...(row.sort && { sorter: (a, b) => a['key'].length - b['key'].length }),
-      },
-    )
-  })
-
 
   return (<Table {...props} columns={columns} />)
 

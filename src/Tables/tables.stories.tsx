@@ -57,116 +57,51 @@ const data: DataType[] = [
   },
 ];
 
-const columns: ColumnsType<DataType> = [
+
+const columns = [
   {
-    title: "Room Name",
-    dataIndex: "roomName",
-    key: "roomName",
-    render: (text) => <>{text}</>,
-    sorter: (a, b) => a.roomName.length - b.roomName.length,
+    title: 'Room Name',
+    subTitle: '',
+    key: 'roomName',
+    sort: true,
+
   },
   {
-    title: "Room Type",
-    dataIndex: "roomType",
-    key: "roomType",
-    render: (items: any) => {
-      return (
-        <>
-          <Select
-            defaultValue={items[0]?.label}
-            style={{ width: 120 }}
-            // onChange={() => console.log(item)}
-            options={items}
-          />
-        </>
-      );
-    },
+    title: 'Room Type',
+    subTitle: '',
+    key: 'roomType',
+    sort: true,
+    component: 'select'
   },
   {
-    title: () => {
-      return (
-        <>
-          Max Persons
-          <br />
-          (per rooms)
-        </>
-      );
-    },
-    dataIndex: "maxPersons",
-    key: "maxPersons",
-    sorter: (a, b) => a.maxPersons - b.maxPersons,
+    title: 'Max Persons',
+    subTitle: '(per rooms)',
+    key: 'maxPersons',
+    sort: true
   },
   {
-    title: () => {
-      return (
-        <>
-          Room Price
-          <br />
-          (regular use)
-        </>
-      );
-    },
-    dataIndex: "regularUseRoomPrice",
-    key: "regularUseRoomPrice",
-    sorter: (a, b) => a.regularUseRoomPrice - b.regularUseRoomPrice,
+    title: 'Room Price',
+    subTitle: '(regular use)',
+    key: 'regularUseRoomPrice',
+    sort: true
   },
   {
-    title: () => {
-      return (
-        <>
-          Room Price
-          <br />
-          (single use)
-        </>
-      );
-    },
-    dataIndex: "singleUseRoomPrice",
-    key: "singleUseRoomPrice",
-    sorter: (a, b) => a.singleUseRoomPrice - b.singleUseRoomPrice,
+    title: '',
+    subTitle: '',
+    key: 'actions',
+    sort: false,
+    component: 'action'
+
   },
-  {
-    title: "",
-    key: "action",
-    render: (_, record) => (
-      <Space size="middle">
-        <div
-          style={{
-            height: "25px",
-            width: "25px",
-            backgroundColor: "#2496FF2E",
-            borderRadius: "50%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <a onClick={() => alert(`${record.roomName} edited`)}>
-            <EditOutlined />
-          </a>
-        </div>
-        <div
-          style={{
-            height: "25px",
-            width: "25px",
-            backgroundColor: "#F4636D2E",
-            borderRadius: "50%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <a onClick={() => alert(`${record.roomName} deleted`)}>
-            <DeleteOutlined style={{ color: "#F04551" }} />
-          </a>
-        </div>
-      </Space>
-    ),
-  },
-];
+
+]
+
+
 
 export const Primary = (args) => <Tables {...args} />;
 
 Primary.args = {
   columns: columns,
   dataSource: data,
+
 };

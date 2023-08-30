@@ -59,7 +59,7 @@ const data: DataType[] = [
 
 const columns: ColumnsType<DataType> = [
   {
-    title: "roomName",
+    title: "Room Name",
     dataIndex: "roomName",
     key: "roomName",
     render: (text) => <>{text}</>,

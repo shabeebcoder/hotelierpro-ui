@@ -11,14 +11,19 @@ Primary.args = {
     children: "Primary Button",
     type: 'default',
     disabled: false,
-    style: { backgroundColor: '#3A7jC7C', color: 'white', }
+    style: { backgroundColor: '#3A7C7C', color: 'white', }
 }
 export const Default = (args) => <Buttons {...args} />
+
 Default.args = {
     children: "Primary Button",
-    type: 'default'
+    type: 'default',
+    style: { backgroundColor: '#3A7C7C', color: 'white' }
 
 }
+
+
+
 export const Dashed = (args) => <Buttons {...args} />
 Dashed.args = {
     children: "Dashed Button",

@@ -20,7 +20,7 @@ type FieldType = {
 };
 
 export default function Login() {
-    return <Card bordered={false} style={{ width: 478, display: 'flex', justifyContent: 'center' }}>
+    return <Card bordered={false} style={{ width: 478, display: 'flex', justifyContent: 'center', boxShadow: '0px 1.0612244606018066px 5.306122303009033px 0px rgba(0, 0, 0, 0.10)' }}>
         <div style={{ display: 'flex', textAlign: 'center', flexDirection: 'column' }}>
             <Title level={5} style={{ fontSize: 24, flexGrow: 1, marginBottom: '0px' }}>Welcome back, Olivia</Title>
             <span style={{ fontSize: 16, fontWeight: 200, }}>Please enter your details</span>
@@ -56,7 +56,7 @@ export default function Login() {
                 style={{ display: 'flex', justifyContent: 'space-between' }}
             >
                 <Checkbox style={{ fontSize: 12 }} >Remember me</Checkbox>
-                <Link style={{ fontSize: 12 }}  >Forgot password</Link>
+                <Link style={{ fontSize: 12, color: '#3A7C7C' }}  >Forgot password</Link>
             </div>
 
 
@@ -70,7 +70,7 @@ export default function Login() {
 
             <div style={{ textAlign: 'center', }}>
 
-                <Text style={{ fontSize: 12 }}>Don't have an account ?</Text>   <Link style={{ fontSize: 12 }}>Login</Link>
+                <Text style={{ fontSize: 12 }}>Don't have an account ?</Text>   <Link style={{ fontSize: 12, color: '#3A7C7C' }}>Login</Link>
 
             </div>
 

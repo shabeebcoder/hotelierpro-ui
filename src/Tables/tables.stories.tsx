@@ -1,100 +1,106 @@
 import React from "react";
-import Tables from "../Tables";
-import { Space, Table, Tag } from 'antd';
-import type { ColumnsType } from 'antd/es/table';
+import Tables from "./tables";
+import { Space, Table, Tag, Select } from "antd";
+import type { ColumnsType } from "antd/es/table";
+
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
 export default {
-    title: "elements/Tables"
-}
-
+  title: "elements/Tables",
+};
 
 interface DataType {
-    key: string;
-    name: string;
-    age: number;
-    address: string;
-    tags: string[];
+  key: string;
+  roomName: string;
+  roomType: any[];
+  maxPersons: number;
+  singleUseRoomPrice: number;
+  regularUseRoomPrice: number;
 }
 
 const data: DataType[] = [
-    {
-        key: '1',
-        name: 'John Brown',
-        age: 32,
-        address: 'New York No. 1 Lake Park',
-        tags: ['nice', 'developer'],
-    },
-    {
-        key: '2',
-        name: 'Jim Green',
-        age: 42,
-        address: 'London No. 1 Lake Park',
-        tags: ['loser'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-];
-
-const columns: ColumnsType<DataType> = [
-    {
-        title: 'Name',
-        dataIndex: 'name',
-        key: 'name',
-        render: (text) => <a>{text}</a>,
-    },
-    {
-        title: 'Age',
-        dataIndex: 'age',
-        key: 'age',
-    },
-    {
-        title: 'Address',
-        dataIndex: 'address',
-        key: 'address',
-    },
-    {
-        title: 'Tags',
-        key: 'tags',
-        dataIndex: 'tags',
-        render: (_, { tags }) => (
-            <>
-                {tags.map((tag) => {
-                    let color = tag.length > 5 ? 'geekblue' : 'green';
-                    if (tag === 'loser') {
-                        color = 'volcano';
-                    }
-                    return (
-                        <Tag color={color} key={tag}>
-                            {tag.toUpperCase()}
-                        </Tag>
-                    );
-                })}
-            </>
-        ),
-    },
-    {
-        title: 'Action',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Invite {record.name}</a>
-                <a>Delete</a>
-            </Space>
-        ),
-    },
+  {
+    key: "1",
+    roomName: "Room 1",
+    roomType: [
+      { value: "single", label: "Single" },
+      { value: "double", label: "Double" },
+      { value: "deluxe", label: "Deluxe" },
+    ],
+    maxPersons: 2,
+    singleUseRoomPrice: 20,
+    regularUseRoomPrice: 30,
+  },
+  {
+    key: "2",
+    roomName: "Room 1 regular",
+    roomType: [
+      { value: "single", label: "Single" },
+      { value: "double", label: "Double" },
+      { value: "deluxe", label: "Deluxe" },
+    ],
+    maxPersons: 3,
+    singleUseRoomPrice: 30,
+    regularUseRoomPrice: 50,
+  },
+  {
+    key: "3",
+    roomName: "Room 3",
+    roomType: [
+      { value: "single", label: "Single" },
+      { value: "double", label: "Double" },
+      { value: "deluxe", label: "Deluxe" },
+    ],
+    maxPersons: 4,
+    regularUseRoomPrice: 100,
+    singleUseRoomPrice: 40,
+  },
 ];
 
 
+const columns = [
+  {
+    title: 'Room Name',
+    subTitle: '',
+    key: 'roomName',
+    sort: true,
 
-export const Primary = (args) => <Tables {...args} />
+  },
+  {
+    title: 'Room Type',
+    subTitle: '',
+    key: 'roomType',
+    sort: true,
+    component: 'select'
+  },
+  {
+    title: 'Max Persons',
+    subTitle: '(per rooms)',
+    key: 'maxPersons',
+    sort: true
+  },
+  {
+    title: 'Room Price',
+    subTitle: '(regular use)',
+    key: 'regularUseRoomPrice',
+    sort: true
+  },
+  {
+    title: '',
+    subTitle: '',
+    key: 'actions',
+    sort: false,
+    component: 'action'
+
+  },
+
+]
+
+
+
+export const Primary = (args) => <Tables {...args} />;
 
 Primary.args = {
-    columns: columns,
-    dataSource: data
-
-}
+  type: 'room',
+  dataSource: data,
+};

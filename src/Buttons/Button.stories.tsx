@@ -3,7 +3,9 @@ import React from "react";
 import Buttons from "./Button";
 
 export default {
-    title: "elements/Buttons"
+    title: "elements/Buttons",
+    argTypes: { onClick: { action: 'clicked' } },
+
 };
 
 export const Primary = (args) => <Buttons {...args} />
@@ -11,7 +13,8 @@ Primary.args = {
     children: "Primary Button",
     type: 'default',
     disabled: false,
-    style: { backgroundColor: '#3A7C7C', color: 'white', }
+    style: { backgroundColor: '#3A7C7C', color: 'white', },
+    onClick: () => console.log("ds")
 }
 export const Default = (args) => <Buttons {...args} />
 

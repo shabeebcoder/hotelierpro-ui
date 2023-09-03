@@ -1,0 +1,391 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: aliceblue;
+}
+
+.front-desk-page-container {
+    overflow: hidden;
+}
+
+.front-desk-page-container .calendar-year-section {
+    height: 43px;
+    display: flex;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #f4f4f5;
+}
+
+.front-desk-page-container .calendar-year-section button {
+    display: block;
+    height: 43px;
+    border: 1px solid #f4f4f5;
+    border-bottom: 0px;
+    border-radius: 0 !important;
+    background-color: white;
+}
+
+.front-desk-page-container .calendar-year-section ul {
+    cursor: pointer;
+    padding: 5px 7px;
+    margin-right: 10px;
+    border-radius: 3px !important;
+    list-style: none;
+    padding: 6px 10px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 300;
+    align-items: center;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.front-desk-page-container .calendar-year-section ul li {
+    cursor: pointer;
+    padding: 5px 7px;
+    margin-right: 10px;
+    border-radius: 3px !important;
+}
+
+.front-desk-page-container .calendar-year-section ul li:hover {
+    background-color: #f7f7f7;
+}
+
+.front-desk-page-container .calendar-year-section ul li.active {
+    background-color: #24afe8;
+    color: #fff;
+}
+
+.front-desk-page-container .calendar-month-section {
+    height: 43px;
+    display: flex;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #f4f4f5;
+}
+
+.front-desk-page-container .calendar-month-section button {
+    display: block;
+    height: 43px;
+    border: 1px solid #f4f4f5;
+    border-bottom: 0px;
+    border-radius: 0 !important;
+    background-color: white;
+}
+
+.front-desk-page-container .calendar-month-section ul {
+    cursor: pointer;
+    padding: 5px 7px;
+    margin-right: 10px;
+    border-radius: 3px !important;
+    list-style: none;
+    padding: 6px 10px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 300;
+    align-items: center;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.front-desk-page-container .calendar-month-section ul li {
+    cursor: pointer;
+    padding: 5px 7px;
+    margin-right: 10px;
+    border-radius: 3px !important;
+}
+
+.front-desk-page-container .calendar-month-section ul li:hover {
+    background-color: #f7f7f7;
+}
+
+.front-desk-page-container .calendar-month-section ul li.active {
+    background-color: #24afe8;
+    color: #fff;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .row {
+    display: flex;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .rooms-title {
+    height: 73px;
+    max-width: 153px;
+    min-width: 153px;
+    width: 153px;
+    background-color: white;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    color: #2b2b2b;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    border-bottom: 1px solid #f4f4f5;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .column {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border-left: 1px solid #f4f4f5;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .selected-year-and-month {
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #f4f4f5;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .selected-dates-range {
+    height: 100%;
+    background-color: white;
+    border-bottom: 1px solid #f4f4f5;
+    display: flex;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .selected-dates-range .date-box {
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #f4f4f5;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .selected-dates-range .date-box .date-day-box {
+    background-color: #3A7C7C;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+    text-align: center;
+    text-transform: uppercase !important;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .category-total-capacity-row {
+    background-color: white;
+    display: flex;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .category-total-capacity-row .blank {
+    width: 153px;
+    min-width: 153px;
+    max-width: 153px;
+    border-right: 1px solid #f4f4f5;
+    border-bottom: 1px solid #f4f4f5;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    color: #2b2b2b;
+    padding: 10px;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .category-total-capacity-row .room-total-capacity-box {
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    justify-content: center;
+    align-items: flex-start;
+    /* margin-top: 10px;
+    */
+    /* border-right: 1px solid #030353; */
+    /* border-bottom: 1px solid #f4f4f5; */
+    height: 40px;
+    display: flex;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .category-total-capacity-row .room-total-capacity-box span {
+    margin-top: 10px;
+    padding: 4px 6px;
+    border-radius: 3px !important;
+    background-color: #59b59d;
+    color: white;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .room-category-row {
+    display: flex;
+    background-color: white;
+    height: 80px;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .room-category-row .room-category-name {
+    width: 153px;
+    min-width: 153px;
+    max-width: 153px;
+    border-right: 1px solid #f4f4f5;
+    border-bottom: 1px solid #f4f4f5;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    color: #2b2b2b;
+    padding: 10px;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .room-category-row .room-total-capacity-box {
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    justify-content: center;
+    align-items: flex-start;
+    /* margin-top: 10px;
+    */
+    border-right: 1px solid #f4f4f5;
+    border-bottom: 1px solid #f4f4f5;
+    /* height: 40px;
+    */
+    display: flex;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .room-category-row .room-total-capacity-box span {
+    margin-top: 10px;
+    padding: 4px 6px;
+    border-radius: 3px !important;
+    background-color: #59b59d;
+    color: white;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .room-row {
+    display: flex;
+    background-color: white;
+    height: 60px;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .room-row .room-name {
+    width: 153px;
+    min-width: 153px;
+    max-width: 153px;
+    border-right: 1px solid #f4f4f5;
+    border-bottom: 1px solid #f4f4f5;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    color: #2b2b2b;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .room-row .room-box {
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    justify-content: center;
+    align-items: flex-start;
+    /* margin-top: 10px;
+    */
+    border-right: 1px solid #f4f4f5;
+    border-bottom: 1px solid #f4f4f5;
+    /* height: 40px;
+    */
+    display: flex;
+    position: relative;
+    align-items: center;
+    overflow: visible;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .room-row .room-box .booked-info {
+    background-color: #EDC362;
+    width: 150px;
+    color: white;
+    height: 35px;
+    padding: 3px;
+    position: absolute;
+    font-weight: 400;
+    padding: 5px;
+    /* display: flex; */
+    /* align-items: center; */
+    border-radius: 5px;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .room-row .room-box .booked-info .name {
+    font-size: 12px;
+}
+
+.front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .room-row .room-box span {
+    margin-top: 10px;
+    padding: 4px 6px;
+    border-radius: 3px !important;
+    background-color: #59b59d;
+    color: white;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+}

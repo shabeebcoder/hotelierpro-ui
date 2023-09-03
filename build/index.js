@@ -56,7 +56,7 @@ var __assign = function() {
     return __assign.apply(this, arguments);
 };
 
-function __rest$p(s, e) {
+function __rest$j(s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
         t[p] = s[p];
@@ -4172,7 +4172,7 @@ function convertFieldsError(errors) {
   });
   return fields;
 }
-function format$1(template) {
+function format(template) {
   for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     args[_key - 1] = arguments[_key];
   }
@@ -4421,7 +4421,7 @@ function deepMerge(target, source) {
 
 var required$1 = function required(rule, value, source, errors, options, type) {
   if (rule.required && (!source.hasOwnProperty(rule.field) || isEmptyValue(value, type || rule.type))) {
-    errors.push(format$1(options.messages.required, rule.fullField));
+    errors.push(format(options.messages.required, rule.fullField));
   }
 };
 
@@ -4439,7 +4439,7 @@ var required$1 = function required(rule, value, source, errors, options, type) {
 
 var whitespace = function whitespace(rule, value, source, errors, options) {
   if (/^\s+$/.test(value) || value === '') {
-    errors.push(format$1(options.messages.whitespace, rule.fullField));
+    errors.push(format(options.messages.whitespace, rule.fullField));
   }
 };
 
@@ -4560,11 +4560,11 @@ var type$1 = function type(rule, value, source, errors, options) {
 
   if (custom.indexOf(ruleType) > -1) {
     if (!types[ruleType](value)) {
-      errors.push(format$1(options.messages.types[ruleType], rule.fullField, rule.type));
+      errors.push(format(options.messages.types[ruleType], rule.fullField, rule.type));
     } // straight typeof check
 
   } else if (ruleType && typeof value !== rule.type) {
-    errors.push(format$1(options.messages.types[ruleType], rule.fullField, rule.type));
+    errors.push(format(options.messages.types[ruleType], rule.fullField, rule.type));
   }
 };
 
@@ -4606,14 +4606,14 @@ var range = function range(rule, value, source, errors, options) {
 
   if (len) {
     if (val !== rule.len) {
-      errors.push(format$1(options.messages[key].len, rule.fullField, rule.len));
+      errors.push(format(options.messages[key].len, rule.fullField, rule.len));
     }
   } else if (min && !max && val < rule.min) {
-    errors.push(format$1(options.messages[key].min, rule.fullField, rule.min));
+    errors.push(format(options.messages[key].min, rule.fullField, rule.min));
   } else if (max && !min && val > rule.max) {
-    errors.push(format$1(options.messages[key].max, rule.fullField, rule.max));
+    errors.push(format(options.messages[key].max, rule.fullField, rule.max));
   } else if (min && max && (val < rule.min || val > rule.max)) {
-    errors.push(format$1(options.messages[key].range, rule.fullField, rule.min, rule.max));
+    errors.push(format(options.messages[key].range, rule.fullField, rule.min, rule.max));
   }
 };
 
@@ -4623,7 +4623,7 @@ var enumerable$1 = function enumerable(rule, value, source, errors, options) {
   rule[ENUM$1] = Array.isArray(rule[ENUM$1]) ? rule[ENUM$1] : [];
 
   if (rule[ENUM$1].indexOf(value) === -1) {
-    errors.push(format$1(options.messages[ENUM$1], rule.fullField, rule[ENUM$1].join(', ')));
+    errors.push(format(options.messages[ENUM$1], rule.fullField, rule[ENUM$1].join(', ')));
   }
 };
 
@@ -4636,13 +4636,13 @@ var pattern$1 = function pattern(rule, value, source, errors, options) {
       rule.pattern.lastIndex = 0;
 
       if (!rule.pattern.test(value)) {
-        errors.push(format$1(options.messages.pattern.mismatch, rule.fullField, value, rule.pattern));
+        errors.push(format(options.messages.pattern.mismatch, rule.fullField, value, rule.pattern));
       }
     } else if (typeof rule.pattern === 'string') {
       var _pattern = new RegExp(rule.pattern);
 
       if (!_pattern.test(value)) {
-        errors.push(format$1(options.messages.pattern.mismatch, rule.fullField, value, rule.pattern));
+        errors.push(format(options.messages.pattern.mismatch, rule.fullField, value, rule.pattern));
       }
     }
   }
@@ -5233,7 +5233,7 @@ var Schema = /*#__PURE__*/function () {
             if (rule.message !== undefined) {
               filledErrors = [].concat(rule.message).map(complementError(rule, source));
             } else if (options.error) {
-              filledErrors = [options.error(rule, format$1(options.messages.required, rule.field))];
+              filledErrors = [options.error(rule, format(options.messages.required, rule.field))];
             }
 
             return doIt(filledErrors);
@@ -5326,7 +5326,7 @@ var Schema = /*#__PURE__*/function () {
     }
 
     if (typeof rule.validator !== 'function' && rule.type && !validators.hasOwnProperty(rule.type)) {
-      throw new Error(format$1('Unknown rule type %s', rule.type));
+      throw new Error(format('Unknown rule type %s', rule.type));
     }
 
     return rule.type || 'string';
@@ -5894,7 +5894,7 @@ function _finishOnFirstFailed() {
   return _finishOnFirstFailed.apply(this, arguments);
 }
 
-var _excluded$m = ["name"];
+var _excluded$k = ["name"];
 var EMPTY_ERRORS = [];
 function requireUpdate(shouldUpdate, prev, next, prevValue, nextValue, info) {
   if (typeof shouldUpdate === 'function') {
@@ -6389,7 +6389,7 @@ Field.defaultProps = {
 };
 function WrapperField(_ref5) {
   var name = _ref5.name,
-    restProps = _objectWithoutProperties(_ref5, _excluded$m);
+    restProps = _objectWithoutProperties(_ref5, _excluded$k);
   var fieldContext = React__namespace.useContext(Context$1);
   var listContext = React__namespace.useContext(ListContext);
   var namePath = name !== undefined ? getNamePath(name) : undefined;
@@ -6656,7 +6656,7 @@ var NameMap = /*#__PURE__*/function () {
   return NameMap;
 }();
 
-var _excluded$l = ["name"];
+var _excluded$j = ["name"];
 var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
   var _this = this;
   _classCallCheck(this, FormStore);
@@ -7076,7 +7076,7 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
     var namePathList = [];
     fields.forEach(function (fieldData) {
       var name = fieldData.name,
-        data = _objectWithoutProperties(fieldData, _excluded$l);
+        data = _objectWithoutProperties(fieldData, _excluded$j);
       var namePath = getNamePath(name);
       namePathList.push(namePath);
       // Value
@@ -7522,7 +7522,7 @@ var FormProvider = function FormProvider(_ref) {
   }, children);
 };
 
-var _excluded$k = ["name", "initialValues", "fields", "form", "preserve", "children", "component", "validateMessages", "validateTrigger", "onValuesChange", "onFieldsChange", "onFinish", "onFinishFailed"];
+var _excluded$i = ["name", "initialValues", "fields", "form", "preserve", "children", "component", "validateMessages", "validateTrigger", "onValuesChange", "onFieldsChange", "onFinish", "onFinishFailed"];
 var Form = function Form(_ref, ref) {
   var name = _ref.name,
     initialValues = _ref.initialValues,
@@ -7539,7 +7539,7 @@ var Form = function Form(_ref, ref) {
     _onFieldsChange = _ref.onFieldsChange,
     _onFinish = _ref.onFinish,
     onFinishFailed = _ref.onFinishFailed,
-    restProps = _objectWithoutProperties(_ref, _excluded$k);
+    restProps = _objectWithoutProperties(_ref, _excluded$i);
   var formContext = React__namespace.useContext(FormContext);
   // We customize handle event since Context will makes all the consumer re-render:
   // https://reactjs.org/docs/context.html#contextprovider
@@ -7958,26 +7958,6 @@ function changeConfirmLocale(newLocale) {
 
 const LocaleContext = /*#__PURE__*/React.createContext(undefined);
 var LocaleContext$1 = LocaleContext;
-
-const useLocale = (componentName, defaultLocale$1) => {
-  const fullLocale = React__namespace.useContext(LocaleContext$1);
-  const getLocale = React__namespace.useMemo(() => {
-    var _a;
-    const locale = defaultLocale$1 || defaultLocale[componentName];
-    const localeFromContext = (_a = fullLocale === null || fullLocale === void 0 ? void 0 : fullLocale[componentName]) !== null && _a !== void 0 ? _a : {};
-    return Object.assign(Object.assign({}, typeof locale === 'function' ? locale() : locale), localeFromContext || {});
-  }, [componentName, defaultLocale$1, fullLocale]);
-  const getLocaleCode = React__namespace.useMemo(() => {
-    const localeCode = fullLocale === null || fullLocale === void 0 ? void 0 : fullLocale.locale;
-    // Had use LocaleProvide but didn't set locale
-    if ((fullLocale === null || fullLocale === void 0 ? void 0 : fullLocale.exist) && !localeCode) {
-      return defaultLocale.locale;
-    }
-    return localeCode;
-  }, [fullLocale]);
-  return [getLocale, getLocaleCode];
-};
-var useLocale$1 = useLocale;
 
 const ANT_MARK = 'internalMark';
 const LocaleProvider = props => {
@@ -9365,7 +9345,6 @@ Object.keys(presetPrimaryColors).forEach(function (key) {
   });
   presetDarkPalettes[key].primary = presetDarkPalettes[key][5];
 });
-var gold = presetPalettes.gold;
 
 const genControlHeight = token => {
   const {
@@ -9751,7 +9730,7 @@ function getAlphaColor$1(frontColor, backgroundColor) {
   }).toRgbString();
 }
 
-var __rest$o = undefined && undefined.__rest || function (s, e) {
+var __rest$i = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -9768,7 +9747,7 @@ function formatToken(derivativeToken) {
   const {
       override
     } = derivativeToken,
-    restToken = __rest$o(derivativeToken, ["override"]);
+    restToken = __rest$i(derivativeToken, ["override"]);
   const overrideTokens = Object.assign({}, override);
   Object.keys(defaultSeedToken).forEach(token => {
     delete overrideTokens[token];
@@ -9931,23 +9910,6 @@ const ConfigContext = /*#__PURE__*/React__namespace.createContext({
   // We provide a default function for Context without provider
   getPrefixCls: defaultGetPrefixCls,
   iconPrefixCls: defaultIconPrefixCls
-});
-
-// eslint-disable-next-line import/prefer-default-export
-const operationUnit = token => ({
-  // FIXME: This use link but is a operation unit. Seems should be a colorPrimary.
-  // And Typography use this to generate link style which should not do this.
-  color: token.colorLink,
-  textDecoration: 'none',
-  outline: 'none',
-  cursor: 'pointer',
-  transition: `color ${token.motionDurationSlow}`,
-  '&:focus, &:hover': {
-    color: token.colorLinkHover
-  },
-  '&:active': {
-    color: token.colorLinkActive
-  }
 });
 
 const roundedArrow = (width, innerRadius, outerRadius, bgColor, boxShadow) => {
@@ -10403,7 +10365,7 @@ function useTheme(theme, parentTheme) {
   return mergedTheme;
 }
 
-const useStyle$a = (iconPrefixCls, csp) => {
+const useStyle$9 = (iconPrefixCls, csp) => {
   const [theme, token] = useToken$2();
   // Generate style for icons
   return useStyleRegister({
@@ -10420,9 +10382,9 @@ const useStyle$a = (iconPrefixCls, csp) => {
     })
   }]);
 };
-var useStyle$b = useStyle$a;
+var useStyle$a = useStyle$9;
 
-var __rest$n = undefined && undefined.__rest || function (s, e) {
+var __rest$h = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -10488,7 +10450,7 @@ const ProviderChildren = props => {
   const iconPrefixCls = customIconPrefixCls || parentContext.iconPrefixCls || defaultIconPrefixCls;
   const shouldWrapSSR = iconPrefixCls !== parentContext.iconPrefixCls;
   const csp = customCsp || parentContext.csp;
-  const wrapSSR = useStyle$b(iconPrefixCls, csp);
+  const wrapSSR = useStyle$a(iconPrefixCls, csp);
   const mergedTheme = useTheme(theme, parentContext.theme);
   if (process.env.NODE_ENV !== 'production') {
     existThemeConfig = existThemeConfig || !!mergedTheme;
@@ -10562,7 +10524,7 @@ const ProviderChildren = props => {
         algorithm,
         token
       } = _a,
-      rest = __rest$n(_a, ["algorithm", "token"]);
+      rest = __rest$h(_a, ["algorithm", "token"]);
     const themeObj = algorithm && (!Array.isArray(algorithm) || algorithm.length > 0) ? createTheme(algorithm) : undefined;
     return Object.assign(Object.assign({}, rest), {
       theme: themeObj,
@@ -10672,6 +10634,10 @@ function addEventListenerWrap(target, eventType, cb, option) {
   };
 }
 
+// This icon file is generated automatically.
+var CheckCircleFilled$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z" } }] }, "name": "check-circle", "theme": "filled" };
+var CheckCircleFilledSvg = CheckCircleFilled$2;
+
 function warning(valid, message) {
   warningOnce(valid, "[@ant-design/icons] ".concat(message));
 }
@@ -10735,7 +10701,7 @@ var useInsertStyles = function useInsertStyles() {
   }, []);
 };
 
-var _excluded$j = ["icon", "className", "onClick", "style", "primaryColor", "secondaryColor"];
+var _excluded$h = ["icon", "className", "onClick", "style", "primaryColor", "secondaryColor"];
 var twoToneColorPalette = {
   primaryColor: '#333',
   secondaryColor: '#E6E6E6',
@@ -10758,7 +10724,7 @@ var IconBase = function IconBase(props) {
     style = props.style,
     primaryColor = props.primaryColor,
     secondaryColor = props.secondaryColor,
-    restProps = _objectWithoutProperties(props, _excluded$j);
+    restProps = _objectWithoutProperties(props, _excluded$h);
   var colors = twoToneColorPalette;
   if (primaryColor) {
     colors = {
@@ -10811,7 +10777,7 @@ function getTwoToneColor() {
   return [colors.primaryColor, colors.secondaryColor];
 }
 
-var _excluded$i = ["className", "icon", "spin", "rotate", "tabIndex", "onClick", "twoToneColor"];
+var _excluded$g = ["className", "icon", "spin", "rotate", "tabIndex", "onClick", "twoToneColor"];
 // Initial setting
 // should move it to antd main repo?
 setTwoToneColor('#1890ff');
@@ -10824,7 +10790,7 @@ var Icon$1 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     tabIndex = props.tabIndex,
     onClick = props.onClick,
     twoToneColor = props.twoToneColor,
-    restProps = _objectWithoutProperties(props, _excluded$i);
+    restProps = _objectWithoutProperties(props, _excluded$g);
   var _React$useContext = React__namespace.useContext(Context$2),
     _React$useContext$pre = _React$useContext.prefixCls,
     prefixCls = _React$useContext$pre === void 0 ? 'anticon' : _React$useContext$pre,
@@ -10862,6 +10828,15 @@ Icon$1.getTwoToneColor = getTwoToneColor;
 Icon$1.setTwoToneColor = setTwoToneColor;
 var AntdIcon = Icon$1;
 
+var CheckCircleFilled = function CheckCircleFilled(props, ref) {
+  return /*#__PURE__*/React__namespace.createElement(AntdIcon, _objectSpread2$1(_objectSpread2$1({}, props), {}, {
+    ref: ref,
+    icon: CheckCircleFilledSvg
+  }));
+};
+CheckCircleFilled.displayName = 'CheckCircleFilled';
+var CheckCircleFilled$1 = /*#__PURE__*/React__namespace.forwardRef(CheckCircleFilled);
+
 // This icon file is generated automatically.
 var CloseCircleFilled$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z" } }] }, "name": "close-circle", "theme": "filled" };
 var CloseCircleFilledSvg = CloseCircleFilled$2;
@@ -10874,6 +10849,45 @@ var CloseCircleFilled = function CloseCircleFilled(props, ref) {
 };
 CloseCircleFilled.displayName = 'CloseCircleFilled';
 var CloseCircleFilled$1 = /*#__PURE__*/React__namespace.forwardRef(CloseCircleFilled);
+
+// This icon file is generated automatically.
+var CloseOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z" } }] }, "name": "close", "theme": "outlined" };
+var CloseOutlinedSvg = CloseOutlined$2;
+
+var CloseOutlined = function CloseOutlined(props, ref) {
+  return /*#__PURE__*/React__namespace.createElement(AntdIcon, _objectSpread2$1(_objectSpread2$1({}, props), {}, {
+    ref: ref,
+    icon: CloseOutlinedSvg
+  }));
+};
+CloseOutlined.displayName = 'CloseOutlined';
+var CloseOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(CloseOutlined);
+
+// This icon file is generated automatically.
+var ExclamationCircleFilled$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z" } }] }, "name": "exclamation-circle", "theme": "filled" };
+var ExclamationCircleFilledSvg = ExclamationCircleFilled$2;
+
+var ExclamationCircleFilled = function ExclamationCircleFilled(props, ref) {
+  return /*#__PURE__*/React__namespace.createElement(AntdIcon, _objectSpread2$1(_objectSpread2$1({}, props), {}, {
+    ref: ref,
+    icon: ExclamationCircleFilledSvg
+  }));
+};
+ExclamationCircleFilled.displayName = 'ExclamationCircleFilled';
+var ExclamationCircleFilled$1 = /*#__PURE__*/React__namespace.forwardRef(ExclamationCircleFilled);
+
+// This icon file is generated automatically.
+var InfoCircleFilled$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm32 664c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V456c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272zm-32-344a48.01 48.01 0 010-96 48.01 48.01 0 010 96z" } }] }, "name": "info-circle", "theme": "filled" };
+var InfoCircleFilledSvg = InfoCircleFilled$2;
+
+var InfoCircleFilled = function InfoCircleFilled(props, ref) {
+  return /*#__PURE__*/React__namespace.createElement(AntdIcon, _objectSpread2$1(_objectSpread2$1({}, props), {}, {
+    ref: ref,
+    icon: InfoCircleFilledSvg
+  }));
+};
+InfoCircleFilled.displayName = 'InfoCircleFilled';
+var InfoCircleFilled$1 = /*#__PURE__*/React__namespace.forwardRef(InfoCircleFilled);
 
 var Context = /*#__PURE__*/React__namespace.createContext({});
 
@@ -11579,7 +11593,7 @@ function diffKeys() {
   return list;
 }
 
-var _excluded$h = ["component", "children", "onVisibleChanged", "onAllRemoved"],
+var _excluded$f = ["component", "children", "onVisibleChanged", "onAllRemoved"],
   _excluded2$4 = ["status"];
 var MOTION_PROP_NAMES = ['eventProps', 'visible', 'children', 'motionName', 'motionAppear', 'motionEnter', 'motionLeave', 'motionLeaveImmediately', 'motionDeadline', 'removeOnLeave', 'leavedClassName', 'onAppearStart', 'onAppearActive', 'onAppearEnd', 'onEnterStart', 'onEnterActive', 'onEnterEnd', 'onLeaveStart', 'onLeaveActive', 'onLeaveEnd'];
 /**
@@ -11630,7 +11644,7 @@ function genCSSMotionList(transitionSupport) {
           children = _this$props.children,
           _onVisibleChanged = _this$props.onVisibleChanged,
           onAllRemoved = _this$props.onAllRemoved,
-          restProps = _objectWithoutProperties(_this$props, _excluded$h);
+          restProps = _objectWithoutProperties(_this$props, _excluded$f);
         var Component = component || React__namespace.Fragment;
         var motionProps = {};
         MOTION_PROP_NAMES.forEach(function (prop) {
@@ -11694,6 +11708,15 @@ function genCSSMotionList(transitionSupport) {
 }
 genCSSMotionList(supportTransition);
 
+function getDataOrAriaProps(props) {
+  return Object.keys(props).reduce((prev, key) => {
+    if ((key.startsWith('data-') || key.startsWith('aria-') || key === 'role') && !key.startsWith('data-__')) {
+      prev[key] = props[key];
+    }
+    return prev;
+  }, {});
+}
+
 const {
   isValidElement
 } = React__namespace;
@@ -11709,6 +11732,399 @@ function replaceElement(element, replacement, props) {
 function cloneElement(element, props) {
   return replaceElement(element, element, props);
 }
+
+let ErrorBoundary = /*#__PURE__*/function (_React$Component) {
+  _inherits(ErrorBoundary, _React$Component);
+  var _super = _createSuper(ErrorBoundary);
+  function ErrorBoundary() {
+    var _this;
+    _classCallCheck(this, ErrorBoundary);
+    _this = _super.apply(this, arguments);
+    _this.state = {
+      error: undefined,
+      info: {
+        componentStack: ''
+      }
+    };
+    return _this;
+  }
+  _createClass(ErrorBoundary, [{
+    key: "componentDidCatch",
+    value: function componentDidCatch(error, info) {
+      this.setState({
+        error,
+        info
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      const {
+        message,
+        description,
+        children
+      } = this.props;
+      const {
+        error,
+        info
+      } = this.state;
+      const componentStack = info && info.componentStack ? info.componentStack : null;
+      const errorMessage = typeof message === 'undefined' ? (error || '').toString() : message;
+      const errorDescription = typeof description === 'undefined' ? componentStack : description;
+      if (error) {
+        return /*#__PURE__*/React__namespace.createElement(Alert$1, {
+          type: "error",
+          message: errorMessage,
+          description: /*#__PURE__*/React__namespace.createElement("pre", {
+            style: {
+              fontSize: '0.9em',
+              overflowX: 'auto'
+            }
+          }, errorDescription)
+        });
+      }
+      return children;
+    }
+  }]);
+  return ErrorBoundary;
+}(React__namespace.Component);
+var ErrorBoundary$1 = ErrorBoundary;
+
+const genAlertTypeStyle = (bgColor, borderColor, iconColor, token, alertCls) => ({
+  backgroundColor: bgColor,
+  border: `${token.lineWidth}px ${token.lineType} ${borderColor}`,
+  [`${alertCls}-icon`]: {
+    color: iconColor
+  }
+});
+const genBaseStyle$1 = token => {
+  const {
+    componentCls,
+    motionDurationSlow: duration,
+    marginXS,
+    marginSM,
+    fontSize,
+    fontSizeLG,
+    lineHeight,
+    borderRadiusLG: borderRadius,
+    motionEaseInOutCirc,
+    alertIconSizeLG,
+    colorText,
+    paddingContentVerticalSM,
+    alertPaddingHorizontal,
+    paddingMD,
+    paddingContentHorizontalLG
+  } = token;
+  return {
+    [componentCls]: Object.assign(Object.assign({}, resetComponent(token)), {
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+      padding: `${paddingContentVerticalSM}px ${alertPaddingHorizontal}px`,
+      wordWrap: 'break-word',
+      borderRadius,
+      [`&${componentCls}-rtl`]: {
+        direction: 'rtl'
+      },
+      [`${componentCls}-content`]: {
+        flex: 1,
+        minWidth: 0
+      },
+      [`${componentCls}-icon`]: {
+        marginInlineEnd: marginXS,
+        lineHeight: 0
+      },
+      [`&-description`]: {
+        display: 'none',
+        fontSize,
+        lineHeight
+      },
+      '&-message': {
+        color: colorText
+      },
+      [`&${componentCls}-motion-leave`]: {
+        overflow: 'hidden',
+        opacity: 1,
+        transition: `max-height ${duration} ${motionEaseInOutCirc}, opacity ${duration} ${motionEaseInOutCirc},
+        padding-top ${duration} ${motionEaseInOutCirc}, padding-bottom ${duration} ${motionEaseInOutCirc},
+        margin-bottom ${duration} ${motionEaseInOutCirc}`
+      },
+      [`&${componentCls}-motion-leave-active`]: {
+        maxHeight: 0,
+        marginBottom: '0 !important',
+        paddingTop: 0,
+        paddingBottom: 0,
+        opacity: 0
+      }
+    }),
+    [`${componentCls}-with-description`]: {
+      alignItems: 'flex-start',
+      paddingInline: paddingContentHorizontalLG,
+      paddingBlock: paddingMD,
+      [`${componentCls}-icon`]: {
+        marginInlineEnd: marginSM,
+        fontSize: alertIconSizeLG,
+        lineHeight: 0
+      },
+      [`${componentCls}-message`]: {
+        display: 'block',
+        marginBottom: marginXS,
+        color: colorText,
+        fontSize: fontSizeLG
+      },
+      [`${componentCls}-description`]: {
+        display: 'block'
+      }
+    },
+    [`${componentCls}-banner`]: {
+      marginBottom: 0,
+      border: '0 !important',
+      borderRadius: 0
+    }
+  };
+};
+const genTypeStyle = token => {
+  const {
+    componentCls,
+    colorSuccess,
+    colorSuccessBorder,
+    colorSuccessBg,
+    colorWarning,
+    colorWarningBorder,
+    colorWarningBg,
+    colorError,
+    colorErrorBorder,
+    colorErrorBg,
+    colorInfo,
+    colorInfoBorder,
+    colorInfoBg
+  } = token;
+  return {
+    [componentCls]: {
+      '&-success': genAlertTypeStyle(colorSuccessBg, colorSuccessBorder, colorSuccess, token, componentCls),
+      '&-info': genAlertTypeStyle(colorInfoBg, colorInfoBorder, colorInfo, token, componentCls),
+      '&-warning': genAlertTypeStyle(colorWarningBg, colorWarningBorder, colorWarning, token, componentCls),
+      '&-error': Object.assign(Object.assign({}, genAlertTypeStyle(colorErrorBg, colorErrorBorder, colorError, token, componentCls)), {
+        [`${componentCls}-description > pre`]: {
+          margin: 0,
+          padding: 0
+        }
+      })
+    }
+  };
+};
+const genActionStyle = token => {
+  const {
+    componentCls,
+    iconCls,
+    motionDurationMid,
+    marginXS,
+    fontSizeIcon,
+    colorIcon,
+    colorIconHover
+  } = token;
+  return {
+    [componentCls]: {
+      [`&-action`]: {
+        marginInlineStart: marginXS
+      },
+      [`${componentCls}-close-icon`]: {
+        marginInlineStart: marginXS,
+        padding: 0,
+        overflow: 'hidden',
+        fontSize: fontSizeIcon,
+        lineHeight: `${fontSizeIcon}px`,
+        backgroundColor: 'transparent',
+        border: 'none',
+        outline: 'none',
+        cursor: 'pointer',
+        [`${iconCls}-close`]: {
+          color: colorIcon,
+          transition: `color ${motionDurationMid}`,
+          '&:hover': {
+            color: colorIconHover
+          }
+        }
+      },
+      '&-close-text': {
+        color: colorIcon,
+        transition: `color ${motionDurationMid}`,
+        '&:hover': {
+          color: colorIconHover
+        }
+      }
+    }
+  };
+};
+const genAlertStyle = token => [genBaseStyle$1(token), genTypeStyle(token), genActionStyle(token)];
+var useStyle$8 = genComponentStyleHook('Alert', token => {
+  const {
+    fontSizeHeading3
+  } = token;
+  const alertToken = merge(token, {
+    alertIconSizeLG: fontSizeHeading3,
+    alertPaddingHorizontal: 12 // Fixed value here.
+  });
+
+  return [genAlertStyle(alertToken)];
+});
+
+var __rest$g = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+const iconMapFilled = {
+  success: CheckCircleFilled$1,
+  info: InfoCircleFilled$1,
+  error: CloseCircleFilled$1,
+  warning: ExclamationCircleFilled$1
+};
+const IconNode = props => {
+  const {
+    icon,
+    prefixCls,
+    type
+  } = props;
+  const iconType = iconMapFilled[type] || null;
+  if (icon) {
+    return replaceElement(icon, /*#__PURE__*/React__namespace.createElement("span", {
+      className: `${prefixCls}-icon`
+    }, icon), () => ({
+      className: classnames(`${prefixCls}-icon`, {
+        [icon.props.className]: icon.props.className
+      })
+    }));
+  }
+  return /*#__PURE__*/React__namespace.createElement(iconType, {
+    className: `${prefixCls}-icon`
+  });
+};
+const CloseIcon = props => {
+  const {
+    isClosable,
+    closeText,
+    prefixCls,
+    closeIcon,
+    handleClose
+  } = props;
+  return isClosable ? /*#__PURE__*/React__namespace.createElement("button", {
+    type: "button",
+    onClick: handleClose,
+    className: `${prefixCls}-close-icon`,
+    tabIndex: 0
+  }, closeText ? /*#__PURE__*/React__namespace.createElement("span", {
+    className: `${prefixCls}-close-text`
+  }, closeText) : closeIcon) : null;
+};
+const Alert = _a => {
+  var {
+      description,
+      prefixCls: customizePrefixCls,
+      message,
+      banner,
+      className,
+      rootClassName,
+      style,
+      onMouseEnter,
+      onMouseLeave,
+      onClick,
+      afterClose,
+      showIcon,
+      closable,
+      closeText,
+      closeIcon = /*#__PURE__*/React__namespace.createElement(CloseOutlined$1, null),
+      action
+    } = _a,
+    props = __rest$g(_a, ["description", "prefixCls", "message", "banner", "className", "rootClassName", "style", "onMouseEnter", "onMouseLeave", "onClick", "afterClose", "showIcon", "closable", "closeText", "closeIcon", "action"]);
+  const [closed, setClosed] = React__namespace.useState(false);
+  const ref = React__namespace.useRef();
+  const {
+    getPrefixCls,
+    direction
+  } = React__namespace.useContext(ConfigContext);
+  const prefixCls = getPrefixCls('alert', customizePrefixCls);
+  const [wrapSSR, hashId] = useStyle$8(prefixCls);
+  const handleClose = e => {
+    var _a;
+    setClosed(true);
+    (_a = props.onClose) === null || _a === void 0 ? void 0 : _a.call(props, e);
+  };
+  const getType = () => {
+    const {
+      type
+    } = props;
+    if (type !== undefined) {
+      return type;
+    }
+    // banner mode defaults to 'warning'
+    return banner ? 'warning' : 'info';
+  };
+  // closeable when closeText is assigned
+  const isClosable = closeText ? true : closable;
+  const type = getType();
+  // banner mode defaults to Icon
+  const isShowIcon = banner && showIcon === undefined ? true : showIcon;
+  const alertCls = classnames(prefixCls, `${prefixCls}-${type}`, {
+    [`${prefixCls}-with-description`]: !!description,
+    [`${prefixCls}-no-icon`]: !isShowIcon,
+    [`${prefixCls}-banner`]: !!banner,
+    [`${prefixCls}-rtl`]: direction === 'rtl'
+  }, className, rootClassName, hashId);
+  const dataOrAriaProps = getDataOrAriaProps(props);
+  return wrapSSR( /*#__PURE__*/React__namespace.createElement(CSSMotion, {
+    visible: !closed,
+    motionName: `${prefixCls}-motion`,
+    motionAppear: false,
+    motionEnter: false,
+    onLeaveStart: node => ({
+      maxHeight: node.offsetHeight
+    }),
+    onLeaveEnd: afterClose
+  }, _ref => {
+    let {
+      className: motionClassName,
+      style: motionStyle
+    } = _ref;
+    return /*#__PURE__*/React__namespace.createElement("div", Object.assign({
+      ref: ref,
+      "data-show": !closed,
+      className: classnames(alertCls, motionClassName),
+      style: Object.assign(Object.assign({}, style), motionStyle),
+      onMouseEnter: onMouseEnter,
+      onMouseLeave: onMouseLeave,
+      onClick: onClick,
+      role: "alert"
+    }, dataOrAriaProps), isShowIcon ? /*#__PURE__*/React__namespace.createElement(IconNode, {
+      description: description,
+      icon: props.icon,
+      prefixCls: prefixCls,
+      type: type
+    }) : null, /*#__PURE__*/React__namespace.createElement("div", {
+      className: `${prefixCls}-content`
+    }, message ? /*#__PURE__*/React__namespace.createElement("div", {
+      className: `${prefixCls}-message`
+    }, message) : null, description ? /*#__PURE__*/React__namespace.createElement("div", {
+      className: `${prefixCls}-description`
+    }, description) : null), action ? /*#__PURE__*/React__namespace.createElement("div", {
+      className: `${prefixCls}-action`
+    }, action) : null, /*#__PURE__*/React__namespace.createElement(CloseIcon, {
+      isClosable: !!isClosable,
+      closeText: closeText,
+      prefixCls: prefixCls,
+      closeIcon: closeIcon,
+      handleClose: handleClose
+    }));
+  }));
+};
+Alert.ErrorBoundary = ErrorBoundary$1;
+if (process.env.NODE_ENV !== 'production') {
+  Alert.displayName = 'Alert';
+}
+var Alert$1 = Alert;
 
 function useEvent(callback) {
   var fnRef = React__namespace.useRef();
@@ -12418,7 +12834,7 @@ const genWaveStyle = token => {
     }
   };
 };
-var useStyle$9 = genComponentStyleHook('Wave', token => [genWaveStyle(token)]);
+var useStyle$7 = genComponentStyleHook('Wave', token => [genWaveStyle(token)]);
 
 function isNotGrey(color) {
   // eslint-disable-next-line no-useless-escape
@@ -12581,7 +12997,7 @@ const Wave = props => {
   const containerRef = React.useRef(null);
   // ============================== Style ===============================
   const prefixCls = getPrefixCls('wave');
-  const [, hashId] = useStyle$9(prefixCls);
+  const [, hashId] = useStyle$7(prefixCls);
   // =============================== Wave ===============================
   const showWave = useWave(containerRef, classnames(prefixCls, hashId));
   // ============================== Effect ==============================
@@ -12675,13 +13091,13 @@ const genSpaceStyle = token => {
   };
 };
 // ============================== Export ==============================
-var useStyle$8 = genComponentStyleHook('Space', token => [genSpaceStyle(token), genSpaceCompactStyle$1(token)], () => ({}), {
+var useStyle$6 = genComponentStyleHook('Space', token => [genSpaceStyle(token), genSpaceCompactStyle$1(token)], () => ({}), {
   // Space component don't apply extra font style
   // https://github.com/ant-design/ant-design/issues/40315
   resetStyle: false
 });
 
-var __rest$m = undefined && undefined.__rest || function (s, e) {
+var __rest$f = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -12725,7 +13141,7 @@ const CompactItem = _a => {
   var {
       children
     } = _a,
-    otherProps = __rest$m(_a, ["children"]);
+    otherProps = __rest$f(_a, ["children"]);
   return /*#__PURE__*/React__namespace.createElement(SpaceCompactItemContext.Provider, {
     value: otherProps
   }, children);
@@ -12744,9 +13160,9 @@ const Compact = props => {
       rootClassName,
       children
     } = props,
-    restProps = __rest$m(props, ["size", "direction", "block", "prefixCls", "className", "rootClassName", "children"]);
+    restProps = __rest$f(props, ["size", "direction", "block", "prefixCls", "className", "rootClassName", "children"]);
   const prefixCls = getPrefixCls('space-compact', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$8(prefixCls);
+  const [wrapSSR, hashId] = useStyle$6(prefixCls);
   const clx = classnames(prefixCls, hashId, {
     [`${prefixCls}-rtl`]: directionConfig === 'rtl',
     [`${prefixCls}-block`]: block,
@@ -12823,7 +13239,7 @@ const LoadingIcon = _ref => {
 };
 var LoadingIcon$1 = LoadingIcon;
 
-var __rest$l = undefined && undefined.__rest || function (s, e) {
+var __rest$e = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -12842,7 +13258,7 @@ const ButtonGroup = props => {
       size,
       className
     } = props,
-    others = __rest$l(props, ["prefixCls", "size", "className"]);
+    others = __rest$e(props, ["prefixCls", "size", "className"]);
   const prefixCls = getPrefixCls('btn-group', customizePrefixCls);
   const [,, hashId] = useToken$2();
   let sizeCls = '';
@@ -12934,7 +13350,7 @@ const genButtonBorderStyle = (buttonTypeCls, borderColor) => ({
     }
   }
 });
-const genGroupStyle$1 = token => {
+const genGroupStyle = token => {
   const {
     componentCls,
     fontSize,
@@ -12982,7 +13398,7 @@ const genGroupStyle$1 = token => {
     genButtonBorderStyle(`${componentCls}-primary`, colorPrimaryHover), genButtonBorderStyle(`${componentCls}-danger`, colorErrorHover)]
   };
 };
-var genGroupStyle$2 = genGroupStyle$1;
+var genGroupStyle$1 = genGroupStyle;
 
 // handle border collapse
 function compactItemBorder(token, parentCls, options) {
@@ -13185,7 +13601,7 @@ const genRoundButtonStyle = token => ({
   paddingInlineEnd: token.controlHeight / 2
 });
 // =============================== Type ===============================
-const genDisabledStyle$1 = token => ({
+const genDisabledStyle = token => ({
   cursor: 'not-allowed',
   borderColor: token.colorBorder,
   color: token.colorTextDisabled,
@@ -13211,7 +13627,7 @@ const genGhostButtonStyle = (btnCls, textColor, borderColor, textColorDisabled, 
   })
 });
 const genSolidDisabledButtonStyle = token => ({
-  '&:disabled': Object.assign({}, genDisabledStyle$1(token))
+  '&:disabled': Object.assign({}, genDisabledStyle(token))
 });
 const genSolidButtonStyle = token => Object.assign({}, genSolidDisabledButtonStyle(token));
 const genPureDisabledButtonStyle = token => ({
@@ -13315,8 +13731,8 @@ const genTextButtonStyle = token => Object.assign(Object.assign(Object.assign({}
   }))
 });
 // Href and Disabled
-const genDisabledButtonStyle = token => Object.assign(Object.assign({}, genDisabledStyle$1(token)), {
-  [`&${token.componentCls}:hover`]: Object.assign({}, genDisabledStyle$1(token))
+const genDisabledButtonStyle = token => Object.assign(Object.assign({}, genDisabledStyle(token)), {
+  [`&${token.componentCls}:hover`]: Object.assign({}, genDisabledStyle(token))
 });
 const genTypeButtonStyle = token => {
   const {
@@ -13418,7 +13834,7 @@ const genBlockButtonStyle = token => {
   };
 };
 // ============================== Export ==============================
-var useStyle$7 = genComponentStyleHook('Button', token => {
+var useStyle$5 = genComponentStyleHook('Button', token => {
   const {
     controlTmpOutline,
     paddingContentHorizontal
@@ -13437,12 +13853,12 @@ var useStyle$7 = genComponentStyleHook('Button', token => {
   // Group (type, ghost, danger, disabled, loading)
   genTypeButtonStyle(buttonToken),
   // Button Group
-  genGroupStyle$2(buttonToken),
+  genGroupStyle$1(buttonToken),
   // Space Compact
   genCompactItemStyle(token), genCompactItemVerticalStyle(token)];
 });
 
-var __rest$k = undefined && undefined.__rest || function (s, e) {
+var __rest$d = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -13482,14 +13898,14 @@ const InternalButton = (props, ref) => {
       // React does not recognize the `htmlType` prop on a DOM element. Here we pick it out of `rest`.
       htmlType = 'button'
     } = props,
-    rest = __rest$k(props, ["loading", "prefixCls", "type", "danger", "shape", "size", "disabled", "className", "rootClassName", "children", "icon", "ghost", "block", "htmlType"]);
+    rest = __rest$d(props, ["loading", "prefixCls", "type", "danger", "shape", "size", "disabled", "className", "rootClassName", "children", "icon", "ghost", "block", "htmlType"]);
   const {
     getPrefixCls,
     autoInsertSpaceInButton,
     direction
   } = React.useContext(ConfigContext);
   const prefixCls = getPrefixCls('btn', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$7(prefixCls);
+  const [wrapSSR, hashId] = useStyle$5(prefixCls);
   const size = React.useContext(SizeContext$1);
   const disabled = React.useContext(DisabledContext$1);
   const mergedDisabled = customDisabled !== null && customDisabled !== void 0 ? customDisabled : disabled;
@@ -13648,6 +14064,7 @@ const getTransitionName$1 = (rootPrefixCls, motion, transitionName) => {
   }
   return `${rootPrefixCls}-${motion}`;
 };
+var initCollapseMotion$1 = initCollapseMotion;
 
 var OrderContext = /*#__PURE__*/React__namespace.createContext(null);
 
@@ -13989,34 +14406,6 @@ function pickAttrs(props) {
     }
   });
   return attrs;
-}
-
-const FormItemInputContext = /*#__PURE__*/React__namespace.createContext({});
-
-var isStyleNameSupport = function isStyleNameSupport(styleName) {
-  if (canUseDom() && window.document.documentElement) {
-    var styleNameList = Array.isArray(styleName) ? styleName : [styleName];
-    var documentElement = window.document.documentElement;
-    return styleNameList.some(function (name) {
-      return name in documentElement.style;
-    });
-  }
-  return false;
-};
-var isStyleValueSupport = function isStyleValueSupport(styleName, value) {
-  if (!isStyleNameSupport(styleName)) {
-    return false;
-  }
-  var ele = document.createElement('div');
-  var origin = ele.style[styleName];
-  ele.style[styleName] = value;
-  return ele.style[styleName] !== origin;
-};
-function isStyleSupport(styleName, styleValue) {
-  if (!Array.isArray(styleName) && styleValue !== undefined) {
-    return isStyleValueSupport(styleName, styleValue);
-  }
-  return isStyleNameSupport(styleName);
 }
 
 const canUseDocElement = () => canUseDom() && window.document.documentElement;
@@ -14629,7 +15018,7 @@ var isMobile = (function () {
   return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(agent) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw-(n|u)|c55\/|capi|ccwa|cdm-|cell|chtm|cldc|cmd-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc-s|devi|dica|dmob|do(c|p)o|ds(12|-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(-|_)|g1 u|g560|gene|gf-5|g-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd-(m|p|t)|hei-|hi(pt|ta)|hp( i|ip)|hs-c|ht(c(-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i-(20|go|ma)|i230|iac( |-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|-[a-w])|libw|lynx|m1-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|-([1-8]|c))|phil|pire|pl(ay|uc)|pn-2|po(ck|rt|se)|prox|psio|pt-g|qa-a|qc(07|12|21|32|60|-[2-7]|i-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h-|oo|p-)|sdk\/|se(c(-|0|1)|47|mc|nd|ri)|sgh-|shar|sie(-|m)|sk-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h-|v-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl-|tdg-|tel(i|m)|tim-|t-mo|to(pl|sh)|ts(70|m-|m3|m5)|tx-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas-|your|zeto|zte-/i.test(agent === null || agent === void 0 ? void 0 : agent.substr(0, 4));
 });
 
-var _excluded$g = ["prefixCls", "invalidate", "item", "renderItem", "responsive", "responsiveDisabled", "registerSize", "itemKey", "className", "style", "children", "display", "order", "component"];
+var _excluded$e = ["prefixCls", "invalidate", "item", "renderItem", "responsive", "responsiveDisabled", "registerSize", "itemKey", "className", "style", "children", "display", "order", "component"];
 // Use shared variable to save bundle size
 var UNDEFINED = undefined;
 function InternalItem(props, ref) {
@@ -14648,7 +15037,7 @@ function InternalItem(props, ref) {
     order = props.order,
     _props$component = props.component,
     Component = _props$component === void 0 ? 'div' : _props$component,
-    restProps = _objectWithoutProperties(props, _excluded$g);
+    restProps = _objectWithoutProperties(props, _excluded$e);
   var mergedHidden = responsive && !display;
   // ================================ Effect ================================
   function internalRegisterSize(width) {
@@ -14749,7 +15138,7 @@ function useEffectState(notifyEffectUpdate, defaultValue) {
   return [stateValue, setEffectVal];
 }
 
-var _excluded$f = ["component"],
+var _excluded$d = ["component"],
   _excluded2$3 = ["className"],
   _excluded3$1 = ["className"];
 var InternalRawItem = function InternalRawItem(props, ref) {
@@ -14758,7 +15147,7 @@ var InternalRawItem = function InternalRawItem(props, ref) {
   if (!context) {
     var _props$component = props.component,
       Component = _props$component === void 0 ? 'div' : _props$component,
-      _restProps = _objectWithoutProperties(props, _excluded$f);
+      _restProps = _objectWithoutProperties(props, _excluded$d);
     return /*#__PURE__*/React__namespace.createElement(Component, _extends$1({}, _restProps, {
       ref: ref
     }));
@@ -14778,7 +15167,7 @@ var InternalRawItem = function InternalRawItem(props, ref) {
 var RawItem = /*#__PURE__*/React__namespace.forwardRef(InternalRawItem);
 RawItem.displayName = 'RawItem';
 
-var _excluded$e = ["prefixCls", "data", "renderItem", "renderRawItem", "itemKey", "itemWidth", "ssr", "style", "className", "maxCount", "renderRest", "renderRawRest", "suffix", "component", "itemComponent", "onVisibleChange"];
+var _excluded$c = ["prefixCls", "data", "renderItem", "renderRawItem", "itemKey", "itemWidth", "ssr", "style", "className", "maxCount", "renderRest", "renderRawRest", "suffix", "component", "itemComponent", "onVisibleChange"];
 var OverflowContext = /*#__PURE__*/React__namespace.createContext(null);
 var RESPONSIVE = 'responsive';
 var INVALIDATE = 'invalidate';
@@ -14806,7 +15195,7 @@ function Overflow(props, ref) {
     Component = _props$component === void 0 ? 'div' : _props$component,
     itemComponent = props.itemComponent,
     onVisibleChange = props.onVisibleChange,
-    restProps = _objectWithoutProperties(props, _excluded$e);
+    restProps = _objectWithoutProperties(props, _excluded$c);
   var fullySSR = ssr === 'full';
   var notifyEffectUpdate = useBatcher();
   var _useEffectState = useEffectState(notifyEffectUpdate, null),
@@ -15949,7 +16338,7 @@ if (process.env.NODE_ENV !== 'production') {
   TriggerWrapper.displayName = 'TriggerWrapper';
 }
 
-var _excluded$d = ["prefixCls", "children", "action", "showAction", "hideAction", "popupVisible", "defaultPopupVisible", "onPopupVisibleChange", "afterPopupVisibleChange", "mouseEnterDelay", "mouseLeaveDelay", "focusDelay", "blurDelay", "mask", "maskClosable", "getPopupContainer", "forceRender", "autoDestroy", "destroyPopupOnHide", "popup", "popupClassName", "popupStyle", "popupPlacement", "builtinPlacements", "popupAlign", "zIndex", "stretch", "getPopupClassNameFromAlign", "alignPoint", "onPopupClick", "onPopupAlign", "arrow", "popupMotion", "maskMotion", "popupTransitionName", "popupAnimation", "maskTransitionName", "maskAnimation", "className", "getTriggerDOMNode"];
+var _excluded$b = ["prefixCls", "children", "action", "showAction", "hideAction", "popupVisible", "defaultPopupVisible", "onPopupVisibleChange", "afterPopupVisibleChange", "mouseEnterDelay", "mouseLeaveDelay", "focusDelay", "blurDelay", "mask", "maskClosable", "getPopupContainer", "forceRender", "autoDestroy", "destroyPopupOnHide", "popup", "popupClassName", "popupStyle", "popupPlacement", "builtinPlacements", "popupAlign", "zIndex", "stretch", "getPopupClassNameFromAlign", "alignPoint", "onPopupClick", "onPopupAlign", "arrow", "popupMotion", "maskMotion", "popupTransitionName", "popupAnimation", "maskTransitionName", "maskAnimation", "className", "getTriggerDOMNode"];
 function generateTrigger$1() {
   var PortalComponent = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Portal$1;
   var Trigger = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
@@ -15998,7 +16387,7 @@ function generateTrigger$1() {
       maskAnimation = props.maskAnimation,
       className = props.className,
       getTriggerDOMNode = props.getTriggerDOMNode,
-      restProps = _objectWithoutProperties(props, _excluded$d);
+      restProps = _objectWithoutProperties(props, _excluded$b);
     var mergedAutoDestroy = autoDestroy || destroyPopupOnHide || false;
 
     // =========================== Mobile ===========================
@@ -16523,30 +16912,6 @@ function genPurePanel(Component, defaultPrefixCls, getDropdownCls, postProps) {
   };
 }
 
-function getStatusClassNames(prefixCls, status, hasFeedback) {
-  return classnames({
-    [`${prefixCls}-status-success`]: status === 'success',
-    [`${prefixCls}-status-warning`]: status === 'warning',
-    [`${prefixCls}-status-error`]: status === 'error',
-    [`${prefixCls}-status-validating`]: status === 'validating',
-    [`${prefixCls}-has-feedback`]: hasFeedback
-  });
-}
-const getMergedStatus = (contextStatus, customStatus) => customStatus || contextStatus;
-
-// This icon file is generated automatically.
-var CheckOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 00-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z" } }] }, "name": "check", "theme": "outlined" };
-var CheckOutlinedSvg = CheckOutlined$2;
-
-var CheckOutlined = function CheckOutlined(props, ref) {
-  return /*#__PURE__*/React__namespace.createElement(AntdIcon, _objectSpread2$1(_objectSpread2$1({}, props), {}, {
-    ref: ref,
-    icon: CheckOutlinedSvg
-  }));
-};
-CheckOutlined.displayName = 'CheckOutlined';
-var CheckOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(CheckOutlined);
-
 // This icon file is generated automatically.
 var DownOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z" } }] }, "name": "down", "theme": "outlined" };
 var DownOutlinedSvg = DownOutlined$2;
@@ -16662,7 +17027,7 @@ function Popup$1(props) {
   }, typeof children === 'function' ? children() : children));
 }
 
-var _excluded$c = ["overlayClassName", "trigger", "mouseEnterDelay", "mouseLeaveDelay", "overlayStyle", "prefixCls", "children", "onVisibleChange", "afterVisibleChange", "transitionName", "animation", "motion", "placement", "align", "destroyTooltipOnHide", "defaultVisible", "getTooltipContainer", "overlayInnerStyle", "arrowContent", "overlay", "id", "showArrow"];
+var _excluded$a = ["overlayClassName", "trigger", "mouseEnterDelay", "mouseLeaveDelay", "overlayStyle", "prefixCls", "children", "onVisibleChange", "afterVisibleChange", "transitionName", "animation", "motion", "placement", "align", "destroyTooltipOnHide", "defaultVisible", "getTooltipContainer", "overlayInnerStyle", "arrowContent", "overlay", "id", "showArrow"];
 var Tooltip$2 = function Tooltip(props, ref) {
   var overlayClassName = props.overlayClassName,
     _props$trigger = props.trigger,
@@ -16694,7 +17059,7 @@ var Tooltip$2 = function Tooltip(props, ref) {
     id = props.id,
     _props$showArrow = props.showArrow,
     showArrow = _props$showArrow === void 0 ? true : _props$showArrow,
-    restProps = _objectWithoutProperties(props, _excluded$c);
+    restProps = _objectWithoutProperties(props, _excluded$a);
   var triggerRef = React.useRef(null);
   React.useImperativeHandle(ref, function () {
     return triggerRef.current;
@@ -17271,7 +17636,7 @@ const genTooltipStyle = token => {
   }];
 };
 // ============================== Export ==============================
-var useStyle$6 = ((prefixCls, injectStyle) => {
+var useStyle$4 = ((prefixCls, injectStyle) => {
   const useOriginHook = genComponentStyleHook('Tooltip', token => {
     // Popover use Tooltip as internal component. We do not need to handle this.
     if (injectStyle === false) {
@@ -17353,7 +17718,7 @@ function PurePanel$1(props) {
     getPrefixCls
   } = React__namespace.useContext(ConfigContext);
   const prefixCls = getPrefixCls('tooltip', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$6(prefixCls, true);
+  const [wrapSSR, hashId] = useStyle$4(prefixCls, true);
   // Color
   const colorInfo = parseColor(prefixCls, color);
   const formattedOverlayInnerStyle = Object.assign(Object.assign({}, overlayInnerStyle), colorInfo.overlayStyle);
@@ -17370,7 +17735,7 @@ function PurePanel$1(props) {
   }), title)));
 }
 
-var __rest$j = undefined && undefined.__rest || function (s, e) {
+var __rest$c = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -17548,7 +17913,7 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
       overlayStyle,
       rootClassName
     } = props,
-    otherProps = __rest$j(props, ["getPopupContainer", "placement", "mouseEnterDelay", "mouseLeaveDelay", "overlayStyle", "rootClassName"]);
+    otherProps = __rest$c(props, ["getPopupContainer", "placement", "mouseEnterDelay", "mouseLeaveDelay", "overlayStyle", "rootClassName"]);
   const prefixCls = getPrefixCls('tooltip', customizePrefixCls);
   const rootPrefixCls = getPrefixCls();
   const injectFromPopover = props['data-popover-inject'];
@@ -17564,7 +17929,7 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
     [openClassName || `${prefixCls}-open`]: true
   }) : childProps.className;
   // Style
-  const [wrapSSR, hashId] = useStyle$6(prefixCls, !injectFromPopover);
+  const [wrapSSR, hashId] = useStyle$4(prefixCls, !injectFromPopover);
   // Color
   const colorInfo = parseColor(prefixCls, color);
   const formattedOverlayInnerStyle = Object.assign(Object.assign({}, overlayInnerStyle), colorInfo.overlayStyle);
@@ -19587,11 +19952,11 @@ var MobilePopupInner = /*#__PURE__*/React__namespace.forwardRef(function (props,
 });
 MobilePopupInner.displayName = 'MobilePopupInner';
 
-var _excluded$b = ["visible", "mobile"];
+var _excluded$9 = ["visible", "mobile"];
 var Popup = /*#__PURE__*/React__namespace.forwardRef(function (_ref, ref) {
   var visible = _ref.visible,
       mobile = _ref.mobile,
-      props = _objectWithoutProperties(_ref, _excluded$b);
+      props = _objectWithoutProperties(_ref, _excluded$9);
 
   var _useState = React.useState(visible),
       _useState2 = _slicedToArray(_useState, 2),
@@ -20614,7 +20979,7 @@ function useAccessibility$1(_ref) {
   }, [visible]); // eslint-disable-line react-hooks/exhaustive-deps
 }
 
-var _excluded$a = ["arrow", "prefixCls", "transitionName", "animation", "align", "placement", "placements", "getPopupContainer", "showAction", "hideAction", "overlayClassName", "overlayStyle", "visible", "trigger", "autoFocus"];
+var _excluded$8 = ["arrow", "prefixCls", "transitionName", "animation", "align", "placement", "placements", "getPopupContainer", "showAction", "hideAction", "overlayClassName", "overlayStyle", "visible", "trigger", "autoFocus"];
 
 function Dropdown$2(props, ref) {
   var _props$arrow = props.arrow,
@@ -20637,7 +21002,7 @@ function Dropdown$2(props, ref) {
       _props$trigger = props.trigger,
       trigger = _props$trigger === void 0 ? ['hover'] : _props$trigger,
       autoFocus = props.autoFocus,
-      otherProps = _objectWithoutProperties(props, _excluded$a);
+      otherProps = _objectWithoutProperties(props, _excluded$8);
 
   var _React$useState = React__namespace.useState(),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -20782,7 +21147,7 @@ function useMenuId(eventKey) {
   return getMenuId(id, eventKey);
 }
 
-var _excluded$9 = ["children", "locked"];
+var _excluded$7 = ["children", "locked"];
 var MenuContext$2 = /*#__PURE__*/React__namespace.createContext(null);
 function mergeProps(origin, target) {
   var clone = _objectSpread2$1({}, origin);
@@ -20797,7 +21162,7 @@ function mergeProps(origin, target) {
 function InheritableContextProvider(_ref) {
   var children = _ref.children,
     locked = _ref.locked,
-    restProps = _objectWithoutProperties(_ref, _excluded$9);
+    restProps = _objectWithoutProperties(_ref, _excluded$7);
   var context = React__namespace.useContext(MenuContext$2);
   var inheritableContext = useMemo(function () {
     return mergeProps(context, restProps);
@@ -21298,7 +21663,7 @@ function Icon(_ref) {
   return iconNode || children || null;
 }
 
-var _excluded$8 = ["item"];
+var _excluded$6 = ["item"];
 
 /**
  * `onClick` event return `info.item` which point to react node directly.
@@ -21306,7 +21671,7 @@ var _excluded$8 = ["item"];
  */
 function warnItemProp(_ref) {
   var item = _ref.item,
-    restInfo = _objectWithoutProperties(_ref, _excluded$8);
+    restInfo = _objectWithoutProperties(_ref, _excluded$6);
   Object.defineProperty(restInfo, 'item', {
     get: function get() {
       warningOnce(false, '`info.item` is deprecated since we will move to function component that not provides React Node instance in future.');
@@ -21316,7 +21681,7 @@ function warnItemProp(_ref) {
   return restInfo;
 }
 
-var _excluded$7 = ["title", "attribute", "elementRef"],
+var _excluded$5 = ["title", "attribute", "elementRef"],
   _excluded2$2 = ["style", "className", "eventKey", "warnKey", "disabled", "itemIcon", "children", "role", "onMouseEnter", "onMouseLeave", "onClick", "onKeyDown", "onFocus"],
   _excluded3 = ["active"];
 // Since Menu event provide the `info.item` which point to the MenuItem node instance.
@@ -21336,7 +21701,7 @@ var LegacyMenuItem = /*#__PURE__*/function (_React$Component) {
         title = _this$props.title,
         attribute = _this$props.attribute,
         elementRef = _this$props.elementRef,
-        restProps = _objectWithoutProperties(_this$props, _excluded$7);
+        restProps = _objectWithoutProperties(_this$props, _excluded$5);
 
       // Here the props are eventually passed to the DOM element.
       // React does not recognize non-standard attributes.
@@ -21508,11 +21873,11 @@ function MenuItem$1(props, ref) {
 }
 var MenuItem$2 = /*#__PURE__*/React__namespace.forwardRef(MenuItem$1);
 
-var _excluded$6 = ["className", "children"];
+var _excluded$4 = ["className", "children"];
 var InternalSubMenuList = function InternalSubMenuList(_ref, ref) {
   var className = _ref.className,
     children = _ref.children,
-    restProps = _objectWithoutProperties(_ref, _excluded$6);
+    restProps = _objectWithoutProperties(_ref, _excluded$4);
   var _React$useContext = React__namespace.useContext(MenuContext$2),
     prefixCls = _React$useContext.prefixCls,
     mode = _React$useContext.mode,
@@ -21528,7 +21893,7 @@ var InternalSubMenuList = function InternalSubMenuList(_ref, ref) {
 var SubMenuList = /*#__PURE__*/React__namespace.forwardRef(InternalSubMenuList);
 SubMenuList.displayName = 'SubMenuList';
 
-var _excluded$5 = ["label", "children", "key", "type"];
+var _excluded$3 = ["label", "children", "key", "type"];
 function parseChildren(children, keyPath) {
   return toArray$2(children).map(function (child, index) {
     if ( /*#__PURE__*/React__namespace.isValidElement(child)) {
@@ -21559,7 +21924,7 @@ function convertItemsToNodes$1(list) {
         children = _ref.children,
         key = _ref.key,
         type = _ref.type,
-        restProps = _objectWithoutProperties(_ref, _excluded$5);
+        restProps = _objectWithoutProperties(_ref, _excluded$3);
       var mergedKey = key !== null && key !== void 0 ? key : "tmp-".concat(index);
 
       // MenuItemGroup & SubMenuItem
@@ -21814,7 +22179,7 @@ function InlineSubMenuList(_ref) {
   }));
 }
 
-var _excluded$4 = ["style", "className", "title", "eventKey", "warnKey", "disabled", "internalPopupClose", "children", "itemIcon", "expandIcon", "popupClassName", "popupOffset", "onClick", "onMouseEnter", "onMouseLeave", "onTitleClick", "onTitleMouseEnter", "onTitleMouseLeave"],
+var _excluded$2 = ["style", "className", "title", "eventKey", "warnKey", "disabled", "internalPopupClose", "children", "itemIcon", "expandIcon", "popupClassName", "popupOffset", "onClick", "onMouseEnter", "onMouseLeave", "onTitleClick", "onTitleMouseEnter", "onTitleMouseLeave"],
   _excluded2$1 = ["active"];
 var InternalSubMenu = function InternalSubMenu(props) {
   var _classNames;
@@ -21836,7 +22201,7 @@ var InternalSubMenu = function InternalSubMenu(props) {
     onTitleClick = props.onTitleClick,
     onTitleMouseEnter = props.onTitleMouseEnter,
     onTitleMouseLeave = props.onTitleMouseLeave,
-    restProps = _objectWithoutProperties(props, _excluded$4);
+    restProps = _objectWithoutProperties(props, _excluded$2);
   var domDataId = useMenuId(eventKey);
   var _React$useContext = React__namespace.useContext(MenuContext$2),
     prefixCls = _React$useContext.prefixCls,
@@ -22080,7 +22445,7 @@ function SubMenu$2(props) {
   }, renderNode);
 }
 
-var _excluded$3 = ["prefixCls", "rootClassName", "style", "className", "tabIndex", "items", "children", "direction", "id", "mode", "inlineCollapsed", "disabled", "disabledOverflow", "subMenuOpenDelay", "subMenuCloseDelay", "forceSubMenuRender", "defaultOpenKeys", "openKeys", "activeKey", "defaultActiveFirst", "selectable", "multiple", "defaultSelectedKeys", "selectedKeys", "onSelect", "onDeselect", "inlineIndent", "motion", "defaultMotions", "triggerSubMenuAction", "builtinPlacements", "itemIcon", "expandIcon", "overflowedIndicator", "overflowedIndicatorPopupClassName", "getPopupContainer", "onClick", "onOpenChange", "onKeyDown", "openAnimation", "openTransitionName", "_internalRenderMenuItem", "_internalRenderSubMenuItem"];
+var _excluded$1 = ["prefixCls", "rootClassName", "style", "className", "tabIndex", "items", "children", "direction", "id", "mode", "inlineCollapsed", "disabled", "disabledOverflow", "subMenuOpenDelay", "subMenuCloseDelay", "forceSubMenuRender", "defaultOpenKeys", "openKeys", "activeKey", "defaultActiveFirst", "selectable", "multiple", "defaultSelectedKeys", "selectedKeys", "onSelect", "onDeselect", "inlineIndent", "motion", "defaultMotions", "triggerSubMenuAction", "builtinPlacements", "itemIcon", "expandIcon", "overflowedIndicator", "overflowedIndicatorPopupClassName", "getPopupContainer", "onClick", "onOpenChange", "onKeyDown", "openAnimation", "openTransitionName", "_internalRenderMenuItem", "_internalRenderSubMenuItem"];
 
 /**
  * Menu modify after refactor:
@@ -22153,7 +22518,7 @@ var Menu$2 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     openTransitionName = _ref.openTransitionName,
     _internalRenderMenuItem = _ref._internalRenderMenuItem,
     _internalRenderSubMenuItem = _ref._internalRenderSubMenuItem,
-    restProps = _objectWithoutProperties(_ref, _excluded$3);
+    restProps = _objectWithoutProperties(_ref, _excluded$1);
   var childList = React__namespace.useMemo(function () {
     return parseItems(children, items, EMPTY_LIST);
   }, [children, items]);
@@ -22525,14 +22890,14 @@ var Menu$2 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
   }, childList)))));
 });
 
-var _excluded$2 = ["className", "title", "eventKey", "children"],
+var _excluded = ["className", "title", "eventKey", "children"],
   _excluded2 = ["children"];
 var InternalMenuItemGroup = function InternalMenuItemGroup(_ref) {
   var className = _ref.className,
     title = _ref.title;
     _ref.eventKey;
     var children = _ref.children,
-    restProps = _objectWithoutProperties(_ref, _excluded$2);
+    restProps = _objectWithoutProperties(_ref, _excluded);
   var _React$useContext = React__namespace.useContext(MenuContext$2),
     prefixCls = _React$useContext.prefixCls;
   var groupPrefixCls = "".concat(prefixCls, "-item-group");
@@ -23341,7 +23706,7 @@ const getBaseStyle = token => {
   }];
 };
 // ============================== Export ==============================
-var useStyle$5 = ((prefixCls, injectStyle) => {
+var useStyle$3 = ((prefixCls, injectStyle) => {
   const useOriginHook = genComponentStyleHook('Menu', (token, _ref) => {
     let {
       overrideComponentToken
@@ -23459,7 +23824,7 @@ var useStyle$5 = ((prefixCls, injectStyle) => {
   return useOriginHook(prefixCls);
 });
 
-var __rest$i = undefined && undefined.__rest || function (s, e) {
+var __rest$b = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -23473,7 +23838,7 @@ const OverrideProvider = props => {
   const {
       children
     } = props,
-    restProps = __rest$i(props, ["children"]);
+    restProps = __rest$b(props, ["children"]);
   const override = React__namespace.useContext(OverrideContext);
   const context = React__namespace.useMemo(() => Object.assign(Object.assign({}, override), restProps), [override, restProps.prefixCls,
   // restProps.expandIcon, Not mark as deps since this is a ReactNode
@@ -23486,7 +23851,7 @@ const OverrideProvider = props => {
   }, children);
 };
 
-var __rest$h = undefined && undefined.__rest || function (s, e) {
+var __rest$a = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -23500,7 +23865,7 @@ const MenuDivider = props => {
       className,
       dashed
     } = props,
-    restProps = __rest$h(props, ["prefixCls", "className", "dashed"]);
+    restProps = __rest$a(props, ["prefixCls", "className", "dashed"]);
   const {
     getPrefixCls
   } = React__namespace.useContext(ConfigContext);
@@ -23725,7 +24090,7 @@ const genLayoutStyle = token => {
   };
 };
 // ============================== Export ==============================
-var useStyle$4 = genComponentStyleHook('Layout', token => {
+var useStyle$2 = genComponentStyleHook('Layout', token => {
   const {
     colorText,
     controlHeightSM,
@@ -23755,7 +24120,7 @@ var useStyle$4 = genComponentStyleHook('Layout', token => {
   };
 });
 
-var __rest$g = undefined && undefined.__rest || function (s, e) {
+var __rest$9 = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -23794,12 +24159,12 @@ const Basic = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
       className,
       tagName: TagName
     } = props,
-    others = __rest$g(props, ["prefixCls", "suffixCls", "className", "tagName"]);
+    others = __rest$9(props, ["prefixCls", "suffixCls", "className", "tagName"]);
   const {
     getPrefixCls
   } = React__namespace.useContext(ConfigContext);
   const prefixCls = getPrefixCls('layout', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$4(prefixCls);
+  const [wrapSSR, hashId] = useStyle$2(prefixCls);
   const prefixWithSuffixCls = suffixCls ? `${prefixCls}-${suffixCls}` : prefixCls;
   return wrapSSR( /*#__PURE__*/React__namespace.createElement(TagName, Object.assign({
     className: classnames(customizePrefixCls || prefixWithSuffixCls, className, hashId),
@@ -23819,13 +24184,13 @@ const BasicLayout = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
       hasSider,
       tagName: Tag
     } = props,
-    others = __rest$g(props, ["prefixCls", "className", "rootClassName", "children", "hasSider", "tagName"]);
+    others = __rest$9(props, ["prefixCls", "className", "rootClassName", "children", "hasSider", "tagName"]);
   const passedProps = omit(others, ['suffixCls']);
   const {
     getPrefixCls
   } = React__namespace.useContext(ConfigContext);
   const prefixCls = getPrefixCls('layout', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$4(prefixCls);
+  const [wrapSSR, hashId] = useStyle$2(prefixCls);
   const classString = classnames(prefixCls, {
     [`${prefixCls}-has-sider`]: typeof hasSider === 'boolean' ? hasSider : siders.length > 0,
     [`${prefixCls}-rtl`]: direction === 'rtl'
@@ -23867,7 +24232,7 @@ generator({
   displayName: 'Content'
 })(Basic);
 
-var __rest$f = undefined && undefined.__rest || function (s, e) {
+var __rest$8 = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -23910,7 +24275,7 @@ const Sider = /*#__PURE__*/React__namespace.forwardRef((_a, ref) => {
       onCollapse,
       onBreakpoint
     } = _a,
-    props = __rest$f(_a, ["prefixCls", "className", "trigger", "children", "defaultCollapsed", "theme", "style", "collapsible", "reverseArrow", "width", "collapsedWidth", "zeroWidthTriggerStyle", "breakpoint", "onCollapse", "onBreakpoint"]);
+    props = __rest$8(_a, ["prefixCls", "className", "trigger", "children", "defaultCollapsed", "theme", "style", "collapsible", "reverseArrow", "width", "collapsedWidth", "zeroWidthTriggerStyle", "breakpoint", "onCollapse", "onBreakpoint"]);
   const {
     siderHook
   } = React.useContext(LayoutContext);
@@ -24155,7 +24520,7 @@ const SubMenu = props => {
 };
 var SubMenu$1 = SubMenu;
 
-var __rest$e = undefined && undefined.__rest || function (s, e) {
+var __rest$7 = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -24173,7 +24538,7 @@ function convertItemsToNodes(list) {
           key,
           type
         } = _a,
-        restProps = __rest$e(_a, ["label", "children", "key", "type"]);
+        restProps = __rest$7(_a, ["label", "children", "key", "type"]);
       const mergedKey = key !== null && key !== void 0 ? key : `tmp-${index}`;
       // MenuItemGroup & SubMenuItem
       if (children || type === 'group') {
@@ -24219,7 +24584,7 @@ function useItems$1(items) {
   }, [items]);
 }
 
-var __rest$d = undefined && undefined.__rest || function (s, e) {
+var __rest$6 = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -24252,7 +24617,7 @@ const InternalMenu = /*#__PURE__*/React.forwardRef((props, ref) => {
       selectable,
       onClick
     } = props,
-    restProps = __rest$d(props, ["prefixCls", "className", "theme", "expandIcon", "_internalDisableMenuItemTitleTooltip", "inlineCollapsed", "siderCollapsed", "items", "children", "rootClassName", "mode", "selectable", "onClick"]);
+    restProps = __rest$6(props, ["prefixCls", "className", "theme", "expandIcon", "_internalDisableMenuItemTitleTooltip", "inlineCollapsed", "siderCollapsed", "items", "children", "rootClassName", "mode", "selectable", "onClick"]);
   const passedProps = omit(restProps, ['collapsedWidth']);
   // ========================= Items ===========================
   const mergedChildren = useItems$1(items) || children;
@@ -24286,13 +24651,13 @@ const InternalMenu = /*#__PURE__*/React.forwardRef((props, ref) => {
     horizontal: {
       motionName: `${rootPrefixCls}-slide-up`
     },
-    inline: initCollapseMotion(rootPrefixCls),
+    inline: initCollapseMotion$1(rootPrefixCls),
     other: {
       motionName: `${rootPrefixCls}-zoom-big`
     }
   };
   const prefixCls = getPrefixCls('menu', customizePrefixCls || overrideObj.prefixCls);
-  const [wrapSSR, hashId] = useStyle$5(prefixCls, !override);
+  const [wrapSSR, hashId] = useStyle$3(prefixCls, !override);
   const menuClassName = classnames(`${prefixCls}-${theme}`, className);
   // ====================== Expand Icon ========================
   let mergedExpandIcon;
@@ -24414,7 +24779,7 @@ function Item(_ref) {
   }, split));
 }
 
-var __rest$c = undefined && undefined.__rest || function (s, e) {
+var __rest$5 = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -24454,7 +24819,7 @@ const Space = props => {
       style,
       wrap = false
     } = props,
-    otherProps = __rest$c(props, ["size", "align", "className", "rootClassName", "children", "direction", "prefixCls", "split", "style", "wrap"]);
+    otherProps = __rest$5(props, ["size", "align", "className", "rootClassName", "children", "direction", "prefixCls", "split", "style", "wrap"]);
   const supportFlexGap = useFlexGapSupport();
   const [horizontalSize, verticalSize] = React__namespace.useMemo(() => (Array.isArray(size) ? size : [size, size]).map(item => getNumberSize(item)), [size]);
   const childNodes = toArray$2(children, {
@@ -24462,7 +24827,7 @@ const Space = props => {
   });
   const mergedAlign = align === undefined && direction === 'horizontal' ? 'center' : align;
   const prefixCls = getPrefixCls('space', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$8(prefixCls);
+  const [wrapSSR, hashId] = useStyle$6(prefixCls);
   const cn = classnames(prefixCls, hashId, `${prefixCls}-${direction}`, {
     [`${prefixCls}-rtl`]: directionConfig === 'rtl',
     [`${prefixCls}-align-${mergedAlign}`]: mergedAlign
@@ -24522,7 +24887,7 @@ const CompoundedSpace = Space;
 CompoundedSpace.Compact = Compact$1;
 var Space$1 = CompoundedSpace;
 
-const genStatusStyle$1 = token => {
+const genStatusStyle = token => {
   const {
     componentCls,
     menuCls,
@@ -24544,7 +24909,7 @@ const genStatusStyle$1 = token => {
     }
   };
 };
-var genStatusStyle$2 = genStatusStyle$1;
+var genStatusStyle$1 = genStatusStyle;
 
 // =============================== Base ===============================
 const genBaseStyle = token => {
@@ -24794,7 +25159,7 @@ const genBaseStyle = token => {
   [initSlideMotion(token, 'slide-up'), initSlideMotion(token, 'slide-down'), initMoveMotion(token, 'move-up'), initMoveMotion(token, 'move-down'), initZoomMotion(token, 'zoom-big')]];
 };
 // ============================== Export ==============================
-var useStyle$3 = genComponentStyleHook('Dropdown', (token, _ref) => {
+var useStyle$1 = genComponentStyleHook('Dropdown', (token, _ref) => {
   let {
     rootPrefixCls
   } = _ref;
@@ -24822,12 +25187,12 @@ var useStyle$3 = genComponentStyleHook('Dropdown', (token, _ref) => {
     dropdownPaddingVertical,
     dropdownEdgeChildPadding: paddingXXS
   });
-  return [genBaseStyle(dropdownToken), genStatusStyle$2(dropdownToken)];
+  return [genBaseStyle(dropdownToken), genStatusStyle$1(dropdownToken)];
 }, token => ({
   zIndexPopup: token.zIndexPopupBase + 50
 }));
 
-var __rest$b = undefined && undefined.__rest || function (s, e) {
+var __rest$4 = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -24872,10 +25237,10 @@ const DropdownButton = props => {
       destroyPopupOnHide,
       dropdownRender
     } = props,
-    restProps = __rest$b(props, ["prefixCls", "type", "danger", "disabled", "loading", "onClick", "htmlType", "children", "className", "menu", "arrow", "autoFocus", "overlay", "trigger", "align", "open", "onOpenChange", "placement", "getPopupContainer", "href", "icon", "title", "buttonsRender", "mouseEnterDelay", "mouseLeaveDelay", "overlayClassName", "overlayStyle", "destroyPopupOnHide", "dropdownRender"]);
+    restProps = __rest$4(props, ["prefixCls", "type", "danger", "disabled", "loading", "onClick", "htmlType", "children", "className", "menu", "arrow", "autoFocus", "overlay", "trigger", "align", "open", "onOpenChange", "placement", "getPopupContainer", "href", "icon", "title", "buttonsRender", "mouseEnterDelay", "mouseLeaveDelay", "overlayClassName", "overlayStyle", "destroyPopupOnHide", "dropdownRender"]);
   const prefixCls = getPrefixCls('dropdown', customizePrefixCls);
   const buttonPrefixCls = `${prefixCls}-button`;
-  const [wrapSSR, hashId] = useStyle$3(prefixCls);
+  const [wrapSSR, hashId] = useStyle$1(prefixCls);
   const dropdownProps = {
     menu,
     arrow,
@@ -24998,7 +25363,7 @@ const Dropdown = props => {
     });
   }
   const prefixCls = getPrefixCls('dropdown', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$3(prefixCls);
+  const [wrapSSR, hashId] = useStyle$1(prefixCls);
   const {
     token
   } = theme.useToken();
@@ -25117,7 +25482,7 @@ const BreadcrumbSeparator = _ref => {
 BreadcrumbSeparator.__ANT_BREADCRUMB_SEPARATOR = true;
 var BreadcrumbSeparator$1 = BreadcrumbSeparator;
 
-var __rest$a = undefined && undefined.__rest || function (s, e) {
+var __rest$3 = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -25140,7 +25505,7 @@ function renderItem(prefixCls, item, children, href) {
       className,
       onClick
     } = item,
-    restItem = __rest$a(item, ["className", "onClick"]);
+    restItem = __rest$3(item, ["className", "onClick"]);
   const passedProps = Object.assign(Object.assign({}, pickAttrs(restItem, {
     data: true,
     aria: true
@@ -25168,7 +25533,7 @@ function useItemRender(prefixCls, itemRender) {
   return mergedItemRender;
 }
 
-var __rest$9 = undefined && undefined.__rest || function (s, e) {
+var __rest$2 = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -25199,7 +25564,7 @@ const InternalBreadcrumbItem = props => {
           {
             items
           } = _a,
-          menuProps = __rest$9(_a, ["items"]);
+          menuProps = __rest$2(_a, ["items"]);
         mergeDropDownProps.menu = Object.assign(Object.assign({}, menuProps), {
           items: items === null || items === void 0 ? void 0 : items.map((_a, index) => {
             var {
@@ -25208,7 +25573,7 @@ const InternalBreadcrumbItem = props => {
                 label,
                 path
               } = _a,
-              itemProps = __rest$9(_a, ["key", "title", "label", "path"]);
+              itemProps = __rest$2(_a, ["key", "title", "label", "path"]);
             let mergedLabel = label !== null && label !== void 0 ? label : title;
             if (path) {
               mergedLabel = /*#__PURE__*/React__namespace.createElement("a", {
@@ -25245,7 +25610,7 @@ const BreadcrumbItem = props => {
       children,
       href
     } = props,
-    restProps = __rest$9(props, ["prefixCls", "children", "href"]);
+    restProps = __rest$2(props, ["prefixCls", "children", "href"]);
   const {
     getPrefixCls
   } = React__namespace.useContext(ConfigContext);
@@ -25335,7 +25700,7 @@ const genBreadcrumbStyle = token => {
   };
 };
 // ============================== Export ==============================
-var useStyle$2 = genComponentStyleHook('Breadcrumb', token => {
+var useStyle = genComponentStyleHook('Breadcrumb', token => {
   const BreadcrumbToken = merge(token, {
     breadcrumbBaseColor: token.colorTextDescription,
     breadcrumbFontSize: token.fontSize,
@@ -25349,7 +25714,7 @@ var useStyle$2 = genComponentStyleHook('Breadcrumb', token => {
   return [genBreadcrumbStyle(BreadcrumbToken)];
 });
 
-var __rest$8 = undefined && undefined.__rest || function (s, e) {
+var __rest$1 = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -25362,7 +25727,7 @@ function route2item(route) {
       breadcrumbName,
       children
     } = route,
-    rest = __rest$8(route, ["breadcrumbName", "children"]);
+    rest = __rest$1(route, ["breadcrumbName", "children"]);
   const clone = Object.assign({
     title: breadcrumbName
   }, rest);
@@ -25372,7 +25737,7 @@ function route2item(route) {
         var {
             breadcrumbName: itemBreadcrumbName
           } = _a,
-          itemProps = __rest$8(_a, ["breadcrumbName"]);
+          itemProps = __rest$1(_a, ["breadcrumbName"]);
         return Object.assign(Object.assign({}, itemProps), {
           title: itemBreadcrumbName
         });
@@ -25393,7 +25758,7 @@ function useItems(items, routes) {
   }, [items, routes]);
 }
 
-var __rest$7 = undefined && undefined.__rest || function (s, e) {
+var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -25424,14 +25789,14 @@ const Breadcrumb = props => {
       itemRender,
       params = {}
     } = props,
-    restProps = __rest$7(props, ["prefixCls", "separator", "style", "className", "rootClassName", "routes", "items", "children", "itemRender", "params"]);
+    restProps = __rest(props, ["prefixCls", "separator", "style", "className", "rootClassName", "routes", "items", "children", "itemRender", "params"]);
   const {
     getPrefixCls,
     direction
   } = React__namespace.useContext(ConfigContext);
   let crumbs;
   const prefixCls = getPrefixCls('breadcrumb', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$2(prefixCls);
+  const [wrapSSR, hashId] = useStyle(prefixCls);
   const mergedItems = useItems(items, legacyRoutes);
   if (process.env.NODE_ENV !== 'production') {
     process.env.NODE_ENV !== "production" ? warning$2(!legacyRoutes, 'Breadcrumb', '`routes` is deprecated. Please use `items` instead.') : void 0;
@@ -25523,2993 +25888,13 @@ if (process.env.NODE_ENV !== 'production') {
 }
 var Breadcrumb$1 = Breadcrumb;
 
-const genPlaceholderStyle = color => ({
-  // Firefox
-  '&::-moz-placeholder': {
-    opacity: 1
-  },
-  '&::placeholder': {
-    color,
-    userSelect: 'none' // https://github.com/ant-design/ant-design/pull/32639
-  },
-
-  '&:placeholder-shown': {
-    textOverflow: 'ellipsis'
-  }
-});
-const genHoverStyle = token => ({
-  borderColor: token.inputBorderHoverColor,
-  borderInlineEndWidth: token.lineWidth
-});
-const genActiveStyle = token => ({
-  borderColor: token.inputBorderHoverColor,
-  boxShadow: `0 0 0 ${token.controlOutlineWidth}px ${token.controlOutline}`,
-  borderInlineEndWidth: token.lineWidth,
-  outline: 0
-});
-const genDisabledStyle = token => ({
-  color: token.colorTextDisabled,
-  backgroundColor: token.colorBgContainerDisabled,
-  borderColor: token.colorBorder,
-  boxShadow: 'none',
-  cursor: 'not-allowed',
-  opacity: 1,
-  '&:hover': Object.assign({}, genHoverStyle(merge(token, {
-    inputBorderHoverColor: token.colorBorder
-  })))
-});
-const genInputLargeStyle = token => {
-  const {
-    inputPaddingVerticalLG,
-    fontSizeLG,
-    lineHeightLG,
-    borderRadiusLG,
-    inputPaddingHorizontalLG
-  } = token;
-  return {
-    padding: `${inputPaddingVerticalLG}px ${inputPaddingHorizontalLG}px`,
-    fontSize: fontSizeLG,
-    lineHeight: lineHeightLG,
-    borderRadius: borderRadiusLG
-  };
-};
-const genInputSmallStyle = token => ({
-  padding: `${token.inputPaddingVerticalSM}px ${token.controlPaddingHorizontalSM - 1}px`,
-  borderRadius: token.borderRadiusSM
-});
-const genStatusStyle = (token, parentCls) => {
-  const {
-    componentCls,
-    colorError,
-    colorWarning,
-    colorErrorOutline,
-    colorWarningOutline,
-    colorErrorBorderHover,
-    colorWarningBorderHover
-  } = token;
-  return {
-    [`&-status-error:not(${parentCls}-disabled):not(${parentCls}-borderless)${parentCls}`]: {
-      borderColor: colorError,
-      '&:hover': {
-        borderColor: colorErrorBorderHover
-      },
-      '&:focus, &-focused': Object.assign({}, genActiveStyle(merge(token, {
-        inputBorderActiveColor: colorError,
-        inputBorderHoverColor: colorError,
-        controlOutline: colorErrorOutline
-      }))),
-      [`${componentCls}-prefix, ${componentCls}-suffix`]: {
-        color: colorError
-      }
-    },
-    [`&-status-warning:not(${parentCls}-disabled):not(${parentCls}-borderless)${parentCls}`]: {
-      borderColor: colorWarning,
-      '&:hover': {
-        borderColor: colorWarningBorderHover
-      },
-      '&:focus, &-focused': Object.assign({}, genActiveStyle(merge(token, {
-        inputBorderActiveColor: colorWarning,
-        inputBorderHoverColor: colorWarning,
-        controlOutline: colorWarningOutline
-      }))),
-      [`${componentCls}-prefix, ${componentCls}-suffix`]: {
-        color: colorWarning
-      }
-    }
-  };
-};
-const genBasicInputStyle = token => Object.assign(Object.assign({
-  position: 'relative',
-  display: 'inline-block',
-  width: '100%',
-  minWidth: 0,
-  padding: `${token.inputPaddingVertical}px ${token.inputPaddingHorizontal}px`,
-  color: token.colorText,
-  fontSize: token.fontSize,
-  lineHeight: token.lineHeight,
-  backgroundColor: token.colorBgContainer,
-  backgroundImage: 'none',
-  borderWidth: token.lineWidth,
-  borderStyle: token.lineType,
-  borderColor: token.colorBorder,
-  borderRadius: token.borderRadius,
-  transition: `all ${token.motionDurationMid}`
-}, genPlaceholderStyle(token.colorTextPlaceholder)), {
-  '&:hover': Object.assign({}, genHoverStyle(token)),
-  '&:focus, &-focused': Object.assign({}, genActiveStyle(token)),
-  '&-disabled, &[disabled]': Object.assign({}, genDisabledStyle(token)),
-  '&-borderless': {
-    '&, &:hover, &:focus, &-focused, &-disabled, &[disabled]': {
-      backgroundColor: 'transparent',
-      border: 'none',
-      boxShadow: 'none'
-    }
-  },
-  // Reset height for `textarea`s
-  'textarea&': {
-    maxWidth: '100%',
-    height: 'auto',
-    minHeight: token.controlHeight,
-    lineHeight: token.lineHeight,
-    verticalAlign: 'bottom',
-    transition: `all ${token.motionDurationSlow}, height 0s`,
-    resize: 'vertical'
-  },
-  // Size
-  '&-lg': Object.assign({}, genInputLargeStyle(token)),
-  '&-sm': Object.assign({}, genInputSmallStyle(token)),
-  // RTL
-  '&-rtl': {
-    direction: 'rtl'
-  },
-  '&-textarea-rtl': {
-    direction: 'rtl'
-  }
-});
-const genInputGroupStyle = token => {
-  const {
-    componentCls,
-    antCls
-  } = token;
-  return {
-    position: 'relative',
-    display: 'table',
-    width: '100%',
-    borderCollapse: 'separate',
-    borderSpacing: 0,
-    // Undo padding and float of grid classes
-    [`&[class*='col-']`]: {
-      paddingInlineEnd: token.paddingXS,
-      '&:last-child': {
-        paddingInlineEnd: 0
-      }
-    },
-    // Sizing options
-    [`&-lg ${componentCls}, &-lg > ${componentCls}-group-addon`]: Object.assign({}, genInputLargeStyle(token)),
-    [`&-sm ${componentCls}, &-sm > ${componentCls}-group-addon`]: Object.assign({}, genInputSmallStyle(token)),
-    // Fix https://github.com/ant-design/ant-design/issues/5754
-    [`&-lg ${antCls}-select-single ${antCls}-select-selector`]: {
-      height: token.controlHeightLG
-    },
-    [`&-sm ${antCls}-select-single ${antCls}-select-selector`]: {
-      height: token.controlHeightSM
-    },
-    [`> ${componentCls}`]: {
-      display: 'table-cell',
-      '&:not(:first-child):not(:last-child)': {
-        borderRadius: 0
-      }
-    },
-    [`${componentCls}-group`]: {
-      [`&-addon, &-wrap`]: {
-        display: 'table-cell',
-        width: 1,
-        whiteSpace: 'nowrap',
-        verticalAlign: 'middle',
-        '&:not(:first-child):not(:last-child)': {
-          borderRadius: 0
-        }
-      },
-      '&-wrap > *': {
-        display: 'block !important'
-      },
-      '&-addon': {
-        position: 'relative',
-        padding: `0 ${token.inputPaddingHorizontal}px`,
-        color: token.colorText,
-        fontWeight: 'normal',
-        fontSize: token.fontSize,
-        textAlign: 'center',
-        backgroundColor: token.colorFillAlter,
-        border: `${token.lineWidth}px ${token.lineType} ${token.colorBorder}`,
-        borderRadius: token.borderRadius,
-        transition: `all ${token.motionDurationSlow}`,
-        lineHeight: 1,
-        // Reset Select's style in addon
-        [`${antCls}-select`]: {
-          margin: `-${token.inputPaddingVertical + 1}px -${token.inputPaddingHorizontal}px`,
-          [`&${antCls}-select-single:not(${antCls}-select-customize-input)`]: {
-            [`${antCls}-select-selector`]: {
-              backgroundColor: 'inherit',
-              border: `${token.lineWidth}px ${token.lineType} transparent`,
-              boxShadow: 'none'
-            }
-          },
-          '&-open, &-focused': {
-            [`${antCls}-select-selector`]: {
-              color: token.colorPrimary
-            }
-          }
-        },
-        // https://github.com/ant-design/ant-design/issues/31333
-        [`${antCls}-cascader-picker`]: {
-          margin: `-9px -${token.inputPaddingHorizontal}px`,
-          backgroundColor: 'transparent',
-          [`${antCls}-cascader-input`]: {
-            textAlign: 'start',
-            border: 0,
-            boxShadow: 'none'
-          }
-        }
-      },
-      '&-addon:first-child': {
-        borderInlineEnd: 0
-      },
-      '&-addon:last-child': {
-        borderInlineStart: 0
-      }
-    },
-    [`${componentCls}`]: {
-      width: '100%',
-      marginBottom: 0,
-      textAlign: 'inherit',
-      '&:focus': {
-        zIndex: 1,
-        borderInlineEndWidth: 1
-      },
-      '&:hover': {
-        zIndex: 1,
-        borderInlineEndWidth: 1,
-        [`${componentCls}-search-with-button &`]: {
-          zIndex: 0
-        }
-      }
-    },
-    // Reset rounded corners
-    [`> ${componentCls}:first-child, ${componentCls}-group-addon:first-child`]: {
-      borderStartEndRadius: 0,
-      borderEndEndRadius: 0,
-      // Reset Select's style in addon
-      [`${antCls}-select ${antCls}-select-selector`]: {
-        borderStartEndRadius: 0,
-        borderEndEndRadius: 0
-      }
-    },
-    [`> ${componentCls}-affix-wrapper`]: {
-      [`&:not(:first-child) ${componentCls}`]: {
-        borderStartStartRadius: 0,
-        borderEndStartRadius: 0
-      },
-      [`&:not(:last-child) ${componentCls}`]: {
-        borderStartEndRadius: 0,
-        borderEndEndRadius: 0
-      }
-    },
-    [`> ${componentCls}:last-child, ${componentCls}-group-addon:last-child`]: {
-      borderStartStartRadius: 0,
-      borderEndStartRadius: 0,
-      // Reset Select's style in addon
-      [`${antCls}-select ${antCls}-select-selector`]: {
-        borderStartStartRadius: 0,
-        borderEndStartRadius: 0
-      }
-    },
-    [`${componentCls}-affix-wrapper`]: {
-      '&:not(:last-child)': {
-        borderStartEndRadius: 0,
-        borderEndEndRadius: 0,
-        [`${componentCls}-search &`]: {
-          borderStartStartRadius: token.borderRadius,
-          borderEndStartRadius: token.borderRadius
-        }
-      },
-      [`&:not(:first-child), ${componentCls}-search &:not(:first-child)`]: {
-        borderStartStartRadius: 0,
-        borderEndStartRadius: 0
-      }
-    },
-    [`&${componentCls}-group-compact`]: Object.assign(Object.assign({
-      display: 'block'
-    }, clearFix()), {
-      [`${componentCls}-group-addon, ${componentCls}-group-wrap, > ${componentCls}`]: {
-        '&:not(:first-child):not(:last-child)': {
-          borderInlineEndWidth: token.lineWidth,
-          '&:hover': {
-            zIndex: 1
-          },
-          '&:focus': {
-            zIndex: 1
-          }
-        }
-      },
-      '& > *': {
-        display: 'inline-block',
-        float: 'none',
-        verticalAlign: 'top',
-        borderRadius: 0
-      },
-      [`& > ${componentCls}-affix-wrapper`]: {
-        display: 'inline-flex'
-      },
-      [`& > ${antCls}-picker-range`]: {
-        display: 'inline-flex'
-      },
-      '& > *:not(:last-child)': {
-        marginInlineEnd: -token.lineWidth,
-        borderInlineEndWidth: token.lineWidth
-      },
-      // Undo float for .ant-input-group .ant-input
-      [`${componentCls}`]: {
-        float: 'none'
-      },
-      // reset border for Select, DatePicker, AutoComplete, Cascader, Mention, TimePicker, Input
-      [`& > ${antCls}-select > ${antCls}-select-selector,
-      & > ${antCls}-select-auto-complete ${componentCls},
-      & > ${antCls}-cascader-picker ${componentCls},
-      & > ${componentCls}-group-wrapper ${componentCls}`]: {
-        borderInlineEndWidth: token.lineWidth,
-        borderRadius: 0,
-        '&:hover': {
-          zIndex: 1
-        },
-        '&:focus': {
-          zIndex: 1
-        }
-      },
-      [`& > ${antCls}-select-focused`]: {
-        zIndex: 1
-      },
-      // update z-index for arrow icon
-      [`& > ${antCls}-select > ${antCls}-select-arrow`]: {
-        zIndex: 1 // https://github.com/ant-design/ant-design/issues/20371
-      },
-      [`& > *:first-child,
-      & > ${antCls}-select:first-child > ${antCls}-select-selector,
-      & > ${antCls}-select-auto-complete:first-child ${componentCls},
-      & > ${antCls}-cascader-picker:first-child ${componentCls}`]: {
-        borderStartStartRadius: token.borderRadius,
-        borderEndStartRadius: token.borderRadius
-      },
-      [`& > *:last-child,
-      & > ${antCls}-select:last-child > ${antCls}-select-selector,
-      & > ${antCls}-cascader-picker:last-child ${componentCls},
-      & > ${antCls}-cascader-picker-focused:last-child ${componentCls}`]: {
-        borderInlineEndWidth: token.lineWidth,
-        borderStartEndRadius: token.borderRadius,
-        borderEndEndRadius: token.borderRadius
-      },
-      // https://github.com/ant-design/ant-design/issues/12493
-      [`& > ${antCls}-select-auto-complete ${componentCls}`]: {
-        verticalAlign: 'top'
-      },
-      [`${componentCls}-group-wrapper + ${componentCls}-group-wrapper`]: {
-        marginInlineStart: -token.lineWidth,
-        [`${componentCls}-affix-wrapper`]: {
-          borderRadius: 0
-        }
-      },
-      [`${componentCls}-group-wrapper:not(:last-child)`]: {
-        [`&${componentCls}-search > ${componentCls}-group`]: {
-          [`& > ${componentCls}-group-addon > ${componentCls}-search-button`]: {
-            borderRadius: 0
-          },
-          [`& > ${componentCls}`]: {
-            borderStartStartRadius: token.borderRadius,
-            borderStartEndRadius: 0,
-            borderEndEndRadius: 0,
-            borderEndStartRadius: token.borderRadius
-          }
-        }
-      }
-    })
-  };
-};
-const genInputStyle = token => {
-  const {
-    componentCls,
-    controlHeightSM,
-    lineWidth
-  } = token;
-  const FIXED_CHROME_COLOR_HEIGHT = 16;
-  const colorSmallPadding = (controlHeightSM - lineWidth * 2 - FIXED_CHROME_COLOR_HEIGHT) / 2;
-  return {
-    [componentCls]: Object.assign(Object.assign(Object.assign(Object.assign({}, resetComponent(token)), genBasicInputStyle(token)), genStatusStyle(token, componentCls)), {
-      '&[type="color"]': {
-        height: token.controlHeight,
-        [`&${componentCls}-lg`]: {
-          height: token.controlHeightLG
-        },
-        [`&${componentCls}-sm`]: {
-          height: controlHeightSM,
-          paddingTop: colorSmallPadding,
-          paddingBottom: colorSmallPadding
-        }
-      },
-      '&[type="search"]::-webkit-search-cancel-button, &[type="search"]::-webkit-search-decoration': {
-        '-webkit-appearance': 'none'
-      }
-    })
-  };
-};
-const genAllowClearStyle = token => {
-  const {
-    componentCls
-  } = token;
-  return {
-    // ========================= Input =========================
-    [`${componentCls}-clear-icon`]: {
-      margin: 0,
-      color: token.colorTextQuaternary,
-      fontSize: token.fontSizeIcon,
-      verticalAlign: -1,
-      // https://github.com/ant-design/ant-design/pull/18151
-      // https://codesandbox.io/s/wizardly-sun-u10br
-      cursor: 'pointer',
-      transition: `color ${token.motionDurationSlow}`,
-      '&:hover': {
-        color: token.colorTextTertiary
-      },
-      '&:active': {
-        color: token.colorText
-      },
-      '&-hidden': {
-        visibility: 'hidden'
-      },
-      '&-has-suffix': {
-        margin: `0 ${token.inputAffixPadding}px`
-      }
-    }
-  };
-};
-const genAffixStyle = token => {
-  const {
-    componentCls,
-    inputAffixPadding,
-    colorTextDescription,
-    motionDurationSlow,
-    colorIcon,
-    colorIconHover,
-    iconCls
-  } = token;
-  return {
-    [`${componentCls}-affix-wrapper`]: Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, genBasicInputStyle(token)), {
-      display: 'inline-flex',
-      [`&:not(${componentCls}-affix-wrapper-disabled):hover`]: Object.assign(Object.assign({}, genHoverStyle(token)), {
-        zIndex: 1,
-        [`${componentCls}-search-with-button &`]: {
-          zIndex: 0
-        }
-      }),
-      '&-focused, &:focus': {
-        zIndex: 1
-      },
-      '&-disabled': {
-        [`${componentCls}[disabled]`]: {
-          background: 'transparent'
-        }
-      },
-      [`> input${componentCls}`]: {
-        padding: 0,
-        fontSize: 'inherit',
-        border: 'none',
-        borderRadius: 0,
-        outline: 'none',
-        '&::-ms-reveal': {
-          display: 'none'
-        },
-        '&:focus': {
-          boxShadow: 'none !important'
-        }
-      },
-      '&::before': {
-        width: 0,
-        visibility: 'hidden',
-        content: '"\\a0"'
-      },
-      [`${componentCls}`]: {
-        '&-prefix, &-suffix': {
-          display: 'flex',
-          flex: 'none',
-          alignItems: 'center',
-          '> *:not(:last-child)': {
-            marginInlineEnd: token.paddingXS
-          }
-        },
-        '&-show-count-suffix': {
-          color: colorTextDescription
-        },
-        '&-show-count-has-suffix': {
-          marginInlineEnd: token.paddingXXS
-        },
-        '&-prefix': {
-          marginInlineEnd: inputAffixPadding
-        },
-        '&-suffix': {
-          marginInlineStart: inputAffixPadding
-        }
-      }
-    }), genAllowClearStyle(token)), {
-      // password
-      [`${iconCls}${componentCls}-password-icon`]: {
-        color: colorIcon,
-        cursor: 'pointer',
-        transition: `all ${motionDurationSlow}`,
-        '&:hover': {
-          color: colorIconHover
-        }
-      }
-    }), genStatusStyle(token, `${componentCls}-affix-wrapper`))
-  };
-};
-const genGroupStyle = token => {
-  const {
-    componentCls,
-    colorError,
-    colorWarning,
-    borderRadiusLG,
-    borderRadiusSM
-  } = token;
-  return {
-    [`${componentCls}-group`]: Object.assign(Object.assign(Object.assign({}, resetComponent(token)), genInputGroupStyle(token)), {
-      '&-rtl': {
-        direction: 'rtl'
-      },
-      '&-wrapper': {
-        display: 'inline-block',
-        width: '100%',
-        textAlign: 'start',
-        verticalAlign: 'top',
-        '&-rtl': {
-          direction: 'rtl'
-        },
-        // Size
-        '&-lg': {
-          [`${componentCls}-group-addon`]: {
-            borderRadius: borderRadiusLG
-          }
-        },
-        '&-sm': {
-          [`${componentCls}-group-addon`]: {
-            borderRadius: borderRadiusSM
-          }
-        },
-        // Status
-        '&-status-error': {
-          [`${componentCls}-group-addon`]: {
-            color: colorError,
-            borderColor: colorError
-          }
-        },
-        '&-status-warning': {
-          [`${componentCls}-group-addon`]: {
-            color: colorWarning,
-            borderColor: colorWarning
-          }
-        },
-        '&-disabled': {
-          [`${componentCls}-group-addon`]: Object.assign({}, genDisabledStyle(token))
-        }
-      }
-    })
-  };
-};
-const genSearchInputStyle = token => {
-  const {
-    componentCls,
-    antCls
-  } = token;
-  const searchPrefixCls = `${componentCls}-search`;
-  return {
-    [searchPrefixCls]: {
-      [`${componentCls}`]: {
-        '&:hover, &:focus': {
-          borderColor: token.colorPrimaryHover,
-          [`+ ${componentCls}-group-addon ${searchPrefixCls}-button:not(${antCls}-btn-primary)`]: {
-            borderInlineStartColor: token.colorPrimaryHover
-          }
-        }
-      },
-      [`${componentCls}-affix-wrapper`]: {
-        borderRadius: 0
-      },
-      // fix slight height diff in Firefox:
-      // https://ant.design/components/auto-complete-cn/#components-auto-complete-demo-certain-category
-      [`${componentCls}-lg`]: {
-        lineHeight: token.lineHeightLG - 0.0002
-      },
-      [`> ${componentCls}-group`]: {
-        [`> ${componentCls}-group-addon:last-child`]: {
-          insetInlineStart: -1,
-          padding: 0,
-          border: 0,
-          [`${searchPrefixCls}-button`]: {
-            paddingTop: 0,
-            paddingBottom: 0,
-            borderStartStartRadius: 0,
-            borderStartEndRadius: token.borderRadius,
-            borderEndEndRadius: token.borderRadius,
-            borderEndStartRadius: 0
-          },
-          [`${searchPrefixCls}-button:not(${antCls}-btn-primary)`]: {
-            color: token.colorTextDescription,
-            '&:hover': {
-              color: token.colorPrimaryHover
-            },
-            '&:active': {
-              color: token.colorPrimaryActive
-            },
-            [`&${antCls}-btn-loading::before`]: {
-              insetInlineStart: 0,
-              insetInlineEnd: 0,
-              insetBlockStart: 0,
-              insetBlockEnd: 0
-            }
-          }
-        }
-      },
-      [`${searchPrefixCls}-button`]: {
-        height: token.controlHeight,
-        '&:hover, &:focus': {
-          zIndex: 1
-        }
-      },
-      [`&-large ${searchPrefixCls}-button`]: {
-        height: token.controlHeightLG
-      },
-      [`&-small ${searchPrefixCls}-button`]: {
-        height: token.controlHeightSM
-      },
-      '&-rtl': {
-        direction: 'rtl'
-      },
-      // ===================== Compact Item Customized Styles =====================
-      [`&${componentCls}-compact-item`]: {
-        [`&:not(${componentCls}-compact-last-item)`]: {
-          [`${componentCls}-group-addon`]: {
-            [`${componentCls}-search-button`]: {
-              marginInlineEnd: -token.lineWidth,
-              borderRadius: 0
-            }
-          }
-        },
-        [`&:not(${componentCls}-compact-first-item)`]: {
-          [`${componentCls},${componentCls}-affix-wrapper`]: {
-            borderRadius: 0
-          }
-        },
-        [`> ${componentCls}-group-addon ${componentCls}-search-button,
-        > ${componentCls},
-        ${componentCls}-affix-wrapper`]: {
-          '&:hover,&:focus,&:active': {
-            zIndex: 2
-          }
-        },
-        [`> ${componentCls}-affix-wrapper-focused`]: {
-          zIndex: 2
-        }
-      }
-    }
-  };
-};
-function initInputToken(token) {
-  // @ts-ignore
-  return merge(token, {
-    inputAffixPadding: token.paddingXXS,
-    inputPaddingVertical: Math.max(Math.round((token.controlHeight - token.fontSize * token.lineHeight) / 2 * 10) / 10 - token.lineWidth, 3),
-    inputPaddingVerticalLG: Math.ceil((token.controlHeightLG - token.fontSizeLG * token.lineHeightLG) / 2 * 10) / 10 - token.lineWidth,
-    inputPaddingVerticalSM: Math.max(Math.round((token.controlHeightSM - token.fontSize * token.lineHeight) / 2 * 10) / 10 - token.lineWidth, 0),
-    inputPaddingHorizontal: token.paddingSM - token.lineWidth,
-    inputPaddingHorizontalSM: token.paddingXS - token.lineWidth,
-    inputPaddingHorizontalLG: token.controlPaddingHorizontal - token.lineWidth,
-    inputBorderHoverColor: token.colorPrimaryHover,
-    inputBorderActiveColor: token.colorPrimaryHover
-  });
-}
-const genTextAreaStyle = token => {
-  const {
-    componentCls,
-    paddingLG
-  } = token;
-  const textareaPrefixCls = `${componentCls}-textarea`;
-  return {
-    [textareaPrefixCls]: {
-      position: 'relative',
-      '&-show-count': {
-        // https://github.com/ant-design/ant-design/issues/33049
-        [`> ${componentCls}`]: {
-          height: '100%'
-        },
-        [`${componentCls}-data-count`]: {
-          position: 'absolute',
-          bottom: -token.fontSize * token.lineHeight,
-          insetInlineEnd: 0,
-          color: token.colorTextDescription,
-          whiteSpace: 'nowrap',
-          pointerEvents: 'none'
-        }
-      },
-      [`&-affix-wrapper${textareaPrefixCls}-has-feedback`]: {
-        [`${componentCls}`]: {
-          paddingInlineEnd: paddingLG
-        }
-      },
-      [`&-affix-wrapper${componentCls}-affix-wrapper`]: {
-        padding: 0,
-        [`> textarea${componentCls}`]: {
-          fontSize: 'inherit',
-          border: 'none',
-          outline: 'none',
-          '&:focus': {
-            boxShadow: 'none !important'
-          }
-        },
-        [`${componentCls}-suffix`]: {
-          margin: 0,
-          '> *:not(:last-child)': {
-            marginInline: 0
-          },
-          // Clear Icon
-          [`${componentCls}-clear-icon`]: {
-            position: 'absolute',
-            insetInlineEnd: token.paddingXS,
-            insetBlockStart: token.paddingXS
-          },
-          // Feedback Icon
-          [`${textareaPrefixCls}-suffix`]: {
-            position: 'absolute',
-            top: 0,
-            insetInlineEnd: token.inputPaddingHorizontal,
-            bottom: 0,
-            zIndex: 1,
-            display: 'inline-flex',
-            alignItems: 'center',
-            margin: 'auto',
-            pointerEvents: 'none'
-          }
-        }
-      }
-    }
-  };
-};
-// ============================== Export ==============================
-var useStyle$1 = genComponentStyleHook('Input', token => {
-  const inputToken = initInputToken(token);
-  return [genInputStyle(inputToken), genTextAreaStyle(inputToken), genAffixStyle(inputToken), genGroupStyle(inputToken), genSearchInputStyle(inputToken),
-  // =====================================================
-  // ==             Space Compact                       ==
-  // =====================================================
-  genCompactItemStyle(inputToken)];
-});
-
-function hasAddon(props) {
-  return !!(props.addonBefore || props.addonAfter);
-}
-function hasPrefixSuffix(props) {
-  return !!(props.prefix || props.suffix || props.allowClear);
-}
-function resolveOnChange(target, e, onChange, targetValue) {
-  if (!onChange) {
-    return;
-  }
-  var event = e;
-  if (e.type === 'click') {
-    // Clone a new target for event.
-    // Avoid the following usage, the setQuery method gets the original value.
-    //
-    // const [query, setQuery] = React.useState('');
-    // <Input
-    //   allowClear
-    //   value={query}
-    //   onChange={(e)=> {
-    //     setQuery((prevStatus) => e.target.value);
-    //   }}
-    // />
-
-    var currentTarget = target.cloneNode(true);
-
-    // click clear icon
-    event = Object.create(e, {
-      target: {
-        value: currentTarget
-      },
-      currentTarget: {
-        value: currentTarget
-      }
-    });
-    currentTarget.value = '';
-    onChange(event);
-    return;
-  }
-
-  // Trigger by composition event, this means we need force change the input value
-  if (targetValue !== undefined) {
-    event = Object.create(e, {
-      target: {
-        value: target
-      },
-      currentTarget: {
-        value: target
-      }
-    });
-    target.value = targetValue;
-    onChange(event);
-    return;
-  }
-  onChange(event);
-}
-function fixControlledValue(value) {
-  if (typeof value === 'undefined' || value === null) {
-    return '';
-  }
-  return String(value);
-}
-
-var BaseInput = function BaseInput(props) {
-  var _inputElement$props, _inputElement$props2;
-  var inputElement = props.inputElement,
-    prefixCls = props.prefixCls,
-    prefix = props.prefix,
-    suffix = props.suffix,
-    addonBefore = props.addonBefore,
-    addonAfter = props.addonAfter,
-    className = props.className,
-    style = props.style,
-    disabled = props.disabled,
-    readOnly = props.readOnly,
-    focused = props.focused,
-    triggerFocus = props.triggerFocus,
-    allowClear = props.allowClear,
-    value = props.value,
-    handleReset = props.handleReset,
-    hidden = props.hidden,
-    classes = props.classes,
-    classNames = props.classNames,
-    dataAttrs = props.dataAttrs,
-    styles = props.styles;
-  var containerRef = React.useRef(null);
-  var onInputClick = function onInputClick(e) {
-    var _containerRef$current;
-    if ((_containerRef$current = containerRef.current) !== null && _containerRef$current !== void 0 && _containerRef$current.contains(e.target)) {
-      triggerFocus === null || triggerFocus === void 0 ? void 0 : triggerFocus();
-    }
-  };
-
-  // ================== Clear Icon ================== //
-  var getClearIcon = function getClearIcon() {
-    var _clsx;
-    if (!allowClear) {
-      return null;
-    }
-    var needClear = !disabled && !readOnly && value;
-    var clearIconCls = "".concat(prefixCls, "-clear-icon");
-    var iconNode = _typeof$1(allowClear) === 'object' && allowClear !== null && allowClear !== void 0 && allowClear.clearIcon ? allowClear.clearIcon : '✖';
-    return /*#__PURE__*/React__default["default"].createElement("span", {
-      onClick: handleReset
-      // Do not trigger onBlur when clear input
-      // https://github.com/ant-design/ant-design/issues/31200
-      ,
-      onMouseDown: function onMouseDown(e) {
-        return e.preventDefault();
-      },
-      className: classnames(clearIconCls, (_clsx = {}, _defineProperty$1(_clsx, "".concat(clearIconCls, "-hidden"), !needClear), _defineProperty$1(_clsx, "".concat(clearIconCls, "-has-suffix"), !!suffix), _clsx)),
-      role: "button",
-      tabIndex: -1
-    }, iconNode);
-  };
-  var element = /*#__PURE__*/React.cloneElement(inputElement, {
-    value: value,
-    hidden: hidden,
-    className: classnames((_inputElement$props = inputElement.props) === null || _inputElement$props === void 0 ? void 0 : _inputElement$props.className, !hasPrefixSuffix(props) && !hasAddon(props) && className) || null,
-    style: _objectSpread2$1(_objectSpread2$1({}, (_inputElement$props2 = inputElement.props) === null || _inputElement$props2 === void 0 ? void 0 : _inputElement$props2.style), !hasPrefixSuffix(props) && !hasAddon(props) ? style : {})
-  });
-
-  // ================== Prefix & Suffix ================== //
-  if (hasPrefixSuffix(props)) {
-    var _clsx2;
-    var affixWrapperPrefixCls = "".concat(prefixCls, "-affix-wrapper");
-    var affixWrapperCls = classnames(affixWrapperPrefixCls, (_clsx2 = {}, _defineProperty$1(_clsx2, "".concat(affixWrapperPrefixCls, "-disabled"), disabled), _defineProperty$1(_clsx2, "".concat(affixWrapperPrefixCls, "-focused"), focused), _defineProperty$1(_clsx2, "".concat(affixWrapperPrefixCls, "-readonly"), readOnly), _defineProperty$1(_clsx2, "".concat(affixWrapperPrefixCls, "-input-with-clear-btn"), suffix && allowClear && value), _clsx2), !hasAddon(props) && className, classes === null || classes === void 0 ? void 0 : classes.affixWrapper);
-    var suffixNode = (suffix || allowClear) && /*#__PURE__*/React__default["default"].createElement("span", {
-      className: classnames("".concat(prefixCls, "-suffix"), classNames === null || classNames === void 0 ? void 0 : classNames.suffix),
-      style: styles === null || styles === void 0 ? void 0 : styles.suffix
-    }, getClearIcon(), suffix);
-    element = /*#__PURE__*/React__default["default"].createElement("span", _extends$1({
-      className: affixWrapperCls,
-      style: !hasAddon(props) ? style : undefined,
-      hidden: !hasAddon(props) && hidden,
-      onClick: onInputClick
-    }, dataAttrs === null || dataAttrs === void 0 ? void 0 : dataAttrs.affixWrapper, {
-      ref: containerRef
-    }), prefix && /*#__PURE__*/React__default["default"].createElement("span", {
-      className: classnames("".concat(prefixCls, "-prefix"), classNames === null || classNames === void 0 ? void 0 : classNames.prefix),
-      style: styles === null || styles === void 0 ? void 0 : styles.prefix
-    }, prefix), /*#__PURE__*/React.cloneElement(inputElement, {
-      value: value,
-      hidden: null
-    }), suffixNode);
-  }
-
-  // ================== Addon ================== //
-  if (hasAddon(props)) {
-    var wrapperCls = "".concat(prefixCls, "-group");
-    var addonCls = "".concat(wrapperCls, "-addon");
-    var mergedWrapperClassName = classnames("".concat(prefixCls, "-wrapper"), wrapperCls, classes === null || classes === void 0 ? void 0 : classes.wrapper);
-    var mergedGroupClassName = classnames("".concat(prefixCls, "-group-wrapper"), className, classes === null || classes === void 0 ? void 0 : classes.group);
-
-    // Need another wrapper for changing display:table to display:inline-block
-    // and put style prop in wrapper
-    return /*#__PURE__*/React__default["default"].createElement("span", {
-      className: mergedGroupClassName,
-      style: style,
-      hidden: hidden
-    }, /*#__PURE__*/React__default["default"].createElement("span", {
-      className: mergedWrapperClassName
-    }, addonBefore && /*#__PURE__*/React__default["default"].createElement("span", {
-      className: addonCls
-    }, addonBefore), /*#__PURE__*/React.cloneElement(element, {
-      hidden: null
-    }), addonAfter && /*#__PURE__*/React__default["default"].createElement("span", {
-      className: addonCls
-    }, addonAfter)));
-  }
-  return element;
-};
-
-undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-function triggerFocus(element, option) {
-  if (!element) {
-    return;
-  }
-  element.focus(option);
-  // Selection content
-  const {
-    cursor
-  } = option || {};
-  if (cursor) {
-    const len = element.value.length;
-    switch (cursor) {
-      case 'start':
-        element.setSelectionRange(0, 0);
-        break;
-      case 'end':
-        element.setSelectionRange(len, len);
-        break;
-      default:
-        element.setSelectionRange(0, len);
-        break;
-    }
-  }
-}
-
-// Thanks to https://github.com/andreypopp/react-textarea-autosize/
-
-/**
- * calculateNodeHeight(uiTextNode, useCache = false)
- */
-
-var HIDDEN_TEXTAREA_STYLE = "\n  min-height:0 !important;\n  max-height:none !important;\n  height:0 !important;\n  visibility:hidden !important;\n  overflow:hidden !important;\n  position:absolute !important;\n  z-index:-1000 !important;\n  top:0 !important;\n  right:0 !important;\n  pointer-events: none !important;\n";
-var SIZING_STYLE = ['letter-spacing', 'line-height', 'padding-top', 'padding-bottom', 'font-family', 'font-weight', 'font-size', 'font-variant', 'text-rendering', 'text-transform', 'width', 'text-indent', 'padding-left', 'padding-right', 'border-width', 'box-sizing', 'word-break', 'white-space'];
-var computedStyleCache = {};
-var hiddenTextarea;
-function calculateNodeStyling(node) {
-  var useCache = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-  var nodeRef = node.getAttribute('id') || node.getAttribute('data-reactid') || node.getAttribute('name');
-  if (useCache && computedStyleCache[nodeRef]) {
-    return computedStyleCache[nodeRef];
-  }
-  var style = window.getComputedStyle(node);
-  var boxSizing = style.getPropertyValue('box-sizing') || style.getPropertyValue('-moz-box-sizing') || style.getPropertyValue('-webkit-box-sizing');
-  var paddingSize = parseFloat(style.getPropertyValue('padding-bottom')) + parseFloat(style.getPropertyValue('padding-top'));
-  var borderSize = parseFloat(style.getPropertyValue('border-bottom-width')) + parseFloat(style.getPropertyValue('border-top-width'));
-  var sizingStyle = SIZING_STYLE.map(function (name) {
-    return "".concat(name, ":").concat(style.getPropertyValue(name));
-  }).join(';');
-  var nodeInfo = {
-    sizingStyle: sizingStyle,
-    paddingSize: paddingSize,
-    borderSize: borderSize,
-    boxSizing: boxSizing
-  };
-  if (useCache && nodeRef) {
-    computedStyleCache[nodeRef] = nodeInfo;
-  }
-  return nodeInfo;
-}
-function calculateAutoSizeStyle(uiTextNode) {
-  var useCache = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-  var minRows = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
-  var maxRows = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
-  if (!hiddenTextarea) {
-    hiddenTextarea = document.createElement('textarea');
-    hiddenTextarea.setAttribute('tab-index', '-1');
-    hiddenTextarea.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(hiddenTextarea);
-  }
-
-  // Fix wrap="off" issue
-  // https://github.com/ant-design/ant-design/issues/6577
-  if (uiTextNode.getAttribute('wrap')) {
-    hiddenTextarea.setAttribute('wrap', uiTextNode.getAttribute('wrap'));
-  } else {
-    hiddenTextarea.removeAttribute('wrap');
-  }
-
-  // Copy all CSS properties that have an impact on the height of the content in
-  // the textbox
-  var _calculateNodeStyling = calculateNodeStyling(uiTextNode, useCache),
-    paddingSize = _calculateNodeStyling.paddingSize,
-    borderSize = _calculateNodeStyling.borderSize,
-    boxSizing = _calculateNodeStyling.boxSizing,
-    sizingStyle = _calculateNodeStyling.sizingStyle;
-
-  // Need to have the overflow attribute to hide the scrollbar otherwise
-  // text-lines will not calculated properly as the shadow will technically be
-  // narrower for content
-  hiddenTextarea.setAttribute('style', "".concat(sizingStyle, ";").concat(HIDDEN_TEXTAREA_STYLE));
-  hiddenTextarea.value = uiTextNode.value || uiTextNode.placeholder || '';
-  var minHeight = undefined;
-  var maxHeight = undefined;
-  var overflowY;
-  var height = hiddenTextarea.scrollHeight;
-  if (boxSizing === 'border-box') {
-    // border-box: add border, since height = content + padding + border
-    height += borderSize;
-  } else if (boxSizing === 'content-box') {
-    // remove padding, since height = content
-    height -= paddingSize;
-  }
-  if (minRows !== null || maxRows !== null) {
-    // measure height of a textarea with a single row
-    hiddenTextarea.value = ' ';
-    var singleRowHeight = hiddenTextarea.scrollHeight - paddingSize;
-    if (minRows !== null) {
-      minHeight = singleRowHeight * minRows;
-      if (boxSizing === 'border-box') {
-        minHeight = minHeight + paddingSize + borderSize;
-      }
-      height = Math.max(minHeight, height);
-    }
-    if (maxRows !== null) {
-      maxHeight = singleRowHeight * maxRows;
-      if (boxSizing === 'border-box') {
-        maxHeight = maxHeight + paddingSize + borderSize;
-      }
-      overflowY = height > maxHeight ? '' : 'hidden';
-      height = Math.min(maxHeight, height);
-    }
-  }
-  var style = {
-    height: height,
-    overflowY: overflowY,
-    resize: 'none'
-  };
-  if (minHeight) {
-    style.minHeight = minHeight;
-  }
-  if (maxHeight) {
-    style.maxHeight = maxHeight;
-  }
-  return style;
-}
-
-var _excluded$1 = ["prefixCls", "onPressEnter", "defaultValue", "value", "autoSize", "onResize", "className", "style", "disabled", "onChange", "onInternalAutoSize"];
-var RESIZE_START = 0;
-var RESIZE_MEASURING = 1;
-var RESIZE_STABLE = 2;
-var ResizableTextArea = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
-  var _ref = props,
-    prefixCls = _ref.prefixCls;
-    _ref.onPressEnter;
-    var defaultValue = _ref.defaultValue,
-    value = _ref.value,
-    autoSize = _ref.autoSize,
-    onResize = _ref.onResize,
-    className = _ref.className,
-    style = _ref.style,
-    disabled = _ref.disabled,
-    onChange = _ref.onChange,
-    onInternalAutoSize = _ref.onInternalAutoSize,
-    restProps = _objectWithoutProperties(_ref, _excluded$1);
-
-  // =============================== Value ================================
-  var _useMergedState = useMergedState(defaultValue, {
-      value: value,
-      postState: function postState(val) {
-        return val !== null && val !== void 0 ? val : '';
-      }
-    }),
-    _useMergedState2 = _slicedToArray(_useMergedState, 2),
-    mergedValue = _useMergedState2[0],
-    setMergedValue = _useMergedState2[1];
-  var onInternalChange = function onInternalChange(event) {
-    setMergedValue(event.target.value);
-    onChange === null || onChange === void 0 ? void 0 : onChange(event);
-  };
-
-  // ================================ Ref =================================
-  var textareaRef = React__namespace.useRef();
-  React__namespace.useImperativeHandle(ref, function () {
-    return {
-      textArea: textareaRef.current
-    };
-  });
-
-  // ============================== AutoSize ==============================
-  var _React$useMemo = React__namespace.useMemo(function () {
-      if (autoSize && _typeof$1(autoSize) === 'object') {
-        return [autoSize.minRows, autoSize.maxRows];
-      }
-      return [];
-    }, [autoSize]),
-    _React$useMemo2 = _slicedToArray(_React$useMemo, 2),
-    minRows = _React$useMemo2[0],
-    maxRows = _React$useMemo2[1];
-  var needAutoSize = !!autoSize;
-
-  // =============================== Scroll ===============================
-  // https://github.com/ant-design/ant-design/issues/21870
-  var fixFirefoxAutoScroll = function fixFirefoxAutoScroll() {
-    try {
-      // FF has bug with jump of scroll to top. We force back here.
-      if (document.activeElement === textareaRef.current) {
-        var _textareaRef$current = textareaRef.current,
-          selectionStart = _textareaRef$current.selectionStart,
-          selectionEnd = _textareaRef$current.selectionEnd,
-          scrollTop = _textareaRef$current.scrollTop;
-
-        // Fix Safari bug which not rollback when break line
-        // This makes Chinese IME can't input. Do not fix this
-        // const { value: tmpValue } = textareaRef.current;
-        // textareaRef.current.value = '';
-        // textareaRef.current.value = tmpValue;
-
-        textareaRef.current.setSelectionRange(selectionStart, selectionEnd);
-        textareaRef.current.scrollTop = scrollTop;
-      }
-    } catch (e) {
-      // Fix error in Chrome:
-      // Failed to read the 'selectionStart' property from 'HTMLInputElement'
-      // http://stackoverflow.com/q/21177489/3040605
-    }
-  };
-
-  // =============================== Resize ===============================
-  var _React$useState = React__namespace.useState(RESIZE_STABLE),
-    _React$useState2 = _slicedToArray(_React$useState, 2),
-    resizeState = _React$useState2[0],
-    setResizeState = _React$useState2[1];
-  var _React$useState3 = React__namespace.useState(),
-    _React$useState4 = _slicedToArray(_React$useState3, 2),
-    autoSizeStyle = _React$useState4[0],
-    setAutoSizeStyle = _React$useState4[1];
-  var startResize = function startResize() {
-    setResizeState(RESIZE_START);
-    if (process.env.NODE_ENV === 'test') {
-      onInternalAutoSize === null || onInternalAutoSize === void 0 ? void 0 : onInternalAutoSize();
-    }
-  };
-
-  // Change to trigger resize measure
-  useLayoutEffect(function () {
-    if (needAutoSize) {
-      startResize();
-    }
-  }, [value, minRows, maxRows, needAutoSize]);
-  useLayoutEffect(function () {
-    if (resizeState === RESIZE_START) {
-      setResizeState(RESIZE_MEASURING);
-    } else if (resizeState === RESIZE_MEASURING) {
-      var textareaStyles = calculateAutoSizeStyle(textareaRef.current, false, minRows, maxRows);
-
-      // Safari has bug that text will keep break line on text cut when it's prev is break line.
-      // ZombieJ: This not often happen. So we just skip it.
-      // const { selectionStart, selectionEnd, scrollTop } = textareaRef.current;
-      // const { value: tmpValue } = textareaRef.current;
-      // textareaRef.current.value = '';
-      // textareaRef.current.value = tmpValue;
-
-      // if (document.activeElement === textareaRef.current) {
-      //   textareaRef.current.scrollTop = scrollTop;
-      //   textareaRef.current.setSelectionRange(selectionStart, selectionEnd);
-      // }
-
-      setResizeState(RESIZE_STABLE);
-      setAutoSizeStyle(textareaStyles);
-    } else {
-      fixFirefoxAutoScroll();
-    }
-  }, [resizeState]);
-
-  // We lock resize trigger by raf to avoid Safari warning
-  var resizeRafRef = React__namespace.useRef();
-  var cleanRaf = function cleanRaf() {
-    wrapperRaf.cancel(resizeRafRef.current);
-  };
-  var onInternalResize = function onInternalResize(size) {
-    if (resizeState === RESIZE_STABLE) {
-      onResize === null || onResize === void 0 ? void 0 : onResize(size);
-      if (autoSize) {
-        cleanRaf();
-        resizeRafRef.current = wrapperRaf(function () {
-          startResize();
-        });
-      }
-    }
-  };
-  React__namespace.useEffect(function () {
-    return cleanRaf;
-  }, []);
-
-  // =============================== Render ===============================
-  var mergedAutoSizeStyle = needAutoSize ? autoSizeStyle : null;
-  var mergedStyle = _objectSpread2$1(_objectSpread2$1({}, style), mergedAutoSizeStyle);
-  if (resizeState === RESIZE_START || resizeState === RESIZE_MEASURING) {
-    mergedStyle.overflowY = 'hidden';
-    mergedStyle.overflowX = 'hidden';
-  }
-  return /*#__PURE__*/React__namespace.createElement(RefResizeObserver, {
-    onResize: onInternalResize,
-    disabled: !(autoSize || onResize)
-  }, /*#__PURE__*/React__namespace.createElement("textarea", _extends$1({}, restProps, {
-    ref: textareaRef,
-    style: mergedStyle,
-    className: classnames(prefixCls, className, _defineProperty$1({}, "".concat(prefixCls, "-disabled"), disabled)),
-    disabled: disabled,
-    value: mergedValue,
-    onChange: onInternalChange
-  })));
-});
-
-var _excluded = ["defaultValue", "value", "onFocus", "onBlur", "onChange", "allowClear", "maxLength", "onCompositionStart", "onCompositionEnd", "suffix", "prefixCls", "classes", "showCount", "className", "style", "disabled", "hidden", "classNames", "styles", "onResize"];
-function fixEmojiLength(value, maxLength) {
-  return _toConsumableArray(value || '').slice(0, maxLength).join('');
-}
-function setTriggerValue(isCursorInEnd, preValue, triggerValue, maxLength) {
-  var newTriggerValue = triggerValue;
-  if (isCursorInEnd) {
-    // 光标在尾部，直接截断
-    newTriggerValue = fixEmojiLength(triggerValue, maxLength);
-  } else if (_toConsumableArray(preValue || '').length < triggerValue.length && _toConsumableArray(triggerValue || '').length > maxLength) {
-    // 光标在中间，如果最后的值超过最大值，则采用原先的值
-    newTriggerValue = preValue;
-  }
-  return newTriggerValue;
-}
-var TextArea$2 = /*#__PURE__*/React__default["default"].forwardRef(function (_ref, ref) {
-  var _clsx;
-  var defaultValue = _ref.defaultValue,
-    customValue = _ref.value,
-    onFocus = _ref.onFocus,
-    onBlur = _ref.onBlur,
-    onChange = _ref.onChange,
-    allowClear = _ref.allowClear,
-    maxLength = _ref.maxLength,
-    onCompositionStart = _ref.onCompositionStart,
-    onCompositionEnd = _ref.onCompositionEnd,
-    suffix = _ref.suffix,
-    _ref$prefixCls = _ref.prefixCls,
-    prefixCls = _ref$prefixCls === void 0 ? 'rc-textarea' : _ref$prefixCls,
-    classes = _ref.classes,
-    showCount = _ref.showCount,
-    className = _ref.className,
-    style = _ref.style,
-    disabled = _ref.disabled,
-    hidden = _ref.hidden,
-    classNames = _ref.classNames,
-    styles = _ref.styles,
-    onResize = _ref.onResize,
-    rest = _objectWithoutProperties(_ref, _excluded);
-  var _useMergedState = useMergedState(defaultValue, {
-      value: customValue,
-      defaultValue: defaultValue
-    }),
-    _useMergedState2 = _slicedToArray(_useMergedState, 2),
-    value = _useMergedState2[0],
-    setValue = _useMergedState2[1];
-  var resizableTextAreaRef = React.useRef(null);
-  var _React$useState = React__default["default"].useState(false),
-    _React$useState2 = _slicedToArray(_React$useState, 2),
-    focused = _React$useState2[0],
-    setFocused = _React$useState2[1];
-  var _React$useState3 = React__default["default"].useState(false),
-    _React$useState4 = _slicedToArray(_React$useState3, 2),
-    compositing = _React$useState4[0],
-    setCompositing = _React$useState4[1];
-  var oldCompositionValueRef = React__default["default"].useRef();
-  var oldSelectionStartRef = React__default["default"].useRef(0);
-  // Since ResizeObserver would resize once on mounted, manual resizing should be happened after that
-  var _React$useState5 = React__default["default"].useState(null),
-    _React$useState6 = _slicedToArray(_React$useState5, 2),
-    resizeStatus = _React$useState6[0],
-    setResizeStatus = _React$useState6[1];
-  var focus = function focus() {
-    resizableTextAreaRef.current.textArea.focus();
-  };
-  React.useImperativeHandle(ref, function () {
-    return {
-      resizableTextArea: resizableTextAreaRef.current,
-      focus: focus,
-      blur: function blur() {
-        resizableTextAreaRef.current.textArea.blur();
-      }
-    };
-  });
-  React.useEffect(function () {
-    setFocused(function (prev) {
-      return !disabled && prev;
-    });
-  }, [disabled]);
-
-  // =========================== Value Update ===========================
-  // Max length value
-  var hasMaxLength = Number(maxLength) > 0;
-  var onInternalCompositionStart = function onInternalCompositionStart(e) {
-    setCompositing(true);
-    // 拼音输入前保存一份旧值
-    oldCompositionValueRef.current = value;
-    // 保存旧的光标位置
-    oldSelectionStartRef.current = e.currentTarget.selectionStart;
-    onCompositionStart === null || onCompositionStart === void 0 ? void 0 : onCompositionStart(e);
-  };
-  var onInternalCompositionEnd = function onInternalCompositionEnd(e) {
-    setCompositing(false);
-    var triggerValue = e.currentTarget.value;
-    if (hasMaxLength) {
-      var _oldCompositionValueR;
-      var isCursorInEnd = oldSelectionStartRef.current >= maxLength + 1 || oldSelectionStartRef.current === ((_oldCompositionValueR = oldCompositionValueRef.current) === null || _oldCompositionValueR === void 0 ? void 0 : _oldCompositionValueR.length);
-      triggerValue = setTriggerValue(isCursorInEnd, oldCompositionValueRef.current, triggerValue, maxLength);
-    }
-    // Patch composition onChange when value changed
-    if (triggerValue !== value) {
-      setValue(triggerValue);
-      resolveOnChange(e.currentTarget, e, onChange, triggerValue);
-    }
-    onCompositionEnd === null || onCompositionEnd === void 0 ? void 0 : onCompositionEnd(e);
-  };
-  var handleChange = function handleChange(e) {
-    var triggerValue = e.target.value;
-    if (!compositing && hasMaxLength) {
-      // 1. 复制粘贴超过maxlength的情况 2.未超过maxlength的情况
-      var isCursorInEnd = e.target.selectionStart >= maxLength + 1 || e.target.selectionStart === triggerValue.length || !e.target.selectionStart;
-      triggerValue = setTriggerValue(isCursorInEnd, value, triggerValue, maxLength);
-    }
-    setValue(triggerValue);
-    resolveOnChange(e.currentTarget, e, onChange, triggerValue);
-  };
-  var handleKeyDown = function handleKeyDown(e) {
-    var onPressEnter = rest.onPressEnter,
-      onKeyDown = rest.onKeyDown;
-    if (e.key === 'Enter' && onPressEnter) {
-      onPressEnter(e);
-    }
-    onKeyDown === null || onKeyDown === void 0 ? void 0 : onKeyDown(e);
-  };
-  var handleFocus = function handleFocus(e) {
-    setFocused(true);
-    onFocus === null || onFocus === void 0 ? void 0 : onFocus(e);
-  };
-  var handleBlur = function handleBlur(e) {
-    setFocused(false);
-    onBlur === null || onBlur === void 0 ? void 0 : onBlur(e);
-  };
-
-  // ============================== Reset ===============================
-  var handleReset = function handleReset(e) {
-    setValue('');
-    focus();
-    resolveOnChange(resizableTextAreaRef.current.textArea, e, onChange);
-  };
-  var val = fixControlledValue(value);
-  if (!compositing && hasMaxLength && (customValue === null || customValue === undefined)) {
-    // fix #27612 将value转为数组进行截取，解决 '😂'.length === 2 等emoji表情导致的截取乱码的问题
-    val = fixEmojiLength(val, maxLength);
-  }
-  var suffixNode = suffix;
-  var dataCount;
-  if (showCount) {
-    var valueLength = _toConsumableArray(val).length;
-    if (_typeof$1(showCount) === 'object') {
-      dataCount = showCount.formatter({
-        value: val,
-        count: valueLength,
-        maxLength: maxLength
-      });
-    } else {
-      dataCount = "".concat(valueLength).concat(hasMaxLength ? " / ".concat(maxLength) : '');
-    }
-    suffixNode = /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, suffixNode, /*#__PURE__*/React__default["default"].createElement("span", {
-      className: classnames("".concat(prefixCls, "-data-count"), classNames === null || classNames === void 0 ? void 0 : classNames.count),
-      style: styles === null || styles === void 0 ? void 0 : styles.count
-    }, dataCount));
-  }
-  var handleResize = function handleResize(size) {
-    onResize === null || onResize === void 0 ? void 0 : onResize(size);
-    if (resizeStatus === null) {
-      setResizeStatus('mounted');
-    } else if (resizeStatus === 'mounted') {
-      setResizeStatus('resized');
-    }
-  };
-  var textarea = /*#__PURE__*/React__default["default"].createElement(BaseInput, {
-    value: val,
-    allowClear: allowClear,
-    handleReset: handleReset,
-    suffix: suffixNode,
-    prefixCls: prefixCls,
-    classes: {
-      affixWrapper: classnames(classes === null || classes === void 0 ? void 0 : classes.affixWrapper, (_clsx = {}, _defineProperty$1(_clsx, "".concat(prefixCls, "-show-count"), showCount), _defineProperty$1(_clsx, "".concat(prefixCls, "-textarea-allow-clear"), allowClear), _clsx))
-    },
-    disabled: disabled,
-    focused: focused,
-    className: className,
-    style: _objectSpread2$1(_objectSpread2$1({}, style), resizeStatus === 'resized' ? {
-      height: 'auto'
-    } : {}),
-    dataAttrs: {
-      affixWrapper: {
-        'data-count': typeof dataCount === 'string' ? dataCount : undefined
-      }
-    },
-    hidden: hidden,
-    inputElement: /*#__PURE__*/React__default["default"].createElement(ResizableTextArea, _extends$1({}, rest, {
-      onKeyDown: handleKeyDown,
-      onChange: handleChange,
-      onFocus: handleFocus,
-      onBlur: handleBlur,
-      onCompositionStart: onInternalCompositionStart,
-      onCompositionEnd: onInternalCompositionEnd,
-      className: classNames === null || classNames === void 0 ? void 0 : classNames.textarea,
-      style: _objectSpread2$1(_objectSpread2$1({}, styles === null || styles === void 0 ? void 0 : styles.textarea), {}, {
-        resize: style === null || style === void 0 ? void 0 : style.resize
-      }),
-      disabled: disabled,
-      prefixCls: prefixCls,
-      onResize: handleResize,
-      ref: resizableTextAreaRef
-    }))
-  });
-  return textarea;
-});
-
-var __rest$6 = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-const TextArea = /*#__PURE__*/React.forwardRef((_a, ref) => {
-  var {
-      prefixCls: customizePrefixCls,
-      bordered = true,
-      size: customizeSize,
-      disabled: customDisabled,
-      status: customStatus,
-      allowClear,
-      showCount,
-      classNames: classes
-    } = _a,
-    rest = __rest$6(_a, ["prefixCls", "bordered", "size", "disabled", "status", "allowClear", "showCount", "classNames"]);
-  const {
-    getPrefixCls,
-    direction
-  } = React__namespace.useContext(ConfigContext);
-  // ===================== Size =====================
-  const size = React__namespace.useContext(SizeContext$1);
-  const mergedSize = customizeSize || size;
-  // ===================== Disabled =====================
-  const disabled = React__namespace.useContext(DisabledContext$1);
-  const mergedDisabled = customDisabled !== null && customDisabled !== void 0 ? customDisabled : disabled;
-  // ===================== Status =====================
-  const {
-    status: contextStatus,
-    hasFeedback,
-    feedbackIcon
-  } = React__namespace.useContext(FormItemInputContext);
-  const mergedStatus = getMergedStatus(contextStatus, customStatus);
-  // ===================== Ref =====================
-  const innerRef = React__namespace.useRef(null);
-  React__namespace.useImperativeHandle(ref, () => {
-    var _a;
-    return {
-      resizableTextArea: (_a = innerRef.current) === null || _a === void 0 ? void 0 : _a.resizableTextArea,
-      focus: option => {
-        var _a, _b;
-        triggerFocus((_b = (_a = innerRef.current) === null || _a === void 0 ? void 0 : _a.resizableTextArea) === null || _b === void 0 ? void 0 : _b.textArea, option);
-      },
-      blur: () => {
-        var _a;
-        return (_a = innerRef.current) === null || _a === void 0 ? void 0 : _a.blur();
-      }
-    };
-  });
-  const prefixCls = getPrefixCls('input', customizePrefixCls);
-  // Allow clear
-  let mergedAllowClear;
-  if (typeof allowClear === 'object' && (allowClear === null || allowClear === void 0 ? void 0 : allowClear.clearIcon)) {
-    mergedAllowClear = allowClear;
-  } else if (allowClear) {
-    mergedAllowClear = {
-      clearIcon: /*#__PURE__*/React__namespace.createElement(CloseCircleFilled$1, null)
-    };
-  }
-  // ===================== Style =====================
-  const [wrapSSR, hashId] = useStyle$1(prefixCls);
-  return wrapSSR( /*#__PURE__*/React__namespace.createElement(TextArea$2, Object.assign({}, rest, {
-    disabled: mergedDisabled,
-    allowClear: mergedAllowClear,
-    classes: {
-      affixWrapper: classnames(`${prefixCls}-textarea-affix-wrapper`, {
-        [`${prefixCls}-affix-wrapper-rtl`]: direction === 'rtl',
-        [`${prefixCls}-affix-wrapper-borderless`]: !bordered,
-        [`${prefixCls}-affix-wrapper-sm`]: mergedSize === 'small',
-        [`${prefixCls}-affix-wrapper-lg`]: mergedSize === 'large',
-        [`${prefixCls}-textarea-show-count`]: showCount
-      }, getStatusClassNames(`${prefixCls}-affix-wrapper`, mergedStatus), hashId)
-    },
-    classNames: Object.assign(Object.assign({}, classes), {
-      textarea: classnames({
-        [`${prefixCls}-borderless`]: !bordered,
-        [`${prefixCls}-sm`]: mergedSize === 'small',
-        [`${prefixCls}-lg`]: mergedSize === 'large'
-      }, getStatusClassNames(prefixCls, mergedStatus), hashId, classes === null || classes === void 0 ? void 0 : classes.textarea)
-    }),
-    prefixCls: prefixCls,
-    suffix: hasFeedback && /*#__PURE__*/React__namespace.createElement("span", {
-      className: `${prefixCls}-textarea-suffix`
-    }, feedbackIcon),
-    showCount: showCount,
-    ref: innerRef
-  })));
-});
-var TextArea$1 = TextArea;
-
-// This icon file is generated automatically.
-var CopyOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z" } }] }, "name": "copy", "theme": "outlined" };
-var CopyOutlinedSvg = CopyOutlined$2;
-
-var CopyOutlined = function CopyOutlined(props, ref) {
-  return /*#__PURE__*/React__namespace.createElement(AntdIcon, _objectSpread2$1(_objectSpread2$1({}, props), {}, {
-    ref: ref,
-    icon: CopyOutlinedSvg
-  }));
-};
-CopyOutlined.displayName = 'CopyOutlined';
-var CopyOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(CopyOutlined);
-
-// This icon file is generated automatically.
-var EditOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M257.7 752c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 000-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 009.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9zm67.4-174.4L687.8 215l73.3 73.3-362.7 362.6-88.9 15.7 15.6-89zM880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32z" } }] }, "name": "edit", "theme": "outlined" };
-var EditOutlinedSvg = EditOutlined$2;
-
-var EditOutlined = function EditOutlined(props, ref) {
-  return /*#__PURE__*/React__namespace.createElement(AntdIcon, _objectSpread2$1(_objectSpread2$1({}, props), {}, {
-    ref: ref,
-    icon: EditOutlinedSvg
-  }));
-};
-EditOutlined.displayName = 'EditOutlined';
-var EditOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(EditOutlined);
-
-// This icon file is generated automatically.
-var EnterOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M864 170h-60c-4.4 0-8 3.6-8 8v518H310v-73c0-6.7-7.8-10.5-13-6.3l-141.9 112a8 8 0 000 12.6l141.9 112c5.3 4.2 13 .4 13-6.3v-75h498c35.3 0 64-28.7 64-64V178c0-4.4-3.6-8-8-8z" } }] }, "name": "enter", "theme": "outlined" };
-var EnterOutlinedSvg = EnterOutlined$2;
-
-var EnterOutlined = function EnterOutlined(props, ref) {
-  return /*#__PURE__*/React__namespace.createElement(AntdIcon, _objectSpread2$1(_objectSpread2$1({}, props), {}, {
-    ref: ref,
-    icon: EnterOutlinedSvg
-  }));
-};
-EnterOutlined.displayName = 'EnterOutlined';
-var EnterOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(EnterOutlined);
-
-var __rest$5 = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-const inlineStyle = {
-  border: 0,
-  background: 'transparent',
-  padding: 0,
-  lineHeight: 'inherit',
-  display: 'inline-block'
-};
-const TransButton = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
-  const onKeyDown = event => {
-    const {
-      keyCode
-    } = event;
-    if (keyCode === KeyCode.ENTER) {
-      event.preventDefault();
-    }
-  };
-  const onKeyUp = event => {
-    const {
-      keyCode
-    } = event;
-    const {
-      onClick
-    } = props;
-    if (keyCode === KeyCode.ENTER && onClick) {
-      onClick();
-    }
-  };
-  const {
-      style,
-      noStyle,
-      disabled
-    } = props,
-    restProps = __rest$5(props, ["style", "noStyle", "disabled"]);
-  let mergedStyle = {};
-  if (!noStyle) {
-    mergedStyle = Object.assign({}, inlineStyle);
-  }
-  if (disabled) {
-    mergedStyle.pointerEvents = 'none';
-  }
-  mergedStyle = Object.assign(Object.assign({}, mergedStyle), style);
-  return /*#__PURE__*/React__namespace.createElement("div", Object.assign({
-    role: "button",
-    tabIndex: 0,
-    ref: ref
-  }, restProps, {
-    onKeyDown: onKeyDown,
-    onKeyUp: onKeyUp,
-    style: mergedStyle
-  }));
-});
-var TransButton$1 = TransButton;
-
-var toggleSelection = function () {
-  var selection = document.getSelection();
-  if (!selection.rangeCount) {
-    return function () {};
-  }
-  var active = document.activeElement;
-
-  var ranges = [];
-  for (var i = 0; i < selection.rangeCount; i++) {
-    ranges.push(selection.getRangeAt(i));
-  }
-
-  switch (active.tagName.toUpperCase()) { // .toUpperCase handles XHTML
-    case 'INPUT':
-    case 'TEXTAREA':
-      active.blur();
-      break;
-
-    default:
-      active = null;
-      break;
-  }
-
-  selection.removeAllRanges();
-  return function () {
-    selection.type === 'Caret' &&
-    selection.removeAllRanges();
-
-    if (!selection.rangeCount) {
-      ranges.forEach(function(range) {
-        selection.addRange(range);
-      });
-    }
-
-    active &&
-    active.focus();
-  };
-};
-
-var clipboardToIE11Formatting = {
-  "text/plain": "Text",
-  "text/html": "Url",
-  "default": "Text"
-};
-
-var defaultMessage = "Copy to clipboard: #{key}, Enter";
-
-function format(message) {
-  var copyKey = (/mac os x/i.test(navigator.userAgent) ? "⌘" : "Ctrl") + "+C";
-  return message.replace(/#{\s*key\s*}/g, copyKey);
-}
-
-function copy(text, options) {
-  var debug,
-    message,
-    reselectPrevious,
-    range,
-    selection,
-    mark,
-    success = false;
-  if (!options) {
-    options = {};
-  }
-  debug = options.debug || false;
-  try {
-    reselectPrevious = toggleSelection();
-
-    range = document.createRange();
-    selection = document.getSelection();
-
-    mark = document.createElement("span");
-    mark.textContent = text;
-    // avoid screen readers from reading out loud the text
-    mark.ariaHidden = "true";
-    // reset user styles for span element
-    mark.style.all = "unset";
-    // prevents scrolling to the end of the page
-    mark.style.position = "fixed";
-    mark.style.top = 0;
-    mark.style.clip = "rect(0, 0, 0, 0)";
-    // used to preserve spaces and line breaks
-    mark.style.whiteSpace = "pre";
-    // do not inherit user-select (it may be `none`)
-    mark.style.webkitUserSelect = "text";
-    mark.style.MozUserSelect = "text";
-    mark.style.msUserSelect = "text";
-    mark.style.userSelect = "text";
-    mark.addEventListener("copy", function(e) {
-      e.stopPropagation();
-      if (options.format) {
-        e.preventDefault();
-        if (typeof e.clipboardData === "undefined") { // IE 11
-          debug && console.warn("unable to use e.clipboardData");
-          debug && console.warn("trying IE specific stuff");
-          window.clipboardData.clearData();
-          var format = clipboardToIE11Formatting[options.format] || clipboardToIE11Formatting["default"];
-          window.clipboardData.setData(format, text);
-        } else { // all other browsers
-          e.clipboardData.clearData();
-          e.clipboardData.setData(options.format, text);
-        }
-      }
-      if (options.onCopy) {
-        e.preventDefault();
-        options.onCopy(e.clipboardData);
-      }
-    });
-
-    document.body.appendChild(mark);
-
-    range.selectNodeContents(mark);
-    selection.addRange(range);
-
-    var successful = document.execCommand("copy");
-    if (!successful) {
-      throw new Error("copy command was unsuccessful");
-    }
-    success = true;
-  } catch (err) {
-    debug && console.error("unable to copy using execCommand: ", err);
-    debug && console.warn("trying IE specific stuff");
-    try {
-      window.clipboardData.setData(options.format || "text", text);
-      options.onCopy && options.onCopy(window.clipboardData);
-      success = true;
-    } catch (err) {
-      debug && console.error("unable to copy using clipboardData: ", err);
-      debug && console.error("falling back to prompt");
-      message = format("message" in options ? options.message : defaultMessage);
-      window.prompt(message, text);
-    }
-  } finally {
-    if (selection) {
-      if (typeof selection.removeRange == "function") {
-        selection.removeRange(range);
-      } else {
-        selection.removeAllRanges();
-      }
-    }
-
-    if (mark) {
-      document.body.removeChild(mark);
-    }
-    reselectPrevious();
-  }
-
-  return success;
-}
-
-var copyToClipboard = copy;
-
-/*
-.typography-title(@fontSize; @fontWeight; @lineHeight; @headingColor; @headingMarginBottom;) {
-  margin-bottom: @headingMarginBottom;
-  color: @headingColor;
-  font-weight: @fontWeight;
-  fontSize: @fontSize;
-  line-height: @lineHeight;
-}
-*/
-// eslint-disable-next-line import/prefer-default-export
-const getTitleStyle = (fontSize, lineHeight, color, token) => {
-  const {
-    sizeMarginHeadingVerticalEnd,
-    fontWeightStrong
-  } = token;
-  return {
-    marginBottom: sizeMarginHeadingVerticalEnd,
-    color,
-    fontWeight: fontWeightStrong,
-    fontSize,
-    lineHeight
-  };
-};
-// eslint-disable-next-line import/prefer-default-export
-const getTitleStyles = token => {
-  const headings = [1, 2, 3, 4, 5];
-  const styles = {};
-  headings.forEach(headingLevel => {
-    styles[`
-      h${headingLevel}&,
-      div&-h${headingLevel},
-      div&-h${headingLevel} > textarea,
-      h${headingLevel}
-    `] = getTitleStyle(token[`fontSizeHeading${headingLevel}`], token[`lineHeightHeading${headingLevel}`], token.colorTextHeading, token);
-  });
-  return styles;
-};
-const getLinkStyles = token => {
-  const {
-    componentCls
-  } = token;
-  return {
-    'a&, a': Object.assign(Object.assign({}, operationUnit(token)), {
-      textDecoration: token.linkDecoration,
-      '&:active, &:hover': {
-        textDecoration: token.linkHoverDecoration
-      },
-      [`&[disabled], &${componentCls}-disabled`]: {
-        color: token.colorTextDisabled,
-        cursor: 'not-allowed',
-        '&:active, &:hover': {
-          color: token.colorTextDisabled
-        },
-        '&:active': {
-          pointerEvents: 'none'
-        }
-      }
-    })
-  };
-};
-const getResetStyles = token => ({
-  code: {
-    margin: '0 0.2em',
-    paddingInline: '0.4em',
-    paddingBlock: '0.2em 0.1em',
-    fontSize: '85%',
-    fontFamily: token.fontFamilyCode,
-    background: 'rgba(150, 150, 150, 0.1)',
-    border: '1px solid rgba(100, 100, 100, 0.2)',
-    borderRadius: 3
-  },
-  kbd: {
-    margin: '0 0.2em',
-    paddingInline: '0.4em',
-    paddingBlock: '0.15em 0.1em',
-    fontSize: '90%',
-    fontFamily: token.fontFamilyCode,
-    background: 'rgba(150, 150, 150, 0.06)',
-    border: '1px solid rgba(100, 100, 100, 0.2)',
-    borderBottomWidth: 2,
-    borderRadius: 3
-  },
-  mark: {
-    padding: 0,
-    // FIXME hardcode in v4
-    backgroundColor: gold[2]
-  },
-  'u, ins': {
-    textDecoration: 'underline',
-    textDecorationSkipInk: 'auto'
-  },
-  's, del': {
-    textDecoration: 'line-through'
-  },
-  strong: {
-    fontWeight: 600
-  },
-  // list
-  'ul, ol': {
-    marginInline: 0,
-    marginBlock: '0 1em',
-    padding: 0,
-    li: {
-      marginInline: '20px 0',
-      marginBlock: 0,
-      paddingInline: '4px 0',
-      paddingBlock: 0
-    }
-  },
-  ul: {
-    listStyleType: 'circle',
-    ul: {
-      listStyleType: 'disc'
-    }
-  },
-  ol: {
-    listStyleType: 'decimal'
-  },
-  // pre & block
-  'pre, blockquote': {
-    margin: '1em 0'
-  },
-  pre: {
-    padding: '0.4em 0.6em',
-    whiteSpace: 'pre-wrap',
-    wordWrap: 'break-word',
-    background: 'rgba(150, 150, 150, 0.1)',
-    border: '1px solid rgba(100, 100, 100, 0.2)',
-    borderRadius: 3,
-    fontFamily: token.fontFamilyCode,
-    // Compatible for marked
-    code: {
-      display: 'inline',
-      margin: 0,
-      padding: 0,
-      fontSize: 'inherit',
-      fontFamily: 'inherit',
-      background: 'transparent',
-      border: 0
-    }
-  },
-  blockquote: {
-    paddingInline: '0.6em 0',
-    paddingBlock: 0,
-    borderInlineStart: '4px solid rgba(100, 100, 100, 0.2)',
-    opacity: 0.85
-  }
-});
-const getEditableStyles = token => {
-  const {
-    componentCls
-  } = token;
-  const inputToken = initInputToken(token);
-  const inputShift = inputToken.inputPaddingVertical + 1;
-  return {
-    '&-edit-content': {
-      position: 'relative',
-      'div&': {
-        insetInlineStart: -token.paddingSM,
-        marginTop: -inputShift,
-        marginBottom: `calc(1em - ${inputShift}px)`
-      },
-      [`${componentCls}-edit-content-confirm`]: {
-        position: 'absolute',
-        insetInlineEnd: token.marginXS + 2,
-        insetBlockEnd: token.marginXS,
-        color: token.colorTextDescription,
-        // default style
-        fontWeight: 'normal',
-        fontSize: token.fontSize,
-        fontStyle: 'normal',
-        pointerEvents: 'none'
-      },
-      textarea: {
-        margin: '0!important',
-        // Fix Editable Textarea flash in Firefox
-        MozTransition: 'none',
-        height: '1em'
-      }
-    }
-  };
-};
-const getCopyableStyles = token => ({
-  '&-copy-success': {
-    [`
-    &,
-    &:hover,
-    &:focus`]: {
-      color: token.colorSuccess
-    }
-  }
-});
-const getEllipsisStyles = () => ({
-  [`
-  a&-ellipsis,
-  span&-ellipsis
-  `]: {
-    display: 'inline-block',
-    maxWidth: '100%'
-  },
-  '&-single-line': {
-    whiteSpace: 'nowrap'
-  },
-  '&-ellipsis-single-line': {
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    // https://blog.csdn.net/iefreer/article/details/50421025
-    'a&, span&': {
-      verticalAlign: 'bottom'
-    }
-  },
-  '&-ellipsis-multiple-line': {
-    display: '-webkit-box',
-    overflow: 'hidden',
-    WebkitLineClamp: 3,
-    WebkitBoxOrient: 'vertical'
-  }
-});
-
-const genTypographyStyle = token => {
-  const {
-    componentCls,
-    sizeMarginHeadingVerticalStart
-  } = token;
-  return {
-    [componentCls]: Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({
-      color: token.colorText,
-      wordBreak: 'break-word',
-      lineHeight: token.lineHeight,
-      [`&${componentCls}-secondary`]: {
-        color: token.colorTextDescription
-      },
-      [`&${componentCls}-success`]: {
-        color: token.colorSuccess
-      },
-      [`&${componentCls}-warning`]: {
-        color: token.colorWarning
-      },
-      [`&${componentCls}-danger`]: {
-        color: token.colorError,
-        'a&:active, a&:focus': {
-          color: token.colorErrorActive
-        },
-        'a&:hover': {
-          color: token.colorErrorHover
-        }
-      },
-      [`&${componentCls}-disabled`]: {
-        color: token.colorTextDisabled,
-        cursor: 'not-allowed',
-        userSelect: 'none'
-      },
-      [`
-        div&,
-        p
-      `]: {
-        marginBottom: '1em'
-      }
-    }, getTitleStyles(token)), {
-      [`
-      & + h1${componentCls},
-      & + h2${componentCls},
-      & + h3${componentCls},
-      & + h4${componentCls},
-      & + h5${componentCls}
-      `]: {
-        marginTop: sizeMarginHeadingVerticalStart
-      },
-      [`
-      div,
-      ul,
-      li,
-      p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5`]: {
-        [`
-        + h1,
-        + h2,
-        + h3,
-        + h4,
-        + h5
-        `]: {
-          marginTop: sizeMarginHeadingVerticalStart
-        }
-      }
-    }), getResetStyles(token)), getLinkStyles(token)), {
-      // Operation
-      [`
-        ${componentCls}-expand,
-        ${componentCls}-edit,
-        ${componentCls}-copy
-      `]: Object.assign(Object.assign({}, operationUnit(token)), {
-        marginInlineStart: token.marginXXS
-      })
-    }), getEditableStyles(token)), getCopyableStyles(token)), getEllipsisStyles()), {
-      '&-rtl': {
-        direction: 'rtl'
-      }
-    })
-  };
-};
-// ============================== Export ==============================
-var useStyle = genComponentStyleHook('Typography', token => [genTypographyStyle(token)], {
-  sizeMarginHeadingVerticalStart: '1.2em',
-  sizeMarginHeadingVerticalEnd: '0.5em'
-});
-
-const Editable = _ref => {
-  let {
-    prefixCls,
-    'aria-label': ariaLabel,
-    className,
-    style,
-    direction,
-    maxLength,
-    autoSize = true,
-    value,
-    onSave,
-    onCancel,
-    onEnd,
-    component,
-    enterIcon = /*#__PURE__*/React__namespace.createElement(EnterOutlined$1, null)
-  } = _ref;
-  const ref = React__namespace.useRef(null);
-  const inComposition = React__namespace.useRef(false);
-  const lastKeyCode = React__namespace.useRef();
-  const [current, setCurrent] = React__namespace.useState(value);
-  React__namespace.useEffect(() => {
-    setCurrent(value);
-  }, [value]);
-  React__namespace.useEffect(() => {
-    if (ref.current && ref.current.resizableTextArea) {
-      const {
-        textArea
-      } = ref.current.resizableTextArea;
-      textArea.focus();
-      const {
-        length
-      } = textArea.value;
-      textArea.setSelectionRange(length, length);
-    }
-  }, []);
-  const onChange = _ref2 => {
-    let {
-      target
-    } = _ref2;
-    setCurrent(target.value.replace(/[\n\r]/g, ''));
-  };
-  const onCompositionStart = () => {
-    inComposition.current = true;
-  };
-  const onCompositionEnd = () => {
-    inComposition.current = false;
-  };
-  const onKeyDown = _ref3 => {
-    let {
-      keyCode
-    } = _ref3;
-    // We don't record keyCode when IME is using
-    if (inComposition.current) return;
-    lastKeyCode.current = keyCode;
-  };
-  const confirmChange = () => {
-    onSave(current.trim());
-  };
-  const onKeyUp = _ref4 => {
-    let {
-      keyCode,
-      ctrlKey,
-      altKey,
-      metaKey,
-      shiftKey
-    } = _ref4;
-    // Check if it's a real key
-    if (lastKeyCode.current === keyCode && !inComposition.current && !ctrlKey && !altKey && !metaKey && !shiftKey) {
-      if (keyCode === KeyCode.ENTER) {
-        confirmChange();
-        onEnd === null || onEnd === void 0 ? void 0 : onEnd();
-      } else if (keyCode === KeyCode.ESC) {
-        onCancel();
-      }
-    }
-  };
-  const onBlur = () => {
-    confirmChange();
-  };
-  const textClassName = component ? `${prefixCls}-${component}` : '';
-  const [wrapSSR, hashId] = useStyle(prefixCls);
-  const textAreaClassName = classnames(prefixCls, `${prefixCls}-edit-content`, {
-    [`${prefixCls}-rtl`]: direction === 'rtl'
-  }, className, textClassName, hashId);
-  return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", {
-    className: textAreaClassName,
-    style: style
-  }, /*#__PURE__*/React__namespace.createElement(TextArea$1, {
-    ref: ref,
-    maxLength: maxLength,
-    value: current,
-    onChange: onChange,
-    onKeyDown: onKeyDown,
-    onKeyUp: onKeyUp,
-    onCompositionStart: onCompositionStart,
-    onCompositionEnd: onCompositionEnd,
-    onBlur: onBlur,
-    "aria-label": ariaLabel,
-    rows: 1,
-    autoSize: autoSize
-  }), enterIcon !== null ? cloneElement(enterIcon, {
-    className: `${prefixCls}-edit-content-confirm`
-  }) : null));
-};
-var Editable$1 = Editable;
-
-function useMergedConfig(propConfig, templateConfig) {
-  return React__namespace.useMemo(() => {
-    const support = !!propConfig;
-    return [support, Object.assign(Object.assign({}, templateConfig), support && typeof propConfig === 'object' ? propConfig : null)];
-  }, [propConfig]);
-}
-
-/** Similar with `useEffect` but only trigger after mounted */
-const useUpdatedEffect = (callback, conditions) => {
-  const mountRef = React__namespace.useRef(false);
-  React__namespace.useEffect(() => {
-    if (mountRef.current) {
-      callback();
-    } else {
-      mountRef.current = true;
-    }
-  }, conditions);
-};
-var useUpdatedEffect$1 = useUpdatedEffect;
-
-var __rest$4 = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-const Typography$2 = /*#__PURE__*/React__namespace.forwardRef((_a, ref) => {
-  var {
-      prefixCls: customizePrefixCls,
-      component: Component = 'article',
-      className,
-      rootClassName,
-      setContentRef,
-      children,
-      direction: typographyDirection
-    } = _a,
-    restProps = __rest$4(_a, ["prefixCls", "component", "className", "rootClassName", "setContentRef", "children", "direction"]);
-  const {
-    getPrefixCls,
-    direction: contextDirection
-  } = React__namespace.useContext(ConfigContext);
-  const direction = typographyDirection !== null && typographyDirection !== void 0 ? typographyDirection : contextDirection;
-  let mergedRef = ref;
-  if (setContentRef) {
-    process.env.NODE_ENV !== "production" ? warning$2(false, 'Typography', '`setContentRef` is deprecated. Please use `ref` instead.') : void 0;
-    mergedRef = composeRef(ref, setContentRef);
-  }
-  const prefixCls = getPrefixCls('typography', customizePrefixCls);
-  // Style
-  const [wrapSSR, hashId] = useStyle(prefixCls);
-  const componentClassName = classnames(prefixCls, {
-    [`${prefixCls}-rtl`]: direction === 'rtl'
-  }, className, rootClassName, hashId);
-  return wrapSSR(
-  /*#__PURE__*/
-  // @ts-expect-error: Expression produces a union type that is too complex to represent.
-  React__namespace.createElement(Component, Object.assign({
-    className: componentClassName,
-    ref: mergedRef
-  }, restProps), children));
-});
-if (process.env.NODE_ENV !== 'production') {
-  Typography$2.displayName = 'Typography';
-}
-// es default export should use const instead of let
-var OriginTypography = Typography$2;
-
-function cuttable(node) {
-  const type = typeof node;
-  return type === 'string' || type === 'number';
-}
-function getNodesLen(nodeList) {
-  let totalLen = 0;
-  nodeList.forEach(node => {
-    if (cuttable(node)) {
-      totalLen += String(node).length;
-    } else {
-      totalLen += 1;
-    }
-  });
-  return totalLen;
-}
-function sliceNodes(nodeList, len) {
-  let currLen = 0;
-  const currentNodeList = [];
-  for (let i = 0; i < nodeList.length; i += 1) {
-    // Match to return
-    if (currLen === len) {
-      return currentNodeList;
-    }
-    const node = nodeList[i];
-    const canCut = cuttable(node);
-    const nodeLen = canCut ? String(node).length : 1;
-    const nextLen = currLen + nodeLen;
-    // Exceed but current not which means we need cut this
-    // This will not happen on validate ReactElement
-    if (nextLen > len) {
-      const restLen = len - currLen;
-      currentNodeList.push(String(node).slice(0, restLen));
-      return currentNodeList;
-    }
-    currentNodeList.push(node);
-    currLen = nextLen;
-  }
-  return nodeList;
-}
-const NONE = 0;
-const PREPARE = 1;
-const WALKING = 2;
-const DONE_WITH_ELLIPSIS = 3;
-const DONE_WITHOUT_ELLIPSIS = 4;
-const Ellipsis = _ref => {
-  let {
-    enabledMeasure,
-    children,
-    text,
-    width,
-    fontSize,
-    rows,
-    onEllipsis
-  } = _ref;
-  const [[startLen, midLen, endLen], setCutLength] = React__namespace.useState([0, 0, 0]);
-  const [walkingState, setWalkingState] = React__namespace.useState(NONE);
-  const [singleRowHeight, setSingleRowHeight] = React__namespace.useState(0);
-  const singleRowRef = React__namespace.useRef(null);
-  const midRowRef = React__namespace.useRef(null);
-  const nodeList = React__namespace.useMemo(() => toArray$2(text), [text]);
-  const totalLen = React__namespace.useMemo(() => getNodesLen(nodeList), [nodeList]);
-  const mergedChildren = React__namespace.useMemo(() => {
-    if (!enabledMeasure || walkingState !== DONE_WITH_ELLIPSIS) {
-      return children(nodeList, false);
-    }
-    return children(sliceNodes(nodeList, midLen), midLen < totalLen);
-  }, [enabledMeasure, walkingState, children, nodeList, midLen, totalLen]);
-  // ======================== Walk ========================
-  useLayoutEffect(() => {
-    if (enabledMeasure && width && fontSize && totalLen) {
-      setWalkingState(PREPARE);
-      setCutLength([0, Math.ceil(totalLen / 2), totalLen]);
-    }
-  }, [enabledMeasure, width, fontSize, text, totalLen, rows]);
-  useLayoutEffect(() => {
-    var _a;
-    if (walkingState === PREPARE) {
-      setSingleRowHeight(((_a = singleRowRef.current) === null || _a === void 0 ? void 0 : _a.offsetHeight) || 0);
-    }
-  }, [walkingState]);
-  useLayoutEffect(() => {
-    var _a, _b;
-    if (singleRowHeight) {
-      if (walkingState === PREPARE) {
-        // Ignore if position is enough
-        const midHeight = ((_a = midRowRef.current) === null || _a === void 0 ? void 0 : _a.offsetHeight) || 0;
-        const maxHeight = rows * singleRowHeight;
-        if (midHeight <= maxHeight) {
-          setWalkingState(DONE_WITHOUT_ELLIPSIS);
-          onEllipsis(false);
-        } else {
-          setWalkingState(WALKING);
-        }
-      } else if (walkingState === WALKING) {
-        if (startLen !== endLen) {
-          const midHeight = ((_b = midRowRef.current) === null || _b === void 0 ? void 0 : _b.offsetHeight) || 0;
-          const maxHeight = rows * singleRowHeight;
-          let nextStartLen = startLen;
-          let nextEndLen = endLen;
-          // We reach the last round
-          if (startLen === endLen - 1) {
-            nextEndLen = startLen;
-          } else if (midHeight <= maxHeight) {
-            nextStartLen = midLen;
-          } else {
-            nextEndLen = midLen;
-          }
-          const nextMidLen = Math.ceil((nextStartLen + nextEndLen) / 2);
-          setCutLength([nextStartLen, nextMidLen, nextEndLen]);
-        } else {
-          setWalkingState(DONE_WITH_ELLIPSIS);
-          onEllipsis(true);
-        }
-      }
-    }
-  }, [walkingState, startLen, endLen, rows, singleRowHeight]);
-  // ======================= Render =======================
-  const measureStyle = {
-    width,
-    whiteSpace: 'normal',
-    margin: 0,
-    padding: 0
-  };
-  const renderMeasure = (content, ref, style) => /*#__PURE__*/React__namespace.createElement("span", {
-    "aria-hidden": true,
-    ref: ref,
-    style: Object.assign({
-      position: 'fixed',
-      display: 'block',
-      left: 0,
-      top: 0,
-      zIndex: -9999,
-      visibility: 'hidden',
-      pointerEvents: 'none',
-      fontSize: Math.floor(fontSize / 2) * 2
-    }, style)
-  }, content);
-  const renderMeasureSlice = (len, ref) => {
-    const sliceNodeList = sliceNodes(nodeList, len);
-    return renderMeasure(children(sliceNodeList, true), ref, measureStyle);
-  };
-  return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, mergedChildren, enabledMeasure && walkingState !== DONE_WITH_ELLIPSIS && walkingState !== DONE_WITHOUT_ELLIPSIS && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, renderMeasure('lg', singleRowRef, {
-    wordBreak: 'keep-all',
-    whiteSpace: 'nowrap'
-  }), walkingState === PREPARE ? renderMeasure(children(nodeList, false), midRowRef, measureStyle) : renderMeasureSlice(midLen, midRowRef)));
-};
-if (process.env.NODE_ENV !== 'production') {
-  Ellipsis.displayName = 'Ellipsis';
-}
-var Ellipsis$1 = Ellipsis;
-
-const EllipsisTooltip = _ref => {
-  let {
-    enabledEllipsis,
-    isEllipsis,
-    children,
-    tooltipProps
-  } = _ref;
-  if (!(tooltipProps === null || tooltipProps === void 0 ? void 0 : tooltipProps.title) || !enabledEllipsis) {
-    return children;
-  }
-  return /*#__PURE__*/React__namespace.createElement(Tooltip$1, Object.assign({
-    open: isEllipsis ? undefined : false
-  }, tooltipProps), children);
-};
-if (process.env.NODE_ENV !== 'production') {
-  EllipsisTooltip.displayName = 'EllipsisTooltip';
-}
-var EllipsisTooltip$1 = EllipsisTooltip;
-
-var __rest$3 = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-function wrapperDecorations(_ref, content) {
-  let {
-    mark,
-    code,
-    underline,
-    delete: del,
-    strong,
-    keyboard,
-    italic
-  } = _ref;
-  let currentContent = content;
-  function wrap(tag, needed) {
-    if (!needed) {
-      return;
-    }
-    currentContent = /*#__PURE__*/React__namespace.createElement(tag, {}, currentContent);
-  }
-  wrap('strong', strong);
-  wrap('u', underline);
-  wrap('del', del);
-  wrap('code', code);
-  wrap('mark', mark);
-  wrap('kbd', keyboard);
-  wrap('i', italic);
-  return currentContent;
-}
-function getNode(dom, defaultNode, needDom) {
-  if (dom === true || dom === undefined) {
-    return defaultNode;
-  }
-  return dom || needDom && defaultNode;
-}
-function toList(val) {
-  if (val === false) {
-    return [false, false];
-  }
-  return Array.isArray(val) ? val : [val];
-}
-const ELLIPSIS_STR = '...';
-const Base = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
-  var _a, _b, _c;
-  const {
-      prefixCls: customizePrefixCls,
-      className,
-      style,
-      type,
-      disabled,
-      children,
-      ellipsis,
-      editable,
-      copyable,
-      component,
-      title
-    } = props,
-    restProps = __rest$3(props, ["prefixCls", "className", "style", "type", "disabled", "children", "ellipsis", "editable", "copyable", "component", "title"]);
-  const {
-    getPrefixCls,
-    direction
-  } = React__namespace.useContext(ConfigContext);
-  const [textLocale] = useLocale$1('Text');
-  const typographyRef = React__namespace.useRef(null);
-  const editIconRef = React__namespace.useRef(null);
-  // ============================ MISC ============================
-  const prefixCls = getPrefixCls('typography', customizePrefixCls);
-  const textProps = omit(restProps, ['mark', 'code', 'delete', 'underline', 'strong', 'keyboard', 'italic']);
-  // ========================== Editable ==========================
-  const [enableEdit, editConfig] = useMergedConfig(editable);
-  const [editing, setEditing] = useMergedState(false, {
-    value: editConfig.editing
-  });
-  const {
-    triggerType = ['icon']
-  } = editConfig;
-  const triggerEdit = edit => {
-    var _a;
-    if (edit) {
-      (_a = editConfig.onStart) === null || _a === void 0 ? void 0 : _a.call(editConfig);
-    }
-    setEditing(edit);
-  };
-  // Focus edit icon when back
-  useUpdatedEffect$1(() => {
-    var _a;
-    if (!editing) {
-      (_a = editIconRef.current) === null || _a === void 0 ? void 0 : _a.focus();
-    }
-  }, [editing]);
-  const onEditClick = e => {
-    e === null || e === void 0 ? void 0 : e.preventDefault();
-    triggerEdit(true);
-  };
-  const onEditChange = value => {
-    var _a;
-    (_a = editConfig.onChange) === null || _a === void 0 ? void 0 : _a.call(editConfig, value);
-    triggerEdit(false);
-  };
-  const onEditCancel = () => {
-    var _a;
-    (_a = editConfig.onCancel) === null || _a === void 0 ? void 0 : _a.call(editConfig);
-    triggerEdit(false);
-  };
-  // ========================== Copyable ==========================
-  const [enableCopy, copyConfig] = useMergedConfig(copyable);
-  const [copied, setCopied] = React__namespace.useState(false);
-  const copyIdRef = React__namespace.useRef();
-  const copyOptions = {};
-  if (copyConfig.format) {
-    copyOptions.format = copyConfig.format;
-  }
-  const cleanCopyId = () => {
-    window.clearTimeout(copyIdRef.current);
-  };
-  const onCopyClick = e => {
-    var _a;
-    e === null || e === void 0 ? void 0 : e.preventDefault();
-    e === null || e === void 0 ? void 0 : e.stopPropagation();
-    copyToClipboard(copyConfig.text || String(children) || '', copyOptions);
-    setCopied(true);
-    // Trigger tips update
-    cleanCopyId();
-    copyIdRef.current = window.setTimeout(() => {
-      setCopied(false);
-    }, 3000);
-    (_a = copyConfig.onCopy) === null || _a === void 0 ? void 0 : _a.call(copyConfig, e);
-  };
-  React__namespace.useEffect(() => cleanCopyId, []);
-  // ========================== Ellipsis ==========================
-  const [isLineClampSupport, setIsLineClampSupport] = React__namespace.useState(false);
-  const [isTextOverflowSupport, setIsTextOverflowSupport] = React__namespace.useState(false);
-  const [expanded, setExpanded] = React__namespace.useState(false);
-  const [isJsEllipsis, setIsJsEllipsis] = React__namespace.useState(false);
-  const [isNativeEllipsis, setIsNativeEllipsis] = React__namespace.useState(false);
-  const [isNativeVisible, setIsNativeVisible] = React__namespace.useState(true);
-  const [enableEllipsis, ellipsisConfig] = useMergedConfig(ellipsis, {
-    expandable: false
-  });
-  const mergedEnableEllipsis = enableEllipsis && !expanded;
-  // Shared prop to reduce bundle size
-  const {
-    rows = 1
-  } = ellipsisConfig;
-  const needMeasureEllipsis = React__namespace.useMemo(() =>
-  // Disable ellipsis
-  !mergedEnableEllipsis ||
-  // Provide suffix
-  ellipsisConfig.suffix !== undefined || ellipsisConfig.onEllipsis ||
-  // Can't use css ellipsis since we need to provide the place for button
-  ellipsisConfig.expandable || enableEdit || enableCopy, [mergedEnableEllipsis, ellipsisConfig, enableEdit, enableCopy]);
-  useLayoutEffect(() => {
-    if (enableEllipsis && !needMeasureEllipsis) {
-      setIsLineClampSupport(isStyleSupport('webkitLineClamp'));
-      setIsTextOverflowSupport(isStyleSupport('textOverflow'));
-    }
-  }, [needMeasureEllipsis, enableEllipsis]);
-  const cssEllipsis = React__namespace.useMemo(() => {
-    if (needMeasureEllipsis) {
-      return false;
-    }
-    if (rows === 1) {
-      return isTextOverflowSupport;
-    }
-    return isLineClampSupport;
-  }, [needMeasureEllipsis, isTextOverflowSupport, isLineClampSupport]);
-  const isMergedEllipsis = mergedEnableEllipsis && (cssEllipsis ? isNativeEllipsis : isJsEllipsis);
-  const cssTextOverflow = mergedEnableEllipsis && rows === 1 && cssEllipsis;
-  const cssLineClamp = mergedEnableEllipsis && rows > 1 && cssEllipsis;
-  // >>>>> Expand
-  const onExpandClick = e => {
-    var _a;
-    setExpanded(true);
-    (_a = ellipsisConfig.onExpand) === null || _a === void 0 ? void 0 : _a.call(ellipsisConfig, e);
-  };
-  const [ellipsisWidth, setEllipsisWidth] = React__namespace.useState(0);
-  const [ellipsisFontSize, setEllipsisFontSize] = React__namespace.useState(0);
-  const onResize = (_ref2, element) => {
-    let {
-      offsetWidth
-    } = _ref2;
-    var _a;
-    setEllipsisWidth(offsetWidth);
-    setEllipsisFontSize(parseInt((_a = window.getComputedStyle) === null || _a === void 0 ? void 0 : _a.call(window, element).fontSize, 10) || 0);
-  };
-  // >>>>> JS Ellipsis
-  const onJsEllipsis = jsEllipsis => {
-    var _a;
-    setIsJsEllipsis(jsEllipsis);
-    // Trigger if changed
-    if (isJsEllipsis !== jsEllipsis) {
-      (_a = ellipsisConfig.onEllipsis) === null || _a === void 0 ? void 0 : _a.call(ellipsisConfig, jsEllipsis);
-    }
-  };
-  // >>>>> Native ellipsis
-  React__namespace.useEffect(() => {
-    const textEle = typographyRef.current;
-    if (enableEllipsis && cssEllipsis && textEle) {
-      const currentEllipsis = cssLineClamp ? textEle.offsetHeight < textEle.scrollHeight : textEle.offsetWidth < textEle.scrollWidth;
-      if (isNativeEllipsis !== currentEllipsis) {
-        setIsNativeEllipsis(currentEllipsis);
-      }
-    }
-  }, [enableEllipsis, cssEllipsis, children, cssLineClamp, isNativeVisible]);
-  // https://github.com/ant-design/ant-design/issues/36786
-  // Use IntersectionObserver to check if element is invisible
-  React__namespace.useEffect(() => {
-    const textEle = typographyRef.current;
-    if (typeof IntersectionObserver === 'undefined' || !textEle || !cssEllipsis || !mergedEnableEllipsis) {
-      return;
-    }
-    /* eslint-disable-next-line compat/compat */
-    const observer = new IntersectionObserver(() => {
-      setIsNativeVisible(!!textEle.offsetParent);
-    });
-    observer.observe(textEle);
-    return () => {
-      observer.disconnect();
-    };
-  }, [cssEllipsis, mergedEnableEllipsis]);
-  // ========================== Tooltip ===========================
-  let tooltipProps = {};
-  if (ellipsisConfig.tooltip === true) {
-    tooltipProps = {
-      title: (_a = editConfig.text) !== null && _a !== void 0 ? _a : children
-    };
-  } else if ( /*#__PURE__*/React__namespace.isValidElement(ellipsisConfig.tooltip)) {
-    tooltipProps = {
-      title: ellipsisConfig.tooltip
-    };
-  } else if (typeof ellipsisConfig.tooltip === 'object') {
-    tooltipProps = Object.assign({
-      title: (_b = editConfig.text) !== null && _b !== void 0 ? _b : children
-    }, ellipsisConfig.tooltip);
-  } else {
-    tooltipProps = {
-      title: ellipsisConfig.tooltip
-    };
-  }
-  const topAriaLabel = React__namespace.useMemo(() => {
-    const isValid = val => ['string', 'number'].includes(typeof val);
-    if (!enableEllipsis || cssEllipsis) {
-      return undefined;
-    }
-    if (isValid(editConfig.text)) {
-      return editConfig.text;
-    }
-    if (isValid(children)) {
-      return children;
-    }
-    if (isValid(title)) {
-      return title;
-    }
-    if (isValid(tooltipProps.title)) {
-      return tooltipProps.title;
-    }
-    return undefined;
-  }, [enableEllipsis, cssEllipsis, title, tooltipProps.title, isMergedEllipsis]);
-  // =========================== Render ===========================
-  // >>>>>>>>>>> Editing input
-  if (editing) {
-    return /*#__PURE__*/React__namespace.createElement(Editable$1, {
-      value: (_c = editConfig.text) !== null && _c !== void 0 ? _c : typeof children === 'string' ? children : '',
-      onSave: onEditChange,
-      onCancel: onEditCancel,
-      onEnd: editConfig.onEnd,
-      prefixCls: prefixCls,
-      className: className,
-      style: style,
-      direction: direction,
-      component: component,
-      maxLength: editConfig.maxLength,
-      autoSize: editConfig.autoSize,
-      enterIcon: editConfig.enterIcon
-    });
-  }
-  // >>>>>>>>>>> Typography
-  // Expand
-  const renderExpand = () => {
-    const {
-      expandable,
-      symbol
-    } = ellipsisConfig;
-    if (!expandable) return null;
-    let expandContent;
-    if (symbol) {
-      expandContent = symbol;
-    } else {
-      expandContent = textLocale === null || textLocale === void 0 ? void 0 : textLocale.expand;
-    }
-    return /*#__PURE__*/React__namespace.createElement("a", {
-      key: "expand",
-      className: `${prefixCls}-expand`,
-      onClick: onExpandClick,
-      "aria-label": textLocale === null || textLocale === void 0 ? void 0 : textLocale.expand
-    }, expandContent);
-  };
-  // Edit
-  const renderEdit = () => {
-    if (!enableEdit) return;
-    const {
-      icon,
-      tooltip
-    } = editConfig;
-    const editTitle = toArray$2(tooltip)[0] || (textLocale === null || textLocale === void 0 ? void 0 : textLocale.edit);
-    const ariaLabel = typeof editTitle === 'string' ? editTitle : '';
-    return triggerType.includes('icon') ? /*#__PURE__*/React__namespace.createElement(Tooltip$1, {
-      key: "edit",
-      title: tooltip === false ? '' : editTitle
-    }, /*#__PURE__*/React__namespace.createElement(TransButton$1, {
-      ref: editIconRef,
-      className: `${prefixCls}-edit`,
-      onClick: onEditClick,
-      "aria-label": ariaLabel
-    }, icon || /*#__PURE__*/React__namespace.createElement(EditOutlined$1, {
-      role: "button"
-    }))) : null;
-  };
-  // Copy
-  const renderCopy = () => {
-    if (!enableCopy) return;
-    const {
-      tooltips,
-      icon
-    } = copyConfig;
-    const tooltipNodes = toList(tooltips);
-    const iconNodes = toList(icon);
-    const copyTitle = copied ? getNode(tooltipNodes[1], textLocale === null || textLocale === void 0 ? void 0 : textLocale.copied) : getNode(tooltipNodes[0], textLocale === null || textLocale === void 0 ? void 0 : textLocale.copy);
-    const systemStr = copied ? textLocale === null || textLocale === void 0 ? void 0 : textLocale.copied : textLocale === null || textLocale === void 0 ? void 0 : textLocale.copy;
-    const ariaLabel = typeof copyTitle === 'string' ? copyTitle : systemStr;
-    return /*#__PURE__*/React__namespace.createElement(Tooltip$1, {
-      key: "copy",
-      title: copyTitle
-    }, /*#__PURE__*/React__namespace.createElement(TransButton$1, {
-      className: classnames(`${prefixCls}-copy`, copied && `${prefixCls}-copy-success`),
-      onClick: onCopyClick,
-      "aria-label": ariaLabel
-    }, copied ? getNode(iconNodes[1], /*#__PURE__*/React__namespace.createElement(CheckOutlined$1, null), true) : getNode(iconNodes[0], /*#__PURE__*/React__namespace.createElement(CopyOutlined$1, null), true)));
-  };
-  const renderOperations = renderExpanded => [renderExpanded && renderExpand(), renderEdit(), renderCopy()];
-  const renderEllipsis = needEllipsis => [needEllipsis && /*#__PURE__*/React__namespace.createElement("span", {
-    "aria-hidden": true,
-    key: "ellipsis"
-  }, ELLIPSIS_STR), ellipsisConfig.suffix, renderOperations(needEllipsis)];
-  return /*#__PURE__*/React__namespace.createElement(RefResizeObserver, {
-    onResize: onResize,
-    disabled: !mergedEnableEllipsis || cssEllipsis
-  }, resizeRef => /*#__PURE__*/React__namespace.createElement(EllipsisTooltip$1, {
-    tooltipProps: tooltipProps,
-    enabledEllipsis: mergedEnableEllipsis,
-    isEllipsis: isMergedEllipsis
-  }, /*#__PURE__*/React__namespace.createElement(OriginTypography, Object.assign({
-    className: classnames({
-      [`${prefixCls}-${type}`]: type,
-      [`${prefixCls}-disabled`]: disabled,
-      [`${prefixCls}-ellipsis`]: enableEllipsis,
-      [`${prefixCls}-single-line`]: mergedEnableEllipsis && rows === 1,
-      [`${prefixCls}-ellipsis-single-line`]: cssTextOverflow,
-      [`${prefixCls}-ellipsis-multiple-line`]: cssLineClamp
-    }, className),
-    prefixCls: customizePrefixCls,
-    style: Object.assign(Object.assign({}, style), {
-      WebkitLineClamp: cssLineClamp ? rows : undefined
-    }),
-    component: component,
-    ref: composeRef(resizeRef, typographyRef, ref),
-    direction: direction,
-    onClick: triggerType.includes('text') ? onEditClick : undefined,
-    "aria-label": topAriaLabel === null || topAriaLabel === void 0 ? void 0 : topAriaLabel.toString(),
-    title: title
-  }, textProps), /*#__PURE__*/React__namespace.createElement(Ellipsis$1, {
-    enabledMeasure: mergedEnableEllipsis && !cssEllipsis,
-    text: children,
-    rows: rows,
-    width: ellipsisWidth,
-    fontSize: ellipsisFontSize,
-    onEllipsis: onJsEllipsis
-  }, (node, needEllipsis) => {
-    let renderNode = node;
-    if (node.length && needEllipsis && topAriaLabel) {
-      renderNode = /*#__PURE__*/React__namespace.createElement("span", {
-        key: "show-content",
-        "aria-hidden": true
-      }, renderNode);
-    }
-    const wrappedContext = wrapperDecorations(props, /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, renderNode, renderEllipsis(needEllipsis)));
-    return wrappedContext;
-  }))));
-});
-var Base$1 = Base;
-
-var __rest$2 = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-const Link = /*#__PURE__*/React__namespace.forwardRef((_a, ref) => {
-  var {
-      ellipsis,
-      rel
-    } = _a,
-    restProps = __rest$2(_a, ["ellipsis", "rel"]);
-  process.env.NODE_ENV !== "production" ? warning$2(typeof ellipsis !== 'object', 'Typography.Link', '`ellipsis` only supports boolean value.') : void 0;
-  const mergedProps = Object.assign(Object.assign({}, restProps), {
-    rel: rel === undefined && restProps.target === '_blank' ? 'noopener noreferrer' : rel
-  });
-  // @ts-expect-error: https://github.com/ant-design/ant-design/issues/26622
-  delete mergedProps.navigate;
-  return /*#__PURE__*/React__namespace.createElement(Base$1, Object.assign({}, mergedProps, {
-    ref: ref,
-    ellipsis: !!ellipsis,
-    component: "a"
-  }));
-});
-var Link$1 = Link;
-
-const Paragraph = /*#__PURE__*/React__namespace.forwardRef((props, ref) => /*#__PURE__*/React__namespace.createElement(Base$1, Object.assign({
-  ref: ref
-}, props, {
-  component: "div"
-})));
-var Paragraph$1 = Paragraph;
-
-var __rest$1 = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-const Text = (_a, ref) => {
-  var {
-      ellipsis
-    } = _a,
-    restProps = __rest$1(_a, ["ellipsis"]);
-  const mergedEllipsis = React__namespace.useMemo(() => {
-    if (ellipsis && typeof ellipsis === 'object') {
-      return omit(ellipsis, ['expandable', 'rows']);
-    }
-    return ellipsis;
-  }, [ellipsis]);
-  process.env.NODE_ENV !== "production" ? warning$2(typeof ellipsis !== 'object' || !ellipsis || !('expandable' in ellipsis) && !('rows' in ellipsis), 'Typography.Text', '`ellipsis` do not support `expandable` or `rows` props.') : void 0;
-  return /*#__PURE__*/React__namespace.createElement(Base$1, Object.assign({
-    ref: ref
-  }, restProps, {
-    ellipsis: mergedEllipsis,
-    component: "span"
-  }));
-};
-var Text$1 = /*#__PURE__*/React__namespace.forwardRef(Text);
-
-var __rest = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-const TITLE_ELE_LIST = [1, 2, 3, 4, 5];
-const Title$1 = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
-  const {
-      level = 1
-    } = props,
-    restProps = __rest(props, ["level"]);
-  let component;
-  if (TITLE_ELE_LIST.includes(level)) {
-    component = `h${level}`;
-  } else {
-    process.env.NODE_ENV !== "production" ? warning$2(false, 'Typography.Title', 'Title only accept `1 | 2 | 3 | 4 | 5` as `level` value. And `5` need 4.6.0+ version.') : void 0;
-    component = 'h1';
-  }
-  return /*#__PURE__*/React__namespace.createElement(Base$1, Object.assign({
-    ref: ref
-  }, restProps, {
-    component: component
-  }));
-});
-var Title$2 = Title$1;
-
-const Typography = OriginTypography;
-Typography.Text = Text$1;
-Typography.Link = Link$1;
-Typography.Title = Title$2;
-Typography.Paragraph = Paragraph$1;
-var Typography$1 = Typography;
-
 function Button (_a) {
-    var children = _a.children, props = __rest$p(_a, ["children"]);
+    var children = _a.children, props = __rest$j(_a, ["children"]);
     return (React__default["default"].createElement(Space$1, { wrap: true },
         React__default["default"].createElement(Button$2, __assign({ style: props.style }, props), children)));
 }
 
-var Title = Typography$1.Title;
-var Headline = function (_a) {
-    var children = _a.children, level = _a.level, props = __rest$p(_a, ["children", "level"]);
-    if (level === 'one') {
-        level = 1;
-    }
-    if (level === 'two') {
-        level = 2;
-    }
-    if (level === 'three') {
-        level = 3;
-    }
-    if (level === 'four') {
-        level = 4;
-    }
-    if (level === 'five') {
-        level = 5;
-    }
-    return (React__default["default"].createElement(React__default["default"].Fragment, null,
-        React__default["default"].createElement(Title, __assign({ level: level }, props), children)));
-};
+var App = function (props) { return (React__default["default"].createElement(Alert$1, { message: props.message, type: props.type })); };
 
 function Breadcrumbs (props) {
     return React__default["default"].createElement(Breadcrumb$1, __assign({}, props));
@@ -28518,10 +25903,10 @@ function Breadcrumbs (props) {
 var DLS = {
     Button: Button,
     Breadcrumbs: Breadcrumbs,
-    Headline: Headline
+    SuccessAlert: App,
 };
 
 exports.Button = Button;
 exports.DLS = DLS;
-exports.Headline = Headline;
+exports.SuccessAlert = App;
 //# sourceMappingURL=index.js.map

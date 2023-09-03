@@ -6,8 +6,12 @@ import type { ColumnsType } from "antd/es/table";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
 export default {
-  title: "elements/Tables",
+  title: "components/Tables",
+  argTypes: {
+    onClick: { action: "onClick" },
+  },
 };
+
 
 interface DataType {
   key: string;
@@ -57,50 +61,278 @@ const data: DataType[] = [
   },
 ];
 
+const roomTypeData: any = [
+  {
+    key: "1",
+    roomName: "Room 1",
+    numberOfRooms: 2,
+    maxPersons: 2,
+    singleUseRoomPrice: 20,
+    regularUseRoomPrice: 30,
+  },
+  {
+    key: "2",
+    roomName: "Room 1 regular",
+    numberOfRooms: 2,
 
-const columns = [
+    maxPersons: 3,
+    singleUseRoomPrice: 30,
+    regularUseRoomPrice: 50,
+  },
   {
-    title: 'Room Name',
-    subTitle: '',
-    key: 'roomName',
-    sort: true,
+    key: "3",
+    roomName: "Room 3",
+    numberOfRooms: 2,
 
+    maxPersons: 4,
+    regularUseRoomPrice: 100,
+    singleUseRoomPrice: 40,
   },
-  {
-    title: 'Room Type',
-    subTitle: '',
-    key: 'roomType',
-    sort: true,
-    component: 'select'
-  },
-  {
-    title: 'Max Persons',
-    subTitle: '(per rooms)',
-    key: 'maxPersons',
-    sort: true
-  },
-  {
-    title: 'Room Price',
-    subTitle: '(regular use)',
-    key: 'regularUseRoomPrice',
-    sort: true
-  },
-  {
-    title: '',
-    subTitle: '',
-    key: 'actions',
-    sort: false,
-    component: 'action'
+];
 
+const guestsData = [
+  {
+    key: "1",
+    fullName: 'Donna Morris',
+    passportId: '1234567890ABV',
+    country: 'India',
+    address: 'Test, Test Address, Test Address',
+    email: 'donnamorris@gmail.com',
+    phone: '9988776655'
   },
+  {
+    key: "2",
+    fullName: 'Matteo Adamo',
+    passportId: '1234567890ABV',
+    country: 'India',
+    address: 'Test, Test Address, Test Address',
+    email: 'donnamorris@gmail.com',
+    phone: '9988776655'
+  }
+]
+const companyData = [
+  {
+    key: "1",
+    fullName: 'Donna Morris',
+    companyId: '1234567890ABV',
+    bank: '$$',
+    bankAccount: '11111111111',
+    country: 'India',
+    address: 'Test, Test Address, Test Address',
+    email: 'donnamorris@gmail.com',
+    phone: '9988776655',
+    contactPerson: 'ABC'
+  },
+  {
+    key: "2",
+    fullName: 'Matteo Adamo',
+    companyId: '1234567890ABV',
+    bank: '$$',
+    bankAccount: '11111111111',
+    passportId: '1234567890ABV',
+    country: 'India',
+    address: 'Test, Test Address, Test Address',
+    email: 'donnamorris@gmail.com',
+    phone: '9988776655',
+    contactPerson: 'ABC'
 
+  }
 ]
 
+const servicesData = [
+  {
+    key: "1",
+    serviceName: 'Beef Steak',
+    price: '$ 12',
+    serviceCategory: 'Food'
+  },
+  {
+    key: "2",
+    serviceName: 'Coco Cola',
+    price: '$ 4',
+    serviceCategory: 'Drinks'
+  },
+  {
+    key: "3",
+    serviceName: 'Coffee',
+    price: '$ 6',
+    serviceCategory: 'Drinks'
+  },
+  {
+    key: "4",
+    serviceName: 'Cuba Libre',
+    price: '$ 7',
+    serviceCategory: '7'
+  }
+  , {
+    key: "5",
+    serviceName: 'Ice Cream',
+    price: '$ 2',
+    serviceCategory: 'Food'
+  },
+  {
+    key: "6",
+    serviceName: 'Massage',
+    price: '$ 12',
+    serviceCategory: 'Genaral Service'
+  }
+];
+const servicescateGoryData = [
+  {
+    key: "1",
+
+    serviceCategory: 'Food'
+  },
+  {
+    key: "2",
+
+    serviceCategory: 'Drinks'
+  },
+  {
+    key: "3",
+
+    serviceCategory: 'Drinks'
+  },
+  {
+    key: "4",
+
+    serviceCategory: 'Rafting'
+  }
+  , {
+    key: "5",
+
+    serviceCategory: 'Food'
+  },
+  {
+    key: "6",
+
+    serviceCategory: 'Genaral Service'
+  }
+];
 
 
-export const Primary = (args) => <Tables {...args} />;
+const invoiceListData = [
+  {
+    key: "1",
+    invoiceNumber: '#INV-20230723-2',
+    client: 'Donna Morris',
+    date: '07/23/2023',
+    status: [],
+    total: '$ 245',
+    notes: 'abcdsd'
+  },
+  {
+    key: "2",
 
-Primary.args = {
+    invoiceNumber: '#INV-20230723-2',
+    client: 'Donna Morris',
+    date: '07/23/2023',
+    status: [],
+    total: '$ 245',
+    notes: 'abcdsd'
+  },
+  {
+    key: "3",
+
+    invoiceNumber: '#INV-20230723-2',
+    client: 'Donna Morris',
+    date: '07/23/2023',
+    status: [],
+    total: '$ 245',
+    notes: 'abcdsd'
+  },
+  {
+    key: "4",
+
+    invoiceNumber: '#INV-20230723-2',
+    client: 'Donna Morris',
+    date: '07/23/2023',
+    status: [],
+    total: '$ 245',
+    notes: 'abcdsd'
+  }
+  , {
+    key: "5",
+
+    invoiceNumber: '#INV-20230723-2',
+    client: 'Donna Morris',
+    date: '07/23/2023',
+    status: [],
+    total: '$ 245',
+    notes: 'abcdsd'
+  },
+  {
+    key: "6",
+    invoiceNumber: '#INV-20230723-2',
+    client: 'Donna Morris',
+    date: '07/23/2023',
+    status: [],
+    total: '$ 245',
+    notes: 'abcdsd'
+  }
+];
+const handleOnSave = (dataToSave) => {
+  alert(JSON.stringify(data))
+  console.log("Save Function", data)
+}
+
+const HandleOnDelete = (dataToDelete) => {
+  console.log("dataToDelete===>", dataToDelete)
+}
+
+const handleHasSingleUse = (hasSingleUse) => {
+  console.log("hasSingUse======>", hasSingleUse)
+}
+
+export const Rooms = (args) => <Tables {...args} />;
+export const RoomType = (args) => <Tables {...args} />;
+export const Guests = (args) => <Tables {...args} />;
+export const Companies = (args) => <Tables {...args} />;
+export const Services = (args) => <Tables {...args} />;
+export const ServiceCategory = (args) => <Tables {...args} />;
+export const InvoiceList = (args) => <Tables {...args} />;
+
+Rooms.args = {
   type: 'room',
   dataSource: data,
+
+};
+Guests.args = {
+  type: 'room',
+  dataSource: guestsData,
+  type: 'guests',
+};
+Companies.args = {
+  type: 'room',
+  dataSource: companyData,
+  type: 'companies',
+};
+Services.args = {
+  type: 'room',
+  dataSource: servicesData,
+  type: 'services',
+};
+ServiceCategory.args = {
+  type: 'room',
+  dataSource: servicescateGoryData,
+  type: 'serviceCategory',
+  styles: {
+    maxWidth: 400
+  }
+};
+InvoiceList.args = {
+
+  dataSource: invoiceListData,
+  type: 'invoiceList',
+};
+
+companyData
+
+
+RoomType.args = {
+  type: 'roomType',
+  dataSource: roomTypeData,
+  onSave: handleOnSave,
+  onDelete: HandleOnDelete,
+  hasSingleUse: handleHasSingleUse
 };

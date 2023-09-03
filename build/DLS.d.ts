@@ -4,6 +4,6 @@ import { Breadcrumbs } from "./Breadcrumb";
 declare const _default: {
     Button: typeof Button;
     Breadcrumbs: typeof Breadcrumbs;
-    Headline: import("react").FC<{}>;
+    SuccessAlert: import("react").FC<{}>;
 };
 export default _default;

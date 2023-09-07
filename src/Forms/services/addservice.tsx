@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Card, Space } from 'antd';
-import { Button, Form, Input, Radio } from 'antd';
-import "./styles.css"
+import { Button, Form, Input, Select } from 'antd';
+import AddPersonForm from "./addservice"
+import { Textarea } from '@mantine/core';
+// import "./styles.css"
 
 type LayoutType = Parameters<typeof Form>[0]['layout'];
 
-const App: React.FC = () => {
+const App: React.FC = (props) => {
 
     const [form] = Form.useForm();
     const [formLayout, setFormLayout] = useState<LayoutType>('horizontal');
@@ -19,33 +21,105 @@ const App: React.FC = () => {
 
     const buttonItemLayout =
         formLayout === 'horizontal' ? { wrapperCol: { span: 14, offset: 4 } } : null;
-    return (<Space direction="vertical" size={16}>
-        <Card title="Add Service" style={{ width: 353 }}>
-            <Form
-                {...formItemLayout}
-                layout={formLayout}
-                form={form}
-                initialValues={{ layout: formLayout }}
-                onValuesChange={onFormLayoutChange}
-                style={{ maxWidth: formLayout === 'inline' ? 'none' : 600 }}
-            >
+    return (
+        <div >
+            <Card title={props.title}>
 
-                <Form.Item label="Field A">
-                    <Input placeholder="input placeholder" />
-                </Form.Item>
-                <Form.Item label="Field B">
-                    <Input placeholder="input placeholder" />
-                </Form.Item>
+                {props.type === "addService" && (<Form
+                    {...formItemLayout}
+                    layout={formLayout}
+                    form={form}
+                    initialValues={{ layout: formLayout }}
+                    onValuesChange={onFormLayoutChange}
+                // style={{ maxWidth: formLayout === 'inline' ? 'none' : 600 }}
+                >
 
-            </Form>
-        </Card>
-        <div style={{ display: "flex" }}>
+                    <Form.Item label="Service Name">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item label="Price">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
 
-            <Button type="primary">Add</Button>&nbsp;
-            <Button>Cancel</Button>
-        </div>
+                    <Form.Item label="Select Service">
+                        <Select
+                            defaultValue=""
+                            style={{ width: 120 }}
+                            allowClear
+                            options={[{ value: 'lucy', label: 'Lucy' }]}
+                        />
+                    </Form.Item>
 
-    </Space >)
+
+                </Form>)}
+
+                {props.type === "addPerson" && (<Form
+                    {...formItemLayout}
+                    layout={formLayout}
+                    form={form}
+                    initialValues={{ layout: formLayout }}
+                    onValuesChange={onFormLayoutChange}
+                // style={{ maxWidth: formLayout === 'inline' ? 'none' : 600 }}
+                >
+
+                    <Form.Item label="Full Name">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item label="Company ID">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item label="Bank">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item label="Account Number">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item label="Email">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item label="Phone Number">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item label="Address">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item label="Contact Person">
+                        <Input placeholder="" />
+                    </Form.Item>
+
+                    <Form.Item label="Notes">
+                        <Textarea />
+                    </Form.Item>
+
+
+                </Form>)}
+
+                {props.type === "addCategory" && (<Form
+                    {...formItemLayout}
+                    layout={formLayout}
+                    form={form}
+                    initialValues={{ layout: formLayout }}
+                    onValuesChange={onFormLayoutChange}
+                // style={{ maxWidth: formLayout === 'inline' ? 'none' : 600 }}
+                >
+
+                    <Form.Item label="Category Name">
+                        <Input />
+                    </Form.Item>
+
+
+                </Form>)}
+
+
+                {/* <AddPersonForm /> */}
+            </Card>
+            <br />
+            <div style={{ display: "flex" }}>
+                <Button type="primary">Add</Button>&nbsp;
+                <Button>Cancel</Button>
+            </div>
+
+        </div >)
 
 };
 

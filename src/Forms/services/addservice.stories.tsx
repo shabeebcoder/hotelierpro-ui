@@ -6,4 +6,20 @@ export default {
 }
 
 
-export const AddService = () => <Forms />
+export const AddService = (args) => <Forms {...args} />
+export const AddPersonForm = (args) => <Forms {...args} />
+
+AddService.args = {
+    title: 'Add Service',
+    type: 'addService'
+}
+
+AddPersonForm.args = {
+    title: 'Add Person',
+    type: "addPerson"
+}
+
+AddPersonForm.args = {
+    title: 'Add Category',
+    type: "addCategory"
+}

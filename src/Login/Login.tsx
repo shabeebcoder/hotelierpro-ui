@@ -3,61 +3,53 @@ import { Card, Space } from 'antd';
 import { Typography } from 'antd';
 const { Title, Text, Link } = Typography;
 import { Button, Checkbox, Form, Input } from 'antd';
+import "./styles.css";
 
 
-const onFinish = (values: any) => {
-    console.log('Success:', values);
-};
 
-const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-};
+export default function Login(props: any) {
+    const { title, signUpUrl, forgotPasswordUrl, onFinish } = props
 
-type FieldType = {
-    username?: string;
-    password?: string;
-    remember?: string;
-};
-
-export default function Login() {
-    return <Card bordered={false} style={{ width: 478, display: 'flex', justifyContent: 'center', boxShadow: '0px 1.0612244606018066px 5.306122303009033px 0px rgba(0, 0, 0, 0.10)' }}>
-        <div style={{ display: 'flex', textAlign: 'center', flexDirection: 'column' }}>
-            <Title level={5} style={{ fontSize: 24, flexGrow: 1, marginBottom: '0px' }}>Welcome back, Olivia</Title>
-            <span style={{ fontSize: 16, fontWeight: 200, }}>Please enter your details</span>
+    return <Card className="login-card" bordered={false} >
+        <div className="header">
+            <Title level={5} className="title" >{title}</Title>
+            <span className="sub-title" >Please enter your details</span>
         </div>
         <Form
             name="basic"
             labelCol={{ span: 8 }}
             wrapperCol={{ span: 16 }}
-            style={{ width: 300, paddingTop: 70, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+            className="form"
             initialValues={{ remember: true }}
             onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
+            // onFinishFailed={onFinishFailed}
             autoComplete="off"
 
         >
             <Form.Item
 
                 style={{ width: 450, }}
-                rules={[{ required: true, message: 'username' }]}
+                rules={[{ required: true, message: 'username required' }]}
+                name="username"
             >
                 <Input size="large" placeholder="Username" />
             </Form.Item>
 
             <Form.Item
                 style={{ width: 450, marginBottom: 5 }}
-
-                rules={[{ required: true, message: 'Please input your password!' }]}
+                name="password"
+                rules={[{ required: true, message: 'Password required' }]}
             >
                 <Input.Password placeholder="password" size="large" />
             </Form.Item>
 
-            <div
-                style={{ display: 'flex', justifyContent: 'space-between' }}
-            >
-                <Checkbox style={{ fontSize: 12 }} >Remember me</Checkbox>
-                <Link style={{ fontSize: 12, color: '#3A7C7C' }}  >Forgot password</Link>
-            </div>
+
+            <Form.Item name="remember" style={{ display: 'flex', justifyContent: 'space-between', }} >
+
+                <Checkbox checked={true} style={{ fontSize: 12 }} >Remember me</Checkbox>
+                <Link href={forgotPasswordUrl} style={{ fontSize: 12, color: '#3A7C7C' }}  >Forgot password</Link>
+            </Form.Item>
+
 
 
             <Space direction="vertical" style={{ width: '100%', paddingTop: 70 }}>
@@ -70,7 +62,8 @@ export default function Login() {
 
             <div style={{ textAlign: 'center', }}>
 
-                <Text style={{ fontSize: 12 }}>Don't have an account ?</Text>   <Link style={{ fontSize: 12, color: '#3A7C7C' }}>Login</Link>
+                <Text style={{ fontSize: 12 }}>Don't have an account ?</Text>
+                <Link href={signUpUrl} style={{ fontSize: 12, color: '#3A7C7C' }}>Register</Link>
 
             </div>
 

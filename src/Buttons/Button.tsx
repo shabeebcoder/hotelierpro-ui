@@ -12,7 +12,7 @@ interface Props extends HTMLAttributes<HTMLButtonElement> {
 export default function ({ children, ...props }: any) {
     return (
         <Space wrap>
-            <Button style={props.style} {...props} >{children}</Button>
+            <Button className='' style={props.style} {...props} >{children}</Button>
         </Space>
     )
 }

@@ -7,6 +7,7 @@ COPY rollup*.js ./
 COPY tsconfig*.json ./
 COPY . ./
 RUN export NODE_OPTIONS=--openssl-legacy-provider
+RUN node -v
 RUN npm install
 CMD ["npm", "run", "dev"]
 

@@ -1,6 +1,6 @@
 {
     "name": "hotelier-lib",
-    "version": "1.4.4",
+    "version": "1.4.9",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "files": [
@@ -63,6 +63,7 @@
         "react-dom": "^16.14.0",
         "rollup": "^2.56.3",
         "rollup-plugin-copy": "^3.4.0",
+        "rollup-plugin-css-only": "^4.3.0",
         "rollup-plugin-peer-deps-external": "^2.2.4",
         "rollup-plugin-postcss": "^4.0.2",
         "rollup-plugin-typescript2": "^0.29.0",
@@ -81,6 +82,7 @@
         "@tabler/icons-react": "^2.32.0",
         "antd": "^5.4.7",
         "postcss": "^8.4.23",
-        "react-big-calendar": "^1.8.2"
+        "react-big-calendar": "^1.8.2",
+        "rollup-plugin-import-css": "^3.3.1"
     }
 }

@@ -54,7 +54,7 @@ export default function Login(props: any) {
 
             <Space direction="vertical" style={{ width: '100%', paddingTop: 70 }}>
 
-                <Button type="primary" style={{ backgroundColor: '#3A7C7C' }} htmlType="submit" block>
+                <Button type="primary" className="primary" htmlType="submit" block>
                     Submit
                 </Button>
             </Space>

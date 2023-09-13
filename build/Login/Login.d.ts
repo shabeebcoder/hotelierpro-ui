@@ -1,2 +1,3 @@
 import React from "react";
-export default function Login(): React.JSX.Element;
+import "./styles.css";
+export default function Login(props: any): React.JSX.Element;

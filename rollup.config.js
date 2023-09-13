@@ -4,6 +4,8 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 import copy from "rollup-plugin-copy";
+import css from 'rollup-plugin-css-only'
+
 
 const packageJson = require("./package.json");
 
@@ -22,6 +24,9 @@ export default {
     ],
     plugins: [
         peerDepsExternal(),
+        css({
+            output: 'bundle.css'
+        }),
         resolve({
             browser: true
         }),
@@ -39,5 +44,16 @@ export default {
                 rename: "index.css"
             }]
         })
-    ]
+    ],
+    module: {
+        rules: [{
+            test: /\.(sa|sc|c)ss$/,
+            use: [
+                'vue-style-loader',
+                'css-loader',
+                'sass-loader',
+                'postcss-loader',
+            ]
+        }]
+    }
 };

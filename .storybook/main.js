@@ -7,17 +7,7 @@ module.exports = {
 
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-
-    {
-      name: '@storybook/addon-styling',
-      options: {
-        sass: {
-          // Require your Sass preprocessor here
-          implementation: require('sass'),
-        },
-      },
-    },
+    "@storybook/addon-interactions"
   ],
 
   "framework": "@storybook/react"

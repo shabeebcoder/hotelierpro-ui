@@ -1,5 +1,5 @@
 # Development stage
-FROM node:18
+FROM node:alpine
 WORKDIR /app
 COPY package*.json ./
 COPY postcss*.js ./
@@ -7,7 +7,7 @@ COPY rollup*.js ./
 COPY tsconfig*.json ./
 COPY . ./
 RUN export NODE_OPTIONS=--openssl-legacy-provider
-RUN node -v
+
 RUN npm install
 CMD ["npm", "run", "dev"]
 

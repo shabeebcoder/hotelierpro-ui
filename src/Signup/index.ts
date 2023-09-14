@@ -1,4 +1,4 @@
-import SignUp from "./Signup";
+import Register from "./Signup";
 
 
-export { SignUp }
+export { Register }

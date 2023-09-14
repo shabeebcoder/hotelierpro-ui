@@ -6,7 +6,7 @@ COPY postcss*.js ./
 COPY rollup*.js ./
 COPY tsconfig*.json ./
 COPY . ./
-
+RUN NODE_ENV=development
 RUN npm install
 CMD ["npm", "run", "dev"]
 

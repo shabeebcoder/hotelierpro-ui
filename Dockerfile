@@ -1,5 +1,5 @@
 # Development stage
-FROM node:alpine
+FROM node:18.17.1
 WORKDIR /app
 COPY package*.json ./
 COPY postcss*.js ./

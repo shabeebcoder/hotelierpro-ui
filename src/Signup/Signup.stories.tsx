@@ -1,5 +1,5 @@
 import React from "react";
-import SignuoComponet from "./Signup";
+import Register from "./Signup";
 
 
 
@@ -8,8 +8,17 @@ export default {
 }
 
 
-export const Signup = (args) => <SignuoComponet {...args} />
+const onFinish = (values: any) => {
+    console.log('Success:', values);
+};
+export const Signup = (args) => <Register {...args} />
 
 
 
-SignuoComponet.args = {}
+Signup.args = {
+    title: 'Create an account',
+    subTitle: 'Lets get Started with 14 days free trial!',
+    loginUrl: '',
+    termsAndConditionUrl: '',
+    onFinish
+}

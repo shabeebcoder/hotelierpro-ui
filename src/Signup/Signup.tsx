@@ -4,24 +4,12 @@ import { Typography } from 'antd';
 const { Title, Text, Link } = Typography;
 import { Button, Checkbox, Form, Input } from 'antd';
 const { Option } = Select;
+import "./styles.css";
 
 
-const onFinish = (values: any) => {
-    console.log('Success:', values);
-};
 
-const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-};
-
-type FieldType = {
-    username?: string;
-    password?: string;
-    remember?: string;
-};
-
-export default function Login() {
-
+export default function Register(props: any) {
+    const { title, subTitle, loginUrl, termsAndConditionUrl, onFinish } = props;
     const prefixSelector = (
         <Form.Item name="prefix" noStyle>
             <Select defaultValue={"86"} style={{ width: 70 }}>
@@ -31,91 +19,94 @@ export default function Login() {
         </Form.Item>
     );
 
-    return <Card bordered={false} style={{ width: 678, display: 'flex', justifyContent: 'center', boxShadow: '0px 1.0612244606018066px 5.306122303009033px 0px rgba(0, 0, 0, 0.10)' }}>
-        <div style={{ display: 'flex', textAlign: 'center', flexDirection: 'column' }}>
-            <Title level={5} style={{ fontSize: 24, flexGrow: 1, marginBottom: '0px' }}>Create an account</Title>
-            <span style={{ fontSize: 16, fontWeight: 200, }}>Lets get Started with 14 days free trial!</span>
+    return <Card className="register_container" bordered={false} >
+        <div className="title-container">
+            <Title level={5} className="title">{title}</Title>
+            <span className="sub-title">{subTitle}</span>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div className="form-container">
 
-            <Form style={{ display: 'flex', marginTop: 72, justifyContent: 'center', }} name="horizontal_login" layout="inline" onFinish={onFinish}>
+            <Form className="form" name="horizontal_login" layout="inline" onFinish={onFinish}>
                 <Form.Item
-                    style={{ marginBottom: 32, minWidth: 280 }}
-                    name="username"
+                    className="form-item"
+                    name="firstName"
+                    rules={[{ required: true, message: 'First Name required' }]}
                 >
                     <Input size="large" placeholder="First Name" />
                 </Form.Item>
                 <Form.Item
-                    style={{ marginBottom: 32, minWidth: 280 }}
-                    name="password"
+                    className="form-item"
+                    name="lastName"
+                    rules={[{ required: true, message: 'Last Name required' }]}
 
                 >
-                    <Input size="large"
-                        type="password"
-                        placeholder="Last Name"
-                    />
+                    <Input size="large" placeholder="Last Name" />
                 </Form.Item>
                 <Form.Item
-                    style={{ marginBottom: 32, minWidth: 280 }}
-                    name="username"
+                    className="form-item"
+                    name="email"
+                    rules={[{ required: true, message: 'email required' }]}
                 >
                     <Input size="large" placeholder="email" />
                 </Form.Item>
                 <Form.Item
-                    style={{ marginBottom: 32, minWidth: 280 }}
-                    name="password"
-
+                    className="form-item"
+                    name="phoneNumber"
+                    rules={[{ required: true, message: 'Phone number required' }]}
                 >
                     <Input
                         style={{ width: '100%' }}
                         addonAfter={prefixSelector}
                         size="large"
-                        type="password"
+
                         placeholder="Phone No"
                     />
                 </Form.Item>
                 <Form.Item
-                    style={{ marginBottom: 32, minWidth: 280 }}
-                    name="username"
+                    className="form-item"
+                    name="hotelName"
+                    rules={[{ required: true, message: 'Hotel Name required' }]}
                 >
                     <Input size="large" placeholder="Hotel Name" />
                 </Form.Item>
                 <Form.Item
-                    style={{ marginBottom: 32, minWidth: 280 }}
-                    name="password"
+                    className="form-item"
+                    name="website"
 
                 >
                     <Input size="large"
-                        type="password"
+
                         placeholder="Hotel Website"
                     />
                 </Form.Item>
                 <Form.Item
-                    style={{ marginBottom: 32, minWidth: 280 }}
-                    name="username"
+                    className="form-item"
+                    name="password"
+                    rules={[{ required: true, message: 'Password required' }]}
                 >
                     <Input.Password size="large" placeholder="Password" />
                 </Form.Item>
                 <Form.Item
-                    style={{ marginBottom: 32, minWidth: 280 }}
-                    name="password"
-                    hasFeedback
+                    className="form-item"
+                    name="reTypePassword"
+                    rules={[{ required: true, message: 'Confirm password required' }]}
 
                 >
                     <Input.Password size="large" placeholder="Confirm Passowrd" />
                 </Form.Item>
 
 
-                <Space direction="vertical" style={{ width: '50%', paddingTop: 70, textAlign: 'center' }}>
+                <Space direction="vertical" className="footer-container " >
                     <Checkbox style={{ fontSize: 12 }}>
-                        I Accept <Link style={{ fontSize: 12, color: '#3A7C7C' }}>Terms and Condition</Link>
+
+                        I Accept <Link href={termsAndConditionUrl} style={{ fontSize: 12, color: '#3A7C7C' }}>Terms and Condition</Link>
                     </Checkbox>
                     <Button type="primary" style={{ backgroundColor: '#3A7C7C', marginTop: -2 }} htmlType="submit" block>
                         Submit
                     </Button>
                     <div style={{ marginTop: -4 }} >
 
-                        <Text style={{ fontSize: 12 }}>Already have an accout?</Text> <Link style={{ fontSize: 12, textDecoration: 'underline', color: '#3A7C7C' }}>Login</Link>
+                        <Text style={{ fontSize: 12 }}>Already have an accout?</Text> <Link href={loginUrl} className="link-1">Login</Link>
                     </div>
                 </Space>
 

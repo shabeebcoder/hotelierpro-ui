@@ -1,6 +1,6 @@
 {
     "name": "hotelier-lib",
-    "version": "1.6.5",
+    "version": "1.6.6",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "files": [
@@ -82,6 +82,7 @@
         "@mantine/hooks": "^6.0.19",
         "@tabler/icons-react": "^2.32.0",
         "antd": "^5.4.7",
+        "classnames": "^2.3.2",
         "postcss": "^8.4.23",
         "react-big-calendar": "^1.8.2",
         "rollup-plugin-import-css": "^3.3.1"

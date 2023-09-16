@@ -13,7 +13,7 @@ Primary.args = {
     children: "Primary Button",
     type: 'default',
     disabled: false,
-    style: { backgroundColor: '#3A7C7C', color: 'white', },
+
     onClick: () => console.log("ds")
 }
 export const Default = (args) => <Buttons {...args} />

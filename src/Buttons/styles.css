@@ -1,0 +1,8 @@
+.ant-btn-primary.hotelierButton {
+    background-color: #3A7C7C;
+}
+
+.ant-btn-default.hotelierButton {
+    color: #3A7C7C;
+    border-color: #3A7C7C;
+}

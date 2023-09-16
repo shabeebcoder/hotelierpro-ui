@@ -7,6 +7,9 @@ export default {
     title: "components/signup"
 }
 
+const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
+};
 
 const onFinish = (values: any) => {
     console.log('Success:', values);
@@ -20,5 +23,6 @@ Signup.args = {
     subTitle: 'Lets get Started with 14 days free trial!',
     loginUrl: '',
     termsAndConditionUrl: '',
-    onFinish
+    onFinish,
+    onFinishFailed
 }

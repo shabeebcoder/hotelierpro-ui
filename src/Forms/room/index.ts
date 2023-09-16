@@ -1,4 +1,4 @@
-import RoomTypesForm from "./roomType";
+import Rooms from "./room";
 
 
-export { RoomTypesForm }
+export { Rooms }

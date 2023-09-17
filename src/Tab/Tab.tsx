@@ -16,12 +16,13 @@ type panels = {
 interface Props {
     tabs: tab[];
     panels: panels[];
+    defaultValue: string
 }
 
 export default function Tab(props: Props) {
-    const { panels = [], tabs = [] } = props;
+    const { panels = [], tabs = [], defaultValue } = props;
     return (
-        <Tabs color="green" defaultValue="gallery">
+        <Tabs color="green" defaultValue={defaultValue}>
             <Tabs.List>
                 {
                     tabs.map((row) => <Tabs.Tab value={row.value} icon={<IconPhoto size="0.8rem" />}>{row.label}</Tabs.Tab>)

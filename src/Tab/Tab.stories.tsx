@@ -29,5 +29,6 @@ Primary.args = {
         { tabId: 'gallery', panel: <h1>Gallery</h1> },
         { tabId: 'settings', panel: 'settings' },
         { tabId: 'messages', panel: 'messages' }
-    ]
+    ],
+    defaultValue: 'gallery'
 }

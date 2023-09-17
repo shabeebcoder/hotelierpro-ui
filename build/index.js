@@ -867,7 +867,7 @@ var MapShim = (function () {
 /**
  * Detects whether window and document objects are available in current environment.
  */
-var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined' && window.document === document;
+var isBrowser$1 = typeof window !== 'undefined' && typeof document !== 'undefined' && window.document === document;
 
 // Returns global object of a current environment.
 var global$1 = (function () {
@@ -1086,7 +1086,7 @@ var ResizeObserverController = /** @class */ (function () {
     ResizeObserverController.prototype.connect_ = function () {
         // Do nothing if running in a non-browser environment or if listeners
         // have been already added.
-        if (!isBrowser || this.connected_) {
+        if (!isBrowser$1 || this.connected_) {
             return;
         }
         // Subscription to the "Transitionend" event is used as a workaround for
@@ -1118,7 +1118,7 @@ var ResizeObserverController = /** @class */ (function () {
     ResizeObserverController.prototype.disconnect_ = function () {
         // Do nothing if running in a non-browser environment or if listeners
         // have been already removed.
-        if (!isBrowser || !this.connected_) {
+        if (!isBrowser$1 || !this.connected_) {
             return;
         }
         document.removeEventListener('transitionend', this.onTransitionEnd_);
@@ -1366,7 +1366,7 @@ function isDocumentElement(target) {
  * @returns {DOMRectInit}
  */
 function getContentRect(target) {
-    if (!isBrowser) {
+    if (!isBrowser$1) {
         return emptyRect;
     }
     if (isSVGGraphicsElement(target)) {
@@ -1983,7 +1983,7 @@ wrapperRaf.cancel = function (id) {
 /* eslint-disable */
 // Inspired by https://github.com/garycourt/murmurhash-js
 // Ported from https://github.com/aappleby/smhasher/blob/61a0530f28277f2e850bfc39600ce61d02b518de/src/MurmurHash2.cpp#L37-L86
-function murmur2(str) {
+function murmur2$1(str) {
   // 'm' and 'r' are mixing constants generated offline.
   // They're not really 'magic', they just happen to work well.
   // const m = 0x5bd1e995;
@@ -2153,7 +2153,7 @@ var ATTR_CACHE_PATH = 'data-cache-path';
 
 // Mark css-in-js instance in style element
 var CSS_IN_JS_INSTANCE = '__cssinjs_instance__';
-function createCache() {
+function createCache$1() {
   var cssinjsInstanceId = Math.random().toString(12).slice(2);
 
   // Tricky SSR: Move all inline style to the head.
@@ -2188,7 +2188,7 @@ function createCache() {
 }
 var StyleContext = /*#__PURE__*/React__namespace.createContext({
   hashPriority: 'low',
-  cache: createCache(),
+  cache: createCache$1(),
   defaultCache: true
 });
 var StyleContext$1 = StyleContext;
@@ -2604,7 +2604,7 @@ function flattenToken(token) {
  * Convert derivative token to key string
  */
 function token2key(token, salt) {
-  return murmur2("".concat(salt, "_").concat(flattenToken(token)));
+  return murmur2$1("".concat(salt, "_").concat(flattenToken(token)));
 }
 var randomSelectorKey = "random-".concat(Date.now(), "-").concat(Math.random()).replace(/\./g, '');
 
@@ -2936,7 +2936,7 @@ function useCacheToken(theme, tokens) {
     var tokenKey = token2key(mergedDerivativeToken, salt);
     mergedDerivativeToken._tokenKey = tokenKey;
     recordCleanToken(tokenKey);
-    var hashId = "".concat(hashPrefix, "-").concat(murmur2(tokenKey));
+    var hashId = "".concat(hashPrefix, "-").concat(murmur2$1(tokenKey));
     mergedDerivativeToken._hashId = hashId; // Not used
 
     return [mergedDerivativeToken, hashId];
@@ -2947,7 +2947,7 @@ function useCacheToken(theme, tokens) {
   return cachedToken;
 }
 
-var unitlessKeys = {
+var unitlessKeys$1 = {
   animationIterationCount: 1,
   borderImageOutset: 1,
   borderImageSlice: 1,
@@ -2996,6 +2996,10 @@ var unitlessKeys = {
   strokeWidth: 1
 };
 
+var MS = '-ms-';
+var MOZ = '-moz-';
+var WEBKIT = '-webkit-';
+
 var COMMENT = 'comm';
 var RULESET = 'rule';
 var DECLARATION = 'decl';
@@ -3016,11 +3020,35 @@ var abs = Math.abs;
 var from = String.fromCharCode;
 
 /**
+ * @param {object}
+ * @return {object}
+ */
+var assign = Object.assign;
+
+/**
+ * @param {string} value
+ * @param {number} length
+ * @return {number}
+ */
+function hash (value, length) {
+	return charat(value, 0) ^ 45 ? (((((((length << 2) ^ charat(value, 0)) << 2) ^ charat(value, 1)) << 2) ^ charat(value, 2)) << 2) ^ charat(value, 3) : 0
+}
+
+/**
  * @param {string} value
  * @return {string}
  */
 function trim (value) {
 	return value.trim()
+}
+
+/**
+ * @param {string} value
+ * @param {RegExp} pattern
+ * @return {string?}
+ */
+function match$1 (value, pattern) {
+	return (value = pattern.exec(value)) ? value[0] : value
 }
 
 /**
@@ -3086,6 +3114,15 @@ function append (value, array) {
 	return array.push(value), value
 }
 
+/**
+ * @param {string[]} array
+ * @param {function} callback
+ * @return {string}
+ */
+function combine (array, callback) {
+	return array.map(callback).join('')
+}
+
 var line = 1;
 var column = 1;
 var length = 0;
@@ -3104,6 +3141,15 @@ var characters = '';
  */
 function node (value, root, parent, type, props, children, length) {
 	return {value: value, root: root, parent: parent, type: type, props: props, children: children, line: line, column: column, length: length, return: ''}
+}
+
+/**
+ * @param {object} root
+ * @param {object} props
+ * @return {object}
+ */
+function copy$1 (root, props) {
+	return assign(node('', null, null, '', null, null, 0), root, {length: -root.length}, props)
 }
 
 /**
@@ -3519,6 +3565,35 @@ function stringify$2 (element, index, children, callback) {
 	return strlen(children = serialize(element.children, callback)) ? element.return = element.value + '{' + children + '}' : ''
 }
 
+/**
+ * @param {function[]} collection
+ * @return {function}
+ */
+function middleware (collection) {
+	var length = sizeof(collection);
+
+	return function (element, index, children, callback) {
+		var output = '';
+
+		for (var i = 0; i < length; i++)
+			output += collection[i](element, index, children, callback) || '';
+
+		return output
+	}
+}
+
+/**
+ * @param {function} callback
+ * @return {function}
+ */
+function rulesheet (callback) {
+	return function (element) {
+		if (!element.root)
+			if (element = element.return)
+				callback(element);
+	}
+}
+
 function lintWarning(message, info) {
   var path = info.path,
     parentSelectors = info.parentSelectors;
@@ -3762,7 +3837,7 @@ var parseStyle = function parseStyle(interpolation) {
 
             // Auto suffix with px
             var formatValue = cssValue;
-            if (!unitlessKeys[cssKey] && typeof formatValue === 'number' && formatValue !== 0) {
+            if (!unitlessKeys$1[cssKey] && typeof formatValue === 'number' && formatValue !== 0) {
               formatValue = "".concat(formatValue, "px");
             }
 
@@ -3805,7 +3880,7 @@ var parseStyle = function parseStyle(interpolation) {
 // ==                                Register                                ==
 // ============================================================================
 function uniqueHash(path, styleStr) {
-  return murmur2("".concat(path.join('%')).concat(styleStr));
+  return murmur2$1("".concat(path.join('%')).concat(styleStr));
 }
 function Empty$3() {
   return null;
@@ -12350,7 +12425,7 @@ function getUseId() {
   return fullClone.useId;
 }
 var uuid$2 = 0;
-function useId$1(id) {
+function useId$2(id) {
   // Inner id for accessibility usage. Only work in client side
   var _React$useState = React__namespace.useState('ssr-id'),
     _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -19225,7 +19300,7 @@ function generateTrigger() {
     }, [parentContext]);
 
     // =========================== Popup ============================
-    var id = useId$1();
+    var id = useId$2();
     var _React$useState3 = React__namespace.useState(null),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       popupEle = _React$useState4[0],
@@ -20589,7 +20664,7 @@ function getUUID() {
   }
   return retId;
 }
-function useId(id) {
+function useId$1(id) {
   // Inner id for accessibility usage. Only work in client side
   var _React$useState = React__namespace.useState(),
     _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -22457,7 +22532,7 @@ var Select$2 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     labelInValue = props.labelInValue,
     onChange = props.onChange,
     restProps = _objectWithoutProperties(props, _excluded$r);
-  var mergedId = useId(id);
+  var mergedId = useId$1(id);
   var multiple = isMultiple(mode);
   var childrenAsData = !!(!options && children);
   var mergedFilterOption = React__namespace.useMemo(function () {
@@ -33508,7 +33583,7 @@ function TabNode(_ref) {
   return renderWrapper ? renderWrapper(node) : node;
 }
 
-var getSize = function getSize(refObj) {
+var getSize$1 = function getSize(refObj) {
   var _ref = refObj.current || {},
     _ref$offsetWidth = _ref.offsetWidth,
     offsetWidth = _ref$offsetWidth === void 0 ? 0 : _ref$offsetWidth,
@@ -33797,17 +33872,17 @@ function TabNavList(props, ref) {
   }).join('_')]);
   var onListHolderResize = useUpdate(function () {
     // Update wrapper records
-    var containerSize = getSize(containerRef);
-    var extraLeftSize = getSize(extraLeftRef);
-    var extraRightSize = getSize(extraRightRef);
+    var containerSize = getSize$1(containerRef);
+    var extraLeftSize = getSize$1(extraLeftRef);
+    var extraRightSize = getSize$1(extraRightRef);
     setContainerExcludeExtraSize([containerSize[0] - extraLeftSize[0] - extraRightSize[0], containerSize[1] - extraLeftSize[1] - extraRightSize[1]]);
-    var newAddSize = getSize(innerAddButtonRef);
+    var newAddSize = getSize$1(innerAddButtonRef);
     setAddSize(newAddSize);
-    var newOperationSize = getSize(operationsRef);
+    var newOperationSize = getSize$1(operationsRef);
     setOperationSize(newOperationSize);
 
     // Which includes add button size
-    var tabContentFullSize = getSize(tabListRef);
+    var tabContentFullSize = getSize$1(tabListRef);
     setTabContentSize([tabContentFullSize[0] - newAddSize[0], tabContentFullSize[1] - newAddSize[1]]);
 
     // Update buttons records
@@ -34017,7 +34092,7 @@ var _excluded$d = ["id", "prefixCls", "className", "items", "direction", "active
 
 // Used for accessibility
 var uuid = 0;
-function Tabs$2(_ref, ref) {
+function Tabs$3(_ref, ref) {
   var _classNames;
   var id = _ref.id,
     _ref$prefixCls = _ref.prefixCls,
@@ -34165,7 +34240,7 @@ function Tabs$2(_ref, ref) {
     animated: mergedAnimated
   }))));
 }
-var ForwardTabs = /*#__PURE__*/React__namespace.forwardRef(Tabs$2);
+var ForwardTabs = /*#__PURE__*/React__namespace.forwardRef(Tabs$3);
 if (process.env.NODE_ENV !== 'production') {
   ForwardTabs.displayName = 'Tabs';
 }
@@ -35109,7 +35184,7 @@ var __rest$s = undefined && undefined.__rest || function (s, e) {
   }
   return t;
 };
-const Tabs = props => {
+const Tabs$1 = props => {
   const {
       type,
       className,
@@ -35179,11 +35254,11 @@ const Tabs = props => {
     animated: mergedAnimated
   })));
 };
-Tabs.TabPane = TabPane$1;
+Tabs$1.TabPane = TabPane$1;
 if (process.env.NODE_ENV !== 'production') {
-  Tabs.displayName = 'Tabs';
+  Tabs$1.displayName = 'Tabs';
 }
-var Tabs$1 = Tabs;
+var Tabs$2 = Tabs$1;
 
 var __rest$r = undefined && undefined.__rest || function (s, e) {
   var t = {};
@@ -35635,7 +35710,7 @@ const Card$2 = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   let head;
   const mergedSize = useSize$1(customizeSize);
   const tabSize = !mergedSize || mergedSize === 'default' ? 'large' : mergedSize;
-  const tabs = tabList ? /*#__PURE__*/React__namespace.createElement(Tabs$1, Object.assign({
+  const tabs = tabList ? /*#__PURE__*/React__namespace.createElement(Tabs$2, Object.assign({
     size: tabSize
   }, extraProps, {
     className: `${prefixCls}-head-tabs`,
@@ -56136,6 +56211,4403 @@ var Tables = function (props) {
             }, dataSource: data, columns: mergedColumns })));
 };
 
+function createPolymorphicComponent(component) {
+  return component;
+}
+
+function findElementAncestor(element, selector) {
+  let _element = element;
+  while ((_element = _element.parentElement) && !_element.matches(selector))
+    ;
+  return _element;
+}
+
+function getPreviousIndex(current, elements, loop) {
+  for (let i = current - 1; i >= 0; i -= 1) {
+    if (!elements[i].disabled) {
+      return i;
+    }
+  }
+  if (loop) {
+    for (let i = elements.length - 1; i > -1; i -= 1) {
+      if (!elements[i].disabled) {
+        return i;
+      }
+    }
+  }
+  return current;
+}
+function getNextIndex(current, elements, loop) {
+  for (let i = current + 1; i < elements.length; i += 1) {
+    if (!elements[i].disabled) {
+      return i;
+    }
+  }
+  if (loop) {
+    for (let i = 0; i < elements.length; i += 1) {
+      if (!elements[i].disabled) {
+        return i;
+      }
+    }
+  }
+  return current;
+}
+function onSameLevel(target, sibling, parentSelector) {
+  return findElementAncestor(target, parentSelector) === findElementAncestor(sibling, parentSelector);
+}
+function createScopedKeydownHandler({
+  parentSelector,
+  siblingSelector,
+  onKeyDown,
+  loop = true,
+  activateOnFocus = false,
+  dir = "rtl",
+  orientation
+}) {
+  return (event) => {
+    var _a;
+    onKeyDown == null ? void 0 : onKeyDown(event);
+    const elements = Array.from(((_a = findElementAncestor(event.currentTarget, parentSelector)) == null ? void 0 : _a.querySelectorAll(siblingSelector)) || []).filter((node) => onSameLevel(event.currentTarget, node, parentSelector));
+    const current = elements.findIndex((el) => event.currentTarget === el);
+    const _nextIndex = getNextIndex(current, elements, loop);
+    const _previousIndex = getPreviousIndex(current, elements, loop);
+    const nextIndex = dir === "rtl" ? _previousIndex : _nextIndex;
+    const previousIndex = dir === "rtl" ? _nextIndex : _previousIndex;
+    switch (event.key) {
+      case "ArrowRight": {
+        if (orientation === "horizontal") {
+          event.stopPropagation();
+          event.preventDefault();
+          elements[nextIndex].focus();
+          activateOnFocus && elements[nextIndex].click();
+        }
+        break;
+      }
+      case "ArrowLeft": {
+        if (orientation === "horizontal") {
+          event.stopPropagation();
+          event.preventDefault();
+          elements[previousIndex].focus();
+          activateOnFocus && elements[previousIndex].click();
+        }
+        break;
+      }
+      case "ArrowUp": {
+        if (orientation === "vertical") {
+          event.stopPropagation();
+          event.preventDefault();
+          elements[_previousIndex].focus();
+          activateOnFocus && elements[_previousIndex].click();
+        }
+        break;
+      }
+      case "ArrowDown": {
+        if (orientation === "vertical") {
+          event.stopPropagation();
+          event.preventDefault();
+          elements[_nextIndex].focus();
+          activateOnFocus && elements[_nextIndex].click();
+        }
+        break;
+      }
+      case "Home": {
+        event.stopPropagation();
+        event.preventDefault();
+        !elements[0].disabled && elements[0].focus();
+        break;
+      }
+      case "End": {
+        event.stopPropagation();
+        event.preventDefault();
+        const last = elements.length - 1;
+        !elements[last].disabled && elements[last].focus();
+        break;
+      }
+    }
+  };
+}
+
+function createSafeContext(errorMessage) {
+  const Context = React.createContext(null);
+  const useSafeContext = () => {
+    const ctx = React.useContext(Context);
+    if (ctx === null) {
+      throw new Error(errorMessage);
+    }
+    return ctx;
+  };
+  const Provider = ({ children, value }) => /* @__PURE__ */ React__default["default"].createElement(Context.Provider, {
+    value
+  }, children);
+  return [Provider, useSafeContext];
+}
+
+function packSx(sx) {
+  return Array.isArray(sx) ? sx : [sx];
+}
+
+function getSafeId(uid, errorMessage) {
+  return (value) => {
+    if (typeof value !== "string" || value.trim().length === 0) {
+      throw new Error(errorMessage);
+    }
+    return `${uid}-${value}`;
+  };
+}
+
+function toVal(mix) {
+	var k, y, str='';
+
+	if (typeof mix === 'string' || typeof mix === 'number') {
+		str += mix;
+	} else if (typeof mix === 'object') {
+		if (Array.isArray(mix)) {
+			for (k=0; k < mix.length; k++) {
+				if (mix[k]) {
+					if (y = toVal(mix[k])) {
+						str && (str += ' ');
+						str += y;
+					}
+				}
+			}
+		} else {
+			for (k in mix) {
+				if (mix[k]) {
+					str && (str += ' ');
+					str += k;
+				}
+			}
+		}
+	}
+
+	return str;
+}
+
+function clsx () {
+	var i=0, tmp, x, str='';
+	while (i < arguments.length) {
+		if (tmp = arguments[i++]) {
+			if (x = toVal(tmp)) {
+				str && (str += ' ');
+				str += x;
+			}
+		}
+	}
+	return str;
+}
+
+const DEFAULT_COLORS = {
+  dark: [
+    "#C1C2C5",
+    "#A6A7AB",
+    "#909296",
+    "#5c5f66",
+    "#373A40",
+    "#2C2E33",
+    "#25262b",
+    "#1A1B1E",
+    "#141517",
+    "#101113"
+  ],
+  gray: [
+    "#f8f9fa",
+    "#f1f3f5",
+    "#e9ecef",
+    "#dee2e6",
+    "#ced4da",
+    "#adb5bd",
+    "#868e96",
+    "#495057",
+    "#343a40",
+    "#212529"
+  ],
+  red: [
+    "#fff5f5",
+    "#ffe3e3",
+    "#ffc9c9",
+    "#ffa8a8",
+    "#ff8787",
+    "#ff6b6b",
+    "#fa5252",
+    "#f03e3e",
+    "#e03131",
+    "#c92a2a"
+  ],
+  pink: [
+    "#fff0f6",
+    "#ffdeeb",
+    "#fcc2d7",
+    "#faa2c1",
+    "#f783ac",
+    "#f06595",
+    "#e64980",
+    "#d6336c",
+    "#c2255c",
+    "#a61e4d"
+  ],
+  grape: [
+    "#f8f0fc",
+    "#f3d9fa",
+    "#eebefa",
+    "#e599f7",
+    "#da77f2",
+    "#cc5de8",
+    "#be4bdb",
+    "#ae3ec9",
+    "#9c36b5",
+    "#862e9c"
+  ],
+  violet: [
+    "#f3f0ff",
+    "#e5dbff",
+    "#d0bfff",
+    "#b197fc",
+    "#9775fa",
+    "#845ef7",
+    "#7950f2",
+    "#7048e8",
+    "#6741d9",
+    "#5f3dc4"
+  ],
+  indigo: [
+    "#edf2ff",
+    "#dbe4ff",
+    "#bac8ff",
+    "#91a7ff",
+    "#748ffc",
+    "#5c7cfa",
+    "#4c6ef5",
+    "#4263eb",
+    "#3b5bdb",
+    "#364fc7"
+  ],
+  blue: [
+    "#e7f5ff",
+    "#d0ebff",
+    "#a5d8ff",
+    "#74c0fc",
+    "#4dabf7",
+    "#339af0",
+    "#228be6",
+    "#1c7ed6",
+    "#1971c2",
+    "#1864ab"
+  ],
+  cyan: [
+    "#e3fafc",
+    "#c5f6fa",
+    "#99e9f2",
+    "#66d9e8",
+    "#3bc9db",
+    "#22b8cf",
+    "#15aabf",
+    "#1098ad",
+    "#0c8599",
+    "#0b7285"
+  ],
+  teal: [
+    "#e6fcf5",
+    "#c3fae8",
+    "#96f2d7",
+    "#63e6be",
+    "#38d9a9",
+    "#20c997",
+    "#12b886",
+    "#0ca678",
+    "#099268",
+    "#087f5b"
+  ],
+  green: [
+    "#ebfbee",
+    "#d3f9d8",
+    "#b2f2bb",
+    "#8ce99a",
+    "#69db7c",
+    "#51cf66",
+    "#40c057",
+    "#37b24d",
+    "#2f9e44",
+    "#2b8a3e"
+  ],
+  lime: [
+    "#f4fce3",
+    "#e9fac8",
+    "#d8f5a2",
+    "#c0eb75",
+    "#a9e34b",
+    "#94d82d",
+    "#82c91e",
+    "#74b816",
+    "#66a80f",
+    "#5c940d"
+  ],
+  yellow: [
+    "#fff9db",
+    "#fff3bf",
+    "#ffec99",
+    "#ffe066",
+    "#ffd43b",
+    "#fcc419",
+    "#fab005",
+    "#f59f00",
+    "#f08c00",
+    "#e67700"
+  ],
+  orange: [
+    "#fff4e6",
+    "#ffe8cc",
+    "#ffd8a8",
+    "#ffc078",
+    "#ffa94d",
+    "#ff922b",
+    "#fd7e14",
+    "#f76707",
+    "#e8590c",
+    "#d9480f"
+  ]
+};
+
+function fontStyles(theme) {
+  return () => ({ fontFamily: theme.fontFamily || "sans-serif" });
+}
+
+var __defProp$f = Object.defineProperty;
+var __getOwnPropSymbols$g = Object.getOwnPropertySymbols;
+var __hasOwnProp$g = Object.prototype.hasOwnProperty;
+var __propIsEnum$g = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$f = (obj, key, value) => key in obj ? __defProp$f(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$f = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$g.call(b, prop))
+      __defNormalProp$f(a, prop, b[prop]);
+  if (__getOwnPropSymbols$g)
+    for (var prop of __getOwnPropSymbols$g(b)) {
+      if (__propIsEnum$g.call(b, prop))
+        __defNormalProp$f(a, prop, b[prop]);
+    }
+  return a;
+};
+function focusStyles(theme) {
+  return (selector) => ({
+    WebkitTapHighlightColor: "transparent",
+    [selector || "&:focus"]: __spreadValues$f({}, theme.focusRing === "always" || theme.focusRing === "auto" ? theme.focusRingStyles.styles(theme) : theme.focusRingStyles.resetStyles(theme)),
+    [selector ? selector.replace(":focus", ":focus:not(:focus-visible)") : "&:focus:not(:focus-visible)"]: __spreadValues$f({}, theme.focusRing === "auto" || theme.focusRing === "never" ? theme.focusRingStyles.resetStyles(theme) : null)
+  });
+}
+
+function primaryShade(theme) {
+  return (colorScheme) => {
+    if (typeof theme.primaryShade === "number") {
+      return theme.primaryShade;
+    }
+    return theme.primaryShade[colorScheme || theme.colorScheme];
+  };
+}
+
+function themeColor(theme) {
+  const getPrimaryShade = primaryShade(theme);
+  return (color, shade, primaryFallback = true, useSplittedShade = true) => {
+    if (typeof color === "string" && color.includes(".")) {
+      const [splitterColor, _splittedShade] = color.split(".");
+      const splittedShade = parseInt(_splittedShade, 10);
+      if (splitterColor in theme.colors && splittedShade >= 0 && splittedShade < 10) {
+        return theme.colors[splitterColor][typeof shade === "number" && !useSplittedShade ? shade : splittedShade];
+      }
+    }
+    const _shade = typeof shade === "number" ? shade : getPrimaryShade();
+    return color in theme.colors ? theme.colors[color][_shade] : primaryFallback ? theme.colors[theme.primaryColor][_shade] : color;
+  };
+}
+
+function getGradientColorStops(colors) {
+  let stops = "";
+  for (let i = 1; i < colors.length - 1; i += 1) {
+    stops += `${colors[i]} ${i / (colors.length - 1) * 100}%, `;
+  }
+  return `${colors[0]} 0%, ${stops}${colors[colors.length - 1]} 100%`;
+}
+
+function linearGradient(deg, ...colors) {
+  return `linear-gradient(${deg}deg, ${getGradientColorStops(colors)})`;
+}
+function radialGradient(...colors) {
+  return `radial-gradient(circle, ${getGradientColorStops(colors)})`;
+}
+function gradient(theme) {
+  const getThemeColor = themeColor(theme);
+  const getPrimaryShade = primaryShade(theme);
+  return (payload) => {
+    const merged = {
+      from: (payload == null ? void 0 : payload.from) || theme.defaultGradient.from,
+      to: (payload == null ? void 0 : payload.to) || theme.defaultGradient.to,
+      deg: (payload == null ? void 0 : payload.deg) || theme.defaultGradient.deg
+    };
+    return `linear-gradient(${merged.deg}deg, ${getThemeColor(merged.from, getPrimaryShade(), false)} 0%, ${getThemeColor(merged.to, getPrimaryShade(), false)} 100%)`;
+  };
+}
+
+function createConverter(units) {
+  return (px) => {
+    if (typeof px === "number") {
+      return `${px / 16}${units}`;
+    }
+    if (typeof px === "string") {
+      const replaced = px.replace("px", "");
+      if (!Number.isNaN(Number(replaced))) {
+        return `${Number(replaced) / 16}${units}`;
+      }
+    }
+    return px;
+  };
+}
+const rem = createConverter("rem");
+const em = createConverter("em");
+
+function getSize({
+  size,
+  sizes,
+  units
+}) {
+  if (size in sizes) {
+    return sizes[size];
+  }
+  if (typeof size === "number") {
+    return units === "em" ? em(size) : rem(size);
+  }
+  return size || sizes.md;
+}
+
+function getBreakpointValue(value) {
+  if (typeof value === "number") {
+    return value;
+  }
+  if (typeof value === "string" && value.includes("rem")) {
+    return Number(value.replace("rem", "")) * 16;
+  }
+  if (typeof value === "string" && value.includes("em")) {
+    return Number(value.replace("em", "")) * 16;
+  }
+  return Number(value);
+}
+function largerThan(theme) {
+  return (breakpoint) => `@media (min-width: ${em(getBreakpointValue(getSize({ size: breakpoint, sizes: theme.breakpoints })))})`;
+}
+function smallerThan(theme) {
+  return (breakpoint) => `@media (max-width: ${em(getBreakpointValue(getSize({ size: breakpoint, sizes: theme.breakpoints })) - 1)})`;
+}
+
+function isHexColor(hex) {
+  const HEX_REGEXP = /^#?([0-9A-F]{3}){1,2}$/i;
+  return HEX_REGEXP.test(hex);
+}
+function hexToRgba(color) {
+  let hexString = color.replace("#", "");
+  if (hexString.length === 3) {
+    const shorthandHex = hexString.split("");
+    hexString = [
+      shorthandHex[0],
+      shorthandHex[0],
+      shorthandHex[1],
+      shorthandHex[1],
+      shorthandHex[2],
+      shorthandHex[2]
+    ].join("");
+  }
+  const parsed = parseInt(hexString, 16);
+  const r = parsed >> 16 & 255;
+  const g = parsed >> 8 & 255;
+  const b = parsed & 255;
+  return {
+    r,
+    g,
+    b,
+    a: 1
+  };
+}
+function rgbStringToRgba(color) {
+  const [r, g, b, a] = color.replace(/[^0-9,.]/g, "").split(",").map(Number);
+  return { r, g, b, a: a || 1 };
+}
+function toRgba(color) {
+  if (isHexColor(color)) {
+    return hexToRgba(color);
+  }
+  if (color.startsWith("rgb")) {
+    return rgbStringToRgba(color);
+  }
+  return {
+    r: 0,
+    g: 0,
+    b: 0,
+    a: 1
+  };
+}
+
+function rgba(color, alpha) {
+  if (typeof color !== "string" || alpha > 1 || alpha < 0) {
+    return "rgba(0, 0, 0, 1)";
+  }
+  if (color.startsWith("var(--")) {
+    return color;
+  }
+  const { r, g, b } = toRgba(color);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function cover(offset = 0) {
+  return {
+    position: "absolute",
+    top: rem(offset),
+    right: rem(offset),
+    left: rem(offset),
+    bottom: rem(offset)
+  };
+}
+
+function darken(color, alpha) {
+  if (typeof color === "string" && color.startsWith("var(--")) {
+    return color;
+  }
+  const { r, g, b, a } = toRgba(color);
+  const f = 1 - alpha;
+  const dark = (input) => Math.round(input * f);
+  return `rgba(${dark(r)}, ${dark(g)}, ${dark(b)}, ${a})`;
+}
+
+function lighten(color, alpha) {
+  if (typeof color === "string" && color.startsWith("var(--")) {
+    return color;
+  }
+  const { r, g, b, a } = toRgba(color);
+  const light = (input) => Math.round(input + (255 - input) * alpha);
+  return `rgba(${light(r)}, ${light(g)}, ${light(b)}, ${a})`;
+}
+
+function radius(theme) {
+  return (size) => {
+    if (typeof size === "number") {
+      return rem(size);
+    }
+    const defaultRadius = typeof theme.defaultRadius === "number" ? theme.defaultRadius : theme.radius[theme.defaultRadius] || theme.defaultRadius;
+    return theme.radius[size] || size || defaultRadius;
+  };
+}
+
+function getColorIndexInfo(color, theme) {
+  if (typeof color === "string" && color.includes(".")) {
+    const [splittedColor, _splittedShade] = color.split(".");
+    const splittedShade = parseInt(_splittedShade, 10);
+    if (splittedColor in theme.colors && splittedShade >= 0 && splittedShade < 10) {
+      return { isSplittedColor: true, key: splittedColor, shade: splittedShade };
+    }
+  }
+  return { isSplittedColor: false };
+}
+function variant(theme) {
+  const getThemeColor = themeColor(theme);
+  const getPrimaryShade = primaryShade(theme);
+  const getGradient = gradient(theme);
+  return ({ variant: variant2, color, gradient: gradient2, primaryFallback }) => {
+    const colorInfo = getColorIndexInfo(color, theme);
+    switch (variant2) {
+      case "light": {
+        return {
+          border: "transparent",
+          background: rgba(getThemeColor(color, theme.colorScheme === "dark" ? 8 : 0, primaryFallback, false), theme.colorScheme === "dark" ? 0.2 : 1),
+          color: color === "dark" ? theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.colors.dark[9] : getThemeColor(color, theme.colorScheme === "dark" ? 2 : getPrimaryShade("light")),
+          hover: rgba(getThemeColor(color, theme.colorScheme === "dark" ? 7 : 1, primaryFallback, false), theme.colorScheme === "dark" ? 0.25 : 0.65)
+        };
+      }
+      case "subtle": {
+        return {
+          border: "transparent",
+          background: "transparent",
+          color: color === "dark" ? theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.colors.dark[9] : getThemeColor(color, theme.colorScheme === "dark" ? 2 : getPrimaryShade("light")),
+          hover: rgba(getThemeColor(color, theme.colorScheme === "dark" ? 8 : 0, primaryFallback, false), theme.colorScheme === "dark" ? 0.2 : 1)
+        };
+      }
+      case "outline": {
+        return {
+          border: getThemeColor(color, theme.colorScheme === "dark" ? 5 : getPrimaryShade("light")),
+          background: "transparent",
+          color: getThemeColor(color, theme.colorScheme === "dark" ? 5 : getPrimaryShade("light")),
+          hover: theme.colorScheme === "dark" ? rgba(getThemeColor(color, 5, primaryFallback, false), 0.05) : rgba(getThemeColor(color, 0, primaryFallback, false), 0.35)
+        };
+      }
+      case "default": {
+        return {
+          border: theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[4],
+          background: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.white,
+          color: theme.colorScheme === "dark" ? theme.white : theme.black,
+          hover: theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[0]
+        };
+      }
+      case "white": {
+        return {
+          border: "transparent",
+          background: theme.white,
+          color: getThemeColor(color, getPrimaryShade()),
+          hover: null
+        };
+      }
+      case "transparent": {
+        return {
+          border: "transparent",
+          color: color === "dark" ? theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.colors.dark[9] : getThemeColor(color, theme.colorScheme === "dark" ? 2 : getPrimaryShade("light")),
+          background: "transparent",
+          hover: null
+        };
+      }
+      case "gradient": {
+        return {
+          background: getGradient(gradient2),
+          color: theme.white,
+          border: "transparent",
+          hover: null
+        };
+      }
+      default: {
+        const _primaryShade = getPrimaryShade();
+        const _shade = colorInfo.isSplittedColor ? colorInfo.shade : _primaryShade;
+        const _color = colorInfo.isSplittedColor ? colorInfo.key : color;
+        return {
+          border: "transparent",
+          background: getThemeColor(_color, _shade, primaryFallback),
+          color: theme.white,
+          hover: getThemeColor(_color, _shade === 9 ? 8 : _shade + 1)
+        };
+      }
+    }
+  };
+}
+
+function primaryColor(theme) {
+  return (colorScheme) => {
+    const shade = primaryShade(theme)(colorScheme);
+    return theme.colors[theme.primaryColor][shade];
+  };
+}
+
+function hover(hoverStyle) {
+  return {
+    "@media (hover: hover)": {
+      "&:hover": hoverStyle
+    },
+    "@media (hover: none)": {
+      "&:active": hoverStyle
+    }
+  };
+}
+
+function placeholderStyles(theme) {
+  return () => ({
+    userSelect: "none",
+    color: theme.colorScheme === "dark" ? theme.colors.dark[3] : theme.colors.gray[5]
+  });
+}
+
+function dimmed(theme) {
+  return () => theme.colorScheme === "dark" ? theme.colors.dark[2] : theme.colors.gray[6];
+}
+
+const fns = {
+  fontStyles,
+  themeColor,
+  focusStyles,
+  linearGradient,
+  radialGradient,
+  smallerThan,
+  largerThan,
+  rgba,
+  cover,
+  darken,
+  lighten,
+  radius,
+  variant,
+  primaryShade,
+  hover,
+  gradient,
+  primaryColor,
+  placeholderStyles,
+  dimmed
+};
+
+var __defProp$e = Object.defineProperty;
+var __defProps$7 = Object.defineProperties;
+var __getOwnPropDescs$7 = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols$f = Object.getOwnPropertySymbols;
+var __hasOwnProp$f = Object.prototype.hasOwnProperty;
+var __propIsEnum$f = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$e = (obj, key, value) => key in obj ? __defProp$e(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$e = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$f.call(b, prop))
+      __defNormalProp$e(a, prop, b[prop]);
+  if (__getOwnPropSymbols$f)
+    for (var prop of __getOwnPropSymbols$f(b)) {
+      if (__propIsEnum$f.call(b, prop))
+        __defNormalProp$e(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps$7 = (a, b) => __defProps$7(a, __getOwnPropDescs$7(b));
+function attachFunctions(themeBase) {
+  return __spreadProps$7(__spreadValues$e({}, themeBase), {
+    fn: {
+      fontStyles: fns.fontStyles(themeBase),
+      themeColor: fns.themeColor(themeBase),
+      focusStyles: fns.focusStyles(themeBase),
+      largerThan: fns.largerThan(themeBase),
+      smallerThan: fns.smallerThan(themeBase),
+      radialGradient: fns.radialGradient,
+      linearGradient: fns.linearGradient,
+      gradient: fns.gradient(themeBase),
+      rgba: fns.rgba,
+      cover: fns.cover,
+      lighten: fns.lighten,
+      darken: fns.darken,
+      primaryShade: fns.primaryShade(themeBase),
+      radius: fns.radius(themeBase),
+      variant: fns.variant(themeBase),
+      hover: fns.hover,
+      primaryColor: fns.primaryColor(themeBase),
+      placeholderStyles: fns.placeholderStyles(themeBase),
+      dimmed: fns.dimmed(themeBase)
+    }
+  });
+}
+
+Object.keys(DEFAULT_COLORS);
+const _DEFAULT_THEME = {
+  dir: "ltr",
+  primaryShade: {
+    light: 6,
+    dark: 8
+  },
+  focusRing: "auto",
+  loader: "oval",
+  colorScheme: "light",
+  white: "#fff",
+  black: "#000",
+  defaultRadius: "sm",
+  transitionTimingFunction: "ease",
+  colors: DEFAULT_COLORS,
+  lineHeight: 1.55,
+  fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
+  fontFamilyMonospace: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace",
+  primaryColor: "blue",
+  respectReducedMotion: true,
+  cursorType: "default",
+  defaultGradient: {
+    from: "indigo",
+    to: "cyan",
+    deg: 45
+  },
+  shadows: {
+    xs: "0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.1)",
+    sm: "0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 0.625rem 0.9375rem -0.3125rem, rgba(0, 0, 0, 0.04) 0 0.4375rem 0.4375rem -0.3125rem",
+    md: "0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 1.25rem 1.5625rem -0.3125rem, rgba(0, 0, 0, 0.04) 0 0.625rem 0.625rem -0.3125rem",
+    lg: "0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 1.75rem 1.4375rem -0.4375rem, rgba(0, 0, 0, 0.04) 0 0.75rem 0.75rem -0.4375rem",
+    xl: "0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 2.25rem 1.75rem -0.4375rem, rgba(0, 0, 0, 0.04) 0 1.0625rem 1.0625rem -0.4375rem"
+  },
+  fontSizes: {
+    xs: "0.75rem",
+    sm: "0.875rem",
+    md: "1rem",
+    lg: "1.125rem",
+    xl: "1.25rem"
+  },
+  radius: {
+    xs: "0.125rem",
+    sm: "0.25rem",
+    md: "0.5rem",
+    lg: "1rem",
+    xl: "2rem"
+  },
+  spacing: {
+    xs: "0.625rem",
+    sm: "0.75rem",
+    md: "1rem",
+    lg: "1.25rem",
+    xl: "1.5rem"
+  },
+  breakpoints: {
+    xs: "36em",
+    sm: "48em",
+    md: "62em",
+    lg: "75em",
+    xl: "88em"
+  },
+  headings: {
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
+    fontWeight: 700,
+    sizes: {
+      h1: { fontSize: "2.125rem", lineHeight: 1.3, fontWeight: void 0 },
+      h2: { fontSize: "1.625rem", lineHeight: 1.35, fontWeight: void 0 },
+      h3: { fontSize: "1.375rem", lineHeight: 1.4, fontWeight: void 0 },
+      h4: { fontSize: "1.125rem", lineHeight: 1.45, fontWeight: void 0 },
+      h5: { fontSize: "1rem", lineHeight: 1.5, fontWeight: void 0 },
+      h6: { fontSize: "0.875rem", lineHeight: 1.5, fontWeight: void 0 }
+    }
+  },
+  other: {},
+  components: {},
+  activeStyles: { transform: "translateY(0.0625rem)" },
+  datesLocale: "en",
+  globalStyles: void 0,
+  focusRingStyles: {
+    styles: (theme) => ({
+      outlineOffset: "0.125rem",
+      outline: `0.125rem solid ${theme.colors[theme.primaryColor][theme.colorScheme === "dark" ? 7 : 5]}`
+    }),
+    resetStyles: () => ({ outline: "none" }),
+    inputStyles: (theme) => ({
+      outline: "none",
+      borderColor: theme.colors[theme.primaryColor][typeof theme.primaryShade === "object" ? theme.primaryShade[theme.colorScheme] : theme.primaryShade]
+    })
+  }
+};
+const DEFAULT_THEME = attachFunctions(_DEFAULT_THEME);
+
+/*
+
+Based off glamor's StyleSheet, thanks Sunil ❤️
+
+high performance StyleSheet for css-in-js systems
+
+- uses multiple style tags behind the scenes for millions of rules
+- uses `insertRule` for appending in production for *much* faster performance
+
+// usage
+
+import { StyleSheet } from '@emotion/sheet'
+
+let styleSheet = new StyleSheet({ key: '', container: document.head })
+
+styleSheet.insert('#box { border: 1px solid red; }')
+- appends a css rule into the stylesheet
+
+styleSheet.flush()
+- empties the stylesheet of all its contents
+
+*/
+// $FlowFixMe
+function sheetForTag(tag) {
+  if (tag.sheet) {
+    // $FlowFixMe
+    return tag.sheet;
+  } // this weirdness brought to you by firefox
+
+  /* istanbul ignore next */
+
+
+  for (var i = 0; i < document.styleSheets.length; i++) {
+    if (document.styleSheets[i].ownerNode === tag) {
+      // $FlowFixMe
+      return document.styleSheets[i];
+    }
+  }
+}
+
+function createStyleElement(options) {
+  var tag = document.createElement('style');
+  tag.setAttribute('data-emotion', options.key);
+
+  if (options.nonce !== undefined) {
+    tag.setAttribute('nonce', options.nonce);
+  }
+
+  tag.appendChild(document.createTextNode(''));
+  tag.setAttribute('data-s', '');
+  return tag;
+}
+
+var StyleSheet = /*#__PURE__*/function () {
+  // Using Node instead of HTMLElement since container may be a ShadowRoot
+  function StyleSheet(options) {
+    var _this = this;
+
+    this._insertTag = function (tag) {
+      var before;
+
+      if (_this.tags.length === 0) {
+        if (_this.insertionPoint) {
+          before = _this.insertionPoint.nextSibling;
+        } else if (_this.prepend) {
+          before = _this.container.firstChild;
+        } else {
+          before = _this.before;
+        }
+      } else {
+        before = _this.tags[_this.tags.length - 1].nextSibling;
+      }
+
+      _this.container.insertBefore(tag, before);
+
+      _this.tags.push(tag);
+    };
+
+    this.isSpeedy = options.speedy === undefined ? process.env.NODE_ENV === 'production' : options.speedy;
+    this.tags = [];
+    this.ctr = 0;
+    this.nonce = options.nonce; // key is the value of the data-emotion attribute, it's used to identify different sheets
+
+    this.key = options.key;
+    this.container = options.container;
+    this.prepend = options.prepend;
+    this.insertionPoint = options.insertionPoint;
+    this.before = null;
+  }
+
+  var _proto = StyleSheet.prototype;
+
+  _proto.hydrate = function hydrate(nodes) {
+    nodes.forEach(this._insertTag);
+  };
+
+  _proto.insert = function insert(rule) {
+    // the max length is how many rules we have per style tag, it's 65000 in speedy mode
+    // it's 1 in dev because we insert source maps that map a single rule to a location
+    // and you can only have one source map per style tag
+    if (this.ctr % (this.isSpeedy ? 65000 : 1) === 0) {
+      this._insertTag(createStyleElement(this));
+    }
+
+    var tag = this.tags[this.tags.length - 1];
+
+    if (process.env.NODE_ENV !== 'production') {
+      var isImportRule = rule.charCodeAt(0) === 64 && rule.charCodeAt(1) === 105;
+
+      if (isImportRule && this._alreadyInsertedOrderInsensitiveRule) {
+        // this would only cause problem in speedy mode
+        // but we don't want enabling speedy to affect the observable behavior
+        // so we report this error at all times
+        console.error("You're attempting to insert the following rule:\n" + rule + '\n\n`@import` rules must be before all other types of rules in a stylesheet but other rules have already been inserted. Please ensure that `@import` rules are before all other rules.');
+      }
+      this._alreadyInsertedOrderInsensitiveRule = this._alreadyInsertedOrderInsensitiveRule || !isImportRule;
+    }
+
+    if (this.isSpeedy) {
+      var sheet = sheetForTag(tag);
+
+      try {
+        // this is the ultrafast version, works across browsers
+        // the big drawback is that the css won't be editable in devtools
+        sheet.insertRule(rule, sheet.cssRules.length);
+      } catch (e) {
+        if (process.env.NODE_ENV !== 'production' && !/:(-moz-placeholder|-moz-focus-inner|-moz-focusring|-ms-input-placeholder|-moz-read-write|-moz-read-only|-ms-clear|-ms-expand|-ms-reveal){/.test(rule)) {
+          console.error("There was a problem inserting the following rule: \"" + rule + "\"", e);
+        }
+      }
+    } else {
+      tag.appendChild(document.createTextNode(rule));
+    }
+
+    this.ctr++;
+  };
+
+  _proto.flush = function flush() {
+    // $FlowFixMe
+    this.tags.forEach(function (tag) {
+      return tag.parentNode && tag.parentNode.removeChild(tag);
+    });
+    this.tags = [];
+    this.ctr = 0;
+
+    if (process.env.NODE_ENV !== 'production') {
+      this._alreadyInsertedOrderInsensitiveRule = false;
+    }
+  };
+
+  return StyleSheet;
+}();
+
+function memoize(fn) {
+  var cache = Object.create(null);
+  return function (arg) {
+    if (cache[arg] === undefined) cache[arg] = fn(arg);
+    return cache[arg];
+  };
+}
+
+var identifierWithPointTracking = function identifierWithPointTracking(begin, points, index) {
+  var previous = 0;
+  var character = 0;
+
+  while (true) {
+    previous = character;
+    character = peek(); // &\f
+
+    if (previous === 38 && character === 12) {
+      points[index] = 1;
+    }
+
+    if (token(character)) {
+      break;
+    }
+
+    next();
+  }
+
+  return slice(begin, position);
+};
+
+var toRules = function toRules(parsed, points) {
+  // pretend we've started with a comma
+  var index = -1;
+  var character = 44;
+
+  do {
+    switch (token(character)) {
+      case 0:
+        // &\f
+        if (character === 38 && peek() === 12) {
+          // this is not 100% correct, we don't account for literal sequences here - like for example quoted strings
+          // stylis inserts \f after & to know when & where it should replace this sequence with the context selector
+          // and when it should just concatenate the outer and inner selectors
+          // it's very unlikely for this sequence to actually appear in a different context, so we just leverage this fact here
+          points[index] = 1;
+        }
+
+        parsed[index] += identifierWithPointTracking(position - 1, points, index);
+        break;
+
+      case 2:
+        parsed[index] += delimit(character);
+        break;
+
+      case 4:
+        // comma
+        if (character === 44) {
+          // colon
+          parsed[++index] = peek() === 58 ? '&\f' : '';
+          points[index] = parsed[index].length;
+          break;
+        }
+
+      // fallthrough
+
+      default:
+        parsed[index] += from(character);
+    }
+  } while (character = next());
+
+  return parsed;
+};
+
+var getRules = function getRules(value, points) {
+  return dealloc(toRules(alloc(value), points));
+}; // WeakSet would be more appropriate, but only WeakMap is supported in IE11
+
+
+var fixedElements = /* #__PURE__ */new WeakMap();
+var compat = function compat(element) {
+  if (element.type !== 'rule' || !element.parent || // positive .length indicates that this rule contains pseudo
+  // negative .length indicates that this rule has been already prefixed
+  element.length < 1) {
+    return;
+  }
+
+  var value = element.value,
+      parent = element.parent;
+  var isImplicitRule = element.column === parent.column && element.line === parent.line;
+
+  while (parent.type !== 'rule') {
+    parent = parent.parent;
+    if (!parent) return;
+  } // short-circuit for the simplest case
+
+
+  if (element.props.length === 1 && value.charCodeAt(0) !== 58
+  /* colon */
+  && !fixedElements.get(parent)) {
+    return;
+  } // if this is an implicitly inserted rule (the one eagerly inserted at the each new nested level)
+  // then the props has already been manipulated beforehand as they that array is shared between it and its "rule parent"
+
+
+  if (isImplicitRule) {
+    return;
+  }
+
+  fixedElements.set(element, true);
+  var points = [];
+  var rules = getRules(value, points);
+  var parentRules = parent.props;
+
+  for (var i = 0, k = 0; i < rules.length; i++) {
+    for (var j = 0; j < parentRules.length; j++, k++) {
+      element.props[k] = points[i] ? rules[i].replace(/&\f/g, parentRules[j]) : parentRules[j] + " " + rules[i];
+    }
+  }
+};
+var removeLabel = function removeLabel(element) {
+  if (element.type === 'decl') {
+    var value = element.value;
+
+    if ( // charcode for l
+    value.charCodeAt(0) === 108 && // charcode for b
+    value.charCodeAt(2) === 98) {
+      // this ignores label
+      element["return"] = '';
+      element.value = '';
+    }
+  }
+};
+var ignoreFlag = 'emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason';
+
+var isIgnoringComment = function isIgnoringComment(element) {
+  return element.type === 'comm' && element.children.indexOf(ignoreFlag) > -1;
+};
+
+var createUnsafeSelectorsAlarm = function createUnsafeSelectorsAlarm(cache) {
+  return function (element, index, children) {
+    if (element.type !== 'rule' || cache.compat) return;
+    var unsafePseudoClasses = element.value.match(/(:first|:nth|:nth-last)-child/g);
+
+    if (unsafePseudoClasses) {
+      var isNested = !!element.parent; // in nested rules comments become children of the "auto-inserted" rule and that's always the `element.parent`
+      //
+      // considering this input:
+      // .a {
+      //   .b /* comm */ {}
+      //   color: hotpink;
+      // }
+      // we get output corresponding to this:
+      // .a {
+      //   & {
+      //     /* comm */
+      //     color: hotpink;
+      //   }
+      //   .b {}
+      // }
+
+      var commentContainer = isNested ? element.parent.children : // global rule at the root level
+      children;
+
+      for (var i = commentContainer.length - 1; i >= 0; i--) {
+        var node = commentContainer[i];
+
+        if (node.line < element.line) {
+          break;
+        } // it is quite weird but comments are *usually* put at `column: element.column - 1`
+        // so we seek *from the end* for the node that is earlier than the rule's `element` and check that
+        // this will also match inputs like this:
+        // .a {
+        //   /* comm */
+        //   .b {}
+        // }
+        //
+        // but that is fine
+        //
+        // it would be the easiest to change the placement of the comment to be the first child of the rule:
+        // .a {
+        //   .b { /* comm */ }
+        // }
+        // with such inputs we wouldn't have to search for the comment at all
+        // TODO: consider changing this comment placement in the next major version
+
+
+        if (node.column < element.column) {
+          if (isIgnoringComment(node)) {
+            return;
+          }
+
+          break;
+        }
+      }
+
+      unsafePseudoClasses.forEach(function (unsafePseudoClass) {
+        console.error("The pseudo class \"" + unsafePseudoClass + "\" is potentially unsafe when doing server-side rendering. Try changing it to \"" + unsafePseudoClass.split('-child')[0] + "-of-type\".");
+      });
+    }
+  };
+};
+
+var isImportRule = function isImportRule(element) {
+  return element.type.charCodeAt(1) === 105 && element.type.charCodeAt(0) === 64;
+};
+
+var isPrependedWithRegularRules = function isPrependedWithRegularRules(index, children) {
+  for (var i = index - 1; i >= 0; i--) {
+    if (!isImportRule(children[i])) {
+      return true;
+    }
+  }
+
+  return false;
+}; // use this to remove incorrect elements from further processing
+// so they don't get handed to the `sheet` (or anything else)
+// as that could potentially lead to additional logs which in turn could be overhelming to the user
+
+
+var nullifyElement = function nullifyElement(element) {
+  element.type = '';
+  element.value = '';
+  element["return"] = '';
+  element.children = '';
+  element.props = '';
+};
+
+var incorrectImportAlarm = function incorrectImportAlarm(element, index, children) {
+  if (!isImportRule(element)) {
+    return;
+  }
+
+  if (element.parent) {
+    console.error("`@import` rules can't be nested inside other rules. Please move it to the top level and put it before regular rules. Keep in mind that they can only be used within global styles.");
+    nullifyElement(element);
+  } else if (isPrependedWithRegularRules(index, children)) {
+    console.error("`@import` rules can't be after other rules. Please put your `@import` rules before your other rules.");
+    nullifyElement(element);
+  }
+};
+
+/* eslint-disable no-fallthrough */
+
+function prefix(value, length) {
+  switch (hash(value, length)) {
+    // color-adjust
+    case 5103:
+      return WEBKIT + 'print-' + value + value;
+    // animation, animation-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function)
+
+    case 5737:
+    case 4201:
+    case 3177:
+    case 3433:
+    case 1641:
+    case 4457:
+    case 2921: // text-decoration, filter, clip-path, backface-visibility, column, box-decoration-break
+
+    case 5572:
+    case 6356:
+    case 5844:
+    case 3191:
+    case 6645:
+    case 3005: // mask, mask-image, mask-(mode|clip|size), mask-(repeat|origin), mask-position, mask-composite,
+
+    case 6391:
+    case 5879:
+    case 5623:
+    case 6135:
+    case 4599:
+    case 4855: // background-clip, columns, column-(count|fill|gap|rule|rule-color|rule-style|rule-width|span|width)
+
+    case 4215:
+    case 6389:
+    case 5109:
+    case 5365:
+    case 5621:
+    case 3829:
+      return WEBKIT + value + value;
+    // appearance, user-select, transform, hyphens, text-size-adjust
+
+    case 5349:
+    case 4246:
+    case 4810:
+    case 6968:
+    case 2756:
+      return WEBKIT + value + MOZ + value + MS + value + value;
+    // flex, flex-direction
+
+    case 6828:
+    case 4268:
+      return WEBKIT + value + MS + value + value;
+    // order
+
+    case 6165:
+      return WEBKIT + value + MS + 'flex-' + value + value;
+    // align-items
+
+    case 5187:
+      return WEBKIT + value + replace(value, /(\w+).+(:[^]+)/, WEBKIT + 'box-$1$2' + MS + 'flex-$1$2') + value;
+    // align-self
+
+    case 5443:
+      return WEBKIT + value + MS + 'flex-item-' + replace(value, /flex-|-self/, '') + value;
+    // align-content
+
+    case 4675:
+      return WEBKIT + value + MS + 'flex-line-pack' + replace(value, /align-content|flex-|-self/, '') + value;
+    // flex-shrink
+
+    case 5548:
+      return WEBKIT + value + MS + replace(value, 'shrink', 'negative') + value;
+    // flex-basis
+
+    case 5292:
+      return WEBKIT + value + MS + replace(value, 'basis', 'preferred-size') + value;
+    // flex-grow
+
+    case 6060:
+      return WEBKIT + 'box-' + replace(value, '-grow', '') + WEBKIT + value + MS + replace(value, 'grow', 'positive') + value;
+    // transition
+
+    case 4554:
+      return WEBKIT + replace(value, /([^-])(transform)/g, '$1' + WEBKIT + '$2') + value;
+    // cursor
+
+    case 6187:
+      return replace(replace(replace(value, /(zoom-|grab)/, WEBKIT + '$1'), /(image-set)/, WEBKIT + '$1'), value, '') + value;
+    // background, background-image
+
+    case 5495:
+    case 3959:
+      return replace(value, /(image-set\([^]*)/, WEBKIT + '$1' + '$`$1');
+    // justify-content
+
+    case 4968:
+      return replace(replace(value, /(.+:)(flex-)?(.*)/, WEBKIT + 'box-pack:$3' + MS + 'flex-pack:$3'), /s.+-b[^;]+/, 'justify') + WEBKIT + value + value;
+    // (margin|padding)-inline-(start|end)
+
+    case 4095:
+    case 3583:
+    case 4068:
+    case 2532:
+      return replace(value, /(.+)-inline(.+)/, WEBKIT + '$1$2') + value;
+    // (min|max)?(width|height|inline-size|block-size)
+
+    case 8116:
+    case 7059:
+    case 5753:
+    case 5535:
+    case 5445:
+    case 5701:
+    case 4933:
+    case 4677:
+    case 5533:
+    case 5789:
+    case 5021:
+    case 4765:
+      // stretch, max-content, min-content, fill-available
+      if (strlen(value) - 1 - length > 6) switch (charat(value, length + 1)) {
+        // (m)ax-content, (m)in-content
+        case 109:
+          // -
+          if (charat(value, length + 4) !== 45) break;
+        // (f)ill-available, (f)it-content
+
+        case 102:
+          return replace(value, /(.+:)(.+)-([^]+)/, '$1' + WEBKIT + '$2-$3' + '$1' + MOZ + (charat(value, length + 3) == 108 ? '$3' : '$2-$3')) + value;
+        // (s)tretch
+
+        case 115:
+          return ~indexof(value, 'stretch') ? prefix(replace(value, 'stretch', 'fill-available'), length) + value : value;
+      }
+      break;
+    // position: sticky
+
+    case 4949:
+      // (s)ticky?
+      if (charat(value, length + 1) !== 115) break;
+    // display: (flex|inline-flex)
+
+    case 6444:
+      switch (charat(value, strlen(value) - 3 - (~indexof(value, '!important') && 10))) {
+        // stic(k)y
+        case 107:
+          return replace(value, ':', ':' + WEBKIT) + value;
+        // (inline-)?fl(e)x
+
+        case 101:
+          return replace(value, /(.+:)([^;!]+)(;|!.+)?/, '$1' + WEBKIT + (charat(value, 14) === 45 ? 'inline-' : '') + 'box$3' + '$1' + WEBKIT + '$2$3' + '$1' + MS + '$2box$3') + value;
+      }
+
+      break;
+    // writing-mode
+
+    case 5936:
+      switch (charat(value, length + 11)) {
+        // vertical-l(r)
+        case 114:
+          return WEBKIT + value + MS + replace(value, /[svh]\w+-[tblr]{2}/, 'tb') + value;
+        // vertical-r(l)
+
+        case 108:
+          return WEBKIT + value + MS + replace(value, /[svh]\w+-[tblr]{2}/, 'tb-rl') + value;
+        // horizontal(-)tb
+
+        case 45:
+          return WEBKIT + value + MS + replace(value, /[svh]\w+-[tblr]{2}/, 'lr') + value;
+      }
+
+      return WEBKIT + value + MS + value + value;
+  }
+
+  return value;
+}
+
+var prefixer = function prefixer(element, index, children, callback) {
+  if (element.length > -1) if (!element["return"]) switch (element.type) {
+    case DECLARATION:
+      element["return"] = prefix(element.value, element.length);
+      break;
+
+    case KEYFRAMES:
+      return serialize([copy$1(element, {
+        value: replace(element.value, '@', '@' + WEBKIT)
+      })], callback);
+
+    case RULESET:
+      if (element.length) return combine(element.props, function (value) {
+        switch (match$1(value, /(::plac\w+|:read-\w+)/)) {
+          // :read-(only|write)
+          case ':read-only':
+          case ':read-write':
+            return serialize([copy$1(element, {
+              props: [replace(value, /:(read-\w+)/, ':' + MOZ + '$1')]
+            })], callback);
+          // :placeholder
+
+          case '::placeholder':
+            return serialize([copy$1(element, {
+              props: [replace(value, /:(plac\w+)/, ':' + WEBKIT + 'input-$1')]
+            }), copy$1(element, {
+              props: [replace(value, /:(plac\w+)/, ':' + MOZ + '$1')]
+            }), copy$1(element, {
+              props: [replace(value, /:(plac\w+)/, MS + 'input-$1')]
+            })], callback);
+        }
+
+        return '';
+      });
+  }
+};
+
+var defaultStylisPlugins = [prefixer];
+
+var createCache = function createCache(options) {
+  var key = options.key;
+
+  if (process.env.NODE_ENV !== 'production' && !key) {
+    throw new Error("You have to configure `key` for your cache. Please make sure it's unique (and not equal to 'css') as it's used for linking styles to your cache.\n" + "If multiple caches share the same key they might \"fight\" for each other's style elements.");
+  }
+
+  if (key === 'css') {
+    var ssrStyles = document.querySelectorAll("style[data-emotion]:not([data-s])"); // get SSRed styles out of the way of React's hydration
+    // document.head is a safe place to move them to(though note document.head is not necessarily the last place they will be)
+    // note this very very intentionally targets all style elements regardless of the key to ensure
+    // that creating a cache works inside of render of a React component
+
+    Array.prototype.forEach.call(ssrStyles, function (node) {
+      // we want to only move elements which have a space in the data-emotion attribute value
+      // because that indicates that it is an Emotion 11 server-side rendered style elements
+      // while we will already ignore Emotion 11 client-side inserted styles because of the :not([data-s]) part in the selector
+      // Emotion 10 client-side inserted styles did not have data-s (but importantly did not have a space in their data-emotion attributes)
+      // so checking for the space ensures that loading Emotion 11 after Emotion 10 has inserted some styles
+      // will not result in the Emotion 10 styles being destroyed
+      var dataEmotionAttribute = node.getAttribute('data-emotion');
+
+      if (dataEmotionAttribute.indexOf(' ') === -1) {
+        return;
+      }
+      document.head.appendChild(node);
+      node.setAttribute('data-s', '');
+    });
+  }
+
+  var stylisPlugins = options.stylisPlugins || defaultStylisPlugins;
+
+  if (process.env.NODE_ENV !== 'production') {
+    // $FlowFixMe
+    if (/[^a-z-]/.test(key)) {
+      throw new Error("Emotion key must only contain lower case alphabetical characters and - but \"" + key + "\" was passed");
+    }
+  }
+
+  var inserted = {};
+  var container;
+  var nodesToHydrate = [];
+
+  {
+    container = options.container || document.head;
+    Array.prototype.forEach.call( // this means we will ignore elements which don't have a space in them which
+    // means that the style elements we're looking at are only Emotion 11 server-rendered style elements
+    document.querySelectorAll("style[data-emotion^=\"" + key + " \"]"), function (node) {
+      var attrib = node.getAttribute("data-emotion").split(' '); // $FlowFixMe
+
+      for (var i = 1; i < attrib.length; i++) {
+        inserted[attrib[i]] = true;
+      }
+
+      nodesToHydrate.push(node);
+    });
+  }
+
+  var _insert;
+
+  var omnipresentPlugins = [compat, removeLabel];
+
+  if (process.env.NODE_ENV !== 'production') {
+    omnipresentPlugins.push(createUnsafeSelectorsAlarm({
+      get compat() {
+        return cache.compat;
+      }
+
+    }), incorrectImportAlarm);
+  }
+
+  {
+    var currentSheet;
+    var finalizingPlugins = [stringify$2, process.env.NODE_ENV !== 'production' ? function (element) {
+      if (!element.root) {
+        if (element["return"]) {
+          currentSheet.insert(element["return"]);
+        } else if (element.value && element.type !== COMMENT) {
+          // insert empty rule in non-production environments
+          // so @emotion/jest can grab `key` from the (JS)DOM for caches without any rules inserted yet
+          currentSheet.insert(element.value + "{}");
+        }
+      }
+    } : rulesheet(function (rule) {
+      currentSheet.insert(rule);
+    })];
+    var serializer = middleware(omnipresentPlugins.concat(stylisPlugins, finalizingPlugins));
+
+    var stylis = function stylis(styles) {
+      return serialize(compile(styles), serializer);
+    };
+
+    _insert = function insert(selector, serialized, sheet, shouldCache) {
+      currentSheet = sheet;
+
+      if (process.env.NODE_ENV !== 'production' && serialized.map !== undefined) {
+        currentSheet = {
+          insert: function insert(rule) {
+            sheet.insert(rule + serialized.map);
+          }
+        };
+      }
+
+      stylis(selector ? selector + "{" + serialized.styles + "}" : serialized.styles);
+
+      if (shouldCache) {
+        cache.inserted[serialized.name] = true;
+      }
+    };
+  }
+
+  var cache = {
+    key: key,
+    sheet: new StyleSheet({
+      key: key,
+      container: container,
+      nonce: options.nonce,
+      speedy: options.speedy,
+      prepend: options.prepend,
+      insertionPoint: options.insertionPoint
+    }),
+    nonce: options.nonce,
+    inserted: inserted,
+    registered: {},
+    insert: _insert
+  };
+  cache.sheet.hydrate(nodesToHydrate);
+  return cache;
+};
+
+var isBrowser = "object" !== 'undefined';
+function getRegisteredStyles(registered, registeredStyles, classNames) {
+  var rawClassName = '';
+  classNames.split(' ').forEach(function (className) {
+    if (registered[className] !== undefined) {
+      registeredStyles.push(registered[className] + ";");
+    } else {
+      rawClassName += className + " ";
+    }
+  });
+  return rawClassName;
+}
+var registerStyles = function registerStyles(cache, serialized, isStringTag) {
+  var className = cache.key + "-" + serialized.name;
+
+  if ( // we only need to add the styles to the registered cache if the
+  // class name could be used further down
+  // the tree but if it's a string tag, we know it won't
+  // so we don't have to add it to registered cache.
+  // this improves memory usage since we can avoid storing the whole style string
+  (isStringTag === false || // we need to always store it if we're in compat mode and
+  // in node since emotion-server relies on whether a style is in
+  // the registered cache to know whether a style is global or not
+  // also, note that this check will be dead code eliminated in the browser
+  isBrowser === false ) && cache.registered[className] === undefined) {
+    cache.registered[className] = serialized.styles;
+  }
+};
+var insertStyles = function insertStyles(cache, serialized, isStringTag) {
+  registerStyles(cache, serialized, isStringTag);
+  var className = cache.key + "-" + serialized.name;
+
+  if (cache.inserted[serialized.name] === undefined) {
+    var current = serialized;
+
+    do {
+      cache.insert(serialized === current ? "." + className : '', current, cache.sheet, true);
+
+      current = current.next;
+    } while (current !== undefined);
+  }
+};
+
+/* eslint-disable */
+// Inspired by https://github.com/garycourt/murmurhash-js
+// Ported from https://github.com/aappleby/smhasher/blob/61a0530f28277f2e850bfc39600ce61d02b518de/src/MurmurHash2.cpp#L37-L86
+function murmur2(str) {
+  // 'm' and 'r' are mixing constants generated offline.
+  // They're not really 'magic', they just happen to work well.
+  // const m = 0x5bd1e995;
+  // const r = 24;
+  // Initialize the hash
+  var h = 0; // Mix 4 bytes at a time into the hash
+
+  var k,
+      i = 0,
+      len = str.length;
+
+  for (; len >= 4; ++i, len -= 4) {
+    k = str.charCodeAt(i) & 0xff | (str.charCodeAt(++i) & 0xff) << 8 | (str.charCodeAt(++i) & 0xff) << 16 | (str.charCodeAt(++i) & 0xff) << 24;
+    k =
+    /* Math.imul(k, m): */
+    (k & 0xffff) * 0x5bd1e995 + ((k >>> 16) * 0xe995 << 16);
+    k ^=
+    /* k >>> r: */
+    k >>> 24;
+    h =
+    /* Math.imul(k, m): */
+    (k & 0xffff) * 0x5bd1e995 + ((k >>> 16) * 0xe995 << 16) ^
+    /* Math.imul(h, m): */
+    (h & 0xffff) * 0x5bd1e995 + ((h >>> 16) * 0xe995 << 16);
+  } // Handle the last few bytes of the input array
+
+
+  switch (len) {
+    case 3:
+      h ^= (str.charCodeAt(i + 2) & 0xff) << 16;
+
+    case 2:
+      h ^= (str.charCodeAt(i + 1) & 0xff) << 8;
+
+    case 1:
+      h ^= str.charCodeAt(i) & 0xff;
+      h =
+      /* Math.imul(h, m): */
+      (h & 0xffff) * 0x5bd1e995 + ((h >>> 16) * 0xe995 << 16);
+  } // Do a few final mixes of the hash to ensure the last few
+  // bytes are well-incorporated.
+
+
+  h ^= h >>> 13;
+  h =
+  /* Math.imul(h, m): */
+  (h & 0xffff) * 0x5bd1e995 + ((h >>> 16) * 0xe995 << 16);
+  return ((h ^ h >>> 15) >>> 0).toString(36);
+}
+
+var unitlessKeys = {
+  animationIterationCount: 1,
+  aspectRatio: 1,
+  borderImageOutset: 1,
+  borderImageSlice: 1,
+  borderImageWidth: 1,
+  boxFlex: 1,
+  boxFlexGroup: 1,
+  boxOrdinalGroup: 1,
+  columnCount: 1,
+  columns: 1,
+  flex: 1,
+  flexGrow: 1,
+  flexPositive: 1,
+  flexShrink: 1,
+  flexNegative: 1,
+  flexOrder: 1,
+  gridRow: 1,
+  gridRowEnd: 1,
+  gridRowSpan: 1,
+  gridRowStart: 1,
+  gridColumn: 1,
+  gridColumnEnd: 1,
+  gridColumnSpan: 1,
+  gridColumnStart: 1,
+  msGridRow: 1,
+  msGridRowSpan: 1,
+  msGridColumn: 1,
+  msGridColumnSpan: 1,
+  fontWeight: 1,
+  lineHeight: 1,
+  opacity: 1,
+  order: 1,
+  orphans: 1,
+  tabSize: 1,
+  widows: 1,
+  zIndex: 1,
+  zoom: 1,
+  WebkitLineClamp: 1,
+  // SVG-related properties
+  fillOpacity: 1,
+  floodOpacity: 1,
+  stopOpacity: 1,
+  strokeDasharray: 1,
+  strokeDashoffset: 1,
+  strokeMiterlimit: 1,
+  strokeOpacity: 1,
+  strokeWidth: 1
+};
+
+var ILLEGAL_ESCAPE_SEQUENCE_ERROR = "You have illegal escape sequence in your template literal, most likely inside content's property value.\nBecause you write your CSS inside a JavaScript string you actually have to do double escaping, so for example \"content: '\\00d7';\" should become \"content: '\\\\00d7';\".\nYou can read more about this here:\nhttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#ES2018_revision_of_illegal_escape_sequences";
+var UNDEFINED_AS_OBJECT_KEY_ERROR = "You have passed in falsy value as style object's key (can happen when in example you pass unexported component as computed key).";
+var hyphenateRegex = /[A-Z]|^ms/g;
+var animationRegex = /_EMO_([^_]+?)_([^]*?)_EMO_/g;
+
+var isCustomProperty = function isCustomProperty(property) {
+  return property.charCodeAt(1) === 45;
+};
+
+var isProcessableValue = function isProcessableValue(value) {
+  return value != null && typeof value !== 'boolean';
+};
+
+var processStyleName = /* #__PURE__ */memoize(function (styleName) {
+  return isCustomProperty(styleName) ? styleName : styleName.replace(hyphenateRegex, '-$&').toLowerCase();
+});
+
+var processStyleValue = function processStyleValue(key, value) {
+  switch (key) {
+    case 'animation':
+    case 'animationName':
+      {
+        if (typeof value === 'string') {
+          return value.replace(animationRegex, function (match, p1, p2) {
+            cursor = {
+              name: p1,
+              styles: p2,
+              next: cursor
+            };
+            return p1;
+          });
+        }
+      }
+  }
+
+  if (unitlessKeys[key] !== 1 && !isCustomProperty(key) && typeof value === 'number' && value !== 0) {
+    return value + 'px';
+  }
+
+  return value;
+};
+
+if (process.env.NODE_ENV !== 'production') {
+  var contentValuePattern = /(var|attr|counters?|url|element|(((repeating-)?(linear|radial))|conic)-gradient)\(|(no-)?(open|close)-quote/;
+  var contentValues = ['normal', 'none', 'initial', 'inherit', 'unset'];
+  var oldProcessStyleValue = processStyleValue;
+  var msPattern = /^-ms-/;
+  var hyphenPattern = /-(.)/g;
+  var hyphenatedCache = {};
+
+  processStyleValue = function processStyleValue(key, value) {
+    if (key === 'content') {
+      if (typeof value !== 'string' || contentValues.indexOf(value) === -1 && !contentValuePattern.test(value) && (value.charAt(0) !== value.charAt(value.length - 1) || value.charAt(0) !== '"' && value.charAt(0) !== "'")) {
+        throw new Error("You seem to be using a value for 'content' without quotes, try replacing it with `content: '\"" + value + "\"'`");
+      }
+    }
+
+    var processed = oldProcessStyleValue(key, value);
+
+    if (processed !== '' && !isCustomProperty(key) && key.indexOf('-') !== -1 && hyphenatedCache[key] === undefined) {
+      hyphenatedCache[key] = true;
+      console.error("Using kebab-case for css properties in objects is not supported. Did you mean " + key.replace(msPattern, 'ms-').replace(hyphenPattern, function (str, _char) {
+        return _char.toUpperCase();
+      }) + "?");
+    }
+
+    return processed;
+  };
+}
+
+var noComponentSelectorMessage = 'Component selectors can only be used in conjunction with ' + '@emotion/babel-plugin, the swc Emotion plugin, or another Emotion-aware ' + 'compiler transform.';
+
+function handleInterpolation(mergedProps, registered, interpolation) {
+  if (interpolation == null) {
+    return '';
+  }
+
+  if (interpolation.__emotion_styles !== undefined) {
+    if (process.env.NODE_ENV !== 'production' && interpolation.toString() === 'NO_COMPONENT_SELECTOR') {
+      throw new Error(noComponentSelectorMessage);
+    }
+
+    return interpolation;
+  }
+
+  switch (typeof interpolation) {
+    case 'boolean':
+      {
+        return '';
+      }
+
+    case 'object':
+      {
+        if (interpolation.anim === 1) {
+          cursor = {
+            name: interpolation.name,
+            styles: interpolation.styles,
+            next: cursor
+          };
+          return interpolation.name;
+        }
+
+        if (interpolation.styles !== undefined) {
+          var next = interpolation.next;
+
+          if (next !== undefined) {
+            // not the most efficient thing ever but this is a pretty rare case
+            // and there will be very few iterations of this generally
+            while (next !== undefined) {
+              cursor = {
+                name: next.name,
+                styles: next.styles,
+                next: cursor
+              };
+              next = next.next;
+            }
+          }
+
+          var styles = interpolation.styles + ";";
+
+          if (process.env.NODE_ENV !== 'production' && interpolation.map !== undefined) {
+            styles += interpolation.map;
+          }
+
+          return styles;
+        }
+
+        return createStringFromObject(mergedProps, registered, interpolation);
+      }
+
+    case 'function':
+      {
+        if (mergedProps !== undefined) {
+          var previousCursor = cursor;
+          var result = interpolation(mergedProps);
+          cursor = previousCursor;
+          return handleInterpolation(mergedProps, registered, result);
+        } else if (process.env.NODE_ENV !== 'production') {
+          console.error('Functions that are interpolated in css calls will be stringified.\n' + 'If you want to have a css call based on props, create a function that returns a css call like this\n' + 'let dynamicStyle = (props) => css`color: ${props.color}`\n' + 'It can be called directly with props or interpolated in a styled call like this\n' + "let SomeComponent = styled('div')`${dynamicStyle}`");
+        }
+
+        break;
+      }
+
+    case 'string':
+      if (process.env.NODE_ENV !== 'production') {
+        var matched = [];
+        var replaced = interpolation.replace(animationRegex, function (match, p1, p2) {
+          var fakeVarName = "animation" + matched.length;
+          matched.push("const " + fakeVarName + " = keyframes`" + p2.replace(/^@keyframes animation-\w+/, '') + "`");
+          return "${" + fakeVarName + "}";
+        });
+
+        if (matched.length) {
+          console.error('`keyframes` output got interpolated into plain string, please wrap it with `css`.\n\n' + 'Instead of doing this:\n\n' + [].concat(matched, ["`" + replaced + "`"]).join('\n') + '\n\nYou should wrap it with `css` like this:\n\n' + ("css`" + replaced + "`"));
+        }
+      }
+
+      break;
+  } // finalize string values (regular strings and functions interpolated into css calls)
+
+
+  if (registered == null) {
+    return interpolation;
+  }
+
+  var cached = registered[interpolation];
+  return cached !== undefined ? cached : interpolation;
+}
+
+function createStringFromObject(mergedProps, registered, obj) {
+  var string = '';
+
+  if (Array.isArray(obj)) {
+    for (var i = 0; i < obj.length; i++) {
+      string += handleInterpolation(mergedProps, registered, obj[i]) + ";";
+    }
+  } else {
+    for (var _key in obj) {
+      var value = obj[_key];
+
+      if (typeof value !== 'object') {
+        if (registered != null && registered[value] !== undefined) {
+          string += _key + "{" + registered[value] + "}";
+        } else if (isProcessableValue(value)) {
+          string += processStyleName(_key) + ":" + processStyleValue(_key, value) + ";";
+        }
+      } else {
+        if (_key === 'NO_COMPONENT_SELECTOR' && process.env.NODE_ENV !== 'production') {
+          throw new Error(noComponentSelectorMessage);
+        }
+
+        if (Array.isArray(value) && typeof value[0] === 'string' && (registered == null || registered[value[0]] === undefined)) {
+          for (var _i = 0; _i < value.length; _i++) {
+            if (isProcessableValue(value[_i])) {
+              string += processStyleName(_key) + ":" + processStyleValue(_key, value[_i]) + ";";
+            }
+          }
+        } else {
+          var interpolated = handleInterpolation(mergedProps, registered, value);
+
+          switch (_key) {
+            case 'animation':
+            case 'animationName':
+              {
+                string += processStyleName(_key) + ":" + interpolated + ";";
+                break;
+              }
+
+            default:
+              {
+                if (process.env.NODE_ENV !== 'production' && _key === 'undefined') {
+                  console.error(UNDEFINED_AS_OBJECT_KEY_ERROR);
+                }
+
+                string += _key + "{" + interpolated + "}";
+              }
+          }
+        }
+      }
+    }
+  }
+
+  return string;
+}
+
+var labelPattern = /label:\s*([^\s;\n{]+)\s*(;|$)/g;
+var sourceMapPattern;
+
+if (process.env.NODE_ENV !== 'production') {
+  sourceMapPattern = /\/\*#\ssourceMappingURL=data:application\/json;\S+\s+\*\//g;
+} // this is the cursor for keyframes
+// keyframes are stored on the SerializedStyles object as a linked list
+
+
+var cursor;
+var serializeStyles = function serializeStyles(args, registered, mergedProps) {
+  if (args.length === 1 && typeof args[0] === 'object' && args[0] !== null && args[0].styles !== undefined) {
+    return args[0];
+  }
+
+  var stringMode = true;
+  var styles = '';
+  cursor = undefined;
+  var strings = args[0];
+
+  if (strings == null || strings.raw === undefined) {
+    stringMode = false;
+    styles += handleInterpolation(mergedProps, registered, strings);
+  } else {
+    if (process.env.NODE_ENV !== 'production' && strings[0] === undefined) {
+      console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR);
+    }
+
+    styles += strings[0];
+  } // we start at 1 since we've already handled the first arg
+
+
+  for (var i = 1; i < args.length; i++) {
+    styles += handleInterpolation(mergedProps, registered, args[i]);
+
+    if (stringMode) {
+      if (process.env.NODE_ENV !== 'production' && strings[i] === undefined) {
+        console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR);
+      }
+
+      styles += strings[i];
+    }
+  }
+
+  var sourceMap;
+
+  if (process.env.NODE_ENV !== 'production') {
+    styles = styles.replace(sourceMapPattern, function (match) {
+      sourceMap = match;
+      return '';
+    });
+  } // using a global regex with .exec is stateful so lastIndex has to be reset each time
+
+
+  labelPattern.lastIndex = 0;
+  var identifierName = '';
+  var match; // https://esbench.com/bench/5b809c2cf2949800a0f61fb5
+
+  while ((match = labelPattern.exec(styles)) !== null) {
+    identifierName += '-' + // $FlowFixMe we know it's not null
+    match[1];
+  }
+
+  var name = murmur2(styles) + identifierName;
+
+  if (process.env.NODE_ENV !== 'production') {
+    // $FlowFixMe SerializedStyles type doesn't have toString property (and we don't want to add it)
+    return {
+      name: name,
+      styles: styles,
+      map: sourceMap,
+      next: cursor,
+      toString: function toString() {
+        return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop).";
+      }
+    };
+  }
+
+  return {
+    name: name,
+    styles: styles,
+    next: cursor
+  };
+};
+
+function filterProps(props) {
+  return Object.keys(props).reduce((acc, key) => {
+    if (props[key] !== void 0) {
+      acc[key] = props[key];
+    }
+    return acc;
+  }, {});
+}
+
+var __defProp$d = Object.defineProperty;
+var __getOwnPropSymbols$e = Object.getOwnPropertySymbols;
+var __hasOwnProp$e = Object.prototype.hasOwnProperty;
+var __propIsEnum$e = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$d = (obj, key, value) => key in obj ? __defProp$d(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$d = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$e.call(b, prop))
+      __defNormalProp$d(a, prop, b[prop]);
+  if (__getOwnPropSymbols$e)
+    for (var prop of __getOwnPropSymbols$e(b)) {
+      if (__propIsEnum$e.call(b, prop))
+        __defNormalProp$d(a, prop, b[prop]);
+    }
+  return a;
+};
+const MantineProviderContext = React.createContext({
+  theme: DEFAULT_THEME
+});
+function useMantineTheme() {
+  var _a;
+  return ((_a = React.useContext(MantineProviderContext)) == null ? void 0 : _a.theme) || DEFAULT_THEME;
+}
+function useMantineProviderStyles(component) {
+  const theme = useMantineTheme();
+  const getStyles = (name) => {
+    var _a, _b, _c, _d;
+    return {
+      styles: ((_a = theme.components[name]) == null ? void 0 : _a.styles) || {},
+      classNames: ((_b = theme.components[name]) == null ? void 0 : _b.classNames) || {},
+      variants: (_c = theme.components[name]) == null ? void 0 : _c.variants,
+      sizes: (_d = theme.components[name]) == null ? void 0 : _d.sizes
+    };
+  };
+  if (Array.isArray(component)) {
+    return component.map(getStyles);
+  }
+  return [getStyles(component)];
+}
+function useMantineEmotionCache() {
+  var _a;
+  return (_a = React.useContext(MantineProviderContext)) == null ? void 0 : _a.emotionCache;
+}
+function useComponentDefaultProps(component, defaultProps, props) {
+  var _a;
+  const theme = useMantineTheme();
+  const contextPropsPayload = (_a = theme.components[component]) == null ? void 0 : _a.defaultProps;
+  const contextProps = typeof contextPropsPayload === "function" ? contextPropsPayload(theme) : contextPropsPayload;
+  return __spreadValues$d(__spreadValues$d(__spreadValues$d({}, defaultProps), contextProps), filterProps(props));
+}
+
+function useGuaranteedMemo(fn, deps) {
+  const ref = React.useRef();
+  if (!ref.current || deps.length !== ref.current.prevDeps.length || ref.current.prevDeps.map((v, i) => v === deps[i]).indexOf(false) >= 0) {
+    ref.current = {
+      v: fn(),
+      prevDeps: [...deps]
+    };
+  }
+  return ref.current.v;
+}
+
+const defaultMantineEmotionCache = createCache({ key: "mantine", prepend: true });
+
+function useEmotionCache() {
+  const cache = useMantineEmotionCache();
+  return cache || defaultMantineEmotionCache;
+}
+
+var __defProp$c = Object.defineProperty;
+var __getOwnPropSymbols$d = Object.getOwnPropertySymbols;
+var __hasOwnProp$d = Object.prototype.hasOwnProperty;
+var __propIsEnum$d = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$c = (obj, key, value) => key in obj ? __defProp$c(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$c = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$d.call(b, prop))
+      __defNormalProp$c(a, prop, b[prop]);
+  if (__getOwnPropSymbols$d)
+    for (var prop of __getOwnPropSymbols$d(b)) {
+      if (__propIsEnum$d.call(b, prop))
+        __defNormalProp$c(a, prop, b[prop]);
+    }
+  return a;
+};
+const refPropertyName = "ref";
+function getRef(args) {
+  let ref;
+  if (args.length !== 1) {
+    return { args, ref };
+  }
+  const [arg] = args;
+  if (!(arg instanceof Object)) {
+    return { args, ref };
+  }
+  if (!(refPropertyName in arg)) {
+    return { args, ref };
+  }
+  ref = arg[refPropertyName];
+  const argCopy = __spreadValues$c({}, arg);
+  delete argCopy[refPropertyName];
+  return { args: [argCopy], ref };
+}
+const { cssFactory } = (() => {
+  function merge(registered, css, className) {
+    const registeredStyles = [];
+    const rawClassName = getRegisteredStyles(registered, registeredStyles, className);
+    if (registeredStyles.length < 2) {
+      return className;
+    }
+    return rawClassName + css(registeredStyles);
+  }
+  function _cssFactory(params) {
+    const { cache } = params;
+    const css = (...styles) => {
+      const { ref, args } = getRef(styles);
+      const serialized = serializeStyles(args, cache.registered);
+      insertStyles(cache, serialized, false);
+      return `${cache.key}-${serialized.name}${ref === void 0 ? "" : ` ${ref}`}`;
+    };
+    const cx = (...args) => merge(cache.registered, css, clsx(args));
+    return { css, cx };
+  }
+  return { cssFactory: _cssFactory };
+})();
+function useCss() {
+  const cache = useEmotionCache();
+  return useGuaranteedMemo(() => cssFactory({ cache }), [cache]);
+}
+
+function mergeClassNames({
+  cx,
+  classes,
+  context,
+  classNames,
+  name,
+  cache
+}) {
+  const contextClassNames = context.reduce((acc, item) => {
+    Object.keys(item.classNames).forEach((key) => {
+      if (typeof acc[key] !== "string") {
+        acc[key] = `${item.classNames[key]}`;
+      } else {
+        acc[key] = `${acc[key]} ${item.classNames[key]}`;
+      }
+    });
+    return acc;
+  }, {});
+  return Object.keys(classes).reduce((acc, className) => {
+    acc[className] = cx(classes[className], contextClassNames[className], classNames != null && classNames[className], Array.isArray(name) ? name.filter(Boolean).map((part) => `${(cache == null ? void 0 : cache.key) || "mantine"}-${part}-${className}`).join(" ") : name ? `${(cache == null ? void 0 : cache.key) || "mantine"}-${name}-${className}` : null);
+    return acc;
+  }, {});
+}
+
+var __defProp$b = Object.defineProperty;
+var __getOwnPropSymbols$c = Object.getOwnPropertySymbols;
+var __hasOwnProp$c = Object.prototype.hasOwnProperty;
+var __propIsEnum$c = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$b = (obj, key, value) => key in obj ? __defProp$b(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$b = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$c.call(b, prop))
+      __defNormalProp$b(a, prop, b[prop]);
+  if (__getOwnPropSymbols$c)
+    for (var prop of __getOwnPropSymbols$c(b)) {
+      if (__propIsEnum$c.call(b, prop))
+        __defNormalProp$b(a, prop, b[prop]);
+    }
+  return a;
+};
+function assignAccStyles(acc, styles) {
+  if (styles) {
+    Object.keys(styles).forEach((key) => {
+      if (!acc[key]) {
+        acc[key] = __spreadValues$b({}, styles[key]);
+      } else {
+        acc[key] = __spreadValues$b(__spreadValues$b({}, acc[key]), styles[key]);
+      }
+    });
+  }
+  return acc;
+}
+function getStyles(styles, theme, params, contextParams) {
+  const extractStyles = (stylesPartial) => typeof stylesPartial === "function" ? stylesPartial(theme, params || {}, contextParams) : stylesPartial || {};
+  if (Array.isArray(styles)) {
+    return styles.map((item) => extractStyles(item.styles)).reduce((acc, item) => assignAccStyles(acc, item), {});
+  }
+  return extractStyles(styles);
+}
+function getContextVariation({ ctx, theme, params, variant, size }) {
+  return ctx.reduce((acc, item) => {
+    if (item.variants && variant in item.variants) {
+      assignAccStyles(acc, item.variants[variant](theme, params, { variant, size }));
+    }
+    if (item.sizes && size in item.sizes) {
+      assignAccStyles(acc, item.sizes[size](theme, params, { variant, size }));
+    }
+    return acc;
+  }, {});
+}
+function createStyles(input) {
+  const getCssObject = typeof input === "function" ? input : () => input;
+  function useStyles(params, options) {
+    const theme = useMantineTheme();
+    const context = useMantineProviderStyles(options == null ? void 0 : options.name);
+    const cache = useMantineEmotionCache();
+    const contextParams = { variant: options == null ? void 0 : options.variant, size: options == null ? void 0 : options.size };
+    const { css, cx } = useCss();
+    const cssObject = getCssObject(theme, params, contextParams);
+    const componentStyles = getStyles(options == null ? void 0 : options.styles, theme, params, contextParams);
+    const providerStyles = getStyles(context, theme, params, contextParams);
+    const contextVariations = getContextVariation({
+      ctx: context,
+      theme,
+      params,
+      variant: options == null ? void 0 : options.variant,
+      size: options == null ? void 0 : options.size
+    });
+    const classes = Object.fromEntries(Object.keys(cssObject).map((key) => {
+      const mergedStyles = cx({ [css(cssObject[key])]: !(options == null ? void 0 : options.unstyled) }, css(contextVariations[key]), css(providerStyles[key]), css(componentStyles[key]));
+      return [key, mergedStyles];
+    }));
+    return {
+      classes: mergeClassNames({
+        cx,
+        classes,
+        context,
+        classNames: options == null ? void 0 : options.classNames,
+        name: options == null ? void 0 : options.name,
+        cache
+      }),
+      cx,
+      theme
+    };
+  }
+  return useStyles;
+}
+
+const useIsomorphicEffect = typeof document !== "undefined" ? React.useLayoutEffect : React.useEffect;
+
+function randomId() {
+  return `mantine-${Math.random().toString(36).slice(2, 11)}`;
+}
+
+const __useId = React__default["default"]["useId".toString()] || (() => void 0);
+function useReactId() {
+  const id = __useId();
+  return id ? `mantine-${id.replace(/:/g, "")}` : "";
+}
+
+function useId(staticId) {
+  const reactId = useReactId();
+  const [uuid, setUuid] = React.useState(reactId);
+  useIsomorphicEffect(() => {
+    setUuid(randomId());
+  }, []);
+  if (typeof staticId === "string") {
+    return staticId;
+  }
+  if (typeof window === "undefined") {
+    return reactId;
+  }
+  return uuid;
+}
+
+function useUncontrolled({
+  value,
+  defaultValue,
+  finalValue,
+  onChange = () => {
+  }
+}) {
+  const [uncontrolledValue, setUncontrolledValue] = React.useState(defaultValue !== void 0 ? defaultValue : finalValue);
+  const handleUncontrolledChange = (val) => {
+    setUncontrolledValue(val);
+    onChange == null ? void 0 : onChange(val);
+  };
+  if (value !== void 0) {
+    return [value, onChange, true];
+  }
+  return [uncontrolledValue, handleUncontrolledChange, false];
+}
+
+var __getOwnPropSymbols$b = Object.getOwnPropertySymbols;
+var __hasOwnProp$b = Object.prototype.hasOwnProperty;
+var __propIsEnum$b = Object.prototype.propertyIsEnumerable;
+var __objRest$7 = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp$b.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols$b)
+    for (var prop of __getOwnPropSymbols$b(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum$b.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+function extractSystemStyles(others) {
+  const _a = others, {
+    m,
+    mx,
+    my,
+    mt,
+    mb,
+    ml,
+    mr,
+    p,
+    px,
+    py,
+    pt,
+    pb,
+    pl,
+    pr,
+    bg,
+    c,
+    opacity,
+    ff,
+    fz,
+    fw,
+    lts,
+    ta,
+    lh,
+    fs,
+    tt,
+    td,
+    w,
+    miw,
+    maw,
+    h,
+    mih,
+    mah,
+    bgsz,
+    bgp,
+    bgr,
+    bga,
+    pos,
+    top,
+    left,
+    bottom,
+    right,
+    inset,
+    display
+  } = _a, rest = __objRest$7(_a, [
+    "m",
+    "mx",
+    "my",
+    "mt",
+    "mb",
+    "ml",
+    "mr",
+    "p",
+    "px",
+    "py",
+    "pt",
+    "pb",
+    "pl",
+    "pr",
+    "bg",
+    "c",
+    "opacity",
+    "ff",
+    "fz",
+    "fw",
+    "lts",
+    "ta",
+    "lh",
+    "fs",
+    "tt",
+    "td",
+    "w",
+    "miw",
+    "maw",
+    "h",
+    "mih",
+    "mah",
+    "bgsz",
+    "bgp",
+    "bgr",
+    "bga",
+    "pos",
+    "top",
+    "left",
+    "bottom",
+    "right",
+    "inset",
+    "display"
+  ]);
+  const systemStyles = filterProps({
+    m,
+    mx,
+    my,
+    mt,
+    mb,
+    ml,
+    mr,
+    p,
+    px,
+    py,
+    pt,
+    pb,
+    pl,
+    pr,
+    bg,
+    c,
+    opacity,
+    ff,
+    fz,
+    fw,
+    lts,
+    ta,
+    lh,
+    fs,
+    tt,
+    td,
+    w,
+    miw,
+    maw,
+    h,
+    mih,
+    mah,
+    bgsz,
+    bgp,
+    bgr,
+    bga,
+    pos,
+    top,
+    left,
+    bottom,
+    right,
+    inset,
+    display
+  });
+  return { systemStyles, rest };
+}
+
+function getSortedKeys(value, theme) {
+  const sorted = Object.keys(value).filter((breakpoint) => breakpoint !== "base").sort((a, b) => getBreakpointValue(getSize({ size: a, sizes: theme.breakpoints })) - getBreakpointValue(getSize({ size: b, sizes: theme.breakpoints })));
+  return "base" in value ? ["base", ...sorted] : sorted;
+}
+function getResponsiveValue({ value, theme, getValue, property }) {
+  if (value == null) {
+    return void 0;
+  }
+  if (typeof value === "object") {
+    const result = getSortedKeys(value, theme).reduce((acc, breakpointKey) => {
+      if (breakpointKey === "base" && value.base !== void 0) {
+        const baseValue = getValue(value.base, theme);
+        if (Array.isArray(property)) {
+          property.forEach((prop) => {
+            acc[prop] = baseValue;
+          });
+          return acc;
+        }
+        acc[property] = baseValue;
+        return acc;
+      }
+      const breakpointValue = getValue(value[breakpointKey], theme);
+      if (Array.isArray(property)) {
+        acc[theme.fn.largerThan(breakpointKey)] = {};
+        property.forEach((prop) => {
+          acc[theme.fn.largerThan(breakpointKey)][prop] = breakpointValue;
+        });
+        return acc;
+      }
+      acc[theme.fn.largerThan(breakpointKey)] = {
+        [property]: breakpointValue
+      };
+      return acc;
+    }, {});
+    return result;
+  }
+  const cssValue = getValue(value, theme);
+  if (Array.isArray(property)) {
+    return property.reduce((acc, prop) => {
+      acc[prop] = cssValue;
+      return acc;
+    }, {});
+  }
+  return { [property]: cssValue };
+}
+
+function getColorValue(color, theme) {
+  if (color === "dimmed") {
+    return theme.colorScheme === "dark" ? theme.colors.dark[2] : theme.colors.gray[6];
+  }
+  return theme.fn.variant({ variant: "filled", color, primaryFallback: false }).background;
+}
+
+function getSizeValue(value) {
+  return rem(value);
+}
+function identity(value) {
+  return value;
+}
+
+function getFontSizeValue(size, theme) {
+  return getSize({ size, sizes: theme.fontSizes });
+}
+
+const NEGATIVE_VALUES = ["-xs", "-sm", "-md", "-lg", "-xl"];
+function getSpacingValue(size, theme) {
+  if (NEGATIVE_VALUES.includes(size)) {
+    return `calc(${getSize({
+      size: size.replace("-", ""),
+      sizes: theme.spacing
+    })} * -1)`;
+  }
+  return getSize({ size, sizes: theme.spacing });
+}
+
+const valueGetters = {
+  identity,
+  color: getColorValue,
+  size: getSizeValue,
+  fontSize: getFontSizeValue,
+  spacing: getSpacingValue
+};
+
+const SYSTEM_PROPS = {
+  m: { type: "spacing", property: "margin" },
+  mt: { type: "spacing", property: "marginTop" },
+  mb: { type: "spacing", property: "marginBottom" },
+  ml: { type: "spacing", property: "marginLeft" },
+  mr: { type: "spacing", property: "marginRight" },
+  mx: { type: "spacing", property: ["marginRight", "marginLeft"] },
+  my: { type: "spacing", property: ["marginTop", "marginBottom"] },
+  p: { type: "spacing", property: "padding" },
+  pt: { type: "spacing", property: "paddingTop" },
+  pb: { type: "spacing", property: "paddingBottom" },
+  pl: { type: "spacing", property: "paddingLeft" },
+  pr: { type: "spacing", property: "paddingRight" },
+  px: { type: "spacing", property: ["paddingRight", "paddingLeft"] },
+  py: { type: "spacing", property: ["paddingTop", "paddingBottom"] },
+  bg: { type: "color", property: "background" },
+  c: { type: "color", property: "color" },
+  opacity: { type: "identity", property: "opacity" },
+  ff: { type: "identity", property: "fontFamily" },
+  fz: { type: "fontSize", property: "fontSize" },
+  fw: { type: "identity", property: "fontWeight" },
+  lts: { type: "size", property: "letterSpacing" },
+  ta: { type: "identity", property: "textAlign" },
+  lh: { type: "identity", property: "lineHeight" },
+  fs: { type: "identity", property: "fontStyle" },
+  tt: { type: "identity", property: "textTransform" },
+  td: { type: "identity", property: "textDecoration" },
+  w: { type: "spacing", property: "width" },
+  miw: { type: "spacing", property: "minWidth" },
+  maw: { type: "spacing", property: "maxWidth" },
+  h: { type: "spacing", property: "height" },
+  mih: { type: "spacing", property: "minHeight" },
+  mah: { type: "spacing", property: "maxHeight" },
+  bgsz: { type: "size", property: "backgroundSize" },
+  bgp: { type: "identity", property: "backgroundPosition" },
+  bgr: { type: "identity", property: "backgroundRepeat" },
+  bga: { type: "identity", property: "backgroundAttachment" },
+  pos: { type: "identity", property: "position" },
+  top: { type: "identity", property: "top" },
+  left: { type: "size", property: "left" },
+  bottom: { type: "size", property: "bottom" },
+  right: { type: "size", property: "right" },
+  inset: { type: "size", property: "inset" },
+  display: { type: "identity", property: "display" }
+};
+
+var __defProp$a = Object.defineProperty;
+var __getOwnPropSymbols$a = Object.getOwnPropertySymbols;
+var __hasOwnProp$a = Object.prototype.hasOwnProperty;
+var __propIsEnum$a = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$a = (obj, key, value) => key in obj ? __defProp$a(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$a = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$a.call(b, prop))
+      __defNormalProp$a(a, prop, b[prop]);
+  if (__getOwnPropSymbols$a)
+    for (var prop of __getOwnPropSymbols$a(b)) {
+      if (__propIsEnum$a.call(b, prop))
+        __defNormalProp$a(a, prop, b[prop]);
+    }
+  return a;
+};
+function getSystemStyles(systemStyles, theme, systemProps = SYSTEM_PROPS) {
+  const styles = Object.keys(systemProps).reduce((acc, systemProp) => {
+    if (systemProp in systemStyles && systemStyles[systemProp] !== void 0) {
+      acc.push(getResponsiveValue({
+        value: systemStyles[systemProp],
+        getValue: valueGetters[systemProps[systemProp].type],
+        property: systemProps[systemProp].property,
+        theme
+      }));
+    }
+    return acc;
+  }, []);
+  return styles.reduce((acc, stylesPartial) => {
+    Object.keys(stylesPartial).forEach((property) => {
+      if (typeof stylesPartial[property] === "object" && stylesPartial[property] !== null) {
+        if (!(property in acc)) {
+          acc[property] = stylesPartial[property];
+        } else {
+          acc[property] = __spreadValues$a(__spreadValues$a({}, acc[property]), stylesPartial[property]);
+        }
+      } else {
+        acc[property] = stylesPartial[property];
+      }
+    });
+    return acc;
+  }, {});
+}
+
+function extractSx(sx, theme) {
+  return typeof sx === "function" ? sx(theme) : sx;
+}
+function useSx(sx, systemProps, className) {
+  const theme = useMantineTheme();
+  const { css, cx } = useCss();
+  if (Array.isArray(sx)) {
+    return cx(className, css(getSystemStyles(systemProps, theme)), sx.map((partial) => css(extractSx(partial, theme))));
+  }
+  return cx(className, css(extractSx(sx, theme)), css(getSystemStyles(systemProps, theme)));
+}
+
+var __defProp$9 = Object.defineProperty;
+var __getOwnPropSymbols$9 = Object.getOwnPropertySymbols;
+var __hasOwnProp$9 = Object.prototype.hasOwnProperty;
+var __propIsEnum$9 = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$9 = (obj, key, value) => key in obj ? __defProp$9(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$9 = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$9.call(b, prop))
+      __defNormalProp$9(a, prop, b[prop]);
+  if (__getOwnPropSymbols$9)
+    for (var prop of __getOwnPropSymbols$9(b)) {
+      if (__propIsEnum$9.call(b, prop))
+        __defNormalProp$9(a, prop, b[prop]);
+    }
+  return a;
+};
+var __objRest$6 = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp$9.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols$9)
+    for (var prop of __getOwnPropSymbols$9(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum$9.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const _Box = React.forwardRef((_a, ref) => {
+  var _b = _a, { className, component, style, sx } = _b, others = __objRest$6(_b, ["className", "component", "style", "sx"]);
+  const { systemStyles, rest } = extractSystemStyles(others);
+  const Element = component || "div";
+  return /* @__PURE__ */ React__default["default"].createElement(Element, __spreadValues$9({
+    ref,
+    className: useSx(sx, systemStyles, className),
+    style
+  }, rest));
+});
+_Box.displayName = "@mantine/core/Box";
+const Box = createPolymorphicComponent(_Box);
+
+var __defProp$8 = Object.defineProperty;
+var __defProps$6 = Object.defineProperties;
+var __getOwnPropDescs$6 = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols$8 = Object.getOwnPropertySymbols;
+var __hasOwnProp$8 = Object.prototype.hasOwnProperty;
+var __propIsEnum$8 = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$8 = (obj, key, value) => key in obj ? __defProp$8(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$8 = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$8.call(b, prop))
+      __defNormalProp$8(a, prop, b[prop]);
+  if (__getOwnPropSymbols$8)
+    for (var prop of __getOwnPropSymbols$8(b)) {
+      if (__propIsEnum$8.call(b, prop))
+        __defNormalProp$8(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps$6 = (a, b) => __defProps$6(a, __getOwnPropDescs$6(b));
+var useStyles$8 = createStyles((theme) => ({
+  root: __spreadProps$6(__spreadValues$8(__spreadValues$8({}, theme.fn.focusStyles()), theme.fn.fontStyles()), {
+    cursor: "pointer",
+    border: 0,
+    padding: 0,
+    appearance: "none",
+    fontSize: theme.fontSizes.md,
+    backgroundColor: "transparent",
+    textAlign: "left",
+    color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
+    textDecoration: "none",
+    boxSizing: "border-box"
+  })
+}));
+
+var useStyles$9 = useStyles$8;
+
+var __defProp$7 = Object.defineProperty;
+var __getOwnPropSymbols$7 = Object.getOwnPropertySymbols;
+var __hasOwnProp$7 = Object.prototype.hasOwnProperty;
+var __propIsEnum$7 = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$7 = (obj, key, value) => key in obj ? __defProp$7(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$7 = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$7.call(b, prop))
+      __defNormalProp$7(a, prop, b[prop]);
+  if (__getOwnPropSymbols$7)
+    for (var prop of __getOwnPropSymbols$7(b)) {
+      if (__propIsEnum$7.call(b, prop))
+        __defNormalProp$7(a, prop, b[prop]);
+    }
+  return a;
+};
+var __objRest$5 = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp$7.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols$7)
+    for (var prop of __getOwnPropSymbols$7(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum$7.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const _UnstyledButton = React.forwardRef((props, ref) => {
+  const _a = useComponentDefaultProps("UnstyledButton", {}, props), {
+    className,
+    component = "button",
+    unstyled,
+    variant
+  } = _a, others = __objRest$5(_a, [
+    "className",
+    "component",
+    "unstyled",
+    "variant"
+  ]);
+  const { classes, cx } = useStyles$9(null, { name: "UnstyledButton", unstyled, variant });
+  return /* @__PURE__ */ React__default["default"].createElement(Box, __spreadValues$7({
+    component,
+    ref,
+    className: cx(classes.root, className),
+    type: component === "button" ? "button" : void 0
+  }, others));
+});
+_UnstyledButton.displayName = "@mantine/core/UnstyledButton";
+const UnstyledButton = createPolymorphicComponent(_UnstyledButton);
+
+const GROUP_POSITIONS = {
+  left: "flex-start",
+  center: "center",
+  right: "flex-end",
+  apart: "space-between"
+};
+
+const TABS_ERRORS = {
+  context: "Tabs component was not found in the tree",
+  value: "Tabs.Tab or Tabs.Panel component was rendered with invalid value or without value"
+};
+
+const [TabsContextProvider, useTabsContext] = createSafeContext(TABS_ERRORS.context);
+
+var __defProp$6 = Object.defineProperty;
+var __getOwnPropSymbols$6 = Object.getOwnPropertySymbols;
+var __hasOwnProp$6 = Object.prototype.hasOwnProperty;
+var __propIsEnum$6 = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$6 = (obj, key, value) => key in obj ? __defProp$6(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$6 = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$6.call(b, prop))
+      __defNormalProp$6(a, prop, b[prop]);
+  if (__getOwnPropSymbols$6)
+    for (var prop of __getOwnPropSymbols$6(b)) {
+      if (__propIsEnum$6.call(b, prop))
+        __defNormalProp$6(a, prop, b[prop]);
+    }
+  return a;
+};
+function getVariantStyles$1({ orientation, inverted, placement }, theme, variant) {
+  const vertical = orientation === "vertical";
+  if (variant === "default") {
+    return {
+      [vertical ? placement === "left" ? "borderRight" : "borderLeft" : inverted ? "borderTop" : "borderBottom"]: `${rem(2)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`
+    };
+  }
+  if (variant === "outline") {
+    return {
+      [vertical ? placement === "left" ? "borderRight" : "borderLeft" : inverted ? "borderTop" : "borderBottom"]: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`
+    };
+  }
+  if (variant === "pills") {
+    return {
+      gap: `calc(${theme.spacing.sm} / 2)`
+    };
+  }
+  return {};
+}
+var useStyles$6 = createStyles((theme, params, { variant }) => {
+  const vertical = params.orientation === "vertical";
+  return {
+    tabsList: __spreadValues$6({
+      display: "flex",
+      flexWrap: "wrap",
+      flexDirection: vertical ? "column" : "row",
+      justifyContent: GROUP_POSITIONS[params.position],
+      '& [role="tab"]': {
+        flex: params.grow ? 1 : void 0
+      }
+    }, getVariantStyles$1(params, theme, variant))
+  };
+});
+
+var useStyles$7 = useStyles$6;
+
+var __defProp$5 = Object.defineProperty;
+var __defProps$5 = Object.defineProperties;
+var __getOwnPropDescs$5 = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols$5 = Object.getOwnPropertySymbols;
+var __hasOwnProp$5 = Object.prototype.hasOwnProperty;
+var __propIsEnum$5 = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$5 = (obj, key, value) => key in obj ? __defProp$5(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$5 = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$5.call(b, prop))
+      __defNormalProp$5(a, prop, b[prop]);
+  if (__getOwnPropSymbols$5)
+    for (var prop of __getOwnPropSymbols$5(b)) {
+      if (__propIsEnum$5.call(b, prop))
+        __defNormalProp$5(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps$5 = (a, b) => __defProps$5(a, __getOwnPropDescs$5(b));
+var __objRest$4 = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp$5.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols$5)
+    for (var prop of __getOwnPropSymbols$5(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum$5.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const defaultProps$3 = {
+  grow: false,
+  position: "left"
+};
+const TabsList = React.forwardRef((props, ref) => {
+  const _a = useComponentDefaultProps("TabsList", defaultProps$3, props), { children, className, grow, position } = _a, others = __objRest$4(_a, ["children", "className", "grow", "position"]);
+  const { orientation, variant, color, radius, inverted, placement, classNames, styles, unstyled } = useTabsContext();
+  const { classes, cx } = useStyles$7({ orientation, grow, color, position, radius, inverted, placement }, { name: "Tabs", unstyled, classNames, styles, variant });
+  return /* @__PURE__ */ React__default["default"].createElement(Box, __spreadProps$5(__spreadValues$5({}, others), {
+    className: cx(classes.tabsList, className),
+    ref,
+    role: "tablist",
+    "aria-orientation": orientation
+  }), children);
+});
+TabsList.displayName = "@mantine/core/TabsList";
+
+var useStyles$4 = createStyles((_theme, { orientation }) => ({
+  panel: {
+    flex: orientation === "vertical" ? 1 : void 0
+  }
+}));
+
+var useStyles$5 = useStyles$4;
+
+var __defProp$4 = Object.defineProperty;
+var __defProps$4 = Object.defineProperties;
+var __getOwnPropDescs$4 = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols$4 = Object.getOwnPropertySymbols;
+var __hasOwnProp$4 = Object.prototype.hasOwnProperty;
+var __propIsEnum$4 = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$4 = (obj, key, value) => key in obj ? __defProp$4(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$4 = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$4.call(b, prop))
+      __defNormalProp$4(a, prop, b[prop]);
+  if (__getOwnPropSymbols$4)
+    for (var prop of __getOwnPropSymbols$4(b)) {
+      if (__propIsEnum$4.call(b, prop))
+        __defNormalProp$4(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps$4 = (a, b) => __defProps$4(a, __getOwnPropDescs$4(b));
+var __objRest$3 = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp$4.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols$4)
+    for (var prop of __getOwnPropSymbols$4(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum$4.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const defaultProps$2 = {};
+const TabsPanel = React.forwardRef((props, ref) => {
+  const _a = useComponentDefaultProps("TabsPanel", defaultProps$2, props), { value, children, sx, className } = _a, others = __objRest$3(_a, ["value", "children", "sx", "className"]);
+  const ctx = useTabsContext();
+  const { classes, cx } = useStyles$5({
+    orientation: ctx.orientation,
+    color: ctx.color,
+    radius: ctx.radius,
+    inverted: ctx.inverted,
+    placement: ctx.placement
+  }, {
+    name: "Tabs",
+    unstyled: ctx.unstyled,
+    classNames: ctx.classNames,
+    styles: ctx.styles,
+    variant: ctx.variant
+  });
+  const panelId = ctx.getPanelId(value);
+  const active = ctx.value === value;
+  const content = ctx.keepMounted ? children : active ? children : null;
+  React.useEffect(() => {
+    ctx.setMountedPanelIds((prev) => [...prev, panelId]);
+    return ctx.setMountedPanelIds((prev) => prev.filter((id) => id !== panelId));
+  }, [panelId]);
+  return /* @__PURE__ */ React__default["default"].createElement(Box, __spreadProps$4(__spreadValues$4({}, others), {
+    ref,
+    sx: [{ display: !active ? "none" : void 0 }, ...packSx(sx)],
+    className: cx(classes.panel, className),
+    role: "tabpanel",
+    id: panelId,
+    "aria-labelledby": ctx.getTabId(value)
+  }), content);
+});
+TabsPanel.displayName = "@mantine/core/TabsPanel";
+
+var __defProp$3 = Object.defineProperty;
+var __defProps$3 = Object.defineProperties;
+var __getOwnPropDescs$3 = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols$3 = Object.getOwnPropertySymbols;
+var __hasOwnProp$3 = Object.prototype.hasOwnProperty;
+var __propIsEnum$3 = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$3 = (obj, key, value) => key in obj ? __defProp$3(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$3 = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$3.call(b, prop))
+      __defNormalProp$3(a, prop, b[prop]);
+  if (__getOwnPropSymbols$3)
+    for (var prop of __getOwnPropSymbols$3(b)) {
+      if (__propIsEnum$3.call(b, prop))
+        __defNormalProp$3(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps$3 = (a, b) => __defProps$3(a, __getOwnPropDescs$3(b));
+function getVariantStyles(theme, { orientation, color, radius, inverted, placement }, variant) {
+  const vertical = orientation === "vertical";
+  const filledScheme = theme.fn.variant({ color, variant: "filled" });
+  const radiusValue = rem(theme.fn.radius(radius));
+  const borderRadius = orientation === "vertical" ? placement === "left" ? `${radiusValue} 0 0 ${radiusValue}` : ` 0 ${radiusValue} ${radiusValue} 0` : inverted ? `0 0 ${radiusValue} ${radiusValue}` : `${radiusValue} ${radiusValue} 0 0`;
+  if (variant === "default") {
+    return __spreadProps$3(__spreadValues$3({
+      [vertical ? placement === "left" ? "borderRight" : "borderLeft" : inverted ? "borderTop" : "borderBottom"]: `${rem(2)} solid transparent`,
+      [vertical ? placement === "left" ? "marginRight" : "marginLeft" : inverted ? "marginTop" : "marginBottom"]: rem(-2),
+      borderRadius
+    }, theme.fn.hover({
+      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
+      borderColor: theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
+    })), {
+      "&[data-active]": __spreadValues$3({
+        borderColor: filledScheme.background,
+        color: theme.colorScheme === "dark" ? theme.white : theme.black
+      }, theme.fn.hover({ borderColor: filledScheme.background }))
+    });
+  }
+  if (variant === "outline") {
+    return {
+      borderRadius,
+      border: `${rem(1)} solid transparent`,
+      [vertical ? placement === "left" ? "borderRight" : "borderLeft" : inverted ? "borderTop" : "borderBottom"]: "none",
+      "&[data-active]": {
+        borderColor: theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3],
+        "&::before": {
+          content: '""',
+          backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+          position: "absolute",
+          bottom: vertical ? 0 : inverted ? "unset" : rem(-1),
+          top: vertical ? 0 : inverted ? rem(-1) : "unset",
+          [vertical ? "width" : "height"]: rem(1),
+          right: vertical ? placement === "left" ? rem(-1) : "unset" : 0,
+          left: vertical ? placement === "left" ? "unset" : rem(-1) : 0
+        }
+      }
+    };
+  }
+  if (variant === "pills") {
+    return __spreadProps$3(__spreadValues$3({
+      borderRadius: theme.fn.radius(radius)
+    }, theme.fn.hover({
+      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0]
+    })), {
+      "&[data-active]": __spreadValues$3({
+        backgroundColor: filledScheme.background,
+        color: theme.white
+      }, theme.fn.hover({ backgroundColor: filledScheme.background }))
+    });
+  }
+  return {};
+}
+var useStyles$2 = createStyles((theme, params, { variant }) => ({
+  tabLabel: {},
+  tab: __spreadValues$3({
+    position: "relative",
+    padding: `${theme.spacing.xs} ${theme.spacing.md}`,
+    paddingLeft: params.withIcon ? theme.spacing.xs : void 0,
+    paddingRight: params.withRightSection ? theme.spacing.xs : void 0,
+    fontSize: theme.fontSizes.sm,
+    whiteSpace: "nowrap",
+    zIndex: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: params.orientation === "horizontal" ? "center" : void 0,
+    lineHeight: 1,
+    "&:disabled": __spreadValues$3({
+      opacity: 0.5,
+      cursor: "not-allowed"
+    }, theme.fn.hover({ backgroundColor: "transparent" })),
+    "&:focus": {
+      zIndex: 1
+    }
+  }, getVariantStyles(theme, params, variant)),
+  tabRightSection: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    "&:not(:only-child)": {
+      marginLeft: rem(7)
+    }
+  },
+  tabIcon: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    "&:not(:only-child)": {
+      marginRight: rem(7)
+    }
+  }
+}));
+
+var useStyles$3 = useStyles$2;
+
+var __defProp$2 = Object.defineProperty;
+var __defProps$2 = Object.defineProperties;
+var __getOwnPropDescs$2 = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols$2 = Object.getOwnPropertySymbols;
+var __hasOwnProp$2 = Object.prototype.hasOwnProperty;
+var __propIsEnum$2 = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$2 = (obj, key, value) => key in obj ? __defProp$2(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$2 = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$2.call(b, prop))
+      __defNormalProp$2(a, prop, b[prop]);
+  if (__getOwnPropSymbols$2)
+    for (var prop of __getOwnPropSymbols$2(b)) {
+      if (__propIsEnum$2.call(b, prop))
+        __defNormalProp$2(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps$2 = (a, b) => __defProps$2(a, __getOwnPropDescs$2(b));
+var __objRest$2 = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp$2.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols$2)
+    for (var prop of __getOwnPropSymbols$2(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum$2.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const defaultProps$1 = {};
+const Tab$1 = React.forwardRef((props, ref) => {
+  const _a = useComponentDefaultProps("TabsTab", defaultProps$1, props), { value, children, onKeyDown, onClick, className, icon, rightSection, color } = _a, others = __objRest$2(_a, ["value", "children", "onKeyDown", "onClick", "className", "icon", "rightSection", "color"]);
+  const ctx = useTabsContext();
+  const hasIcon = !!icon;
+  const hasRightSection = !!rightSection;
+  const { theme, classes, cx } = useStyles$3({
+    withIcon: hasIcon || hasRightSection && !children,
+    withRightSection: hasRightSection || hasIcon && !children,
+    orientation: ctx.orientation,
+    color: color || ctx.color,
+    radius: ctx.radius,
+    inverted: ctx.inverted,
+    placement: ctx.placement
+  }, {
+    name: "Tabs",
+    unstyled: ctx.unstyled,
+    classNames: ctx.classNames,
+    styles: ctx.styles,
+    variant: ctx.variant
+  });
+  const isActive = value === ctx.value;
+  const panelId = ctx.getPanelId(value);
+  const ariaControls = ctx.mountedPanelIds.includes(value) ? panelId : void 0;
+  const activateTab = (event) => {
+    ctx.onTabChange(ctx.allowTabDeactivation ? value === ctx.value ? null : value : value);
+    onClick == null ? void 0 : onClick(event);
+  };
+  return /* @__PURE__ */ React__default["default"].createElement(UnstyledButton, __spreadProps$2(__spreadValues$2({}, others), {
+    unstyled: ctx.unstyled,
+    className: cx(classes.tab, className),
+    "data-active": isActive || void 0,
+    ref,
+    type: "button",
+    role: "tab",
+    id: ctx.getTabId(value),
+    "aria-selected": isActive,
+    tabIndex: isActive || ctx.value === null ? 0 : -1,
+    "aria-controls": ariaControls,
+    onClick: activateTab,
+    onKeyDown: createScopedKeydownHandler({
+      siblingSelector: '[role="tab"]',
+      parentSelector: '[role="tablist"]',
+      activateOnFocus: ctx.activateTabWithKeyboard,
+      loop: ctx.loop,
+      dir: theme.dir,
+      orientation: ctx.orientation,
+      onKeyDown
+    })
+  }), icon && /* @__PURE__ */ React__default["default"].createElement("span", {
+    className: classes.tabIcon
+  }, icon), children && /* @__PURE__ */ React__default["default"].createElement("span", {
+    className: classes.tabLabel
+  }, children), rightSection && /* @__PURE__ */ React__default["default"].createElement("span", {
+    className: classes.tabRightSection
+  }, rightSection));
+});
+Tab$1.displayName = "@mantine/core/Tab";
+
+function TabsProvider({
+  defaultValue,
+  value,
+  onTabChange,
+  orientation,
+  children,
+  loop,
+  id,
+  activateTabWithKeyboard,
+  allowTabDeactivation,
+  variant,
+  color,
+  radius,
+  inverted,
+  placement,
+  keepMounted = true,
+  classNames,
+  styles,
+  unstyled
+}) {
+  const uid = useId(id);
+  const [mountedPanelIds, setMountedPanelIds] = React.useState([]);
+  const [_value, onChange] = useUncontrolled({
+    value,
+    defaultValue,
+    finalValue: null,
+    onChange: onTabChange
+  });
+  return /* @__PURE__ */ React__default["default"].createElement(TabsContextProvider, {
+    value: {
+      placement,
+      value: _value,
+      orientation,
+      id: uid,
+      loop,
+      activateTabWithKeyboard,
+      getTabId: getSafeId(`${uid}-tab`, TABS_ERRORS.value),
+      getPanelId: getSafeId(`${uid}-panel`, TABS_ERRORS.value),
+      onTabChange: onChange,
+      setMountedPanelIds,
+      mountedPanelIds,
+      allowTabDeactivation,
+      variant,
+      color,
+      radius,
+      inverted,
+      keepMounted,
+      classNames,
+      styles,
+      unstyled
+    }
+  }, children);
+}
+TabsProvider.displayName = "@mantine/core/TabsProvider";
+
+var useStyles = createStyles((_theme, { orientation, placement }) => ({
+  root: {
+    display: orientation === "vertical" ? "flex" : void 0,
+    flexDirection: placement === "right" ? "row-reverse" : "row"
+  }
+}));
+
+var useStyles$1 = useStyles;
+
+var __defProp$1 = Object.defineProperty;
+var __defProps$1 = Object.defineProperties;
+var __getOwnPropDescs$1 = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols$1 = Object.getOwnPropertySymbols;
+var __hasOwnProp$1 = Object.prototype.hasOwnProperty;
+var __propIsEnum$1 = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$1 = (obj, key, value) => key in obj ? __defProp$1(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$1 = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp$1.call(b, prop))
+      __defNormalProp$1(a, prop, b[prop]);
+  if (__getOwnPropSymbols$1)
+    for (var prop of __getOwnPropSymbols$1(b)) {
+      if (__propIsEnum$1.call(b, prop))
+        __defNormalProp$1(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps$1 = (a, b) => __defProps$1(a, __getOwnPropDescs$1(b));
+var __objRest$1 = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp$1.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols$1)
+    for (var prop of __getOwnPropSymbols$1(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum$1.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const defaultProps = {
+  orientation: "horizontal",
+  loop: true,
+  activateTabWithKeyboard: true,
+  allowTabDeactivation: false,
+  unstyled: false,
+  inverted: false,
+  variant: "default",
+  placement: "left"
+};
+const Tabs = React.forwardRef((props, ref) => {
+  const _a = useComponentDefaultProps("Tabs", defaultProps, props), {
+    defaultValue,
+    value,
+    orientation,
+    loop,
+    activateTabWithKeyboard,
+    allowTabDeactivation,
+    children,
+    id,
+    onTabChange,
+    variant,
+    color,
+    className,
+    unstyled,
+    classNames,
+    styles,
+    radius,
+    inverted,
+    keepMounted,
+    placement
+  } = _a, others = __objRest$1(_a, [
+    "defaultValue",
+    "value",
+    "orientation",
+    "loop",
+    "activateTabWithKeyboard",
+    "allowTabDeactivation",
+    "children",
+    "id",
+    "onTabChange",
+    "variant",
+    "color",
+    "className",
+    "unstyled",
+    "classNames",
+    "styles",
+    "radius",
+    "inverted",
+    "keepMounted",
+    "placement"
+  ]);
+  const { classes, cx } = useStyles$1({ orientation, color, radius, inverted, placement }, { unstyled, name: "Tabs", classNames, styles, variant });
+  return /* @__PURE__ */ React__default["default"].createElement(TabsProvider, {
+    activateTabWithKeyboard,
+    defaultValue,
+    orientation,
+    onTabChange,
+    value,
+    id,
+    loop,
+    allowTabDeactivation,
+    color,
+    variant,
+    radius,
+    inverted,
+    keepMounted,
+    placement,
+    classNames,
+    styles,
+    unstyled
+  }, /* @__PURE__ */ React__default["default"].createElement(Box, __spreadProps$1(__spreadValues$1({}, others), {
+    className: cx(classes.root, className),
+    id,
+    ref
+  }), children));
+});
+Tabs.List = TabsList;
+Tabs.Tab = Tab$1;
+Tabs.Panel = TabsPanel;
+Tabs.displayName = "@mantine/core/Tabs";
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+/* eslint-disable no-unused-vars */
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+	if (val === null || val === undefined) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function shouldUseNative() {
+	try {
+		if (!Object.assign) {
+			return false;
+		}
+
+		// Detect buggy property enumeration order in older V8 versions.
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+		test1[5] = 'de';
+		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test2 = {};
+		for (var i = 0; i < 10; i++) {
+			test2['_' + String.fromCharCode(i)] = i;
+		}
+		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+			return test2[n];
+		});
+		if (order2.join('') !== '0123456789') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test3 = {};
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+			test3[letter] = letter;
+		});
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
+			return false;
+		}
+
+		return true;
+	} catch (err) {
+		// We don't expect any of the above to throw, but better to be safe.
+		return false;
+	}
+}
+
+var objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
+	var from;
+	var to = toObject(target);
+	var symbols;
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = Object(arguments[s]);
+
+		for (var key in from) {
+			if (hasOwnProperty.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (getOwnPropertySymbols) {
+			symbols = getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
+			}
+		}
+	}
+
+	return to;
+};
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var ReactPropTypesSecret$2 = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+var ReactPropTypesSecret_1 = ReactPropTypesSecret$2;
+
+var has$2 = Function.call.bind(Object.prototype.hasOwnProperty);
+
+var ReactPropTypesSecret$1 = ReactPropTypesSecret_1;
+
+var has$1 = has$2;
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var printWarning$1 = function() {};
+
+if (process.env.NODE_ENV !== 'production') {
+  var ReactPropTypesSecret = ReactPropTypesSecret$1;
+  var loggedTypeFailures = {};
+  var has = has$1;
+
+  printWarning$1 = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) { /**/ }
+  };
+}
+
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */
+function checkPropTypes$1(typeSpecs, values, location, componentName, getStack) {
+  if (process.env.NODE_ENV !== 'production') {
+    for (var typeSpecName in typeSpecs) {
+      if (has(typeSpecs, typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+          // This is intentionally an invariant that gets caught. It's the same
+          // behavior as without this statement except with a better message.
+          if (typeof typeSpecs[typeSpecName] !== 'function') {
+            var err = Error(
+              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
+              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' +
+              'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.'
+            );
+            err.name = 'Invariant Violation';
+            throw err;
+          }
+          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+          error = ex;
+        }
+        if (error && !(error instanceof Error)) {
+          printWarning$1(
+            (componentName || 'React class') + ': type specification of ' +
+            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
+            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
+            'You may have forgotten to pass an argument to the type checker ' +
+            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
+            'shape all require an argument).'
+          );
+        }
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+          // Only monitor this failure once because there tends to be a lot of the
+          // same error.
+          loggedTypeFailures[error.message] = true;
+
+          var stack = getStack ? getStack() : '';
+
+          printWarning$1(
+            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
+          );
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */
+checkPropTypes$1.resetWarningCache = function() {
+  if (process.env.NODE_ENV !== 'production') {
+    loggedTypeFailures = {};
+  }
+};
+
+var checkPropTypes_1 = checkPropTypes$1;
+
+var checkPropTypes = checkPropTypes_1;
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+
+
+
+var printWarning = function() {};
+
+if (process.env.NODE_ENV !== 'production') {
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+function emptyFunctionThatReturnsNull() {
+  return null;
+}
+
+var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
+  /* global Symbol */
+  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+  /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */
+  function getIteratorFn(maybeIterable) {
+    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+    if (typeof iteratorFn === 'function') {
+      return iteratorFn;
+    }
+  }
+
+  /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */
+
+  var ANONYMOUS = '<<anonymous>>';
+
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bigint: createPrimitiveTypeChecker('bigint'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
+
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    elementType: createElementTypeTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker,
+  };
+
+  /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */
+  /*eslint-disable no-self-compare*/
+  function is(x, y) {
+    // SameValue algorithm
+    if (x === y) {
+      // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  }
+  /*eslint-enable no-self-compare*/
+
+  /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */
+  function PropTypeError(message, data) {
+    this.message = message;
+    this.data = data && typeof data === 'object' ? data: {};
+    this.stack = '';
+  }
+  // Make `instanceof Error` still work for returned errors.
+  PropTypeError.prototype = Error.prototype;
+
+  function createChainableTypeChecker(validate) {
+    if (process.env.NODE_ENV !== 'production') {
+      var manualPropTypeCallCache = {};
+      var manualPropTypeWarningCount = 0;
+    }
+    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+      componentName = componentName || ANONYMOUS;
+      propFullName = propFullName || propName;
+
+      if (secret !== ReactPropTypesSecret$1) {
+        if (throwOnDirectAccess) {
+          // New behavior only for users of `prop-types` package
+          var err = new Error(
+            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+            'Use `PropTypes.checkPropTypes()` to call them. ' +
+            'Read more at http://fb.me/use-check-prop-types'
+          );
+          err.name = 'Invariant Violation';
+          throw err;
+        } else if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
+          // Old behavior for people using React.PropTypes
+          var cacheKey = componentName + ':' + propName;
+          if (
+            !manualPropTypeCallCache[cacheKey] &&
+            // Avoid spamming the console because they are often not actionable except for lib authors
+            manualPropTypeWarningCount < 3
+          ) {
+            printWarning(
+              'You are manually calling a React.PropTypes validation ' +
+              'function for the `' + propFullName + '` prop on `' + componentName + '`. This is deprecated ' +
+              'and will throw in the standalone `prop-types` package. ' +
+              'You may be seeing this warning due to a third-party PropTypes ' +
+              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
+            );
+            manualPropTypeCallCache[cacheKey] = true;
+            manualPropTypeWarningCount++;
+          }
+        }
+      }
+      if (props[propName] == null) {
+        if (isRequired) {
+          if (props[propName] === null) {
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+          }
+          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+        }
+        return null;
+      } else {
+        return validate(props, propName, componentName, location, propFullName);
+      }
+    }
+
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+
+    return chainedCheckType;
+  }
+
+  function createPrimitiveTypeChecker(expectedType) {
+    function validate(props, propName, componentName, location, propFullName, secret) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== expectedType) {
+        // `propValue` being instance of, say, date/regexp, pass the 'object'
+        // check, but we can offer a more precise error message here rather than
+        // 'of type `object`'.
+        var preciseType = getPreciseType(propValue);
+
+        return new PropTypeError(
+          'Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'),
+          {expectedType: expectedType}
+        );
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createAnyTypeChecker() {
+    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+  }
+
+  function createArrayOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+      }
+      var propValue = props[propName];
+      if (!Array.isArray(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+      }
+      for (var i = 0; i < propValue.length; i++) {
+        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret$1);
+        if (error instanceof Error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!isValidElement(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!reactIs.isValidElementType(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createInstanceTypeChecker(expectedClass) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!(props[propName] instanceof expectedClass)) {
+        var expectedClassName = expectedClass.name || ANONYMOUS;
+        var actualClassName = getClassName(props[propName]);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createEnumTypeChecker(expectedValues) {
+    if (!Array.isArray(expectedValues)) {
+      if (process.env.NODE_ENV !== 'production') {
+        if (arguments.length > 1) {
+          printWarning(
+            'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
+            'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).'
+          );
+        } else {
+          printWarning('Invalid argument supplied to oneOf, expected an array.');
+        }
+      }
+      return emptyFunctionThatReturnsNull;
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      for (var i = 0; i < expectedValues.length; i++) {
+        if (is(propValue, expectedValues[i])) {
+          return null;
+        }
+      }
+
+      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+        var type = getPreciseType(value);
+        if (type === 'symbol') {
+          return String(value);
+        }
+        return value;
+      });
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createObjectOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+      }
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+      }
+      for (var key in propValue) {
+        if (has$1(propValue, key)) {
+          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret$1);
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createUnionTypeChecker(arrayOfTypeCheckers) {
+    if (!Array.isArray(arrayOfTypeCheckers)) {
+      process.env.NODE_ENV !== 'production' ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+      return emptyFunctionThatReturnsNull;
+    }
+
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        printWarning(
+          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
+          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
+        );
+        return emptyFunctionThatReturnsNull;
+      }
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var expectedTypes = [];
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+        var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret$1);
+        if (checkerResult == null) {
+          return null;
+        }
+        if (checkerResult.data && has$1(checkerResult.data, 'expectedType')) {
+          expectedTypes.push(checkerResult.data.expectedType);
+        }
+      }
+      var expectedTypesMessage = (expectedTypes.length > 0) ? ', expected one of type [' + expectedTypes.join(', ') + ']': '';
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`' + expectedTypesMessage + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createNodeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!isNode(props[propName])) {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function invalidValidatorError(componentName, location, propFullName, key, type) {
+    return new PropTypeError(
+      (componentName || 'React class') + ': ' + location + ' type `' + propFullName + '.' + key + '` is invalid; ' +
+      'it must be a function, usually from the `prop-types` package, but received `' + type + '`.'
+    );
+  }
+
+  function createShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      for (var key in shapeTypes) {
+        var checker = shapeTypes[key];
+        if (typeof checker !== 'function') {
+          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret$1);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from props.
+      var allKeys = objectAssign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (has$1(shapeTypes, key) && typeof checker !== 'function') {
+          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+        }
+        if (!checker) {
+          return new PropTypeError(
+            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+            '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  ')
+          );
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret$1);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function isNode(propValue) {
+    switch (typeof propValue) {
+      case 'number':
+      case 'string':
+      case 'undefined':
+        return true;
+      case 'boolean':
+        return !propValue;
+      case 'object':
+        if (Array.isArray(propValue)) {
+          return propValue.every(isNode);
+        }
+        if (propValue === null || isValidElement(propValue)) {
+          return true;
+        }
+
+        var iteratorFn = getIteratorFn(propValue);
+        if (iteratorFn) {
+          var iterator = iteratorFn.call(propValue);
+          var step;
+          if (iteratorFn !== propValue.entries) {
+            while (!(step = iterator.next()).done) {
+              if (!isNode(step.value)) {
+                return false;
+              }
+            }
+          } else {
+            // Iterator will provide entry [k,v] tuples rather than values.
+            while (!(step = iterator.next()).done) {
+              var entry = step.value;
+              if (entry) {
+                if (!isNode(entry[1])) {
+                  return false;
+                }
+              }
+            }
+          }
+        } else {
+          return false;
+        }
+
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  function isSymbol(propType, propValue) {
+    // Native Symbol.
+    if (propType === 'symbol') {
+      return true;
+    }
+
+    // falsy value can't be a Symbol
+    if (!propValue) {
+      return false;
+    }
+
+    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+    if (propValue['@@toStringTag'] === 'Symbol') {
+      return true;
+    }
+
+    // Fallback for non-spec compliant Symbols which are polyfilled.
+    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Equivalent of `typeof` but with special handling for array and regexp.
+  function getPropType(propValue) {
+    var propType = typeof propValue;
+    if (Array.isArray(propValue)) {
+      return 'array';
+    }
+    if (propValue instanceof RegExp) {
+      // Old webkits (at least until Android 4.0) return 'function' rather than
+      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+      // passes PropTypes.object.
+      return 'object';
+    }
+    if (isSymbol(propType, propValue)) {
+      return 'symbol';
+    }
+    return propType;
+  }
+
+  // This handles more types than `getPropType`. Only used for error messages.
+  // See `createPrimitiveTypeChecker`.
+  function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
+    var propType = getPropType(propValue);
+    if (propType === 'object') {
+      if (propValue instanceof Date) {
+        return 'date';
+      } else if (propValue instanceof RegExp) {
+        return 'regexp';
+      }
+    }
+    return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
+  }
+
+  // Returns class name of the object, if any.
+  function getClassName(propValue) {
+    if (!propValue.constructor || !propValue.constructor.name) {
+      return ANONYMOUS;
+    }
+    return propValue.constructor.name;
+  }
+
+  ReactPropTypes.checkPropTypes = checkPropTypes;
+  ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+function emptyFunction() {}
+function emptyFunctionWithReset() {}
+emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+var factoryWithThrowingShims = function() {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret$1) {
+      // It is still safe when called from React.
+      return;
+    }
+    var err = new Error(
+      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+      'Use PropTypes.checkPropTypes() to call them. ' +
+      'Read more at http://fb.me/use-check-prop-types'
+    );
+    err.name = 'Invariant Violation';
+    throw err;
+  }  shim.isRequired = shim;
+  function getShim() {
+    return shim;
+  }  // Important!
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+  var ReactPropTypes = {
+    array: shim,
+    bigint: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    elementType: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim,
+
+    checkPropTypes: emptyFunctionWithReset,
+    resetWarningCache: emptyFunction
+  };
+
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+var require$$1 = factoryWithTypeCheckers;
+
+var require$$2 = factoryWithThrowingShims;
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var propTypes = createCommonjsModule(function (module) {
+if (process.env.NODE_ENV !== 'production') {
+  var ReactIs = reactIs;
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = require$$1(ReactIs.isElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = require$$2();
+}
+});
+
+var PropTypes = propTypes;
+
+/**
+ * @tabler/icons-react v2.34.0 - MIT
+ */
+
+var defaultAttributes = {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: 24,
+  height: 24,
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 2,
+  strokeLinecap: "round",
+  strokeLinejoin: "round"
+};
+
+/**
+ * @tabler/icons-react v2.34.0 - MIT
+ */
+
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+var createReactComponent = (iconName, iconNamePascal, iconNode) => {
+  const Component = React.forwardRef(
+    (_a, ref) => {
+      var _b = _a, { color = "currentColor", size = 24, stroke = 2, children } = _b, rest = __objRest(_b, ["color", "size", "stroke", "children"]);
+      return React.createElement(
+        "svg",
+        __spreadValues(__spreadProps(__spreadValues({
+          ref
+        }, defaultAttributes), {
+          width: size,
+          height: size,
+          stroke: color,
+          strokeWidth: stroke,
+          className: `tabler-icon tabler-icon-${iconName}`
+        }), rest),
+        [...iconNode.map(([tag, attrs]) => React.createElement(tag, attrs)), ...children || []]
+      );
+    }
+  );
+  Component.propTypes = {
+    color: PropTypes.string,
+    size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    stroke: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  };
+  Component.displayName = `${iconNamePascal}`;
+  return Component;
+};
+
+/**
+ * @tabler/icons-react v2.34.0 - MIT
+ */
+
+var IconPhoto = createReactComponent("photo", "IconPhoto", [
+  ["path", { d: "M15 8h.01", key: "svg-0" }],
+  [
+    "path",
+    {
+      d: "M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z",
+      key: "svg-1"
+    }
+  ],
+  ["path", { d: "M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5", key: "svg-2" }],
+  ["path", { d: "M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3", key: "svg-3" }]
+]);
+
+function Tab(props) {
+    var _a = props.panels, panels = _a === void 0 ? [] : _a, _b = props.tabs, tabs = _b === void 0 ? [] : _b;
+    return (React__default["default"].createElement(Tabs, { color: "green", defaultValue: "gallery" },
+        React__default["default"].createElement(Tabs.List, null, tabs.map(function (row) { return React__default["default"].createElement(Tabs.Tab, { value: row.value, icon: React__default["default"].createElement(IconPhoto, { size: "0.8rem" }) }, row.label); })),
+        panels.map(function (_a) {
+            var tabId = _a.tabId, panel = _a.panel;
+            return React__default["default"].createElement(Tabs.Panel, { value: tabId, pt: "xs" }, panel);
+        })));
+}
+
 function Breadcrumbs (props) {
     return React__default["default"].createElement(Breadcrumb$1, __assign({}, props));
 }
@@ -56155,4 +60627,5 @@ exports.RoomTypesForm = RoomTypeForm;
 exports.Rooms = Rooms;
 exports.SuccessAlert = App$1;
 exports.Tables = Tables;
+exports.Tabs = Tab;
 //# sourceMappingURL=index.js.map

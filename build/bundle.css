@@ -108,3 +108,48 @@
     font-weight: 500;
     line-height: normal;
 }
+.table-row-light {
+    background-color: #ffffff;
+}
+
+.table-row-dark {
+    background-color: rgba(235, 246, 246, 0.42);
+}
+
+.ant-table .ant-table-container .ant-table-content table thead.ant-table-thead .ant-table-cell {
+    background-color: rgba(144, 203, 203, 0.12);
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.title {
+    font-family: 'Inter';
+    font-size: '14px';
+    font-weight: 500;
+    line-height: 'normal'
+}
+
+.subTitle {
+    font-size: 10px;
+    font-weight: 500;
+    font-family: 'Inter'
+}
+
+.editableInput {
+    border-radius: 0px;
+}
+
+:where(.css-dev-only-do-not-override-ed5zg0).ant-table-wrapper .ant-table-column-sorters {
+    justify-content: unset !important;
+    /* margin-inline-start: 10px */
+}
+
+:where(.css-dev-only-do-not-override-ed5zg0).ant-table-wrapper .ant-table-column-title {
+    /* flex: unset; */
+}
+
+.ant-select-selection {
+    background-color: green;
+}

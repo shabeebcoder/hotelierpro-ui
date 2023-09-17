@@ -20,6 +20,9 @@ interface Props {
   dataSource: DataType[];
   type: 'room' | 'roomType' | 'guests' | 'companies' | 'services' | 'serviceCategory' | 'invoiceList'
   onSave: any
+  handleRoomType: AnimationPlayState;
+  onDelete: any;
+  styles?: any
 }
 
 
@@ -30,8 +33,10 @@ interface RoomTableDataType {
   maxPersons: number;
   singleUseRoomPrice: number;
   regularUseRoomPrice: number;
-  editable?: boolean
-  handleRoomType: any
+  editable?: boolean;
+  handleRoomType: any,
+  onChange: any
+
 }
 
 interface Item {
@@ -49,6 +54,7 @@ interface EditableCellProps extends React.HTMLAttributes<HTMLElement> {
   record: Item;
   index: number;
   children: React.ReactNode;
+  handleRoomType: any
 }
 
 
@@ -83,7 +89,7 @@ const RoomList: any = (props: Props) => {
     }),
   };
 
-  const save = async (record: React.Key) => {
+  const save = async (record: any) => {
     try {
       const row = (await form.validateFields()) as Item;
 

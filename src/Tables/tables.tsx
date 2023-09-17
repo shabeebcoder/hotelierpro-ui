@@ -20,6 +20,8 @@ interface Props {
   dataSource: DataType[];
   type: 'room' | 'roomType' | 'guests' | 'companies' | 'services' | 'serviceCategory' | 'invoiceList'
   onSave: any
+  onDelete?: any
+  styles?: any
 }
 
 
@@ -31,6 +33,7 @@ interface RoomTableDataType {
   singleUseRoomPrice: number;
   regularUseRoomPrice: number;
   editable?: boolean
+  inputType?: any
 }
 
 interface Item {
@@ -82,7 +85,7 @@ const Tables: any = (props: Props) => {
     }),
   };
 
-  const save = async (record: React.Key) => {
+  const save = async (record: any) => {
     try {
       const row = (await form.validateFields()) as Item;
 
@@ -304,7 +307,7 @@ const Tables: any = (props: Props) => {
 
           </div>
           <div onClick={() => setEditingKey('')}>
-            <Button type="cancel">Cancel</Button>
+            <Button type="default">Cancel</Button>
 
           </div>
 
@@ -1356,7 +1359,7 @@ const Tables: any = (props: Props) => {
     });
   }
   else if (props.type === "guests") {
-    var mergedColumns = GuestsColumns.map((col: any) => {
+    var mergedColumns: any[] = GuestsColumns.map((col: any) => {
       if (!col.editable) {
         return col;
       }
@@ -1376,7 +1379,7 @@ const Tables: any = (props: Props) => {
     });
   }
   else if (props.type === "companies") {
-    var mergedColumns = CompanyColumns.map((col: any) => {
+    var mergedColumns: any[] = CompanyColumns.map((col: any) => {
       if (!col.editable) {
         return col;
       }
@@ -1396,7 +1399,7 @@ const Tables: any = (props: Props) => {
     });
   }
   else if (props.type === "services") {
-    var mergedColumns = ServicesColumn.map((col: any) => {
+    var mergedColumns: any[] = ServicesColumn.map((col: any) => {
       if (!col.editable) {
         return col;
       }
@@ -1417,7 +1420,7 @@ const Tables: any = (props: Props) => {
   }
 
   else if (props.type === "serviceCategory") {
-    var mergedColumns = ServicesCategoryColumn.map((col: any) => {
+    var mergedColumns: any[] = ServicesCategoryColumn.map((col: any) => {
       if (!col.editable) {
         return col;
       }
@@ -1438,7 +1441,7 @@ const Tables: any = (props: Props) => {
   }
 
   else if (props.type === "invoiceList") {
-    var mergedColumns = InvoiceListColumn.map((col: any) => {
+    var mergedColumns: any[] = InvoiceListColumn.map((col: any) => {
       if (!col.editable) {
         return col;
       }

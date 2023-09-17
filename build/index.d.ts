@@ -4,5 +4,6 @@ import { Login } from "./Login";
 import { Register } from "./Signup";
 import { RoomTypesForm } from "./Forms/roomType";
 import { Rooms } from "./Forms/room";
+import { RoomList, Tables } from "./Tables";
 import DLS from "./DLS";
-export { Button, DLS, SuccessAlert, Login, Register, RoomTypesForm, Rooms };
+export { Button, DLS, SuccessAlert, Login, Register, RoomTypesForm, Rooms, Tables, RoomList };

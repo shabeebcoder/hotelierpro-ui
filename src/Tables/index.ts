@@ -1,3 +1,4 @@
-import tables from "./tables";
+import RoomList from "./RoomListTable";
+import Tables from "./tables"
 
-export { tables };
+export { RoomList, Tables };

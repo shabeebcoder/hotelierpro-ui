@@ -34092,7 +34092,7 @@ var _excluded$d = ["id", "prefixCls", "className", "items", "direction", "active
 
 // Used for accessibility
 var uuid = 0;
-function Tabs$3(_ref, ref) {
+function Tabs$4(_ref, ref) {
   var _classNames;
   var id = _ref.id,
     _ref$prefixCls = _ref.prefixCls,
@@ -34240,7 +34240,7 @@ function Tabs$3(_ref, ref) {
     animated: mergedAnimated
   }))));
 }
-var ForwardTabs = /*#__PURE__*/React__namespace.forwardRef(Tabs$3);
+var ForwardTabs = /*#__PURE__*/React__namespace.forwardRef(Tabs$4);
 if (process.env.NODE_ENV !== 'production') {
   ForwardTabs.displayName = 'Tabs';
 }
@@ -35184,7 +35184,7 @@ var __rest$s = undefined && undefined.__rest || function (s, e) {
   }
   return t;
 };
-const Tabs$1 = props => {
+const Tabs$2 = props => {
   const {
       type,
       className,
@@ -35254,11 +35254,11 @@ const Tabs$1 = props => {
     animated: mergedAnimated
   })));
 };
-Tabs$1.TabPane = TabPane$1;
+Tabs$2.TabPane = TabPane$1;
 if (process.env.NODE_ENV !== 'production') {
-  Tabs$1.displayName = 'Tabs';
+  Tabs$2.displayName = 'Tabs';
 }
-var Tabs$2 = Tabs$1;
+var Tabs$3 = Tabs$2;
 
 var __rest$r = undefined && undefined.__rest || function (s, e) {
   var t = {};
@@ -35710,7 +35710,7 @@ const Card$2 = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   let head;
   const mergedSize = useSize$1(customizeSize);
   const tabSize = !mergedSize || mergedSize === 'default' ? 'large' : mergedSize;
-  const tabs = tabList ? /*#__PURE__*/React__namespace.createElement(Tabs$2, Object.assign({
+  const tabs = tabList ? /*#__PURE__*/React__namespace.createElement(Tabs$3, Object.assign({
     size: tabSize
   }, extraProps, {
     className: `${prefixCls}-head-tabs`,
@@ -59358,7 +59358,7 @@ var __objRest$2 = (source, exclude) => {
   return target;
 };
 const defaultProps$1 = {};
-const Tab$1 = React.forwardRef((props, ref) => {
+const Tab = React.forwardRef((props, ref) => {
   const _a = useComponentDefaultProps("TabsTab", defaultProps$1, props), { value, children, onKeyDown, onClick, className, icon, rightSection, color } = _a, others = __objRest$2(_a, ["value", "children", "onKeyDown", "onClick", "className", "icon", "rightSection", "color"]);
   const ctx = useTabsContext();
   const hasIcon = !!icon;
@@ -59414,7 +59414,7 @@ const Tab$1 = React.forwardRef((props, ref) => {
     className: classes.tabRightSection
   }, rightSection));
 });
-Tab$1.displayName = "@mantine/core/Tab";
+Tab.displayName = "@mantine/core/Tab";
 
 function TabsProvider({
   defaultValue,
@@ -59521,7 +59521,7 @@ const defaultProps = {
   variant: "default",
   placement: "left"
 };
-const Tabs = React.forwardRef((props, ref) => {
+const Tabs$1 = React.forwardRef((props, ref) => {
   const _a = useComponentDefaultProps("Tabs", defaultProps, props), {
     defaultValue,
     value,
@@ -59588,10 +59588,10 @@ const Tabs = React.forwardRef((props, ref) => {
     ref
   }), children));
 });
-Tabs.List = TabsList;
-Tabs.Tab = Tab$1;
-Tabs.Panel = TabsPanel;
-Tabs.displayName = "@mantine/core/Tabs";
+Tabs$1.List = TabsList;
+Tabs$1.Tab = Tab;
+Tabs$1.Panel = TabsPanel;
+Tabs$1.displayName = "@mantine/core/Tabs";
 
 /*
 object-assign
@@ -60598,13 +60598,13 @@ var IconPhoto = createReactComponent("photo", "IconPhoto", [
   ["path", { d: "M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3", key: "svg-3" }]
 ]);
 
-function Tab(props) {
-    var _a = props.panels, panels = _a === void 0 ? [] : _a, _b = props.tabs, tabs = _b === void 0 ? [] : _b, defaultValue = props.defaultValue;
-    return (React__default["default"].createElement(Tabs, { color: "green", defaultValue: defaultValue },
-        React__default["default"].createElement(Tabs.List, null, tabs.map(function (row) { return React__default["default"].createElement(Tabs.Tab, { value: row.value, icon: React__default["default"].createElement(IconPhoto, { size: "0.8rem" }) }, row.label); })),
+function Tabs(props) {
+    var _a = props.panels, panels = _a === void 0 ? [] : _a, _b = props.tabs, tabs = _b === void 0 ? [] : _b, defaultValue = props.defaultValue, handleOnClick = props.handleOnClick;
+    return (React__default["default"].createElement(Tabs$1, { color: "green", defaultValue: defaultValue },
+        React__default["default"].createElement(Tabs$1.List, null, tabs.map(function (row) { return React__default["default"].createElement(Tabs$1.Tab, { onClick: function () { return handleOnClick(row); }, value: row.value, icon: React__default["default"].createElement(IconPhoto, { size: "0.8rem" }) }, row.label); })),
         panels.map(function (_a) {
             var tabId = _a.tabId, panel = _a.panel;
-            return React__default["default"].createElement(Tabs.Panel, { value: tabId, pt: "xs" }, panel);
+            return React__default["default"].createElement(Tabs$1.Panel, { value: tabId, pt: "xs" }, panel);
         })));
 }
 
@@ -60627,5 +60627,5 @@ exports.RoomTypesForm = RoomTypeForm;
 exports.Rooms = Rooms;
 exports.SuccessAlert = App$1;
 exports.Tables = Tables;
-exports.Tabs = Tab;
+exports.Tabs = Tabs;
 //# sourceMappingURL=index.js.map

@@ -12,6 +12,7 @@ interface Props {
     tabs: tab[];
     panels: panels[];
     defaultValue: string;
+    handleOnClick?: any;
 }
-export default function Tab(props: Props): React.JSX.Element;
+export default function Tabs(props: Props): React.JSX.Element;
 export {};

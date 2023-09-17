@@ -11,6 +11,7 @@ declare type panels = {
 interface Props {
     tabs: tab[];
     panels: panels[];
+    defaultValue: string;
 }
 export default function Tab(props: Props): React.JSX.Element;
 export {};

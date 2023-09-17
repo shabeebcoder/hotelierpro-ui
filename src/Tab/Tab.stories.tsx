@@ -30,5 +30,6 @@ Primary.args = {
         { tabId: 'settings', panel: 'settings' },
         { tabId: 'messages', panel: 'messages' }
     ],
-    defaultValue: 'gallery'
+    defaultValue: 'gallery',
+    handleOnClick: (row) => alert(JSON.stringify(row))
 }

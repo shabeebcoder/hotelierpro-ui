@@ -60599,8 +60599,8 @@ var IconPhoto = createReactComponent("photo", "IconPhoto", [
 ]);
 
 function Tab(props) {
-    var _a = props.panels, panels = _a === void 0 ? [] : _a, _b = props.tabs, tabs = _b === void 0 ? [] : _b;
-    return (React__default["default"].createElement(Tabs, { color: "green", defaultValue: "gallery" },
+    var _a = props.panels, panels = _a === void 0 ? [] : _a, _b = props.tabs, tabs = _b === void 0 ? [] : _b, defaultValue = props.defaultValue;
+    return (React__default["default"].createElement(Tabs, { color: "green", defaultValue: defaultValue },
         React__default["default"].createElement(Tabs.List, null, tabs.map(function (row) { return React__default["default"].createElement(Tabs.Tab, { value: row.value, icon: React__default["default"].createElement(IconPhoto, { size: "0.8rem" }) }, row.label); })),
         panels.map(function (_a) {
             var tabId = _a.tabId, panel = _a.panel;

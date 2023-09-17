@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs } from '@mantine/core';
+import { Tabs as Tab } from '@mantine/core';
 import { IconPhoto, IconMessageCircle, IconSettings } from '@tabler/icons-react';
 
 
@@ -16,23 +16,24 @@ type panels = {
 interface Props {
     tabs: tab[];
     panels: panels[];
-    defaultValue: string
+    defaultValue: string;
+    handleOnClick?: any
 }
 
-export default function Tab(props: Props) {
-    const { panels = [], tabs = [], defaultValue } = props;
+export default function Tabs(props: Props) {
+    const { panels = [], tabs = [], defaultValue, handleOnClick } = props;
     return (
-        <Tabs color="green" defaultValue={defaultValue}>
-            <Tabs.List>
+        <Tab color="green" defaultValue={defaultValue}>
+            <Tab.List>
                 {
-                    tabs.map((row) => <Tabs.Tab value={row.value} icon={<IconPhoto size="0.8rem" />}>{row.label}</Tabs.Tab>)
+                    tabs.map((row) => <Tab.Tab onClick={() => handleOnClick(row)} value={row.value} icon={<IconPhoto size="0.8rem" />}>{row.label}</Tab.Tab>)
                 }
-            </Tabs.List>
+            </Tab.List>
             {
-                panels.map(({ tabId, panel }) => <Tabs.Panel value={tabId} pt="xs">
+                panels.map(({ tabId, panel }) => <Tab.Panel value={tabId} pt="xs">
                     {panel}
-                </Tabs.Panel>)
+                </Tab.Panel>)
             }
-        </Tabs>
+        </Tab >
     );
 }

@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { Card, Space, Form, Input } from 'antd';
 import { Button } from "./../Buttons"
 import './styles.css';
 
 
-type LayoutType = Parameters<typeof Form>[0]['layout'];
+// type LayoutType = Parameters<typeof Form>[0]['layout'];
+interface Props {
+    onFinish: any,
+    formName: string,
+    title: string,
+    children?: ReactNode
+    handleCancel?: any
+}
 
-const App: React.FC = (props: any) => {
+const App = (props: Props) => {
 
     const { onFinish, formName, title, children, handleCancel } = props;
 
@@ -19,13 +26,13 @@ const App: React.FC = (props: any) => {
                     wrapperCol={{ span: 14 }}
                     layout="horizontal"
 
-                    id={'formName'} name={'formName'} onFinish={onFinish}>
+                    id={formName} name={formName} onFinish={onFinish}>
                     {children}
                 </Form>
             </Card>
             <br />
             <div style={{ display: "flex" }}>
-                <Button type="primary" htmlType="submit" form={'formName'}>Add</Button>&nbsp;
+                <Button type="primary" htmlType="submit" form={formName}>Add</Button>&nbsp;
                 <Button type="default" onClick={handleCancel}>Cancel</Button>
             </div>
         </div >)

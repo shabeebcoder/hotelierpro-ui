@@ -1,5 +1,5 @@
 import * as React from 'react';
-import React__default, { isValidElement as isValidElement$1, useContext, createContext, useRef, useLayoutEffect as useLayoutEffect$1, useEffect, forwardRef, useMemo as useMemo$1, useState, Children, createRef, useCallback, useImperativeHandle, cloneElement as cloneElement$1 } from 'react';
+import React__default, { isValidElement as isValidElement$1, useContext, createContext, useRef, useLayoutEffect as useLayoutEffect$2, useEffect, forwardRef, useMemo as useMemo$1, useState, Children, createRef, useCallback, useImperativeHandle, cloneElement as cloneElement$1 } from 'react';
 import * as ReactDOM from 'react-dom';
 import ReactDOM__default, { createPortal, unstable_batchedUpdates, flushSync } from 'react-dom';
 
@@ -29,7 +29,7 @@ var __assign = function() {
     return __assign.apply(this, arguments);
 };
 
-function __rest$G(s, e) {
+function __rest$I(s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
         t[p] = s[p];
@@ -179,7 +179,7 @@ function createCommonjsModule(fn) {
 	http://jedwatson.github.io/classnames
 */
 
-var classnames = createCommonjsModule(function (module) {
+var classnames$c = createCommonjsModule(function (module) {
 /* global define */
 
 (function () {
@@ -482,7 +482,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 });
 
-function toArray$3(children) {
+function toArray$4(children) {
   var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var ret = [];
   React__default.Children.forEach(children, function (child) {
@@ -490,9 +490,9 @@ function toArray$3(children) {
       return;
     }
     if (Array.isArray(child)) {
-      ret = ret.concat(toArray$3(child));
+      ret = ret.concat(toArray$4(child));
     } else if (reactIs.isFragment(child) && child.props) {
-      ret = ret.concat(toArray$3(child.props.children, option));
+      ret = ret.concat(toArray$4(child.props.children, option));
     } else {
       ret.push(child);
     }
@@ -1793,7 +1793,7 @@ if (process.env.NODE_ENV !== 'production') {
 var INTERNAL_PREFIX_KEY = 'rc-observer-key';
 function ResizeObserver$1(props, ref) {
   var children = props.children;
-  var childNodes = typeof children === 'function' ? [children] : toArray$3(children);
+  var childNodes = typeof children === 'function' ? [children] : toArray$4(children);
   if (process.env.NODE_ENV !== 'production') {
     if (childNodes.length > 1) {
       warning$4(false, 'Find more than one child node with `children` in ResizeObserver. Please use ResizeObserver.Collection instead.');
@@ -2457,7 +2457,7 @@ var ThemeCache = /*#__PURE__*/function () {
 _defineProperty(ThemeCache, "MAX_CACHE_SIZE", 20);
 _defineProperty(ThemeCache, "MAX_CACHE_OFFSET", 5);
 
-var uuid$3 = 0;
+var uuid$4 = 0;
 
 /**
  * Theme with algorithms to derive tokens from design tokens.
@@ -2469,11 +2469,11 @@ var Theme = /*#__PURE__*/function () {
     _defineProperty(this, "derivatives", void 0);
     _defineProperty(this, "id", void 0);
     this.derivatives = Array.isArray(derivatives) ? derivatives : [derivatives];
-    this.id = uuid$3;
+    this.id = uuid$4;
     if (derivatives.length === 0) {
       warning$4(derivatives.length > 0, '[Ant Design CSS-in-JS] Theme should have at least one derivative function.');
     }
-    uuid$3 += 1;
+    uuid$4 += 1;
   }
   _createClass(Theme, [{
     key: "getDerivativeToken",
@@ -2570,7 +2570,7 @@ function supportLayer() {
  * Wrap `React.useLayoutEffect` which will not throw warning message in test env
  */
 var useInternalLayoutEffect = process.env.NODE_ENV !== 'test' && canUseDom() ? React.useLayoutEffect : React.useEffect;
-var useLayoutEffect = function useLayoutEffect(callback, deps) {
+var useLayoutEffect$1 = function useLayoutEffect(callback, deps) {
   var firstMountRef = React.useRef(true);
   useInternalLayoutEffect(function () {
     return callback(firstMountRef.current);
@@ -2585,7 +2585,7 @@ var useLayoutEffect = function useLayoutEffect(callback, deps) {
   }, []);
 };
 var useLayoutUpdateEffect = function useLayoutUpdateEffect(callback, deps) {
-  useLayoutEffect(function (firstMount) {
+  useLayoutEffect$1(function (firstMount) {
     if (!firstMount) {
       return callback();
     }
@@ -2604,7 +2604,7 @@ var useInsertionEffect$1 = fullClone$2.useInsertionEffect;
  */
 var useInsertionEffectPolyfill = function useInsertionEffectPolyfill(renderEffect, effect, deps) {
   React.useMemo(renderEffect, deps);
-  useLayoutEffect(function () {
+  useLayoutEffect$1(function () {
     return effect(true);
   }, deps);
 };
@@ -3732,7 +3732,7 @@ var parseStyle = function parseStyle(interpolation) {
 function uniqueHash(path, styleStr) {
   return murmur2("".concat(path.join('%')).concat(styleStr));
 }
-function Empty() {
+function Empty$3() {
   return null;
 }
 
@@ -3853,7 +3853,7 @@ function useStyleRegister(info, styleFn) {
   return function (node) {
     var styleNode;
     if (!ssrInline || isMergedClientSide || !defaultCache) {
-      styleNode = /*#__PURE__*/React.createElement(Empty, null);
+      styleNode = /*#__PURE__*/React.createElement(Empty$3, null);
     } else {
       var _ref6;
       styleNode = /*#__PURE__*/React.createElement("style", _extends$1({}, (_ref6 = {}, _defineProperty(_ref6, ATTR_TOKEN, cachedTokenKey), _defineProperty(_ref6, ATTR_MARK, cachedStyleId), _ref6), {
@@ -6103,7 +6103,7 @@ function getAlphaColor$1(frontColor, backgroundColor) {
   }).toRgbString();
 }
 
-var __rest$F = undefined && undefined.__rest || function (s, e) {
+var __rest$H = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -6120,7 +6120,7 @@ function formatToken(derivativeToken) {
   const {
       override
     } = derivativeToken,
-    restToken = __rest$F(derivativeToken, ["override"]);
+    restToken = __rest$H(derivativeToken, ["override"]);
   const overrideTokens = Object.assign({}, override);
   Object.keys(seedToken$1).forEach(token => {
     delete overrideTokens[token];
@@ -6277,7 +6277,7 @@ function formatToken(derivativeToken) {
   return aliasToken;
 }
 
-var __rest$E = undefined && undefined.__rest || function (s, e) {
+var __rest$G = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -6290,7 +6290,7 @@ const getComputedToken = (originToken, overrideToken, theme) => {
   const {
       override
     } = overrideToken,
-    components = __rest$E(overrideToken, ["override"]);
+    components = __rest$G(overrideToken, ["override"]);
   // Merge with override
   let mergedDerivativeToken = Object.assign(Object.assign({}, derivativeToken), {
     override
@@ -6303,7 +6303,7 @@ const getComputedToken = (originToken, overrideToken, theme) => {
       const {
           theme: componentTheme
         } = value,
-        componentTokens = __rest$E(value, ["theme"]);
+        componentTokens = __rest$G(value, ["theme"]);
       let mergedComponentToken = componentTokens;
       if (componentTheme) {
         mergedComponentToken = getComputedToken(Object.assign(Object.assign({}, mergedDerivativeToken), componentTokens), {
@@ -6378,7 +6378,7 @@ function useSafeState(defaultValue) {
 }
 
 /** We only think `undefined` is empty */
-function hasValue(value) {
+function hasValue$1(value) {
   return value !== undefined;
 }
 
@@ -6395,9 +6395,9 @@ function useMergedState(defaultStateValue, option) {
 
   // ======================= Init =======================
   var _useState = useSafeState(function () {
-      if (hasValue(value)) {
+      if (hasValue$1(value)) {
         return value;
-      } else if (hasValue(defaultValue)) {
+      } else if (hasValue$1(defaultValue)) {
         return typeof defaultValue === 'function' ? defaultValue() : defaultValue;
       } else {
         return typeof defaultStateValue === 'function' ? defaultStateValue() : defaultStateValue;
@@ -6424,7 +6424,7 @@ function useMergedState(defaultStateValue, option) {
 
   // Sync value back to `undefined` when it from control to un-control
   useLayoutUpdateEffect(function () {
-    if (!hasValue(value)) {
+    if (!hasValue$1(value)) {
       setInnerValue(value);
     }
   }, [value]);
@@ -6715,7 +6715,7 @@ const useResetIconStyle = (iconPrefixCls, csp) => {
     })
   }]);
 };
-var useStyle$g = useResetIconStyle;
+var useStyle$h = useResetIconStyle;
 
 /* eslint-disable no-redeclare */
 function genComponentStyleHook(componentName, styleFn, getDefaultToken, options) {
@@ -6749,7 +6749,7 @@ function genComponentStyleHook(componentName, styleFn, getDefaultToken, options)
       '&': genLinkStyle(token)
     }]);
     // Generate style for icons
-    useStyle$g(iconPrefixCls);
+    useStyle$h(iconPrefixCls);
     return [useStyleRegister(Object.assign(Object.assign({}, sharedConfig), {
       path: [concatComponent, prefixCls, iconPrefixCls]
     }), () => {
@@ -6941,11 +6941,68 @@ function useTheme(theme, parentTheme) {
   }));
 }
 
-var _excluded$r = ["children"];
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+var classnames$b = createCommonjsModule(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+					classes.push(arg.toString());
+					continue;
+				}
+
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
+
+var _excluded$x = ["children"];
 var Context$1 = /*#__PURE__*/React.createContext({});
 function MotionProvider(_ref) {
   var children = _ref.children,
-    props = _objectWithoutProperties(_ref, _excluded$r);
+    props = _objectWithoutProperties(_ref, _excluded$x);
   return /*#__PURE__*/React.createElement(Context$1.Provider, {
     value: props
   }, children);
@@ -7093,7 +7150,7 @@ var useDomMotionEvents = (function (callback) {
 });
 
 // It's safe to use `useLayoutEffect` but the warning is annoying
-var useIsomorphicLayoutEffect = canUseDom() ? useLayoutEffect$1 : useEffect;
+var useIsomorphicLayoutEffect = canUseDom() ? useLayoutEffect$2 : useEffect;
 
 var useNextFrame = (function () {
   var nextFrameRef = React.useRef(null);
@@ -7501,7 +7558,7 @@ function genCSSMotion(config) {
       }
       var motionCls = getTransitionName$1(motionName, "".concat(status, "-").concat(statusSuffix));
       motionChildren = children(_objectSpread2(_objectSpread2({}, mergedProps), {}, {
-        className: classnames(getTransitionName$1(motionName, status), (_classNames = {}, _defineProperty(_classNames, motionCls, motionCls && statusSuffix), _defineProperty(_classNames, motionName, typeof motionName === 'string'), _classNames)),
+        className: classnames$b(getTransitionName$1(motionName, status), (_classNames = {}, _defineProperty(_classNames, motionCls, motionCls && statusSuffix), _defineProperty(_classNames, motionName, typeof motionName === 'string'), _classNames)),
         style: statusStyle
       }), setNodeRef);
     }
@@ -7627,8 +7684,8 @@ function diffKeys() {
   return list;
 }
 
-var _excluded$q = ["component", "children", "onVisibleChanged", "onAllRemoved"],
-  _excluded2$5 = ["status"];
+var _excluded$w = ["component", "children", "onVisibleChanged", "onAllRemoved"],
+  _excluded2$6 = ["status"];
 var MOTION_PROP_NAMES = ['eventProps', 'visible', 'children', 'motionName', 'motionAppear', 'motionEnter', 'motionLeave', 'motionLeaveImmediately', 'motionDeadline', 'removeOnLeave', 'leavedClassName', 'onAppearPrepare', 'onAppearStart', 'onAppearActive', 'onAppearEnd', 'onEnterStart', 'onEnterActive', 'onEnterEnd', 'onLeaveStart', 'onLeaveActive', 'onLeaveEnd'];
 /**
  * Generate a CSSMotionList component with config
@@ -7679,7 +7736,7 @@ function genCSSMotionList(transitionSupport) {
           children = _this$props.children,
           _onVisibleChanged = _this$props.onVisibleChanged,
           onAllRemoved = _this$props.onAllRemoved,
-          restProps = _objectWithoutProperties(_this$props, _excluded$q);
+          restProps = _objectWithoutProperties(_this$props, _excluded$w);
         var Component = component || React.Fragment;
         var motionProps = {};
         MOTION_PROP_NAMES.forEach(function (prop) {
@@ -7689,7 +7746,7 @@ function genCSSMotionList(transitionSupport) {
         delete restProps.keys;
         return /*#__PURE__*/React.createElement(Component, restProps, keyEntities.map(function (_ref2) {
           var status = _ref2.status,
-            eventProps = _objectWithoutProperties(_ref2, _excluded2$5);
+            eventProps = _objectWithoutProperties(_ref2, _excluded2$6);
           var visible = status === STATUS_ADD || status === STATUS_KEEP;
           return /*#__PURE__*/React.createElement(CSSMotion$1, _extends$1({}, motionProps, {
             key: eventProps.key,
@@ -7759,7 +7816,7 @@ function MotionWrapper(props) {
   return children;
 }
 
-var __rest$D = undefined && undefined.__rest || function (s, e) {
+var __rest$F = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -7888,7 +7945,7 @@ const ProviderChildren = props => {
   const iconPrefixCls = customIconPrefixCls || parentContext.iconPrefixCls || defaultIconPrefixCls;
   const shouldWrapSSR = iconPrefixCls !== parentContext.iconPrefixCls;
   const csp = customCsp || parentContext.csp;
-  const wrapSSR = useStyle$g(iconPrefixCls, csp);
+  const wrapSSR = useStyle$h(iconPrefixCls, csp);
   const mergedTheme = useTheme(theme, parentContext.theme);
   if (process.env.NODE_ENV !== 'production') {
     existThemeConfig = existThemeConfig || !!mergedTheme;
@@ -8014,7 +8071,7 @@ const ProviderChildren = props => {
         token,
         components
       } = _a,
-      rest = __rest$D(_a, ["algorithm", "token", "components"]);
+      rest = __rest$F(_a, ["algorithm", "token", "components"]);
     const themeObj = algorithm && (!Array.isArray(algorithm) || algorithm.length > 0) ? createTheme(algorithm) : defaultTheme;
     const parsedComponents = {};
     Object.entries(components || {}).forEach(_ref2 => {
@@ -8076,6 +8133,63 @@ if (process.env.NODE_ENV !== 'production') {
 // This icon file is generated automatically.
 var CheckCircleFilled$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z" } }] }, "name": "check-circle", "theme": "filled" };
 var CheckCircleFilledSvg = CheckCircleFilled$2;
+
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+var classnames$a = createCommonjsModule(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+					classes.push(arg.toString());
+					continue;
+				}
+
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
 
 /**
  * lodash (Custom Build) <https://lodash.com/>
@@ -8762,7 +8876,7 @@ var useInsertStyles = function useInsertStyles(eleRef) {
   }, []);
 };
 
-var _excluded$p = ["icon", "className", "onClick", "style", "primaryColor", "secondaryColor"];
+var _excluded$v = ["icon", "className", "onClick", "style", "primaryColor", "secondaryColor"];
 var twoToneColorPalette = {
   primaryColor: '#333',
   secondaryColor: '#E6E6E6',
@@ -8785,7 +8899,7 @@ var IconBase = function IconBase(props) {
     style = props.style,
     primaryColor = props.primaryColor,
     secondaryColor = props.secondaryColor,
-    restProps = _objectWithoutProperties(props, _excluded$p);
+    restProps = _objectWithoutProperties(props, _excluded$v);
   var svgRef = React.useRef();
   var colors = twoToneColorPalette;
   if (primaryColor) {
@@ -8841,7 +8955,7 @@ function getTwoToneColor() {
   return [colors.primaryColor, colors.secondaryColor];
 }
 
-var _excluded$o = ["className", "icon", "spin", "rotate", "tabIndex", "onClick", "twoToneColor"];
+var _excluded$u = ["className", "icon", "spin", "rotate", "tabIndex", "onClick", "twoToneColor"];
 // Initial setting
 // should move it to antd main repo?
 setTwoToneColor(blue.primary);
@@ -8857,12 +8971,12 @@ var Icon$1 = /*#__PURE__*/React.forwardRef(function (props, ref) {
     tabIndex = props.tabIndex,
     onClick = props.onClick,
     twoToneColor = props.twoToneColor,
-    restProps = _objectWithoutProperties(props, _excluded$o);
+    restProps = _objectWithoutProperties(props, _excluded$u);
   var _React$useContext = React.useContext(Context$2),
     _React$useContext$pre = _React$useContext.prefixCls,
     prefixCls = _React$useContext$pre === void 0 ? 'anticon' : _React$useContext$pre,
     rootClassName = _React$useContext.rootClassName;
-  var classString = classnames(rootClassName, prefixCls, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-").concat(icon.name), !!icon.name), _defineProperty(_classNames, "".concat(prefixCls, "-spin"), !!spin || icon.name === 'loading'), _classNames), className);
+  var classString = classnames$a(rootClassName, prefixCls, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-").concat(icon.name), !!icon.name), _defineProperty(_classNames, "".concat(prefixCls, "-spin"), !!spin || icon.name === 'loading'), _classNames), className);
   var iconTabIndex = tabIndex;
   if (iconTabIndex === undefined && onClick) {
     iconTabIndex = -1;
@@ -9035,7 +9149,7 @@ const genAlertTypeStyle = (bgColor, borderColor, iconColor, token, alertCls) => 
     color: iconColor
   }
 });
-const genBaseStyle$2 = token => {
+const genBaseStyle$3 = token => {
   const {
     componentCls,
     motionDurationSlow: duration,
@@ -9195,8 +9309,8 @@ const genActionStyle = token => {
     }
   };
 };
-const genAlertStyle = token => [genBaseStyle$2(token), genTypeStyle(token), genActionStyle(token)];
-var useStyle$f = genComponentStyleHook('Alert', token => {
+const genAlertStyle = token => [genBaseStyle$3(token), genTypeStyle(token), genActionStyle(token)];
+var useStyle$g = genComponentStyleHook('Alert', token => {
   const {
     fontSizeHeading3
   } = token;
@@ -9208,7 +9322,7 @@ var useStyle$f = genComponentStyleHook('Alert', token => {
   return [genAlertStyle(alertToken)];
 });
 
-var __rest$C = undefined && undefined.__rest || function (s, e) {
+var __rest$E = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -9233,7 +9347,7 @@ const IconNode = props => {
     return replaceElement(icon, /*#__PURE__*/React.createElement("span", {
       className: `${prefixCls}-icon`
     }, icon), () => ({
-      className: classnames(`${prefixCls}-icon`, {
+      className: classnames$c(`${prefixCls}-icon`, {
         [icon.props.className]: icon.props.className
       })
     }));
@@ -9276,7 +9390,7 @@ const Alert$2 = props => {
       closeIcon,
       action
     } = props,
-    otherProps = __rest$C(props, ["description", "prefixCls", "message", "banner", "className", "rootClassName", "style", "onMouseEnter", "onMouseLeave", "onClick", "afterClose", "showIcon", "closable", "closeText", "closeIcon", "action"]);
+    otherProps = __rest$E(props, ["description", "prefixCls", "message", "banner", "className", "rootClassName", "style", "onMouseEnter", "onMouseLeave", "onClick", "afterClose", "showIcon", "closable", "closeText", "closeIcon", "action"]);
   const [closed, setClosed] = React.useState(false);
   if (process.env.NODE_ENV !== 'production') {
     process.env.NODE_ENV !== "production" ? warning$3(!closeText, 'Alert', '`closeText` is deprecated. Please use `closeIcon` instead.') : void 0;
@@ -9288,7 +9402,7 @@ const Alert$2 = props => {
     alert
   } = React.useContext(ConfigContext);
   const prefixCls = getPrefixCls('alert', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$f(prefixCls);
+  const [wrapSSR, hashId] = useStyle$g(prefixCls);
   const handleClose = e => {
     var _a;
     setClosed(true);
@@ -9314,7 +9428,7 @@ const Alert$2 = props => {
   }, [closeText, closeIcon, closable]);
   // banner mode defaults to Icon
   const isShowIcon = banner && showIcon === undefined ? true : showIcon;
-  const alertCls = classnames(prefixCls, `${prefixCls}-${type}`, {
+  const alertCls = classnames$c(prefixCls, `${prefixCls}-${type}`, {
     [`${prefixCls}-with-description`]: !!description,
     [`${prefixCls}-no-icon`]: !isShowIcon,
     [`${prefixCls}-banner`]: !!banner,
@@ -9341,7 +9455,7 @@ const Alert$2 = props => {
     return /*#__PURE__*/React.createElement("div", Object.assign({
       ref: ref,
       "data-show": !closed,
-      className: classnames(alertCls, motionClassName),
+      className: classnames$c(alertCls, motionClassName),
       style: Object.assign(Object.assign(Object.assign({}, alert === null || alert === void 0 ? void 0 : alert.style), style), motionStyle),
       onMouseEnter: onMouseEnter,
       onMouseLeave: onMouseLeave,
@@ -10471,7 +10585,7 @@ const genWaveStyle = token => {
     }
   };
 };
-var useStyle$e = genComponentStyleHook('Wave', token => [genWaveStyle(token)]);
+var useStyle$f = genComponentStyleHook('Wave', token => [genWaveStyle(token)]);
 
 function isNotGrey(color) {
   // eslint-disable-next-line no-useless-escape
@@ -10601,7 +10715,7 @@ const WaveEffect = props => {
     } = _ref;
     return /*#__PURE__*/React.createElement("div", {
       ref: divRef,
-      className: classnames(className, {
+      className: classnames$c(className, {
         'wave-quick': isSmallComponent
       }, motionClassName),
       style: waveStyle
@@ -10675,9 +10789,9 @@ const Wave = props => {
   const containerRef = useRef(null);
   // ============================== Style ===============================
   const prefixCls = getPrefixCls('wave');
-  const [, hashId] = useStyle$e(prefixCls);
+  const [, hashId] = useStyle$f(prefixCls);
   // =============================== Wave ===============================
-  const showWave = useWave(containerRef, classnames(prefixCls, hashId), component);
+  const showWave = useWave(containerRef, classnames$c(prefixCls, hashId), component);
   // ============================== Effect ==============================
   React__default.useEffect(() => {
     const node = containerRef.current;
@@ -10786,13 +10900,13 @@ const genSpaceStyle = token => {
   };
 };
 // ============================== Export ==============================
-var useStyle$d = genComponentStyleHook('Space', token => [genSpaceStyle(token), genSpaceCompactStyle$1(token)], () => ({}), {
+var useStyle$e = genComponentStyleHook('Space', token => [genSpaceStyle(token), genSpaceCompactStyle$1(token)], () => ({}), {
   // Space component don't apply extra font style
   // https://github.com/ant-design/ant-design/issues/40315
   resetStyle: false
 });
 
-var __rest$B = undefined && undefined.__rest || function (s, e) {
+var __rest$D = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -10813,7 +10927,7 @@ const useCompactItemContext = (prefixCls, direction) => {
       isLastItem
     } = compactItemContext;
     const separator = compactDirection === 'vertical' ? '-vertical-' : '-';
-    return classnames(`${prefixCls}-compact${separator}item`, {
+    return classnames$c(`${prefixCls}-compact${separator}item`, {
       [`${prefixCls}-compact${separator}first-item`]: isFirstItem,
       [`${prefixCls}-compact${separator}last-item`]: isLastItem,
       [`${prefixCls}-compact${separator}item-rtl`]: direction === 'rtl'
@@ -10837,7 +10951,7 @@ const CompactItem = _a => {
   var {
       children
     } = _a,
-    otherProps = __rest$B(_a, ["children"]);
+    otherProps = __rest$D(_a, ["children"]);
   return /*#__PURE__*/React.createElement(SpaceCompactItemContext.Provider, {
     value: otherProps
   }, children);
@@ -10856,17 +10970,17 @@ const Compact = props => {
       rootClassName,
       children
     } = props,
-    restProps = __rest$B(props, ["size", "direction", "block", "prefixCls", "className", "rootClassName", "children"]);
+    restProps = __rest$D(props, ["size", "direction", "block", "prefixCls", "className", "rootClassName", "children"]);
   const mergedSize = useSize$1(ctx => size !== null && size !== void 0 ? size : ctx);
   const prefixCls = getPrefixCls('space-compact', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$d(prefixCls);
-  const clx = classnames(prefixCls, hashId, {
+  const [wrapSSR, hashId] = useStyle$e(prefixCls);
+  const clx = classnames$c(prefixCls, hashId, {
     [`${prefixCls}-rtl`]: directionConfig === 'rtl',
     [`${prefixCls}-block`]: block,
     [`${prefixCls}-vertical`]: direction === 'vertical'
   }, className, rootClassName);
   const compactItemContext = React.useContext(SpaceCompactItemContext);
-  const childNodes = toArray$3(children);
+  const childNodes = toArray$4(children);
   const nodes = React.useMemo(() => childNodes.map((child, i) => {
     const key = child && child.key || `${prefixCls}-item-${i}`;
     return /*#__PURE__*/React.createElement(CompactItem, {
@@ -10894,7 +11008,7 @@ const IconWrapper = /*#__PURE__*/forwardRef((props, ref) => {
     children,
     prefixCls
   } = props;
-  const iconWrapperCls = classnames(`${prefixCls}-icon`, className);
+  const iconWrapperCls = classnames$c(`${prefixCls}-icon`, className);
   return /*#__PURE__*/React__default.createElement("span", {
     ref: ref,
     className: iconWrapperCls,
@@ -10910,7 +11024,7 @@ const InnerLoadingIcon = /*#__PURE__*/forwardRef((_ref, ref) => {
     style,
     iconClassName
   } = _ref;
-  const mergedIconCls = classnames(`${prefixCls}-loading-icon`, className);
+  const mergedIconCls = classnames$c(`${prefixCls}-loading-icon`, className);
   return /*#__PURE__*/React__default.createElement(IconWrapper$1, {
     prefixCls: prefixCls,
     className: mergedIconCls,
@@ -10973,7 +11087,7 @@ const LoadingIcon = props => {
 };
 var LoadingIcon$1 = LoadingIcon;
 
-var __rest$A = undefined && undefined.__rest || function (s, e) {
+var __rest$C = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -10992,7 +11106,7 @@ const ButtonGroup = props => {
       size,
       className
     } = props,
-    others = __rest$A(props, ["prefixCls", "size", "className"]);
+    others = __rest$C(props, ["prefixCls", "size", "className"]);
   const prefixCls = getPrefixCls('btn-group', customizePrefixCls);
   const [,, hashId] = useToken$2();
   let sizeCls = '';
@@ -11009,7 +11123,7 @@ const ButtonGroup = props => {
     default:
       process.env.NODE_ENV !== "production" ? warning$3(!size, 'Button.Group', 'Invalid prop `size`.') : void 0;
   }
-  const classes = classnames(prefixCls, {
+  const classes = classnames$c(prefixCls, {
     [`${prefixCls}-${sizeCls}`]: sizeCls,
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, className, hashId);
@@ -11574,7 +11688,7 @@ const genBlockButtonStyle = token => {
   };
 };
 // ============================== Export ==============================
-var useStyle$c = genComponentStyleHook('Button', token => {
+var useStyle$d = genComponentStyleHook('Button', token => {
   const {
     controlTmpOutline,
     paddingContentHorizontal
@@ -11600,7 +11714,7 @@ var useStyle$c = genComponentStyleHook('Button', token => {
   genCompactItemStyle(token), genCompactItemVerticalStyle(token)];
 });
 
-var __rest$z = undefined && undefined.__rest || function (s, e) {
+var __rest$B = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -11644,7 +11758,7 @@ const InternalButton = (props, ref) => {
       classNames: customClassNames,
       style: customStyle = {}
     } = props,
-    rest = __rest$z(props, ["loading", "prefixCls", "type", "danger", "shape", "size", "styles", "disabled", "className", "rootClassName", "children", "icon", "ghost", "block", "htmlType", "classNames", "style"]);
+    rest = __rest$B(props, ["loading", "prefixCls", "type", "danger", "shape", "size", "styles", "disabled", "className", "rootClassName", "children", "icon", "ghost", "block", "htmlType", "classNames", "style"]);
   const {
     getPrefixCls,
     autoInsertSpaceInButton,
@@ -11652,7 +11766,7 @@ const InternalButton = (props, ref) => {
     button
   } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('btn', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$c(prefixCls);
+  const [wrapSSR, hashId] = useStyle$d(prefixCls);
   const disabled = useContext(DisabledContext$1);
   const mergedDisabled = customDisabled !== null && customDisabled !== void 0 ? customDisabled : disabled;
   const groupSize = useContext(GroupSizeContext);
@@ -11724,7 +11838,7 @@ const InternalButton = (props, ref) => {
   const sizeCls = sizeFullName ? sizeClassNameMap[sizeFullName] || '' : '';
   const iconType = innerLoading ? 'loading' : icon;
   const linkButtonRestProps = omit(rest, ['navigate']);
-  const classes = classnames(prefixCls, hashId, {
+  const classes = classnames$c(prefixCls, hashId, {
     [`${prefixCls}-${shape}`]: shape !== 'default' && shape,
     [`${prefixCls}-${type}`]: type,
     [`${prefixCls}-${sizeCls}`]: sizeCls,
@@ -11737,7 +11851,7 @@ const InternalButton = (props, ref) => {
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, compactItemClassnames, className, rootClassName, button === null || button === void 0 ? void 0 : button.className);
   const fullStyle = Object.assign(Object.assign({}, button === null || button === void 0 ? void 0 : button.style), customStyle);
-  const iconClasses = classnames(customClassNames === null || customClassNames === void 0 ? void 0 : customClassNames.icon, (_a = button === null || button === void 0 ? void 0 : button.classNames) === null || _a === void 0 ? void 0 : _a.icon);
+  const iconClasses = classnames$c(customClassNames === null || customClassNames === void 0 ? void 0 : customClassNames.icon, (_a = button === null || button === void 0 ? void 0 : button.classNames) === null || _a === void 0 ? void 0 : _a.icon);
   const iconStyle = Object.assign(Object.assign({}, (styles === null || styles === void 0 ? void 0 : styles.icon) || {}), ((_b = button === null || button === void 0 ? void 0 : button.styles) === null || _b === void 0 ? void 0 : _b.icon) || {});
   const iconNode = icon && !innerLoading ? /*#__PURE__*/React__default.createElement(IconWrapper$1, {
     prefixCls: prefixCls,
@@ -11751,7 +11865,7 @@ const InternalButton = (props, ref) => {
   const kids = children || children === 0 ? spaceChildren(children, needInserted && autoInsertSpace) : null;
   if (linkButtonRestProps.href !== undefined) {
     return wrapSSR( /*#__PURE__*/React__default.createElement("a", Object.assign({}, linkButtonRestProps, {
-      className: classnames(classes, {
+      className: classnames$c(classes, {
         [`${prefixCls}-disabled`]: mergedDisabled
       }),
       style: fullStyle,
@@ -11873,7 +11987,7 @@ function useDom(render, debug) {
     (_ele$parentElement = ele.parentElement) === null || _ele$parentElement === void 0 ? void 0 : _ele$parentElement.removeChild(ele);
     appendedRef.current = false;
   }
-  useLayoutEffect(function () {
+  useLayoutEffect$1(function () {
     if (render) {
       if (queueCreate) {
         queueCreate(append);
@@ -11885,7 +11999,7 @@ function useDom(render, debug) {
     }
     return cleanup;
   }, [render]);
-  useLayoutEffect(function () {
+  useLayoutEffect$1(function () {
     if (queue.length) {
       queue.forEach(function (appendFn) {
         return appendFn();
@@ -11959,16 +12073,16 @@ function isBodyOverflowing() {
 }
 
 var UNIQUE_ID = "rc-util-locker-".concat(Date.now());
-var uuid$2 = 0;
+var uuid$3 = 0;
 function useScrollLocker(lock) {
   var mergedLock = !!lock;
   var _React$useState = React.useState(function () {
-      uuid$2 += 1;
-      return "".concat(UNIQUE_ID, "_").concat(uuid$2);
+      uuid$3 += 1;
+      return "".concat(UNIQUE_ID, "_").concat(uuid$3);
     }),
     _React$useState2 = _slicedToArray(_React$useState, 1),
     id = _React$useState2[0];
-  useLayoutEffect(function () {
+  useLayoutEffect$1(function () {
     if (mergedLock) {
       var scrollbarSize = getTargetScrollBarSize(document.body).width;
       var isOverflow = isBodyOverflowing();
@@ -12089,8 +12203,8 @@ function getUseId() {
   var fullClone = _objectSpread2({}, React);
   return fullClone.useId;
 }
-var uuid$1 = 0;
-function useId(id) {
+var uuid$2 = 0;
+function useId$1(id) {
   // Inner id for accessibility usage. Only work in client side
   var _React$useState = React.useState('ssr-id'),
     _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -12100,8 +12214,8 @@ function useId(id) {
   var reactNativeId = useOriginId === null || useOriginId === void 0 ? void 0 : useOriginId();
   React.useEffect(function () {
     if (!useOriginId) {
-      var nextId = uuid$1;
-      uuid$1 += 1;
+      var nextId = uuid$2;
+      uuid$2 += 1;
       setInnerId("rc_unique_".concat(nextId));
     }
   }, []);
@@ -12217,7 +12331,7 @@ var Context = /*#__PURE__*/React.createContext({
 
 var ListContext = /*#__PURE__*/React.createContext(null);
 
-function toArray$2(value) {
+function toArray$3(value) {
   if (value === undefined || value === null) {
     return [];
   }
@@ -13900,7 +14014,7 @@ function _finishOnFirstFailed() {
  * ['a', 123] => ['a', 123]
  */
 function getNamePath(path) {
-  return toArray$2(path);
+  return toArray$3(path);
 }
 function cloneByNamePathList(store, namePathList) {
   var newStore = {};
@@ -13980,7 +14094,7 @@ function move(array, moveIndex, toIndex) {
   return array;
 }
 
-var _excluded$n = ["name"];
+var _excluded$t = ["name"];
 var EMPTY_ERRORS = [];
 function requireUpdate(shouldUpdate, prev, next, prevValue, nextValue, info) {
   if (typeof shouldUpdate === 'function') {
@@ -14222,7 +14336,7 @@ var Field = /*#__PURE__*/function (_React$Component) {
             if (!validateTrigger) {
               return true;
             }
-            var triggerList = toArray$2(validateTrigger);
+            var triggerList = toArray$3(validateTrigger);
             return triggerList.includes(triggerName);
           });
         }
@@ -14326,7 +14440,7 @@ var Field = /*#__PURE__*/function (_React$Component) {
         });
       }
       // Filed element only
-      var childList = toArray$3(children);
+      var childList = toArray$4(children);
       if (childList.length !== 1 || ! /*#__PURE__*/React.isValidElement(childList[0])) {
         return {
           child: childList,
@@ -14395,7 +14509,7 @@ var Field = /*#__PURE__*/function (_React$Component) {
         }
       };
       // Add validateTrigger
-      var validateTriggerList = toArray$2(mergedValidateTrigger || []);
+      var validateTriggerList = toArray$3(mergedValidateTrigger || []);
       validateTriggerList.forEach(function (triggerName) {
         // Wrap additional function of component, so that we can get latest value from store
         var originTrigger = control[triggerName];
@@ -14490,7 +14604,7 @@ Field.defaultProps = {
 };
 function WrapperField(_ref5) {
   var name = _ref5.name,
-    restProps = _objectWithoutProperties(_ref5, _excluded$n);
+    restProps = _objectWithoutProperties(_ref5, _excluded$t);
   var fieldContext = React.useContext(Context);
   var listContext = React.useContext(ListContext);
   var namePath = name !== undefined ? getNamePath(name) : undefined;
@@ -14512,7 +14626,7 @@ function WrapperField(_ref5) {
   }));
 }
 
-function List$1(_ref) {
+function List$2(_ref) {
   var name = _ref.name,
     initialValue = _ref.initialValue,
     children = _ref.children,
@@ -14757,7 +14871,7 @@ var NameMap = /*#__PURE__*/function () {
   return NameMap;
 }();
 
-var _excluded$m = ["name"];
+var _excluded$s = ["name"];
 var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
   var _this = this;
   _classCallCheck(this, FormStore);
@@ -15193,7 +15307,7 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
     var namePathList = [];
     fields.forEach(function (fieldData) {
       var name = fieldData.name,
-        data = _objectWithoutProperties(fieldData, _excluded$m);
+        data = _objectWithoutProperties(fieldData, _excluded$s);
       var namePath = getNamePath(name);
       namePathList.push(namePath);
       // Value
@@ -15657,7 +15771,7 @@ var FormProvider$1 = function FormProvider(_ref) {
   }, children);
 };
 
-var _excluded$l = ["name", "initialValues", "fields", "form", "preserve", "children", "component", "validateMessages", "validateTrigger", "onValuesChange", "onFieldsChange", "onFinish", "onFinishFailed"];
+var _excluded$r = ["name", "initialValues", "fields", "form", "preserve", "children", "component", "validateMessages", "validateTrigger", "onValuesChange", "onFieldsChange", "onFinish", "onFinishFailed"];
 var Form$3 = function Form(_ref, ref) {
   var name = _ref.name,
     initialValues = _ref.initialValues,
@@ -15674,7 +15788,7 @@ var Form$3 = function Form(_ref, ref) {
     _onFieldsChange = _ref.onFieldsChange,
     _onFinish = _ref.onFinish,
     onFinishFailed = _ref.onFinishFailed,
-    restProps = _objectWithoutProperties(_ref, _excluded$l);
+    restProps = _objectWithoutProperties(_ref, _excluded$r);
   var formContext = React.useContext(FormContext$1);
   // We customize handle event since Context will makes all the consumer re-render:
   // https://reactjs.org/docs/context.html#contextprovider
@@ -15856,7 +15970,7 @@ var InternalForm$2 = /*#__PURE__*/React.forwardRef(Form$3);
 var RefForm = InternalForm$2;
 RefForm.FormProvider = FormProvider$1;
 RefForm.Field = WrapperField;
-RefForm.List = List$1;
+RefForm.List = List$2;
 RefForm.useForm = useForm$1;
 RefForm.useWatch = useWatch$1;
 
@@ -16492,6 +16606,63 @@ function genPurePanel(Component, defaultPrefixCls, getDropdownCls, postProps) {
   return withPureRenderTheme(PurePanel);
 }
 
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+var classnames$9 = createCommonjsModule(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+					classes.push(arg.toString());
+					continue;
+				}
+
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
+
 var isMobile = (function () {
   if (typeof navigator === 'undefined' || typeof window === 'undefined') {
     return false;
@@ -16500,7 +16671,167 @@ var isMobile = (function () {
   return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(agent) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw-(n|u)|c55\/|capi|ccwa|cdm-|cell|chtm|cldc|cmd-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc-s|devi|dica|dmob|do(c|p)o|ds(12|-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(-|_)|g1 u|g560|gene|gf-5|g-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd-(m|p|t)|hei-|hi(pt|ta)|hp( i|ip)|hs-c|ht(c(-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i-(20|go|ma)|i230|iac( |-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|-[a-w])|libw|lynx|m1-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|-([1-8]|c))|phil|pire|pl(ay|uc)|pn-2|po(ck|rt|se)|prox|psio|pt-g|qa-a|qc(07|12|21|32|60|-[2-7]|i-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h-|oo|p-)|sdk\/|se(c(-|0|1)|47|mc|nd|ri)|sgh-|shar|sie(-|m)|sk-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h-|v-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl-|tdg-|tel(i|m)|tim-|t-mo|to(pl|sh)|ts(70|m-|m3|m5)|tx-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas-|your|zeto|zte-/i.test(agent === null || agent === void 0 ? void 0 : agent.substr(0, 4));
 });
 
-var _excluded$k = ["prefixCls", "invalidate", "item", "renderItem", "responsive", "responsiveDisabled", "registerSize", "itemKey", "className", "style", "children", "display", "order", "component"];
+/**
+ * BaseSelect provide some parsed data into context.
+ * You can use this hooks to get them.
+ */
+var BaseSelectContext = /*#__PURE__*/React.createContext(null);
+function useBaseProps() {
+  return React.useContext(BaseSelectContext);
+}
+
+/**
+ * Similar with `useLock`, but this hook will always execute last value.
+ * When set to `true`, it will keep `true` for a short time even if `false` is set.
+ */
+function useDelayReset() {
+  var timeout = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 10;
+  var _React$useState = React.useState(false),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    bool = _React$useState2[0],
+    setBool = _React$useState2[1];
+  var delayRef = React.useRef(null);
+  var cancelLatest = function cancelLatest() {
+    window.clearTimeout(delayRef.current);
+  };
+  React.useEffect(function () {
+    return cancelLatest;
+  }, []);
+  var delaySetBool = function delaySetBool(value, callback) {
+    cancelLatest();
+    delayRef.current = window.setTimeout(function () {
+      setBool(value);
+      if (callback) {
+        callback();
+      }
+    }, timeout);
+  };
+  return [bool, delaySetBool, cancelLatest];
+}
+
+/**
+ * Locker return cached mark.
+ * If set to `true`, will return `true` in a short time even if set `false`.
+ * If set to `false` and then set to `true`, will change to `true`.
+ * And after time duration, it will back to `null` automatically.
+ */
+function useLock() {
+  var duration = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 250;
+  var lockRef = React.useRef(null);
+  var timeoutRef = React.useRef(null);
+
+  // Clean up
+  React.useEffect(function () {
+    return function () {
+      window.clearTimeout(timeoutRef.current);
+    };
+  }, []);
+  function doLock(locked) {
+    if (locked || lockRef.current === null) {
+      lockRef.current = locked;
+    }
+    window.clearTimeout(timeoutRef.current);
+    timeoutRef.current = window.setTimeout(function () {
+      lockRef.current = null;
+    }, duration);
+  }
+  return [function () {
+    return lockRef.current;
+  }, doLock];
+}
+
+function useSelectTriggerControl(elements, open, triggerOpen, customizedTrigger) {
+  var propsRef = React.useRef(null);
+  propsRef.current = {
+    open: open,
+    triggerOpen: triggerOpen,
+    customizedTrigger: customizedTrigger
+  };
+  React.useEffect(function () {
+    function onGlobalMouseDown(event) {
+      var _propsRef$current;
+      // If trigger is customized, Trigger will take control of popupVisible
+      if ((_propsRef$current = propsRef.current) !== null && _propsRef$current !== void 0 && _propsRef$current.customizedTrigger) {
+        return;
+      }
+      var target = event.target;
+      if (target.shadowRoot && event.composed) {
+        target = event.composedPath()[0] || target;
+      }
+      if (propsRef.current.open && elements().filter(function (element) {
+        return element;
+      }).every(function (element) {
+        return !element.contains(target) && element !== target;
+      })) {
+        // Should trigger close
+        propsRef.current.triggerOpen(false);
+      }
+    }
+    window.addEventListener('mousedown', onGlobalMouseDown);
+    return function () {
+      return window.removeEventListener('mousedown', onGlobalMouseDown);
+    };
+  }, []);
+}
+
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+var classnames$8 = createCommonjsModule(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+					classes.push(arg.toString());
+					continue;
+				}
+
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
+
+var _excluded$q = ["prefixCls", "invalidate", "item", "renderItem", "responsive", "responsiveDisabled", "registerSize", "itemKey", "className", "style", "children", "display", "order", "component"];
 // Use shared variable to save bundle size
 var UNDEFINED = undefined;
 function InternalItem(props, ref) {
@@ -16519,7 +16850,7 @@ function InternalItem(props, ref) {
     order = props.order,
     _props$component = props.component,
     Component = _props$component === void 0 ? 'div' : _props$component,
-    restProps = _objectWithoutProperties(props, _excluded$k);
+    restProps = _objectWithoutProperties(props, _excluded$q);
   var mergedHidden = responsive && !display;
   // ================================ Effect ================================
   function internalRegisterSize(width) {
@@ -16548,7 +16879,7 @@ function InternalItem(props, ref) {
     overflowProps['aria-hidden'] = true;
   }
   var itemNode = /*#__PURE__*/React.createElement(Component, _extends$1({
-    className: classnames(!invalidate && prefixCls, className),
+    className: classnames$8(!invalidate && prefixCls, className),
     style: _objectSpread2(_objectSpread2({}, overflowStyle), style)
   }, overflowProps, restProps, {
     ref: ref
@@ -16564,8 +16895,8 @@ function InternalItem(props, ref) {
   }
   return itemNode;
 }
-var Item$4 = /*#__PURE__*/React.forwardRef(InternalItem);
-Item$4.displayName = 'Item';
+var Item$5 = /*#__PURE__*/React.forwardRef(InternalItem);
+Item$5.displayName = 'Item';
 
 function channelUpdate(callback) {
   if (typeof MessageChannel === 'undefined') {
@@ -16622,8 +16953,8 @@ function useEffectState(notifyEffectUpdate, defaultValue) {
 
 var OverflowContext = /*#__PURE__*/React__default.createContext(null);
 
-var _excluded$j = ["component"],
-  _excluded2$4 = ["className"],
+var _excluded$p = ["component"],
+  _excluded2$5 = ["className"],
   _excluded3$1 = ["className"];
 var InternalRawItem = function InternalRawItem(props, ref) {
   var context = React.useContext(OverflowContext);
@@ -16631,27 +16962,27 @@ var InternalRawItem = function InternalRawItem(props, ref) {
   if (!context) {
     var _props$component = props.component,
       Component = _props$component === void 0 ? 'div' : _props$component,
-      _restProps = _objectWithoutProperties(props, _excluded$j);
+      _restProps = _objectWithoutProperties(props, _excluded$p);
     return /*#__PURE__*/React.createElement(Component, _extends$1({}, _restProps, {
       ref: ref
     }));
   }
   var contextClassName = context.className,
-    restContext = _objectWithoutProperties(context, _excluded2$4);
+    restContext = _objectWithoutProperties(context, _excluded2$5);
   var className = props.className,
     restProps = _objectWithoutProperties(props, _excluded3$1);
   // Do not pass context to sub item to avoid multiple measure
   return /*#__PURE__*/React.createElement(OverflowContext.Provider, {
     value: null
-  }, /*#__PURE__*/React.createElement(Item$4, _extends$1({
+  }, /*#__PURE__*/React.createElement(Item$5, _extends$1({
     ref: ref,
-    className: classnames(contextClassName, className)
+    className: classnames$8(contextClassName, className)
   }, restContext, restProps)));
 };
 var RawItem = /*#__PURE__*/React.forwardRef(InternalRawItem);
 RawItem.displayName = 'RawItem';
 
-var _excluded$i = ["prefixCls", "data", "renderItem", "renderRawItem", "itemKey", "itemWidth", "ssr", "style", "className", "maxCount", "renderRest", "renderRawRest", "suffix", "component", "itemComponent", "onVisibleChange"];
+var _excluded$o = ["prefixCls", "data", "renderItem", "renderRawItem", "itemKey", "itemWidth", "ssr", "style", "className", "maxCount", "renderRest", "renderRawRest", "suffix", "component", "itemComponent", "onVisibleChange"];
 var RESPONSIVE = 'responsive';
 var INVALIDATE = 'invalidate';
 function defaultRenderRest(omittedItems) {
@@ -16678,7 +17009,7 @@ function Overflow(props, ref) {
     Component = _props$component === void 0 ? 'div' : _props$component,
     itemComponent = props.itemComponent,
     onVisibleChange = props.onVisibleChange,
-    restProps = _objectWithoutProperties(props, _excluded$i);
+    restProps = _objectWithoutProperties(props, _excluded$o);
   var fullySSR = ssr === 'full';
   var notifyEffectUpdate = useBatcher();
   var _useEffectState = useEffectState(notifyEffectUpdate, null),
@@ -16803,7 +17134,7 @@ function Overflow(props, ref) {
   function getItemWidth(index) {
     return itemWidths.get(getKey(mergedData[index], index));
   }
-  useLayoutEffect(function () {
+  useLayoutEffect$1(function () {
     if (mergedContainerWidth && typeof mergedRestWidth === 'number' && mergedData) {
       var totalWidth = suffixWidth;
       var len = mergedData.length;
@@ -16876,7 +17207,7 @@ function Overflow(props, ref) {
     }, renderRawItem(item, index));
   } : function (item, index) {
     var key = getKey(item, index);
-    return /*#__PURE__*/React.createElement(Item$4, _extends$1({}, itemSharedProps, {
+    return /*#__PURE__*/React.createElement(Item$5, _extends$1({}, itemSharedProps, {
       order: index,
       key: key,
       item: item,
@@ -16896,17 +17227,17 @@ function Overflow(props, ref) {
   };
   if (!renderRawRest) {
     var mergedRenderRest = renderRest || defaultRenderRest;
-    restNode = /*#__PURE__*/React.createElement(Item$4, _extends$1({}, itemSharedProps, restContextProps), typeof mergedRenderRest === 'function' ? mergedRenderRest(omittedItems) : mergedRenderRest);
+    restNode = /*#__PURE__*/React.createElement(Item$5, _extends$1({}, itemSharedProps, restContextProps), typeof mergedRenderRest === 'function' ? mergedRenderRest(omittedItems) : mergedRenderRest);
   } else if (renderRawRest) {
     restNode = /*#__PURE__*/React.createElement(OverflowContext.Provider, {
       value: _objectSpread2(_objectSpread2({}, itemSharedProps), restContextProps)
     }, renderRawRest(omittedItems));
   }
   var overflowNode = /*#__PURE__*/React.createElement(Component, _extends$1({
-    className: classnames(!invalidate && prefixCls, className),
+    className: classnames$8(!invalidate && prefixCls, className),
     style: style,
     ref: ref
-  }, restProps), mergedData.map(internalRenderItemNode), showRest ? restNode : null, suffix && /*#__PURE__*/React.createElement(Item$4, _extends$1({}, itemSharedProps, {
+  }, restProps), mergedData.map(internalRenderItemNode), showRest ? restNode : null, suffix && /*#__PURE__*/React.createElement(Item$5, _extends$1({}, itemSharedProps, {
     responsive: isResponsive,
     responsiveDisabled: !shouldResponsive,
     order: mergedDisplayCount,
@@ -16928,6 +17259,664 @@ ForwardOverflow.displayName = 'Overflow';
 ForwardOverflow.Item = RawItem;
 ForwardOverflow.RESPONSIVE = RESPONSIVE;
 ForwardOverflow.INVALIDATE = INVALIDATE;
+
+var TransBtn = function TransBtn(_ref) {
+  var className = _ref.className,
+    customizeIcon = _ref.customizeIcon,
+    customizeIconProps = _ref.customizeIconProps,
+    _onMouseDown = _ref.onMouseDown,
+    onClick = _ref.onClick,
+    children = _ref.children;
+  var icon;
+  if (typeof customizeIcon === 'function') {
+    icon = customizeIcon(customizeIconProps);
+  } else {
+    icon = customizeIcon;
+  }
+  return /*#__PURE__*/React.createElement("span", {
+    className: className,
+    onMouseDown: function onMouseDown(event) {
+      event.preventDefault();
+      if (_onMouseDown) {
+        _onMouseDown(event);
+      }
+    },
+    style: {
+      userSelect: 'none',
+      WebkitUserSelect: 'none'
+    },
+    unselectable: "on",
+    onClick: onClick,
+    "aria-hidden": true
+  }, icon !== undefined ? icon : /*#__PURE__*/React.createElement("span", {
+    className: classnames$9(className.split(/\s+/).map(function (cls) {
+      return "".concat(cls, "-icon");
+    }))
+  }, children));
+};
+
+var Input$4 = function Input(_ref, ref) {
+  var _inputNode2, _inputNode2$props;
+  var prefixCls = _ref.prefixCls,
+    id = _ref.id,
+    inputElement = _ref.inputElement,
+    disabled = _ref.disabled,
+    tabIndex = _ref.tabIndex,
+    autoFocus = _ref.autoFocus,
+    autoComplete = _ref.autoComplete,
+    editable = _ref.editable,
+    activeDescendantId = _ref.activeDescendantId,
+    value = _ref.value,
+    maxLength = _ref.maxLength,
+    _onKeyDown = _ref.onKeyDown,
+    _onMouseDown = _ref.onMouseDown,
+    _onChange = _ref.onChange,
+    onPaste = _ref.onPaste,
+    _onCompositionStart = _ref.onCompositionStart,
+    _onCompositionEnd = _ref.onCompositionEnd,
+    open = _ref.open,
+    attrs = _ref.attrs;
+  var inputNode = inputElement || /*#__PURE__*/React.createElement("input", null);
+  var _inputNode = inputNode,
+    originRef = _inputNode.ref,
+    originProps = _inputNode.props;
+  var onOriginKeyDown = originProps.onKeyDown,
+    onOriginChange = originProps.onChange,
+    onOriginMouseDown = originProps.onMouseDown,
+    onOriginCompositionStart = originProps.onCompositionStart,
+    onOriginCompositionEnd = originProps.onCompositionEnd,
+    style = originProps.style;
+  warning$4(!('maxLength' in inputNode.props), "Passing 'maxLength' to input element directly may not work because input in BaseSelect is controlled.");
+  inputNode = /*#__PURE__*/React.cloneElement(inputNode, _objectSpread2(_objectSpread2(_objectSpread2({
+    type: 'search'
+  }, originProps), {}, {
+    // Override over origin props
+    id: id,
+    ref: composeRef(ref, originRef),
+    disabled: disabled,
+    tabIndex: tabIndex,
+    autoComplete: autoComplete || 'off',
+    autoFocus: autoFocus,
+    className: classnames$9("".concat(prefixCls, "-selection-search-input"), (_inputNode2 = inputNode) === null || _inputNode2 === void 0 ? void 0 : (_inputNode2$props = _inputNode2.props) === null || _inputNode2$props === void 0 ? void 0 : _inputNode2$props.className),
+    role: 'combobox',
+    'aria-label': 'Search',
+    'aria-expanded': open,
+    'aria-haspopup': 'listbox',
+    'aria-owns': "".concat(id, "_list"),
+    'aria-autocomplete': 'list',
+    'aria-controls': "".concat(id, "_list"),
+    'aria-activedescendant': open ? activeDescendantId : undefined
+  }, attrs), {}, {
+    value: editable ? value : '',
+    maxLength: maxLength,
+    readOnly: !editable,
+    unselectable: !editable ? 'on' : null,
+    style: _objectSpread2(_objectSpread2({}, style), {}, {
+      opacity: editable ? null : 0
+    }),
+    onKeyDown: function onKeyDown(event) {
+      _onKeyDown(event);
+      if (onOriginKeyDown) {
+        onOriginKeyDown(event);
+      }
+    },
+    onMouseDown: function onMouseDown(event) {
+      _onMouseDown(event);
+      if (onOriginMouseDown) {
+        onOriginMouseDown(event);
+      }
+    },
+    onChange: function onChange(event) {
+      _onChange(event);
+      if (onOriginChange) {
+        onOriginChange(event);
+      }
+    },
+    onCompositionStart: function onCompositionStart(event) {
+      _onCompositionStart(event);
+      if (onOriginCompositionStart) {
+        onOriginCompositionStart(event);
+      }
+    },
+    onCompositionEnd: function onCompositionEnd(event) {
+      _onCompositionEnd(event);
+      if (onOriginCompositionEnd) {
+        onOriginCompositionEnd(event);
+      }
+    },
+    onPaste: onPaste
+  }));
+  return inputNode;
+};
+var RefInput = /*#__PURE__*/React.forwardRef(Input$4);
+RefInput.displayName = 'Input';
+
+function toArray$2(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+  return value !== undefined ? [value] : [];
+}
+var isClient = typeof window !== 'undefined' && window.document && window.document.documentElement;
+
+/** Is client side and not jsdom */
+var isBrowserClient$1 = process.env.NODE_ENV !== 'test' && isClient;
+function hasValue(value) {
+  return value !== undefined && value !== null;
+}
+
+/** combo mode no value judgment function */
+function isComboNoValue(value) {
+  return !value && value !== 0;
+}
+function isTitleType$1(title) {
+  return ['string', 'number'].includes(_typeof(title));
+}
+function getTitle(item) {
+  var title = undefined;
+  if (item) {
+    if (isTitleType$1(item.title)) {
+      title = item.title.toString();
+    } else if (isTitleType$1(item.label)) {
+      title = item.label.toString();
+    }
+  }
+  return title;
+}
+
+/* eslint-disable react-hooks/rules-of-hooks */
+
+/**
+ * Wrap `React.useLayoutEffect` which will not throw warning message in test env
+ */
+function useLayoutEffect(effect, deps) {
+  // Never happen in test env
+  if (isBrowserClient$1) {
+    /* istanbul ignore next */
+    React.useLayoutEffect(effect, deps);
+  } else {
+    React.useEffect(effect, deps);
+  }
+}
+/* eslint-enable */
+
+function itemKey(value) {
+  var _value$key;
+  return (_value$key = value.key) !== null && _value$key !== void 0 ? _value$key : value.value;
+}
+var onPreventMouseDown = function onPreventMouseDown(event) {
+  event.preventDefault();
+  event.stopPropagation();
+};
+var SelectSelector = function SelectSelector(props) {
+  var id = props.id,
+    prefixCls = props.prefixCls,
+    values = props.values,
+    open = props.open,
+    searchValue = props.searchValue,
+    autoClearSearchValue = props.autoClearSearchValue,
+    inputRef = props.inputRef,
+    placeholder = props.placeholder,
+    disabled = props.disabled,
+    mode = props.mode,
+    showSearch = props.showSearch,
+    autoFocus = props.autoFocus,
+    autoComplete = props.autoComplete,
+    activeDescendantId = props.activeDescendantId,
+    tabIndex = props.tabIndex,
+    removeIcon = props.removeIcon,
+    maxTagCount = props.maxTagCount,
+    maxTagTextLength = props.maxTagTextLength,
+    _props$maxTagPlacehol = props.maxTagPlaceholder,
+    maxTagPlaceholder = _props$maxTagPlacehol === void 0 ? function (omittedValues) {
+      return "+ ".concat(omittedValues.length, " ...");
+    } : _props$maxTagPlacehol,
+    tagRender = props.tagRender,
+    onToggleOpen = props.onToggleOpen,
+    onRemove = props.onRemove,
+    onInputChange = props.onInputChange,
+    onInputPaste = props.onInputPaste,
+    onInputKeyDown = props.onInputKeyDown,
+    onInputMouseDown = props.onInputMouseDown,
+    onInputCompositionStart = props.onInputCompositionStart,
+    onInputCompositionEnd = props.onInputCompositionEnd;
+  var measureRef = React.useRef(null);
+  var _useState = useState(0),
+    _useState2 = _slicedToArray(_useState, 2),
+    inputWidth = _useState2[0],
+    setInputWidth = _useState2[1];
+  var _useState3 = useState(false),
+    _useState4 = _slicedToArray(_useState3, 2),
+    focused = _useState4[0],
+    setFocused = _useState4[1];
+  var selectionPrefixCls = "".concat(prefixCls, "-selection");
+
+  // ===================== Search ======================
+  var inputValue = open || mode === "multiple" && autoClearSearchValue === false || mode === 'tags' ? searchValue : '';
+  var inputEditable = mode === 'tags' || mode === "multiple" && autoClearSearchValue === false || showSearch && (open || focused);
+
+  // We measure width and set to the input immediately
+  useLayoutEffect(function () {
+    setInputWidth(measureRef.current.scrollWidth);
+  }, [inputValue]);
+
+  // ===================== Render ======================
+  // >>> Render Selector Node. Includes Item & Rest
+  function defaultRenderSelector(item, content, itemDisabled, closable, onClose) {
+    return /*#__PURE__*/React.createElement("span", {
+      className: classnames$9("".concat(selectionPrefixCls, "-item"), _defineProperty({}, "".concat(selectionPrefixCls, "-item-disabled"), itemDisabled)),
+      title: getTitle(item)
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "".concat(selectionPrefixCls, "-item-content")
+    }, content), closable && /*#__PURE__*/React.createElement(TransBtn, {
+      className: "".concat(selectionPrefixCls, "-item-remove"),
+      onMouseDown: onPreventMouseDown,
+      onClick: onClose,
+      customizeIcon: removeIcon
+    }, "\xD7"));
+  }
+  function customizeRenderSelector(value, content, itemDisabled, closable, onClose) {
+    var onMouseDown = function onMouseDown(e) {
+      onPreventMouseDown(e);
+      onToggleOpen(!open);
+    };
+    return /*#__PURE__*/React.createElement("span", {
+      onMouseDown: onMouseDown
+    }, tagRender({
+      label: content,
+      value: value,
+      disabled: itemDisabled,
+      closable: closable,
+      onClose: onClose
+    }));
+  }
+  function renderItem(valueItem) {
+    var itemDisabled = valueItem.disabled,
+      label = valueItem.label,
+      value = valueItem.value;
+    var closable = !disabled && !itemDisabled;
+    var displayLabel = label;
+    if (typeof maxTagTextLength === 'number') {
+      if (typeof label === 'string' || typeof label === 'number') {
+        var strLabel = String(displayLabel);
+        if (strLabel.length > maxTagTextLength) {
+          displayLabel = "".concat(strLabel.slice(0, maxTagTextLength), "...");
+        }
+      }
+    }
+    var onClose = function onClose(event) {
+      if (event) event.stopPropagation();
+      onRemove(valueItem);
+    };
+    return typeof tagRender === 'function' ? customizeRenderSelector(value, displayLabel, itemDisabled, closable, onClose) : defaultRenderSelector(valueItem, displayLabel, itemDisabled, closable, onClose);
+  }
+  function renderRest(omittedValues) {
+    var content = typeof maxTagPlaceholder === 'function' ? maxTagPlaceholder(omittedValues) : maxTagPlaceholder;
+    return defaultRenderSelector({
+      title: content
+    }, content, false);
+  }
+
+  // >>> Input Node
+  var inputNode = /*#__PURE__*/React.createElement("div", {
+    className: "".concat(selectionPrefixCls, "-search"),
+    style: {
+      width: inputWidth
+    },
+    onFocus: function onFocus() {
+      setFocused(true);
+    },
+    onBlur: function onBlur() {
+      setFocused(false);
+    }
+  }, /*#__PURE__*/React.createElement(RefInput, {
+    ref: inputRef,
+    open: open,
+    prefixCls: prefixCls,
+    id: id,
+    inputElement: null,
+    disabled: disabled,
+    autoFocus: autoFocus,
+    autoComplete: autoComplete,
+    editable: inputEditable,
+    activeDescendantId: activeDescendantId,
+    value: inputValue,
+    onKeyDown: onInputKeyDown,
+    onMouseDown: onInputMouseDown,
+    onChange: onInputChange,
+    onPaste: onInputPaste,
+    onCompositionStart: onInputCompositionStart,
+    onCompositionEnd: onInputCompositionEnd,
+    tabIndex: tabIndex,
+    attrs: pickAttrs(props, true)
+  }), /*#__PURE__*/React.createElement("span", {
+    ref: measureRef,
+    className: "".concat(selectionPrefixCls, "-search-mirror"),
+    "aria-hidden": true
+  }, inputValue, "\xA0"));
+
+  // >>> Selections
+  var selectionNode = /*#__PURE__*/React.createElement(ForwardOverflow, {
+    prefixCls: "".concat(selectionPrefixCls, "-overflow"),
+    data: values,
+    renderItem: renderItem,
+    renderRest: renderRest,
+    suffix: inputNode,
+    itemKey: itemKey,
+    maxCount: maxTagCount
+  });
+  return /*#__PURE__*/React.createElement(React.Fragment, null, selectionNode, !values.length && !inputValue && /*#__PURE__*/React.createElement("span", {
+    className: "".concat(selectionPrefixCls, "-placeholder")
+  }, placeholder));
+};
+
+var SingleSelector = function SingleSelector(props) {
+  var inputElement = props.inputElement,
+    prefixCls = props.prefixCls,
+    id = props.id,
+    inputRef = props.inputRef,
+    disabled = props.disabled,
+    autoFocus = props.autoFocus,
+    autoComplete = props.autoComplete,
+    activeDescendantId = props.activeDescendantId,
+    mode = props.mode,
+    open = props.open,
+    values = props.values,
+    placeholder = props.placeholder,
+    tabIndex = props.tabIndex,
+    showSearch = props.showSearch,
+    searchValue = props.searchValue,
+    activeValue = props.activeValue,
+    maxLength = props.maxLength,
+    onInputKeyDown = props.onInputKeyDown,
+    onInputMouseDown = props.onInputMouseDown,
+    onInputChange = props.onInputChange,
+    onInputPaste = props.onInputPaste,
+    onInputCompositionStart = props.onInputCompositionStart,
+    onInputCompositionEnd = props.onInputCompositionEnd,
+    title = props.title;
+  var _React$useState = React.useState(false),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    inputChanged = _React$useState2[0],
+    setInputChanged = _React$useState2[1];
+  var combobox = mode === 'combobox';
+  var inputEditable = combobox || showSearch;
+  var item = values[0];
+  var inputValue = searchValue || '';
+  if (combobox && activeValue && !inputChanged) {
+    inputValue = activeValue;
+  }
+  React.useEffect(function () {
+    if (combobox) {
+      setInputChanged(false);
+    }
+  }, [combobox, activeValue]);
+
+  // Not show text when closed expect combobox mode
+  var hasTextInput = mode !== 'combobox' && !open && !showSearch ? false : !!inputValue;
+
+  // Get title of selection item
+  var selectionTitle = title === undefined ? getTitle(item) : title;
+  var renderPlaceholder = function renderPlaceholder() {
+    if (item) {
+      return null;
+    }
+    var hiddenStyle = hasTextInput ? {
+      visibility: 'hidden'
+    } : undefined;
+    return /*#__PURE__*/React.createElement("span", {
+      className: "".concat(prefixCls, "-selection-placeholder"),
+      style: hiddenStyle
+    }, placeholder);
+  };
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+    className: "".concat(prefixCls, "-selection-search")
+  }, /*#__PURE__*/React.createElement(RefInput, {
+    ref: inputRef,
+    prefixCls: prefixCls,
+    id: id,
+    open: open,
+    inputElement: inputElement,
+    disabled: disabled,
+    autoFocus: autoFocus,
+    autoComplete: autoComplete,
+    editable: inputEditable,
+    activeDescendantId: activeDescendantId,
+    value: inputValue,
+    onKeyDown: onInputKeyDown,
+    onMouseDown: onInputMouseDown,
+    onChange: function onChange(e) {
+      setInputChanged(true);
+      onInputChange(e);
+    },
+    onPaste: onInputPaste,
+    onCompositionStart: onInputCompositionStart,
+    onCompositionEnd: onInputCompositionEnd,
+    tabIndex: tabIndex,
+    attrs: pickAttrs(props, true),
+    maxLength: combobox ? maxLength : undefined
+  })), !combobox && item ? /*#__PURE__*/React.createElement("span", {
+    className: "".concat(prefixCls, "-selection-item"),
+    title: selectionTitle
+    // 当 Select 已经选中选项时，还需 selection 隐藏但留在原地占位
+    // https://github.com/ant-design/ant-design/issues/27688
+    // https://github.com/ant-design/ant-design/issues/41530
+    ,
+    style: hasTextInput ? {
+      visibility: 'hidden'
+    } : undefined
+  }, item.label) : null, renderPlaceholder());
+};
+
+/** keyCode Judgment function */
+function isValidateOpenKey(currentKeyCode) {
+  return ![
+  // System function button
+  KeyCode.ESC, KeyCode.SHIFT, KeyCode.BACKSPACE, KeyCode.TAB, KeyCode.WIN_KEY, KeyCode.ALT, KeyCode.META, KeyCode.WIN_KEY_RIGHT, KeyCode.CTRL, KeyCode.SEMICOLON, KeyCode.EQUALS, KeyCode.CAPS_LOCK, KeyCode.CONTEXT_MENU,
+  // F1-F12
+  KeyCode.F1, KeyCode.F2, KeyCode.F3, KeyCode.F4, KeyCode.F5, KeyCode.F6, KeyCode.F7, KeyCode.F8, KeyCode.F9, KeyCode.F10, KeyCode.F11, KeyCode.F12].includes(currentKeyCode);
+}
+
+var Selector = function Selector(props, ref) {
+  var inputRef = useRef(null);
+  var compositionStatusRef = useRef(false);
+  var prefixCls = props.prefixCls,
+    open = props.open,
+    mode = props.mode,
+    showSearch = props.showSearch,
+    tokenWithEnter = props.tokenWithEnter,
+    autoClearSearchValue = props.autoClearSearchValue,
+    onSearch = props.onSearch,
+    onSearchSubmit = props.onSearchSubmit,
+    onToggleOpen = props.onToggleOpen,
+    onInputKeyDown = props.onInputKeyDown,
+    domRef = props.domRef;
+
+  // ======================= Ref =======================
+  React.useImperativeHandle(ref, function () {
+    return {
+      focus: function focus() {
+        inputRef.current.focus();
+      },
+      blur: function blur() {
+        inputRef.current.blur();
+      }
+    };
+  });
+
+  // ====================== Input ======================
+  var _useLock = useLock(0),
+    _useLock2 = _slicedToArray(_useLock, 2),
+    getInputMouseDown = _useLock2[0],
+    setInputMouseDown = _useLock2[1];
+  var onInternalInputKeyDown = function onInternalInputKeyDown(event) {
+    var which = event.which;
+    if (which === KeyCode.UP || which === KeyCode.DOWN) {
+      event.preventDefault();
+    }
+    if (onInputKeyDown) {
+      onInputKeyDown(event);
+    }
+    if (which === KeyCode.ENTER && mode === 'tags' && !compositionStatusRef.current && !open) {
+      // When menu isn't open, OptionList won't trigger a value change
+      // So when enter is pressed, the tag's input value should be emitted here to let selector know
+      onSearchSubmit === null || onSearchSubmit === void 0 ? void 0 : onSearchSubmit(event.target.value);
+    }
+    if (isValidateOpenKey(which)) {
+      onToggleOpen(true);
+    }
+  };
+
+  /**
+   * We can not use `findDOMNode` sine it will get warning,
+   * have to use timer to check if is input element.
+   */
+  var onInternalInputMouseDown = function onInternalInputMouseDown() {
+    setInputMouseDown(true);
+  };
+
+  // When paste come, ignore next onChange
+  var pastedTextRef = useRef(null);
+  var triggerOnSearch = function triggerOnSearch(value) {
+    if (onSearch(value, true, compositionStatusRef.current) !== false) {
+      onToggleOpen(true);
+    }
+  };
+  var onInputCompositionStart = function onInputCompositionStart() {
+    compositionStatusRef.current = true;
+  };
+  var onInputCompositionEnd = function onInputCompositionEnd(e) {
+    compositionStatusRef.current = false;
+
+    // Trigger search again to support `tokenSeparators` with typewriting
+    if (mode !== 'combobox') {
+      triggerOnSearch(e.target.value);
+    }
+  };
+  var onInputChange = function onInputChange(event) {
+    var value = event.target.value;
+
+    // Pasted text should replace back to origin content
+    if (tokenWithEnter && pastedTextRef.current && /[\r\n]/.test(pastedTextRef.current)) {
+      // CRLF will be treated as a single space for input element
+      var replacedText = pastedTextRef.current.replace(/[\r\n]+$/, '').replace(/\r\n/g, ' ').replace(/[\r\n]/g, ' ');
+      value = value.replace(replacedText, pastedTextRef.current);
+    }
+    pastedTextRef.current = null;
+    triggerOnSearch(value);
+  };
+  var onInputPaste = function onInputPaste(e) {
+    var clipboardData = e.clipboardData;
+    var value = clipboardData.getData('text');
+    pastedTextRef.current = value;
+  };
+  var onClick = function onClick(_ref) {
+    var target = _ref.target;
+    if (target !== inputRef.current) {
+      // Should focus input if click the selector
+      var isIE = document.body.style.msTouchAction !== undefined;
+      if (isIE) {
+        setTimeout(function () {
+          inputRef.current.focus();
+        });
+      } else {
+        inputRef.current.focus();
+      }
+    }
+  };
+  var onMouseDown = function onMouseDown(event) {
+    var inputMouseDown = getInputMouseDown();
+
+    // when mode is combobox, don't prevent default behavior
+    // https://github.com/ant-design/ant-design/issues/37320
+    if (event.target !== inputRef.current && !inputMouseDown && mode !== 'combobox') {
+      event.preventDefault();
+    }
+    if (mode !== 'combobox' && (!showSearch || !inputMouseDown) || !open) {
+      if (open && autoClearSearchValue !== false) {
+        onSearch('', true, false);
+      }
+      onToggleOpen();
+    }
+  };
+
+  // ================= Inner Selector ==================
+  var sharedProps = {
+    inputRef: inputRef,
+    onInputKeyDown: onInternalInputKeyDown,
+    onInputMouseDown: onInternalInputMouseDown,
+    onInputChange: onInputChange,
+    onInputPaste: onInputPaste,
+    onInputCompositionStart: onInputCompositionStart,
+    onInputCompositionEnd: onInputCompositionEnd
+  };
+  var selectNode = mode === 'multiple' || mode === 'tags' ? /*#__PURE__*/React.createElement(SelectSelector, _extends$1({}, props, sharedProps)) : /*#__PURE__*/React.createElement(SingleSelector, _extends$1({}, props, sharedProps));
+  return /*#__PURE__*/React.createElement("div", {
+    ref: domRef,
+    className: "".concat(prefixCls, "-selector"),
+    onClick: onClick,
+    onMouseDown: onMouseDown
+  }, selectNode);
+};
+var ForwardSelector = /*#__PURE__*/React.forwardRef(Selector);
+ForwardSelector.displayName = 'Selector';
+
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+var classnames$7 = createCommonjsModule(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+					classes.push(arg.toString());
+					continue;
+				}
+
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
 
 var TriggerContext = /*#__PURE__*/React.createContext(null);
 
@@ -17606,8 +18595,8 @@ function useAlign(open, popupEle, target, placement, builtinPlacements, popupAli
       });
     });
   };
-  useLayoutEffect(resetReady, [placement]);
-  useLayoutEffect(function () {
+  useLayoutEffect$1(resetReady, [placement]);
+  useLayoutEffect$1(function () {
     if (!open) {
       resetReady();
     }
@@ -17616,7 +18605,7 @@ function useAlign(open, popupEle, target, placement, builtinPlacements, popupAli
 }
 
 function useWatch(open, target, popup, onAlign, onScroll) {
-  useLayoutEffect(function () {
+  useLayoutEffect$1(function () {
     if (open && target && popup) {
       var targetElement = target;
       var popupElement = popup;
@@ -17782,7 +18771,7 @@ function Arrow(props) {
   }
   return /*#__PURE__*/React.createElement("div", {
     ref: arrowRef,
-    className: classnames("".concat(prefixCls, "-arrow"), className),
+    className: classnames$7("".concat(prefixCls, "-arrow"), className),
     style: alignStyle
   }, content);
 }
@@ -17806,7 +18795,7 @@ function Mask(props) {
       style: {
         zIndex: zIndex
       },
-      className: classnames("".concat(prefixCls, "-mask"), className)
+      className: classnames$7("".concat(prefixCls, "-mask"), className)
     });
   });
 }
@@ -17868,7 +18857,7 @@ var Popup$1 = /*#__PURE__*/React.forwardRef(function (props, ref) {
     setShow = _React$useState2[1];
 
   // Delay to show since `getPopupContainer` need target element
-  useLayoutEffect(function () {
+  useLayoutEffect$1(function () {
     if (!show && getPopupContainerNeedParams && target) {
       setShow(true);
     }
@@ -17963,7 +18952,7 @@ var Popup$1 = /*#__PURE__*/React.forwardRef(function (props, ref) {
     }), function (_ref, motionRef) {
       var motionClassName = _ref.className,
         motionStyle = _ref.style;
-      var cls = classnames(prefixCls, motionClassName, className);
+      var cls = classnames$7(prefixCls, motionClassName, className);
       return /*#__PURE__*/React.createElement("div", {
         ref: composeRef(resizeObserverRef, ref, motionRef),
         className: cls,
@@ -18011,7 +19000,7 @@ if (process.env.NODE_ENV !== 'production') {
   TriggerWrapper.displayName = 'TriggerWrapper';
 }
 
-var _excluded$h = ["prefixCls", "children", "action", "showAction", "hideAction", "popupVisible", "defaultPopupVisible", "onPopupVisibleChange", "afterPopupVisibleChange", "mouseEnterDelay", "mouseLeaveDelay", "focusDelay", "blurDelay", "mask", "maskClosable", "getPopupContainer", "forceRender", "autoDestroy", "destroyPopupOnHide", "popup", "popupClassName", "popupStyle", "popupPlacement", "builtinPlacements", "popupAlign", "zIndex", "stretch", "getPopupClassNameFromAlign", "alignPoint", "onPopupClick", "onPopupAlign", "arrow", "popupMotion", "maskMotion", "popupTransitionName", "popupAnimation", "maskTransitionName", "maskAnimation", "className", "getTriggerDOMNode"];
+var _excluded$n = ["prefixCls", "children", "action", "showAction", "hideAction", "popupVisible", "defaultPopupVisible", "onPopupVisibleChange", "afterPopupVisibleChange", "mouseEnterDelay", "mouseLeaveDelay", "focusDelay", "blurDelay", "mask", "maskClosable", "getPopupContainer", "forceRender", "autoDestroy", "destroyPopupOnHide", "popup", "popupClassName", "popupStyle", "popupPlacement", "builtinPlacements", "popupAlign", "zIndex", "stretch", "getPopupClassNameFromAlign", "alignPoint", "onPopupClick", "onPopupAlign", "arrow", "popupMotion", "maskMotion", "popupTransitionName", "popupAnimation", "maskTransitionName", "maskAnimation", "className", "getTriggerDOMNode"];
 
 // Removed Props List
 // Seems this can be auto
@@ -18065,7 +19054,7 @@ function generateTrigger() {
       maskAnimation = props.maskAnimation,
       className = props.className,
       getTriggerDOMNode = props.getTriggerDOMNode,
-      restProps = _objectWithoutProperties(props, _excluded$h);
+      restProps = _objectWithoutProperties(props, _excluded$n);
     var mergedAutoDestroy = autoDestroy || destroyPopupOnHide || false;
 
     // =========================== Mobile ===========================
@@ -18073,7 +19062,7 @@ function generateTrigger() {
       _React$useState2 = _slicedToArray(_React$useState, 2),
       mobile = _React$useState2[0],
       setMobile = _React$useState2[1];
-    useLayoutEffect(function () {
+    useLayoutEffect$1(function () {
       setMobile(isMobile());
     }, []);
 
@@ -18090,7 +19079,7 @@ function generateTrigger() {
     }, [parentContext]);
 
     // =========================== Popup ============================
-    var id = useId();
+    var id = useId$1();
     var _React$useState3 = React.useState(null),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       popupEle = _React$useState4[0],
@@ -18145,7 +19134,7 @@ function generateTrigger() {
         setInternalOpen(nextOpen);
       }
     });
-    useLayoutEffect(function () {
+    useLayoutEffect$1(function () {
       setInternalOpen(popupVisible || false);
     }, [popupVisible]);
     var openRef = React.useRef(mergedOpen);
@@ -18186,7 +19175,7 @@ function generateTrigger() {
       _React$useState10 = _slicedToArray(_React$useState9, 2),
       inMotion = _React$useState10[0],
       setInMotion = _React$useState10[1];
-    useLayoutEffect(function (firstMount) {
+    useLayoutEffect$1(function (firstMount) {
       if (!firstMount || mergedOpen) {
         setInMotion(true);
       }
@@ -18234,19 +19223,19 @@ function generateTrigger() {
       }
     };
     useWatch(mergedOpen, targetEle, popupEle, triggerAlign, onScroll);
-    useLayoutEffect(function () {
+    useLayoutEffect$1(function () {
       triggerAlign();
     }, [mousePos, popupPlacement]);
 
     // When no builtinPlacements and popupAlign changed
-    useLayoutEffect(function () {
+    useLayoutEffect$1(function () {
       if (mergedOpen && !(builtinPlacements !== null && builtinPlacements !== void 0 && builtinPlacements[popupPlacement])) {
         triggerAlign();
       }
     }, [JSON.stringify(popupAlign)]);
     var alignedClassName = React.useMemo(function () {
       var baseClassName = getAlignPopupClassName(builtinPlacements, prefixCls, alignInfo, alignPoint);
-      return classnames(baseClassName, getPopupClassNameFromAlign === null || getPopupClassNameFromAlign === void 0 ? void 0 : getPopupClassNameFromAlign(alignInfo));
+      return classnames$7(baseClassName, getPopupClassNameFromAlign === null || getPopupClassNameFromAlign === void 0 ? void 0 : getPopupClassNameFromAlign(alignInfo));
     }, [alignInfo, getPopupClassNameFromAlign, builtinPlacements, prefixCls, alignPoint]);
     React.useImperativeHandle(ref, function () {
       return {
@@ -18291,7 +19280,7 @@ function generateTrigger() {
         });
       });
     };
-    useLayoutEffect(function () {
+    useLayoutEffect$1(function () {
       if (motionPrepareResolve) {
         onAlign();
         motionPrepareResolve();
@@ -18406,7 +19395,7 @@ function generateTrigger() {
 
     // ========================= ClassName ==========================
     if (className) {
-      cloneProps.className = classnames(originChildProps.className, className);
+      cloneProps.className = classnames$7(originChildProps.className, className);
     }
 
     // =========================== Render ===========================
@@ -18450,7 +19439,7 @@ function generateTrigger() {
       ref: setPopupRef,
       prefixCls: prefixCls,
       popup: popup,
-      className: classnames(popupClassName, alignedClassName),
+      className: classnames$7(popupClassName, alignedClassName),
       style: popupStyle,
       target: targetEle,
       onMouseEnter: onPopupMouseEnter,
@@ -18507,8 +19496,3248 @@ function generateTrigger() {
 }
 var Trigger = generateTrigger(Portal);
 
+var _excluded$m = ["prefixCls", "disabled", "visible", "children", "popupElement", "containerWidth", "animation", "transitionName", "dropdownStyle", "dropdownClassName", "direction", "placement", "builtinPlacements", "dropdownMatchSelectWidth", "dropdownRender", "dropdownAlign", "getPopupContainer", "empty", "getTriggerDOMNode", "onPopupVisibleChange", "onPopupMouseEnter"];
+var getBuiltInPlacements$1 = function getBuiltInPlacements(dropdownMatchSelectWidth) {
+  // Enable horizontal overflow auto-adjustment when a custom dropdown width is provided
+  var adjustX = dropdownMatchSelectWidth === true ? 0 : 1;
+  return {
+    bottomLeft: {
+      points: ['tl', 'bl'],
+      offset: [0, 4],
+      overflow: {
+        adjustX: adjustX,
+        adjustY: 1
+      },
+      htmlRegion: 'scroll'
+    },
+    bottomRight: {
+      points: ['tr', 'br'],
+      offset: [0, 4],
+      overflow: {
+        adjustX: adjustX,
+        adjustY: 1
+      },
+      htmlRegion: 'scroll'
+    },
+    topLeft: {
+      points: ['bl', 'tl'],
+      offset: [0, -4],
+      overflow: {
+        adjustX: adjustX,
+        adjustY: 1
+      },
+      htmlRegion: 'scroll'
+    },
+    topRight: {
+      points: ['br', 'tr'],
+      offset: [0, -4],
+      overflow: {
+        adjustX: adjustX,
+        adjustY: 1
+      },
+      htmlRegion: 'scroll'
+    }
+  };
+};
+var SelectTrigger = function SelectTrigger(props, ref) {
+  var prefixCls = props.prefixCls;
+    props.disabled;
+    var visible = props.visible,
+    children = props.children,
+    popupElement = props.popupElement,
+    containerWidth = props.containerWidth,
+    animation = props.animation,
+    transitionName = props.transitionName,
+    dropdownStyle = props.dropdownStyle,
+    dropdownClassName = props.dropdownClassName,
+    _props$direction = props.direction,
+    direction = _props$direction === void 0 ? 'ltr' : _props$direction,
+    placement = props.placement,
+    builtinPlacements = props.builtinPlacements,
+    dropdownMatchSelectWidth = props.dropdownMatchSelectWidth,
+    dropdownRender = props.dropdownRender,
+    dropdownAlign = props.dropdownAlign,
+    getPopupContainer = props.getPopupContainer,
+    empty = props.empty,
+    getTriggerDOMNode = props.getTriggerDOMNode,
+    onPopupVisibleChange = props.onPopupVisibleChange,
+    onPopupMouseEnter = props.onPopupMouseEnter,
+    restProps = _objectWithoutProperties(props, _excluded$m);
+  var dropdownPrefixCls = "".concat(prefixCls, "-dropdown");
+  var popupNode = popupElement;
+  if (dropdownRender) {
+    popupNode = dropdownRender(popupElement);
+  }
+  var mergedBuiltinPlacements = React.useMemo(function () {
+    return builtinPlacements || getBuiltInPlacements$1(dropdownMatchSelectWidth);
+  }, [builtinPlacements, dropdownMatchSelectWidth]);
+
+  // ===================== Motion ======================
+  var mergedTransitionName = animation ? "".concat(dropdownPrefixCls, "-").concat(animation) : transitionName;
+
+  // ======================= Ref =======================
+  var popupRef = React.useRef(null);
+  React.useImperativeHandle(ref, function () {
+    return {
+      getPopupElement: function getPopupElement() {
+        return popupRef.current;
+      }
+    };
+  });
+  var popupStyle = _objectSpread2({
+    minWidth: containerWidth
+  }, dropdownStyle);
+  if (typeof dropdownMatchSelectWidth === 'number') {
+    popupStyle.width = dropdownMatchSelectWidth;
+  } else if (dropdownMatchSelectWidth) {
+    popupStyle.width = containerWidth;
+  }
+  return /*#__PURE__*/React.createElement(Trigger, _extends$1({}, restProps, {
+    showAction: onPopupVisibleChange ? ['click'] : [],
+    hideAction: onPopupVisibleChange ? ['click'] : [],
+    popupPlacement: placement || (direction === 'rtl' ? 'bottomRight' : 'bottomLeft'),
+    builtinPlacements: mergedBuiltinPlacements,
+    prefixCls: dropdownPrefixCls,
+    popupTransitionName: mergedTransitionName,
+    popup: /*#__PURE__*/React.createElement("div", {
+      ref: popupRef,
+      onMouseEnter: onPopupMouseEnter
+    }, popupNode),
+    popupAlign: dropdownAlign,
+    popupVisible: visible,
+    getPopupContainer: getPopupContainer,
+    popupClassName: classnames$9(dropdownClassName, _defineProperty({}, "".concat(dropdownPrefixCls, "-empty"), empty)),
+    popupStyle: popupStyle,
+    getTriggerDOMNode: getTriggerDOMNode,
+    onPopupVisibleChange: onPopupVisibleChange
+  }), children);
+};
+var RefSelectTrigger = /*#__PURE__*/React.forwardRef(SelectTrigger);
+RefSelectTrigger.displayName = 'SelectTrigger';
+
+function getKey(data, index) {
+  var key = data.key;
+  var value;
+  if ('value' in data) {
+    value = data.value;
+  }
+  if (key !== null && key !== undefined) {
+    return key;
+  }
+  if (value !== undefined) {
+    return value;
+  }
+  return "rc-index-key-".concat(index);
+}
+function fillFieldNames(fieldNames, childrenAsData) {
+  var _ref = fieldNames || {},
+    label = _ref.label,
+    value = _ref.value,
+    options = _ref.options,
+    groupLabel = _ref.groupLabel;
+  var mergedLabel = label || (childrenAsData ? 'children' : 'label');
+  return {
+    label: mergedLabel,
+    value: value || 'value',
+    options: options || 'options',
+    groupLabel: groupLabel || mergedLabel
+  };
+}
+
+/**
+ * Flat options into flatten list.
+ * We use `optionOnly` here is aim to avoid user use nested option group.
+ * Here is simply set `key` to the index if not provided.
+ */
+function flattenOptions(options) {
+  var _ref2 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+    fieldNames = _ref2.fieldNames,
+    childrenAsData = _ref2.childrenAsData;
+  var flattenList = [];
+  var _fillFieldNames = fillFieldNames(fieldNames, false),
+    fieldLabel = _fillFieldNames.label,
+    fieldValue = _fillFieldNames.value,
+    fieldOptions = _fillFieldNames.options,
+    groupLabel = _fillFieldNames.groupLabel;
+  function dig(list, isGroupOption) {
+    list.forEach(function (data) {
+      if (isGroupOption || !(fieldOptions in data)) {
+        var value = data[fieldValue];
+
+        // Option
+        flattenList.push({
+          key: getKey(data, flattenList.length),
+          groupOption: isGroupOption,
+          data: data,
+          label: data[fieldLabel],
+          value: value
+        });
+      } else {
+        var grpLabel = data[groupLabel];
+        if (grpLabel === undefined && childrenAsData) {
+          grpLabel = data.label;
+        }
+
+        // Option Group
+        flattenList.push({
+          key: getKey(data, flattenList.length),
+          group: true,
+          data: data,
+          label: grpLabel
+        });
+        dig(data[fieldOptions], true);
+      }
+    });
+  }
+  dig(options, false);
+  return flattenList;
+}
+
+/**
+ * Inject `props` into `option` for legacy usage
+ */
+function injectPropsWithOption(option) {
+  var newOption = _objectSpread2({}, option);
+  if (!('props' in newOption)) {
+    Object.defineProperty(newOption, 'props', {
+      get: function get() {
+        warningOnce(false, 'Return type is option instead of Option instance. Please read value directly instead of reading from `props`.');
+        return newOption;
+      }
+    });
+  }
+  return newOption;
+}
+function getSeparatedContent(text, tokens) {
+  if (!tokens || !tokens.length) {
+    return null;
+  }
+  var match = false;
+  function separate(str, _ref3) {
+    var _ref4 = _toArray(_ref3),
+      token = _ref4[0],
+      restTokens = _ref4.slice(1);
+    if (!token) {
+      return [str];
+    }
+    var list = str.split(token);
+    match = match || list.length > 1;
+    return list.reduce(function (prevList, unitStr) {
+      return [].concat(_toConsumableArray(prevList), _toConsumableArray(separate(unitStr, restTokens)));
+    }, []).filter(function (unit) {
+      return unit;
+    });
+  }
+  var list = separate(text, tokens);
+  return match ? list : null;
+}
+
+function useAllowClear(prefixCls, onClearMouseDown, displayValues, allowClear, clearIcon) {
+  var disabled = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : false;
+  var mergedSearchValue = arguments.length > 6 ? arguments[6] : undefined;
+  var mode = arguments.length > 7 ? arguments[7] : undefined;
+  var mergedClearIcon = React__default.useMemo(function () {
+    if (_typeof(allowClear) === "object") {
+      return allowClear.clearIcon;
+    }
+    if (!!clearIcon) return clearIcon;
+  }, [allowClear, clearIcon]);
+  var mergedAllowClear = React__default.useMemo(function () {
+    if (!disabled && !!allowClear && (displayValues.length || mergedSearchValue) && !(mode === 'combobox' && mergedSearchValue === '')) {
+      return true;
+    }
+    return false;
+  }, [allowClear, disabled, displayValues.length, mergedSearchValue, mode]);
+  return {
+    allowClear: mergedAllowClear,
+    clearIcon: /*#__PURE__*/React__default.createElement(TransBtn, {
+      className: "".concat(prefixCls, "-clear"),
+      onMouseDown: onClearMouseDown,
+      customizeIcon: mergedClearIcon
+    }, "\xD7")
+  };
+}
+
+var _excluded$l = ["id", "prefixCls", "className", "showSearch", "tagRender", "direction", "omitDomProps", "displayValues", "onDisplayValuesChange", "emptyOptions", "notFoundContent", "onClear", "mode", "disabled", "loading", "getInputElement", "getRawInputElement", "open", "defaultOpen", "onDropdownVisibleChange", "activeValue", "onActiveValueChange", "activeDescendantId", "searchValue", "autoClearSearchValue", "onSearch", "onSearchSplit", "tokenSeparators", "allowClear", "suffixIcon", "clearIcon", "OptionList", "animation", "transitionName", "dropdownStyle", "dropdownClassName", "dropdownMatchSelectWidth", "dropdownRender", "dropdownAlign", "placement", "builtinPlacements", "getPopupContainer", "showAction", "onFocus", "onBlur", "onKeyUp", "onKeyDown", "onMouseDown"];
+var DEFAULT_OMIT_PROPS = ['value', 'onChange', 'removeIcon', 'placeholder', 'autoFocus', 'maxTagCount', 'maxTagTextLength', 'maxTagPlaceholder', 'choiceTransitionName', 'onInputKeyDown', 'onPopupScroll', 'tabIndex'];
+function isMultiple(mode) {
+  return mode === 'tags' || mode === 'multiple';
+}
+var BaseSelect = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var _customizeRawInputEle, _classNames2;
+  var id = props.id,
+    prefixCls = props.prefixCls,
+    className = props.className,
+    showSearch = props.showSearch,
+    tagRender = props.tagRender,
+    direction = props.direction,
+    omitDomProps = props.omitDomProps,
+    displayValues = props.displayValues,
+    onDisplayValuesChange = props.onDisplayValuesChange,
+    emptyOptions = props.emptyOptions,
+    _props$notFoundConten = props.notFoundContent,
+    notFoundContent = _props$notFoundConten === void 0 ? 'Not Found' : _props$notFoundConten,
+    onClear = props.onClear,
+    mode = props.mode,
+    disabled = props.disabled,
+    loading = props.loading,
+    getInputElement = props.getInputElement,
+    getRawInputElement = props.getRawInputElement,
+    open = props.open,
+    defaultOpen = props.defaultOpen,
+    onDropdownVisibleChange = props.onDropdownVisibleChange,
+    activeValue = props.activeValue,
+    onActiveValueChange = props.onActiveValueChange,
+    activeDescendantId = props.activeDescendantId,
+    searchValue = props.searchValue,
+    autoClearSearchValue = props.autoClearSearchValue,
+    onSearch = props.onSearch,
+    onSearchSplit = props.onSearchSplit,
+    tokenSeparators = props.tokenSeparators,
+    allowClear = props.allowClear,
+    suffixIcon = props.suffixIcon,
+    clearIcon = props.clearIcon,
+    OptionList = props.OptionList,
+    animation = props.animation,
+    transitionName = props.transitionName,
+    dropdownStyle = props.dropdownStyle,
+    dropdownClassName = props.dropdownClassName,
+    dropdownMatchSelectWidth = props.dropdownMatchSelectWidth,
+    dropdownRender = props.dropdownRender,
+    dropdownAlign = props.dropdownAlign,
+    placement = props.placement,
+    builtinPlacements = props.builtinPlacements,
+    getPopupContainer = props.getPopupContainer,
+    _props$showAction = props.showAction,
+    showAction = _props$showAction === void 0 ? [] : _props$showAction,
+    onFocus = props.onFocus,
+    onBlur = props.onBlur,
+    onKeyUp = props.onKeyUp,
+    onKeyDown = props.onKeyDown,
+    onMouseDown = props.onMouseDown,
+    restProps = _objectWithoutProperties(props, _excluded$l);
+
+  // ============================== MISC ==============================
+  var multiple = isMultiple(mode);
+  var mergedShowSearch = (showSearch !== undefined ? showSearch : multiple) || mode === 'combobox';
+  var domProps = _objectSpread2({}, restProps);
+  DEFAULT_OMIT_PROPS.forEach(function (propName) {
+    delete domProps[propName];
+  });
+  omitDomProps === null || omitDomProps === void 0 ? void 0 : omitDomProps.forEach(function (propName) {
+    delete domProps[propName];
+  });
+
+  // ============================= Mobile =============================
+  var _React$useState = React.useState(false),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    mobile = _React$useState2[0],
+    setMobile = _React$useState2[1];
+  React.useEffect(function () {
+    // Only update on the client side
+    setMobile(isMobile());
+  }, []);
+
+  // ============================== Refs ==============================
+  var containerRef = React.useRef(null);
+  var selectorDomRef = React.useRef(null);
+  var triggerRef = React.useRef(null);
+  var selectorRef = React.useRef(null);
+  var listRef = React.useRef(null);
+
+  /** Used for component focused management */
+  var _useDelayReset = useDelayReset(),
+    _useDelayReset2 = _slicedToArray(_useDelayReset, 3),
+    mockFocused = _useDelayReset2[0],
+    setMockFocused = _useDelayReset2[1],
+    cancelSetMockFocused = _useDelayReset2[2];
+
+  // =========================== Imperative ===========================
+  React.useImperativeHandle(ref, function () {
+    var _selectorRef$current, _selectorRef$current2;
+    return {
+      focus: (_selectorRef$current = selectorRef.current) === null || _selectorRef$current === void 0 ? void 0 : _selectorRef$current.focus,
+      blur: (_selectorRef$current2 = selectorRef.current) === null || _selectorRef$current2 === void 0 ? void 0 : _selectorRef$current2.blur,
+      scrollTo: function scrollTo(arg) {
+        var _listRef$current;
+        return (_listRef$current = listRef.current) === null || _listRef$current === void 0 ? void 0 : _listRef$current.scrollTo(arg);
+      }
+    };
+  });
+
+  // ========================== Search Value ==========================
+  var mergedSearchValue = React.useMemo(function () {
+    var _displayValues$;
+    if (mode !== 'combobox') {
+      return searchValue;
+    }
+    var val = (_displayValues$ = displayValues[0]) === null || _displayValues$ === void 0 ? void 0 : _displayValues$.value;
+    return typeof val === 'string' || typeof val === 'number' ? String(val) : '';
+  }, [searchValue, mode, displayValues]);
+
+  // ========================== Custom Input ==========================
+  // Only works in `combobox`
+  var customizeInputElement = mode === 'combobox' && typeof getInputElement === 'function' && getInputElement() || null;
+
+  // Used for customize replacement for `rc-cascader`
+  var customizeRawInputElement = typeof getRawInputElement === 'function' && getRawInputElement();
+  var customizeRawInputRef = useComposeRef(selectorDomRef, customizeRawInputElement === null || customizeRawInputElement === void 0 ? void 0 : (_customizeRawInputEle = customizeRawInputElement.props) === null || _customizeRawInputEle === void 0 ? void 0 : _customizeRawInputEle.ref);
+
+  // ============================== Open ==============================
+  // SSR not support Portal which means we need delay `open` for the first time render
+  var _React$useState3 = React.useState(false),
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    rendered = _React$useState4[0],
+    setRendered = _React$useState4[1];
+  useLayoutEffect$1(function () {
+    setRendered(true);
+  }, []);
+  var _useMergedState = useMergedState(false, {
+      defaultValue: defaultOpen,
+      value: open
+    }),
+    _useMergedState2 = _slicedToArray(_useMergedState, 2),
+    innerOpen = _useMergedState2[0],
+    setInnerOpen = _useMergedState2[1];
+  var mergedOpen = rendered ? innerOpen : false;
+
+  // Not trigger `open` in `combobox` when `notFoundContent` is empty
+  var emptyListContent = !notFoundContent && emptyOptions;
+  if (disabled || emptyListContent && mergedOpen && mode === 'combobox') {
+    mergedOpen = false;
+  }
+  var triggerOpen = emptyListContent ? false : mergedOpen;
+  var onToggleOpen = React.useCallback(function (newOpen) {
+    var nextOpen = newOpen !== undefined ? newOpen : !mergedOpen;
+    if (!disabled) {
+      setInnerOpen(nextOpen);
+      if (mergedOpen !== nextOpen) {
+        onDropdownVisibleChange === null || onDropdownVisibleChange === void 0 ? void 0 : onDropdownVisibleChange(nextOpen);
+      }
+    }
+  }, [disabled, mergedOpen, setInnerOpen, onDropdownVisibleChange]);
+
+  // ============================= Search =============================
+  var tokenWithEnter = React.useMemo(function () {
+    return (tokenSeparators || []).some(function (tokenSeparator) {
+      return ['\n', '\r\n'].includes(tokenSeparator);
+    });
+  }, [tokenSeparators]);
+  var onInternalSearch = function onInternalSearch(searchText, fromTyping, isCompositing) {
+    var ret = true;
+    var newSearchText = searchText;
+    onActiveValueChange === null || onActiveValueChange === void 0 ? void 0 : onActiveValueChange(null);
+
+    // Check if match the `tokenSeparators`
+    var patchLabels = isCompositing ? null : getSeparatedContent(searchText, tokenSeparators);
+
+    // Ignore combobox since it's not split-able
+    if (mode !== 'combobox' && patchLabels) {
+      newSearchText = '';
+      onSearchSplit === null || onSearchSplit === void 0 ? void 0 : onSearchSplit(patchLabels);
+
+      // Should close when paste finish
+      onToggleOpen(false);
+
+      // Tell Selector that break next actions
+      ret = false;
+    }
+    if (onSearch && mergedSearchValue !== newSearchText) {
+      onSearch(newSearchText, {
+        source: fromTyping ? 'typing' : 'effect'
+      });
+    }
+    return ret;
+  };
+
+  // Only triggered when menu is closed & mode is tags
+  // If menu is open, OptionList will take charge
+  // If mode isn't tags, press enter is not meaningful when you can't see any option
+  var onInternalSearchSubmit = function onInternalSearchSubmit(searchText) {
+    // prevent empty tags from appearing when you click the Enter button
+    if (!searchText || !searchText.trim()) {
+      return;
+    }
+    onSearch(searchText, {
+      source: 'submit'
+    });
+  };
+
+  // Close will clean up single mode search text
+  React.useEffect(function () {
+    if (!mergedOpen && !multiple && mode !== 'combobox') {
+      onInternalSearch('', false, false);
+    }
+  }, [mergedOpen]);
+
+  // ============================ Disabled ============================
+  // Close dropdown & remove focus state when disabled change
+  React.useEffect(function () {
+    if (innerOpen && disabled) {
+      setInnerOpen(false);
+    }
+    if (disabled) {
+      setMockFocused(false);
+    }
+  }, [disabled]);
+
+  // ============================ Keyboard ============================
+  /**
+   * We record input value here to check if can press to clean up by backspace
+   * - null: Key is not down, this is reset by key up
+   * - true: Search text is empty when first time backspace down
+   * - false: Search text is not empty when first time backspace down
+   */
+  var _useLock = useLock(),
+    _useLock2 = _slicedToArray(_useLock, 2),
+    getClearLock = _useLock2[0],
+    setClearLock = _useLock2[1];
+
+  // KeyDown
+  var onInternalKeyDown = function onInternalKeyDown(event) {
+    var clearLock = getClearLock();
+    var which = event.which;
+    if (which === KeyCode.ENTER) {
+      // Do not submit form when type in the input
+      if (mode !== 'combobox') {
+        event.preventDefault();
+      }
+
+      // We only manage open state here, close logic should handle by list component
+      if (!mergedOpen) {
+        onToggleOpen(true);
+      }
+    }
+    setClearLock(!!mergedSearchValue);
+
+    // Remove value by `backspace`
+    if (which === KeyCode.BACKSPACE && !clearLock && multiple && !mergedSearchValue && displayValues.length) {
+      var cloneDisplayValues = _toConsumableArray(displayValues);
+      var removedDisplayValue = null;
+      for (var i = cloneDisplayValues.length - 1; i >= 0; i -= 1) {
+        var current = cloneDisplayValues[i];
+        if (!current.disabled) {
+          cloneDisplayValues.splice(i, 1);
+          removedDisplayValue = current;
+          break;
+        }
+      }
+      if (removedDisplayValue) {
+        onDisplayValuesChange(cloneDisplayValues, {
+          type: 'remove',
+          values: [removedDisplayValue]
+        });
+      }
+    }
+    for (var _len = arguments.length, rest = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      rest[_key - 1] = arguments[_key];
+    }
+    if (mergedOpen && listRef.current) {
+      var _listRef$current2;
+      (_listRef$current2 = listRef.current).onKeyDown.apply(_listRef$current2, [event].concat(rest));
+    }
+    onKeyDown === null || onKeyDown === void 0 ? void 0 : onKeyDown.apply(void 0, [event].concat(rest));
+  };
+
+  // KeyUp
+  var onInternalKeyUp = function onInternalKeyUp(event) {
+    for (var _len2 = arguments.length, rest = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+      rest[_key2 - 1] = arguments[_key2];
+    }
+    if (mergedOpen && listRef.current) {
+      var _listRef$current3;
+      (_listRef$current3 = listRef.current).onKeyUp.apply(_listRef$current3, [event].concat(rest));
+    }
+    onKeyUp === null || onKeyUp === void 0 ? void 0 : onKeyUp.apply(void 0, [event].concat(rest));
+  };
+
+  // ============================ Selector ============================
+  var onSelectorRemove = function onSelectorRemove(val) {
+    var newValues = displayValues.filter(function (i) {
+      return i !== val;
+    });
+    onDisplayValuesChange(newValues, {
+      type: 'remove',
+      values: [val]
+    });
+  };
+
+  // ========================== Focus / Blur ==========================
+  /** Record real focus status */
+  var focusRef = React.useRef(false);
+  var onContainerFocus = function onContainerFocus() {
+    setMockFocused(true);
+    if (!disabled) {
+      if (onFocus && !focusRef.current) {
+        onFocus.apply(void 0, arguments);
+      }
+
+      // `showAction` should handle `focus` if set
+      if (showAction.includes('focus')) {
+        onToggleOpen(true);
+      }
+    }
+    focusRef.current = true;
+  };
+  var onContainerBlur = function onContainerBlur() {
+    setMockFocused(false, function () {
+      focusRef.current = false;
+      onToggleOpen(false);
+    });
+    if (disabled) {
+      return;
+    }
+    if (mergedSearchValue) {
+      // `tags` mode should move `searchValue` into values
+      if (mode === 'tags') {
+        onSearch(mergedSearchValue, {
+          source: 'submit'
+        });
+      } else if (mode === 'multiple') {
+        // `multiple` mode only clean the search value but not trigger event
+        onSearch('', {
+          source: 'blur'
+        });
+      }
+    }
+    if (onBlur) {
+      onBlur.apply(void 0, arguments);
+    }
+  };
+
+  // Give focus back of Select
+  var activeTimeoutIds = [];
+  React.useEffect(function () {
+    return function () {
+      activeTimeoutIds.forEach(function (timeoutId) {
+        return clearTimeout(timeoutId);
+      });
+      activeTimeoutIds.splice(0, activeTimeoutIds.length);
+    };
+  }, []);
+  var onInternalMouseDown = function onInternalMouseDown(event) {
+    var _triggerRef$current;
+    var target = event.target;
+    var popupElement = (_triggerRef$current = triggerRef.current) === null || _triggerRef$current === void 0 ? void 0 : _triggerRef$current.getPopupElement();
+
+    // We should give focus back to selector if clicked item is not focusable
+    if (popupElement && popupElement.contains(target)) {
+      var timeoutId = setTimeout(function () {
+        var index = activeTimeoutIds.indexOf(timeoutId);
+        if (index !== -1) {
+          activeTimeoutIds.splice(index, 1);
+        }
+        cancelSetMockFocused();
+        if (!mobile && !popupElement.contains(document.activeElement)) {
+          var _selectorRef$current3;
+          (_selectorRef$current3 = selectorRef.current) === null || _selectorRef$current3 === void 0 ? void 0 : _selectorRef$current3.focus();
+        }
+      });
+      activeTimeoutIds.push(timeoutId);
+    }
+    for (var _len3 = arguments.length, restArgs = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+      restArgs[_key3 - 1] = arguments[_key3];
+    }
+    onMouseDown === null || onMouseDown === void 0 ? void 0 : onMouseDown.apply(void 0, [event].concat(restArgs));
+  };
+
+  // ============================ Dropdown ============================
+  var _React$useState5 = React.useState(null),
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    containerWidth = _React$useState6[0],
+    setContainerWidth = _React$useState6[1];
+  var _React$useState7 = React.useState({}),
+    _React$useState8 = _slicedToArray(_React$useState7, 2),
+    forceUpdate = _React$useState8[1];
+  // We need force update here since popup dom is render async
+  function onPopupMouseEnter() {
+    forceUpdate({});
+  }
+  useLayoutEffect$1(function () {
+    if (triggerOpen) {
+      var _containerRef$current;
+      // Guaranteed width accuracy 
+      var newWidth = Math.ceil((_containerRef$current = containerRef.current) === null || _containerRef$current === void 0 ? void 0 : _containerRef$current.getBoundingClientRect().width);
+      if (containerWidth !== newWidth && !Number.isNaN(newWidth)) {
+        setContainerWidth(newWidth);
+      }
+    }
+  }, [triggerOpen]);
+
+  // Used for raw custom input trigger
+  var onTriggerVisibleChange;
+  if (customizeRawInputElement) {
+    onTriggerVisibleChange = function onTriggerVisibleChange(newOpen) {
+      onToggleOpen(newOpen);
+    };
+  }
+
+  // Close when click on non-select element
+  useSelectTriggerControl(function () {
+    var _triggerRef$current2;
+    return [containerRef.current, (_triggerRef$current2 = triggerRef.current) === null || _triggerRef$current2 === void 0 ? void 0 : _triggerRef$current2.getPopupElement()];
+  }, triggerOpen, onToggleOpen, !!customizeRawInputElement);
+
+  // ============================ Context =============================
+  var baseSelectContext = React.useMemo(function () {
+    return _objectSpread2(_objectSpread2({}, props), {}, {
+      notFoundContent: notFoundContent,
+      open: mergedOpen,
+      triggerOpen: triggerOpen,
+      id: id,
+      showSearch: mergedShowSearch,
+      multiple: multiple,
+      toggleOpen: onToggleOpen
+    });
+  }, [props, notFoundContent, triggerOpen, mergedOpen, id, mergedShowSearch, multiple, onToggleOpen]);
+
+  // ==================================================================
+  // ==                            Render                            ==
+  // ==================================================================
+
+  // ============================= Arrow ==============================
+  var showSuffixIcon = !!suffixIcon || loading;
+  var arrowNode;
+  if (showSuffixIcon) {
+    arrowNode = /*#__PURE__*/React.createElement(TransBtn, {
+      className: classnames$9("".concat(prefixCls, "-arrow"), _defineProperty({}, "".concat(prefixCls, "-arrow-loading"), loading)),
+      customizeIcon: suffixIcon,
+      customizeIconProps: {
+        loading: loading,
+        searchValue: mergedSearchValue,
+        open: mergedOpen,
+        focused: mockFocused,
+        showSearch: mergedShowSearch
+      }
+    });
+  }
+
+  // ============================= Clear ==============================
+  var onClearMouseDown = function onClearMouseDown() {
+    var _selectorRef$current4;
+    onClear === null || onClear === void 0 ? void 0 : onClear();
+    (_selectorRef$current4 = selectorRef.current) === null || _selectorRef$current4 === void 0 ? void 0 : _selectorRef$current4.focus();
+    onDisplayValuesChange([], {
+      type: 'clear',
+      values: displayValues
+    });
+    onInternalSearch('', false, false);
+  };
+  var _useAllowClear = useAllowClear(prefixCls, onClearMouseDown, displayValues, allowClear, clearIcon, disabled, mergedSearchValue, mode),
+    mergedAllowClear = _useAllowClear.allowClear,
+    clearNode = _useAllowClear.clearIcon;
+
+  // =========================== OptionList ===========================
+  var optionList = /*#__PURE__*/React.createElement(OptionList, {
+    ref: listRef
+  });
+
+  // ============================= Select =============================
+  var mergedClassName = classnames$9(prefixCls, className, (_classNames2 = {}, _defineProperty(_classNames2, "".concat(prefixCls, "-focused"), mockFocused), _defineProperty(_classNames2, "".concat(prefixCls, "-multiple"), multiple), _defineProperty(_classNames2, "".concat(prefixCls, "-single"), !multiple), _defineProperty(_classNames2, "".concat(prefixCls, "-allow-clear"), allowClear), _defineProperty(_classNames2, "".concat(prefixCls, "-show-arrow"), showSuffixIcon), _defineProperty(_classNames2, "".concat(prefixCls, "-disabled"), disabled), _defineProperty(_classNames2, "".concat(prefixCls, "-loading"), loading), _defineProperty(_classNames2, "".concat(prefixCls, "-open"), mergedOpen), _defineProperty(_classNames2, "".concat(prefixCls, "-customize-input"), customizeInputElement), _defineProperty(_classNames2, "".concat(prefixCls, "-show-search"), mergedShowSearch), _classNames2));
+
+  // >>> Selector
+  var selectorNode = /*#__PURE__*/React.createElement(RefSelectTrigger, {
+    ref: triggerRef,
+    disabled: disabled,
+    prefixCls: prefixCls,
+    visible: triggerOpen,
+    popupElement: optionList,
+    containerWidth: containerWidth,
+    animation: animation,
+    transitionName: transitionName,
+    dropdownStyle: dropdownStyle,
+    dropdownClassName: dropdownClassName,
+    direction: direction,
+    dropdownMatchSelectWidth: dropdownMatchSelectWidth,
+    dropdownRender: dropdownRender,
+    dropdownAlign: dropdownAlign,
+    placement: placement,
+    builtinPlacements: builtinPlacements,
+    getPopupContainer: getPopupContainer,
+    empty: emptyOptions,
+    getTriggerDOMNode: function getTriggerDOMNode() {
+      return selectorDomRef.current;
+    },
+    onPopupVisibleChange: onTriggerVisibleChange,
+    onPopupMouseEnter: onPopupMouseEnter
+  }, customizeRawInputElement ? /*#__PURE__*/React.cloneElement(customizeRawInputElement, {
+    ref: customizeRawInputRef
+  }) : /*#__PURE__*/React.createElement(ForwardSelector, _extends$1({}, props, {
+    domRef: selectorDomRef,
+    prefixCls: prefixCls,
+    inputElement: customizeInputElement,
+    ref: selectorRef,
+    id: id,
+    showSearch: mergedShowSearch,
+    autoClearSearchValue: autoClearSearchValue,
+    mode: mode,
+    activeDescendantId: activeDescendantId,
+    tagRender: tagRender,
+    values: displayValues,
+    open: mergedOpen,
+    onToggleOpen: onToggleOpen,
+    activeValue: activeValue,
+    searchValue: mergedSearchValue,
+    onSearch: onInternalSearch,
+    onSearchSubmit: onInternalSearchSubmit,
+    onRemove: onSelectorRemove,
+    tokenWithEnter: tokenWithEnter
+  })));
+
+  // >>> Render
+  var renderNode;
+
+  // Render raw
+  if (customizeRawInputElement) {
+    renderNode = selectorNode;
+  } else {
+    renderNode = /*#__PURE__*/React.createElement("div", _extends$1({
+      className: mergedClassName
+    }, domProps, {
+      ref: containerRef,
+      onMouseDown: onInternalMouseDown,
+      onKeyDown: onInternalKeyDown,
+      onKeyUp: onInternalKeyUp,
+      onFocus: onContainerFocus,
+      onBlur: onContainerBlur
+    }), mockFocused && !mergedOpen && /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: 0,
+        height: 0,
+        position: 'absolute',
+        overflow: 'hidden',
+        opacity: 0
+      },
+      "aria-live": "polite"
+    }, "".concat(displayValues.map(function (_ref) {
+      var label = _ref.label,
+        value = _ref.value;
+      return ['number', 'string'].includes(_typeof(label)) ? label : value;
+    }).join(', '))), selectorNode, arrowNode, mergedAllowClear && clearNode);
+  }
+  return /*#__PURE__*/React.createElement(BaseSelectContext.Provider, {
+    value: baseSelectContext
+  }, renderNode);
+});
+
+// Set display name for dev
+if (process.env.NODE_ENV !== 'production') {
+  BaseSelect.displayName = 'BaseSelect';
+}
+
+/**
+ * Cache `value` related LabeledValue & options.
+ */
+var useCache = (function (labeledValues, valueOptions) {
+  var cacheRef = React.useRef({
+    values: new Map(),
+    options: new Map()
+  });
+  var filledLabeledValues = React.useMemo(function () {
+    var _cacheRef$current = cacheRef.current,
+      prevValueCache = _cacheRef$current.values,
+      prevOptionCache = _cacheRef$current.options;
+
+    // Fill label by cache
+    var patchedValues = labeledValues.map(function (item) {
+      if (item.label === undefined) {
+        var _prevValueCache$get;
+        return _objectSpread2(_objectSpread2({}, item), {}, {
+          label: (_prevValueCache$get = prevValueCache.get(item.value)) === null || _prevValueCache$get === void 0 ? void 0 : _prevValueCache$get.label
+        });
+      }
+      return item;
+    });
+
+    // Refresh cache
+    var valueCache = new Map();
+    var optionCache = new Map();
+    patchedValues.forEach(function (item) {
+      valueCache.set(item.value, item);
+      optionCache.set(item.value, valueOptions.get(item.value) || prevOptionCache.get(item.value));
+    });
+    cacheRef.current.values = valueCache;
+    cacheRef.current.options = optionCache;
+    return patchedValues;
+  }, [labeledValues, valueOptions]);
+  var getOption = React.useCallback(function (val) {
+    return valueOptions.get(val) || cacheRef.current.options.get(val);
+  }, [valueOptions]);
+  return [filledLabeledValues, getOption];
+});
+
+function includes(test, search) {
+  return toArray$2(test).join('').toUpperCase().includes(search);
+}
+var useFilterOptions = (function (options, fieldNames, searchValue, filterOption, optionFilterProp) {
+  return React.useMemo(function () {
+    if (!searchValue || filterOption === false) {
+      return options;
+    }
+    var fieldOptions = fieldNames.options,
+      fieldLabel = fieldNames.label,
+      fieldValue = fieldNames.value;
+    var filteredOptions = [];
+    var customizeFilter = typeof filterOption === 'function';
+    var upperSearch = searchValue.toUpperCase();
+    var filterFunc = customizeFilter ? filterOption : function (_, option) {
+      // Use provided `optionFilterProp`
+      if (optionFilterProp) {
+        return includes(option[optionFilterProp], upperSearch);
+      }
+
+      // Auto select `label` or `value` by option type
+      if (option[fieldOptions]) {
+        // hack `fieldLabel` since `OptionGroup` children is not `label`
+        return includes(option[fieldLabel !== 'children' ? fieldLabel : 'label'], upperSearch);
+      }
+      return includes(option[fieldValue], upperSearch);
+    };
+    var wrapOption = customizeFilter ? function (opt) {
+      return injectPropsWithOption(opt);
+    } : function (opt) {
+      return opt;
+    };
+    options.forEach(function (item) {
+      // Group should check child options
+      if (item[fieldOptions]) {
+        // Check group first
+        var matchGroup = filterFunc(searchValue, wrapOption(item));
+        if (matchGroup) {
+          filteredOptions.push(item);
+        } else {
+          // Check option
+          var subOptions = item[fieldOptions].filter(function (subItem) {
+            return filterFunc(searchValue, wrapOption(subItem));
+          });
+          if (subOptions.length) {
+            filteredOptions.push(_objectSpread2(_objectSpread2({}, item), {}, _defineProperty({}, fieldOptions, subOptions)));
+          }
+        }
+        return;
+      }
+      if (filterFunc(searchValue, wrapOption(item))) {
+        filteredOptions.push(item);
+      }
+    });
+    return filteredOptions;
+  }, [options, filterOption, optionFilterProp, searchValue, fieldNames]);
+});
+
+var uuid$1 = 0;
+
+/** Is client side and not jsdom */
+var isBrowserClient = process.env.NODE_ENV !== 'test' && canUseDom();
+
+/** Get unique id for accessibility usage */
+function getUUID() {
+  var retId;
+
+  // Test never reach
+  /* istanbul ignore if */
+  if (isBrowserClient) {
+    retId = uuid$1;
+    uuid$1 += 1;
+  } else {
+    retId = 'TEST_OR_SSR';
+  }
+  return retId;
+}
+function useId(id) {
+  // Inner id for accessibility usage. Only work in client side
+  var _React$useState = React.useState(),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    innerId = _React$useState2[0],
+    setInnerId = _React$useState2[1];
+  React.useEffect(function () {
+    setInnerId("rc_select_".concat(getUUID()));
+  }, []);
+  return id || innerId;
+}
+
+var _excluded$k = ["children", "value"],
+  _excluded2$4 = ["children"];
+function convertNodeToOption(node) {
+  var _ref = node,
+    key = _ref.key,
+    _ref$props = _ref.props,
+    children = _ref$props.children,
+    value = _ref$props.value,
+    restProps = _objectWithoutProperties(_ref$props, _excluded$k);
+  return _objectSpread2({
+    key: key,
+    value: value !== undefined ? value : key,
+    children: children
+  }, restProps);
+}
+function convertChildrenToData(nodes) {
+  var optionOnly = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  return toArray$4(nodes).map(function (node, index) {
+    if (! /*#__PURE__*/React.isValidElement(node) || !node.type) {
+      return null;
+    }
+    var _ref2 = node,
+      isSelectOptGroup = _ref2.type.isSelectOptGroup,
+      key = _ref2.key,
+      _ref2$props = _ref2.props,
+      children = _ref2$props.children,
+      restProps = _objectWithoutProperties(_ref2$props, _excluded2$4);
+    if (optionOnly || !isSelectOptGroup) {
+      return convertNodeToOption(node);
+    }
+    return _objectSpread2(_objectSpread2({
+      key: "__RC_SELECT_GRP__".concat(key === null ? index : key, "__"),
+      label: key
+    }, restProps), {}, {
+      options: convertChildrenToData(children)
+    });
+  }).filter(function (data) {
+    return data;
+  });
+}
+
+/**
+ * Parse `children` to `options` if `options` is not provided.
+ * Then flatten the `options`.
+ */
+function useOptions(options, children, fieldNames, optionFilterProp, optionLabelProp) {
+  return React.useMemo(function () {
+    var mergedOptions = options;
+    var childrenAsData = !options;
+    if (childrenAsData) {
+      mergedOptions = convertChildrenToData(children);
+    }
+    var valueOptions = new Map();
+    var labelOptions = new Map();
+    var setLabelOptions = function setLabelOptions(labelOptionsMap, option, key) {
+      if (key && typeof key === 'string') {
+        labelOptionsMap.set(option[key], option);
+      }
+    };
+    function dig(optionList) {
+      var isChildren = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      // for loop to speed up collection speed
+      for (var i = 0; i < optionList.length; i += 1) {
+        var option = optionList[i];
+        if (!option[fieldNames.options] || isChildren) {
+          valueOptions.set(option[fieldNames.value], option);
+          setLabelOptions(labelOptions, option, fieldNames.label);
+          // https://github.com/ant-design/ant-design/issues/35304
+          setLabelOptions(labelOptions, option, optionFilterProp);
+          setLabelOptions(labelOptions, option, optionLabelProp);
+        } else {
+          dig(option[fieldNames.options], true);
+        }
+      }
+    }
+    dig(mergedOptions);
+    return {
+      options: mergedOptions,
+      valueOptions: valueOptions,
+      labelOptions: labelOptions
+    };
+  }, [options, children, fieldNames, optionFilterProp, optionLabelProp]);
+}
+
+/**
+ * Same as `React.useCallback` but always return a memoized function
+ * but redirect to real function.
+ */
+function useRefFunc(callback) {
+  var funcRef = React.useRef();
+  funcRef.current = callback;
+  var cacheFn = React.useCallback(function () {
+    return funcRef.current.apply(funcRef, arguments);
+  }, []);
+  return cacheFn;
+}
+
+/* istanbul ignore file */
+
+/** This is a placeholder, not real render in dom */
+var OptGroup = function OptGroup() {
+  return null;
+};
+OptGroup.isSelectOptGroup = true;
+
+/* istanbul ignore file */
+
+/** This is a placeholder, not real render in dom */
+var Option$1 = function Option() {
+  return null;
+};
+Option$1.isSelectOption = true;
+
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+var classnames$6 = createCommonjsModule(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+					classes.push(arg.toString());
+					continue;
+				}
+
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
+
+/**
+ * Fill component to provided the scroll content real height.
+ */
+var Filler = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
+  var height = _ref.height,
+    offsetY = _ref.offsetY,
+    offsetX = _ref.offsetX,
+    children = _ref.children,
+    prefixCls = _ref.prefixCls,
+    onInnerResize = _ref.onInnerResize,
+    innerProps = _ref.innerProps,
+    rtl = _ref.rtl,
+    extra = _ref.extra;
+  var outerStyle = {};
+  var innerStyle = {
+    display: 'flex',
+    flexDirection: 'column'
+  };
+  if (offsetY !== undefined) {
+    var _objectSpread2$1;
+    // Not set `width` since this will break `sticky: right`
+    outerStyle = {
+      height: height,
+      position: 'relative',
+      overflow: 'hidden'
+    };
+    innerStyle = _objectSpread2(_objectSpread2({}, innerStyle), {}, (_objectSpread2$1 = {
+      transform: "translateY(".concat(offsetY, "px)")
+    }, _defineProperty(_objectSpread2$1, rtl ? 'marginRight' : 'marginLeft', -offsetX), _defineProperty(_objectSpread2$1, "position", 'absolute'), _defineProperty(_objectSpread2$1, "left", 0), _defineProperty(_objectSpread2$1, "right", 0), _defineProperty(_objectSpread2$1, "top", 0), _objectSpread2$1));
+  }
+  return /*#__PURE__*/React.createElement("div", {
+    style: outerStyle
+  }, /*#__PURE__*/React.createElement(RefResizeObserver, {
+    onResize: function onResize(_ref2) {
+      var offsetHeight = _ref2.offsetHeight;
+      if (offsetHeight && onInnerResize) {
+        onInnerResize();
+      }
+    }
+  }, /*#__PURE__*/React.createElement("div", _extends$1({
+    style: innerStyle,
+    className: classnames$6(_defineProperty({}, "".concat(prefixCls, "-holder-inner"), prefixCls)),
+    ref: ref
+  }, innerProps), children, extra)));
+});
+Filler.displayName = 'Filler';
+
+function getPageXY(e, horizontal) {
+  var obj = 'touches' in e ? e.touches[0] : e;
+  return obj[horizontal ? 'pageX' : 'pageY'];
+}
+var ScrollBar = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var _classNames;
+  var prefixCls = props.prefixCls,
+    rtl = props.rtl,
+    scrollOffset = props.scrollOffset,
+    scrollRange = props.scrollRange,
+    onStartMove = props.onStartMove,
+    onStopMove = props.onStopMove,
+    onScroll = props.onScroll,
+    horizontal = props.horizontal,
+    spinSize = props.spinSize,
+    containerSize = props.containerSize;
+  var _React$useState = React.useState(false),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    dragging = _React$useState2[0],
+    setDragging = _React$useState2[1];
+  var _React$useState3 = React.useState(null),
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    pageXY = _React$useState4[0],
+    setPageXY = _React$useState4[1];
+  var _React$useState5 = React.useState(null),
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    startTop = _React$useState6[0],
+    setStartTop = _React$useState6[1];
+  var isLTR = !rtl;
+  // ========================= Refs =========================
+  var scrollbarRef = React.useRef();
+  var thumbRef = React.useRef();
+  // ======================= Visible ========================
+  var _React$useState7 = React.useState(false),
+    _React$useState8 = _slicedToArray(_React$useState7, 2),
+    visible = _React$useState8[0],
+    setVisible = _React$useState8[1];
+  var visibleTimeoutRef = React.useRef();
+  var delayHidden = function delayHidden() {
+    clearTimeout(visibleTimeoutRef.current);
+    setVisible(true);
+    visibleTimeoutRef.current = setTimeout(function () {
+      setVisible(false);
+    }, 3000);
+  };
+  // ======================== Range =========================
+  var enableScrollRange = scrollRange - containerSize || 0;
+  var enableOffsetRange = containerSize - spinSize || 0;
+  // `scrollWidth` < `clientWidth` means no need to show scrollbar
+  var canScroll = enableScrollRange > 0;
+  // ========================= Top ==========================
+  var top = React.useMemo(function () {
+    if (scrollOffset === 0 || enableScrollRange === 0) {
+      return 0;
+    }
+    var ptg = scrollOffset / enableScrollRange;
+    return ptg * enableOffsetRange;
+  }, [scrollOffset, enableScrollRange, enableOffsetRange]);
+  // ====================== Container =======================
+  var onContainerMouseDown = function onContainerMouseDown(e) {
+    e.stopPropagation();
+    e.preventDefault();
+  };
+  // ======================== Thumb =========================
+  var stateRef = React.useRef({
+    top: top,
+    dragging: dragging,
+    pageY: pageXY,
+    startTop: startTop
+  });
+  stateRef.current = {
+    top: top,
+    dragging: dragging,
+    pageY: pageXY,
+    startTop: startTop
+  };
+  var onThumbMouseDown = function onThumbMouseDown(e) {
+    setDragging(true);
+    setPageXY(getPageXY(e, horizontal));
+    setStartTop(stateRef.current.top);
+    onStartMove();
+    e.stopPropagation();
+    e.preventDefault();
+  };
+  // ======================== Effect ========================
+  // React make event as passive, but we need to preventDefault
+  // Add event on dom directly instead.
+  // ref: https://github.com/facebook/react/issues/9809
+  React.useEffect(function () {
+    var onScrollbarTouchStart = function onScrollbarTouchStart(e) {
+      e.preventDefault();
+    };
+    var scrollbarEle = scrollbarRef.current;
+    var thumbEle = thumbRef.current;
+    scrollbarEle.addEventListener('touchstart', onScrollbarTouchStart);
+    thumbEle.addEventListener('touchstart', onThumbMouseDown);
+    return function () {
+      scrollbarEle.removeEventListener('touchstart', onScrollbarTouchStart);
+      thumbEle.removeEventListener('touchstart', onThumbMouseDown);
+    };
+  }, []);
+  // Pass to effect
+  var enableScrollRangeRef = React.useRef();
+  enableScrollRangeRef.current = enableScrollRange;
+  var enableOffsetRangeRef = React.useRef();
+  enableOffsetRangeRef.current = enableOffsetRange;
+  React.useEffect(function () {
+    if (dragging) {
+      var moveRafId;
+      var onMouseMove = function onMouseMove(e) {
+        var _stateRef$current = stateRef.current,
+          stateDragging = _stateRef$current.dragging,
+          statePageY = _stateRef$current.pageY,
+          stateStartTop = _stateRef$current.startTop;
+        wrapperRaf.cancel(moveRafId);
+        if (stateDragging) {
+          var offset = getPageXY(e, horizontal) - statePageY;
+          var newTop = stateStartTop;
+          if (!isLTR && horizontal) {
+            newTop -= offset;
+          } else {
+            newTop += offset;
+          }
+          var tmpEnableScrollRange = enableScrollRangeRef.current;
+          var tmpEnableOffsetRange = enableOffsetRangeRef.current;
+          var ptg = tmpEnableOffsetRange ? newTop / tmpEnableOffsetRange : 0;
+          var newScrollTop = Math.ceil(ptg * tmpEnableScrollRange);
+          newScrollTop = Math.max(newScrollTop, 0);
+          newScrollTop = Math.min(newScrollTop, tmpEnableScrollRange);
+          moveRafId = wrapperRaf(function () {
+            onScroll(newScrollTop, horizontal);
+          });
+        }
+      };
+      var onMouseUp = function onMouseUp() {
+        setDragging(false);
+        onStopMove();
+      };
+      window.addEventListener('mousemove', onMouseMove);
+      window.addEventListener('touchmove', onMouseMove);
+      window.addEventListener('mouseup', onMouseUp);
+      window.addEventListener('touchend', onMouseUp);
+      return function () {
+        window.removeEventListener('mousemove', onMouseMove);
+        window.removeEventListener('touchmove', onMouseMove);
+        window.removeEventListener('mouseup', onMouseUp);
+        window.removeEventListener('touchend', onMouseUp);
+        wrapperRaf.cancel(moveRafId);
+      };
+    }
+  }, [dragging]);
+  React.useEffect(function () {
+    delayHidden();
+  }, [scrollOffset]);
+  // ====================== Imperative ======================
+  React.useImperativeHandle(ref, function () {
+    return {
+      delayHidden: delayHidden
+    };
+  });
+  // ======================== Render ========================
+  var scrollbarPrefixCls = "".concat(prefixCls, "-scrollbar");
+  var containerStyle = {
+    position: 'absolute',
+    visibility: visible && canScroll ? null : 'hidden'
+  };
+  var thumbStyle = {
+    position: 'absolute',
+    background: 'rgba(0, 0, 0, 0.5)',
+    borderRadius: 99,
+    cursor: 'pointer',
+    userSelect: 'none'
+  };
+  if (horizontal) {
+    // Container
+    containerStyle.height = 8;
+    containerStyle.left = 0;
+    containerStyle.right = 0;
+    containerStyle.bottom = 0;
+    // Thumb
+    thumbStyle.height = '100%';
+    thumbStyle.width = spinSize;
+    if (isLTR) {
+      thumbStyle.left = top;
+    } else {
+      thumbStyle.right = top;
+    }
+  } else {
+    // Container
+    containerStyle.width = 8;
+    containerStyle.top = 0;
+    containerStyle.bottom = 0;
+    if (isLTR) {
+      containerStyle.right = 0;
+    } else {
+      containerStyle.left = 0;
+    }
+    // Thumb
+    thumbStyle.width = '100%';
+    thumbStyle.height = spinSize;
+    thumbStyle.top = top;
+  }
+  return /*#__PURE__*/React.createElement("div", {
+    ref: scrollbarRef,
+    className: classnames$6(scrollbarPrefixCls, (_classNames = {}, _defineProperty(_classNames, "".concat(scrollbarPrefixCls, "-horizontal"), horizontal), _defineProperty(_classNames, "".concat(scrollbarPrefixCls, "-vertical"), !horizontal), _defineProperty(_classNames, "".concat(scrollbarPrefixCls, "-visible"), visible), _classNames)),
+    style: containerStyle,
+    onMouseDown: onContainerMouseDown,
+    onMouseMove: delayHidden
+  }, /*#__PURE__*/React.createElement("div", {
+    ref: thumbRef,
+    className: classnames$6("".concat(scrollbarPrefixCls, "-thumb"), _defineProperty({}, "".concat(scrollbarPrefixCls, "-thumb-moving"), dragging)),
+    style: thumbStyle,
+    onMouseDown: onThumbMouseDown
+  }));
+});
+if (process.env.NODE_ENV !== 'production') {
+  ScrollBar.displayName = 'ScrollBar';
+}
+
+function Item$4(_ref) {
+  var children = _ref.children,
+    setRef = _ref.setRef;
+  var refFunc = React.useCallback(function (node) {
+    setRef(node);
+  }, []);
+  return /*#__PURE__*/React.cloneElement(children, {
+    ref: refFunc
+  });
+}
+
+function useChildren$1(list, startIndex, endIndex, scrollWidth, setNodeRef, renderFunc, _ref) {
+  var getKey = _ref.getKey;
+  return list.slice(startIndex, endIndex + 1).map(function (item, index) {
+    var eleIndex = startIndex + index;
+    var node = renderFunc(item, eleIndex, {
+      style: {
+        width: scrollWidth
+      }
+    });
+    var key = getKey(item);
+    return /*#__PURE__*/React.createElement(Item$4, {
+      key: key,
+      setRef: function setRef(ele) {
+        return setNodeRef(item, ele);
+      }
+    }, node);
+  });
+}
+
+// Firefox has low performance of map.
+var CacheMap = /*#__PURE__*/function () {
+  function CacheMap() {
+    _classCallCheck(this, CacheMap);
+    this.maps = void 0;
+    // Used for cache key
+    // `useMemo` no need to update if `id` not change
+    this.id = 0;
+    this.maps = Object.create(null);
+  }
+  _createClass(CacheMap, [{
+    key: "set",
+    value: function set(key, value) {
+      this.maps[key] = value;
+      this.id += 1;
+    }
+  }, {
+    key: "get",
+    value: function get(key) {
+      return this.maps[key];
+    }
+  }]);
+  return CacheMap;
+}();
+
+function useHeights(getKey, onItemAdd, onItemRemove) {
+  var _React$useState = React.useState(0),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    updatedMark = _React$useState2[0],
+    setUpdatedMark = _React$useState2[1];
+  var instanceRef = useRef(new Map());
+  var heightsRef = useRef(new CacheMap());
+  var collectRafRef = useRef();
+  function cancelRaf() {
+    wrapperRaf.cancel(collectRafRef.current);
+  }
+  function collectHeight() {
+    cancelRaf();
+    collectRafRef.current = wrapperRaf(function () {
+      instanceRef.current.forEach(function (element, key) {
+        if (element && element.offsetParent) {
+          var htmlElement = findDOMNode(element);
+          var offsetHeight = htmlElement.offsetHeight;
+          if (heightsRef.current.get(key) !== offsetHeight) {
+            heightsRef.current.set(key, htmlElement.offsetHeight);
+          }
+        }
+      });
+      // Always trigger update mark to tell parent that should re-calculate heights when resized
+      setUpdatedMark(function (c) {
+        return c + 1;
+      });
+    });
+  }
+  function setInstanceRef(item, instance) {
+    var key = getKey(item);
+    var origin = instanceRef.current.get(key);
+    if (instance) {
+      instanceRef.current.set(key, instance);
+      collectHeight();
+    } else {
+      instanceRef.current.delete(key);
+    }
+    // Instance changed
+    if (!origin !== !instance) {
+      if (instance) {
+        onItemAdd === null || onItemAdd === void 0 ? void 0 : onItemAdd(item);
+      } else {
+        onItemRemove === null || onItemRemove === void 0 ? void 0 : onItemRemove(item);
+      }
+    }
+  }
+  useEffect(function () {
+    return cancelRaf;
+  }, []);
+  return [setInstanceRef, collectHeight, heightsRef.current, updatedMark];
+}
+
+function useScrollTo(containerRef, data, heights, itemHeight, getKey, collectHeight, syncScrollTop, triggerFlash) {
+  var scrollRef = React.useRef();
+  return function (arg) {
+    // When not argument provided, we think dev may want to show the scrollbar
+    if (arg === null || arg === undefined) {
+      triggerFlash();
+      return;
+    }
+    // Normal scroll logic
+    wrapperRaf.cancel(scrollRef.current);
+    if (typeof arg === 'number') {
+      syncScrollTop(arg);
+    } else if (arg && _typeof(arg) === 'object') {
+      var index;
+      var align = arg.align;
+      if ('index' in arg) {
+        index = arg.index;
+      } else {
+        index = data.findIndex(function (item) {
+          return getKey(item) === arg.key;
+        });
+      }
+      var _arg$offset = arg.offset,
+        offset = _arg$offset === void 0 ? 0 : _arg$offset;
+      // We will retry 3 times in case dynamic height shaking
+      var syncScroll = function syncScroll(times, targetAlign) {
+        if (times < 0 || !containerRef.current) return;
+        var height = containerRef.current.clientHeight;
+        var needCollectHeight = false;
+        var newTargetAlign = targetAlign;
+        // Go to next frame if height not exist
+        if (height) {
+          var mergedAlign = targetAlign || align;
+          // Get top & bottom
+          var stackTop = 0;
+          var itemTop = 0;
+          var itemBottom = 0;
+          var maxLen = Math.min(data.length, index);
+          for (var i = 0; i <= maxLen; i += 1) {
+            var key = getKey(data[i]);
+            itemTop = stackTop;
+            var cacheHeight = heights.get(key);
+            itemBottom = itemTop + (cacheHeight === undefined ? itemHeight : cacheHeight);
+            stackTop = itemBottom;
+            if (i === index && cacheHeight === undefined) {
+              needCollectHeight = true;
+            }
+          }
+          // Scroll to
+          var targetTop = null;
+          switch (mergedAlign) {
+            case 'top':
+              targetTop = itemTop - offset;
+              break;
+            case 'bottom':
+              targetTop = itemBottom - height + offset;
+              break;
+            default:
+              {
+                var scrollTop = containerRef.current.scrollTop;
+                var scrollBottom = scrollTop + height;
+                if (itemTop < scrollTop) {
+                  newTargetAlign = 'top';
+                } else if (itemBottom > scrollBottom) {
+                  newTargetAlign = 'bottom';
+                }
+              }
+          }
+          if (targetTop !== null && targetTop !== containerRef.current.scrollTop) {
+            syncScrollTop(targetTop);
+          }
+        }
+        // We will retry since element may not sync height as it described
+        scrollRef.current = wrapperRaf(function () {
+          if (needCollectHeight) {
+            collectHeight();
+          }
+          syncScroll(times - 1, newTargetAlign);
+        }, 2); // Delay 2 to wait for List collect heights
+      };
+
+      syncScroll(3);
+    }
+  };
+}
+
+/**
+ * Get index with specific start index one by one. e.g.
+ * min: 3, max: 9, start: 6
+ *
+ * Return index is:
+ * [0]: 6
+ * [1]: 7
+ * [2]: 5
+ * [3]: 8
+ * [4]: 4
+ * [5]: 9
+ * [6]: 3
+ */
+/**
+ * We assume that 2 list has only 1 item diff and others keeping the order.
+ * So we can use dichotomy algorithm to find changed one.
+ */
+function findListDiffIndex(originList, targetList, getKey) {
+  var originLen = originList.length;
+  var targetLen = targetList.length;
+  var shortList;
+  var longList;
+  if (originLen === 0 && targetLen === 0) {
+    return null;
+  }
+  if (originLen < targetLen) {
+    shortList = originList;
+    longList = targetList;
+  } else {
+    shortList = targetList;
+    longList = originList;
+  }
+  var notExistKey = {
+    __EMPTY_ITEM__: true
+  };
+  function getItemKey(item) {
+    if (item !== undefined) {
+      return getKey(item);
+    }
+    return notExistKey;
+  }
+  // Loop to find diff one
+  var diffIndex = null;
+  var multiple = Math.abs(originLen - targetLen) !== 1;
+  for (var i = 0; i < longList.length; i += 1) {
+    var shortKey = getItemKey(shortList[i]);
+    var longKey = getItemKey(longList[i]);
+    if (shortKey !== longKey) {
+      diffIndex = i;
+      multiple = multiple || shortKey !== getItemKey(longList[i + 1]);
+      break;
+    }
+  }
+  return diffIndex === null ? null : {
+    index: diffIndex,
+    multiple: multiple
+  };
+}
+
+function useDiffItem(data, getKey, onDiff) {
+  var _React$useState = React.useState(data),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    prevData = _React$useState2[0],
+    setPrevData = _React$useState2[1];
+  var _React$useState3 = React.useState(null),
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    diffItem = _React$useState4[0],
+    setDiffItem = _React$useState4[1];
+  React.useEffect(function () {
+    var diff = findListDiffIndex(prevData || [], data || [], getKey);
+    if ((diff === null || diff === void 0 ? void 0 : diff.index) !== undefined) {
+      onDiff === null || onDiff === void 0 ? void 0 : onDiff(diff.index);
+      setDiffItem(data[diff.index]);
+    }
+    setPrevData(data);
+  }, [data]);
+  return [diffItem];
+}
+
+var isFF = (typeof navigator === "undefined" ? "undefined" : _typeof(navigator)) === 'object' && /Firefox/i.test(navigator.userAgent);
+
+var useOriginScroll = (function (isScrollAtTop, isScrollAtBottom) {
+  // Do lock for a wheel when scrolling
+  var lockRef = useRef(false);
+  var lockTimeoutRef = useRef(null);
+  function lockScroll() {
+    clearTimeout(lockTimeoutRef.current);
+    lockRef.current = true;
+    lockTimeoutRef.current = setTimeout(function () {
+      lockRef.current = false;
+    }, 50);
+  }
+  // Pass to ref since global add is in closure
+  var scrollPingRef = useRef({
+    top: isScrollAtTop,
+    bottom: isScrollAtBottom
+  });
+  scrollPingRef.current.top = isScrollAtTop;
+  scrollPingRef.current.bottom = isScrollAtBottom;
+  return function (deltaY) {
+    var smoothOffset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+    var originScroll =
+    // Pass origin wheel when on the top
+    deltaY < 0 && scrollPingRef.current.top ||
+    // Pass origin wheel when on the bottom
+    deltaY > 0 && scrollPingRef.current.bottom;
+    if (smoothOffset && originScroll) {
+      // No need lock anymore when it's smooth offset from touchMove interval
+      clearTimeout(lockTimeoutRef.current);
+      lockRef.current = false;
+    } else if (!originScroll || lockRef.current) {
+      lockScroll();
+    }
+    return !lockRef.current && originScroll;
+  };
+});
+
+function useFrameWheel(inVirtual, isScrollAtTop, isScrollAtBottom, horizontalScroll,
+/***
+ * Return `true` when you need to prevent default event
+ */
+onWheelDelta) {
+  var offsetRef = useRef(0);
+  var nextFrameRef = useRef(null);
+  // Firefox patch
+  var wheelValueRef = useRef(null);
+  var isMouseScrollRef = useRef(false);
+  // Scroll status sync
+  var originScroll = useOriginScroll(isScrollAtTop, isScrollAtBottom);
+  function onWheelY(event) {
+    wrapperRaf.cancel(nextFrameRef.current);
+    var deltaY = event.deltaY;
+    offsetRef.current += deltaY;
+    wheelValueRef.current = deltaY;
+    // Do nothing when scroll at the edge, Skip check when is in scroll
+    if (originScroll(deltaY)) return;
+    // Proxy of scroll events
+    if (!isFF) {
+      event.preventDefault();
+    }
+    nextFrameRef.current = wrapperRaf(function () {
+      // Patch a multiple for Firefox to fix wheel number too small
+      // ref: https://github.com/ant-design/ant-design/issues/26372#issuecomment-679460266
+      var patchMultiple = isMouseScrollRef.current ? 10 : 1;
+      onWheelDelta(offsetRef.current * patchMultiple);
+      offsetRef.current = 0;
+    });
+  }
+  function onWheelX(event) {
+    var deltaX = event.deltaX;
+    onWheelDelta(deltaX, true);
+    if (!isFF) {
+      event.preventDefault();
+    }
+  }
+  // Check for which direction does wheel do
+  var wheelDirectionRef = useRef(null);
+  var wheelDirectionCleanRef = useRef(null);
+  function onWheel(event) {
+    if (!inVirtual) return;
+    // Wait for 2 frame to clean direction
+    wrapperRaf.cancel(wheelDirectionCleanRef.current);
+    wheelDirectionCleanRef.current = wrapperRaf(function () {
+      wheelDirectionRef.current = null;
+    }, 2);
+    var deltaX = event.deltaX,
+      deltaY = event.deltaY;
+    var absX = Math.abs(deltaX);
+    var absY = Math.abs(deltaY);
+    if (wheelDirectionRef.current === null) {
+      wheelDirectionRef.current = horizontalScroll && absX > absY ? 'x' : 'y';
+    }
+    if (wheelDirectionRef.current === 'x') {
+      onWheelX(event);
+    } else {
+      onWheelY(event);
+    }
+  }
+  // A patch for firefox
+  function onFireFoxScroll(event) {
+    if (!inVirtual) return;
+    isMouseScrollRef.current = event.detail === wheelValueRef.current;
+  }
+  return [onWheel, onFireFoxScroll];
+}
+
+var SMOOTH_PTG = 14 / 15;
+function useMobileTouchMove(inVirtual, listRef, callback) {
+  var touchedRef = useRef(false);
+  var touchYRef = useRef(0);
+  var elementRef = useRef(null);
+  // Smooth scroll
+  var intervalRef = useRef(null);
+  /* eslint-disable prefer-const */
+  var cleanUpEvents;
+  var onTouchMove = function onTouchMove(e) {
+    if (touchedRef.current) {
+      var currentY = Math.ceil(e.touches[0].pageY);
+      var offsetY = touchYRef.current - currentY;
+      touchYRef.current = currentY;
+      if (callback(offsetY)) {
+        e.preventDefault();
+      }
+      // Smooth interval
+      clearInterval(intervalRef.current);
+      intervalRef.current = setInterval(function () {
+        offsetY *= SMOOTH_PTG;
+        if (!callback(offsetY, true) || Math.abs(offsetY) <= 0.1) {
+          clearInterval(intervalRef.current);
+        }
+      }, 16);
+    }
+  };
+  var onTouchEnd = function onTouchEnd() {
+    touchedRef.current = false;
+    cleanUpEvents();
+  };
+  var onTouchStart = function onTouchStart(e) {
+    cleanUpEvents();
+    if (e.touches.length === 1 && !touchedRef.current) {
+      touchedRef.current = true;
+      touchYRef.current = Math.ceil(e.touches[0].pageY);
+      elementRef.current = e.target;
+      elementRef.current.addEventListener('touchmove', onTouchMove);
+      elementRef.current.addEventListener('touchend', onTouchEnd);
+    }
+  };
+  cleanUpEvents = function cleanUpEvents() {
+    if (elementRef.current) {
+      elementRef.current.removeEventListener('touchmove', onTouchMove);
+      elementRef.current.removeEventListener('touchend', onTouchEnd);
+    }
+  };
+  useLayoutEffect$1(function () {
+    if (inVirtual) {
+      listRef.current.addEventListener('touchstart', onTouchStart);
+    }
+    return function () {
+      var _listRef$current;
+      (_listRef$current = listRef.current) === null || _listRef$current === void 0 ? void 0 : _listRef$current.removeEventListener('touchstart', onTouchStart);
+      cleanUpEvents();
+      clearInterval(intervalRef.current);
+    };
+  }, [inVirtual]);
+}
+
+var MIN_SIZE = 20;
+function getSpinSize() {
+  var containerSize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  var scrollRange = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  var baseSize = containerSize / scrollRange * 100;
+  if (isNaN(baseSize)) {
+    baseSize = 0;
+  }
+  baseSize = Math.max(baseSize, MIN_SIZE);
+  baseSize = Math.min(baseSize, containerSize / 2);
+  return Math.floor(baseSize);
+}
+
+/**
+ * Size info need loop query for the `heights` which will has the perf issue.
+ * Let cache result for each render phase.
+ */
+function useGetSize(mergedData, getKey, heights, itemHeight) {
+  var _React$useMemo = React.useMemo(function () {
+      return [new Map(), []];
+    }, [mergedData, heights.id, itemHeight]),
+    _React$useMemo2 = _slicedToArray(_React$useMemo, 2),
+    key2Index = _React$useMemo2[0],
+    bottomList = _React$useMemo2[1];
+  var getSize = function getSize(startKey) {
+    var endKey = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : startKey;
+    // Get from cache first
+    var startIndex = key2Index.get(startKey);
+    var endIndex = key2Index.get(endKey);
+    // Loop to fill the cache
+    if (startIndex === undefined || endIndex === undefined) {
+      var dataLen = mergedData.length;
+      for (var i = bottomList.length; i < dataLen; i += 1) {
+        var _heights$get;
+        var item = mergedData[i];
+        var key = getKey(item);
+        key2Index.set(key, i);
+        var cacheHeight = (_heights$get = heights.get(key)) !== null && _heights$get !== void 0 ? _heights$get : itemHeight;
+        bottomList[i] = (bottomList[i - 1] || 0) + cacheHeight;
+        if (key === startKey) {
+          startIndex = i;
+        }
+        if (key === endKey) {
+          endIndex = i;
+        }
+        if (startIndex !== undefined && endIndex !== undefined) {
+          break;
+        }
+      }
+    }
+    return {
+      top: bottomList[startIndex - 1] || 0,
+      bottom: bottomList[endIndex]
+    };
+  };
+  return getSize;
+}
+
+var _excluded$j = ["prefixCls", "className", "height", "itemHeight", "fullHeight", "style", "data", "children", "itemKey", "virtual", "direction", "scrollWidth", "component", "onScroll", "onVirtualScroll", "onVisibleChange", "innerProps", "extraRender"];
+var EMPTY_DATA = [];
+var ScrollStyle = {
+  overflowY: 'auto',
+  overflowAnchor: 'none'
+};
+function RawList(props, ref) {
+  var _props$prefixCls = props.prefixCls,
+    prefixCls = _props$prefixCls === void 0 ? 'rc-virtual-list' : _props$prefixCls,
+    className = props.className,
+    height = props.height,
+    itemHeight = props.itemHeight,
+    _props$fullHeight = props.fullHeight,
+    fullHeight = _props$fullHeight === void 0 ? true : _props$fullHeight,
+    style = props.style,
+    data = props.data,
+    children = props.children,
+    itemKey = props.itemKey,
+    virtual = props.virtual,
+    direction = props.direction,
+    scrollWidth = props.scrollWidth,
+    _props$component = props.component,
+    Component = _props$component === void 0 ? 'div' : _props$component,
+    onScroll = props.onScroll,
+    onVirtualScroll = props.onVirtualScroll,
+    onVisibleChange = props.onVisibleChange,
+    innerProps = props.innerProps,
+    extraRender = props.extraRender,
+    restProps = _objectWithoutProperties(props, _excluded$j);
+  // ================================= MISC =================================
+  var useVirtual = !!(virtual !== false && height && itemHeight);
+  var inVirtual = useVirtual && data && itemHeight * data.length > height;
+  var isRTL = direction === 'rtl';
+  var mergedClassName = classnames$6(prefixCls, _defineProperty({}, "".concat(prefixCls, "-rtl"), isRTL), className);
+  var mergedData = data || EMPTY_DATA;
+  var componentRef = useRef();
+  var fillerInnerRef = useRef();
+  // =============================== Item Key ===============================
+  var _useState = useState(0),
+    _useState2 = _slicedToArray(_useState, 2),
+    offsetTop = _useState2[0],
+    setOffsetTop = _useState2[1];
+  var _useState3 = useState(0),
+    _useState4 = _slicedToArray(_useState3, 2),
+    offsetLeft = _useState4[0],
+    setOffsetLeft = _useState4[1];
+  var _useState5 = useState(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    scrollMoving = _useState6[0],
+    setScrollMoving = _useState6[1];
+  var onScrollbarStartMove = function onScrollbarStartMove() {
+    setScrollMoving(true);
+  };
+  var onScrollbarStopMove = function onScrollbarStopMove() {
+    setScrollMoving(false);
+  };
+  // =============================== Item Key ===============================
+  var getKey = React.useCallback(function (item) {
+    if (typeof itemKey === 'function') {
+      return itemKey(item);
+    }
+    return item === null || item === void 0 ? void 0 : item[itemKey];
+  }, [itemKey]);
+  var sharedConfig = {
+    getKey: getKey
+  };
+  // ================================ Scroll ================================
+  function syncScrollTop(newTop) {
+    setOffsetTop(function (origin) {
+      var value;
+      if (typeof newTop === 'function') {
+        value = newTop(origin);
+      } else {
+        value = newTop;
+      }
+      var alignedTop = keepInRange(value);
+      componentRef.current.scrollTop = alignedTop;
+      return alignedTop;
+    });
+  }
+  // ================================ Legacy ================================
+  // Put ref here since the range is generate by follow
+  var rangeRef = useRef({
+    start: 0,
+    end: mergedData.length
+  });
+  var diffItemRef = useRef();
+  var _useDiffItem = useDiffItem(mergedData, getKey),
+    _useDiffItem2 = _slicedToArray(_useDiffItem, 1),
+    diffItem = _useDiffItem2[0];
+  diffItemRef.current = diffItem;
+  // ================================ Height ================================
+  var _useHeights = useHeights(getKey, null, null),
+    _useHeights2 = _slicedToArray(_useHeights, 4),
+    setInstanceRef = _useHeights2[0],
+    collectHeight = _useHeights2[1],
+    heights = _useHeights2[2],
+    heightUpdatedMark = _useHeights2[3];
+  // ========================== Visible Calculation =========================
+  var _React$useMemo = React.useMemo(function () {
+      if (!useVirtual) {
+        return {
+          scrollHeight: undefined,
+          start: 0,
+          end: mergedData.length - 1,
+          offset: undefined
+        };
+      }
+      // Always use virtual scroll bar in avoid shaking
+      if (!inVirtual) {
+        var _fillerInnerRef$curre;
+        return {
+          scrollHeight: ((_fillerInnerRef$curre = fillerInnerRef.current) === null || _fillerInnerRef$curre === void 0 ? void 0 : _fillerInnerRef$curre.offsetHeight) || 0,
+          start: 0,
+          end: mergedData.length - 1,
+          offset: undefined
+        };
+      }
+      var itemTop = 0;
+      var startIndex;
+      var startOffset;
+      var endIndex;
+      var dataLen = mergedData.length;
+      for (var i = 0; i < dataLen; i += 1) {
+        var item = mergedData[i];
+        var key = getKey(item);
+        var cacheHeight = heights.get(key);
+        var currentItemBottom = itemTop + (cacheHeight === undefined ? itemHeight : cacheHeight);
+        // Check item top in the range
+        if (currentItemBottom >= offsetTop && startIndex === undefined) {
+          startIndex = i;
+          startOffset = itemTop;
+        }
+        // Check item bottom in the range. We will render additional one item for motion usage
+        if (currentItemBottom > offsetTop + height && endIndex === undefined) {
+          endIndex = i;
+        }
+        itemTop = currentItemBottom;
+      }
+      // When scrollTop at the end but data cut to small count will reach this
+      if (startIndex === undefined) {
+        startIndex = 0;
+        startOffset = 0;
+        endIndex = Math.ceil(height / itemHeight);
+      }
+      if (endIndex === undefined) {
+        endIndex = mergedData.length - 1;
+      }
+      // Give cache to improve scroll experience
+      endIndex = Math.min(endIndex + 1, mergedData.length - 1);
+      return {
+        scrollHeight: itemTop,
+        start: startIndex,
+        end: endIndex,
+        offset: startOffset
+      };
+    }, [inVirtual, useVirtual, offsetTop, mergedData, heightUpdatedMark, height]),
+    scrollHeight = _React$useMemo.scrollHeight,
+    start = _React$useMemo.start,
+    end = _React$useMemo.end,
+    fillerOffset = _React$useMemo.offset;
+  rangeRef.current.start = start;
+  rangeRef.current.end = end;
+  // ================================= Size =================================
+  var _React$useState = React.useState({
+      width: 0,
+      height: height
+    }),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    size = _React$useState2[0],
+    setSize = _React$useState2[1];
+  var onHolderResize = function onHolderResize(sizeInfo) {
+    setSize(sizeInfo);
+  };
+  // Hack on scrollbar to enable flash call
+  var verticalScrollBarRef = useRef();
+  var horizontalScrollBarRef = useRef();
+  var horizontalScrollBarSpinSize = React.useMemo(function () {
+    return getSpinSize(size.width, scrollWidth);
+  }, [size.width, scrollWidth]);
+  var verticalScrollBarSpinSize = React.useMemo(function () {
+    return getSpinSize(size.height, scrollHeight);
+  }, [size.height, scrollHeight]);
+  // =============================== In Range ===============================
+  var maxScrollHeight = scrollHeight - height;
+  var maxScrollHeightRef = useRef(maxScrollHeight);
+  maxScrollHeightRef.current = maxScrollHeight;
+  function keepInRange(newScrollTop) {
+    var newTop = newScrollTop;
+    if (!Number.isNaN(maxScrollHeightRef.current)) {
+      newTop = Math.min(newTop, maxScrollHeightRef.current);
+    }
+    newTop = Math.max(newTop, 0);
+    return newTop;
+  }
+  var isScrollAtTop = offsetTop <= 0;
+  var isScrollAtBottom = offsetTop >= maxScrollHeight;
+  var originScroll = useOriginScroll(isScrollAtTop, isScrollAtBottom);
+  // ================================ Scroll ================================
+  var getVirtualScrollInfo = function getVirtualScrollInfo() {
+    return {
+      x: isRTL ? -offsetLeft : offsetLeft,
+      y: offsetTop
+    };
+  };
+  var lastVirtualScrollInfoRef = useRef(getVirtualScrollInfo());
+  var triggerScroll = useEvent(function () {
+    if (onVirtualScroll) {
+      var nextInfo = getVirtualScrollInfo();
+      // Trigger when offset changed
+      if (lastVirtualScrollInfoRef.current.x !== nextInfo.x || lastVirtualScrollInfoRef.current.y !== nextInfo.y) {
+        onVirtualScroll(nextInfo);
+        lastVirtualScrollInfoRef.current = nextInfo;
+      }
+    }
+  });
+  function onScrollBar(newScrollOffset, horizontal) {
+    var newOffset = newScrollOffset;
+    if (horizontal) {
+      flushSync(function () {
+        setOffsetLeft(newOffset);
+      });
+      triggerScroll();
+    } else {
+      syncScrollTop(newOffset);
+    }
+  }
+  // When data size reduce. It may trigger native scroll event back to fit scroll position
+  function onFallbackScroll(e) {
+    var newScrollTop = e.currentTarget.scrollTop;
+    if (newScrollTop !== offsetTop) {
+      syncScrollTop(newScrollTop);
+    }
+    // Trigger origin onScroll
+    onScroll === null || onScroll === void 0 ? void 0 : onScroll(e);
+    triggerScroll();
+  }
+  var keepInHorizontalRange = function keepInHorizontalRange(nextOffsetLeft) {
+    var tmpOffsetLeft = nextOffsetLeft;
+    var max = scrollWidth - size.width;
+    tmpOffsetLeft = Math.max(tmpOffsetLeft, 0);
+    tmpOffsetLeft = Math.min(tmpOffsetLeft, max);
+    return tmpOffsetLeft;
+  };
+  var onWheelDelta = useEvent(function (offsetXY, fromHorizontal) {
+    if (fromHorizontal) {
+      // Horizontal scroll no need sync virtual position
+      flushSync(function () {
+        setOffsetLeft(function (left) {
+          var nextOffsetLeft = left + (isRTL ? -offsetXY : offsetXY);
+          return keepInHorizontalRange(nextOffsetLeft);
+        });
+      });
+      triggerScroll();
+    } else {
+      syncScrollTop(function (top) {
+        var newTop = top + offsetXY;
+        return newTop;
+      });
+    }
+  });
+  // Since this added in global,should use ref to keep update
+  var _useFrameWheel = useFrameWheel(useVirtual, isScrollAtTop, isScrollAtBottom, !!scrollWidth, onWheelDelta),
+    _useFrameWheel2 = _slicedToArray(_useFrameWheel, 2),
+    onRawWheel = _useFrameWheel2[0],
+    onFireFoxScroll = _useFrameWheel2[1];
+  // Mobile touch move
+  useMobileTouchMove(useVirtual, componentRef, function (deltaY, smoothOffset) {
+    if (originScroll(deltaY, smoothOffset)) {
+      return false;
+    }
+    onRawWheel({
+      preventDefault: function preventDefault() {},
+      deltaY: deltaY
+    });
+    return true;
+  });
+  useLayoutEffect$1(function () {
+    // Firefox only
+    function onMozMousePixelScroll(e) {
+      if (useVirtual) {
+        e.preventDefault();
+      }
+    }
+    var componentEle = componentRef.current;
+    componentEle.addEventListener('wheel', onRawWheel);
+    componentEle.addEventListener('DOMMouseScroll', onFireFoxScroll);
+    componentEle.addEventListener('MozMousePixelScroll', onMozMousePixelScroll);
+    return function () {
+      componentEle.removeEventListener('wheel', onRawWheel);
+      componentEle.removeEventListener('DOMMouseScroll', onFireFoxScroll);
+      componentEle.removeEventListener('MozMousePixelScroll', onMozMousePixelScroll);
+    };
+  }, [useVirtual]);
+  // ================================= Ref ==================================
+  var delayHideScrollBar = function delayHideScrollBar() {
+    var _verticalScrollBarRef, _horizontalScrollBarR;
+    (_verticalScrollBarRef = verticalScrollBarRef.current) === null || _verticalScrollBarRef === void 0 ? void 0 : _verticalScrollBarRef.delayHidden();
+    (_horizontalScrollBarR = horizontalScrollBarRef.current) === null || _horizontalScrollBarR === void 0 ? void 0 : _horizontalScrollBarR.delayHidden();
+  };
+  var _scrollTo = useScrollTo(componentRef, mergedData, heights, itemHeight, getKey, collectHeight, syncScrollTop, delayHideScrollBar);
+  React.useImperativeHandle(ref, function () {
+    return {
+      getScrollInfo: getVirtualScrollInfo,
+      scrollTo: function scrollTo(config) {
+        function isPosScroll(arg) {
+          return arg && _typeof(arg) === 'object' && ('left' in arg || 'top' in arg);
+        }
+        if (isPosScroll(config)) {
+          // Scroll X
+          if (config.left !== undefined) {
+            setOffsetLeft(keepInHorizontalRange(config.left));
+          }
+          // Scroll Y
+          _scrollTo(config.top);
+        } else {
+          _scrollTo(config);
+        }
+      }
+    };
+  });
+  // ================================ Effect ================================
+  /** We need told outside that some list not rendered */
+  useLayoutEffect$1(function () {
+    if (onVisibleChange) {
+      var renderList = mergedData.slice(start, end + 1);
+      onVisibleChange(renderList, mergedData);
+    }
+  }, [start, end, mergedData]);
+  // ================================ Extra =================================
+  var getSize = useGetSize(mergedData, getKey, heights, itemHeight);
+  var extraContent = extraRender === null || extraRender === void 0 ? void 0 : extraRender({
+    start: start,
+    end: end,
+    virtual: inVirtual,
+    offsetX: offsetLeft,
+    offsetY: fillerOffset,
+    rtl: isRTL,
+    getSize: getSize
+  });
+  // ================================ Render ================================
+  var listChildren = useChildren$1(mergedData, start, end, scrollWidth, setInstanceRef, children, sharedConfig);
+  var componentStyle = null;
+  if (height) {
+    componentStyle = _objectSpread2(_defineProperty({}, fullHeight ? 'height' : 'maxHeight', height), ScrollStyle);
+    if (useVirtual) {
+      componentStyle.overflowY = 'hidden';
+      if (scrollWidth) {
+        componentStyle.overflowX = 'hidden';
+      }
+      if (scrollMoving) {
+        componentStyle.pointerEvents = 'none';
+      }
+    }
+  }
+  var containerProps = {};
+  if (isRTL) {
+    containerProps.dir = 'rtl';
+  }
+  return /*#__PURE__*/React.createElement("div", _extends$1({
+    style: _objectSpread2(_objectSpread2({}, style), {}, {
+      position: 'relative'
+    }),
+    className: mergedClassName
+  }, containerProps, restProps), /*#__PURE__*/React.createElement(RefResizeObserver, {
+    onResize: onHolderResize
+  }, /*#__PURE__*/React.createElement(Component, {
+    className: "".concat(prefixCls, "-holder"),
+    style: componentStyle,
+    ref: componentRef,
+    onScroll: onFallbackScroll,
+    onMouseEnter: delayHideScrollBar
+  }, /*#__PURE__*/React.createElement(Filler, {
+    prefixCls: prefixCls,
+    height: scrollHeight,
+    offsetX: offsetLeft,
+    offsetY: fillerOffset,
+    scrollWidth: scrollWidth,
+    onInnerResize: collectHeight,
+    ref: fillerInnerRef,
+    innerProps: innerProps,
+    rtl: isRTL,
+    extra: extraContent
+  }, listChildren))), inVirtual && scrollHeight > height && /*#__PURE__*/React.createElement(ScrollBar, {
+    ref: verticalScrollBarRef,
+    prefixCls: prefixCls,
+    scrollOffset: offsetTop,
+    scrollRange: scrollHeight,
+    rtl: isRTL,
+    onScroll: onScrollBar,
+    onStartMove: onScrollbarStartMove,
+    onStopMove: onScrollbarStopMove,
+    spinSize: verticalScrollBarSpinSize,
+    containerSize: size.height
+  }), inVirtual && scrollWidth && /*#__PURE__*/React.createElement(ScrollBar, {
+    ref: horizontalScrollBarRef,
+    prefixCls: prefixCls,
+    scrollOffset: offsetLeft,
+    scrollRange: scrollWidth,
+    rtl: isRTL,
+    onScroll: onScrollBar,
+    onStartMove: onScrollbarStartMove,
+    onStopMove: onScrollbarStopMove,
+    spinSize: horizontalScrollBarSpinSize,
+    containerSize: size.width,
+    horizontal: true
+  }));
+}
+var List$1 = /*#__PURE__*/React.forwardRef(RawList);
+List$1.displayName = 'List';
+
+// Use any here since we do not get the type during compilation
+
+var SelectContext = /*#__PURE__*/React.createContext(null);
+
+/* istanbul ignore file */
+function isPlatformMac() {
+  return /(mac\sos|macintosh)/i.test(navigator.appVersion);
+}
+
+var _excluded$i = ["disabled", "title", "children", "style", "className"];
+
+// export interface OptionListProps<OptionsType extends object[]> {
+
+function isTitleType(content) {
+  return typeof content === 'string' || typeof content === 'number';
+}
+
+/**
+ * Using virtual list of option display.
+ * Will fallback to dom if use customize render.
+ */
+var OptionList = function OptionList(_, ref) {
+  var _useBaseProps = useBaseProps(),
+    prefixCls = _useBaseProps.prefixCls,
+    id = _useBaseProps.id,
+    open = _useBaseProps.open,
+    multiple = _useBaseProps.multiple,
+    mode = _useBaseProps.mode,
+    searchValue = _useBaseProps.searchValue,
+    toggleOpen = _useBaseProps.toggleOpen,
+    notFoundContent = _useBaseProps.notFoundContent,
+    onPopupScroll = _useBaseProps.onPopupScroll;
+  var _React$useContext = React.useContext(SelectContext),
+    flattenOptions = _React$useContext.flattenOptions,
+    onActiveValue = _React$useContext.onActiveValue,
+    defaultActiveFirstOption = _React$useContext.defaultActiveFirstOption,
+    onSelect = _React$useContext.onSelect,
+    menuItemSelectedIcon = _React$useContext.menuItemSelectedIcon,
+    rawValues = _React$useContext.rawValues,
+    fieldNames = _React$useContext.fieldNames,
+    virtual = _React$useContext.virtual,
+    direction = _React$useContext.direction,
+    listHeight = _React$useContext.listHeight,
+    listItemHeight = _React$useContext.listItemHeight;
+  var itemPrefixCls = "".concat(prefixCls, "-item");
+  var memoFlattenOptions = useMemo(function () {
+    return flattenOptions;
+  }, [open, flattenOptions], function (prev, next) {
+    return next[0] && prev[1] !== next[1];
+  });
+
+  // =========================== List ===========================
+  var listRef = React.useRef(null);
+  var onListMouseDown = function onListMouseDown(event) {
+    event.preventDefault();
+  };
+  var scrollIntoView = function scrollIntoView(args) {
+    if (listRef.current) {
+      listRef.current.scrollTo(typeof args === 'number' ? {
+        index: args
+      } : args);
+    }
+  };
+
+  // ========================== Active ==========================
+  var getEnabledActiveIndex = function getEnabledActiveIndex(index) {
+    var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+    var len = memoFlattenOptions.length;
+    for (var i = 0; i < len; i += 1) {
+      var current = (index + i * offset + len) % len;
+      var _memoFlattenOptions$c = memoFlattenOptions[current],
+        group = _memoFlattenOptions$c.group,
+        data = _memoFlattenOptions$c.data;
+      if (!group && !data.disabled) {
+        return current;
+      }
+    }
+    return -1;
+  };
+  var _React$useState = React.useState(function () {
+      return getEnabledActiveIndex(0);
+    }),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    activeIndex = _React$useState2[0],
+    setActiveIndex = _React$useState2[1];
+  var setActive = function setActive(index) {
+    var fromKeyboard = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+    setActiveIndex(index);
+    var info = {
+      source: fromKeyboard ? 'keyboard' : 'mouse'
+    };
+
+    // Trigger active event
+    var flattenItem = memoFlattenOptions[index];
+    if (!flattenItem) {
+      onActiveValue(null, -1, info);
+      return;
+    }
+    onActiveValue(flattenItem.value, index, info);
+  };
+
+  // Auto active first item when list length or searchValue changed
+  useEffect(function () {
+    setActive(defaultActiveFirstOption !== false ? getEnabledActiveIndex(0) : -1);
+  }, [memoFlattenOptions.length, searchValue]);
+
+  // https://github.com/ant-design/ant-design/issues/34975
+  var isSelected = React.useCallback(function (value) {
+    return rawValues.has(value) && mode !== 'combobox';
+  }, [mode, _toConsumableArray(rawValues).toString(), rawValues.size]);
+
+  // Auto scroll to item position in single mode
+  useEffect(function () {
+    /**
+     * React will skip `onChange` when component update.
+     * `setActive` function will call root accessibility state update which makes re-render.
+     * So we need to delay to let Input component trigger onChange first.
+     */
+    var timeoutId = setTimeout(function () {
+      if (!multiple && open && rawValues.size === 1) {
+        var value = Array.from(rawValues)[0];
+        var index = memoFlattenOptions.findIndex(function (_ref) {
+          var data = _ref.data;
+          return data.value === value;
+        });
+        if (index !== -1) {
+          setActive(index);
+          scrollIntoView(index);
+        }
+      }
+    });
+
+    // Force trigger scrollbar visible when open
+    if (open) {
+      var _listRef$current;
+      (_listRef$current = listRef.current) === null || _listRef$current === void 0 ? void 0 : _listRef$current.scrollTo(undefined);
+    }
+    return function () {
+      return clearTimeout(timeoutId);
+    };
+  }, [open, searchValue, flattenOptions.length]);
+
+  // ========================== Values ==========================
+  var onSelectValue = function onSelectValue(value) {
+    if (value !== undefined) {
+      onSelect(value, {
+        selected: !rawValues.has(value)
+      });
+    }
+
+    // Single mode should always close by select
+    if (!multiple) {
+      toggleOpen(false);
+    }
+  };
+
+  // ========================= Keyboard =========================
+  React.useImperativeHandle(ref, function () {
+    return {
+      onKeyDown: function onKeyDown(event) {
+        var which = event.which,
+          ctrlKey = event.ctrlKey;
+        switch (which) {
+          // >>> Arrow keys & ctrl + n/p on Mac
+          case KeyCode.N:
+          case KeyCode.P:
+          case KeyCode.UP:
+          case KeyCode.DOWN:
+            {
+              var offset = 0;
+              if (which === KeyCode.UP) {
+                offset = -1;
+              } else if (which === KeyCode.DOWN) {
+                offset = 1;
+              } else if (isPlatformMac() && ctrlKey) {
+                if (which === KeyCode.N) {
+                  offset = 1;
+                } else if (which === KeyCode.P) {
+                  offset = -1;
+                }
+              }
+              if (offset !== 0) {
+                var nextActiveIndex = getEnabledActiveIndex(activeIndex + offset, offset);
+                scrollIntoView(nextActiveIndex);
+                setActive(nextActiveIndex, true);
+              }
+              break;
+            }
+
+          // >>> Select
+          case KeyCode.ENTER:
+            {
+              // value
+              var item = memoFlattenOptions[activeIndex];
+              if (item && !item.data.disabled) {
+                onSelectValue(item.value);
+              } else {
+                onSelectValue(undefined);
+              }
+              if (open) {
+                event.preventDefault();
+              }
+              break;
+            }
+
+          // >>> Close
+          case KeyCode.ESC:
+            {
+              toggleOpen(false);
+              if (open) {
+                event.stopPropagation();
+              }
+            }
+        }
+      },
+      onKeyUp: function onKeyUp() {},
+      scrollTo: function scrollTo(index) {
+        scrollIntoView(index);
+      }
+    };
+  });
+
+  // ========================== Render ==========================
+  if (memoFlattenOptions.length === 0) {
+    return /*#__PURE__*/React.createElement("div", {
+      role: "listbox",
+      id: "".concat(id, "_list"),
+      className: "".concat(itemPrefixCls, "-empty"),
+      onMouseDown: onListMouseDown
+    }, notFoundContent);
+  }
+  var omitFieldNameList = Object.keys(fieldNames).map(function (key) {
+    return fieldNames[key];
+  });
+  var getLabel = function getLabel(item) {
+    return item.label;
+  };
+  function getItemAriaProps(item, index) {
+    var group = item.group;
+    return {
+      role: group ? 'presentation' : 'option',
+      id: "".concat(id, "_list_").concat(index)
+    };
+  }
+  var renderItem = function renderItem(index) {
+    var item = memoFlattenOptions[index];
+    if (!item) return null;
+    var itemData = item.data || {};
+    var value = itemData.value;
+    var group = item.group;
+    var attrs = pickAttrs(itemData, true);
+    var mergedLabel = getLabel(item);
+    return item ? /*#__PURE__*/React.createElement("div", _extends$1({
+      "aria-label": typeof mergedLabel === 'string' && !group ? mergedLabel : null
+    }, attrs, {
+      key: index
+    }, getItemAriaProps(item, index), {
+      "aria-selected": isSelected(value)
+    }), value) : null;
+  };
+  var a11yProps = {
+    role: 'listbox',
+    id: "".concat(id, "_list")
+  };
+  return /*#__PURE__*/React.createElement(React.Fragment, null, virtual && /*#__PURE__*/React.createElement("div", _extends$1({}, a11yProps, {
+    style: {
+      height: 0,
+      width: 0,
+      overflow: 'hidden'
+    }
+  }), renderItem(activeIndex - 1), renderItem(activeIndex), renderItem(activeIndex + 1)), /*#__PURE__*/React.createElement(List$1, {
+    itemKey: "key",
+    ref: listRef,
+    data: memoFlattenOptions,
+    height: listHeight,
+    itemHeight: listItemHeight,
+    fullHeight: false,
+    onMouseDown: onListMouseDown,
+    onScroll: onPopupScroll,
+    virtual: virtual,
+    direction: direction,
+    innerProps: virtual ? null : a11yProps
+  }, function (item, itemIndex) {
+    var _classNames;
+    var group = item.group,
+      groupOption = item.groupOption,
+      data = item.data,
+      label = item.label,
+      value = item.value;
+    var key = data.key;
+
+    // Group
+    if (group) {
+      var _data$title;
+      var groupTitle = (_data$title = data.title) !== null && _data$title !== void 0 ? _data$title : isTitleType(label) ? label.toString() : undefined;
+      return /*#__PURE__*/React.createElement("div", {
+        className: classnames$9(itemPrefixCls, "".concat(itemPrefixCls, "-group")),
+        title: groupTitle
+      }, label !== undefined ? label : key);
+    }
+    var disabled = data.disabled,
+      title = data.title;
+      data.children;
+      var style = data.style,
+      className = data.className,
+      otherProps = _objectWithoutProperties(data, _excluded$i);
+    var passedProps = omit(otherProps, omitFieldNameList);
+
+    // Option
+    var selected = isSelected(value);
+    var optionPrefixCls = "".concat(itemPrefixCls, "-option");
+    var optionClassName = classnames$9(itemPrefixCls, optionPrefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(optionPrefixCls, "-grouped"), groupOption), _defineProperty(_classNames, "".concat(optionPrefixCls, "-active"), activeIndex === itemIndex && !disabled), _defineProperty(_classNames, "".concat(optionPrefixCls, "-disabled"), disabled), _defineProperty(_classNames, "".concat(optionPrefixCls, "-selected"), selected), _classNames));
+    var mergedLabel = getLabel(item);
+    var iconVisible = !menuItemSelectedIcon || typeof menuItemSelectedIcon === 'function' || selected;
+
+    // https://github.com/ant-design/ant-design/issues/34145
+    var content = typeof mergedLabel === 'number' ? mergedLabel : mergedLabel || value;
+    // https://github.com/ant-design/ant-design/issues/26717
+    var optionTitle = isTitleType(content) ? content.toString() : undefined;
+    if (title !== undefined) {
+      optionTitle = title;
+    }
+    return /*#__PURE__*/React.createElement("div", _extends$1({}, pickAttrs(passedProps), !virtual ? getItemAriaProps(item, itemIndex) : {}, {
+      "aria-selected": selected,
+      className: optionClassName,
+      title: optionTitle,
+      onMouseMove: function onMouseMove() {
+        if (activeIndex === itemIndex || disabled) {
+          return;
+        }
+        setActive(itemIndex);
+      },
+      onClick: function onClick() {
+        if (!disabled) {
+          onSelectValue(value);
+        }
+      },
+      style: style
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "".concat(optionPrefixCls, "-content")
+    }, content), /*#__PURE__*/React.isValidElement(menuItemSelectedIcon) || selected, iconVisible && /*#__PURE__*/React.createElement(TransBtn, {
+      className: "".concat(itemPrefixCls, "-option-state"),
+      customizeIcon: menuItemSelectedIcon,
+      customizeIconProps: {
+        isSelected: selected
+      }
+    }, selected ? '✓' : null));
+  }));
+};
+var RefOptionList = /*#__PURE__*/React.forwardRef(OptionList);
+RefOptionList.displayName = 'OptionList';
+
+function warningProps(props) {
+  var mode = props.mode,
+    options = props.options,
+    children = props.children,
+    backfill = props.backfill,
+    allowClear = props.allowClear,
+    placeholder = props.placeholder,
+    getInputElement = props.getInputElement,
+    showSearch = props.showSearch,
+    onSearch = props.onSearch,
+    defaultOpen = props.defaultOpen,
+    autoFocus = props.autoFocus,
+    labelInValue = props.labelInValue,
+    value = props.value,
+    inputValue = props.inputValue,
+    optionLabelProp = props.optionLabelProp;
+  var multiple = isMultiple(mode);
+  var mergedShowSearch = showSearch !== undefined ? showSearch : multiple || mode === 'combobox';
+  var mergedOptions = options || convertChildrenToData(children);
+
+  // `tags` should not set option as disabled
+  warningOnce(mode !== 'tags' || mergedOptions.every(function (opt) {
+    return !opt.disabled;
+  }), 'Please avoid setting option to disabled in tags mode since user can always type text as tag.');
+
+  // `combobox` & `tags` should option be `string` type
+  if (mode === 'tags' || mode === 'combobox') {
+    var hasNumberValue = mergedOptions.some(function (item) {
+      if (item.options) {
+        return item.options.some(function (opt) {
+          return typeof ('value' in opt ? opt.value : opt.key) === 'number';
+        });
+      }
+      return typeof ('value' in item ? item.value : item.key) === 'number';
+    });
+    warningOnce(!hasNumberValue, '`value` of Option should not use number type when `mode` is `tags` or `combobox`.');
+  }
+
+  // `combobox` should not use `optionLabelProp`
+  warningOnce(mode !== 'combobox' || !optionLabelProp, '`combobox` mode not support `optionLabelProp`. Please set `value` on Option directly.');
+
+  // Only `combobox` support `backfill`
+  warningOnce(mode === 'combobox' || !backfill, '`backfill` only works with `combobox` mode.');
+
+  // Only `combobox` support `getInputElement`
+  warningOnce(mode === 'combobox' || !getInputElement, '`getInputElement` only work with `combobox` mode.');
+
+  // Customize `getInputElement` should not use `allowClear` & `placeholder`
+  noteOnce(mode !== 'combobox' || !getInputElement || !allowClear || !placeholder, 'Customize `getInputElement` should customize clear and placeholder logic instead of configuring `allowClear` and `placeholder`.');
+
+  // `onSearch` should use in `combobox` or `showSearch`
+  if (onSearch && !mergedShowSearch && mode !== 'combobox' && mode !== 'tags') {
+    warningOnce(false, '`onSearch` should work with `showSearch` instead of use alone.');
+  }
+  noteOnce(!defaultOpen || autoFocus, '`defaultOpen` makes Select open without focus which means it will not close by click outside. You can set `autoFocus` if needed.');
+  if (value !== undefined && value !== null) {
+    var values = toArray$2(value);
+    warningOnce(!labelInValue || values.every(function (val) {
+      return _typeof(val) === 'object' && ('key' in val || 'value' in val);
+    }), '`value` should in shape of `{ value: string | number, label?: ReactNode }` when you set `labelInValue` to `true`');
+    warningOnce(!multiple || Array.isArray(value), '`value` should be array when `mode` is `multiple` or `tags`');
+  }
+
+  // Syntactic sugar should use correct children type
+  if (children) {
+    var invalidateChildType = null;
+    toArray$4(children).some(function (node) {
+      if (! /*#__PURE__*/React.isValidElement(node) || !node.type) {
+        return false;
+      }
+      var _ref = node,
+        type = _ref.type;
+      if (type.isSelectOption) {
+        return false;
+      }
+      if (type.isSelectOptGroup) {
+        var allChildrenValid = toArray$4(node.props.children).every(function (subNode) {
+          if (! /*#__PURE__*/React.isValidElement(subNode) || !node.type || subNode.type.isSelectOption) {
+            return true;
+          }
+          invalidateChildType = subNode.type;
+          return false;
+        });
+        if (allChildrenValid) {
+          return false;
+        }
+        return true;
+      }
+      invalidateChildType = type;
+      return true;
+    });
+    if (invalidateChildType) {
+      warningOnce(false, "`children` should be `Select.Option` or `Select.OptGroup` instead of `".concat(invalidateChildType.displayName || invalidateChildType.name || invalidateChildType, "`."));
+    }
+    warningOnce(inputValue === undefined, '`inputValue` is deprecated, please use `searchValue` instead.');
+  }
+}
+
+// value in Select option should not be null
+// note: OptGroup has options too
+function warningNullOptions(options, fieldNames) {
+  if (options) {
+    var recursiveOptions = function recursiveOptions(optionsList) {
+      var inGroup = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      for (var i = 0; i < optionsList.length; i++) {
+        var option = optionsList[i];
+        if (option[fieldNames === null || fieldNames === void 0 ? void 0 : fieldNames.value] === null) {
+          warningOnce(false, '`value` in Select options should not be `null`.');
+          return true;
+        }
+        if (!inGroup && Array.isArray(option[fieldNames === null || fieldNames === void 0 ? void 0 : fieldNames.options]) && recursiveOptions(option[fieldNames === null || fieldNames === void 0 ? void 0 : fieldNames.options], true)) {
+          break;
+        }
+      }
+    };
+    recursiveOptions(options);
+  }
+}
+
+var _excluded$h = ["id", "mode", "prefixCls", "backfill", "fieldNames", "inputValue", "searchValue", "onSearch", "autoClearSearchValue", "onSelect", "onDeselect", "dropdownMatchSelectWidth", "filterOption", "filterSort", "optionFilterProp", "optionLabelProp", "options", "children", "defaultActiveFirstOption", "menuItemSelectedIcon", "virtual", "direction", "listHeight", "listItemHeight", "value", "defaultValue", "labelInValue", "onChange"];
+var OMIT_DOM_PROPS = ['inputValue'];
+function isRawValue(value) {
+  return !value || _typeof(value) !== 'object';
+}
+var Select$2 = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var id = props.id,
+    mode = props.mode,
+    _props$prefixCls = props.prefixCls,
+    prefixCls = _props$prefixCls === void 0 ? 'rc-select' : _props$prefixCls,
+    backfill = props.backfill,
+    fieldNames = props.fieldNames,
+    inputValue = props.inputValue,
+    searchValue = props.searchValue,
+    onSearch = props.onSearch,
+    _props$autoClearSearc = props.autoClearSearchValue,
+    autoClearSearchValue = _props$autoClearSearc === void 0 ? true : _props$autoClearSearc,
+    onSelect = props.onSelect,
+    onDeselect = props.onDeselect,
+    _props$dropdownMatchS = props.dropdownMatchSelectWidth,
+    dropdownMatchSelectWidth = _props$dropdownMatchS === void 0 ? true : _props$dropdownMatchS,
+    filterOption = props.filterOption,
+    filterSort = props.filterSort,
+    optionFilterProp = props.optionFilterProp,
+    optionLabelProp = props.optionLabelProp,
+    options = props.options,
+    children = props.children,
+    defaultActiveFirstOption = props.defaultActiveFirstOption,
+    menuItemSelectedIcon = props.menuItemSelectedIcon,
+    virtual = props.virtual,
+    direction = props.direction,
+    _props$listHeight = props.listHeight,
+    listHeight = _props$listHeight === void 0 ? 200 : _props$listHeight,
+    _props$listItemHeight = props.listItemHeight,
+    listItemHeight = _props$listItemHeight === void 0 ? 20 : _props$listItemHeight,
+    value = props.value,
+    defaultValue = props.defaultValue,
+    labelInValue = props.labelInValue,
+    onChange = props.onChange,
+    restProps = _objectWithoutProperties(props, _excluded$h);
+  var mergedId = useId(id);
+  var multiple = isMultiple(mode);
+  var childrenAsData = !!(!options && children);
+  var mergedFilterOption = React.useMemo(function () {
+    if (filterOption === undefined && mode === 'combobox') {
+      return false;
+    }
+    return filterOption;
+  }, [filterOption, mode]);
+
+  // ========================= FieldNames =========================
+  var mergedFieldNames = React.useMemo(function () {
+    return fillFieldNames(fieldNames, childrenAsData);
+  }, /* eslint-disable react-hooks/exhaustive-deps */
+  [
+  // We stringify fieldNames to avoid unnecessary re-renders.
+  JSON.stringify(fieldNames), childrenAsData]
+  /* eslint-enable react-hooks/exhaustive-deps */);
+
+  // =========================== Search ===========================
+  var _useMergedState = useMergedState('', {
+      value: searchValue !== undefined ? searchValue : inputValue,
+      postState: function postState(search) {
+        return search || '';
+      }
+    }),
+    _useMergedState2 = _slicedToArray(_useMergedState, 2),
+    mergedSearchValue = _useMergedState2[0],
+    setSearchValue = _useMergedState2[1];
+
+  // =========================== Option ===========================
+  var parsedOptions = useOptions(options, children, mergedFieldNames, optionFilterProp, optionLabelProp);
+  var valueOptions = parsedOptions.valueOptions,
+    labelOptions = parsedOptions.labelOptions,
+    mergedOptions = parsedOptions.options;
+
+  // ========================= Wrap Value =========================
+  var convert2LabelValues = React.useCallback(function (draftValues) {
+    // Convert to array
+    var valueList = toArray$2(draftValues);
+
+    // Convert to labelInValue type
+    return valueList.map(function (val) {
+      var rawValue;
+      var rawLabel;
+      var rawKey;
+      var rawDisabled;
+      var rawTitle;
+
+      // Fill label & value
+      if (isRawValue(val)) {
+        rawValue = val;
+      } else {
+        var _val$value;
+        rawKey = val.key;
+        rawLabel = val.label;
+        rawValue = (_val$value = val.value) !== null && _val$value !== void 0 ? _val$value : rawKey;
+      }
+      var option = valueOptions.get(rawValue);
+      if (option) {
+        var _option$key;
+        // Fill missing props
+        if (rawLabel === undefined) rawLabel = option === null || option === void 0 ? void 0 : option[optionLabelProp || mergedFieldNames.label];
+        if (rawKey === undefined) rawKey = (_option$key = option === null || option === void 0 ? void 0 : option.key) !== null && _option$key !== void 0 ? _option$key : rawValue;
+        rawDisabled = option === null || option === void 0 ? void 0 : option.disabled;
+        rawTitle = option === null || option === void 0 ? void 0 : option.title;
+
+        // Warning if label not same as provided
+        if (process.env.NODE_ENV !== 'production' && !optionLabelProp) {
+          var optionLabel = option === null || option === void 0 ? void 0 : option[mergedFieldNames.label];
+          if (optionLabel !== undefined && ! /*#__PURE__*/React.isValidElement(optionLabel) && ! /*#__PURE__*/React.isValidElement(rawLabel) && optionLabel !== rawLabel) {
+            warningOnce(false, '`label` of `value` is not same as `label` in Select options.');
+          }
+        }
+      }
+      return {
+        label: rawLabel,
+        value: rawValue,
+        key: rawKey,
+        disabled: rawDisabled,
+        title: rawTitle
+      };
+    });
+  }, [mergedFieldNames, optionLabelProp, valueOptions]);
+
+  // =========================== Values ===========================
+  var _useMergedState3 = useMergedState(defaultValue, {
+      value: value
+    }),
+    _useMergedState4 = _slicedToArray(_useMergedState3, 2),
+    internalValue = _useMergedState4[0],
+    setInternalValue = _useMergedState4[1];
+
+  // Merged value with LabelValueType
+  var rawLabeledValues = React.useMemo(function () {
+    var _values$;
+    var values = convert2LabelValues(internalValue);
+
+    // combobox no need save value when it's no value (exclude value equal 0)
+    if (mode === 'combobox' && isComboNoValue((_values$ = values[0]) === null || _values$ === void 0 ? void 0 : _values$.value)) {
+      return [];
+    }
+    return values;
+  }, [internalValue, convert2LabelValues, mode]);
+
+  // Fill label with cache to avoid option remove
+  var _useCache = useCache(rawLabeledValues, valueOptions),
+    _useCache2 = _slicedToArray(_useCache, 2),
+    mergedValues = _useCache2[0],
+    getMixedOption = _useCache2[1];
+  var displayValues = React.useMemo(function () {
+    // `null` need show as placeholder instead
+    // https://github.com/ant-design/ant-design/issues/25057
+    if (!mode && mergedValues.length === 1) {
+      var firstValue = mergedValues[0];
+      if (firstValue.value === null && (firstValue.label === null || firstValue.label === undefined)) {
+        return [];
+      }
+    }
+    return mergedValues.map(function (item) {
+      var _item$label;
+      return _objectSpread2(_objectSpread2({}, item), {}, {
+        label: (_item$label = item.label) !== null && _item$label !== void 0 ? _item$label : item.value
+      });
+    });
+  }, [mode, mergedValues]);
+
+  /** Convert `displayValues` to raw value type set */
+  var rawValues = React.useMemo(function () {
+    return new Set(mergedValues.map(function (val) {
+      return val.value;
+    }));
+  }, [mergedValues]);
+  React.useEffect(function () {
+    if (mode === 'combobox') {
+      var _mergedValues$;
+      var strValue = (_mergedValues$ = mergedValues[0]) === null || _mergedValues$ === void 0 ? void 0 : _mergedValues$.value;
+      setSearchValue(hasValue(strValue) ? String(strValue) : '');
+    }
+  }, [mergedValues]);
+
+  // ======================= Display Option =======================
+  // Create a placeholder item if not exist in `options`
+  var createTagOption = useRefFunc(function (val, label) {
+    var _ref;
+    var mergedLabel = label !== null && label !== void 0 ? label : val;
+    return _ref = {}, _defineProperty(_ref, mergedFieldNames.value, val), _defineProperty(_ref, mergedFieldNames.label, mergedLabel), _ref;
+  });
+
+  // Fill tag as option if mode is `tags`
+  var filledTagOptions = React.useMemo(function () {
+    if (mode !== 'tags') {
+      return mergedOptions;
+    }
+
+    // >>> Tag mode
+    var cloneOptions = _toConsumableArray(mergedOptions);
+
+    // Check if value exist in options (include new patch item)
+    var existOptions = function existOptions(val) {
+      return valueOptions.has(val);
+    };
+
+    // Fill current value as option
+    _toConsumableArray(mergedValues).sort(function (a, b) {
+      return a.value < b.value ? -1 : 1;
+    }).forEach(function (item) {
+      var val = item.value;
+      if (!existOptions(val)) {
+        cloneOptions.push(createTagOption(val, item.label));
+      }
+    });
+    return cloneOptions;
+  }, [createTagOption, mergedOptions, valueOptions, mergedValues, mode]);
+  var filteredOptions = useFilterOptions(filledTagOptions, mergedFieldNames, mergedSearchValue, mergedFilterOption, optionFilterProp);
+
+  // Fill options with search value if needed
+  var filledSearchOptions = React.useMemo(function () {
+    if (mode !== 'tags' || !mergedSearchValue || filteredOptions.some(function (item) {
+      return item[optionFilterProp || 'value'] === mergedSearchValue;
+    })) {
+      return filteredOptions;
+    }
+    // ignore when search value equal select input value
+    if (filteredOptions.some(function (item) {
+      return item[mergedFieldNames.value] === mergedSearchValue;
+    })) {
+      return filteredOptions;
+    }
+    // Fill search value as option
+    return [createTagOption(mergedSearchValue)].concat(_toConsumableArray(filteredOptions));
+  }, [createTagOption, optionFilterProp, mode, filteredOptions, mergedSearchValue, mergedFieldNames]);
+  var orderedFilteredOptions = React.useMemo(function () {
+    if (!filterSort) {
+      return filledSearchOptions;
+    }
+    return _toConsumableArray(filledSearchOptions).sort(function (a, b) {
+      return filterSort(a, b);
+    });
+  }, [filledSearchOptions, filterSort]);
+  var displayOptions = React.useMemo(function () {
+    return flattenOptions(orderedFilteredOptions, {
+      fieldNames: mergedFieldNames,
+      childrenAsData: childrenAsData
+    });
+  }, [orderedFilteredOptions, mergedFieldNames, childrenAsData]);
+
+  // =========================== Change ===========================
+  var triggerChange = function triggerChange(values) {
+    var labeledValues = convert2LabelValues(values);
+    setInternalValue(labeledValues);
+    if (onChange && (
+    // Trigger event only when value changed
+    labeledValues.length !== mergedValues.length || labeledValues.some(function (newVal, index) {
+      var _mergedValues$index;
+      return ((_mergedValues$index = mergedValues[index]) === null || _mergedValues$index === void 0 ? void 0 : _mergedValues$index.value) !== (newVal === null || newVal === void 0 ? void 0 : newVal.value);
+    }))) {
+      var returnValues = labelInValue ? labeledValues : labeledValues.map(function (v) {
+        return v.value;
+      });
+      var returnOptions = labeledValues.map(function (v) {
+        return injectPropsWithOption(getMixedOption(v.value));
+      });
+      onChange(
+      // Value
+      multiple ? returnValues : returnValues[0],
+      // Option
+      multiple ? returnOptions : returnOptions[0]);
+    }
+  };
+
+  // ======================= Accessibility ========================
+  var _React$useState = React.useState(null),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    activeValue = _React$useState2[0],
+    setActiveValue = _React$useState2[1];
+  var _React$useState3 = React.useState(0),
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    accessibilityIndex = _React$useState4[0],
+    setAccessibilityIndex = _React$useState4[1];
+  var mergedDefaultActiveFirstOption = defaultActiveFirstOption !== undefined ? defaultActiveFirstOption : mode !== 'combobox';
+  var onActiveValue = React.useCallback(function (active, index) {
+    var _ref2 = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {},
+      _ref2$source = _ref2.source,
+      source = _ref2$source === void 0 ? 'keyboard' : _ref2$source;
+    setAccessibilityIndex(index);
+    if (backfill && mode === 'combobox' && active !== null && source === 'keyboard') {
+      setActiveValue(String(active));
+    }
+  }, [backfill, mode]);
+
+  // ========================= OptionList =========================
+  var triggerSelect = function triggerSelect(val, selected, type) {
+    var getSelectEnt = function getSelectEnt() {
+      var _option$key2;
+      var option = getMixedOption(val);
+      return [labelInValue ? {
+        label: option === null || option === void 0 ? void 0 : option[mergedFieldNames.label],
+        value: val,
+        key: (_option$key2 = option === null || option === void 0 ? void 0 : option.key) !== null && _option$key2 !== void 0 ? _option$key2 : val
+      } : val, injectPropsWithOption(option)];
+    };
+    if (selected && onSelect) {
+      var _getSelectEnt = getSelectEnt(),
+        _getSelectEnt2 = _slicedToArray(_getSelectEnt, 2),
+        wrappedValue = _getSelectEnt2[0],
+        _option = _getSelectEnt2[1];
+      onSelect(wrappedValue, _option);
+    } else if (!selected && onDeselect && type !== 'clear') {
+      var _getSelectEnt3 = getSelectEnt(),
+        _getSelectEnt4 = _slicedToArray(_getSelectEnt3, 2),
+        _wrappedValue = _getSelectEnt4[0],
+        _option2 = _getSelectEnt4[1];
+      onDeselect(_wrappedValue, _option2);
+    }
+  };
+
+  // Used for OptionList selection
+  var onInternalSelect = useRefFunc(function (val, info) {
+    var cloneValues;
+
+    // Single mode always trigger select only with option list
+    var mergedSelect = multiple ? info.selected : true;
+    if (mergedSelect) {
+      cloneValues = multiple ? [].concat(_toConsumableArray(mergedValues), [val]) : [val];
+    } else {
+      cloneValues = mergedValues.filter(function (v) {
+        return v.value !== val;
+      });
+    }
+    triggerChange(cloneValues);
+    triggerSelect(val, mergedSelect);
+
+    // Clean search value if single or configured
+    if (mode === 'combobox') {
+      // setSearchValue(String(val));
+      setActiveValue('');
+    } else if (!isMultiple || autoClearSearchValue) {
+      setSearchValue('');
+      setActiveValue('');
+    }
+  });
+
+  // ======================= Display Change =======================
+  // BaseSelect display values change
+  var onDisplayValuesChange = function onDisplayValuesChange(nextValues, info) {
+    triggerChange(nextValues);
+    var type = info.type,
+      values = info.values;
+    if (type === 'remove' || type === 'clear') {
+      values.forEach(function (item) {
+        triggerSelect(item.value, false, type);
+      });
+    }
+  };
+
+  // =========================== Search ===========================
+  var onInternalSearch = function onInternalSearch(searchText, info) {
+    setSearchValue(searchText);
+    setActiveValue(null);
+
+    // [Submit] Tag mode should flush input
+    if (info.source === 'submit') {
+      var formatted = (searchText || '').trim();
+      // prevent empty tags from appearing when you click the Enter button
+      if (formatted) {
+        var newRawValues = Array.from(new Set([].concat(_toConsumableArray(rawValues), [formatted])));
+        triggerChange(newRawValues);
+        triggerSelect(formatted, true);
+        setSearchValue('');
+      }
+      return;
+    }
+    if (info.source !== 'blur') {
+      if (mode === 'combobox') {
+        triggerChange(searchText);
+      }
+      onSearch === null || onSearch === void 0 ? void 0 : onSearch(searchText);
+    }
+  };
+  var onInternalSearchSplit = function onInternalSearchSplit(words) {
+    var patchValues = words;
+    if (mode !== 'tags') {
+      patchValues = words.map(function (word) {
+        var opt = labelOptions.get(word);
+        return opt === null || opt === void 0 ? void 0 : opt.value;
+      }).filter(function (val) {
+        return val !== undefined;
+      });
+    }
+    var newRawValues = Array.from(new Set([].concat(_toConsumableArray(rawValues), _toConsumableArray(patchValues))));
+    triggerChange(newRawValues);
+    newRawValues.forEach(function (newRawValue) {
+      triggerSelect(newRawValue, true);
+    });
+  };
+
+  // ========================== Context ===========================
+  var selectContext = React.useMemo(function () {
+    var realVirtual = virtual !== false && dropdownMatchSelectWidth !== false;
+    return _objectSpread2(_objectSpread2({}, parsedOptions), {}, {
+      flattenOptions: displayOptions,
+      onActiveValue: onActiveValue,
+      defaultActiveFirstOption: mergedDefaultActiveFirstOption,
+      onSelect: onInternalSelect,
+      menuItemSelectedIcon: menuItemSelectedIcon,
+      rawValues: rawValues,
+      fieldNames: mergedFieldNames,
+      virtual: realVirtual,
+      direction: direction,
+      listHeight: listHeight,
+      listItemHeight: listItemHeight,
+      childrenAsData: childrenAsData
+    });
+  }, [parsedOptions, displayOptions, onActiveValue, mergedDefaultActiveFirstOption, onInternalSelect, menuItemSelectedIcon, rawValues, mergedFieldNames, virtual, dropdownMatchSelectWidth, listHeight, listItemHeight, childrenAsData]);
+
+  // ========================== Warning ===========================
+  if (process.env.NODE_ENV !== 'production') {
+    warningProps(props);
+    warningNullOptions(mergedOptions, mergedFieldNames);
+  }
+
+  // ==============================================================
+  // ==                          Render                          ==
+  // ==============================================================
+  return /*#__PURE__*/React.createElement(SelectContext.Provider, {
+    value: selectContext
+  }, /*#__PURE__*/React.createElement(BaseSelect, _extends$1({}, restProps, {
+    // >>> MISC
+    id: mergedId,
+    prefixCls: prefixCls,
+    ref: ref,
+    omitDomProps: OMIT_DOM_PROPS,
+    mode: mode
+    // >>> Values
+    ,
+    displayValues: displayValues,
+    onDisplayValuesChange: onDisplayValuesChange
+    // >>> Trigger
+    ,
+    direction: direction
+    // >>> Search
+    ,
+    searchValue: mergedSearchValue,
+    onSearch: onInternalSearch,
+    autoClearSearchValue: autoClearSearchValue,
+    onSearchSplit: onInternalSearchSplit,
+    dropdownMatchSelectWidth: dropdownMatchSelectWidth
+    // >>> OptionList
+    ,
+    OptionList: RefOptionList,
+    emptyOptions: !displayOptions.length
+    // >>> Accessibility
+    ,
+    activeValue: activeValue,
+    activeDescendantId: "".concat(mergedId, "_list_").concat(accessibilityIndex)
+  })));
+});
+if (process.env.NODE_ENV !== 'production') {
+  Select$2.displayName = 'Select';
+}
+var TypedSelect = Select$2;
+TypedSelect.Option = Option$1;
+TypedSelect.OptGroup = OptGroup;
+
 function getStatusClassNames(prefixCls, status, hasFeedback) {
-  return classnames({
+  return classnames$c({
     [`${prefixCls}-status-success`]: status === 'success',
     [`${prefixCls}-status-warning`]: status === 'warning',
     [`${prefixCls}-status-error`]: status === 'error',
@@ -18517,6 +22746,1062 @@ function getStatusClassNames(prefixCls, status, hasFeedback) {
   });
 }
 const getMergedStatus = (contextStatus, customStatus) => customStatus || contextStatus;
+
+const Empty$2 = () => {
+  const [, token] = useToken$2();
+  const bgColor = new TinyColor(token.colorBgBase);
+  // Dark Theme need more dark of this
+  const themeStyle = bgColor.toHsl().l < 0.5 ? {
+    opacity: 0.65
+  } : {};
+  return /*#__PURE__*/React.createElement("svg", {
+    style: themeStyle,
+    width: "184",
+    height: "152",
+    viewBox: "0 0 184 152",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/React.createElement("g", {
+    fill: "none",
+    fillRule: "evenodd"
+  }, /*#__PURE__*/React.createElement("g", {
+    transform: "translate(24 31.67)"
+  }, /*#__PURE__*/React.createElement("ellipse", {
+    fillOpacity: ".8",
+    fill: "#F5F5F7",
+    cx: "67.797",
+    cy: "106.89",
+    rx: "67.797",
+    ry: "12.668"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M122.034 69.674L98.109 40.229c-1.148-1.386-2.826-2.225-4.593-2.225h-51.44c-1.766 0-3.444.839-4.592 2.225L13.56 69.674v15.383h108.475V69.674z",
+    fill: "#AEB8C2"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M101.537 86.214L80.63 61.102c-1.001-1.207-2.507-1.867-4.048-1.867H31.724c-1.54 0-3.047.66-4.048 1.867L6.769 86.214v13.792h94.768V86.214z",
+    fill: "url(#linearGradient-1)",
+    transform: "translate(13.56)"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M33.83 0h67.933a4 4 0 0 1 4 4v93.344a4 4 0 0 1-4 4H33.83a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4z",
+    fill: "#F5F5F7"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M42.678 9.953h50.237a2 2 0 0 1 2 2V36.91a2 2 0 0 1-2 2H42.678a2 2 0 0 1-2-2V11.953a2 2 0 0 1 2-2zM42.94 49.767h49.713a2.262 2.262 0 1 1 0 4.524H42.94a2.262 2.262 0 0 1 0-4.524zM42.94 61.53h49.713a2.262 2.262 0 1 1 0 4.525H42.94a2.262 2.262 0 0 1 0-4.525zM121.813 105.032c-.775 3.071-3.497 5.36-6.735 5.36H20.515c-3.238 0-5.96-2.29-6.734-5.36a7.309 7.309 0 0 1-.222-1.79V69.675h26.318c2.907 0 5.25 2.448 5.25 5.42v.04c0 2.971 2.37 5.37 5.277 5.37h34.785c2.907 0 5.277-2.421 5.277-5.393V75.1c0-2.972 2.343-5.426 5.25-5.426h26.318v33.569c0 .617-.077 1.216-.221 1.789z",
+    fill: "#DCE0E6"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M149.121 33.292l-6.83 2.65a1 1 0 0 1-1.317-1.23l1.937-6.207c-2.589-2.944-4.109-6.534-4.109-10.408C138.802 8.102 148.92 0 161.402 0 173.881 0 184 8.102 184 18.097c0 9.995-10.118 18.097-22.599 18.097-4.528 0-8.744-1.066-12.28-2.902z",
+    fill: "#DCE0E6"
+  }), /*#__PURE__*/React.createElement("g", {
+    transform: "translate(149.65 15.383)",
+    fill: "#FFF"
+  }, /*#__PURE__*/React.createElement("ellipse", {
+    cx: "20.654",
+    cy: "3.167",
+    rx: "2.849",
+    ry: "2.815"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M5.698 5.63H0L2.898.704zM9.259.704h4.985V5.63H9.259z"
+  }))));
+};
+if (process.env.NODE_ENV !== 'production') {
+  Empty$2.displayName = 'EmptyImage';
+}
+var DefaultEmptyImg = Empty$2;
+
+const Simple = () => {
+  const [, token] = useToken$2();
+  const {
+    colorFill,
+    colorFillTertiary,
+    colorFillQuaternary,
+    colorBgContainer
+  } = token;
+  const {
+    borderColor,
+    shadowColor,
+    contentColor
+  } = useMemo$1(() => ({
+    borderColor: new TinyColor(colorFill).onBackground(colorBgContainer).toHexShortString(),
+    shadowColor: new TinyColor(colorFillTertiary).onBackground(colorBgContainer).toHexShortString(),
+    contentColor: new TinyColor(colorFillQuaternary).onBackground(colorBgContainer).toHexShortString()
+  }), [colorFill, colorFillTertiary, colorFillQuaternary, colorBgContainer]);
+  return /*#__PURE__*/React.createElement("svg", {
+    width: "64",
+    height: "41",
+    viewBox: "0 0 64 41",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/React.createElement("g", {
+    transform: "translate(0 1)",
+    fill: "none",
+    fillRule: "evenodd"
+  }, /*#__PURE__*/React.createElement("ellipse", {
+    fill: shadowColor,
+    cx: "32",
+    cy: "33",
+    rx: "32",
+    ry: "7"
+  }), /*#__PURE__*/React.createElement("g", {
+    fillRule: "nonzero",
+    stroke: borderColor
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z",
+    fill: contentColor
+  }))));
+};
+if (process.env.NODE_ENV !== 'production') {
+  Simple.displayName = 'SimpleImage';
+}
+var SimpleEmptyImg = Simple;
+
+// ============================== Shared ==============================
+const genSharedEmptyStyle = token => {
+  const {
+    componentCls,
+    margin,
+    marginXS,
+    marginXL,
+    fontSize,
+    lineHeight
+  } = token;
+  return {
+    [componentCls]: {
+      marginInline: marginXS,
+      fontSize,
+      lineHeight,
+      textAlign: 'center',
+      // 原来 &-image 没有父子结构，现在为了外层承担我们的hashId，改成父子结果
+      [`${componentCls}-image`]: {
+        height: token.emptyImgHeight,
+        marginBottom: marginXS,
+        opacity: token.opacityImage,
+        img: {
+          height: '100%'
+        },
+        svg: {
+          maxWidth: '100%',
+          height: '100%',
+          margin: 'auto'
+        }
+      },
+      [`${componentCls}-description`]: {
+        color: token.colorText
+      },
+      // 原来 &-footer 没有父子结构，现在为了外层承担我们的hashId，改成父子结果
+      [`${componentCls}-footer`]: {
+        marginTop: margin
+      },
+      '&-normal': {
+        marginBlock: marginXL,
+        color: token.colorTextDisabled,
+        [`${componentCls}-description`]: {
+          color: token.colorTextDisabled
+        },
+        [`${componentCls}-image`]: {
+          height: token.emptyImgHeightMD
+        }
+      },
+      '&-small': {
+        marginBlock: marginXS,
+        color: token.colorTextDisabled,
+        [`${componentCls}-image`]: {
+          height: token.emptyImgHeightSM
+        }
+      }
+    }
+  };
+};
+// ============================== Export ==============================
+var useStyle$c = genComponentStyleHook('Empty', token => {
+  const {
+    componentCls,
+    controlHeightLG
+  } = token;
+  const emptyToken = merge(token, {
+    emptyImgCls: `${componentCls}-img`,
+    emptyImgHeight: controlHeightLG * 2.5,
+    emptyImgHeightMD: controlHeightLG,
+    emptyImgHeightSM: controlHeightLG * 0.875
+  });
+  return [genSharedEmptyStyle(emptyToken)];
+});
+
+var __rest$A = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+const defaultEmptyImg = /*#__PURE__*/React.createElement(DefaultEmptyImg, null);
+const simpleEmptyImg = /*#__PURE__*/React.createElement(SimpleEmptyImg, null);
+const Empty = _a => {
+  var {
+      className,
+      rootClassName,
+      prefixCls: customizePrefixCls,
+      image = defaultEmptyImg,
+      description,
+      children,
+      imageStyle,
+      style
+    } = _a,
+    restProps = __rest$A(_a, ["className", "rootClassName", "prefixCls", "image", "description", "children", "imageStyle", "style"]);
+  const {
+    getPrefixCls,
+    direction,
+    empty
+  } = React.useContext(ConfigContext);
+  const prefixCls = getPrefixCls('empty', customizePrefixCls);
+  const [wrapSSR, hashId] = useStyle$c(prefixCls);
+  const [locale] = useLocale$1('Empty');
+  const des = typeof description !== 'undefined' ? description : locale === null || locale === void 0 ? void 0 : locale.description;
+  const alt = typeof des === 'string' ? des : 'empty';
+  let imageNode = null;
+  if (typeof image === 'string') {
+    imageNode = /*#__PURE__*/React.createElement("img", {
+      alt: alt,
+      src: image
+    });
+  } else {
+    imageNode = image;
+  }
+  return wrapSSR( /*#__PURE__*/React.createElement("div", Object.assign({
+    className: classnames$c(hashId, prefixCls, empty === null || empty === void 0 ? void 0 : empty.className, {
+      [`${prefixCls}-normal`]: image === simpleEmptyImg,
+      [`${prefixCls}-rtl`]: direction === 'rtl'
+    }, className, rootClassName),
+    style: Object.assign(Object.assign({}, empty === null || empty === void 0 ? void 0 : empty.style), style)
+  }, restProps), /*#__PURE__*/React.createElement("div", {
+    className: `${prefixCls}-image`,
+    style: imageStyle
+  }, imageNode), des && /*#__PURE__*/React.createElement("div", {
+    className: `${prefixCls}-description`
+  }, des), children && /*#__PURE__*/React.createElement("div", {
+    className: `${prefixCls}-footer`
+  }, children)));
+};
+Empty.PRESENTED_IMAGE_DEFAULT = defaultEmptyImg;
+Empty.PRESENTED_IMAGE_SIMPLE = simpleEmptyImg;
+if (process.env.NODE_ENV !== 'production') {
+  Empty.displayName = 'Empty';
+}
+var Empty$1 = Empty;
+
+const DefaultRenderEmpty = props => {
+  const {
+    componentName
+  } = props;
+  const {
+    getPrefixCls
+  } = useContext(ConfigContext);
+  const prefix = getPrefixCls('empty');
+  switch (componentName) {
+    case 'Table':
+    case 'List':
+      return /*#__PURE__*/React__default.createElement(Empty$1, {
+        image: Empty$1.PRESENTED_IMAGE_SIMPLE
+      });
+    case 'Select':
+    case 'TreeSelect':
+    case 'Cascader':
+    case 'Transfer':
+    case 'Mentions':
+      return /*#__PURE__*/React__default.createElement(Empty$1, {
+        image: Empty$1.PRESENTED_IMAGE_SIMPLE,
+        className: `${prefix}-small`
+      });
+    /* istanbul ignore next */
+    default:
+      // Should never hit if we take all the component into consider.
+      return /*#__PURE__*/React__default.createElement(Empty$1, null);
+  }
+};
+var DefaultRenderEmpty$1 = DefaultRenderEmpty;
+
+const genItemStyle = token => {
+  const {
+    controlPaddingHorizontal,
+    controlHeight,
+    fontSize,
+    lineHeight
+  } = token;
+  return {
+    position: 'relative',
+    display: 'block',
+    minHeight: controlHeight,
+    padding: `${(controlHeight - fontSize * lineHeight) / 2}px ${controlPaddingHorizontal}px`,
+    color: token.colorText,
+    fontWeight: 'normal',
+    fontSize,
+    lineHeight,
+    boxSizing: 'border-box'
+  };
+};
+const genSingleStyle$1 = token => {
+  const {
+    antCls,
+    componentCls
+  } = token;
+  const selectItemCls = `${componentCls}-item`;
+  const slideUpEnterActive = `&${antCls}-slide-up-enter${antCls}-slide-up-enter-active`;
+  const slideUpAppearActive = `&${antCls}-slide-up-appear${antCls}-slide-up-appear-active`;
+  const slideUpLeaveActive = `&${antCls}-slide-up-leave${antCls}-slide-up-leave-active`;
+  const dropdownPlacementCls = `${componentCls}-dropdown-placement-`;
+  return [{
+    [`${componentCls}-dropdown`]: Object.assign(Object.assign({}, resetComponent(token)), {
+      position: 'absolute',
+      top: -9999,
+      zIndex: token.zIndexPopup,
+      boxSizing: 'border-box',
+      padding: token.paddingXXS,
+      overflow: 'hidden',
+      fontSize: token.fontSize,
+      // Fix select render lag of long text in chrome
+      // https://github.com/ant-design/ant-design/issues/11456
+      // https://github.com/ant-design/ant-design/issues/11843
+      fontVariant: 'initial',
+      backgroundColor: token.colorBgElevated,
+      borderRadius: token.borderRadiusLG,
+      outline: 'none',
+      boxShadow: token.boxShadowSecondary,
+      [`
+          ${slideUpEnterActive}${dropdownPlacementCls}bottomLeft,
+          ${slideUpAppearActive}${dropdownPlacementCls}bottomLeft
+        `]: {
+        animationName: slideUpIn
+      },
+      [`
+          ${slideUpEnterActive}${dropdownPlacementCls}topLeft,
+          ${slideUpAppearActive}${dropdownPlacementCls}topLeft,
+          ${slideUpEnterActive}${dropdownPlacementCls}topRight,
+          ${slideUpAppearActive}${dropdownPlacementCls}topRight
+        `]: {
+        animationName: slideDownIn
+      },
+      [`${slideUpLeaveActive}${dropdownPlacementCls}bottomLeft`]: {
+        animationName: slideUpOut
+      },
+      [`
+          ${slideUpLeaveActive}${dropdownPlacementCls}topLeft,
+          ${slideUpLeaveActive}${dropdownPlacementCls}topRight
+        `]: {
+        animationName: slideDownOut
+      },
+      '&-hidden': {
+        display: 'none'
+      },
+      [`${selectItemCls}`]: Object.assign(Object.assign({}, genItemStyle(token)), {
+        cursor: 'pointer',
+        transition: `background ${token.motionDurationSlow} ease`,
+        borderRadius: token.borderRadiusSM,
+        // =========== Group ============
+        '&-group': {
+          color: token.colorTextDescription,
+          fontSize: token.fontSizeSM,
+          cursor: 'default'
+        },
+        // =========== Option ===========
+        '&-option': {
+          display: 'flex',
+          '&-content': Object.assign({
+            flex: 'auto'
+          }, textEllipsis),
+          '&-state': {
+            flex: 'none',
+            display: 'flex',
+            alignItems: 'center'
+          },
+          [`&-active:not(${selectItemCls}-option-disabled)`]: {
+            backgroundColor: token.controlItemBgHover
+          },
+          [`&-selected:not(${selectItemCls}-option-disabled)`]: {
+            color: token.colorText,
+            fontWeight: token.fontWeightStrong,
+            backgroundColor: token.controlItemBgActive,
+            [`${selectItemCls}-option-state`]: {
+              color: token.colorPrimary
+            }
+          },
+          '&-disabled': {
+            [`&${selectItemCls}-option-selected`]: {
+              backgroundColor: token.colorBgContainerDisabled
+            },
+            color: token.colorTextDisabled,
+            cursor: 'not-allowed'
+          },
+          '&-grouped': {
+            paddingInlineStart: token.controlPaddingHorizontal * 2
+          }
+        }
+      }),
+      // =========================== RTL ===========================
+      '&-rtl': {
+        direction: 'rtl'
+      }
+    })
+  },
+  // Follow code may reuse in other components
+  initSlideMotion(token, 'slide-up'), initSlideMotion(token, 'slide-down'), initMoveMotion(token, 'move-up'), initMoveMotion(token, 'move-down')];
+};
+var genDropdownStyle$1 = genSingleStyle$1;
+
+const FIXED_ITEM_MARGIN = 2;
+const getSelectItemStyle = _ref => {
+  let {
+    controlHeightSM,
+    controlHeight,
+    lineWidth: borderWidth
+  } = _ref;
+  const selectItemDist = (controlHeight - controlHeightSM) / 2 - borderWidth;
+  const selectItemMargin = Math.ceil(selectItemDist / 2);
+  return [selectItemDist, selectItemMargin];
+};
+function genSizeStyle$2(token, suffix) {
+  const {
+    componentCls,
+    iconCls
+  } = token;
+  const selectOverflowPrefixCls = `${componentCls}-selection-overflow`;
+  const selectItemHeight = token.controlHeightSM;
+  const [selectItemDist] = getSelectItemStyle(token);
+  const suffixCls = suffix ? `${componentCls}-${suffix}` : '';
+  return {
+    [`${componentCls}-multiple${suffixCls}`]: {
+      fontSize: token.fontSize,
+      /**
+       * Do not merge `height` & `line-height` under style with `selection` & `search`, since chrome
+       * may update to redesign with its align logic.
+       */
+      // =========================== Overflow ===========================
+      [selectOverflowPrefixCls]: {
+        position: 'relative',
+        display: 'flex',
+        flex: 'auto',
+        flexWrap: 'wrap',
+        maxWidth: '100%',
+        '&-item': {
+          flex: 'none',
+          alignSelf: 'center',
+          maxWidth: '100%',
+          display: 'inline-flex'
+        }
+      },
+      // ========================= Selector =========================
+      [`${componentCls}-selector`]: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        // Multiple is little different that horizontal is follow the vertical
+        padding: `${selectItemDist - FIXED_ITEM_MARGIN}px ${FIXED_ITEM_MARGIN * 2}px`,
+        borderRadius: token.borderRadius,
+        [`${componentCls}-show-search&`]: {
+          cursor: 'text'
+        },
+        [`${componentCls}-disabled&`]: {
+          background: token.colorBgContainerDisabled,
+          cursor: 'not-allowed'
+        },
+        '&:after': {
+          display: 'inline-block',
+          width: 0,
+          margin: `${FIXED_ITEM_MARGIN}px 0`,
+          lineHeight: `${selectItemHeight}px`,
+          visibility: 'hidden',
+          content: '"\\a0"'
+        }
+      },
+      [`
+        &${componentCls}-show-arrow ${componentCls}-selector,
+        &${componentCls}-allow-clear ${componentCls}-selector
+      `]: {
+        paddingInlineEnd: token.fontSizeIcon + token.controlPaddingHorizontal
+      },
+      // ======================== Selections ========================
+      [`${componentCls}-selection-item`]: {
+        position: 'relative',
+        display: 'flex',
+        flex: 'none',
+        boxSizing: 'border-box',
+        maxWidth: '100%',
+        height: selectItemHeight,
+        marginTop: FIXED_ITEM_MARGIN,
+        marginBottom: FIXED_ITEM_MARGIN,
+        lineHeight: `${selectItemHeight - token.lineWidth * 2}px`,
+        background: token.colorFillSecondary,
+        borderRadius: token.borderRadiusSM,
+        cursor: 'default',
+        transition: `font-size ${token.motionDurationSlow}, line-height ${token.motionDurationSlow}, height ${token.motionDurationSlow}`,
+        userSelect: 'none',
+        marginInlineEnd: FIXED_ITEM_MARGIN * 2,
+        paddingInlineStart: token.paddingXS,
+        paddingInlineEnd: token.paddingXS / 2,
+        [`${componentCls}-disabled&`]: {
+          color: token.colorTextDisabled,
+          cursor: 'not-allowed'
+        },
+        // It's ok not to do this, but 24px makes bottom narrow in view should adjust
+        '&-content': {
+          display: 'inline-block',
+          marginInlineEnd: token.paddingXS / 2,
+          overflow: 'hidden',
+          whiteSpace: 'pre',
+          textOverflow: 'ellipsis'
+        },
+        '&-remove': Object.assign(Object.assign({}, resetIcon()), {
+          display: 'inline-flex',
+          alignItems: 'center',
+          color: token.colorIcon,
+          fontWeight: 'bold',
+          fontSize: 10,
+          lineHeight: 'inherit',
+          cursor: 'pointer',
+          [`> ${iconCls}`]: {
+            verticalAlign: '-0.2em'
+          },
+          '&:hover': {
+            color: token.colorIconHover
+          }
+        })
+      },
+      // ========================== Input ==========================
+      [`${selectOverflowPrefixCls}-item + ${selectOverflowPrefixCls}-item`]: {
+        [`${componentCls}-selection-search`]: {
+          marginInlineStart: 0
+        }
+      },
+      [`${componentCls}-selection-search`]: {
+        display: 'inline-flex',
+        position: 'relative',
+        maxWidth: '100%',
+        marginInlineStart: token.inputPaddingHorizontalBase - selectItemDist,
+        [`
+          &-input,
+          &-mirror
+        `]: {
+          height: selectItemHeight,
+          fontFamily: token.fontFamily,
+          lineHeight: `${selectItemHeight}px`,
+          transition: `all ${token.motionDurationSlow}`
+        },
+        '&-input': {
+          width: '100%',
+          minWidth: 4.1 // fix search cursor missing
+        },
+
+        '&-mirror': {
+          position: 'absolute',
+          top: 0,
+          insetInlineStart: 0,
+          insetInlineEnd: 'auto',
+          zIndex: 999,
+          whiteSpace: 'pre',
+          visibility: 'hidden'
+        }
+      },
+      // ======================= Placeholder =======================
+      [`${componentCls}-selection-placeholder `]: {
+        position: 'absolute',
+        top: '50%',
+        insetInlineStart: token.inputPaddingHorizontalBase,
+        insetInlineEnd: token.inputPaddingHorizontalBase,
+        transform: 'translateY(-50%)',
+        transition: `all ${token.motionDurationSlow}`
+      }
+    }
+  };
+}
+const genMultipleStyle = token => {
+  const {
+    componentCls
+  } = token;
+  const smallToken = merge(token, {
+    controlHeight: token.controlHeightSM,
+    controlHeightSM: token.controlHeightXS,
+    borderRadius: token.borderRadiusSM,
+    borderRadiusSM: token.borderRadiusXS
+  });
+  const largeToken = merge(token, {
+    fontSize: token.fontSizeLG,
+    controlHeight: token.controlHeightLG,
+    controlHeightSM: token.controlHeight,
+    borderRadius: token.borderRadiusLG,
+    borderRadiusSM: token.borderRadius
+  });
+  const [, smSelectItemMargin] = getSelectItemStyle(token);
+  return [genSizeStyle$2(token),
+  // ======================== Small ========================
+  genSizeStyle$2(smallToken, 'sm'),
+  // Padding
+  {
+    [`${componentCls}-multiple${componentCls}-sm`]: {
+      [`${componentCls}-selection-placeholder`]: {
+        insetInline: token.controlPaddingHorizontalSM - token.lineWidth
+      },
+      // https://github.com/ant-design/ant-design/issues/29559
+      [`${componentCls}-selection-search`]: {
+        marginInlineStart: smSelectItemMargin
+      }
+    }
+  },
+  // ======================== Large ========================
+  genSizeStyle$2(largeToken, 'lg')];
+};
+var genMultipleStyle$1 = genMultipleStyle;
+
+function genSizeStyle$1(token, suffix) {
+  const {
+    componentCls,
+    inputPaddingHorizontalBase,
+    borderRadius
+  } = token;
+  const selectHeightWithoutBorder = token.controlHeight - token.lineWidth * 2;
+  const selectionItemPadding = Math.ceil(token.fontSize * 1.25);
+  const suffixCls = suffix ? `${componentCls}-${suffix}` : '';
+  return {
+    [`${componentCls}-single${suffixCls}`]: {
+      fontSize: token.fontSize,
+      // ========================= Selector =========================
+      [`${componentCls}-selector`]: Object.assign(Object.assign({}, resetComponent(token)), {
+        display: 'flex',
+        borderRadius,
+        [`${componentCls}-selection-search`]: {
+          position: 'absolute',
+          top: 0,
+          insetInlineStart: inputPaddingHorizontalBase,
+          insetInlineEnd: inputPaddingHorizontalBase,
+          bottom: 0,
+          '&-input': {
+            width: '100%'
+          }
+        },
+        [`
+          ${componentCls}-selection-item,
+          ${componentCls}-selection-placeholder
+        `]: {
+          padding: 0,
+          lineHeight: `${selectHeightWithoutBorder}px`,
+          transition: `all ${token.motionDurationSlow}, visibility 0s`,
+          // Firefox inline-block position calculation is not same as Chrome & Safari. Patch this:
+          '@supports (-moz-appearance: meterbar)': {
+            lineHeight: `${selectHeightWithoutBorder}px`
+          }
+        },
+        [`${componentCls}-selection-item`]: {
+          position: 'relative',
+          userSelect: 'none'
+        },
+        [`${componentCls}-selection-placeholder`]: {
+          transition: 'none',
+          pointerEvents: 'none'
+        },
+        // For common baseline align
+        [['&:after', /* For '' value baseline align */
+        `${componentCls}-selection-item:after`, /* For undefined value baseline align */
+        `${componentCls}-selection-placeholder:after`].join(',')]: {
+          display: 'inline-block',
+          width: 0,
+          visibility: 'hidden',
+          content: '"\\a0"'
+        }
+      }),
+      [`
+        &${componentCls}-show-arrow ${componentCls}-selection-item,
+        &${componentCls}-show-arrow ${componentCls}-selection-placeholder
+      `]: {
+        paddingInlineEnd: selectionItemPadding
+      },
+      // Opacity selection if open
+      [`&${componentCls}-open ${componentCls}-selection-item`]: {
+        color: token.colorTextPlaceholder
+      },
+      // ========================== Input ==========================
+      // We only change the style of non-customize input which is only support by `combobox` mode.
+      // Not customize
+      [`&:not(${componentCls}-customize-input)`]: {
+        [`${componentCls}-selector`]: {
+          width: '100%',
+          height: token.controlHeight,
+          padding: `0 ${inputPaddingHorizontalBase}px`,
+          [`${componentCls}-selection-search-input`]: {
+            height: selectHeightWithoutBorder
+          },
+          '&:after': {
+            lineHeight: `${selectHeightWithoutBorder}px`
+          }
+        }
+      },
+      [`&${componentCls}-customize-input`]: {
+        [`${componentCls}-selector`]: {
+          '&:after': {
+            display: 'none'
+          },
+          [`${componentCls}-selection-search`]: {
+            position: 'static',
+            width: '100%'
+          },
+          [`${componentCls}-selection-placeholder`]: {
+            position: 'absolute',
+            insetInlineStart: 0,
+            insetInlineEnd: 0,
+            padding: `0 ${inputPaddingHorizontalBase}px`,
+            '&:after': {
+              display: 'none'
+            }
+          }
+        }
+      }
+    }
+  };
+}
+function genSingleStyle(token) {
+  const {
+    componentCls
+  } = token;
+  const inputPaddingHorizontalSM = token.controlPaddingHorizontalSM - token.lineWidth;
+  return [genSizeStyle$1(token),
+  // ======================== Small ========================
+  // Shared
+  genSizeStyle$1(merge(token, {
+    controlHeight: token.controlHeightSM,
+    borderRadius: token.borderRadiusSM
+  }), 'sm'),
+  // padding
+  {
+    [`${componentCls}-single${componentCls}-sm`]: {
+      [`&:not(${componentCls}-customize-input)`]: {
+        [`${componentCls}-selection-search`]: {
+          insetInlineStart: inputPaddingHorizontalSM,
+          insetInlineEnd: inputPaddingHorizontalSM
+        },
+        [`${componentCls}-selector`]: {
+          padding: `0 ${inputPaddingHorizontalSM}px`
+        },
+        // With arrow should provides `padding-right` to show the arrow
+        [`&${componentCls}-show-arrow ${componentCls}-selection-search`]: {
+          insetInlineEnd: inputPaddingHorizontalSM + token.fontSize * 1.5
+        },
+        [`
+            &${componentCls}-show-arrow ${componentCls}-selection-item,
+            &${componentCls}-show-arrow ${componentCls}-selection-placeholder
+          `]: {
+          paddingInlineEnd: token.fontSize * 1.5
+        }
+      }
+    }
+  },
+  // ======================== Large ========================
+  // Shared
+  genSizeStyle$1(merge(token, {
+    controlHeight: token.controlHeightLG,
+    fontSize: token.fontSizeLG,
+    borderRadius: token.borderRadiusLG
+  }), 'lg')];
+}
+
+// ============================= Selector =============================
+const genSelectorStyle = token => {
+  const {
+    componentCls
+  } = token;
+  return {
+    position: 'relative',
+    backgroundColor: token.colorBgContainer,
+    border: `${token.lineWidth}px ${token.lineType} ${token.colorBorder}`,
+    transition: `all ${token.motionDurationMid} ${token.motionEaseInOut}`,
+    input: {
+      cursor: 'pointer'
+    },
+    [`${componentCls}-show-search&`]: {
+      cursor: 'text',
+      input: {
+        cursor: 'auto',
+        color: 'inherit'
+      }
+    },
+    [`${componentCls}-disabled&`]: {
+      color: token.colorTextDisabled,
+      background: token.colorBgContainerDisabled,
+      cursor: 'not-allowed',
+      [`${componentCls}-multiple&`]: {
+        background: token.colorBgContainerDisabled
+      },
+      input: {
+        cursor: 'not-allowed'
+      }
+    }
+  };
+};
+// ============================== Status ==============================
+const genStatusStyle$3 = function (rootSelectCls, token) {
+  let overwriteDefaultBorder = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  const {
+    componentCls,
+    borderHoverColor,
+    outlineColor,
+    antCls
+  } = token;
+  const overwriteStyle = overwriteDefaultBorder ? {
+    [`${componentCls}-selector`]: {
+      borderColor: borderHoverColor
+    }
+  } : {};
+  return {
+    [rootSelectCls]: {
+      [`&:not(${componentCls}-disabled):not(${componentCls}-customize-input):not(${antCls}-pagination-size-changer)`]: Object.assign(Object.assign({}, overwriteStyle), {
+        [`${componentCls}-focused& ${componentCls}-selector`]: {
+          borderColor: borderHoverColor,
+          boxShadow: `0 0 0 ${token.controlOutlineWidth}px ${outlineColor}`,
+          outline: 0
+        },
+        [`&:hover ${componentCls}-selector`]: {
+          borderColor: borderHoverColor
+        }
+      })
+    }
+  };
+};
+// ============================== Styles ==============================
+// /* Reset search input style */
+const getSearchInputWithoutBorderStyle = token => {
+  const {
+    componentCls
+  } = token;
+  return {
+    [`${componentCls}-selection-search-input`]: {
+      margin: 0,
+      padding: 0,
+      background: 'transparent',
+      border: 'none',
+      outline: 'none',
+      appearance: 'none',
+      '&::-webkit-search-cancel-button': {
+        display: 'none',
+        '-webkit-appearance': 'none'
+      }
+    }
+  };
+};
+// =============================== Base ===============================
+const genBaseStyle$2 = token => {
+  const {
+    componentCls,
+    inputPaddingHorizontalBase,
+    iconCls
+  } = token;
+  return {
+    [componentCls]: Object.assign(Object.assign({}, resetComponent(token)), {
+      position: 'relative',
+      display: 'inline-block',
+      cursor: 'pointer',
+      [`&:not(${componentCls}-customize-input) ${componentCls}-selector`]: Object.assign(Object.assign({}, genSelectorStyle(token)), getSearchInputWithoutBorderStyle(token)),
+      // [`&:not(&-disabled):hover ${selectCls}-selector`]: {
+      //   ...genHoverStyle(token),
+      // },
+      // ======================== Selection ========================
+      [`${componentCls}-selection-item`]: Object.assign({
+        flex: 1,
+        fontWeight: 'normal'
+      }, textEllipsis),
+      // ======================= Placeholder =======================
+      [`${componentCls}-selection-placeholder`]: Object.assign(Object.assign({}, textEllipsis), {
+        flex: 1,
+        color: token.colorTextPlaceholder,
+        pointerEvents: 'none'
+      }),
+      // ========================== Arrow ==========================
+      [`${componentCls}-arrow`]: Object.assign(Object.assign({}, resetIcon()), {
+        position: 'absolute',
+        top: '50%',
+        insetInlineStart: 'auto',
+        insetInlineEnd: inputPaddingHorizontalBase,
+        height: token.fontSizeIcon,
+        marginTop: -token.fontSizeIcon / 2,
+        color: token.colorTextQuaternary,
+        fontSize: token.fontSizeIcon,
+        lineHeight: 1,
+        textAlign: 'center',
+        pointerEvents: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        [iconCls]: {
+          verticalAlign: 'top',
+          transition: `transform ${token.motionDurationSlow}`,
+          '> svg': {
+            verticalAlign: 'top'
+          },
+          [`&:not(${componentCls}-suffix)`]: {
+            pointerEvents: 'auto'
+          }
+        },
+        [`${componentCls}-disabled &`]: {
+          cursor: 'not-allowed'
+        },
+        '> *:not(:last-child)': {
+          marginInlineEnd: 8 // FIXME: magic
+        }
+      }),
+
+      // ========================== Clear ==========================
+      [`${componentCls}-clear`]: {
+        position: 'absolute',
+        top: '50%',
+        insetInlineStart: 'auto',
+        insetInlineEnd: inputPaddingHorizontalBase,
+        zIndex: 1,
+        display: 'inline-block',
+        width: token.fontSizeIcon,
+        height: token.fontSizeIcon,
+        marginTop: -token.fontSizeIcon / 2,
+        color: token.colorTextQuaternary,
+        fontSize: token.fontSizeIcon,
+        fontStyle: 'normal',
+        lineHeight: 1,
+        textAlign: 'center',
+        textTransform: 'none',
+        background: token.colorBgContainer,
+        cursor: 'pointer',
+        opacity: 0,
+        transition: `color ${token.motionDurationMid} ease, opacity ${token.motionDurationSlow} ease`,
+        textRendering: 'auto',
+        '&:before': {
+          display: 'block'
+        },
+        '&:hover': {
+          color: token.colorTextTertiary
+        }
+      },
+      '&:hover': {
+        [`${componentCls}-clear`]: {
+          opacity: 1
+        }
+      }
+    }),
+    // ========================= Feedback ==========================
+    [`${componentCls}-has-feedback`]: {
+      [`${componentCls}-clear`]: {
+        insetInlineEnd: inputPaddingHorizontalBase + token.fontSize + token.paddingXS
+      }
+    }
+  };
+};
+// ============================== Styles ==============================
+const genSelectStyle = token => {
+  const {
+    componentCls
+  } = token;
+  return [{
+    [componentCls]: {
+      // ==================== BorderLess ====================
+      [`&-borderless ${componentCls}-selector`]: {
+        backgroundColor: `transparent !important`,
+        borderColor: `transparent !important`,
+        boxShadow: `none !important`
+      },
+      // ==================== In Form ====================
+      [`&${componentCls}-in-form-item`]: {
+        width: '100%'
+      }
+    }
+  },
+  // =====================================================
+  // ==                       LTR                       ==
+  // =====================================================
+  // Base
+  genBaseStyle$2(token),
+  // Single
+  genSingleStyle(token),
+  // Multiple
+  genMultipleStyle$1(token),
+  // Dropdown
+  genDropdownStyle$1(token),
+  // =====================================================
+  // ==                       RTL                       ==
+  // =====================================================
+  {
+    [`${componentCls}-rtl`]: {
+      direction: 'rtl'
+    }
+  },
+  // =====================================================
+  // ==                     Status                      ==
+  // =====================================================
+  genStatusStyle$3(componentCls, merge(token, {
+    borderHoverColor: token.colorPrimaryHover,
+    outlineColor: token.controlOutline
+  })), genStatusStyle$3(`${componentCls}-status-error`, merge(token, {
+    borderHoverColor: token.colorErrorHover,
+    outlineColor: token.colorErrorOutline
+  }), true), genStatusStyle$3(`${componentCls}-status-warning`, merge(token, {
+    borderHoverColor: token.colorWarningHover,
+    outlineColor: token.colorWarningOutline
+  }), true),
+  // =====================================================
+  // ==             Space Compact                       ==
+  // =====================================================
+  genCompactItemStyle(token, {
+    borderElCls: `${componentCls}-selector`,
+    focusElCls: `${componentCls}-focused`
+  })];
+};
+// ============================== Export ==============================
+var useSelectStyle = genComponentStyleHook('Select', (token, _ref) => {
+  let {
+    rootPrefixCls
+  } = _ref;
+  const selectToken = merge(token, {
+    rootPrefixCls,
+    inputPaddingHorizontalBase: token.paddingSM - 1
+  });
+  return [genSelectStyle(selectToken)];
+}, token => ({
+  zIndexPopup: token.zIndexPopupBase + 50
+}));
+
+const getBuiltInPlacements = popupOverflow => {
+  const htmlRegion = popupOverflow === 'scroll' ? 'scroll' : 'visible';
+  const sharedConfig = {
+    overflow: {
+      adjustX: true,
+      adjustY: true,
+      shiftY: true
+    },
+    htmlRegion,
+    _experimental: {
+      dynamicInset: true
+    }
+  };
+  return {
+    bottomLeft: Object.assign(Object.assign({}, sharedConfig), {
+      points: ['tl', 'bl'],
+      offset: [0, 4]
+    }),
+    bottomRight: Object.assign(Object.assign({}, sharedConfig), {
+      points: ['tr', 'br'],
+      offset: [0, 4]
+    }),
+    topLeft: Object.assign(Object.assign({}, sharedConfig), {
+      points: ['bl', 'tl'],
+      offset: [0, -4]
+    }),
+    topRight: Object.assign(Object.assign({}, sharedConfig), {
+      points: ['br', 'tr'],
+      offset: [0, -4]
+    })
+  };
+};
+function useBuiltinPlacements(buildInPlacements, popupOverflow) {
+  return buildInPlacements || getBuiltInPlacements(popupOverflow);
+}
+
+/**
+ * Since Select, TreeSelect, Cascader is same Select like component.
+ * We just use same hook to handle this logic.
+ *
+ * If `suffixIcon` is not equal to `null`, always show it.
+ */
+function useShowArrow(suffixIcon, showArrow) {
+  return showArrow !== undefined ? showArrow : suffixIcon !== null;
+}
 
 // This icon file is generated automatically.
 var CheckOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 00-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z" } }] }, "name": "check", "theme": "outlined" };
@@ -18562,6 +23847,260 @@ if (process.env.NODE_ENV !== 'production') {
   SearchOutlined.displayName = 'SearchOutlined';
 }
 var SearchOutlined$1 = /*#__PURE__*/React.forwardRef(SearchOutlined);
+
+function getIcons(_ref) {
+  let {
+    suffixIcon,
+    clearIcon,
+    menuItemSelectedIcon,
+    removeIcon,
+    loading,
+    multiple,
+    hasFeedback,
+    prefixCls,
+    showSuffixIcon,
+    feedbackIcon,
+    showArrow,
+    componentName
+  } = _ref;
+  if (process.env.NODE_ENV !== 'production') {
+    process.env.NODE_ENV !== "production" ? warning$3(!clearIcon, componentName, '`clearIcon` is deprecated, please use `allowClear={{ clearIcon: React.ReactNode }}` instead.') : void 0;
+  }
+  // Clear Icon
+  const mergedClearIcon = clearIcon !== null && clearIcon !== void 0 ? clearIcon : /*#__PURE__*/React.createElement(CloseCircleFilled$1, null);
+  // Validation Feedback Icon
+  const getSuffixIconNode = arrowIcon => {
+    if (suffixIcon === null && !hasFeedback && !showArrow) {
+      return null;
+    }
+    return /*#__PURE__*/React.createElement(React.Fragment, null, showSuffixIcon !== false && arrowIcon, hasFeedback && feedbackIcon);
+  };
+  // Arrow item icon
+  let mergedSuffixIcon = null;
+  if (suffixIcon !== undefined) {
+    mergedSuffixIcon = getSuffixIconNode(suffixIcon);
+  } else if (loading) {
+    mergedSuffixIcon = getSuffixIconNode( /*#__PURE__*/React.createElement(LoadingOutlined$1, {
+      spin: true
+    }));
+  } else {
+    const iconCls = `${prefixCls}-suffix`;
+    mergedSuffixIcon = _ref2 => {
+      let {
+        open,
+        showSearch
+      } = _ref2;
+      if (open && showSearch) {
+        return getSuffixIconNode( /*#__PURE__*/React.createElement(SearchOutlined$1, {
+          className: iconCls
+        }));
+      }
+      return getSuffixIconNode( /*#__PURE__*/React.createElement(DownOutlined$1, {
+        className: iconCls
+      }));
+    };
+  }
+  // Checked item icon
+  let mergedItemIcon = null;
+  if (menuItemSelectedIcon !== undefined) {
+    mergedItemIcon = menuItemSelectedIcon;
+  } else if (multiple) {
+    mergedItemIcon = /*#__PURE__*/React.createElement(CheckOutlined$1, null);
+  } else {
+    mergedItemIcon = null;
+  }
+  let mergedRemoveIcon = null;
+  if (removeIcon !== undefined) {
+    mergedRemoveIcon = removeIcon;
+  } else {
+    mergedRemoveIcon = /*#__PURE__*/React.createElement(CloseOutlined$1, null);
+  }
+  return {
+    clearIcon: mergedClearIcon,
+    suffixIcon: mergedSuffixIcon,
+    itemIcon: mergedItemIcon,
+    removeIcon: mergedRemoveIcon
+  };
+}
+
+var __rest$z = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+const SECRET_COMBOBOX_MODE_DO_NOT_USE = 'SECRET_COMBOBOX_MODE_DO_NOT_USE';
+const InternalSelect = (_a, ref) => {
+  var _b;
+  var {
+      prefixCls: customizePrefixCls,
+      bordered = true,
+      className,
+      rootClassName,
+      getPopupContainer,
+      popupClassName,
+      dropdownClassName,
+      listHeight = 256,
+      placement,
+      listItemHeight = 24,
+      size: customizeSize,
+      disabled: customDisabled,
+      notFoundContent,
+      status: customStatus,
+      builtinPlacements,
+      dropdownMatchSelectWidth,
+      popupMatchSelectWidth,
+      direction: propDirection,
+      style,
+      allowClear
+    } = _a,
+    props = __rest$z(_a, ["prefixCls", "bordered", "className", "rootClassName", "getPopupContainer", "popupClassName", "dropdownClassName", "listHeight", "placement", "listItemHeight", "size", "disabled", "notFoundContent", "status", "builtinPlacements", "dropdownMatchSelectWidth", "popupMatchSelectWidth", "direction", "style", "allowClear"]);
+  const {
+    getPopupContainer: getContextPopupContainer,
+    getPrefixCls,
+    renderEmpty,
+    direction: contextDirection,
+    virtual,
+    popupMatchSelectWidth: contextPopupMatchSelectWidth,
+    popupOverflow,
+    select
+  } = React.useContext(ConfigContext);
+  const prefixCls = getPrefixCls('select', customizePrefixCls);
+  const rootPrefixCls = getPrefixCls();
+  const direction = propDirection !== null && propDirection !== void 0 ? propDirection : contextDirection;
+  const {
+    compactSize,
+    compactItemClassnames
+  } = useCompactItemContext(prefixCls, direction);
+  const [wrapSSR, hashId] = useSelectStyle(prefixCls);
+  const mode = React.useMemo(() => {
+    const {
+      mode: m
+    } = props;
+    if (m === 'combobox') {
+      return undefined;
+    }
+    if (m === SECRET_COMBOBOX_MODE_DO_NOT_USE) {
+      return 'combobox';
+    }
+    return m;
+  }, [props.mode]);
+  const isMultiple = mode === 'multiple' || mode === 'tags';
+  const showSuffixIcon = useShowArrow(props.suffixIcon, props.showArrow);
+  const mergedPopupMatchSelectWidth = (_b = popupMatchSelectWidth !== null && popupMatchSelectWidth !== void 0 ? popupMatchSelectWidth : dropdownMatchSelectWidth) !== null && _b !== void 0 ? _b : contextPopupMatchSelectWidth;
+  // ===================== Form Status =====================
+  const {
+    status: contextStatus,
+    hasFeedback,
+    isFormItemInput,
+    feedbackIcon
+  } = React.useContext(FormItemInputContext);
+  const mergedStatus = getMergedStatus(contextStatus, customStatus);
+  // ===================== Empty =====================
+  let mergedNotFound;
+  if (notFoundContent !== undefined) {
+    mergedNotFound = notFoundContent;
+  } else if (mode === 'combobox') {
+    mergedNotFound = null;
+  } else {
+    mergedNotFound = (renderEmpty === null || renderEmpty === void 0 ? void 0 : renderEmpty('Select')) || /*#__PURE__*/React.createElement(DefaultRenderEmpty$1, {
+      componentName: "Select"
+    });
+  }
+  // ===================== Icons =====================
+  const {
+    suffixIcon,
+    itemIcon,
+    removeIcon,
+    clearIcon
+  } = getIcons(Object.assign(Object.assign({}, props), {
+    multiple: isMultiple,
+    hasFeedback,
+    feedbackIcon,
+    showSuffixIcon,
+    prefixCls,
+    showArrow: props.showArrow,
+    componentName: 'Select'
+  }));
+  const mergedAllowClear = allowClear === true ? {
+    clearIcon
+  } : allowClear;
+  const selectProps = omit(props, ['suffixIcon', 'itemIcon']);
+  const rcSelectRtlDropdownClassName = classnames$c(popupClassName || dropdownClassName, {
+    [`${prefixCls}-dropdown-${direction}`]: direction === 'rtl'
+  }, rootClassName, hashId);
+  const mergedSize = useSize$1(ctx => {
+    var _a;
+    return (_a = customizeSize !== null && customizeSize !== void 0 ? customizeSize : compactSize) !== null && _a !== void 0 ? _a : ctx;
+  });
+  // ===================== Disabled =====================
+  const disabled = React.useContext(DisabledContext$1);
+  const mergedDisabled = customDisabled !== null && customDisabled !== void 0 ? customDisabled : disabled;
+  const mergedClassName = classnames$c({
+    [`${prefixCls}-lg`]: mergedSize === 'large',
+    [`${prefixCls}-sm`]: mergedSize === 'small',
+    [`${prefixCls}-rtl`]: direction === 'rtl',
+    [`${prefixCls}-borderless`]: !bordered,
+    [`${prefixCls}-in-form-item`]: isFormItemInput
+  }, getStatusClassNames(prefixCls, mergedStatus, hasFeedback), compactItemClassnames, select === null || select === void 0 ? void 0 : select.className, className, rootClassName, hashId);
+  // ===================== Placement =====================
+  const memoPlacement = React.useMemo(() => {
+    if (placement !== undefined) {
+      return placement;
+    }
+    return direction === 'rtl' ? 'bottomRight' : 'bottomLeft';
+  }, [placement, direction]);
+  const mergedBuiltinPlacements = useBuiltinPlacements(builtinPlacements, popupOverflow);
+  // ====================== Warning ======================
+  if (process.env.NODE_ENV !== 'production') {
+    process.env.NODE_ENV !== "production" ? warning$3(!dropdownClassName, 'Select', '`dropdownClassName` is deprecated. Please use `popupClassName` instead.') : void 0;
+    process.env.NODE_ENV !== "production" ? warning$3(dropdownMatchSelectWidth === undefined, 'Select', '`dropdownMatchSelectWidth` is deprecated. Please use `popupMatchSelectWidth` instead.') : void 0;
+    process.env.NODE_ENV !== "production" ? warning$3(!('showArrow' in props), 'Select', '`showArrow` is deprecated which will be removed in next major version. It will be a default behavior, you can hide it by setting `suffixIcon` to null.') : void 0;
+  }
+  // ====================== Render =======================
+  return wrapSSR( /*#__PURE__*/React.createElement(TypedSelect, Object.assign({
+    ref: ref,
+    virtual: virtual,
+    showSearch: select === null || select === void 0 ? void 0 : select.showSearch
+  }, selectProps, {
+    style: Object.assign(Object.assign({}, select === null || select === void 0 ? void 0 : select.style), style),
+    dropdownMatchSelectWidth: mergedPopupMatchSelectWidth,
+    builtinPlacements: mergedBuiltinPlacements,
+    transitionName: getTransitionName(rootPrefixCls, 'slide-up', props.transitionName),
+    listHeight: listHeight,
+    listItemHeight: listItemHeight,
+    mode: mode,
+    prefixCls: prefixCls,
+    placement: memoPlacement,
+    direction: direction,
+    suffixIcon: suffixIcon,
+    menuItemSelectedIcon: itemIcon,
+    removeIcon: removeIcon,
+    allowClear: mergedAllowClear,
+    notFoundContent: mergedNotFound,
+    className: mergedClassName,
+    getPopupContainer: getPopupContainer || getContextPopupContainer,
+    dropdownClassName: rcSelectRtlDropdownClassName,
+    disabled: mergedDisabled
+  })));
+};
+if (process.env.NODE_ENV !== 'production') {
+  InternalSelect.displayName = 'Select';
+}
+const Select = /*#__PURE__*/React.forwardRef(InternalSelect);
+// We don't care debug panel
+/* istanbul ignore next */
+const PurePanel$3 = genPurePanel(Select);
+Select.SECRET_COMBOBOX_MODE_DO_NOT_USE = SECRET_COMBOBOX_MODE_DO_NOT_USE;
+Select.Option = Option$1;
+Select.OptGroup = OptGroup;
+Select._InternalPanelDoNotUseOrYouWillBeFired = PurePanel$3;
+if (process.env.NODE_ENV !== 'production') {
+  Select.displayName = 'Select';
+}
+var Select$1 = Select;
 
 const responsiveArray = ['xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
 const getResponsiveMap = token => ({
@@ -18743,6 +24282,63 @@ var placements$2 = {
   }
 };
 
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+var classnames$5 = createCommonjsModule(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+					classes.push(arg.toString());
+					continue;
+				}
+
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
+
 function Popup(props) {
   var children = props.children,
     prefixCls = props.prefixCls,
@@ -18751,7 +24347,7 @@ function Popup(props) {
     className = props.className,
     style = props.style;
   return /*#__PURE__*/React.createElement("div", {
-    className: classnames("".concat(prefixCls, "-content"), className),
+    className: classnames$5("".concat(prefixCls, "-content"), className),
     style: style
   }, /*#__PURE__*/React.createElement("div", {
     className: "".concat(prefixCls, "-inner"),
@@ -19439,7 +25035,7 @@ function isPresetColor(color) {
 /* eslint-disable import/prefer-default-export */
 function parseColor(prefixCls, color) {
   const isInternalColor = isPresetColor(color);
-  const className = classnames({
+  const className = classnames$c({
     [`${prefixCls}-${color}`]: color && isInternalColor
   });
   const overlayStyle = {};
@@ -19475,7 +25071,7 @@ const PurePanel$1 = props => {
   const colorInfo = parseColor(prefixCls, color);
   const arrowContentStyle = colorInfo.arrowStyle;
   const formattedOverlayInnerStyle = Object.assign(Object.assign({}, overlayInnerStyle), colorInfo.overlayStyle);
-  const cls = classnames(hashId, prefixCls, `${prefixCls}-pure`, `${prefixCls}-placement-${placement}`, className, colorInfo.className);
+  const cls = classnames$c(hashId, prefixCls, `${prefixCls}-pure`, `${prefixCls}-placement-${placement}`, className, colorInfo.className);
   return wrapSSR( /*#__PURE__*/React.createElement("div", {
     className: cls,
     style: arrowContentStyle
@@ -19541,7 +25137,7 @@ function getDisabledCompatibleChildren(element, prefixCls) {
     });
     return /*#__PURE__*/React.createElement("span", {
       style: spanStyle,
-      className: classnames(element.props.className, `${prefixCls}-disabled-compatible-wrapper`)
+      className: classnames$c(element.props.className, `${prefixCls}-disabled-compatible-wrapper`)
     }, child);
   }
   return element;
@@ -19653,14 +25249,14 @@ const Tooltip = /*#__PURE__*/React.forwardRef((props, ref) => {
   // ============================= Render =============================
   const child = getDisabledCompatibleChildren(isValidElement(children) && !isFragment(children) ? children : /*#__PURE__*/React.createElement("span", null, children), prefixCls);
   const childProps = child.props;
-  const childCls = !childProps.className || typeof childProps.className === 'string' ? classnames(childProps.className, openClassName || `${prefixCls}-open`) : childProps.className;
+  const childCls = !childProps.className || typeof childProps.className === 'string' ? classnames$c(childProps.className, openClassName || `${prefixCls}-open`) : childProps.className;
   // Style
   const [wrapSSR, hashId] = useStyle$b(prefixCls, !injectFromPopover);
   // Color
   const colorInfo = parseColor(prefixCls, color);
   const arrowContentStyle = colorInfo.arrowStyle;
   const formattedOverlayInnerStyle = Object.assign(Object.assign({}, overlayInnerStyle), colorInfo.overlayStyle);
-  const customOverlayClassName = classnames(overlayClassName, {
+  const customOverlayClassName = classnames$c(overlayClassName, {
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, colorInfo.className, rootClassName, hashId);
   return wrapSSR( /*#__PURE__*/React.createElement(Tooltip$3, Object.assign({}, otherProps, {
@@ -19711,6 +25307,63 @@ if (process.env.NODE_ENV !== 'production') {
   RightOutlined.displayName = 'RightOutlined';
 }
 var RightOutlined$1 = /*#__PURE__*/React.forwardRef(RightOutlined);
+
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+var classnames$4 = createCommonjsModule(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+					classes.push(arg.toString());
+					continue;
+				}
+
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
 
 var ESC$1 = KeyCode.ESC,
   TAB = KeyCode.TAB;
@@ -19926,7 +25579,7 @@ function Dropdown$1(props, ref) {
     return "".concat(prefixCls, "-open");
   };
   var childrenNode = /*#__PURE__*/React__default.cloneElement(children, {
-    className: classnames((_children$props = children.props) === null || _children$props === void 0 ? void 0 : _children$props.className, mergedVisible && getOpenClassName()),
+    className: classnames$4((_children$props = children.props) === null || _children$props === void 0 ? void 0 : _children$props.className, mergedVisible && getOpenClassName()),
     ref: supportRef(children) ? composeRef(childRef, children.ref) : undefined
   });
   var triggerHideAction = hideAction;
@@ -19938,7 +25591,7 @@ function Dropdown$1(props, ref) {
   }, otherProps, {
     prefixCls: prefixCls,
     ref: triggerRef,
-    popupClassName: classnames(overlayClassName, _defineProperty({}, "".concat(prefixCls, "-show-arrow"), arrow)),
+    popupClassName: classnames$4(overlayClassName, _defineProperty({}, "".concat(prefixCls, "-show-arrow"), arrow)),
     popupStyle: overlayStyle,
     action: trigger,
     showAction: showAction,
@@ -19956,6 +25609,63 @@ function Dropdown$1(props, ref) {
   }), childrenNode);
 }
 var Dropdown$2 = /*#__PURE__*/React__default.forwardRef(Dropdown$1);
+
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+var classnames$3 = createCommonjsModule(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+					classes.push(arg.toString());
+					continue;
+				}
+
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
 
 var IdContext = /*#__PURE__*/React.createContext(null);
 function getMenuId(uuid, eventKey) {
@@ -20698,7 +26408,7 @@ var InternalMenuItem = /*#__PURE__*/React.forwardRef(function (props, ref) {
     component: "li",
     "aria-disabled": disabled,
     style: _objectSpread2(_objectSpread2({}, directionStyle), style),
-    className: classnames(itemCls, (_classNames = {}, _defineProperty(_classNames, "".concat(itemCls, "-active"), active), _defineProperty(_classNames, "".concat(itemCls, "-selected"), selected), _defineProperty(_classNames, "".concat(itemCls, "-disabled"), mergedDisabled), _classNames), className),
+    className: classnames$3(itemCls, (_classNames = {}, _defineProperty(_classNames, "".concat(itemCls, "-active"), active), _defineProperty(_classNames, "".concat(itemCls, "-selected"), selected), _defineProperty(_classNames, "".concat(itemCls, "-disabled"), mergedDisabled), _classNames), className),
     onClick: onInternalClick,
     onKeyDown: onInternalKeyDown,
     onFocus: onInternalFocus
@@ -20752,7 +26462,7 @@ var InternalSubMenuList = function InternalSubMenuList(_ref, ref) {
     mode = _React$useContext.mode,
     rtl = _React$useContext.rtl;
   return /*#__PURE__*/React.createElement("ul", _extends$1({
-    className: classnames(prefixCls, rtl && "".concat(prefixCls, "-rtl"), "".concat(prefixCls, "-sub"), "".concat(prefixCls, "-").concat(mode === 'inline' ? 'inline' : 'vertical'), className),
+    className: classnames$3(prefixCls, rtl && "".concat(prefixCls, "-rtl"), "".concat(prefixCls, "-sub"), "".concat(prefixCls, "-").concat(mode === 'inline' ? 'inline' : 'vertical'), className),
     role: "menu"
   }, restProps, {
     "data-menu-list": true,
@@ -20763,7 +26473,7 @@ var SubMenuList = /*#__PURE__*/React.forwardRef(InternalSubMenuList);
 SubMenuList.displayName = 'SubMenuList';
 
 function parseChildren(children, keyPath) {
-  return toArray$3(children).map(function (child, index) {
+  return toArray$4(children).map(function (child, index) {
     if ( /*#__PURE__*/React.isValidElement(child)) {
       var _eventKey, _child$props;
       var key = child.key;
@@ -20928,7 +26638,7 @@ function PopupTrigger(_ref) {
   }, [visible]);
   return /*#__PURE__*/React.createElement(Trigger, {
     prefixCls: prefixCls,
-    popupClassName: classnames("".concat(prefixCls, "-popup"), _defineProperty({}, "".concat(prefixCls, "-rtl"), rtl), popupClassName, rootClassName),
+    popupClassName: classnames$3("".concat(prefixCls, "-popup"), _defineProperty({}, "".concat(prefixCls, "-rtl"), rtl), popupClassName, rootClassName),
     stretch: mode === 'horizontal' ? 'minWidth' : null,
     getPopupContainer: getPopupContainer,
     builtinPlacements: placement,
@@ -21229,7 +26939,7 @@ var InternalSubMenu = function InternalSubMenu(props) {
   }, restProps, {
     component: "li",
     style: style,
-    className: classnames(subMenuPrefixCls, "".concat(subMenuPrefixCls, "-").concat(mode), className, (_classNames = {}, _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-open"), open), _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-active"), mergedActive), _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-selected"), childrenSelected), _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-disabled"), mergedDisabled), _classNames)),
+    className: classnames$3(subMenuPrefixCls, "".concat(subMenuPrefixCls, "-").concat(mode), className, (_classNames = {}, _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-open"), open), _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-active"), mergedActive), _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-selected"), childrenSelected), _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-disabled"), mergedDisabled), _classNames)),
     onMouseEnter: onInternalMouseEnter,
     onMouseLeave: onInternalMouseLeave
   }), titleNode, !overflowDisabled && /*#__PURE__*/React.createElement(InlineSubMenuList, {
@@ -21302,7 +27012,7 @@ var InternalMenuItemGroup = function InternalMenuItemGroup(_ref) {
     onClick: function onClick(e) {
       return e.stopPropagation();
     },
-    className: classnames(groupPrefixCls, className)
+    className: classnames$3(groupPrefixCls, className)
   }), /*#__PURE__*/React.createElement("div", {
     role: "presentation",
     className: "".concat(groupPrefixCls, "-title"),
@@ -21334,7 +27044,7 @@ function Divider(_ref) {
     return null;
   }
   return /*#__PURE__*/React.createElement("li", {
-    className: classnames("".concat(prefixCls, "-item-divider"), className),
+    className: classnames$3("".concat(prefixCls, "-item-divider"), className),
     style: style
   });
 }
@@ -21750,7 +27460,7 @@ var Menu$2 = /*#__PURE__*/React.forwardRef(function (props, ref) {
     prefixCls: "".concat(prefixCls, "-overflow"),
     component: "ul",
     itemComponent: MenuItem$2,
-    className: classnames(prefixCls, "".concat(prefixCls, "-root"), "".concat(prefixCls, "-").concat(internalMode), className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-inline-collapsed"), internalInlineCollapsed), _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), isRtl), _classNames), rootClassName),
+    className: classnames$3(prefixCls, "".concat(prefixCls, "-root"), "".concat(prefixCls, "-").concat(internalMode), className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-inline-collapsed"), internalInlineCollapsed), _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), isRtl), _classNames), rootClassName),
     dir: direction,
     style: style,
     role: "menu",
@@ -22135,7 +27845,7 @@ const Basic = /*#__PURE__*/React.forwardRef((props, ref) => {
   const [wrapSSR, hashId] = useStyle$a(prefixCls);
   const prefixWithSuffixCls = suffixCls ? `${prefixCls}-${suffixCls}` : prefixCls;
   return wrapSSR( /*#__PURE__*/React.createElement(TagName, Object.assign({
-    className: classnames(customizePrefixCls || prefixWithSuffixCls, className, hashId),
+    className: classnames$c(customizePrefixCls || prefixWithSuffixCls, className, hashId),
     ref: ref
   }, others)));
 });
@@ -22161,7 +27871,7 @@ const BasicLayout = /*#__PURE__*/React.forwardRef((props, ref) => {
   } = React.useContext(ConfigContext);
   const prefixCls = getPrefixCls('layout', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$a(prefixCls);
-  const classString = classnames(prefixCls, {
+  const classString = classnames$c(prefixCls, {
     [`${prefixCls}-has-sider`]: typeof hasSider === 'boolean' ? hasSider : siders.length > 0,
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, layout === null || layout === void 0 ? void 0 : layout.className, className, rootClassName, hashId);
@@ -22319,7 +28029,7 @@ const Sider = /*#__PURE__*/React.forwardRef((props, ref) => {
     // special trigger when collapsedWidth == 0
     const zeroWidthTrigger = parseFloat(String(collapsedWidth || 0)) === 0 ? /*#__PURE__*/React.createElement("span", {
       onClick: toggle,
-      className: classnames(`${prefixCls}-zero-width-trigger`, `${prefixCls}-zero-width-trigger-${reverseArrow ? 'right' : 'left'}`),
+      className: classnames$c(`${prefixCls}-zero-width-trigger`, `${prefixCls}-zero-width-trigger-${reverseArrow ? 'right' : 'left'}`),
       style: zeroWidthTriggerStyle
     }, trigger || /*#__PURE__*/React.createElement(BarsOutlined$1, null)) : null;
     const iconObj = {
@@ -22341,7 +28051,7 @@ const Sider = /*#__PURE__*/React.forwardRef((props, ref) => {
       minWidth: siderWidth,
       width: siderWidth
     });
-    const siderCls = classnames(prefixCls, `${prefixCls}-${theme}`, {
+    const siderCls = classnames$c(prefixCls, `${prefixCls}-${theme}`, {
       [`${prefixCls}-collapsed`]: !!collapsed,
       [`${prefixCls}-has-trigger`]: collapsible && trigger !== null && !zeroWidthTrigger,
       [`${prefixCls}-below`]: !!below,
@@ -22386,7 +28096,7 @@ const MenuDivider = props => {
     getPrefixCls
   } = React.useContext(ConfigContext);
   const prefixCls = getPrefixCls('menu', customizePrefixCls);
-  const classString = classnames({
+  const classString = classnames$c({
     [`${prefixCls}-item-divider-dashed`]: !!dashed
   }, className);
   return /*#__PURE__*/React.createElement(Divider, Object.assign({
@@ -22451,15 +28161,15 @@ const MenuItem = props => {
     // ref: https://github.com/ant-design/ant-design/issues/16742
     tooltipProps.open = false;
   }
-  const childrenLength = toArray$3(children).length;
+  const childrenLength = toArray$4(children).length;
   let returnNode = /*#__PURE__*/React.createElement(MenuItem$2, Object.assign({}, omit(props, ['title', 'icon', 'danger']), {
-    className: classnames({
+    className: classnames$c({
       [`${prefixCls}-item-danger`]: danger,
       [`${prefixCls}-item-only-child`]: (icon ? childrenLength + 1 : childrenLength) === 1
     }, className),
     title: typeof title === 'string' ? title : undefined
   }), cloneElement(icon, {
-    className: classnames(isValidElement(icon) ? (_a = icon.props) === null || _a === void 0 ? void 0 : _a.className : '', `${prefixCls}-item-icon`)
+    className: classnames$c(isValidElement(icon) ? (_a = icon.props) === null || _a === void 0 ? void 0 : _a.className : '', `${prefixCls}-item-icon`)
   }), renderItemChildren(isInlineCollapsed));
   if (!disableMenuItemTitleTooltip) {
     returnNode = /*#__PURE__*/React.createElement(Tooltip$1, Object.assign({}, tooltipProps, {
@@ -22498,7 +28208,7 @@ const SubMenu = props => {
     // ref: https://github.com/ant-design/ant-design/pull/23456
     const titleIsSpan = isValidElement(title) && title.type === 'span';
     titleNode = /*#__PURE__*/React.createElement(React.Fragment, null, cloneElement(icon, {
-      className: classnames(isValidElement(icon) ? (_a = icon.props) === null || _a === void 0 ? void 0 : _a.className : '', `${prefixCls}-item-icon`)
+      className: classnames$c(isValidElement(icon) ? (_a = icon.props) === null || _a === void 0 ? void 0 : _a.className : '', `${prefixCls}-item-icon`)
     }), titleIsSpan ? title : /*#__PURE__*/React.createElement("span", {
       className: `${prefixCls}-title-content`
     }, title));
@@ -22510,7 +28220,7 @@ const SubMenu = props => {
     value: contextValue
   }, /*#__PURE__*/React.createElement(SubMenu$2, Object.assign({}, omit(props, ['icon']), {
     title: titleNode,
-    popupClassName: classnames(prefixCls, popupClassName, `${prefixCls}-${customTheme || contextTheme}`)
+    popupClassName: classnames$c(prefixCls, popupClassName, `${prefixCls}-${customTheme || contextTheme}`)
   })));
 };
 var SubMenu$1 = SubMenu;
@@ -23687,7 +29397,7 @@ const InternalMenu = /*#__PURE__*/forwardRef((props, ref) => {
   };
   const prefixCls = getPrefixCls('menu', customizePrefixCls || overrideObj.prefixCls);
   const [wrapSSR, hashId] = useStyle$9(prefixCls, !override);
-  const menuClassName = classnames(`${prefixCls}-${theme}`, menu === null || menu === void 0 ? void 0 : menu.className, className);
+  const menuClassName = classnames$c(`${prefixCls}-${theme}`, menu === null || menu === void 0 ? void 0 : menu.className, className);
   // ====================== Expand Icon ========================
   let mergedExpandIcon;
   if (typeof expandIcon === 'function') {
@@ -23695,7 +29405,7 @@ const InternalMenu = /*#__PURE__*/forwardRef((props, ref) => {
   } else {
     const beClone = expandIcon || overrideObj.expandIcon;
     mergedExpandIcon = cloneElement(beClone, {
-      className: classnames(`${prefixCls}-submenu-expand-icon`, isValidElement(beClone) ? (_b = beClone.props) === null || _b === void 0 ? void 0 : _b.className : '')
+      className: classnames$c(`${prefixCls}-submenu-expand-icon`, isValidElement(beClone) ? (_b = beClone.props) === null || _b === void 0 ? void 0 : _b.className : '')
     });
   }
   // ======================== Context ==========================
@@ -23716,7 +29426,7 @@ const InternalMenu = /*#__PURE__*/forwardRef((props, ref) => {
   }, /*#__PURE__*/React.createElement(ExportMenu, Object.assign({
     getPopupContainer: getPopupContainer,
     overflowedIndicator: /*#__PURE__*/React.createElement(EllipsisOutlined$1, null),
-    overflowedIndicatorPopupClassName: classnames(prefixCls, `${prefixCls}-${theme}`, overflowedIndicatorPopupClassName),
+    overflowedIndicatorPopupClassName: classnames$c(prefixCls, `${prefixCls}-${theme}`, overflowedIndicatorPopupClassName),
     mode: mergedMode,
     selectable: mergedSelectable,
     onClick: onItemClick
@@ -23729,7 +29439,7 @@ const InternalMenu = /*#__PURE__*/forwardRef((props, ref) => {
     defaultMotions: defaultMotions,
     expandIcon: mergedExpandIcon,
     ref: ref,
-    rootClassName: classnames(rootClassName, hashId)
+    rootClassName: classnames$c(rootClassName, hashId)
   }), mergedChildren))));
 });
 var InternalMenu$1 = InternalMenu;
@@ -24134,7 +29844,7 @@ const Dropdown = props => {
   } = theme.useToken();
   const child = React.Children.only(children);
   const dropdownTrigger = cloneElement(child, {
-    className: classnames(`${prefixCls}-trigger`, {
+    className: classnames$c(`${prefixCls}-trigger`, {
       [`${prefixCls}-rtl`]: direction === 'rtl'
     }, child.props.className),
     disabled
@@ -24154,7 +29864,7 @@ const Dropdown = props => {
     setOpen(nextOpen);
   });
   // =========================== Overlay ============================
-  const overlayClassNameCustomized = classnames(overlayClassName, rootClassName, hashId, {
+  const overlayClassNameCustomized = classnames$c(overlayClassName, rootClassName, hashId, {
     [`${prefixCls}-rtl`]: direction === 'rtl'
   });
   const builtinPlacements = getPlacements({
@@ -24288,12 +29998,12 @@ function renderItem(prefixCls, item, children, href) {
   });
   if (href !== undefined) {
     return /*#__PURE__*/React.createElement("a", Object.assign({}, passedProps, {
-      className: classnames(`${prefixCls}-link`, className),
+      className: classnames$c(`${prefixCls}-link`, className),
       href: href
     }), children);
   }
   return /*#__PURE__*/React.createElement("span", Object.assign({}, passedProps, {
-    className: classnames(`${prefixCls}-link`, className)
+    className: classnames$c(`${prefixCls}-link`, className)
   }), children);
 }
 function useItemRender(prefixCls, itemRender) {
@@ -24630,8 +30340,8 @@ const Breadcrumb = props => {
       }), mergedItemRender(item, params, itemRenderRoutes, paths, href));
     });
   } else if (children) {
-    const childrenLength = toArray$3(children).length;
-    crumbs = toArray$3(children).map((element, index) => {
+    const childrenLength = toArray$4(children).length;
+    crumbs = toArray$4(children).map((element, index) => {
       if (!element) {
         return element;
       }
@@ -24647,7 +30357,7 @@ const Breadcrumb = props => {
       });
     });
   }
-  const breadcrumbClassName = classnames(prefixCls, breadcrumb === null || breadcrumb === void 0 ? void 0 : breadcrumb.className, {
+  const breadcrumbClassName = classnames$c(prefixCls, breadcrumb === null || breadcrumb === void 0 ? void 0 : breadcrumb.className, {
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, className, rootClassName, hashId);
   const mergedStyle = Object.assign(Object.assign({}, breadcrumb === null || breadcrumb === void 0 ? void 0 : breadcrumb.style), style);
@@ -24699,7 +30409,7 @@ var Checkbox$3 = /*#__PURE__*/forwardRef(function (props, ref) {
       input: inputRef.current
     };
   });
-  var classString = classnames(prefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-checked"), rawValue), _defineProperty(_classNames, "".concat(prefixCls, "-disabled"), disabled), _classNames));
+  var classString = classnames$7(prefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-checked"), rawValue), _defineProperty(_classNames, "".concat(prefixCls, "-disabled"), disabled), _classNames));
   var handleChange = function handleChange(e) {
     if (disabled) {
       return;
@@ -25540,11 +31250,11 @@ const Element$1 = props => {
     size,
     shape
   } = props;
-  const sizeCls = classnames({
+  const sizeCls = classnames$c({
     [`${prefixCls}-lg`]: size === 'large',
     [`${prefixCls}-sm`]: size === 'small'
   });
-  const shapeCls = classnames({
+  const shapeCls = classnames$c({
     [`${prefixCls}-circle`]: shape === 'circle',
     [`${prefixCls}-square`]: shape === 'square',
     [`${prefixCls}-round`]: shape === 'round'
@@ -25555,7 +31265,7 @@ const Element$1 = props => {
     lineHeight: `${size}px`
   } : {}, [size]);
   return /*#__PURE__*/React.createElement("span", {
-    className: classnames(prefixCls, sizeCls, shapeCls, className),
+    className: classnames$c(prefixCls, sizeCls, shapeCls, className),
     style: Object.assign(Object.assign({}, sizeStyle), style)
   });
 };
@@ -25879,7 +31589,7 @@ const SkeletonAvatar = props => {
   const prefixCls = getPrefixCls('skeleton', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$5(prefixCls);
   const otherProps = omit(props, ['prefixCls', 'className']);
-  const cls = classnames(prefixCls, `${prefixCls}-element`, {
+  const cls = classnames$c(prefixCls, `${prefixCls}-element`, {
     [`${prefixCls}-active`]: active
   }, className, rootClassName, hashId);
   return wrapSSR( /*#__PURE__*/React.createElement("div", {
@@ -25907,7 +31617,7 @@ const SkeletonButton = props => {
   const prefixCls = getPrefixCls('skeleton', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$5(prefixCls);
   const otherProps = omit(props, ['prefixCls']);
-  const cls = classnames(prefixCls, `${prefixCls}-element`, {
+  const cls = classnames$c(prefixCls, `${prefixCls}-element`, {
     [`${prefixCls}-active`]: active,
     [`${prefixCls}-block`]: block
   }, className, rootClassName, hashId);
@@ -25934,13 +31644,13 @@ const SkeletonImage = props => {
   } = React.useContext(ConfigContext);
   const prefixCls = getPrefixCls('skeleton', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$5(prefixCls);
-  const cls = classnames(prefixCls, `${prefixCls}-element`, {
+  const cls = classnames$c(prefixCls, `${prefixCls}-element`, {
     [`${prefixCls}-active`]: active
   }, className, rootClassName, hashId);
   return wrapSSR( /*#__PURE__*/React.createElement("div", {
     className: cls
   }, /*#__PURE__*/React.createElement("div", {
-    className: classnames(`${prefixCls}-image`, className),
+    className: classnames$c(`${prefixCls}-image`, className),
     style: style
   }, /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 1098 1024",
@@ -25968,7 +31678,7 @@ const SkeletonInput = props => {
   const prefixCls = getPrefixCls('skeleton', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$5(prefixCls);
   const otherProps = omit(props, ['prefixCls']);
-  const cls = classnames(prefixCls, `${prefixCls}-element`, {
+  const cls = classnames$c(prefixCls, `${prefixCls}-element`, {
     [`${prefixCls}-active`]: active,
     [`${prefixCls}-block`]: block
   }, className, rootClassName, hashId);
@@ -26010,14 +31720,14 @@ const SkeletonNode = props => {
   } = React.useContext(ConfigContext);
   const prefixCls = getPrefixCls('skeleton', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$5(prefixCls);
-  const cls = classnames(prefixCls, `${prefixCls}-element`, {
+  const cls = classnames$c(prefixCls, `${prefixCls}-element`, {
     [`${prefixCls}-active`]: active
   }, hashId, className, rootClassName);
   const content = children !== null && children !== void 0 ? children : /*#__PURE__*/React.createElement(DotChartOutlined$1, null);
   return wrapSSR( /*#__PURE__*/React.createElement("div", {
     className: cls
   }, /*#__PURE__*/React.createElement("div", {
-    className: classnames(`${prefixCls}-image`, className),
+    className: classnames$c(`${prefixCls}-image`, className),
     style: style
   }, content)));
 };
@@ -26054,14 +31764,14 @@ const Paragraph$2 = props => {
     }
   }));
   return /*#__PURE__*/React.createElement("ul", {
-    className: classnames(prefixCls, className),
+    className: classnames$c(prefixCls, className),
     style: style
   }, rowList);
 };
 var Paragraph$3 = Paragraph$2;
 
 /* eslint-disable jsx-a11y/heading-has-content */
-const Title$3 = _ref => {
+const Title$4 = _ref => {
   let {
     prefixCls,
     className,
@@ -26069,13 +31779,13 @@ const Title$3 = _ref => {
     style
   } = _ref;
   return /*#__PURE__*/React.createElement("h3", {
-    className: classnames(prefixCls, className),
+    className: classnames$c(prefixCls, className),
     style: Object.assign({
       width
     }, style)
   });
 };
-var Title$4 = Title$3;
+var Title$5 = Title$4;
 
 function getComponentProps(prop) {
   if (prop && typeof prop === 'object') {
@@ -26167,7 +31877,7 @@ const Skeleton = props => {
         const titleProps = Object.assign(Object.assign({
           prefixCls: `${prefixCls}-title`
         }, getTitleBasicProps(hasAvatar, hasParagraph)), getComponentProps(title));
-        $title = /*#__PURE__*/React.createElement(Title$4, Object.assign({}, titleProps));
+        $title = /*#__PURE__*/React.createElement(Title$5, Object.assign({}, titleProps));
       }
       // Paragraph
       let paragraphNode;
@@ -26181,7 +31891,7 @@ const Skeleton = props => {
         className: `${prefixCls}-content`
       }, $title, paragraphNode);
     }
-    const cls = classnames(prefixCls, {
+    const cls = classnames$c(prefixCls, {
       [`${prefixCls}-with-avatar`]: hasAvatar,
       [`${prefixCls}-active`]: active,
       [`${prefixCls}-rtl`]: direction === 'rtl',
@@ -26219,6 +31929,63 @@ if (process.env.NODE_ENV !== 'production') {
 }
 var PlusOutlined$1 = /*#__PURE__*/React.forwardRef(PlusOutlined);
 
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+var classnames$2 = createCommonjsModule(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+					classes.push(arg.toString());
+					continue;
+				}
+
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
+
 var TabContext = /*#__PURE__*/createContext(null);
 
 var TabPane$2 = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
@@ -26236,7 +32003,7 @@ var TabPane$2 = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     "aria-labelledby": id && "".concat(id, "-tab-").concat(tabKey),
     "aria-hidden": !active,
     style: style,
-    className: classnames(prefixCls, active && "".concat(prefixCls, "-active"), className),
+    className: classnames$2(prefixCls, active && "".concat(prefixCls, "-active"), className),
     ref: ref
   }, children);
 });
@@ -26257,9 +32024,9 @@ function TabPanelList(_ref) {
   var tabPaneAnimated = animated.tabPane;
   var tabPanePrefixCls = "".concat(prefixCls, "-tabpane");
   return /*#__PURE__*/React.createElement("div", {
-    className: classnames("".concat(prefixCls, "-content-holder"))
+    className: classnames$2("".concat(prefixCls, "-content-holder"))
   }, /*#__PURE__*/React.createElement("div", {
-    className: classnames("".concat(prefixCls, "-content"), "".concat(prefixCls, "-content-").concat(tabPosition), _defineProperty({}, "".concat(prefixCls, "-content-animated"), tabPaneAnimated))
+    className: classnames$2("".concat(prefixCls, "-content"), "".concat(prefixCls, "-content-").concat(tabPosition), _defineProperty({}, "".concat(prefixCls, "-content-animated"), tabPaneAnimated))
   }, tabs.map(function (_ref2) {
     var key = _ref2.key,
       forceRender = _ref2.forceRender,
@@ -26283,7 +32050,7 @@ function TabPanelList(_ref) {
         animated: tabPaneAnimated,
         active: active,
         style: _objectSpread2(_objectSpread2({}, paneStyle), motionStyle),
-        className: classnames(paneClassName, motionClassName),
+        className: classnames$2(paneClassName, motionClassName),
         ref: ref
       }));
     });
@@ -26820,7 +32587,7 @@ function OperationNode(_ref, ref) {
     moreStyle.visibility = 'hidden';
     moreStyle.order = 1;
   }
-  var overlayClassName = classnames(_defineProperty({}, "".concat(dropdownPrefix, "-rtl"), rtl));
+  var overlayClassName = classnames$2(_defineProperty({}, "".concat(dropdownPrefix, "-rtl"), rtl));
   var moreNode = mobile ? null : /*#__PURE__*/React.createElement(Dropdown$2, {
     prefixCls: dropdownPrefix,
     overlay: menu,
@@ -26828,7 +32595,7 @@ function OperationNode(_ref, ref) {
     visible: tabs.length ? open : false,
     transitionName: moreTransitionName,
     onVisibleChange: setOpen,
-    overlayClassName: classnames(overlayClassName, popupClassName),
+    overlayClassName: classnames$2(overlayClassName, popupClassName),
     mouseEnterDelay: 0.1,
     mouseLeaveDelay: 0.1,
     getPopupContainer: getPopupContainer
@@ -26845,7 +32612,7 @@ function OperationNode(_ref, ref) {
     onKeyDown: onKeyDown
   }, moreIcon));
   return /*#__PURE__*/React.createElement("div", {
-    className: classnames("".concat(prefixCls, "-nav-operations"), className),
+    className: classnames$2("".concat(prefixCls, "-nav-operations"), className),
     style: style,
     ref: ref
   }, moreNode, /*#__PURE__*/React.createElement(AddButton$1, {
@@ -26900,7 +32667,7 @@ function TabNode(_ref) {
     // ref={ref}
     ,
     "data-node-key": genDataNodeKey(key),
-    className: classnames(tabPrefix, (_classNames = {}, _defineProperty(_classNames, "".concat(tabPrefix, "-with-remove"), removable), _defineProperty(_classNames, "".concat(tabPrefix, "-active"), active), _defineProperty(_classNames, "".concat(tabPrefix, "-disabled"), disabled), _classNames)),
+    className: classnames$2(tabPrefix, (_classNames = {}, _defineProperty(_classNames, "".concat(tabPrefix, "-with-remove"), removable), _defineProperty(_classNames, "".concat(tabPrefix, "-active"), active), _defineProperty(_classNames, "".concat(tabPrefix, "-disabled"), disabled), _classNames)),
     style: style,
     onClick: onInternalClick
   }, /*#__PURE__*/React.createElement("div", {
@@ -27316,7 +33083,7 @@ function TabNavList(props, ref) {
   }, /*#__PURE__*/React.createElement("div", {
     ref: useComposeRef(ref, containerRef),
     role: "tablist",
-    className: classnames("".concat(prefixCls, "-nav"), className),
+    className: classnames$2("".concat(prefixCls, "-nav"), className),
     style: style,
     onKeyDown: function onKeyDown() {
       // No need animation when use keyboard
@@ -27328,7 +33095,7 @@ function TabNavList(props, ref) {
     extra: extra,
     prefixCls: prefixCls
   }), /*#__PURE__*/React.createElement("div", {
-    className: classnames(wrapPrefix, (_classNames = {}, _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-left"), pingLeft), _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-right"), pingRight), _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-top"), pingTop), _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-bottom"), pingBottom), _classNames)),
+    className: classnames$2(wrapPrefix, (_classNames = {}, _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-left"), pingLeft), _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-right"), pingRight), _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-top"), pingTop), _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-bottom"), pingBottom), _classNames)),
     ref: tabsWrapperRef
   }, /*#__PURE__*/React.createElement(RefResizeObserver, {
     onResize: onListHolderResize
@@ -27348,7 +33115,7 @@ function TabNavList(props, ref) {
       visibility: hasDropdown ? 'hidden' : null
     })
   }), /*#__PURE__*/React.createElement("div", {
-    className: classnames("".concat(prefixCls, "-ink-bar"), _defineProperty({}, "".concat(prefixCls, "-ink-bar-animated"), animated.inkBar)),
+    className: classnames$2("".concat(prefixCls, "-ink-bar"), _defineProperty({}, "".concat(prefixCls, "-ink-bar-animated"), animated.inkBar)),
     style: inkStyle
   })))), /*#__PURE__*/React.createElement(OperationNode$1, _extends$1({}, props, {
     removeAriaLabel: locale === null || locale === void 0 ? void 0 : locale.removeAriaLabel,
@@ -27583,7 +33350,7 @@ function Tabs$2(_ref, ref) {
   }, /*#__PURE__*/React.createElement("div", _extends$1({
     ref: ref,
     id: id,
-    className: classnames(prefixCls, "".concat(prefixCls, "-").concat(tabPosition), (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-mobile"), mobile), _defineProperty(_classNames, "".concat(prefixCls, "-editable"), editable), _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), rtl), _classNames), className)
+    className: classnames$2(prefixCls, "".concat(prefixCls, "-").concat(tabPosition), (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-mobile"), mobile), _defineProperty(_classNames, "".concat(prefixCls, "-editable"), editable), _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), rtl), _classNames), className)
   }, restProps), tabNavBar, /*#__PURE__*/React.createElement(TabNavListWrapper, _extends$1({}, tabNavBarProps, {
     renderTabBar: renderTabBar
   })), /*#__PURE__*/React.createElement(TabPanelList, _extends$1({
@@ -27653,7 +33420,7 @@ function useLegacyItems(items, children) {
     return items;
   }
   process.env.NODE_ENV !== "production" ? warning$3(!children, 'Tabs', 'Tabs.TabPane is deprecated. Please use `items` directly.') : void 0;
-  const childrenItems = toArray$3(children).map(node => {
+  const childrenItems = toArray$4(children).map(node => {
     if ( /*#__PURE__*/React.isValidElement(node)) {
       const {
         key,
@@ -28592,13 +34359,13 @@ const Tabs = props => {
     moreTransitionName: `${rootPrefixCls}-slide-up`
   }, otherProps, {
     items: mergedItems,
-    className: classnames({
+    className: classnames$c({
       [`${prefixCls}-${size}`]: size,
       [`${prefixCls}-card`]: ['card', 'editable-card'].includes(type),
       [`${prefixCls}-editable-card`]: type === 'editable-card',
       [`${prefixCls}-centered`]: centered
     }, tabs === null || tabs === void 0 ? void 0 : tabs.className, className, rootClassName, hashId),
-    popupClassName: classnames(popupClassName, hashId),
+    popupClassName: classnames$c(popupClassName, hashId),
     style: mergedStyle,
     editable: editable,
     moreIcon: moreIcon,
@@ -28631,7 +34398,7 @@ const Grid = _a => {
     getPrefixCls
   } = React.useContext(ConfigContext);
   const prefix = getPrefixCls('card', prefixCls);
-  const classString = classnames(`${prefix}-grid`, className, {
+  const classString = classnames$c(`${prefix}-grid`, className, {
     [`${prefix}-grid-hoverable`]: hoverable
   });
   return /*#__PURE__*/React.createElement("div", Object.assign({}, props, {
@@ -29100,7 +34867,7 @@ const Card$2 = /*#__PURE__*/React.forwardRef((props, ref) => {
     className: `${prefixCls}-actions`
   }, getAction(actions)) : null;
   const divProps = omit(others, ['onTabChange']);
-  const classString = classnames(prefixCls, card === null || card === void 0 ? void 0 : card.className, {
+  const classString = classnames$c(prefixCls, card === null || card === void 0 ? void 0 : card.className, {
     [`${prefixCls}-loading`]: loading,
     [`${prefixCls}-bordered`]: bordered,
     [`${prefixCls}-hoverable`]: hoverable,
@@ -29141,7 +34908,7 @@ const Meta = props => {
     getPrefixCls
   } = React.useContext(ConfigContext);
   const prefixCls = getPrefixCls('card', customizePrefixCls);
-  const classString = classnames(`${prefixCls}-meta`, className);
+  const classString = classnames$c(`${prefixCls}-meta`, className);
   const avatarDom = avatar ? /*#__PURE__*/React.createElement("div", {
     className: `${prefixCls}-meta-avatar`
   }, avatar) : null;
@@ -29462,13 +35229,13 @@ const InternalCheckbox = (props, ref) => {
     checkboxProps.name = checkboxGroup.name;
     checkboxProps.checked = checkboxGroup.value.includes(restProps.value);
   }
-  const classString = classnames(`${prefixCls}-wrapper`, {
+  const classString = classnames$c(`${prefixCls}-wrapper`, {
     [`${prefixCls}-rtl`]: direction === 'rtl',
     [`${prefixCls}-wrapper-checked`]: checkboxProps.checked,
     [`${prefixCls}-wrapper-disabled`]: mergedDisabled,
     [`${prefixCls}-wrapper-in-form-item`]: isFormItemInput
   }, checkbox === null || checkbox === void 0 ? void 0 : checkbox.className, className, rootClassName, hashId);
-  const checkboxClass = classnames({
+  const checkboxClass = classnames$c({
     [`${prefixCls}-indeterminate`]: indeterminate
   }, TARGET_CLS, hashId);
   const ariaChecked = indeterminate ? 'mixed' : undefined;
@@ -29583,7 +35350,7 @@ const InternalGroup = (props, ref) => {
     registerValue,
     cancelValue
   };
-  const classString = classnames(groupPrefixCls, {
+  const classString = classnames$c(groupPrefixCls, {
     [`${groupPrefixCls}-rtl`]: direction === 'rtl'
   }, className, rootClassName, hashId);
   return wrapSSR( /*#__PURE__*/React.createElement("div", Object.assign({
@@ -29811,7 +35578,7 @@ const Col = /*#__PURE__*/React.forwardRef((props, ref) => {
       [`${prefixCls}-rtl`]: direction === 'rtl'
     });
   });
-  const classes = classnames(prefixCls, {
+  const classes = classnames$c(prefixCls, {
     [`${prefixCls}-${span}`]: span !== undefined,
     [`${prefixCls}-order-${order}`]: order,
     [`${prefixCls}-offset-${offset}`]: offset,
@@ -29963,7 +35730,7 @@ const Row = /*#__PURE__*/React.forwardRef((props, ref) => {
   const prefixCls = getPrefixCls('row', customizePrefixCls);
   const [wrapSSR, hashId] = useRowStyle(prefixCls);
   const gutters = getGutter();
-  const classes = classnames(prefixCls, {
+  const classes = classnames$c(prefixCls, {
     [`${prefixCls}-no-wrap`]: wrap === false,
     [`${prefixCls}-${mergeJustify}`]: mergeJustify,
     [`${prefixCls}-${mergeAlign}`]: mergeAlign,
@@ -30004,6 +35771,63 @@ if (process.env.NODE_ENV !== 'production') {
   Row.displayName = 'Row';
 }
 var Row$1 = Row;
+
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+var classnames$1 = createCommonjsModule(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+					classes.push(arg.toString());
+					continue;
+				}
+
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
 
 function hasAddon(props) {
   return !!(props.addonBefore || props.addonAfter);
@@ -30141,7 +35965,7 @@ var BaseInput = function BaseInput(props) {
       onMouseDown: function onMouseDown(e) {
         return e.preventDefault();
       },
-      className: classnames(clearIconCls, (_clsx = {}, _defineProperty(_clsx, "".concat(clearIconCls, "-hidden"), !needClear), _defineProperty(_clsx, "".concat(clearIconCls, "-has-suffix"), !!suffix), _clsx)),
+      className: classnames$1(clearIconCls, (_clsx = {}, _defineProperty(_clsx, "".concat(clearIconCls, "-hidden"), !needClear), _defineProperty(_clsx, "".concat(clearIconCls, "-has-suffix"), !!suffix), _clsx)),
       role: "button",
       tabIndex: -1
     }, iconNode);
@@ -30149,7 +35973,7 @@ var BaseInput = function BaseInput(props) {
   var element = /*#__PURE__*/cloneElement$1(inputElement, {
     value: value,
     hidden: hidden,
-    className: classnames((_inputElement$props = inputElement.props) === null || _inputElement$props === void 0 ? void 0 : _inputElement$props.className, !hasPrefixSuffix$1(props) && !hasAddon(props) && className) || null,
+    className: classnames$1((_inputElement$props = inputElement.props) === null || _inputElement$props === void 0 ? void 0 : _inputElement$props.className, !hasPrefixSuffix$1(props) && !hasAddon(props) && className) || null,
     style: _objectSpread2(_objectSpread2({}, (_inputElement$props2 = inputElement.props) === null || _inputElement$props2 === void 0 ? void 0 : _inputElement$props2.style), !hasPrefixSuffix$1(props) && !hasAddon(props) ? style : {})
   });
 
@@ -30157,9 +35981,9 @@ var BaseInput = function BaseInput(props) {
   if (hasPrefixSuffix$1(props)) {
     var _clsx2;
     var affixWrapperPrefixCls = "".concat(prefixCls, "-affix-wrapper");
-    var affixWrapperCls = classnames(affixWrapperPrefixCls, (_clsx2 = {}, _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-disabled"), disabled), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-focused"), focused), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-readonly"), readOnly), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-input-with-clear-btn"), suffix && allowClear && value), _clsx2), !hasAddon(props) && className, classes === null || classes === void 0 ? void 0 : classes.affixWrapper, classNames === null || classNames === void 0 ? void 0 : classNames.affixWrapper);
+    var affixWrapperCls = classnames$1(affixWrapperPrefixCls, (_clsx2 = {}, _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-disabled"), disabled), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-focused"), focused), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-readonly"), readOnly), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-input-with-clear-btn"), suffix && allowClear && value), _clsx2), !hasAddon(props) && className, classes === null || classes === void 0 ? void 0 : classes.affixWrapper, classNames === null || classNames === void 0 ? void 0 : classNames.affixWrapper);
     var suffixNode = (suffix || allowClear) && /*#__PURE__*/React__default.createElement("span", {
-      className: classnames("".concat(prefixCls, "-suffix"), classNames === null || classNames === void 0 ? void 0 : classNames.suffix),
+      className: classnames$1("".concat(prefixCls, "-suffix"), classNames === null || classNames === void 0 ? void 0 : classNames.suffix),
       style: styles === null || styles === void 0 ? void 0 : styles.suffix
     }, getClearIcon(), suffix);
     element = /*#__PURE__*/React__default.createElement(AffixWrapperComponent, _extends$1({
@@ -30170,7 +35994,7 @@ var BaseInput = function BaseInput(props) {
     }, dataAttrs === null || dataAttrs === void 0 ? void 0 : dataAttrs.affixWrapper, {
       ref: containerRef
     }), prefix && /*#__PURE__*/React__default.createElement("span", {
-      className: classnames("".concat(prefixCls, "-prefix"), classNames === null || classNames === void 0 ? void 0 : classNames.prefix),
+      className: classnames$1("".concat(prefixCls, "-prefix"), classNames === null || classNames === void 0 ? void 0 : classNames.prefix),
       style: styles === null || styles === void 0 ? void 0 : styles.prefix
     }, prefix), /*#__PURE__*/cloneElement$1(inputElement, {
       value: value,
@@ -30182,8 +36006,8 @@ var BaseInput = function BaseInput(props) {
   if (hasAddon(props)) {
     var wrapperCls = "".concat(prefixCls, "-group");
     var addonCls = "".concat(wrapperCls, "-addon");
-    var mergedWrapperClassName = classnames("".concat(prefixCls, "-wrapper"), wrapperCls, classes === null || classes === void 0 ? void 0 : classes.wrapper);
-    var mergedGroupClassName = classnames("".concat(prefixCls, "-group-wrapper"), className, classes === null || classes === void 0 ? void 0 : classes.group);
+    var mergedWrapperClassName = classnames$1("".concat(prefixCls, "-wrapper"), wrapperCls, classes === null || classes === void 0 ? void 0 : classes.wrapper);
+    var mergedGroupClassName = classnames$1("".concat(prefixCls, "-group-wrapper"), className, classes === null || classes === void 0 ? void 0 : classes.group);
 
     // Need another wrapper for changing display:table to display:inline-block
     // and put style prop in wrapper
@@ -30307,7 +36131,7 @@ var Input$3 = /*#__PURE__*/forwardRef(function (props, ref) {
       onFocus: handleFocus,
       onBlur: handleBlur,
       onKeyDown: handleKeyDown,
-      className: classnames(prefixCls, _defineProperty({}, "".concat(prefixCls, "-disabled"), disabled), classNames === null || classNames === void 0 ? void 0 : classNames.input),
+      className: classnames$1(prefixCls, _defineProperty({}, "".concat(prefixCls, "-disabled"), disabled), classNames === null || classNames === void 0 ? void 0 : classNames.input),
       style: styles === null || styles === void 0 ? void 0 : styles.input,
       ref: inputRef,
       size: htmlSize,
@@ -30326,7 +36150,7 @@ var Input$3 = /*#__PURE__*/forwardRef(function (props, ref) {
         maxLength: maxLength
       }) : "".concat(valueLength).concat(hasMaxLength ? " / ".concat(maxLength) : '');
       return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, !!showCount && /*#__PURE__*/React__default.createElement("span", {
-        className: classnames("".concat(prefixCls, "-show-count-suffix"), _defineProperty({}, "".concat(prefixCls, "-show-count-has-suffix"), !!suffix), classNames === null || classNames === void 0 ? void 0 : classNames.count),
+        className: classnames$1("".concat(prefixCls, "-show-count-suffix"), _defineProperty({}, "".concat(prefixCls, "-show-count-has-suffix"), !!suffix), classNames === null || classNames === void 0 ? void 0 : classNames.count),
         style: _objectSpread2({}, styles === null || styles === void 0 ? void 0 : styles.count)
       }, dataCount), suffix);
     }
@@ -30360,7 +36184,7 @@ const Group = props => {
   const prefixCls = getPrefixCls('input-group', customizePrefixCls);
   const inputPrefixCls = getPrefixCls('input');
   const [wrapSSR, hashId] = useStyle$6(inputPrefixCls);
-  const cls = classnames(prefixCls, {
+  const cls = classnames$c(prefixCls, {
     [`${prefixCls}-lg`]: props.size === 'large',
     [`${prefixCls}-sm`]: props.size === 'small',
     [`${prefixCls}-compact`]: props.compact,
@@ -30543,7 +36367,7 @@ const Input$2 = /*#__PURE__*/forwardRef((props, ref) => {
     styles: Object.assign(Object.assign({}, input === null || input === void 0 ? void 0 : input.styles), styles),
     suffix: suffixNode,
     allowClear: mergedAllowClear,
-    className: classnames(className, rootClassName, compactItemClassnames, input === null || input === void 0 ? void 0 : input.className),
+    className: classnames$c(className, rootClassName, compactItemClassnames, input === null || input === void 0 ? void 0 : input.className),
     onChange: handleChange,
     addonAfter: addonAfter && /*#__PURE__*/React__default.createElement(NoCompactStyle, null, /*#__PURE__*/React__default.createElement(NoFormStyle, {
       override: true,
@@ -30554,7 +36378,7 @@ const Input$2 = /*#__PURE__*/forwardRef((props, ref) => {
       status: true
     }, addonBefore)),
     classNames: Object.assign(Object.assign(Object.assign({}, classes), input === null || input === void 0 ? void 0 : input.classNames), {
-      input: classnames({
+      input: classnames$c({
         [`${prefixCls}-sm`]: mergedSize === 'small',
         [`${prefixCls}-lg`]: mergedSize === 'large',
         [`${prefixCls}-rtl`]: direction === 'rtl',
@@ -30562,16 +36386,16 @@ const Input$2 = /*#__PURE__*/forwardRef((props, ref) => {
       }, !inputHasPrefixSuffix && getStatusClassNames(prefixCls, mergedStatus), classes === null || classes === void 0 ? void 0 : classes.input, (_a = input === null || input === void 0 ? void 0 : input.classNames) === null || _a === void 0 ? void 0 : _a.input, hashId)
     }),
     classes: {
-      affixWrapper: classnames({
+      affixWrapper: classnames$c({
         [`${prefixCls}-affix-wrapper-sm`]: mergedSize === 'small',
         [`${prefixCls}-affix-wrapper-lg`]: mergedSize === 'large',
         [`${prefixCls}-affix-wrapper-rtl`]: direction === 'rtl',
         [`${prefixCls}-affix-wrapper-borderless`]: !bordered
       }, getStatusClassNames(`${prefixCls}-affix-wrapper`, mergedStatus, hasFeedback), hashId),
-      wrapper: classnames({
+      wrapper: classnames$c({
         [`${prefixCls}-group-rtl`]: direction === 'rtl'
       }, hashId),
-      group: classnames({
+      group: classnames$c({
         [`${prefixCls}-group-wrapper-sm`]: mergedSize === 'small',
         [`${prefixCls}-group-wrapper-lg`]: mergedSize === 'large',
         [`${prefixCls}-group-wrapper-rtl`]: direction === 'rtl',
@@ -30695,7 +36519,7 @@ const Password = /*#__PURE__*/React.forwardRef((props, ref) => {
   const inputPrefixCls = getPrefixCls('input', customizeInputPrefixCls);
   const prefixCls = getPrefixCls('input-password', customizePrefixCls);
   const suffixIcon = visibilityToggle && getIcon(prefixCls);
-  const inputClassName = classnames(prefixCls, className, {
+  const inputClassName = classnames$c(prefixCls, className, {
     [`${prefixCls}-${size}`]: !!size
   });
   const omittedProps = Object.assign(Object.assign({}, omit(restProps, ['suffix', 'iconRender', 'visibilityToggle'])), {
@@ -30818,7 +36642,7 @@ const Search = /*#__PURE__*/React.forwardRef((props, ref) => {
       key: 'addonAfter'
     })];
   }
-  const cls = classnames(prefixCls, {
+  const cls = classnames$c(prefixCls, {
     [`${prefixCls}-rtl`]: direction === 'rtl',
     [`${prefixCls}-${size}`]: !!size,
     [`${prefixCls}-with-button`]: !!enterButton
@@ -30850,6 +36674,63 @@ if (process.env.NODE_ENV !== 'production') {
   Search.displayName = 'Search';
 }
 var Search$1 = Search;
+
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+var classnames = createCommonjsModule(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+					classes.push(arg.toString());
+					continue;
+				}
+
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
 
 // Thanks to https://github.com/andreypopp/react-textarea-autosize/
 
@@ -31060,12 +36941,12 @@ var ResizableTextArea = /*#__PURE__*/React.forwardRef(function (props, ref) {
   };
 
   // Change to trigger resize measure
-  useLayoutEffect(function () {
+  useLayoutEffect$1(function () {
     if (needAutoSize) {
       startResize();
     }
   }, [value, minRows, maxRows, needAutoSize]);
-  useLayoutEffect(function () {
+  useLayoutEffect$1(function () {
     if (resizeState === RESIZE_START) {
       setResizeState(RESIZE_MEASURING);
     } else if (resizeState === RESIZE_MEASURING) {
@@ -31411,7 +37292,7 @@ const TextArea = /*#__PURE__*/forwardRef((props, ref) => {
     disabled: mergedDisabled,
     allowClear: mergedAllowClear,
     classes: {
-      affixWrapper: classnames(`${prefixCls}-textarea-affix-wrapper`, {
+      affixWrapper: classnames$c(`${prefixCls}-textarea-affix-wrapper`, {
         [`${prefixCls}-affix-wrapper-rtl`]: direction === 'rtl',
         [`${prefixCls}-affix-wrapper-borderless`]: !bordered,
         [`${prefixCls}-affix-wrapper-sm`]: mergedSize === 'small',
@@ -31420,7 +37301,7 @@ const TextArea = /*#__PURE__*/forwardRef((props, ref) => {
       }, getStatusClassNames(`${prefixCls}-affix-wrapper`, mergedStatus), hashId)
     },
     classNames: Object.assign(Object.assign({}, classes), {
-      textarea: classnames({
+      textarea: classnames$c({
         [`${prefixCls}-borderless`]: !bordered,
         [`${prefixCls}-sm`]: mergedSize === 'small',
         [`${prefixCls}-lg`]: mergedSize === 'large'
@@ -31540,17 +37421,17 @@ const Space = /*#__PURE__*/React.forwardRef((props, ref) => {
     otherProps = __rest$a(props, ["size", "align", "className", "rootClassName", "children", "direction", "prefixCls", "split", "style", "wrap", "classNames", "styles"]);
   const supportFlexGap = useFlexGapSupport();
   const [horizontalSize, verticalSize] = React.useMemo(() => (Array.isArray(size) ? size : [size, size]).map(item => getNumberSize(item)), [size]);
-  const childNodes = toArray$3(children, {
+  const childNodes = toArray$4(children, {
     keepEmpty: true
   });
   const mergedAlign = align === undefined && direction === 'horizontal' ? 'center' : align;
   const prefixCls = getPrefixCls('space', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$d(prefixCls);
-  const cn = classnames(prefixCls, space === null || space === void 0 ? void 0 : space.className, hashId, `${prefixCls}-${direction}`, {
+  const [wrapSSR, hashId] = useStyle$e(prefixCls);
+  const cn = classnames$c(prefixCls, space === null || space === void 0 ? void 0 : space.className, hashId, `${prefixCls}-${direction}`, {
     [`${prefixCls}-rtl`]: directionConfig === 'rtl',
     [`${prefixCls}-align-${mergedAlign}`]: mergedAlign
   }, className, rootClassName);
-  const itemClassName = classnames(`${prefixCls}-item`, (_a = customClassNames === null || customClassNames === void 0 ? void 0 : customClassNames.item) !== null && _a !== void 0 ? _a : (_b = space === null || space === void 0 ? void 0 : space.classNames) === null || _b === void 0 ? void 0 : _b.item);
+  const itemClassName = classnames$c(`${prefixCls}-item`, (_a = customClassNames === null || customClassNames === void 0 ? void 0 : customClassNames.item) !== null && _a !== void 0 ? _a : (_b = space === null || space === void 0 ? void 0 : space.classNames) === null || _b === void 0 ? void 0 : _b.item);
   const marginDirection = directionConfig === 'rtl' ? 'marginLeft' : 'marginRight';
   // Calculate latest one
   let latestIndex = 0;
@@ -32129,7 +38010,7 @@ const ErrorList = _ref => {
       style: holderStyle
     } = holderProps;
     return /*#__PURE__*/React.createElement("div", Object.assign({}, helpProps, {
-      className: classnames(baseClassName, holderClassName, rootClassName, hashId),
+      className: classnames$c(baseClassName, holderClassName, rootClassName, hashId),
       style: holderStyle,
       role: "alert"
     }), /*#__PURE__*/React.createElement(CSSMotionList, Object.assign({
@@ -32147,7 +38028,7 @@ const ErrorList = _ref => {
       } = itemProps;
       return /*#__PURE__*/React.createElement("div", {
         key: key,
-        className: classnames(itemClassName, {
+        className: classnames$c(itemClassName, {
           [`${baseClassName}-${errorStatus}`]: errorStatus
         }),
         style: itemStyle
@@ -32290,7 +38171,7 @@ const InternalForm = (props, ref) => {
   const prefixCls = getPrefixCls('form', customizePrefixCls);
   // Style
   const [wrapSSR, hashId] = useStyle$1(prefixCls);
-  const formClassName = classnames(prefixCls, `${prefixCls}-${layout}`, {
+  const formClassName = classnames$c(prefixCls, `${prefixCls}-${layout}`, {
     [`${prefixCls}-hide-required-mark`]: mergedRequiredMark === false,
     [`${prefixCls}-rtl`]: direction === 'rtl',
     [`${prefixCls}-${mergedSize}`]: mergedSize
@@ -32450,7 +38331,7 @@ const FormItemInput = props => {
   const baseClassName = `${prefixCls}-item`;
   const formContext = React.useContext(FormContext);
   const mergedWrapperCol = wrapperCol || formContext.wrapperCol || {};
-  const className = classnames(`${baseClassName}-control`, mergedWrapperCol.className);
+  const className = classnames$c(`${baseClassName}-control`, mergedWrapperCol.className);
   // Pass to sub FormItem should not with col info
   const subFormContext = React.useMemo(() => Object.assign({}, formContext), [formContext]);
   delete subFormContext.labelCol;
@@ -32568,7 +38449,7 @@ const FormItemLabel = _ref => {
   const mergedLabelCol = labelCol || contextLabelCol || {};
   const mergedLabelAlign = labelAlign || contextLabelAlign;
   const labelClsBasic = `${prefixCls}-item-label`;
-  const labelColClassName = classnames(labelClsBasic, mergedLabelAlign === 'left' && `${labelClsBasic}-left`, mergedLabelCol.className, {
+  const labelColClassName = classnames$c(labelClsBasic, mergedLabelAlign === 'left' && `${labelClsBasic}-left`, mergedLabelCol.className, {
     [`${labelClsBasic}-wrap`]: !!labelWrap
   });
   let labelChildren = label;
@@ -32598,7 +38479,7 @@ const FormItemLabel = _ref => {
       title: ""
     }, (formLocale === null || formLocale === void 0 ? void 0 : formLocale.optional) || ((_a = defaultLocale.Form) === null || _a === void 0 ? void 0 : _a.optional)));
   }
-  const labelClassName = classnames({
+  const labelClassName = classnames$c({
     [`${prefixCls}-item-required`]: required,
     [`${prefixCls}-item-required-mark-optional`]: requiredMark === 'optional',
     [`${prefixCls}-item-no-colon`]: !computedColon
@@ -32659,7 +38540,7 @@ function ItemHolder(props) {
   const hasError = !!(hasHelp || errors.length || warnings.length);
   const isOnScreen = !!itemRef.current && isVisible(itemRef.current);
   const [marginBottom, setMarginBottom] = React.useState(null);
-  useLayoutEffect(() => {
+  useLayoutEffect$1(() => {
     if (hasError && itemRef.current) {
       // The element must be part of the DOMTree to use getComputedStyle
       // https://stackoverflow.com/questions/35360711/getcomputedstyle-returns-a-cssstyledeclaration-but-all-properties-are-empty-on-a
@@ -32698,7 +38579,7 @@ function ItemHolder(props) {
     if (hasFeedback) {
       const IconNode = mergedValidateStatus && iconMap[mergedValidateStatus];
       feedbackIcon = IconNode ? /*#__PURE__*/React.createElement("span", {
-        className: classnames(`${itemPrefixCls}-feedback-icon`, `${itemPrefixCls}-feedback-icon-${mergedValidateStatus}`)
+        className: classnames$c(`${itemPrefixCls}-feedback-icon`, `${itemPrefixCls}-feedback-icon-${mergedValidateStatus}`)
       }, /*#__PURE__*/React.createElement(IconNode, null)) : null;
     }
     return {
@@ -32711,7 +38592,7 @@ function ItemHolder(props) {
     };
   }, [mergedValidateStatus, hasFeedback]);
   // ======================== Render ========================
-  const itemClassName = classnames(itemPrefixCls, className, rootClassName, {
+  const itemClassName = classnames$c(itemPrefixCls, className, rootClassName, {
     [`${itemPrefixCls}-with-help`]: hasHelp || debounceErrors.length || debounceWarnings.length,
     // Status
     [`${itemPrefixCls}-has-feedback`]: mergedValidateStatus && hasFeedback,
@@ -32757,7 +38638,7 @@ function useChildren(children) {
   if (typeof children === 'function') {
     return children;
   }
-  const childList = toArray$3(children);
+  const childList = toArray$4(children);
   return childList.length <= 1 ? childList[0] : childList;
 }
 
@@ -32889,7 +38770,7 @@ function InternalFormItem(props) {
     return /*#__PURE__*/React.createElement(ItemHolder, Object.assign({
       key: "row"
     }, props, {
-      className: classnames(className, hashId),
+      className: classnames$c(className, hashId),
       prefixCls: prefixCls,
       fieldId: fieldId,
       isRequired: isRequired,
@@ -33023,7 +38904,7 @@ const FormList = _a => {
     prefixCls,
     status: 'error'
   }), [prefixCls]);
-  return /*#__PURE__*/React.createElement(List$1, Object.assign({}, props), (fields, operation, meta) => /*#__PURE__*/React.createElement(FormItemPrefixContext.Provider, {
+  return /*#__PURE__*/React.createElement(List$2, Object.assign({}, props), (fields, operation, meta) => /*#__PURE__*/React.createElement(FormItemPrefixContext.Provider, {
     value: contextValue
   }, children(fields.map(field => Object.assign(Object.assign({}, field), {
     fieldKey: field.key
@@ -33702,7 +39583,7 @@ const Editable = props => {
   };
   const textClassName = component ? `${prefixCls}-${component}` : '';
   const [wrapSSR, hashId] = useStyle(prefixCls);
-  const textAreaClassName = classnames(prefixCls, `${prefixCls}-edit-content`, {
+  const textAreaClassName = classnames$c(prefixCls, `${prefixCls}-edit-content`, {
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, className, textClassName, hashId);
   return wrapSSR( /*#__PURE__*/React.createElement("div", {
@@ -33761,7 +39642,7 @@ const Typography$2 = /*#__PURE__*/React.forwardRef((props, ref) => {
   const prefixCls = getPrefixCls('typography', customizePrefixCls);
   // Style
   const [wrapSSR, hashId] = useStyle(prefixCls);
-  const componentClassName = classnames(prefixCls, typography === null || typography === void 0 ? void 0 : typography.className, {
+  const componentClassName = classnames$c(prefixCls, typography === null || typography === void 0 ? void 0 : typography.className, {
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, className, rootClassName, hashId);
   const mergedStyle = Object.assign(Object.assign({}, typography === null || typography === void 0 ? void 0 : typography.style), style);
@@ -33859,7 +39740,7 @@ const Ellipsis = _ref => {
   const [singleRowHeight, setSingleRowHeight] = React.useState(0);
   const singleRowRef = React.useRef(null);
   const midRowRef = React.useRef(null);
-  const nodeList = React.useMemo(() => toArray$3(text), [text]);
+  const nodeList = React.useMemo(() => toArray$4(text), [text]);
   const totalLen = React.useMemo(() => getNodesLen(nodeList), [nodeList]);
   const mergedChildren = React.useMemo(() => {
     if (!enabledMeasure || walkingState !== DONE_WITH_ELLIPSIS) {
@@ -33868,19 +39749,19 @@ const Ellipsis = _ref => {
     return children(sliceNodes(nodeList, midLen), midLen < totalLen);
   }, [enabledMeasure, walkingState, children, nodeList, midLen, totalLen]);
   // ======================== Walk ========================
-  useLayoutEffect(() => {
+  useLayoutEffect$1(() => {
     if (enabledMeasure && width && fontSize && totalLen) {
       setWalkingState(PREPARE);
       setCutLength([0, Math.ceil(totalLen / 2), totalLen]);
     }
   }, [enabledMeasure, width, fontSize, text, totalLen, rows]);
-  useLayoutEffect(() => {
+  useLayoutEffect$1(() => {
     var _a;
     if (walkingState === PREPARE) {
       setSingleRowHeight(((_a = singleRowRef.current) === null || _a === void 0 ? void 0 : _a.offsetHeight) || 0);
     }
   }, [walkingState]);
-  useLayoutEffect(() => {
+  useLayoutEffect$1(() => {
     var _a, _b;
     if (singleRowHeight) {
       if (walkingState === PREPARE) {
@@ -34128,7 +40009,7 @@ const Base = /*#__PURE__*/React.forwardRef((props, ref) => {
   ellipsisConfig.suffix !== undefined || ellipsisConfig.onEllipsis ||
   // Can't use css ellipsis since we need to provide the place for button
   ellipsisConfig.expandable || enableEdit || enableCopy, [mergedEnableEllipsis, ellipsisConfig, enableEdit, enableCopy]);
-  useLayoutEffect(() => {
+  useLayoutEffect$1(() => {
     if (enableEllipsis && !needMeasureEllipsis) {
       setIsLineClampSupport(isStyleSupport('webkitLineClamp'));
       setIsTextOverflowSupport(isStyleSupport('textOverflow'));
@@ -34281,7 +40162,7 @@ const Base = /*#__PURE__*/React.forwardRef((props, ref) => {
       icon,
       tooltip
     } = editConfig;
-    const editTitle = toArray$3(tooltip)[0] || (textLocale === null || textLocale === void 0 ? void 0 : textLocale.edit);
+    const editTitle = toArray$4(tooltip)[0] || (textLocale === null || textLocale === void 0 ? void 0 : textLocale.edit);
     const ariaLabel = typeof editTitle === 'string' ? editTitle : '';
     return triggerType.includes('icon') ? /*#__PURE__*/React.createElement(Tooltip$1, {
       key: "edit",
@@ -34311,7 +40192,7 @@ const Base = /*#__PURE__*/React.forwardRef((props, ref) => {
       key: "copy",
       title: copyTitle
     }, /*#__PURE__*/React.createElement(TransButton$1, {
-      className: classnames(`${prefixCls}-copy`, copied && `${prefixCls}-copy-success`),
+      className: classnames$c(`${prefixCls}-copy`, copied && `${prefixCls}-copy-success`),
       onClick: onCopyClick,
       "aria-label": ariaLabel
     }, copied ? getNode(iconNodes[1], /*#__PURE__*/React.createElement(CheckOutlined$1, null), true) : getNode(iconNodes[0], /*#__PURE__*/React.createElement(CopyOutlined$1, null), true)));
@@ -34329,7 +40210,7 @@ const Base = /*#__PURE__*/React.forwardRef((props, ref) => {
     enabledEllipsis: mergedEnableEllipsis,
     isEllipsis: isMergedEllipsis
   }, /*#__PURE__*/React.createElement(OriginTypography, Object.assign({
-    className: classnames({
+    className: classnames$c({
       [`${prefixCls}-${type}`]: type,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-ellipsis`]: enableEllipsis,
@@ -34376,7 +40257,7 @@ var __rest$2 = undefined && undefined.__rest || function (s, e) {
   }
   return t;
 };
-const Link$1 = /*#__PURE__*/React.forwardRef((_a, ref) => {
+const Link$2 = /*#__PURE__*/React.forwardRef((_a, ref) => {
   var {
       ellipsis,
       rel
@@ -34394,7 +40275,7 @@ const Link$1 = /*#__PURE__*/React.forwardRef((_a, ref) => {
     component: "a"
   }));
 });
-var Link$2 = Link$1;
+var Link$3 = Link$2;
 
 const Paragraph = /*#__PURE__*/React.forwardRef((props, ref) => /*#__PURE__*/React.createElement(Base$1, Object.assign({
   ref: ref
@@ -34411,7 +40292,7 @@ var __rest$1 = undefined && undefined.__rest || function (s, e) {
   }
   return t;
 };
-const Text$1 = (_a, ref) => {
+const Text$2 = (_a, ref) => {
   var {
       ellipsis
     } = _a,
@@ -34430,7 +40311,7 @@ const Text$1 = (_a, ref) => {
     component: "span"
   }));
 };
-var Text$2 = /*#__PURE__*/React.forwardRef(Text$1);
+var Text$3 = /*#__PURE__*/React.forwardRef(Text$2);
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
@@ -34441,7 +40322,7 @@ var __rest = undefined && undefined.__rest || function (s, e) {
   return t;
 };
 const TITLE_ELE_LIST = [1, 2, 3, 4, 5];
-const Title$1 = /*#__PURE__*/React.forwardRef((props, ref) => {
+const Title$2 = /*#__PURE__*/React.forwardRef((props, ref) => {
   const {
       level = 1
     } = props,
@@ -34459,22 +40340,14 @@ const Title$1 = /*#__PURE__*/React.forwardRef((props, ref) => {
     component: component
   }));
 });
-var Title$2 = Title$1;
+var Title$3 = Title$2;
 
 const Typography = OriginTypography;
-Typography.Text = Text$2;
-Typography.Link = Link$2;
-Typography.Title = Title$2;
+Typography.Text = Text$3;
+Typography.Link = Link$3;
+Typography.Title = Title$3;
 Typography.Paragraph = Paragraph$1;
 var Typography$1 = Typography;
-
-function Button (_a) {
-    var children = _a.children, props = __rest$G(_a, ["children"]);
-    return (React__default.createElement(Space$1, { wrap: true },
-        React__default.createElement(Button$2, __assign({ className: '', style: props.style }, props), children)));
-}
-
-var App = function (props) { return (React__default.createElement(Alert$1, { message: props.message, type: props.type })); };
 
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
@@ -34503,15 +40376,29 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = "";
-styleInject(css_248z);
+var css_248z$3 = "";
+styleInject(css_248z$3);
 
-var Title = Typography$1.Title, Text = Typography$1.Text, Link = Typography$1.Link;
+function Button (_a) {
+    var children = _a.children, props = __rest$I(_a, ["children"]);
+    var types = props.types;
+    return (React__default.createElement(Space$1, { wrap: true },
+        React__default.createElement(Button$2, __assign({ className: classnames$7('hotelierButton', {
+                'primary': types === "primary"
+            }), style: props.style }, props), children)));
+}
+
+var App$1 = function (props) { return (React__default.createElement(Alert$1, { message: props.message, type: props.type })); };
+
+var css_248z$2 = "";
+styleInject(css_248z$2);
+
+var Title$1 = Typography$1.Title, Text$1 = Typography$1.Text, Link$1 = Typography$1.Link;
 function Login(props) {
     var title = props.title, signUpUrl = props.signUpUrl, forgotPasswordUrl = props.forgotPasswordUrl, onFinish = props.onFinish;
     return React__default.createElement(Card$1, { className: "login-card", bordered: false },
         React__default.createElement("div", { className: "header" },
-            React__default.createElement(Title, { level: 5, className: "title" }, title),
+            React__default.createElement(Title$1, { level: 5, className: "title" }, title),
             React__default.createElement("span", { className: "sub-title" }, "Please enter your details")),
         React__default.createElement(Form$1, { name: "basic", labelCol: { span: 8 }, wrapperCol: { span: 16 }, className: "form", initialValues: { remember: true }, onFinish: onFinish, 
             // onFinishFailed={onFinishFailed}
@@ -34522,12 +40409,96 @@ function Login(props) {
                 React__default.createElement(Input$1.Password, { placeholder: "password", size: "large" })),
             React__default.createElement(Form$1.Item, { name: "remember", style: { display: 'flex', justifyContent: 'space-between', } },
                 React__default.createElement(Checkbox$1, { checked: true, style: { fontSize: 12 } }, "Remember me"),
-                React__default.createElement(Link, { href: forgotPasswordUrl, style: { fontSize: 12, color: '#3A7C7C' } }, "Forgot password")),
+                React__default.createElement(Link$1, { href: forgotPasswordUrl, style: { fontSize: 12, color: '#3A7C7C' } }, "Forgot password")),
             React__default.createElement(Space$1, { direction: "vertical", style: { width: '100%', paddingTop: 70 } },
                 React__default.createElement(Button$2, { type: "primary", className: "primary", htmlType: "submit", block: true }, "Submit")),
             React__default.createElement("div", { style: { textAlign: 'center', } },
-                React__default.createElement(Text, { style: { fontSize: 12 } }, "Don't have an account ?"),
-                React__default.createElement(Link, { href: signUpUrl, style: { fontSize: 12, color: '#3A7C7C' } }, "Register"))));
+                React__default.createElement(Text$1, { style: { fontSize: 12 } }, "Don't have an account ?"),
+                React__default.createElement(Link$1, { href: signUpUrl, style: { fontSize: 12, color: '#3A7C7C' } }, "Register"))));
+}
+
+var css_248z$1 = "";
+styleInject(css_248z$1);
+
+var Title = Typography$1.Title, Text = Typography$1.Text, Link = Typography$1.Link;
+var Option = Select$1.Option;
+function Register(props) {
+    var title = props.title, subTitle = props.subTitle, loginUrl = props.loginUrl, termsAndConditionUrl = props.termsAndConditionUrl, onFinish = props.onFinish;
+    var prefixSelector = (React__default.createElement(Form$1.Item, { name: "prefix", noStyle: true },
+        React__default.createElement(Select$1, { defaultValue: "86", style: { width: 70 } },
+            React__default.createElement(Option, { value: "86" }, "+86"),
+            React__default.createElement(Option, { value: "87" }, "+87"))));
+    return React__default.createElement(Card$1, { className: "register_container", bordered: false },
+        React__default.createElement("div", { className: "title-container" },
+            React__default.createElement(Title, { level: 5, className: "title" }, title),
+            React__default.createElement("span", { className: "sub-title" }, subTitle)),
+        React__default.createElement("div", { className: "form-container" },
+            React__default.createElement(Form$1, { className: "form", name: "horizontal_login", layout: "inline", onFinish: onFinish },
+                React__default.createElement(Form$1.Item, { className: "form-item", name: "firstName", rules: [{ required: true, message: 'First Name required' }] },
+                    React__default.createElement(Input$1, { size: "large", placeholder: "First Name" })),
+                React__default.createElement(Form$1.Item, { className: "form-item", name: "lastName", rules: [{ required: true, message: 'Last Name required' }] },
+                    React__default.createElement(Input$1, { size: "large", placeholder: "Last Name" })),
+                React__default.createElement(Form$1.Item, { className: "form-item", name: "email", rules: [{ required: true, message: 'email required' }] },
+                    React__default.createElement(Input$1, { size: "large", placeholder: "email" })),
+                React__default.createElement(Form$1.Item, { className: "form-item", name: "phoneNumber", rules: [{ required: true, message: 'Phone number required' }] },
+                    React__default.createElement(Input$1, { style: { width: '100%' }, addonAfter: prefixSelector, size: "large", placeholder: "Phone No" })),
+                React__default.createElement(Form$1.Item, { className: "form-item", name: "hotelName", rules: [{ required: true, message: 'Hotel Name required' }] },
+                    React__default.createElement(Input$1, { size: "large", placeholder: "Hotel Name" })),
+                React__default.createElement(Form$1.Item, { className: "form-item", name: "website" },
+                    React__default.createElement(Input$1, { size: "large", placeholder: "Hotel Website" })),
+                React__default.createElement(Form$1.Item, { className: "form-item", name: "password", rules: [{ required: true, message: 'Password required' }] },
+                    React__default.createElement(Input$1.Password, { size: "large", placeholder: "Password" })),
+                React__default.createElement(Form$1.Item, { className: "form-item", name: "reTypePassword", rules: [{ required: true, message: 'Confirm password required' }] },
+                    React__default.createElement(Input$1.Password, { size: "large", placeholder: "Confirm Passowrd" })),
+                React__default.createElement(Space$1, { direction: "vertical", className: "footer-container " },
+                    React__default.createElement(Checkbox$1, { style: { fontSize: 12 } },
+                        "I Accept ",
+                        React__default.createElement(Link, { href: termsAndConditionUrl, style: { fontSize: 12, color: '#3A7C7C' } }, "Terms and Condition")),
+                    React__default.createElement(Button$2, { type: "primary", style: { backgroundColor: '#3A7C7C', marginTop: -2 }, htmlType: "submit", block: true }, "Submit"),
+                    React__default.createElement("div", { style: { marginTop: -4 } },
+                        React__default.createElement(Text, { style: { fontSize: 12 } }, "Already have an accout?"),
+                        " ",
+                        React__default.createElement(Link, { href: loginUrl, className: "link-1" }, "Login"))))));
+}
+
+var css_248z = "";
+styleInject(css_248z);
+
+var App = function (props) {
+    var onFinish = props.onFinish, formName = props.formName, title = props.title, children = props.children, handleCancel = props.handleCancel;
+    return (React__default.createElement("div", { className: 'form_card_container' },
+        React__default.createElement(Card$1, { title: title },
+            React__default.createElement(Form$1, { className: "form", labelCol: { span: 4 }, wrapperCol: { span: 14 }, layout: "horizontal", id: formName, name: formName, onFinish: onFinish }, children)),
+        React__default.createElement("br", null),
+        React__default.createElement("div", { style: { display: "flex" } },
+            React__default.createElement(Button, { type: "primary", htmlType: "submit", form: formName }, "Add"),
+            "\u00A0",
+            React__default.createElement(Button, { type: "default", onClick: handleCancel }, "Cancel"))));
+};
+
+function RoomTypeForm(props) {
+    var handleCancel = props.handleCancel, handleOnFinish = props.handleOnFinish, title = props.title, formName = props.formName;
+    return React__default.createElement(App, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
+        React__default.createElement(Form$1.Item, { label: "Name", name: "name" },
+            React__default.createElement(Input$1, null)),
+        React__default.createElement(Form$1.Item, { label: "Max. Persons", name: "maxPerson" },
+            React__default.createElement(Input$1, null)),
+        React__default.createElement(Form$1.Item, { label: "Price (Regular use)", name: "regularPrice" },
+            React__default.createElement(Input$1, null)),
+        React__default.createElement(Form$1.Item, { label: "Price (Single use)", name: "singlePrice" },
+            React__default.createElement(Input$1, null)));
+}
+
+function Rooms(props) {
+    var handleCancel = props.handleCancel, handleOnFinish = props.handleOnFinish, title = props.title, formName = props.formName, _a = props.roomTypes, roomTypes = _a === void 0 ? [] : _a;
+    return React__default.createElement(App, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
+        React__default.createElement(Form$1.Item, { label: "Room Types", name: "roomTypes" },
+            React__default.createElement(Select$1, null, roomTypes.map(function (_a) {
+                var value = _a.value, label = _a.label;
+                return React__default.createElement(Select$1.Option, { value: value }, label);
+            }))),
+        React__default.createElement(Form$1.Item, { label: "No of Rooms", name: "noOfRooms" },
+            React__default.createElement(Input$1, null)));
 }
 
 function Breadcrumbs (props) {
@@ -34537,8 +40508,8 @@ function Breadcrumbs (props) {
 var DLS = {
     Button: Button,
     Breadcrumbs: Breadcrumbs,
-    SuccessAlert: App,
+    SuccessAlert: App$1,
 };
 
-export { Button, DLS, Login, App as SuccessAlert };
+export { Button, DLS, Login, Register, RoomTypeForm as RoomTypesForm, Rooms, App$1 as SuccessAlert };
 //# sourceMappingURL=index.esm.js.map

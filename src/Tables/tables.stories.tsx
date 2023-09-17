@@ -1,5 +1,6 @@
 import React from "react";
 import Tables from "./tables";
+import RoomListTable from "./RoomListTable"
 import { Space, Table, Tag, Select } from "antd";
 import type { ColumnsType } from "antd/es/table";
 
@@ -22,18 +23,19 @@ interface DataType {
   regularUseRoomPrice: number;
 }
 
-const data: DataType[] = [
+const roomListData: DataType[] = [
   {
     key: "1",
     roomName: "Room 1",
     roomType: [
-      { value: "single", label: "Single" },
+      { value: "1234", label: "Single" },
       { value: "double", label: "Double" },
       { value: "deluxe", label: "Deluxe" },
     ],
     maxPersons: 2,
     singleUseRoomPrice: 20,
     regularUseRoomPrice: 30,
+
   },
   {
     key: "2",
@@ -272,19 +274,23 @@ const invoiceListData = [
   }
 ];
 const handleOnSave = (dataToSave) => {
-  alert(JSON.stringify(data))
-  console.log("Save Function", data)
+  alert(JSON.stringify(dataToSave))
+  console.log("Save Function", dataToSave)
 }
 
 const HandleOnDelete = (dataToDelete) => {
+  alert(JSON.stringify(dataToDelete))
   console.log("dataToDelete===>", dataToDelete)
 }
 
 const handleHasSingleUse = (hasSingleUse) => {
   console.log("hasSingUse======>", hasSingleUse)
 }
+const handleRoomType = (value) => {
+  alert(JSON.stringify(value))
+}
 
-export const Rooms = (args) => <Tables {...args} />;
+export const RoomList = (args) => <RoomListTable {...args} />;
 export const RoomType = (args) => <Tables {...args} />;
 export const Guests = (args) => <Tables {...args} />;
 export const Companies = (args) => <Tables {...args} />;
@@ -292,9 +298,12 @@ export const Services = (args) => <Tables {...args} />;
 export const ServiceCategory = (args) => <Tables {...args} />;
 export const InvoiceList = (args) => <Tables {...args} />;
 
-Rooms.args = {
+RoomList.args = {
   type: 'room',
-  dataSource: data,
+  dataSource: roomListData,
+  onDelete: HandleOnDelete,
+  onSave: handleOnSave,
+  handleRoomType: handleRoomType
 
 };
 Guests.args = {

@@ -3,7 +3,7 @@ import { FormCard } from "../../cards"
 import { Card, Space, Form, Input, Select } from 'antd';
 
 
-export default function Rooms(props) {
+export default function Rooms(props: any) {
 
     const { handleCancel, handleOnFinish, title, formName, roomTypes = [] } = props;
 

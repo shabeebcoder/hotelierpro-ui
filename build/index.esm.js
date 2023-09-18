@@ -55188,22 +55188,10 @@ var RoomList = function (props) {
                 editing: isEditing(record),
             }); } });
     });
-    var Header = function () {
-        return React__default.createElement("div", null,
-            React__default.createElement("h4", { style: { color: '#4D6969' } }, "Invoice"),
-            React__default.createElement("div", { style: { display: 'flex', justifyContent: 'space-between' } },
-                React__default.createElement("div", null,
-                    React__default.createElement(Space$1, { wrap: true },
-                        React__default.createElement(Select$1, { defaultValue: "All", style: { width: 120 }, options: [{ value: 'lucy', label: 'Lucy' }] }),
-                        React__default.createElement(Select$1, { defaultValue: "07/23/2023", style: { width: 120 }, options: [{ value: 'lucy', label: 'Lucy' }] }),
-                        React__default.createElement(Input$1, { addonBefore: React__default.createElement(SearchOutlined$1, null), placeholder: "Invoice No" }))),
-                React__default.createElement("div", null,
-                    React__default.createElement(Space$1, { wrap: true },
-                        React__default.createElement(Button$3, { style: { backgroundColor: '#3A7C7C' }, type: "primary" }, "Delete"),
-                        React__default.createElement(Select$1, { defaultValue: "Mark As", style: { width: 120, borderColor: '#3A7C7C' }, options: [{ value: 'lucy', label: 'Lucy' }] })))));
-    };
     return (React__default.createElement(Form$1, { form: form, component: false },
-        React__default.createElement(Table$1, { rowSelection: props.type === "invoiceList" && __assign({ type: selectionType }, rowSelection), title: function () { return props.type === 'invoiceList' && React__default.createElement(Header, null); }, style: props.styles, rowClassName: function (record, index) { return index % 2 === 0 ? 'table-row-light' : 'table-row-dark'; }, components: {
+        React__default.createElement(Table$1, { rowSelection: props.type === "invoiceList" && __assign({ type: selectionType }, rowSelection), 
+            // title={() => props.type === 'invoiceList' && <Header />}
+            style: props.styles, rowClassName: function (record, index) { return index % 2 === 0 ? 'table-row-light' : 'table-row-dark'; }, components: {
                 body: {
                     cell: EditableCell,
                 },

@@ -11,7 +11,7 @@ const data = [
     { icon: IconGauge, label: 'Settings' },
 ];
 
-export default function Demo({ handleOnClick, index = 0 }) {
+export default function SideBar({ handleOnClick, index = 0 }) {
     const [active, setActive] = useState(index);
 
 

@@ -7,4 +7,5 @@ import { Rooms } from "./Forms/room";
 import { RoomList, Tables } from "./Tables";
 import { Tabs } from "./Tab";
 import DLS from "./DLS";
-export { Button, DLS, SuccessAlert, Login, Register, RoomTypesForm, Rooms, Tables, RoomList, Tabs, };
+import { SideBar } from "./Navigation";
+export { Button, DLS, SuccessAlert, Login, Register, RoomTypesForm, Rooms, Tables, RoomList, Tabs, SideBar };

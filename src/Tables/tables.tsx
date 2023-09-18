@@ -1526,7 +1526,7 @@ const Tables: any = (props: Props) => {
             ...rowSelection,
           }
         }
-        title={() => props.type === 'invoiceList' && <Header />}
+        // title={() => props.type === 'invoiceList' && <Header />}
         style={props.styles}
         rowClassName={(record, index) => index % 2 === 0 ? 'table-row-light' : 'table-row-dark'}
         components={{

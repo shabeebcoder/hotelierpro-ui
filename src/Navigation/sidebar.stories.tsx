@@ -15,8 +15,10 @@ const handleOnClick = (value) => {
 
 export const SideBar = (args) => <SindBarCompoenent {...args} />
 
+let index = 0
+
 SideBar.args = {
     handleOnClick,
-    index: 1
+    index
 }
 

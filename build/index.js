@@ -56189,22 +56189,10 @@ var Tables = function (props) {
                 }); } });
         });
     }
-    var Header = function () {
-        return React__default["default"].createElement("div", null,
-            React__default["default"].createElement("h4", { style: { color: '#4D6969' } }, "Invoice"),
-            React__default["default"].createElement("div", { style: { display: 'flex', justifyContent: 'space-between' } },
-                React__default["default"].createElement("div", null,
-                    React__default["default"].createElement(Space$1, { wrap: true },
-                        React__default["default"].createElement(Select$1, { defaultValue: "All", style: { width: 120 }, options: [{ value: 'lucy', label: 'Lucy' }] }),
-                        React__default["default"].createElement(Select$1, { defaultValue: "07/23/2023", style: { width: 120 }, options: [{ value: 'lucy', label: 'Lucy' }] }),
-                        React__default["default"].createElement(Input$1, { addonBefore: React__default["default"].createElement(SearchOutlined$1, null), placeholder: "Invoice No" }))),
-                React__default["default"].createElement("div", null,
-                    React__default["default"].createElement(Space$1, { wrap: true },
-                        React__default["default"].createElement(Button$3, { style: { backgroundColor: '#3A7C7C' }, type: "primary" }, "Delete"),
-                        React__default["default"].createElement(Select$1, { defaultValue: "Mark As", style: { width: 120, borderColor: '#3A7C7C' }, options: [{ value: 'lucy', label: 'Lucy' }] })))));
-    };
     return (React__default["default"].createElement(Form$1, { form: form, component: false },
-        React__default["default"].createElement(Table$1, { rowSelection: props.type === "invoiceList" && __assign({ type: selectionType }, rowSelection), title: function () { return props.type === 'invoiceList' && React__default["default"].createElement(Header, null); }, style: props.styles, rowClassName: function (record, index) { return index % 2 === 0 ? 'table-row-light' : 'table-row-dark'; }, components: {
+        React__default["default"].createElement(Table$1, { rowSelection: props.type === "invoiceList" && __assign({ type: selectionType }, rowSelection), 
+            // title={() => props.type === 'invoiceList' && <Header />}
+            style: props.styles, rowClassName: function (record, index) { return index % 2 === 0 ? 'table-row-light' : 'table-row-dark'; }, components: {
                 body: {
                     cell: EditableCell,
                 },
@@ -61358,7 +61346,7 @@ var data = [
     { icon: IconGauge, label: 'Alert' },
     { icon: IconGauge, label: 'Settings' },
 ];
-function Demo(_a) {
+function SideBar(_a) {
     var handleOnClick = _a.handleOnClick, _b = _a.index, index = _b === void 0 ? 0 : _b;
     var _c = React.useState(index), active = _c[0]; _c[1];
     var items = data.map(function (item, index) { return (React__default["default"].createElement(NavLink, { key: item.label, active: index === active, label: item.label, icon: React__default["default"].createElement(item.icon, { size: "1rem", stroke: 1.5 }), onClick: function () { return handleOnClick({ item: item, index: index }); } })); });
@@ -61372,7 +61360,7 @@ exports.Register = Register;
 exports.RoomList = RoomList;
 exports.RoomTypesForm = RoomTypeForm;
 exports.Rooms = Rooms;
-exports.SideBar = Demo;
+exports.SideBar = SideBar;
 exports.SuccessAlert = App$1;
 exports.Tables = Tables;
 exports.Tabs = Tabs;

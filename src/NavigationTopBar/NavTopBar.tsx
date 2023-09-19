@@ -64,13 +64,13 @@ export default function Demo() {
     <StyledTabs>
       <Tabs.List>
         <Tabs.Tab value="settings" icon={<IconSettings size="1rem" />}>
-          Settings
+          Rooms
         </Tabs.Tab>
         <Tabs.Tab value="messages" icon={<IconMessageCircle size="1rem" />}>
-          Messages
+          Clients
         </Tabs.Tab>
         <Tabs.Tab value="gallery" icon={<IconPhoto size="1rem" />}>
-          Gallery
+          Services
         </Tabs.Tab>
       </Tabs.List>
     </StyledTabs>

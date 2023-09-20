@@ -1,3 +1,3 @@
-import NavTopBar from "./NavTopBar";
+import TopbarNavigation from "./NavTopBar";
 
-export { NavTopBar };
+export { TopbarNavigation };

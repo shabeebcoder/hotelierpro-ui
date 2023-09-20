@@ -60,7 +60,7 @@ function StyledTabs(props: TabsProps) {
   );
 }
 
-export default function Demo(props: any) {
+export default function TopbarNavigation(props: any) {
 
   const RightIcon = () => {
 

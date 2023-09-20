@@ -7,8 +7,9 @@ import { Rooms } from "./Forms/room"
 import { RoomList, Tables } from "./Tables";
 import { Tabs } from "./Tab"
 import DLS from "./DLS";
-import { SideBar } from "./Navigation"
-import { NavTopBar } from "./NavigationTopBar";
+import { SideBar } from "./NavigationSideBar"
+import { TopbarNavigation } from "./NavigationTopBar";
+
 
 export {
     Button,
@@ -22,5 +23,5 @@ export {
     RoomList,
     Tabs,
     SideBar,
-    NavTopBar
+    TopbarNavigation
 };

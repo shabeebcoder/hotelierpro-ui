@@ -59,17 +59,19 @@ function StyledTabs(props: TabsProps) {
   );
 }
 
-export default function Demo() {
+export default function Demo(props: any) {
+
+  const { handleOnClick } = props;
   return (
     <StyledTabs>
       <Tabs.List>
-        <Tabs.Tab value="settings" icon={<IconSettings size="1rem" />}>
+        <Tabs.Tab onClick={() => handleOnClick(0)} value="settings" icon={<IconSettings size="1rem" />}>
           Rooms
         </Tabs.Tab>
-        <Tabs.Tab value="messages" icon={<IconMessageCircle size="1rem" />}>
+        <Tabs.Tab onClick={() => handleOnClick(1)} value="messages" icon={<IconMessageCircle size="1rem" />}>
           Clients
         </Tabs.Tab>
-        <Tabs.Tab value="gallery" icon={<IconPhoto size="1rem" />}>
+        <Tabs.Tab onClick={() => handleOnClick(2)} value="gallery" icon={<IconPhoto size="1rem" />}>
           Services
         </Tabs.Tab>
       </Tabs.List>

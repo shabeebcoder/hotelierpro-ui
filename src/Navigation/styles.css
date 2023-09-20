@@ -1,0 +1,42 @@
+.sideNavigation .mantine-NavLink-label {
+    color: #4D6969;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.mantine-9ajpia[data-active] {
+    border-radius: 8px;
+    border: 1px solid #4D6969;
+    background: rgba(212, 232, 232, 0.12);
+}
+
+.mantine-9ajpia {
+    margin-top: 15px;
+}
+
+.sideNavigation {
+    background: #FFF;
+    box-shadow: -1px 0px 12px 0px rgba(0, 0, 0, 0.25);
+    height: 100vh;
+    padding-top: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.sideNavigation .brand {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.sideNavigation .brand h1 {
+    color: #3A7C7C;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

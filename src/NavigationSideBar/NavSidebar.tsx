@@ -15,6 +15,7 @@ import type { MenuProps } from "antd";
 const App: React.FC = (props: any) => {
   return (
     <Menu
+      className="navigationSideBar"
       onClick={props.onClick}
       selectedKeys={[props.current]}
       mode={props.mode}

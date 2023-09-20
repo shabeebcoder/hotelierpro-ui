@@ -61267,6 +61267,20 @@ var IconGauge = createReactComponent("gauge", "IconGauge", [
  * @tabler/icons-react v2.34.0 - MIT
  */
 
+var IconMessageCircle = createReactComponent("message-circle", "IconMessageCircle", [
+  [
+    "path",
+    {
+      d: "M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1",
+      key: "svg-0"
+    }
+  ]
+]);
+
+/**
+ * @tabler/icons-react v2.34.0 - MIT
+ */
+
 var IconPhoto = createReactComponent("photo", "IconPhoto", [
   ["path", { d: "M15 8h.01", key: "svg-0" }],
   [
@@ -61278,6 +61292,21 @@ var IconPhoto = createReactComponent("photo", "IconPhoto", [
   ],
   ["path", { d: "M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5", key: "svg-2" }],
   ["path", { d: "M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3", key: "svg-3" }]
+]);
+
+/**
+ * @tabler/icons-react v2.34.0 - MIT
+ */
+
+var IconSettings = createReactComponent("settings", "IconSettings", [
+  [
+    "path",
+    {
+      d: "M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z",
+      key: "svg-0"
+    }
+  ],
+  ["path", { d: "M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0", key: "svg-1" }]
 ]);
 
 function Tabs(props) {
@@ -61314,5 +61343,42 @@ function SideBar(_a) {
     return React__default.createElement(Box, { w: 220 }, items);
 }
 
-export { Button, DLS, Login, Register, RoomList, RoomTypeForm as RoomTypesForm, Rooms, SideBar, App$1 as SuccessAlert, Tables, Tabs };
+function StyledTabs(props) {
+    return (React__default.createElement(Tabs$1, __assign({ unstyled: true, styles: function (theme) { return ({
+            tab: __assign(__assign({}, theme.fn.focusStyles()), { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white, color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[9], border: "".concat(rem(1), " solid ").concat(theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[4]), padding: "".concat(theme.spacing.xs, " ").concat(theme.spacing.md), cursor: 'pointer', fontSize: theme.fontSizes.sm, display: 'flex', alignItems: 'center', '&:disabled': {
+                    opacity: 0.5,
+                    cursor: 'not-allowed',
+                }, '&:not(:first-of-type)': {
+                    borderLeft: 0,
+                }, '&:first-of-type': {
+                    borderTopLeftRadius: theme.radius.md,
+                    borderBottomLeftRadius: theme.radius.md,
+                }, '&:last-of-type': {
+                    borderTopRightRadius: theme.radius.md,
+                    borderBottomRightRadius: theme.radius.md,
+                }, '&[data-active]': {
+                    backgroundColor: theme.colors.blue[7],
+                    borderColor: theme.colors.blue[7],
+                    color: theme.white,
+                } }),
+            tabIcon: {
+                marginRight: theme.spacing.xs,
+                display: 'flex',
+                alignItems: 'center',
+            },
+            tabsList: {
+                display: 'flex',
+            },
+        }); } }, props)));
+}
+function Demo(props) {
+    var handleOnClick = props.handleOnClick;
+    return (React__default.createElement(StyledTabs, null,
+        React__default.createElement(Tabs$1.List, null,
+            React__default.createElement(Tabs$1.Tab, { onClick: function () { return handleOnClick(0); }, value: "settings", icon: React__default.createElement(IconSettings, { size: "1rem" }) }, "Rooms"),
+            React__default.createElement(Tabs$1.Tab, { onClick: function () { return handleOnClick(1); }, value: "messages", icon: React__default.createElement(IconMessageCircle, { size: "1rem" }) }, "Clients"),
+            React__default.createElement(Tabs$1.Tab, { onClick: function () { return handleOnClick(2); }, value: "gallery", icon: React__default.createElement(IconPhoto, { size: "1rem" }) }, "Services"))));
+}
+
+export { Button, DLS, Login, Demo as NavTopBar, Register, RoomList, RoomTypeForm as RoomTypesForm, Rooms, SideBar, App$1 as SuccessAlert, Tables, Tabs };
 //# sourceMappingURL=index.esm.js.map

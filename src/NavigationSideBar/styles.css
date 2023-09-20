@@ -1,2 +1,14 @@
-.ant-menu-item {
+.navigationSideBar {
+    background: #FFF;
+    box-shadow: -1px 0px 12px 0px rgba(0, 0, 0, 0.25);
+    display: none;
+}
+
+.navigationSideBar .mantine-NavLink-label {
+    color: #4D6969;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }

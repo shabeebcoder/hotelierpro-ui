@@ -10,6 +10,7 @@ type tab = {
     value: string;
     label: string;
     icon?: React.ReactNode;
+    handleOnClick: any
 }
 type panels = {
     panel: React.ReactNode;
@@ -35,10 +36,10 @@ export default function Tabs(props: Props) {
 
 
     return (
-        <Tab color="green" defaultValue={defaultValue} className='hp-tab' onChange={(value) => alert(JSON.stringify(value))}>
+        <Tab color="green" defaultValue={defaultValue} className='hp-tab' >
             <Tab.List>
                 {
-                    tabs.map((row) => <Tab.Tab value={row.value} >{row.label}</Tab.Tab>)
+                    tabs.map((row) => <Tab.Tab onClick={() => handleOnClick(row)} value={row.value} >{row.label}</Tab.Tab>)
                 },
                 <Tab.Tab value="account" ml="auto">
                     <Button className="hpTabActionButton" type='hPprimary' buttonIcon={buttonIcon || ''} >{buttonText}</Button>

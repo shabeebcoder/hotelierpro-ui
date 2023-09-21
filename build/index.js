@@ -54900,6 +54900,21 @@ if (process.env.NODE_ENV !== 'production') {
 }
 var SaveOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(SaveOutlined);
 
+// This icon file is generated automatically.
+var TableOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 208H676V232h212v136zm0 224H676V432h212v160zM412 432h200v160H412V432zm200-64H412V232h200v136zm-476 64h212v160H136V432zm0-200h212v136H136V232zm0 424h212v136H136V656zm276 0h200v136H412V656zm476 136H676V656h212v136z" } }] }, "name": "table", "theme": "outlined" };
+var TableOutlinedSvg = TableOutlined$2;
+
+var TableOutlined = function TableOutlined(props, ref) {
+  return /*#__PURE__*/React__namespace.createElement(AntdIcon, _extends$1({}, props, {
+    ref: ref,
+    icon: TableOutlinedSvg
+  }));
+};
+if (process.env.NODE_ENV !== 'production') {
+  TableOutlined.displayName = 'TableOutlined';
+}
+var TableOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(TableOutlined);
+
 function Button$1 (_a) {
     var children = _a.children, props = __rest$Q(_a, ["children"]);
     var type = props.type, className = props.className;
@@ -54909,7 +54924,7 @@ function Button$1 (_a) {
             }) }, props, { icon: React__default["default"].createElement(PlusOutlined$1, null) }), children)));
 }
 
-var App$1 = function (props) { return (React__default["default"].createElement(Alert$1, { message: props.message, type: props.type })); };
+var App$2 = function (props) { return (React__default["default"].createElement(Alert$1, { message: props.message, type: props.type })); };
 
 var css_248z$8 = "";
 styleInject(css_248z$8);
@@ -54985,7 +55000,7 @@ function Register(props) {
 var css_248z$6 = "";
 styleInject(css_248z$6);
 
-var App = function (props) {
+var App$1 = function (props) {
     var onFinish = props.onFinish, formName = props.formName, title = props.title, children = props.children, handleCancel = props.handleCancel;
     return (React__default["default"].createElement("div", { className: 'form_card_container' },
         React__default["default"].createElement(Card$1, { title: title },
@@ -54999,7 +55014,7 @@ var App = function (props) {
 
 function RoomTypeForm(props) {
     var handleCancel = props.handleCancel, handleOnFinish = props.handleOnFinish, title = props.title, formName = props.formName;
-    return React__default["default"].createElement(App, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
+    return React__default["default"].createElement(App$1, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
         React__default["default"].createElement(Form$1.Item, { label: "Name", name: "name" },
             React__default["default"].createElement(Input$2, null)),
         React__default["default"].createElement(Form$1.Item, { label: "Max. Persons", name: "maxPerson" },
@@ -55012,7 +55027,7 @@ function RoomTypeForm(props) {
 
 function Rooms$1(props) {
     var handleCancel = props.handleCancel, handleOnFinish = props.handleOnFinish, title = props.title, formName = props.formName, _a = props.roomTypes, roomTypes = _a === void 0 ? [] : _a;
-    return React__default["default"].createElement(App, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
+    return React__default["default"].createElement(App$1, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
         React__default["default"].createElement(Form$1.Item, { label: "Room Types", name: "roomTypes" },
             React__default["default"].createElement(Select$2, null, roomTypes.map(function (_a) {
                 var value = _a.value, label = _a.label;
@@ -69360,10 +69375,10 @@ var css_248z$4 = "";
 styleInject(css_248z$4);
 
 function Tabs(props) {
-    var _a = props.panels, panels = _a === void 0 ? [] : _a, _b = props.tabs, tabs = _b === void 0 ? [] : _b, defaultValue = props.defaultValue; props.handleOnClick; props.btHandleOnClick; var buttonText = props.buttonText, buttonIcon = props.buttonIcon; props.addRooms;
-    return (React__default["default"].createElement(Tabs$1, { color: "green", defaultValue: defaultValue, className: 'hp-tab', onChange: function (value) { return alert(JSON.stringify(value)); } },
+    var _a = props.panels, panels = _a === void 0 ? [] : _a, _b = props.tabs, tabs = _b === void 0 ? [] : _b, defaultValue = props.defaultValue, handleOnClick = props.handleOnClick; props.btHandleOnClick; var buttonText = props.buttonText, buttonIcon = props.buttonIcon; props.addRooms;
+    return (React__default["default"].createElement(Tabs$1, { color: "green", defaultValue: defaultValue, className: 'hp-tab' },
         React__default["default"].createElement(Tabs$1.List, null,
-            tabs.map(function (row) { return React__default["default"].createElement(Tabs$1.Tab, { value: row.value }, row.label); }),
+            tabs.map(function (row) { return React__default["default"].createElement(Tabs$1.Tab, { onClick: function () { return handleOnClick(row); }, value: row.value }, row.label); }),
             ",",
             React__default["default"].createElement(Tabs$1.Tab, { value: "account", ml: "auto" },
                 React__default["default"].createElement(Button$1, { className: "hpTabActionButton", type: 'hPprimary', buttonIcon: buttonIcon || '' }, buttonText))),
@@ -69421,7 +69436,7 @@ function Breadcrumbs (props) {
 var DLS = {
     Button: Button$1,
     Breadcrumbs: Breadcrumbs,
-    SuccessAlert: App$1,
+    SuccessAlert: App$2,
 };
 
 var css_248z$3 = "";
@@ -69470,8 +69485,8 @@ var data = [
 ];
 function SideBar(_a) {
     var handleOnClick = _a.handleOnClick, _b = _a.index, index = _b === void 0 ? 0 : _b;
-    var _c = React.useState(index), active = _c[0]; _c[1];
-    var items = data.map(function (item, index) { return (React__default["default"].createElement(NavLink, { key: item.label, active: index === active, label: item.label, icon: React__default["default"].createElement(item.icon, null), onClick: function () { return handleOnClick({ item: item, index: index }); } })); });
+    var _c = React.useState(index), active = _c[0], setActive = _c[1];
+    var items = data.map(function (item, index) { return (React__default["default"].createElement(NavLink, { key: item.label, active: index === active, label: item.label, icon: React__default["default"].createElement(item.icon, null), onClick: function () { setActive(index), handleOnClick({ item: item, index: index }); } })); });
     return React__default["default"].createElement(Box, { className: "sideNavigation", w: 220 },
         React__default["default"].createElement("div", { className: "brand" },
             React__default["default"].createElement(BrandIcon, null),
@@ -75209,13 +75224,19 @@ var moment = createCommonjsModule(function (module, exports) {
 });
 
 function DatesHeader (props) {
-    var dates = props.dates; props.currentDate;
+    var dates = props.dates, currentDate = props.currentDate;
+    var isToday = function (date) {
+        if (moment(date).diff(currentDate) == 0) {
+            return true;
+        }
+        return false;
+    };
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement("div", { className: "row rooms" },
             React__default["default"].createElement("div", { className: "rooms-title" }, "Rooms"),
             React__default["default"].createElement("div", { className: "column" },
                 React__default["default"].createElement("div", { className: "selected-dates-range" }, dates.map(function (date) { return (React__default["default"].createElement("div", { className: "date-box" },
-                    React__default["default"].createElement("div", { className: "date-day-box" },
+                    React__default["default"].createElement("div", { className: classnames$b({ "date-day-box": isToday(date), 'date-day-box-default': !isToday(date) }) },
                         date.clone().format("ddd"),
                         " ",
                         React__default["default"].createElement("br", null),
@@ -75260,30 +75281,53 @@ function Rooms (props) {
     }
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement("div", { className: "room-category-capacity-container" }, roomCategory.map(function (_a) {
-            var categoryName = _a.categoryName; _a.roomTotalCapacity; var roomCurrentCapacity = _a.roomCurrentCapacity, rooms = _a.rooms;
-            return (React__default["default"].createElement("div", { className: "category" },
-                React__default["default"].createElement("div", { className: "room-category-row" },
-                    React__default["default"].createElement("div", { className: "room-category-name" },
-                        React__default["default"].createElement("b", null,
-                            categoryName,
-                            " ",
-                            React__default["default"].createElement(DownOutlined$1, null))),
-                    roomCurrentCapacity.map(function (currentCapcity) { return (React__default["default"].createElement("div", { className: "room-total-capacity-box" },
-                        React__default["default"].createElement("span", null, " 18"))); })),
-                rooms.map(function (_a) {
-                    var availability = _a.availability, name = _a.name, bookings = _a.bookings;
-                    return (React__default["default"].createElement("div", { className: "room-row" },
-                        React__default["default"].createElement("div", { className: "room-name" },
-                            React__default["default"].createElement("span", null, name),
-                            " ",
-                            React__default["default"].createElement("i", { className: "fa-solid fa-ellipsis" })),
-                        availability.map(function (date) { return renderRoomBox(date, bookings); })));
-                })));
+            _a.categoryName; _a.roomTotalCapacity; _a.roomCurrentCapacity; var rooms = _a.rooms;
+            return (React__default["default"].createElement("div", { className: "category" }, rooms.map(function (_a) {
+                var availability = _a.availability, name = _a.name, bookings = _a.bookings;
+                return (React__default["default"].createElement("div", { className: "room-row" },
+                    React__default["default"].createElement("div", { className: "room-name" },
+                        React__default["default"].createElement("span", null, name),
+                        " ",
+                        React__default["default"].createElement("i", { className: "fa-solid fa-ellipsis" })),
+                    availability.map(function (date) { return renderRoomBox(date, bookings); })));
+            })));
         }))));
 }
 
+var onChange = function (value) {
+    console.log("selected ".concat(value));
+};
+var onSearch = function (value) {
+    console.log('search:', value);
+};
+// Filter `option.label` match the user type `input`
+var filterOption = function (input, option) { var _a; return ((_a = option === null || option === void 0 ? void 0 : option.label) !== null && _a !== void 0 ? _a : '').toLowerCase().includes(input.toLowerCase()); };
+var WeeklyMonthly = function () { return React__default["default"].createElement(Select$2, { showSearch: true, placeholder: "Week", optionFilterProp: "children", onChange: onChange, onSearch: onSearch, filterOption: filterOption, options: [
+        {
+            value: 'monthly',
+            label: 'Month',
+        },
+        {
+            value: 'week',
+            label: 'Week',
+        },
+    ] }); };
+var App = function () { return (React__default["default"].createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: 20 } },
+    React__default["default"].createElement("div", { className: "left" },
+        "Booking",
+        React__default["default"].createElement("div", null,
+            React__default["default"].createElement(TableOutlined$1, null),
+            " \u00A0 22 Dec, 2022 ",
+            React__default["default"].createElement(LeftOutlined$1, null),
+            React__default["default"].createElement(RightOutlined$1, null))),
+    React__default["default"].createElement("div", { className: "right" },
+        React__default["default"].createElement(WeeklyMonthly, null),
+        "\u00A0",
+        React__default["default"].createElement(Space$1, null,
+            React__default["default"].createElement(Button$4, { type: "primary" }, "New Booking"))))); };
+
 function Calander() {
-    var _a = React__default["default"].useState(moment("2022-08-6")), currentDate = _a[0]; _a[1];
+    var _a = React__default["default"].useState(moment("2023-09-22")), currentDate = _a[0]; _a[1];
     function getYears() {
         var startYear = currentDate.clone().subtract(6, "year");
         var thirteenYearsArray = [];
@@ -75328,8 +75372,8 @@ function Calander() {
                             bookings: [
                                 {
                                     name: "shabeeb",
-                                    checkIn: moment("2022-8-8"),
-                                    checkOut: moment("2022-8-8")
+                                    checkIn: moment("2023-09-10"),
+                                    checkOut: moment("2022-09-14")
                                 }
                             ]
                         },
@@ -75399,6 +75443,7 @@ function Calander() {
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement("div", { className: "App" },
             React__default["default"].createElement("div", { className: "front-desk-page-container" },
+                React__default["default"].createElement(App, null),
                 React__default["default"].createElement("div", { className: "calendar-dates-capacity-room-container" },
                     React__default["default"].createElement(DatesHeader, __assign({}, getCalendarData())),
                     React__default["default"].createElement(Rooms, __assign({}, getCalendarData())))))));
@@ -80597,7 +80642,7 @@ exports.RoomList = RoomList;
 exports.RoomTypesForm = RoomTypeForm;
 exports.Rooms = Rooms$1;
 exports.SideBar = SideBar;
-exports.SuccessAlert = App$1;
+exports.SuccessAlert = App$2;
 exports.Tables = Tables;
 exports.Tabs = Tabs;
 exports.TopbarNavigation = TopbarNavigation;

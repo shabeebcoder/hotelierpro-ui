@@ -5,6 +5,8 @@
     /* drop-shadow/button-secondary */
     box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
     margin-right: 8px;
+    border: 1px solid var(--neutral-5, #D9D9D9);
+    color: rgba(0, 0, 0, 0.50);
 }
 
 .navigationTopBar {
@@ -12,6 +14,13 @@
     border-radius: 8px;
     background: white;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+}
+
+.navigationTopBar .mantine-1g59u6r[data-active] {
+    color: #3A7C7C;
+    background-color: red;
+    background: rgba(144, 203, 203, 0.12);
+    border: 1px solid #3A7C7C;
 }

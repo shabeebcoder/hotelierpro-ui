@@ -1,3 +1,3 @@
 import React from "react";
 import "./styles.css";
-export default function App(): React.JSX.Element;
+export default function Calander(): React.JSX.Element;

@@ -10,6 +10,7 @@ import DLS from "./DLS";
 import { SideBar } from "./NavigationSideBar"
 import { TopbarNavigation } from "./NavigationTopBar";
 import { Calander } from "./calander"
+import { BookingForm } from "./Forms"
 
 
 export {
@@ -25,5 +26,6 @@ export {
     Tabs,
     SideBar,
     TopbarNavigation,
-    Calander
+    Calander,
+    BookingForm
 };

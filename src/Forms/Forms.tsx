@@ -11,7 +11,7 @@ import { useForm } from '@mantine/form';
 
 
 
-const App: React.FC = () => {
+const BookingForm = () => {
     // const [form] = Form.useForm();
     const [value, setValue] = useState<number | ''>(0);
     const handlers = useRef<NumberInputHandlers>();
@@ -246,4 +246,4 @@ const App: React.FC = () => {
     );
 };
 
-export default App;
+export default BookingForm;

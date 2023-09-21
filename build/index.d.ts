@@ -9,4 +9,5 @@ import { Tabs } from "./Tab";
 import DLS from "./DLS";
 import { SideBar } from "./NavigationSideBar";
 import { TopbarNavigation } from "./NavigationTopBar";
-export { Button, DLS, SuccessAlert, Login, Register, RoomTypesForm, Rooms, Tables, RoomList, Tabs, SideBar, TopbarNavigation };
+import { Calander } from "./calander";
+export { Button, DLS, SuccessAlert, Login, Register, RoomTypesForm, Rooms, Tables, RoomList, Tabs, SideBar, TopbarNavigation, Calander };

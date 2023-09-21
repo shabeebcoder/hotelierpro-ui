@@ -1,5 +1,5 @@
 import React from "react";
-import Forms from "./Forms"
+import BookingForm from "./Forms"
 
 export default {
     title: "components/Forms"
@@ -7,6 +7,6 @@ export default {
 
 
 
-export const BookingForm = (args) => <Forms {...args} />
+export const NewBookingForm = (args) => <BookingForm {...args} />
 
-BookingForm.args = {}
+NewBookingForm.args = {}

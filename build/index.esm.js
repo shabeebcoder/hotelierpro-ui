@@ -56150,14 +56150,26 @@ var Tables = function (props) {
                 }); } });
         });
     }
+    var Header = function () {
+        return React__default.createElement("div", null,
+            React__default.createElement("h4", { style: { color: '#4D6969' } }, "Invoice"),
+            React__default.createElement("div", { style: { display: 'flex', justifyContent: 'space-between' } },
+                React__default.createElement("div", null,
+                    React__default.createElement(Space$1, { wrap: true },
+                        React__default.createElement(Select$1, { defaultValue: "All", style: { width: 120 }, options: [{ value: 'lucy', label: 'Lucy' }] }),
+                        React__default.createElement(Select$1, { defaultValue: "07/23/2023", style: { width: 120 }, options: [{ value: 'lucy', label: 'Lucy' }] }),
+                        React__default.createElement(Input$1, { addonBefore: React__default.createElement(SearchOutlined$1, null), placeholder: "Invoice No" }))),
+                React__default.createElement("div", null,
+                    React__default.createElement(Space$1, { wrap: true },
+                        React__default.createElement(Button$3, { style: { backgroundColor: '#3A7C7C' }, type: "primary" }, "Delete"),
+                        React__default.createElement(Select$1, { defaultValue: "Mark As", style: { width: 120, borderColor: '#3A7C7C' }, options: [{ value: 'lucy', label: 'Lucy' }] })))));
+    };
     return (React__default.createElement(Form$1, { form: form, component: false },
-        React__default.createElement(Table$1, { rowSelection: props.type === "invoiceList" && __assign({ type: selectionType }, rowSelection), 
-            // title={() => props.type === 'invoiceList' && <Header />}
-            style: props.styles, rowClassName: function (record, index) { return index % 2 === 0 ? 'table-row-light' : 'table-row-dark'; }, components: {
+        React__default.createElement(Table$1, __assign({ rowSelection: props.type === "invoiceList" && __assign({ type: selectionType }, rowSelection) }, (props.type === 'invoiceList' && { title: function () { return props.type === 'invoiceList' && React__default.createElement(Header, null); } }), { style: props.styles, rowClassName: function (record, index) { return index % 2 === 0 ? 'table-row-light' : 'table-row-dark'; }, components: {
                 body: {
                     cell: EditableCell,
                 },
-            }, dataSource: data, columns: mergedColumns })));
+            }, dataSource: data, columns: mergedColumns }))));
 };
 
 function createPolymorphicComponent(component) {
@@ -60278,6 +60290,47 @@ function Tabs(props) {
             return React__default.createElement(Tabs$1.Panel, { value: tabId, pt: "xs" }, panel);
         })));
 }
+// const CheckboxGroup = Checkbox.Group;
+// const operations = <Button>Extra Action</Button>;
+// const OperationsSlot: Record<PositionType, React.ReactNode> = {
+//     left: <Button className="hpTabActionButton" type='hPprimary'>{'buttonText'}</Button>,
+//     right: <ButtonAntd>Right Extra Action</ButtonAntd>,
+// };
+// const options = ['left', 'right'];
+// type PositionType = 'left' | 'right';
+// const items: any = new Array(3).fill(null).map((_, i) => {
+//     const id = String(i + 1);
+//     return {
+//         label: `Tab ${id}`,
+//         key: id,
+//         children: `Content of tab ${id}`,
+//         OperationsSlot
+//     };
+// });
+// export default function (props: any) {
+//     const [position, setPosition] = useState<PositionType[]>(['left', 'right']);
+//     const [isHovered, setIsHovered] = useState(false);
+//     const { panels = [], tabs = [], defaultValue, handleOnClick, btHandleOnClick, buttonText, buttonIcon, addRooms, test } = props;
+//     // const handleMouseEnter = () => {
+//     //     setIsHovered(true);
+//     // };
+//     // const handleMouseLeave = () => {
+//     //     setIsHovered(false);
+//     // };
+//     // const slot = useMemo(() => {
+//     //     if (position.length === 0) return null;
+//     //     return position.reduce(
+//     //         (acc, direction) => ({ ...acc, [direction]: OperationsSlot[direction] }),
+//     //         {},
+//     //     );
+//     // }, [position]);
+//     return (
+//         <>
+//             <AntdTabs className='hp-tab' tabBarStyle={{ color: '#4D6969' }} tabBarExtraContent={null} items={props.test} />
+//         </>
+//     );
+// };
+// export { Tabs }
 
 function Breadcrumbs (props) {
     return React__default.createElement(Breadcrumb$1, __assign({}, props));

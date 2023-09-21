@@ -1,6 +1,6 @@
 
 import React from "react";
-import Calendar from "./calander";
+import Calander from "./calander";
 
 
 export default {
@@ -8,4 +8,4 @@ export default {
 }
 
 
-export const Dashboard = (args) => <Calendar {...args} />;
+export const Dashboard = (args) => <Calander {...args} />;

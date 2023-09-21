@@ -32,7 +32,7 @@ Primary.args = {
         { tabId: 'messages', panel: 'messages' }
     ],
     defaultValue: 'gallery',
-    handleOnClick: (row) => alert(JSON.stringify(row)),
+    handleOnClick: (row) => alert(JSON.stringify(row + '===>here')),
     buttonText: 'Add Rooms',
     btHandleOnClick: () => alert('hey + ==' + state),
     tanleName: state

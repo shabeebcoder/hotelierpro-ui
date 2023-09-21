@@ -9,7 +9,7 @@ import BookedInfoBar from "./bookedBar";
 import RoomRow from "./roomRow";
 import Rooms from "./rooms";
 
-export default function App() {
+export default function Calander() {
     const [currentDate, setCurrentDate] = React.useState(moment("2022-08-6"));
 
     function getYears() {

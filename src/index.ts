@@ -9,6 +9,7 @@ import { Tabs } from "./Tab"
 import DLS from "./DLS";
 import { SideBar } from "./NavigationSideBar"
 import { TopbarNavigation } from "./NavigationTopBar";
+import { Calander } from "./calander"
 
 
 export {
@@ -23,5 +24,6 @@ export {
     RoomList,
     Tabs,
     SideBar,
-    TopbarNavigation
+    TopbarNavigation,
+    Calander
 };

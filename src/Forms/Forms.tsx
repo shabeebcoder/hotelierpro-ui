@@ -225,7 +225,7 @@ const BookingForm = () => {
                         <span className="mantine-InputWrapper-label" style={{ marginBottom: 10 }}>Notes</span>
                         <TextArea
                             placeholder="Your comment"
-                            label="Notes"
+
                             rows={4}
                             {...form.getInputProps('notes')}
                             style={{ width: '100%', maxWidth: '100%', backgroundColor: 'rgba(144, 203, 203, 0.12)', borderRadius: 0, border: 'none', }}

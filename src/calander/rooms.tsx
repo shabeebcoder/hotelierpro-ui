@@ -45,14 +45,14 @@ export default function (props) {
                                     </div>
                                 ))}
                             </div> */}
-                            <div className="room-category-row">
+                            {/* <div className="room-category-row">
                                 <div className="room-category-name" ><b>{categoryName} <DownOutlined /></b></div>
                                 {roomCurrentCapacity.map((currentCapcity) => (
                                     <div className="room-total-capacity-box">
                                         <span> 18</span>
                                     </div>
                                 ))}
-                            </div>
+                            </div> */}
                             {rooms.map(({ availability, name, bookings }) => (
                                 <div className="room-row">
                                     <div className="room-name">

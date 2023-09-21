@@ -201,6 +201,17 @@ body {
     font-weight: bold;
 }
 
+.front-desk-page-container .calendar-dates-capacity-room-container .selected-dates-range .date-box .date-day-box-default {
+    color: #4D6969;
+    padding: 5px;
+    border-radius: 6px;
+    text-align: center;
+    text-transform: uppercase !important;
+    font-size: 12px;
+    font-weight: bold !important;
+    font-weight: 900;
+}
+
 .front-desk-page-container .calendar-dates-capacity-room-container .room-category-capacity-container .category-total-capacity-row {
     background-color: white;
     display: flex;

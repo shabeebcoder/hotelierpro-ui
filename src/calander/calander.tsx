@@ -8,9 +8,11 @@ import CategoryCapacityHeader from "./categoryCapacity";
 import BookedInfoBar from "./bookedBar";
 import RoomRow from "./roomRow";
 import Rooms from "./rooms";
+import { Button } from "antd";
+import Header from "./header"
 
 export default function Calander() {
-    const [currentDate, setCurrentDate] = React.useState(moment("2022-08-6"));
+    const [currentDate, setCurrentDate] = React.useState(moment("2023-09-22"));
 
     function getYears() {
         var startYear = currentDate.clone().subtract(6, "year");
@@ -66,8 +68,8 @@ export default function Calander() {
                             bookings: [
                                 {
                                     name: "shabeeb",
-                                    checkIn: moment("2022-8-8"),
-                                    checkOut: moment("2022-8-8")
+                                    checkIn: moment("2023-09-10"),
+                                    checkOut: moment("2022-09-14")
                                 }
                             ]
                         },
@@ -161,9 +163,11 @@ export default function Calander() {
 
                 <div className="front-desk-page-container">
                     {/* <YearHeader {...getCalendarData()} /> */}
+                    <Header />
 
                     {/* <MonthsHeader {...getCalendarData()} /> */}
                     <div className="calendar-dates-capacity-room-container">
+
                         <DatesHeader {...getCalendarData()} />
                         {/* Start Rooms */}
                         <Rooms {...getCalendarData()} />

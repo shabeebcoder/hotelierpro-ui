@@ -74,7 +74,7 @@ export default function SideBar({ handleOnClick, index = 0 }) {
             active={index === active}
             label={item.label}
             icon={<item.icon />}
-            onClick={() => handleOnClick({ item, index })}
+            onClick={() => setActive(index)}
         />
     ));
 

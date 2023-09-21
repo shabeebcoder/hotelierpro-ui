@@ -69458,7 +69458,7 @@ var BrandIcon = function () {
         React__default["default"].createElement("path", { d: "M4.54014 7.97487C4.98611 7.97689 5.39935 8.07289 5.60084 8.13979C5.60084 8.13979 3.7731 8.46878 3.62106 9.80713C5.00995 7.68305 6.5249 10.2519 6.5249 10.2519C6.20904 10.164 5.30459 9.90315 4.70063 10.0132C4.28741 10.0885 3.88459 10.4859 3.90199 10.4809C4.88674 10.7378 6.4512 15.3866 6.18555 15.7642C5.94867 16.0529 5.71154 15.9544 5.47463 15.8079C5.35737 14.8227 4.44226 10.5 3.32246 10.849C3.3223 10.849 3.32214 10.8489 3.32199 10.849C3.22771 10.8832 3.13853 10.9433 3.13369 11.035C3.12447 11.2097 3.23083 11.4953 3.20571 11.6937C3.14749 12.154 3.06252 12.3141 2.93894 12.4747C2.64382 12.2987 2.36144 11.6643 2.30303 11.3354C2.03859 11.4582 1.6135 11.7427 1.2667 12.7993C1.0854 11.8092 1.34686 11.0282 2.20515 10.6814C1.83346 10.511 0.215664 11.3733 0.0181975 11.8539C-0.173928 10.9873 1.18503 9.92681 2.31643 9.98316C2.09952 9.92313 1.86115 9.99328 1.63432 9.8161C1.32994 9.57837 0.974975 9.37362 0.644206 9.15369C1.75661 8.64047 2.78318 8.89388 2.85546 9.4251C2.91227 8.24611 3.77483 7.97145 4.54016 7.97489L4.54014 7.97487Z", fill: "#3A7C7C" }));
 };
 var Divider = function () {
-    return React__default["default"].createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "156", height: "2", viewBox: "0 0 156 2", fill: "none" },
+    return React__default["default"].createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "200", height: "2", viewBox: "0 0 156 2", fill: "none" },
         React__default["default"].createElement("path", { d: "M0 1L156 0.999986", stroke: "#DCDCDC" }));
 };
 var data = [
@@ -69476,7 +69476,8 @@ function SideBar(_a) {
         React__default["default"].createElement("div", { className: "brand" },
             React__default["default"].createElement(BrandIcon, null),
             React__default["default"].createElement("h1", null, "Hotelier")),
-        React__default["default"].createElement(Divider, null),
+        React__default["default"].createElement("div", { style: { display: 'flex', justifyContent: 'center' } },
+            React__default["default"].createElement(Divider, null)),
         items);
 }
 

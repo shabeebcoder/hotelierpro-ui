@@ -1,6 +1,7 @@
 import React from "react";
 
 import Buttons from "./Button";
+import HPButtons from "./Buttonhp"
 
 export default {
     title: "elements/Buttons",
@@ -42,3 +43,12 @@ Link.args = {
     children: "Link Button",
     type: 'link'
 }
+export const HPprimary = (args) => <Buttons {...args} />
+HPprimary.args = {
+    children: "HPprimary Button",
+    type: 'hPprimary'
+}
+
+// export const Buttonhp = (args) => <HPButtons {...args} />
+
+// Buttonhp.args

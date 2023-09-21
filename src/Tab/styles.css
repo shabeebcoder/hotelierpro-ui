@@ -12,3 +12,8 @@
     line-height: 24px;
     /* 150% */
 }
+
+.mantine-1rb9ahf[data-active],
+.mantine-1rb9ahf[data-active]:hover {
+    border-color: #4D6969;
+}

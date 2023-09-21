@@ -2,7 +2,6 @@ import React, { HTMLAttributes, ReactNode } from 'react';
 import { Button, Space } from 'antd';
 import classNames from 'classnames';
 import "./styles.css"
-import { PlusOutlined, SearchOutlined } from '@ant-design/icons';
 
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
@@ -14,12 +13,12 @@ interface Props extends HTMLAttributes<HTMLButtonElement> {
 
 
 export default function ({ children, ...props }: any) {
-    const { type } = props;
+    const { types } = props;
     return (
         <Space wrap>
             <Button className={classNames('hotelierButton', {
-                'hPprimary': type === "hPprimary"
-            })}  {...props} icon={<PlusOutlined />} >{children}</Button>
+                'hPprimary': types === "hPprimary"
+            })}  {...props} >{children}sss</Button>
         </Space>
     )
 }

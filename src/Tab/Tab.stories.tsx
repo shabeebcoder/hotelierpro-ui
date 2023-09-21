@@ -8,6 +8,7 @@ export default {
 
 
 export const Primary = (args) => <Tab {...args} />
+const state = "addRooms"
 
 Primary.args = {
 
@@ -31,5 +32,8 @@ Primary.args = {
         { tabId: 'messages', panel: 'messages' }
     ],
     defaultValue: 'gallery',
-    handleOnClick: (row) => alert(JSON.stringify(row))
+    handleOnClick: (row) => alert(JSON.stringify(row)),
+    buttonText: 'Add Rooms',
+    btHandleOnClick: () => alert('hey + ==' + state),
+    tanleName: state
 }

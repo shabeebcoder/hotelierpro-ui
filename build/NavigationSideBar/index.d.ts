@@ -1,2 +1,2 @@
-import NavSideBar from "./NavSidebar";
-export { NavSideBar };
+import SideBar from "./sidebar";
+export { SideBar };

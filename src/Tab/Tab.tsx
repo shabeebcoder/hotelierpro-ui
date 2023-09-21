@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tabs as Tab } from '@mantine/core';
 import { IconPhoto, IconMessageCircle, IconSettings } from '@tabler/icons-react';
-
+import "./styles.css";
 
 type tab = {
     value: string;
@@ -23,10 +23,10 @@ interface Props {
 export default function Tabs(props: Props) {
     const { panels = [], tabs = [], defaultValue, handleOnClick } = props;
     return (
-        <Tab color="green" defaultValue={defaultValue}>
+        <Tab color="green" defaultValue={defaultValue} className='hp-tab'>
             <Tab.List>
                 {
-                    tabs.map((row) => <Tab.Tab onClick={() => handleOnClick(row)} value={row.value} icon={<IconPhoto size="0.8rem" />}>{row.label}</Tab.Tab>)
+                    tabs.map((row) => <Tab.Tab onClick={() => handleOnClick(row)} value={row.value} >{row.label}</Tab.Tab>)
                 }
             </Tab.List>
             {

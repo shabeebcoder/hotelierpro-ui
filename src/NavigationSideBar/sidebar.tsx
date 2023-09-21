@@ -48,7 +48,7 @@ const BrandIcon = () => {
 }
 
 const Divider = () => {
-    return <svg xmlns="http://www.w3.org/2000/svg" width="156" height="2" viewBox="0 0 156 2" fill="none">
+    return <svg xmlns="http://www.w3.org/2000/svg" width="200" height="2" viewBox="0 0 156 2" fill="none">
         <path d="M0 1L156 0.999986" stroke="#DCDCDC" />
     </svg>
 }
@@ -83,6 +83,9 @@ export default function SideBar({ handleOnClick, index = 0 }) {
             <BrandIcon />
             <h1>Hotelier</h1>
         </div>
-        <Divider />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+
+            <Divider />
+        </div>
         {items}</Box>;
 }

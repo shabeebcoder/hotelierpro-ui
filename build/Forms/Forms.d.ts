@@ -1,4 +1,4 @@
 import React from "react";
 import "./styles.css";
-declare const App: React.FC;
-export default App;
+declare const BookingForm: () => React.JSX.Element;
+export default BookingForm;

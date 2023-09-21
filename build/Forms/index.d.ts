@@ -1,2 +1,2 @@
-import Forms from "./Forms";
-export { Forms };
+import BookingForm from "./Forms";
+export { BookingForm };

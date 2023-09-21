@@ -10,4 +10,5 @@ import DLS from "./DLS";
 import { SideBar } from "./NavigationSideBar";
 import { TopbarNavigation } from "./NavigationTopBar";
 import { Calander } from "./calander";
-export { Button, DLS, SuccessAlert, Login, Register, RoomTypesForm, Rooms, Tables, RoomList, Tabs, SideBar, TopbarNavigation, Calander };
+import { BookingForm } from "./Forms";
+export { Button, DLS, SuccessAlert, Login, Register, RoomTypesForm, Rooms, Tables, RoomList, Tabs, SideBar, TopbarNavigation, Calander, BookingForm };

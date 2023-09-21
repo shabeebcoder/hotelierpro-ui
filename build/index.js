@@ -54894,9 +54894,9 @@ var SaveOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(SaveOutlined);
 
 function Button (_a) {
     var children = _a.children, props = __rest$Q(_a, ["children"]);
-    var type = props.type;
+    var type = props.type, className = props.className;
     return (React__default["default"].createElement(Space$1, { wrap: true },
-        React__default["default"].createElement(Button$3, __assign({ className: classnames$b('hotelierButton', {
+        React__default["default"].createElement(Button$3, __assign({ className: classnames$b('hotelierButton', className, {
                 'hPprimary': type === "hPprimary"
             }) }, props, { icon: React__default["default"].createElement(PlusOutlined$1, null) }), children)));
 }
@@ -60297,9 +60297,9 @@ styleInject(css_248z$2);
 function Tabs(props) {
     var _a = props.panels, panels = _a === void 0 ? [] : _a, _b = props.tabs, tabs = _b === void 0 ? [] : _b, defaultValue = props.defaultValue, handleOnClick = props.handleOnClick, btHandleOnClick = props.btHandleOnClick, buttonText = props.buttonText, buttonIcon = props.buttonIcon; props.addRooms;
     return (React__default["default"].createElement(Tabs$1, { color: "green", defaultValue: defaultValue, className: 'hp-tab' },
-        React__default["default"].createElement("div", { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between' } },
+        React__default["default"].createElement("div", { className: 'hp-tab-container' },
             React__default["default"].createElement(Tabs$1.List, null, tabs.map(function (row) { return React__default["default"].createElement(Tabs$1.Tab, { onClick: function () { return handleOnClick(row); }, value: row.value }, row.label); })),
-            React__default["default"].createElement(Button, { type: 'hPprimary', buttonIcon: buttonIcon || '', onClick: btHandleOnClick }, buttonText)),
+            React__default["default"].createElement(Button, { className: "hpTabActionButton", type: 'hPprimary', buttonIcon: buttonIcon || '', onClick: btHandleOnClick }, buttonText)),
         panels.map(function (_a) {
             var tabId = _a.tabId, panel = _a.panel;
             return React__default["default"].createElement(Tabs$1.Panel, { value: tabId, pt: "xs" }, panel);

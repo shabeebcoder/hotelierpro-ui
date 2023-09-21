@@ -37,3 +37,20 @@ Primary.args = {
     btHandleOnClick: () => alert('hey + ==' + state),
     tanleName: state
 }
+
+// Primary.arg = {
+//     test: [{
+//         label: `hello`,
+//         key: '1',
+//         children: `Content of tab 1`,
+
+//     }
+//         , {
+//         label: `hello2`,
+//         key: '2',
+//         children: `Content of tab 2`,
+
+//     }
+//     ]
+
+// }

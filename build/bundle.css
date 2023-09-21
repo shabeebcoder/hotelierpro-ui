@@ -7,7 +7,7 @@
     border-color: #3A7C7C;
 }
 
-.hotelierButton.hPprimary {
+.hpTabActionButton {
     background-color: #3A7C7C;
     border-radius: 4px;
     color: #F9F9FB;
@@ -183,6 +183,17 @@
 .mantine-1rb9ahf[data-active]:hover {
     border-color: #4D6969;
 }
+
+.hp-tab .hp-tab-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+
+/* {
+    display: none;
+} */
 .sideNavigation .mantine-NavLink-label {
     color: #4D6969;
     font-family: Inter;

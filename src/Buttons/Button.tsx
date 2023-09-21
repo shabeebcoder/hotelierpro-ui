@@ -8,16 +8,17 @@ import { PlusOutlined, SearchOutlined } from '@ant-design/icons';
 interface Props extends HTMLAttributes<HTMLButtonElement> {
     children: ReactNode,
     type: 'primary' | 'default' | 'dashed' | 'text' | 'link' | 'hPprimary'
-    disabled: boolean
+    disabled: boolean,
+    className?: string
 }
 
 
 
 export default function ({ children, ...props }: any) {
-    const { type } = props;
+    const { type, className } = props;
     return (
         <Space wrap>
-            <Button className={classNames('hotelierButton', {
+            <Button className={classNames('hotelierButton', className, {
                 'hPprimary': type === "hPprimary"
             })}  {...props} icon={<PlusOutlined />} >{children}</Button>
         </Space>

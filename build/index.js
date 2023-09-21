@@ -54877,13 +54877,28 @@ function styleInject(css, ref) {
 var css_248z$7 = "";
 styleInject(css_248z$7);
 
+// This icon file is generated automatically.
+var SaveOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M893.3 293.3L730.7 130.7c-7.5-7.5-16.7-13-26.7-16V112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V338.5c0-17-6.7-33.2-18.7-45.2zM384 184h256v104H384V184zm456 656H184V184h136v136c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V205.8l136 136V840zM512 442c-79.5 0-144 64.5-144 144s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144zm0 224c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z" } }] }, "name": "save", "theme": "outlined" };
+var SaveOutlinedSvg = SaveOutlined$2;
+
+var SaveOutlined = function SaveOutlined(props, ref) {
+  return /*#__PURE__*/React__namespace.createElement(AntdIcon, _extends$1({}, props, {
+    ref: ref,
+    icon: SaveOutlinedSvg
+  }));
+};
+if (process.env.NODE_ENV !== 'production') {
+  SaveOutlined.displayName = 'SaveOutlined';
+}
+var SaveOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(SaveOutlined);
+
 function Button (_a) {
     var children = _a.children, props = __rest$Q(_a, ["children"]);
-    var types = props.types;
+    var type = props.type;
     return (React__default["default"].createElement(Space$1, { wrap: true },
         React__default["default"].createElement(Button$3, __assign({ className: classnames$b('hotelierButton', {
-                'primary': types === "primary"
-            }), style: props.style }, props), children)));
+                'hPprimary': type === "hPprimary"
+            }) }, props, { icon: React__default["default"].createElement(PlusOutlined$1, null) }), children)));
 }
 
 var App$1 = function (props) { return (React__default["default"].createElement(Alert$1, { message: props.message, type: props.type })); };
@@ -54998,21 +55013,6 @@ function Rooms(props) {
         React__default["default"].createElement(Form$1.Item, { label: "No of Rooms", name: "noOfRooms" },
             React__default["default"].createElement(Input$1, null)));
 }
-
-// This icon file is generated automatically.
-var SaveOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M893.3 293.3L730.7 130.7c-7.5-7.5-16.7-13-26.7-16V112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V338.5c0-17-6.7-33.2-18.7-45.2zM384 184h256v104H384V184zm456 656H184V184h136v136c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V205.8l136 136V840zM512 442c-79.5 0-144 64.5-144 144s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144zm0 224c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z" } }] }, "name": "save", "theme": "outlined" };
-var SaveOutlinedSvg = SaveOutlined$2;
-
-var SaveOutlined = function SaveOutlined(props, ref) {
-  return /*#__PURE__*/React__namespace.createElement(AntdIcon, _extends$1({}, props, {
-    ref: ref,
-    icon: SaveOutlinedSvg
-  }));
-};
-if (process.env.NODE_ENV !== 'production') {
-  SaveOutlined.displayName = 'SaveOutlined';
-}
-var SaveOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(SaveOutlined);
 
 var css_248z$3 = "";
 styleInject(css_248z$3);
@@ -60295,9 +60295,11 @@ var css_248z$2 = "";
 styleInject(css_248z$2);
 
 function Tabs(props) {
-    var _a = props.panels, panels = _a === void 0 ? [] : _a, _b = props.tabs, tabs = _b === void 0 ? [] : _b, defaultValue = props.defaultValue, handleOnClick = props.handleOnClick;
+    var _a = props.panels, panels = _a === void 0 ? [] : _a, _b = props.tabs, tabs = _b === void 0 ? [] : _b, defaultValue = props.defaultValue, handleOnClick = props.handleOnClick, btHandleOnClick = props.btHandleOnClick, buttonText = props.buttonText, buttonIcon = props.buttonIcon; props.addRooms;
     return (React__default["default"].createElement(Tabs$1, { color: "green", defaultValue: defaultValue, className: 'hp-tab' },
-        React__default["default"].createElement(Tabs$1.List, null, tabs.map(function (row) { return React__default["default"].createElement(Tabs$1.Tab, { onClick: function () { return handleOnClick(row); }, value: row.value }, row.label); })),
+        React__default["default"].createElement("div", { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between' } },
+            React__default["default"].createElement(Tabs$1.List, null, tabs.map(function (row) { return React__default["default"].createElement(Tabs$1.Tab, { onClick: function () { return handleOnClick(row); }, value: row.value }, row.label); })),
+            React__default["default"].createElement(Button, { type: 'hPprimary', buttonIcon: buttonIcon || '', onClick: btHandleOnClick }, buttonText)),
         panels.map(function (_a) {
             var tabId = _a.tabId, panel = _a.panel;
             return React__default["default"].createElement(Tabs$1.Panel, { value: tabId, pt: "xs" }, panel);

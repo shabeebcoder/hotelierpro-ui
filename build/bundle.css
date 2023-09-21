@@ -6,6 +6,17 @@
     color: #3A7C7C;
     border-color: #3A7C7C;
 }
+
+.hotelierButton.hPprimary {
+    background-color: #3A7C7C;
+    border-radius: 4px;
+    color: #F9F9FB;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
 .login-card {
     width: 478px;
     display: flex;
@@ -166,6 +177,11 @@
     font-weight: 500;
     line-height: 24px;
     /* 150% */
+}
+
+.mantine-1rb9ahf[data-active],
+.mantine-1rb9ahf[data-active]:hover {
+    border-color: #4D6969;
 }
 .sideNavigation .mantine-NavLink-label {
     color: #4D6969;

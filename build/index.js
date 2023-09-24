@@ -44560,7 +44560,7 @@ function parseHeaderRows(rootColumns) {
   }
   return rows;
 }
-function Header(props) {
+function Header$1(props) {
   if (process.env.NODE_ENV !== 'production') {
     devRenderTimes(props);
   }
@@ -44595,7 +44595,7 @@ function Header(props) {
     return rowNode;
   }));
 }
-var Header$1 = responseImmutable(Header);
+var Header$2 = responseImmutable(Header$1);
 
 function parseColWidth(totalWidth) {
   var width = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
@@ -45660,7 +45660,7 @@ function Table$2(tableProps) {
   // ========================================================================
   // =================== Render: Func ===================
   var renderFixedHeaderTable = React__namespace.useCallback(function (fixedHolderPassProps) {
-    return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Header$1, fixedHolderPassProps), fixFooter === 'top' && /*#__PURE__*/React__namespace.createElement(Footer$1, fixedHolderPassProps, summaryNode));
+    return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Header$2, fixedHolderPassProps), fixFooter === 'top' && /*#__PURE__*/React__namespace.createElement(Footer$1, fixedHolderPassProps, summaryNode));
   }, [fixFooter, summaryNode]);
   var renderFixedFooterTable = React__namespace.useCallback(function (fixedHolderPassProps) {
     return /*#__PURE__*/React__namespace.createElement(Footer$1, fixedHolderPassProps, summaryNode);
@@ -45804,7 +45804,7 @@ function Table$2(tableProps) {
       style: _objectSpread2(_objectSpread2({}, scrollTableStyle), {}, {
         tableLayout: mergedTableLayout
       })
-    }, ariaProps), captionElement, bodyColGroup, showHeader !== false && /*#__PURE__*/React__namespace.createElement(Header$1, _extends$1({}, headerProps, columnContext)), bodyTable, summaryNode && /*#__PURE__*/React__namespace.createElement(Footer$1, {
+    }, ariaProps), captionElement, bodyColGroup, showHeader !== false && /*#__PURE__*/React__namespace.createElement(Header$2, _extends$1({}, headerProps, columnContext)), bodyTable, summaryNode && /*#__PURE__*/React__namespace.createElement(Footer$1, {
       stickyOffsets: stickyOffsets,
       flattenColumns: flattenColumns,
       columns: columns
@@ -54653,7 +54653,7 @@ function Button$1 (_a) {
             }) }, props, { icon: React__default["default"].createElement(PlusOutlined$1, null) }), children)));
 }
 
-var App$2 = function (props) { return (React__default["default"].createElement(Alert$1, { message: props.message, type: props.type })); };
+var App$1 = function (props) { return (React__default["default"].createElement(Alert$1, { message: props.message, type: props.type })); };
 
 var css_248z$8 = "";
 styleInject(css_248z$8);
@@ -54729,7 +54729,7 @@ function Register(props) {
 var css_248z$6 = "";
 styleInject(css_248z$6);
 
-var App$1 = function (props) {
+var App = function (props) {
     var onFinish = props.onFinish, formName = props.formName, title = props.title, children = props.children, handleCancel = props.handleCancel;
     return (React__default["default"].createElement("div", { className: 'form_card_container' },
         React__default["default"].createElement(Card$1, { title: title },
@@ -54743,7 +54743,7 @@ var App$1 = function (props) {
 
 function RoomTypeForm(props) {
     var handleCancel = props.handleCancel, handleOnFinish = props.handleOnFinish, title = props.title, formName = props.formName;
-    return React__default["default"].createElement(App$1, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
+    return React__default["default"].createElement(App, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
         React__default["default"].createElement(Form$1.Item, { label: "Name", name: "name" },
             React__default["default"].createElement(Input$2, null)),
         React__default["default"].createElement(Form$1.Item, { label: "Max. Persons", name: "maxPerson" },
@@ -54756,7 +54756,7 @@ function RoomTypeForm(props) {
 
 function Rooms$1(props) {
     var handleCancel = props.handleCancel, handleOnFinish = props.handleOnFinish, title = props.title, formName = props.formName, _a = props.roomTypes, roomTypes = _a === void 0 ? [] : _a;
-    return React__default["default"].createElement(App$1, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
+    return React__default["default"].createElement(App, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
         React__default["default"].createElement(Form$1.Item, { label: "Room Types", name: "roomTypes" },
             React__default["default"].createElement(Select$2, null, roomTypes.map(function (_a) {
                 var value = _a.value, label = _a.label;
@@ -69779,7 +69779,7 @@ function Breadcrumbs (props) {
 var DLS = {
     Button: Button$1,
     Breadcrumbs: Breadcrumbs,
-    SuccessAlert: App$2,
+    SuccessAlert: App$1,
 };
 
 var css_248z$3 = "";
@@ -75655,22 +75655,25 @@ var WeeklyMonthly = function () { return React__default["default"].createElement
             label: 'Week',
         },
     ] }); };
-var App = function () { return (React__default["default"].createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: 20 } },
-    React__default["default"].createElement("div", { className: "left" },
-        "Booking",
-        React__default["default"].createElement("div", null,
-            React__default["default"].createElement(TableOutlined$1, null),
-            " \u00A0 22 Dec, 2022 ",
-            React__default["default"].createElement(LeftOutlined$1, null),
-            React__default["default"].createElement(RightOutlined$1, null))),
-    React__default["default"].createElement("div", { className: "right" },
-        React__default["default"].createElement(WeeklyMonthly, null),
-        "\u00A0",
-        React__default["default"].createElement(Space$1, null,
-            React__default["default"].createElement(Button$4, { type: "primary" }, "New Booking"))))); };
+var Header = function (props) {
+    var handleNewBookingButton = props.handleNewBookingButton;
+    return (React__default["default"].createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: 20 } },
+        React__default["default"].createElement("div", { className: "left" },
+            "Booking",
+            React__default["default"].createElement("div", null,
+                React__default["default"].createElement(TableOutlined$1, null),
+                " \u00A0 22 Dec, 2022 ",
+                React__default["default"].createElement(LeftOutlined$1, null),
+                React__default["default"].createElement(RightOutlined$1, null))),
+        React__default["default"].createElement("div", { className: "right" },
+            React__default["default"].createElement(WeeklyMonthly, null),
+            "\u00A0",
+            React__default["default"].createElement(Space$1, null,
+                React__default["default"].createElement(Button$4, { type: "primary", onClick: handleNewBookingButton }, "New Booking")))));
+};
 
 function Calander(props) {
-    var currentDates = props.currentDates;
+    var currentDates = props.currentDates, handleNewBookingButton = props.handleNewBookingButton;
     var _a = React__default["default"].useState(moment(currentDates)), currentDate = _a[0]; _a[1];
     function getYears() {
         var startYear = currentDate.clone().subtract(6, "year");
@@ -75787,7 +75790,7 @@ function Calander(props) {
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement("div", { className: "App" },
             React__default["default"].createElement("div", { className: "front-desk-page-container" },
-                React__default["default"].createElement(App, null),
+                React__default["default"].createElement(Header, { handleNewBookingButton: handleNewBookingButton }),
                 React__default["default"].createElement("div", { className: "calendar-dates-capacity-room-container" },
                     React__default["default"].createElement(DatesHeader, __assign({}, getCalendarData())),
                     React__default["default"].createElement(Rooms, __assign({}, getCalendarData())))))));
@@ -80987,7 +80990,7 @@ exports.RoomList = RoomList;
 exports.RoomTypesForm = RoomTypeForm;
 exports.Rooms = Rooms$1;
 exports.SideBar = SideBar;
-exports.SuccessAlert = App$2;
+exports.SuccessAlert = App$1;
 exports.Tables = Tables;
 exports.Tabs = Tabs;
 exports.TopbarNavigation = TopbarNavigation;

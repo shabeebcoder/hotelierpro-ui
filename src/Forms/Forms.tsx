@@ -95,7 +95,7 @@ const BookingForm = (props: any) => {
                             //   onSearchChange={onSearchChange}
                             //   searchValue={searchValue}
                             nothingFound="No options"
-                            data={['New Booking', 'Cancelled', 'Check-in', 'Check-out']}
+                            data={['newBooking', 'Cancelled', 'Check-in', 'Check-out']}
                             {...form.getInputProps('status')}
                         />
                     </Grid.Col>

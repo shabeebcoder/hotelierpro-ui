@@ -20,7 +20,7 @@ interface Prop {
 
 export default function Calander(props: Prop) {
     const { currentDates, handleNewBookingButton } = props;
-    const { roomList, roomTypeList } = props;
+    const { roomList, roomTypeList, bookingData } = props;
 
     const [currentDate, setCurrentDate] = React.useState(moment(currentDates));
 
@@ -69,13 +69,22 @@ export default function Calander(props: Prop) {
                                 return { date: moment(date), availability: 18 };
                             })
                         ],
-                        bookings: [
-                            {
-                                name: "shabeeb",
-                                checkIn: moment("2023-09-10"),
-                                checkOut: moment("2022-09-14")
+                        bookings: bookingData && bookingData.map((book) => {
+                            const newDate = moment(book.checkInDate).format('MM/DD/YYYY');
+                            return {
+                                name: book?.guest?.fullName || '',
+                                checkIn: moment(newDate),
+                                checkOut: moment(book?.checkOutDate)
                             }
-                        ]
+
+                        })
+                        //     [
+                        //     {
+                        //         name: "shabeeb",
+                        //         checkIn: moment("2023-09-10"),
+                        //         checkOut: moment("2022-09-14")
+                        //     }
+                        // ]
 
                     }
                     // }

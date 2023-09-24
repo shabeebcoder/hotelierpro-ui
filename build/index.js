@@ -75674,6 +75674,7 @@ var Header = function (props) {
 
 function Calander(props) {
     var currentDates = props.currentDates, handleNewBookingButton = props.handleNewBookingButton;
+    var roomList = props.roomList, roomTypeList = props.roomTypeList;
     var _a = React__default["default"].useState(moment(currentDates)), currentDate = _a[0]; _a[1];
     function getYears() {
         var startYear = currentDate.clone().subtract(6, "year");
@@ -75696,94 +75697,38 @@ function Calander(props) {
         return twoWekksDates;
     }
     function getCalendarData() {
+        var payload = roomTypeList.map(function (category) {
+            return {
+                categoryName: category.name,
+                roomTotalCapacity: [],
+                rooms: roomList.map(function (room) {
+                    // if (category.id == room.roomType.id) {
+                    console.log("x=> room typ", room.roomType.id);
+                    console.log("x=>cat", category.id);
+                    return {
+                        name: room.roomName,
+                        availability: __spreadArray([], getTwoWeeksDate().map(function (date) {
+                            return { date: moment(date), availability: 18 };
+                        }), true),
+                        bookings: [
+                            {
+                                name: "shabeeb",
+                                checkIn: moment("2023-09-10"),
+                                checkOut: moment("2022-09-14")
+                            }
+                        ]
+                    };
+                    // }
+                    // return
+                })
+            };
+        });
         var data = {
             years: getYears(),
             months: getMonths(),
             dates: getTwoWeeksDate(),
             currentDate: currentDate,
-            roomCategory: [
-                {
-                    categoryName: "Delux Rooms",
-                    roomTotalCapacity: __spreadArray([], getTwoWeeksDate().map(function (date) {
-                        return { date: moment(date), availability: 18 };
-                    }), true),
-                    roomCurrentCapacity: __spreadArray([], getTwoWeeksDate().map(function (date) {
-                        return { date: moment(date), availability: 18 };
-                    }), true),
-                    rooms: [
-                        {
-                            name: "delux 101",
-                            availability: __spreadArray([], getTwoWeeksDate().map(function (date) {
-                                return { date: moment(date), availability: 18 };
-                            }), true),
-                            bookings: [
-                                {
-                                    name: "shabeeb",
-                                    checkIn: moment("2023-09-10"),
-                                    checkOut: moment("2022-09-14")
-                                }
-                            ]
-                        },
-                        {
-                            name: "delux 102",
-                            availability: __spreadArray([], getTwoWeeksDate().map(function (date) {
-                                return { date: date, availability: 18 };
-                            }), true),
-                            bookings: [
-                                {
-                                    name: "Navas",
-                                    checkIn: moment("2022-8-6"),
-                                    checkOut: moment("2022-8-8")
-                                }
-                            ]
-                        },
-                        {
-                            name: "delux 103",
-                            availability: __spreadArray([], getTwoWeeksDate().map(function (date) {
-                                return { date: moment(date), availability: 18 };
-                            }), true),
-                            bookings: [
-                                {
-                                    name: "Mohammed",
-                                    checkIn: moment("2022-8-2"),
-                                    checkOut: moment("2022-8-8")
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    categoryName: "Double",
-                    roomTotalCapacity: __spreadArray([], getTwoWeeksDate().map(function (date) {
-                        return { date: moment(date), availability: 18 };
-                    }), true),
-                    roomCurrentCapacity: __spreadArray([], getTwoWeeksDate().map(function (date) {
-                        return { date: moment(date), availability: 18 };
-                    }), true),
-                    rooms: [
-                        {
-                            name: "Double 101",
-                            availability: __spreadArray([], getTwoWeeksDate().map(function (date) {
-                                return { date: moment(date), availability: 18 };
-                            }), true),
-                            bookings: []
-                        },
-                        {
-                            name: "Double 102",
-                            availability: __spreadArray([], getTwoWeeksDate().map(function (date) {
-                                return { date: moment(date), availability: 18 };
-                            }), true)
-                        },
-                        {
-                            name: "Double 103",
-                            availability: __spreadArray([], getTwoWeeksDate().map(function (date) {
-                                return { date: moment(date), availability: 18 };
-                            }), true),
-                            bookings: []
-                        }
-                    ]
-                }
-            ]
+            roomCategory: payload
         };
         return data;
     }

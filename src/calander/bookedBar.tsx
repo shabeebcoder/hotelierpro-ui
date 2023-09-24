@@ -19,7 +19,7 @@ export default function ({ name }) {
     }
 
     return (
-        <div className="booked-info" >
+        <div className="booked-info" onClick={() => alert("clicked")}>
             <div className="name">
 
                 {name}

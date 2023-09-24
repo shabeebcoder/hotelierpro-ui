@@ -13,10 +13,12 @@ import Header from "./header"
 
 interface Prop {
     currentDates: string;
+    handleNewBookingButton: any
 }
 
 export default function Calander(props: Prop) {
-    const { currentDates } = props;
+    const { currentDates, handleNewBookingButton } = props;
+
     const [currentDate, setCurrentDate] = React.useState(moment(currentDates));
 
     function getYears() {
@@ -168,7 +170,7 @@ export default function Calander(props: Prop) {
 
                 <div className="front-desk-page-container">
                     {/* <YearHeader {...getCalendarData()} /> */}
-                    <Header />
+                    <Header handleNewBookingButton={handleNewBookingButton} />
 
                     {/* <MonthsHeader {...getCalendarData()} /> */}
                     <div className="calendar-dates-capacity-room-container">

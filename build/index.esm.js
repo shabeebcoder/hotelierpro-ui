@@ -80864,8 +80864,9 @@ function useForm({
   };
 }
 
-var BookingForm = function () {
+var BookingForm = function (props) {
     // const [form] = Form.useForm();
+    var onSubmitForm = props.onSubmitForm;
     var _a = useState(0), value = _a[0], setValue = _a[1];
     var handlers = useRef();
     var form = useForm({
@@ -80877,11 +80878,11 @@ var BookingForm = function () {
             firstName: function (value) { return (value.length < 2 ? 'Name must have at least 2 letters' : null); },
         },
     });
-    var onSubmitForm = function (formData) {
-        alert();
-        // formData.preventDefault()
-        console.log("formData=====>", formData);
-    };
+    // const onSubmitForm = (formData) => {
+    //     alert()
+    //     // formData.preventDefault()
+    //     console.log("f  ", formData)
+    // }
     return (React__default.createElement("div", { className: "bookFormContainer" },
         React__default.createElement("form", { onSubmit: form.onSubmit(onSubmitForm) },
             React__default.createElement(Grid, null,

@@ -9,3 +9,7 @@ export default {
 
 
 export const Dashboard = (args) => <Calander {...args} />;
+
+Dashboard.args = {
+    handleNewBookingButton: () => alert()
+}

@@ -33,8 +33,10 @@ const WeeklyMonthly = () => <Select
 
     ]}
 />
-const App: React.FC = () => (
-    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20 }}>
+const Header = (props: any) => {
+
+    const { handleNewBookingButton } = props;
+    return (<div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20 }}>
         <div className="left">
             Booking
             <div>
@@ -46,10 +48,11 @@ const App: React.FC = () => (
             <WeeklyMonthly />&nbsp;
             <Space>
 
-                <Button type="primary">New Booking</Button>
+                <Button type="primary" onClick={handleNewBookingButton} >New Booking</Button>
             </Space>
         </div>
-    </div>
-);
+    </div>)
+}
 
-export default App;
+
+export default Header;

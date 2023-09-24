@@ -129,6 +129,10 @@ body {
     color: #fff;
 }
 
+.calendar-dates-capacity-room-container {
+    overflow: auto;
+}
+
 .front-desk-page-container .calendar-dates-capacity-room-container .row {
     display: flex;
 }

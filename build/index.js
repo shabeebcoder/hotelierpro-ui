@@ -80934,7 +80934,7 @@ var BookingForm = function (props) {
                     React__default["default"].createElement(Select, __assign({ label: "Status", placeholder: "status", searchable: true, 
                         //   onSearchChange={onSearchChange}
                         //   searchValue={searchValue}
-                        nothingFound: "No options", data: ['New Booking', 'Cancelled', 'Check-in', 'Check-out'] }, form.getInputProps('status')))),
+                        nothingFound: "No options", data: ['newBooking', 'Cancelled', 'Check-in', 'Check-out'] }, form.getInputProps('status')))),
                 React__default["default"].createElement(Grid.Col, { span: 4, style: { display: 'flex' } },
                     React__default["default"].createElement("div", null,
                         React__default["default"].createElement("span", { className: "mantine-InputWrapper-label " }, "Adult"),

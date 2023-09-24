@@ -13,11 +13,14 @@ import Header from "./header"
 
 interface Prop {
     currentDates: string;
-    handleNewBookingButton: any
+    handleNewBookingButton: any;
+    roomList: any[],
+    roomTypeList: any[]
 }
 
 export default function Calander(props: Prop) {
     const { currentDates, handleNewBookingButton } = props;
+    const { roomList, roomTypeList } = props;
 
     const [currentDate, setCurrentDate] = React.useState(moment(currentDates));
 
@@ -45,115 +48,49 @@ export default function Calander(props: Prop) {
         return twoWekksDates;
     }
 
+
+
+
     function getCalendarData() {
+
+        const payload = roomTypeList.map((category) => {
+            return {
+                categoryName: category.name,
+                roomTotalCapacity: [],
+                rooms: roomList.map((room) => {
+                    // if (category.id == room.roomType.id) {
+                    console.log("x=> room typ", room.roomType.id)
+                    console.log("x=>cat", category.id)
+                    return {
+
+                        name: room.roomName,
+                        availability: [
+                            ...getTwoWeeksDate().map((date) => {
+                                return { date: moment(date), availability: 18 };
+                            })
+                        ],
+                        bookings: [
+                            {
+                                name: "shabeeb",
+                                checkIn: moment("2023-09-10"),
+                                checkOut: moment("2022-09-14")
+                            }
+                        ]
+
+                    }
+                    // }
+                    // return
+
+                })
+            }
+        })
+
         const data = {
             years: getYears(),
             months: getMonths(),
             dates: getTwoWeeksDate(),
             currentDate,
-            roomCategory: [
-                {
-                    categoryName: "Delux Rooms",
-                    roomTotalCapacity: [
-                        ...getTwoWeeksDate().map((date) => {
-                            return { date: moment(date), availability: 18 };
-                        })
-                    ],
-                    roomCurrentCapacity: [
-                        ...getTwoWeeksDate().map((date) => {
-                            return { date: moment(date), availability: 18 };
-                        })
-                    ],
-                    rooms: [
-                        {
-                            name: "delux 101",
-                            availability: [
-                                ...getTwoWeeksDate().map((date) => {
-                                    return { date: moment(date), availability: 18 };
-                                })
-                            ],
-                            bookings: [
-                                {
-                                    name: "shabeeb",
-                                    checkIn: moment("2023-09-10"),
-                                    checkOut: moment("2022-09-14")
-                                }
-                            ]
-                        },
-                        {
-                            name: "delux 102",
-                            availability: [
-                                ...getTwoWeeksDate().map((date) => {
-                                    return { date, availability: 18 };
-                                })
-                            ],
-                            bookings: [
-                                {
-                                    name: "Navas",
-                                    checkIn: moment("2022-8-6"),
-                                    checkOut: moment("2022-8-8")
-                                }
-                            ]
-                        },
-                        {
-                            name: "delux 103",
-                            availability: [
-                                ...getTwoWeeksDate().map((date) => {
-                                    return { date: moment(date), availability: 18 };
-                                })
-                            ],
-                            bookings: [
-                                {
-                                    name: "Mohammed",
-                                    checkIn: moment("2022-8-2"),
-                                    checkOut: moment("2022-8-8")
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    categoryName: "Double",
-                    roomTotalCapacity: [
-                        ...getTwoWeeksDate().map((date) => {
-                            return { date: moment(date), availability: 18 };
-                        })
-                    ],
-                    roomCurrentCapacity: [
-                        ...getTwoWeeksDate().map((date) => {
-                            return { date: moment(date), availability: 18 };
-                        })
-                    ],
-                    rooms: [
-                        {
-                            name: "Double 101",
-                            availability: [
-                                ...getTwoWeeksDate().map((date) => {
-                                    return { date: moment(date), availability: 18 };
-                                })
-                            ],
-                            bookings: []
-                        },
-                        {
-                            name: "Double 102",
-                            availability: [
-                                ...getTwoWeeksDate().map((date) => {
-                                    return { date: moment(date), availability: 18 };
-                                })
-                            ]
-                        },
-                        {
-                            name: "Double 103",
-                            availability: [
-                                ...getTwoWeeksDate().map((date) => {
-                                    return { date: moment(date), availability: 18 };
-                                })
-                            ],
-                            bookings: []
-                        }
-                    ]
-                }
-            ]
+            roomCategory: payload
         };
 
         return data;

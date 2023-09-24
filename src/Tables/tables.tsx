@@ -145,7 +145,7 @@ const Tables: any = (props: Props) => {
     );
   }
 
-  const RoomTableColumns: ColumnsType<RoomTableDataType> = [
+  const RoomTableColumns: any = [
     {
       title: () => {
         return (
@@ -316,7 +316,7 @@ const Tables: any = (props: Props) => {
     },
   ];
 
-  const RoomTypeColumns: ColumnsType<RoomTableDataType> = [
+  const RoomTypeColumns: any = [
     {
       title: () => {
         return (
@@ -1359,7 +1359,7 @@ const Tables: any = (props: Props) => {
     });
   }
   else if (props.type === "guests") {
-    var mergedColumns: any[] = GuestsColumns.map((col: any) => {
+    var mergedColumns = GuestsColumns.map((col: any) => {
       if (!col.editable) {
         return col;
       }
@@ -1379,7 +1379,7 @@ const Tables: any = (props: Props) => {
     });
   }
   else if (props.type === "companies") {
-    var mergedColumns: any[] = CompanyColumns.map((col: any) => {
+    var mergedColumns = CompanyColumns.map((col: any) => {
       if (!col.editable) {
         return col;
       }
@@ -1399,7 +1399,7 @@ const Tables: any = (props: Props) => {
     });
   }
   else if (props.type === "services") {
-    var mergedColumns: any[] = ServicesColumn.map((col: any) => {
+    var mergedColumns = ServicesColumn.map((col: any) => {
       if (!col.editable) {
         return col;
       }
@@ -1420,7 +1420,7 @@ const Tables: any = (props: Props) => {
   }
 
   else if (props.type === "serviceCategory") {
-    var mergedColumns: any[] = ServicesCategoryColumn.map((col: any) => {
+    var mergedColumns = ServicesCategoryColumn.map((col: any) => {
       if (!col.editable) {
         return col;
       }
@@ -1441,7 +1441,7 @@ const Tables: any = (props: Props) => {
   }
 
   else if (props.type === "invoiceList") {
-    var mergedColumns: any[] = InvoiceListColumn.map((col: any) => {
+    var mergedColumns = InvoiceListColumn.map((col: any) => {
       if (!col.editable) {
         return col;
       }

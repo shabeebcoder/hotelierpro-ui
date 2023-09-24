@@ -8,21 +8,21 @@ var ReactDOM = require('react-dom');
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 function _interopNamespace(e) {
-    if (e && e.__esModule) return e;
-    var n = Object.create(null);
-    if (e) {
-        Object.keys(e).forEach(function (k) {
-            if (k !== 'default') {
-                var d = Object.getOwnPropertyDescriptor(e, k);
-                Object.defineProperty(n, k, d.get ? d : {
-                    enumerable: true,
-                    get: function () { return e[k]; }
-                });
-            }
+  if (e && e.__esModule) return e;
+  var n = Object.create(null);
+  if (e) {
+    Object.keys(e).forEach(function (k) {
+      if (k !== 'default') {
+        var d = Object.getOwnPropertyDescriptor(e, k);
+        Object.defineProperty(n, k, d.get ? d : {
+          enumerable: true,
+          get: function () { return e[k]; }
         });
-    }
-    n["default"] = e;
-    return Object.freeze(n);
+      }
+    });
+  }
+  n["default"] = e;
+  return Object.freeze(n);
 }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
@@ -46,75 +46,80 @@ PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 
 var __assign = function() {
-    __assign = Object.assign || function __assign(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
+  __assign = Object.assign || function __assign(t) {
+      for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+          for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+      }
+      return t;
+  };
+  return __assign.apply(this, arguments);
 };
 
 function __rest$Q(s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+      t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function")
+      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+          if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+              t[p[i]] = s[p[i]];
+      }
+  return t;
 }
 
 function __awaiter(thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
+  function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+  return new (P || (P = Promise))(function (resolve, reject) {
+      function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+      function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+      function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+      step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
 }
 
 function __generator(thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
+  var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+  return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+  function verb(n) { return function (v) { return step([n, v]); }; }
+  function step(op) {
+      if (f) throw new TypeError("Generator is already executing.");
+      while (g && (g = 0, op[0] && (_ = 0)), _) try {
+          if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+          if (y = 0, t) op = [op[0] & 2, t.value];
+          switch (op[0]) {
+              case 0: case 1: t = op; break;
+              case 4: _.label++; return { value: op[1], done: false };
+              case 5: _.label++; y = op[1]; op = [0]; continue;
+              case 7: op = _.ops.pop(); _.trys.pop(); continue;
+              default:
+                  if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                  if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                  if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                  if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                  if (t[2]) _.ops.pop();
+                  _.trys.pop(); continue;
+          }
+          op = body.call(thisArg, _);
+      } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+      if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+  }
 }
 
 function __spreadArray(to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
+  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+      if (ar || !(i in from)) {
+          if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+          ar[i] = from[i];
+      }
+  }
+  return to.concat(ar || Array.prototype.slice.call(from));
 }
+
+typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
+  var e = new Error(message);
+  return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -258,7 +263,7 @@ function commonjsRequire (target) {
 	http://jedwatson.github.io/classnames
 */
 
-var classnames$g = createCommonjsModule(function (module) {
+var classnames = createCommonjsModule(function (module) {
 /* global define */
 
 (function () {
@@ -332,12 +337,12 @@ function _extends$1() {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e$1=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l$1=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n$1=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
-Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t$2=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
-function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l$1:case m:case e$1:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n$1:case t$2:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l$1;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h;var Element$3=c;var ForwardRef=n$1;var Fragment=e$1;var Lazy=t$2;var Memo=r;var Portal$2=d;
-var Profiler=g;var StrictMode=f;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l$1};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h};var isElement$3=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n$1};var isFragment$1=function(a){return z(a)===e$1};var isLazy=function(a){return z(a)===t$2};
+var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e$2=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l$1=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n$1=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
+Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t$1=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
+function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l$1:case m:case e$2:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n$1:case t$1:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l$1;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h;var Element$3=c;var ForwardRef=n$1;var Fragment=e$2;var Lazy=t$1;var Memo=r;var Portal$2=d;
+var Profiler=g;var StrictMode=f;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l$1};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h};var isElement$3=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n$1};var isFragment$1=function(a){return z(a)===e$2};var isLazy=function(a){return z(a)===t$1};
 var isMemo=function(a){return z(a)===r};var isPortal=function(a){return z(a)===d};var isProfiler=function(a){return z(a)===g};var isStrictMode=function(a){return z(a)===f};var isSuspense=function(a){return z(a)===p};
-var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e$1||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t$2||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n$1||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};var typeOf=z;
+var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e$2||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t$1||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n$1||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};var typeOf=z;
 
 var reactIs_production_min = {
 	AsyncMode: AsyncMode,
@@ -3000,59 +3005,31 @@ var unitlessKeys$1 = {
   strokeWidth: 1
 };
 
-var MS = '-ms-';
-var MOZ = '-moz-';
-var WEBKIT = '-webkit-';
-
-var COMMENT = 'comm';
-var RULESET = 'rule';
-var DECLARATION = 'decl';
-var IMPORT = '@import';
-var KEYFRAMES = '@keyframes';
-var LAYER = '@layer';
+var COMMENT$1 = 'comm';
+var RULESET$1 = 'rule';
+var DECLARATION$1 = 'decl';
+var IMPORT$1 = '@import';
+var KEYFRAMES$1 = '@keyframes';
+var LAYER$1 = '@layer';
 
 /**
  * @param {number}
  * @return {number}
  */
-var abs = Math.abs;
+var abs$1 = Math.abs;
 
 /**
  * @param {number}
  * @return {string}
  */
-var from = String.fromCharCode;
-
-/**
- * @param {object}
- * @return {object}
- */
-var assign = Object.assign;
-
-/**
- * @param {string} value
- * @param {number} length
- * @return {number}
- */
-function hash (value, length) {
-	return charat(value, 0) ^ 45 ? (((((((length << 2) ^ charat(value, 0)) << 2) ^ charat(value, 1)) << 2) ^ charat(value, 2)) << 2) ^ charat(value, 3) : 0
-}
+var from$1 = String.fromCharCode;
 
 /**
  * @param {string} value
  * @return {string}
  */
-function trim (value) {
+function trim$1 (value) {
 	return value.trim()
-}
-
-/**
- * @param {string} value
- * @param {RegExp} pattern
- * @return {string?}
- */
-function match$1 (value, pattern) {
-	return (value = pattern.exec(value)) ? value[0] : value
 }
 
 /**
@@ -3061,7 +3038,7 @@ function match$1 (value, pattern) {
  * @param {string} replacement
  * @return {string}
  */
-function replace (value, pattern, replacement) {
+function replace$1 (value, pattern, replacement) {
 	return value.replace(pattern, replacement)
 }
 
@@ -3070,7 +3047,7 @@ function replace (value, pattern, replacement) {
  * @param {string} search
  * @return {number}
  */
-function indexof (value, search) {
+function indexof$1 (value, search) {
 	return value.indexOf(search)
 }
 
@@ -3079,7 +3056,7 @@ function indexof (value, search) {
  * @param {number} index
  * @return {number}
  */
-function charat (value, index) {
+function charat$1 (value, index) {
 	return value.charCodeAt(index) | 0
 }
 
@@ -3089,7 +3066,7 @@ function charat (value, index) {
  * @param {number} end
  * @return {string}
  */
-function substr (value, begin, end) {
+function substr$1 (value, begin, end) {
 	return value.slice(begin, end)
 }
 
@@ -3097,7 +3074,7 @@ function substr (value, begin, end) {
  * @param {string} value
  * @return {number}
  */
-function strlen (value) {
+function strlen$1 (value) {
 	return value.length
 }
 
@@ -3105,7 +3082,7 @@ function strlen (value) {
  * @param {any[]} value
  * @return {number}
  */
-function sizeof (value) {
+function sizeof$1 (value) {
 	return value.length
 }
 
@@ -3114,25 +3091,16 @@ function sizeof (value) {
  * @param {any[]} array
  * @return {any}
  */
-function append (value, array) {
+function append$1 (value, array) {
 	return array.push(value), value
 }
 
-/**
- * @param {string[]} array
- * @param {function} callback
- * @return {string}
- */
-function combine (array, callback) {
-	return array.map(callback).join('')
-}
-
-var line = 1;
-var column = 1;
-var length = 0;
-var position = 0;
-var character = 0;
-var characters = '';
+var line$1 = 1;
+var column$1 = 1;
+var length$1 = 0;
+var position$1 = 0;
+var character$1 = 0;
+var characters$1 = '';
 
 /**
  * @param {string} value
@@ -3141,64 +3109,56 @@ var characters = '';
  * @param {string} type
  * @param {string[] | string} props
  * @param {object[] | string} children
+ * @param {object[]} siblings
  * @param {number} length
  */
-function node (value, root, parent, type, props, children, length) {
-	return {value: value, root: root, parent: parent, type: type, props: props, children: children, line: line, column: column, length: length, return: ''}
-}
-
-/**
- * @param {object} root
- * @param {object} props
- * @return {object}
- */
-function copy$1 (root, props) {
-	return assign(node('', null, null, '', null, null, 0), root, {length: -root.length}, props)
+function node$1 (value, root, parent, type, props, children, length, siblings) {
+	return {value: value, root: root, parent: parent, type: type, props: props, children: children, line: line$1, column: column$1, length: length, return: '', siblings: siblings}
 }
 
 /**
  * @return {number}
  */
-function char () {
-	return character
+function char$1 () {
+	return character$1
 }
 
 /**
  * @return {number}
  */
-function prev () {
-	character = position > 0 ? charat(characters, --position) : 0;
+function prev$1 () {
+	character$1 = position$1 > 0 ? charat$1(characters$1, --position$1) : 0;
 
-	if (column--, character === 10)
-		column = 1, line--;
+	if (column$1--, character$1 === 10)
+		column$1 = 1, line$1--;
 
-	return character
+	return character$1
 }
 
 /**
  * @return {number}
  */
-function next () {
-	character = position < length ? charat(characters, position++) : 0;
+function next$1 () {
+	character$1 = position$1 < length$1 ? charat$1(characters$1, position$1++) : 0;
 
-	if (column++, character === 10)
-		column = 1, line++;
+	if (column$1++, character$1 === 10)
+		column$1 = 1, line$1++;
 
-	return character
+	return character$1
 }
 
 /**
  * @return {number}
  */
-function peek () {
-	return charat(characters, position)
+function peek$1 () {
+	return charat$1(characters$1, position$1)
 }
 
 /**
  * @return {number}
  */
-function caret () {
-	return position
+function caret$1 () {
+	return position$1
 }
 
 /**
@@ -3206,15 +3166,15 @@ function caret () {
  * @param {number} end
  * @return {string}
  */
-function slice (begin, end) {
-	return substr(characters, begin, end)
+function slice$1 (begin, end) {
+	return substr$1(characters$1, begin, end)
 }
 
 /**
  * @param {number} type
  * @return {number}
  */
-function token (type) {
+function token$1 (type) {
 	switch (type) {
 		// \0 \t \n \r \s whitespace token
 		case 0: case 9: case 10: case 13: case 32:
@@ -3242,38 +3202,38 @@ function token (type) {
  * @param {string} value
  * @return {any[]}
  */
-function alloc (value) {
-	return line = column = 1, length = strlen(characters = value), position = 0, []
+function alloc$1 (value) {
+	return line$1 = column$1 = 1, length$1 = strlen$1(characters$1 = value), position$1 = 0, []
 }
 
 /**
  * @param {any} value
  * @return {any}
  */
-function dealloc (value) {
-	return characters = '', value
+function dealloc$1 (value) {
+	return characters$1 = '', value
 }
 
 /**
  * @param {number} type
  * @return {string}
  */
-function delimit (type) {
-	return trim(slice(position - 1, delimiter(type === 91 ? type + 2 : type === 40 ? type + 1 : type)))
+function delimit$1 (type) {
+	return trim$1(slice$1(position$1 - 1, delimiter$1(type === 91 ? type + 2 : type === 40 ? type + 1 : type)))
 }
 
 /**
  * @param {number} type
  * @return {string}
  */
-function whitespace$1 (type) {
-	while (character = peek())
-		if (character < 33)
-			next();
+function whitespace$2 (type) {
+	while (character$1 = peek$1())
+		if (character$1 < 33)
+			next$1();
 		else
 			break
 
-	return token(type) > 2 || token(character) > 3 ? '' : ' '
+	return token$1(type) > 2 || token$1(character$1) > 3 ? '' : ' '
 }
 
 /**
@@ -3281,42 +3241,42 @@ function whitespace$1 (type) {
  * @param {number} count
  * @return {string}
  */
-function escaping (index, count) {
-	while (--count && next())
+function escaping$1 (index, count) {
+	while (--count && next$1())
 		// not 0-9 A-F a-f
-		if (character < 48 || character > 102 || (character > 57 && character < 65) || (character > 70 && character < 97))
+		if (character$1 < 48 || character$1 > 102 || (character$1 > 57 && character$1 < 65) || (character$1 > 70 && character$1 < 97))
 			break
 
-	return slice(index, caret() + (count < 6 && peek() == 32 && next() == 32))
+	return slice$1(index, caret$1() + (count < 6 && peek$1() == 32 && next$1() == 32))
 }
 
 /**
  * @param {number} type
  * @return {number}
  */
-function delimiter (type) {
-	while (next())
-		switch (character) {
+function delimiter$1 (type) {
+	while (next$1())
+		switch (character$1) {
 			// ] ) " '
 			case type:
-				return position
+				return position$1
 			// " '
 			case 34: case 39:
 				if (type !== 34 && type !== 39)
-					delimiter(character);
+					delimiter$1(character$1);
 				break
 			// (
 			case 40:
 				if (type === 41)
-					delimiter(type);
+					delimiter$1(type);
 				break
 			// \
 			case 92:
-				next();
+				next$1();
 				break
 		}
 
-	return position
+	return position$1
 }
 
 /**
@@ -3324,35 +3284,35 @@ function delimiter (type) {
  * @param {number} index
  * @return {number}
  */
-function commenter (type, index) {
-	while (next())
+function commenter$1 (type, index) {
+	while (next$1())
 		// //
-		if (type + character === 47 + 10)
+		if (type + character$1 === 47 + 10)
 			break
 		// /*
-		else if (type + character === 42 + 42 && peek() === 47)
+		else if (type + character$1 === 42 + 42 && peek$1() === 47)
 			break
 
-	return '/*' + slice(index, position - 1) + '*' + from(type === 47 ? type : next())
+	return '/*' + slice$1(index, position$1 - 1) + '*' + from$1(type === 47 ? type : next$1())
 }
 
 /**
  * @param {number} index
  * @return {string}
  */
-function identifier (index) {
-	while (!token(peek()))
-		next();
+function identifier$1 (index) {
+	while (!token$1(peek$1()))
+		next$1();
 
-	return slice(index, position)
+	return slice$1(index, position$1)
 }
 
 /**
  * @param {string} value
  * @return {object[]}
  */
-function compile (value) {
-	return dealloc(parse('', null, null, null, [''], value = alloc(value), 0, [0], value))
+function compile$1 (value) {
+	return dealloc$1(parse$1('', null, null, null, [''], value = alloc$1(value), 0, [0], value))
 }
 
 /**
@@ -3367,7 +3327,7 @@ function compile (value) {
  * @param {string[]} declarations
  * @return {object}
  */
-function parse (value, root, parent, rule, rules, rulesets, pseudo, points, declarations) {
+function parse$1 (value, root, parent, rule, rules, rulesets, pseudo, points, declarations) {
 	var index = 0;
 	var offset = 0;
 	var length = pseudo;
@@ -3385,31 +3345,31 @@ function parse (value, root, parent, rule, rules, rulesets, pseudo, points, decl
 	var characters = type;
 
 	while (scanning)
-		switch (previous = character, character = next()) {
+		switch (previous = character, character = next$1()) {
 			// (
 			case 40:
-				if (previous != 108 && charat(characters, length - 1) == 58) {
-					if (indexof(characters += replace(delimit(character), '&', '&\f'), '&\f') != -1)
+				if (previous != 108 && charat$1(characters, length - 1) == 58) {
+					if (indexof$1(characters += replace$1(delimit$1(character), '&', '&\f'), '&\f') != -1)
 						ampersand = -1;
 					break
 				}
 			// " ' [
 			case 34: case 39: case 91:
-				characters += delimit(character);
+				characters += delimit$1(character);
 				break
 			// \t \n \r \s
 			case 9: case 10: case 13: case 32:
-				characters += whitespace$1(previous);
+				characters += whitespace$2(previous);
 				break
 			// \
 			case 92:
-				characters += escaping(caret() - 1, 7);
+				characters += escaping$1(caret$1() - 1, 7);
 				continue
 			// /
 			case 47:
-				switch (peek()) {
+				switch (peek$1()) {
 					case 42: case 47:
-						append(comment(commenter(next(), caret()), root, parent), declarations);
+						append$1(comment$1(commenter$1(next$1(), caret$1()), root, parent, declarations), declarations);
 						break
 					default:
 						characters += '/';
@@ -3417,34 +3377,34 @@ function parse (value, root, parent, rule, rules, rulesets, pseudo, points, decl
 				break
 			// {
 			case 123 * variable:
-				points[index++] = strlen(characters) * ampersand;
+				points[index++] = strlen$1(characters) * ampersand;
 			// } ; \0
 			case 125 * variable: case 59: case 0:
 				switch (character) {
 					// \0 }
 					case 0: case 125: scanning = 0;
 					// ;
-					case 59 + offset: if (ampersand == -1) characters = replace(characters, /\f/g, '');
-						if (property > 0 && (strlen(characters) - length))
-							append(property > 32 ? declaration(characters + ';', rule, parent, length - 1) : declaration(replace(characters, ' ', '') + ';', rule, parent, length - 2), declarations);
+					case 59 + offset: if (ampersand == -1) characters = replace$1(characters, /\f/g, '');
+						if (property > 0 && (strlen$1(characters) - length))
+							append$1(property > 32 ? declaration$1(characters + ';', rule, parent, length - 1, declarations) : declaration$1(replace$1(characters, ' ', '') + ';', rule, parent, length - 2, declarations), declarations);
 						break
 					// @ ;
 					case 59: characters += ';';
 					// { rule/at-rule
 					default:
-						append(reference = ruleset(characters, root, parent, index, offset, rules, points, type, props = [], children = [], length), rulesets);
+						append$1(reference = ruleset$1(characters, root, parent, index, offset, rules, points, type, props = [], children = [], length, rulesets), rulesets);
 
 						if (character === 123)
 							if (offset === 0)
-								parse(characters, root, reference, reference, props, rulesets, length, points, children);
+								parse$1(characters, root, reference, reference, props, rulesets, length, points, children);
 							else
-								switch (atrule === 99 && charat(characters, 3) === 110 ? 100 : atrule) {
+								switch (atrule === 99 && charat$1(characters, 3) === 110 ? 100 : atrule) {
 									// d l m s
 									case 100: case 108: case 109: case 115:
-										parse(value, reference, reference, rule && append(ruleset(value, reference, reference, 0, 0, rules, points, type, rules, props = [], length), children), rules, children, length, points, rule ? props : children);
+										parse$1(value, reference, reference, rule && append$1(ruleset$1(value, reference, reference, 0, 0, rules, points, type, rules, props = [], length, children), children), rules, children, length, points, rule ? props : children);
 										break
 									default:
-										parse(characters, reference, reference, reference, [''], children, 0, points, children);
+										parse$1(characters, reference, reference, reference, [''], children, 0, points, children);
 								}
 				}
 
@@ -3452,34 +3412,34 @@ function parse (value, root, parent, rule, rules, rulesets, pseudo, points, decl
 				break
 			// :
 			case 58:
-				length = 1 + strlen(characters), property = previous;
+				length = 1 + strlen$1(characters), property = previous;
 			default:
 				if (variable < 1)
 					if (character == 123)
 						--variable;
-					else if (character == 125 && variable++ == 0 && prev() == 125)
+					else if (character == 125 && variable++ == 0 && prev$1() == 125)
 						continue
 
-				switch (characters += from(character), character * variable) {
+				switch (characters += from$1(character), character * variable) {
 					// &
 					case 38:
 						ampersand = offset > 0 ? 1 : (characters += '\f', -1);
 						break
 					// ,
 					case 44:
-						points[index++] = (strlen(characters) - 1) * ampersand, ampersand = 1;
+						points[index++] = (strlen$1(characters) - 1) * ampersand, ampersand = 1;
 						break
 					// @
 					case 64:
 						// -
-						if (peek() === 45)
-							characters += delimit(next());
+						if (peek$1() === 45)
+							characters += delimit$1(next$1());
 
-						atrule = peek(), offset = length = strlen(type = characters += identifier(caret())), character++;
+						atrule = peek$1(), offset = length = strlen$1(type = characters += identifier$1(caret$1())), character++;
 						break
 					// -
 					case 45:
-						if (previous === 45 && strlen(characters) == 2)
+						if (previous === 45 && strlen$1(characters) == 2)
 							variable = 0;
 				}
 		}
@@ -3499,29 +3459,31 @@ function parse (value, root, parent, rule, rules, rulesets, pseudo, points, decl
  * @param {string[]} props
  * @param {string[]} children
  * @param {number} length
+ * @param {object[]} siblings
  * @return {object}
  */
-function ruleset (value, root, parent, index, offset, rules, points, type, props, children, length) {
+function ruleset$1 (value, root, parent, index, offset, rules, points, type, props, children, length, siblings) {
 	var post = offset - 1;
 	var rule = offset === 0 ? rules : [''];
-	var size = sizeof(rule);
+	var size = sizeof$1(rule);
 
 	for (var i = 0, j = 0, k = 0; i < index; ++i)
-		for (var x = 0, y = substr(value, post + 1, post = abs(j = points[i])), z = value; x < size; ++x)
-			if (z = trim(j > 0 ? rule[x] + ' ' + y : replace(y, /&\f/g, rule[x])))
+		for (var x = 0, y = substr$1(value, post + 1, post = abs$1(j = points[i])), z = value; x < size; ++x)
+			if (z = trim$1(j > 0 ? rule[x] + ' ' + y : replace$1(y, /&\f/g, rule[x])))
 				props[k++] = z;
 
-	return node(value, root, parent, offset === 0 ? RULESET : type, props, children, length)
+	return node$1(value, root, parent, offset === 0 ? RULESET$1 : type, props, children, length, siblings)
 }
 
 /**
  * @param {number} value
  * @param {object} root
  * @param {object?} parent
+ * @param {object[]} siblings
  * @return {object}
  */
-function comment (value, root, parent) {
-	return node(value, root, parent, COMMENT, from(char()), substr(value, 2, -2), 0)
+function comment$1 (value, root, parent, siblings) {
+	return node$1(value, root, parent, COMMENT$1, from$1(char$1()), substr$1(value, 2, -2), 0, siblings)
 }
 
 /**
@@ -3529,10 +3491,11 @@ function comment (value, root, parent) {
  * @param {object} root
  * @param {object?} parent
  * @param {number} length
+ * @param {object[]} siblings
  * @return {object}
  */
-function declaration (value, root, parent, length) {
-	return node(value, root, parent, DECLARATION, substr(value, 0, length), substr(value, length + 1, -1), length)
+function declaration$1 (value, root, parent, length, siblings) {
+	return node$1(value, root, parent, DECLARATION$1, substr$1(value, 0, length), substr$1(value, length + 1, -1), length, siblings)
 }
 
 /**
@@ -3540,11 +3503,10 @@ function declaration (value, root, parent, length) {
  * @param {function} callback
  * @return {string}
  */
-function serialize (children, callback) {
+function serialize$1 (children, callback) {
 	var output = '';
-	var length = sizeof(children);
 
-	for (var i = 0; i < length; i++)
+	for (var i = 0; i < children.length; i++)
 		output += callback(children[i], i, children, callback) || '';
 
 	return output
@@ -3557,45 +3519,16 @@ function serialize (children, callback) {
  * @param {function} callback
  * @return {string}
  */
-function stringify$2 (element, index, children, callback) {
+function stringify$3 (element, index, children, callback) {
 	switch (element.type) {
-		case LAYER: if (element.children.length) break
-		case IMPORT: case DECLARATION: return element.return = element.return || element.value
-		case COMMENT: return ''
-		case KEYFRAMES: return element.return = element.value + '{' + serialize(element.children, callback) + '}'
-		case RULESET: element.value = element.props.join(',');
+		case LAYER$1: if (element.children.length) break
+		case IMPORT$1: case DECLARATION$1: return element.return = element.return || element.value
+		case COMMENT$1: return ''
+		case KEYFRAMES$1: return element.return = element.value + '{' + serialize$1(element.children, callback) + '}'
+		case RULESET$1: if (!strlen$1(element.value = element.props.join(','))) return ''
 	}
 
-	return strlen(children = serialize(element.children, callback)) ? element.return = element.value + '{' + children + '}' : ''
-}
-
-/**
- * @param {function[]} collection
- * @return {function}
- */
-function middleware (collection) {
-	var length = sizeof(collection);
-
-	return function (element, index, children, callback) {
-		var output = '';
-
-		for (var i = 0; i < length; i++)
-			output += collection[i](element, index, children, callback) || '';
-
-		return output
-	}
-}
-
-/**
- * @param {function} callback
- * @return {function}
- */
-function rulesheet (callback) {
-	return function (element) {
-		if (!element.root)
-			if (element = element.return)
-				callback(element);
-	}
+	return strlen$1(children = serialize$1(element.children, callback)) ? element.return = element.value + '{' + children + '}' : ''
 }
 
 function lintWarning(message, info) {
@@ -3696,7 +3629,7 @@ var MULTI_VALUE = '_multi_value_';
 // ============================================================================
 // Preprocessor style content to browser support one
 function normalizeStyle(styleStr) {
-  var serialized = serialize(compile(styleStr), stringify$2);
+  var serialized = serialize$1(compile$1(styleStr), stringify$3);
   return serialized.replace(/\{%%%\:[^;];}/g, ';');
 }
 function isCompoundCSSProperty(value) {
@@ -4209,6 +4142,30 @@ if (process.env.NODE_ENV !== 'production') {
     }
   };
 }
+const WarningContext = /*#__PURE__*/React__namespace.createContext({});
+/**
+ * This is a hook but we not named as `useWarning`
+ * since this is only used in development.
+ * We should always wrap this in `if (process.env.NODE_ENV !== 'production')` condition
+ */
+const devUseWarning = process.env.NODE_ENV !== 'production' ? component => {
+  const {
+    deprecated
+  } = React__namespace.useContext(WarningContext);
+  const typeWarning = (valid, type, message) => {
+    if (deprecated !== false || type !== 'deprecated') {
+      process.env.NODE_ENV !== "production" ? warning$2(valid, component, message) : void 0;
+    }
+  };
+  typeWarning.deprecated = (valid, oldProp, newProp, message) => {
+    typeWarning(valid, 'deprecated', `\`${oldProp}\` is deprecated. Please use \`${newProp}\` instead.${message ? ` ${message}` : ''}`);
+  };
+  return typeWarning;
+} : () => {
+  const noopWarning = () => {};
+  noopWarning.deprecated = noop$4;
+  return noopWarning;
+};
 var warning$3 = warning$2;
 
 // ZombieJ: We export single file here since
@@ -4476,7 +4433,8 @@ const LocaleProvider = props => {
     _ANT_MARK__
   } = props;
   if (process.env.NODE_ENV !== 'production') {
-    process.env.NODE_ENV !== "production" ? warning$3(_ANT_MARK__ === ANT_MARK, 'LocaleProvider', '`LocaleProvider` is deprecated. Please use `locale` with `ConfigProvider` instead: http://u.ant.design/locale') : void 0;
+    const warning = devUseWarning('LocaleProvider');
+    process.env.NODE_ENV !== "production" ? warning(_ANT_MARK__ === ANT_MARK, 'deprecated', '`LocaleProvider` is deprecated. Please use `locale` with `ConfigProvider` instead: http://u.ant.design/locale') : void 0;
   }
   React__namespace.useEffect(() => {
     const clearLocale = changeConfirmLocale(locale && locale.Modal);
@@ -4493,10 +4451,6 @@ if (process.env.NODE_ENV !== 'production') {
   LocaleProvider.displayName = 'LocaleProvider';
 }
 var LocaleProvider$1 = LocaleProvider;
-
-const PresetColors = ['blue', 'purple', 'cyan', 'green', 'magenta', 'pink', 'red', 'orange', 'yellow', 'volcano', 'geekblue', 'lime', 'gold'];
-
-var version$1 = '5.8.5';
 
 /**
  * Take input from [0, n] and return it as [0, 1]
@@ -5867,7 +5821,7 @@ const genControlHeight = token => {
 };
 var genControlHeight$1 = genControlHeight;
 
-function genSizeMapToken$1(token) {
+function genSizeMapToken(token) {
   const {
     sizeUnit,
     sizeStep
@@ -6096,13 +6050,13 @@ function genCommonMapToken(token) {
   }, genRadius$1(borderRadius));
 }
 
-const getAlphaColor$2 = (baseColor, alpha) => new TinyColor(baseColor).setAlpha(alpha).toRgbString();
-const getSolidColor$1 = (baseColor, brightness) => {
+const getAlphaColor$1 = (baseColor, alpha) => new TinyColor(baseColor).setAlpha(alpha).toRgbString();
+const getSolidColor = (baseColor, brightness) => {
   const instance = new TinyColor(baseColor);
   return instance.darken(brightness).toHexString();
 };
 
-const generateColorPalettes$1 = baseColor => {
+const generateColorPalettes = baseColor => {
   const colors = generate$1(baseColor);
   return {
     1: colors[0],
@@ -6121,26 +6075,26 @@ const generateColorPalettes$1 = baseColor => {
   };
 };
 
-const generateNeutralColorPalettes$1 = (bgBaseColor, textBaseColor) => {
+const generateNeutralColorPalettes = (bgBaseColor, textBaseColor) => {
   const colorBgBase = bgBaseColor || '#fff';
   const colorTextBase = textBaseColor || '#000';
   return {
     colorBgBase,
     colorTextBase,
-    colorText: getAlphaColor$2(colorTextBase, 0.88),
-    colorTextSecondary: getAlphaColor$2(colorTextBase, 0.65),
-    colorTextTertiary: getAlphaColor$2(colorTextBase, 0.45),
-    colorTextQuaternary: getAlphaColor$2(colorTextBase, 0.25),
-    colorFill: getAlphaColor$2(colorTextBase, 0.15),
-    colorFillSecondary: getAlphaColor$2(colorTextBase, 0.06),
-    colorFillTertiary: getAlphaColor$2(colorTextBase, 0.04),
-    colorFillQuaternary: getAlphaColor$2(colorTextBase, 0.02),
-    colorBgLayout: getSolidColor$1(colorBgBase, 4),
-    colorBgContainer: getSolidColor$1(colorBgBase, 0),
-    colorBgElevated: getSolidColor$1(colorBgBase, 0),
-    colorBgSpotlight: getAlphaColor$2(colorTextBase, 0.85),
-    colorBorder: getSolidColor$1(colorBgBase, 15),
-    colorBorderSecondary: getSolidColor$1(colorBgBase, 6)
+    colorText: getAlphaColor$1(colorTextBase, 0.88),
+    colorTextSecondary: getAlphaColor$1(colorTextBase, 0.65),
+    colorTextTertiary: getAlphaColor$1(colorTextBase, 0.45),
+    colorTextQuaternary: getAlphaColor$1(colorTextBase, 0.25),
+    colorFill: getAlphaColor$1(colorTextBase, 0.15),
+    colorFillSecondary: getAlphaColor$1(colorTextBase, 0.06),
+    colorFillTertiary: getAlphaColor$1(colorTextBase, 0.04),
+    colorFillQuaternary: getAlphaColor$1(colorTextBase, 0.02),
+    colorBgLayout: getSolidColor(colorBgBase, 4),
+    colorBgContainer: getSolidColor(colorBgBase, 0),
+    colorBgElevated: getSolidColor(colorBgBase, 0),
+    colorBgSpotlight: getAlphaColor$1(colorTextBase, 0.85),
+    colorBorder: getSolidColor(colorBgBase, 15),
+    colorBorderSecondary: getSolidColor(colorBgBase, 6)
   };
 };
 
@@ -6189,7 +6143,7 @@ const genFontMapToken = fontSize => {
 };
 var genFontMapToken$1 = genFontMapToken;
 
-function derivative$2(token) {
+function derivative(token) {
   const colorPalettes = Object.keys(defaultPresetColors).map(colorKey => {
     const colors = generate$1(token[colorKey]);
     return new Array(10).fill(1).reduce((prev, _, i) => {
@@ -6202,12 +6156,12 @@ function derivative$2(token) {
     return prev;
   }, {});
   return Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, token), colorPalettes), genColorMapToken(token, {
-    generateColorPalettes: generateColorPalettes$1,
-    generateNeutralColorPalettes: generateNeutralColorPalettes$1
-  })), genFontMapToken$1(token.fontSize)), genSizeMapToken$1(token)), genControlHeight$1(token)), genCommonMapToken(token));
+    generateColorPalettes,
+    generateNeutralColorPalettes
+  })), genFontMapToken$1(token.fontSize)), genSizeMapToken(token)), genControlHeight$1(token)), genCommonMapToken(token));
 }
 
-const defaultTheme = createTheme(derivative$2);
+const defaultTheme = createTheme(derivative);
 // ================================ Context =================================
 // To ensure snapshot stable. We disable hashed in test env.
 const defaultConfig = {
@@ -6216,10 +6170,14 @@ const defaultConfig = {
 };
 const DesignTokenContext = /*#__PURE__*/React__default["default"].createContext(defaultConfig);
 
+const PresetColors = ['blue', 'purple', 'cyan', 'green', 'magenta', 'pink', 'red', 'orange', 'yellow', 'volcano', 'geekblue', 'lime', 'gold'];
+
+var version$1 = '5.9.2';
+
 function isStableColor(color) {
   return color >= 0 && color <= 255;
 }
-function getAlphaColor$1(frontColor, backgroundColor) {
+function getAlphaColor(frontColor, backgroundColor) {
   const {
     r: fR,
     g: fG,
@@ -6302,7 +6260,7 @@ function formatToken(derivativeToken) {
     colorBgContainerDisabled: mergedToken.colorFillTertiary,
     // ============== Split ============== //
     colorBorderBg: mergedToken.colorBgContainer,
-    colorSplit: getAlphaColor$1(mergedToken.colorBorderSecondary, mergedToken.colorBgContainer),
+    colorSplit: getAlphaColor(mergedToken.colorBorderSecondary, mergedToken.colorBgContainer),
     // ============== Text ============== //
     colorTextPlaceholder: mergedToken.colorTextQuaternary,
     colorTextDisabled: mergedToken.colorTextQuaternary,
@@ -6315,8 +6273,8 @@ function formatToken(derivativeToken) {
     colorBgTextActive: mergedToken.colorFill,
     colorIcon: mergedToken.colorTextTertiary,
     colorIconHover: mergedToken.colorText,
-    colorErrorOutline: getAlphaColor$1(mergedToken.colorErrorBg, mergedToken.colorBgContainer),
-    colorWarningOutline: getAlphaColor$1(mergedToken.colorWarningBg, mergedToken.colorBgContainer),
+    colorErrorOutline: getAlphaColor(mergedToken.colorErrorBg, mergedToken.colorBgContainer),
+    colorWarningOutline: getAlphaColor(mergedToken.colorWarningBg, mergedToken.colorBgContainer),
     // Font
     fontSizeIcon: mergedToken.fontSizeSM,
     // Line
@@ -6331,7 +6289,7 @@ function formatToken(derivativeToken) {
     controlItemBgActiveHover: mergedToken.colorPrimaryBgHover,
     controlItemBgActiveDisabled: mergedToken.colorFill,
     controlTmpOutline: mergedToken.colorFillQuaternary,
-    controlOutline: getAlphaColor$1(mergedToken.colorPrimaryBg, mergedToken.colorBgContainer),
+    controlOutline: getAlphaColor(mergedToken.colorPrimaryBg, mergedToken.colorBgContainer),
     lineType: mergedToken.lineType,
     borderRadius: mergedToken.borderRadius,
     borderRadiusXS: mergedToken.borderRadiusXS,
@@ -6470,7 +6428,7 @@ const getComputedToken = (originToken, overrideToken, theme) => {
   return mergedDerivativeToken;
 };
 // ================================== Hook ==================================
-function useToken$2() {
+function useToken() {
   const {
     token: rootDesignToken,
     hashed,
@@ -6853,7 +6811,7 @@ function statisticToken(token) {
 }
 
 const useResetIconStyle = (iconPrefixCls, csp) => {
-  const [theme, token] = useToken$2();
+  const [theme, token] = useToken();
   // Generate style for icons
   return useStyleRegister({
     theme,
@@ -6872,12 +6830,13 @@ const useResetIconStyle = (iconPrefixCls, csp) => {
 var useStyle$n = useResetIconStyle;
 
 /* eslint-disable no-redeclare */
-function genComponentStyleHook(componentName, styleFn, getDefaultToken, options) {
+function genComponentStyleHook(componentName, styleFn, getDefaultToken) {
+  let options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
   const cells = Array.isArray(componentName) ? componentName : [componentName, componentName];
   const [component] = cells;
   const concatComponent = cells.join('-');
   return prefixCls => {
-    const [theme, token, hashId] = useToken$2();
+    const [theme, token, hashId] = useToken();
     const {
       getPrefixCls,
       iconPrefixCls,
@@ -6890,9 +6849,9 @@ function genComponentStyleHook(componentName, styleFn, getDefaultToken, options)
       token,
       hashId,
       nonce: () => csp === null || csp === void 0 ? void 0 : csp.nonce,
-      clientOnly: options === null || options === void 0 ? void 0 : options.clientOnly,
+      clientOnly: options.clientOnly,
       // antd is always at top of styles
-      order: -999
+      order: options.order || -999
     };
     // Generate style for all a tags in antd component.
     useStyleRegister(Object.assign(Object.assign({}, sharedConfig), {
@@ -6912,7 +6871,7 @@ function genComponentStyleHook(componentName, styleFn, getDefaultToken, options)
         flush
       } = statisticToken(token);
       const customComponentToken = Object.assign({}, token[component]);
-      if (options === null || options === void 0 ? void 0 : options.deprecatedTokens) {
+      if (options.deprecatedTokens) {
         const {
           deprecatedTokens
         } = options;
@@ -6945,10 +6904,28 @@ function genComponentStyleHook(componentName, styleFn, getDefaultToken, options)
         overrideComponentToken: customComponentToken
       });
       flush(component, mergedComponentToken);
-      return [(options === null || options === void 0 ? void 0 : options.resetStyle) === false ? null : genCommonStyle(token, prefixCls), styleInterpolation];
+      return [options.resetStyle === false ? null : genCommonStyle(token, prefixCls), styleInterpolation];
     }), hashId];
   };
 }
+const genSubStyleComponent = (componentName, styleFn, getDefaultToken, options) => {
+  const useStyle = genComponentStyleHook(componentName, styleFn, getDefaultToken, Object.assign({
+    resetStyle: false,
+    // Sub Style should default after root one
+    order: -998
+  }, options));
+  const StyledComponent = _ref2 => {
+    let {
+      prefixCls
+    } = _ref2;
+    useStyle(prefixCls);
+    return null;
+  };
+  if (process.env.NODE_ENV !== 'production') {
+    StyledComponent.displayName = `SubStyle_${Array.isArray(componentName) ? componentName.join('.') : componentName}`;
+  }
+  return StyledComponent;
+};
 
 function genPresetColor(token, genCss) {
   return PresetColors.reduce((prev, colorKey) => {
@@ -7095,68 +7072,11 @@ function useTheme(theme, parentTheme) {
   }));
 }
 
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$f = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
-
-var _excluded$H = ["children"];
+var _excluded$I = ["children"];
 var Context$1 = /*#__PURE__*/React__namespace.createContext({});
 function MotionProvider(_ref) {
   var children = _ref.children,
-    props = _objectWithoutProperties(_ref, _excluded$H);
+    props = _objectWithoutProperties(_ref, _excluded$I);
   return /*#__PURE__*/React__namespace.createElement(Context$1.Provider, {
     value: props
   }, children);
@@ -7712,7 +7632,7 @@ function genCSSMotion(config) {
       }
       var motionCls = getTransitionName$1(motionName, "".concat(status, "-").concat(statusSuffix));
       motionChildren = children(_objectSpread2(_objectSpread2({}, mergedProps), {}, {
-        className: classnames$f(getTransitionName$1(motionName, status), (_classNames = {}, _defineProperty(_classNames, motionCls, motionCls && statusSuffix), _defineProperty(_classNames, motionName, typeof motionName === 'string'), _classNames)),
+        className: classnames(getTransitionName$1(motionName, status), (_classNames = {}, _defineProperty(_classNames, motionCls, motionCls && statusSuffix), _defineProperty(_classNames, motionName, typeof motionName === 'string'), _classNames)),
         style: statusStyle
       }), setNodeRef);
     }
@@ -7838,7 +7758,7 @@ function diffKeys() {
   return list;
 }
 
-var _excluded$G = ["component", "children", "onVisibleChanged", "onAllRemoved"],
+var _excluded$H = ["component", "children", "onVisibleChanged", "onAllRemoved"],
   _excluded2$8 = ["status"];
 var MOTION_PROP_NAMES = ['eventProps', 'visible', 'children', 'motionName', 'motionAppear', 'motionEnter', 'motionLeave', 'motionLeaveImmediately', 'motionDeadline', 'removeOnLeave', 'leavedClassName', 'onAppearPrepare', 'onAppearStart', 'onAppearActive', 'onAppearEnd', 'onEnterStart', 'onEnterActive', 'onEnterEnd', 'onLeaveStart', 'onLeaveActive', 'onLeaveEnd'];
 /**
@@ -7890,7 +7810,7 @@ function genCSSMotionList(transitionSupport) {
           children = _this$props.children,
           _onVisibleChanged = _this$props.onVisibleChanged,
           onAllRemoved = _this$props.onAllRemoved,
-          restProps = _objectWithoutProperties(_this$props, _excluded$G);
+          restProps = _objectWithoutProperties(_this$props, _excluded$H);
         var Component = component || React__namespace.Fragment;
         var motionProps = {};
         MOTION_PROP_NAMES.forEach(function (prop) {
@@ -7898,7 +7818,7 @@ function genCSSMotionList(transitionSupport) {
           delete restProps[prop];
         });
         delete restProps.keys;
-        return /*#__PURE__*/React__namespace.createElement(Component, restProps, keyEntities.map(function (_ref2) {
+        return /*#__PURE__*/React__namespace.createElement(Component, restProps, keyEntities.map(function (_ref2, index) {
           var status = _ref2.status,
             eventProps = _objectWithoutProperties(_ref2, _excluded2$8);
           var visible = status === STATUS_ADD || status === STATUS_KEEP;
@@ -7917,7 +7837,11 @@ function genCSSMotionList(transitionSupport) {
                 }
               }
             }
-          }), children);
+          }), function (props, ref) {
+            return children(_objectSpread2(_objectSpread2({}, props), {}, {
+              index: index
+            }), ref);
+          });
         }));
       }
     }], [{
@@ -7956,7 +7880,7 @@ function MotionWrapper(props) {
   const {
     children
   } = props;
-  const [, token] = useToken$2();
+  const [, token] = useToken();
   const {
     motion
   } = token;
@@ -7969,6 +7893,23 @@ function MotionWrapper(props) {
   }
   return children;
 }
+
+/**
+ * Warning for ConfigProviderProps.
+ * This will be empty function in production.
+ */
+const PropWarning = /*#__PURE__*/React__namespace.memo(_ref => {
+  let {
+    dropdownMatchSelectWidth
+  } = _ref;
+  const warning = devUseWarning('ConfigProvider');
+  warning.deprecated(dropdownMatchSelectWidth === undefined, 'dropdownMatchSelectWidth', 'popupMatchSelectWidth');
+  return null;
+});
+if (process.env.NODE_ENV !== 'production') {
+  PropWarning.displayName = 'PropWarning';
+}
+var PropWarning$1 = process.env.NODE_ENV !== 'production' ? PropWarning : () => null;
 
 var __rest$N = undefined && undefined.__rest || function (s, e) {
   var t = {};
@@ -8080,11 +8021,8 @@ const ProviderChildren = props => {
     colorPicker,
     datePicker,
     wave
+    // warning: warningConfig,
   } = props;
-  // =================================== Warning ===================================
-  if (process.env.NODE_ENV !== 'production') {
-    process.env.NODE_ENV !== "production" ? warning$3(dropdownMatchSelectWidth === undefined, 'ConfigProvider', '`dropdownMatchSelectWidth` is deprecated. Please use `popupMatchSelectWidth` instead.') : void 0;
-  }
   // =================================== Context ===================================
   const getPrefixCls = React__namespace.useCallback((suffixCls, customizePrefixCls) => {
     const {
@@ -8097,9 +8035,8 @@ const ProviderChildren = props => {
     return suffixCls ? `${mergedPrefixCls}-${suffixCls}` : mergedPrefixCls;
   }, [parentContext.getPrefixCls, props.prefixCls]);
   const iconPrefixCls = customIconPrefixCls || parentContext.iconPrefixCls || defaultIconPrefixCls;
-  const shouldWrapSSR = iconPrefixCls !== parentContext.iconPrefixCls;
   const csp = customCsp || parentContext.csp;
-  const wrapSSR = useStyle$n(iconPrefixCls, csp);
+  useStyle$n(iconPrefixCls, csp);
   const mergedTheme = useTheme(theme, parentContext.theme);
   if (process.env.NODE_ENV !== 'production') {
     existThemeConfig = existThemeConfig || !!mergedTheme;
@@ -8164,7 +8101,9 @@ const ProviderChildren = props => {
     colorPicker,
     datePicker,
     wave
+    // warning: warningConfig,
   };
+
   const config = Object.assign({}, parentContext);
   Object.keys(baseConfig).forEach(key => {
     if (baseConfig[key] !== undefined) {
@@ -8189,7 +8128,9 @@ const ProviderChildren = props => {
     prefixCls: iconPrefixCls,
     csp
   }), [iconPrefixCls, csp]);
-  let childNode = shouldWrapSSR ? wrapSSR(children) : children;
+  let childNode = /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(PropWarning$1, {
+    dropdownMatchSelectWidth: dropdownMatchSelectWidth
+  }), children);
   const validateMessages = React__namespace.useMemo(() => {
     var _a, _b, _c, _d;
     return merge$1(((_a = defaultLocale.Form) === null || _a === void 0 ? void 0 : _a.defaultValidateMessages) || {}, ((_c = (_b = memoedConfig.locale) === null || _b === void 0 ? void 0 : _b.Form) === null || _c === void 0 ? void 0 : _c.defaultValidateMessages) || {}, ((_d = memoedConfig.form) === null || _d === void 0 ? void 0 : _d.validateMessages) || {}, (form === null || form === void 0 ? void 0 : form.validateMessages) || {});
@@ -8197,7 +8138,7 @@ const ProviderChildren = props => {
   if (Object.keys(validateMessages).length > 0) {
     childNode = /*#__PURE__*/React__namespace.createElement(ValidateMessagesContext.Provider, {
       value: validateMessages
-    }, children);
+    }, childNode);
   }
   if (locale) {
     childNode = /*#__PURE__*/React__namespace.createElement(LocaleProvider$1, {
@@ -8252,6 +8193,12 @@ const ProviderChildren = props => {
       value: memoTheme
     }, childNode);
   }
+  // ================================== Warning ===================================
+  // if (memoedConfig.warning) {
+  //   childNode = (
+  //     <WarningContext.Provider value={memoedConfig.warning}>{childNode}</WarningContext.Provider>
+  //   );
+  // }
   // =================================== Render ===================================
   if (componentDisabled !== undefined) {
     childNode = /*#__PURE__*/React__namespace.createElement(DisabledContextProvider, {
@@ -8288,663 +8235,6 @@ if (process.env.NODE_ENV !== 'production') {
 var CheckCircleFilled$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z" } }] }, "name": "check-circle", "theme": "filled" };
 var CheckCircleFilledSvg = CheckCircleFilled$2;
 
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$e = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
-
-/**
- * lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright jQuery Foundation and other contributors <https://jquery.org/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0;
-
-/** `Object#toString` result references. */
-var symbolTag = '[object Symbol]';
-
-/** Used to match words composed of alphanumeric characters. */
-var reAsciiWord = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g;
-
-/** Used to match Latin Unicode letters (excluding mathematical operators). */
-var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
-
-/** Used to compose unicode character classes. */
-var rsAstralRange = '\\ud800-\\udfff',
-    rsComboMarksRange = '\\u0300-\\u036f\\ufe20-\\ufe23',
-    rsComboSymbolsRange = '\\u20d0-\\u20f0',
-    rsDingbatRange = '\\u2700-\\u27bf',
-    rsLowerRange = 'a-z\\xdf-\\xf6\\xf8-\\xff',
-    rsMathOpRange = '\\xac\\xb1\\xd7\\xf7',
-    rsNonCharRange = '\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf',
-    rsPunctuationRange = '\\u2000-\\u206f',
-    rsSpaceRange = ' \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000',
-    rsUpperRange = 'A-Z\\xc0-\\xd6\\xd8-\\xde',
-    rsVarRange = '\\ufe0e\\ufe0f',
-    rsBreakRange = rsMathOpRange + rsNonCharRange + rsPunctuationRange + rsSpaceRange;
-
-/** Used to compose unicode capture groups. */
-var rsApos = "['\u2019]",
-    rsAstral = '[' + rsAstralRange + ']',
-    rsBreak = '[' + rsBreakRange + ']',
-    rsCombo = '[' + rsComboMarksRange + rsComboSymbolsRange + ']',
-    rsDigits = '\\d+',
-    rsDingbat = '[' + rsDingbatRange + ']',
-    rsLower = '[' + rsLowerRange + ']',
-    rsMisc = '[^' + rsAstralRange + rsBreakRange + rsDigits + rsDingbatRange + rsLowerRange + rsUpperRange + ']',
-    rsFitz = '\\ud83c[\\udffb-\\udfff]',
-    rsModifier = '(?:' + rsCombo + '|' + rsFitz + ')',
-    rsNonAstral = '[^' + rsAstralRange + ']',
-    rsRegional = '(?:\\ud83c[\\udde6-\\uddff]){2}',
-    rsSurrPair = '[\\ud800-\\udbff][\\udc00-\\udfff]',
-    rsUpper = '[' + rsUpperRange + ']',
-    rsZWJ = '\\u200d';
-
-/** Used to compose unicode regexes. */
-var rsLowerMisc = '(?:' + rsLower + '|' + rsMisc + ')',
-    rsUpperMisc = '(?:' + rsUpper + '|' + rsMisc + ')',
-    rsOptLowerContr = '(?:' + rsApos + '(?:d|ll|m|re|s|t|ve))?',
-    rsOptUpperContr = '(?:' + rsApos + '(?:D|LL|M|RE|S|T|VE))?',
-    reOptMod = rsModifier + '?',
-    rsOptVar = '[' + rsVarRange + ']?',
-    rsOptJoin = '(?:' + rsZWJ + '(?:' + [rsNonAstral, rsRegional, rsSurrPair].join('|') + ')' + rsOptVar + reOptMod + ')*',
-    rsSeq = rsOptVar + reOptMod + rsOptJoin,
-    rsEmoji = '(?:' + [rsDingbat, rsRegional, rsSurrPair].join('|') + ')' + rsSeq,
-    rsSymbol = '(?:' + [rsNonAstral + rsCombo + '?', rsCombo, rsRegional, rsSurrPair, rsAstral].join('|') + ')';
-
-/** Used to match apostrophes. */
-var reApos = RegExp(rsApos, 'g');
-
-/**
- * Used to match [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks) and
- * [combining diacritical marks for symbols](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks_for_Symbols).
- */
-var reComboMark = RegExp(rsCombo, 'g');
-
-/** Used to match [string symbols](https://mathiasbynens.be/notes/javascript-unicode). */
-var reUnicode = RegExp(rsFitz + '(?=' + rsFitz + ')|' + rsSymbol + rsSeq, 'g');
-
-/** Used to match complex or compound words. */
-var reUnicodeWord = RegExp([
-  rsUpper + '?' + rsLower + '+' + rsOptLowerContr + '(?=' + [rsBreak, rsUpper, '$'].join('|') + ')',
-  rsUpperMisc + '+' + rsOptUpperContr + '(?=' + [rsBreak, rsUpper + rsLowerMisc, '$'].join('|') + ')',
-  rsUpper + '?' + rsLowerMisc + '+' + rsOptLowerContr,
-  rsUpper + '+' + rsOptUpperContr,
-  rsDigits,
-  rsEmoji
-].join('|'), 'g');
-
-/** Used to detect strings with [zero-width joiners or code points from the astral planes](http://eev.ee/blog/2015/09/12/dark-corners-of-unicode/). */
-var reHasUnicode = RegExp('[' + rsZWJ + rsAstralRange  + rsComboMarksRange + rsComboSymbolsRange + rsVarRange + ']');
-
-/** Used to detect strings that need a more robust regexp to match words. */
-var reHasUnicodeWord = /[a-z][A-Z]|[A-Z]{2,}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
-
-/** Used to map Latin Unicode letters to basic Latin letters. */
-var deburredLetters = {
-  // Latin-1 Supplement block.
-  '\xc0': 'A',  '\xc1': 'A', '\xc2': 'A', '\xc3': 'A', '\xc4': 'A', '\xc5': 'A',
-  '\xe0': 'a',  '\xe1': 'a', '\xe2': 'a', '\xe3': 'a', '\xe4': 'a', '\xe5': 'a',
-  '\xc7': 'C',  '\xe7': 'c',
-  '\xd0': 'D',  '\xf0': 'd',
-  '\xc8': 'E',  '\xc9': 'E', '\xca': 'E', '\xcb': 'E',
-  '\xe8': 'e',  '\xe9': 'e', '\xea': 'e', '\xeb': 'e',
-  '\xcc': 'I',  '\xcd': 'I', '\xce': 'I', '\xcf': 'I',
-  '\xec': 'i',  '\xed': 'i', '\xee': 'i', '\xef': 'i',
-  '\xd1': 'N',  '\xf1': 'n',
-  '\xd2': 'O',  '\xd3': 'O', '\xd4': 'O', '\xd5': 'O', '\xd6': 'O', '\xd8': 'O',
-  '\xf2': 'o',  '\xf3': 'o', '\xf4': 'o', '\xf5': 'o', '\xf6': 'o', '\xf8': 'o',
-  '\xd9': 'U',  '\xda': 'U', '\xdb': 'U', '\xdc': 'U',
-  '\xf9': 'u',  '\xfa': 'u', '\xfb': 'u', '\xfc': 'u',
-  '\xdd': 'Y',  '\xfd': 'y', '\xff': 'y',
-  '\xc6': 'Ae', '\xe6': 'ae',
-  '\xde': 'Th', '\xfe': 'th',
-  '\xdf': 'ss',
-  // Latin Extended-A block.
-  '\u0100': 'A',  '\u0102': 'A', '\u0104': 'A',
-  '\u0101': 'a',  '\u0103': 'a', '\u0105': 'a',
-  '\u0106': 'C',  '\u0108': 'C', '\u010a': 'C', '\u010c': 'C',
-  '\u0107': 'c',  '\u0109': 'c', '\u010b': 'c', '\u010d': 'c',
-  '\u010e': 'D',  '\u0110': 'D', '\u010f': 'd', '\u0111': 'd',
-  '\u0112': 'E',  '\u0114': 'E', '\u0116': 'E', '\u0118': 'E', '\u011a': 'E',
-  '\u0113': 'e',  '\u0115': 'e', '\u0117': 'e', '\u0119': 'e', '\u011b': 'e',
-  '\u011c': 'G',  '\u011e': 'G', '\u0120': 'G', '\u0122': 'G',
-  '\u011d': 'g',  '\u011f': 'g', '\u0121': 'g', '\u0123': 'g',
-  '\u0124': 'H',  '\u0126': 'H', '\u0125': 'h', '\u0127': 'h',
-  '\u0128': 'I',  '\u012a': 'I', '\u012c': 'I', '\u012e': 'I', '\u0130': 'I',
-  '\u0129': 'i',  '\u012b': 'i', '\u012d': 'i', '\u012f': 'i', '\u0131': 'i',
-  '\u0134': 'J',  '\u0135': 'j',
-  '\u0136': 'K',  '\u0137': 'k', '\u0138': 'k',
-  '\u0139': 'L',  '\u013b': 'L', '\u013d': 'L', '\u013f': 'L', '\u0141': 'L',
-  '\u013a': 'l',  '\u013c': 'l', '\u013e': 'l', '\u0140': 'l', '\u0142': 'l',
-  '\u0143': 'N',  '\u0145': 'N', '\u0147': 'N', '\u014a': 'N',
-  '\u0144': 'n',  '\u0146': 'n', '\u0148': 'n', '\u014b': 'n',
-  '\u014c': 'O',  '\u014e': 'O', '\u0150': 'O',
-  '\u014d': 'o',  '\u014f': 'o', '\u0151': 'o',
-  '\u0154': 'R',  '\u0156': 'R', '\u0158': 'R',
-  '\u0155': 'r',  '\u0157': 'r', '\u0159': 'r',
-  '\u015a': 'S',  '\u015c': 'S', '\u015e': 'S', '\u0160': 'S',
-  '\u015b': 's',  '\u015d': 's', '\u015f': 's', '\u0161': 's',
-  '\u0162': 'T',  '\u0164': 'T', '\u0166': 'T',
-  '\u0163': 't',  '\u0165': 't', '\u0167': 't',
-  '\u0168': 'U',  '\u016a': 'U', '\u016c': 'U', '\u016e': 'U', '\u0170': 'U', '\u0172': 'U',
-  '\u0169': 'u',  '\u016b': 'u', '\u016d': 'u', '\u016f': 'u', '\u0171': 'u', '\u0173': 'u',
-  '\u0174': 'W',  '\u0175': 'w',
-  '\u0176': 'Y',  '\u0177': 'y', '\u0178': 'Y',
-  '\u0179': 'Z',  '\u017b': 'Z', '\u017d': 'Z',
-  '\u017a': 'z',  '\u017c': 'z', '\u017e': 'z',
-  '\u0132': 'IJ', '\u0133': 'ij',
-  '\u0152': 'Oe', '\u0153': 'oe',
-  '\u0149': "'n", '\u017f': 'ss'
-};
-
-/** Detect free variable `global` from Node.js. */
-var freeGlobal = typeof commonjsGlobal == 'object' && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
-
-/** Detect free variable `self`. */
-var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
-
-/** Used as a reference to the global object. */
-var root = freeGlobal || freeSelf || Function('return this')();
-
-/**
- * A specialized version of `_.reduce` for arrays without support for
- * iteratee shorthands.
- *
- * @private
- * @param {Array} [array] The array to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @param {*} [accumulator] The initial value.
- * @param {boolean} [initAccum] Specify using the first element of `array` as
- *  the initial value.
- * @returns {*} Returns the accumulated value.
- */
-function arrayReduce(array, iteratee, accumulator, initAccum) {
-  var index = -1,
-      length = array ? array.length : 0;
-
-  if (initAccum && length) {
-    accumulator = array[++index];
-  }
-  while (++index < length) {
-    accumulator = iteratee(accumulator, array[index], index, array);
-  }
-  return accumulator;
-}
-
-/**
- * Converts an ASCII `string` to an array.
- *
- * @private
- * @param {string} string The string to convert.
- * @returns {Array} Returns the converted array.
- */
-function asciiToArray(string) {
-  return string.split('');
-}
-
-/**
- * Splits an ASCII `string` into an array of its words.
- *
- * @private
- * @param {string} The string to inspect.
- * @returns {Array} Returns the words of `string`.
- */
-function asciiWords(string) {
-  return string.match(reAsciiWord) || [];
-}
-
-/**
- * The base implementation of `_.propertyOf` without support for deep paths.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Function} Returns the new accessor function.
- */
-function basePropertyOf(object) {
-  return function(key) {
-    return object == null ? undefined : object[key];
-  };
-}
-
-/**
- * Used by `_.deburr` to convert Latin-1 Supplement and Latin Extended-A
- * letters to basic Latin letters.
- *
- * @private
- * @param {string} letter The matched letter to deburr.
- * @returns {string} Returns the deburred letter.
- */
-var deburrLetter = basePropertyOf(deburredLetters);
-
-/**
- * Checks if `string` contains Unicode symbols.
- *
- * @private
- * @param {string} string The string to inspect.
- * @returns {boolean} Returns `true` if a symbol is found, else `false`.
- */
-function hasUnicode(string) {
-  return reHasUnicode.test(string);
-}
-
-/**
- * Checks if `string` contains a word composed of Unicode symbols.
- *
- * @private
- * @param {string} string The string to inspect.
- * @returns {boolean} Returns `true` if a word is found, else `false`.
- */
-function hasUnicodeWord(string) {
-  return reHasUnicodeWord.test(string);
-}
-
-/**
- * Converts `string` to an array.
- *
- * @private
- * @param {string} string The string to convert.
- * @returns {Array} Returns the converted array.
- */
-function stringToArray(string) {
-  return hasUnicode(string)
-    ? unicodeToArray(string)
-    : asciiToArray(string);
-}
-
-/**
- * Converts a Unicode `string` to an array.
- *
- * @private
- * @param {string} string The string to convert.
- * @returns {Array} Returns the converted array.
- */
-function unicodeToArray(string) {
-  return string.match(reUnicode) || [];
-}
-
-/**
- * Splits a Unicode `string` into an array of its words.
- *
- * @private
- * @param {string} The string to inspect.
- * @returns {Array} Returns the words of `string`.
- */
-function unicodeWords(string) {
-  return string.match(reUnicodeWord) || [];
-}
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/** Built-in value references. */
-var Symbol$1 = root.Symbol;
-
-/** Used to convert symbols to primitives and strings. */
-var symbolProto = Symbol$1 ? Symbol$1.prototype : undefined,
-    symbolToString = symbolProto ? symbolProto.toString : undefined;
-
-/**
- * The base implementation of `_.slice` without an iteratee call guard.
- *
- * @private
- * @param {Array} array The array to slice.
- * @param {number} [start=0] The start position.
- * @param {number} [end=array.length] The end position.
- * @returns {Array} Returns the slice of `array`.
- */
-function baseSlice(array, start, end) {
-  var index = -1,
-      length = array.length;
-
-  if (start < 0) {
-    start = -start > length ? 0 : (length + start);
-  }
-  end = end > length ? length : end;
-  if (end < 0) {
-    end += length;
-  }
-  length = start > end ? 0 : ((end - start) >>> 0);
-  start >>>= 0;
-
-  var result = Array(length);
-  while (++index < length) {
-    result[index] = array[index + start];
-  }
-  return result;
-}
-
-/**
- * The base implementation of `_.toString` which doesn't convert nullish
- * values to empty strings.
- *
- * @private
- * @param {*} value The value to process.
- * @returns {string} Returns the string.
- */
-function baseToString(value) {
-  // Exit early for strings to avoid a performance hit in some environments.
-  if (typeof value == 'string') {
-    return value;
-  }
-  if (isSymbol(value)) {
-    return symbolToString ? symbolToString.call(value) : '';
-  }
-  var result = (value + '');
-  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
-}
-
-/**
- * Casts `array` to a slice if it's needed.
- *
- * @private
- * @param {Array} array The array to inspect.
- * @param {number} start The start position.
- * @param {number} [end=array.length] The end position.
- * @returns {Array} Returns the cast slice.
- */
-function castSlice(array, start, end) {
-  var length = array.length;
-  end = end === undefined ? length : end;
-  return (!start && end >= length) ? array : baseSlice(array, start, end);
-}
-
-/**
- * Creates a function like `_.lowerFirst`.
- *
- * @private
- * @param {string} methodName The name of the `String` case method to use.
- * @returns {Function} Returns the new case function.
- */
-function createCaseFirst(methodName) {
-  return function(string) {
-    string = toString(string);
-
-    var strSymbols = hasUnicode(string)
-      ? stringToArray(string)
-      : undefined;
-
-    var chr = strSymbols
-      ? strSymbols[0]
-      : string.charAt(0);
-
-    var trailing = strSymbols
-      ? castSlice(strSymbols, 1).join('')
-      : string.slice(1);
-
-    return chr[methodName]() + trailing;
-  };
-}
-
-/**
- * Creates a function like `_.camelCase`.
- *
- * @private
- * @param {Function} callback The function to combine each word.
- * @returns {Function} Returns the new compounder function.
- */
-function createCompounder(callback) {
-  return function(string) {
-    return arrayReduce(words(deburr(string).replace(reApos, '')), callback, '');
-  };
-}
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-/**
- * Checks if `value` is classified as a `Symbol` primitive or object.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
- * @example
- *
- * _.isSymbol(Symbol.iterator);
- * // => true
- *
- * _.isSymbol('abc');
- * // => false
- */
-function isSymbol(value) {
-  return typeof value == 'symbol' ||
-    (isObjectLike(value) && objectToString.call(value) == symbolTag);
-}
-
-/**
- * Converts `value` to a string. An empty string is returned for `null`
- * and `undefined` values. The sign of `-0` is preserved.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to process.
- * @returns {string} Returns the string.
- * @example
- *
- * _.toString(null);
- * // => ''
- *
- * _.toString(-0);
- * // => '-0'
- *
- * _.toString([1, 2, 3]);
- * // => '1,2,3'
- */
-function toString(value) {
-  return value == null ? '' : baseToString(value);
-}
-
-/**
- * Converts `string` to [camel case](https://en.wikipedia.org/wiki/CamelCase).
- *
- * @static
- * @memberOf _
- * @since 3.0.0
- * @category String
- * @param {string} [string=''] The string to convert.
- * @returns {string} Returns the camel cased string.
- * @example
- *
- * _.camelCase('Foo Bar');
- * // => 'fooBar'
- *
- * _.camelCase('--foo-bar--');
- * // => 'fooBar'
- *
- * _.camelCase('__FOO_BAR__');
- * // => 'fooBar'
- */
-var camelCase = createCompounder(function(result, word, index) {
-  word = word.toLowerCase();
-  return result + (index ? capitalize(word) : word);
-});
-
-/**
- * Converts the first character of `string` to upper case and the remaining
- * to lower case.
- *
- * @static
- * @memberOf _
- * @since 3.0.0
- * @category String
- * @param {string} [string=''] The string to capitalize.
- * @returns {string} Returns the capitalized string.
- * @example
- *
- * _.capitalize('FRED');
- * // => 'Fred'
- */
-function capitalize(string) {
-  return upperFirst(toString(string).toLowerCase());
-}
-
-/**
- * Deburrs `string` by converting
- * [Latin-1 Supplement](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)#Character_table)
- * and [Latin Extended-A](https://en.wikipedia.org/wiki/Latin_Extended-A)
- * letters to basic Latin letters and removing
- * [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks).
- *
- * @static
- * @memberOf _
- * @since 3.0.0
- * @category String
- * @param {string} [string=''] The string to deburr.
- * @returns {string} Returns the deburred string.
- * @example
- *
- * _.deburr('déjà vu');
- * // => 'deja vu'
- */
-function deburr(string) {
-  string = toString(string);
-  return string && string.replace(reLatin, deburrLetter).replace(reComboMark, '');
-}
-
-/**
- * Converts the first character of `string` to upper case.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category String
- * @param {string} [string=''] The string to convert.
- * @returns {string} Returns the converted string.
- * @example
- *
- * _.upperFirst('fred');
- * // => 'Fred'
- *
- * _.upperFirst('FRED');
- * // => 'FRED'
- */
-var upperFirst = createCaseFirst('toUpperCase');
-
-/**
- * Splits `string` into an array of its words.
- *
- * @static
- * @memberOf _
- * @since 3.0.0
- * @category String
- * @param {string} [string=''] The string to inspect.
- * @param {RegExp|string} [pattern] The pattern to match words.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
- * @returns {Array} Returns the words of `string`.
- * @example
- *
- * _.words('fred, barney, & pebbles');
- * // => ['fred', 'barney', 'pebbles']
- *
- * _.words('fred, barney, & pebbles', /[^, ]+/g);
- * // => ['fred', 'barney', '&', 'pebbles']
- */
-function words(string, pattern, guard) {
-  string = toString(string);
-  pattern = guard ? undefined : pattern;
-
-  if (pattern === undefined) {
-    return hasUnicodeWord(string) ? unicodeWords(string) : asciiWords(string);
-  }
-  return string.match(pattern) || [];
-}
-
-var lodash_camelcase = camelCase;
-
 function getRoot(ele) {
   var _ele$getRootNode;
   return ele === null || ele === void 0 ? void 0 : (_ele$getRootNode = ele.getRootNode) === null || _ele$getRootNode === void 0 ? void 0 : _ele$getRootNode.call(ele);
@@ -8964,6 +8254,11 @@ function getShadowRoot(ele) {
   return inShadow(ele) ? getRoot(ele) : null;
 }
 
+function camelCase(input) {
+  return input.replace(/-(.)/g, function (match, g) {
+    return g.toUpperCase();
+  });
+}
 function warning$1(valid, message) {
   warningOnce(valid, "[@ant-design/icons] ".concat(message));
 }
@@ -8981,7 +8276,7 @@ function normalizeAttrs() {
         break;
       default:
         delete acc[key];
-        acc[lodash_camelcase(key)] = val;
+        acc[camelCase(key)] = val;
     }
     return acc;
   }, {});
@@ -9030,7 +8325,7 @@ var useInsertStyles = function useInsertStyles(eleRef) {
   }, []);
 };
 
-var _excluded$F = ["icon", "className", "onClick", "style", "primaryColor", "secondaryColor"];
+var _excluded$G = ["icon", "className", "onClick", "style", "primaryColor", "secondaryColor"];
 var twoToneColorPalette = {
   primaryColor: '#333',
   secondaryColor: '#E6E6E6',
@@ -9053,7 +8348,7 @@ var IconBase = function IconBase(props) {
     style = props.style,
     primaryColor = props.primaryColor,
     secondaryColor = props.secondaryColor,
-    restProps = _objectWithoutProperties(props, _excluded$F);
+    restProps = _objectWithoutProperties(props, _excluded$G);
   var svgRef = React__namespace.useRef();
   var colors = twoToneColorPalette;
   if (primaryColor) {
@@ -9109,7 +8404,7 @@ function getTwoToneColor() {
   return [colors.primaryColor, colors.secondaryColor];
 }
 
-var _excluded$E = ["className", "icon", "spin", "rotate", "tabIndex", "onClick", "twoToneColor"];
+var _excluded$F = ["className", "icon", "spin", "rotate", "tabIndex", "onClick", "twoToneColor"];
 // Initial setting
 // should move it to antd main repo?
 setTwoToneColor(blue.primary);
@@ -9125,12 +8420,12 @@ var Icon$1 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     tabIndex = props.tabIndex,
     onClick = props.onClick,
     twoToneColor = props.twoToneColor,
-    restProps = _objectWithoutProperties(props, _excluded$E);
+    restProps = _objectWithoutProperties(props, _excluded$F);
   var _React$useContext = React__namespace.useContext(Context$2),
     _React$useContext$pre = _React$useContext.prefixCls,
     prefixCls = _React$useContext$pre === void 0 ? 'anticon' : _React$useContext$pre,
     rootClassName = _React$useContext.rootClassName;
-  var classString = classnames$e(rootClassName, prefixCls, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-").concat(icon.name), !!icon.name), _defineProperty(_classNames, "".concat(prefixCls, "-spin"), !!spin || icon.name === 'loading'), _classNames), className);
+  var classString = classnames(rootClassName, prefixCls, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-").concat(icon.name), !!icon.name), _defineProperty(_classNames, "".concat(prefixCls, "-spin"), !!spin || icon.name === 'loading'), _classNames), className);
   var iconTabIndex = tabIndex;
   if (iconTabIndex === undefined && onClick) {
     iconTabIndex = -1;
@@ -9241,7 +8536,7 @@ var propList = "".concat(attributes, " ").concat(eventsName).split(/[\s\n]+/);
 /* eslint-enable max-len */
 var ariaPrefix = 'aria-';
 var dataPrefix = 'data-';
-function match(key, prefix) {
+function match$1(key, prefix) {
   return key.indexOf(prefix) === 0;
 }
 /**
@@ -9269,9 +8564,9 @@ function pickAttrs(props) {
   Object.keys(props).forEach(function (key) {
     if (
     // Aria
-    mergedConfig.aria && (key === 'role' || match(key, ariaPrefix)) ||
+    mergedConfig.aria && (key === 'role' || match$1(key, ariaPrefix)) ||
     // Data
-    mergedConfig.data && match(key, dataPrefix) ||
+    mergedConfig.data && match$1(key, dataPrefix) ||
     // Attr
     mergedConfig.attr && propList.includes(key)) {
       attrs[key] = props[key];
@@ -9314,20 +8609,18 @@ const genBaseStyle$4 = token => {
     lineHeight,
     borderRadiusLG: borderRadius,
     motionEaseInOutCirc,
-    alertIconSizeLG,
+    withDescriptionIconSize,
     colorText,
-    paddingContentVerticalSM,
-    alertPaddingHorizontal,
-    paddingMD,
-    paddingContentHorizontalLG,
-    colorTextHeading
+    colorTextHeading,
+    withDescriptionPadding,
+    defaultPadding
   } = token;
   return {
     [componentCls]: Object.assign(Object.assign({}, resetComponent(token)), {
       position: 'relative',
       display: 'flex',
       alignItems: 'center',
-      padding: `${paddingContentVerticalSM}px ${alertPaddingHorizontal}px`,
+      padding: defaultPadding,
       wordWrap: 'break-word',
       borderRadius,
       [`&${componentCls}-rtl`]: {
@@ -9347,7 +8640,7 @@ const genBaseStyle$4 = token => {
         lineHeight
       },
       '&-message': {
-        color: colorText
+        color: colorTextHeading
       },
       [`&${componentCls}-motion-leave`]: {
         overflow: 'hidden',
@@ -9366,11 +8659,10 @@ const genBaseStyle$4 = token => {
     }),
     [`${componentCls}-with-description`]: {
       alignItems: 'flex-start',
-      paddingInline: paddingContentHorizontalLG,
-      paddingBlock: paddingMD,
+      padding: withDescriptionPadding,
       [`${componentCls}-icon`]: {
         marginInlineEnd: marginSM,
-        fontSize: alertIconSizeLG,
+        fontSize: withDescriptionIconSize,
         lineHeight: 0
       },
       [`${componentCls}-message`]: {
@@ -9380,7 +8672,8 @@ const genBaseStyle$4 = token => {
         fontSize: fontSizeLG
       },
       [`${componentCls}-description`]: {
-        display: 'block'
+        display: 'block',
+        color: colorText
       }
     },
     [`${componentCls}-banner`]: {
@@ -9464,16 +8757,13 @@ const genActionStyle = token => {
   };
 };
 const genAlertStyle = token => [genBaseStyle$4(token), genTypeStyle(token), genActionStyle(token)];
-var useStyle$m = genComponentStyleHook('Alert', token => {
-  const {
-    fontSizeHeading3
-  } = token;
-  const alertToken = merge(token, {
-    alertIconSizeLG: fontSizeHeading3,
-    alertPaddingHorizontal: 12 // Fixed value here.
-  });
-
-  return [genAlertStyle(alertToken)];
+var useStyle$m = genComponentStyleHook('Alert', token => [genAlertStyle(token)], token => {
+  const paddingHorizontal = 12; // Fixed value here.
+  return {
+    withDescriptionIconSize: token.fontSizeHeading3,
+    defaultPadding: `${token.paddingContentVerticalSM}px ${paddingHorizontal}px`,
+    withDescriptionPadding: `${token.paddingMD}px ${token.paddingContentHorizontalLG}px`
+  };
 });
 
 var __rest$M = undefined && undefined.__rest || function (s, e) {
@@ -9501,7 +8791,7 @@ const IconNode = props => {
     return replaceElement(icon, /*#__PURE__*/React__namespace.createElement("span", {
       className: `${prefixCls}-icon`
     }, icon), () => ({
-      className: classnames$g(`${prefixCls}-icon`, {
+      className: classnames(`${prefixCls}-icon`, {
         [icon.props.className]: icon.props.className
       })
     }));
@@ -9547,7 +8837,8 @@ const Alert$2 = props => {
     otherProps = __rest$M(props, ["description", "prefixCls", "message", "banner", "className", "rootClassName", "style", "onMouseEnter", "onMouseLeave", "onClick", "afterClose", "showIcon", "closable", "closeText", "closeIcon", "action"]);
   const [closed, setClosed] = React__namespace.useState(false);
   if (process.env.NODE_ENV !== 'production') {
-    process.env.NODE_ENV !== "production" ? warning$3(!closeText, 'Alert', '`closeText` is deprecated. Please use `closeIcon` instead.') : void 0;
+    const warning = devUseWarning('Alert');
+    warning.deprecated(!closeText, 'closeText', 'closeIcon');
   }
   const ref = React__namespace.useRef(null);
   const {
@@ -9582,7 +8873,7 @@ const Alert$2 = props => {
   }, [closeText, closeIcon, closable]);
   // banner mode defaults to Icon
   const isShowIcon = banner && showIcon === undefined ? true : showIcon;
-  const alertCls = classnames$g(prefixCls, `${prefixCls}-${type}`, {
+  const alertCls = classnames(prefixCls, `${prefixCls}-${type}`, {
     [`${prefixCls}-with-description`]: !!description,
     [`${prefixCls}-no-icon`]: !isShowIcon,
     [`${prefixCls}-banner`]: !!banner,
@@ -9609,7 +8900,7 @@ const Alert$2 = props => {
     return /*#__PURE__*/React__namespace.createElement("div", Object.assign({
       ref: ref,
       "data-show": !closed,
-      className: classnames$g(alertCls, motionClassName),
+      className: classnames(alertCls, motionClassName),
       style: Object.assign(Object.assign(Object.assign({}, alert === null || alert === void 0 ? void 0 : alert.style), style), motionStyle),
       onMouseEnter: onMouseEnter,
       onMouseLeave: onMouseLeave,
@@ -9702,9 +8993,9 @@ const Alert = InternalAlert;
 Alert.ErrorBoundary = ErrorBoundary$1;
 var Alert$1 = Alert;
 
-const t$1=t=>"object"==typeof t&&null!=t&&1===t.nodeType,e=(t,e)=>(!e||"hidden"!==t)&&("visible"!==t&&"clip"!==t),n=(t,n)=>{if(t.clientHeight<t.scrollHeight||t.clientWidth<t.scrollWidth){const o=getComputedStyle(t,null);return e(o.overflowY,n)||e(o.overflowX,n)||(t=>{const e=(t=>{if(!t.ownerDocument||!t.ownerDocument.defaultView)return null;try{return t.ownerDocument.defaultView.frameElement}catch(t){return null}})(t);return !!e&&(e.clientHeight<t.scrollHeight||e.clientWidth<t.scrollWidth)})(t)}return !1},o$1=(t,e,n,o,i,l,r,d)=>l<t&&r>e||l>t&&r<e?0:l<=t&&d<=n||r>=e&&d>=n?l-t-o:r>e&&d<n||l<t&&d>n?r-e+i:0,i=t=>{const e=t.parentElement;return null==e?t.getRootNode().host||null:e},l=(e,l)=>{var r,d,s,h;if("undefined"==typeof document)return [];const{scrollMode:c,block:f,inline:u,boundary:a,skipOverflowHiddenElements:g}=l,m="function"==typeof a?a:t=>t!==a;if(!t$1(e))throw new TypeError("Invalid target");const p=document.scrollingElement||document.documentElement,w=[];let W=e;for(;t$1(W)&&m(W);){if(W=i(W),W===p){w.push(W);break}null!=W&&W===document.body&&n(W)&&!n(document.documentElement)||null!=W&&n(W,g)&&w.push(W);}const H=null!=(d=null==(r=window.visualViewport)?void 0:r.width)?d:innerWidth,b=null!=(h=null==(s=window.visualViewport)?void 0:s.height)?h:innerHeight,{scrollX:v,scrollY:y}=window,{height:E,width:M,top:x,right:I,bottom:C,left:R}=e.getBoundingClientRect();let T="start"===f||"nearest"===f?x:"end"===f?C:x+E/2,V="center"===u?R+M/2:"end"===u?I:R;const k=[];for(let t=0;t<w.length;t++){const e=w[t],{height:n,width:i,top:l,right:r,bottom:d,left:s}=e.getBoundingClientRect();if("if-needed"===c&&x>=0&&R>=0&&C<=b&&I<=H&&x>=l&&C<=d&&R>=s&&I<=r)return k;const h=getComputedStyle(e),a=parseInt(h.borderLeftWidth,10),g=parseInt(h.borderTopWidth,10),m=parseInt(h.borderRightWidth,10),W=parseInt(h.borderBottomWidth,10);let B=0,D=0;const L="offsetWidth"in e?e.offsetWidth-e.clientWidth-a-m:0,S="offsetHeight"in e?e.offsetHeight-e.clientHeight-g-W:0,X="offsetWidth"in e?0===e.offsetWidth?0:i/e.offsetWidth:0,Y="offsetHeight"in e?0===e.offsetHeight?0:n/e.offsetHeight:0;if(p===e)B="start"===f?T:"end"===f?T-b:"nearest"===f?o$1(y,y+b,b,g,W,y+T,y+T+E,E):T-b/2,D="start"===u?V:"center"===u?V-H/2:"end"===u?V-H:o$1(v,v+H,H,a,m,v+V,v+V+M,M),B=Math.max(0,B+y),D=Math.max(0,D+v);else {B="start"===f?T-l-g:"end"===f?T-d+W+S:"nearest"===f?o$1(l,d,n,g,W+S,T,T+E,E):T-(l+n/2)+S/2,D="start"===u?V-s-a:"center"===u?V-(s+i/2)+L/2:"end"===u?V-r+m+L:o$1(s,r,i,a,m+L,V,V+M,M);const{scrollLeft:t,scrollTop:h}=e;B=Math.max(0,Math.min(h+B/Y,e.scrollHeight-n/Y+S)),D=Math.max(0,Math.min(t+D/X,e.scrollWidth-i/X+L)),T+=h-B,V+=t-D;}k.push({el:e,top:B,left:D});}return k};
+const t=t=>"object"==typeof t&&null!=t&&1===t.nodeType,e$1=(t,e)=>(!e||"hidden"!==t)&&("visible"!==t&&"clip"!==t),n=(t,n)=>{if(t.clientHeight<t.scrollHeight||t.clientWidth<t.scrollWidth){const o=getComputedStyle(t,null);return e$1(o.overflowY,n)||e$1(o.overflowX,n)||(t=>{const e=(t=>{if(!t.ownerDocument||!t.ownerDocument.defaultView)return null;try{return t.ownerDocument.defaultView.frameElement}catch(t){return null}})(t);return !!e&&(e.clientHeight<t.scrollHeight||e.clientWidth<t.scrollWidth)})(t)}return !1},o$1=(t,e,n,o,i,l,r,d)=>l<t&&r>e||l>t&&r<e?0:l<=t&&d<=n||r>=e&&d>=n?l-t-o:r>e&&d<n||l<t&&d>n?r-e+i:0,i=t=>{const e=t.parentElement;return null==e?t.getRootNode().host||null:e},l=(e,l)=>{var r,d,s,h;if("undefined"==typeof document)return [];const{scrollMode:c,block:f,inline:u,boundary:a,skipOverflowHiddenElements:g}=l,m="function"==typeof a?a:t=>t!==a;if(!t(e))throw new TypeError("Invalid target");const p=document.scrollingElement||document.documentElement,w=[];let W=e;for(;t(W)&&m(W);){if(W=i(W),W===p){w.push(W);break}null!=W&&W===document.body&&n(W)&&!n(document.documentElement)||null!=W&&n(W,g)&&w.push(W);}const H=null!=(d=null==(r=window.visualViewport)?void 0:r.width)?d:innerWidth,b=null!=(h=null==(s=window.visualViewport)?void 0:s.height)?h:innerHeight,{scrollX:v,scrollY:y}=window,{height:E,width:M,top:x,right:I,bottom:C,left:R}=e.getBoundingClientRect();let T="start"===f||"nearest"===f?x:"end"===f?C:x+E/2,V="center"===u?R+M/2:"end"===u?I:R;const k=[];for(let t=0;t<w.length;t++){const e=w[t],{height:n,width:i,top:l,right:r,bottom:d,left:s}=e.getBoundingClientRect();if("if-needed"===c&&x>=0&&R>=0&&C<=b&&I<=H&&x>=l&&C<=d&&R>=s&&I<=r)return k;const h=getComputedStyle(e),a=parseInt(h.borderLeftWidth,10),g=parseInt(h.borderTopWidth,10),m=parseInt(h.borderRightWidth,10),W=parseInt(h.borderBottomWidth,10);let B=0,D=0;const L="offsetWidth"in e?e.offsetWidth-e.clientWidth-a-m:0,S="offsetHeight"in e?e.offsetHeight-e.clientHeight-g-W:0,X="offsetWidth"in e?0===e.offsetWidth?0:i/e.offsetWidth:0,Y="offsetHeight"in e?0===e.offsetHeight?0:n/e.offsetHeight:0;if(p===e)B="start"===f?T:"end"===f?T-b:"nearest"===f?o$1(y,y+b,b,g,W,y+T,y+T+E,E):T-b/2,D="start"===u?V:"center"===u?V-H/2:"end"===u?V-H:o$1(v,v+H,H,a,m,v+V,v+V+M,M),B=Math.max(0,B+y),D=Math.max(0,D+v);else {B="start"===f?T-l-g:"end"===f?T-d+W+S:"nearest"===f?o$1(l,d,n,g,W+S,T,T+E,E):T-(l+n/2)+S/2,D="start"===u?V-s-a:"center"===u?V-(s+i/2)+L/2:"end"===u?V-r+m+L:o$1(s,r,i,a,m+L,V,V+M,M);const{scrollLeft:t,scrollTop:h}=e;B=Math.max(0,Math.min(h+B/Y,e.scrollHeight-n/Y+S)),D=Math.max(0,Math.min(t+D/X,e.scrollWidth-i/X+L)),T+=h-B,V+=t-D;}k.push({el:e,top:B,left:D});}return k};
 
-const o=e=>!1===e?{block:"end",inline:"nearest"}:(e=>e===Object(e)&&0!==Object.keys(e).length)(e)?e:{block:"start",inline:"nearest"};function t(t,n){if(!t.isConnected||!(e=>{let o=e;for(;o&&o.parentNode;){if(o.parentNode===document)return !0;o=o.parentNode instanceof ShadowRoot?o.parentNode.host:o.parentNode;}return !1})(t))return;if((e=>"object"==typeof e&&"function"==typeof e.behavior)(n))return n.behavior(l(t,n));const r="boolean"==typeof n||null==n?void 0:n.behavior;for(const{el:i,top:a,left:l$1}of l(t,o(n)))i.scroll({top:a,left:l$1,behavior:r});}
+const o=t=>!1===t?{block:"end",inline:"nearest"}:(t=>t===Object(t)&&0!==Object.keys(t).length)(t)?t:{block:"start",inline:"nearest"};function e(e,r){if(!e.isConnected||!(t=>{let o=t;for(;o&&o.parentNode;){if(o.parentNode===document)return !0;o=o.parentNode instanceof ShadowRoot?o.parentNode.host:o.parentNode;}return !1})(e))return;const n=(t=>{const o=window.getComputedStyle(t);return {top:parseFloat(o.scrollMarginTop)||0,right:parseFloat(o.scrollMarginRight)||0,bottom:parseFloat(o.scrollMarginBottom)||0,left:parseFloat(o.scrollMarginLeft)||0}})(e);if((t=>"object"==typeof t&&"function"==typeof t.behavior)(r))return r.behavior(l(e,r));const l$1="boolean"==typeof r||null==r?void 0:r.behavior;for(const{el:a,top:i,left:s}of l(e,o(r))){const t=i-n.top+n.bottom,o=s-n.left+n.right;a.scroll({top:t,left:o,behavior:l$1});}}
 
 function isWindow(obj) {
   return obj !== null && obj !== undefined && obj === obj.window;
@@ -10754,6 +10045,48 @@ function _unmount() {
   return _unmount.apply(this, arguments);
 }
 
+// ================== Collapse Motion ==================
+const getCollapsedHeight = () => ({
+  height: 0,
+  opacity: 0
+});
+const getRealHeight = node => {
+  const {
+    scrollHeight
+  } = node;
+  return {
+    height: scrollHeight,
+    opacity: 1
+  };
+};
+const getCurrentHeight = node => ({
+  height: node ? node.offsetHeight : 0
+});
+const skipOpacityTransition = (_, event) => (event === null || event === void 0 ? void 0 : event.deadline) === true || event.propertyName === 'height';
+const initCollapseMotion = function () {
+  let rootCls = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'ant';
+  return {
+    motionName: `${rootCls}-motion-collapse`,
+    onAppearStart: getCollapsedHeight,
+    onEnterStart: getCollapsedHeight,
+    onAppearActive: getRealHeight,
+    onEnterActive: getRealHeight,
+    onLeaveStart: getCurrentHeight,
+    onLeaveActive: getCollapsedHeight,
+    onAppearEnd: skipOpacityTransition,
+    onEnterEnd: skipOpacityTransition,
+    onLeaveEnd: skipOpacityTransition,
+    motionDeadline: 500
+  };
+};
+const getTransitionName = (rootPrefixCls, motion, transitionName) => {
+  if (transitionName !== undefined) {
+    return transitionName;
+  }
+  return `${rootPrefixCls}-${motion}`;
+};
+var initCollapseMotion$1 = initCollapseMotion;
+
 var isVisible = (function (element) {
   if (!element) {
     return false;
@@ -10940,7 +10273,7 @@ const WaveEffect = props => {
     } = _ref;
     return /*#__PURE__*/React__namespace.createElement("div", {
       ref: divRef,
-      className: classnames$g(className, {
+      className: classnames(className, {
         'wave-quick': isSmallComponent
       }, motionClassName),
       style: waveStyle
@@ -10972,7 +10305,7 @@ function useWave(nodeRef, className, component) {
   const {
     wave
   } = React__namespace.useContext(ConfigContext);
-  const [, token, hashId] = useToken$2();
+  const [, token, hashId] = useToken();
   const showWave = useEvent$1(event => {
     const node = nodeRef.current;
     if ((wave === null || wave === void 0 ? void 0 : wave.disabled) || !node) {
@@ -11016,7 +10349,7 @@ const Wave = props => {
   const prefixCls = getPrefixCls('wave');
   const [, hashId] = useStyle$l(prefixCls);
   // =============================== Wave ===============================
-  const showWave = useWave(containerRef, classnames$g(prefixCls, hashId), component);
+  const showWave = useWave(containerRef, classnames(prefixCls, hashId), component);
   // ============================== Effect ==============================
   React__default["default"].useEffect(() => {
     const node = containerRef.current;
@@ -11124,8 +10457,42 @@ const genSpaceStyle = token => {
     }
   };
 };
+const genSpaceGapStyle = token => {
+  const {
+    componentCls
+  } = token;
+  return {
+    [componentCls]: {
+      '&-gap-row-small': {
+        rowGap: token.spaceGapSmallSize
+      },
+      '&-gap-row-middle': {
+        rowGap: token.spaceGapMiddleSize
+      },
+      '&-gap-row-large': {
+        rowGap: token.spaceGapLargeSize
+      },
+      '&-gap-col-small': {
+        columnGap: token.spaceGapSmallSize
+      },
+      '&-gap-col-middle': {
+        columnGap: token.spaceGapMiddleSize
+      },
+      '&-gap-col-large': {
+        columnGap: token.spaceGapLargeSize
+      }
+    }
+  };
+};
 // ============================== Export ==============================
-var useStyle$k = genComponentStyleHook('Space', token => [genSpaceStyle(token), genSpaceCompactStyle$1(token)], () => ({}), {
+var useStyle$k = genComponentStyleHook('Space', token => {
+  const spaceToken = merge(token, {
+    spaceGapSmallSize: token.paddingXS,
+    spaceGapMiddleSize: token.padding,
+    spaceGapLargeSize: token.paddingLG
+  });
+  return [genSpaceStyle(spaceToken), genSpaceGapStyle(spaceToken), genSpaceCompactStyle$1(spaceToken)];
+}, () => ({}), {
   // Space component don't apply extra font style
   // https://github.com/ant-design/ant-design/issues/40315
   resetStyle: false
@@ -11152,7 +10519,7 @@ const useCompactItemContext = (prefixCls, direction) => {
       isLastItem
     } = compactItemContext;
     const separator = compactDirection === 'vertical' ? '-vertical-' : '-';
-    return classnames$g(`${prefixCls}-compact${separator}item`, {
+    return classnames(`${prefixCls}-compact${separator}item`, {
       [`${prefixCls}-compact${separator}first-item`]: isFirstItem,
       [`${prefixCls}-compact${separator}last-item`]: isLastItem,
       [`${prefixCls}-compact${separator}item-rtl`]: direction === 'rtl'
@@ -11199,7 +10566,7 @@ const Compact = props => {
   const mergedSize = useSize$1(ctx => size !== null && size !== void 0 ? size : ctx);
   const prefixCls = getPrefixCls('space-compact', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$k(prefixCls);
-  const clx = classnames$g(prefixCls, hashId, {
+  const clx = classnames(prefixCls, hashId, {
     [`${prefixCls}-rtl`]: directionConfig === 'rtl',
     [`${prefixCls}-block`]: block,
     [`${prefixCls}-vertical`]: direction === 'vertical'
@@ -11226,6 +10593,99 @@ const Compact = props => {
 };
 var Compact$1 = Compact;
 
+var __rest$K = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+const GroupSizeContext = /*#__PURE__*/React__namespace.createContext(undefined);
+const ButtonGroup$1 = props => {
+  const {
+    getPrefixCls,
+    direction
+  } = React__namespace.useContext(ConfigContext);
+  const {
+      prefixCls: customizePrefixCls,
+      size,
+      className
+    } = props,
+    others = __rest$K(props, ["prefixCls", "size", "className"]);
+  const prefixCls = getPrefixCls('btn-group', customizePrefixCls);
+  const [,, hashId] = useToken();
+  let sizeCls = '';
+  switch (size) {
+    case 'large':
+      sizeCls = 'lg';
+      break;
+    case 'small':
+      sizeCls = 'sm';
+      break;
+    // Do nothing
+  }
+
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Button.Group');
+    process.env.NODE_ENV !== "production" ? warning(!size || ['large', 'small', 'middle'].includes(size), 'usage', 'Invalid prop `size`.') : void 0;
+  }
+  const classes = classnames(prefixCls, {
+    [`${prefixCls}-${sizeCls}`]: sizeCls,
+    [`${prefixCls}-rtl`]: direction === 'rtl'
+  }, className, hashId);
+  return /*#__PURE__*/React__namespace.createElement(GroupSizeContext.Provider, {
+    value: size
+  }, /*#__PURE__*/React__namespace.createElement("div", Object.assign({}, others, {
+    className: classes
+  })));
+};
+var Group$5 = ButtonGroup$1;
+
+const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
+const isTwoCNChar = rxTwoCNChar.test.bind(rxTwoCNChar);
+function isString(str) {
+  return typeof str === 'string';
+}
+function isUnBorderedButtonType(type) {
+  return type === 'text' || type === 'link';
+}
+function splitCNCharsBySpace(child, needInserted) {
+  if (child === null || child === undefined) {
+    return;
+  }
+  const SPACE = needInserted ? ' ' : '';
+  if (typeof child !== 'string' && typeof child !== 'number' && isString(child.type) && isTwoCNChar(child.props.children)) {
+    return cloneElement(child, {
+      children: child.props.children.split('').join(SPACE)
+    });
+  }
+  if (isString(child)) {
+    return isTwoCNChar(child) ? /*#__PURE__*/React__default["default"].createElement("span", null, child.split('').join(SPACE)) : /*#__PURE__*/React__default["default"].createElement("span", null, child);
+  }
+  if (isFragment(child)) {
+    return /*#__PURE__*/React__default["default"].createElement("span", null, child);
+  }
+  return child;
+}
+function spaceChildren(children, needInserted) {
+  let isPrevChildPure = false;
+  const childList = [];
+  React__default["default"].Children.forEach(children, child => {
+    const type = typeof child;
+    const isCurrentChildPure = type === 'string' || type === 'number';
+    if (isPrevChildPure && isCurrentChildPure) {
+      const lastIndex = childList.length - 1;
+      const lastChild = childList[lastIndex];
+      childList[lastIndex] = `${lastChild}${child}`;
+    } else {
+      childList.push(child);
+    }
+    isPrevChildPure = isCurrentChildPure;
+  });
+  return React__default["default"].Children.map(childList, child => splitCNCharsBySpace(child, needInserted));
+}
+
 const IconWrapper = /*#__PURE__*/React.forwardRef((props, ref) => {
   const {
     className,
@@ -11233,7 +10693,7 @@ const IconWrapper = /*#__PURE__*/React.forwardRef((props, ref) => {
     children,
     prefixCls
   } = props;
-  const iconWrapperCls = classnames$g(`${prefixCls}-icon`, className);
+  const iconWrapperCls = classnames(`${prefixCls}-icon`, className);
   return /*#__PURE__*/React__default["default"].createElement("span", {
     ref: ref,
     className: iconWrapperCls,
@@ -11249,7 +10709,7 @@ const InnerLoadingIcon = /*#__PURE__*/React.forwardRef((_ref, ref) => {
     style,
     iconClassName
   } = _ref;
-  const mergedIconCls = classnames$g(`${prefixCls}-loading-icon`, className);
+  const mergedIconCls = classnames(`${prefixCls}-loading-icon`, className);
   return /*#__PURE__*/React__default["default"].createElement(IconWrapper$1, {
     prefixCls: prefixCls,
     className: mergedIconCls,
@@ -11312,97 +10772,467 @@ const LoadingIcon = props => {
 };
 var LoadingIcon$1 = LoadingIcon;
 
-var __rest$K = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-const GroupSizeContext = /*#__PURE__*/React__namespace.createContext(undefined);
-const ButtonGroup$1 = props => {
-  const {
-    getPrefixCls,
-    direction
-  } = React__namespace.useContext(ConfigContext);
-  const {
-      prefixCls: customizePrefixCls,
-      size,
-      className
-    } = props,
-    others = __rest$K(props, ["prefixCls", "size", "className"]);
-  const prefixCls = getPrefixCls('btn-group', customizePrefixCls);
-  const [,, hashId] = useToken$2();
-  let sizeCls = '';
-  switch (size) {
-    case 'large':
-      sizeCls = 'lg';
-      break;
-    case 'small':
-      sizeCls = 'sm';
-      break;
-    case 'middle':
-    case undefined:
-      break;
-    default:
-      process.env.NODE_ENV !== "production" ? warning$3(!size, 'Button.Group', 'Invalid prop `size`.') : void 0;
-  }
-  const classes = classnames$g(prefixCls, {
-    [`${prefixCls}-${sizeCls}`]: sizeCls,
-    [`${prefixCls}-rtl`]: direction === 'rtl'
-  }, className, hashId);
-  return /*#__PURE__*/React__namespace.createElement(GroupSizeContext.Provider, {
-    value: size
-  }, /*#__PURE__*/React__namespace.createElement("div", Object.assign({}, others, {
-    className: classes
-  })));
-};
-var Group$5 = ButtonGroup$1;
-
-const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
-const isTwoCNChar = rxTwoCNChar.test.bind(rxTwoCNChar);
-function isString(str) {
-  return typeof str === 'string';
-}
-function isUnBorderedButtonType(type) {
-  return type === 'text' || type === 'link';
-}
-function splitCNCharsBySpace(child, needInserted) {
-  if (child === null || child === undefined) {
-    return;
-  }
-  const SPACE = needInserted ? ' ' : '';
-  if (typeof child !== 'string' && typeof child !== 'number' && isString(child.type) && isTwoCNChar(child.props.children)) {
-    return cloneElement(child, {
-      children: child.props.children.split('').join(SPACE)
-    });
-  }
-  if (isString(child)) {
-    return isTwoCNChar(child) ? /*#__PURE__*/React__default["default"].createElement("span", null, child.split('').join(SPACE)) : /*#__PURE__*/React__default["default"].createElement("span", null, child);
-  }
-  if (isFragment(child)) {
-    return /*#__PURE__*/React__default["default"].createElement("span", null, child);
-  }
-  return child;
-}
-function spaceChildren(children, needInserted) {
-  let isPrevChildPure = false;
-  const childList = [];
-  React__default["default"].Children.forEach(children, child => {
-    const type = typeof child;
-    const isCurrentChildPure = type === 'string' || type === 'number';
-    if (isPrevChildPure && isCurrentChildPure) {
-      const lastIndex = childList.length - 1;
-      const lastChild = childList[lastIndex];
-      childList[lastIndex] = `${lastChild}${child}`;
-    } else {
-      childList.push(child);
+const genButtonBorderStyle = (buttonTypeCls, borderColor) => ({
+  // Border
+  [`> span, > ${buttonTypeCls}`]: {
+    '&:not(:last-child)': {
+      [`&, & > ${buttonTypeCls}`]: {
+        '&:not(:disabled)': {
+          borderInlineEndColor: borderColor
+        }
+      }
+    },
+    '&:not(:first-child)': {
+      [`&, & > ${buttonTypeCls}`]: {
+        '&:not(:disabled)': {
+          borderInlineStartColor: borderColor
+        }
+      }
     }
-    isPrevChildPure = isCurrentChildPure;
+  }
+});
+const genGroupStyle$1 = token => {
+  const {
+    componentCls,
+    fontSize,
+    lineWidth,
+    groupBorderColor,
+    colorErrorHover
+  } = token;
+  return {
+    [`${componentCls}-group`]: [{
+      position: 'relative',
+      display: 'inline-flex',
+      // Border
+      [`> span, > ${componentCls}`]: {
+        '&:not(:last-child)': {
+          [`&, & > ${componentCls}`]: {
+            borderStartEndRadius: 0,
+            borderEndEndRadius: 0
+          }
+        },
+        '&:not(:first-child)': {
+          marginInlineStart: -lineWidth,
+          [`&, & > ${componentCls}`]: {
+            borderStartStartRadius: 0,
+            borderEndStartRadius: 0
+          }
+        }
+      },
+      [componentCls]: {
+        position: 'relative',
+        zIndex: 1,
+        [`&:hover,
+          &:focus,
+          &:active`]: {
+          zIndex: 2
+        },
+        '&[disabled]': {
+          zIndex: 0
+        }
+      },
+      [`${componentCls}-icon-only`]: {
+        fontSize
+      }
+    },
+    // Border Color
+    genButtonBorderStyle(`${componentCls}-primary`, groupBorderColor), genButtonBorderStyle(`${componentCls}-danger`, colorErrorHover)]
+  };
+};
+var genGroupStyle$2 = genGroupStyle$1;
+
+// ============================== Shared ==============================
+const genSharedButtonStyle = token => {
+  const {
+    componentCls,
+    iconCls,
+    fontWeight
+  } = token;
+  return {
+    [componentCls]: {
+      outline: 'none',
+      position: 'relative',
+      display: 'inline-block',
+      fontWeight,
+      whiteSpace: 'nowrap',
+      textAlign: 'center',
+      backgroundImage: 'none',
+      backgroundColor: 'transparent',
+      border: `${token.lineWidth}px ${token.lineType} transparent`,
+      cursor: 'pointer',
+      transition: `all ${token.motionDurationMid} ${token.motionEaseInOut}`,
+      userSelect: 'none',
+      touchAction: 'manipulation',
+      lineHeight: token.lineHeight,
+      color: token.colorText,
+      '&:disabled > *': {
+        pointerEvents: 'none'
+      },
+      '> span': {
+        display: 'inline-block'
+      },
+      [`${componentCls}-icon`]: {
+        lineHeight: 0
+      },
+      // Leave a space between icon and text.
+      [`> ${iconCls} + span, > span + ${iconCls}`]: {
+        marginInlineStart: token.marginXS
+      },
+      [`&:not(${componentCls}-icon-only) > ${componentCls}-icon`]: {
+        [`&${componentCls}-loading-icon, &:not(:last-child)`]: {
+          marginInlineEnd: token.marginXS
+        }
+      },
+      '> a': {
+        color: 'currentColor'
+      },
+      '&:not(:disabled)': Object.assign({}, genFocusStyle(token)),
+      // make `btn-icon-only` not too narrow
+      [`&-icon-only${componentCls}-compact-item`]: {
+        flex: 'none'
+      },
+      // Special styles for Primary Button
+      [`&-compact-item${componentCls}-primary`]: {
+        [`&:not([disabled]) + ${componentCls}-compact-item${componentCls}-primary:not([disabled])`]: {
+          position: 'relative',
+          '&:before': {
+            position: 'absolute',
+            top: -token.lineWidth,
+            insetInlineStart: -token.lineWidth,
+            display: 'inline-block',
+            width: token.lineWidth,
+            height: `calc(100% + ${token.lineWidth * 2}px)`,
+            backgroundColor: token.colorPrimaryHover,
+            content: '""'
+          }
+        }
+      },
+      // Special styles for Primary Button
+      '&-compact-vertical-item': {
+        [`&${componentCls}-primary`]: {
+          [`&:not([disabled]) + ${componentCls}-compact-vertical-item${componentCls}-primary:not([disabled])`]: {
+            position: 'relative',
+            '&:before': {
+              position: 'absolute',
+              top: -token.lineWidth,
+              insetInlineStart: -token.lineWidth,
+              display: 'inline-block',
+              width: `calc(100% + ${token.lineWidth * 2}px)`,
+              height: token.lineWidth,
+              backgroundColor: token.colorPrimaryHover,
+              content: '""'
+            }
+          }
+        }
+      }
+    }
+  };
+};
+const genHoverActiveButtonStyle = (btnCls, hoverStyle, activeStyle) => ({
+  [`&:not(:disabled):not(${btnCls}-disabled)`]: {
+    '&:hover': hoverStyle,
+    '&:active': activeStyle
+  }
+});
+// ============================== Shape ===============================
+const genCircleButtonStyle = token => ({
+  minWidth: token.controlHeight,
+  paddingInlineStart: 0,
+  paddingInlineEnd: 0,
+  borderRadius: '50%'
+});
+const genRoundButtonStyle = token => ({
+  borderRadius: token.controlHeight,
+  paddingInlineStart: token.controlHeight / 2,
+  paddingInlineEnd: token.controlHeight / 2
+});
+// =============================== Type ===============================
+const genDisabledStyle$1 = token => ({
+  cursor: 'not-allowed',
+  borderColor: token.borderColorDisabled,
+  color: token.colorTextDisabled,
+  backgroundColor: token.colorBgContainerDisabled,
+  boxShadow: 'none'
+});
+const genGhostButtonStyle = (btnCls, background, textColor, borderColor, textColorDisabled, borderColorDisabled, hoverStyle, activeStyle) => ({
+  [`&${btnCls}-background-ghost`]: Object.assign(Object.assign({
+    color: textColor || undefined,
+    backgroundColor: background,
+    borderColor: borderColor || undefined,
+    boxShadow: 'none'
+  }, genHoverActiveButtonStyle(btnCls, Object.assign({
+    backgroundColor: background
+  }, hoverStyle), Object.assign({
+    backgroundColor: background
+  }, activeStyle))), {
+    '&:disabled': {
+      cursor: 'not-allowed',
+      color: textColorDisabled || undefined,
+      borderColor: borderColorDisabled || undefined
+    }
+  })
+});
+const genSolidDisabledButtonStyle = token => ({
+  [`&:disabled, &${token.componentCls}-disabled`]: Object.assign({}, genDisabledStyle$1(token))
+});
+const genSolidButtonStyle = token => Object.assign({}, genSolidDisabledButtonStyle(token));
+const genPureDisabledButtonStyle = token => ({
+  [`&:disabled, &${token.componentCls}-disabled`]: {
+    cursor: 'not-allowed',
+    color: token.colorTextDisabled
+  }
+});
+// Type: Default
+const genDefaultButtonStyle = token => Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, genSolidButtonStyle(token)), {
+  backgroundColor: token.defaultBg,
+  borderColor: token.defaultBorderColor,
+  color: token.defaultColor,
+  boxShadow: token.defaultShadow
+}), genHoverActiveButtonStyle(token.componentCls, {
+  color: token.colorPrimaryHover,
+  borderColor: token.colorPrimaryHover
+}, {
+  color: token.colorPrimaryActive,
+  borderColor: token.colorPrimaryActive
+})), genGhostButtonStyle(token.componentCls, token.ghostBg, token.defaultGhostColor, token.defaultGhostBorderColor, token.colorTextDisabled, token.colorBorder)), {
+  [`&${token.componentCls}-dangerous`]: Object.assign(Object.assign(Object.assign({
+    color: token.colorError,
+    borderColor: token.colorError
+  }, genHoverActiveButtonStyle(token.componentCls, {
+    color: token.colorErrorHover,
+    borderColor: token.colorErrorBorderHover
+  }, {
+    color: token.colorErrorActive,
+    borderColor: token.colorErrorActive
+  })), genGhostButtonStyle(token.componentCls, token.ghostBg, token.colorError, token.colorError, token.colorTextDisabled, token.colorBorder)), genSolidDisabledButtonStyle(token))
+});
+// Type: Primary
+const genPrimaryButtonStyle = token => Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, genSolidButtonStyle(token)), {
+  color: token.primaryColor,
+  backgroundColor: token.colorPrimary,
+  boxShadow: token.primaryShadow
+}), genHoverActiveButtonStyle(token.componentCls, {
+  color: token.colorTextLightSolid,
+  backgroundColor: token.colorPrimaryHover
+}, {
+  color: token.colorTextLightSolid,
+  backgroundColor: token.colorPrimaryActive
+})), genGhostButtonStyle(token.componentCls, token.ghostBg, token.colorPrimary, token.colorPrimary, token.colorTextDisabled, token.colorBorder, {
+  color: token.colorPrimaryHover,
+  borderColor: token.colorPrimaryHover
+}, {
+  color: token.colorPrimaryActive,
+  borderColor: token.colorPrimaryActive
+})), {
+  [`&${token.componentCls}-dangerous`]: Object.assign(Object.assign(Object.assign({
+    backgroundColor: token.colorError,
+    boxShadow: token.dangerShadow,
+    color: token.dangerColor
+  }, genHoverActiveButtonStyle(token.componentCls, {
+    backgroundColor: token.colorErrorHover
+  }, {
+    backgroundColor: token.colorErrorActive
+  })), genGhostButtonStyle(token.componentCls, token.ghostBg, token.colorError, token.colorError, token.colorTextDisabled, token.colorBorder, {
+    color: token.colorErrorHover,
+    borderColor: token.colorErrorHover
+  }, {
+    color: token.colorErrorActive,
+    borderColor: token.colorErrorActive
+  })), genSolidDisabledButtonStyle(token))
+});
+// Type: Dashed
+const genDashedButtonStyle = token => Object.assign(Object.assign({}, genDefaultButtonStyle(token)), {
+  borderStyle: 'dashed'
+});
+// Type: Link
+const genLinkButtonStyle = token => Object.assign(Object.assign(Object.assign({
+  color: token.colorLink
+}, genHoverActiveButtonStyle(token.componentCls, {
+  color: token.colorLinkHover,
+  backgroundColor: token.linkHoverBg
+}, {
+  color: token.colorLinkActive
+})), genPureDisabledButtonStyle(token)), {
+  [`&${token.componentCls}-dangerous`]: Object.assign(Object.assign({
+    color: token.colorError
+  }, genHoverActiveButtonStyle(token.componentCls, {
+    color: token.colorErrorHover
+  }, {
+    color: token.colorErrorActive
+  })), genPureDisabledButtonStyle(token))
+});
+// Type: Text
+const genTextButtonStyle = token => Object.assign(Object.assign(Object.assign({}, genHoverActiveButtonStyle(token.componentCls, {
+  color: token.colorText,
+  backgroundColor: token.textHoverBg
+}, {
+  color: token.colorText,
+  backgroundColor: token.colorBgTextActive
+})), genPureDisabledButtonStyle(token)), {
+  [`&${token.componentCls}-dangerous`]: Object.assign(Object.assign({
+    color: token.colorError
+  }, genPureDisabledButtonStyle(token)), genHoverActiveButtonStyle(token.componentCls, {
+    color: token.colorErrorHover,
+    backgroundColor: token.colorErrorBg
+  }, {
+    color: token.colorErrorHover,
+    backgroundColor: token.colorErrorBg
+  }))
+});
+const genTypeButtonStyle = token => {
+  const {
+    componentCls
+  } = token;
+  return {
+    [`${componentCls}-default`]: genDefaultButtonStyle(token),
+    [`${componentCls}-primary`]: genPrimaryButtonStyle(token),
+    [`${componentCls}-dashed`]: genDashedButtonStyle(token),
+    [`${componentCls}-link`]: genLinkButtonStyle(token),
+    [`${componentCls}-text`]: genTextButtonStyle(token),
+    [`${componentCls}-ghost`]: genGhostButtonStyle(token.componentCls, token.ghostBg, token.colorBgContainer, token.colorBgContainer, token.colorTextDisabled, token.colorBorder)
+  };
+};
+// =============================== Size ===============================
+const genSizeButtonStyle = function (token) {
+  let sizePrefixCls = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+  const {
+    componentCls,
+    controlHeight,
+    fontSize,
+    lineHeight,
+    lineWidth,
+    borderRadius,
+    buttonPaddingHorizontal,
+    iconCls
+  } = token;
+  const paddingVertical = Math.max(0, (controlHeight - fontSize * lineHeight) / 2 - lineWidth);
+  const iconOnlyCls = `${componentCls}-icon-only`;
+  return [
+  // Size
+  {
+    [`${componentCls}${sizePrefixCls}`]: {
+      fontSize,
+      height: controlHeight,
+      padding: `${paddingVertical}px ${buttonPaddingHorizontal}px`,
+      borderRadius,
+      [`&${iconOnlyCls}`]: {
+        width: controlHeight,
+        paddingInlineStart: 0,
+        paddingInlineEnd: 0,
+        [`&${componentCls}-round`]: {
+          width: 'auto'
+        },
+        [iconCls]: {
+          fontSize: token.buttonIconOnlyFontSize
+        }
+      },
+      // Loading
+      [`&${componentCls}-loading`]: {
+        opacity: token.opacityLoading,
+        cursor: 'default'
+      },
+      [`${componentCls}-loading-icon`]: {
+        transition: `width ${token.motionDurationSlow} ${token.motionEaseInOut}, opacity ${token.motionDurationSlow} ${token.motionEaseInOut}`
+      }
+    }
+  },
+  // Shape - patch prefixCls again to override solid border radius style
+  {
+    [`${componentCls}${componentCls}-circle${sizePrefixCls}`]: genCircleButtonStyle(token)
+  }, {
+    [`${componentCls}${componentCls}-round${sizePrefixCls}`]: genRoundButtonStyle(token)
+  }];
+};
+const genSizeBaseButtonStyle = token => genSizeButtonStyle(merge(token, {
+  fontSize: token.contentFontSize
+}));
+const genSizeSmallButtonStyle = token => {
+  const smallToken = merge(token, {
+    controlHeight: token.controlHeightSM,
+    fontSize: token.contentFontSizeSM,
+    padding: token.paddingXS,
+    buttonPaddingHorizontal: token.paddingInlineSM,
+    borderRadius: token.borderRadiusSM,
+    buttonIconOnlyFontSize: token.onlyIconSizeSM
   });
-  return React__default["default"].Children.map(childList, child => splitCNCharsBySpace(child, needInserted));
-}
+  return genSizeButtonStyle(smallToken, `${token.componentCls}-sm`);
+};
+const genSizeLargeButtonStyle = token => {
+  const largeToken = merge(token, {
+    controlHeight: token.controlHeightLG,
+    fontSize: token.contentFontSizeLG,
+    buttonPaddingHorizontal: token.paddingInlineLG,
+    borderRadius: token.borderRadiusLG,
+    buttonIconOnlyFontSize: token.onlyIconSizeLG
+  });
+  return genSizeButtonStyle(largeToken, `${token.componentCls}-lg`);
+};
+const genBlockButtonStyle = token => {
+  const {
+    componentCls
+  } = token;
+  return {
+    [componentCls]: {
+      [`&${componentCls}-block`]: {
+        width: '100%'
+      }
+    }
+  };
+};
+// ============================== Export ==============================
+const prepareToken$1 = token => {
+  const {
+    paddingInline,
+    onlyIconSize
+  } = token;
+  const buttonToken = merge(token, {
+    buttonPaddingHorizontal: paddingInline,
+    buttonIconOnlyFontSize: onlyIconSize
+  });
+  return buttonToken;
+};
+const prepareComponentToken = token => ({
+  fontWeight: 400,
+  defaultShadow: `0 ${token.controlOutlineWidth}px 0 ${token.controlTmpOutline}`,
+  primaryShadow: `0 ${token.controlOutlineWidth}px 0 ${token.controlOutline}`,
+  dangerShadow: `0 ${token.controlOutlineWidth}px 0 ${token.colorErrorOutline}`,
+  primaryColor: token.colorTextLightSolid,
+  dangerColor: token.colorTextLightSolid,
+  borderColorDisabled: token.colorBorder,
+  defaultGhostColor: token.colorBgContainer,
+  ghostBg: 'transparent',
+  defaultGhostBorderColor: token.colorBgContainer,
+  paddingInline: token.paddingContentHorizontal - token.lineWidth,
+  paddingInlineLG: token.paddingContentHorizontal - token.lineWidth,
+  paddingInlineSM: 8 - token.lineWidth,
+  onlyIconSize: token.fontSizeLG,
+  onlyIconSizeSM: token.fontSizeLG - 2,
+  onlyIconSizeLG: token.fontSizeLG + 2,
+  groupBorderColor: token.colorPrimaryHover,
+  linkHoverBg: 'transparent',
+  textHoverBg: token.colorBgTextHover,
+  defaultColor: token.colorText,
+  defaultBg: token.colorBgContainer,
+  defaultBorderColor: token.colorBorder,
+  defaultBorderColorDisabled: token.colorBorder,
+  contentFontSize: token.fontSize,
+  contentFontSizeSM: token.fontSize,
+  contentFontSizeLG: token.fontSizeLG
+});
+var useStyle$j = genComponentStyleHook('Button', token => {
+  const buttonToken = prepareToken$1(token);
+  return [
+  // Shared
+  genSharedButtonStyle(buttonToken),
+  // Size
+  genSizeSmallButtonStyle(buttonToken), genSizeBaseButtonStyle(buttonToken), genSizeLargeButtonStyle(buttonToken),
+  // Block
+  genBlockButtonStyle(buttonToken),
+  // Group (type, ghost, danger, loading)
+  genTypeButtonStyle(buttonToken),
+  // Button Group
+  genGroupStyle$2(buttonToken)];
+}, prepareComponentToken);
 
 // handle border collapse
 function compactItemBorder(token, parentCls, options) {
@@ -11511,433 +11341,14 @@ function genCompactItemVerticalStyle(token) {
   };
 }
 
-const genButtonBorderStyle = (buttonTypeCls, borderColor) => ({
-  // Border
-  [`> span, > ${buttonTypeCls}`]: {
-    '&:not(:last-child)': {
-      [`&, & > ${buttonTypeCls}`]: {
-        '&:not(:disabled)': {
-          borderInlineEndColor: borderColor
-        }
-      }
-    },
-    '&:not(:first-child)': {
-      [`&, & > ${buttonTypeCls}`]: {
-        '&:not(:disabled)': {
-          borderInlineStartColor: borderColor
-        }
-      }
-    }
-  }
-});
-const genGroupStyle$1 = token => {
-  const {
-    componentCls,
-    fontSize,
-    lineWidth,
-    colorPrimaryHover,
-    colorErrorHover
-  } = token;
-  return {
-    [`${componentCls}-group`]: [{
-      position: 'relative',
-      display: 'inline-flex',
-      // Border
-      [`> span, > ${componentCls}`]: {
-        '&:not(:last-child)': {
-          [`&, & > ${componentCls}`]: {
-            borderStartEndRadius: 0,
-            borderEndEndRadius: 0
-          }
-        },
-        '&:not(:first-child)': {
-          marginInlineStart: -lineWidth,
-          [`&, & > ${componentCls}`]: {
-            borderStartStartRadius: 0,
-            borderEndStartRadius: 0
-          }
-        }
-      },
-      [componentCls]: {
-        position: 'relative',
-        zIndex: 1,
-        [`&:hover,
-          &:focus,
-          &:active`]: {
-          zIndex: 2
-        },
-        '&[disabled]': {
-          zIndex: 0
-        }
-      },
-      [`${componentCls}-icon-only`]: {
-        fontSize
-      }
-    },
-    // Border Color
-    genButtonBorderStyle(`${componentCls}-primary`, colorPrimaryHover), genButtonBorderStyle(`${componentCls}-danger`, colorErrorHover)]
-  };
-};
-var genGroupStyle$2 = genGroupStyle$1;
-
-// ============================== Shared ==============================
-const genSharedButtonStyle = token => {
-  const {
-    componentCls,
-    iconCls,
-    buttonFontWeight
-  } = token;
-  return {
-    [componentCls]: {
-      outline: 'none',
-      position: 'relative',
-      display: 'inline-block',
-      fontWeight: buttonFontWeight,
-      whiteSpace: 'nowrap',
-      textAlign: 'center',
-      backgroundImage: 'none',
-      backgroundColor: 'transparent',
-      border: `${token.lineWidth}px ${token.lineType} transparent`,
-      cursor: 'pointer',
-      transition: `all ${token.motionDurationMid} ${token.motionEaseInOut}`,
-      userSelect: 'none',
-      touchAction: 'manipulation',
-      lineHeight: token.lineHeight,
-      color: token.colorText,
-      '&:disabled > *': {
-        pointerEvents: 'none'
-      },
-      '> span': {
-        display: 'inline-block'
-      },
-      [`${componentCls}-icon`]: {
-        lineHeight: 0
-      },
-      // Leave a space between icon and text.
-      [`> ${iconCls} + span, > span + ${iconCls}`]: {
-        marginInlineStart: token.marginXS
-      },
-      [`&:not(${componentCls}-icon-only) > ${componentCls}-icon`]: {
-        [`&${componentCls}-loading-icon, &:not(:last-child)`]: {
-          marginInlineEnd: token.marginXS
-        }
-      },
-      '> a': {
-        color: 'currentColor'
-      },
-      '&:not(:disabled)': Object.assign({}, genFocusStyle(token)),
-      // make `btn-icon-only` not too narrow
-      [`&-icon-only${componentCls}-compact-item`]: {
-        flex: 'none'
-      },
-      // Special styles for Primary Button
-      [`&-compact-item${componentCls}-primary`]: {
-        [`&:not([disabled]) + ${componentCls}-compact-item${componentCls}-primary:not([disabled])`]: {
-          position: 'relative',
-          '&:before': {
-            position: 'absolute',
-            top: -token.lineWidth,
-            insetInlineStart: -token.lineWidth,
-            display: 'inline-block',
-            width: token.lineWidth,
-            height: `calc(100% + ${token.lineWidth * 2}px)`,
-            backgroundColor: token.colorPrimaryHover,
-            content: '""'
-          }
-        }
-      },
-      // Special styles for Primary Button
-      '&-compact-vertical-item': {
-        [`&${componentCls}-primary`]: {
-          [`&:not([disabled]) + ${componentCls}-compact-vertical-item${componentCls}-primary:not([disabled])`]: {
-            position: 'relative',
-            '&:before': {
-              position: 'absolute',
-              top: -token.lineWidth,
-              insetInlineStart: -token.lineWidth,
-              display: 'inline-block',
-              width: `calc(100% + ${token.lineWidth * 2}px)`,
-              height: token.lineWidth,
-              backgroundColor: token.colorPrimaryHover,
-              content: '""'
-            }
-          }
-        }
-      }
-    }
-  };
-};
-const genHoverActiveButtonStyle = (btnCls, hoverStyle, activeStyle) => ({
-  [`&:not(:disabled):not(${btnCls}-disabled)`]: {
-    '&:hover': hoverStyle,
-    '&:active': activeStyle
-  }
-});
-// ============================== Shape ===============================
-const genCircleButtonStyle = token => ({
-  minWidth: token.controlHeight,
-  paddingInlineStart: 0,
-  paddingInlineEnd: 0,
-  borderRadius: '50%'
-});
-const genRoundButtonStyle = token => ({
-  borderRadius: token.controlHeight,
-  paddingInlineStart: token.controlHeight / 2,
-  paddingInlineEnd: token.controlHeight / 2
-});
-// =============================== Type ===============================
-const genDisabledStyle$1 = token => ({
-  cursor: 'not-allowed',
-  borderColor: token.colorBorder,
-  color: token.colorTextDisabled,
-  backgroundColor: token.colorBgContainerDisabled,
-  boxShadow: 'none'
-});
-const genGhostButtonStyle = (btnCls, textColor, borderColor, textColorDisabled, borderColorDisabled, hoverStyle, activeStyle) => ({
-  [`&${btnCls}-background-ghost`]: Object.assign(Object.assign({
-    color: textColor || undefined,
-    backgroundColor: 'transparent',
-    borderColor: borderColor || undefined,
-    boxShadow: 'none'
-  }, genHoverActiveButtonStyle(btnCls, Object.assign({
-    backgroundColor: 'transparent'
-  }, hoverStyle), Object.assign({
-    backgroundColor: 'transparent'
-  }, activeStyle))), {
-    '&:disabled': {
-      cursor: 'not-allowed',
-      color: textColorDisabled || undefined,
-      borderColor: borderColorDisabled || undefined
-    }
-  })
-});
-const genSolidDisabledButtonStyle = token => ({
-  [`&:disabled, &${token.componentCls}-disabled`]: Object.assign({}, genDisabledStyle$1(token))
-});
-const genSolidButtonStyle = token => Object.assign({}, genSolidDisabledButtonStyle(token));
-const genPureDisabledButtonStyle = token => ({
-  [`&:disabled, &${token.componentCls}-disabled`]: {
-    cursor: 'not-allowed',
-    color: token.colorTextDisabled
-  }
-});
-// Type: Default
-const genDefaultButtonStyle = token => Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, genSolidButtonStyle(token)), {
-  backgroundColor: token.colorBgContainer,
-  borderColor: token.colorBorder,
-  boxShadow: `0 ${token.controlOutlineWidth}px 0 ${token.controlTmpOutline}`
-}), genHoverActiveButtonStyle(token.componentCls, {
-  color: token.colorPrimaryHover,
-  borderColor: token.colorPrimaryHover
-}, {
-  color: token.colorPrimaryActive,
-  borderColor: token.colorPrimaryActive
-})), genGhostButtonStyle(token.componentCls, token.colorBgContainer, token.colorBgContainer, token.colorTextDisabled, token.colorBorder)), {
-  [`&${token.componentCls}-dangerous`]: Object.assign(Object.assign(Object.assign({
-    color: token.colorError,
-    borderColor: token.colorError
-  }, genHoverActiveButtonStyle(token.componentCls, {
-    color: token.colorErrorHover,
-    borderColor: token.colorErrorBorderHover
-  }, {
-    color: token.colorErrorActive,
-    borderColor: token.colorErrorActive
-  })), genGhostButtonStyle(token.componentCls, token.colorError, token.colorError, token.colorTextDisabled, token.colorBorder)), genSolidDisabledButtonStyle(token))
-});
-// Type: Primary
-const genPrimaryButtonStyle = token => Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, genSolidButtonStyle(token)), {
-  color: token.colorTextLightSolid,
-  backgroundColor: token.colorPrimary,
-  boxShadow: `0 ${token.controlOutlineWidth}px 0 ${token.controlOutline}`
-}), genHoverActiveButtonStyle(token.componentCls, {
-  color: token.colorTextLightSolid,
-  backgroundColor: token.colorPrimaryHover
-}, {
-  color: token.colorTextLightSolid,
-  backgroundColor: token.colorPrimaryActive
-})), genGhostButtonStyle(token.componentCls, token.colorPrimary, token.colorPrimary, token.colorTextDisabled, token.colorBorder, {
-  color: token.colorPrimaryHover,
-  borderColor: token.colorPrimaryHover
-}, {
-  color: token.colorPrimaryActive,
-  borderColor: token.colorPrimaryActive
-})), {
-  [`&${token.componentCls}-dangerous`]: Object.assign(Object.assign(Object.assign({
-    backgroundColor: token.colorError,
-    boxShadow: `0 ${token.controlOutlineWidth}px 0 ${token.colorErrorOutline}`
-  }, genHoverActiveButtonStyle(token.componentCls, {
-    backgroundColor: token.colorErrorHover
-  }, {
-    backgroundColor: token.colorErrorActive
-  })), genGhostButtonStyle(token.componentCls, token.colorError, token.colorError, token.colorTextDisabled, token.colorBorder, {
-    color: token.colorErrorHover,
-    borderColor: token.colorErrorHover
-  }, {
-    color: token.colorErrorActive,
-    borderColor: token.colorErrorActive
-  })), genSolidDisabledButtonStyle(token))
-});
-// Type: Dashed
-const genDashedButtonStyle = token => Object.assign(Object.assign({}, genDefaultButtonStyle(token)), {
-  borderStyle: 'dashed'
-});
-// Type: Link
-const genLinkButtonStyle = token => Object.assign(Object.assign(Object.assign({
-  color: token.colorLink
-}, genHoverActiveButtonStyle(token.componentCls, {
-  color: token.colorLinkHover
-}, {
-  color: token.colorLinkActive
-})), genPureDisabledButtonStyle(token)), {
-  [`&${token.componentCls}-dangerous`]: Object.assign(Object.assign({
-    color: token.colorError
-  }, genHoverActiveButtonStyle(token.componentCls, {
-    color: token.colorErrorHover
-  }, {
-    color: token.colorErrorActive
-  })), genPureDisabledButtonStyle(token))
-});
-// Type: Text
-const genTextButtonStyle = token => Object.assign(Object.assign(Object.assign({}, genHoverActiveButtonStyle(token.componentCls, {
-  color: token.colorText,
-  backgroundColor: token.colorBgTextHover
-}, {
-  color: token.colorText,
-  backgroundColor: token.colorBgTextActive
-})), genPureDisabledButtonStyle(token)), {
-  [`&${token.componentCls}-dangerous`]: Object.assign(Object.assign({
-    color: token.colorError
-  }, genPureDisabledButtonStyle(token)), genHoverActiveButtonStyle(token.componentCls, {
-    color: token.colorErrorHover,
-    backgroundColor: token.colorErrorBg
-  }, {
-    color: token.colorErrorHover,
-    backgroundColor: token.colorErrorBg
-  }))
-});
-const genTypeButtonStyle = token => {
-  const {
-    componentCls
-  } = token;
-  return {
-    [`${componentCls}-default`]: genDefaultButtonStyle(token),
-    [`${componentCls}-primary`]: genPrimaryButtonStyle(token),
-    [`${componentCls}-dashed`]: genDashedButtonStyle(token),
-    [`${componentCls}-link`]: genLinkButtonStyle(token),
-    [`${componentCls}-text`]: genTextButtonStyle(token),
-    [`${componentCls}-ghost`]: genGhostButtonStyle(token.componentCls, token.colorBgContainer, token.colorBgContainer, token.colorTextDisabled, token.colorBorder)
-  };
-};
-// =============================== Size ===============================
-const genSizeButtonStyle = function (token) {
-  let sizePrefixCls = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-  const {
-    componentCls,
-    controlHeight,
-    fontSize,
-    lineHeight,
-    lineWidth,
-    borderRadius,
-    buttonPaddingHorizontal,
-    iconCls
-  } = token;
-  const paddingVertical = Math.max(0, (controlHeight - fontSize * lineHeight) / 2 - lineWidth);
-  const paddingHorizontal = buttonPaddingHorizontal - lineWidth;
-  const iconOnlyCls = `${componentCls}-icon-only`;
-  return [
-  // Size
-  {
-    [`${componentCls}${sizePrefixCls}`]: {
-      fontSize,
-      height: controlHeight,
-      padding: `${paddingVertical}px ${paddingHorizontal}px`,
-      borderRadius,
-      [`&${iconOnlyCls}`]: {
-        width: controlHeight,
-        paddingInlineStart: 0,
-        paddingInlineEnd: 0,
-        [`&${componentCls}-round`]: {
-          width: 'auto'
-        },
-        [iconCls]: {
-          fontSize: token.buttonIconOnlyFontSize
-        }
-      },
-      // Loading
-      [`&${componentCls}-loading`]: {
-        opacity: token.opacityLoading,
-        cursor: 'default'
-      },
-      [`${componentCls}-loading-icon`]: {
-        transition: `width ${token.motionDurationSlow} ${token.motionEaseInOut}, opacity ${token.motionDurationSlow} ${token.motionEaseInOut}`
-      }
-    }
-  },
-  // Shape - patch prefixCls again to override solid border radius style
-  {
-    [`${componentCls}${componentCls}-circle${sizePrefixCls}`]: genCircleButtonStyle(token)
-  }, {
-    [`${componentCls}${componentCls}-round${sizePrefixCls}`]: genRoundButtonStyle(token)
-  }];
-};
-const genSizeBaseButtonStyle = token => genSizeButtonStyle(token);
-const genSizeSmallButtonStyle = token => {
-  const smallToken = merge(token, {
-    controlHeight: token.controlHeightSM,
-    padding: token.paddingXS,
-    buttonPaddingHorizontal: 8,
-    borderRadius: token.borderRadiusSM,
-    buttonIconOnlyFontSize: token.fontSizeLG - 2
-  });
-  return genSizeButtonStyle(smallToken, `${token.componentCls}-sm`);
-};
-const genSizeLargeButtonStyle = token => {
-  const largeToken = merge(token, {
-    controlHeight: token.controlHeightLG,
-    fontSize: token.fontSizeLG,
-    borderRadius: token.borderRadiusLG,
-    buttonIconOnlyFontSize: token.fontSizeLG + 2
-  });
-  return genSizeButtonStyle(largeToken, `${token.componentCls}-lg`);
-};
-const genBlockButtonStyle = token => {
-  const {
-    componentCls
-  } = token;
-  return {
-    [componentCls]: {
-      [`&${componentCls}-block`]: {
-        width: '100%'
-      }
-    }
-  };
-};
+// Style as inline component
 // ============================== Export ==============================
-var useStyle$j = genComponentStyleHook('Button', token => {
-  const {
-    controlTmpOutline,
-    paddingContentHorizontal
-  } = token;
-  const buttonToken = merge(token, {
-    colorOutlineDefault: controlTmpOutline,
-    buttonPaddingHorizontal: paddingContentHorizontal,
-    buttonIconOnlyFontSize: token.fontSizeLG,
-    buttonFontWeight: 400
-  });
+var CompactCmp = genSubStyleComponent(['Button', 'compact'], token => {
+  const buttonToken = prepareToken$1(token);
   return [
-  // Shared
-  genSharedButtonStyle(buttonToken),
-  // Size
-  genSizeSmallButtonStyle(buttonToken), genSizeBaseButtonStyle(buttonToken), genSizeLargeButtonStyle(buttonToken),
-  // Block
-  genBlockButtonStyle(buttonToken),
-  // Group (type, ghost, danger, loading)
-  genTypeButtonStyle(buttonToken),
-  // Button Group
-  genGroupStyle$2(buttonToken),
   // Space Compact
-  genCompactItemStyle(token), genCompactItemVerticalStyle(token)];
-});
+  genCompactItemStyle(buttonToken), genCompactItemVerticalStyle(buttonToken)];
+}, prepareComponentToken);
 
 var __rest$J = undefined && undefined.__rest || function (s, e) {
   var t = {};
@@ -12044,8 +11455,11 @@ const InternalButton = (props, ref) => {
     }
     onClick === null || onClick === void 0 ? void 0 : onClick(e);
   };
-  process.env.NODE_ENV !== "production" ? warning$3(!(typeof icon === 'string' && icon.length > 2), 'Button', `\`icon\` is using ReactNode instead of string naming in v4. Please check \`${icon}\` at https://ant.design/components/icon`) : void 0;
-  process.env.NODE_ENV !== "production" ? warning$3(!(ghost && isUnBorderedButtonType(type)), 'Button', "`link` or `text` button can't be a `ghost` button.") : void 0;
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Button');
+    process.env.NODE_ENV !== "production" ? warning(!(typeof icon === 'string' && icon.length > 2), 'breaking', `\`icon\` is using ReactNode instead of string naming in v4. Please check \`${icon}\` at https://ant.design/components/icon`) : void 0;
+    process.env.NODE_ENV !== "production" ? warning(!(ghost && isUnBorderedButtonType(type)), 'usage', "`link` or `text` button can't be a `ghost` button.") : void 0;
+  }
   const autoInsertSpace = autoInsertSpaceInButton !== false;
   const {
     compactSize,
@@ -12063,7 +11477,7 @@ const InternalButton = (props, ref) => {
   const sizeCls = sizeFullName ? sizeClassNameMap[sizeFullName] || '' : '';
   const iconType = innerLoading ? 'loading' : icon;
   const linkButtonRestProps = omit(rest, ['navigate']);
-  const classes = classnames$g(prefixCls, hashId, {
+  const classes = classnames(prefixCls, hashId, {
     [`${prefixCls}-${shape}`]: shape !== 'default' && shape,
     [`${prefixCls}-${type}`]: type,
     [`${prefixCls}-${sizeCls}`]: sizeCls,
@@ -12076,7 +11490,7 @@ const InternalButton = (props, ref) => {
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, compactItemClassnames, className, rootClassName, button === null || button === void 0 ? void 0 : button.className);
   const fullStyle = Object.assign(Object.assign({}, button === null || button === void 0 ? void 0 : button.style), customStyle);
-  const iconClasses = classnames$g(customClassNames === null || customClassNames === void 0 ? void 0 : customClassNames.icon, (_a = button === null || button === void 0 ? void 0 : button.classNames) === null || _a === void 0 ? void 0 : _a.icon);
+  const iconClasses = classnames(customClassNames === null || customClassNames === void 0 ? void 0 : customClassNames.icon, (_a = button === null || button === void 0 ? void 0 : button.classNames) === null || _a === void 0 ? void 0 : _a.icon);
   const iconStyle = Object.assign(Object.assign({}, (styles === null || styles === void 0 ? void 0 : styles.icon) || {}), ((_b = button === null || button === void 0 ? void 0 : button.styles) === null || _b === void 0 ? void 0 : _b.icon) || {});
   const iconNode = icon && !innerLoading ? /*#__PURE__*/React__default["default"].createElement(IconWrapper$1, {
     prefixCls: prefixCls,
@@ -12090,7 +11504,7 @@ const InternalButton = (props, ref) => {
   const kids = children || children === 0 ? spaceChildren(children, needInserted && autoInsertSpace) : null;
   if (linkButtonRestProps.href !== undefined) {
     return wrapSSR( /*#__PURE__*/React__default["default"].createElement("a", Object.assign({}, linkButtonRestProps, {
-      className: classnames$g(classes, {
+      className: classnames(classes, {
         [`${prefixCls}-disabled`]: mergedDisabled
       }),
       style: fullStyle,
@@ -12105,7 +11519,10 @@ const InternalButton = (props, ref) => {
     onClick: handleClick,
     disabled: mergedDisabled,
     ref: buttonRef
-  }), iconNode, kids);
+  }), iconNode, kids, compactItemClassnames && /*#__PURE__*/React__default["default"].createElement(CompactCmp, {
+    key: "compact",
+    prefixCls: prefixCls
+  }));
   if (!isUnBorderedButtonType(type)) {
     buttonNode = /*#__PURE__*/React__default["default"].createElement(Wave$1, {
       component: "Button",
@@ -12121,48 +11538,6 @@ if (process.env.NODE_ENV !== 'production') {
 Button$3.Group = Group$5;
 Button$3.__ANT_BUTTON = true;
 var Button$4 = Button$3;
-
-// ================== Collapse Motion ==================
-const getCollapsedHeight = () => ({
-  height: 0,
-  opacity: 0
-});
-const getRealHeight = node => {
-  const {
-    scrollHeight
-  } = node;
-  return {
-    height: scrollHeight,
-    opacity: 1
-  };
-};
-const getCurrentHeight = node => ({
-  height: node ? node.offsetHeight : 0
-});
-const skipOpacityTransition = (_, event) => (event === null || event === void 0 ? void 0 : event.deadline) === true || event.propertyName === 'height';
-const initCollapseMotion = function () {
-  let rootCls = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'ant';
-  return {
-    motionName: `${rootCls}-motion-collapse`,
-    onAppearStart: getCollapsedHeight,
-    onEnterStart: getCollapsedHeight,
-    onAppearActive: getRealHeight,
-    onEnterActive: getRealHeight,
-    onLeaveStart: getCurrentHeight,
-    onLeaveActive: getCollapsedHeight,
-    onAppearEnd: skipOpacityTransition,
-    onEnterEnd: skipOpacityTransition,
-    onLeaveEnd: skipOpacityTransition,
-    motionDeadline: 500
-  };
-};
-const getTransitionName = (rootPrefixCls, motion, transitionName) => {
-  if (transitionName !== undefined) {
-    return transitionName;
-  }
-  return `${rootPrefixCls}-${motion}`;
-};
-var initCollapseMotion$1 = initCollapseMotion;
 
 var OrderContext = /*#__PURE__*/React__namespace.createContext(null);
 
@@ -12485,36 +11860,8 @@ function isStyleSupport(styleName, styleValue) {
   return isStyleNameSupport(styleName);
 }
 
-const canUseDocElement = () => canUseDom() && window.document.documentElement;
-let flexGapSupported;
-const detectFlexGapSupported = () => {
-  if (!canUseDocElement()) {
-    return false;
-  }
-  if (flexGapSupported !== undefined) {
-    return flexGapSupported;
-  }
-  // create flex container with row-gap set
-  const flex = document.createElement('div');
-  flex.style.display = 'flex';
-  flex.style.flexDirection = 'column';
-  flex.style.rowGap = '1px';
-  // create two, elements inside it
-  flex.appendChild(document.createElement('div'));
-  flex.appendChild(document.createElement('div'));
-  // some browser may not repaint when remove nodes, so we need create a new layer to detect.
-  const container = document.createElement('div');
-  container.style.position = 'absolute';
-  container.style.zIndex = '-9999';
-  container.appendChild(flex);
-  // append to the DOM (needed to obtain scrollHeight)
-  document.body.appendChild(container);
-  flexGapSupported = flex.scrollHeight === 1; // flex container should be 1px high from the row-gap
-  document.body.removeChild(container);
-  return flexGapSupported;
-};
-
 var HOOK_MARK = 'RC_FORM_INTERNAL_HOOKS';
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 var warningFunc = function warningFunc() {
   warningOnce(false, 'Can not find FormContext. Please make sure you wrap Field under Form.');
@@ -12964,7 +12311,7 @@ var required$1 = function required(rule, value, source, errors, options, type) {
  *  @param options.messages The validation messages.
  */
 
-var whitespace = function whitespace(rule, value, source, errors, options) {
+var whitespace$1 = function whitespace(rule, value, source, errors, options) {
   if (/^\s+$/.test(value) || value === '') {
     errors.push(format$1(options.messages.whitespace, rule.fullField));
   }
@@ -13177,7 +12524,7 @@ var pattern$1 = function pattern(rule, value, source, errors, options) {
 
 var rules = {
   required: required$1,
-  whitespace: whitespace,
+  whitespace: whitespace$1,
   type: type$1,
   range: range,
   "enum": enumerable$1,
@@ -13944,6 +13291,7 @@ var defaultValidateMessages = {
 
 // Remove incorrect original ts define
 var AsyncValidator = Schema;
+
 /**
  * Replace with template.
  *   `I'm ${name}` + { name: 'bamboo' } = I'm bamboo
@@ -13972,6 +13320,7 @@ function _validateRule() {
           // https://github.com/react-component/field-form/issues/316
           // https://github.com/react-component/field-form/issues/313
           delete cloneRule.ruleIndex;
+
           // https://github.com/ant-design/ant-design/issues/40497#issuecomment-1422282378
           AsyncValidator.warning = function () {
             return void 0;
@@ -13987,6 +13336,7 @@ function _validateRule() {
               }
             };
           }
+
           // We should special handle array validate
           subRuleField = null;
           if (cloneRule && cloneRule.type === 'array' && cloneRule.defaultField) {
@@ -14055,16 +13405,19 @@ function _validateRule() {
 }
 function validateRules(namePath, value, rules, options, validateFirst, messageVariables) {
   var name = namePath.join('.');
+
   // Fill rule with context
   var filledRules = rules.map(function (currentRule, ruleIndex) {
     var originValidatorFunc = currentRule.validator;
     var cloneRule = _objectSpread2(_objectSpread2({}, currentRule), {}, {
       ruleIndex: ruleIndex
     });
+
     // Replace validator if needed
     if (originValidatorFunc) {
       cloneRule.validator = function (rule, val, callback) {
         var hasPromise = false;
+
         // Wrap callback only accept when promise not provided
         var wrappedCallback = function wrappedCallback() {
           for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -14078,9 +13431,11 @@ function validateRules(namePath, value, rules, options, validateFirst, messageVa
             }
           });
         };
+
         // Get promise
         var promise = originValidatorFunc(rule, val, wrappedCallback);
         hasPromise = promise && typeof promise.then === 'function' && typeof promise.catch === 'function';
+
         /**
          * 1. Use promise as the first priority.
          * 2. If promise not exist, use callback with warning instead
@@ -14110,6 +13465,7 @@ function validateRules(namePath, value, rules, options, validateFirst, messageVa
     }
     return -1;
   });
+
   // Do validate rules
   var summaryPromise;
   if (validateFirst === true) {
@@ -14146,6 +13502,7 @@ function validateRules(namePath, value, rules, options, validateFirst, messageVa
               break;
             case 12:
               /* eslint-enable */
+
               resolve([]);
             case 13:
             case "end":
@@ -14172,6 +13529,7 @@ function validateRules(namePath, value, rules, options, validateFirst, messageVa
       return Promise.reject(errors);
     });
   }
+
   // Internal catch error to avoid console error log.
   summaryPromise.catch(function (e) {
     return e;
@@ -14249,19 +13607,41 @@ function cloneByNamePathList(store, namePathList) {
   });
   return newStore;
 }
+
+/**
+ * Check if `namePathList` includes `namePath`.
+ * @param namePathList A list of `InternalNamePath[]`
+ * @param namePath Compare `InternalNamePath`
+ * @param partialMatch True will make `[a, b]` match `[a, b, c]`
+ */
 function containsNamePath(namePathList, namePath) {
+  var partialMatch = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
   return namePathList && namePathList.some(function (path) {
-    return matchNamePath(path, namePath);
+    return matchNamePath(namePath, path, partialMatch);
   });
 }
-function matchNamePath(namePath, changedNamePath) {
-  if (!namePath || !changedNamePath || namePath.length !== changedNamePath.length) {
+
+/**
+ * Check if `namePath` is super set or equal of `subNamePath`.
+ * @param namePath A list of `InternalNamePath[]`
+ * @param subNamePath Compare `InternalNamePath`
+ * @param partialMatch True will make `[a, b]` match `[a, b, c]`
+ */
+function matchNamePath(namePath, subNamePath) {
+  var partialMatch = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  if (!namePath || !subNamePath) {
     return false;
   }
-  return namePath.every(function (nameUnit, i) {
-    return changedNamePath[i] === nameUnit;
+  if (!partialMatch && namePath.length !== subNamePath.length) {
+    return false;
+  }
+  return subNamePath.every(function (nameUnit, i) {
+    return namePath[i] === nameUnit;
   });
 }
+
+// Like `shallowEqual`, but we not check the data which may cause re-render
+
 function isSimilar(source, target) {
   if (source === target) {
     return true;
@@ -14291,6 +13671,7 @@ function defaultGetValueFromEvent(valuePropName) {
   }
   return event;
 }
+
 /**
  * Moves an array item from one position in an array to another.
  *
@@ -14319,7 +13700,7 @@ function move(array, moveIndex, toIndex) {
   return array;
 }
 
-var _excluded$D = ["name"];
+var _excluded$E = ["name"];
 var EMPTY_ERRORS = [];
 function requireUpdate(shouldUpdate, prev, next, prevValue, nextValue, info) {
   if (typeof shouldUpdate === 'function') {
@@ -14329,6 +13710,8 @@ function requireUpdate(shouldUpdate, prev, next, prevValue, nextValue, info) {
   }
   return prevValue !== nextValue;
 }
+
+// eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
 // We use Class instead of Hooks here since it will cost much code by using Hooks.
 var Field = /*#__PURE__*/function (_React$Component) {
   _inherits(Field, _React$Component);
@@ -14338,28 +13721,29 @@ var Field = /*#__PURE__*/function (_React$Component) {
     var _this;
     _classCallCheck(this, Field);
     _this = _super.call(this, props);
+
     // Register on init
-    _this.state = {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       resetCount: 0
-    };
-    _this.cancelRegisterFunc = null;
-    _this.mounted = false;
+    });
+    _defineProperty(_assertThisInitialized(_this), "cancelRegisterFunc", null);
+    _defineProperty(_assertThisInitialized(_this), "mounted", false);
     /**
      * Follow state should not management in State since it will async update by React.
      * This makes first render of form can not get correct state value.
      */
-    _this.touched = false;
+    _defineProperty(_assertThisInitialized(_this), "touched", false);
     /**
      * Mark when touched & validated. Currently only used for `dependencies`.
      * Note that we do not think field with `initialValue` is dirty
      * but this will be by `isFieldDirty` func.
      */
-    _this.dirty = false;
-    _this.validatePromise = void 0;
-    _this.prevValidating = void 0;
-    _this.errors = EMPTY_ERRORS;
-    _this.warnings = EMPTY_ERRORS;
-    _this.cancelRegister = function () {
+    _defineProperty(_assertThisInitialized(_this), "dirty", false);
+    _defineProperty(_assertThisInitialized(_this), "validatePromise", void 0);
+    _defineProperty(_assertThisInitialized(_this), "prevValidating", void 0);
+    _defineProperty(_assertThisInitialized(_this), "errors", EMPTY_ERRORS);
+    _defineProperty(_assertThisInitialized(_this), "warnings", EMPTY_ERRORS);
+    _defineProperty(_assertThisInitialized(_this), "cancelRegister", function () {
       var _this$props = _this.props,
         preserve = _this$props.preserve,
         isListField = _this$props.isListField,
@@ -14368,17 +13752,17 @@ var Field = /*#__PURE__*/function (_React$Component) {
         _this.cancelRegisterFunc(isListField, preserve, getNamePath(name));
       }
       _this.cancelRegisterFunc = null;
-    };
+    });
     // ================================== Utils ==================================
-    _this.getNamePath = function () {
+    _defineProperty(_assertThisInitialized(_this), "getNamePath", function () {
       var _this$props2 = _this.props,
         name = _this$props2.name,
         fieldContext = _this$props2.fieldContext;
       var _fieldContext$prefixN = fieldContext.prefixName,
         prefixName = _fieldContext$prefixN === void 0 ? [] : _fieldContext$prefixN;
       return name !== undefined ? [].concat(_toConsumableArray(prefixName), _toConsumableArray(name)) : [];
-    };
-    _this.getRules = function () {
+    });
+    _defineProperty(_assertThisInitialized(_this), "getRules", function () {
       var _this$props3 = _this.props,
         _this$props3$rules = _this$props3.rules,
         rules = _this$props3$rules === void 0 ? [] : _this$props3$rules,
@@ -14389,9 +13773,10 @@ var Field = /*#__PURE__*/function (_React$Component) {
         }
         return rule;
       });
-    };
-    _this.refresh = function () {
+    });
+    _defineProperty(_assertThisInitialized(_this), "refresh", function () {
       if (!_this.mounted) return;
+
       /**
        * Clean up current node.
        */
@@ -14401,26 +13786,26 @@ var Field = /*#__PURE__*/function (_React$Component) {
           resetCount: resetCount + 1
         };
       });
-    };
+    });
     // Event should only trigger when meta changed
-    _this.metaCache = null;
-    _this.triggerMetaEvent = function (destroy) {
+    _defineProperty(_assertThisInitialized(_this), "metaCache", null);
+    _defineProperty(_assertThisInitialized(_this), "triggerMetaEvent", function (destroy) {
       var onMetaChange = _this.props.onMetaChange;
       if (onMetaChange) {
-        var meta = _objectSpread2(_objectSpread2({}, _this.getMeta()), {}, {
+        var _meta = _objectSpread2(_objectSpread2({}, _this.getMeta()), {}, {
           destroy: destroy
         });
-        if (!isEqual(_this.metaCache, meta)) {
-          onMetaChange(meta);
+        if (!isEqual(_this.metaCache, _meta)) {
+          onMetaChange(_meta);
         }
-        _this.metaCache = meta;
+        _this.metaCache = _meta;
       } else {
         _this.metaCache = null;
       }
-    };
+    });
     // ========================= Field Entity Interfaces =========================
     // Trigger by store update. Check if need update the component
-    _this.onStoreChange = function (prevStore, namePathList, info) {
+    _defineProperty(_assertThisInitialized(_this), "onStoreChange", function (prevStore, namePathList, info) {
       var _this$props4 = _this.props,
         shouldUpdate = _this$props4.shouldUpdate,
         _this$props4$dependen = _this$props4.dependencies,
@@ -14431,6 +13816,7 @@ var Field = /*#__PURE__*/function (_React$Component) {
       var prevValue = _this.getValue(prevStore);
       var curValue = _this.getValue(store);
       var namePathMatch = namePathList && containsNamePath(namePathList, namePath);
+
       // `setFieldsValue` is a quick access to update related status
       if (info.type === 'valueUpdate' && info.source === 'external' && prevValue !== curValue) {
         _this.touched = true;
@@ -14455,6 +13841,7 @@ var Field = /*#__PURE__*/function (_React$Component) {
             return;
           }
           break;
+
         /**
          * In case field with `preserve = false` nest deps like:
          * - A = 1 => show B
@@ -14471,8 +13858,8 @@ var Field = /*#__PURE__*/function (_React$Component) {
           }
         case 'setField':
           {
+            var data = info.data;
             if (namePathMatch) {
-              var data = info.data;
               if ('touched' in data) {
                 _this.touched = data.touched;
               }
@@ -14489,7 +13876,12 @@ var Field = /*#__PURE__*/function (_React$Component) {
               _this.triggerMetaEvent();
               _this.reRender();
               return;
+            } else if ('value' in data && containsNamePath(namePathList, namePath, true)) {
+              // Contains path with value should also check
+              _this.reRender();
+              return;
             }
+
             // Handle update by `setField` with `shouldUpdate`
             if (shouldUpdate && !namePath.length && requireUpdate(shouldUpdate, prevStore, store, prevValue, curValue, info)) {
               _this.reRender();
@@ -14534,8 +13926,8 @@ var Field = /*#__PURE__*/function (_React$Component) {
       if (shouldUpdate === true) {
         _this.reRender();
       }
-    };
-    _this.validateRules = function (options) {
+    });
+    _defineProperty(_assertThisInitialized(_this), "validateRules", function (options) {
       // We should fixed namePath & value to avoid developer change then by form function
       var namePath = _this.getNamePath();
       var currentValue = _this.getValue();
@@ -14543,57 +13935,85 @@ var Field = /*#__PURE__*/function (_React$Component) {
         triggerName = _ref2.triggerName,
         _ref2$validateOnly = _ref2.validateOnly,
         validateOnly = _ref2$validateOnly === void 0 ? false : _ref2$validateOnly;
+
       // Force change to async to avoid rule OOD under renderProps field
-      var rootPromise = Promise.resolve().then(function () {
-        if (!_this.mounted) {
-          return [];
-        }
-        var _this$props5 = _this.props,
-          _this$props5$validate = _this$props5.validateFirst,
-          validateFirst = _this$props5$validate === void 0 ? false : _this$props5$validate,
-          messageVariables = _this$props5.messageVariables;
-        var filteredRules = _this.getRules();
-        if (triggerName) {
-          filteredRules = filteredRules.filter(function (rule) {
-            return rule;
-          }).filter(function (rule) {
-            var validateTrigger = rule.validateTrigger;
-            if (!validateTrigger) {
-              return true;
-            }
-            var triggerList = toArray$4(validateTrigger);
-            return triggerList.includes(triggerName);
-          });
-        }
-        var promise = validateRules(namePath, currentValue, filteredRules, options, validateFirst, messageVariables);
-        promise.catch(function (e) {
-          return e;
-        }).then(function () {
-          var ruleErrors = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : EMPTY_ERRORS;
-          if (_this.validatePromise === rootPromise) {
-            var _ruleErrors$forEach;
-            _this.validatePromise = null;
-            // Get errors & warnings
-            var nextErrors = [];
-            var nextWarnings = [];
-            (_ruleErrors$forEach = ruleErrors.forEach) === null || _ruleErrors$forEach === void 0 ? void 0 : _ruleErrors$forEach.call(ruleErrors, function (_ref3) {
-              var warningOnly = _ref3.rule.warningOnly,
-                _ref3$errors = _ref3.errors,
-                errors = _ref3$errors === void 0 ? EMPTY_ERRORS : _ref3$errors;
-              if (warningOnly) {
-                nextWarnings.push.apply(nextWarnings, _toConsumableArray(errors));
-              } else {
-                nextErrors.push.apply(nextErrors, _toConsumableArray(errors));
+      var rootPromise = Promise.resolve().then( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var _this$props5, _this$props5$validate, validateFirst, messageVariables, validateDebounce, filteredRules, promise;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              if (_this.mounted) {
+                _context.next = 2;
+                break;
               }
-            });
-            _this.errors = nextErrors;
-            _this.warnings = nextWarnings;
-            _this.triggerMetaEvent();
-            _this.reRender();
+              return _context.abrupt("return", []);
+            case 2:
+              _this$props5 = _this.props, _this$props5$validate = _this$props5.validateFirst, validateFirst = _this$props5$validate === void 0 ? false : _this$props5$validate, messageVariables = _this$props5.messageVariables, validateDebounce = _this$props5.validateDebounce; // Start validate
+              filteredRules = _this.getRules();
+              if (triggerName) {
+                filteredRules = filteredRules.filter(function (rule) {
+                  return rule;
+                }).filter(function (rule) {
+                  var validateTrigger = rule.validateTrigger;
+                  if (!validateTrigger) {
+                    return true;
+                  }
+                  var triggerList = toArray$4(validateTrigger);
+                  return triggerList.includes(triggerName);
+                });
+              }
+
+              // Wait for debounce. Skip if no `triggerName` since its from `validateFields / submit`
+              if (!(validateDebounce && triggerName)) {
+                _context.next = 10;
+                break;
+              }
+              _context.next = 8;
+              return new Promise(function (resolve) {
+                setTimeout(resolve, validateDebounce);
+              });
+            case 8:
+              if (!(_this.validatePromise !== rootPromise)) {
+                _context.next = 10;
+                break;
+              }
+              return _context.abrupt("return", []);
+            case 10:
+              promise = validateRules(namePath, currentValue, filteredRules, options, validateFirst, messageVariables);
+              promise.catch(function (e) {
+                return e;
+              }).then(function () {
+                var ruleErrors = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : EMPTY_ERRORS;
+                if (_this.validatePromise === rootPromise) {
+                  var _ruleErrors$forEach;
+                  _this.validatePromise = null;
+
+                  // Get errors & warnings
+                  var nextErrors = [];
+                  var nextWarnings = [];
+                  (_ruleErrors$forEach = ruleErrors.forEach) === null || _ruleErrors$forEach === void 0 ? void 0 : _ruleErrors$forEach.call(ruleErrors, function (_ref4) {
+                    var warningOnly = _ref4.rule.warningOnly,
+                      _ref4$errors = _ref4.errors,
+                      errors = _ref4$errors === void 0 ? EMPTY_ERRORS : _ref4$errors;
+                    if (warningOnly) {
+                      nextWarnings.push.apply(nextWarnings, _toConsumableArray(errors));
+                    } else {
+                      nextErrors.push.apply(nextErrors, _toConsumableArray(errors));
+                    }
+                  });
+                  _this.errors = nextErrors;
+                  _this.warnings = nextWarnings;
+                  _this.triggerMetaEvent();
+                  _this.reRender();
+                }
+              });
+              return _context.abrupt("return", promise);
+            case 13:
+            case "end":
+              return _context.stop();
           }
-        });
-        return promise;
-      });
+        }, _callee);
+      })));
       if (validateOnly) {
         return rootPromise;
       }
@@ -14602,21 +14022,23 @@ var Field = /*#__PURE__*/function (_React$Component) {
       _this.errors = EMPTY_ERRORS;
       _this.warnings = EMPTY_ERRORS;
       _this.triggerMetaEvent();
+
       // Force trigger re-render since we need sync renderProps with new meta
       _this.reRender();
       return rootPromise;
-    };
-    _this.isFieldValidating = function () {
+    });
+    _defineProperty(_assertThisInitialized(_this), "isFieldValidating", function () {
       return !!_this.validatePromise;
-    };
-    _this.isFieldTouched = function () {
+    });
+    _defineProperty(_assertThisInitialized(_this), "isFieldTouched", function () {
       return _this.touched;
-    };
-    _this.isFieldDirty = function () {
+    });
+    _defineProperty(_assertThisInitialized(_this), "isFieldDirty", function () {
       // Touched or validate or has initialValue
       if (_this.dirty || _this.props.initialValue !== undefined) {
         return true;
       }
+
       // Form set initialValue
       var fieldContext = _this.props.fieldContext;
       var _fieldContext$getInte = fieldContext.getInternalHooks(HOOK_MARK),
@@ -14625,24 +14047,24 @@ var Field = /*#__PURE__*/function (_React$Component) {
         return true;
       }
       return false;
-    };
-    _this.getErrors = function () {
+    });
+    _defineProperty(_assertThisInitialized(_this), "getErrors", function () {
       return _this.errors;
-    };
-    _this.getWarnings = function () {
+    });
+    _defineProperty(_assertThisInitialized(_this), "getWarnings", function () {
       return _this.warnings;
-    };
-    _this.isListField = function () {
+    });
+    _defineProperty(_assertThisInitialized(_this), "isListField", function () {
       return _this.props.isListField;
-    };
-    _this.isList = function () {
+    });
+    _defineProperty(_assertThisInitialized(_this), "isList", function () {
       return _this.props.isList;
-    };
-    _this.isPreserve = function () {
+    });
+    _defineProperty(_assertThisInitialized(_this), "isPreserve", function () {
       return _this.props.preserve;
-    };
+    });
     // ============================= Child Component =============================
-    _this.getMeta = function () {
+    _defineProperty(_assertThisInitialized(_this), "getMeta", function () {
       // Make error & validating in cache to save perf
       _this.prevValidating = _this.isFieldValidating();
       var meta = {
@@ -14654,16 +14076,17 @@ var Field = /*#__PURE__*/function (_React$Component) {
         validated: _this.validatePromise === null
       };
       return meta;
-    };
+    });
     // Only return validate child node. If invalidate, will do nothing about field.
-    _this.getOnlyChild = function (children) {
+    _defineProperty(_assertThisInitialized(_this), "getOnlyChild", function (children) {
       // Support render props
       if (typeof children === 'function') {
-        var meta = _this.getMeta();
-        return _objectSpread2(_objectSpread2({}, _this.getOnlyChild(children(_this.getControlled(), meta, _this.props.fieldContext))), {}, {
+        var _meta2 = _this.getMeta();
+        return _objectSpread2(_objectSpread2({}, _this.getOnlyChild(children(_this.getControlled(), _meta2, _this.props.fieldContext))), {}, {
           isFunction: true
         });
       }
+
       // Filed element only
       var childList = toArray$5(children);
       if (childList.length !== 1 || ! /*#__PURE__*/React__namespace.isValidElement(childList[0])) {
@@ -14676,14 +14099,14 @@ var Field = /*#__PURE__*/function (_React$Component) {
         child: childList[0],
         isFunction: false
       };
-    };
+    });
     // ============================== Field Control ==============================
-    _this.getValue = function (store) {
+    _defineProperty(_assertThisInitialized(_this), "getValue", function (store) {
       var getFieldsValue = _this.props.fieldContext.getFieldsValue;
       var namePath = _this.getNamePath();
       return get(store || getFieldsValue(true), namePath);
-    };
-    _this.getControlled = function () {
+    });
+    _defineProperty(_assertThisInitialized(_this), "getControlled", function () {
       var childProps = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       var _this$props6 = _this.props,
         trigger = _this$props6.trigger,
@@ -14703,9 +14126,11 @@ var Field = /*#__PURE__*/function (_React$Component) {
       var mergedGetValueProps = getValueProps || function (val) {
         return _defineProperty({}, valuePropName, val);
       };
+
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       var originTriggerFunc = childProps[trigger];
       var control = _objectSpread2(_objectSpread2({}, childProps), mergedGetValueProps(value));
+
       // Add trigger
       control[trigger] = function () {
         // Mark as touched
@@ -14733,6 +14158,7 @@ var Field = /*#__PURE__*/function (_React$Component) {
           originTriggerFunc.apply(void 0, args);
         }
       };
+
       // Add validateTrigger
       var validateTriggerList = toArray$4(mergedValidateTrigger || []);
       validateTriggerList.forEach(function (triggerName) {
@@ -14742,6 +14168,7 @@ var Field = /*#__PURE__*/function (_React$Component) {
           if (originTrigger) {
             originTrigger.apply(void 0, arguments);
           }
+
           // Always use latest rules
           var rules = _this.props.rules;
           if (rules && rules.length) {
@@ -14756,7 +14183,7 @@ var Field = /*#__PURE__*/function (_React$Component) {
         };
       });
       return control;
-    };
+    });
     if (props.fieldContext) {
       var getInternalHooks = props.fieldContext.getInternalHooks;
       var _getInternalHooks2 = getInternalHooks(HOOK_MARK),
@@ -14772,6 +14199,7 @@ var Field = /*#__PURE__*/function (_React$Component) {
         shouldUpdate = _this$props7.shouldUpdate,
         fieldContext = _this$props7.fieldContext;
       this.mounted = true;
+
       // Register on init
       if (fieldContext) {
         var getInternalHooks = fieldContext.getInternalHooks;
@@ -14779,6 +14207,7 @@ var Field = /*#__PURE__*/function (_React$Component) {
           registerField = _getInternalHooks3.registerField;
         this.cancelRegisterFunc = registerField(this);
       }
+
       // One more render for component in case fields not ready
       if (shouldUpdate === true) {
         this.reRender();
@@ -14805,6 +14234,7 @@ var Field = /*#__PURE__*/function (_React$Component) {
       var _this$getOnlyChild = this.getOnlyChild(children),
         child = _this$getOnlyChild.child,
         isFunction = _this$getOnlyChild.isFunction;
+
       // Not need to `cloneElement` since user can handle this in render function self
       var returnChildNode;
       if (isFunction) {
@@ -14822,14 +14252,14 @@ var Field = /*#__PURE__*/function (_React$Component) {
   }]);
   return Field;
 }(React__namespace.Component);
-Field.contextType = Context;
-Field.defaultProps = {
+_defineProperty(Field, "contextType", Context);
+_defineProperty(Field, "defaultProps", {
   trigger: 'onChange',
   valuePropName: 'value'
-};
-function WrapperField(_ref5) {
-  var name = _ref5.name,
-    restProps = _objectWithoutProperties(_ref5, _excluded$D);
+});
+function WrapperField(_ref6) {
+  var name = _ref6.name,
+    restProps = _objectWithoutProperties(_ref6, _excluded$E);
   var fieldContext = React__namespace.useContext(Context);
   var listContext = React__namespace.useContext(ListContext);
   var namePath = name !== undefined ? getNamePath(name) : undefined;
@@ -14837,6 +14267,7 @@ function WrapperField(_ref5) {
   if (!restProps.isListField) {
     key = "_".concat((namePath || []).join('_'));
   }
+
   // Warning if it's a directly list field.
   // We can still support multiple level field preserve.
   if (process.env.NODE_ENV !== 'production' && restProps.preserve === false && restProps.isListField && namePath.length <= 1) {
@@ -14874,6 +14305,7 @@ function List$2(_ref) {
       prefixName: prefixName
     });
   }, [context, prefixName]);
+
   // List context
   var listContext = React__namespace.useMemo(function () {
     return {
@@ -14884,6 +14316,7 @@ function List$2(_ref) {
       }
     };
   }, [prefixName]);
+
   // User should not pass `children` as other type.
   if (typeof children !== 'function') {
     warningOnce(false, 'Form.List only accepts function as children.');
@@ -14945,6 +14378,7 @@ function List$2(_ref) {
         keyManager.keys = keyManager.keys.filter(function (_, keysIndex) {
           return !indexSet.has(keysIndex);
         });
+
         // Trigger store change
         onChange(newValue.filter(function (_, valueIndex) {
           return !indexSet.has(valueIndex);
@@ -14955,11 +14389,13 @@ function List$2(_ref) {
           return;
         }
         var newValue = getNewValue();
+
         // Do not handle out of range
         if (from < 0 || from >= newValue.length || to < 0 || to >= newValue.length) {
           return;
         }
         keyManager.keys = move(keyManager.keys, from, to);
+
         // Trigger store change
         onChange(move(newValue, from, to));
       }
@@ -15015,6 +14451,7 @@ function allPromiseFinish(promiseList) {
 }
 
 var SPLIT = '__@field_split__';
+
 /**
  * Convert name path into string to fast the fetch speed of Map.
  */
@@ -15025,13 +14462,14 @@ function normalize(namePath) {
   // Magic split
   .join(SPLIT);
 }
+
 /**
  * NameMap like a `Map` but accepts `string[]` as key.
  */
 var NameMap = /*#__PURE__*/function () {
   function NameMap() {
     _classCallCheck(this, NameMap);
-    this.kvs = new Map();
+    _defineProperty(this, "kvs", new Map());
   }
   _createClass(NameMap, [{
     key: "set",
@@ -15059,6 +14497,7 @@ var NameMap = /*#__PURE__*/function () {
     value: function _delete(key) {
       this.kvs.delete(normalize(key));
     }
+
     // Since we only use this in test, let simply realize this
   }, {
     key: "map",
@@ -15096,21 +14535,21 @@ var NameMap = /*#__PURE__*/function () {
   return NameMap;
 }();
 
-var _excluded$C = ["name"];
+var _excluded$D = ["name"];
 var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
   var _this = this;
   _classCallCheck(this, FormStore);
-  this.formHooked = false;
-  this.forceRootUpdate = void 0;
-  this.subscribable = true;
-  this.store = {};
-  this.fieldEntities = [];
-  this.initialValues = {};
-  this.callbacks = {};
-  this.validateMessages = null;
-  this.preserve = null;
-  this.lastValidatePromise = null;
-  this.getForm = function () {
+  _defineProperty(this, "formHooked", false);
+  _defineProperty(this, "forceRootUpdate", void 0);
+  _defineProperty(this, "subscribable", true);
+  _defineProperty(this, "store", {});
+  _defineProperty(this, "fieldEntities", []);
+  _defineProperty(this, "initialValues", {});
+  _defineProperty(this, "callbacks", {});
+  _defineProperty(this, "validateMessages", null);
+  _defineProperty(this, "preserve", null);
+  _defineProperty(this, "lastValidatePromise", null);
+  _defineProperty(this, "getForm", function () {
     return {
       getFieldValue: _this.getFieldValue,
       getFieldsValue: _this.getFieldsValue,
@@ -15130,9 +14569,9 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       _init: true,
       getInternalHooks: _this.getInternalHooks
     };
-  };
+  });
   // ======================== Internal Hooks ========================
-  this.getInternalHooks = function (key) {
+  _defineProperty(this, "getInternalHooks", function (key) {
     if (key === HOOK_MARK) {
       _this.formHooked = true;
       return {
@@ -15152,23 +14591,24 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
     }
     warningOnce(false, '`getInternalHooks` is internal usage. Should not call directly.');
     return null;
-  };
-  this.useSubscribe = function (subscribable) {
+  });
+  _defineProperty(this, "useSubscribe", function (subscribable) {
     _this.subscribable = subscribable;
-  };
+  });
   /**
    * Record prev Form unmount fieldEntities which config preserve false.
    * This need to be refill with initialValues instead of store value.
    */
-  this.prevWithoutPreserves = null;
+  _defineProperty(this, "prevWithoutPreserves", null);
   /**
    * First time `setInitialValues` should update store with initial value
    */
-  this.setInitialValues = function (initialValues, init) {
+  _defineProperty(this, "setInitialValues", function (initialValues, init) {
     _this.initialValues = initialValues || {};
     if (init) {
       var _this$prevWithoutPres;
       var nextStore = merge$1(initialValues, _this.store);
+
       // We will take consider prev form unmount fields.
       // When the field is not `preserve`, we need fill this with initialValues instead of store.
       // eslint-disable-next-line array-callback-return
@@ -15179,8 +14619,8 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       _this.prevWithoutPreserves = null;
       _this.updateStore(nextStore);
     }
-  };
-  this.destroyForm = function () {
+  });
+  _defineProperty(this, "destroyForm", function () {
     var prevWithoutPreserves = new NameMap();
     _this.getFieldEntities(true).forEach(function (entity) {
       if (!_this.isMergedPreserve(entity.isPreserve())) {
@@ -15188,32 +14628,33 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       }
     });
     _this.prevWithoutPreserves = prevWithoutPreserves;
-  };
-  this.getInitialValue = function (namePath) {
+  });
+  _defineProperty(this, "getInitialValue", function (namePath) {
     var initValue = get(_this.initialValues, namePath);
+
     // Not cloneDeep when without `namePath`
     return namePath.length ? merge$1(initValue) : initValue;
-  };
-  this.setCallbacks = function (callbacks) {
+  });
+  _defineProperty(this, "setCallbacks", function (callbacks) {
     _this.callbacks = callbacks;
-  };
-  this.setValidateMessages = function (validateMessages) {
+  });
+  _defineProperty(this, "setValidateMessages", function (validateMessages) {
     _this.validateMessages = validateMessages;
-  };
-  this.setPreserve = function (preserve) {
+  });
+  _defineProperty(this, "setPreserve", function (preserve) {
     _this.preserve = preserve;
-  };
+  });
   // ============================= Watch ============================
-  this.watchList = [];
-  this.registerWatch = function (callback) {
+  _defineProperty(this, "watchList", []);
+  _defineProperty(this, "registerWatch", function (callback) {
     _this.watchList.push(callback);
     return function () {
       _this.watchList = _this.watchList.filter(function (fn) {
         return fn !== callback;
       });
     };
-  };
-  this.notifyWatch = function () {
+  });
+  _defineProperty(this, "notifyWatch", function () {
     var namePath = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     // No need to cost perf when nothing need to watch
     if (_this.watchList.length) {
@@ -15223,10 +14664,10 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
         callback(values, allValues, namePath);
       });
     }
-  };
+  });
   // ========================== Dev Warning =========================
-  this.timeoutId = null;
-  this.warningUnhooked = function () {
+  _defineProperty(this, "timeoutId", null);
+  _defineProperty(this, "warningUnhooked", function () {
     if (process.env.NODE_ENV !== 'production' && !_this.timeoutId && typeof window !== 'undefined') {
       _this.timeoutId = setTimeout(function () {
         _this.timeoutId = null;
@@ -15235,17 +14676,17 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
         }
       });
     }
-  };
+  });
   // ============================ Store =============================
-  this.updateStore = function (nextStore) {
+  _defineProperty(this, "updateStore", function (nextStore) {
     _this.store = nextStore;
-  };
+  });
   // ============================ Fields ============================
   /**
    * Get registered field entities.
    * @param pure Only return field which has a `name`. Default: false
    */
-  this.getFieldEntities = function () {
+  _defineProperty(this, "getFieldEntities", function () {
     var pure = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
     if (!pure) {
       return _this.fieldEntities;
@@ -15253,8 +14694,8 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
     return _this.fieldEntities.filter(function (field) {
       return field.getNamePath().length;
     });
-  };
-  this.getFieldsMap = function () {
+  });
+  _defineProperty(this, "getFieldsMap", function () {
     var pure = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
     var cache = new NameMap();
     _this.getFieldEntities(pure).forEach(function (field) {
@@ -15262,8 +14703,8 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       cache.set(namePath, field);
     });
     return cache;
-  };
-  this.getFieldEntitiesForNamePathList = function (nameList) {
+  });
+  _defineProperty(this, "getFieldEntitiesForNamePathList", function (nameList) {
     if (!nameList) {
       return _this.getFieldEntities(true);
     }
@@ -15274,9 +14715,10 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
         INVALIDATE_NAME_PATH: getNamePath(name)
       };
     });
-  };
-  this.getFieldsValue = function (nameList, filterFunc) {
+  });
+  _defineProperty(this, "getFieldsValue", function (nameList, filterFunc) {
     _this.warningUnhooked();
+
     // Fill args
     var mergedNameList;
     var mergedFilterFunc;
@@ -15294,16 +14736,17 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
     var fieldEntities = _this.getFieldEntitiesForNamePathList(Array.isArray(mergedNameList) ? mergedNameList : null);
     var filteredNameList = [];
     fieldEntities.forEach(function (entity) {
-      var _entity$isListField;
+      var _isListField, _ref3;
       var namePath = 'INVALIDATE_NAME_PATH' in entity ? entity.INVALIDATE_NAME_PATH : entity.getNamePath();
+
       // Ignore when it's a list item and not specific the namePath,
       // since parent field is already take in count
       if (mergedStrict) {
-        var _entity$isList;
-        if ((_entity$isList = entity.isList) === null || _entity$isList === void 0 ? void 0 : _entity$isList.call(entity)) {
+        var _isList, _ref2;
+        if ((_isList = (_ref2 = entity).isList) !== null && _isList !== void 0 && _isList.call(_ref2)) {
           return;
         }
-      } else if (!mergedNameList && ((_entity$isListField = entity.isListField) === null || _entity$isListField === void 0 ? void 0 : _entity$isListField.call(entity))) {
+      } else if (!mergedNameList && (_isListField = (_ref3 = entity).isListField) !== null && _isListField !== void 0 && _isListField.call(_ref3)) {
         return;
       }
       if (!mergedFilterFunc) {
@@ -15316,13 +14759,13 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       }
     });
     return cloneByNamePathList(_this.store, filteredNameList.map(getNamePath));
-  };
-  this.getFieldValue = function (name) {
+  });
+  _defineProperty(this, "getFieldValue", function (name) {
     _this.warningUnhooked();
     var namePath = getNamePath(name);
     return get(_this.store, namePath);
-  };
-  this.getFieldsError = function (nameList) {
+  });
+  _defineProperty(this, "getFieldsError", function (nameList) {
     _this.warningUnhooked();
     var fieldEntities = _this.getFieldEntitiesForNamePathList(nameList);
     return fieldEntities.map(function (entity, index) {
@@ -15339,20 +14782,20 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
         warnings: []
       };
     });
-  };
-  this.getFieldError = function (name) {
+  });
+  _defineProperty(this, "getFieldError", function (name) {
     _this.warningUnhooked();
     var namePath = getNamePath(name);
     var fieldError = _this.getFieldsError([namePath])[0];
     return fieldError.errors;
-  };
-  this.getFieldWarning = function (name) {
+  });
+  _defineProperty(this, "getFieldWarning", function (name) {
     _this.warningUnhooked();
     var namePath = getNamePath(name);
     var fieldError = _this.getFieldsError([namePath])[0];
     return fieldError.warnings;
-  };
-  this.isFieldsTouched = function () {
+  });
+  _defineProperty(this, "isFieldsTouched", function () {
     _this.warningUnhooked();
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -15379,10 +14822,12 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
     var isFieldTouched = function isFieldTouched(field) {
       return field.isFieldTouched();
     };
+
     // ===== Will get fully compare when not config namePathList =====
     if (!namePathList) {
       return isAllFieldsTouched ? fieldEntities.every(isFieldTouched) : fieldEntities.some(isFieldTouched);
     }
+
     // Generate a nest tree for validate
     var map = new NameMap();
     namePathList.forEach(function (shortNamePath) {
@@ -15390,6 +14835,7 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
     });
     fieldEntities.forEach(function (field) {
       var fieldNamePath = field.getNamePath();
+
       // Find matched entity and put into list
       namePathList.forEach(function (shortNamePath) {
         if (shortNamePath.every(function (nameUnit, i) {
@@ -15401,21 +14847,22 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
         }
       });
     });
+
     // Check if NameMap value is touched
     var isNamePathListTouched = function isNamePathListTouched(entities) {
       return entities.some(isFieldTouched);
     };
-    var namePathListEntities = map.map(function (_ref2) {
-      var value = _ref2.value;
+    var namePathListEntities = map.map(function (_ref4) {
+      var value = _ref4.value;
       return value;
     });
     return isAllFieldsTouched ? namePathListEntities.every(isNamePathListTouched) : namePathListEntities.some(isNamePathListTouched);
-  };
-  this.isFieldTouched = function (name) {
+  });
+  _defineProperty(this, "isFieldTouched", function (name) {
     _this.warningUnhooked();
     return _this.isFieldsTouched([name]);
-  };
-  this.isFieldsValidating = function (nameList) {
+  });
+  _defineProperty(this, "isFieldsValidating", function (nameList) {
     _this.warningUnhooked();
     var fieldEntities = _this.getFieldEntities();
     if (!nameList) {
@@ -15428,16 +14875,16 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       var fieldNamePath = testField.getNamePath();
       return containsNamePath(namePathList, fieldNamePath) && testField.isFieldValidating();
     });
-  };
-  this.isFieldValidating = function (name) {
+  });
+  _defineProperty(this, "isFieldValidating", function (name) {
     _this.warningUnhooked();
     return _this.isFieldsValidating([name]);
-  };
+  });
   /**
    * Reset Field with field `initialValue` prop.
    * Can pass `entities` or `namePathList` or just nothing.
    */
-  this.resetWithFieldInitialValue = function () {
+  _defineProperty(this, "resetWithFieldInitialValue", function () {
     var info = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     // Create cache
     var cache = new NameMap();
@@ -15445,6 +14892,7 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
     fieldEntities.forEach(function (field) {
       var initialValue = field.props.initialValue;
       var namePath = field.getNamePath();
+
       // Record only if has `initialValue`
       if (initialValue !== undefined) {
         var records = cache.get(namePath) || new Set();
@@ -15455,6 +14903,7 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
         cache.set(namePath, records);
       }
     });
+
     // Reset
     var resetWithFields = function resetWithFields(entities) {
       entities.forEach(function (field) {
@@ -15499,8 +14948,8 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       requiredFieldEntities = fieldEntities;
     }
     resetWithFields(requiredFieldEntities);
-  };
-  this.resetFields = function (nameList) {
+  });
+  _defineProperty(this, "resetFields", function (nameList) {
     _this.warningUnhooked();
     var prevStore = _this.store;
     if (!nameList) {
@@ -15512,6 +14961,7 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       _this.notifyWatch();
       return;
     }
+
     // Reset by `nameList`
     var namePathList = nameList.map(getNamePath);
     namePathList.forEach(function (namePath) {
@@ -15525,16 +14975,17 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       type: 'reset'
     });
     _this.notifyWatch(namePathList);
-  };
-  this.setFields = function (fields) {
+  });
+  _defineProperty(this, "setFields", function (fields) {
     _this.warningUnhooked();
     var prevStore = _this.store;
     var namePathList = [];
     fields.forEach(function (fieldData) {
       var name = fieldData.name,
-        data = _objectWithoutProperties(fieldData, _excluded$C);
+        data = _objectWithoutProperties(fieldData, _excluded$D);
       var namePath = getNamePath(name);
       namePathList.push(namePath);
+
       // Value
       if ('value' in data) {
         _this.updateStore(set$1(_this.store, namePath, data.value));
@@ -15545,8 +14996,8 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       });
     });
     _this.notifyWatch(namePathList);
-  };
-  this.getFields = function () {
+  });
+  _defineProperty(this, "getFields", function () {
     var entities = _this.getFieldEntities(true);
     var fields = entities.map(function (field) {
       var namePath = field.getNamePath();
@@ -15561,12 +15012,12 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       return fieldData;
     });
     return fields;
-  };
+  });
   // =========================== Observer ===========================
   /**
    * This only trigger when a field is on constructor to avoid we get initialValue too late
    */
-  this.initEntityValue = function (entity) {
+  _defineProperty(this, "initEntityValue", function (entity) {
     var initialValue = entity.props.initialValue;
     if (initialValue !== undefined) {
       var namePath = entity.getNamePath();
@@ -15575,15 +15026,16 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
         _this.updateStore(set$1(_this.store, namePath, initialValue));
       }
     }
-  };
-  this.isMergedPreserve = function (fieldPreserve) {
+  });
+  _defineProperty(this, "isMergedPreserve", function (fieldPreserve) {
     var mergedPreserve = fieldPreserve !== undefined ? fieldPreserve : _this.preserve;
     return mergedPreserve !== null && mergedPreserve !== void 0 ? mergedPreserve : true;
-  };
-  this.registerField = function (entity) {
+  });
+  _defineProperty(this, "registerField", function (entity) {
     _this.fieldEntities.push(entity);
     var namePath = entity.getNamePath();
     _this.notifyWatch([namePath]);
+
     // Set initial values
     if (entity.props.initialValue !== undefined) {
       var prevStore = _this.store;
@@ -15596,12 +15048,14 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
         source: 'internal'
       });
     }
+
     // un-register field callback
     return function (isListField, preserve) {
       var subNamePath = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
       _this.fieldEntities = _this.fieldEntities.filter(function (item) {
         return item !== entity;
       });
+
       // Clean up store value if not preserve
       if (!_this.isMergedPreserve(preserve) && (!isListField || subNamePath.length > 1)) {
         var defaultValue = isListField ? undefined : _this.getInitialValue(namePath);
@@ -15613,18 +15067,20 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
         })) {
           var _prevStore = _this.store;
           _this.updateStore(set$1(_prevStore, namePath, defaultValue, true));
+
           // Notify that field is unmount
           _this.notifyObservers(_prevStore, [namePath], {
             type: 'remove'
           });
+
           // Dependencies update
           _this.triggerDependenciesUpdate(_prevStore, namePath);
         }
       }
       _this.notifyWatch([namePath]);
     };
-  };
-  this.dispatch = function (action) {
+  });
+  _defineProperty(this, "dispatch", function (action) {
     switch (action.type) {
       case 'updateValue':
         {
@@ -15644,25 +15100,25 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
         }
       // Currently we don't have other action. Do nothing.
     }
-  };
-  this.notifyObservers = function (prevStore, namePathList, info) {
+  });
+  _defineProperty(this, "notifyObservers", function (prevStore, namePathList, info) {
     if (_this.subscribable) {
       var mergedInfo = _objectSpread2(_objectSpread2({}, info), {}, {
         store: _this.getFieldsValue(true)
       });
-      _this.getFieldEntities().forEach(function (_ref3) {
-        var onStoreChange = _ref3.onStoreChange;
+      _this.getFieldEntities().forEach(function (_ref5) {
+        var onStoreChange = _ref5.onStoreChange;
         onStoreChange(prevStore, namePathList, mergedInfo);
       });
     } else {
       _this.forceRootUpdate();
     }
-  };
+  });
   /**
    * Notify dependencies children with parent update
    * We need delay to trigger validate in case Field is under render props
    */
-  this.triggerDependenciesUpdate = function (prevStore, namePath) {
+  _defineProperty(this, "triggerDependenciesUpdate", function (prevStore, namePath) {
     var childrenFields = _this.getDependencyChildrenFields(namePath);
     if (childrenFields.length) {
       _this.validateFields(childrenFields);
@@ -15672,8 +15128,8 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       relatedFields: [namePath].concat(_toConsumableArray(childrenFields))
     });
     return childrenFields;
-  };
-  this.updateValue = function (name, value) {
+  });
+  _defineProperty(this, "updateValue", function (name, value) {
     var namePath = getNamePath(name);
     var prevStore = _this.store;
     _this.updateStore(set$1(_this.store, namePath, value));
@@ -15682,8 +15138,10 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       source: 'internal'
     });
     _this.notifyWatch([namePath]);
+
     // Dependencies update
     var childrenFields = _this.triggerDependenciesUpdate(prevStore, namePath);
+
     // trigger callback function
     var onValuesChange = _this.callbacks.onValuesChange;
     if (onValuesChange) {
@@ -15691,9 +15149,9 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       onValuesChange(changedValues, _this.getFieldsValue());
     }
     _this.triggerOnFieldsChange([namePath].concat(_toConsumableArray(childrenFields)));
-  };
+  });
   // Let all child Field get update.
-  this.setFieldsValue = function (store) {
+  _defineProperty(this, "setFieldsValue", function (store) {
     _this.warningUnhooked();
     var prevStore = _this.store;
     if (store) {
@@ -15705,17 +15163,18 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
       source: 'external'
     });
     _this.notifyWatch();
-  };
-  this.setFieldValue = function (name, value) {
+  });
+  _defineProperty(this, "setFieldValue", function (name, value) {
     _this.setFields([{
       name: name,
       value: value
     }]);
-  };
-  this.getDependencyChildrenFields = function (rootNamePath) {
+  });
+  _defineProperty(this, "getDependencyChildrenFields", function (rootNamePath) {
     var children = new Set();
     var childrenFields = [];
     var dependencies2fields = new NameMap();
+
     /**
      * Generate maps
      * Can use cache to save perf if user report performance issue with this
@@ -15746,19 +15205,20 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
     };
     fillChildren(rootNamePath);
     return childrenFields;
-  };
-  this.triggerOnFieldsChange = function (namePathList, filedErrors) {
+  });
+  _defineProperty(this, "triggerOnFieldsChange", function (namePathList, filedErrors) {
     var onFieldsChange = _this.callbacks.onFieldsChange;
     if (onFieldsChange) {
       var fields = _this.getFields();
+
       /**
        * Fill errors since `fields` may be replaced by controlled fields
        */
       if (filedErrors) {
         var cache = new NameMap();
-        filedErrors.forEach(function (_ref4) {
-          var name = _ref4.name,
-            errors = _ref4.errors;
+        filedErrors.forEach(function (_ref6) {
+          var name = _ref6.name,
+            errors = _ref6.errors;
           cache.set(name, errors);
         });
         fields.forEach(function (field) {
@@ -15766,17 +15226,18 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
           field.errors = cache.get(field.name) || field.errors;
         });
       }
-      var changedFields = fields.filter(function (_ref5) {
-        var fieldName = _ref5.name;
+      var changedFields = fields.filter(function (_ref7) {
+        var fieldName = _ref7.name;
         return containsNamePath(namePathList, fieldName);
       });
       if (changedFields.length) {
         onFieldsChange(changedFields, fields);
       }
     }
-  };
+  });
   // =========================== Validate ===========================
-  this.validateFields = function (arg1, arg2) {
+  _defineProperty(this, "validateFields", function (arg1, arg2) {
+    var _options;
     _this.warningUnhooked();
     var nameList;
     var options;
@@ -15788,43 +15249,33 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
     }
     var provideNameList = !!nameList;
     var namePathList = provideNameList ? nameList.map(getNamePath) : [];
+
     // Collect result in promise list
     var promiseList = [];
+
     // We temp save the path which need trigger for `onFieldsChange`
     var TMP_SPLIT = String(Date.now());
     var validateNamePathList = new Set();
+    var recursive = (_options = options) === null || _options === void 0 ? void 0 : _options.recursive;
     _this.getFieldEntities(true).forEach(function (field) {
-      var _options;
       // Add field if not provide `nameList`
       if (!provideNameList) {
         namePathList.push(field.getNamePath());
       }
-      /**
-       * Recursive validate if configured.
-       * TODO: perf improvement @zombieJ
-       */
-      if (((_options = options) === null || _options === void 0 ? void 0 : _options.recursive) && provideNameList) {
-        var namePath = field.getNamePath();
-        if (
-        // nameList[i] === undefined 说明是以 nameList 开头的
-        // ['name'] -> ['name','list']
-        namePath.every(function (nameUnit, i) {
-          return nameList[i] === nameUnit || nameList[i] === undefined;
-        })) {
-          namePathList.push(namePath);
-        }
-      }
+
       // Skip if without rule
       if (!field.props.rules || !field.props.rules.length) {
         return;
       }
       var fieldNamePath = field.getNamePath();
       validateNamePathList.add(fieldNamePath.join(TMP_SPLIT));
+
       // Add field validate rule in to promise list
-      if (!provideNameList || containsNamePath(namePathList, fieldNamePath)) {
+      if (!provideNameList || containsNamePath(namePathList, fieldNamePath, recursive)) {
         var promise = field.validateRules(_objectSpread2({
           validateMessages: _objectSpread2(_objectSpread2({}, defaultValidateMessages), _this.validateMessages)
         }, options));
+
         // Wrap promise with field
         promiseList.push(promise.then(function () {
           return {
@@ -15836,9 +15287,9 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
           var _ruleErrors$forEach;
           var mergedErrors = [];
           var mergedWarnings = [];
-          (_ruleErrors$forEach = ruleErrors.forEach) === null || _ruleErrors$forEach === void 0 ? void 0 : _ruleErrors$forEach.call(ruleErrors, function (_ref6) {
-            var warningOnly = _ref6.rule.warningOnly,
-              errors = _ref6.errors;
+          (_ruleErrors$forEach = ruleErrors.forEach) === null || _ruleErrors$forEach === void 0 ? void 0 : _ruleErrors$forEach.call(ruleErrors, function (_ref8) {
+            var warningOnly = _ref8.rule.warningOnly,
+              errors = _ref8.errors;
             if (warningOnly) {
               mergedWarnings.push.apply(mergedWarnings, _toConsumableArray(errors));
             } else {
@@ -15862,12 +15313,13 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
     });
     var summaryPromise = allPromiseFinish(promiseList);
     _this.lastValidatePromise = summaryPromise;
+
     // Notify fields with rule that validate has finished and need update
     summaryPromise.catch(function (results) {
       return results;
     }).then(function (results) {
-      var resultNamePathList = results.map(function (_ref7) {
-        var name = _ref7.name;
+      var resultNamePathList = results.map(function (_ref9) {
+        var name = _ref9.name;
         return name;
       });
       _this.notifyObservers(_this.store, resultNamePathList, {
@@ -15890,19 +15342,21 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
         outOfDate: _this.lastValidatePromise !== summaryPromise
       });
     });
+
     // Do not throw in console
     returnPromise.catch(function (e) {
       return e;
     });
+
     // `validating` changed. Trigger `onFieldsChange`
     var triggerNamePathList = namePathList.filter(function (namePath) {
       return validateNamePathList.has(namePath.join(TMP_SPLIT));
     });
     _this.triggerOnFieldsChange(triggerNamePathList);
     return returnPromise;
-  };
+  });
   // ============================ Submit ============================
-  this.submit = function () {
+  _defineProperty(this, "submit", function () {
     _this.warningUnhooked();
     _this.validateFields().then(function (values) {
       var onFinish = _this.callbacks.onFinish;
@@ -15920,7 +15374,7 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
         onFinishFailed(e);
       }
     });
-  };
+  });
   this.forceRootUpdate = forceRootUpdate;
 });
 function useForm$2(form) {
@@ -15996,7 +15450,7 @@ var FormProvider$1 = function FormProvider(_ref) {
   }, children);
 };
 
-var _excluded$B = ["name", "initialValues", "fields", "form", "preserve", "children", "component", "validateMessages", "validateTrigger", "onValuesChange", "onFieldsChange", "onFinish", "onFinishFailed"];
+var _excluded$C = ["name", "initialValues", "fields", "form", "preserve", "children", "component", "validateMessages", "validateTrigger", "onValuesChange", "onFieldsChange", "onFinish", "onFinishFailed"];
 var Form$3 = function Form(_ref, ref) {
   var name = _ref.name,
     initialValues = _ref.initialValues,
@@ -16013,24 +15467,27 @@ var Form$3 = function Form(_ref, ref) {
     _onFieldsChange = _ref.onFieldsChange,
     _onFinish = _ref.onFinish,
     onFinishFailed = _ref.onFinishFailed,
-    restProps = _objectWithoutProperties(_ref, _excluded$B);
+    restProps = _objectWithoutProperties(_ref, _excluded$C);
   var formContext = React__namespace.useContext(FormContext$1);
+
   // We customize handle event since Context will makes all the consumer re-render:
   // https://reactjs.org/docs/context.html#contextprovider
   var _useForm = useForm$2(form),
     _useForm2 = _slicedToArray(_useForm, 1),
     formInstance = _useForm2[0];
-  var _formInstance$getInte = formInstance.getInternalHooks(HOOK_MARK),
-    useSubscribe = _formInstance$getInte.useSubscribe,
-    setInitialValues = _formInstance$getInte.setInitialValues,
-    setCallbacks = _formInstance$getInte.setCallbacks,
-    setValidateMessages = _formInstance$getInte.setValidateMessages,
-    setPreserve = _formInstance$getInte.setPreserve,
-    destroyForm = _formInstance$getInte.destroyForm;
+  var _getInternalHooks = formInstance.getInternalHooks(HOOK_MARK),
+    useSubscribe = _getInternalHooks.useSubscribe,
+    setInitialValues = _getInternalHooks.setInitialValues,
+    setCallbacks = _getInternalHooks.setCallbacks,
+    setValidateMessages = _getInternalHooks.setValidateMessages,
+    setPreserve = _getInternalHooks.setPreserve,
+    destroyForm = _getInternalHooks.destroyForm;
+
   // Pass ref with form instance
   React__namespace.useImperativeHandle(ref, function () {
     return formInstance;
   });
+
   // Register form into Context
   React__namespace.useEffect(function () {
     formContext.registerForm(name, formInstance);
@@ -16038,6 +15495,7 @@ var Form$3 = function Form(_ref, ref) {
       formContext.unregisterForm(name);
     };
   }, [formContext, formInstance, name]);
+
   // Pass props to store
   setValidateMessages(_objectSpread2(_objectSpread2({}, formContext.validateMessages), validateMessages));
   setCallbacks({
@@ -16060,6 +15518,7 @@ var Form$3 = function Form(_ref, ref) {
     onFinishFailed: onFinishFailed
   });
   setPreserve(preserve);
+
   // Set initial value, init store value when first mount
   var mountRef = React__namespace.useRef(null);
   setInitialValues(initialValues, !mountRef.current);
@@ -16071,17 +15530,20 @@ var Form$3 = function Form(_ref, ref) {
   },
   // eslint-disable-next-line react-hooks/exhaustive-deps
   []);
+
   // Prepare children by `children` type
   var childrenNode;
   var childrenRenderProps = typeof children === 'function';
   if (childrenRenderProps) {
-    var values = formInstance.getFieldsValue(true);
-    childrenNode = children(values, formInstance);
+    var _values = formInstance.getFieldsValue(true);
+    childrenNode = children(_values, formInstance);
   } else {
     childrenNode = children;
   }
+
   // Not use subscribe when using render props
   useSubscribe(!childrenRenderProps);
+
   // Listen if fields provided. We use ref to save prev data here to avoid additional render
   var prevFieldsRef = React__namespace.useRef();
   React__namespace.useEffect(function () {
@@ -16118,7 +15580,7 @@ var Form$3 = function Form(_ref, ref) {
   }), wrapperNode);
 };
 
-function stringify$1(value) {
+function stringify$2(value) {
   try {
     return JSON.stringify(value);
   } catch (err) {
@@ -16147,13 +15609,14 @@ function useWatch$1() {
     value = _useState2[0],
     setValue = _useState2[1];
   var valueStr = React.useMemo(function () {
-    return stringify$1(value);
+    return stringify$2(value);
   }, [value]);
   var valueStrRef = React.useRef(valueStr);
   valueStrRef.current = valueStr;
   var fieldContext = React.useContext(Context);
   var formInstance = form || fieldContext;
   var isValidForm = formInstance && formInstance._init;
+
   // Warning if not exist form instance
   if (process.env.NODE_ENV !== 'production') {
     warningOnce(args.length === 2 ? form ? isValidForm : true : isValidForm, 'useWatch requires a form instance since it can not auto detect from context.');
@@ -16173,16 +15636,23 @@ function useWatch$1() {
       registerWatch = _getInternalHooks.registerWatch;
     var cancelRegister = registerWatch(function (values, allValues) {
       var newValue = get(options.preserve ? allValues : values, namePathRef.current);
-      var nextValueStr = stringify$1(newValue);
+      var nextValueStr = stringify$2(newValue);
+
       // Compare stringify in case it's nest object
       if (valueStrRef.current !== nextValueStr) {
         valueStrRef.current = nextValueStr;
         setValue(newValue);
       }
     });
+
     // TODO: We can improve this perf in future
     var initialValue = get(options.preserve ? getFieldsValue(true) : getFieldsValue(), namePathRef.current);
-    setValue(initialValue);
+
+    // React 18 has the bug that will queue update twice even the value is not changed
+    // ref: https://github.com/facebook/react/issues/27213
+    if (value !== initialValue) {
+      setValue(initialValue);
+    }
     return cancelRegister;
   },
   // We do not need re-register since namePath content is the same
@@ -16213,6 +15683,9 @@ const FormItemPrefixContext = /*#__PURE__*/React__namespace.createContext({
   prefixCls: ''
 });
 const FormItemInputContext = /*#__PURE__*/React__namespace.createContext({});
+if (process.env.NODE_ENV !== 'production') {
+  FormItemInputContext.displayName = 'FormItemInputContext';
+}
 const NoFormStyle = _ref => {
   let {
     children,
@@ -16831,63 +16304,6 @@ function genPurePanel(Component, defaultPrefixCls, getDropdownCls, postProps) {
   return withPureRenderTheme(PurePanel);
 }
 
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$d = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
-
 var isMobile = (function () {
   if (typeof navigator === 'undefined' || typeof window === 'undefined') {
     return false;
@@ -16895,6 +16311,67 @@ var isMobile = (function () {
   var agent = navigator.userAgent || navigator.vendor || window.opera;
   return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(agent) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw-(n|u)|c55\/|capi|ccwa|cdm-|cell|chtm|cldc|cmd-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc-s|devi|dica|dmob|do(c|p)o|ds(12|-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(-|_)|g1 u|g560|gene|gf-5|g-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd-(m|p|t)|hei-|hi(pt|ta)|hp( i|ip)|hs-c|ht(c(-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i-(20|go|ma)|i230|iac( |-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|-[a-w])|libw|lynx|m1-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|-([1-8]|c))|phil|pire|pl(ay|uc)|pn-2|po(ck|rt|se)|prox|psio|pt-g|qa-a|qc(07|12|21|32|60|-[2-7]|i-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h-|oo|p-)|sdk\/|se(c(-|0|1)|47|mc|nd|ri)|sgh-|shar|sie(-|m)|sk-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h-|v-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl-|tdg-|tel(i|m)|tim-|t-mo|to(pl|sh)|ts(70|m-|m3|m5)|tx-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas-|your|zeto|zte-/i.test(agent === null || agent === void 0 ? void 0 : agent.substr(0, 4));
 });
+
+var TransBtn = function TransBtn(_ref) {
+  var className = _ref.className,
+    customizeIcon = _ref.customizeIcon,
+    customizeIconProps = _ref.customizeIconProps,
+    _onMouseDown = _ref.onMouseDown,
+    onClick = _ref.onClick,
+    children = _ref.children;
+  var icon;
+  if (typeof customizeIcon === 'function') {
+    icon = customizeIcon(customizeIconProps);
+  } else {
+    icon = customizeIcon;
+  }
+  return /*#__PURE__*/React__namespace.createElement("span", {
+    className: className,
+    onMouseDown: function onMouseDown(event) {
+      event.preventDefault();
+      if (_onMouseDown) {
+        _onMouseDown(event);
+      }
+    },
+    style: {
+      userSelect: 'none',
+      WebkitUserSelect: 'none'
+    },
+    unselectable: "on",
+    onClick: onClick,
+    "aria-hidden": true
+  }, icon !== undefined ? icon : /*#__PURE__*/React__namespace.createElement("span", {
+    className: classnames(className.split(/\s+/).map(function (cls) {
+      return "".concat(cls, "-icon");
+    }))
+  }, children));
+};
+
+function useAllowClear(prefixCls, onClearMouseDown, displayValues, allowClear, clearIcon) {
+  var disabled = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : false;
+  var mergedSearchValue = arguments.length > 6 ? arguments[6] : undefined;
+  var mode = arguments.length > 7 ? arguments[7] : undefined;
+  var mergedClearIcon = React__default["default"].useMemo(function () {
+    if (_typeof(allowClear) === "object") {
+      return allowClear.clearIcon;
+    }
+    if (!!clearIcon) return clearIcon;
+  }, [allowClear, clearIcon]);
+  var mergedAllowClear = React__default["default"].useMemo(function () {
+    if (!disabled && !!allowClear && (displayValues.length || mergedSearchValue) && !(mode === 'combobox' && mergedSearchValue === '')) {
+      return true;
+    }
+    return false;
+  }, [allowClear, disabled, displayValues.length, mergedSearchValue, mode]);
+  return {
+    allowClear: mergedAllowClear,
+    clearIcon: /*#__PURE__*/React__default["default"].createElement(TransBtn, {
+      className: "".concat(prefixCls, "-clear"),
+      onMouseDown: onClearMouseDown,
+      customizeIcon: mergedClearIcon
+    }, "\xD7")
+  };
+}
 
 /**
  * BaseSelect provide some parsed data into context.
@@ -16999,64 +16476,7 @@ function useSelectTriggerControl(elements, open, triggerOpen, customizedTrigger)
   }, []);
 }
 
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$c = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
-
-var _excluded$A = ["prefixCls", "invalidate", "item", "renderItem", "responsive", "responsiveDisabled", "registerSize", "itemKey", "className", "style", "children", "display", "order", "component"];
+var _excluded$B = ["prefixCls", "invalidate", "item", "renderItem", "responsive", "responsiveDisabled", "registerSize", "itemKey", "className", "style", "children", "display", "order", "component"];
 // Use shared variable to save bundle size
 var UNDEFINED = undefined;
 function InternalItem(props, ref) {
@@ -17075,7 +16495,7 @@ function InternalItem(props, ref) {
     order = props.order,
     _props$component = props.component,
     Component = _props$component === void 0 ? 'div' : _props$component,
-    restProps = _objectWithoutProperties(props, _excluded$A);
+    restProps = _objectWithoutProperties(props, _excluded$B);
   var mergedHidden = responsive && !display;
   // ================================ Effect ================================
   function internalRegisterSize(width) {
@@ -17104,7 +16524,7 @@ function InternalItem(props, ref) {
     overflowProps['aria-hidden'] = true;
   }
   var itemNode = /*#__PURE__*/React__namespace.createElement(Component, _extends$1({
-    className: classnames$c(!invalidate && prefixCls, className),
+    className: classnames(!invalidate && prefixCls, className),
     style: _objectSpread2(_objectSpread2({}, overflowStyle), style)
   }, overflowProps, restProps, {
     ref: ref
@@ -17178,7 +16598,7 @@ function useEffectState(notifyEffectUpdate, defaultValue) {
 
 var OverflowContext = /*#__PURE__*/React__default["default"].createContext(null);
 
-var _excluded$z = ["component"],
+var _excluded$A = ["component"],
   _excluded2$7 = ["className"],
   _excluded3$1 = ["className"];
 var InternalRawItem = function InternalRawItem(props, ref) {
@@ -17187,7 +16607,7 @@ var InternalRawItem = function InternalRawItem(props, ref) {
   if (!context) {
     var _props$component = props.component,
       Component = _props$component === void 0 ? 'div' : _props$component,
-      _restProps = _objectWithoutProperties(props, _excluded$z);
+      _restProps = _objectWithoutProperties(props, _excluded$A);
     return /*#__PURE__*/React__namespace.createElement(Component, _extends$1({}, _restProps, {
       ref: ref
     }));
@@ -17201,13 +16621,13 @@ var InternalRawItem = function InternalRawItem(props, ref) {
     value: null
   }, /*#__PURE__*/React__namespace.createElement(Item$5, _extends$1({
     ref: ref,
-    className: classnames$c(contextClassName, className)
+    className: classnames(contextClassName, className)
   }, restContext, restProps)));
 };
 var RawItem = /*#__PURE__*/React__namespace.forwardRef(InternalRawItem);
 RawItem.displayName = 'RawItem';
 
-var _excluded$y = ["prefixCls", "data", "renderItem", "renderRawItem", "itemKey", "itemWidth", "ssr", "style", "className", "maxCount", "renderRest", "renderRawRest", "suffix", "component", "itemComponent", "onVisibleChange"];
+var _excluded$z = ["prefixCls", "data", "renderItem", "renderRawItem", "itemKey", "itemWidth", "ssr", "style", "className", "maxCount", "renderRest", "renderRawRest", "suffix", "component", "itemComponent", "onVisibleChange"];
 var RESPONSIVE = 'responsive';
 var INVALIDATE = 'invalidate';
 function defaultRenderRest(omittedItems) {
@@ -17234,7 +16654,7 @@ function Overflow(props, ref) {
     Component = _props$component === void 0 ? 'div' : _props$component,
     itemComponent = props.itemComponent,
     onVisibleChange = props.onVisibleChange,
-    restProps = _objectWithoutProperties(props, _excluded$y);
+    restProps = _objectWithoutProperties(props, _excluded$z);
   var fullySSR = ssr === 'full';
   var notifyEffectUpdate = useBatcher();
   var _useEffectState = useEffectState(notifyEffectUpdate, null),
@@ -17459,7 +16879,7 @@ function Overflow(props, ref) {
     }, renderRawRest(omittedItems));
   }
   var overflowNode = /*#__PURE__*/React__namespace.createElement(Component, _extends$1({
-    className: classnames$c(!invalidate && prefixCls, className),
+    className: classnames(!invalidate && prefixCls, className),
     style: style,
     ref: ref
   }, restProps), mergedData.map(internalRenderItemNode), showRest ? restNode : null, suffix && /*#__PURE__*/React__namespace.createElement(Item$5, _extends$1({}, itemSharedProps, {
@@ -17484,41 +16904,6 @@ ForwardOverflow.displayName = 'Overflow';
 ForwardOverflow.Item = RawItem;
 ForwardOverflow.RESPONSIVE = RESPONSIVE;
 ForwardOverflow.INVALIDATE = INVALIDATE;
-
-var TransBtn = function TransBtn(_ref) {
-  var className = _ref.className,
-    customizeIcon = _ref.customizeIcon,
-    customizeIconProps = _ref.customizeIconProps,
-    _onMouseDown = _ref.onMouseDown,
-    onClick = _ref.onClick,
-    children = _ref.children;
-  var icon;
-  if (typeof customizeIcon === 'function') {
-    icon = customizeIcon(customizeIconProps);
-  } else {
-    icon = customizeIcon;
-  }
-  return /*#__PURE__*/React__namespace.createElement("span", {
-    className: className,
-    onMouseDown: function onMouseDown(event) {
-      event.preventDefault();
-      if (_onMouseDown) {
-        _onMouseDown(event);
-      }
-    },
-    style: {
-      userSelect: 'none',
-      WebkitUserSelect: 'none'
-    },
-    unselectable: "on",
-    onClick: onClick,
-    "aria-hidden": true
-  }, icon !== undefined ? icon : /*#__PURE__*/React__namespace.createElement("span", {
-    className: classnames$d(className.split(/\s+/).map(function (cls) {
-      return "".concat(cls, "-icon");
-    }))
-  }, children));
-};
 
 var Input$5 = function Input(_ref, ref) {
   var _inputNode2, _inputNode2$props;
@@ -17562,10 +16947,10 @@ var Input$5 = function Input(_ref, ref) {
     tabIndex: tabIndex,
     autoComplete: autoComplete || 'off',
     autoFocus: autoFocus,
-    className: classnames$d("".concat(prefixCls, "-selection-search-input"), (_inputNode2 = inputNode) === null || _inputNode2 === void 0 ? void 0 : (_inputNode2$props = _inputNode2.props) === null || _inputNode2$props === void 0 ? void 0 : _inputNode2$props.className),
+    className: classnames("".concat(prefixCls, "-selection-search-input"), (_inputNode2 = inputNode) === null || _inputNode2 === void 0 ? void 0 : (_inputNode2$props = _inputNode2.props) === null || _inputNode2$props === void 0 ? void 0 : _inputNode2$props.className),
     role: 'combobox',
     'aria-label': 'Search',
-    'aria-expanded': open,
+    'aria-expanded': open || false,
     'aria-haspopup': 'listbox',
     'aria-owns': "".concat(id, "_list"),
     'aria-autocomplete': 'list',
@@ -17729,7 +17114,7 @@ var SelectSelector = function SelectSelector(props) {
   // >>> Render Selector Node. Includes Item & Rest
   function defaultRenderSelector(item, content, itemDisabled, closable, onClose) {
     return /*#__PURE__*/React__namespace.createElement("span", {
-      className: classnames$d("".concat(selectionPrefixCls, "-item"), _defineProperty({}, "".concat(selectionPrefixCls, "-item-disabled"), itemDisabled)),
+      className: classnames("".concat(selectionPrefixCls, "-item"), _defineProperty({}, "".concat(selectionPrefixCls, "-item-disabled"), itemDisabled)),
       title: getTitle(item)
     }, /*#__PURE__*/React__namespace.createElement("span", {
       className: "".concat(selectionPrefixCls, "-item-content")
@@ -18085,63 +17470,6 @@ var Selector = function Selector(props, ref) {
 };
 var ForwardSelector = /*#__PURE__*/React__namespace.forwardRef(Selector);
 ForwardSelector.displayName = 'Selector';
-
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$b = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
 
 var TriggerContext = /*#__PURE__*/React__namespace.createContext(null);
 
@@ -18996,7 +18324,7 @@ function Arrow(props) {
   }
   return /*#__PURE__*/React__namespace.createElement("div", {
     ref: arrowRef,
-    className: classnames$b("".concat(prefixCls, "-arrow"), className),
+    className: classnames("".concat(prefixCls, "-arrow"), className),
     style: alignStyle
   }, content);
 }
@@ -19020,7 +18348,7 @@ function Mask(props) {
       style: {
         zIndex: zIndex
       },
-      className: classnames$b("".concat(prefixCls, "-mask"), className)
+      className: classnames("".concat(prefixCls, "-mask"), className)
     });
   });
 }
@@ -19044,6 +18372,7 @@ var Popup$1 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     _onVisibleChanged = props.onVisibleChanged,
     open = props.open,
     keepDom = props.keepDom,
+    fresh = props.fresh,
     onClick = props.onClick,
     mask = props.mask,
     arrow = props.arrow,
@@ -19104,9 +18433,9 @@ var Popup$1 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
 
   // Set align style
   if (ready || !open) {
-    var points = align.points,
-      _experimental = align._experimental;
-    var dynamicInset = _experimental === null || _experimental === void 0 ? void 0 : _experimental.dynamicInset;
+    var _experimental;
+    var points = align.points;
+    var dynamicInset = align.dynamicInset || ((_experimental = align._experimental) === null || _experimental === void 0 ? void 0 : _experimental.dynamicInset);
     var alignRight = dynamicInset && points[0][1] === 'r';
     var alignBottom = dynamicInset && points[0][0] === 'b';
     if (alignRight) {
@@ -19177,7 +18506,7 @@ var Popup$1 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     }), function (_ref, motionRef) {
       var motionClassName = _ref.className,
         motionStyle = _ref.style;
-      var cls = classnames$b(prefixCls, motionClassName, className);
+      var cls = classnames(prefixCls, motionClassName, className);
       return /*#__PURE__*/React__namespace.createElement("div", {
         ref: composeRef(resizeObserverRef, ref, motionRef),
         className: cls,
@@ -19198,7 +18527,7 @@ var Popup$1 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
         arrowPos: arrowPos,
         align: align
       }), /*#__PURE__*/React__namespace.createElement(PopupContent, {
-        cache: !open
+        cache: !open && !fresh
       }, childNode));
     });
   }));
@@ -19225,7 +18554,7 @@ if (process.env.NODE_ENV !== 'production') {
   TriggerWrapper.displayName = 'TriggerWrapper';
 }
 
-var _excluded$x = ["prefixCls", "children", "action", "showAction", "hideAction", "popupVisible", "defaultPopupVisible", "onPopupVisibleChange", "afterPopupVisibleChange", "mouseEnterDelay", "mouseLeaveDelay", "focusDelay", "blurDelay", "mask", "maskClosable", "getPopupContainer", "forceRender", "autoDestroy", "destroyPopupOnHide", "popup", "popupClassName", "popupStyle", "popupPlacement", "builtinPlacements", "popupAlign", "zIndex", "stretch", "getPopupClassNameFromAlign", "alignPoint", "onPopupClick", "onPopupAlign", "arrow", "popupMotion", "maskMotion", "popupTransitionName", "popupAnimation", "maskTransitionName", "maskAnimation", "className", "getTriggerDOMNode"];
+var _excluded$y = ["prefixCls", "children", "action", "showAction", "hideAction", "popupVisible", "defaultPopupVisible", "onPopupVisibleChange", "afterPopupVisibleChange", "mouseEnterDelay", "mouseLeaveDelay", "focusDelay", "blurDelay", "mask", "maskClosable", "getPopupContainer", "forceRender", "autoDestroy", "destroyPopupOnHide", "popup", "popupClassName", "popupStyle", "popupPlacement", "builtinPlacements", "popupAlign", "zIndex", "stretch", "getPopupClassNameFromAlign", "fresh", "alignPoint", "onPopupClick", "onPopupAlign", "arrow", "popupMotion", "maskMotion", "popupTransitionName", "popupAnimation", "maskTransitionName", "maskAnimation", "className", "getTriggerDOMNode"];
 
 // Removed Props List
 // Seems this can be auto
@@ -19267,6 +18596,7 @@ function generateTrigger() {
       zIndex = props.zIndex,
       stretch = props.stretch,
       getPopupClassNameFromAlign = props.getPopupClassNameFromAlign,
+      fresh = props.fresh,
       alignPoint = props.alignPoint,
       onPopupClick = props.onPopupClick,
       onPopupAlign = props.onPopupAlign,
@@ -19279,7 +18609,7 @@ function generateTrigger() {
       maskAnimation = props.maskAnimation,
       className = props.className,
       getTriggerDOMNode = props.getTriggerDOMNode,
-      restProps = _objectWithoutProperties(props, _excluded$x);
+      restProps = _objectWithoutProperties(props, _excluded$y);
     var mergedAutoDestroy = autoDestroy || destroyPopupOnHide || false;
 
     // =========================== Mobile ===========================
@@ -19460,7 +18790,7 @@ function generateTrigger() {
     }, [JSON.stringify(popupAlign)]);
     var alignedClassName = React__namespace.useMemo(function () {
       var baseClassName = getAlignPopupClassName(builtinPlacements, prefixCls, alignInfo, alignPoint);
-      return classnames$b(baseClassName, getPopupClassNameFromAlign === null || getPopupClassNameFromAlign === void 0 ? void 0 : getPopupClassNameFromAlign(alignInfo));
+      return classnames(baseClassName, getPopupClassNameFromAlign === null || getPopupClassNameFromAlign === void 0 ? void 0 : getPopupClassNameFromAlign(alignInfo));
     }, [alignInfo, getPopupClassNameFromAlign, builtinPlacements, prefixCls, alignPoint]);
     React__namespace.useImperativeHandle(ref, function () {
       return {
@@ -19620,7 +18950,7 @@ function generateTrigger() {
 
     // ========================= ClassName ==========================
     if (className) {
-      cloneProps.className = classnames$b(originChildProps.className, className);
+      cloneProps.className = classnames(originChildProps.className, className);
     }
 
     // =========================== Render ===========================
@@ -19664,7 +18994,7 @@ function generateTrigger() {
       ref: setPopupRef,
       prefixCls: prefixCls,
       popup: popup,
-      className: classnames$b(popupClassName, alignedClassName),
+      className: classnames(popupClassName, alignedClassName),
       style: popupStyle,
       target: targetEle,
       onMouseEnter: onPopupMouseEnter,
@@ -19676,7 +19006,8 @@ function generateTrigger() {
       // Open
       ,
       open: mergedOpen,
-      keepDom: inMotion
+      keepDom: inMotion,
+      fresh: fresh
       // Click
       ,
       onClick: onPopupClick
@@ -19721,7 +19052,7 @@ function generateTrigger() {
 }
 var Trigger = generateTrigger(Portal$1);
 
-var _excluded$w = ["prefixCls", "disabled", "visible", "children", "popupElement", "containerWidth", "animation", "transitionName", "dropdownStyle", "dropdownClassName", "direction", "placement", "builtinPlacements", "dropdownMatchSelectWidth", "dropdownRender", "dropdownAlign", "getPopupContainer", "empty", "getTriggerDOMNode", "onPopupVisibleChange", "onPopupMouseEnter"];
+var _excluded$x = ["prefixCls", "disabled", "visible", "children", "popupElement", "animation", "transitionName", "dropdownStyle", "dropdownClassName", "direction", "placement", "builtinPlacements", "dropdownMatchSelectWidth", "dropdownRender", "dropdownAlign", "getPopupContainer", "empty", "getTriggerDOMNode", "onPopupVisibleChange", "onPopupMouseEnter"];
 var getBuiltInPlacements$1 = function getBuiltInPlacements(dropdownMatchSelectWidth) {
   // Enable horizontal overflow auto-adjustment when a custom dropdown width is provided
   var adjustX = dropdownMatchSelectWidth === true ? 0 : 1;
@@ -19770,7 +19101,6 @@ var SelectTrigger = function SelectTrigger(props, ref) {
     var visible = props.visible,
     children = props.children,
     popupElement = props.popupElement,
-    containerWidth = props.containerWidth,
     animation = props.animation,
     transitionName = props.transitionName,
     dropdownStyle = props.dropdownStyle,
@@ -19787,7 +19117,7 @@ var SelectTrigger = function SelectTrigger(props, ref) {
     getTriggerDOMNode = props.getTriggerDOMNode,
     onPopupVisibleChange = props.onPopupVisibleChange,
     onPopupMouseEnter = props.onPopupMouseEnter,
-    restProps = _objectWithoutProperties(props, _excluded$w);
+    restProps = _objectWithoutProperties(props, _excluded$x);
   var dropdownPrefixCls = "".concat(prefixCls, "-dropdown");
   var popupNode = popupElement;
   if (dropdownRender) {
@@ -19800,6 +19130,21 @@ var SelectTrigger = function SelectTrigger(props, ref) {
   // ===================== Motion ======================
   var mergedTransitionName = animation ? "".concat(dropdownPrefixCls, "-").concat(animation) : transitionName;
 
+  // =================== Popup Width ===================
+  var isNumberPopupWidth = typeof dropdownMatchSelectWidth === 'number';
+  var stretch = React__namespace.useMemo(function () {
+    if (isNumberPopupWidth) {
+      return null;
+    }
+    return dropdownMatchSelectWidth === false ? 'minWidth' : 'width';
+  }, [dropdownMatchSelectWidth, isNumberPopupWidth]);
+  var popupStyle = dropdownStyle;
+  if (isNumberPopupWidth) {
+    popupStyle = _objectSpread2(_objectSpread2({}, popupStyle), {}, {
+      width: dropdownMatchSelectWidth
+    });
+  }
+
   // ======================= Ref =======================
   var popupRef = React__namespace.useRef(null);
   React__namespace.useImperativeHandle(ref, function () {
@@ -19809,14 +19154,6 @@ var SelectTrigger = function SelectTrigger(props, ref) {
       }
     };
   });
-  var popupStyle = _objectSpread2({
-    minWidth: containerWidth
-  }, dropdownStyle);
-  if (typeof dropdownMatchSelectWidth === 'number') {
-    popupStyle.width = dropdownMatchSelectWidth;
-  } else if (dropdownMatchSelectWidth) {
-    popupStyle.width = containerWidth;
-  }
   return /*#__PURE__*/React__namespace.createElement(Trigger, _extends$1({}, restProps, {
     showAction: onPopupVisibleChange ? ['click'] : [],
     hideAction: onPopupVisibleChange ? ['click'] : [],
@@ -19828,10 +19165,11 @@ var SelectTrigger = function SelectTrigger(props, ref) {
       ref: popupRef,
       onMouseEnter: onPopupMouseEnter
     }, popupNode),
+    stretch: stretch,
     popupAlign: dropdownAlign,
     popupVisible: visible,
     getPopupContainer: getPopupContainer,
-    popupClassName: classnames$d(dropdownClassName, _defineProperty({}, "".concat(dropdownPrefixCls, "-empty"), empty)),
+    popupClassName: classnames(dropdownClassName, _defineProperty({}, "".concat(dropdownPrefixCls, "-empty"), empty)),
     popupStyle: popupStyle,
     getTriggerDOMNode: getTriggerDOMNode,
     onPopupVisibleChange: onPopupVisibleChange
@@ -19957,33 +19295,7 @@ function getSeparatedContent(text, tokens) {
   return match ? list : null;
 }
 
-function useAllowClear(prefixCls, onClearMouseDown, displayValues, allowClear, clearIcon) {
-  var disabled = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : false;
-  var mergedSearchValue = arguments.length > 6 ? arguments[6] : undefined;
-  var mode = arguments.length > 7 ? arguments[7] : undefined;
-  var mergedClearIcon = React__default["default"].useMemo(function () {
-    if (_typeof(allowClear) === "object") {
-      return allowClear.clearIcon;
-    }
-    if (!!clearIcon) return clearIcon;
-  }, [allowClear, clearIcon]);
-  var mergedAllowClear = React__default["default"].useMemo(function () {
-    if (!disabled && !!allowClear && (displayValues.length || mergedSearchValue) && !(mode === 'combobox' && mergedSearchValue === '')) {
-      return true;
-    }
-    return false;
-  }, [allowClear, disabled, displayValues.length, mergedSearchValue, mode]);
-  return {
-    allowClear: mergedAllowClear,
-    clearIcon: /*#__PURE__*/React__default["default"].createElement(TransBtn, {
-      className: "".concat(prefixCls, "-clear"),
-      onMouseDown: onClearMouseDown,
-      customizeIcon: mergedClearIcon
-    }, "\xD7")
-  };
-}
-
-var _excluded$v = ["id", "prefixCls", "className", "showSearch", "tagRender", "direction", "omitDomProps", "displayValues", "onDisplayValuesChange", "emptyOptions", "notFoundContent", "onClear", "mode", "disabled", "loading", "getInputElement", "getRawInputElement", "open", "defaultOpen", "onDropdownVisibleChange", "activeValue", "onActiveValueChange", "activeDescendantId", "searchValue", "autoClearSearchValue", "onSearch", "onSearchSplit", "tokenSeparators", "allowClear", "suffixIcon", "clearIcon", "OptionList", "animation", "transitionName", "dropdownStyle", "dropdownClassName", "dropdownMatchSelectWidth", "dropdownRender", "dropdownAlign", "placement", "builtinPlacements", "getPopupContainer", "showAction", "onFocus", "onBlur", "onKeyUp", "onKeyDown", "onMouseDown"];
+var _excluded$w = ["id", "prefixCls", "className", "showSearch", "tagRender", "direction", "omitDomProps", "displayValues", "onDisplayValuesChange", "emptyOptions", "notFoundContent", "onClear", "mode", "disabled", "loading", "getInputElement", "getRawInputElement", "open", "defaultOpen", "onDropdownVisibleChange", "activeValue", "onActiveValueChange", "activeDescendantId", "searchValue", "autoClearSearchValue", "onSearch", "onSearchSplit", "tokenSeparators", "allowClear", "suffixIcon", "clearIcon", "OptionList", "animation", "transitionName", "dropdownStyle", "dropdownClassName", "dropdownMatchSelectWidth", "dropdownRender", "dropdownAlign", "placement", "builtinPlacements", "getPopupContainer", "showAction", "onFocus", "onBlur", "onKeyUp", "onKeyDown", "onMouseDown"];
 var DEFAULT_OMIT_PROPS = ['value', 'onChange', 'removeIcon', 'placeholder', 'autoFocus', 'maxTagCount', 'maxTagTextLength', 'maxTagPlaceholder', 'choiceTransitionName', 'onInputKeyDown', 'onPopupScroll', 'tabIndex'];
 function isMultiple(mode) {
   return mode === 'tags' || mode === 'multiple';
@@ -20040,7 +19352,7 @@ var BaseSelect = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) 
     onKeyUp = props.onKeyUp,
     onKeyDown = props.onKeyDown,
     onMouseDown = props.onMouseDown,
-    restProps = _objectWithoutProperties(props, _excluded$v);
+    restProps = _objectWithoutProperties(props, _excluded$w);
 
   // ============================== MISC ==============================
   var multiple = isMultiple(mode);
@@ -20367,27 +19679,13 @@ var BaseSelect = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) 
   };
 
   // ============================ Dropdown ============================
-  var _React$useState5 = React__namespace.useState(null),
+  var _React$useState5 = React__namespace.useState({}),
     _React$useState6 = _slicedToArray(_React$useState5, 2),
-    containerWidth = _React$useState6[0],
-    setContainerWidth = _React$useState6[1];
-  var _React$useState7 = React__namespace.useState({}),
-    _React$useState8 = _slicedToArray(_React$useState7, 2),
-    forceUpdate = _React$useState8[1];
+    forceUpdate = _React$useState6[1];
   // We need force update here since popup dom is render async
   function onPopupMouseEnter() {
     forceUpdate({});
   }
-  useLayoutEffect$1(function () {
-    if (triggerOpen) {
-      var _containerRef$current;
-      // Guaranteed width accuracy 
-      var newWidth = Math.ceil((_containerRef$current = containerRef.current) === null || _containerRef$current === void 0 ? void 0 : _containerRef$current.getBoundingClientRect().width);
-      if (containerWidth !== newWidth && !Number.isNaN(newWidth)) {
-        setContainerWidth(newWidth);
-      }
-    }
-  }, [triggerOpen]);
 
   // Used for raw custom input trigger
   var onTriggerVisibleChange;
@@ -20425,7 +19723,7 @@ var BaseSelect = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) 
   var arrowNode;
   if (showSuffixIcon) {
     arrowNode = /*#__PURE__*/React__namespace.createElement(TransBtn, {
-      className: classnames$d("".concat(prefixCls, "-arrow"), _defineProperty({}, "".concat(prefixCls, "-arrow-loading"), loading)),
+      className: classnames("".concat(prefixCls, "-arrow"), _defineProperty({}, "".concat(prefixCls, "-arrow-loading"), loading)),
       customizeIcon: suffixIcon,
       customizeIconProps: {
         loading: loading,
@@ -20458,7 +19756,7 @@ var BaseSelect = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) 
   });
 
   // ============================= Select =============================
-  var mergedClassName = classnames$d(prefixCls, className, (_classNames2 = {}, _defineProperty(_classNames2, "".concat(prefixCls, "-focused"), mockFocused), _defineProperty(_classNames2, "".concat(prefixCls, "-multiple"), multiple), _defineProperty(_classNames2, "".concat(prefixCls, "-single"), !multiple), _defineProperty(_classNames2, "".concat(prefixCls, "-allow-clear"), allowClear), _defineProperty(_classNames2, "".concat(prefixCls, "-show-arrow"), showSuffixIcon), _defineProperty(_classNames2, "".concat(prefixCls, "-disabled"), disabled), _defineProperty(_classNames2, "".concat(prefixCls, "-loading"), loading), _defineProperty(_classNames2, "".concat(prefixCls, "-open"), mergedOpen), _defineProperty(_classNames2, "".concat(prefixCls, "-customize-input"), customizeInputElement), _defineProperty(_classNames2, "".concat(prefixCls, "-show-search"), mergedShowSearch), _classNames2));
+  var mergedClassName = classnames(prefixCls, className, (_classNames2 = {}, _defineProperty(_classNames2, "".concat(prefixCls, "-focused"), mockFocused), _defineProperty(_classNames2, "".concat(prefixCls, "-multiple"), multiple), _defineProperty(_classNames2, "".concat(prefixCls, "-single"), !multiple), _defineProperty(_classNames2, "".concat(prefixCls, "-allow-clear"), allowClear), _defineProperty(_classNames2, "".concat(prefixCls, "-show-arrow"), showSuffixIcon), _defineProperty(_classNames2, "".concat(prefixCls, "-disabled"), disabled), _defineProperty(_classNames2, "".concat(prefixCls, "-loading"), loading), _defineProperty(_classNames2, "".concat(prefixCls, "-open"), mergedOpen), _defineProperty(_classNames2, "".concat(prefixCls, "-customize-input"), customizeInputElement), _defineProperty(_classNames2, "".concat(prefixCls, "-show-search"), mergedShowSearch), _classNames2));
 
   // >>> Selector
   var selectorNode = /*#__PURE__*/React__namespace.createElement(RefSelectTrigger, {
@@ -20467,7 +19765,6 @@ var BaseSelect = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) 
     prefixCls: prefixCls,
     visible: triggerOpen,
     popupElement: optionList,
-    containerWidth: containerWidth,
     animation: animation,
     transitionName: transitionName,
     dropdownStyle: dropdownStyle,
@@ -20680,7 +19977,7 @@ function useId$1(id) {
   return id || innerId;
 }
 
-var _excluded$u = ["children", "value"],
+var _excluded$v = ["children", "value"],
   _excluded2$6 = ["children"];
 function convertNodeToOption(node) {
   var _ref = node,
@@ -20688,7 +19985,7 @@ function convertNodeToOption(node) {
     _ref$props = _ref.props,
     children = _ref$props.children,
     value = _ref$props.value,
-    restProps = _objectWithoutProperties(_ref$props, _excluded$u);
+    restProps = _objectWithoutProperties(_ref$props, _excluded$v);
   return _objectSpread2({
     key: key,
     value: value !== undefined ? value : key,
@@ -20793,63 +20090,6 @@ var Option$1 = function Option() {
 };
 Option$1.isSelectOption = true;
 
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$a = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
-
 /**
  * Fill component to provided the scroll content real height.
  */
@@ -20891,7 +20131,7 @@ var Filler = /*#__PURE__*/React__namespace.forwardRef(function (_ref, ref) {
     }
   }, /*#__PURE__*/React__namespace.createElement("div", _extends$1({
     style: innerStyle,
-    className: classnames$a(_defineProperty({}, "".concat(prefixCls, "-holder-inner"), prefixCls)),
+    className: classnames(_defineProperty({}, "".concat(prefixCls, "-holder-inner"), prefixCls)),
     ref: ref
   }, innerProps), children, extra)));
 });
@@ -21101,13 +20341,13 @@ var ScrollBar = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
   }
   return /*#__PURE__*/React__namespace.createElement("div", {
     ref: scrollbarRef,
-    className: classnames$a(scrollbarPrefixCls, (_classNames = {}, _defineProperty(_classNames, "".concat(scrollbarPrefixCls, "-horizontal"), horizontal), _defineProperty(_classNames, "".concat(scrollbarPrefixCls, "-vertical"), !horizontal), _defineProperty(_classNames, "".concat(scrollbarPrefixCls, "-visible"), visible), _classNames)),
+    className: classnames(scrollbarPrefixCls, (_classNames = {}, _defineProperty(_classNames, "".concat(scrollbarPrefixCls, "-horizontal"), horizontal), _defineProperty(_classNames, "".concat(scrollbarPrefixCls, "-vertical"), !horizontal), _defineProperty(_classNames, "".concat(scrollbarPrefixCls, "-visible"), visible), _classNames)),
     style: containerStyle,
     onMouseDown: onContainerMouseDown,
     onMouseMove: delayHidden
   }, /*#__PURE__*/React__namespace.createElement("div", {
     ref: thumbRef,
-    className: classnames$a("".concat(scrollbarPrefixCls, "-thumb"), _defineProperty({}, "".concat(scrollbarPrefixCls, "-thumb-moving"), dragging)),
+    className: classnames("".concat(scrollbarPrefixCls, "-thumb"), _defineProperty({}, "".concat(scrollbarPrefixCls, "-thumb-moving"), dragging)),
     style: thumbStyle,
     onMouseDown: onThumbMouseDown
   }));
@@ -21183,8 +20423,9 @@ function useHeights(getKey, onItemAdd, onItemRemove) {
     wrapperRaf.cancel(collectRafRef.current);
   }
   function collectHeight() {
+    var sync = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
     cancelRaf();
-    collectRafRef.current = wrapperRaf(function () {
+    var doCollect = function doCollect() {
       instanceRef.current.forEach(function (element, key) {
         if (element && element.offsetParent) {
           var htmlElement = findDOMNode(element);
@@ -21198,7 +20439,12 @@ function useHeights(getKey, onItemAdd, onItemRemove) {
       setUpdatedMark(function (c) {
         return c + 1;
       });
-    });
+    };
+    if (sync) {
+      doCollect();
+    } else {
+      collectRafRef.current = wrapperRaf(doCollect);
+    }
   }
   function setInstanceRef(item, instance) {
     var key = getKey(item);
@@ -21224,8 +20470,103 @@ function useHeights(getKey, onItemAdd, onItemRemove) {
   return [setInstanceRef, collectHeight, heightsRef.current, updatedMark];
 }
 
+var MAX_TIMES = 10;
 function useScrollTo(containerRef, data, heights, itemHeight, getKey, collectHeight, syncScrollTop, triggerFlash) {
   var scrollRef = React__namespace.useRef();
+  var _React$useState = React__namespace.useState(null),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    syncState = _React$useState2[0],
+    setSyncState = _React$useState2[1];
+  // ========================== Sync Scroll ==========================
+  useLayoutEffect$1(function () {
+    if (syncState && syncState.times < MAX_TIMES) {
+      // Never reach
+      if (!containerRef.current) {
+        setSyncState(function (ori) {
+          return _objectSpread2({}, ori);
+        });
+        return;
+      }
+      collectHeight();
+      var targetAlign = syncState.targetAlign,
+        originAlign = syncState.originAlign,
+        index = syncState.index,
+        offset = syncState.offset;
+      var height = containerRef.current.clientHeight;
+      var needCollectHeight = false;
+      var newTargetAlign = targetAlign;
+      var targetTop = null;
+      // Go to next frame if height not exist
+      if (height) {
+        var mergedAlign = targetAlign || originAlign;
+        // Get top & bottom
+        var stackTop = 0;
+        var itemTop = 0;
+        var itemBottom = 0;
+        var maxLen = Math.min(data.length - 1, index);
+        for (var i = 0; i <= maxLen; i += 1) {
+          var key = getKey(data[i]);
+          itemTop = stackTop;
+          var cacheHeight = heights.get(key);
+          itemBottom = itemTop + (cacheHeight === undefined ? itemHeight : cacheHeight);
+          stackTop = itemBottom;
+        }
+        // Check if need sync height (visible range has item not record height)
+        var leftHeight = mergedAlign === 'top' ? offset : height - offset;
+        for (var _i = maxLen; _i >= 0; _i -= 1) {
+          var _key = getKey(data[_i]);
+          var _cacheHeight = heights.get(_key);
+          if (_cacheHeight === undefined) {
+            needCollectHeight = true;
+            break;
+          }
+          leftHeight -= _cacheHeight;
+          if (leftHeight <= 0) {
+            break;
+          }
+        }
+        // Scroll to
+        switch (mergedAlign) {
+          case 'top':
+            targetTop = itemTop - offset;
+            break;
+          case 'bottom':
+            targetTop = itemBottom - height + offset;
+            break;
+          default:
+            {
+              var scrollTop = containerRef.current.scrollTop;
+              var scrollBottom = scrollTop + height;
+              if (itemTop < scrollTop) {
+                newTargetAlign = 'top';
+              } else if (itemBottom > scrollBottom) {
+                newTargetAlign = 'bottom';
+              }
+            }
+        }
+        if (targetTop !== null) {
+          syncScrollTop(targetTop);
+        }
+        // One more time for sync
+        if (targetTop !== syncState.lastTop) {
+          needCollectHeight = true;
+        }
+      }
+      // Trigger next effect
+      if (needCollectHeight) {
+        setSyncState(function (ori) {
+          return _objectSpread2(_objectSpread2({}, ori), {}, {
+            times: ori.times + 1,
+            targetAlign: newTargetAlign,
+            lastTop: targetTop
+          });
+        });
+      }
+    } else if (process.env.NODE_ENV !== 'production' && (syncState === null || syncState === void 0 ? void 0 : syncState.times) === MAX_TIMES) {
+      warningOnce(false, 'Seems `scrollTo` with `rc-virtual-list` reach the max limitation. Please fire issue for us. Thanks.');
+    }
+  }, [syncState, containerRef.current]);
+  // =========================== Scroll To ===========================
   return function (arg) {
     // When not argument provided, we think dev may want to show the scrollbar
     if (arg === null || arg === undefined) {
@@ -21248,64 +20589,12 @@ function useScrollTo(containerRef, data, heights, itemHeight, getKey, collectHei
       }
       var _arg$offset = arg.offset,
         offset = _arg$offset === void 0 ? 0 : _arg$offset;
-      // We will retry 3 times in case dynamic height shaking
-      var syncScroll = function syncScroll(times, targetAlign) {
-        if (times < 0 || !containerRef.current) return;
-        var height = containerRef.current.clientHeight;
-        var needCollectHeight = false;
-        var newTargetAlign = targetAlign;
-        // Go to next frame if height not exist
-        if (height) {
-          var mergedAlign = targetAlign || align;
-          // Get top & bottom
-          var stackTop = 0;
-          var itemTop = 0;
-          var itemBottom = 0;
-          var maxLen = Math.min(data.length, index);
-          for (var i = 0; i <= maxLen; i += 1) {
-            var key = getKey(data[i]);
-            itemTop = stackTop;
-            var cacheHeight = heights.get(key);
-            itemBottom = itemTop + (cacheHeight === undefined ? itemHeight : cacheHeight);
-            stackTop = itemBottom;
-            if (i === index && cacheHeight === undefined) {
-              needCollectHeight = true;
-            }
-          }
-          // Scroll to
-          var targetTop = null;
-          switch (mergedAlign) {
-            case 'top':
-              targetTop = itemTop - offset;
-              break;
-            case 'bottom':
-              targetTop = itemBottom - height + offset;
-              break;
-            default:
-              {
-                var scrollTop = containerRef.current.scrollTop;
-                var scrollBottom = scrollTop + height;
-                if (itemTop < scrollTop) {
-                  newTargetAlign = 'top';
-                } else if (itemBottom > scrollBottom) {
-                  newTargetAlign = 'bottom';
-                }
-              }
-          }
-          if (targetTop !== null && targetTop !== containerRef.current.scrollTop) {
-            syncScrollTop(targetTop);
-          }
-        }
-        // We will retry since element may not sync height as it described
-        scrollRef.current = wrapperRaf(function () {
-          if (needCollectHeight) {
-            collectHeight();
-          }
-          syncScroll(times - 1, newTargetAlign);
-        }, 2); // Delay 2 to wait for List collect heights
-      };
-
-      syncScroll(3);
+      setSyncState({
+        times: 0,
+        index: index,
+        offset: offset,
+        originAlign: align
+      });
     }
   };
 }
@@ -21439,9 +20728,8 @@ onWheelDelta) {
   var isMouseScrollRef = React.useRef(false);
   // Scroll status sync
   var originScroll = useOriginScroll(isScrollAtTop, isScrollAtBottom);
-  function onWheelY(event) {
+  function onWheelY(event, deltaY) {
     wrapperRaf.cancel(nextFrameRef.current);
-    var deltaY = event.deltaY;
     offsetRef.current += deltaY;
     wheelValueRef.current = deltaY;
     // Do nothing when scroll at the edge, Skip check when is in scroll
@@ -21458,14 +20746,13 @@ onWheelDelta) {
       offsetRef.current = 0;
     });
   }
-  function onWheelX(event) {
-    var deltaX = event.deltaX;
+  function onWheelX(event, deltaX) {
     onWheelDelta(deltaX, true);
     if (!isFF) {
       event.preventDefault();
     }
   }
-  // Check for which direction does wheel do
+  // Check for which direction does wheel do. `sx` means `shift + wheel`
   var wheelDirectionRef = React.useRef(null);
   var wheelDirectionCleanRef = React.useRef(null);
   function onWheel(event) {
@@ -21476,16 +20763,24 @@ onWheelDelta) {
       wheelDirectionRef.current = null;
     }, 2);
     var deltaX = event.deltaX,
-      deltaY = event.deltaY;
-    var absX = Math.abs(deltaX);
-    var absY = Math.abs(deltaY);
+      deltaY = event.deltaY,
+      shiftKey = event.shiftKey;
+    var mergedDeltaX = deltaX;
+    var mergedDeltaY = deltaY;
+    if (wheelDirectionRef.current === 'sx' || !wheelDirectionRef.current && (shiftKey || false) && deltaY && !deltaX) {
+      mergedDeltaX = deltaY;
+      mergedDeltaY = 0;
+      wheelDirectionRef.current = 'sx';
+    }
+    var absX = Math.abs(mergedDeltaX);
+    var absY = Math.abs(mergedDeltaY);
     if (wheelDirectionRef.current === null) {
       wheelDirectionRef.current = horizontalScroll && absX > absY ? 'x' : 'y';
     }
-    if (wheelDirectionRef.current === 'x') {
-      onWheelX(event);
+    if (wheelDirectionRef.current === 'y') {
+      onWheelY(event, mergedDeltaY);
     } else {
-      onWheelY(event);
+      onWheelX(event, mergedDeltaX);
     }
   }
   // A patch for firefox
@@ -21614,7 +20909,7 @@ function useGetSize(mergedData, getKey, heights, itemHeight) {
   return getSize;
 }
 
-var _excluded$t = ["prefixCls", "className", "height", "itemHeight", "fullHeight", "style", "data", "children", "itemKey", "virtual", "direction", "scrollWidth", "component", "onScroll", "onVirtualScroll", "onVisibleChange", "innerProps", "extraRender"];
+var _excluded$u = ["prefixCls", "className", "height", "itemHeight", "fullHeight", "style", "data", "children", "itemKey", "virtual", "direction", "scrollWidth", "component", "onScroll", "onVirtualScroll", "onVisibleChange", "innerProps", "extraRender"];
 var EMPTY_DATA$1 = [];
 var ScrollStyle = {
   overflowY: 'auto',
@@ -21642,12 +20937,12 @@ function RawList(props, ref) {
     onVisibleChange = props.onVisibleChange,
     innerProps = props.innerProps,
     extraRender = props.extraRender,
-    restProps = _objectWithoutProperties(props, _excluded$t);
+    restProps = _objectWithoutProperties(props, _excluded$u);
   // ================================= MISC =================================
   var useVirtual = !!(virtual !== false && height && itemHeight);
-  var inVirtual = useVirtual && data && itemHeight * data.length > height;
+  var inVirtual = useVirtual && data && (itemHeight * data.length > height || !!scrollWidth);
   var isRTL = direction === 'rtl';
-  var mergedClassName = classnames$a(prefixCls, _defineProperty({}, "".concat(prefixCls, "-rtl"), isRTL), className);
+  var mergedClassName = classnames(prefixCls, _defineProperty({}, "".concat(prefixCls, "-rtl"), isRTL), className);
   var mergedData = data || EMPTY_DATA$1;
   var componentRef = React.useRef();
   var fillerInnerRef = React.useRef();
@@ -21908,13 +21203,23 @@ function RawList(props, ref) {
       componentEle.removeEventListener('MozMousePixelScroll', onMozMousePixelScroll);
     };
   }, [useVirtual]);
+  // Sync scroll left
+  useLayoutEffect$1(function () {
+    if (scrollWidth) {
+      setOffsetLeft(function (left) {
+        return keepInHorizontalRange(left);
+      });
+    }
+  }, [size.width, scrollWidth]);
   // ================================= Ref ==================================
   var delayHideScrollBar = function delayHideScrollBar() {
     var _verticalScrollBarRef, _horizontalScrollBarR;
     (_verticalScrollBarRef = verticalScrollBarRef.current) === null || _verticalScrollBarRef === void 0 ? void 0 : _verticalScrollBarRef.delayHidden();
     (_horizontalScrollBarR = horizontalScrollBarRef.current) === null || _horizontalScrollBarR === void 0 ? void 0 : _horizontalScrollBarR.delayHidden();
   };
-  var _scrollTo = useScrollTo(componentRef, mergedData, heights, itemHeight, getKey, collectHeight, syncScrollTop, delayHideScrollBar);
+  var _scrollTo = useScrollTo(componentRef, mergedData, heights, itemHeight, getKey, function () {
+    return collectHeight(true);
+  }, syncScrollTop, delayHideScrollBar);
   React__namespace.useImperativeHandle(ref, function () {
     return {
       getScrollInfo: getVirtualScrollInfo,
@@ -22034,7 +21339,7 @@ function isPlatformMac() {
   return /(mac\sos|macintosh)/i.test(navigator.appVersion);
 }
 
-var _excluded$s = ["disabled", "title", "children", "style", "className"];
+var _excluded$t = ["disabled", "title", "children", "style", "className"];
 
 // export interface OptionListProps<OptionsType extends object[]> {
 
@@ -22321,7 +21626,7 @@ var OptionList = function OptionList(_, ref) {
       var _data$title;
       var groupTitle = (_data$title = data.title) !== null && _data$title !== void 0 ? _data$title : isTitleType(label) ? label.toString() : undefined;
       return /*#__PURE__*/React__namespace.createElement("div", {
-        className: classnames$d(itemPrefixCls, "".concat(itemPrefixCls, "-group")),
+        className: classnames(itemPrefixCls, "".concat(itemPrefixCls, "-group")),
         title: groupTitle
       }, label !== undefined ? label : key);
     }
@@ -22330,13 +21635,13 @@ var OptionList = function OptionList(_, ref) {
       data.children;
       var style = data.style,
       className = data.className,
-      otherProps = _objectWithoutProperties(data, _excluded$s);
+      otherProps = _objectWithoutProperties(data, _excluded$t);
     var passedProps = omit(otherProps, omitFieldNameList);
 
     // Option
     var selected = isSelected(value);
     var optionPrefixCls = "".concat(itemPrefixCls, "-option");
-    var optionClassName = classnames$d(itemPrefixCls, optionPrefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(optionPrefixCls, "-grouped"), groupOption), _defineProperty(_classNames, "".concat(optionPrefixCls, "-active"), activeIndex === itemIndex && !disabled), _defineProperty(_classNames, "".concat(optionPrefixCls, "-disabled"), disabled), _defineProperty(_classNames, "".concat(optionPrefixCls, "-selected"), selected), _classNames));
+    var optionClassName = classnames(itemPrefixCls, optionPrefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(optionPrefixCls, "-grouped"), groupOption), _defineProperty(_classNames, "".concat(optionPrefixCls, "-active"), activeIndex === itemIndex && !disabled), _defineProperty(_classNames, "".concat(optionPrefixCls, "-disabled"), disabled), _defineProperty(_classNames, "".concat(optionPrefixCls, "-selected"), selected), _classNames));
     var mergedLabel = getLabel(item);
     var iconVisible = !menuItemSelectedIcon || typeof menuItemSelectedIcon === 'function' || selected;
 
@@ -22496,7 +21801,7 @@ function warningNullOptions(options, fieldNames) {
   }
 }
 
-var _excluded$r = ["id", "mode", "prefixCls", "backfill", "fieldNames", "inputValue", "searchValue", "onSearch", "autoClearSearchValue", "onSelect", "onDeselect", "dropdownMatchSelectWidth", "filterOption", "filterSort", "optionFilterProp", "optionLabelProp", "options", "children", "defaultActiveFirstOption", "menuItemSelectedIcon", "virtual", "direction", "listHeight", "listItemHeight", "value", "defaultValue", "labelInValue", "onChange"];
+var _excluded$s = ["id", "mode", "prefixCls", "backfill", "fieldNames", "inputValue", "searchValue", "onSearch", "autoClearSearchValue", "onSelect", "onDeselect", "dropdownMatchSelectWidth", "filterOption", "filterSort", "optionFilterProp", "optionLabelProp", "options", "children", "defaultActiveFirstOption", "menuItemSelectedIcon", "virtual", "direction", "listHeight", "listItemHeight", "value", "defaultValue", "labelInValue", "onChange"];
 var OMIT_DOM_PROPS = ['inputValue'];
 function isRawValue(value) {
   return !value || _typeof(value) !== 'object';
@@ -22535,7 +21840,7 @@ var Select$3 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     defaultValue = props.defaultValue,
     labelInValue = props.labelInValue,
     onChange = props.onChange,
-    restProps = _objectWithoutProperties(props, _excluded$r);
+    restProps = _objectWithoutProperties(props, _excluded$s);
   var mergedId = useId$1(id);
   var multiple = isMultiple(mode);
   var childrenAsData = !!(!options && children);
@@ -22962,7 +22267,7 @@ TypedSelect.Option = Option$1;
 TypedSelect.OptGroup = OptGroup;
 
 function getStatusClassNames(prefixCls, status, hasFeedback) {
-  return classnames$g({
+  return classnames({
     [`${prefixCls}-status-success`]: status === 'success',
     [`${prefixCls}-status-warning`]: status === 'warning',
     [`${prefixCls}-status-error`]: status === 'error',
@@ -22973,7 +22278,7 @@ function getStatusClassNames(prefixCls, status, hasFeedback) {
 const getMergedStatus = (contextStatus, customStatus) => customStatus || contextStatus;
 
 const Empty$2 = () => {
-  const [, token] = useToken$2();
+  const [, token] = useToken();
   const bgColor = new TinyColor(token.colorBgBase);
   // Dark Theme need more dark of this
   const themeStyle = bgColor.toHsl().l < 0.5 ? {
@@ -23031,7 +22336,7 @@ if (process.env.NODE_ENV !== 'production') {
 var DefaultEmptyImg = Empty$2;
 
 const Simple = () => {
-  const [, token] = useToken$2();
+  const [, token] = useToken();
   const {
     colorFill,
     colorFillTertiary,
@@ -23191,7 +22496,7 @@ const Empty = _a => {
     imageNode = image;
   }
   return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", Object.assign({
-    className: classnames$g(hashId, prefixCls, empty === null || empty === void 0 ? void 0 : empty.className, {
+    className: classnames(hashId, prefixCls, empty === null || empty === void 0 ? void 0 : empty.className, {
       [`${prefixCls}-normal`]: image === simpleEmptyImg,
       [`${prefixCls}-rtl`]: direction === 'rtl'
     }, className, rootClassName),
@@ -23245,20 +22550,20 @@ var DefaultRenderEmpty$1 = DefaultRenderEmpty;
 
 const genItemStyle = token => {
   const {
-    controlPaddingHorizontal,
-    controlHeight,
-    fontSize,
-    lineHeight
+    optionHeight,
+    optionFontSize,
+    optionLineHeight,
+    optionPadding
   } = token;
   return {
     position: 'relative',
     display: 'block',
-    minHeight: controlHeight,
-    padding: `${(controlHeight - fontSize * lineHeight) / 2}px ${controlPaddingHorizontal}px`,
+    minHeight: optionHeight,
+    padding: optionPadding,
     color: token.colorText,
     fontWeight: 'normal',
-    fontSize,
-    lineHeight,
+    fontSize: optionFontSize,
+    lineHeight: optionLineHeight,
     boxSizing: 'border-box'
   };
 };
@@ -23337,12 +22642,12 @@ const genSingleStyle$1 = token => {
             alignItems: 'center'
           },
           [`&-active:not(${selectItemCls}-option-disabled)`]: {
-            backgroundColor: token.controlItemBgHover
+            backgroundColor: token.optionActiveBg
           },
           [`&-selected:not(${selectItemCls}-option-disabled)`]: {
-            color: token.colorText,
-            fontWeight: token.fontWeightStrong,
-            backgroundColor: token.controlItemBgActive,
+            color: token.optionSelectedColor,
+            fontWeight: token.optionSelectedFontWeight,
+            backgroundColor: token.optionSelectedBg,
             [`${selectItemCls}-option-state`]: {
               color: token.colorPrimary
             }
@@ -23373,11 +22678,11 @@ var genDropdownStyle$1 = genSingleStyle$1;
 const FIXED_ITEM_MARGIN = 2;
 const getSelectItemStyle = _ref => {
   let {
-    controlHeightSM,
-    controlHeight,
+    multipleSelectItemHeight,
+    selectHeight,
     lineWidth: borderWidth
   } = _ref;
-  const selectItemDist = (controlHeight - controlHeightSM) / 2 - borderWidth;
+  const selectItemDist = (selectHeight - multipleSelectItemHeight) / 2 - borderWidth;
   const selectItemMargin = Math.ceil(selectItemDist / 2);
   return [selectItemDist, selectItemMargin];
 };
@@ -23387,7 +22692,7 @@ function genSizeStyle$4(token, suffix) {
     iconCls
   } = token;
   const selectOverflowPrefixCls = `${componentCls}-selection-overflow`;
-  const selectItemHeight = token.controlHeightSM;
+  const selectItemHeight = token.multipleSelectItemHeight;
   const [selectItemDist] = getSelectItemStyle(token);
   const suffixCls = suffix ? `${componentCls}-${suffix}` : '';
   return {
@@ -23416,6 +22721,7 @@ function genSizeStyle$4(token, suffix) {
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',
+        height: '100%',
         // Multiple is little different that horizontal is follow the vertical
         padding: `${selectItemDist - FIXED_ITEM_MARGIN}px ${FIXED_ITEM_MARGIN * 2}px`,
         borderRadius: token.borderRadius,
@@ -23423,7 +22729,7 @@ function genSizeStyle$4(token, suffix) {
           cursor: 'text'
         },
         [`${componentCls}-disabled&`]: {
-          background: token.colorBgContainerDisabled,
+          background: token.multipleSelectorBgDisabled,
           cursor: 'not-allowed'
         },
         '&:after': {
@@ -23443,8 +22749,8 @@ function genSizeStyle$4(token, suffix) {
       },
       // ======================== Selections ========================
       [`${componentCls}-selection-item`]: {
-        position: 'relative',
         display: 'flex',
+        alignSelf: 'center',
         flex: 'none',
         boxSizing: 'border-box',
         maxWidth: '100%',
@@ -23452,16 +22758,17 @@ function genSizeStyle$4(token, suffix) {
         marginTop: FIXED_ITEM_MARGIN,
         marginBottom: FIXED_ITEM_MARGIN,
         lineHeight: `${selectItemHeight - token.lineWidth * 2}px`,
-        background: token.colorFillSecondary,
+        background: token.multipleItemBg,
+        border: `${token.lineWidth}px ${token.lineType} ${token.multipleItemBorderColor}`,
         borderRadius: token.borderRadiusSM,
         cursor: 'default',
         transition: `font-size ${token.motionDurationSlow}, line-height ${token.motionDurationSlow}, height ${token.motionDurationSlow}`,
-        userSelect: 'none',
         marginInlineEnd: FIXED_ITEM_MARGIN * 2,
         paddingInlineStart: token.paddingXS,
         paddingInlineEnd: token.paddingXS / 2,
         [`${componentCls}-disabled&`]: {
-          color: token.colorTextDisabled,
+          color: token.multipleItemColorDisabled,
+          borderColor: token.multipleItemBorderColorDisabled,
           cursor: 'not-allowed'
         },
         // It's ok not to do this, but 24px makes bottom narrow in view should adjust
@@ -23494,6 +22801,10 @@ function genSizeStyle$4(token, suffix) {
           marginInlineStart: 0
         }
       },
+      // https://github.com/ant-design/ant-design/issues/44754
+      [`${selectOverflowPrefixCls}-item-suffix`]: {
+        height: '100%'
+      },
       [`${componentCls}-selection-search`]: {
         display: 'inline-flex',
         position: 'relative',
@@ -23524,7 +22835,7 @@ function genSizeStyle$4(token, suffix) {
         }
       },
       // ======================= Placeholder =======================
-      [`${componentCls}-selection-placeholder `]: {
+      [`${componentCls}-selection-placeholder`]: {
         position: 'absolute',
         top: '50%',
         insetInlineStart: token.inputPaddingHorizontalBase,
@@ -23540,15 +22851,15 @@ const genMultipleStyle = token => {
     componentCls
   } = token;
   const smallToken = merge(token, {
-    controlHeight: token.controlHeightSM,
-    controlHeightSM: token.controlHeightXS,
+    selectHeight: token.controlHeightSM,
+    multipleSelectItemHeight: token.controlHeightXS,
     borderRadius: token.borderRadiusSM,
     borderRadiusSM: token.borderRadiusXS
   });
   const largeToken = merge(token, {
     fontSize: token.fontSizeLG,
-    controlHeight: token.controlHeightLG,
-    controlHeightSM: token.controlHeight,
+    selectHeight: token.controlHeightLG,
+    multipleSelectItemHeight: token.multipleItemHeightLG,
     borderRadius: token.borderRadiusLG,
     borderRadiusSM: token.borderRadius
   });
@@ -23585,6 +22896,7 @@ function genSizeStyle$3(token, suffix) {
   return {
     [`${componentCls}-single${suffixCls}`]: {
       fontSize: token.fontSize,
+      height: token.controlHeight,
       // ========================= Selector =========================
       [`${componentCls}-selector`]: Object.assign(Object.assign({}, resetComponent(token)), {
         display: 'flex',
@@ -23606,14 +22918,7 @@ function genSizeStyle$3(token, suffix) {
           padding: 0,
           lineHeight: `${selectHeightWithoutBorder}px`,
           transition: `all ${token.motionDurationSlow}, visibility 0s`,
-          // Firefox inline-block position calculation is not same as Chrome & Safari. Patch this:
-          '@supports (-moz-appearance: meterbar)': {
-            lineHeight: `${selectHeightWithoutBorder}px`
-          }
-        },
-        [`${componentCls}-selection-item`]: {
-          position: 'relative',
-          userSelect: 'none'
+          alignSelf: 'center'
         },
         [`${componentCls}-selection-placeholder`]: {
           transition: 'none',
@@ -23621,8 +22926,8 @@ function genSizeStyle$3(token, suffix) {
         },
         // For common baseline align
         [['&:after', /* For '' value baseline align */
-        `${componentCls}-selection-item:after`, /* For undefined value baseline align */
-        `${componentCls}-selection-placeholder:after`].join(',')]: {
+        `${componentCls}-selection-item:empty:after`, /* For undefined value baseline align */
+        `${componentCls}-selection-placeholder:empty:after`].join(',')]: {
           display: 'inline-block',
           width: 0,
           visibility: 'hidden',
@@ -23645,7 +22950,7 @@ function genSizeStyle$3(token, suffix) {
       [`&:not(${componentCls}-customize-input)`]: {
         [`${componentCls}-selector`]: {
           width: '100%',
-          height: token.controlHeight,
+          height: '100%',
           padding: `0 ${inputPaddingHorizontalBase}px`,
           [`${componentCls}-selection-search-input`]: {
             height: selectHeightWithoutBorder
@@ -23717,7 +23022,7 @@ function genSingleStyle(token) {
   // ======================== Large ========================
   // Shared
   genSizeStyle$3(merge(token, {
-    controlHeight: token.controlHeightLG,
+    controlHeight: token.singleItemHeightLG,
     fontSize: token.fontSizeLG,
     borderRadius: token.borderRadiusLG
   }), 'lg')];
@@ -23726,11 +23031,12 @@ function genSingleStyle(token) {
 // ============================= Selector =============================
 const genSelectorStyle = token => {
   const {
-    componentCls
+    componentCls,
+    selectorBg
   } = token;
   return {
     position: 'relative',
-    backgroundColor: token.colorBgContainer,
+    backgroundColor: selectorBg,
     border: `${token.lineWidth}px ${token.lineType} ${token.colorBorder}`,
     transition: `all ${token.motionDurationMid} ${token.motionEaseInOut}`,
     input: {
@@ -23740,7 +23046,8 @@ const genSelectorStyle = token => {
       cursor: 'text',
       input: {
         cursor: 'auto',
-        color: 'inherit'
+        color: 'inherit',
+        height: '100%'
       }
     },
     [`${componentCls}-disabled&`]: {
@@ -23748,7 +23055,7 @@ const genSelectorStyle = token => {
       background: token.colorBgContainerDisabled,
       cursor: 'not-allowed',
       [`${componentCls}-multiple&`]: {
-        background: token.colorBgContainerDisabled
+        background: token.multipleSelectorBgDisabled
       },
       input: {
         cursor: 'not-allowed'
@@ -23809,6 +23116,7 @@ const getSearchInputWithoutBorderStyle = token => {
 // =============================== Base ===============================
 const genBaseStyle$3 = token => {
   const {
+    antCls,
     componentCls,
     inputPaddingHorizontalBase,
     iconCls
@@ -23823,10 +23131,17 @@ const genBaseStyle$3 = token => {
       //   ...genHoverStyle(token),
       // },
       // ======================== Selection ========================
-      [`${componentCls}-selection-item`]: Object.assign({
+      [`${componentCls}-selection-item`]: Object.assign(Object.assign({
         flex: 1,
-        fontWeight: 'normal'
-      }, textEllipsis),
+        fontWeight: 'normal',
+        position: 'relative',
+        userSelect: 'none'
+      }, textEllipsis), {
+        // https://github.com/ant-design/ant-design/issues/40421
+        [`> ${antCls}-typography`]: {
+          display: 'inline'
+        }
+      }),
       // ======================= Placeholder =======================
       [`${componentCls}-selection-placeholder`]: Object.assign(Object.assign({}, textEllipsis), {
         flex: 1,
@@ -23883,7 +23198,7 @@ const genBaseStyle$3 = token => {
         lineHeight: 1,
         textAlign: 'center',
         textTransform: 'none',
-        background: token.colorBgContainer,
+        background: token.clearBg,
         cursor: 'pointer',
         opacity: 0,
         transition: `color ${token.motionDurationMid} ease, opacity ${token.motionDurationSlow} ease`,
@@ -23975,12 +23290,51 @@ var useSelectStyle = genComponentStyleHook('Select', (token, _ref) => {
   } = _ref;
   const selectToken = merge(token, {
     rootPrefixCls,
-    inputPaddingHorizontalBase: token.paddingSM - 1
+    inputPaddingHorizontalBase: token.paddingSM - 1,
+    multipleSelectItemHeight: token.multipleItemHeight,
+    selectHeight: token.controlHeight
   });
   return [genSelectStyle(selectToken)];
-}, token => ({
-  zIndexPopup: token.zIndexPopupBase + 50
-}));
+}, token => {
+  const {
+    fontSize,
+    lineHeight,
+    controlHeight,
+    controlPaddingHorizontal,
+    zIndexPopupBase,
+    colorText,
+    fontWeightStrong,
+    controlItemBgActive,
+    controlItemBgHover,
+    colorBgContainer,
+    colorFillSecondary,
+    controlHeightLG,
+    controlHeightSM,
+    colorBgContainerDisabled,
+    colorTextDisabled
+  } = token;
+  return {
+    zIndexPopup: zIndexPopupBase + 50,
+    optionSelectedColor: colorText,
+    optionSelectedFontWeight: fontWeightStrong,
+    optionSelectedBg: controlItemBgActive,
+    optionActiveBg: controlItemBgHover,
+    optionPadding: `${(controlHeight - fontSize * lineHeight) / 2}px ${controlPaddingHorizontal}px`,
+    optionFontSize: fontSize,
+    optionLineHeight: lineHeight,
+    optionHeight: controlHeight,
+    selectorBg: colorBgContainer,
+    clearBg: colorBgContainer,
+    singleItemHeightLG: controlHeightLG,
+    multipleItemBg: colorFillSecondary,
+    multipleItemBorderColor: 'transparent',
+    multipleItemHeight: controlHeightSM,
+    multipleItemHeightLG: controlHeight,
+    multipleSelectorBgDisabled: colorBgContainerDisabled,
+    multipleItemColorDisabled: colorTextDisabled,
+    multipleItemBorderColorDisabled: 'transparent'
+  };
+});
 
 const getBuiltInPlacements = popupOverflow => {
   const htmlRegion = popupOverflow === 'scroll' ? 'scroll' : 'visible';
@@ -24073,7 +23427,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 var SearchOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(SearchOutlined);
 
-function getIcons(_ref) {
+function useIcons(_ref) {
   let {
     suffixIcon,
     clearIcon,
@@ -24089,7 +23443,8 @@ function getIcons(_ref) {
     componentName
   } = _ref;
   if (process.env.NODE_ENV !== 'production') {
-    process.env.NODE_ENV !== "production" ? warning$3(!clearIcon, componentName, '`clearIcon` is deprecated, please use `allowClear={{ clearIcon: React.ReactNode }}` instead.') : void 0;
+    const warning = devUseWarning(componentName);
+    warning.deprecated(!clearIcon, 'clearIcon', 'allowClear={{ clearIcon: React.ReactNode }}');
   }
   // Clear Icon
   const mergedClearIcon = clearIcon !== null && clearIcon !== void 0 ? clearIcon : /*#__PURE__*/React__namespace.createElement(CloseCircleFilled$1, null);
@@ -24240,7 +23595,7 @@ const InternalSelect = (_a, ref) => {
     itemIcon,
     removeIcon,
     clearIcon
-  } = getIcons(Object.assign(Object.assign({}, props), {
+  } = useIcons(Object.assign(Object.assign({}, props), {
     multiple: isMultiple,
     hasFeedback,
     feedbackIcon,
@@ -24253,7 +23608,7 @@ const InternalSelect = (_a, ref) => {
     clearIcon
   } : allowClear;
   const selectProps = omit(props, ['suffixIcon', 'itemIcon']);
-  const rcSelectRtlDropdownClassName = classnames$g(popupClassName || dropdownClassName, {
+  const rcSelectRtlDropdownClassName = classnames(popupClassName || dropdownClassName, {
     [`${prefixCls}-dropdown-${direction}`]: direction === 'rtl'
   }, rootClassName, hashId);
   const mergedSize = useSize$1(ctx => {
@@ -24263,7 +23618,7 @@ const InternalSelect = (_a, ref) => {
   // ===================== Disabled =====================
   const disabled = React__namespace.useContext(DisabledContext$1);
   const mergedDisabled = customDisabled !== null && customDisabled !== void 0 ? customDisabled : disabled;
-  const mergedClassName = classnames$g({
+  const mergedClassName = classnames({
     [`${prefixCls}-lg`]: mergedSize === 'large',
     [`${prefixCls}-sm`]: mergedSize === 'small',
     [`${prefixCls}-rtl`]: direction === 'rtl',
@@ -24280,9 +23635,10 @@ const InternalSelect = (_a, ref) => {
   const mergedBuiltinPlacements = useBuiltinPlacements(builtinPlacements, popupOverflow);
   // ====================== Warning ======================
   if (process.env.NODE_ENV !== 'production') {
-    process.env.NODE_ENV !== "production" ? warning$3(!dropdownClassName, 'Select', '`dropdownClassName` is deprecated. Please use `popupClassName` instead.') : void 0;
-    process.env.NODE_ENV !== "production" ? warning$3(dropdownMatchSelectWidth === undefined, 'Select', '`dropdownMatchSelectWidth` is deprecated. Please use `popupMatchSelectWidth` instead.') : void 0;
-    process.env.NODE_ENV !== "production" ? warning$3(!('showArrow' in props), 'Select', '`showArrow` is deprecated which will be removed in next major version. It will be a default behavior, you can hide it by setting `suffixIcon` to null.') : void 0;
+    const warning = devUseWarning('Select');
+    warning.deprecated(!dropdownClassName, 'dropdownClassName', 'popupClassName');
+    warning.deprecated(dropdownMatchSelectWidth === undefined, 'dropdownMatchSelectWidth', 'popupMatchSelectWidth');
+    process.env.NODE_ENV !== "production" ? warning(!('showArrow' in props), 'deprecated', '`showArrow` is deprecated which will be removed in next major version. It will be a default behavior, you can hide it by setting `suffixIcon` to null.') : void 0;
   }
   // ====================== Render =======================
   return wrapSSR( /*#__PURE__*/React__namespace.createElement(TypedSelect, Object.assign({
@@ -24365,7 +23721,7 @@ const validateBreakpoints = token => {
   return token;
 };
 function useResponsiveObserver() {
-  const [, token] = useToken$2();
+  const [, token] = useToken();
   const responsiveMap = getResponsiveMap(validateBreakpoints(token));
   // To avoid repeat create instance, we add `useMemo` here.
   return React__default["default"].useMemo(() => {
@@ -24529,63 +23885,6 @@ var placements$2 = {
   }
 };
 
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$9 = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
-
 function Popup(props) {
   var children = props.children,
     prefixCls = props.prefixCls,
@@ -24594,7 +23893,7 @@ function Popup(props) {
     className = props.className,
     style = props.style;
   return /*#__PURE__*/React__namespace.createElement("div", {
-    className: classnames$9("".concat(prefixCls, "-content"), className),
+    className: classnames("".concat(prefixCls, "-content"), className),
     style: style
   }, /*#__PURE__*/React__namespace.createElement("div", {
     className: "".concat(prefixCls, "-inner"),
@@ -24604,7 +23903,7 @@ function Popup(props) {
   }, typeof children === 'function' ? children() : children));
 }
 
-var _excluded$q = ["overlayClassName", "trigger", "mouseEnterDelay", "mouseLeaveDelay", "overlayStyle", "prefixCls", "children", "onVisibleChange", "afterVisibleChange", "transitionName", "animation", "motion", "placement", "align", "destroyTooltipOnHide", "defaultVisible", "getTooltipContainer", "overlayInnerStyle", "arrowContent", "overlay", "id", "showArrow"];
+var _excluded$r = ["overlayClassName", "trigger", "mouseEnterDelay", "mouseLeaveDelay", "overlayStyle", "prefixCls", "children", "onVisibleChange", "afterVisibleChange", "transitionName", "animation", "motion", "placement", "align", "destroyTooltipOnHide", "defaultVisible", "getTooltipContainer", "overlayInnerStyle", "arrowContent", "overlay", "id", "showArrow"];
 var Tooltip$2 = function Tooltip(props, ref) {
   var overlayClassName = props.overlayClassName,
     _props$trigger = props.trigger,
@@ -24636,7 +23935,7 @@ var Tooltip$2 = function Tooltip(props, ref) {
     id = props.id,
     _props$showArrow = props.showArrow,
     showArrow = _props$showArrow === void 0 ? true : _props$showArrow,
-    restProps = _objectWithoutProperties(props, _excluded$q);
+    restProps = _objectWithoutProperties(props, _excluded$r);
   var triggerRef = React.useRef(null);
   React.useImperativeHandle(ref, function () {
     return triggerRef.current;
@@ -25002,143 +24301,6 @@ function getPlacements(config) {
   return placementMap;
 }
 
-const getDesignToken = config => {
-  const theme = (config === null || config === void 0 ? void 0 : config.algorithm) ? createTheme(config.algorithm) : createTheme(derivative$2);
-  const mergedToken = Object.assign(Object.assign({}, seedToken$1), config === null || config === void 0 ? void 0 : config.token);
-  return getComputedToken$1(mergedToken, {
-    override: config === null || config === void 0 ? void 0 : config.token
-  }, theme, formatToken);
-};
-var getDesignToken$1 = getDesignToken;
-
-function genSizeMapToken(token) {
-  const {
-    sizeUnit,
-    sizeStep
-  } = token;
-  const compactSizeStep = sizeStep - 2;
-  return {
-    sizeXXL: sizeUnit * (compactSizeStep + 10),
-    sizeXL: sizeUnit * (compactSizeStep + 6),
-    sizeLG: sizeUnit * (compactSizeStep + 2),
-    sizeMD: sizeUnit * (compactSizeStep + 2),
-    sizeMS: sizeUnit * (compactSizeStep + 1),
-    size: sizeUnit * compactSizeStep,
-    sizeSM: sizeUnit * compactSizeStep,
-    sizeXS: sizeUnit * (compactSizeStep - 1),
-    sizeXXS: sizeUnit * (compactSizeStep - 1)
-  };
-}
-
-const derivative$1 = (token, mapToken) => {
-  const mergedMapToken = mapToken !== null && mapToken !== void 0 ? mapToken : derivative$2(token);
-  const fontSize = mergedMapToken.fontSizeSM; // Smaller size font-size as base
-  const controlHeight = mergedMapToken.controlHeight - 4;
-  return Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, mergedMapToken), genSizeMapToken(mapToken !== null && mapToken !== void 0 ? mapToken : token)), genFontMapToken$1(fontSize)), {
-    // controlHeight
-    controlHeight
-  }), genControlHeight$1(Object.assign(Object.assign({}, mergedMapToken), {
-    controlHeight
-  })));
-};
-var compactAlgorithm = derivative$1;
-
-const getAlphaColor = (baseColor, alpha) => new TinyColor(baseColor).setAlpha(alpha).toRgbString();
-const getSolidColor = (baseColor, brightness) => {
-  const instance = new TinyColor(baseColor);
-  return instance.lighten(brightness).toHexString();
-};
-
-const generateColorPalettes = baseColor => {
-  const colors = generate$1(baseColor, {
-    theme: 'dark'
-  });
-  return {
-    1: colors[0],
-    2: colors[1],
-    3: colors[2],
-    4: colors[3],
-    5: colors[6],
-    6: colors[5],
-    7: colors[4],
-    8: colors[6],
-    9: colors[5],
-    10: colors[4]
-    // 8: colors[9],
-    // 9: colors[8],
-    // 10: colors[7],
-  };
-};
-
-const generateNeutralColorPalettes = (bgBaseColor, textBaseColor) => {
-  const colorBgBase = bgBaseColor || '#000';
-  const colorTextBase = textBaseColor || '#fff';
-  return {
-    colorBgBase,
-    colorTextBase,
-    colorText: getAlphaColor(colorTextBase, 0.85),
-    colorTextSecondary: getAlphaColor(colorTextBase, 0.65),
-    colorTextTertiary: getAlphaColor(colorTextBase, 0.45),
-    colorTextQuaternary: getAlphaColor(colorTextBase, 0.25),
-    colorFill: getAlphaColor(colorTextBase, 0.18),
-    colorFillSecondary: getAlphaColor(colorTextBase, 0.12),
-    colorFillTertiary: getAlphaColor(colorTextBase, 0.08),
-    colorFillQuaternary: getAlphaColor(colorTextBase, 0.04),
-    colorBgElevated: getSolidColor(colorBgBase, 12),
-    colorBgContainer: getSolidColor(colorBgBase, 8),
-    colorBgLayout: getSolidColor(colorBgBase, 0),
-    colorBgSpotlight: getSolidColor(colorBgBase, 26),
-    colorBorder: getSolidColor(colorBgBase, 26),
-    colorBorderSecondary: getSolidColor(colorBgBase, 19)
-  };
-};
-
-const derivative = (token, mapToken) => {
-  const colorPalettes = Object.keys(defaultPresetColors).map(colorKey => {
-    const colors = generate$1(token[colorKey], {
-      theme: 'dark'
-    });
-    return new Array(10).fill(1).reduce((prev, _, i) => {
-      prev[`${colorKey}-${i + 1}`] = colors[i];
-      prev[`${colorKey}${i + 1}`] = colors[i];
-      return prev;
-    }, {});
-  }).reduce((prev, cur) => {
-    prev = Object.assign(Object.assign({}, prev), cur);
-    return prev;
-  }, {});
-  const mergedMapToken = mapToken !== null && mapToken !== void 0 ? mapToken : derivative$2(token);
-  return Object.assign(Object.assign(Object.assign({}, mergedMapToken), colorPalettes), genColorMapToken(token, {
-    generateColorPalettes,
-    generateNeutralColorPalettes
-  }));
-};
-var darkAlgorithm = derivative;
-
-// ZombieJ: We export as object to user but array in internal.
-// This is used to minimize the bundle size for antd package but safe to refactor as object also.
-// Please do not export internal `useToken` directly to avoid something export unexpected.
-/** Get current context Design Token. Will be different if you are using nest theme config. */
-function useToken$1() {
-  const [theme, token, hashId] = useToken$2();
-  return {
-    theme,
-    token,
-    hashId
-  };
-}
-var theme = {
-  /** @private Test Usage. Do not use in production. */
-  defaultConfig,
-  /** Default seedToken */
-  defaultSeed: defaultConfig.token,
-  useToken: useToken$1,
-  defaultAlgorithm: derivative$2,
-  darkAlgorithm,
-  compactAlgorithm,
-  getDesignToken: getDesignToken$1
-};
-
 const genTooltipStyle = token => {
   const {
     componentCls,
@@ -25282,7 +24444,7 @@ function isPresetColor(color) {
 /* eslint-disable import/prefer-default-export */
 function parseColor(prefixCls, color) {
   const isInternalColor = isPresetColor(color);
-  const className = classnames$g({
+  const className = classnames({
     [`${prefixCls}-${color}`]: color && isInternalColor
   });
   const overlayStyle = {};
@@ -25318,7 +24480,7 @@ const PurePanel$1 = props => {
   const colorInfo = parseColor(prefixCls, color);
   const arrowContentStyle = colorInfo.arrowStyle;
   const formattedOverlayInnerStyle = Object.assign(Object.assign({}, overlayInnerStyle), colorInfo.overlayStyle);
-  const cls = classnames$g(hashId, prefixCls, `${prefixCls}-pure`, `${prefixCls}-placement-${placement}`, className, colorInfo.className);
+  const cls = classnames(hashId, prefixCls, `${prefixCls}-pure`, `${prefixCls}-placement-${placement}`, className, colorInfo.className);
   return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", {
     className: cls,
     style: arrowContentStyle
@@ -25340,9 +24502,6 @@ var __rest$G = undefined && undefined.__rest || function (s, e) {
   }
   return t;
 };
-const {
-  useToken
-} = theme;
 const splitObject = (obj, keys) => {
   const picked = {};
   const omitted = Object.assign({}, obj);
@@ -25384,7 +24543,7 @@ function getDisabledCompatibleChildren(element, prefixCls) {
     });
     return /*#__PURE__*/React__namespace.createElement("span", {
       style: spanStyle,
-      className: classnames$g(element.props.className, `${prefixCls}-disabled-compatible-wrapper`)
+      className: classnames(element.props.className, `${prefixCls}-disabled-compatible-wrapper`)
     }, child);
   }
   return element;
@@ -25410,15 +24569,14 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
     autoAdjustOverflow = true
   } = props;
   const mergedShowArrow = !!arrow;
-  const {
-    token
-  } = useToken();
+  const [, token] = useToken();
   const {
     getPopupContainer: getContextPopupContainer,
     getPrefixCls,
     direction
   } = React__namespace.useContext(ConfigContext);
   // ============================== Ref ===============================
+  const warning = devUseWarning('Tooltip');
   const tooltipRef = React__namespace.useRef(null);
   const forceAlign = () => {
     var _a;
@@ -25427,7 +24585,7 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   React__namespace.useImperativeHandle(ref, () => ({
     forceAlign,
     forcePopupAlign: () => {
-      process.env.NODE_ENV !== "production" ? warning$3(false, 'Tooltip', '`forcePopupAlign` is align to `forceAlign` instead.') : void 0;
+      warning.deprecated(false, 'forcePopupAlign', 'forceAlign');
       forceAlign();
     }
   }));
@@ -25435,10 +24593,10 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   if (process.env.NODE_ENV !== 'production') {
     [['visible', 'open'], ['defaultVisible', 'defaultOpen'], ['onVisibleChange', 'onOpenChange'], ['afterVisibleChange', 'afterOpenChange'], ['arrowPointAtCenter', 'arrow={{ pointAtCenter: true }}']].forEach(_ref => {
       let [deprecatedName, newName] = _ref;
-      process.env.NODE_ENV !== "production" ? warning$3(!(deprecatedName in props), 'Tooltip', `\`${deprecatedName}\` is deprecated, please use \`${newName}\` instead.`) : void 0;
+      warning.deprecated(!(deprecatedName in props), deprecatedName, newName);
     });
-    process.env.NODE_ENV !== "production" ? warning$3(!destroyTooltipOnHide || typeof destroyTooltipOnHide === 'boolean', 'Tooltip', '`destroyTooltipOnHide` no need config `keepParent` anymore. Please use `boolean` value directly.') : void 0;
-    process.env.NODE_ENV !== "production" ? warning$3(!arrow || typeof arrow === 'boolean' || !('arrowPointAtCenter' in arrow), 'Tooltip', '`arrowPointAtCenter` in `arrow` is deprecated, please use `pointAtCenter` instead.') : void 0;
+    process.env.NODE_ENV !== "production" ? warning(!destroyTooltipOnHide || typeof destroyTooltipOnHide === 'boolean', 'usage', '`destroyTooltipOnHide` no need config `keepParent` anymore. Please use `boolean` value directly.') : void 0;
+    process.env.NODE_ENV !== "production" ? warning(!arrow || typeof arrow === 'boolean' || !('arrowPointAtCenter' in arrow), 'deprecated', '`arrowPointAtCenter` in `arrow` is deprecated. Please use `pointAtCenter` instead.') : void 0;
   }
   // ============================== Open ==============================
   const [open, setOpen] = useMergedState(false, {
@@ -25496,14 +24654,14 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   // ============================= Render =============================
   const child = getDisabledCompatibleChildren(isValidElement(children) && !isFragment(children) ? children : /*#__PURE__*/React__namespace.createElement("span", null, children), prefixCls);
   const childProps = child.props;
-  const childCls = !childProps.className || typeof childProps.className === 'string' ? classnames$g(childProps.className, openClassName || `${prefixCls}-open`) : childProps.className;
+  const childCls = !childProps.className || typeof childProps.className === 'string' ? classnames(childProps.className, openClassName || `${prefixCls}-open`) : childProps.className;
   // Style
   const [wrapSSR, hashId] = useStyle$h(prefixCls, !injectFromPopover);
   // Color
   const colorInfo = parseColor(prefixCls, color);
   const arrowContentStyle = colorInfo.arrowStyle;
   const formattedOverlayInnerStyle = Object.assign(Object.assign({}, overlayInnerStyle), colorInfo.overlayStyle);
-  const customOverlayClassName = classnames$g(overlayClassName, {
+  const customOverlayClassName = classnames(overlayClassName, {
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, colorInfo.className, rootClassName, hashId);
   return wrapSSR( /*#__PURE__*/React__namespace.createElement(Tooltip$3, Object.assign({}, otherProps, {
@@ -25554,63 +24712,6 @@ if (process.env.NODE_ENV !== 'production') {
   RightOutlined.displayName = 'RightOutlined';
 }
 var RightOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(RightOutlined);
-
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$8 = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
 
 var ESC$1 = KeyCode$1.ESC,
   TAB = KeyCode$1.TAB;
@@ -25740,7 +24841,7 @@ var placements$1 = {
   }
 };
 
-var _excluded$p = ["arrow", "prefixCls", "transitionName", "animation", "align", "placement", "placements", "getPopupContainer", "showAction", "hideAction", "overlayClassName", "overlayStyle", "visible", "trigger", "autoFocus", "overlay", "children", "onVisibleChange"];
+var _excluded$q = ["arrow", "prefixCls", "transitionName", "animation", "align", "placement", "placements", "getPopupContainer", "showAction", "hideAction", "overlayClassName", "overlayStyle", "visible", "trigger", "autoFocus", "overlay", "children", "onVisibleChange"];
 function Dropdown$3(props, ref) {
   var _children$props;
   var _props$arrow = props.arrow,
@@ -25766,7 +24867,7 @@ function Dropdown$3(props, ref) {
     overlay = props.overlay,
     children = props.children,
     onVisibleChange = props.onVisibleChange,
-    otherProps = _objectWithoutProperties(props, _excluded$p);
+    otherProps = _objectWithoutProperties(props, _excluded$q);
   var _React$useState = React__default["default"].useState(),
     _React$useState2 = _slicedToArray(_React$useState, 2),
     triggerVisible = _React$useState2[0],
@@ -25826,7 +24927,7 @@ function Dropdown$3(props, ref) {
     return "".concat(prefixCls, "-open");
   };
   var childrenNode = /*#__PURE__*/React__default["default"].cloneElement(children, {
-    className: classnames$8((_children$props = children.props) === null || _children$props === void 0 ? void 0 : _children$props.className, mergedVisible && getOpenClassName()),
+    className: classnames((_children$props = children.props) === null || _children$props === void 0 ? void 0 : _children$props.className, mergedVisible && getOpenClassName()),
     ref: supportRef(children) ? composeRef(childRef, children.ref) : undefined
   });
   var triggerHideAction = hideAction;
@@ -25838,7 +24939,7 @@ function Dropdown$3(props, ref) {
   }, otherProps, {
     prefixCls: prefixCls,
     ref: triggerRef,
-    popupClassName: classnames$8(overlayClassName, _defineProperty({}, "".concat(prefixCls, "-show-arrow"), arrow)),
+    popupClassName: classnames(overlayClassName, _defineProperty({}, "".concat(prefixCls, "-show-arrow"), arrow)),
     popupStyle: overlayStyle,
     action: trigger,
     showAction: showAction,
@@ -25857,63 +24958,6 @@ function Dropdown$3(props, ref) {
 }
 var Dropdown$4 = /*#__PURE__*/React__default["default"].forwardRef(Dropdown$3);
 
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$7 = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
-
 var IdContext = /*#__PURE__*/React__namespace.createContext(null);
 function getMenuId(uuid, eventKey) {
   if (uuid === undefined) {
@@ -25930,7 +24974,7 @@ function useMenuId(eventKey) {
   return getMenuId(id, eventKey);
 }
 
-var _excluded$o = ["children", "locked"];
+var _excluded$p = ["children", "locked"];
 var MenuContext$2 = /*#__PURE__*/React__namespace.createContext(null);
 function mergeProps(origin, target) {
   var clone = _objectSpread2({}, origin);
@@ -25945,7 +24989,7 @@ function mergeProps(origin, target) {
 function InheritableContextProvider(_ref) {
   var children = _ref.children,
     locked = _ref.locked,
-    restProps = _objectWithoutProperties(_ref, _excluded$o);
+    restProps = _objectWithoutProperties(_ref, _excluded$p);
   var context = React__namespace.useContext(MenuContext$2);
   var inheritableContext = useMemo(function () {
     return mergeProps(context, restProps);
@@ -26480,16 +25524,19 @@ function Icon(_ref) {
     props = _ref.props,
     children = _ref.children;
   var iconNode;
+  if (icon === null || icon === false) {
+    return null;
+  }
   if (typeof icon === 'function') {
     iconNode = /*#__PURE__*/React__namespace.createElement(icon, _objectSpread2({}, props));
-  } else {
+  } else if (typeof icon !== "boolean") {
     // Compatible for origin definition
     iconNode = icon;
   }
   return iconNode || children || null;
 }
 
-var _excluded$n = ["item"];
+var _excluded$o = ["item"];
 
 /**
  * `onClick` event return `info.item` which point to react node directly.
@@ -26497,7 +25544,7 @@ var _excluded$n = ["item"];
  */
 function warnItemProp(_ref) {
   var item = _ref.item,
-    restInfo = _objectWithoutProperties(_ref, _excluded$n);
+    restInfo = _objectWithoutProperties(_ref, _excluded$o);
   Object.defineProperty(restInfo, 'item', {
     get: function get() {
       warningOnce(false, '`info.item` is deprecated since we will move to function component that not provides React Node instance in future.');
@@ -26507,7 +25554,7 @@ function warnItemProp(_ref) {
   return restInfo;
 }
 
-var _excluded$m = ["title", "attribute", "elementRef"],
+var _excluded$n = ["title", "attribute", "elementRef"],
   _excluded2$5 = ["style", "className", "eventKey", "warnKey", "disabled", "itemIcon", "children", "role", "onMouseEnter", "onMouseLeave", "onClick", "onKeyDown", "onFocus"],
   _excluded3 = ["active"];
 // Since Menu event provide the `info.item` which point to the MenuItem node instance.
@@ -26527,7 +25574,7 @@ var LegacyMenuItem = /*#__PURE__*/function (_React$Component) {
         title = _this$props.title,
         attribute = _this$props.attribute,
         elementRef = _this$props.elementRef,
-        restProps = _objectWithoutProperties(_this$props, _excluded$m);
+        restProps = _objectWithoutProperties(_this$props, _excluded$n);
 
       // Here the props are eventually passed to the DOM element.
       // React does not recognize non-standard attributes.
@@ -26655,7 +25702,7 @@ var InternalMenuItem = /*#__PURE__*/React__namespace.forwardRef(function (props,
     component: "li",
     "aria-disabled": disabled,
     style: _objectSpread2(_objectSpread2({}, directionStyle), style),
-    className: classnames$7(itemCls, (_classNames = {}, _defineProperty(_classNames, "".concat(itemCls, "-active"), active), _defineProperty(_classNames, "".concat(itemCls, "-selected"), selected), _defineProperty(_classNames, "".concat(itemCls, "-disabled"), mergedDisabled), _classNames), className),
+    className: classnames(itemCls, (_classNames = {}, _defineProperty(_classNames, "".concat(itemCls, "-active"), active), _defineProperty(_classNames, "".concat(itemCls, "-selected"), selected), _defineProperty(_classNames, "".concat(itemCls, "-disabled"), mergedDisabled), _classNames), className),
     onClick: onInternalClick,
     onKeyDown: onInternalKeyDown,
     onFocus: onInternalFocus
@@ -26699,17 +25746,17 @@ function MenuItem$1(props, ref) {
 }
 var MenuItem$2 = /*#__PURE__*/React__namespace.forwardRef(MenuItem$1);
 
-var _excluded$l = ["className", "children"];
+var _excluded$m = ["className", "children"];
 var InternalSubMenuList = function InternalSubMenuList(_ref, ref) {
   var className = _ref.className,
     children = _ref.children,
-    restProps = _objectWithoutProperties(_ref, _excluded$l);
+    restProps = _objectWithoutProperties(_ref, _excluded$m);
   var _React$useContext = React__namespace.useContext(MenuContext$2),
     prefixCls = _React$useContext.prefixCls,
     mode = _React$useContext.mode,
     rtl = _React$useContext.rtl;
   return /*#__PURE__*/React__namespace.createElement("ul", _extends$1({
-    className: classnames$7(prefixCls, rtl && "".concat(prefixCls, "-rtl"), "".concat(prefixCls, "-sub"), "".concat(prefixCls, "-").concat(mode === 'inline' ? 'inline' : 'vertical'), className),
+    className: classnames(prefixCls, rtl && "".concat(prefixCls, "-rtl"), "".concat(prefixCls, "-sub"), "".concat(prefixCls, "-").concat(mode === 'inline' ? 'inline' : 'vertical'), className),
     role: "menu"
   }, restProps, {
     "data-menu-list": true,
@@ -26836,6 +25883,7 @@ function PopupTrigger(_ref) {
     visible = _ref.visible,
     children = _ref.children,
     popup = _ref.popup,
+    popupStyle = _ref.popupStyle,
     popupClassName = _ref.popupClassName,
     popupOffset = _ref.popupOffset,
     disabled = _ref.disabled,
@@ -26885,13 +25933,14 @@ function PopupTrigger(_ref) {
   }, [visible]);
   return /*#__PURE__*/React__namespace.createElement(Trigger, {
     prefixCls: prefixCls,
-    popupClassName: classnames$7("".concat(prefixCls, "-popup"), _defineProperty({}, "".concat(prefixCls, "-rtl"), rtl), popupClassName, rootClassName),
+    popupClassName: classnames("".concat(prefixCls, "-popup"), _defineProperty({}, "".concat(prefixCls, "-rtl"), rtl), popupClassName, rootClassName),
     stretch: mode === 'horizontal' ? 'minWidth' : null,
     getPopupContainer: getPopupContainer,
     builtinPlacements: placement,
     popupPlacement: popupPlacement,
     popupVisible: innerVisible,
     popup: popup,
+    popupStyle: popupStyle,
     popupAlign: popupOffset && {
       offset: popupOffset
     },
@@ -26976,7 +26025,7 @@ function InlineSubMenuList(_ref) {
   }));
 }
 
-var _excluded$k = ["style", "className", "title", "eventKey", "warnKey", "disabled", "internalPopupClose", "children", "itemIcon", "expandIcon", "popupClassName", "popupOffset", "onClick", "onMouseEnter", "onMouseLeave", "onTitleClick", "onTitleMouseEnter", "onTitleMouseLeave"],
+var _excluded$l = ["style", "className", "title", "eventKey", "warnKey", "disabled", "internalPopupClose", "children", "itemIcon", "expandIcon", "popupClassName", "popupOffset", "popupStyle", "onClick", "onMouseEnter", "onMouseLeave", "onTitleClick", "onTitleMouseEnter", "onTitleMouseLeave"],
   _excluded2$4 = ["active"];
 var InternalSubMenu = function InternalSubMenu(props) {
   var _classNames;
@@ -26992,13 +26041,14 @@ var InternalSubMenu = function InternalSubMenu(props) {
     expandIcon = props.expandIcon,
     popupClassName = props.popupClassName,
     popupOffset = props.popupOffset,
+    popupStyle = props.popupStyle,
     onClick = props.onClick,
     onMouseEnter = props.onMouseEnter,
     onMouseLeave = props.onMouseLeave,
     onTitleClick = props.onTitleClick,
     onTitleMouseEnter = props.onTitleMouseEnter,
     onTitleMouseLeave = props.onTitleMouseLeave,
-    restProps = _objectWithoutProperties(props, _excluded$k);
+    restProps = _objectWithoutProperties(props, _excluded$l);
   var domDataId = useMenuId(eventKey);
   var _React$useContext = React__namespace.useContext(MenuContext$2),
     prefixCls = _React$useContext.prefixCls,
@@ -27029,8 +26079,8 @@ var InternalSubMenu = function InternalSubMenu(props) {
   }
 
   // ================================ Icon ================================
-  var mergedItemIcon = itemIcon || contextItemIcon;
-  var mergedExpandIcon = expandIcon || contextExpandIcon;
+  var mergedItemIcon = itemIcon !== null && itemIcon !== void 0 ? itemIcon : contextItemIcon;
+  var mergedExpandIcon = expandIcon !== null && expandIcon !== void 0 ? expandIcon : contextExpandIcon;
 
   // ================================ Open ================================
   var originOpen = openKeys.includes(eventKey);
@@ -27139,7 +26189,7 @@ var InternalSubMenu = function InternalSubMenu(props) {
     onClick: onInternalTitleClick,
     onFocus: onInternalFocus
   }, activeProps), title, /*#__PURE__*/React__namespace.createElement(Icon, {
-    icon: mode !== 'horizontal' ? mergedExpandIcon : null,
+    icon: mode !== 'horizontal' ? mergedExpandIcon : undefined,
     props: _objectSpread2(_objectSpread2({}, props), {}, {
       isOpen: open,
       // [Legacy] Not sure why need this mark
@@ -27167,6 +26217,7 @@ var InternalSubMenu = function InternalSubMenu(props) {
       visible: !internalPopupClose && open && mode !== 'inline',
       popupClassName: popupClassName,
       popupOffset: popupOffset,
+      popupStyle: popupStyle,
       popup: /*#__PURE__*/React__namespace.createElement(InheritableContextProvider
       // Special handle of horizontal mode
       , {
@@ -27186,7 +26237,7 @@ var InternalSubMenu = function InternalSubMenu(props) {
   }, restProps, {
     component: "li",
     style: style,
-    className: classnames$7(subMenuPrefixCls, "".concat(subMenuPrefixCls, "-").concat(mode), className, (_classNames = {}, _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-open"), open), _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-active"), mergedActive), _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-selected"), childrenSelected), _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-disabled"), mergedDisabled), _classNames)),
+    className: classnames(subMenuPrefixCls, "".concat(subMenuPrefixCls, "-").concat(mode), className, (_classNames = {}, _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-open"), open), _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-active"), mergedActive), _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-selected"), childrenSelected), _defineProperty(_classNames, "".concat(subMenuPrefixCls, "-disabled"), mergedDisabled), _classNames)),
     onMouseEnter: onInternalMouseEnter,
     onMouseLeave: onInternalMouseLeave
   }), titleNode, !overflowDisabled && /*#__PURE__*/React__namespace.createElement(InlineSubMenuList, {
@@ -27242,14 +26293,14 @@ function SubMenu$2(props) {
   }, renderNode);
 }
 
-var _excluded$j = ["className", "title", "eventKey", "children"],
+var _excluded$k = ["className", "title", "eventKey", "children"],
   _excluded2$3 = ["children"];
 var InternalMenuItemGroup = function InternalMenuItemGroup(_ref) {
   var className = _ref.className,
     title = _ref.title;
     _ref.eventKey;
     var children = _ref.children,
-    restProps = _objectWithoutProperties(_ref, _excluded$j);
+    restProps = _objectWithoutProperties(_ref, _excluded$k);
   var _React$useContext = React__namespace.useContext(MenuContext$2),
     prefixCls = _React$useContext.prefixCls;
   var groupPrefixCls = "".concat(prefixCls, "-item-group");
@@ -27259,7 +26310,7 @@ var InternalMenuItemGroup = function InternalMenuItemGroup(_ref) {
     onClick: function onClick(e) {
       return e.stopPropagation();
     },
-    className: classnames$7(groupPrefixCls, className)
+    className: classnames(groupPrefixCls, className)
   }), /*#__PURE__*/React__namespace.createElement("div", {
     role: "presentation",
     className: "".concat(groupPrefixCls, "-title"),
@@ -27291,12 +26342,13 @@ function Divider$2(_ref) {
     return null;
   }
   return /*#__PURE__*/React__namespace.createElement("li", {
-    className: classnames$7("".concat(prefixCls, "-item-divider"), className),
+    role: "separator",
+    className: classnames("".concat(prefixCls, "-item-divider"), className),
     style: style
   });
 }
 
-var _excluded$i = ["label", "children", "key", "type"];
+var _excluded$j = ["label", "children", "key", "type"];
 function convertItemsToNodes$1(list) {
   return (list || []).map(function (opt, index) {
     if (opt && _typeof(opt) === 'object') {
@@ -27305,7 +26357,7 @@ function convertItemsToNodes$1(list) {
         children = _ref.children,
         key = _ref.key,
         type = _ref.type,
-        restProps = _objectWithoutProperties(_ref, _excluded$i);
+        restProps = _objectWithoutProperties(_ref, _excluded$j);
       var mergedKey = key !== null && key !== void 0 ? key : "tmp-".concat(index);
 
       // MenuItemGroup & SubMenuItem
@@ -27350,7 +26402,7 @@ function parseItems(children, items, keyPath) {
   return parseChildren(childNodes, keyPath);
 }
 
-var _excluded$h = ["prefixCls", "rootClassName", "style", "className", "tabIndex", "items", "children", "direction", "id", "mode", "inlineCollapsed", "disabled", "disabledOverflow", "subMenuOpenDelay", "subMenuCloseDelay", "forceSubMenuRender", "defaultOpenKeys", "openKeys", "activeKey", "defaultActiveFirst", "selectable", "multiple", "defaultSelectedKeys", "selectedKeys", "onSelect", "onDeselect", "inlineIndent", "motion", "defaultMotions", "triggerSubMenuAction", "builtinPlacements", "itemIcon", "expandIcon", "overflowedIndicator", "overflowedIndicatorPopupClassName", "getPopupContainer", "onClick", "onOpenChange", "onKeyDown", "openAnimation", "openTransitionName", "_internalRenderMenuItem", "_internalRenderSubMenuItem"];
+var _excluded$i = ["prefixCls", "rootClassName", "style", "className", "tabIndex", "items", "children", "direction", "id", "mode", "inlineCollapsed", "disabled", "disabledOverflow", "subMenuOpenDelay", "subMenuCloseDelay", "forceSubMenuRender", "defaultOpenKeys", "openKeys", "activeKey", "defaultActiveFirst", "selectable", "multiple", "defaultSelectedKeys", "selectedKeys", "onSelect", "onDeselect", "inlineIndent", "motion", "defaultMotions", "triggerSubMenuAction", "builtinPlacements", "itemIcon", "expandIcon", "overflowedIndicator", "overflowedIndicatorPopupClassName", "getPopupContainer", "onClick", "onOpenChange", "onKeyDown", "openAnimation", "openTransitionName", "_internalRenderMenuItem", "_internalRenderSubMenuItem"];
 
 /**
  * Menu modify after refactor:
@@ -27423,7 +26475,7 @@ var Menu$2 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     openTransitionName = _ref.openTransitionName,
     _internalRenderMenuItem = _ref._internalRenderMenuItem,
     _internalRenderSubMenuItem = _ref._internalRenderSubMenuItem,
-    restProps = _objectWithoutProperties(_ref, _excluded$h);
+    restProps = _objectWithoutProperties(_ref, _excluded$i);
   var childList = React__namespace.useMemo(function () {
     return parseItems(children, items, EMPTY_LIST$3);
   }, [children, items]);
@@ -27707,7 +26759,7 @@ var Menu$2 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     prefixCls: "".concat(prefixCls, "-overflow"),
     component: "ul",
     itemComponent: MenuItem$2,
-    className: classnames$7(prefixCls, "".concat(prefixCls, "-root"), "".concat(prefixCls, "-").concat(internalMode), className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-inline-collapsed"), internalInlineCollapsed), _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), isRtl), _classNames), rootClassName),
+    className: classnames(prefixCls, "".concat(prefixCls, "-root"), "".concat(prefixCls, "-").concat(internalMode), className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-inline-collapsed"), internalInlineCollapsed), _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), isRtl), _classNames), rootClassName),
     dir: direction,
     style: style,
     role: "menu",
@@ -27836,21 +26888,22 @@ var isNumeric$1 = isNumeric;
 const genLayoutLightStyle = token => {
   const {
     componentCls,
-    colorBgContainer,
-    colorBgBody,
-    colorText
+    bodyBg,
+    lightSiderBg,
+    lightTriggerBg,
+    lightTriggerColor
   } = token;
   return {
     [`${componentCls}-sider-light`]: {
-      background: colorBgContainer,
+      background: lightSiderBg,
       [`${componentCls}-sider-trigger`]: {
-        color: colorText,
-        background: colorBgContainer
+        color: lightTriggerColor,
+        background: lightTriggerBg
       },
       [`${componentCls}-sider-zero-width-trigger`]: {
-        color: colorText,
-        background: colorBgContainer,
-        border: `1px solid ${colorBgBody}`,
+        color: lightTriggerColor,
+        background: lightTriggerBg,
+        border: `1px solid ${bodyBg}`,
         borderInlineStart: 0
       }
     }
@@ -27865,20 +26918,23 @@ const genLayoutStyle = token => {
     componentCls,
     // .ant-layout
     colorText,
-    colorTextLightSolid,
-    colorBgHeader,
-    colorBgBody,
-    colorBgTrigger,
-    layoutHeaderHeight,
-    layoutHeaderPaddingInline,
-    layoutHeaderColor,
-    layoutFooterPadding,
-    layoutTriggerHeight,
-    layoutZeroTriggerSize,
+    triggerColor,
+    footerBg,
+    triggerBg,
+    headerHeight,
+    headerPadding,
+    headerColor,
+    footerPadding,
+    triggerHeight,
+    zeroTriggerHeight,
+    zeroTriggerWidth,
     motionDurationMid,
     motionDurationSlow,
     fontSize,
-    borderRadius
+    borderRadius,
+    bodyBg,
+    headerBg,
+    siderBg
   } = token;
   return {
     [componentCls]: Object.assign(Object.assign({
@@ -27887,7 +26943,7 @@ const genLayoutStyle = token => {
       flexDirection: 'column',
       /* fix firefox can't set height smaller than content on flex item */
       minHeight: 0,
-      background: colorBgBody,
+      background: bodyBg,
       '&, *': {
         boxSizing: 'border-box'
       },
@@ -27905,7 +26961,7 @@ const genLayoutStyle = token => {
         position: 'relative',
         // fix firefox can't set width smaller than content on flex item
         minWidth: 0,
-        background: colorBgHeader,
+        background: siderBg,
         transition: `all ${motionDurationMid}, background 0s`,
         '&-children': {
           height: '100%',
@@ -27919,7 +26975,7 @@ const genLayoutStyle = token => {
           }
         },
         '&-has-trigger': {
-          paddingBottom: layoutTriggerHeight
+          paddingBottom: triggerHeight
         },
         '&-right': {
           order: 1
@@ -27928,11 +26984,11 @@ const genLayoutStyle = token => {
           position: 'fixed',
           bottom: 0,
           zIndex: 1,
-          height: layoutTriggerHeight,
-          color: colorTextLightSolid,
-          lineHeight: `${layoutTriggerHeight}px`,
+          height: triggerHeight,
+          color: triggerColor,
+          lineHeight: `${triggerHeight}px`,
           textAlign: 'center',
-          background: colorBgTrigger,
+          background: triggerBg,
           cursor: 'pointer',
           transition: `all ${motionDurationMid}`
         },
@@ -27942,17 +26998,17 @@ const genLayoutStyle = token => {
           },
           '&-trigger': {
             position: 'absolute',
-            top: layoutHeaderHeight,
-            insetInlineEnd: -layoutZeroTriggerSize,
+            top: headerHeight,
+            insetInlineEnd: -zeroTriggerWidth,
             zIndex: 1,
-            width: layoutZeroTriggerSize,
-            height: layoutZeroTriggerSize,
-            color: colorTextLightSolid,
+            width: zeroTriggerWidth,
+            height: zeroTriggerHeight,
+            color: triggerColor,
             fontSize: token.fontSizeXL,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: colorBgHeader,
+            background: siderBg,
             borderStartStartRadius: 0,
             borderStartEndRadius: borderRadius,
             borderEndEndRadius: borderRadius,
@@ -27967,11 +27023,10 @@ const genLayoutStyle = token => {
               content: '""'
             },
             '&:hover::after': {
-              // FIXME: Hardcode, but seems no need to create a token for this
               background: `rgba(255, 255, 255, 0.2)`
             },
             '&-right': {
-              insetInlineStart: -layoutZeroTriggerSize,
+              insetInlineStart: -zeroTriggerWidth,
               borderStartStartRadius: borderRadius,
               borderStartEndRadius: 0,
               borderEndEndRadius: 0,
@@ -27988,11 +27043,11 @@ const genLayoutStyle = token => {
     }),
     // ==================== Header ====================
     [`${componentCls}-header`]: {
-      height: layoutHeaderHeight,
-      paddingInline: layoutHeaderPaddingInline,
-      color: layoutHeaderColor,
-      lineHeight: `${layoutHeaderHeight}px`,
-      background: colorBgHeader,
+      height: headerHeight,
+      padding: headerPadding,
+      color: headerColor,
+      lineHeight: `${headerHeight}px`,
+      background: headerBg,
       // Other components/menu/style/index.less line:686
       // Integration with header element so menu items have the same height
       [`${antCls}-menu`]: {
@@ -28001,10 +27056,10 @@ const genLayoutStyle = token => {
     },
     // ==================== Footer ====================
     [`${componentCls}-footer`]: {
-      padding: layoutFooterPadding,
+      padding: footerPadding,
       color: colorText,
       fontSize,
-      background: colorBgBody
+      background: footerBg
     },
     // =================== Content ====================
     [`${componentCls}-content`]: {
@@ -28015,34 +27070,42 @@ const genLayoutStyle = token => {
   };
 };
 // ============================== Export ==============================
-var useStyle$g = genComponentStyleHook('Layout', token => {
+var useStyle$g = genComponentStyleHook('Layout', token => [genLayoutStyle(token)], token => {
   const {
-    colorText,
-    controlHeightSM,
+    colorBgLayout,
     controlHeight,
     controlHeightLG,
-    marginXXS
+    colorText,
+    controlHeightSM,
+    marginXXS,
+    colorTextLightSolid,
+    colorBgContainer
   } = token;
-  const layoutHeaderPaddingInline = controlHeightLG * 1.25;
-  const layoutToken = merge(token, {
-    // Layout
-    layoutHeaderHeight: controlHeight * 2,
-    layoutHeaderPaddingInline,
-    layoutHeaderColor: colorText,
-    layoutFooterPadding: `${controlHeightSM}px ${layoutHeaderPaddingInline}px`,
-    layoutTriggerHeight: controlHeightLG + marginXXS * 2,
-    layoutZeroTriggerSize: controlHeightLG
-  });
-  return [genLayoutStyle(layoutToken)];
-}, token => {
-  const {
-    colorBgLayout
-  } = token;
+  const paddingInline = controlHeightLG * 1.25;
   return {
+    // Deprecated
     colorBgHeader: '#001529',
     colorBgBody: colorBgLayout,
-    colorBgTrigger: '#002140'
+    colorBgTrigger: '#002140',
+    bodyBg: colorBgLayout,
+    headerBg: '#001529',
+    headerHeight: controlHeight * 2,
+    headerPadding: `0 ${paddingInline}px`,
+    headerColor: colorText,
+    footerPadding: `${controlHeightSM}px ${paddingInline}px`,
+    footerBg: colorBgLayout,
+    siderBg: '#001529',
+    triggerHeight: controlHeightLG + marginXXS * 2,
+    triggerBg: '#002140',
+    triggerColor: colorTextLightSolid,
+    zeroTriggerWidth: controlHeightLG,
+    zeroTriggerHeight: controlHeightLG,
+    lightSiderBg: colorBgContainer,
+    lightTriggerBg: colorBgContainer,
+    lightTriggerColor: colorText
   };
+}, {
+  deprecatedTokens: [['colorBgBody', 'bodyBg'], ['colorBgHeader', 'headerBg'], ['colorBgTrigger', 'triggerBg']]
 });
 
 var __rest$F = undefined && undefined.__rest || function (s, e) {
@@ -28092,7 +27155,7 @@ const Basic = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   const [wrapSSR, hashId] = useStyle$g(prefixCls);
   const prefixWithSuffixCls = suffixCls ? `${prefixCls}-${suffixCls}` : prefixCls;
   return wrapSSR( /*#__PURE__*/React__namespace.createElement(TagName, Object.assign({
-    className: classnames$g(customizePrefixCls || prefixWithSuffixCls, className, hashId),
+    className: classnames(customizePrefixCls || prefixWithSuffixCls, className, hashId),
     ref: ref
   }, others)));
 });
@@ -28118,7 +27181,7 @@ const BasicLayout = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   } = React__namespace.useContext(ConfigContext);
   const prefixCls = getPrefixCls('layout', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$g(prefixCls);
-  const classString = classnames$g(prefixCls, {
+  const classString = classnames(prefixCls, {
     [`${prefixCls}-has-sider`]: typeof hasSider === 'boolean' ? hasSider : siders.length > 0,
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, layout === null || layout === void 0 ? void 0 : layout.className, className, rootClassName, hashId);
@@ -28276,7 +27339,7 @@ const Sider = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
     // special trigger when collapsedWidth == 0
     const zeroWidthTrigger = parseFloat(String(collapsedWidth || 0)) === 0 ? /*#__PURE__*/React__namespace.createElement("span", {
       onClick: toggle,
-      className: classnames$g(`${prefixCls}-zero-width-trigger`, `${prefixCls}-zero-width-trigger-${reverseArrow ? 'right' : 'left'}`),
+      className: classnames(`${prefixCls}-zero-width-trigger`, `${prefixCls}-zero-width-trigger-${reverseArrow ? 'right' : 'left'}`),
       style: zeroWidthTriggerStyle
     }, trigger || /*#__PURE__*/React__namespace.createElement(BarsOutlined$1, null)) : null;
     const iconObj = {
@@ -28298,7 +27361,7 @@ const Sider = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
       minWidth: siderWidth,
       width: siderWidth
     });
-    const siderCls = classnames$g(prefixCls, `${prefixCls}-${theme}`, {
+    const siderCls = classnames(prefixCls, `${prefixCls}-${theme}`, {
       [`${prefixCls}-collapsed`]: !!collapsed,
       [`${prefixCls}-has-trigger`]: collapsible && trigger !== null && !zeroWidthTrigger,
       [`${prefixCls}-below`]: !!below,
@@ -28343,7 +27406,7 @@ const MenuDivider = props => {
     getPrefixCls
   } = React__namespace.useContext(ConfigContext);
   const prefixCls = getPrefixCls('menu', customizePrefixCls);
-  const classString = classnames$g({
+  const classString = classnames({
     [`${prefixCls}-item-divider-dashed`]: !!dashed
   }, className);
   return /*#__PURE__*/React__namespace.createElement(Divider$2, Object.assign({
@@ -28410,13 +27473,13 @@ const MenuItem = props => {
   }
   const childrenLength = toArray$5(children).length;
   let returnNode = /*#__PURE__*/React__namespace.createElement(MenuItem$2, Object.assign({}, omit(props, ['title', 'icon', 'danger']), {
-    className: classnames$g({
+    className: classnames({
       [`${prefixCls}-item-danger`]: danger,
       [`${prefixCls}-item-only-child`]: (icon ? childrenLength + 1 : childrenLength) === 1
     }, className),
     title: typeof title === 'string' ? title : undefined
   }), cloneElement(icon, {
-    className: classnames$g(isValidElement(icon) ? (_a = icon.props) === null || _a === void 0 ? void 0 : _a.className : '', `${prefixCls}-item-icon`)
+    className: classnames(isValidElement(icon) ? (_a = icon.props) === null || _a === void 0 ? void 0 : _a.className : '', `${prefixCls}-item-icon`)
   }), renderItemChildren(isInlineCollapsed));
   if (!disableMenuItemTitleTooltip) {
     returnNode = /*#__PURE__*/React__namespace.createElement(Tooltip$1, Object.assign({}, tooltipProps, {
@@ -28455,7 +27518,7 @@ const SubMenu = props => {
     // ref: https://github.com/ant-design/ant-design/pull/23456
     const titleIsSpan = isValidElement(title) && title.type === 'span';
     titleNode = /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, cloneElement(icon, {
-      className: classnames$g(isValidElement(icon) ? (_a = icon.props) === null || _a === void 0 ? void 0 : _a.className : '', `${prefixCls}-item-icon`)
+      className: classnames(isValidElement(icon) ? (_a = icon.props) === null || _a === void 0 ? void 0 : _a.className : '', `${prefixCls}-item-icon`)
     }), titleIsSpan ? title : /*#__PURE__*/React__namespace.createElement("span", {
       className: `${prefixCls}-title-content`
     }, title));
@@ -28467,7 +27530,7 @@ const SubMenu = props => {
     value: contextValue
   }, /*#__PURE__*/React__namespace.createElement(SubMenu$2, Object.assign({}, omit(props, ['icon']), {
     title: titleNode,
-    popupClassName: classnames$g(prefixCls, popupClassName, `${prefixCls}-${customTheme || contextTheme}`)
+    popupClassName: classnames(prefixCls, popupClassName, `${prefixCls}-${customTheme || contextTheme}`)
   })));
 };
 var SubMenu$1 = SubMenu;
@@ -28495,35 +27558,6 @@ var __rest$C = undefined && undefined.__rest || function (s, e) {
   }
   return t;
 };
-const OverrideContext = /*#__PURE__*/React__namespace.createContext(null);
-/** @internal Only used for Dropdown component. Do not use this in your production. */
-const OverrideProvider = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
-  const {
-      children
-    } = props,
-    restProps = __rest$C(props, ["children"]);
-  const override = React__namespace.useContext(OverrideContext);
-  const context = React__namespace.useMemo(() => Object.assign(Object.assign({}, override), restProps), [override, restProps.prefixCls,
-  // restProps.expandIcon, Not mark as deps since this is a ReactNode
-  restProps.mode, restProps.selectable
-  // restProps.validator, Not mark as deps since this is a function
-  ]);
-
-  return /*#__PURE__*/React__namespace.createElement(OverrideContext.Provider, {
-    value: context
-  }, /*#__PURE__*/React__namespace.createElement(NoCompactStyle, null, supportNodeRef(children) ? /*#__PURE__*/React__namespace.cloneElement(children, {
-    ref
-  }) : children));
-});
-
-var __rest$B = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
 function convertItemsToNodes(list) {
   return (list || []).map((opt, index) => {
     if (opt && typeof opt === 'object') {
@@ -28534,7 +27568,7 @@ function convertItemsToNodes(list) {
           key,
           type
         } = _a,
-        restProps = __rest$B(_a, ["label", "children", "key", "type"]);
+        restProps = __rest$C(_a, ["label", "children", "key", "type"]);
       const mergedKey = key !== null && key !== void 0 ? key : `tmp-${index}`;
       // MenuItemGroup & SubMenuItem
       if (children || type === 'group') {
@@ -28579,6 +27613,35 @@ function useItems$1(items) {
     return convertItemsToNodes(items);
   }, [items]);
 }
+
+var __rest$B = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+const OverrideContext = /*#__PURE__*/React__namespace.createContext(null);
+/** @internal Only used for Dropdown component. Do not use this in your production. */
+const OverrideProvider = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
+  const {
+      children
+    } = props,
+    restProps = __rest$B(props, ["children"]);
+  const override = React__namespace.useContext(OverrideContext);
+  const context = React__namespace.useMemo(() => Object.assign(Object.assign({}, override), restProps), [override, restProps.prefixCls,
+  // restProps.expandIcon, Not mark as deps since this is a ReactNode
+  restProps.mode, restProps.selectable
+  // restProps.validator, Not mark as deps since this is a function
+  ]);
+
+  return /*#__PURE__*/React__namespace.createElement(OverrideContext.Provider, {
+    value: context
+  }, /*#__PURE__*/React__namespace.createElement(NoCompactStyle, null, supportNodeRef(children) ? /*#__PURE__*/React__namespace.cloneElement(children, {
+    ref
+  }) : children));
+});
 
 const getHorizontalStyle = token => {
   const {
@@ -29608,9 +28671,12 @@ const InternalMenu = /*#__PURE__*/React.forwardRef((props, ref) => {
   // ========================= Items ===========================
   const mergedChildren = useItems$1(items) || children;
   // ======================== Warning ==========================
-  process.env.NODE_ENV !== "production" ? warning$3(!('inlineCollapsed' in props && mode !== 'inline'), 'Menu', '`inlineCollapsed` should only be used when `mode` is inline.') : void 0;
-  process.env.NODE_ENV !== "production" ? warning$3(!(props.siderCollapsed !== undefined && 'inlineCollapsed' in props), 'Menu', '`inlineCollapsed` not control Menu under Sider. Should set `collapsed` on Sider instead.') : void 0;
-  process.env.NODE_ENV !== "production" ? warning$3('items' in props && !children, 'Menu', '`children` will be removed in next major version. Please use `items` instead.') : void 0;
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Menu');
+    process.env.NODE_ENV !== "production" ? warning(!('inlineCollapsed' in props && mode !== 'inline'), 'usage', '`inlineCollapsed` should only be used when `mode` is inline.') : void 0;
+    process.env.NODE_ENV !== "production" ? warning(!(props.siderCollapsed !== undefined && 'inlineCollapsed' in props), 'usage', '`inlineCollapsed` not control Menu under Sider. Should set `collapsed` on Sider instead.') : void 0;
+    warning.deprecated('items' in props && !children, 'children', 'items');
+  }
   (_a = overrideObj.validator) === null || _a === void 0 ? void 0 : _a.call(overrideObj, {
     mode
   });
@@ -29644,15 +28710,19 @@ const InternalMenu = /*#__PURE__*/React.forwardRef((props, ref) => {
   };
   const prefixCls = getPrefixCls('menu', customizePrefixCls || overrideObj.prefixCls);
   const [wrapSSR, hashId] = useStyle$f(prefixCls, !override);
-  const menuClassName = classnames$g(`${prefixCls}-${theme}`, menu === null || menu === void 0 ? void 0 : menu.className, className);
+  const menuClassName = classnames(`${prefixCls}-${theme}`, menu === null || menu === void 0 ? void 0 : menu.className, className);
   // ====================== Expand Icon ========================
   let mergedExpandIcon;
   if (typeof expandIcon === 'function') {
     mergedExpandIcon = expandIcon;
+  } else if (expandIcon === null || expandIcon === false) {
+    mergedExpandIcon = null;
+  } else if (overrideObj.expandIcon === null || overrideObj.expandIcon === false) {
+    mergedExpandIcon = null;
   } else {
-    const beClone = expandIcon || overrideObj.expandIcon;
+    const beClone = expandIcon !== null && expandIcon !== void 0 ? expandIcon : overrideObj.expandIcon;
     mergedExpandIcon = cloneElement(beClone, {
-      className: classnames$g(`${prefixCls}-submenu-expand-icon`, isValidElement(beClone) ? (_b = beClone.props) === null || _b === void 0 ? void 0 : _b.className : '')
+      className: classnames(`${prefixCls}-submenu-expand-icon`, isValidElement(beClone) ? (_b = beClone.props) === null || _b === void 0 ? void 0 : _b.className : '')
     });
   }
   // ======================== Context ==========================
@@ -29673,7 +28743,7 @@ const InternalMenu = /*#__PURE__*/React.forwardRef((props, ref) => {
   }, /*#__PURE__*/React__namespace.createElement(ExportMenu, Object.assign({
     getPopupContainer: getPopupContainer,
     overflowedIndicator: /*#__PURE__*/React__namespace.createElement(EllipsisOutlined$1, null),
-    overflowedIndicatorPopupClassName: classnames$g(prefixCls, `${prefixCls}-${theme}`, overflowedIndicatorPopupClassName),
+    overflowedIndicatorPopupClassName: classnames(prefixCls, `${prefixCls}-${theme}`, overflowedIndicatorPopupClassName),
     mode: mergedMode,
     selectable: mergedSelectable,
     onClick: onItemClick
@@ -29686,7 +28756,7 @@ const InternalMenu = /*#__PURE__*/React.forwardRef((props, ref) => {
     defaultMotions: defaultMotions,
     expandIcon: mergedExpandIcon,
     ref: ref,
-    rootClassName: classnames$g(rootClassName, hashId)
+    rootClassName: classnames(rootClassName, hashId)
   }), mergedChildren))));
 });
 var InternalMenu$1 = InternalMenu;
@@ -30050,12 +29120,13 @@ const Dropdown$2 = props => {
     direction
   } = React__namespace.useContext(ConfigContext);
   // Warning for deprecated usage
+  const warning = devUseWarning('Dropdown');
   if (process.env.NODE_ENV !== 'production') {
     [['visible', 'open'], ['onVisibleChange', 'onOpenChange']].forEach(_ref => {
       let [deprecatedName, newName] = _ref;
-      process.env.NODE_ENV !== "production" ? warning$3(!(deprecatedName in props), 'Dropdown', `\`${deprecatedName}\` is deprecated which will be removed in next major version, please use \`${newName}\` instead.`) : void 0;
+      warning.deprecated(!(deprecatedName in props), deprecatedName, newName);
     });
-    process.env.NODE_ENV !== "production" ? warning$3(!('overlay' in props), 'Dropdown', '`overlay` is deprecated. Please use `menu` instead.') : void 0;
+    warning.deprecated(!('overlay' in props), 'overlay', 'menu');
   }
   const memoTransitionName = React__namespace.useMemo(() => {
     const rootPrefixCls = getPrefixCls();
@@ -30072,26 +29143,26 @@ const Dropdown$2 = props => {
       return direction === 'rtl' ? 'bottomRight' : 'bottomLeft';
     }
     if (placement.includes('Center')) {
-      const newPlacement = placement.slice(0, placement.indexOf('Center'));
-      process.env.NODE_ENV !== "production" ? warning$3(!placement.includes('Center'), 'Dropdown', `You are using '${placement}' placement in Dropdown, which is deprecated. Try to use '${newPlacement}' instead.`) : void 0;
-      return newPlacement;
+      return placement.slice(0, placement.indexOf('Center'));
     }
     return placement;
   }, [placement, direction]);
   if (process.env.NODE_ENV !== 'production') {
+    if (placement.includes('Center')) {
+      const newPlacement = placement.slice(0, placement.indexOf('Center'));
+      process.env.NODE_ENV !== "production" ? warning(!placement.includes('Center'), 'deprecated', `You are using '${placement}' placement in Dropdown, which is deprecated. Try to use '${newPlacement}' instead.`) : void 0;
+    }
     [['visible', 'open'], ['onVisibleChange', 'onOpenChange']].forEach(_ref2 => {
       let [deprecatedName, newName] = _ref2;
-      process.env.NODE_ENV !== "production" ? warning$3(!(deprecatedName in props), 'Dropdown', `\`${deprecatedName}\` is deprecated, please use \`${newName}\` instead.`) : void 0;
+      warning.deprecated(!(deprecatedName in props), deprecatedName, newName);
     });
   }
   const prefixCls = getPrefixCls('dropdown', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$e(prefixCls);
-  const {
-    token
-  } = theme.useToken();
+  const [, token] = useToken();
   const child = React__namespace.Children.only(children);
   const dropdownTrigger = cloneElement(child, {
-    className: classnames$g(`${prefixCls}-trigger`, {
+    className: classnames(`${prefixCls}-trigger`, {
       [`${prefixCls}-rtl`]: direction === 'rtl'
     }, child.props.className),
     disabled
@@ -30111,7 +29182,7 @@ const Dropdown$2 = props => {
     setOpen(nextOpen);
   });
   // =========================== Overlay ============================
-  const overlayClassNameCustomized = classnames$g(overlayClassName, rootClassName, hashId, {
+  const overlayClassNameCustomized = classnames(overlayClassName, rootClassName, hashId, {
     [`${prefixCls}-rtl`]: direction === 'rtl'
   });
   const builtinPlacements = getPlacements({
@@ -30154,7 +29225,7 @@ const Dropdown$2 = props => {
           mode
         } = _ref3;
         // Warning if use other mode
-        process.env.NODE_ENV !== "production" ? warning$3(!mode || mode === 'vertical', 'Dropdown', `mode="${mode}" is not supported for Dropdown's Menu.`) : void 0;
+        process.env.NODE_ENV !== "production" ? warning(!mode || mode === 'vertical', 'usage', `mode="${mode}" is not supported for Dropdown's Menu.`) : void 0;
       }
     }, overlayNode);
   };
@@ -30245,12 +29316,12 @@ function renderItem(prefixCls, item, children, href) {
   });
   if (href !== undefined) {
     return /*#__PURE__*/React__namespace.createElement("a", Object.assign({}, passedProps, {
-      className: classnames$g(`${prefixCls}-link`, className),
+      className: classnames(`${prefixCls}-link`, className),
       href: href
     }), children);
   }
   return /*#__PURE__*/React__namespace.createElement("span", Object.assign({}, passedProps, {
-    className: classnames$g(`${prefixCls}-link`, className)
+    className: classnames(`${prefixCls}-link`, className)
   }), children);
 }
 function useItemRender(prefixCls, itemRender) {
@@ -30284,7 +29355,8 @@ const InternalBreadcrumbItem = props => {
   } = props;
   // Warning for deprecated usage
   if (process.env.NODE_ENV !== 'production') {
-    process.env.NODE_ENV !== "production" ? warning$3(!('overlay' in props), 'Breadcrumb.Item', '`overlay` is deprecated. Please use `menu` instead.') : void 0;
+    const warning = devUseWarning('Breadcrumb.Item');
+    warning.deprecated(!('overlay' in props), 'overlay', 'menu');
   }
   /** If overlay is have Wrap a Dropdown */
   const renderBreadcrumbNode = breadcrumbItem => {
@@ -30530,7 +29602,18 @@ const Breadcrumb = props => {
   const [wrapSSR, hashId] = useStyle$d(prefixCls);
   const mergedItems = useItems(items, legacyRoutes);
   if (process.env.NODE_ENV !== 'production') {
-    process.env.NODE_ENV !== "production" ? warning$3(!legacyRoutes, 'Breadcrumb', '`routes` is deprecated. Please use `items` instead.') : void 0;
+    const warning = devUseWarning('Breadcrumb');
+    warning.deprecated(!legacyRoutes, 'routes', 'items');
+    // Deprecated warning for breadcrumb children
+    if (!mergedItems || mergedItems.length === 0) {
+      const childList = toArray$5(children);
+      warning.deprecated(childList.length === 0, 'Breadcrumb.Item and Breadcrumb.Separator', 'items');
+      childList.forEach(element => {
+        if (element) {
+          process.env.NODE_ENV !== "production" ? warning(element.type && (element.type.__ANT_BREADCRUMB_ITEM === true || element.type.__ANT_BREADCRUMB_SEPARATOR === true), 'usage', "Only accepts Breadcrumb.Item and Breadcrumb.Separator as it's children") : void 0;
+        }
+      });
+    }
   }
   const mergedItemRender = useItemRender(prefixCls, itemRender);
   if (mergedItems && mergedItems.length > 0) {
@@ -30592,11 +29675,6 @@ const Breadcrumb = props => {
       if (!element) {
         return element;
       }
-      // =================== Warning =====================
-      if (process.env.NODE_ENV !== 'production') {
-        process.env.NODE_ENV !== "production" ? warning$3(!element, 'Breadcrumb', '`Breadcrumb.Item and Breadcrumb.Separator` is deprecated. Please use `items` instead.') : void 0;
-      }
-      process.env.NODE_ENV !== "production" ? warning$3(element.type && (element.type.__ANT_BREADCRUMB_ITEM === true || element.type.__ANT_BREADCRUMB_SEPARATOR === true), 'Breadcrumb', "Only accepts Breadcrumb.Item and Breadcrumb.Separator as it's children") : void 0;
       const isLastItem = index === childrenLength - 1;
       return cloneElement(element, {
         separator: isLastItem ? '' : separator,
@@ -30604,7 +29682,7 @@ const Breadcrumb = props => {
       });
     });
   }
-  const breadcrumbClassName = classnames$g(prefixCls, breadcrumb === null || breadcrumb === void 0 ? void 0 : breadcrumb.className, {
+  const breadcrumbClassName = classnames(prefixCls, breadcrumb === null || breadcrumb === void 0 ? void 0 : breadcrumb.className, {
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, className, rootClassName, hashId);
   const mergedStyle = Object.assign(Object.assign({}, breadcrumb === null || breadcrumb === void 0 ? void 0 : breadcrumb.style), style);
@@ -30621,7 +29699,7 @@ if (process.env.NODE_ENV !== 'production') {
 var Breadcrumb$1 = Breadcrumb;
 
 var dayjs_min = createCommonjsModule(function (module, exports) {
-!function(t,e){module.exports=e();}(commonjsGlobal,(function(){var t=1e3,e=6e4,n=36e5,r="millisecond",i="second",s="minute",u="hour",a="day",o="week",c="month",f="quarter",h="year",d="date",l="Invalid Date",$=/^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/,y=/\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g,M={name:"en",weekdays:"Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"),months:"January_February_March_April_May_June_July_August_September_October_November_December".split("_"),ordinal:function(t){var e=["th","st","nd","rd"],n=t%100;return "["+t+(e[(n-20)%10]||e[n]||e[0])+"]"}},m=function(t,e,n){var r=String(t);return !r||r.length>=e?t:""+Array(e+1-r.length).join(n)+t},v={s:m,z:function(t){var e=-t.utcOffset(),n=Math.abs(e),r=Math.floor(n/60),i=n%60;return (e<=0?"+":"-")+m(r,2,"0")+":"+m(i,2,"0")},m:function t(e,n){if(e.date()<n.date())return -t(n,e);var r=12*(n.year()-e.year())+(n.month()-e.month()),i=e.clone().add(r,c),s=n-i<0,u=e.clone().add(r+(s?-1:1),c);return +(-(r+(n-i)/(s?i-u:u-i))||0)},a:function(t){return t<0?Math.ceil(t)||0:Math.floor(t)},p:function(t){return {M:c,y:h,w:o,d:a,D:d,h:u,m:s,s:i,ms:r,Q:f}[t]||String(t||"").toLowerCase().replace(/s$/,"")},u:function(t){return void 0===t}},g="en",D={};D[g]=M;var p=function(t){return t instanceof b},S=function t(e,n,r){var i;if(!e)return g;if("string"==typeof e){var s=e.toLowerCase();D[s]&&(i=s),n&&(D[s]=n,i=s);var u=e.split("-");if(!i&&u.length>1)return t(u[0])}else {var a=e.name;D[a]=e,i=a;}return !r&&i&&(g=i),i||!r&&g},w=function(t,e){if(p(t))return t.clone();var n="object"==typeof e?e:{};return n.date=t,n.args=arguments,new b(n)},O=v;O.l=S,O.i=p,O.w=function(t,e){return w(t,{locale:e.$L,utc:e.$u,x:e.$x,$offset:e.$offset})};var b=function(){function M(t){this.$L=S(t.locale,null,!0),this.parse(t);}var m=M.prototype;return m.parse=function(t){this.$d=function(t){var e=t.date,n=t.utc;if(null===e)return new Date(NaN);if(O.u(e))return new Date;if(e instanceof Date)return new Date(e);if("string"==typeof e&&!/Z$/i.test(e)){var r=e.match($);if(r){var i=r[2]-1||0,s=(r[7]||"0").substring(0,3);return n?new Date(Date.UTC(r[1],i,r[3]||1,r[4]||0,r[5]||0,r[6]||0,s)):new Date(r[1],i,r[3]||1,r[4]||0,r[5]||0,r[6]||0,s)}}return new Date(e)}(t),this.$x=t.x||{},this.init();},m.init=function(){var t=this.$d;this.$y=t.getFullYear(),this.$M=t.getMonth(),this.$D=t.getDate(),this.$W=t.getDay(),this.$H=t.getHours(),this.$m=t.getMinutes(),this.$s=t.getSeconds(),this.$ms=t.getMilliseconds();},m.$utils=function(){return O},m.isValid=function(){return !(this.$d.toString()===l)},m.isSame=function(t,e){var n=w(t);return this.startOf(e)<=n&&n<=this.endOf(e)},m.isAfter=function(t,e){return w(t)<this.startOf(e)},m.isBefore=function(t,e){return this.endOf(e)<w(t)},m.$g=function(t,e,n){return O.u(t)?this[e]:this.set(n,t)},m.unix=function(){return Math.floor(this.valueOf()/1e3)},m.valueOf=function(){return this.$d.getTime()},m.startOf=function(t,e){var n=this,r=!!O.u(e)||e,f=O.p(t),l=function(t,e){var i=O.w(n.$u?Date.UTC(n.$y,e,t):new Date(n.$y,e,t),n);return r?i:i.endOf(a)},$=function(t,e){return O.w(n.toDate()[t].apply(n.toDate("s"),(r?[0,0,0,0]:[23,59,59,999]).slice(e)),n)},y=this.$W,M=this.$M,m=this.$D,v="set"+(this.$u?"UTC":"");switch(f){case h:return r?l(1,0):l(31,11);case c:return r?l(1,M):l(0,M+1);case o:var g=this.$locale().weekStart||0,D=(y<g?y+7:y)-g;return l(r?m-D:m+(6-D),M);case a:case d:return $(v+"Hours",0);case u:return $(v+"Minutes",1);case s:return $(v+"Seconds",2);case i:return $(v+"Milliseconds",3);default:return this.clone()}},m.endOf=function(t){return this.startOf(t,!1)},m.$set=function(t,e){var n,o=O.p(t),f="set"+(this.$u?"UTC":""),l=(n={},n[a]=f+"Date",n[d]=f+"Date",n[c]=f+"Month",n[h]=f+"FullYear",n[u]=f+"Hours",n[s]=f+"Minutes",n[i]=f+"Seconds",n[r]=f+"Milliseconds",n)[o],$=o===a?this.$D+(e-this.$W):e;if(o===c||o===h){var y=this.clone().set(d,1);y.$d[l]($),y.init(),this.$d=y.set(d,Math.min(this.$D,y.daysInMonth())).$d;}else l&&this.$d[l]($);return this.init(),this},m.set=function(t,e){return this.clone().$set(t,e)},m.get=function(t){return this[O.p(t)]()},m.add=function(r,f){var d,l=this;r=Number(r);var $=O.p(f),y=function(t){var e=w(l);return O.w(e.date(e.date()+Math.round(t*r)),l)};if($===c)return this.set(c,this.$M+r);if($===h)return this.set(h,this.$y+r);if($===a)return y(1);if($===o)return y(7);var M=(d={},d[s]=e,d[u]=n,d[i]=t,d)[$]||1,m=this.$d.getTime()+r*M;return O.w(m,this)},m.subtract=function(t,e){return this.add(-1*t,e)},m.format=function(t){var e=this,n=this.$locale();if(!this.isValid())return n.invalidDate||l;var r=t||"YYYY-MM-DDTHH:mm:ssZ",i=O.z(this),s=this.$H,u=this.$m,a=this.$M,o=n.weekdays,c=n.months,f=n.meridiem,h=function(t,n,i,s){return t&&(t[n]||t(e,r))||i[n].slice(0,s)},d=function(t){return O.s(s%12||12,t,"0")},$=f||function(t,e,n){var r=t<12?"AM":"PM";return n?r.toLowerCase():r};return r.replace(y,(function(t,r){return r||function(t){switch(t){case"YY":return String(e.$y).slice(-2);case"YYYY":return O.s(e.$y,4,"0");case"M":return a+1;case"MM":return O.s(a+1,2,"0");case"MMM":return h(n.monthsShort,a,c,3);case"MMMM":return h(c,a);case"D":return e.$D;case"DD":return O.s(e.$D,2,"0");case"d":return String(e.$W);case"dd":return h(n.weekdaysMin,e.$W,o,2);case"ddd":return h(n.weekdaysShort,e.$W,o,3);case"dddd":return o[e.$W];case"H":return String(s);case"HH":return O.s(s,2,"0");case"h":return d(1);case"hh":return d(2);case"a":return $(s,u,!0);case"A":return $(s,u,!1);case"m":return String(u);case"mm":return O.s(u,2,"0");case"s":return String(e.$s);case"ss":return O.s(e.$s,2,"0");case"SSS":return O.s(e.$ms,3,"0");case"Z":return i}return null}(t)||i.replace(":","")}))},m.utcOffset=function(){return 15*-Math.round(this.$d.getTimezoneOffset()/15)},m.diff=function(r,d,l){var $,y=this,M=O.p(d),m=w(r),v=(m.utcOffset()-this.utcOffset())*e,g=this-m,D=function(){return O.m(y,m)};switch(M){case h:$=D()/12;break;case c:$=D();break;case f:$=D()/3;break;case o:$=(g-v)/6048e5;break;case a:$=(g-v)/864e5;break;case u:$=g/n;break;case s:$=g/e;break;case i:$=g/t;break;default:$=g;}return l?$:O.a($)},m.daysInMonth=function(){return this.endOf(c).$D},m.$locale=function(){return D[this.$L]},m.locale=function(t,e){if(!t)return this.$L;var n=this.clone(),r=S(t,e,!0);return r&&(n.$L=r),n},m.clone=function(){return O.w(this.$d,this)},m.toDate=function(){return new Date(this.valueOf())},m.toJSON=function(){return this.isValid()?this.toISOString():null},m.toISOString=function(){return this.$d.toISOString()},m.toString=function(){return this.$d.toUTCString()},M}(),_=b.prototype;return w.prototype=_,[["$ms",r],["$s",i],["$m",s],["$H",u],["$W",a],["$M",c],["$y",h],["$D",d]].forEach((function(t){_[t[1]]=function(e){return this.$g(e,t[0],t[1])};})),w.extend=function(t,e){return t.$i||(t(e,b,w),t.$i=!0),w},w.locale=S,w.isDayjs=p,w.unix=function(t){return w(1e3*t)},w.en=D[g],w.Ls=D,w.p={},w}));
+!function(t,e){module.exports=e();}(commonjsGlobal,(function(){var t=1e3,e=6e4,n=36e5,r="millisecond",i="second",s="minute",u="hour",a="day",o="week",c="month",f="quarter",h="year",d="date",l="Invalid Date",$=/^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/,y=/\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g,M={name:"en",weekdays:"Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"),months:"January_February_March_April_May_June_July_August_September_October_November_December".split("_"),ordinal:function(t){var e=["th","st","nd","rd"],n=t%100;return "["+t+(e[(n-20)%10]||e[n]||e[0])+"]"}},m=function(t,e,n){var r=String(t);return !r||r.length>=e?t:""+Array(e+1-r.length).join(n)+t},v={s:m,z:function(t){var e=-t.utcOffset(),n=Math.abs(e),r=Math.floor(n/60),i=n%60;return (e<=0?"+":"-")+m(r,2,"0")+":"+m(i,2,"0")},m:function t(e,n){if(e.date()<n.date())return -t(n,e);var r=12*(n.year()-e.year())+(n.month()-e.month()),i=e.clone().add(r,c),s=n-i<0,u=e.clone().add(r+(s?-1:1),c);return +(-(r+(n-i)/(s?i-u:u-i))||0)},a:function(t){return t<0?Math.ceil(t)||0:Math.floor(t)},p:function(t){return {M:c,y:h,w:o,d:a,D:d,h:u,m:s,s:i,ms:r,Q:f}[t]||String(t||"").toLowerCase().replace(/s$/,"")},u:function(t){return void 0===t}},g="en",D={};D[g]=M;var p="$isDayjsObject",S=function(t){return t instanceof _||!(!t||!t[p])},w=function t(e,n,r){var i;if(!e)return g;if("string"==typeof e){var s=e.toLowerCase();D[s]&&(i=s),n&&(D[s]=n,i=s);var u=e.split("-");if(!i&&u.length>1)return t(u[0])}else {var a=e.name;D[a]=e,i=a;}return !r&&i&&(g=i),i||!r&&g},O=function(t,e){if(S(t))return t.clone();var n="object"==typeof e?e:{};return n.date=t,n.args=arguments,new _(n)},b=v;b.l=w,b.i=S,b.w=function(t,e){return O(t,{locale:e.$L,utc:e.$u,x:e.$x,$offset:e.$offset})};var _=function(){function M(t){this.$L=w(t.locale,null,!0),this.parse(t),this.$x=this.$x||t.x||{},this[p]=!0;}var m=M.prototype;return m.parse=function(t){this.$d=function(t){var e=t.date,n=t.utc;if(null===e)return new Date(NaN);if(b.u(e))return new Date;if(e instanceof Date)return new Date(e);if("string"==typeof e&&!/Z$/i.test(e)){var r=e.match($);if(r){var i=r[2]-1||0,s=(r[7]||"0").substring(0,3);return n?new Date(Date.UTC(r[1],i,r[3]||1,r[4]||0,r[5]||0,r[6]||0,s)):new Date(r[1],i,r[3]||1,r[4]||0,r[5]||0,r[6]||0,s)}}return new Date(e)}(t),this.init();},m.init=function(){var t=this.$d;this.$y=t.getFullYear(),this.$M=t.getMonth(),this.$D=t.getDate(),this.$W=t.getDay(),this.$H=t.getHours(),this.$m=t.getMinutes(),this.$s=t.getSeconds(),this.$ms=t.getMilliseconds();},m.$utils=function(){return b},m.isValid=function(){return !(this.$d.toString()===l)},m.isSame=function(t,e){var n=O(t);return this.startOf(e)<=n&&n<=this.endOf(e)},m.isAfter=function(t,e){return O(t)<this.startOf(e)},m.isBefore=function(t,e){return this.endOf(e)<O(t)},m.$g=function(t,e,n){return b.u(t)?this[e]:this.set(n,t)},m.unix=function(){return Math.floor(this.valueOf()/1e3)},m.valueOf=function(){return this.$d.getTime()},m.startOf=function(t,e){var n=this,r=!!b.u(e)||e,f=b.p(t),l=function(t,e){var i=b.w(n.$u?Date.UTC(n.$y,e,t):new Date(n.$y,e,t),n);return r?i:i.endOf(a)},$=function(t,e){return b.w(n.toDate()[t].apply(n.toDate("s"),(r?[0,0,0,0]:[23,59,59,999]).slice(e)),n)},y=this.$W,M=this.$M,m=this.$D,v="set"+(this.$u?"UTC":"");switch(f){case h:return r?l(1,0):l(31,11);case c:return r?l(1,M):l(0,M+1);case o:var g=this.$locale().weekStart||0,D=(y<g?y+7:y)-g;return l(r?m-D:m+(6-D),M);case a:case d:return $(v+"Hours",0);case u:return $(v+"Minutes",1);case s:return $(v+"Seconds",2);case i:return $(v+"Milliseconds",3);default:return this.clone()}},m.endOf=function(t){return this.startOf(t,!1)},m.$set=function(t,e){var n,o=b.p(t),f="set"+(this.$u?"UTC":""),l=(n={},n[a]=f+"Date",n[d]=f+"Date",n[c]=f+"Month",n[h]=f+"FullYear",n[u]=f+"Hours",n[s]=f+"Minutes",n[i]=f+"Seconds",n[r]=f+"Milliseconds",n)[o],$=o===a?this.$D+(e-this.$W):e;if(o===c||o===h){var y=this.clone().set(d,1);y.$d[l]($),y.init(),this.$d=y.set(d,Math.min(this.$D,y.daysInMonth())).$d;}else l&&this.$d[l]($);return this.init(),this},m.set=function(t,e){return this.clone().$set(t,e)},m.get=function(t){return this[b.p(t)]()},m.add=function(r,f){var d,l=this;r=Number(r);var $=b.p(f),y=function(t){var e=O(l);return b.w(e.date(e.date()+Math.round(t*r)),l)};if($===c)return this.set(c,this.$M+r);if($===h)return this.set(h,this.$y+r);if($===a)return y(1);if($===o)return y(7);var M=(d={},d[s]=e,d[u]=n,d[i]=t,d)[$]||1,m=this.$d.getTime()+r*M;return b.w(m,this)},m.subtract=function(t,e){return this.add(-1*t,e)},m.format=function(t){var e=this,n=this.$locale();if(!this.isValid())return n.invalidDate||l;var r=t||"YYYY-MM-DDTHH:mm:ssZ",i=b.z(this),s=this.$H,u=this.$m,a=this.$M,o=n.weekdays,c=n.months,f=n.meridiem,h=function(t,n,i,s){return t&&(t[n]||t(e,r))||i[n].slice(0,s)},d=function(t){return b.s(s%12||12,t,"0")},$=f||function(t,e,n){var r=t<12?"AM":"PM";return n?r.toLowerCase():r};return r.replace(y,(function(t,r){return r||function(t){switch(t){case"YY":return String(e.$y).slice(-2);case"YYYY":return b.s(e.$y,4,"0");case"M":return a+1;case"MM":return b.s(a+1,2,"0");case"MMM":return h(n.monthsShort,a,c,3);case"MMMM":return h(c,a);case"D":return e.$D;case"DD":return b.s(e.$D,2,"0");case"d":return String(e.$W);case"dd":return h(n.weekdaysMin,e.$W,o,2);case"ddd":return h(n.weekdaysShort,e.$W,o,3);case"dddd":return o[e.$W];case"H":return String(s);case"HH":return b.s(s,2,"0");case"h":return d(1);case"hh":return d(2);case"a":return $(s,u,!0);case"A":return $(s,u,!1);case"m":return String(u);case"mm":return b.s(u,2,"0");case"s":return String(e.$s);case"ss":return b.s(e.$s,2,"0");case"SSS":return b.s(e.$ms,3,"0");case"Z":return i}return null}(t)||i.replace(":","")}))},m.utcOffset=function(){return 15*-Math.round(this.$d.getTimezoneOffset()/15)},m.diff=function(r,d,l){var $,y=this,M=b.p(d),m=O(r),v=(m.utcOffset()-this.utcOffset())*e,g=this-m,D=function(){return b.m(y,m)};switch(M){case h:$=D()/12;break;case c:$=D();break;case f:$=D()/3;break;case o:$=(g-v)/6048e5;break;case a:$=(g-v)/864e5;break;case u:$=g/n;break;case s:$=g/e;break;case i:$=g/t;break;default:$=g;}return l?$:b.a($)},m.daysInMonth=function(){return this.endOf(c).$D},m.$locale=function(){return D[this.$L]},m.locale=function(t,e){if(!t)return this.$L;var n=this.clone(),r=w(t,e,!0);return r&&(n.$L=r),n},m.clone=function(){return b.w(this.$d,this)},m.toDate=function(){return new Date(this.valueOf())},m.toJSON=function(){return this.isValid()?this.toISOString():null},m.toISOString=function(){return this.$d.toISOString()},m.toString=function(){return this.$d.toUTCString()},M}(),k=_.prototype;return O.prototype=k,[["$ms",r],["$s",i],["$m",s],["$H",u],["$W",a],["$M",c],["$y",h],["$D",d]].forEach((function(t){k[t[1]]=function(e){return this.$g(e,t[0],t[1])};})),O.extend=function(t,e){return t.$i||(t(e,_,O),t.$i=!0),O},O.locale=w,O.isDayjs=S,O.unix=function(t){return O(1e3*t)},O.en=D[g],O.Ls=D,O.p={},O}));
 });
 
 const RadioGroupContext = /*#__PURE__*/React__namespace.createContext(null);
@@ -30629,7 +29707,7 @@ const RadioGroupContextProvider = RadioGroupContext.Provider;
 const RadioOptionTypeContext = /*#__PURE__*/React__namespace.createContext(null);
 const RadioOptionTypeContextProvider = RadioOptionTypeContext.Provider;
 
-var _excluded$g = ["prefixCls", "className", "style", "checked", "disabled", "defaultChecked", "type", "title", "onChange"];
+var _excluded$h = ["prefixCls", "className", "style", "checked", "disabled", "defaultChecked", "type", "title", "onChange"];
 var Checkbox$3 = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames;
   var _props$prefixCls = props.prefixCls,
@@ -30644,7 +29722,7 @@ var Checkbox$3 = /*#__PURE__*/React.forwardRef(function (props, ref) {
     type = _props$type === void 0 ? 'checkbox' : _props$type,
     title = props.title,
     onChange = props.onChange,
-    inputProps = _objectWithoutProperties(props, _excluded$g);
+    inputProps = _objectWithoutProperties(props, _excluded$h);
   var inputRef = React.useRef(null);
   var _useMergedState = useMergedState(defaultChecked, {
       value: checked
@@ -30665,7 +29743,7 @@ var Checkbox$3 = /*#__PURE__*/React.forwardRef(function (props, ref) {
       input: inputRef.current
     };
   });
-  var classString = classnames$b(prefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-checked"), rawValue), _defineProperty(_classNames, "".concat(prefixCls, "-disabled"), disabled), _classNames));
+  var classString = classnames(prefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-checked"), rawValue), _defineProperty(_classNames, "".concat(prefixCls, "-disabled"), disabled), _classNames));
   var handleChange = function handleChange(e) {
     if (disabled) {
       return;
@@ -30915,7 +29993,10 @@ const getRadioButtonStyle = token => {
     buttonCheckedColorDisabled,
     colorPrimary,
     colorPrimaryHover,
-    colorPrimaryActive
+    colorPrimaryActive,
+    buttonSolidCheckedBg,
+    buttonSolidCheckedHoverBg,
+    buttonSolidCheckedActiveBg
   } = token;
   return {
     [`${componentCls}-button-wrapper`]: {
@@ -31042,17 +30123,17 @@ const getRadioButtonStyle = token => {
       },
       [`${componentCls}-group-solid &-checked:not(${componentCls}-button-wrapper-disabled)`]: {
         color: buttonSolidCheckedColor,
-        background: colorPrimary,
-        borderColor: colorPrimary,
+        background: buttonSolidCheckedBg,
+        borderColor: buttonSolidCheckedBg,
         '&:hover': {
           color: buttonSolidCheckedColor,
-          background: colorPrimaryHover,
-          borderColor: colorPrimaryHover
+          background: buttonSolidCheckedHoverBg,
+          borderColor: buttonSolidCheckedHoverBg
         },
         '&:active': {
           color: buttonSolidCheckedColor,
-          background: colorPrimaryActive,
-          borderColor: colorPrimaryActive
+          background: buttonSolidCheckedActiveBg,
+          borderColor: buttonSolidCheckedActiveBg
         }
       },
       '&-disabled': {
@@ -31106,7 +30187,10 @@ var useStyle$c = genComponentStyleHook('Radio', token => {
     colorBgContainer,
     colorTextDisabled,
     controlItemBgActiveDisabled,
-    colorTextLightSolid
+    colorTextLightSolid,
+    colorPrimary,
+    colorPrimaryHover,
+    colorPrimaryActive
   } = token;
   const dotPadding = 4; // Fixed value
   const radioSize = fontSizeLG;
@@ -31118,6 +30202,9 @@ var useStyle$c = genComponentStyleHook('Radio', token => {
     dotColorDisabled: colorTextDisabled,
     // Radio buttons
     buttonSolidCheckedColor: colorTextLightSolid,
+    buttonSolidCheckedBg: colorPrimary,
+    buttonSolidCheckedHoverBg: colorPrimaryHover,
+    buttonSolidCheckedActiveBg: colorPrimaryActive,
     buttonBg: colorBgContainer,
     buttonCheckedBg: colorBgContainer,
     buttonColor: colorText,
@@ -31150,7 +30237,10 @@ const InternalRadio = (props, ref) => {
   const {
     isFormItemInput
   } = React__namespace.useContext(FormItemInputContext);
-  process.env.NODE_ENV !== "production" ? warning$3(!('optionType' in props), 'Radio', '`optionType` is only support in Radio.Group.') : void 0;
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Radio');
+    process.env.NODE_ENV !== "production" ? warning(!('optionType' in props), 'usage', '`optionType` is only support in Radio.Group.') : void 0;
+  }
   const onChange = e => {
     var _a, _b;
     (_a = props.onChange) === null || _a === void 0 ? void 0 : _a.call(props, e);
@@ -31179,7 +30269,7 @@ const InternalRadio = (props, ref) => {
     radioProps.disabled = (_a = radioProps.disabled) !== null && _a !== void 0 ? _a : groupContext.disabled;
   }
   radioProps.disabled = (_b = radioProps.disabled) !== null && _b !== void 0 ? _b : disabled;
-  const wrapperClassString = classnames$g(`${prefixCls}-wrapper`, {
+  const wrapperClassString = classnames(`${prefixCls}-wrapper`, {
     [`${prefixCls}-wrapper-checked`]: radioProps.checked,
     [`${prefixCls}-wrapper-disabled`]: radioProps.disabled,
     [`${prefixCls}-wrapper-rtl`]: direction === 'rtl',
@@ -31194,7 +30284,7 @@ const InternalRadio = (props, ref) => {
     onMouseEnter: props.onMouseEnter,
     onMouseLeave: props.onMouseLeave
   }, /*#__PURE__*/React__namespace.createElement(Checkbox$3, Object.assign({}, radioProps, {
-    className: classnames$g(radioProps.className, !isButtonType && TARGET_CLS),
+    className: classnames(radioProps.className, !isButtonType && TARGET_CLS),
     type: "radio",
     prefixCls: prefixCls,
     ref: mergedRef
@@ -31274,7 +30364,7 @@ const RadioGroup = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
     });
   }
   const mergedSize = useSize$1(customizeSize);
-  const classString = classnames$g(groupPrefixCls, `${groupPrefixCls}-${buttonStyle}`, {
+  const classString = classnames(groupPrefixCls, `${groupPrefixCls}-${buttonStyle}`, {
     [`${groupPrefixCls}-${mergedSize}`]: mergedSize,
     [`${groupPrefixCls}-rtl`]: direction === 'rtl'
   }, className, rootClassName, hashId);
@@ -31320,11 +30410,11 @@ const RadioButton = (props, ref) => {
     radioProps = __rest$u(props, ["prefixCls"]);
   const prefixCls = getPrefixCls('radio', customizePrefixCls);
   return /*#__PURE__*/React__namespace.createElement(RadioOptionTypeContextProvider, {
-    value: 'button'
+    value: "button"
   }, /*#__PURE__*/React__namespace.createElement(InternalRadio$1, Object.assign({
     prefixCls: prefixCls
   }, radioProps, {
-    type: 'radio',
+    type: "radio",
     ref: ref
   })));
 };
@@ -31351,13 +30441,11 @@ const genPlaceholderStyle = color => ({
   }
 });
 const genHoverStyle = token => ({
-  borderColor: token.inputBorderHoverColor,
-  borderInlineEndWidth: token.lineWidth
+  borderColor: token.hoverBorderColor
 });
 const genActiveStyle = token => ({
-  borderColor: token.inputBorderHoverColor,
-  boxShadow: `0 0 0 ${token.controlOutlineWidth}px ${token.controlOutline}`,
-  borderInlineEndWidth: token.lineWidth,
+  borderColor: token.activeBorderColor,
+  boxShadow: token.activeShadow,
   outline: 0
 });
 const genDisabledStyle = token => ({
@@ -31368,26 +30456,26 @@ const genDisabledStyle = token => ({
   cursor: 'not-allowed',
   opacity: 1,
   '&:hover': Object.assign({}, genHoverStyle(merge(token, {
-    inputBorderHoverColor: token.colorBorder
+    hoverBorderColor: token.colorBorder
   })))
 });
 const genInputLargeStyle = token => {
   const {
-    inputPaddingVerticalLG,
+    paddingBlockLG,
     fontSizeLG,
     lineHeightLG,
     borderRadiusLG,
-    inputPaddingHorizontalLG
+    paddingInlineLG
   } = token;
   return {
-    padding: `${inputPaddingVerticalLG}px ${inputPaddingHorizontalLG}px`,
+    padding: `${paddingBlockLG}px ${paddingInlineLG}px`,
     fontSize: fontSizeLG,
     lineHeight: lineHeightLG,
     borderRadius: borderRadiusLG
   };
 };
 const genInputSmallStyle = token => ({
-  padding: `${token.inputPaddingVerticalSM}px ${token.controlPaddingHorizontalSM - 1}px`,
+  padding: `${token.paddingBlockSM}px ${token.paddingInlineSM}px`,
   borderRadius: token.borderRadiusSM
 });
 const genStatusStyle = (token, parentCls) => {
@@ -31395,8 +30483,8 @@ const genStatusStyle = (token, parentCls) => {
     componentCls,
     colorError,
     colorWarning,
-    colorErrorOutline,
-    colorWarningOutline,
+    errorActiveShadow,
+    warningActiveShadow,
     colorErrorBorderHover,
     colorWarningBorderHover
   } = token;
@@ -31407,9 +30495,8 @@ const genStatusStyle = (token, parentCls) => {
         borderColor: colorErrorBorderHover
       },
       '&:focus, &-focused': Object.assign({}, genActiveStyle(merge(token, {
-        inputBorderActiveColor: colorError,
-        inputBorderHoverColor: colorError,
-        controlOutline: colorErrorOutline
+        activeBorderColor: colorError,
+        activeShadow: errorActiveShadow
       }))),
       [`${componentCls}-prefix, ${componentCls}-suffix`]: {
         color: colorError
@@ -31421,9 +30508,8 @@ const genStatusStyle = (token, parentCls) => {
         borderColor: colorWarningBorderHover
       },
       '&:focus, &-focused': Object.assign({}, genActiveStyle(merge(token, {
-        inputBorderActiveColor: colorWarning,
-        inputBorderHoverColor: colorWarning,
-        controlOutline: colorWarningOutline
+        activeBorderColor: colorWarning,
+        activeShadow: warningActiveShadow
       }))),
       [`${componentCls}-prefix, ${componentCls}-suffix`]: {
         color: colorWarning
@@ -31436,7 +30522,7 @@ const genBasicInputStyle = token => Object.assign(Object.assign({
   display: 'inline-block',
   width: '100%',
   minWidth: 0,
-  padding: `${token.inputPaddingVertical}px ${token.inputPaddingHorizontal}px`,
+  padding: `${token.paddingBlock}px ${token.paddingInline}px`,
   color: token.colorText,
   fontSize: token.fontSize,
   lineHeight: token.lineHeight,
@@ -31528,7 +30614,7 @@ const genInputGroupStyle = token => {
       },
       '&-addon': {
         position: 'relative',
-        padding: `0 ${token.inputPaddingHorizontal}px`,
+        padding: `0 ${token.paddingInline}px`,
         color: token.colorText,
         fontWeight: 'normal',
         fontSize: token.fontSize,
@@ -31540,8 +30626,8 @@ const genInputGroupStyle = token => {
         lineHeight: 1,
         // Reset Select's style in addon
         [`${antCls}-select`]: {
-          margin: `-${token.inputPaddingVertical + 1}px -${token.inputPaddingHorizontal}px`,
-          [`&${antCls}-select-single:not(${antCls}-select-customize-input)`]: {
+          margin: `-${token.paddingBlock + 1}px -${token.paddingInline}px`,
+          [`&${antCls}-select-single:not(${antCls}-select-customize-input):not(${antCls}-pagination-size-changer)`]: {
             [`${antCls}-select-selector`]: {
               backgroundColor: 'inherit',
               border: `${token.lineWidth}px ${token.lineType} transparent`,
@@ -31556,7 +30642,7 @@ const genInputGroupStyle = token => {
         },
         // https://github.com/ant-design/ant-design/issues/31333
         [`${antCls}-cascader-picker`]: {
-          margin: `-9px -${token.inputPaddingHorizontal}px`,
+          margin: `-9px -${token.paddingInline}px`,
           backgroundColor: 'transparent',
           [`${antCls}-cascader-input`]: {
             textAlign: 'start',
@@ -31973,7 +31059,8 @@ const genSearchInputStyle = token => {
             borderStartStartRadius: 0,
             borderStartEndRadius: token.borderRadius,
             borderEndEndRadius: token.borderRadius,
-            borderEndStartRadius: 0
+            borderEndStartRadius: 0,
+            boxShadow: 'none'
           },
           [`${searchPrefixCls}-button:not(${antCls}-btn-primary)`]: {
             color: token.colorTextDescription,
@@ -32036,20 +31123,6 @@ const genSearchInputStyle = token => {
     }
   };
 };
-function initInputToken(token) {
-  // @ts-ignore
-  return merge(token, {
-    inputAffixPadding: token.paddingXXS,
-    inputPaddingVertical: Math.max(Math.round((token.controlHeight - token.fontSize * token.lineHeight) / 2 * 10) / 10 - token.lineWidth, 3),
-    inputPaddingVerticalLG: Math.ceil((token.controlHeightLG - token.fontSizeLG * token.lineHeightLG) / 2 * 10) / 10 - token.lineWidth,
-    inputPaddingVerticalSM: Math.max(Math.round((token.controlHeightSM - token.fontSize * token.lineHeight) / 2 * 10) / 10 - token.lineWidth, 0),
-    inputPaddingHorizontal: token.paddingSM - token.lineWidth,
-    inputPaddingHorizontalSM: token.paddingXS - token.lineWidth,
-    inputPaddingHorizontalLG: token.controlPaddingHorizontal - token.lineWidth,
-    inputBorderHoverColor: token.colorPrimaryHover,
-    inputBorderActiveColor: token.colorPrimaryHover
-  });
-}
 const genTextAreaStyle = token => {
   const {
     componentCls,
@@ -32108,7 +31181,7 @@ const genTextAreaStyle = token => {
           [`${textareaPrefixCls}-suffix`]: {
             position: 'absolute',
             top: 0,
-            insetInlineEnd: token.inputPaddingHorizontal,
+            insetInlineEnd: token.paddingInline,
             bottom: 0,
             zIndex: 1,
             display: 'inline-flex',
@@ -32121,15 +31194,55 @@ const genTextAreaStyle = token => {
     }
   };
 };
+function initInputToken(token) {
+  return merge(token, {
+    inputAffixPadding: token.paddingXXS
+  });
+}
+const initComponentToken$1 = token => {
+  const {
+    controlHeight,
+    fontSize,
+    lineHeight,
+    lineWidth,
+    controlHeightSM,
+    controlHeightLG,
+    fontSizeLG,
+    lineHeightLG,
+    paddingSM,
+    controlPaddingHorizontalSM,
+    controlPaddingHorizontal,
+    colorFillAlter,
+    colorPrimaryHover,
+    controlOutlineWidth,
+    controlOutline,
+    colorErrorOutline,
+    colorWarningOutline
+  } = token;
+  return {
+    paddingBlock: Math.max(Math.round((controlHeight - fontSize * lineHeight) / 2 * 10) / 10 - lineWidth, 3),
+    paddingBlockSM: Math.max(Math.round((controlHeightSM - fontSize * lineHeight) / 2 * 10) / 10 - lineWidth, 0),
+    paddingBlockLG: Math.ceil((controlHeightLG - fontSizeLG * lineHeightLG) / 2 * 10) / 10 - lineWidth,
+    paddingInline: paddingSM - lineWidth,
+    paddingInlineSM: controlPaddingHorizontalSM - lineWidth,
+    paddingInlineLG: controlPaddingHorizontal - lineWidth,
+    addonBg: colorFillAlter,
+    activeBorderColor: colorPrimaryHover,
+    hoverBorderColor: colorPrimaryHover,
+    activeShadow: `0 0 0 ${controlOutlineWidth}px ${controlOutline}`,
+    errorActiveShadow: `0 0 0 ${controlOutlineWidth}px ${colorErrorOutline}`,
+    warningActiveShadow: `0 0 0 ${controlOutlineWidth}px ${colorWarningOutline}`
+  };
+};
 // ============================== Export ==============================
 var useStyle$b = genComponentStyleHook('Input', token => {
-  const inputToken = initInputToken(token);
+  const inputToken = merge(token, initInputToken(token));
   return [genInputStyle(inputToken), genTextAreaStyle(inputToken), genAffixStyle(inputToken), genGroupStyle(inputToken), genSearchInputStyle(inputToken),
   // =====================================================
   // ==             Space Compact                       ==
   // =====================================================
   genCompactItemStyle(inputToken)];
-});
+}, initComponentToken$1);
 
 const Element$1 = props => {
   const {
@@ -32139,11 +31252,11 @@ const Element$1 = props => {
     size,
     shape
   } = props;
-  const sizeCls = classnames$g({
+  const sizeCls = classnames({
     [`${prefixCls}-lg`]: size === 'large',
     [`${prefixCls}-sm`]: size === 'small'
   });
-  const shapeCls = classnames$g({
+  const shapeCls = classnames({
     [`${prefixCls}-circle`]: shape === 'circle',
     [`${prefixCls}-square`]: shape === 'square',
     [`${prefixCls}-round`]: shape === 'round'
@@ -32154,7 +31267,7 @@ const Element$1 = props => {
     lineHeight: `${size}px`
   } : {}, [size]);
   return /*#__PURE__*/React__namespace.createElement("span", {
-    className: classnames$g(prefixCls, sizeCls, shapeCls, className),
+    className: classnames(prefixCls, sizeCls, shapeCls, className),
     style: Object.assign(Object.assign({}, sizeStyle), style)
   });
 };
@@ -32478,7 +31591,7 @@ const SkeletonAvatar = props => {
   const prefixCls = getPrefixCls('skeleton', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$a(prefixCls);
   const otherProps = omit(props, ['prefixCls', 'className']);
-  const cls = classnames$g(prefixCls, `${prefixCls}-element`, {
+  const cls = classnames(prefixCls, `${prefixCls}-element`, {
     [`${prefixCls}-active`]: active
   }, className, rootClassName, hashId);
   return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", {
@@ -32506,7 +31619,7 @@ const SkeletonButton = props => {
   const prefixCls = getPrefixCls('skeleton', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$a(prefixCls);
   const otherProps = omit(props, ['prefixCls']);
-  const cls = classnames$g(prefixCls, `${prefixCls}-element`, {
+  const cls = classnames(prefixCls, `${prefixCls}-element`, {
     [`${prefixCls}-active`]: active,
     [`${prefixCls}-block`]: block
   }, className, rootClassName, hashId);
@@ -32533,13 +31646,13 @@ const SkeletonImage = props => {
   } = React__namespace.useContext(ConfigContext);
   const prefixCls = getPrefixCls('skeleton', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$a(prefixCls);
-  const cls = classnames$g(prefixCls, `${prefixCls}-element`, {
+  const cls = classnames(prefixCls, `${prefixCls}-element`, {
     [`${prefixCls}-active`]: active
   }, className, rootClassName, hashId);
   return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", {
     className: cls
   }, /*#__PURE__*/React__namespace.createElement("div", {
-    className: classnames$g(`${prefixCls}-image`, className),
+    className: classnames(`${prefixCls}-image`, className),
     style: style
   }, /*#__PURE__*/React__namespace.createElement("svg", {
     viewBox: "0 0 1098 1024",
@@ -32567,7 +31680,7 @@ const SkeletonInput = props => {
   const prefixCls = getPrefixCls('skeleton', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$a(prefixCls);
   const otherProps = omit(props, ['prefixCls']);
-  const cls = classnames$g(prefixCls, `${prefixCls}-element`, {
+  const cls = classnames(prefixCls, `${prefixCls}-element`, {
     [`${prefixCls}-active`]: active,
     [`${prefixCls}-block`]: block
   }, className, rootClassName, hashId);
@@ -32609,14 +31722,14 @@ const SkeletonNode = props => {
   } = React__namespace.useContext(ConfigContext);
   const prefixCls = getPrefixCls('skeleton', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$a(prefixCls);
-  const cls = classnames$g(prefixCls, `${prefixCls}-element`, {
+  const cls = classnames(prefixCls, `${prefixCls}-element`, {
     [`${prefixCls}-active`]: active
   }, hashId, className, rootClassName);
   const content = children !== null && children !== void 0 ? children : /*#__PURE__*/React__namespace.createElement(DotChartOutlined$1, null);
   return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", {
     className: cls
   }, /*#__PURE__*/React__namespace.createElement("div", {
-    className: classnames$g(`${prefixCls}-image`, className),
+    className: classnames(`${prefixCls}-image`, className),
     style: style
   }, content)));
 };
@@ -32653,13 +31766,12 @@ const Paragraph$2 = props => {
     }
   }));
   return /*#__PURE__*/React__namespace.createElement("ul", {
-    className: classnames$g(prefixCls, className),
+    className: classnames(prefixCls, className),
     style: style
   }, rowList);
 };
 var Paragraph$3 = Paragraph$2;
 
-/* eslint-disable jsx-a11y/heading-has-content */
 const Title$4 = _ref => {
   let {
     prefixCls,
@@ -32668,7 +31780,7 @@ const Title$4 = _ref => {
     style
   } = _ref;
   return /*#__PURE__*/React__namespace.createElement("h3", {
-    className: classnames$g(prefixCls, className),
+    className: classnames(prefixCls, className),
     style: Object.assign({
       width
     }, style)
@@ -32780,7 +31892,7 @@ const Skeleton = props => {
         className: `${prefixCls}-content`
       }, $title, paragraphNode);
     }
-    const cls = classnames$g(prefixCls, {
+    const cls = classnames(prefixCls, {
       [`${prefixCls}-with-avatar`]: hasAvatar,
       [`${prefixCls}-active`]: active,
       [`${prefixCls}-rtl`]: direction === 'rtl',
@@ -32818,63 +31930,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 var PlusOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(PlusOutlined);
 
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$6 = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
-
 var TabContext = /*#__PURE__*/React.createContext(null);
 
 var TabPane$2 = /*#__PURE__*/React__namespace.forwardRef(function (_ref, ref) {
@@ -32892,7 +31947,7 @@ var TabPane$2 = /*#__PURE__*/React__namespace.forwardRef(function (_ref, ref) {
     "aria-labelledby": id && "".concat(id, "-tab-").concat(tabKey),
     "aria-hidden": !active,
     style: style,
-    className: classnames$6(prefixCls, active && "".concat(prefixCls, "-active"), className),
+    className: classnames(prefixCls, active && "".concat(prefixCls, "-active"), className),
     ref: ref
   }, children);
 });
@@ -32900,7 +31955,7 @@ if (process.env.NODE_ENV !== 'production') {
   TabPane$2.displayName = 'TabPane';
 }
 
-var _excluded$f = ["key", "forceRender", "style", "className"];
+var _excluded$g = ["key", "forceRender", "style", "className"];
 function TabPanelList(_ref) {
   var id = _ref.id,
     activeKey = _ref.activeKey,
@@ -32913,15 +31968,15 @@ function TabPanelList(_ref) {
   var tabPaneAnimated = animated.tabPane;
   var tabPanePrefixCls = "".concat(prefixCls, "-tabpane");
   return /*#__PURE__*/React__namespace.createElement("div", {
-    className: classnames$6("".concat(prefixCls, "-content-holder"))
+    className: classnames("".concat(prefixCls, "-content-holder"))
   }, /*#__PURE__*/React__namespace.createElement("div", {
-    className: classnames$6("".concat(prefixCls, "-content"), "".concat(prefixCls, "-content-").concat(tabPosition), _defineProperty({}, "".concat(prefixCls, "-content-animated"), tabPaneAnimated))
+    className: classnames("".concat(prefixCls, "-content"), "".concat(prefixCls, "-content-").concat(tabPosition), _defineProperty({}, "".concat(prefixCls, "-content-animated"), tabPaneAnimated))
   }, tabs.map(function (_ref2) {
     var key = _ref2.key,
       forceRender = _ref2.forceRender,
       paneStyle = _ref2.style,
       paneClassName = _ref2.className,
-      restTabProps = _objectWithoutProperties(_ref2, _excluded$f);
+      restTabProps = _objectWithoutProperties(_ref2, _excluded$g);
     var active = key === activeKey;
     return /*#__PURE__*/React__namespace.createElement(CSSMotion, _extends$1({
       key: key,
@@ -32939,7 +31994,7 @@ function TabPanelList(_ref) {
         animated: tabPaneAnimated,
         active: active,
         style: _objectSpread2(_objectSpread2({}, paneStyle), motionStyle),
-        className: classnames$6(paneClassName, motionClassName),
+        className: classnames(paneClassName, motionClassName),
         ref: ref
       }));
     });
@@ -33251,7 +32306,7 @@ function useVisibleRange(tabOffsets, visibleTabContentValue, transform, tabConte
  * We trade Map as deps which may change with same value but different ref object.
  * We should make it as hash for deps
  * */
-function stringify(obj) {
+function stringify$1(obj) {
   var tgt;
   if (obj instanceof Map) {
     tgt = {};
@@ -33476,7 +32531,7 @@ function OperationNode(_ref, ref) {
     moreStyle.visibility = 'hidden';
     moreStyle.order = 1;
   }
-  var overlayClassName = classnames$6(_defineProperty({}, "".concat(dropdownPrefix, "-rtl"), rtl));
+  var overlayClassName = classnames(_defineProperty({}, "".concat(dropdownPrefix, "-rtl"), rtl));
   var moreNode = mobile ? null : /*#__PURE__*/React__namespace.createElement(Dropdown$4, {
     prefixCls: dropdownPrefix,
     overlay: menu,
@@ -33484,7 +32539,7 @@ function OperationNode(_ref, ref) {
     visible: tabs.length ? open : false,
     transitionName: moreTransitionName,
     onVisibleChange: setOpen,
-    overlayClassName: classnames$6(overlayClassName, popupClassName),
+    overlayClassName: classnames(overlayClassName, popupClassName),
     mouseEnterDelay: 0.1,
     mouseLeaveDelay: 0.1,
     getPopupContainer: getPopupContainer
@@ -33501,7 +32556,7 @@ function OperationNode(_ref, ref) {
     onKeyDown: onKeyDown
   }, moreIcon));
   return /*#__PURE__*/React__namespace.createElement("div", {
-    className: classnames$6("".concat(prefixCls, "-nav-operations"), className),
+    className: classnames("".concat(prefixCls, "-nav-operations"), className),
     style: style,
     ref: ref
   }, moreNode, /*#__PURE__*/React__namespace.createElement(AddButton$1, {
@@ -33556,7 +32611,7 @@ function TabNode(_ref) {
     // ref={ref}
     ,
     "data-node-key": genDataNodeKey(key),
-    className: classnames$6(tabPrefix, (_classNames = {}, _defineProperty(_classNames, "".concat(tabPrefix, "-with-remove"), removable), _defineProperty(_classNames, "".concat(tabPrefix, "-active"), active), _defineProperty(_classNames, "".concat(tabPrefix, "-disabled"), disabled), _classNames)),
+    className: classnames(tabPrefix, (_classNames = {}, _defineProperty(_classNames, "".concat(tabPrefix, "-with-remove"), removable), _defineProperty(_classNames, "".concat(tabPrefix, "-active"), active), _defineProperty(_classNames, "".concat(tabPrefix, "-disabled"), disabled), _classNames)),
     style: style,
     onClick: onInternalClick
   }, /*#__PURE__*/React__namespace.createElement("div", {
@@ -33591,6 +32646,59 @@ function TabNode(_ref) {
   return renderWrapper ? renderWrapper(node) : node;
 }
 
+var useIndicator = function useIndicator(_ref) {
+  var activeTabOffset = _ref.activeTabOffset,
+    horizontal = _ref.horizontal,
+    rtl = _ref.rtl,
+    indicatorSize = _ref.indicatorSize;
+  var _useState = React.useState(),
+    _useState2 = _slicedToArray(_useState, 2),
+    inkStyle = _useState2[0],
+    setInkStyle = _useState2[1];
+  var inkBarRafRef = React.useRef();
+  var getLength = function getLength(origin) {
+    if (typeof indicatorSize === 'function') {
+      return indicatorSize(origin);
+    }
+    if (typeof indicatorSize === 'number') {
+      return indicatorSize;
+    }
+    return origin;
+  };
+
+  // Delay set ink style to avoid remove tab blink
+  function cleanInkBarRaf() {
+    wrapperRaf.cancel(inkBarRafRef.current);
+  }
+  React.useEffect(function () {
+    var newInkStyle = {};
+    if (activeTabOffset) {
+      if (horizontal) {
+        if (rtl) {
+          newInkStyle.right = activeTabOffset.right + activeTabOffset.width / 2;
+          newInkStyle.transform = 'translateX(50%)';
+        } else {
+          newInkStyle.left = activeTabOffset.left + activeTabOffset.width / 2;
+          newInkStyle.transform = 'translateX(-50%)';
+        }
+        newInkStyle.width = getLength(activeTabOffset.width);
+      } else {
+        newInkStyle.top = activeTabOffset.top + activeTabOffset.height / 2;
+        newInkStyle.transform = 'translateY(-50%)';
+        newInkStyle.height = getLength(activeTabOffset.height);
+      }
+    }
+    cleanInkBarRaf();
+    inkBarRafRef.current = wrapperRaf(function () {
+      setInkStyle(newInkStyle);
+    });
+    return cleanInkBarRaf;
+  }, [activeTabOffset, horizontal, rtl, indicatorSize]);
+  return {
+    style: inkStyle
+  };
+};
+
 var getSize$1 = function getSize(refObj) {
   var _ref = refObj.current || {},
     _ref$offsetWidth = _ref.offsetWidth,
@@ -33624,7 +32732,8 @@ function TabNavList(props, ref) {
     tabBarGutter = props.tabBarGutter,
     children = props.children,
     onTabClick = props.onTabClick,
-    onTabScroll = props.onTabScroll;
+    onTabScroll = props.onTabScroll,
+    indicatorSize = props.indicatorSize;
   var containerRef = React.useRef();
   var extraLeftRef = React.useRef();
   var extraRightRef = React.useRef();
@@ -33903,44 +33012,20 @@ function TabNavList(props, ref) {
   var hiddenTabs = [].concat(_toConsumableArray(startHiddenTabs), _toConsumableArray(endHiddenTabs));
 
   // =================== Link & Operations ===================
-  var _useState11 = React.useState(),
-    _useState12 = _slicedToArray(_useState11, 2),
-    inkStyle = _useState12[0],
-    setInkStyle = _useState12[1];
   var activeTabOffset = tabOffsets.get(activeKey);
-
-  // Delay set ink style to avoid remove tab blink
-  var inkBarRafRef = React.useRef();
-  function cleanInkBarRaf() {
-    wrapperRaf.cancel(inkBarRafRef.current);
-  }
-  React.useEffect(function () {
-    var newInkStyle = {};
-    if (activeTabOffset) {
-      if (tabPositionTopOrBottom) {
-        if (rtl) {
-          newInkStyle.right = activeTabOffset.right;
-        } else {
-          newInkStyle.left = activeTabOffset.left;
-        }
-        newInkStyle.width = activeTabOffset.width;
-      } else {
-        newInkStyle.top = activeTabOffset.top;
-        newInkStyle.height = activeTabOffset.height;
-      }
-    }
-    cleanInkBarRaf();
-    inkBarRafRef.current = wrapperRaf(function () {
-      setInkStyle(newInkStyle);
-    });
-    return cleanInkBarRaf;
-  }, [activeTabOffset, tabPositionTopOrBottom, rtl]);
+  var _useIndicator = useIndicator({
+      activeTabOffset: activeTabOffset,
+      horizontal: tabPositionTopOrBottom,
+      rtl: rtl,
+      indicatorSize: indicatorSize
+    }),
+    indicatorStyle = _useIndicator.style;
 
   // ========================= Effect ========================
   React.useEffect(function () {
     scrollToTab();
     // eslint-disable-next-line
-  }, [activeKey, transformMin, transformMax, stringify(activeTabOffset), stringify(tabOffsets), tabPositionTopOrBottom]);
+  }, [activeKey, transformMin, transformMax, stringify$1(activeTabOffset), stringify$1(tabOffsets), tabPositionTopOrBottom]);
 
   // Should recalculate when rtl changed
   React.useEffect(function () {
@@ -33972,7 +33057,7 @@ function TabNavList(props, ref) {
   }, /*#__PURE__*/React__namespace.createElement("div", {
     ref: useComposeRef(ref, containerRef),
     role: "tablist",
-    className: classnames$6("".concat(prefixCls, "-nav"), className),
+    className: classnames("".concat(prefixCls, "-nav"), className),
     style: style,
     onKeyDown: function onKeyDown() {
       // No need animation when use keyboard
@@ -33983,8 +33068,10 @@ function TabNavList(props, ref) {
     position: "left",
     extra: extra,
     prefixCls: prefixCls
-  }), /*#__PURE__*/React__namespace.createElement("div", {
-    className: classnames$6(wrapPrefix, (_classNames = {}, _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-left"), pingLeft), _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-right"), pingRight), _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-top"), pingTop), _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-bottom"), pingBottom), _classNames)),
+  }), /*#__PURE__*/React__namespace.createElement(RefResizeObserver, {
+    onResize: onListHolderResize
+  }, /*#__PURE__*/React__namespace.createElement("div", {
+    className: classnames(wrapPrefix, (_classNames = {}, _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-left"), pingLeft), _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-right"), pingRight), _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-top"), pingTop), _defineProperty(_classNames, "".concat(wrapPrefix, "-ping-bottom"), pingBottom), _classNames)),
     ref: tabsWrapperRef
   }, /*#__PURE__*/React__namespace.createElement(RefResizeObserver, {
     onResize: onListHolderResize
@@ -34004,9 +33091,9 @@ function TabNavList(props, ref) {
       visibility: hasDropdown ? 'hidden' : null
     })
   }), /*#__PURE__*/React__namespace.createElement("div", {
-    className: classnames$6("".concat(prefixCls, "-ink-bar"), _defineProperty({}, "".concat(prefixCls, "-ink-bar-animated"), animated.inkBar)),
-    style: inkStyle
-  })))), /*#__PURE__*/React__namespace.createElement(OperationNode$1, _extends$1({}, props, {
+    className: classnames("".concat(prefixCls, "-ink-bar"), _defineProperty({}, "".concat(prefixCls, "-ink-bar-animated"), animated.inkBar)),
+    style: indicatorStyle
+  }))))), /*#__PURE__*/React__namespace.createElement(OperationNode$1, _extends$1({}, props, {
     removeAriaLabel: locale === null || locale === void 0 ? void 0 : locale.removeAriaLabel,
     ref: operationsRef,
     prefixCls: prefixCls,
@@ -34024,12 +33111,12 @@ function TabNavList(props, ref) {
 
 var TabNavList$1 = /*#__PURE__*/React__namespace.forwardRef(TabNavList);
 
-var _excluded$e = ["renderTabBar"],
+var _excluded$f = ["renderTabBar"],
   _excluded2$2 = ["label", "key"];
 // We have to create a TabNavList components.
 function TabNavListWrapper(_ref) {
   var renderTabBar = _ref.renderTabBar,
-    restProps = _objectWithoutProperties(_ref, _excluded$e);
+    restProps = _objectWithoutProperties(_ref, _excluded$f);
   var _React$useContext = React__namespace.useContext(TabContext),
     tabs = _React$useContext.tabs;
   if (renderTabBar) {
@@ -34086,8 +33173,7 @@ function useAnimateConfig$1() {
   return mergedAnimated;
 }
 
-var _excluded$d = ["id", "prefixCls", "className", "items", "direction", "activeKey", "defaultActiveKey", "editable", "animated", "tabPosition", "tabBarGutter", "tabBarStyle", "tabBarExtraContent", "locale", "moreIcon", "moreTransitionName", "destroyInactiveTabPane", "renderTabBar", "onChange", "onTabClick", "onTabScroll", "getPopupContainer", "popupClassName"];
-
+var _excluded$e = ["id", "prefixCls", "className", "items", "direction", "activeKey", "defaultActiveKey", "editable", "animated", "tabPosition", "tabBarGutter", "tabBarStyle", "tabBarExtraContent", "locale", "moreIcon", "moreTransitionName", "destroyInactiveTabPane", "renderTabBar", "onChange", "onTabClick", "onTabScroll", "getPopupContainer", "popupClassName", "indicatorSize"];
 /**
  * Should added antd:
  * - type
@@ -34096,9 +33182,7 @@ var _excluded$d = ["id", "prefixCls", "className", "items", "direction", "active
  * - onNextClick
  * - onPrevClick
  * - keyboard
- */
-
-// Used for accessibility
+ */ // Used for accessibility
 var uuid = 0;
 function Tabs$4(_ref, ref) {
   var _classNames;
@@ -34127,7 +33211,8 @@ function Tabs$4(_ref, ref) {
     onTabScroll = _ref.onTabScroll,
     getPopupContainer = _ref.getPopupContainer,
     popupClassName = _ref.popupClassName,
-    restProps = _objectWithoutProperties(_ref, _excluded$d);
+    indicatorSize = _ref.indicatorSize,
+    restProps = _objectWithoutProperties(_ref, _excluded$e);
   var tabs = React__namespace.useMemo(function () {
     return (items || []).filter(function (item) {
       return item && _typeof(item) === 'object' && 'key' in item;
@@ -34216,7 +33301,6 @@ function Tabs$4(_ref, ref) {
     rtl: rtl,
     mobile: mobile
   };
-  var tabNavBar;
   var tabNavBarProps = _objectSpread2(_objectSpread2({}, sharedProps), {}, {
     editable: editable,
     locale: locale,
@@ -34229,7 +33313,8 @@ function Tabs$4(_ref, ref) {
     style: tabBarStyle,
     panes: null,
     getPopupContainer: getPopupContainer,
-    popupClassName: popupClassName
+    popupClassName: popupClassName,
+    indicatorSize: indicatorSize
   });
   return /*#__PURE__*/React__namespace.createElement(TabContext.Provider, {
     value: {
@@ -34239,8 +33324,8 @@ function Tabs$4(_ref, ref) {
   }, /*#__PURE__*/React__namespace.createElement("div", _extends$1({
     ref: ref,
     id: id,
-    className: classnames$6(prefixCls, "".concat(prefixCls, "-").concat(tabPosition), (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-mobile"), mobile), _defineProperty(_classNames, "".concat(prefixCls, "-editable"), editable), _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), rtl), _classNames), className)
-  }, restProps), tabNavBar, /*#__PURE__*/React__namespace.createElement(TabNavListWrapper, _extends$1({}, tabNavBarProps, {
+    className: classnames(prefixCls, "".concat(prefixCls, "-").concat(tabPosition), (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-mobile"), mobile), _defineProperty(_classNames, "".concat(prefixCls, "-editable"), editable), _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), rtl), _classNames), className)
+  }, restProps), /*#__PURE__*/React__namespace.createElement(TabNavListWrapper, _extends$1({}, tabNavBarProps, {
     renderTabBar: renderTabBar
   })), /*#__PURE__*/React__namespace.createElement(TabPanelList, _extends$1({
     destroyInactiveTabPane: destroyInactiveTabPane
@@ -34252,12 +33337,6 @@ var ForwardTabs = /*#__PURE__*/React__namespace.forwardRef(Tabs$4);
 if (process.env.NODE_ENV !== 'production') {
   ForwardTabs.displayName = 'Tabs';
 }
-
-const TabPane = () => null;
-if (process.env.NODE_ENV !== 'production') {
-  TabPane.displayName = 'DeprecatedTabPane';
-}
-var TabPane$1 = TabPane;
 
 const motion = {
   motionAppear: false,
@@ -34305,10 +33384,13 @@ function filter(items) {
   return items.filter(item => item);
 }
 function useLegacyItems(items, children) {
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Tabs');
+    warning.deprecated(!children, 'Tabs.TabPane', 'items');
+  }
   if (items) {
     return items;
   }
-  process.env.NODE_ENV !== "production" ? warning$3(!children, 'Tabs', 'Tabs.TabPane is deprecated. Please use `items` directly.') : void 0;
   const childrenItems = toArray$5(children).map(node => {
     if ( /*#__PURE__*/React__namespace.isValidElement(node)) {
       const {
@@ -34833,7 +33915,8 @@ const genTabStyle = token => {
     iconCls,
     tabsHorizontalItemMargin,
     horizontalItemPadding,
-    itemSelectedColor
+    itemSelectedColor,
+    itemColor
   } = token;
   const tabCls = `${componentCls}-tab`;
   return {
@@ -34849,6 +33932,7 @@ const genTabStyle = token => {
       border: 0,
       outline: 'none',
       cursor: 'pointer',
+      color: itemColor,
       '&-btn, &-remove': Object.assign({
         '&:focus:not(:focus-visible), &:active': {
           color: itemActiveColor
@@ -35177,12 +34261,19 @@ var useStyle$9 = genComponentStyleHook('Tabs', token => {
     horizontalItemPaddingLG: `${token.padding}px 0`,
     verticalItemPadding: `${token.paddingXS}px ${token.paddingLG}px`,
     verticalItemMargin: `${token.margin}px 0 0 0`,
+    itemColor: token.colorText,
     itemSelectedColor: token.colorPrimary,
     itemHoverColor: token.colorPrimaryHover,
     itemActiveColor: token.colorPrimaryActive,
     cardGutter: token.marginXXS / 2
   };
 });
+
+const TabPane = () => null;
+if (process.env.NODE_ENV !== 'production') {
+  TabPane.displayName = 'DeprecatedTabPane';
+}
+var TabPane$1 = TabPane;
 
 var __rest$s = undefined && undefined.__rest || function (s, e) {
   var t = {};
@@ -35206,9 +34297,10 @@ const Tabs$2 = props => {
       children,
       items,
       animated,
-      style
+      style,
+      indicatorSize
     } = props,
-    otherProps = __rest$s(props, ["type", "className", "rootClassName", "size", "onEdit", "hideAdd", "centered", "addIcon", "popupClassName", "children", "items", "animated", "style"]);
+    otherProps = __rest$s(props, ["type", "className", "rootClassName", "size", "onEdit", "hideAdd", "centered", "addIcon", "popupClassName", "children", "items", "animated", "style", "indicatorSize"]);
   const {
     prefixCls: customizePrefixCls,
     moreIcon = /*#__PURE__*/React__namespace.createElement(EllipsisOutlined$1, null)
@@ -35237,7 +34329,10 @@ const Tabs$2 = props => {
     };
   }
   const rootPrefixCls = getPrefixCls();
-  process.env.NODE_ENV !== "production" ? warning$3(!('onPrevClick' in props) && !('onNextClick' in props), 'Tabs', '`onPrevClick` and `onNextClick` has been removed. Please use `onTabScroll` instead.') : void 0;
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Tabs');
+    process.env.NODE_ENV !== "production" ? warning(!('onPrevClick' in props) && !('onNextClick' in props), 'breaking', '`onPrevClick` and `onNextClick` has been removed. Please use `onTabScroll` instead.') : void 0;
+  }
   const mergedItems = useLegacyItems(items, children);
   const mergedAnimated = useAnimateConfig(prefixCls, animated);
   const size = useSize$1(customSize);
@@ -35248,18 +34343,19 @@ const Tabs$2 = props => {
     moreTransitionName: `${rootPrefixCls}-slide-up`
   }, otherProps, {
     items: mergedItems,
-    className: classnames$g({
+    className: classnames({
       [`${prefixCls}-${size}`]: size,
       [`${prefixCls}-card`]: ['card', 'editable-card'].includes(type),
       [`${prefixCls}-editable-card`]: type === 'editable-card',
       [`${prefixCls}-centered`]: centered
     }, tabs === null || tabs === void 0 ? void 0 : tabs.className, className, rootClassName, hashId),
-    popupClassName: classnames$g(popupClassName, hashId),
+    popupClassName: classnames(popupClassName, hashId),
     style: mergedStyle,
     editable: editable,
     moreIcon: moreIcon,
     prefixCls: prefixCls,
-    animated: mergedAnimated
+    animated: mergedAnimated,
+    indicatorSize: indicatorSize !== null && indicatorSize !== void 0 ? indicatorSize : tabs === null || tabs === void 0 ? void 0 : tabs.indicatorSize
   })));
 };
 Tabs$2.TabPane = TabPane$1;
@@ -35276,7 +34372,7 @@ var __rest$r = undefined && undefined.__rest || function (s, e) {
   }
   return t;
 };
-const Grid$1 = _a => {
+const Grid$2 = _a => {
   var {
       prefixCls,
       className,
@@ -35287,14 +34383,14 @@ const Grid$1 = _a => {
     getPrefixCls
   } = React__namespace.useContext(ConfigContext);
   const prefix = getPrefixCls('card', prefixCls);
-  const classString = classnames$g(`${prefix}-grid`, className, {
+  const classString = classnames(`${prefix}-grid`, className, {
     [`${prefix}-grid-hoverable`]: hoverable
   });
   return /*#__PURE__*/React__namespace.createElement("div", Object.assign({}, props, {
     className: classString
   }));
 };
-var Grid$2 = Grid$1;
+var Grid$3 = Grid$2;
 
 // ============================== Styles ==============================
 // ============================== Head ==============================
@@ -35551,6 +34647,7 @@ const genCardStyle = token => {
       }
     },
     [`${componentCls}-contain-grid`]: {
+      borderRadius: `${token.borderRadiusLG}px ${token.borderRadiusLG}px 0 0 `,
       [`${componentCls}-body`]: {
         display: 'flex',
         flexWrap: 'wrap'
@@ -35694,7 +34791,7 @@ const Card$2 = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   const isContainGrid = React__namespace.useMemo(() => {
     let containGrid = false;
     React__namespace.Children.forEach(children, element => {
-      if (element && element.type && element.type === Grid$2) {
+      if (element && element.type && element.type === Grid$3) {
         containGrid = true;
       }
     });
@@ -35756,7 +34853,7 @@ const Card$2 = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
     className: `${prefixCls}-actions`
   }, getAction(actions)) : null;
   const divProps = omit(others, ['onTabChange']);
-  const classString = classnames$g(prefixCls, card === null || card === void 0 ? void 0 : card.className, {
+  const classString = classnames(prefixCls, card === null || card === void 0 ? void 0 : card.className, {
     [`${prefixCls}-loading`]: loading,
     [`${prefixCls}-bordered`]: bordered,
     [`${prefixCls}-hoverable`]: hoverable,
@@ -35797,7 +34894,7 @@ const Meta = props => {
     getPrefixCls
   } = React__namespace.useContext(ConfigContext);
   const prefixCls = getPrefixCls('card', customizePrefixCls);
-  const classString = classnames$g(`${prefixCls}-meta`, className);
+  const classString = classnames(`${prefixCls}-meta`, className);
   const avatarDom = avatar ? /*#__PURE__*/React__namespace.createElement("div", {
     className: `${prefixCls}-meta-avatar`
   }, avatar) : null;
@@ -35817,7 +34914,7 @@ const Meta = props => {
 var Meta$1 = Meta;
 
 const Card = InternalCard;
-Card.Grid = Grid$2;
+Card.Grid = Grid$3;
 Card.Meta = Meta$1;
 if (process.env.NODE_ENV !== 'production') {
   Card.displayName = 'Card';
@@ -35994,6 +35091,10 @@ function debounce (delay, callback, options) {
   });
 }
 
+function getEntity(keyEntities, key) {
+  return keyEntities[key];
+}
+
 function removeFromCheckedKeys(halfCheckedKeys, checkedKeys) {
   var filteredKeys = new Set();
   halfCheckedKeys.forEach(function (key) {
@@ -36157,7 +35258,7 @@ function conductCheck(keyList, checked, keyEntities, getCheckDisabled) {
   }
   // We only handle exist keys
   var keys = new Set(keyList.filter(function (key) {
-    var hasEntity = !!keyEntities[key];
+    var hasEntity = !!getEntity(keyEntities, key);
     if (!hasEntity) {
       warningMissKeys.push(key);
     }
@@ -36189,7 +35290,7 @@ function conductCheck(keyList, checked, keyEntities, getCheckDisabled) {
   return result;
 }
 
-var _excluded$c = ["children"];
+var _excluded$d = ["children"];
 function getPosition(level, index) {
   return "".concat(level, "-").concat(index);
 }
@@ -36250,7 +35351,7 @@ function convertTreeToData(rootNodes) {
       var key = treeNode.key;
       var _treeNode$props = treeNode.props,
         children = _treeNode$props.children,
-        rest = _objectWithoutProperties(_treeNode$props, _excluded$c);
+        rest = _objectWithoutProperties(_treeNode$props, _excluded$d);
       var dataNode = _objectSpread2({
         key: key
       }, rest);
@@ -36465,7 +35566,7 @@ function getTreeNodeProps(key, _ref3) {
     dragOverNodeKey = _ref3.dragOverNodeKey,
     dropPosition = _ref3.dropPosition,
     keyEntities = _ref3.keyEntities;
-  var entity = keyEntities[key];
+  var entity = getEntity(keyEntities, key);
   var treeNodeProps = {
     eventKey: key,
     expanded: expandedKeys.indexOf(key) !== -1,
@@ -36784,9 +35885,12 @@ const InternalCheckbox = (props, ref) => {
   const contextDisabled = React__namespace.useContext(DisabledContext$1);
   const mergedDisabled = (_a = (checkboxGroup === null || checkboxGroup === void 0 ? void 0 : checkboxGroup.disabled) || disabled) !== null && _a !== void 0 ? _a : contextDisabled;
   const prevValue = React__namespace.useRef(restProps.value);
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Checkbox');
+    process.env.NODE_ENV !== "production" ? warning('checked' in restProps || !!checkboxGroup || !('value' in restProps), 'usage', '`value` is not a valid prop, do you mean `checked`?') : void 0;
+  }
   React__namespace.useEffect(() => {
     checkboxGroup === null || checkboxGroup === void 0 ? void 0 : checkboxGroup.registerValue(restProps.value);
-    process.env.NODE_ENV !== "production" ? warning$3('checked' in restProps || !!checkboxGroup || !('value' in restProps), 'Checkbox', '`value` is not a valid prop, do you mean `checked`?') : void 0;
   }, []);
   React__namespace.useEffect(() => {
     if (skipGroup) {
@@ -36817,13 +35921,13 @@ const InternalCheckbox = (props, ref) => {
     checkboxProps.name = checkboxGroup.name;
     checkboxProps.checked = checkboxGroup.value.includes(restProps.value);
   }
-  const classString = classnames$g(`${prefixCls}-wrapper`, {
+  const classString = classnames(`${prefixCls}-wrapper`, {
     [`${prefixCls}-rtl`]: direction === 'rtl',
     [`${prefixCls}-wrapper-checked`]: checkboxProps.checked,
     [`${prefixCls}-wrapper-disabled`]: mergedDisabled,
     [`${prefixCls}-wrapper-in-form-item`]: isFormItemInput
   }, checkbox === null || checkbox === void 0 ? void 0 : checkbox.className, className, rootClassName, hashId);
-  const checkboxClass = classnames$g({
+  const checkboxClass = classnames({
     [`${prefixCls}-indeterminate`]: indeterminate
   }, TARGET_CLS, hashId);
   const ariaChecked = indeterminate ? 'mixed' : undefined;
@@ -36938,7 +36042,7 @@ const InternalGroup = (props, ref) => {
     registerValue,
     cancelValue
   };
-  const classString = classnames$g(groupPrefixCls, {
+  const classString = classnames(groupPrefixCls, {
     [`${groupPrefixCls}-rtl`]: direction === 'rtl'
   }, className, rootClassName, hashId);
   return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", Object.assign({
@@ -37061,11 +36165,19 @@ const genLoopGridColumnsStyle = (token, sizeCls) => {
         order: 0
       };
     } else {
-      gridColumnsStyle[`${componentCls}${sizeCls}-${i}`] = {
-        display: 'block',
+      gridColumnsStyle[`${componentCls}${sizeCls}-${i}`] = [
+      // https://github.com/ant-design/ant-design/issues/44456
+      // Form set `display: flex` on Col which will override `display: block`.
+      // Let's get it from css variable to support override.
+      {
+        ['--ant-display']: 'block',
+        // Fallback to display if variable not support
+        display: 'block'
+      }, {
+        display: 'var(--ant-display)',
         flex: `0 0 ${i / gridColumns * 100}%`,
         maxWidth: `${i / gridColumns * 100}%`
-      };
+      }];
       gridColumnsStyle[`${componentCls}${sizeCls}-push-${i}`] = {
         insetInlineStart: `${i / gridColumns * 100}%`
       };
@@ -37128,8 +36240,7 @@ const Col$1 = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   } = React__namespace.useContext(ConfigContext);
   const {
     gutter,
-    wrap,
-    supportFlexGap
+    wrap
   } = React__namespace.useContext(RowContext$1);
   const {
       prefixCls: customizePrefixCls,
@@ -37166,7 +36277,7 @@ const Col$1 = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
       [`${prefixCls}-rtl`]: direction === 'rtl'
     });
   });
-  const classes = classnames$g(prefixCls, {
+  const classes = classnames(prefixCls, {
     [`${prefixCls}-${span}`]: span !== undefined,
     [`${prefixCls}-order-${order}`]: order,
     [`${prefixCls}-offset-${offset}`]: offset,
@@ -37179,12 +36290,6 @@ const Col$1 = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
     const horizontalGutter = gutter[0] / 2;
     mergedStyle.paddingLeft = horizontalGutter;
     mergedStyle.paddingRight = horizontalGutter;
-  }
-  // Vertical gutter use padding when gap not support
-  if (gutter && gutter[1] > 0 && !supportFlexGap) {
-    const verticalGutter = gutter[1] / 2;
-    mergedStyle.paddingTop = verticalGutter;
-    mergedStyle.paddingBottom = verticalGutter;
   }
   if (flex) {
     mergedStyle.flex = parseFlex(flex);
@@ -37204,14 +36309,6 @@ if (process.env.NODE_ENV !== 'production') {
   Col$1.displayName = 'Col';
 }
 var Col$2 = Col$1;
-
-var useFlexGapSupport = (() => {
-  const [flexible, setFlexible] = React__namespace.useState(false);
-  React__namespace.useEffect(() => {
-    setFlexible(detectFlexGapSupported());
-  }, []);
-  return flexible;
-});
 
 var __rest$l = undefined && undefined.__rest || function (s, e) {
   var t = {};
@@ -37233,7 +36330,9 @@ function useMergePropByScreen(oriProp, screen) {
     for (let i = 0; i < responsiveArray.length; i++) {
       const breakpoint = responsiveArray[i];
       // if do not match, do nothing
-      if (!screen[breakpoint]) continue;
+      if (!screen[breakpoint]) {
+        continue;
+      }
       const curVal = oriProp[breakpoint];
       if (curVal !== undefined) {
         setProp(curVal);
@@ -37282,7 +36381,6 @@ const Row = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   // ================================== calc responsive data ==================================
   const mergeAlign = useMergePropByScreen(align, curScreens);
   const mergeJustify = useMergePropByScreen(justify, curScreens);
-  const supportFlexGap = useFlexGapSupport();
   const gutterRef = React__namespace.useRef(gutter);
   const responsiveObserver = useResponsiveObserver();
   // ================================== Effect ==================================
@@ -37318,7 +36416,7 @@ const Row = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   const prefixCls = getPrefixCls('row', customizePrefixCls);
   const [wrapSSR, hashId] = useRowStyle(prefixCls);
   const gutters = getGutter();
-  const classes = classnames$g(prefixCls, {
+  const classes = classnames(prefixCls, {
     [`${prefixCls}-no-wrap`]: wrap === false,
     [`${prefixCls}-${mergeJustify}`]: mergeJustify,
     [`${prefixCls}-${mergeAlign}`]: mergeAlign,
@@ -37327,26 +36425,18 @@ const Row = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   // Add gutter related style
   const rowStyle = {};
   const horizontalGutter = gutters[0] != null && gutters[0] > 0 ? gutters[0] / -2 : undefined;
-  const verticalGutter = gutters[1] != null && gutters[1] > 0 ? gutters[1] / -2 : undefined;
   if (horizontalGutter) {
     rowStyle.marginLeft = horizontalGutter;
     rowStyle.marginRight = horizontalGutter;
   }
-  if (supportFlexGap) {
-    // Set gap direct if flex gap support
-    [, rowStyle.rowGap] = gutters;
-  } else if (verticalGutter) {
-    rowStyle.marginTop = verticalGutter;
-    rowStyle.marginBottom = verticalGutter;
-  }
+  [, rowStyle.rowGap] = gutters;
   // "gutters" is a new array in each rendering phase, it'll make 'React.useMemo' effectless.
   // So we deconstruct "gutters" variable here.
   const [gutterH, gutterV] = gutters;
   const rowContext = React__namespace.useMemo(() => ({
     gutter: [gutterH, gutterV],
-    wrap,
-    supportFlexGap
-  }), [gutterH, gutterV, wrap, supportFlexGap]);
+    wrap
+  }), [gutterH, gutterV, wrap]);
   return wrapSSR( /*#__PURE__*/React__namespace.createElement(RowContext$1.Provider, {
     value: rowContext
   }, /*#__PURE__*/React__namespace.createElement("div", Object.assign({}, others, {
@@ -37800,120 +36890,6 @@ function toFixed(numStr, separatorStr, precision) {
   return "".concat(numberWithoutDecimal).concat(precisionDecimalStr);
 }
 
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$5 = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
-
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$4 = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
-
 function hasAddon(props) {
   return !!(props.addonBefore || props.addonAfter);
 }
@@ -38050,7 +37026,7 @@ var BaseInput = function BaseInput(props) {
       onMouseDown: function onMouseDown(e) {
         return e.preventDefault();
       },
-      className: classnames$4(clearIconCls, (_clsx = {}, _defineProperty(_clsx, "".concat(clearIconCls, "-hidden"), !needClear), _defineProperty(_clsx, "".concat(clearIconCls, "-has-suffix"), !!suffix), _clsx)),
+      className: classnames(clearIconCls, (_clsx = {}, _defineProperty(_clsx, "".concat(clearIconCls, "-hidden"), !needClear), _defineProperty(_clsx, "".concat(clearIconCls, "-has-suffix"), !!suffix), _clsx)),
       role: "button",
       tabIndex: -1
     }, iconNode);
@@ -38058,7 +37034,7 @@ var BaseInput = function BaseInput(props) {
   var element = /*#__PURE__*/React.cloneElement(inputElement, {
     value: value,
     hidden: hidden,
-    className: classnames$4((_inputElement$props = inputElement.props) === null || _inputElement$props === void 0 ? void 0 : _inputElement$props.className, !hasPrefixSuffix$1(props) && !hasAddon(props) && className) || null,
+    className: classnames((_inputElement$props = inputElement.props) === null || _inputElement$props === void 0 ? void 0 : _inputElement$props.className, !hasPrefixSuffix$1(props) && !hasAddon(props) && className) || null,
     style: _objectSpread2(_objectSpread2({}, (_inputElement$props2 = inputElement.props) === null || _inputElement$props2 === void 0 ? void 0 : _inputElement$props2.style), !hasPrefixSuffix$1(props) && !hasAddon(props) ? style : {})
   });
 
@@ -38066,9 +37042,9 @@ var BaseInput = function BaseInput(props) {
   if (hasPrefixSuffix$1(props)) {
     var _clsx2;
     var affixWrapperPrefixCls = "".concat(prefixCls, "-affix-wrapper");
-    var affixWrapperCls = classnames$4(affixWrapperPrefixCls, (_clsx2 = {}, _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-disabled"), disabled), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-focused"), focused), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-readonly"), readOnly), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-input-with-clear-btn"), suffix && allowClear && value), _clsx2), !hasAddon(props) && className, classes === null || classes === void 0 ? void 0 : classes.affixWrapper, classNames === null || classNames === void 0 ? void 0 : classNames.affixWrapper);
+    var affixWrapperCls = classnames(affixWrapperPrefixCls, (_clsx2 = {}, _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-disabled"), disabled), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-focused"), focused), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-readonly"), readOnly), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-input-with-clear-btn"), suffix && allowClear && value), _clsx2), !hasAddon(props) && className, classes === null || classes === void 0 ? void 0 : classes.affixWrapper, classNames === null || classNames === void 0 ? void 0 : classNames.affixWrapper);
     var suffixNode = (suffix || allowClear) && /*#__PURE__*/React__default["default"].createElement("span", {
-      className: classnames$4("".concat(prefixCls, "-suffix"), classNames === null || classNames === void 0 ? void 0 : classNames.suffix),
+      className: classnames("".concat(prefixCls, "-suffix"), classNames === null || classNames === void 0 ? void 0 : classNames.suffix),
       style: styles === null || styles === void 0 ? void 0 : styles.suffix
     }, getClearIcon(), suffix);
     element = /*#__PURE__*/React__default["default"].createElement(AffixWrapperComponent, _extends$1({
@@ -38079,7 +37055,7 @@ var BaseInput = function BaseInput(props) {
     }, dataAttrs === null || dataAttrs === void 0 ? void 0 : dataAttrs.affixWrapper, {
       ref: containerRef
     }), prefix && /*#__PURE__*/React__default["default"].createElement("span", {
-      className: classnames$4("".concat(prefixCls, "-prefix"), classNames === null || classNames === void 0 ? void 0 : classNames.prefix),
+      className: classnames("".concat(prefixCls, "-prefix"), classNames === null || classNames === void 0 ? void 0 : classNames.prefix),
       style: styles === null || styles === void 0 ? void 0 : styles.prefix
     }, prefix), /*#__PURE__*/React.cloneElement(inputElement, {
       value: value,
@@ -38091,8 +37067,8 @@ var BaseInput = function BaseInput(props) {
   if (hasAddon(props)) {
     var wrapperCls = "".concat(prefixCls, "-group");
     var addonCls = "".concat(wrapperCls, "-addon");
-    var mergedWrapperClassName = classnames$4("".concat(prefixCls, "-wrapper"), wrapperCls, classes === null || classes === void 0 ? void 0 : classes.wrapper);
-    var mergedGroupClassName = classnames$4("".concat(prefixCls, "-group-wrapper"), className, classes === null || classes === void 0 ? void 0 : classes.group);
+    var mergedWrapperClassName = classnames("".concat(prefixCls, "-wrapper"), wrapperCls, classes === null || classes === void 0 ? void 0 : classes.wrapper);
+    var mergedGroupClassName = classnames("".concat(prefixCls, "-group-wrapper"), className, classes === null || classes === void 0 ? void 0 : classes.group);
 
     // Need another wrapper for changing display:table to display:inline-block
     // and put style prop in wrapper
@@ -38113,7 +37089,7 @@ var BaseInput = function BaseInput(props) {
   return element;
 };
 
-var _excluded$b = ["autoComplete", "onChange", "onFocus", "onBlur", "onPressEnter", "onKeyDown", "prefixCls", "disabled", "htmlSize", "className", "maxLength", "suffix", "showCount", "type", "classes", "classNames", "styles"];
+var _excluded$c = ["autoComplete", "onChange", "onFocus", "onBlur", "onPressEnter", "onKeyDown", "prefixCls", "disabled", "htmlSize", "className", "maxLength", "suffix", "showCount", "type", "classes", "classNames", "styles"];
 var Input$4 = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var autoComplete = props.autoComplete,
     onChange = props.onChange,
@@ -38134,7 +37110,7 @@ var Input$4 = /*#__PURE__*/React.forwardRef(function (props, ref) {
     classes = props.classes,
     classNames = props.classNames,
     styles = props.styles,
-    rest = _objectWithoutProperties(props, _excluded$b);
+    rest = _objectWithoutProperties(props, _excluded$c);
   var _useMergedState = useMergedState(props.defaultValue, {
       value: props.value
     }),
@@ -38216,7 +37192,7 @@ var Input$4 = /*#__PURE__*/React.forwardRef(function (props, ref) {
       onFocus: handleFocus,
       onBlur: handleBlur,
       onKeyDown: handleKeyDown,
-      className: classnames$4(prefixCls, _defineProperty({}, "".concat(prefixCls, "-disabled"), disabled), classNames === null || classNames === void 0 ? void 0 : classNames.input),
+      className: classnames(prefixCls, _defineProperty({}, "".concat(prefixCls, "-disabled"), disabled), classNames === null || classNames === void 0 ? void 0 : classNames.input),
       style: styles === null || styles === void 0 ? void 0 : styles.input,
       ref: inputRef,
       size: htmlSize,
@@ -38235,7 +37211,7 @@ var Input$4 = /*#__PURE__*/React.forwardRef(function (props, ref) {
         maxLength: maxLength
       }) : "".concat(valueLength).concat(hasMaxLength ? " / ".concat(maxLength) : '');
       return /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, !!showCount && /*#__PURE__*/React__default["default"].createElement("span", {
-        className: classnames$4("".concat(prefixCls, "-show-count-suffix"), _defineProperty({}, "".concat(prefixCls, "-show-count-has-suffix"), !!suffix), classNames === null || classNames === void 0 ? void 0 : classNames.count),
+        className: classnames("".concat(prefixCls, "-show-count-suffix"), _defineProperty({}, "".concat(prefixCls, "-show-count-has-suffix"), !!suffix), classNames === null || classNames === void 0 ? void 0 : classNames.count),
         style: _objectSpread2({}, styles === null || styles === void 0 ? void 0 : styles.count)
       }, dataCount), suffix);
     }
@@ -38389,8 +37365,8 @@ function StepHandler(_ref) {
     return null;
   }
   var handlerClassName = "".concat(prefixCls, "-handler");
-  var upClassName = classnames$5(handlerClassName, "".concat(handlerClassName, "-up"), _defineProperty({}, "".concat(handlerClassName, "-up-disabled"), upDisabled));
-  var downClassName = classnames$5(handlerClassName, "".concat(handlerClassName, "-down"), _defineProperty({}, "".concat(handlerClassName, "-down-disabled"), downDisabled));
+  var upClassName = classnames(handlerClassName, "".concat(handlerClassName, "-up"), _defineProperty({}, "".concat(handlerClassName, "-up-disabled"), upDisabled));
+  var downClassName = classnames(handlerClassName, "".concat(handlerClassName, "-down"), _defineProperty({}, "".concat(handlerClassName, "-down-disabled"), downDisabled));
 
   // fix: https://github.com/ant-design/ant-design/issues/43088
   // In Safari, When we fire onmousedown and onmouseup events in quick succession, 
@@ -38459,7 +37435,7 @@ var useFrame = (function () {
   };
 });
 
-var _excluded$a = ["prefixCls", "className", "style", "min", "max", "step", "defaultValue", "value", "disabled", "readOnly", "upHandler", "downHandler", "keyboard", "controls", "classNames", "stringMode", "parser", "formatter", "precision", "decimalSeparator", "onChange", "onInput", "onPressEnter", "onStep"],
+var _excluded$b = ["prefixCls", "className", "style", "min", "max", "step", "defaultValue", "value", "disabled", "readOnly", "upHandler", "downHandler", "keyboard", "controls", "classNames", "stringMode", "parser", "formatter", "precision", "decimalSeparator", "onChange", "onInput", "onPressEnter", "onStep"],
   _excluded2$1 = ["disabled", "style", "prefixCls", "value", "prefix", "suffix", "addonBefore", "addonAfter", "classes", "className", "classNames"];
 /**
  * We support `stringMode` which need handle correct type when user call in onChange
@@ -38511,7 +37487,7 @@ var InternalInputNumber = /*#__PURE__*/React__namespace.forwardRef(function (pro
     onInput = props.onInput,
     onPressEnter = props.onPressEnter,
     onStep = props.onStep,
-    inputProps = _objectWithoutProperties(props, _excluded$a);
+    inputProps = _objectWithoutProperties(props, _excluded$b);
   var inputClassName = "".concat(prefixCls, "-input");
   var inputRef = React__namespace.useRef(null);
   var _React$useState = React__namespace.useState(false),
@@ -38894,7 +37870,7 @@ var InternalInputNumber = /*#__PURE__*/React__namespace.forwardRef(function (pro
 
   // ============================ Render ============================
   return /*#__PURE__*/React__namespace.createElement("div", {
-    className: classnames$5(prefixCls, classNames === null || classNames === void 0 ? void 0 : classNames.input, className, (_clsx = {}, _defineProperty(_clsx, "".concat(prefixCls, "-focused"), focus), _defineProperty(_clsx, "".concat(prefixCls, "-disabled"), disabled), _defineProperty(_clsx, "".concat(prefixCls, "-readonly"), readOnly), _defineProperty(_clsx, "".concat(prefixCls, "-not-a-number"), decimalValue.isNaN()), _defineProperty(_clsx, "".concat(prefixCls, "-out-of-range"), !decimalValue.isInvalidate() && !isInRange(decimalValue)), _clsx)),
+    className: classnames(prefixCls, classNames === null || classNames === void 0 ? void 0 : classNames.input, className, (_clsx = {}, _defineProperty(_clsx, "".concat(prefixCls, "-focused"), focus), _defineProperty(_clsx, "".concat(prefixCls, "-disabled"), disabled), _defineProperty(_clsx, "".concat(prefixCls, "-readonly"), readOnly), _defineProperty(_clsx, "".concat(prefixCls, "-not-a-number"), decimalValue.isNaN()), _defineProperty(_clsx, "".concat(prefixCls, "-out-of-range"), !decimalValue.isInvalidate() && !isInRange(decimalValue)), _clsx)),
     style: style,
     onFocus: function onFocus() {
       setFocus(true);
@@ -39011,18 +37987,20 @@ const genInputNumberStyles = token => {
     controlHeightLG,
     controlHeightSM,
     colorError,
-    inputPaddingHorizontalSM,
+    paddingInlineSM,
     colorTextDescription,
     motionDurationMid,
-    colorPrimary,
-    inputPaddingHorizontal,
-    inputPaddingVertical,
-    colorBgContainer,
+    handleHoverColor,
+    paddingInline,
+    paddingBlock,
+    handleBg,
+    handleActiveBg,
     colorTextDisabled,
     borderRadiusSM,
     borderRadiusLG,
     controlWidth,
-    handleVisible
+    handleVisible,
+    handleBorderColor
   } = token;
   return [{
     [componentCls]: Object.assign(Object.assign(Object.assign(Object.assign({}, resetComponent(token)), genBasicInputStyle(token)), genStatusStyle(token, componentCls)), {
@@ -39051,7 +38029,7 @@ const genInputNumberStyles = token => {
         borderRadius: borderRadiusSM,
         [`input${componentCls}-input`]: {
           height: controlHeightSM - 2 * lineWidth,
-          padding: `0 ${inputPaddingHorizontalSM}px`
+          padding: `0 ${paddingInlineSM}px`
         }
       },
       '&:hover': Object.assign({}, genHoverStyle(token)),
@@ -39094,7 +38072,7 @@ const genInputNumberStyles = token => {
       [componentCls]: {
         '&-input': Object.assign(Object.assign(Object.assign(Object.assign({}, resetComponent(token)), {
           width: '100%',
-          padding: `${inputPaddingVertical}px ${inputPaddingHorizontal}px`,
+          padding: `${paddingBlock}px ${paddingInline}px`,
           textAlign: 'start',
           backgroundColor: 'transparent',
           border: 0,
@@ -39126,7 +38104,7 @@ const genInputNumberStyles = token => {
         insetInlineEnd: 0,
         width: token.handleWidth,
         height: '100%',
-        background: colorBgContainer,
+        background: handleBg,
         borderStartStartRadius: 0,
         borderStartEndRadius: borderRadius,
         borderEndEndRadius: borderRadius,
@@ -39162,10 +38140,10 @@ const genInputNumberStyles = token => {
         lineHeight: 0,
         textAlign: 'center',
         cursor: 'pointer',
-        borderInlineStart: `${lineWidth}px ${lineType} ${colorBorder}`,
+        borderInlineStart: `${lineWidth}px ${lineType} ${handleBorderColor}`,
         transition: `all ${motionDurationMid} linear`,
         '&:active': {
-          background: token.colorFillAlter
+          background: handleActiveBg
         },
         // Hover
         '&:hover': {
@@ -39174,7 +38152,7 @@ const genInputNumberStyles = token => {
               ${componentCls}-handler-up-inner,
               ${componentCls}-handler-down-inner
             `]: {
-            color: colorPrimary
+            color: handleHoverColor
           }
         },
         '&-up-inner, &-down-inner': Object.assign(Object.assign({}, resetIcon()), {
@@ -39187,7 +38165,7 @@ const genInputNumberStyles = token => {
         borderStartEndRadius: borderRadius
       },
       [`${componentCls}-handler-down`]: {
-        borderBlockStart: `${lineWidth}px ${lineType} ${colorBorder}`,
+        borderBlockStart: `${lineWidth}px ${lineType} ${handleBorderColor}`,
         borderEndEndRadius: borderRadius
       }
     }, genRadiusStyle$2(token, 'lg')), genRadiusStyle$2(token, 'sm')), {
@@ -39228,8 +38206,8 @@ const genInputNumberStyles = token => {
 const genAffixWrapperStyles = token => {
   const {
     componentCls,
-    inputPaddingVertical,
-    inputPaddingHorizontal,
+    paddingBlock,
+    paddingInline,
     inputAffixPadding,
     controlWidth,
     borderRadiusLG,
@@ -39242,7 +38220,7 @@ const genAffixWrapperStyles = token => {
       display: 'inline-flex',
       width: controlWidth,
       padding: 0,
-      paddingInlineStart: inputPaddingHorizontal,
+      paddingInlineStart: paddingInline,
       '&-lg': {
         borderRadius: borderRadiusLG
       },
@@ -39267,7 +38245,7 @@ const genAffixWrapperStyles = token => {
         }
       },
       [`input${componentCls}-input`]: {
-        padding: `${inputPaddingVertical}px 0`
+        padding: `${paddingBlock}px 0`
       },
       '&::before': {
         display: 'inline-block',
@@ -39294,7 +38272,7 @@ const genAffixWrapperStyles = token => {
           insetInlineEnd: 0,
           zIndex: 1,
           height: '100%',
-          marginInlineEnd: inputPaddingHorizontal,
+          marginInlineEnd: paddingInline,
           marginInlineStart: inputAffixPadding
         }
       }
@@ -39303,17 +38281,21 @@ const genAffixWrapperStyles = token => {
 };
 // ============================== Export ==============================
 var useStyle$6 = genComponentStyleHook('InputNumber', token => {
-  const inputNumberToken = initInputToken(token);
+  const inputNumberToken = merge(token, initInputToken(token));
   return [genInputNumberStyles(inputNumberToken), genAffixWrapperStyles(inputNumberToken),
   // =====================================================
   // ==             Space Compact                       ==
   // =====================================================
   genCompactItemStyle(inputNumberToken)];
-}, token => ({
+}, token => Object.assign(Object.assign({}, initComponentToken$1(token)), {
   controlWidth: 90,
   handleWidth: token.controlHeightSM - token.lineWidth * 2,
   handleFontSize: token.fontSize / 2,
-  handleVisible: 'auto'
+  handleVisible: 'auto',
+  handleActiveBg: token.colorFillAlter,
+  handleBg: token.colorBgContainer,
+  handleHoverColor: token.colorPrimary,
+  handleBorderColor: token.colorBorder
 }));
 
 var __rest$k = undefined && undefined.__rest || function (s, e) {
@@ -39382,7 +38364,7 @@ const InputNumber = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   // ===================== Disabled =====================
   const disabled = React__namespace.useContext(DisabledContext$1);
   const mergedDisabled = customDisabled !== null && customDisabled !== void 0 ? customDisabled : disabled;
-  const inputNumberClass = classnames$g({
+  const inputNumberClass = classnames({
     [`${prefixCls}-lg`]: mergedSize === 'large',
     [`${prefixCls}-sm`]: mergedSize === 'small',
     [`${prefixCls}-rtl`]: direction === 'rtl',
@@ -39393,7 +38375,7 @@ const InputNumber = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   const element = /*#__PURE__*/React__namespace.createElement(InputNumber$2, Object.assign({
     ref: inputRef,
     disabled: mergedDisabled,
-    className: classnames$g(className, rootClassName),
+    className: classnames(className, rootClassName),
     upHandler: upIcon,
     downHandler: downIcon,
     prefixCls: prefixCls,
@@ -39413,17 +38395,17 @@ const InputNumber = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
       input: inputNumberClass
     },
     classes: {
-      affixWrapper: classnames$g(getStatusClassNames(`${prefixCls}-affix-wrapper`, mergedStatus, hasFeedback), {
+      affixWrapper: classnames(getStatusClassNames(`${prefixCls}-affix-wrapper`, mergedStatus, hasFeedback), {
         [`${prefixCls}-affix-wrapper-sm`]: mergedSize === 'small',
         [`${prefixCls}-affix-wrapper-lg`]: mergedSize === 'large',
         [`${prefixCls}-affix-wrapper-rtl`]: direction === 'rtl',
         [`${prefixCls}-affix-wrapper-borderless`]: !bordered
       }, hashId),
-      wrapper: classnames$g({
+      wrapper: classnames({
         [`${wrapperClassName}-rtl`]: direction === 'rtl',
         [`${prefixCls}-wrapper-disabled`]: mergedDisabled
       }, hashId),
-      group: classnames$g({
+      group: classnames({
         [`${prefixCls}-group-wrapper-sm`]: mergedSize === 'small',
         [`${prefixCls}-group-wrapper-lg`]: mergedSize === 'large',
         [`${prefixCls}-group-wrapper-rtl`]: direction === 'rtl'
@@ -39461,7 +38443,7 @@ const Group$1 = props => {
   const prefixCls = getPrefixCls('input-group', customizePrefixCls);
   const inputPrefixCls = getPrefixCls('input');
   const [wrapSSR, hashId] = useStyle$b(inputPrefixCls);
-  const cls = classnames$g(prefixCls, {
+  const cls = classnames(prefixCls, {
     [`${prefixCls}-lg`]: props.size === 'large',
     [`${prefixCls}-sm`]: props.size === 'small',
     [`${prefixCls}-compact`]: props.compact,
@@ -39472,7 +38454,8 @@ const Group$1 = props => {
     isFormItemInput: false
   }), [formItemContext]);
   if (process.env.NODE_ENV !== 'production') {
-    process.env.NODE_ENV !== "production" ? warning$3(false, 'Input.Group', `'Input.Group' is deprecated. Please use 'Space.Compact' instead.`) : void 0;
+    const warning = devUseWarning('Input.Group');
+    warning.deprecated(false, 'Input.Group', 'Space.Compact');
   }
   return wrapSSR( /*#__PURE__*/React__namespace.createElement("span", {
     className: cls,
@@ -39601,13 +38584,18 @@ const Input$3 = /*#__PURE__*/React.forwardRef((props, ref) => {
   // ===================== Focus warning =====================
   const inputHasPrefixSuffix = hasPrefixSuffix(props) || !!hasFeedback;
   const prevHasPrefixSuffix = React.useRef(inputHasPrefixSuffix);
-  React.useEffect(() => {
-    var _a;
-    if (inputHasPrefixSuffix && !prevHasPrefixSuffix.current) {
-      process.env.NODE_ENV !== "production" ? warning$3(document.activeElement === ((_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.input), 'Input', `When Input is focused, dynamic add or remove prefix / suffix will make it lose focus caused by dom structure change. Read more: https://ant.design/components/input/#FAQ`) : void 0;
-    }
-    prevHasPrefixSuffix.current = inputHasPrefixSuffix;
-  }, [inputHasPrefixSuffix]);
+  /* eslint-disable react-hooks/rules-of-hooks */
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Input');
+    React.useEffect(() => {
+      var _a;
+      if (inputHasPrefixSuffix && !prevHasPrefixSuffix.current) {
+        process.env.NODE_ENV !== "production" ? warning(document.activeElement === ((_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.input), 'usage', `When Input is focused, dynamic add or remove prefix / suffix will make it lose focus caused by dom structure change. Read more: https://ant.design/components/input/#FAQ`) : void 0;
+      }
+      prevHasPrefixSuffix.current = inputHasPrefixSuffix;
+    }, [inputHasPrefixSuffix]);
+  }
+  /* eslint-enable */
   // ===================== Remove Password value =====================
   const removePasswordTimeout = useRemovePasswordTimeout(inputRef, true);
   const handleBlur = e => {
@@ -39644,7 +38632,7 @@ const Input$3 = /*#__PURE__*/React.forwardRef((props, ref) => {
     styles: Object.assign(Object.assign({}, input === null || input === void 0 ? void 0 : input.styles), styles),
     suffix: suffixNode,
     allowClear: mergedAllowClear,
-    className: classnames$g(className, rootClassName, compactItemClassnames, input === null || input === void 0 ? void 0 : input.className),
+    className: classnames(className, rootClassName, compactItemClassnames, input === null || input === void 0 ? void 0 : input.className),
     onChange: handleChange,
     addonAfter: addonAfter && /*#__PURE__*/React__default["default"].createElement(NoCompactStyle, null, /*#__PURE__*/React__default["default"].createElement(NoFormStyle, {
       override: true,
@@ -39655,7 +38643,7 @@ const Input$3 = /*#__PURE__*/React.forwardRef((props, ref) => {
       status: true
     }, addonBefore)),
     classNames: Object.assign(Object.assign(Object.assign({}, classes), input === null || input === void 0 ? void 0 : input.classNames), {
-      input: classnames$g({
+      input: classnames({
         [`${prefixCls}-sm`]: mergedSize === 'small',
         [`${prefixCls}-lg`]: mergedSize === 'large',
         [`${prefixCls}-rtl`]: direction === 'rtl',
@@ -39663,16 +38651,16 @@ const Input$3 = /*#__PURE__*/React.forwardRef((props, ref) => {
       }, !inputHasPrefixSuffix && getStatusClassNames(prefixCls, mergedStatus), classes === null || classes === void 0 ? void 0 : classes.input, (_a = input === null || input === void 0 ? void 0 : input.classNames) === null || _a === void 0 ? void 0 : _a.input, hashId)
     }),
     classes: {
-      affixWrapper: classnames$g({
+      affixWrapper: classnames({
         [`${prefixCls}-affix-wrapper-sm`]: mergedSize === 'small',
         [`${prefixCls}-affix-wrapper-lg`]: mergedSize === 'large',
         [`${prefixCls}-affix-wrapper-rtl`]: direction === 'rtl',
         [`${prefixCls}-affix-wrapper-borderless`]: !bordered
       }, getStatusClassNames(`${prefixCls}-affix-wrapper`, mergedStatus, hasFeedback), hashId),
-      wrapper: classnames$g({
+      wrapper: classnames({
         [`${prefixCls}-group-rtl`]: direction === 'rtl'
       }, hashId),
-      group: classnames$g({
+      group: classnames({
         [`${prefixCls}-group-wrapper-sm`]: mergedSize === 'small',
         [`${prefixCls}-group-wrapper-lg`]: mergedSize === 'large',
         [`${prefixCls}-group-wrapper-rtl`]: direction === 'rtl',
@@ -39796,7 +38784,7 @@ const Password = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   const inputPrefixCls = getPrefixCls('input', customizeInputPrefixCls);
   const prefixCls = getPrefixCls('input-password', customizePrefixCls);
   const suffixIcon = visibilityToggle && getIcon(prefixCls);
-  const inputClassName = classnames$g(prefixCls, className, {
+  const inputClassName = classnames(prefixCls, className, {
     [`${prefixCls}-${size}`]: !!size
   });
   const omittedProps = Object.assign(Object.assign({}, omit(restProps, ['suffix', 'iconRender', 'visibilityToggle'])), {
@@ -39859,7 +38847,9 @@ const Search = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   const inputRef = React__namespace.useRef(null);
   const onChange = e => {
     if (e && e.target && e.type === 'click' && customOnSearch) {
-      customOnSearch(e.target.value, e);
+      customOnSearch(e.target.value, e, {
+        source: 'clear'
+      });
     }
     if (customOnChange) {
       customOnChange(e);
@@ -39874,7 +38864,9 @@ const Search = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   const onSearch = e => {
     var _a, _b;
     if (customOnSearch) {
-      customOnSearch((_b = (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.input) === null || _b === void 0 ? void 0 : _b.value, e);
+      customOnSearch((_b = (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.input) === null || _b === void 0 ? void 0 : _b.value, e, {
+        source: 'input'
+      });
     }
   };
   const onPressEnter = e => {
@@ -39919,7 +38911,7 @@ const Search = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
       key: 'addonAfter'
     })];
   }
-  const cls = classnames$g(prefixCls, {
+  const cls = classnames(prefixCls, {
     [`${prefixCls}-rtl`]: direction === 'rtl',
     [`${prefixCls}-${size}`]: !!size,
     [`${prefixCls}-with-button`]: !!enterButton
@@ -39951,63 +38943,6 @@ if (process.env.NODE_ENV !== 'production') {
   Search.displayName = 'Search';
 }
 var Search$1 = Search;
-
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$3 = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
 
 // Thanks to https://github.com/andreypopp/react-textarea-autosize/
 
@@ -40120,7 +39055,7 @@ function calculateAutoSizeStyle(uiTextNode) {
   return style;
 }
 
-var _excluded$9 = ["prefixCls", "onPressEnter", "defaultValue", "value", "autoSize", "onResize", "className", "style", "disabled", "onChange", "onInternalAutoSize"];
+var _excluded$a = ["prefixCls", "onPressEnter", "defaultValue", "value", "autoSize", "onResize", "className", "style", "disabled", "onChange", "onInternalAutoSize"];
 var RESIZE_START = 0;
 var RESIZE_MEASURING = 1;
 var RESIZE_STABLE = 2;
@@ -40137,7 +39072,7 @@ var ResizableTextArea = /*#__PURE__*/React__namespace.forwardRef(function (props
     disabled = _ref.disabled,
     onChange = _ref.onChange,
     onInternalAutoSize = _ref.onInternalAutoSize,
-    restProps = _objectWithoutProperties(_ref, _excluded$9);
+    restProps = _objectWithoutProperties(_ref, _excluded$a);
 
   // =============================== Value ================================
   var _useMergedState = useMergedState(defaultValue, {
@@ -40281,14 +39216,14 @@ var ResizableTextArea = /*#__PURE__*/React__namespace.forwardRef(function (props
   }, /*#__PURE__*/React__namespace.createElement("textarea", _extends$1({}, restProps, {
     ref: textareaRef,
     style: mergedStyle,
-    className: classnames$3(prefixCls, className, _defineProperty({}, "".concat(prefixCls, "-disabled"), disabled)),
+    className: classnames(prefixCls, className, _defineProperty({}, "".concat(prefixCls, "-disabled"), disabled)),
     disabled: disabled,
     value: mergedValue,
     onChange: onInternalChange
   })));
 });
 
-var _excluded$8 = ["defaultValue", "value", "onFocus", "onBlur", "onChange", "allowClear", "maxLength", "onCompositionStart", "onCompositionEnd", "suffix", "prefixCls", "classes", "showCount", "className", "style", "disabled", "hidden", "classNames", "styles", "onResize"];
+var _excluded$9 = ["defaultValue", "value", "onFocus", "onBlur", "onChange", "allowClear", "maxLength", "onCompositionStart", "onCompositionEnd", "suffix", "prefixCls", "classes", "showCount", "className", "style", "disabled", "hidden", "classNames", "styles", "onResize"];
 function fixEmojiLength(value, maxLength) {
   return _toConsumableArray(value || '').slice(0, maxLength).join('');
 }
@@ -40326,7 +39261,7 @@ var TextArea$2 = /*#__PURE__*/React__default["default"].forwardRef(function (_re
     classNames = _ref.classNames,
     styles = _ref.styles,
     onResize = _ref.onResize,
-    rest = _objectWithoutProperties(_ref, _excluded$8);
+    rest = _objectWithoutProperties(_ref, _excluded$9);
   var _useMergedState = useMergedState(defaultValue, {
       value: customValue,
       defaultValue: defaultValue
@@ -40448,7 +39383,7 @@ var TextArea$2 = /*#__PURE__*/React__default["default"].forwardRef(function (_re
       dataCount = "".concat(valueLength).concat(hasMaxLength ? " / ".concat(maxLength) : '');
     }
     suffixNode = /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, suffixNode, /*#__PURE__*/React__default["default"].createElement("span", {
-      className: classnames$3("".concat(prefixCls, "-data-count"), classNames === null || classNames === void 0 ? void 0 : classNames.count),
+      className: classnames("".concat(prefixCls, "-data-count"), classNames === null || classNames === void 0 ? void 0 : classNames.count),
       style: styles === null || styles === void 0 ? void 0 : styles.count
     }, dataCount));
   }
@@ -40467,7 +39402,7 @@ var TextArea$2 = /*#__PURE__*/React__default["default"].forwardRef(function (_re
     suffix: suffixNode,
     prefixCls: prefixCls,
     classes: {
-      affixWrapper: classnames$3(classes === null || classes === void 0 ? void 0 : classes.affixWrapper, (_clsx = {}, _defineProperty(_clsx, "".concat(prefixCls, "-show-count"), showCount), _defineProperty(_clsx, "".concat(prefixCls, "-textarea-allow-clear"), allowClear), _clsx))
+      affixWrapper: classnames(classes === null || classes === void 0 ? void 0 : classes.affixWrapper, (_clsx = {}, _defineProperty(_clsx, "".concat(prefixCls, "-show-count"), showCount), _defineProperty(_clsx, "".concat(prefixCls, "-textarea-allow-clear"), allowClear), _clsx))
     },
     disabled: disabled,
     focused: focused,
@@ -40518,9 +39453,11 @@ const TextArea = /*#__PURE__*/React.forwardRef((props, ref) => {
       status: customStatus,
       allowClear,
       showCount,
-      classNames: classes
+      classNames: classes,
+      rootClassName,
+      className
     } = props,
-    rest = __rest$g(props, ["prefixCls", "bordered", "size", "disabled", "status", "allowClear", "showCount", "classNames"]);
+    rest = __rest$g(props, ["prefixCls", "bordered", "size", "disabled", "status", "allowClear", "showCount", "classNames", "rootClassName", "className"]);
   const {
     getPrefixCls,
     direction
@@ -40568,8 +39505,9 @@ const TextArea = /*#__PURE__*/React.forwardRef((props, ref) => {
   return wrapSSR( /*#__PURE__*/React__namespace.createElement(TextArea$2, Object.assign({}, rest, {
     disabled: mergedDisabled,
     allowClear: mergedAllowClear,
+    className: classnames(className, rootClassName),
     classes: {
-      affixWrapper: classnames$g(`${prefixCls}-textarea-affix-wrapper`, {
+      affixWrapper: classnames(`${prefixCls}-textarea-affix-wrapper`, {
         [`${prefixCls}-affix-wrapper-rtl`]: direction === 'rtl',
         [`${prefixCls}-affix-wrapper-borderless`]: !bordered,
         [`${prefixCls}-affix-wrapper-sm`]: mergedSize === 'small',
@@ -40578,7 +39516,7 @@ const TextArea = /*#__PURE__*/React.forwardRef((props, ref) => {
       }, getStatusClassNames(`${prefixCls}-affix-wrapper`, mergedStatus), hashId)
     },
     classNames: Object.assign(Object.assign({}, classes), {
-      textarea: classnames$g({
+      textarea: classnames({
         [`${prefixCls}-borderless`]: !bordered,
         [`${prefixCls}-sm`]: mergedSize === 'small',
         [`${prefixCls}-lg`]: mergedSize === 'large'
@@ -40604,56 +39542,41 @@ Input$1.TextArea = TextArea$1;
 Input$1.Password = Password$1;
 var Input$2 = Input$1;
 
+function isPresetSize(size) {
+  return ['small', 'middle', 'large'].includes(size);
+}
+function isValidGapNumber(size) {
+  if (!size) {
+    // The case of size = 0 is deliberately excluded here, because the default value of the gap attribute in CSS is 0, so if the user passes 0 in, we can directly ignore it.
+    return false;
+  }
+  return typeof size === 'number' && !Number.isNaN(size);
+}
+
 const SpaceContext = /*#__PURE__*/React__default["default"].createContext({
-  latestIndex: 0,
-  horizontalSize: 0,
-  verticalSize: 0,
-  supportFlexGap: false
+  latestIndex: 0
 });
 const SpaceContextProvider = SpaceContext.Provider;
 
 const Item$1 = _ref => {
   let {
     className,
-    direction,
     index,
-    marginDirection,
     children,
     split,
-    wrap,
-    style: customStyle
+    style
   } = _ref;
   const {
-    horizontalSize,
-    verticalSize,
-    latestIndex,
-    supportFlexGap
+    latestIndex
   } = React__namespace.useContext(SpaceContext);
-  let style = {};
-  if (!supportFlexGap) {
-    if (direction === 'vertical') {
-      if (index < latestIndex) {
-        style = {
-          marginBottom: horizontalSize / (split ? 2 : 1)
-        };
-      }
-    } else {
-      style = Object.assign(Object.assign({}, index < latestIndex && {
-        [marginDirection]: horizontalSize / (split ? 2 : 1)
-      }), wrap && {
-        paddingBottom: verticalSize
-      });
-    }
-  }
   if (children === null || children === undefined) {
     return null;
   }
   return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
     className: className,
-    style: Object.assign(Object.assign({}, style), customStyle)
-  }, children), index < latestIndex && split && /*#__PURE__*/React__namespace.createElement("span", {
-    className: `${className}-split`,
     style: style
+  }, children), index < latestIndex && split && /*#__PURE__*/React__namespace.createElement("span", {
+    className: `${className}-split`
   }, split));
 };
 var Item$2 = Item$1;
@@ -40666,14 +39589,6 @@ var __rest$f = undefined && undefined.__rest || function (s, e) {
   }
   return t;
 };
-const spaceSize = {
-  small: 8,
-  middle: 16,
-  large: 24
-};
-function getNumberSize(size) {
-  return typeof size === 'string' ? spaceSize[size] : size || 0;
-}
 const Space = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   var _a, _b;
   const {
@@ -40696,20 +39611,24 @@ const Space = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
       styles
     } = props,
     otherProps = __rest$f(props, ["size", "align", "className", "rootClassName", "children", "direction", "prefixCls", "split", "style", "wrap", "classNames", "styles"]);
-  const supportFlexGap = useFlexGapSupport();
-  const [horizontalSize, verticalSize] = React__namespace.useMemo(() => (Array.isArray(size) ? size : [size, size]).map(item => getNumberSize(item)), [size]);
+  const [horizontalSize, verticalSize] = Array.isArray(size) ? size : [size, size];
+  const isPresetVerticalSize = isPresetSize(verticalSize);
+  const isPresetHorizontalSize = isPresetSize(horizontalSize);
+  const isValidVerticalSize = isValidGapNumber(verticalSize);
+  const isValidHorizontalSize = isValidGapNumber(horizontalSize);
   const childNodes = toArray$5(children, {
     keepEmpty: true
   });
   const mergedAlign = align === undefined && direction === 'horizontal' ? 'center' : align;
   const prefixCls = getPrefixCls('space', customizePrefixCls);
   const [wrapSSR, hashId] = useStyle$k(prefixCls);
-  const cn = classnames$g(prefixCls, space === null || space === void 0 ? void 0 : space.className, hashId, `${prefixCls}-${direction}`, {
+  const cls = classnames(prefixCls, space === null || space === void 0 ? void 0 : space.className, hashId, `${prefixCls}-${direction}`, {
     [`${prefixCls}-rtl`]: directionConfig === 'rtl',
-    [`${prefixCls}-align-${mergedAlign}`]: mergedAlign
+    [`${prefixCls}-align-${mergedAlign}`]: mergedAlign,
+    [`${prefixCls}-gap-row-${verticalSize}`]: isPresetVerticalSize,
+    [`${prefixCls}-gap-col-${horizontalSize}`]: isPresetHorizontalSize
   }, className, rootClassName);
-  const itemClassName = classnames$g(`${prefixCls}-item`, (_a = customClassNames === null || customClassNames === void 0 ? void 0 : customClassNames.item) !== null && _a !== void 0 ? _a : (_b = space === null || space === void 0 ? void 0 : space.classNames) === null || _b === void 0 ? void 0 : _b.item);
-  const marginDirection = directionConfig === 'rtl' ? 'marginLeft' : 'marginRight';
+  const itemClassName = classnames(`${prefixCls}-item`, (_a = customClassNames === null || customClassNames === void 0 ? void 0 : customClassNames.item) !== null && _a !== void 0 ? _a : (_b = space === null || space === void 0 ? void 0 : space.classNames) === null || _b === void 0 ? void 0 : _b.item);
   // Calculate latest one
   let latestIndex = 0;
   const nodes = childNodes.map((child, i) => {
@@ -40721,20 +39640,14 @@ const Space = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
     return /*#__PURE__*/React__namespace.createElement(Item$2, {
       className: itemClassName,
       key: key,
-      direction: direction,
       index: i,
-      marginDirection: marginDirection,
       split: split,
-      wrap: wrap,
       style: (_a = styles === null || styles === void 0 ? void 0 : styles.item) !== null && _a !== void 0 ? _a : (_b = space === null || space === void 0 ? void 0 : space.styles) === null || _b === void 0 ? void 0 : _b.item
     }, child);
   });
   const spaceContext = React__namespace.useMemo(() => ({
-    horizontalSize,
-    verticalSize,
-    latestIndex,
-    supportFlexGap
-  }), [horizontalSize, verticalSize, latestIndex, supportFlexGap]);
+    latestIndex
+  }), [latestIndex]);
   // =========================== Render ===========================
   if (childNodes.length === 0) {
     return null;
@@ -40742,18 +39655,16 @@ const Space = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   const gapStyle = {};
   if (wrap) {
     gapStyle.flexWrap = 'wrap';
-    // Patch for gap not support
-    if (!supportFlexGap) {
-      gapStyle.marginBottom = -verticalSize;
-    }
   }
-  if (supportFlexGap) {
+  if (!isPresetHorizontalSize && isValidHorizontalSize) {
     gapStyle.columnGap = horizontalSize;
+  }
+  if (!isPresetVerticalSize && isValidVerticalSize) {
     gapStyle.rowGap = verticalSize;
   }
   return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", Object.assign({
     ref: ref,
-    className: cn,
+    className: cls,
     style: Object.assign(Object.assign(Object.assign({}, gapStyle), space === null || space === void 0 ? void 0 : space.style), style)
   }, otherProps), /*#__PURE__*/React__namespace.createElement(SpaceContextProvider, {
     value: spaceContext
@@ -40835,7 +39746,7 @@ const DropdownButton = props => {
     compactSize,
     compactItemClassnames
   } = useCompactItemContext(prefixCls, direction);
-  const classes = classnames$g(buttonPrefixCls, compactItemClassnames, className, hashId);
+  const classes = classnames(buttonPrefixCls, compactItemClassnames, className, hashId);
   if ('overlay' in props) {
     dropdownProps.overlay = overlay;
   }
@@ -41022,11 +39933,18 @@ const genFormItemStyle = token => {
     formItemCls,
     iconCls,
     componentCls,
-    rootPrefixCls
+    rootPrefixCls,
+    labelRequiredMarkColor,
+    labelColor,
+    labelFontSize,
+    labelHeight,
+    labelColonMarginInlineStart,
+    labelColonMarginInlineEnd,
+    itemMarginBottom
   } = token;
   return {
     [formItemCls]: Object.assign(Object.assign({}, resetComponent(token)), {
-      marginBottom: token.marginLG,
+      marginBottom: itemMarginBottom,
       verticalAlign: 'top',
       '&-with-help': {
         transition: 'none'
@@ -41050,7 +39968,6 @@ const genFormItemStyle = token => {
       // =                            Label                           =
       // ==============================================================
       [`${formItemCls}-label`]: {
-        display: 'inline-block',
         flexGrow: 0,
         overflow: 'hidden',
         whiteSpace: 'nowrap',
@@ -41069,9 +39986,9 @@ const genFormItemStyle = token => {
           display: 'inline-flex',
           alignItems: 'center',
           maxWidth: '100%',
-          height: token.controlHeight,
-          color: token.colorTextHeading,
-          fontSize: token.fontSize,
+          height: labelHeight,
+          color: labelColor,
+          fontSize: labelFontSize,
           [`> ${iconCls}`]: {
             fontSize: token.fontSize,
             verticalAlign: 'top'
@@ -41080,7 +39997,7 @@ const genFormItemStyle = token => {
           [`&${formItemCls}-required:not(${formItemCls}-required-mark-optional)::before`]: {
             display: 'inline-block',
             marginInlineEnd: token.marginXXS,
-            color: token.colorError,
+            color: labelRequiredMarkColor,
             fontSize: token.fontSize,
             fontFamily: 'SimSun, sans-serif',
             lineHeight: 1,
@@ -41109,8 +40026,8 @@ const genFormItemStyle = token => {
             content: '":"',
             position: 'relative',
             marginBlock: 0,
-            marginInlineStart: token.marginXXS / 2,
-            marginInlineEnd: token.marginXS
+            marginInlineStart: labelColonMarginInlineStart,
+            marginInlineEnd: labelColonMarginInlineEnd
           },
           [`&${formItemCls}-no-colon::after`]: {
             content: '"\\a0"'
@@ -41121,7 +40038,7 @@ const genFormItemStyle = token => {
       // =                            Input                           =
       // ==============================================================
       [`${formItemCls}-control`]: {
-        display: 'flex',
+        ['--ant-display']: 'flex',
         flexDirection: 'column',
         flexGrow: 1,
         [`&:first-child:not([class^="'${rootPrefixCls}-col-'"]):not([class*="' ${rootPrefixCls}-col-'"])`]: {
@@ -41199,8 +40116,7 @@ const genFormItemStyle = token => {
 const genHorizontalStyle = token => {
   const {
     componentCls,
-    formItemCls,
-    rootPrefixCls
+    formItemCls
   } = token;
   return {
     [`${componentCls}-horizontal`]: {
@@ -41213,9 +40129,14 @@ const genHorizontalStyle = token => {
         // https://github.com/ant-design/ant-design/issues/33773
         minWidth: 0
       },
+      // Do not change this to `ant-col-24`! `-24` match all the responsive rules
       // https://github.com/ant-design/ant-design/issues/32980
-      [`${formItemCls}-label.${rootPrefixCls}-col-24 + ${formItemCls}-control`]: {
-        minWidth: 'unset'
+      // https://github.com/ant-design/ant-design/issues/34903
+      // https://github.com/ant-design/ant-design/issues/44538
+      [`${formItemCls}-label[class$='-24'], ${formItemCls}-label[class*='-24 ']`]: {
+        [`& + ${formItemCls}-control`]: {
+          minWidth: 'unset'
+        }
       }
     }
   };
@@ -41255,7 +40176,8 @@ const genInlineStyle = token => {
   };
 };
 const makeVerticalLayoutLabel = token => ({
-  padding: `0 0 ${token.paddingXS}px`,
+  padding: token.verticalLabelPadding,
+  margin: token.verticalLabelMargin,
   whiteSpace: 'initial',
   textAlign: 'start',
   '> label': {
@@ -41336,15 +40258,33 @@ const genVerticalStyle = token => {
   };
 };
 // ============================== Export ==============================
-var useStyle$5 = genComponentStyleHook('Form', (token, _ref) => {
-  let {
-    rootPrefixCls
-  } = _ref;
+const prepareToken = (token, rootPrefixCls) => {
   const formToken = merge(token, {
     formItemCls: `${token.componentCls}-item`,
     rootPrefixCls
   });
+  return formToken;
+};
+var useStyle$5 = genComponentStyleHook('Form', (token, _ref) => {
+  let {
+    rootPrefixCls
+  } = _ref;
+  const formToken = prepareToken(token, rootPrefixCls);
   return [genFormStyle(formToken), genFormItemStyle(formToken), genFormValidateMotionStyle$1(formToken), genHorizontalStyle(formToken), genInlineStyle(formToken), genVerticalStyle(formToken), genCollapseMotion$1(formToken), zoomIn];
+}, token => ({
+  labelRequiredMarkColor: token.colorError,
+  labelColor: token.colorTextHeading,
+  labelFontSize: token.fontSize,
+  labelHeight: token.controlHeight,
+  labelColonMarginInlineStart: token.marginXXS / 2,
+  labelColonMarginInlineEnd: token.marginXS,
+  itemMarginBottom: token.marginLG,
+  verticalLabelPadding: `0 0 ${token.paddingXS}px`,
+  verticalLabelMargin: 0
+}), {
+  // Let From style before the Grid
+  // ref https://github.com/ant-design/ant-design/issues/44386
+  order: -1000
 });
 
 const EMPTY_LIST$2 = [];
@@ -41397,7 +40337,7 @@ const ErrorList = _ref => {
       style: holderStyle
     } = holderProps;
     return /*#__PURE__*/React__namespace.createElement("div", Object.assign({}, helpProps, {
-      className: classnames$g(baseClassName, holderClassName, rootClassName, hashId),
+      className: classnames(baseClassName, holderClassName, rootClassName, hashId),
       style: holderStyle,
       role: "alert"
     }), /*#__PURE__*/React__namespace.createElement(CSSMotionList, Object.assign({
@@ -41415,7 +40355,7 @@ const ErrorList = _ref => {
       } = itemProps;
       return /*#__PURE__*/React__namespace.createElement("div", {
         key: key,
-        className: classnames$g(itemClassName, {
+        className: classnames(itemClassName, {
           [`${baseClassName}-${errorStatus}`]: errorStatus
         }),
         style: itemStyle
@@ -41445,6 +40385,25 @@ function getFieldId(namePath, formName) {
   const isIllegalName = formItemNameBlackList.includes(mergedId);
   return isIllegalName ? `${defaultItemNamePrefixCls}_${mergedId}` : mergedId;
 }
+/**
+ * Get merged status by meta or passed `validateStatus`.
+ */
+function getStatus$1(errors, warnings, meta, defaultValidateStatus, hasFeedback, validateStatus) {
+  let status = defaultValidateStatus;
+  if (validateStatus !== undefined) {
+    status = validateStatus;
+  } else if (meta.validating) {
+    status = 'validating';
+  } else if (errors.length) {
+    status = 'error';
+  } else if (warnings.length) {
+    status = 'warning';
+  } else if (meta.touched || hasFeedback && meta.validated) {
+    // success feedback should display when pass hasFeedback prop and current value is valid value
+    status = 'success';
+  }
+  return status;
+}
 
 function toNamePathStr(name) {
   const namePath = toArray$1(name);
@@ -41470,7 +40429,7 @@ function useForm$1(form) {
       const fieldId = getFieldId(namePath, wrapForm.__INTERNAL__.name);
       const node = fieldId ? document.getElementById(fieldId) : null;
       if (node) {
-        t(node, Object.assign({
+        e(node, Object.assign({
           scrollMode: 'if-needed',
           block: 'nearest'
         }, options));
@@ -41489,10 +40448,11 @@ function useFormWarning(_ref) {
   let {
     name
   } = _ref;
+  const warning = devUseWarning('Form');
   React.useEffect(() => {
     if (name) {
       names[name] = (names[name] || 0) + 1;
-      process.env.NODE_ENV !== "production" ? warning$3(names[name] <= 1, 'Form', 'There exist multiple Form with same `name`.') : void 0;
+      process.env.NODE_ENV !== "production" ? warning(names[name] <= 1, 'usage', 'There exist multiple Form with same `name`.') : void 0;
       return () => {
         names[name] -= 1;
       };
@@ -41533,9 +40493,10 @@ const InternalForm = (props, ref) => {
       requiredMark,
       onFinishFailed,
       name,
-      style
+      style,
+      feedbackIcons
     } = props,
-    restFormProps = __rest$d(props, ["prefixCls", "className", "rootClassName", "size", "disabled", "form", "colon", "labelAlign", "labelWrap", "labelCol", "wrapperCol", "hideRequiredMark", "layout", "scrollToFirstError", "requiredMark", "onFinishFailed", "name", "style"]);
+    restFormProps = __rest$d(props, ["prefixCls", "className", "rootClassName", "size", "disabled", "form", "colon", "labelAlign", "labelWrap", "labelCol", "wrapperCol", "hideRequiredMark", "layout", "scrollToFirstError", "requiredMark", "onFinishFailed", "name", "style", "feedbackIcons"]);
   const mergedSize = useSize$1(size);
   const contextValidateMessages = React__namespace.useContext(ValidateMessagesContext);
   if (process.env.NODE_ENV !== 'production') {
@@ -41558,7 +40519,7 @@ const InternalForm = (props, ref) => {
   const prefixCls = getPrefixCls('form', customizePrefixCls);
   // Style
   const [wrapSSR, hashId] = useStyle$5(prefixCls);
-  const formClassName = classnames$g(prefixCls, `${prefixCls}-${layout}`, {
+  const formClassName = classnames(prefixCls, `${prefixCls}-${layout}`, {
     [`${prefixCls}-hide-required-mark`]: mergedRequiredMark === false,
     [`${prefixCls}-rtl`]: direction === 'rtl',
     [`${prefixCls}-${mergedSize}`]: mergedSize
@@ -41578,8 +40539,9 @@ const InternalForm = (props, ref) => {
     colon: mergedColon,
     requiredMark: mergedRequiredMark,
     itemRef: __INTERNAL__.itemRef,
-    form: wrapForm
-  }), [name, labelAlign, labelCol, wrapperCol, layout, mergedColon, mergedRequiredMark, wrapForm]);
+    form: wrapForm,
+    feedbackIcons
+  }), [name, labelAlign, labelCol, wrapperCol, layout, mergedColon, mergedRequiredMark, wrapForm, feedbackIcons]);
   React__namespace.useImperativeHandle(ref, () => wrapForm);
   const scrollToField = (options, fieldName) => {
     if (options) {
@@ -41630,13 +40592,24 @@ if (process.env.NODE_ENV !== 'production') {
 }
 var InternalForm$1 = Form$2;
 
+function useChildren(children) {
+  if (typeof children === 'function') {
+    return children;
+  }
+  const childList = toArray$5(children);
+  return childList.length <= 1 ? childList[0] : childList;
+}
+
 const useFormItemStatus = () => {
   const {
     status,
     errors = [],
     warnings = []
   } = React.useContext(FormItemInputContext);
-  process.env.NODE_ENV !== "production" ? warning$3(status !== undefined, 'Form.Item', 'Form.Item.useStatus should be used under Form.Item component. For more information: https://u.ant.design/form-item-usestatus') : void 0;
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Form.Item');
+    process.env.NODE_ENV !== "production" ? warning(status !== undefined, 'usage', 'Form.Item.useStatus should be used under Form.Item component. For more information: https://u.ant.design/form-item-usestatus') : void 0;
+  }
   return {
     status,
     errors,
@@ -41700,6 +40673,33 @@ function useItemRef() {
   return getRef;
 }
 
+/**
+ * Fallback of IE.
+ * Safe to remove.
+ */
+// ============================= Fallback =============================
+const genFallbackStyle = token => {
+  const {
+    formItemCls
+  } = token;
+  return {
+    '@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)': {
+      // Fallback for IE, safe to remove we not support it anymore
+      [`${formItemCls}-control`]: {
+        display: 'flex'
+      }
+    }
+  };
+};
+// ============================== Export ==============================
+var FallbackCmp = genSubStyleComponent(['Form', 'item-item'], (token, _ref) => {
+  let {
+    rootPrefixCls
+  } = _ref;
+  const formToken = prepareToken(token, rootPrefixCls);
+  return [genFallbackStyle(formToken)];
+});
+
 const FormItemInput = props => {
   const {
     prefixCls,
@@ -41718,7 +40718,7 @@ const FormItemInput = props => {
   const baseClassName = `${prefixCls}-item`;
   const formContext = React__namespace.useContext(FormContext);
   const mergedWrapperCol = wrapperCol || formContext.wrapperCol || {};
-  const className = classnames$g(`${baseClassName}-control`, mergedWrapperCol.className);
+  const className = classnames(`${baseClassName}-control`, mergedWrapperCol.className);
   // Pass to sub FormItem should not with col info
   const subFormContext = React__namespace.useMemo(() => Object.assign({}, formContext), [formContext]);
   delete subFormContext.labelCol;
@@ -41771,7 +40771,9 @@ const FormItemInput = props => {
     value: subFormContext
   }, /*#__PURE__*/React__namespace.createElement(Col$2, Object.assign({}, mergedWrapperCol, {
     className: className
-  }), dom));
+  }), dom), /*#__PURE__*/React__namespace.createElement(FallbackCmp, {
+    prefixCls: prefixCls
+  }));
 };
 var FormItemInput$1 = FormItemInput;
 
@@ -41836,7 +40838,7 @@ const FormItemLabel = _ref => {
   const mergedLabelCol = labelCol || contextLabelCol || {};
   const mergedLabelAlign = labelAlign || contextLabelAlign;
   const labelClsBasic = `${prefixCls}-item-label`;
-  const labelColClassName = classnames$g(labelClsBasic, mergedLabelAlign === 'left' && `${labelClsBasic}-left`, mergedLabelCol.className, {
+  const labelColClassName = classnames(labelClsBasic, mergedLabelAlign === 'left' && `${labelClsBasic}-left`, mergedLabelCol.className, {
     [`${labelClsBasic}-wrap`]: !!labelWrap
   });
   let labelChildren = label;
@@ -41860,15 +40862,22 @@ const FormItemLabel = _ref => {
     }));
     labelChildren = /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, labelChildren, tooltipNode);
   }
-  if (requiredMark === 'optional' && !required) {
+  // Required Mark
+  const isOptionalMark = requiredMark === 'optional';
+  const isRenderMark = typeof requiredMark === 'function';
+  if (isRenderMark) {
+    labelChildren = requiredMark(labelChildren, {
+      required: !!required
+    });
+  } else if (isOptionalMark && !required) {
     labelChildren = /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, labelChildren, /*#__PURE__*/React__namespace.createElement("span", {
       className: `${prefixCls}-item-optional`,
       title: ""
     }, (formLocale === null || formLocale === void 0 ? void 0 : formLocale.optional) || ((_a = defaultLocale.Form) === null || _a === void 0 ? void 0 : _a.optional)));
   }
-  const labelClassName = classnames$g({
+  const labelClassName = classnames({
     [`${prefixCls}-item-required`]: required,
-    [`${prefixCls}-item-required-mark-optional`]: requiredMark === 'optional',
+    [`${prefixCls}-item-required-mark-optional`]: isOptionalMark || isRenderMark,
     [`${prefixCls}-item-no-colon`]: !computedColon
   });
   return /*#__PURE__*/React__namespace.createElement(Col$2, Object.assign({}, mergedLabelCol, {
@@ -41881,6 +40890,73 @@ const FormItemLabel = _ref => {
 };
 var FormItemLabel$1 = FormItemLabel;
 
+const iconMap = {
+  success: CheckCircleFilled$1,
+  warning: ExclamationCircleFilled$1,
+  error: CloseCircleFilled$1,
+  validating: LoadingOutlined$1
+};
+function StatusProvider(_ref) {
+  let {
+    children,
+    errors,
+    warnings,
+    hasFeedback,
+    validateStatus,
+    prefixCls,
+    meta,
+    noStyle
+  } = _ref;
+  const itemPrefixCls = `${prefixCls}-item`;
+  const {
+    feedbackIcons
+  } = React__namespace.useContext(FormContext);
+  const mergedValidateStatus = getStatus$1(errors, warnings, meta, null, !!hasFeedback, validateStatus);
+  const {
+    isFormItemInput: parentIsFormItemInput,
+    status: parentStatus,
+    hasFeedback: parentHasFeedback,
+    feedbackIcon: parentFeedbackIcon
+  } = React__namespace.useContext(FormItemInputContext);
+  // ====================== Context =======================
+  const formItemStatusContext = React__namespace.useMemo(() => {
+    var _a;
+    let feedbackIcon;
+    if (hasFeedback) {
+      const customIcons = hasFeedback !== true && hasFeedback.icons || feedbackIcons;
+      const customIconNode = mergedValidateStatus && ((_a = customIcons === null || customIcons === void 0 ? void 0 : customIcons({
+        status: mergedValidateStatus,
+        errors,
+        warnings
+      })) === null || _a === void 0 ? void 0 : _a[mergedValidateStatus]);
+      const IconNode = mergedValidateStatus && iconMap[mergedValidateStatus];
+      feedbackIcon = customIconNode !== false && IconNode ? /*#__PURE__*/React__namespace.createElement("span", {
+        className: classnames(`${itemPrefixCls}-feedback-icon`, `${itemPrefixCls}-feedback-icon-${mergedValidateStatus}`)
+      }, customIconNode || /*#__PURE__*/React__namespace.createElement(IconNode, null)) : null;
+    }
+    const context = {
+      status: mergedValidateStatus || '',
+      errors,
+      warnings,
+      hasFeedback: !!hasFeedback,
+      feedbackIcon,
+      isFormItemInput: true
+    };
+    // No style will follow parent context
+    if (noStyle) {
+      context.status = (mergedValidateStatus !== null && mergedValidateStatus !== void 0 ? mergedValidateStatus : parentStatus) || '';
+      context.isFormItemInput = parentIsFormItemInput;
+      context.hasFeedback = !!(hasFeedback !== null && hasFeedback !== void 0 ? hasFeedback : parentHasFeedback);
+      context.feedbackIcon = hasFeedback !== undefined ? context.feedbackIcon : parentFeedbackIcon;
+    }
+    return context;
+  }, [mergedValidateStatus, hasFeedback, noStyle, parentIsFormItemInput, parentStatus]);
+  // ======================= Render =======================
+  return /*#__PURE__*/React__namespace.createElement(FormItemInputContext.Provider, {
+    value: formItemStatusContext
+  }, children);
+}
+
 var __rest$b = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
@@ -41888,12 +40964,6 @@ var __rest$b = undefined && undefined.__rest || function (s, e) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
   return t;
-};
-const iconMap = {
-  success: CheckCircleFilled$1,
-  warning: ExclamationCircleFilled$1,
-  error: CloseCircleFilled$1,
-  validating: LoadingOutlined$1
 };
 function ItemHolder(props) {
   const {
@@ -41943,43 +41013,13 @@ function ItemHolder(props) {
   // ======================== Status ========================
   const getValidateState = function () {
     let isDebounce = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-    let status = '';
     const _errors = isDebounce ? debounceErrors : meta.errors;
     const _warnings = isDebounce ? debounceWarnings : meta.warnings;
-    if (validateStatus !== undefined) {
-      status = validateStatus;
-    } else if (meta.validating) {
-      status = 'validating';
-    } else if (_errors.length) {
-      status = 'error';
-    } else if (_warnings.length) {
-      status = 'warning';
-    } else if (meta.touched || hasFeedback && meta.validated) {
-      // success feedback should display when pass hasFeedback prop and current value is valid value
-      status = 'success';
-    }
-    return status;
+    return getStatus$1(_errors, _warnings, meta, '', !!hasFeedback, validateStatus);
   };
   const mergedValidateStatus = getValidateState();
-  const formItemStatusContext = React__namespace.useMemo(() => {
-    let feedbackIcon;
-    if (hasFeedback) {
-      const IconNode = mergedValidateStatus && iconMap[mergedValidateStatus];
-      feedbackIcon = IconNode ? /*#__PURE__*/React__namespace.createElement("span", {
-        className: classnames$g(`${itemPrefixCls}-feedback-icon`, `${itemPrefixCls}-feedback-icon-${mergedValidateStatus}`)
-      }, /*#__PURE__*/React__namespace.createElement(IconNode, null)) : null;
-    }
-    return {
-      status: mergedValidateStatus,
-      errors,
-      warnings,
-      hasFeedback,
-      feedbackIcon,
-      isFormItemInput: true
-    };
-  }, [mergedValidateStatus, hasFeedback]);
   // ======================== Render ========================
-  const itemClassName = classnames$g(itemPrefixCls, className, rootClassName, {
+  const itemClassName = classnames(itemPrefixCls, className, rootClassName, {
     [`${itemPrefixCls}-with-help`]: hasHelp || debounceErrors.length || debounceWarnings.length,
     // Status
     [`${itemPrefixCls}-has-feedback`]: mergedValidateStatus && hasFeedback,
@@ -41995,7 +41035,7 @@ function ItemHolder(props) {
     ref: itemRef
   }, /*#__PURE__*/React__namespace.createElement(Row$1, Object.assign({
     className: `${itemPrefixCls}-row`
-  }, omit(restProps, ['_internalItemRender', 'colon', 'dependencies', 'extra', 'fieldKey', 'getValueFromEvent', 'getValueProps', 'htmlFor', 'id', 'initialValue', 'isListField', 'label', 'labelAlign', 'labelCol', 'labelWrap', 'messageVariables', 'name', 'normalize', 'noStyle', 'preserve', 'requiredMark', 'rules', 'shouldUpdate', 'trigger', 'tooltip', 'validateFirst', 'validateTrigger', 'valuePropName', 'wrapperCol'])), /*#__PURE__*/React__namespace.createElement(FormItemLabel$1, Object.assign({
+  }, omit(restProps, ['_internalItemRender', 'colon', 'dependencies', 'extra', 'fieldKey', 'getValueFromEvent', 'getValueProps', 'htmlFor', 'id', 'initialValue', 'isListField', 'label', 'labelAlign', 'labelCol', 'labelWrap', 'messageVariables', 'name', 'normalize', 'noStyle', 'preserve', 'requiredMark', 'rules', 'shouldUpdate', 'trigger', 'tooltip', 'validateFirst', 'validateTrigger', 'valuePropName', 'wrapperCol', 'validateDebounce'])), /*#__PURE__*/React__namespace.createElement(FormItemLabel$1, Object.assign({
     htmlFor: fieldId
   }, props, {
     requiredMark: requiredMark,
@@ -42011,22 +41051,20 @@ function ItemHolder(props) {
     onErrorVisibleChanged: onErrorVisibleChanged
   }), /*#__PURE__*/React__namespace.createElement(NoStyleItemContext.Provider, {
     value: onSubItemMetaChange
-  }, /*#__PURE__*/React__namespace.createElement(FormItemInputContext.Provider, {
-    value: formItemStatusContext
+  }, /*#__PURE__*/React__namespace.createElement(StatusProvider, {
+    prefixCls: prefixCls,
+    meta: meta,
+    errors: meta.errors,
+    warnings: meta.warnings,
+    hasFeedback: hasFeedback,
+    // Already calculated
+    validateStatus: mergedValidateStatus
   }, children)))), !!marginBottom && /*#__PURE__*/React__namespace.createElement("div", {
     className: `${itemPrefixCls}-margin-offset`,
     style: {
       marginBottom: -marginBottom
     }
   }));
-}
-
-function useChildren(children) {
-  if (typeof children === 'function') {
-    return children;
-  }
-  const childList = toArray$5(children);
-  return childList.length <= 1 ? childList[0] : childList;
 }
 
 const NAME_SPLIT = '__SPLIT__';
@@ -42036,12 +41074,6 @@ const MemoInput = /*#__PURE__*/React__namespace.memo(_ref => {
   } = _ref;
   return children;
 }, (prev, next) => prev.value === next.value && prev.update === next.update && prev.childProps.length === next.childProps.length && prev.childProps.every((value, index) => value === next.childProps[index]));
-function hasValidName(name) {
-  if (name === null) {
-    process.env.NODE_ENV !== "production" ? warning$3(false, 'Form.Item', '`null` is passed as `name` property') : void 0;
-  }
-  return !(name === undefined || name === null);
-}
 function genEmptyMeta() {
   return {
     errors: [],
@@ -42083,10 +41115,15 @@ function InternalFormItem(props) {
     validateTrigger: contextValidateTrigger
   } = React__namespace.useContext(Context);
   const mergedValidateTrigger = validateTrigger !== undefined ? validateTrigger : contextValidateTrigger;
-  const hasName = hasValidName(name);
+  const hasName = !(name === undefined || name === null);
   const prefixCls = getPrefixCls('form', customizePrefixCls);
   // Style
   const [wrapSSR, hashId] = useStyle$5(prefixCls);
+  // ========================= Warn =========================
+  const warning = devUseWarning('Form.Item');
+  if (process.env.NODE_ENV !== 'production') {
+    process.env.NODE_ENV !== "production" ? warning(name !== null, 'usage', '`null` is passed as `name` property') : void 0;
+  }
   // ========================= MISC =========================
   // Get `noStyle` required info
   const listContext = React__namespace.useContext(ListContext);
@@ -42152,12 +41189,20 @@ function InternalFormItem(props) {
   // ======================== Render ========================
   function renderLayout(baseChildren, fieldId, isRequired) {
     if (noStyle && !hidden) {
-      return baseChildren;
+      return /*#__PURE__*/React__namespace.createElement(StatusProvider, {
+        prefixCls: prefixCls,
+        hasFeedback: props.hasFeedback,
+        validateStatus: props.validateStatus,
+        meta: meta,
+        errors: mergedErrors,
+        warnings: mergedWarnings,
+        noStyle: true
+      }, baseChildren);
     }
     return /*#__PURE__*/React__namespace.createElement(ItemHolder, Object.assign({
       key: "row"
     }, props, {
-      className: classnames$g(className, hashId),
+      className: classnames(className, hashId),
       prefixCls: prefixCls,
       fieldId: fieldId,
       isRequired: isRequired,
@@ -42201,17 +41246,17 @@ function InternalFormItem(props) {
     // ======================= Children =======================
     const mergedControl = Object.assign({}, control);
     let childNode = null;
-    process.env.NODE_ENV !== "production" ? warning$3(!(shouldUpdate && dependencies), 'Form.Item', "`shouldUpdate` and `dependencies` shouldn't be used together. See https://u.ant.design/form-deps.") : void 0;
+    process.env.NODE_ENV !== "production" ? warning(!(shouldUpdate && dependencies), 'usage', "`shouldUpdate` and `dependencies` shouldn't be used together. See https://u.ant.design/form-deps.") : void 0;
     if (Array.isArray(mergedChildren) && hasName) {
-      process.env.NODE_ENV !== "production" ? warning$3(false, 'Form.Item', 'A `Form.Item` with a `name` prop must have a single child element. For information on how to render more complex form items, see https://u.ant.design/complex-form-item.') : void 0;
+      process.env.NODE_ENV !== "production" ? warning(false, 'usage', 'A `Form.Item` with a `name` prop must have a single child element. For information on how to render more complex form items, see https://u.ant.design/complex-form-item.') : void 0;
       childNode = mergedChildren;
     } else if (isRenderProps && (!(shouldUpdate || dependencies) || hasName)) {
-      process.env.NODE_ENV !== "production" ? warning$3(!!(shouldUpdate || dependencies), 'Form.Item', 'A `Form.Item` with a render function must have either `shouldUpdate` or `dependencies`.') : void 0;
-      process.env.NODE_ENV !== "production" ? warning$3(!hasName, 'Form.Item', 'A `Form.Item` with a render function cannot be a field, and thus cannot have a `name` prop.') : void 0;
+      process.env.NODE_ENV !== "production" ? warning(!!(shouldUpdate || dependencies), 'usage', 'A `Form.Item` with a render function must have either `shouldUpdate` or `dependencies`.') : void 0;
+      process.env.NODE_ENV !== "production" ? warning(!hasName, 'usage', 'A `Form.Item` with a render function cannot be a field, and thus cannot have a `name` prop.') : void 0;
     } else if (dependencies && !isRenderProps && !hasName) {
-      process.env.NODE_ENV !== "production" ? warning$3(false, 'Form.Item', 'Must set `name` or use a render function when `dependencies` is set.') : void 0;
+      process.env.NODE_ENV !== "production" ? warning(false, 'usage', 'Must set `name` or use a render function when `dependencies` is set.') : void 0;
     } else if (isValidElement(mergedChildren)) {
-      process.env.NODE_ENV !== "production" ? warning$3(mergedChildren.props.defaultValue === undefined, 'Form.Item', '`defaultValue` will not work on controlled Field. You should use `initialValues` of Form instead.') : void 0;
+      process.env.NODE_ENV !== "production" ? warning(mergedChildren.props.defaultValue === undefined, 'usage', '`defaultValue` will not work on controlled Field. You should use `initialValues` of Form instead.') : void 0;
       const childProps = Object.assign(Object.assign({}, mergedChildren.props), mergedControl);
       if (!childProps.id) {
         childProps.id = fieldId;
@@ -42258,7 +41303,7 @@ function InternalFormItem(props) {
     } else if (isRenderProps && (shouldUpdate || dependencies) && !hasName) {
       childNode = mergedChildren(context);
     } else {
-      process.env.NODE_ENV !== "production" ? warning$3(!mergedName.length, 'Form.Item', '`name` is only used for validate React element. If you are using Form.Item as layout display, please remove `name` instead.') : void 0;
+      process.env.NODE_ENV !== "production" ? warning(!mergedName.length, 'usage', '`name` is only used for validate React element. If you are using Form.Item as layout display, please remove `name` instead.') : void 0;
       childNode = mergedChildren;
     }
     return renderLayout(childNode, fieldId, isRequired);
@@ -42282,7 +41327,10 @@ const FormList = _a => {
       children
     } = _a,
     props = __rest$a(_a, ["prefixCls", "children"]);
-  process.env.NODE_ENV !== "production" ? warning$3(typeof props.name === 'number' || (Array.isArray(props.name) ? !!props.name.length : !!props.name), 'Form.List', 'Miss `name` prop.') : void 0;
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Form.List');
+    process.env.NODE_ENV !== "production" ? warning(typeof props.name === 'number' || (Array.isArray(props.name) ? !!props.name.length : !!props.name), 'usage', 'Miss `name` prop.') : void 0;
+  }
   const {
     getPrefixCls
   } = React__namespace.useContext(ConfigContext);
@@ -42396,63 +41444,6 @@ if (process.env.NODE_ENV !== 'production') {
   DoubleRightOutlined.displayName = 'DoubleRightOutlined';
 }
 var DoubleRightOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(DoubleRightOutlined);
-
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$2 = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
 
 var KeyCode = {
   ZERO: 48,
@@ -42656,7 +41647,7 @@ var Pager = function Pager(props) {
     onKeyPress = props.onKeyPress,
     itemRender = props.itemRender;
   var prefixCls = "".concat(rootPrefixCls, "-item");
-  var cls = classnames$2(prefixCls, "".concat(prefixCls, "-").concat(page), (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-active"), active), _defineProperty(_classNames, "".concat(prefixCls, "-disabled"), !page), _defineProperty(_classNames, props.className, className), _classNames));
+  var cls = classnames(prefixCls, "".concat(prefixCls, "-").concat(page), (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-active"), active), _defineProperty(_classNames, "".concat(prefixCls, "-disabled"), !page), _defineProperty(_classNames, props.className, className), _classNames));
   var handleClick = function handleClick() {
     onClick(page);
   };
@@ -43021,7 +42012,7 @@ var Pagination$2 = /*#__PURE__*/function (_React$Component) {
         }
         var _prev = this.renderPrev(prevPage);
         return /*#__PURE__*/React__default["default"].createElement("ul", _extends$1({
-          className: classnames$2(prefixCls, "".concat(prefixCls, "-simple"), _defineProperty({}, "".concat(prefixCls, "-disabled"), disabled), className),
+          className: classnames(prefixCls, "".concat(prefixCls, "-simple"), _defineProperty({}, "".concat(prefixCls, "-disabled"), disabled), className),
           style: style,
           ref: this.paginationNode
         }, dataOrAriaAttributeProps), totalText, _prev ? /*#__PURE__*/React__default["default"].createElement("li", {
@@ -43029,7 +42020,7 @@ var Pagination$2 = /*#__PURE__*/function (_React$Component) {
           onClick: this.prev,
           tabIndex: this.hasPrev() ? 0 : null,
           onKeyPress: this.runIfEnterPrev,
-          className: classnames$2("".concat(prefixCls, "-prev"), _defineProperty({}, "".concat(prefixCls, "-disabled"), !this.hasPrev())),
+          className: classnames("".concat(prefixCls, "-prev"), _defineProperty({}, "".concat(prefixCls, "-disabled"), !this.hasPrev())),
           "aria-disabled": !this.hasPrev()
         }, _prev) : null, /*#__PURE__*/React__default["default"].createElement("li", {
           title: showTitle ? "".concat(current, "/").concat(allPages) : null,
@@ -43050,7 +42041,7 @@ var Pagination$2 = /*#__PURE__*/function (_React$Component) {
           onClick: this.next,
           tabIndex: this.hasPrev() ? 0 : null,
           onKeyPress: this.runIfEnterNext,
-          className: classnames$2("".concat(prefixCls, "-next"), _defineProperty({}, "".concat(prefixCls, "-disabled"), !this.hasNext())),
+          className: classnames("".concat(prefixCls, "-next"), _defineProperty({}, "".concat(prefixCls, "-disabled"), !this.hasNext())),
           "aria-disabled": !this.hasNext()
         }, this.renderNext(nextPage)), gotoButton);
       }
@@ -43090,7 +42081,7 @@ var Pagination$2 = /*#__PURE__*/function (_React$Component) {
             onClick: this.jumpPrev,
             tabIndex: 0,
             onKeyPress: this.runIfEnterJumpPrev,
-            className: classnames$2("".concat(prefixCls, "-jump-prev"), _defineProperty({}, "".concat(prefixCls, "-jump-prev-custom-icon"), !!jumpPrevIcon))
+            className: classnames("".concat(prefixCls, "-jump-prev"), _defineProperty({}, "".concat(prefixCls, "-jump-prev-custom-icon"), !!jumpPrevIcon))
           }, jumpPrevContent) : null;
           jumpNext = jumpNextContent ? /*#__PURE__*/React__default["default"].createElement("li", {
             title: showTitle ? nextItemTitle : null,
@@ -43098,7 +42089,7 @@ var Pagination$2 = /*#__PURE__*/function (_React$Component) {
             tabIndex: 0,
             onClick: this.jumpNext,
             onKeyPress: this.runIfEnterJumpNext,
-            className: classnames$2("".concat(prefixCls, "-jump-next"), _defineProperty({}, "".concat(prefixCls, "-jump-next-custom-icon"), !!jumpNextIcon))
+            className: classnames("".concat(prefixCls, "-jump-next"), _defineProperty({}, "".concat(prefixCls, "-jump-next-custom-icon"), !!jumpNextIcon))
           }, jumpNextContent) : null;
         }
         lastPager = /*#__PURE__*/React__default["default"].createElement(Pager, {
@@ -43170,7 +42161,7 @@ var Pagination$2 = /*#__PURE__*/function (_React$Component) {
       var prev = this.renderPrev(prevPage);
       var next = this.renderNext(nextPage);
       return /*#__PURE__*/React__default["default"].createElement("ul", _extends$1({
-        className: classnames$2(prefixCls, className, _defineProperty({}, "".concat(prefixCls, "-disabled"), disabled)),
+        className: classnames(prefixCls, className, _defineProperty({}, "".concat(prefixCls, "-disabled"), disabled)),
         style: style,
         ref: this.paginationNode
       }, dataOrAriaAttributeProps), totalText, prev ? /*#__PURE__*/React__default["default"].createElement("li", {
@@ -43178,14 +42169,14 @@ var Pagination$2 = /*#__PURE__*/function (_React$Component) {
         onClick: this.prev,
         tabIndex: prevDisabled ? null : 0,
         onKeyPress: this.runIfEnterPrev,
-        className: classnames$2("".concat(prefixCls, "-prev"), _defineProperty({}, "".concat(prefixCls, "-disabled"), prevDisabled)),
+        className: classnames("".concat(prefixCls, "-prev"), _defineProperty({}, "".concat(prefixCls, "-disabled"), prevDisabled)),
         "aria-disabled": prevDisabled
       }, prev) : null, pagerList, next ? /*#__PURE__*/React__default["default"].createElement("li", {
         title: showTitle ? locale.next_page : null,
         onClick: this.next,
         tabIndex: nextDisabled ? null : 0,
         onKeyPress: this.runIfEnterNext,
-        className: classnames$2("".concat(prefixCls, "-next"), _defineProperty({}, "".concat(prefixCls, "-disabled"), nextDisabled)),
+        className: classnames("".concat(prefixCls, "-next"), _defineProperty({}, "".concat(prefixCls, "-disabled"), nextDisabled)),
         "aria-disabled": nextDisabled
       }, next) : null, /*#__PURE__*/React__default["default"].createElement(Options, {
         disabled: disabled,
@@ -43830,7 +42821,7 @@ var useStyle$4 = genComponentStyleHook('Pagination', token => {
     paginationSlashMarginInlineStart: token.marginXXS,
     paginationSlashMarginInlineEnd: token.marginSM,
     paginationEllipsisTextIndent: '0.13em' // magic for ui experience
-  }, initInputToken(token));
+  }, initInputToken(token), initComponentToken$1(token));
   return [genPaginationStyle$2(paginationToken), genPaginationFocusStyle(paginationToken), token.wireframe && genBorderedStyle$2(paginationToken)];
 }, token => ({
   itemBg: token.colorBgContainer,
@@ -43922,7 +42913,7 @@ const Pagination = props => {
   const mergedSize = useSize$1(customizeSize);
   const isSmall = mergedSize === 'small' || !!(xs && !mergedSize && responsive);
   const selectPrefixCls = getPrefixCls('select', customizeSelectPrefixCls);
-  const extendedClassName = classnames$g({
+  const extendedClassName = classnames({
     [`${prefixCls}-mini`]: isSmall,
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, pagination === null || pagination === void 0 ? void 0 : pagination.className, className, rootClassName, hashId);
@@ -43982,39 +42973,39 @@ const genSpinStyle = token => ({
           position: 'absolute',
           top: '50%',
           insetInlineStart: '50%',
-          margin: -token.spinDotSize / 2
+          margin: -token.dotSize / 2
         },
         [`${token.componentCls}-text`]: {
           position: 'absolute',
           top: '50%',
           width: '100%',
-          paddingTop: (token.spinDotSize - token.fontSize) / 2 + 2,
+          paddingTop: (token.dotSize - token.fontSize) / 2 + 2,
           textShadow: `0 1px 2px ${token.colorBgContainer}`,
           fontSize: token.fontSize
         },
         [`&${token.componentCls}-show-text ${token.componentCls}-dot`]: {
-          marginTop: -(token.spinDotSize / 2) - 10
+          marginTop: -(token.dotSize / 2) - 10
         },
         '&-sm': {
           [`${token.componentCls}-dot`]: {
-            margin: -token.spinDotSizeSM / 2
+            margin: -token.dotSizeSM / 2
           },
           [`${token.componentCls}-text`]: {
-            paddingTop: (token.spinDotSizeSM - token.fontSize) / 2 + 2
+            paddingTop: (token.dotSizeSM - token.fontSize) / 2 + 2
           },
           [`&${token.componentCls}-show-text ${token.componentCls}-dot`]: {
-            marginTop: -(token.spinDotSizeSM / 2) - 10
+            marginTop: -(token.dotSizeSM / 2) - 10
           }
         },
         '&-lg': {
           [`${token.componentCls}-dot`]: {
-            margin: -(token.spinDotSizeLG / 2)
+            margin: -(token.dotSizeLG / 2)
           },
           [`${token.componentCls}-text`]: {
-            paddingTop: (token.spinDotSizeLG - token.fontSize) / 2 + 2
+            paddingTop: (token.dotSizeLG - token.fontSize) / 2 + 2
           },
           [`&${token.componentCls}-show-text ${token.componentCls}-dot`]: {
-            marginTop: -(token.spinDotSizeLG / 2) - 10
+            marginTop: -(token.dotSizeLG / 2) - 10
           }
         }
       },
@@ -44058,14 +43049,14 @@ const genSpinStyle = token => ({
     [`${token.componentCls}-dot`]: {
       position: 'relative',
       display: 'inline-block',
-      fontSize: token.spinDotSize,
+      fontSize: token.dotSize,
       width: '1em',
       height: '1em',
       '&-item': {
         position: 'absolute',
         display: 'block',
-        width: (token.spinDotSize - token.marginXXS / 2) / 2,
-        height: (token.spinDotSize - token.marginXXS / 2) / 2,
+        width: (token.dotSize - token.marginXXS / 2) / 2,
+        height: (token.dotSize - token.marginXXS / 2) / 2,
         backgroundColor: token.colorPrimary,
         borderRadius: '100%',
         transform: 'scale(0.75)',
@@ -44108,18 +43099,18 @@ const genSpinStyle = token => ({
     // ------------------------------
     // small
     [`&-sm ${token.componentCls}-dot`]: {
-      fontSize: token.spinDotSizeSM,
+      fontSize: token.dotSizeSM,
       i: {
-        width: (token.spinDotSizeSM - token.marginXXS / 2) / 2,
-        height: (token.spinDotSizeSM - token.marginXXS / 2) / 2
+        width: (token.dotSizeSM - token.marginXXS / 2) / 2,
+        height: (token.dotSizeSM - token.marginXXS / 2) / 2
       }
     },
     // large
     [`&-lg ${token.componentCls}-dot`]: {
-      fontSize: token.spinDotSizeLG,
+      fontSize: token.dotSizeLG,
       i: {
-        width: (token.spinDotSizeLG - token.marginXXS) / 2,
-        height: (token.spinDotSizeLG - token.marginXXS) / 2
+        width: (token.dotSizeLG - token.marginXXS) / 2,
+        height: (token.dotSizeLG - token.marginXXS) / 2
       }
     },
     [`&${token.componentCls}-show-text ${token.componentCls}-text`]: {
@@ -44130,15 +43121,15 @@ const genSpinStyle = token => ({
 // ============================== Export ==============================
 var useStyle$3 = genComponentStyleHook('Spin', token => {
   const spinToken = merge(token, {
-    spinDotDefault: token.colorTextDescription,
-    spinDotSize: token.controlHeightLG / 2,
-    spinDotSizeSM: token.controlHeightLG * 0.35,
-    spinDotSizeLG: token.controlHeight
+    spinDotDefault: token.colorTextDescription
   });
   return [genSpinStyle(spinToken)];
-}, {
-  contentHeight: 400
-});
+}, token => ({
+  contentHeight: 400,
+  dotSize: token.controlHeightLG / 2,
+  dotSizeSM: token.controlHeightLG * 0.35,
+  dotSizeLG: token.controlHeight
+}));
 
 var __rest$8 = undefined && undefined.__rest || function (s, e) {
   var t = {};
@@ -44161,16 +43152,16 @@ function renderIndicator(prefixCls, props) {
   }
   if (isValidElement(indicator)) {
     return cloneElement(indicator, {
-      className: classnames$g(indicator.props.className, dotClassName)
+      className: classnames(indicator.props.className, dotClassName)
     });
   }
   if (isValidElement(defaultIndicator)) {
     return cloneElement(defaultIndicator, {
-      className: classnames$g(defaultIndicator.props.className, dotClassName)
+      className: classnames(defaultIndicator.props.className, dotClassName)
     });
   }
   return /*#__PURE__*/React__namespace.createElement("span", {
-    className: classnames$g(dotClassName, `${prefixCls}-dot-spin`)
+    className: classnames(dotClassName, `${prefixCls}-dot-spin`)
   }, /*#__PURE__*/React__namespace.createElement("i", {
     className: `${prefixCls}-dot-item`,
     key: 1
@@ -44219,20 +43210,21 @@ const Spin = props => {
   }, [delay, customSpinning]);
   const isNestedPattern = React__namespace.useMemo(() => typeof children !== 'undefined', [children]);
   if (process.env.NODE_ENV !== 'production') {
-    process.env.NODE_ENV !== "production" ? warning$3(!tip || isNestedPattern, 'Spin', '`tip` only work in nest pattern.') : void 0;
+    const warning = devUseWarning('Spin');
+    process.env.NODE_ENV !== "production" ? warning(!tip || isNestedPattern, 'usage', '`tip` only work in nest pattern.') : void 0;
   }
   const {
     direction,
     spin
   } = React__namespace.useContext(ConfigContext);
-  const spinClassName = classnames$g(prefixCls, spin === null || spin === void 0 ? void 0 : spin.className, {
+  const spinClassName = classnames(prefixCls, spin === null || spin === void 0 ? void 0 : spin.className, {
     [`${prefixCls}-sm`]: size === 'small',
     [`${prefixCls}-lg`]: size === 'large',
     [`${prefixCls}-spinning`]: spinning,
     [`${prefixCls}-show-text`]: !!tip,
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, className, rootClassName, hashId);
-  const containerClassName = classnames$g(`${prefixCls}-container`, {
+  const containerClassName = classnames(`${prefixCls}-container`, {
     [`${prefixCls}-blur`]: spinning
   });
   // fix https://fb.me/react-unknown-prop
@@ -44248,7 +43240,7 @@ const Spin = props => {
   }, tip) : null);
   if (isNestedPattern) {
     return /*#__PURE__*/React__namespace.createElement("div", Object.assign({}, divProps, {
-      className: classnames$g(`${prefixCls}-nested-loading`, wrapperClassName, hashId)
+      className: classnames(`${prefixCls}-nested-loading`, wrapperClassName, hashId)
     }), spinning && /*#__PURE__*/React__namespace.createElement("div", {
       key: "loading"
     }, spinElement), /*#__PURE__*/React__namespace.createElement("div", {
@@ -44445,12 +43437,10 @@ function createImmutable() {
   };
 }
 
-// For legacy usage, we export it directly
 var _createImmutable = createImmutable(),
   makeImmutable = _createImmutable.makeImmutable,
   responseImmutable = _createImmutable.responseImmutable,
   useImmutableMark = _createImmutable.useImmutableMark;
-
 var TableContext = createContext();
 
 /* istanbul ignore file */
@@ -44488,63 +43478,6 @@ var RenderBlock = /*#__PURE__*/React__namespace.memo(function () {
   return /*#__PURE__*/React__namespace.createElement("h1", null, "Render Times: ", times);
 });
 RenderBlock.displayName = 'RenderBlock';
-
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames$1 = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
 
 // TODO: Remove when use `responsiveImmutable`
 var PerfContext = /*#__PURE__*/React__namespace.createContext({
@@ -44754,14 +43687,14 @@ function Cell(props) {
   });
 
   // >>>>> ClassName
-  var mergedClassName = classnames$1(cellPrefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-left"), isFixLeft && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-left-first"), firstFixLeft && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-left-last"), lastFixLeft && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-left-all"), lastFixLeft && allColumnsFixedLeft && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-right"), isFixRight && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-right-first"), firstFixRight && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-right-last"), lastFixRight && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-ellipsis"), ellipsis), _defineProperty(_classNames, "".concat(cellPrefixCls, "-with-append"), appendNode), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-sticky"), (isFixLeft || isFixRight) && isSticky && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-row-hover"), !legacyCellProps && hovering), _classNames), additionalProps.className, legacyCellProps === null || legacyCellProps === void 0 ? void 0 : legacyCellProps.className);
+  var mergedClassName = classnames(cellPrefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-left"), isFixLeft && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-left-first"), firstFixLeft && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-left-last"), lastFixLeft && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-left-all"), lastFixLeft && allColumnsFixedLeft && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-right"), isFixRight && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-right-first"), firstFixRight && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-right-last"), lastFixRight && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-ellipsis"), ellipsis), _defineProperty(_classNames, "".concat(cellPrefixCls, "-with-append"), appendNode), _defineProperty(_classNames, "".concat(cellPrefixCls, "-fix-sticky"), (isFixLeft || isFixRight) && isSticky && supportSticky), _defineProperty(_classNames, "".concat(cellPrefixCls, "-row-hover"), !legacyCellProps && hovering), _classNames), additionalProps.className, legacyCellProps === null || legacyCellProps === void 0 ? void 0 : legacyCellProps.className);
 
   // >>>>> Style
   var alignStyle = {};
   if (align) {
     alignStyle.textAlign = align;
   }
-  var mergedStyle = _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, additionalProps.style), alignStyle), fixedStyle), legacyCellProps === null || legacyCellProps === void 0 ? void 0 : legacyCellProps.style);
+  var mergedStyle = _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, fixedStyle), additionalProps.style), alignStyle), legacyCellProps === null || legacyCellProps === void 0 ? void 0 : legacyCellProps.style);
 
   // >>>>> Children Node
   var mergedChildNode = childNode;
@@ -44876,10 +43809,10 @@ function SummaryCell(_ref) {
   }, fixedInfo));
 }
 
-var _excluded$7 = ["children"];
+var _excluded$8 = ["children"];
 function FooterRow(_ref) {
   var children = _ref.children,
-    props = _objectWithoutProperties(_ref, _excluded$7);
+    props = _objectWithoutProperties(_ref, _excluded$8);
   return /*#__PURE__*/React__namespace.createElement("tr", props, children);
 }
 
@@ -44921,28 +43854,9 @@ function Footer(props) {
 var Footer$1 = responseImmutable(Footer);
 var FooterComponents = Summary;
 
-/* istanbul ignore next */
-/**
- * This is a syntactic sugar for `columns` prop.
- * So HOC will not work on this.
- */ // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function Column$1(_) {
-  return null;
-}
-
-/* istanbul ignore next */
-/**
- * This is a syntactic sugar for `columns` prop.
- * So HOC will not work on this.
- */ // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function ColumnGroup$1(_) {
-  return null;
-}
-
 // recursion (flat tree structure)
-function flatRecord(record, indent, childrenColumnName, expandedKeys, getRowKey, index) {
-  var arr = [];
-  arr.push({
+function fillRecords(list, record, indent, childrenColumnName, expandedKeys, getRowKey, index) {
+  list.push({
     record: record,
     indent: indent,
     index: index
@@ -44952,13 +43866,10 @@ function flatRecord(record, indent, childrenColumnName, expandedKeys, getRowKey,
   if (record && Array.isArray(record[childrenColumnName]) && expanded) {
     // expanded state, flat record
     for (var i = 0; i < record[childrenColumnName].length; i += 1) {
-      var tempArr = flatRecord(record[childrenColumnName][i], indent + 1, childrenColumnName, expandedKeys, getRowKey, i);
-      arr.push.apply(arr, _toConsumableArray(tempArr));
+      fillRecords(list, record[childrenColumnName][i], indent + 1, childrenColumnName, expandedKeys, getRowKey, i);
     }
   }
-  return arr;
 }
-
 /**
  * flat tree data on expanded state
  *
@@ -44973,17 +43884,16 @@ function flatRecord(record, indent, childrenColumnName, expandedKeys, getRowKey,
 function useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey) {
   var arr = React__namespace.useMemo(function () {
     if (expandedKeys !== null && expandedKeys !== void 0 && expandedKeys.size) {
-      var temp = [];
+      var list = [];
 
       // collect flattened record
       for (var i = 0; i < (data === null || data === void 0 ? void 0 : data.length); i += 1) {
-        var _temp;
         var record = data[i];
 
         // using array.push or spread operator may cause "Maximum call stack size exceeded" exception if array size is big enough.
-        temp = (_temp = temp).concat.apply(_temp, _toConsumableArray(flatRecord(record, 0, childrenColumnName, expandedKeys, getRowKey, i)));
+        fillRecords(list, record, 0, childrenColumnName, expandedKeys, getRowKey, i);
       }
-      return temp;
+      return list;
     }
     return data === null || data === void 0 ? void 0 : data.map(function (item, index) {
       return {
@@ -44994,6 +43904,66 @@ function useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey) {
     });
   }, [data, childrenColumnName, expandedKeys, getRowKey]);
   return arr;
+}
+
+function useRowInfo(record, rowKey, recordIndex, indent) {
+  var context = useContext(TableContext, ['prefixCls', 'fixedInfoList', 'flattenColumns', 'expandableType', 'expandRowByClick', 'onTriggerExpand', 'rowClassName', 'expandedRowClassName', 'indentSize', 'expandIcon', 'expandedRowRender', 'expandIconColumnIndex', 'expandedKeys', 'childrenColumnName', 'rowExpandable', 'onRow']);
+  var flattenColumns = context.flattenColumns,
+    expandableType = context.expandableType,
+    expandedKeys = context.expandedKeys,
+    childrenColumnName = context.childrenColumnName,
+    onTriggerExpand = context.onTriggerExpand,
+    rowExpandable = context.rowExpandable,
+    onRow = context.onRow,
+    expandRowByClick = context.expandRowByClick,
+    rowClassName = context.rowClassName;
+
+  // ======================= Expandable =======================
+  // Only when row is not expandable and `children` exist in record
+  var nestExpandable = expandableType === 'nest';
+  var rowSupportExpand = expandableType === 'row' && (!rowExpandable || rowExpandable(record));
+  var mergedExpandable = rowSupportExpand || nestExpandable;
+  var expanded = expandedKeys && expandedKeys.has(rowKey);
+  var hasNestChildren = childrenColumnName && record && record[childrenColumnName];
+  var onInternalTriggerExpand = useEvent$1(onTriggerExpand);
+
+  // ========================= onRow ==========================
+  var rowProps = onRow === null || onRow === void 0 ? void 0 : onRow(record, recordIndex);
+  var onRowClick = rowProps === null || rowProps === void 0 ? void 0 : rowProps.onClick;
+  var onClick = function onClick(event) {
+    if (expandRowByClick && mergedExpandable) {
+      onTriggerExpand(record, event);
+    }
+    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+    onRowClick === null || onRowClick === void 0 ? void 0 : onRowClick.apply(void 0, [event].concat(args));
+  };
+
+  // ====================== RowClassName ======================
+  var computeRowClassName;
+  if (typeof rowClassName === 'string') {
+    computeRowClassName = rowClassName;
+  } else if (typeof rowClassName === 'function') {
+    computeRowClassName = rowClassName(record, recordIndex, indent);
+  }
+
+  // ========================= Column =========================
+  var columnsKey = getColumnsKey(flattenColumns);
+  return _objectSpread2(_objectSpread2({}, context), {}, {
+    columnsKey: columnsKey,
+    nestExpandable: nestExpandable,
+    expanded: expanded,
+    hasNestChildren: hasNestChildren,
+    record: record,
+    onTriggerExpand: onInternalTriggerExpand,
+    rowSupportExpand: rowSupportExpand,
+    expandable: mergedExpandable,
+    rowProps: _objectSpread2(_objectSpread2({}, rowProps), {}, {
+      className: classnames(computeRowClassName, rowProps === null || rowProps === void 0 ? void 0 : rowProps.className),
+      onClick: onClick
+    })
+  });
 }
 
 function ExpandedRow(props) {
@@ -45017,7 +43987,7 @@ function ExpandedRow(props) {
 
   // Cache render node
   var contentNode = children;
-  if (isEmpty ? horizonScroll : fixColumn) {
+  if (isEmpty ? horizonScroll && componentWidth : fixColumn) {
     contentNode = /*#__PURE__*/React__namespace.createElement("div", {
       style: {
         width: componentWidth - (fixHeader ? scrollbarSize : 0),
@@ -45026,7 +43996,7 @@ function ExpandedRow(props) {
         overflow: 'hidden'
       },
       className: "".concat(prefixCls, "-expanded-row-fixed")
-    }, componentWidth !== 0 && contentNode);
+    }, contentNode);
   }
   return /*#__PURE__*/React__namespace.createElement(Component, {
     className: className,
@@ -45040,6 +44010,55 @@ function ExpandedRow(props) {
   }, contentNode));
 }
 
+// ==================================================================================
+// ==                                 getCellProps                                 ==
+// ==================================================================================
+function getCellProps(rowInfo, column, colIndex, indent, index) {
+  var record = rowInfo.record,
+    prefixCls = rowInfo.prefixCls,
+    columnsKey = rowInfo.columnsKey,
+    fixedInfoList = rowInfo.fixedInfoList,
+    expandIconColumnIndex = rowInfo.expandIconColumnIndex,
+    nestExpandable = rowInfo.nestExpandable,
+    indentSize = rowInfo.indentSize,
+    expandIcon = rowInfo.expandIcon,
+    expanded = rowInfo.expanded,
+    hasNestChildren = rowInfo.hasNestChildren,
+    onTriggerExpand = rowInfo.onTriggerExpand;
+  var key = columnsKey[colIndex];
+  var fixedInfo = fixedInfoList[colIndex];
+
+  // ============= Used for nest expandable =============
+  var appendCellNode;
+  if (colIndex === (expandIconColumnIndex || 0) && nestExpandable) {
+    appendCellNode = /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("span", {
+      style: {
+        paddingLeft: "".concat(indentSize * indent, "px")
+      },
+      className: "".concat(prefixCls, "-row-indent indent-level-").concat(indent)
+    }), expandIcon({
+      prefixCls: prefixCls,
+      expanded: expanded,
+      expandable: hasNestChildren,
+      record: record,
+      onExpand: onTriggerExpand
+    }));
+  }
+  var additionalCellProps;
+  if (column.onCell) {
+    additionalCellProps = column.onCell(record, index);
+  }
+  return {
+    key: key,
+    fixedInfo: fixedInfo,
+    appendCellNode: appendCellNode,
+    additionalCellProps: additionalCellProps || {}
+  };
+}
+
+// ==================================================================================
+// ==                                 getCellProps                                 ==
+// ==================================================================================
 function BodyRow(props) {
   if (process.env.NODE_ENV !== 'production') {
     devRenderTimes(props);
@@ -45050,107 +44069,41 @@ function BodyRow(props) {
     index = props.index,
     renderIndex = props.renderIndex,
     rowKey = props.rowKey,
-    rowExpandable = props.rowExpandable,
-    expandedKeys = props.expandedKeys,
-    onRow = props.onRow,
     _props$indent = props.indent,
     indent = _props$indent === void 0 ? 0 : _props$indent,
     RowComponent = props.rowComponent,
     cellComponent = props.cellComponent,
-    scopeCellComponent = props.scopeCellComponent,
-    childrenColumnName = props.childrenColumnName;
-  var _useContext = useContext(TableContext, ['prefixCls', 'fixedInfoList', 'flattenColumns', 'expandableType', 'expandRowByClick', 'onTriggerExpand', 'rowClassName', 'expandedRowClassName', 'indentSize', 'expandIcon', 'expandedRowRender', 'expandIconColumnIndex']),
-    prefixCls = _useContext.prefixCls,
-    fixedInfoList = _useContext.fixedInfoList,
-    flattenColumns = _useContext.flattenColumns,
-    expandableType = _useContext.expandableType,
-    expandRowByClick = _useContext.expandRowByClick,
-    onTriggerExpand = _useContext.onTriggerExpand,
-    rowClassName = _useContext.rowClassName,
-    expandedRowClassName = _useContext.expandedRowClassName,
-    indentSize = _useContext.indentSize,
-    expandIcon = _useContext.expandIcon,
-    expandedRowRender = _useContext.expandedRowRender,
-    expandIconColumnIndex = _useContext.expandIconColumnIndex;
-  var _React$useState = React__namespace.useState(false),
-    _React$useState2 = _slicedToArray(_React$useState, 2),
-    expandRended = _React$useState2[0],
-    setExpandRended = _React$useState2[1];
+    scopeCellComponent = props.scopeCellComponent;
+  var rowInfo = useRowInfo(record, rowKey, index, indent);
+  var prefixCls = rowInfo.prefixCls,
+    flattenColumns = rowInfo.flattenColumns,
+    expandedRowClassName = rowInfo.expandedRowClassName,
+    expandedRowRender = rowInfo.expandedRowRender,
+    rowProps = rowInfo.rowProps,
+    expanded = rowInfo.expanded,
+    rowSupportExpand = rowInfo.rowSupportExpand;
+
+  // Force render expand row if expanded before
+  var expandedRef = React__namespace.useRef(false);
+  expandedRef.current || (expandedRef.current = expanded);
   if (process.env.NODE_ENV !== 'production') {
     devRenderTimes(props);
   }
-  var expanded = expandedKeys && expandedKeys.has(rowKey);
-  React__namespace.useEffect(function () {
-    if (expanded) {
-      setExpandRended(true);
-    }
-  }, [expanded]);
-  var rowSupportExpand = expandableType === 'row' && (!rowExpandable || rowExpandable(record));
-  // Only when row is not expandable and `children` exist in record
-  var nestExpandable = expandableType === 'nest';
-  var hasNestChildren = childrenColumnName && record && record[childrenColumnName];
-  var mergedExpandable = rowSupportExpand || nestExpandable;
-
-  // ======================== Expandable =========================
-  var onExpandRef = React__namespace.useRef(onTriggerExpand);
-  onExpandRef.current = onTriggerExpand;
-  var onInternalTriggerExpand = function onInternalTriggerExpand() {
-    onExpandRef.current.apply(onExpandRef, arguments);
-  };
-
-  // =========================== onRow ===========================
-  var additionalProps = onRow === null || onRow === void 0 ? void 0 : onRow(record, index);
-  var onClick = function onClick(event) {
-    var _additionalProps$onCl;
-    if (expandRowByClick && mergedExpandable) {
-      onInternalTriggerExpand(record, event);
-    }
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-    additionalProps === null || additionalProps === void 0 ? void 0 : (_additionalProps$onCl = additionalProps.onClick) === null || _additionalProps$onCl === void 0 ? void 0 : _additionalProps$onCl.call.apply(_additionalProps$onCl, [additionalProps, event].concat(args));
-  };
 
   // ======================== Base tr row ========================
-  var computeRowClassName;
-  if (typeof rowClassName === 'string') {
-    computeRowClassName = rowClassName;
-  } else if (typeof rowClassName === 'function') {
-    computeRowClassName = rowClassName(record, index, indent);
-  }
-  var columnsKey = getColumnsKey(flattenColumns);
-  var baseRowNode = /*#__PURE__*/React__namespace.createElement(RowComponent, _extends$1({}, additionalProps, {
+  var baseRowNode = /*#__PURE__*/React__namespace.createElement(RowComponent, _extends$1({}, rowProps, {
     "data-row-key": rowKey,
-    className: classnames$1(className, "".concat(prefixCls, "-row"), "".concat(prefixCls, "-row-level-").concat(indent), computeRowClassName, additionalProps && additionalProps.className),
-    style: _objectSpread2(_objectSpread2({}, style), additionalProps ? additionalProps.style : null),
-    onClick: onClick
+    className: classnames(className, "".concat(prefixCls, "-row"), "".concat(prefixCls, "-row-level-").concat(indent), rowProps === null || rowProps === void 0 ? void 0 : rowProps.className),
+    style: _objectSpread2(_objectSpread2({}, style), rowProps === null || rowProps === void 0 ? void 0 : rowProps.style)
   }), flattenColumns.map(function (column, colIndex) {
     var render = column.render,
       dataIndex = column.dataIndex,
       columnClassName = column.className;
-    var key = columnsKey[colIndex];
-    var fixedInfo = fixedInfoList[colIndex];
-
-    // ============= Used for nest expandable =============
-    var appendCellNode;
-    if (colIndex === (expandIconColumnIndex || 0) && nestExpandable) {
-      appendCellNode = /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("span", {
-        style: {
-          paddingLeft: "".concat(indentSize * indent, "px")
-        },
-        className: "".concat(prefixCls, "-row-indent indent-level-").concat(indent)
-      }), expandIcon({
-        prefixCls: prefixCls,
-        expanded: expanded,
-        expandable: hasNestChildren,
-        record: record,
-        onExpand: onInternalTriggerExpand
-      }));
-    }
-    var additionalCellProps;
-    if (column.onCell) {
-      additionalCellProps = column.onCell(record, index);
-    }
+    var _getCellProps = getCellProps(rowInfo, column, colIndex, indent, index),
+      key = _getCellProps.key,
+      fixedInfo = _getCellProps.fixedInfo,
+      appendCellNode = _getCellProps.appendCellNode,
+      additionalCellProps = _getCellProps.additionalCellProps;
     return /*#__PURE__*/React__namespace.createElement(Cell$1, _extends$1({
       className: columnClassName,
       ellipsis: column.ellipsis,
@@ -45164,8 +44117,7 @@ function BodyRow(props) {
       renderIndex: renderIndex,
       dataIndex: dataIndex,
       render: render,
-      shouldCellUpdate: column.shouldCellUpdate,
-      expanded: appendCellNode && expanded
+      shouldCellUpdate: column.shouldCellUpdate
     }, fixedInfo, {
       appendNode: appendCellNode,
       additionalProps: additionalCellProps
@@ -45174,12 +44126,12 @@ function BodyRow(props) {
 
   // ======================== Expand Row =========================
   var expandRowNode;
-  if (rowSupportExpand && (expandRended || expanded)) {
+  if (rowSupportExpand && (expandedRef.current || expanded)) {
     var expandContent = expandedRowRender(record, index, indent + 1, expanded);
     var computedExpandedRowClassName = expandedRowClassName && expandedRowClassName(record, index, indent);
     expandRowNode = /*#__PURE__*/React__namespace.createElement(ExpandedRow, {
       expanded: expanded,
-      className: classnames$1("".concat(prefixCls, "-expanded-row"), "".concat(prefixCls, "-expanded-row-level-").concat(indent + 1), computedExpandedRowClassName),
+      className: classnames("".concat(prefixCls, "-expanded-row"), "".concat(prefixCls, "-expanded-row-level-").concat(indent + 1), computedExpandedRowClassName),
       prefixCls: prefixCls,
       component: RowComponent,
       cellComponent: cellComponent,
@@ -45251,18 +44203,16 @@ function Body(props) {
     devRenderTimes(props);
   }
   var data = props.data,
-    getRowKey = props.getRowKey,
-    measureColumnWidth = props.measureColumnWidth,
-    expandedKeys = props.expandedKeys,
-    onRow = props.onRow,
-    rowExpandable = props.rowExpandable,
-    emptyNode = props.emptyNode,
-    childrenColumnName = props.childrenColumnName;
-  var _useContext = useContext(TableContext, ['prefixCls', 'getComponent', 'onColumnResize', 'flattenColumns']),
+    measureColumnWidth = props.measureColumnWidth;
+  var _useContext = useContext(TableContext, ['prefixCls', 'getComponent', 'onColumnResize', 'flattenColumns', 'getRowKey', 'expandedKeys', 'childrenColumnName', 'emptyNode']),
     prefixCls = _useContext.prefixCls,
     getComponent = _useContext.getComponent,
     onColumnResize = _useContext.onColumnResize,
-    flattenColumns = _useContext.flattenColumns;
+    flattenColumns = _useContext.flattenColumns,
+    getRowKey = _useContext.getRowKey,
+    expandedKeys = _useContext.expandedKeys,
+    childrenColumnName = _useContext.childrenColumnName,
+    emptyNode = _useContext.emptyNode;
   var flattenData = useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey);
 
   // =================== Performance ====================
@@ -45291,11 +44241,7 @@ function Body(props) {
         rowComponent: trComponent,
         cellComponent: tdComponent,
         scopeCellComponent: thComponent,
-        expandedKeys: expandedKeys,
-        onRow: onRow,
         getRowKey: getRowKey,
-        rowExpandable: rowExpandable,
-        childrenColumnName: childrenColumnName,
         indent: indent
       });
     });
@@ -45324,11 +44270,11 @@ function Body(props) {
 Body.displayName = 'Body';
 var Body$1 = responseImmutable(Body);
 
-var _excluded$6 = ["expandable"];
+var _excluded$7 = ["expandable"];
 var INTERNAL_COL_DEFINE = 'RC_TABLE_INTERNAL_COL_DEFINE';
 function getExpandableProps(props) {
   var expandable = props.expandable,
-    legacyExpandableConfig = _objectWithoutProperties(props, _excluded$6);
+    legacyExpandableConfig = _objectWithoutProperties(props, _excluded$7);
   var config;
   if ('expandable' in props) {
     config = _objectSpread2(_objectSpread2({}, legacyExpandableConfig), expandable);
@@ -45346,7 +44292,7 @@ function getExpandableProps(props) {
   return config;
 }
 
-var _excluded$5 = ["columnType"];
+var _excluded$6 = ["columnType"];
 function ColGroup(_ref) {
   var colWidths = _ref.colWidths,
     columns = _ref.columns,
@@ -45364,7 +44310,7 @@ function ColGroup(_ref) {
     if (width || additionalProps || mustInsert) {
       var _ref2 = additionalProps || {};
         _ref2.columnType;
-        var restAdditionalProps = _objectWithoutProperties(_ref2, _excluded$5);
+        var restAdditionalProps = _objectWithoutProperties(_ref2, _excluded$6);
       cols.unshift( /*#__PURE__*/React__namespace.createElement("col", _extends$1({
         key: i,
         style: {
@@ -45377,7 +44323,7 @@ function ColGroup(_ref) {
   return /*#__PURE__*/React__namespace.createElement("colgroup", null, cols);
 }
 
-var _excluded$4 = ["className", "noData", "columns", "flattenColumns", "colWidths", "columCount", "stickyOffsets", "direction", "fixHeader", "stickyTopOffset", "stickyBottomOffset", "stickyClassName", "onScroll", "maxContentScroll", "children"];
+var _excluded$5 = ["className", "noData", "columns", "flattenColumns", "colWidths", "columCount", "stickyOffsets", "direction", "fixHeader", "stickyTopOffset", "stickyBottomOffset", "stickyClassName", "onScroll", "maxContentScroll", "children"];
 function useColumnWidth(colWidths, columCount) {
   return React.useMemo(function () {
     var cloneColumns = [];
@@ -45411,7 +44357,7 @@ var FixedHolder = /*#__PURE__*/React__namespace.forwardRef(function (props, ref)
     onScroll = props.onScroll,
     maxContentScroll = props.maxContentScroll,
     children = props.children,
-    restProps = _objectWithoutProperties(props, _excluded$4);
+    restProps = _objectWithoutProperties(props, _excluded$5);
   var _useContext = useContext(TableContext, ['prefixCls', 'scrollbarSize', 'isSticky']),
     prefixCls = _useContext.prefixCls,
     scrollbarSize = _useContext.scrollbarSize,
@@ -45448,7 +44394,7 @@ var FixedHolder = /*#__PURE__*/React__namespace.forwardRef(function (props, ref)
   // Check if all flattenColumns has width
   var allFlattenColumnsWithWidth = React__namespace.useMemo(function () {
     return flattenColumns.every(function (column) {
-      return column.width >= 0;
+      return column.width;
     });
   }, [flattenColumns]);
 
@@ -45493,7 +44439,7 @@ var FixedHolder = /*#__PURE__*/React__namespace.forwardRef(function (props, ref)
       bottom: stickyBottomOffset
     } : {}),
     ref: setScrollRef,
-    className: classnames$1(className, _defineProperty({}, stickyClassName, !!stickyClassName))
+    className: classnames(className, _defineProperty({}, stickyClassName, !!stickyClassName))
   }, /*#__PURE__*/React__namespace.createElement("table", {
     style: {
       tableLayout: 'fixed',
@@ -45651,7 +44597,76 @@ function Header(props) {
 }
 var Header$1 = responseImmutable(Header);
 
-var _excluded$3 = ["children"],
+function parseColWidth(totalWidth) {
+  var width = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+  if (typeof width === 'number') {
+    return width;
+  }
+  if (width.endsWith('%')) {
+    return totalWidth * parseFloat(width) / 100;
+  }
+  return null;
+}
+
+/**
+ * Fill all column with width
+ */
+function useWidthColumns(flattenColumns, scrollWidth, clientWidth) {
+  return React__namespace.useMemo(function () {
+    // Fill width if needed
+    if (scrollWidth && scrollWidth > 0) {
+      var totalWidth = 0;
+      var missWidthCount = 0;
+
+      // collect not given width column
+      flattenColumns.forEach(function (col) {
+        var colWidth = parseColWidth(scrollWidth, col.width);
+        if (colWidth) {
+          totalWidth += colWidth;
+        } else {
+          missWidthCount += 1;
+        }
+      });
+
+      // Fill width
+      var restWidth = Math.max(scrollWidth - totalWidth, missWidthCount);
+      var restCount = missWidthCount;
+      var avgWidth = restWidth / missWidthCount;
+      var realTotal = 0;
+      var filledColumns = flattenColumns.map(function (col) {
+        var clone = _objectSpread2({}, col);
+        var colWidth = parseColWidth(scrollWidth, clone.width);
+        if (colWidth) {
+          clone.width = colWidth;
+        } else {
+          var colAvgWidth = Math.floor(avgWidth);
+          clone.width = restCount === 1 ? restWidth : colAvgWidth;
+          restWidth -= colAvgWidth;
+          restCount -= 1;
+        }
+        realTotal += clone.width;
+        return clone;
+      });
+      var maxFitWidth = Math.max(scrollWidth, clientWidth);
+
+      // If realTotal is less than clientWidth,
+      // We need extend column width
+      if (realTotal < maxFitWidth) {
+        var scale = maxFitWidth / realTotal;
+        restWidth = maxFitWidth;
+        filledColumns.forEach(function (col, index) {
+          var colWidth = Math.floor(col.width * scale);
+          col.width = index === filledColumns.length - 1 ? restWidth : colWidth;
+          restWidth -= colWidth;
+        });
+      }
+      return [filledColumns, Math.max(realTotal, maxFitWidth)];
+    }
+    return [flattenColumns, scrollWidth];
+  }, [flattenColumns, scrollWidth, clientWidth]);
+}
+
+var _excluded$4 = ["children"],
   _excluded2 = ["fixed"];
 function convertChildrenToColumns(children) {
   return toArray$5(children).filter(function (node) {
@@ -45660,7 +44675,7 @@ function convertChildrenToColumns(children) {
     var key = _ref.key,
       props = _ref.props;
     var nodeChildren = props.children,
-      restProps = _objectWithoutProperties(props, _excluded$3);
+      restProps = _objectWithoutProperties(props, _excluded$4);
     var column = _objectSpread2({
       key: key
     }, restProps);
@@ -45671,21 +44686,25 @@ function convertChildrenToColumns(children) {
   });
 }
 function flatColumns(columns) {
+  var parentKey = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'key';
   return columns.filter(function (column) {
     return column && _typeof(column) === 'object';
-  }).reduce(function (list, column) {
+  }).reduce(function (list, column, index) {
     var fixed = column.fixed;
     // Convert `fixed='true'` to `fixed='left'` instead
     var parsedFixed = fixed === true ? 'left' : fixed;
+    var mergedKey = "".concat(parentKey, "-").concat(index);
     var subColumns = column.children;
     if (subColumns && subColumns.length > 0) {
-      return [].concat(_toConsumableArray(list), _toConsumableArray(flatColumns(subColumns).map(function (subColum) {
+      return [].concat(_toConsumableArray(list), _toConsumableArray(flatColumns(subColumns, mergedKey).map(function (subColum) {
         return _objectSpread2({
           fixed: parsedFixed
         }, subColum);
       })));
     }
-    return [].concat(_toConsumableArray(list), [_objectSpread2(_objectSpread2({}, column), {}, {
+    return [].concat(_toConsumableArray(list), [_objectSpread2(_objectSpread2({
+      key: mergedKey
+    }, column), {}, {
       fixed: parsedFixed
     })]);
   }, []);
@@ -45748,7 +44767,9 @@ function useColumns(_ref2, transformColumns) {
     direction = _ref2.direction,
     expandRowByClick = _ref2.expandRowByClick,
     columnWidth = _ref2.columnWidth,
-    fixed = _ref2.fixed;
+    fixed = _ref2.fixed,
+    scrollWidth = _ref2.scrollWidth,
+    clientWidth = _ref2.clientWidth;
   var baseColumns = React__namespace.useMemo(function () {
     return columns || convertChildrenToColumns(children);
   }, [columns, children]);
@@ -45854,12 +44875,19 @@ function useColumns(_ref2, transformColumns) {
       return revertForRtl(flatColumns(mergedColumns));
     }
     return flatColumns(mergedColumns);
-  }, [mergedColumns, direction]);
+  }, [mergedColumns, direction, scrollWidth]);
+
   // Only check out of production since it's waste for each render
   if (process.env.NODE_ENV !== 'production') {
     warningFixed(direction === 'rtl' ? flattenColumns.slice().reverse() : flattenColumns);
   }
-  return [mergedColumns, flattenColumns];
+
+  // ========================= FillWidth ========================
+  var _useWidthColumns = useWidthColumns(flattenColumns, scrollWidth, clientWidth),
+    _useWidthColumns2 = _slicedToArray(_useWidthColumns, 2),
+    filledColumns = _useWidthColumns2[0],
+    realScrollWidth = _useWidthColumns2[1];
+  return [mergedColumns, filledColumns, realScrollWidth];
 }
 
 function renderExpandIcon$1(_ref) {
@@ -45872,7 +44900,7 @@ function renderExpandIcon$1(_ref) {
   var expandClassName = "".concat(prefixCls, "-row-expand-icon");
   if (!expandable) {
     return /*#__PURE__*/React__namespace.createElement("span", {
-      className: classnames$1(expandClassName, "".concat(prefixCls, "-row-spaced"))
+      className: classnames(expandClassName, "".concat(prefixCls, "-row-spaced"))
     });
   }
   var onClick = function onClick(event) {
@@ -45880,7 +44908,7 @@ function renderExpandIcon$1(_ref) {
     event.stopPropagation();
   };
   return /*#__PURE__*/React__namespace.createElement("span", {
-    className: classnames$1(expandClassName, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-row-expanded"), expanded), _defineProperty(_classNames, "".concat(prefixCls, "-row-collapsed"), !expanded), _classNames)),
+    className: classnames(expandClassName, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-row-expanded"), expanded), _defineProperty(_classNames, "".concat(prefixCls, "-row-collapsed"), !expanded), _classNames)),
     onClick: onClick
   });
 }
@@ -46272,7 +45300,7 @@ var StickyScrollBar = function StickyScrollBar(_ref, ref) {
   }, /*#__PURE__*/React__namespace.createElement("div", {
     onMouseDown: onMouseDown,
     ref: scrollBarRef,
-    className: classnames$1("".concat(prefixCls, "-sticky-scroll-bar"), _defineProperty({}, "".concat(prefixCls, "-sticky-scroll-bar-active"), isActive)),
+    className: classnames("".concat(prefixCls, "-sticky-scroll-bar"), _defineProperty({}, "".concat(prefixCls, "-sticky-scroll-bar-active"), isActive)),
     style: {
       width: "".concat(scrollBarWidth, "px"),
       transform: "translate3d(".concat(scrollState.scrollLeft, "px, 0, 0)")
@@ -46280,6 +45308,26 @@ var StickyScrollBar = function StickyScrollBar(_ref, ref) {
   }));
 };
 var StickyScrollBar$1 = /*#__PURE__*/React__namespace.forwardRef(StickyScrollBar);
+
+/* istanbul ignore next */
+/**
+ * This is a syntactic sugar for `columns` prop.
+ * So HOC will not work on this.
+ */ // eslint-disable-next-line @typescript-eslint/no-unused-vars
+function Column$1(_) {
+  return null;
+}
+
+/* istanbul ignore next */
+/**
+ * This is a syntactic sugar for `columns` prop.
+ * So HOC will not work on this.
+ */ // eslint-disable-next-line @typescript-eslint/no-unused-vars
+function ColumnGroup$1(_) {
+  return null;
+}
+
+var DEFAULT_PREFIX = 'rc-table';
 
 // Used for conditions cache
 var EMPTY_DATA = [];
@@ -46293,7 +45341,7 @@ function Table$2(tableProps) {
   var _classNames;
   var props = _objectSpread2({
     rowKey: 'key',
-    prefixCls: 'rc-table',
+    prefixCls: DEFAULT_PREFIX,
     emptyText: defaultEmpty
   }, tableProps);
   var prefixCls = props.prefixCls,
@@ -46318,9 +45366,12 @@ function Table$2(tableProps) {
     internalHooks = props.internalHooks,
     transformColumns = props.transformColumns,
     internalRefs = props.internalRefs,
+    tailor = props.tailor,
+    getContainerWidth = props.getContainerWidth,
     sticky = props.sticky;
   var mergedData = data || EMPTY_DATA;
   var hasData = !!mergedData.length;
+  var useInternalHooks = internalHooks === INTERNAL_HOOKS;
 
   // ===================== Warning ======================
   if (process.env.NODE_ENV !== 'production') {
@@ -46346,6 +45397,7 @@ function Table$2(tableProps) {
       return key;
     };
   }, [rowKey]);
+  var customizeScrollBody = getComponent(['body']);
 
   // ====================== Hover =======================
   var _useHover = useHover(),
@@ -46365,6 +45417,7 @@ function Table$2(tableProps) {
     onTriggerExpand = _useExpand2[5];
 
   // ====================== Column ======================
+  var scrollX = scroll === null || scroll === void 0 ? void 0 : scroll.x;
   var _React$useState = React__namespace.useState(0),
     _React$useState2 = _slicedToArray(_React$useState, 2),
     componentWidth = _React$useState2[0],
@@ -46378,11 +45431,15 @@ function Table$2(tableProps) {
       onTriggerExpand: onTriggerExpand,
       expandIcon: mergedExpandIcon,
       expandIconColumnIndex: expandableConfig.expandIconColumnIndex,
-      direction: direction
-    }), internalHooks === INTERNAL_HOOKS ? transformColumns : null),
-    _useColumns2 = _slicedToArray(_useColumns, 2),
+      direction: direction,
+      scrollWidth: useInternalHooks && tailor && typeof scrollX === 'number' ? scrollX : null,
+      clientWidth: componentWidth
+    }), useInternalHooks ? transformColumns : null),
+    _useColumns2 = _slicedToArray(_useColumns, 3),
     columns = _useColumns2[0],
-    flattenColumns = _useColumns2[1];
+    flattenColumns = _useColumns2[1],
+    flattenScrollX = _useColumns2[2];
+  var mergedScrollX = flattenScrollX !== null && flattenScrollX !== void 0 ? flattenScrollX : scrollX;
   var columnContext = React__namespace.useMemo(function () {
     return {
       columns: columns,
@@ -46419,7 +45476,7 @@ function Table$2(tableProps) {
   }, [pureColWidths.join('_')]);
   var stickyOffsets = useStickyOffsets(colWidths, flattenColumns.length, direction);
   var fixHeader = scroll && validateValue(scroll.y);
-  var horizonScroll = scroll && validateValue(scroll.x) || Boolean(expandableConfig.fixed);
+  var horizonScroll = scroll && validateValue(mergedScrollX) || Boolean(expandableConfig.fixed);
   var fixColumn = horizonScroll && flattenColumns.some(function (_ref) {
     var fixed = _ref.fixed;
     return fixed;
@@ -46464,7 +45521,7 @@ function Table$2(tableProps) {
       };
     }
     scrollTableStyle = {
-      width: (scroll === null || scroll === void 0 ? void 0 : scroll.x) === true ? 'auto' : scroll === null || scroll === void 0 ? void 0 : scroll.x,
+      width: mergedScrollX === true ? 'auto' : mergedScrollX,
       minWidth: '100%'
     };
   }
@@ -46516,9 +45573,10 @@ function Table$2(tableProps) {
       forceScroll(mergedScrollLeft, scrollSummaryRef.current);
       forceScroll(mergedScrollLeft, (_stickyRef$current = stickyRef.current) === null || _stickyRef$current === void 0 ? void 0 : _stickyRef$current.setScrollLeft);
     }
-    if (currentTarget) {
-      var scrollWidth = currentTarget.scrollWidth,
-        clientWidth = currentTarget.clientWidth;
+    var measureTarget = currentTarget || scrollHeaderRef.current;
+    if (measureTarget) {
+      var scrollWidth = measureTarget.scrollWidth,
+        clientWidth = measureTarget.clientWidth;
       // There is no space to scroll
       if (scrollWidth === clientWidth) {
         setPingedLeft(false);
@@ -46546,9 +45604,13 @@ function Table$2(tableProps) {
   };
   var onFullTableResize = function onFullTableResize(_ref3) {
     var width = _ref3.width;
-    if (width !== componentWidth) {
+    var mergedWidth = fullTableRef.current ? fullTableRef.current.offsetWidth : width;
+    if (useInternalHooks && getContainerWidth) {
+      mergedWidth = getContainerWidth(fullTableRef.current, mergedWidth) || mergedWidth;
+    }
+    if (mergedWidth !== componentWidth) {
       triggerOnScroll();
-      setComponentWidth(fullTableRef.current ? fullTableRef.current.offsetWidth : width);
+      setComponentWidth(mergedWidth);
     }
   };
 
@@ -46576,17 +45638,19 @@ function Table$2(tableProps) {
     setSupportSticky = _React$useState10[1]; // Only IE not support, we mark as support first
 
   React__namespace.useEffect(function () {
-    if (scrollBodyRef.current instanceof Element) {
-      setScrollbarSize(getTargetScrollBarSize(scrollBodyRef.current).width);
-    } else {
-      setScrollbarSize(getTargetScrollBarSize(scrollBodyContainerRef.current).width);
+    if (!tailor || !useInternalHooks) {
+      if (scrollBodyRef.current instanceof Element) {
+        setScrollbarSize(getTargetScrollBarSize(scrollBodyRef.current).width);
+      } else {
+        setScrollbarSize(getTargetScrollBarSize(scrollBodyContainerRef.current).width);
+      }
     }
     setSupportSticky(isStyleSupport('position', 'sticky'));
   }, []);
 
   // ================== INTERNAL HOOKS ==================
   React__namespace.useEffect(function () {
-    if (internalHooks === INTERNAL_HOOKS && internalRefs) {
+    if (useInternalHooks && internalRefs) {
       internalRefs.body.current = scrollBodyRef.current;
     }
   });
@@ -46614,7 +45678,7 @@ function Table$2(tableProps) {
     // When scroll.x is max-content, no need to fix table layout
     // it's width should stretch out to fit content
     if (fixColumn) {
-      return (scroll === null || scroll === void 0 ? void 0 : scroll.x) === 'max-content' ? 'auto' : 'fixed';
+      return mergedScrollX === 'max-content' ? 'auto' : 'fixed';
     }
     if (fixHeader || isSticky || flattenColumns.some(function (_ref4) {
       var ellipsis = _ref4.ellipsis;
@@ -46650,13 +45714,7 @@ function Table$2(tableProps) {
   // Body
   var bodyTable = /*#__PURE__*/React__namespace.createElement(Body$1, {
     data: mergedData,
-    measureColumnWidth: fixHeader || horizonScroll || isSticky,
-    expandedKeys: mergedExpandedKeys,
-    rowExpandable: expandableConfig.rowExpandable,
-    getRowKey: getRowKey,
-    onRow: onRow,
-    emptyNode: emptyNode,
-    childrenColumnName: mergedChildrenColumnName
+    measureColumnWidth: fixHeader || horizonScroll || isSticky
   });
   var bodyColGroup = /*#__PURE__*/React__namespace.createElement(ColGroup, {
     colWidths: flattenColumns.map(function (_ref5) {
@@ -46668,10 +45726,6 @@ function Table$2(tableProps) {
   var captionElement = caption !== null && caption !== undefined ? /*#__PURE__*/React__namespace.createElement("caption", {
     className: "".concat(prefixCls, "-caption")
   }, caption) : undefined;
-  var customizeScrollBody = getComponent(['body']);
-  if (process.env.NODE_ENV !== 'production' && typeof customizeScrollBody === 'function' && hasData && !fixHeader) {
-    warningOnce(false, '`components.body` with render props is only work on `scroll.y`.');
-  }
   var dataProps = pickAttrs(props, {
     data: true
   });
@@ -46703,7 +45757,7 @@ function Table$2(tableProps) {
         style: _objectSpread2(_objectSpread2({}, scrollXStyle), scrollYStyle),
         onScroll: onScroll,
         ref: scrollBodyRef,
-        className: classnames$1("".concat(prefixCls, "-body"))
+        className: classnames("".concat(prefixCls, "-body"))
       }, /*#__PURE__*/React__namespace.createElement(TableComponent, _extends$1({
         style: _objectSpread2(_objectSpread2({}, scrollTableStyle), {}, {
           tableLayout: mergedTableLayout
@@ -46718,7 +45772,7 @@ function Table$2(tableProps) {
     // Fixed holder share the props
     var fixedHolderProps = _objectSpread2(_objectSpread2(_objectSpread2({
       noData: !mergedData.length,
-      maxContentScroll: horizonScroll && scroll.x === 'max-content'
+      maxContentScroll: horizonScroll && mergedScrollX === 'max-content'
     }, headerProps), columnContext), {}, {
       direction: direction,
       stickyClassName: stickyClassName,
@@ -46743,7 +45797,7 @@ function Table$2(tableProps) {
     // >>>>>> Unique table
     groupTableNode = /*#__PURE__*/React__namespace.createElement("div", {
       style: _objectSpread2(_objectSpread2({}, scrollXStyle), scrollYStyle),
-      className: classnames$1("".concat(prefixCls, "-content")),
+      className: classnames("".concat(prefixCls, "-content")),
       onScroll: onScroll,
       ref: scrollBodyRef
     }, /*#__PURE__*/React__namespace.createElement(TableComponent, _extends$1({
@@ -46757,7 +45811,7 @@ function Table$2(tableProps) {
     }, summaryNode)));
   }
   var fullTable = /*#__PURE__*/React__namespace.createElement("div", _extends$1({
-    className: classnames$1(prefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), direction === 'rtl'), _defineProperty(_classNames, "".concat(prefixCls, "-ping-left"), pingedLeft), _defineProperty(_classNames, "".concat(prefixCls, "-ping-right"), pingedRight), _defineProperty(_classNames, "".concat(prefixCls, "-layout-fixed"), tableLayout === 'fixed'), _defineProperty(_classNames, "".concat(prefixCls, "-fixed-header"), fixHeader), _defineProperty(_classNames, "".concat(prefixCls, "-fixed-column"), fixColumn), _defineProperty(_classNames, "".concat(prefixCls, "-scroll-horizontal"), horizonScroll), _defineProperty(_classNames, "".concat(prefixCls, "-has-fix-left"), flattenColumns[0] && flattenColumns[0].fixed), _defineProperty(_classNames, "".concat(prefixCls, "-has-fix-right"), flattenColumns[flattenColumns.length - 1] && flattenColumns[flattenColumns.length - 1].fixed === 'right'), _classNames)),
+    className: classnames(prefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), direction === 'rtl'), _defineProperty(_classNames, "".concat(prefixCls, "-ping-left"), pingedLeft), _defineProperty(_classNames, "".concat(prefixCls, "-ping-right"), pingedRight), _defineProperty(_classNames, "".concat(prefixCls, "-layout-fixed"), tableLayout === 'fixed'), _defineProperty(_classNames, "".concat(prefixCls, "-fixed-header"), fixHeader), _defineProperty(_classNames, "".concat(prefixCls, "-fixed-column"), fixColumn), _defineProperty(_classNames, "".concat(prefixCls, "-scroll-horizontal"), horizonScroll), _defineProperty(_classNames, "".concat(prefixCls, "-has-fix-left"), flattenColumns[0] && flattenColumns[0].fixed), _defineProperty(_classNames, "".concat(prefixCls, "-has-fix-right"), flattenColumns[flattenColumns.length - 1] && flattenColumns[flattenColumns.length - 1].fixed === 'right'), _classNames)),
     style: style,
     id: id,
     ref: fullTableRef
@@ -46777,6 +45831,8 @@ function Table$2(tableProps) {
   var fixedInfoList = useFixedInfo(flattenColumns, stickyOffsets, direction, columns);
   var TableContextValue = React__namespace.useMemo(function () {
     return {
+      // Scroll
+      scrollX: mergedScrollX,
       // Table
       prefixCls: prefixCls,
       getComponent: getComponent,
@@ -46790,7 +45846,6 @@ function Table$2(tableProps) {
       fixColumn: fixColumn,
       horizonScroll: horizonScroll,
       // Body
-
       tableLayout: mergedTableLayout,
       rowClassName: rowClassName,
       expandedRowClassName: expandableConfig.expandedRowClassName,
@@ -46804,6 +45859,7 @@ function Table$2(tableProps) {
       allColumnsFixedLeft: flattenColumns.every(function (col) {
         return col.fixed === 'left';
       }),
+      emptyNode: emptyNode,
       // Column
       columns: columns,
       flattenColumns: flattenColumns,
@@ -46811,17 +45867,24 @@ function Table$2(tableProps) {
       // Row
       hoverStartRow: startRow,
       hoverEndRow: endRow,
-      onHover: onHover
+      onHover: onHover,
+      rowExpandable: expandableConfig.rowExpandable,
+      onRow: onRow,
+      getRowKey: getRowKey,
+      expandedKeys: mergedExpandedKeys,
+      childrenColumnName: mergedChildrenColumnName
     };
   }, [
+  // Scroll
+  mergedScrollX,
   // Table
   prefixCls, getComponent, scrollbarSize, direction, fixedInfoList, isSticky, supportSticky, componentWidth, fixHeader, fixColumn, horizonScroll,
   // Body
-  mergedTableLayout, rowClassName, expandableConfig.expandedRowClassName, mergedExpandIcon, expandableType, expandableConfig.expandRowByClick, expandableConfig.expandedRowRender, onTriggerExpand, expandableConfig.expandIconColumnIndex, expandableConfig.indentSize,
+  mergedTableLayout, rowClassName, expandableConfig.expandedRowClassName, mergedExpandIcon, expandableType, expandableConfig.expandRowByClick, expandableConfig.expandedRowRender, onTriggerExpand, expandableConfig.expandIconColumnIndex, expandableConfig.indentSize, emptyNode,
   // Column
   columns, flattenColumns, onColumnResize,
   // Row
-  startRow, endRow, onHover]);
+  startRow, endRow, onHover, expandableConfig.rowExpandable, onRow, getRowKey, mergedExpandedKeys, mergedChildrenColumnName]);
   return /*#__PURE__*/React__namespace.createElement(TableContext.Provider, {
     value: TableContextValue
   }, fullTable);
@@ -46835,6 +45898,492 @@ ImmutableTable.INTERNAL_HOOKS = INTERNAL_HOOKS;
 ImmutableTable.Column = Column$1;
 ImmutableTable.ColumnGroup = ColumnGroup$1;
 ImmutableTable.Summary = FooterComponents;
+
+var StaticContext = createContext(null);
+var GridContext = createContext(null);
+
+/**
+ * Return the width of the column by `colSpan`.
+ * When `colSpan` is `0` will be trade as `1`.
+ */
+function getColumnWidth(colIndex, colSpan, columnsOffset) {
+  var mergedColSpan = colSpan || 1;
+  return columnsOffset[colIndex + mergedColSpan] - (columnsOffset[colIndex] || 0);
+}
+function VirtualCell(props) {
+  var rowInfo = props.rowInfo,
+    column = props.column,
+    colIndex = props.colIndex,
+    indent = props.indent,
+    index = props.index,
+    renderIndex = props.renderIndex,
+    record = props.record,
+    style = props.style,
+    className = props.className,
+    inverse = props.inverse,
+    getHeight = props.getHeight;
+  var render = column.render,
+    dataIndex = column.dataIndex,
+    columnClassName = column.className,
+    colWidth = column.width;
+  var _useContext = useContext(GridContext, ['columnsOffset']),
+    columnsOffset = _useContext.columnsOffset;
+  var _getCellProps = getCellProps(rowInfo, column, colIndex, indent, index),
+    key = _getCellProps.key,
+    fixedInfo = _getCellProps.fixedInfo,
+    appendCellNode = _getCellProps.appendCellNode,
+    additionalCellProps = _getCellProps.additionalCellProps;
+  var cellStyle = additionalCellProps.style,
+    _additionalCellProps$ = additionalCellProps.colSpan,
+    colSpan = _additionalCellProps$ === void 0 ? 1 : _additionalCellProps$,
+    _additionalCellProps$2 = additionalCellProps.rowSpan,
+    rowSpan = _additionalCellProps$2 === void 0 ? 1 : _additionalCellProps$2;
+
+  // ========================= ColWidth =========================
+  // column width
+  var startColIndex = colIndex - 1;
+  var concatColWidth = getColumnWidth(startColIndex, colSpan, columnsOffset);
+
+  // margin offset
+  var marginOffset = colSpan > 1 ? colWidth - concatColWidth : 0;
+
+  // ========================== Style ===========================
+  var mergedStyle = _objectSpread2(_objectSpread2(_objectSpread2({}, cellStyle), style), {}, {
+    flex: "0 0 ".concat(concatColWidth, "px"),
+    width: "".concat(concatColWidth, "px"),
+    marginRight: marginOffset,
+    pointerEvents: 'auto'
+  });
+
+  // When `colSpan` or `rowSpan` is `0`, should skip render.
+  var needHide = React__namespace.useMemo(function () {
+    if (inverse) {
+      return rowSpan <= 1;
+    } else {
+      return colSpan === 0 || rowSpan === 0 || rowSpan > 1;
+    }
+  }, [rowSpan, colSpan, inverse]);
+
+  // 0 rowSpan or colSpan should not render
+  if (needHide) {
+    mergedStyle.visibility = 'hidden';
+  } else if (inverse) {
+    mergedStyle.height = getHeight === null || getHeight === void 0 ? void 0 : getHeight(rowSpan);
+  }
+  var mergedRender = needHide ? function () {
+    return null;
+  } : render;
+
+  // ========================== Render ==========================
+  var cellSpan = {};
+
+  // Virtual should reset `colSpan` & `rowSpan`
+  if (rowSpan === 0 || colSpan === 0) {
+    cellSpan.rowSpan = 1;
+    cellSpan.colSpan = 1;
+  }
+  return /*#__PURE__*/React__namespace.createElement(Cell$1, _extends$1({
+    className: classnames(columnClassName, className),
+    ellipsis: column.ellipsis,
+    align: column.align,
+    scope: column.rowScope,
+    component: "div",
+    prefixCls: rowInfo.prefixCls,
+    key: key,
+    record: record,
+    index: index,
+    renderIndex: renderIndex,
+    dataIndex: dataIndex,
+    render: mergedRender,
+    shouldCellUpdate: column.shouldCellUpdate
+  }, fixedInfo, {
+    appendNode: appendCellNode,
+    additionalProps: _objectSpread2(_objectSpread2({}, additionalCellProps), {}, {
+      style: mergedStyle
+    }, cellSpan)
+  }));
+}
+
+var _excluded$3 = ["data", "index", "className", "rowKey", "style", "extra", "getHeight"];
+var BodyLine = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
+  var data = props.data,
+    index = props.index,
+    className = props.className,
+    rowKey = props.rowKey,
+    style = props.style,
+    extra = props.extra,
+    getHeight = props.getHeight,
+    restProps = _objectWithoutProperties(props, _excluded$3);
+  var record = data.record,
+    indent = data.indent,
+    renderIndex = data.index;
+  var _useContext = useContext(TableContext, ['prefixCls', 'flattenColumns', 'fixColumn', 'componentWidth', 'scrollX']),
+    scrollX = _useContext.scrollX,
+    flattenColumns = _useContext.flattenColumns,
+    prefixCls = _useContext.prefixCls,
+    fixColumn = _useContext.fixColumn,
+    componentWidth = _useContext.componentWidth;
+  var rowInfo = useRowInfo(record, rowKey, index, indent);
+
+  // ========================== Expand ==========================
+  var rowSupportExpand = rowInfo.rowSupportExpand,
+    expanded = rowInfo.expanded,
+    rowProps = rowInfo.rowProps,
+    expandedRowRender = rowInfo.expandedRowRender,
+    expandedRowClassName = rowInfo.expandedRowClassName;
+  var expandRowNode;
+  if (rowSupportExpand && expanded) {
+    var expandContent = expandedRowRender(record, index, indent + 1, expanded);
+    var computedExpandedRowClassName = expandedRowClassName === null || expandedRowClassName === void 0 ? void 0 : expandedRowClassName(record, index, indent);
+    var additionalProps = {};
+    if (fixColumn) {
+      additionalProps = {
+        style: _defineProperty({}, '--virtual-width', "".concat(componentWidth, "px"))
+      };
+    }
+    var rowCellCls = "".concat(prefixCls, "-expanded-row-cell");
+    expandRowNode = /*#__PURE__*/React__namespace.createElement("div", {
+      className: classnames("".concat(prefixCls, "-expanded-row"), "".concat(prefixCls, "-expanded-row-level-").concat(indent + 1), computedExpandedRowClassName)
+    }, /*#__PURE__*/React__namespace.createElement(Cell$1, {
+      component: "div",
+      prefixCls: prefixCls,
+      className: classnames(rowCellCls, _defineProperty({}, "".concat(rowCellCls, "-fixed"), fixColumn)),
+      additionalProps: additionalProps
+    }, expandContent));
+  }
+
+  // ========================== Render ==========================
+
+  var rowStyle = _objectSpread2(_objectSpread2({}, style), {}, {
+    width: scrollX
+  });
+  if (extra) {
+    rowStyle.position = 'absolute';
+    rowStyle.pointerEvents = 'none';
+  }
+  var rowNode = /*#__PURE__*/React__namespace.createElement("div", _extends$1({}, rowProps, restProps, {
+    ref: rowSupportExpand ? null : ref,
+    className: classnames(className, "".concat(prefixCls, "-row"), rowProps === null || rowProps === void 0 ? void 0 : rowProps.className, _defineProperty({}, "".concat(prefixCls, "-row-extra"), extra)),
+    style: _objectSpread2(_objectSpread2({}, rowStyle), rowProps === null || rowProps === void 0 ? void 0 : rowProps.style)
+  }), flattenColumns.map(function (column, colIndex) {
+    return /*#__PURE__*/React__namespace.createElement(VirtualCell, {
+      key: colIndex,
+      rowInfo: rowInfo,
+      column: column,
+      colIndex: colIndex,
+      indent: indent,
+      index: index,
+      renderIndex: renderIndex,
+      record: record,
+      inverse: extra,
+      getHeight: getHeight
+    });
+  }));
+  if (rowSupportExpand) {
+    return /*#__PURE__*/React__namespace.createElement("div", {
+      ref: ref
+    }, rowNode, expandRowNode);
+  }
+  return rowNode;
+});
+var ResponseBodyLine = responseImmutable(BodyLine);
+if (process.env.NODE_ENV !== 'production') {
+  ResponseBodyLine.displayName = 'BodyLine';
+}
+
+var Grid$1 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
+  var data = props.data,
+    onScroll = props.onScroll;
+  var _useContext = useContext(TableContext, ['flattenColumns', 'onColumnResize', 'getRowKey', 'prefixCls', 'expandedKeys', 'childrenColumnName', 'emptyNode', 'scrollX']),
+    flattenColumns = _useContext.flattenColumns,
+    onColumnResize = _useContext.onColumnResize,
+    getRowKey = _useContext.getRowKey,
+    expandedKeys = _useContext.expandedKeys,
+    prefixCls = _useContext.prefixCls,
+    childrenColumnName = _useContext.childrenColumnName,
+    emptyNode = _useContext.emptyNode,
+    scrollX = _useContext.scrollX;
+  var _useContext2 = useContext(StaticContext),
+    scrollY = _useContext2.scrollY,
+    listItemHeight = _useContext2.listItemHeight;
+
+  // =========================== Ref ============================
+  var listRef = React__namespace.useRef();
+
+  // =========================== Data ===========================
+  var flattenData = useFlattenRecords(data, childrenColumnName, expandedKeys, getRowKey);
+
+  // ========================== Column ==========================
+  var columnsWidth = React__namespace.useMemo(function () {
+    var total = 0;
+    return flattenColumns.map(function (_ref) {
+      var width = _ref.width,
+        key = _ref.key;
+      total += width;
+      return [key, width, total];
+    });
+  }, [flattenColumns]);
+  var columnsOffset = React__namespace.useMemo(function () {
+    return columnsWidth.map(function (colWidth) {
+      return colWidth[2];
+    });
+  }, [columnsWidth]);
+  React__namespace.useEffect(function () {
+    columnsWidth.forEach(function (_ref2) {
+      var _ref3 = _slicedToArray(_ref2, 2),
+        key = _ref3[0],
+        width = _ref3[1];
+      onColumnResize(key, width);
+    });
+  }, [columnsWidth]);
+
+  // =========================== Ref ============================
+  React__namespace.useImperativeHandle(ref, function () {
+    var obj = {};
+    Object.defineProperty(obj, 'scrollLeft', {
+      get: function get() {
+        var _listRef$current;
+        return ((_listRef$current = listRef.current) === null || _listRef$current === void 0 ? void 0 : _listRef$current.getScrollInfo().x) || 0;
+      },
+      set: function set(value) {
+        var _listRef$current2;
+        (_listRef$current2 = listRef.current) === null || _listRef$current2 === void 0 ? void 0 : _listRef$current2.scrollTo({
+          left: value
+        });
+      }
+    });
+    return obj;
+  });
+
+  // ======================= Col/Row Span =======================
+  var getRowSpan = function getRowSpan(column, index) {
+    var _flattenData$index;
+    var record = (_flattenData$index = flattenData[index]) === null || _flattenData$index === void 0 ? void 0 : _flattenData$index.record;
+    var onCell = column.onCell;
+    if (onCell) {
+      var _cellProps$rowSpan;
+      var cellProps = onCell(record, index);
+      return (_cellProps$rowSpan = cellProps === null || cellProps === void 0 ? void 0 : cellProps.rowSpan) !== null && _cellProps$rowSpan !== void 0 ? _cellProps$rowSpan : 1;
+    }
+    return 1;
+  };
+  var extraRender = function extraRender(info) {
+    var start = info.start,
+      end = info.end,
+      getSize = info.getSize,
+      offsetY = info.offsetY;
+
+    // Do nothing if no data
+    if (end < 0) {
+      return null;
+    }
+
+    // Find first rowSpan column
+    var firstRowSpanColumns = flattenColumns.filter(
+    // rowSpan is 0
+    function (column) {
+      return getRowSpan(column, start) === 0;
+    });
+    var startIndex = start;
+    var _loop = function _loop(i) {
+      firstRowSpanColumns = firstRowSpanColumns.filter(function (column) {
+        return getRowSpan(column, i) === 0;
+      });
+      if (!firstRowSpanColumns.length) {
+        startIndex = i;
+        return "break";
+      }
+    };
+    for (var i = start; i >= 0; i -= 1) {
+      var _ret = _loop(i);
+      if (_ret === "break") break;
+    }
+
+    // Find last rowSpan column
+    var lastRowSpanColumns = flattenColumns.filter(
+    // rowSpan is not 1
+    function (column) {
+      return getRowSpan(column, end) !== 1;
+    });
+    var endIndex = end;
+    var _loop2 = function _loop2(_i) {
+      lastRowSpanColumns = lastRowSpanColumns.filter(function (column) {
+        return getRowSpan(column, _i) !== 1;
+      });
+      if (!lastRowSpanColumns.length) {
+        endIndex = Math.max(_i - 1, end);
+        return "break";
+      }
+    };
+    for (var _i = end; _i < flattenData.length; _i += 1) {
+      var _ret2 = _loop2(_i);
+      if (_ret2 === "break") break;
+    }
+
+    // Collect the line who has rowSpan
+    var spanLines = [];
+    var _loop3 = function _loop3(_i2) {
+      var item = flattenData[_i2];
+
+      // This code will never reach, just incase
+      if (!item) {
+        return "continue";
+      }
+      if (flattenColumns.some(function (column) {
+        return getRowSpan(column, _i2) > 1;
+      })) {
+        spanLines.push(_i2);
+      }
+    };
+    for (var _i2 = startIndex; _i2 <= endIndex; _i2 += 1) {
+      var _ret3 = _loop3(_i2);
+      if (_ret3 === "continue") continue;
+    }
+
+    // Patch extra line on the page
+    var nodes = spanLines.map(function (index) {
+      var item = flattenData[index];
+      var rowKey = getRowKey(item.record, index);
+      var getHeight = function getHeight(rowSpan) {
+        var endItemIndex = index + rowSpan - 1;
+        var endItemKey = getRowKey(flattenData[endItemIndex].record, endItemIndex);
+        var sizeInfo = getSize(rowKey, endItemKey);
+        return sizeInfo.bottom - sizeInfo.top;
+      };
+      var sizeInfo = getSize(rowKey);
+      return /*#__PURE__*/React__namespace.createElement(ResponseBodyLine, {
+        key: index,
+        data: item,
+        rowKey: rowKey,
+        index: index,
+        style: {
+          top: -offsetY + sizeInfo.top
+        },
+        extra: true,
+        getHeight: getHeight
+      });
+    });
+    return nodes;
+  };
+
+  // ========================= Context ==========================
+  var gridContext = React__namespace.useMemo(function () {
+    return {
+      columnsOffset: columnsOffset
+    };
+  }, [columnsOffset]);
+
+  // ========================== Render ==========================
+  var tblPrefixCls = "".concat(prefixCls, "-tbody");
+  var bodyContent;
+  if (flattenData.length) {
+    bodyContent = /*#__PURE__*/React__namespace.createElement(List$1, {
+      fullHeight: false,
+      ref: listRef,
+      className: classnames(tblPrefixCls, "".concat(tblPrefixCls, "-virtual")),
+      height: scrollY,
+      itemHeight: listItemHeight || 24,
+      data: flattenData,
+      itemKey: function itemKey(item) {
+        return getRowKey(item.record);
+      },
+      scrollWidth: scrollX,
+      onVirtualScroll: function onVirtualScroll(_ref4) {
+        var x = _ref4.x;
+        onScroll({
+          scrollLeft: x
+        });
+      },
+      extraRender: extraRender
+    }, function (item, index, itemProps) {
+      var rowKey = getRowKey(item.record, index);
+      return /*#__PURE__*/React__namespace.createElement(ResponseBodyLine, _extends$1({
+        data: item,
+        rowKey: rowKey,
+        index: index
+      }, itemProps));
+    });
+  } else {
+    bodyContent = /*#__PURE__*/React__namespace.createElement("div", {
+      className: classnames("".concat(prefixCls, "-placeholder"))
+    }, /*#__PURE__*/React__namespace.createElement(Cell$1, {
+      component: "div",
+      prefixCls: prefixCls
+    }, emptyNode));
+  }
+  return /*#__PURE__*/React__namespace.createElement(GridContext.Provider, {
+    value: gridContext
+  }, bodyContent);
+});
+var ResponseGrid = responseImmutable(Grid$1);
+if (process.env.NODE_ENV !== 'production') {
+  ResponseGrid.displayName = 'ResponseGrid';
+}
+
+var renderBody = function renderBody(rawData, props) {
+  var ref = props.ref,
+    onScroll = props.onScroll;
+  return /*#__PURE__*/React__namespace.createElement(ResponseGrid, {
+    ref: ref,
+    data: rawData,
+    onScroll: onScroll
+  });
+};
+function VirtualTable(props) {
+  var columns = props.columns,
+    scroll = props.scroll,
+    _props$prefixCls = props.prefixCls,
+    prefixCls = _props$prefixCls === void 0 ? DEFAULT_PREFIX : _props$prefixCls,
+    className = props.className,
+    listItemHeight = props.listItemHeight;
+  var _ref = scroll || {},
+    scrollX = _ref.x,
+    scrollY = _ref.y;
+
+  // Fill scrollX
+  if (typeof scrollX !== 'number') {
+    if (process.env.NODE_ENV !== 'production') {
+      warningOnce(!scrollX, '`scroll.x` in virtual table must be number.');
+    }
+    scrollX = 1;
+  }
+
+  // Fill scrollY
+  if (typeof scrollY !== 'number') {
+    scrollY = 500;
+    if (process.env.NODE_ENV !== 'production') {
+      warningOnce(false, '`scroll.y` in virtual table must be number.');
+    }
+  }
+
+  // ========================= Context ==========================
+  var context = React__namespace.useMemo(function () {
+    return {
+      scrollY: scrollY,
+      listItemHeight: listItemHeight
+    };
+  }, [scrollY, listItemHeight]);
+
+  // ========================== Render ==========================
+  return /*#__PURE__*/React__namespace.createElement(StaticContext.Provider, {
+    value: context
+  }, /*#__PURE__*/React__namespace.createElement(ImmutableTable, _extends$1({}, props, {
+    className: classnames(className, "".concat(prefixCls, "-virtual")),
+    scroll: _objectSpread2(_objectSpread2({}, scroll), {}, {
+      x: scrollX
+    }),
+    components: {
+      body: renderBody
+    },
+    columns: columns,
+    internalHooks: INTERNAL_HOOKS,
+    tailor: true
+  })));
+}
+function genVirtualTable(shouldTriggerRender) {
+  return makeImmutable(VirtualTable, shouldTriggerRender);
+}
+genVirtualTable();
 
 /* istanbul ignore next */
 /** This is a syntactic sugar for `columns` prop. So HOC will not work on this. */
@@ -46866,7 +46415,7 @@ function renderExpandIcon(locale) {
         onExpand(record, e);
         e.stopPropagation();
       },
-      className: classnames$g(iconPrefix, {
+      className: classnames(iconPrefix, {
         [`${iconPrefix}-spaced`]: !expandable,
         [`${iconPrefix}-expanded`]: expandable && expanded,
         [`${iconPrefix}-collapsed`]: expandable && !expanded
@@ -46877,18 +46426,20 @@ function renderExpandIcon(locale) {
   };
 }
 
-/**
- * Same as `rc-table` but we modify trigger children update logic instead.
- */
-var RcTable = genTable((prev, next) => {
-  const {
-    _renderTimes: prevRenderTimes
-  } = prev;
-  const {
-    _renderTimes: nextRenderTimes
-  } = next;
-  return prevRenderTimes !== nextRenderTimes;
-});
+function useContainerWidth(prefixCls) {
+  const getContainerWidth = (ele, width) => {
+    const container = ele.querySelector(`.${prefixCls}-container`);
+    let returnWidth = width;
+    if (container) {
+      const style = getComputedStyle(container);
+      const borderLeft = parseInt(style.borderLeftWidth, 10);
+      const borderRight = parseInt(style.borderRightWidth, 10);
+      returnWidth = width - borderLeft - borderRight;
+    }
+    return returnWidth;
+  };
+  return getContainerWidth;
+}
 
 function getColumnKey(column, defaultKey) {
   if ('key' in column && column.key !== undefined && column.key !== null) {
@@ -46947,68 +46498,45 @@ function useSyncState(initialValue) {
   }];
 }
 
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
-
 /**
  * Webpack has bug for import loop, which is not the same behavior as ES module.
  * When util.js imports the TreeNode for tree generate will cause treeContextTypes be empty.
  */
 var TreeContext = /*#__PURE__*/React__namespace.createContext(null);
+
+function DropIndicator(_ref) {
+  var dropPosition = _ref.dropPosition,
+    dropLevelOffset = _ref.dropLevelOffset,
+    indent = _ref.indent;
+  var style = {
+    pointerEvents: 'none',
+    position: 'absolute',
+    right: 0,
+    backgroundColor: 'red',
+    height: 2
+  };
+  switch (dropPosition) {
+    case -1:
+      style.top = 0;
+      style.left = -dropLevelOffset * indent;
+      break;
+    case 1:
+      style.bottom = 0;
+      style.left = -dropLevelOffset * indent;
+      break;
+    case 0:
+      style.bottom = 0;
+      style.left = indent;
+      break;
+  }
+  return /*#__PURE__*/React__namespace.createElement("div", {
+    style: style
+  });
+}
+
+function _objectDestructuringEmpty(obj) {
+  if (obj == null) throw new TypeError("Cannot destructure " + obj);
+}
 
 var Indent = function Indent(_ref) {
   var prefixCls = _ref.prefixCls,
@@ -47162,7 +46690,7 @@ var InternalTreeNode = /*#__PURE__*/function (_React$Component) {
     _this.hasChildren = function () {
       var eventKey = _this.props.eventKey;
       var keyEntities = _this.props.context.keyEntities;
-      var _ref = keyEntities[eventKey] || {},
+      var _ref = getEntity(keyEntities, eventKey) || {},
         children = _ref.children;
       return !!(children || []).length;
     };
@@ -47427,7 +46955,7 @@ var InternalTreeNode = /*#__PURE__*/function (_React$Component) {
         aria: true,
         data: true
       });
-      var _ref2 = keyEntities[eventKey] || {},
+      var _ref2 = getEntity(keyEntities, eventKey) || {},
         level = _ref2.level;
       var isEndNode = isEnd[isEnd.length - 1];
       var mergedDraggable = this.isDraggable();
@@ -47472,250 +47000,6 @@ var ContextTreeNode = function ContextTreeNode(props) {
 };
 ContextTreeNode.displayName = 'TreeNode';
 ContextTreeNode.isTreeNode = 1;
-
-function arrDel(list, value) {
-  if (!list) return [];
-  var clone = list.slice();
-  var index = clone.indexOf(value);
-  if (index >= 0) {
-    clone.splice(index, 1);
-  }
-  return clone;
-}
-function arrAdd(list, value) {
-  var clone = (list || []).slice();
-  if (clone.indexOf(value) === -1) {
-    clone.push(value);
-  }
-  return clone;
-}
-function posToArr(pos) {
-  return pos.split('-');
-}
-function getDragChildrenKeys(dragNodeKey, keyEntities) {
-  // not contains self
-  // self for left or right drag
-  var dragChildrenKeys = [];
-  var entity = keyEntities[dragNodeKey];
-  function dig() {
-    var list = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    list.forEach(function (_ref) {
-      var key = _ref.key,
-        children = _ref.children;
-      dragChildrenKeys.push(key);
-      dig(children);
-    });
-  }
-  dig(entity.children);
-  return dragChildrenKeys;
-}
-function isLastChild(treeNodeEntity) {
-  if (treeNodeEntity.parent) {
-    var posArr = posToArr(treeNodeEntity.pos);
-    return Number(posArr[posArr.length - 1]) === treeNodeEntity.parent.children.length - 1;
-  }
-  return false;
-}
-function isFirstChild(treeNodeEntity) {
-  var posArr = posToArr(treeNodeEntity.pos);
-  return Number(posArr[posArr.length - 1]) === 0;
-}
-// Only used when drag, not affect SSR.
-function calcDropPosition(event, dragNode, targetNode, indent, startMousePosition, allowDrop, flattenedNodes, keyEntities, expandKeys, direction) {
-  var _abstractDropNodeEnti;
-  var clientX = event.clientX,
-    clientY = event.clientY;
-  var _event$target$getBoun = event.target.getBoundingClientRect(),
-    top = _event$target$getBoun.top,
-    height = _event$target$getBoun.height;
-  // optional chain for testing
-  var horizontalMouseOffset = (direction === 'rtl' ? -1 : 1) * (((startMousePosition === null || startMousePosition === void 0 ? void 0 : startMousePosition.x) || 0) - clientX);
-  var rawDropLevelOffset = (horizontalMouseOffset - 12) / indent;
-  // find abstract drop node by horizontal offset
-  var abstractDropNodeEntity = keyEntities[targetNode.props.eventKey];
-  if (clientY < top + height / 2) {
-    // first half, set abstract drop node to previous node
-    var nodeIndex = flattenedNodes.findIndex(function (flattenedNode) {
-      return flattenedNode.key === abstractDropNodeEntity.key;
-    });
-    var prevNodeIndex = nodeIndex <= 0 ? 0 : nodeIndex - 1;
-    var prevNodeKey = flattenedNodes[prevNodeIndex].key;
-    abstractDropNodeEntity = keyEntities[prevNodeKey];
-  }
-  var initialAbstractDropNodeKey = abstractDropNodeEntity.key;
-  var abstractDragOverEntity = abstractDropNodeEntity;
-  var dragOverNodeKey = abstractDropNodeEntity.key;
-  var dropPosition = 0;
-  var dropLevelOffset = 0;
-  // Only allow cross level drop when dragging on a non-expanded node
-  if (!expandKeys.includes(initialAbstractDropNodeKey)) {
-    for (var i = 0; i < rawDropLevelOffset; i += 1) {
-      if (isLastChild(abstractDropNodeEntity)) {
-        abstractDropNodeEntity = abstractDropNodeEntity.parent;
-        dropLevelOffset += 1;
-      } else {
-        break;
-      }
-    }
-  }
-  var abstractDragDataNode = dragNode.props.data;
-  var abstractDropDataNode = abstractDropNodeEntity.node;
-  var dropAllowed = true;
-  if (isFirstChild(abstractDropNodeEntity) && abstractDropNodeEntity.level === 0 && clientY < top + height / 2 && allowDrop({
-    dragNode: abstractDragDataNode,
-    dropNode: abstractDropDataNode,
-    dropPosition: -1
-  }) && abstractDropNodeEntity.key === targetNode.props.eventKey) {
-    // first half of first node in first level
-    dropPosition = -1;
-  } else if ((abstractDragOverEntity.children || []).length && expandKeys.includes(dragOverNodeKey)) {
-    // drop on expanded node
-    // only allow drop inside
-    if (allowDrop({
-      dragNode: abstractDragDataNode,
-      dropNode: abstractDropDataNode,
-      dropPosition: 0
-    })) {
-      dropPosition = 0;
-    } else {
-      dropAllowed = false;
-    }
-  } else if (dropLevelOffset === 0) {
-    if (rawDropLevelOffset > -1.5) {
-      // | Node     | <- abstractDropNode
-      // | -^-===== | <- mousePosition
-      // 1. try drop after
-      // 2. do not allow drop
-      if (allowDrop({
-        dragNode: abstractDragDataNode,
-        dropNode: abstractDropDataNode,
-        dropPosition: 1
-      })) {
-        dropPosition = 1;
-      } else {
-        dropAllowed = false;
-      }
-    } else {
-      // | Node     | <- abstractDropNode
-      // | ---==^== | <- mousePosition
-      // whether it has children or doesn't has children
-      // always
-      // 1. try drop inside
-      // 2. try drop after
-      // 3. do not allow drop
-      if (allowDrop({
-        dragNode: abstractDragDataNode,
-        dropNode: abstractDropDataNode,
-        dropPosition: 0
-      })) {
-        dropPosition = 0;
-      } else if (allowDrop({
-        dragNode: abstractDragDataNode,
-        dropNode: abstractDropDataNode,
-        dropPosition: 1
-      })) {
-        dropPosition = 1;
-      } else {
-        dropAllowed = false;
-      }
-    }
-  } else {
-    // | Node1 | <- abstractDropNode
-    //      |  Node2  |
-    // --^--|----=====| <- mousePosition
-    // 1. try insert after Node1
-    // 2. do not allow drop
-    if (allowDrop({
-      dragNode: abstractDragDataNode,
-      dropNode: abstractDropDataNode,
-      dropPosition: 1
-    })) {
-      dropPosition = 1;
-    } else {
-      dropAllowed = false;
-    }
-  }
-  return {
-    dropPosition: dropPosition,
-    dropLevelOffset: dropLevelOffset,
-    dropTargetKey: abstractDropNodeEntity.key,
-    dropTargetPos: abstractDropNodeEntity.pos,
-    dragOverNodeKey: dragOverNodeKey,
-    dropContainerKey: dropPosition === 0 ? null : ((_abstractDropNodeEnti = abstractDropNodeEntity.parent) === null || _abstractDropNodeEnti === void 0 ? void 0 : _abstractDropNodeEnti.key) || null,
-    dropAllowed: dropAllowed
-  };
-}
-/**
- * Return selectedKeys according with multiple prop
- * @param selectedKeys
- * @param props
- * @returns [string]
- */
-function calcSelectedKeys(selectedKeys, props) {
-  if (!selectedKeys) return undefined;
-  var multiple = props.multiple;
-  if (multiple) {
-    return selectedKeys.slice();
-  }
-  if (selectedKeys.length) {
-    return [selectedKeys[0]];
-  }
-  return selectedKeys;
-}
-/**
- * Parse `checkedKeys` to { checkedKeys, halfCheckedKeys } style
- */
-function parseCheckedKeys(keys) {
-  if (!keys) {
-    return null;
-  }
-  // Convert keys to object format
-  var keyProps;
-  if (Array.isArray(keys)) {
-    // [Legacy] Follow the api doc
-    keyProps = {
-      checkedKeys: keys,
-      halfCheckedKeys: undefined
-    };
-  } else if (_typeof(keys) === 'object') {
-    keyProps = {
-      checkedKeys: keys.checked || undefined,
-      halfCheckedKeys: keys.halfChecked || undefined
-    };
-  } else {
-    warningOnce(false, '`checkedKeys` is not an array or an object');
-    return null;
-  }
-  return keyProps;
-}
-/**
- * If user use `autoExpandParent` we should get the list of parent node
- * @param keyList
- * @param keyEntities
- */
-function conductExpandParent(keyList, keyEntities) {
-  var expandedKeys = new Set();
-  function conductUp(key) {
-    if (expandedKeys.has(key)) return;
-    var entity = keyEntities[key];
-    if (!entity) return;
-    expandedKeys.add(key);
-    var parent = entity.parent,
-      node = entity.node;
-    if (node.disabled) return;
-    if (parent) {
-      conductUp(parent.key);
-    }
-  }
-  (keyList || []).forEach(function (key) {
-    conductUp(key);
-  });
-  return _toConsumableArray(expandedKeys);
-}
-
-function _objectDestructuringEmpty(obj) {
-  if (obj == null) throw new TypeError("Cannot destructure " + obj);
-}
 
 /**
  * Trigger only when component unmount
@@ -48153,34 +47437,244 @@ var NodeList = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
 });
 NodeList.displayName = 'NodeList';
 
-function DropIndicator(_ref) {
-  var dropPosition = _ref.dropPosition,
-    dropLevelOffset = _ref.dropLevelOffset,
-    indent = _ref.indent;
-  var style = {
-    pointerEvents: 'none',
-    position: 'absolute',
-    right: 0,
-    backgroundColor: 'red',
-    height: 2
-  };
-  switch (dropPosition) {
-    case -1:
-      style.top = 0;
-      style.left = -dropLevelOffset * indent;
-      break;
-    case 1:
-      style.bottom = 0;
-      style.left = -dropLevelOffset * indent;
-      break;
-    case 0:
-      style.bottom = 0;
-      style.left = indent;
-      break;
+function arrDel(list, value) {
+  if (!list) return [];
+  var clone = list.slice();
+  var index = clone.indexOf(value);
+  if (index >= 0) {
+    clone.splice(index, 1);
   }
-  return /*#__PURE__*/React__namespace.createElement("div", {
-    style: style
+  return clone;
+}
+function arrAdd(list, value) {
+  var clone = (list || []).slice();
+  if (clone.indexOf(value) === -1) {
+    clone.push(value);
+  }
+  return clone;
+}
+function posToArr(pos) {
+  return pos.split('-');
+}
+function getDragChildrenKeys(dragNodeKey, keyEntities) {
+  // not contains self
+  // self for left or right drag
+  var dragChildrenKeys = [];
+  var entity = getEntity(keyEntities, dragNodeKey);
+  function dig() {
+    var list = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    list.forEach(function (_ref) {
+      var key = _ref.key,
+        children = _ref.children;
+      dragChildrenKeys.push(key);
+      dig(children);
+    });
+  }
+  dig(entity.children);
+  return dragChildrenKeys;
+}
+function isLastChild(treeNodeEntity) {
+  if (treeNodeEntity.parent) {
+    var posArr = posToArr(treeNodeEntity.pos);
+    return Number(posArr[posArr.length - 1]) === treeNodeEntity.parent.children.length - 1;
+  }
+  return false;
+}
+function isFirstChild(treeNodeEntity) {
+  var posArr = posToArr(treeNodeEntity.pos);
+  return Number(posArr[posArr.length - 1]) === 0;
+}
+// Only used when drag, not affect SSR.
+function calcDropPosition(event, dragNode, targetNode, indent, startMousePosition, allowDrop, flattenedNodes, keyEntities, expandKeys, direction) {
+  var _abstractDropNodeEnti;
+  var clientX = event.clientX,
+    clientY = event.clientY;
+  var _event$target$getBoun = event.target.getBoundingClientRect(),
+    top = _event$target$getBoun.top,
+    height = _event$target$getBoun.height;
+  // optional chain for testing
+  var horizontalMouseOffset = (direction === 'rtl' ? -1 : 1) * (((startMousePosition === null || startMousePosition === void 0 ? void 0 : startMousePosition.x) || 0) - clientX);
+  var rawDropLevelOffset = (horizontalMouseOffset - 12) / indent;
+  // find abstract drop node by horizontal offset
+  var abstractDropNodeEntity = getEntity(keyEntities, targetNode.props.eventKey);
+  if (clientY < top + height / 2) {
+    // first half, set abstract drop node to previous node
+    var nodeIndex = flattenedNodes.findIndex(function (flattenedNode) {
+      return flattenedNode.key === abstractDropNodeEntity.key;
+    });
+    var prevNodeIndex = nodeIndex <= 0 ? 0 : nodeIndex - 1;
+    var prevNodeKey = flattenedNodes[prevNodeIndex].key;
+    abstractDropNodeEntity = getEntity(keyEntities, prevNodeKey);
+  }
+  var initialAbstractDropNodeKey = abstractDropNodeEntity.key;
+  var abstractDragOverEntity = abstractDropNodeEntity;
+  var dragOverNodeKey = abstractDropNodeEntity.key;
+  var dropPosition = 0;
+  var dropLevelOffset = 0;
+  // Only allow cross level drop when dragging on a non-expanded node
+  if (!expandKeys.includes(initialAbstractDropNodeKey)) {
+    for (var i = 0; i < rawDropLevelOffset; i += 1) {
+      if (isLastChild(abstractDropNodeEntity)) {
+        abstractDropNodeEntity = abstractDropNodeEntity.parent;
+        dropLevelOffset += 1;
+      } else {
+        break;
+      }
+    }
+  }
+  var abstractDragDataNode = dragNode.props.data;
+  var abstractDropDataNode = abstractDropNodeEntity.node;
+  var dropAllowed = true;
+  if (isFirstChild(abstractDropNodeEntity) && abstractDropNodeEntity.level === 0 && clientY < top + height / 2 && allowDrop({
+    dragNode: abstractDragDataNode,
+    dropNode: abstractDropDataNode,
+    dropPosition: -1
+  }) && abstractDropNodeEntity.key === targetNode.props.eventKey) {
+    // first half of first node in first level
+    dropPosition = -1;
+  } else if ((abstractDragOverEntity.children || []).length && expandKeys.includes(dragOverNodeKey)) {
+    // drop on expanded node
+    // only allow drop inside
+    if (allowDrop({
+      dragNode: abstractDragDataNode,
+      dropNode: abstractDropDataNode,
+      dropPosition: 0
+    })) {
+      dropPosition = 0;
+    } else {
+      dropAllowed = false;
+    }
+  } else if (dropLevelOffset === 0) {
+    if (rawDropLevelOffset > -1.5) {
+      // | Node     | <- abstractDropNode
+      // | -^-===== | <- mousePosition
+      // 1. try drop after
+      // 2. do not allow drop
+      if (allowDrop({
+        dragNode: abstractDragDataNode,
+        dropNode: abstractDropDataNode,
+        dropPosition: 1
+      })) {
+        dropPosition = 1;
+      } else {
+        dropAllowed = false;
+      }
+    } else {
+      // | Node     | <- abstractDropNode
+      // | ---==^== | <- mousePosition
+      // whether it has children or doesn't has children
+      // always
+      // 1. try drop inside
+      // 2. try drop after
+      // 3. do not allow drop
+      if (allowDrop({
+        dragNode: abstractDragDataNode,
+        dropNode: abstractDropDataNode,
+        dropPosition: 0
+      })) {
+        dropPosition = 0;
+      } else if (allowDrop({
+        dragNode: abstractDragDataNode,
+        dropNode: abstractDropDataNode,
+        dropPosition: 1
+      })) {
+        dropPosition = 1;
+      } else {
+        dropAllowed = false;
+      }
+    }
+  } else {
+    // | Node1 | <- abstractDropNode
+    //      |  Node2  |
+    // --^--|----=====| <- mousePosition
+    // 1. try insert after Node1
+    // 2. do not allow drop
+    if (allowDrop({
+      dragNode: abstractDragDataNode,
+      dropNode: abstractDropDataNode,
+      dropPosition: 1
+    })) {
+      dropPosition = 1;
+    } else {
+      dropAllowed = false;
+    }
+  }
+  return {
+    dropPosition: dropPosition,
+    dropLevelOffset: dropLevelOffset,
+    dropTargetKey: abstractDropNodeEntity.key,
+    dropTargetPos: abstractDropNodeEntity.pos,
+    dragOverNodeKey: dragOverNodeKey,
+    dropContainerKey: dropPosition === 0 ? null : ((_abstractDropNodeEnti = abstractDropNodeEntity.parent) === null || _abstractDropNodeEnti === void 0 ? void 0 : _abstractDropNodeEnti.key) || null,
+    dropAllowed: dropAllowed
+  };
+}
+/**
+ * Return selectedKeys according with multiple prop
+ * @param selectedKeys
+ * @param props
+ * @returns [string]
+ */
+function calcSelectedKeys(selectedKeys, props) {
+  if (!selectedKeys) return undefined;
+  var multiple = props.multiple;
+  if (multiple) {
+    return selectedKeys.slice();
+  }
+  if (selectedKeys.length) {
+    return [selectedKeys[0]];
+  }
+  return selectedKeys;
+}
+/**
+ * Parse `checkedKeys` to { checkedKeys, halfCheckedKeys } style
+ */
+function parseCheckedKeys(keys) {
+  if (!keys) {
+    return null;
+  }
+  // Convert keys to object format
+  var keyProps;
+  if (Array.isArray(keys)) {
+    // [Legacy] Follow the api doc
+    keyProps = {
+      checkedKeys: keys,
+      halfCheckedKeys: undefined
+    };
+  } else if (_typeof(keys) === 'object') {
+    keyProps = {
+      checkedKeys: keys.checked || undefined,
+      halfCheckedKeys: keys.halfChecked || undefined
+    };
+  } else {
+    warningOnce(false, '`checkedKeys` is not an array or an object');
+    return null;
+  }
+  return keyProps;
+}
+/**
+ * If user use `autoExpandParent` we should get the list of parent node
+ * @param keyList
+ * @param keyEntities
+ */
+function conductExpandParent(keyList, keyEntities) {
+  var expandedKeys = new Set();
+  function conductUp(key) {
+    if (expandedKeys.has(key)) return;
+    var entity = getEntity(keyEntities, key);
+    if (!entity) return;
+    expandedKeys.add(key);
+    var parent = entity.parent,
+      node = entity.node;
+    if (node.disabled) return;
+    if (parent) {
+      conductUp(parent.key);
+    }
+  }
+  (keyList || []).forEach(function (key) {
+    conductUp(key);
   });
+  return _toConsumableArray(expandedKeys);
 }
 
 var MAX_RETRY_TIMES = 10;
@@ -48321,7 +47815,7 @@ var Tree$3 = /*#__PURE__*/function (_React$Component) {
         _this.delayedDragEnterLogic[pos] = window.setTimeout(function () {
           if (_this.state.draggingNodeKey === null) return;
           var newExpandedKeys = _toConsumableArray(expandedKeys);
-          var entity = keyEntities[node.props.eventKey];
+          var entity = getEntity(keyEntities, node.props.eventKey);
           if (entity && (entity.children || []).length) {
             newExpandedKeys = arrAdd(expandedKeys, node.props.eventKey);
           }
@@ -48457,7 +47951,7 @@ var Tree$3 = /*#__PURE__*/function (_React$Component) {
       if (dropTargetKey === null) return;
       var abstractDropNodeProps = _objectSpread2(_objectSpread2({}, getTreeNodeProps(dropTargetKey, _this.getTreeNodeRequiredProps())), {}, {
         active: ((_this$getActiveItem = _this.getActiveItem()) === null || _this$getActiveItem === void 0 ? void 0 : _this$getActiveItem.key) === dropTargetKey,
-        data: _this.state.keyEntities[dropTargetKey].node
+        data: getEntity(_this.state.keyEntities, dropTargetKey).node
       });
       var dropToChild = dragChildrenKeys.indexOf(dropTargetKey) !== -1;
       warningOnce(!dropToChild, "Can not drop to dragNode's children node. This is a bug of rc-tree. Please report an issue.");
@@ -48549,7 +48043,7 @@ var Tree$3 = /*#__PURE__*/function (_React$Component) {
       }
       // [Legacy] Not found related usage in doc or upper libs
       var selectedNodes = selectedKeys.map(function (selectedKey) {
-        var entity = keyEntities[selectedKey];
+        var entity = getEntity(keyEntities, selectedKey);
         if (!entity) return null;
         return entity.node;
       }).filter(function (node) {
@@ -48591,7 +48085,7 @@ var Tree$3 = /*#__PURE__*/function (_React$Component) {
           halfChecked: halfCheckedKeys
         };
         eventObj.checkedNodes = checkedKeys.map(function (checkedKey) {
-          return keyEntities[checkedKey];
+          return getEntity(keyEntities, checkedKey);
         }).filter(function (entity) {
           return entity;
         }).map(function (entity) {
@@ -48622,7 +48116,7 @@ var Tree$3 = /*#__PURE__*/function (_React$Component) {
         eventObj.checkedNodesPositions = [];
         eventObj.halfCheckedKeys = _halfCheckedKeys;
         _checkedKeys.forEach(function (checkedKey) {
-          var entity = keyEntities[checkedKey];
+          var entity = getEntity(keyEntities, checkedKey);
           if (!entity) return;
           var node = entity.node,
             pos = entity.pos;
@@ -49406,7 +48900,9 @@ const genBaseStyle = (prefixCls, token) => {
     treeCls,
     treeNodeCls,
     treeNodePadding,
-    treeTitleHeight
+    titleHeight,
+    nodeSelectedBg,
+    nodeHoverBg
   } = token;
   const treeCheckBoxMarginHorizontal = token.paddingXS;
   return {
@@ -49488,8 +48984,8 @@ const genBaseStyle = (prefixCls, token) => {
           [`${treeCls}-draggable-icon`]: {
             // https://github.com/ant-design/ant-design/issues/41915
             flexShrink: 0,
-            width: treeTitleHeight,
-            lineHeight: `${treeTitleHeight}px`,
+            width: titleHeight,
+            lineHeight: `${titleHeight}px`,
             textAlign: 'center',
             visibility: 'visible',
             opacity: 0.2,
@@ -49512,7 +49008,7 @@ const genBaseStyle = (prefixCls, token) => {
         userSelect: 'none',
         '&-unit': {
           display: 'inline-block',
-          width: treeTitleHeight
+          width: titleHeight
         }
       },
       // >>> Drag Handler
@@ -49524,9 +49020,9 @@ const genBaseStyle = (prefixCls, token) => {
         position: 'relative',
         flex: 'none',
         alignSelf: 'stretch',
-        width: treeTitleHeight,
+        width: titleHeight,
         margin: 0,
-        lineHeight: `${treeTitleHeight}px`,
+        lineHeight: `${titleHeight}px`,
         textAlign: 'center',
         cursor: 'pointer',
         userSelect: 'none',
@@ -49553,7 +49049,7 @@ const genBaseStyle = (prefixCls, token) => {
           '&:before': {
             position: 'absolute',
             top: 0,
-            insetInlineEnd: treeTitleHeight / 2,
+            insetInlineEnd: titleHeight / 2,
             bottom: -treeNodePadding,
             marginInlineStart: -1,
             borderInlineEnd: `1px solid ${token.colorBorder}`,
@@ -49561,8 +49057,8 @@ const genBaseStyle = (prefixCls, token) => {
           },
           '&:after': {
             position: 'absolute',
-            width: treeTitleHeight / 2 * 0.8,
-            height: treeTitleHeight / 2,
+            width: titleHeight / 2 * 0.8,
+            height: titleHeight / 2,
             borderBottom: `1px solid ${token.colorBorder}`,
             content: '""'
           }
@@ -49571,34 +49067,36 @@ const genBaseStyle = (prefixCls, token) => {
       // >>> Checkbox
       [`${treeCls}-checkbox`]: {
         top: 'initial',
-        marginInlineEnd: treeCheckBoxMarginHorizontal
+        marginInlineEnd: treeCheckBoxMarginHorizontal,
+        alignSelf: 'flex-start',
+        marginTop: token.marginXXS
       },
       // >>> Title
       // add `${treeCls}-checkbox + span` to cover checkbox `${checkboxCls} + span`
       [`${treeCls}-node-content-wrapper, ${treeCls}-checkbox + span`]: {
         position: 'relative',
         zIndex: 'auto',
-        minHeight: treeTitleHeight,
+        minHeight: titleHeight,
         margin: 0,
         padding: `0 ${token.paddingXS / 2}px`,
         color: 'inherit',
-        lineHeight: `${treeTitleHeight}px`,
+        lineHeight: `${titleHeight}px`,
         background: 'transparent',
         borderRadius: token.borderRadius,
         cursor: 'pointer',
         transition: `all ${token.motionDurationMid}, border 0s, line-height 0s, box-shadow 0s`,
         '&:hover': {
-          backgroundColor: token.controlItemBgHover
+          backgroundColor: nodeHoverBg
         },
         [`&${treeCls}-node-selected`]: {
-          backgroundColor: token.controlItemBgActive
+          backgroundColor: nodeSelectedBg
         },
         // Icon
         [`${treeCls}-iconEle`]: {
           display: 'inline-block',
-          width: treeTitleHeight,
-          height: treeTitleHeight,
-          lineHeight: `${treeTitleHeight}px`,
+          width: titleHeight,
+          height: titleHeight,
+          lineHeight: `${titleHeight}px`,
           textAlign: 'center',
           verticalAlign: 'top',
           '&:empty': {
@@ -49612,7 +49110,7 @@ const genBaseStyle = (prefixCls, token) => {
       },
       // ==================== Draggable =====================
       [`${treeCls}-node-content-wrapper`]: Object.assign({
-        lineHeight: `${treeTitleHeight}px`,
+        lineHeight: `${titleHeight}px`,
         userSelect: 'none'
       }, getDropIndicatorStyle(prefixCls, token)),
       [`${treeNodeCls}.drop-container`]: {
@@ -49630,7 +49128,7 @@ const genBaseStyle = (prefixCls, token) => {
             '&:before': {
               position: 'absolute',
               top: 0,
-              insetInlineEnd: treeTitleHeight / 2,
+              insetInlineEnd: titleHeight / 2,
               bottom: -treeNodePadding,
               borderInlineEnd: `1px solid ${token.colorBorder}`,
               content: '""'
@@ -49657,7 +49155,7 @@ const genBaseStyle = (prefixCls, token) => {
             '&:before': {
               top: 'auto !important',
               bottom: 'auto !important',
-              height: `${treeTitleHeight / 2}px !important`
+              height: `${titleHeight / 2}px !important`
             }
           }
         }
@@ -49670,7 +49168,9 @@ const genDirectoryStyle = token => {
   const {
     treeCls,
     treeNodeCls,
-    treeNodePadding
+    treeNodePadding,
+    directoryNodeSelectedBg,
+    directoryNodeSelectedColor
   } = token;
   return {
     [`${treeCls}${treeCls}-directory`]: {
@@ -49709,7 +49209,7 @@ const genDirectoryStyle = token => {
             background: 'transparent'
           },
           [`&${treeCls}-node-selected`]: {
-            color: token.colorTextLightSolid,
+            color: directoryNodeSelectedColor,
             background: 'transparent'
           }
         },
@@ -49719,15 +49219,15 @@ const genDirectoryStyle = token => {
             &:hover::before,
             &::before
           `]: {
-            background: token.colorPrimary
+            background: directoryNodeSelectedBg
           },
           // >>> Switcher
           [`${treeCls}-switcher`]: {
-            color: token.colorTextLightSolid
+            color: directoryNodeSelectedColor
           },
           // >>> Title
           [`${treeCls}-node-content-wrapper`]: {
-            color: token.colorTextLightSolid,
+            color: directoryNodeSelectedColor,
             background: 'transparent'
           }
         }
@@ -49740,12 +49240,10 @@ const genTreeStyle = (prefixCls, token) => {
   const treeCls = `.${prefixCls}`;
   const treeNodeCls = `${treeCls}-treenode`;
   const treeNodePadding = token.paddingXS / 2;
-  const treeTitleHeight = token.controlHeightSM;
   const treeToken = merge(token, {
     treeCls,
     treeNodeCls,
-    treeNodePadding,
-    treeTitleHeight
+    treeNodePadding
   });
   return [
   // Basic
@@ -49753,7 +49251,16 @@ const genTreeStyle = (prefixCls, token) => {
   // Directory
   genDirectoryStyle(treeToken)];
 };
-// ============================== Export ==============================
+const initComponentToken = token => {
+  const {
+    controlHeightSM
+  } = token;
+  return {
+    titleHeight: controlHeightSM,
+    nodeHoverBg: token.controlItemBgHover,
+    nodeSelectedBg: token.controlItemBgActive
+  };
+};
 var useStyle$2 = genComponentStyleHook('Tree', (token, _ref) => {
   let {
     prefixCls
@@ -49761,6 +49268,15 @@ var useStyle$2 = genComponentStyleHook('Tree', (token, _ref) => {
   return [{
     [token.componentCls]: getStyle(`${prefixCls}-checkbox`, token)
   }, genTreeStyle(prefixCls, token), genCollapseMotion$1(token)];
+}, token => {
+  const {
+    colorTextLightSolid,
+    colorPrimary
+  } = token;
+  return Object.assign(Object.assign({}, initComponentToken(token)), {
+    directoryNodeSelectedColor: colorTextLightSolid,
+    directoryNodeSelectedBg: colorPrimary
+  });
 });
 
 const offset$1 = 4;
@@ -49872,7 +49388,7 @@ const SwitcherIconCom = props => {
       const leafCls = `${prefixCls}-switcher-line-custom-icon`;
       if (isValidElement(leafIcon)) {
         return cloneElement(leafIcon, {
-          className: classnames$g(leafIcon.props.className || '', leafCls)
+          className: classnames(leafIcon.props.className || '', leafCls)
         });
       }
       return leafIcon;
@@ -49887,7 +49403,7 @@ const SwitcherIconCom = props => {
   const switcher = typeof switcherIcon === 'function' ? switcherIcon(treeNodeProps) : switcherIcon;
   if (isValidElement(switcher)) {
     return cloneElement(switcher, {
-      className: classnames$g(switcher.props.className || '', switcherCls)
+      className: classnames(switcher.props.className || '', switcherCls)
     });
   }
   if (switcher !== undefined) {
@@ -49976,7 +49492,7 @@ const Tree$2 = /*#__PURE__*/React__default["default"].forwardRef((props, ref) =>
     // newProps may contain style so declare style below it
     style: Object.assign(Object.assign({}, tree === null || tree === void 0 ? void 0 : tree.style), style),
     prefixCls: prefixCls,
-    className: classnames$g({
+    className: classnames({
       [`${prefixCls}-icon-hide`]: !showIcon,
       [`${prefixCls}-block-node`]: blockNode,
       [`${prefixCls}-unselectable`]: !selectable,
@@ -50200,7 +49716,7 @@ const DirectoryTree = (_a, ref) => {
     } = props,
     otherProps = __rest$7(props, ["prefixCls", "className", "showIcon", "expandAction"]);
   const prefixCls = getPrefixCls('tree', customizePrefixCls);
-  const connectClassName = classnames$g(`${prefixCls}-directory`, {
+  const connectClassName = classnames(`${prefixCls}-directory`, {
     [`${prefixCls}-directory-rtl`]: direction === 'rtl'
   }, className);
   return /*#__PURE__*/React__namespace.createElement(TreePure, Object.assign({
@@ -50376,9 +49892,10 @@ function FilterDropdown(props) {
     onFilterDropdownVisibleChange === null || onFilterDropdownVisibleChange === void 0 ? void 0 : onFilterDropdownVisibleChange(newVisible);
   };
   if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Table');
     [['filterDropdownVisible', 'filterDropdownOpen', filterDropdownVisible], ['onFilterDropdownVisibleChange', 'onFilterDropdownOpenChange', onFilterDropdownVisibleChange]].forEach(_ref4 => {
       let [deprecatedName, newName, prop] = _ref4;
-      process.env.NODE_ENV !== "production" ? warning$3(prop === undefined || prop === null, 'Table', `\`${deprecatedName}\` is deprecated. Please use \`${newName}\` instead.`) : void 0;
+      warning.deprecated(prop === undefined || prop === null, deprecatedName, newName);
     });
   }
   const mergedVisible = (_b = filterDropdownOpen !== null && filterDropdownOpen !== void 0 ? filterDropdownOpen : filterDropdownVisible) !== null && _b !== void 0 ? _b : visible;
@@ -50496,7 +50013,7 @@ function FilterDropdown(props) {
     }
   };
   // ======================== Style ========================
-  const dropdownMenuClass = classnames$g({
+  const dropdownMenuClass = classnames({
     [`${dropdownPrefixCls}-menu-without-submenu`]: !hasSubMenu(column.filters || [])
   });
   const onCheckAll = e => {
@@ -50685,7 +50202,7 @@ function FilterDropdown(props) {
   }, /*#__PURE__*/React__namespace.createElement("span", {
     role: "button",
     tabIndex: -1,
-    className: classnames$g(`${prefixCls}-trigger`, {
+    className: classnames(`${prefixCls}-trigger`, {
       active: filtered
     }),
     onClick: e => {
@@ -50828,6 +50345,7 @@ function useFilter(_ref3) {
     getPopupContainer,
     locale: tableLocale
   } = _ref3;
+  const warning = devUseWarning('Table');
   const mergedColumns = React__namespace.useMemo(() => getMergedColumns(rawMergedColumns || []), [rawMergedColumns]);
   const [filterStates, setFilterStates] = React__namespace.useState(() => collectFilterStates(mergedColumns, true));
   const mergedFilterStates = React__namespace.useMemo(() => {
@@ -50864,7 +50382,7 @@ function useFilter(_ref3) {
         });
       });
     }
-    process.env.NODE_ENV !== "production" ? warning$3(filteredKeysIsAllControlled, 'Table', 'Columns should all contain `filteredValue` or not contain `filteredValue`.') : void 0;
+    process.env.NODE_ENV !== "production" ? warning(filteredKeysIsAllControlled, 'usage', 'Columns should all contain `filteredValue` or not contain `filteredValue`.') : void 0;
     return collectedStates;
   }, [mergedColumns, filterStates]);
   const filters = React__namespace.useMemo(() => generateFilterInfo(mergedFilterStates), [mergedFilterStates]);
@@ -51024,6 +50542,7 @@ const useSelection = (config, rowSelection) => {
     locale: tableLocale,
     getPopupContainer
   } = config;
+  const warning = devUseWarning('Table');
   // ========================= Keys =========================
   const [mergedSelectedKeys, setMergedSelectedKeys] = useMergedState(selectedRowKeys || defaultSelectedRowKeys || EMPTY_LIST$1, {
     value: selectedRowKeys
@@ -51081,7 +50600,7 @@ const useSelection = (config, rowSelection) => {
       const key = getRowKey(record, index);
       const checkboxProps = (getCheckboxProps ? getCheckboxProps(record) : null) || {};
       map.set(key, checkboxProps);
-      process.env.NODE_ENV !== "production" ? warning$3(!('checked' in checkboxProps || 'defaultChecked' in checkboxProps), 'Table', 'Do not set `checked` or `defaultChecked` in `getCheckboxProps`. Please use `selectedRowKeys` instead.') : void 0;
+      process.env.NODE_ENV !== "production" ? warning(!('checked' in checkboxProps || 'defaultChecked' in checkboxProps), 'usage', 'Do not set `checked` or `defaultChecked` in `getCheckboxProps`. Please use `selectedRowKeys` instead.') : void 0;
     });
     return map;
   }, [flattedData, getRowKey, getCheckboxProps]);
@@ -51182,7 +50701,7 @@ const useSelection = (config, rowSelection) => {
             });
             const keys = Array.from(keySet);
             if (onSelectInvert) {
-              process.env.NODE_ENV !== "production" ? warning$3(false, 'Table', '`onSelectInvert` will be removed in future. Please use `onChange` instead.') : void 0;
+              warning.deprecated(false, 'onSelectInvert', 'onChange');
               onSelectInvert(keys);
             }
             setSelectedKeys(keys, 'invert');
@@ -51220,7 +50739,7 @@ const useSelection = (config, rowSelection) => {
     var _a;
     // >>>>>>>>>>> Skip if not exists `rowSelection`
     if (!rowSelection) {
-      process.env.NODE_ENV !== "production" ? warning$3(!columns.includes(SELECTION_COLUMN), 'Table', '`rowSelection` is not config but `SELECTION_COLUMN` exists in the `columns`.') : void 0;
+      process.env.NODE_ENV !== "production" ? warning(!columns.includes(SELECTION_COLUMN), 'usage', '`rowSelection` is not config but `SELECTION_COLUMN` exists in the `columns`.') : void 0;
       return columns.filter(col => col !== SELECTION_COLUMN);
     }
     // >>>>>>>>>>> Support selection
@@ -51345,7 +50864,7 @@ const useSelection = (config, rowSelection) => {
         let mergedIndeterminate;
         if (expandType === 'nest') {
           mergedIndeterminate = indeterminate;
-          process.env.NODE_ENV !== "production" ? warning$3(typeof (checkboxProps === null || checkboxProps === void 0 ? void 0 : checkboxProps.indeterminate) !== 'boolean', 'Table', 'set `indeterminate` using `rowSelection.getCheckboxProps` is not allowed with tree structured dataSource.') : void 0;
+          process.env.NODE_ENV !== "production" ? warning(typeof (checkboxProps === null || checkboxProps === void 0 ? void 0 : checkboxProps.indeterminate) !== 'boolean', 'usage', 'set `indeterminate` using `rowSelection.getCheckboxProps` is not allowed with tree structured dataSource.') : void 0;
         } else {
           mergedIndeterminate = (_a = checkboxProps === null || checkboxProps === void 0 ? void 0 : checkboxProps.indeterminate) !== null && _a !== void 0 ? _a : indeterminate;
         }
@@ -51465,7 +50984,7 @@ const useSelection = (config, rowSelection) => {
     }
     // Deduplicate selection column
     const selectionColumnIndex = cloneColumns.indexOf(SELECTION_COLUMN);
-    process.env.NODE_ENV !== "production" ? warning$3(cloneColumns.filter(col => col === SELECTION_COLUMN).length <= 1, 'Table', 'Multiple `SELECTION_COLUMN` exist in `columns`.') : void 0;
+    process.env.NODE_ENV !== "production" ? warning(cloneColumns.filter(col => col === SELECTION_COLUMN).length <= 1, 'usage', 'Multiple `SELECTION_COLUMN` exist in `columns`.') : void 0;
     cloneColumns = cloneColumns.filter((column, index) => column !== SELECTION_COLUMN || index === selectionColumnIndex);
     // Fixed column logic
     const prevCol = cloneColumns[selectionColumnIndex - 1];
@@ -51481,7 +51000,7 @@ const useSelection = (config, rowSelection) => {
     if (mergedFixed && prevCol && ((_a = prevCol[INTERNAL_COL_DEFINE]) === null || _a === void 0 ? void 0 : _a.columnType) === 'EXPAND_COLUMN' && prevCol.fixed === undefined) {
       prevCol.fixed = mergedFixed;
     }
-    const columnCls = classnames$g(`${prefixCls}-selection-col`, {
+    const columnCls = classnames(`${prefixCls}-selection-col`, {
       [`${prefixCls}-selection-col-with-dropdown`]: selections && selectionType === 'checkbox'
     });
     // Replace with real selection column
@@ -51612,17 +51131,17 @@ function injectSorter(prefixCls, columns, sorterStates, triggerSorter, defaultSo
         });
       } else {
         const upNode = sortDirections.includes(ASCEND) && /*#__PURE__*/React__namespace.createElement(CaretUpOutlined$1, {
-          className: classnames$g(`${prefixCls}-column-sorter-up`, {
+          className: classnames(`${prefixCls}-column-sorter-up`, {
             active: sortOrder === ASCEND
           })
         });
         const downNode = sortDirections.includes(DESCEND) && /*#__PURE__*/React__namespace.createElement(CaretDownOutlined$1, {
-          className: classnames$g(`${prefixCls}-column-sorter-down`, {
+          className: classnames(`${prefixCls}-column-sorter-down`, {
             active: sortOrder === DESCEND
           })
         });
         sorter = /*#__PURE__*/React__namespace.createElement("span", {
-          className: classnames$g(`${prefixCls}-column-sorter`, {
+          className: classnames(`${prefixCls}-column-sorter`, {
             [`${prefixCls}-column-sorter-full`]: !!(upNode && downNode)
           })
         }, /*#__PURE__*/React__namespace.createElement("span", {
@@ -51645,7 +51164,7 @@ function injectSorter(prefixCls, columns, sorterStates, triggerSorter, defaultSo
         title: sortTip
       };
       newColumn = Object.assign(Object.assign({}, newColumn), {
-        className: classnames$g(newColumn.className, {
+        className: classnames(newColumn.className, {
           [`${prefixCls}-column-sort`]: sortOrder
         }),
         title: renderProps => {
@@ -51688,7 +51207,7 @@ function injectSorter(prefixCls, columns, sorterStates, triggerSorter, defaultSo
           } else {
             cell['aria-label'] = displayTitle || '';
           }
-          cell.className = classnames$g(cell.className, `${prefixCls}-column-has-sorters`);
+          cell.className = classnames(cell.className, `${prefixCls}-column-has-sorters`);
           cell.tabIndex = 0;
           if (column.ellipsis) {
             cell.title = (renderTitle !== null && renderTitle !== void 0 ? renderTitle : '').toString();
@@ -51880,6 +51399,32 @@ function useTitleColumns(columnTitleProps) {
   const filledColumns = React__namespace.useCallback(columns => fillTitle(columns, columnTitleProps), [columnTitleProps]);
   return [filledColumns];
 }
+
+/**
+ * Same as `rc-table` but we modify trigger children update logic instead.
+ */
+var RcTable = genTable((prev, next) => {
+  const {
+    _renderTimes: prevRenderTimes
+  } = prev;
+  const {
+    _renderTimes: nextRenderTimes
+  } = next;
+  return prevRenderTimes !== nextRenderTimes;
+});
+
+/**
+ * Same as `rc-table` but we modify trigger children update logic instead.
+ */
+var RcVirtualTable = genVirtualTable((prev, next) => {
+  const {
+    _renderTimes: prevRenderTimes
+  } = prev;
+  const {
+    _renderTimes: nextRenderTimes
+  } = next;
+  return prevRenderTimes !== nextRenderTimes;
+});
 
 const genBorderedStyle = token => {
   const {
@@ -52218,7 +51763,8 @@ const genFilterStyle = token => {
     tableFilterDropdownHeight,
     controlItemBgHover,
     controlItemBgActive,
-    boxShadowSecondary
+    boxShadowSecondary,
+    filterDropdownMenuBg
   } = token;
   const dropdownPrefixCls = `${antCls}-dropdown`;
   const tableFilterDropdownPrefixCls = `${componentCls}-filter-dropdown`;
@@ -52269,6 +51815,7 @@ const genFilterStyle = token => {
           border: 0,
           boxShadow: 'none',
           borderRadius: 'unset',
+          backgroundColor: filterDropdownMenuBg,
           '&:empty::after': {
             display: 'block',
             padding: `${paddingXS}px 0`,
@@ -52588,7 +52135,10 @@ const genSelectionStyle = token => {
     paddingXS,
     tableHeaderIconColor,
     tableHeaderIconColorHover,
-    tableSelectionColumnWidth
+    tableSelectionColumnWidth,
+    tableSelectedRowBg,
+    tableSelectedRowHoverBg,
+    tableRowHoverBg
   } = token;
   return {
     [`${componentCls}-wrapper`]: {
@@ -52607,7 +52157,8 @@ const genSelectionStyle = token => {
       },
       [`
         table tr th${componentCls}-selection-column,
-        table tr td${componentCls}-selection-column
+        table tr td${componentCls}-selection-column,
+        ${componentCls}-selection-column
       `]: {
         paddingInlineEnd: token.paddingXS,
         paddingInlineStart: token.paddingXS,
@@ -52643,6 +52194,22 @@ const genSelectionStyle = token => {
             color: tableHeaderIconColorHover
           }
         }
+      },
+      // ============================= Rows =============================
+      [`${componentCls}-tbody`]: {
+        [`${componentCls}-row`]: {
+          [`&${componentCls}-row-selected`]: {
+            [`> ${componentCls}-cell`]: {
+              background: tableSelectedRowBg,
+              '&-row-hover': {
+                background: tableSelectedRowHoverBg
+              }
+            }
+          },
+          [`> ${componentCls}-cell-row-hover`]: {
+            background: tableRowHoverBg
+          }
+        }
       }
     }
   };
@@ -52659,6 +52226,7 @@ const genSizeStyle = token => {
       [`
         ${componentCls}-title,
         ${componentCls}-footer,
+        ${componentCls}-cell,
         ${componentCls}-thead > tr > th,
         ${componentCls}-tbody > tr > th,
         ${componentCls}-tbody > tr > td,
@@ -52681,7 +52249,7 @@ const genSizeStyle = token => {
         }
       },
       // https://github.com/ant-design/ant-design/issues/35167
-      [`${componentCls}-selection-column`]: {
+      [`${componentCls}-selection-extra`]: {
         paddingInlineStart: `${paddingHorizontal / 4}px`
       }
     }
@@ -52786,7 +52354,8 @@ const genStickyStyle = token => {
     tableScrollThumbBgHover,
     tableScrollThumbSize,
     tableScrollBg,
-    zIndexTableSticky
+    zIndexTableSticky,
+    stickyScrollBarBorderRadius
   } = token;
   const tableBorder = `${token.lineWidth}px ${token.lineType} ${token.tableBorderColor}`;
   return {
@@ -52814,7 +52383,7 @@ const genStickyStyle = token => {
           '&-bar': {
             height: tableScrollThumbSize,
             backgroundColor: tableScrollThumbBg,
-            borderRadius: 100,
+            borderRadius: stickyScrollBarBorderRadius,
             transition: `all ${token.motionDurationSlow}, transform none`,
             position: 'absolute',
             bottom: 0,
@@ -52856,6 +52425,70 @@ const genSummaryStyle = token => {
 };
 var genSummaryStyle$1 = genSummaryStyle;
 
+const genVirtualStyle = token => {
+  const {
+    componentCls,
+    motionDurationMid
+  } = token;
+  const tableBorder = `${token.lineWidth}px ${token.lineType} ${token.tableBorderColor}`;
+  const rowCellCls = `${componentCls}-expanded-row-cell`;
+  return {
+    [`${componentCls}-wrapper`]: {
+      // ========================== Row ==========================
+      [`${componentCls}-tbody-virtual`]: {
+        [`${componentCls}-row`]: {
+          display: 'flex',
+          boxSizing: 'border-box',
+          width: '100%'
+        },
+        [`${componentCls}-cell`]: {
+          borderBottom: tableBorder,
+          transition: `background ${motionDurationMid}`
+        },
+        [`${componentCls}-expanded-row`]: {
+          [`${rowCellCls}${rowCellCls}-fixed`]: {
+            position: 'sticky',
+            insetInlineStart: 0,
+            overflow: 'hidden',
+            width: `calc(var(--virtual-width) - ${token.lineWidth}px)`,
+            borderInlineEnd: 'none'
+          }
+        }
+      },
+      // ======================== Border =========================
+      [`${componentCls}-bordered`]: {
+        [`${componentCls}-tbody-virtual`]: {
+          '&:after': {
+            content: '""',
+            insetInline: 0,
+            bottom: 0,
+            borderBottom: tableBorder,
+            position: 'absolute'
+          },
+          [`${componentCls}-cell`]: {
+            borderInlineEnd: tableBorder,
+            [`&${componentCls}-cell-fix-right-first:before`]: {
+              content: '""',
+              position: 'absolute',
+              insetBlock: 0,
+              insetInlineStart: -token.lineWidth,
+              borderInlineStart: tableBorder
+            }
+          }
+        },
+        // Empty placeholder
+        [`&${componentCls}-virtual`]: {
+          [`${componentCls}-placeholder ${componentCls}-cell`]: {
+            borderInlineEnd: tableBorder,
+            borderBottom: tableBorder
+          }
+        }
+      }
+    }
+  };
+};
+var genVirtualStyle$1 = genVirtualStyle;
+
 const genTableStyle = token => {
   const {
     componentCls,
@@ -52872,9 +52505,6 @@ const genTableStyle = token => {
     motionDurationMid,
     tableHeaderBg,
     tableHeaderCellSplitColor,
-    tableRowHoverBg,
-    tableSelectedRowBg,
-    tableSelectedRowHoverBg,
     tableFooterTextColor,
     tableFooterBg,
     paddingContentVerticalLG
@@ -52900,6 +52530,7 @@ const genTableStyle = token => {
       },
       // ============================= Cell =============================
       [`
+          ${componentCls}-cell,
           ${componentCls}-thead > tr > th,
           ${componentCls}-tbody > tr > th,
           ${componentCls}-tbody > tr > td,
@@ -52977,22 +52608,6 @@ const genTableStyle = token => {
             background: tableHeaderBg,
             borderBottom: tableBorder,
             transition: `background ${motionDurationMid} ease`
-          },
-          [`
-            &${componentCls}-row:hover > th,
-            &${componentCls}-row:hover > td,
-            > th${componentCls}-cell-row-hover,
-            > td${componentCls}-cell-row-hover
-          `]: {
-            background: tableRowHoverBg
-          },
-          [`&${componentCls}-row-selected`]: {
-            [`> th, > td`]: {
-              background: tableSelectedRowBg
-            },
-            [`&:hover > th, &:hover > td`]: {
-              background: tableSelectedRowHoverBg
-            }
           }
         }
       },
@@ -53008,80 +52623,146 @@ const genTableStyle = token => {
 // ============================== Export ==============================
 var useStyle$1 = genComponentStyleHook('Table', token => {
   const {
-    controlItemBgActive,
-    controlItemBgActiveHover,
-    colorTextPlaceholder,
     colorTextHeading,
     colorSplit,
-    colorBorderSecondary,
-    fontSize,
-    padding,
-    paddingXS,
-    paddingSM,
-    controlHeight,
-    colorFillAlter,
     colorIcon,
     colorIconHover,
     opacityLoading,
     colorBgContainer,
-    borderRadiusLG,
-    colorFillContent,
-    colorFillSecondary,
-    controlInteractiveSize: checkboxSize
+    controlInteractiveSize: checkboxSize,
+    headerBg,
+    headerColor,
+    headerSortActiveBg,
+    headerSortHoverBg,
+    bodySortBg,
+    rowHoverBg,
+    rowSelectedBg,
+    rowSelectedHoverBg,
+    rowExpandedBg,
+    cellPaddingBlock,
+    cellPaddingInline,
+    cellPaddingBlockMD,
+    cellPaddingInlineMD,
+    cellPaddingBlockSM,
+    cellPaddingInlineSM,
+    borderColor,
+    footerBg,
+    footerColor,
+    headerBorderRadius,
+    cellFontSize,
+    cellFontSizeMD,
+    cellFontSizeSM,
+    headerSplitColor,
+    fixedHeaderSortActiveBg,
+    headerFilterHoverBg,
+    filterDropdownBg,
+    expandIconBg,
+    selectionColumnWidth,
+    stickyScrollBarBg
   } = token;
   const baseColorAction = new TinyColor(colorIcon);
   const baseColorActionHover = new TinyColor(colorIconHover);
-  const tableSelectedRowBg = controlItemBgActive;
   const zIndexTableFixed = 2;
-  const colorFillSecondarySolid = new TinyColor(colorFillSecondary).onBackground(colorBgContainer).toHexShortString();
-  const colorFillContentSolid = new TinyColor(colorFillContent).onBackground(colorBgContainer).toHexShortString();
-  const colorFillAlterSolid = new TinyColor(colorFillAlter).onBackground(colorBgContainer).toHexShortString();
   const tableToken = merge(token, {
-    tableFontSize: fontSize,
+    tableFontSize: cellFontSize,
     tableBg: colorBgContainer,
-    tableRadius: borderRadiusLG,
-    tablePaddingVertical: padding,
-    tablePaddingHorizontal: padding,
-    tablePaddingVerticalMiddle: paddingSM,
-    tablePaddingHorizontalMiddle: paddingXS,
-    tablePaddingVerticalSmall: paddingXS,
-    tablePaddingHorizontalSmall: paddingXS,
-    tableBorderColor: colorBorderSecondary,
-    tableHeaderTextColor: colorTextHeading,
-    tableHeaderBg: colorFillAlterSolid,
-    tableFooterTextColor: colorTextHeading,
-    tableFooterBg: colorFillAlterSolid,
-    tableHeaderCellSplitColor: colorBorderSecondary,
-    tableHeaderSortBg: colorFillSecondarySolid,
-    tableHeaderSortHoverBg: colorFillContentSolid,
+    tableRadius: headerBorderRadius,
+    tablePaddingVertical: cellPaddingBlock,
+    tablePaddingHorizontal: cellPaddingInline,
+    tablePaddingVerticalMiddle: cellPaddingBlockMD,
+    tablePaddingHorizontalMiddle: cellPaddingInlineMD,
+    tablePaddingVerticalSmall: cellPaddingBlockSM,
+    tablePaddingHorizontalSmall: cellPaddingInlineSM,
+    tableBorderColor: borderColor,
+    tableHeaderTextColor: headerColor,
+    tableHeaderBg: headerBg,
+    tableFooterTextColor: footerColor,
+    tableFooterBg: footerBg,
+    tableHeaderCellSplitColor: headerSplitColor,
+    tableHeaderSortBg: headerSortActiveBg,
+    tableHeaderSortHoverBg: headerSortHoverBg,
     tableHeaderIconColor: baseColorAction.clone().setAlpha(baseColorAction.getAlpha() * opacityLoading).toRgbString(),
     tableHeaderIconColorHover: baseColorActionHover.clone().setAlpha(baseColorActionHover.getAlpha() * opacityLoading).toRgbString(),
-    tableBodySortBg: colorFillAlterSolid,
-    tableFixedHeaderSortActiveBg: colorFillSecondarySolid,
-    tableHeaderFilterActiveBg: colorFillContent,
-    tableFilterDropdownBg: colorBgContainer,
-    tableRowHoverBg: colorFillAlterSolid,
-    tableSelectedRowBg,
-    tableSelectedRowHoverBg: controlItemBgActiveHover,
+    tableBodySortBg: bodySortBg,
+    tableFixedHeaderSortActiveBg: fixedHeaderSortActiveBg,
+    tableHeaderFilterActiveBg: headerFilterHoverBg,
+    tableFilterDropdownBg: filterDropdownBg,
+    tableRowHoverBg: rowHoverBg,
+    tableSelectedRowBg: rowSelectedBg,
+    tableSelectedRowHoverBg: rowSelectedHoverBg,
     zIndexTableFixed,
     zIndexTableSticky: zIndexTableFixed + 1,
-    tableFontSizeMiddle: fontSize,
-    tableFontSizeSmall: fontSize,
-    tableSelectionColumnWidth: controlHeight,
-    tableExpandIconBg: colorBgContainer,
+    tableFontSizeMiddle: cellFontSizeMD,
+    tableFontSizeSmall: cellFontSizeSM,
+    tableSelectionColumnWidth: selectionColumnWidth,
+    tableExpandIconBg: expandIconBg,
     tableExpandColumnWidth: checkboxSize + 2 * token.padding,
-    tableExpandedRowBg: colorFillAlter,
+    tableExpandedRowBg: rowExpandedBg,
     // Dropdown
     tableFilterDropdownWidth: 120,
     tableFilterDropdownHeight: 264,
     tableFilterDropdownSearchWidth: 140,
     // Virtual Scroll Bar
     tableScrollThumbSize: 8,
-    tableScrollThumbBg: colorTextPlaceholder,
+    tableScrollThumbBg: stickyScrollBarBg,
     tableScrollThumbBgHover: colorTextHeading,
     tableScrollBg: colorSplit
   });
-  return [genTableStyle(tableToken), genPaginationStyle$1(tableToken), genSummaryStyle$1(tableToken), genSorterStyle$1(tableToken), genFilterStyle$1(tableToken), genBorderedStyle$1(tableToken), genRadiusStyle$1(tableToken), genExpandStyle$1(tableToken), genSummaryStyle$1(tableToken), genEmptyStyle$1(tableToken), genSelectionStyle$1(tableToken), genFixedStyle$1(tableToken), genStickyStyle$1(tableToken), genEllipsisStyle$1(tableToken), genSizeStyle$1(tableToken), genRtlStyle(tableToken)];
+  return [genTableStyle(tableToken), genPaginationStyle$1(tableToken), genSummaryStyle$1(tableToken), genSorterStyle$1(tableToken), genFilterStyle$1(tableToken), genBorderedStyle$1(tableToken), genRadiusStyle$1(tableToken), genExpandStyle$1(tableToken), genSummaryStyle$1(tableToken), genEmptyStyle$1(tableToken), genSelectionStyle$1(tableToken), genFixedStyle$1(tableToken), genStickyStyle$1(tableToken), genEllipsisStyle$1(tableToken), genSizeStyle$1(tableToken), genRtlStyle(tableToken), genVirtualStyle$1(tableToken)];
+}, token => {
+  const {
+    colorFillAlter,
+    colorBgContainer,
+    colorTextHeading,
+    colorFillSecondary,
+    colorFillContent,
+    controlItemBgActive,
+    controlItemBgActiveHover,
+    padding,
+    paddingSM,
+    paddingXS,
+    colorBorderSecondary,
+    borderRadiusLG,
+    fontSize,
+    controlHeight,
+    colorTextPlaceholder
+  } = token;
+  const colorFillSecondarySolid = new TinyColor(colorFillSecondary).onBackground(colorBgContainer).toHexShortString();
+  const colorFillContentSolid = new TinyColor(colorFillContent).onBackground(colorBgContainer).toHexShortString();
+  const colorFillAlterSolid = new TinyColor(colorFillAlter).onBackground(colorBgContainer).toHexShortString();
+  return {
+    headerBg: colorFillAlterSolid,
+    headerColor: colorTextHeading,
+    headerSortActiveBg: colorFillSecondarySolid,
+    headerSortHoverBg: colorFillContentSolid,
+    bodySortBg: colorFillAlterSolid,
+    rowHoverBg: colorFillAlterSolid,
+    rowSelectedBg: controlItemBgActive,
+    rowSelectedHoverBg: controlItemBgActiveHover,
+    rowExpandedBg: colorFillAlter,
+    cellPaddingBlock: padding,
+    cellPaddingInline: padding,
+    cellPaddingBlockMD: paddingSM,
+    cellPaddingInlineMD: paddingXS,
+    cellPaddingBlockSM: paddingXS,
+    cellPaddingInlineSM: paddingXS,
+    borderColor: colorBorderSecondary,
+    headerBorderRadius: borderRadiusLG,
+    footerBg: colorFillAlterSolid,
+    footerColor: colorTextHeading,
+    cellFontSize: fontSize,
+    cellFontSizeMD: fontSize,
+    cellFontSizeSM: fontSize,
+    headerSplitColor: colorBorderSecondary,
+    fixedHeaderSortActiveBg: colorFillSecondarySolid,
+    headerFilterHoverBg: colorFillContent,
+    filterDropdownMenuBg: colorBgContainer,
+    filterDropdownBg: colorBgContainer,
+    expandIconBg: colorBgContainer,
+    selectionColumnWidth: controlHeight,
+    stickyScrollBarBg: colorTextPlaceholder,
+    stickyScrollBarBorderRadius: 100
+  };
 });
 
 const EMPTY_LIST = [];
@@ -53113,10 +52794,12 @@ const InternalTable = (props, ref) => {
     scroll,
     sortDirections,
     locale,
-    showSorterTooltip = true
+    showSorterTooltip = true,
+    virtual
   } = props;
+  const warning = devUseWarning('Table');
   if (process.env.NODE_ENV !== 'production') {
-    process.env.NODE_ENV !== "production" ? warning$3(!(typeof rowKey === 'function' && rowKey.length > 1), 'Table', '`index` parameter of `rowKey` function is deprecated. There is no guarantee that it will work as expected.') : void 0;
+    process.env.NODE_ENV !== "production" ? warning(!(typeof rowKey === 'function' && rowKey.length > 1), 'usage', '`index` parameter of `rowKey` function is deprecated. There is no guarantee that it will work as expected.') : void 0;
   }
   const baseColumns = React__namespace.useMemo(() => columns || convertChildrenToColumns(children), [columns, children]);
   const needResponsive = React__namespace.useMemo(() => baseColumns.some(col => col.responsive), [baseColumns]);
@@ -53158,6 +52841,8 @@ const InternalTable = (props, ref) => {
   const internalRefs = {
     body: React__namespace.useRef()
   };
+  // ============================ Width =============================
+  const getContainerWidth = useContainerWidth(prefixCls);
   // ============================ RowKey ============================
   const getRowKey = React__namespace.useMemo(() => {
     if (typeof rowKey === 'function') {
@@ -53270,11 +52955,11 @@ const InternalTable = (props, ref) => {
       total,
       pageSize = DEFAULT_PAGE_SIZE
     } = mergedPagination;
-    process.env.NODE_ENV !== "production" ? warning$3(current > 0, 'Table', '`current` should be positive number.') : void 0;
+    process.env.NODE_ENV !== "production" ? warning(current > 0, 'usage', '`current` should be positive number.') : void 0;
     // Dynamic table data
     if (mergedData.length < total) {
       if (mergedData.length > pageSize) {
-        process.env.NODE_ENV !== "production" ? warning$3(false, 'Table', '`dataSource` length is less than `pagination.total` but large than `pagination.pageSize`. Please make sure your config correct data with async mode.') : void 0;
+        process.env.NODE_ENV !== "production" ? warning(false, 'usage', '`dataSource` length is less than `pagination.total` but large than `pagination.pageSize`. Please make sure your config correct data with async mode.') : void 0;
         return mergedData.slice((current - 1) * pageSize, current * pageSize);
       }
       return mergedData;
@@ -53296,11 +52981,11 @@ const InternalTable = (props, ref) => {
   const internalRowClassName = (record, index, indent) => {
     let mergedRowClassName;
     if (typeof rowClassName === 'function') {
-      mergedRowClassName = classnames$g(rowClassName(record, index, indent));
+      mergedRowClassName = classnames(rowClassName(record, index, indent));
     } else {
-      mergedRowClassName = classnames$g(rowClassName);
+      mergedRowClassName = classnames(rowClassName);
     }
-    return classnames$g({
+    return classnames({
       [`${prefixCls}-row-selected`]: selectedKeySet.has(getRowKey(record, index))
     }, mergedRowClassName);
   };
@@ -53331,7 +53016,7 @@ const InternalTable = (props, ref) => {
       paginationSize = mergedSize === 'small' || mergedSize === 'middle' ? 'small' : undefined;
     }
     const renderPagination = position => /*#__PURE__*/React__namespace.createElement(Pagination$1, Object.assign({}, mergedPagination, {
-      className: classnames$g(`${prefixCls}-pagination ${prefixCls}-pagination-${position}`, mergedPagination.className),
+      className: classnames(`${prefixCls}-pagination ${prefixCls}-pagination-${position}`, mergedPagination.className),
       size: paginationSize
     }));
     const defaultPosition = direction === 'rtl' ? 'left' : 'right';
@@ -53368,25 +53053,51 @@ const InternalTable = (props, ref) => {
   }
   // Style
   const [wrapSSR, hashId] = useStyle$1(prefixCls);
-  const wrapperClassNames = classnames$g(`${prefixCls}-wrapper`, table === null || table === void 0 ? void 0 : table.className, {
+  const [, token] = useToken();
+  const wrapperClassNames = classnames(`${prefixCls}-wrapper`, table === null || table === void 0 ? void 0 : table.className, {
     [`${prefixCls}-wrapper-rtl`]: direction === 'rtl'
   }, className, rootClassName, hashId);
   const mergedStyle = Object.assign(Object.assign({}, table === null || table === void 0 ? void 0 : table.style), style);
   const emptyText = locale && locale.emptyText || (renderEmpty === null || renderEmpty === void 0 ? void 0 : renderEmpty('Table')) || /*#__PURE__*/React__namespace.createElement(DefaultRenderEmpty$1, {
     componentName: "Table"
   });
+  // ========================== Render ==========================
+  const TableComponent = virtual ? RcVirtualTable : RcTable;
+  // >>> Virtual Table props. We set height here since it will affect height collection
+  const virtualProps = {};
+  const listItemHeight = React__namespace.useMemo(() => {
+    const {
+      fontSize,
+      lineHeight,
+      padding,
+      paddingXS,
+      paddingSM
+    } = token;
+    const fontHeight = Math.floor(fontSize * lineHeight);
+    switch (mergedSize) {
+      case 'large':
+        return padding * 2 + fontHeight;
+      case 'small':
+        return paddingXS * 2 + fontHeight;
+      default:
+        return paddingSM * 2 + fontHeight;
+    }
+  }, [token, mergedSize]);
+  if (virtual) {
+    virtualProps.listItemHeight = listItemHeight;
+  }
   return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", {
     ref: ref,
     className: wrapperClassNames,
     style: mergedStyle
   }, /*#__PURE__*/React__namespace.createElement(Spin$1, Object.assign({
     spinning: false
-  }, spinProps), topPaginationNode, /*#__PURE__*/React__namespace.createElement(RcTable, Object.assign({}, tableProps, {
+  }, spinProps), topPaginationNode, /*#__PURE__*/React__namespace.createElement(TableComponent, Object.assign({}, virtualProps, tableProps, {
     columns: mergedColumns,
     direction: direction,
     expandable: mergedExpandable,
     prefixCls: prefixCls,
-    className: classnames$g({
+    className: classnames({
       [`${prefixCls}-middle`]: mergedSize === 'middle',
       [`${prefixCls}-small`]: mergedSize === 'small',
       [`${prefixCls}-bordered`]: bordered,
@@ -53399,7 +53110,8 @@ const InternalTable = (props, ref) => {
     // Internal
     internalHooks: INTERNAL_HOOKS,
     internalRefs: internalRefs,
-    transformColumns: transformColumns
+    transformColumns: transformColumns,
+    getContainerWidth: getContainerWidth
   })), bottomPaginationNode)));
 };
 var InternalTable$1 = /*#__PURE__*/React__namespace.forwardRef(InternalTable);
@@ -53584,7 +53296,7 @@ function format(message) {
   return message.replace(/#{\s*key\s*}/g, copyKey);
 }
 
-function copy(text, options) {
+function copy$1(text, options) {
   var debug,
     message,
     reselectPrevious,
@@ -53681,7 +53393,7 @@ function copy(text, options) {
   return success;
 }
 
-var copyToClipboard = copy;
+var copyToClipboard = copy$1;
 
 // This icon file is generated automatically.
 var EnterOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M864 170h-60c-4.4 0-8 3.6-8 8v518H310v-73c0-6.7-7.8-10.5-13-6.3l-141.9 112a8 8 0 000 12.6l141.9 112c5.3 4.2 13 .4 13-6.3v-75h498c35.3 0 64-28.7 64-64V178c0-4.4-3.6-8-8-8z" } }] }, "name": "enter", "theme": "outlined" };
@@ -53848,10 +53560,10 @@ const getResetStyles = token => ({
 });
 const getEditableStyles = token => {
   const {
-    componentCls
+    componentCls,
+    paddingSM
   } = token;
-  const inputToken = initInputToken(token);
-  const inputShift = inputToken.inputPaddingVertical + 1;
+  const inputShift = paddingSM;
   return {
     '&-edit-content': {
       position: 'relative',
@@ -54089,7 +53801,7 @@ const Editable = props => {
   };
   const textClassName = component ? `${prefixCls}-${component}` : '';
   const [wrapSSR, hashId] = useStyle(prefixCls);
-  const textAreaClassName = classnames$g(prefixCls, `${prefixCls}-edit-content`, {
+  const textAreaClassName = classnames(prefixCls, `${prefixCls}-edit-content`, {
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, className, textClassName, hashId);
   return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", {
@@ -54142,13 +53854,16 @@ const Typography$2 = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   const direction = typographyDirection !== null && typographyDirection !== void 0 ? typographyDirection : contextDirection;
   let mergedRef = ref;
   if (setContentRef) {
-    process.env.NODE_ENV !== "production" ? warning$3(false, 'Typography', '`setContentRef` is deprecated. Please use `ref` instead.') : void 0;
     mergedRef = composeRef(ref, setContentRef);
+  }
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Typography');
+    warning.deprecated(!setContentRef, 'setContentRef', 'ref');
   }
   const prefixCls = getPrefixCls('typography', customizePrefixCls);
   // Style
   const [wrapSSR, hashId] = useStyle(prefixCls);
-  const componentClassName = classnames$g(prefixCls, typography === null || typography === void 0 ? void 0 : typography.className, {
+  const componentClassName = classnames(prefixCls, typography === null || typography === void 0 ? void 0 : typography.className, {
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, className, rootClassName, hashId);
   const mergedStyle = Object.assign(Object.assign({}, typography === null || typography === void 0 ? void 0 : typography.style), style);
@@ -54242,6 +53957,8 @@ const Ellipsis = _ref => {
     onEllipsis
   } = _ref;
   const [[startLen, midLen, endLen], setCutLength] = React__namespace.useState([0, 0, 0]);
+  // record last done with ellipsis width
+  const [lastLen, setLastLen] = React__namespace.useState(0);
   const [walkingState, setWalkingState] = React__namespace.useState(NONE);
   const [singleRowHeight, setSingleRowHeight] = React__namespace.useState(0);
   const singleRowRef = React__namespace.useRef(null);
@@ -54250,6 +53967,8 @@ const Ellipsis = _ref => {
   const totalLen = React__namespace.useMemo(() => getNodesLen(nodeList), [nodeList]);
   const mergedChildren = React__namespace.useMemo(() => {
     if (!enabledMeasure || walkingState !== DONE_WITH_ELLIPSIS) {
+      // if has lastLen, use it as temporary width to avoid lots of text to squeeze space.
+      if (lastLen && walkingState !== DONE_WITHOUT_ELLIPSIS && enabledMeasure) return children(sliceNodes(nodeList, lastLen), lastLen < totalLen);
       return children(nodeList, false);
     }
     return children(sliceNodes(nodeList, midLen), midLen < totalLen);
@@ -54298,6 +54017,7 @@ const Ellipsis = _ref => {
           setCutLength([nextStartLen, nextMidLen, nextEndLen]);
         } else {
           setWalkingState(DONE_WITH_ELLIPSIS);
+          setLastLen(midLen);
           onEllipsis(true);
         }
       }
@@ -54698,7 +54418,7 @@ const Base = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
       key: "copy",
       title: copyTitle
     }, /*#__PURE__*/React__namespace.createElement(TransButton$1, {
-      className: classnames$g(`${prefixCls}-copy`, copied && `${prefixCls}-copy-success`),
+      className: classnames(`${prefixCls}-copy`, copied && `${prefixCls}-copy-success`),
       onClick: onCopyClick,
       "aria-label": ariaLabel
     }, copied ? getNode(iconNodes[1], /*#__PURE__*/React__namespace.createElement(CheckOutlined$1, null), true) : getNode(iconNodes[0], /*#__PURE__*/React__namespace.createElement(CopyOutlined$1, null), true)));
@@ -54716,7 +54436,7 @@ const Base = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
     enabledEllipsis: mergedEnableEllipsis,
     isEllipsis: isMergedEllipsis
   }, /*#__PURE__*/React__namespace.createElement(OriginTypography, Object.assign({
-    className: classnames$g({
+    className: classnames({
       [`${prefixCls}-${type}`]: type,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-ellipsis`]: enableEllipsis,
@@ -54769,7 +54489,10 @@ const Link$2 = /*#__PURE__*/React__namespace.forwardRef((_a, ref) => {
       rel
     } = _a,
     restProps = __rest$2(_a, ["ellipsis", "rel"]);
-  process.env.NODE_ENV !== "production" ? warning$3(typeof ellipsis !== 'object', 'Typography.Link', '`ellipsis` only supports boolean value.') : void 0;
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Typography.Link');
+    process.env.NODE_ENV !== "production" ? warning(typeof ellipsis !== 'object', 'usage', '`ellipsis` only supports boolean value.') : void 0;
+  }
   const mergedProps = Object.assign(Object.assign({}, restProps), {
     rel: rel === undefined && restProps.target === '_blank' ? 'noopener noreferrer' : rel
   });
@@ -54809,7 +54532,10 @@ const Text$3 = (_a, ref) => {
     }
     return ellipsis;
   }, [ellipsis]);
-  process.env.NODE_ENV !== "production" ? warning$3(typeof ellipsis !== 'object' || !ellipsis || !('expandable' in ellipsis) && !('rows' in ellipsis), 'Typography.Text', '`ellipsis` do not support `expandable` or `rows` props.') : void 0;
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Typography.Text');
+    process.env.NODE_ENV !== "production" ? warning(typeof ellipsis !== 'object' || !ellipsis || !('expandable' in ellipsis) && !('rows' in ellipsis), 'usage', '`ellipsis` do not support `expandable` or `rows` props.') : void 0;
+  }
   return /*#__PURE__*/React__namespace.createElement(Base$1, Object.assign({
     ref: ref
   }, restProps, {
@@ -54834,10 +54560,13 @@ const Title$2 = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
     } = props,
     restProps = __rest(props, ["level"]);
   let component;
+  if (process.env.NODE_ENV !== 'production') {
+    const warning = devUseWarning('Typography.Title');
+    process.env.NODE_ENV !== "production" ? warning(TITLE_ELE_LIST.includes(level), 'usage', 'Title only accept `1 | 2 | 3 | 4 | 5` as `level` value. And `5` need 4.6.0+ version.') : void 0;
+  }
   if (TITLE_ELE_LIST.includes(level)) {
     component = `h${level}`;
   } else {
-    process.env.NODE_ENV !== "production" ? warning$3(false, 'Typography.Title', 'Title only accept `1 | 2 | 3 | 4 | 5` as `level` value. And `5` need 4.6.0+ version.') : void 0;
     component = 'h1';
   }
   return /*#__PURE__*/React__namespace.createElement(Base$1, Object.assign({
@@ -54919,7 +54648,7 @@ function Button$1 (_a) {
     var children = _a.children, props = __rest$Q(_a, ["children"]);
     var type = props.type, className = props.className;
     return (React__default["default"].createElement(Space$1, { wrap: true },
-        React__default["default"].createElement(Button$4, __assign({ className: classnames$b('hotelierButton', className, {
+        React__default["default"].createElement(Button$4, __assign({ className: classnames('hotelierButton', className, {
                 'hPprimary': type === "hPprimary"
             }) }, props, { icon: React__default["default"].createElement(PlusOutlined$1, null) }), children)));
 }
@@ -57284,6 +57013,604 @@ var StyleSheet = /*#__PURE__*/function () {
   return StyleSheet;
 }();
 
+var MS = '-ms-';
+var MOZ = '-moz-';
+var WEBKIT = '-webkit-';
+
+var COMMENT = 'comm';
+var RULESET = 'rule';
+var DECLARATION = 'decl';
+var IMPORT = '@import';
+var KEYFRAMES = '@keyframes';
+var LAYER = '@layer';
+
+/**
+ * @param {number}
+ * @return {number}
+ */
+var abs = Math.abs;
+
+/**
+ * @param {number}
+ * @return {string}
+ */
+var from = String.fromCharCode;
+
+/**
+ * @param {object}
+ * @return {object}
+ */
+var assign = Object.assign;
+
+/**
+ * @param {string} value
+ * @param {number} length
+ * @return {number}
+ */
+function hash (value, length) {
+	return charat(value, 0) ^ 45 ? (((((((length << 2) ^ charat(value, 0)) << 2) ^ charat(value, 1)) << 2) ^ charat(value, 2)) << 2) ^ charat(value, 3) : 0
+}
+
+/**
+ * @param {string} value
+ * @return {string}
+ */
+function trim (value) {
+	return value.trim()
+}
+
+/**
+ * @param {string} value
+ * @param {RegExp} pattern
+ * @return {string?}
+ */
+function match (value, pattern) {
+	return (value = pattern.exec(value)) ? value[0] : value
+}
+
+/**
+ * @param {string} value
+ * @param {(string|RegExp)} pattern
+ * @param {string} replacement
+ * @return {string}
+ */
+function replace (value, pattern, replacement) {
+	return value.replace(pattern, replacement)
+}
+
+/**
+ * @param {string} value
+ * @param {string} search
+ * @return {number}
+ */
+function indexof (value, search) {
+	return value.indexOf(search)
+}
+
+/**
+ * @param {string} value
+ * @param {number} index
+ * @return {number}
+ */
+function charat (value, index) {
+	return value.charCodeAt(index) | 0
+}
+
+/**
+ * @param {string} value
+ * @param {number} begin
+ * @param {number} end
+ * @return {string}
+ */
+function substr (value, begin, end) {
+	return value.slice(begin, end)
+}
+
+/**
+ * @param {string} value
+ * @return {number}
+ */
+function strlen (value) {
+	return value.length
+}
+
+/**
+ * @param {any[]} value
+ * @return {number}
+ */
+function sizeof (value) {
+	return value.length
+}
+
+/**
+ * @param {any} value
+ * @param {any[]} array
+ * @return {any}
+ */
+function append (value, array) {
+	return array.push(value), value
+}
+
+/**
+ * @param {string[]} array
+ * @param {function} callback
+ * @return {string}
+ */
+function combine (array, callback) {
+	return array.map(callback).join('')
+}
+
+var line = 1;
+var column = 1;
+var length = 0;
+var position = 0;
+var character = 0;
+var characters = '';
+
+/**
+ * @param {string} value
+ * @param {object | null} root
+ * @param {object | null} parent
+ * @param {string} type
+ * @param {string[] | string} props
+ * @param {object[] | string} children
+ * @param {number} length
+ */
+function node (value, root, parent, type, props, children, length) {
+	return {value: value, root: root, parent: parent, type: type, props: props, children: children, line: line, column: column, length: length, return: ''}
+}
+
+/**
+ * @param {object} root
+ * @param {object} props
+ * @return {object}
+ */
+function copy (root, props) {
+	return assign(node('', null, null, '', null, null, 0), root, {length: -root.length}, props)
+}
+
+/**
+ * @return {number}
+ */
+function char () {
+	return character
+}
+
+/**
+ * @return {number}
+ */
+function prev () {
+	character = position > 0 ? charat(characters, --position) : 0;
+
+	if (column--, character === 10)
+		column = 1, line--;
+
+	return character
+}
+
+/**
+ * @return {number}
+ */
+function next () {
+	character = position < length ? charat(characters, position++) : 0;
+
+	if (column++, character === 10)
+		column = 1, line++;
+
+	return character
+}
+
+/**
+ * @return {number}
+ */
+function peek () {
+	return charat(characters, position)
+}
+
+/**
+ * @return {number}
+ */
+function caret () {
+	return position
+}
+
+/**
+ * @param {number} begin
+ * @param {number} end
+ * @return {string}
+ */
+function slice (begin, end) {
+	return substr(characters, begin, end)
+}
+
+/**
+ * @param {number} type
+ * @return {number}
+ */
+function token (type) {
+	switch (type) {
+		// \0 \t \n \r \s whitespace token
+		case 0: case 9: case 10: case 13: case 32:
+			return 5
+		// ! + , / > @ ~ isolate token
+		case 33: case 43: case 44: case 47: case 62: case 64: case 126:
+		// ; { } breakpoint token
+		case 59: case 123: case 125:
+			return 4
+		// : accompanied token
+		case 58:
+			return 3
+		// " ' ( [ opening delimit token
+		case 34: case 39: case 40: case 91:
+			return 2
+		// ) ] closing delimit token
+		case 41: case 93:
+			return 1
+	}
+
+	return 0
+}
+
+/**
+ * @param {string} value
+ * @return {any[]}
+ */
+function alloc (value) {
+	return line = column = 1, length = strlen(characters = value), position = 0, []
+}
+
+/**
+ * @param {any} value
+ * @return {any}
+ */
+function dealloc (value) {
+	return characters = '', value
+}
+
+/**
+ * @param {number} type
+ * @return {string}
+ */
+function delimit (type) {
+	return trim(slice(position - 1, delimiter(type === 91 ? type + 2 : type === 40 ? type + 1 : type)))
+}
+
+/**
+ * @param {number} type
+ * @return {string}
+ */
+function whitespace (type) {
+	while (character = peek())
+		if (character < 33)
+			next();
+		else
+			break
+
+	return token(type) > 2 || token(character) > 3 ? '' : ' '
+}
+
+/**
+ * @param {number} index
+ * @param {number} count
+ * @return {string}
+ */
+function escaping (index, count) {
+	while (--count && next())
+		// not 0-9 A-F a-f
+		if (character < 48 || character > 102 || (character > 57 && character < 65) || (character > 70 && character < 97))
+			break
+
+	return slice(index, caret() + (count < 6 && peek() == 32 && next() == 32))
+}
+
+/**
+ * @param {number} type
+ * @return {number}
+ */
+function delimiter (type) {
+	while (next())
+		switch (character) {
+			// ] ) " '
+			case type:
+				return position
+			// " '
+			case 34: case 39:
+				if (type !== 34 && type !== 39)
+					delimiter(character);
+				break
+			// (
+			case 40:
+				if (type === 41)
+					delimiter(type);
+				break
+			// \
+			case 92:
+				next();
+				break
+		}
+
+	return position
+}
+
+/**
+ * @param {number} type
+ * @param {number} index
+ * @return {number}
+ */
+function commenter (type, index) {
+	while (next())
+		// //
+		if (type + character === 47 + 10)
+			break
+		// /*
+		else if (type + character === 42 + 42 && peek() === 47)
+			break
+
+	return '/*' + slice(index, position - 1) + '*' + from(type === 47 ? type : next())
+}
+
+/**
+ * @param {number} index
+ * @return {string}
+ */
+function identifier (index) {
+	while (!token(peek()))
+		next();
+
+	return slice(index, position)
+}
+
+/**
+ * @param {string} value
+ * @return {object[]}
+ */
+function compile (value) {
+	return dealloc(parse('', null, null, null, [''], value = alloc(value), 0, [0], value))
+}
+
+/**
+ * @param {string} value
+ * @param {object} root
+ * @param {object?} parent
+ * @param {string[]} rule
+ * @param {string[]} rules
+ * @param {string[]} rulesets
+ * @param {number[]} pseudo
+ * @param {number[]} points
+ * @param {string[]} declarations
+ * @return {object}
+ */
+function parse (value, root, parent, rule, rules, rulesets, pseudo, points, declarations) {
+	var index = 0;
+	var offset = 0;
+	var length = pseudo;
+	var atrule = 0;
+	var property = 0;
+	var previous = 0;
+	var variable = 1;
+	var scanning = 1;
+	var ampersand = 1;
+	var character = 0;
+	var type = '';
+	var props = rules;
+	var children = rulesets;
+	var reference = rule;
+	var characters = type;
+
+	while (scanning)
+		switch (previous = character, character = next()) {
+			// (
+			case 40:
+				if (previous != 108 && charat(characters, length - 1) == 58) {
+					if (indexof(characters += replace(delimit(character), '&', '&\f'), '&\f') != -1)
+						ampersand = -1;
+					break
+				}
+			// " ' [
+			case 34: case 39: case 91:
+				characters += delimit(character);
+				break
+			// \t \n \r \s
+			case 9: case 10: case 13: case 32:
+				characters += whitespace(previous);
+				break
+			// \
+			case 92:
+				characters += escaping(caret() - 1, 7);
+				continue
+			// /
+			case 47:
+				switch (peek()) {
+					case 42: case 47:
+						append(comment(commenter(next(), caret()), root, parent), declarations);
+						break
+					default:
+						characters += '/';
+				}
+				break
+			// {
+			case 123 * variable:
+				points[index++] = strlen(characters) * ampersand;
+			// } ; \0
+			case 125 * variable: case 59: case 0:
+				switch (character) {
+					// \0 }
+					case 0: case 125: scanning = 0;
+					// ;
+					case 59 + offset: if (ampersand == -1) characters = replace(characters, /\f/g, '');
+						if (property > 0 && (strlen(characters) - length))
+							append(property > 32 ? declaration(characters + ';', rule, parent, length - 1) : declaration(replace(characters, ' ', '') + ';', rule, parent, length - 2), declarations);
+						break
+					// @ ;
+					case 59: characters += ';';
+					// { rule/at-rule
+					default:
+						append(reference = ruleset(characters, root, parent, index, offset, rules, points, type, props = [], children = [], length), rulesets);
+
+						if (character === 123)
+							if (offset === 0)
+								parse(characters, root, reference, reference, props, rulesets, length, points, children);
+							else
+								switch (atrule === 99 && charat(characters, 3) === 110 ? 100 : atrule) {
+									// d l m s
+									case 100: case 108: case 109: case 115:
+										parse(value, reference, reference, rule && append(ruleset(value, reference, reference, 0, 0, rules, points, type, rules, props = [], length), children), rules, children, length, points, rule ? props : children);
+										break
+									default:
+										parse(characters, reference, reference, reference, [''], children, 0, points, children);
+								}
+				}
+
+				index = offset = property = 0, variable = ampersand = 1, type = characters = '', length = pseudo;
+				break
+			// :
+			case 58:
+				length = 1 + strlen(characters), property = previous;
+			default:
+				if (variable < 1)
+					if (character == 123)
+						--variable;
+					else if (character == 125 && variable++ == 0 && prev() == 125)
+						continue
+
+				switch (characters += from(character), character * variable) {
+					// &
+					case 38:
+						ampersand = offset > 0 ? 1 : (characters += '\f', -1);
+						break
+					// ,
+					case 44:
+						points[index++] = (strlen(characters) - 1) * ampersand, ampersand = 1;
+						break
+					// @
+					case 64:
+						// -
+						if (peek() === 45)
+							characters += delimit(next());
+
+						atrule = peek(), offset = length = strlen(type = characters += identifier(caret())), character++;
+						break
+					// -
+					case 45:
+						if (previous === 45 && strlen(characters) == 2)
+							variable = 0;
+				}
+		}
+
+	return rulesets
+}
+
+/**
+ * @param {string} value
+ * @param {object} root
+ * @param {object?} parent
+ * @param {number} index
+ * @param {number} offset
+ * @param {string[]} rules
+ * @param {number[]} points
+ * @param {string} type
+ * @param {string[]} props
+ * @param {string[]} children
+ * @param {number} length
+ * @return {object}
+ */
+function ruleset (value, root, parent, index, offset, rules, points, type, props, children, length) {
+	var post = offset - 1;
+	var rule = offset === 0 ? rules : [''];
+	var size = sizeof(rule);
+
+	for (var i = 0, j = 0, k = 0; i < index; ++i)
+		for (var x = 0, y = substr(value, post + 1, post = abs(j = points[i])), z = value; x < size; ++x)
+			if (z = trim(j > 0 ? rule[x] + ' ' + y : replace(y, /&\f/g, rule[x])))
+				props[k++] = z;
+
+	return node(value, root, parent, offset === 0 ? RULESET : type, props, children, length)
+}
+
+/**
+ * @param {number} value
+ * @param {object} root
+ * @param {object?} parent
+ * @return {object}
+ */
+function comment (value, root, parent) {
+	return node(value, root, parent, COMMENT, from(char()), substr(value, 2, -2), 0)
+}
+
+/**
+ * @param {string} value
+ * @param {object} root
+ * @param {object?} parent
+ * @param {number} length
+ * @return {object}
+ */
+function declaration (value, root, parent, length) {
+	return node(value, root, parent, DECLARATION, substr(value, 0, length), substr(value, length + 1, -1), length)
+}
+
+/**
+ * @param {object[]} children
+ * @param {function} callback
+ * @return {string}
+ */
+function serialize (children, callback) {
+	var output = '';
+	var length = sizeof(children);
+
+	for (var i = 0; i < length; i++)
+		output += callback(children[i], i, children, callback) || '';
+
+	return output
+}
+
+/**
+ * @param {object} element
+ * @param {number} index
+ * @param {object[]} children
+ * @param {function} callback
+ * @return {string}
+ */
+function stringify (element, index, children, callback) {
+	switch (element.type) {
+		case LAYER: if (element.children.length) break
+		case IMPORT: case DECLARATION: return element.return = element.return || element.value
+		case COMMENT: return ''
+		case KEYFRAMES: return element.return = element.value + '{' + serialize(element.children, callback) + '}'
+		case RULESET: element.value = element.props.join(',');
+	}
+
+	return strlen(children = serialize(element.children, callback)) ? element.return = element.value + '{' + children + '}' : ''
+}
+
+/**
+ * @param {function[]} collection
+ * @return {function}
+ */
+function middleware (collection) {
+	var length = sizeof(collection);
+
+	return function (element, index, children, callback) {
+		var output = '';
+
+		for (var i = 0; i < length; i++)
+			output += collection[i](element, index, children, callback) || '';
+
+		return output
+	}
+}
+
+/**
+ * @param {function} callback
+ * @return {function}
+ */
+function rulesheet (callback) {
+	return function (element) {
+		if (!element.root)
+			if (element = element.return)
+				callback(element);
+	}
+}
+
 function memoize(fn) {
   var cache = Object.create(null);
   return function (arg) {
@@ -57707,27 +58034,27 @@ var prefixer = function prefixer(element, index, children, callback) {
       break;
 
     case KEYFRAMES:
-      return serialize([copy$1(element, {
+      return serialize([copy(element, {
         value: replace(element.value, '@', '@' + WEBKIT)
       })], callback);
 
     case RULESET:
       if (element.length) return combine(element.props, function (value) {
-        switch (match$1(value, /(::plac\w+|:read-\w+)/)) {
+        switch (match(value, /(::plac\w+|:read-\w+)/)) {
           // :read-(only|write)
           case ':read-only':
           case ':read-write':
-            return serialize([copy$1(element, {
+            return serialize([copy(element, {
               props: [replace(value, /:(read-\w+)/, ':' + MOZ + '$1')]
             })], callback);
           // :placeholder
 
           case '::placeholder':
-            return serialize([copy$1(element, {
+            return serialize([copy(element, {
               props: [replace(value, /:(plac\w+)/, ':' + WEBKIT + 'input-$1')]
-            }), copy$1(element, {
+            }), copy(element, {
               props: [replace(value, /:(plac\w+)/, ':' + MOZ + '$1')]
-            }), copy$1(element, {
+            }), copy(element, {
               props: [replace(value, /:(plac\w+)/, MS + 'input-$1')]
             })], callback);
         }
@@ -57812,7 +58139,7 @@ var createCache = function createCache(options) {
 
   {
     var currentSheet;
-    var finalizingPlugins = [stringify$2, process.env.NODE_ENV !== 'production' ? function (element) {
+    var finalizingPlugins = [stringify, process.env.NODE_ENV !== 'production' ? function (element) {
       if (!element.root) {
         if (element["return"]) {
           currentSheet.insert(element["return"]);
@@ -63084,7 +63411,8 @@ const arrow$1 = options => ({
       placement,
       rects,
       platform,
-      elements
+      elements,
+      middlewareData
     } = state;
     // Since `element` is required, we don't Partial<> the type.
     const {
@@ -63132,16 +63460,20 @@ const arrow$1 = options => ({
 
     // If the reference is small enough that the arrow's padding causes it to
     // to point to nothing for an aligned placement, adjust the offset of the
-    // floating element itself. This stops `shift()` from taking action, but can
-    // be worked around by calling it again after the `arrow()` if desired.
-    const shouldAddOffset = getAlignment(placement) != null && center != offset && rects.reference[length] / 2 - (center < min$1 ? minPadding : maxPadding) - arrowDimensions[length] / 2 < 0;
-    const alignmentOffset = shouldAddOffset ? center < min$1 ? min$1 - center : max - center : 0;
+    // floating element itself. To ensure `shift()` continues to take action,
+    // a single reset is performed when this is true.
+    const shouldAddOffset = !middlewareData.arrow && getAlignment(placement) != null && center != offset && rects.reference[length] / 2 - (center < min$1 ? minPadding : maxPadding) - arrowDimensions[length] / 2 < 0;
+    const alignmentOffset = shouldAddOffset ? center < min$1 ? center - min$1 : center - max : 0;
     return {
-      [axis]: coords[axis] - alignmentOffset,
+      [axis]: coords[axis] + alignmentOffset,
       data: {
         [axis]: offset,
-        centerOffset: center - offset + alignmentOffset
-      }
+        centerOffset: center - offset - alignmentOffset,
+        ...(shouldAddOffset && {
+          alignmentOffset
+        })
+      },
+      reset: shouldAddOffset
     };
   }
 });
@@ -63160,7 +63492,7 @@ const flip = function (options) {
     name: 'flip',
     options,
     async fn(state) {
-      var _middlewareData$flip;
+      var _middlewareData$arrow, _middlewareData$flip;
       const {
         placement,
         middlewareData,
@@ -63178,6 +63510,14 @@ const flip = function (options) {
         flipAlignment = true,
         ...detectOverflowOptions
       } = evaluate(options, state);
+
+      // If a reset by the arrow was caused due to an alignment offset being
+      // added, we should skip any logic now since `flip()` has already done its
+      // work.
+      // https://github.com/floating-ui/floating-ui/issues/2549#issuecomment-1719601643
+      if ((_middlewareData$arrow = middlewareData.arrow) != null && _middlewareData$arrow.alignmentOffset) {
+        return {};
+      }
       const side = getSide(placement);
       const isBasePlacement = getSide(initialPlacement) === initialPlacement;
       const rtl = await (platform.isRTL == null ? void 0 : platform.isRTL(elements.floating));
@@ -63790,18 +64130,21 @@ function getNearestOverflowAncestor(node) {
   }
   return getNearestOverflowAncestor(parentNode);
 }
-function getOverflowAncestors(node, list) {
+function getOverflowAncestors(node, list, traverseIframes) {
   var _node$ownerDocument2;
   if (list === void 0) {
     list = [];
+  }
+  if (traverseIframes === void 0) {
+    traverseIframes = true;
   }
   const scrollableAncestor = getNearestOverflowAncestor(node);
   const isBody = scrollableAncestor === ((_node$ownerDocument2 = node.ownerDocument) == null ? void 0 : _node$ownerDocument2.body);
   const win = getWindow$1(scrollableAncestor);
   if (isBody) {
-    return list.concat(win, win.visualViewport || [], isOverflowElement(scrollableAncestor) ? scrollableAncestor : []);
+    return list.concat(win, win.visualViewport || [], isOverflowElement(scrollableAncestor) ? scrollableAncestor : [], win.frameElement && traverseIframes ? getOverflowAncestors(win.frameElement) : []);
   }
-  return list.concat(scrollableAncestor, getOverflowAncestors(scrollableAncestor));
+  return list.concat(scrollableAncestor, getOverflowAncestors(scrollableAncestor, [], traverseIframes));
 }
 
 function getCssDimensions(element) {
@@ -64072,7 +64415,7 @@ function getClippingElementAncestors(element, cache) {
   if (cachedResult) {
     return cachedResult;
   }
-  let result = getOverflowAncestors(element).filter(el => isElement$1(el) && getNodeName(el) !== 'body');
+  let result = getOverflowAncestors(element, [], false).filter(el => isElement$1(el) && getNodeName(el) !== 'body');
   let currentContainingBlockComputedStyle = null;
   const elementIsFixed = getComputedStyle$1(element).position === 'fixed';
   let currentNode = elementIsFixed ? getParentNode(element) : element;
@@ -69491,7 +69834,7 @@ function SideBar(_a) {
         React__default["default"].createElement("div", { className: "brand" },
             React__default["default"].createElement(BrandIcon, null),
             React__default["default"].createElement("h1", null, "HotelierPro")),
-        React__default["default"].createElement("div", { style: { display: 'flex', justifyContent: 'center', paddingBottom: 15 } },
+        React__default["default"].createElement("div", { style: { display: 'flex', justifyContent: 'center', paddingBottom: 10 } },
             React__default["default"].createElement(Divider, null)),
         items);
 }
@@ -75236,7 +75579,7 @@ function DatesHeader (props) {
             React__default["default"].createElement("div", { className: "rooms-title" }, "Rooms"),
             React__default["default"].createElement("div", { className: "column" },
                 React__default["default"].createElement("div", { className: "selected-dates-range" }, dates.map(function (date) { return (React__default["default"].createElement("div", { className: "date-box" },
-                    React__default["default"].createElement("div", { className: classnames$b({ "date-day-box": isToday(date), 'date-day-box-default': !isToday(date) }) },
+                    React__default["default"].createElement("div", { className: classnames({ "date-day-box": isToday(date), 'date-day-box-default': !isToday(date) }) },
                         date.clone().format("ddd"),
                         " ",
                         React__default["default"].createElement("br", null),
@@ -75326,8 +75669,9 @@ var App = function () { return (React__default["default"].createElement("div", {
         React__default["default"].createElement(Space$1, null,
             React__default["default"].createElement(Button$4, { type: "primary" }, "New Booking"))))); };
 
-function Calander() {
-    var _a = React__default["default"].useState(moment("2023-09-22")), currentDate = _a[0]; _a[1];
+function Calander(props) {
+    var currentDates = props.currentDates;
+    var _a = React__default["default"].useState(moment(currentDates)), currentDate = _a[0]; _a[1];
     function getYears() {
         var startYear = currentDate.clone().subtract(6, "year");
         var thirteenYearsArray = [];

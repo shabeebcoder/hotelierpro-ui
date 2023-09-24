@@ -11,8 +11,9 @@ import { useForm } from '@mantine/form';
 
 
 
-const BookingForm = () => {
+const BookingForm = (props: any) => {
     // const [form] = Form.useForm();
+    const { onSubmitForm } = props;
     const [value, setValue] = useState<number | ''>(0);
     const handlers = useRef<NumberInputHandlers>();
     const form = useForm({
@@ -25,11 +26,11 @@ const BookingForm = () => {
         },
     });
 
-    const onSubmitForm = (formData) => {
-        alert()
-        // formData.preventDefault()
-        console.log("formData=====>", formData)
-    }
+    // const onSubmitForm = (formData) => {
+    //     alert()
+    //     // formData.preventDefault()
+    //     console.log("f  ", formData)
+    // }
 
 
     return (

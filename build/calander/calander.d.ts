@@ -1,3 +1,7 @@
 import React from "react";
 import "./styles.css";
-export default function Calander(): React.JSX.Element;
+interface Prop {
+    currentDates: string;
+}
+export default function Calander(props: Prop): React.JSX.Element;
+export {};

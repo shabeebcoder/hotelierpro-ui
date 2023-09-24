@@ -4,7 +4,8 @@ body {
 }
 
 .front-desk-page-container {
-    overflow: hidden;
+    /* overflow: hidden; */
+    display: grid;
 }
 
 .front-desk-page-container .calendar-year-section {

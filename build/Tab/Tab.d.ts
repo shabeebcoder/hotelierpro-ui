@@ -1,12 +1,12 @@
 import React from 'react';
 import "./styles.css";
-declare type tab = {
+type tab = {
     value: string;
     label: string;
     icon?: React.ReactNode;
     handleOnClick: any;
 };
-declare type panels = {
+type panels = {
     panel: React.ReactNode;
     tabId: string;
 };

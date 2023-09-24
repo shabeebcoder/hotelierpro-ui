@@ -9,4 +9,6 @@ export default {
 
 export const NewBookingForm = (args) => <BookingForm {...args} />
 
-NewBookingForm.args = {}
+NewBookingForm.args = {
+    onSubmitForm: (fomd) => { console.log("dsdsd=>", fomd) }
+}

@@ -20,7 +20,7 @@ interface Props {
   dataSource: DataType[];
   type: 'room' | 'roomType' | 'guests' | 'companies' | 'services' | 'serviceCategory' | 'invoiceList'
   onSave: any
-  handleRoomType: AnimationPlayState;
+  handleRoomType: any;
   onDelete: any;
   styles?: any
 }
@@ -155,7 +155,7 @@ const RoomList: any = (props: Props) => {
     );
   }
 
-  const RoomTableColumns: ColumnsType<RoomTableDataType> = [
+  const RoomTableColumns: any = [
     {
       title: () => {
         return (

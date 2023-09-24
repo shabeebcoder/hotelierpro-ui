@@ -69490,8 +69490,8 @@ function SideBar(_a) {
     return React__default["default"].createElement(Box, { className: "sideNavigation", w: 220 },
         React__default["default"].createElement("div", { className: "brand" },
             React__default["default"].createElement(BrandIcon, null),
-            React__default["default"].createElement("h1", null, "Hotelier")),
-        React__default["default"].createElement("div", { style: { display: 'flex', justifyContent: 'center' } },
+            React__default["default"].createElement("h1", null, "HotelierPro")),
+        React__default["default"].createElement("div", { style: { display: 'flex', justifyContent: 'center', paddingBottom: 15 } },
             React__default["default"].createElement(Divider, null)),
         items);
 }

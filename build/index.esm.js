@@ -69463,8 +69463,8 @@ function SideBar(_a) {
     return React__default.createElement(Box, { className: "sideNavigation", w: 220 },
         React__default.createElement("div", { className: "brand" },
             React__default.createElement(BrandIcon, null),
-            React__default.createElement("h1", null, "Hotelier")),
-        React__default.createElement("div", { style: { display: 'flex', justifyContent: 'center' } },
+            React__default.createElement("h1", null, "HotelierPro")),
+        React__default.createElement("div", { style: { display: 'flex', justifyContent: 'center', paddingBottom: 15 } },
             React__default.createElement(Divider, null)),
         items);
 }

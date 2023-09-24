@@ -11,8 +11,13 @@ import Rooms from "./rooms";
 import { Button } from "antd";
 import Header from "./header"
 
-export default function Calander() {
-    const [currentDate, setCurrentDate] = React.useState(moment("2023-09-22"));
+interface Prop {
+    currentDates: string;
+}
+
+export default function Calander(props: Prop) {
+    const { currentDates } = props;
+    const [currentDate, setCurrentDate] = React.useState(moment(currentDates));
 
     function getYears() {
         var startYear = currentDate.clone().subtract(6, "year");

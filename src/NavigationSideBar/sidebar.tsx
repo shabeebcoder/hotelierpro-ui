@@ -81,9 +81,9 @@ export default function SideBar({ handleOnClick, index = 0 }) {
     return <Box className="sideNavigation" w={220}>
         <div className="brand">
             <BrandIcon />
-            <h1>Hotelier</h1>
+            <h1>HotelierPro</h1>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: 10 }}>
 
             <Divider />
         </div>

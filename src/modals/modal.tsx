@@ -3,47 +3,25 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal, Button, TextInput, Box, Checkbox, Group, NumberInput } from '@mantine/core';
 import "./styles.css";
 import AddServiceForm from "./../Forms/services/addservice"
+
 function Modals(props) {
     const [opened, { open, close }] = useDisclosure(false);
-    const { size } = props;
+    const { size, title, Form, type } = props;
+
+
+    const FormWrapper = ({ children }) => {
+        return <div className='formWrapper'>
+            {children}
+        </div>
+    }
 
     return (
         <>
-            <Modal opened={opened} onClose={close} size={size || 'md'} title="Add New Guest" className='hp-modal'>
+            <Modal opened={opened} onClose={close} size={size || 'md'} title={title} className='hp-modal'>
                 <Box component="form" mx="auto">
-                    <TextInput label="Name" placeholder="Name" withAsterisk />
-                    <TextInput
-                        label="Your job"
-                        placeholder="Your job"
-                        withAsterisk
-                        mt="md"
-                    // {...form.getInputProps('job')}
-                    />
-                    <TextInput
-                        label="Your email"
-                        placeholder="Your email"
-                        withAsterisk
-                        mt="md"
-                    // {...form.getInputProps('email')}
-                    />
-                    <TextInput
-                        label="Your favorite color"
-                        placeholder="Your favorite color"
-                        withAsterisk
-                        mt="md"
-                    // {...form.getInputProps('favoriteColor')}
-                    />
-                    <NumberInput
-                        label="Your age"
-                        placeholder="Your age"
-                        withAsterisk
-                        mt="md"
-                    // {...form.getInputProps('age')}
-                    />
-
-                    <Group style={{ justifyContent: 'flex-end' }} mt="md">
-                        <Button type="submit">Submit</Button>
-                    </Group>
+                    <FormWrapper>
+                        <Form />
+                    </FormWrapper>
                 </Box>
             </Modal >
 

@@ -1,4 +1,5 @@
 import React from "react";
+import TestForm from "./testForm"
 
 import Modals from "./modal";
 
@@ -8,3 +9,9 @@ export default {
 
 
 export const Primary = (args) => <Modals {...args} />
+
+Primary.args = {
+    Form: TestForm,
+    title: 'Add new Service',
+    size: 'lg'
+}

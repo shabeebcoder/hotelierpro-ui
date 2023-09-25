@@ -82526,10 +82526,11 @@ var BookingForm = function (props) {
 var css_248z = "";
 styleInject(css_248z);
 
-function Modals() {
+function Modals(props) {
     var _a = useDisclosure(false), opened = _a[0], _b = _a[1], open = _b.open, close = _b.close;
+    var size = props.size;
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
-        React__default["default"].createElement(Modal, { opened: opened, onClose: close, size: "500%", title: "Add New Guest", className: 'hp-modal' },
+        React__default["default"].createElement(Modal, { opened: opened, onClose: close, size: size || 'md', title: "Add New Guest", className: 'hp-modal' },
             React__default["default"].createElement(Box, { component: "form", mx: "auto" },
                 React__default["default"].createElement(TextInput, { label: "Name", placeholder: "Name", withAsterisk: true }),
                 React__default["default"].createElement(TextInput, { label: "Your job", placeholder: "Your job", withAsterisk: true, mt: "md" }),

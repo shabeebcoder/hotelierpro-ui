@@ -3,12 +3,13 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal, Button, TextInput, Box, Checkbox, Group, NumberInput } from '@mantine/core';
 import "./styles.css";
 import AddServiceForm from "./../Forms/services/addservice"
-function Modals() {
+function Modals(props) {
     const [opened, { open, close }] = useDisclosure(false);
+    const { size } = props;
 
     return (
         <>
-            <Modal opened={opened} onClose={close} size="500%" title="Add New Guest" className='hp-modal'>
+            <Modal opened={opened} onClose={close} size={size || 'md'} title="Add New Guest" className='hp-modal'>
                 <Box component="form" mx="auto">
                     <TextInput label="Name" placeholder="Name" withAsterisk />
                     <TextInput
@@ -40,7 +41,7 @@ function Modals() {
                     // {...form.getInputProps('age')}
                     />
 
-                    <Group justify="flex-end" mt="md">
+                    <Group style={{ justifyContent: 'flex-end' }} mt="md">
                         <Button type="submit">Submit</Button>
                     </Group>
                 </Box>

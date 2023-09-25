@@ -1,6 +1,6 @@
 {
     "name": "hotelier-lib",
-    "version": "2.2.5",
+    "version": "2.2.6",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "files": [

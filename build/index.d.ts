@@ -11,4 +11,5 @@ import { SideBar } from "./NavigationSideBar";
 import { TopbarNavigation } from "./NavigationTopBar";
 import { Calander } from "./calander";
 import { BookingForm } from "./Forms";
-export { Button, DLS, SuccessAlert, Login, Register, RoomTypesForm, Rooms, Tables, RoomList, Tabs, SideBar, TopbarNavigation, Calander, BookingForm };
+import { Modals } from "./modals";
+export { Button, DLS, SuccessAlert, Login, Register, RoomTypesForm, Rooms, Tables, RoomList, Tabs, SideBar, TopbarNavigation, Calander, BookingForm, Modals };

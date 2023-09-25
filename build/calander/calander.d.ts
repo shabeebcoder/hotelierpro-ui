@@ -5,6 +5,7 @@ interface Prop {
     handleNewBookingButton: any;
     roomList: any[];
     roomTypeList: any[];
+    bookingData: any[];
 }
 export default function Calander(props: Prop): React.JSX.Element;
 export {};

@@ -11,6 +11,7 @@ import { SideBar } from "./NavigationSideBar"
 import { TopbarNavigation } from "./NavigationTopBar";
 import { Calander } from "./calander"
 import { BookingForm } from "./Forms"
+import { Modals } from "./modals"
 
 
 export {
@@ -27,5 +28,6 @@ export {
     SideBar,
     TopbarNavigation,
     Calander,
-    BookingForm
+    BookingForm,
+    Modals
 };

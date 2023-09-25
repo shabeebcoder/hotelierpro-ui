@@ -15,7 +15,8 @@ interface Prop {
     currentDates: string;
     handleNewBookingButton: any;
     roomList: any[],
-    roomTypeList: any[]
+    roomTypeList: any[],
+    bookingData: any[]
 }
 
 export default function Calander(props: Prop) {

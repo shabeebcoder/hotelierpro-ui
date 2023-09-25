@@ -75570,7 +75570,7 @@ function BookedBar (_a) {
         return (React__default.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", style: { width: 12 }, fill: "none", viewBox: "0 0 24 24", strokeWidth: 1.5, stroke: "currentColor", className: "w-6 h-6" },
             React__default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" })));
     };
-    return (React__default.createElement("div", { className: "booked-info" },
+    return (React__default.createElement("div", { className: "booked-info", onClick: function () { return alert("clicked"); } },
         React__default.createElement("div", { className: "name" }, name),
         React__default.createElement("div", { style: { display: 'flex', alignItems: 'cnter', fontSize: 13 } },
             React__default.createElement(Guest, null),
@@ -75647,7 +75647,7 @@ var Header = function (props) {
 
 function Calander(props) {
     var currentDates = props.currentDates, handleNewBookingButton = props.handleNewBookingButton;
-    var roomList = props.roomList, roomTypeList = props.roomTypeList;
+    var roomList = props.roomList, roomTypeList = props.roomTypeList, bookingData = props.bookingData;
     var _a = React__default.useState(moment(currentDates)), currentDate = _a[0]; _a[1];
     function getYears() {
         var startYear = currentDate.clone().subtract(6, "year");
@@ -75683,13 +75683,22 @@ function Calander(props) {
                         availability: __spreadArray([], getTwoWeeksDate().map(function (date) {
                             return { date: moment(date), availability: 18 };
                         }), true),
-                        bookings: [
-                            {
-                                name: "shabeeb",
-                                checkIn: moment("2023-09-10"),
-                                checkOut: moment("2022-09-14")
-                            }
-                        ]
+                        bookings: bookingData && bookingData.map(function (book) {
+                            var _a;
+                            var newDate = moment(book.checkInDate).format('MM/DD/YYYY');
+                            return {
+                                name: ((_a = book === null || book === void 0 ? void 0 : book.guest) === null || _a === void 0 ? void 0 : _a.fullName) || '',
+                                checkIn: moment(newDate),
+                                checkOut: moment(book === null || book === void 0 ? void 0 : book.checkOutDate)
+                            };
+                        })
+                        //     [
+                        //     {
+                        //         name: "shabeeb",
+                        //         checkIn: moment("2023-09-10"),
+                        //         checkOut: moment("2022-09-14")
+                        //     }
+                        // ]
                     };
                     // }
                     // return

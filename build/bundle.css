@@ -202,6 +202,21 @@
     align-items: end;
 }
 
+.mantine-ronp0n:disabled:hover,
+.mantine-ronp0n:hover {
+    background-color: unset;
+    border-color: transparent;
+    cursor: unset;
+}
+
+.mantine-ronp0n:disabled {
+    background-color: none;
+}
+
+.mantine-ronp0n:disabled {
+    opacity: 1
+}
+
 
 /* .ant-tabs-tab-btn :where(.css-dev-only-do-not-override-190m0jy).ant-tabs .ant-tabs-tab-btn:focus:not(:focus-visible),
  :where(.css-dev-only-do-not-override-190m0jy).ant-tabs .ant-tabs-tab-remove:focus:not(:focus-visible),

@@ -19,7 +19,8 @@ const handleOnClick = (index) => {
 
 export const Primary = (args: any) => <NavTopBar {...args} />;
 Primary.args = {
-  handleOnClick
+  handleOnClick,
+  active: 1
 }
 
 

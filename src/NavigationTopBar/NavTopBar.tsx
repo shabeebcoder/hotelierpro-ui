@@ -3,6 +3,13 @@ import { Tabs, TabsProps, rem } from '@mantine/core';
 import { IconPhoto, IconMessageCircle, IconSettings } from '@tabler/icons-react';
 import "./styles.css";
 
+interface Props {
+  defaultValue: 'rooms' | 'guests' | 'services',
+  handleOnClick?: any
+
+
+}
+
 function StyledTabs(props: TabsProps) {
   return (
     <Tabs
@@ -60,8 +67,8 @@ function StyledTabs(props: TabsProps) {
   );
 }
 
-export default function TopbarNavigation(props: any) {
-
+export default function TopbarNavigation(props: Props) {
+  const { defaultValue, handleOnClick } = props;
   const RightIcon = () => {
 
     return <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -70,17 +77,17 @@ export default function TopbarNavigation(props: any) {
   }
 
 
-  const { handleOnClick } = props;
+
   return (
-    <StyledTabs className='navigationTopBar'>
+    <StyledTabs value={defaultValue || 'rooms'} className='navigationTopBar'>
       <Tabs.List>
-        <Tabs.Tab onClick={() => handleOnClick(0)} value="settings" >
+        <Tabs.Tab onClick={() => handleOnClick(0)} value="rooms" >
           Rooms
         </Tabs.Tab>
-        <Tabs.Tab onClick={() => handleOnClick(1)} value="messages" >
-          Clients
+        <Tabs.Tab onClick={() => handleOnClick(1)} value="guests" >
+          Guests
         </Tabs.Tab>
-        <Tabs.Tab onClick={() => handleOnClick(2)} value="gallery" >
+        <Tabs.Tab onClick={() => handleOnClick(2)} value="services" >
           Services
         </Tabs.Tab>
       </Tabs.List>

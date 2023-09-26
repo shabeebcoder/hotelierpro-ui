@@ -71307,13 +71307,14 @@ var css_248z$5 = "";
 styleInject(css_248z$5);
 
 function Tabs(props) {
-    var _a = props.panels, panels = _a === void 0 ? [] : _a, _b = props.tabs, tabs = _b === void 0 ? [] : _b, defaultValue = props.defaultValue, handleOnClick = props.handleOnClick; props.btHandleOnClick; var buttonText = props.buttonText, buttonIcon = props.buttonIcon; props.addRooms;
+    var _a = props.panels, panels = _a === void 0 ? [] : _a, _b = props.tabs, tabs = _b === void 0 ? [] : _b, defaultValue = props.defaultValue, handleOnClick = props.handleOnClick, btHandleOnClick = props.btHandleOnClick, buttonText = props.buttonText, buttonIcon = props.buttonIcon; props.addRooms;
     return (React__default["default"].createElement(Tabs$1, { color: "green", defaultValue: defaultValue, className: 'hp-tab' },
-        React__default["default"].createElement(Tabs$1.List, null,
-            tabs.map(function (row) { return React__default["default"].createElement(Tabs$1.Tab, { onClick: function () { return handleOnClick(row); }, value: row.value }, row.label); }),
-            ",",
-            React__default["default"].createElement(Tabs$1.Tab, { value: "account", ml: "auto" },
-                React__default["default"].createElement(Button$1, { className: "hpTabActionButton", type: 'hPprimary', buttonIcon: buttonIcon || '' }, buttonText))),
+        React__default["default"].createElement("div", { style: { display: 'flex', justifyContent: 'space-between', } },
+            React__default["default"].createElement(Tabs$1.List, null,
+                tabs.map(function (row) { return React__default["default"].createElement(Tabs$1.Tab, { onClick: function () { return handleOnClick(row); }, value: row.value }, row.label); }),
+                ","),
+            React__default["default"].createElement("div", { style: { alignSelf: 'flex-end' } },
+                React__default["default"].createElement(Button$1, { className: "hpTabActionButton", onClick: btHandleOnClick, type: 'hPprimary', buttonIcon: buttonIcon || '' }, buttonText))),
         panels.map(function (_a) {
             var tabId = _a.tabId, panel = _a.panel;
             return React__default["default"].createElement(Tabs$1.Panel, { value: tabId, pt: "xs" }, panel);
@@ -82526,23 +82527,13 @@ var BookingForm = function (props) {
 var css_248z = "";
 styleInject(css_248z);
 
-var AddNewService = function (props) { return (React__default["default"].createElement(React__default["default"].Fragment, null,
+var ServiceCategory = function (props) { return (React__default["default"].createElement(React__default["default"].Fragment, null,
     React__default["default"].createElement(Grid, { className: 'form-item' },
         React__default["default"].createElement(Grid.Col, { span: 5 },
-            React__default["default"].createElement("label", null, "Service Name")),
+            React__default["default"].createElement("label", null, "Category Name")),
         React__default["default"].createElement(Grid.Col, { span: 7 },
             React__default["default"].createElement(Input.Wrapper, { size: 'sm' },
                 React__default["default"].createElement(Input, null))),
-        React__default["default"].createElement(Grid.Col, { span: 5 },
-            React__default["default"].createElement("label", null, "Price")),
-        React__default["default"].createElement(Grid.Col, { span: 7 },
-            React__default["default"].createElement(Input.Wrapper, { size: 'sm' },
-                React__default["default"].createElement(Input, null))),
-        React__default["default"].createElement(Grid.Col, { span: 5 },
-            React__default["default"].createElement("label", null, "Service Category")),
-        React__default["default"].createElement(Grid.Col, { span: 7 },
-            React__default["default"].createElement("div", null,
-                React__default["default"].createElement(Select, { data: ['React', 'Angular', 'Vue', 'Svelte'] }))),
         React__default["default"].createElement(Grid.Col, { span: 5 },
             React__default["default"].createElement("div", null,
                 React__default["default"].createElement(Button$1, { type: 'primary' }, "Add"),
@@ -82560,7 +82551,7 @@ function Modals(props) {
         React__default["default"].createElement(Modal, { opened: opened, onClose: close, size: size || 'md', title: title, className: 'hp-modal' },
             React__default["default"].createElement(Box, { component: "form", mx: "auto" },
                 React__default["default"].createElement(FormWrapper, null,
-                    React__default["default"].createElement(AddNewService, { handleSubmit: handleSubmit })))),
+                    React__default["default"].createElement(ServiceCategory, { handleSubmit: handleSubmit })))),
         React__default["default"].createElement(Button, { onClick: open }, "Open modal")));
 }
 

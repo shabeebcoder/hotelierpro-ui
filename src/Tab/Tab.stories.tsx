@@ -34,7 +34,7 @@ Primary.args = {
     defaultValue: 'gallery',
     handleOnClick: (row) => alert(JSON.stringify(row + '===>here')),
     buttonText: 'Add Rooms',
-    btHandleOnClick: () => alert('hey + ==' + state),
+    btHandleOnClick: () => alert('hey + ==' + 'd'),
     tanleName: state
 }
 

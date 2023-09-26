@@ -2,7 +2,7 @@ import React from 'react';
 import { useDisclosure } from '@mantine/hooks';
 import { Modal, Button, TextInput, Box, Checkbox, Group, NumberInput } from '@mantine/core';
 import "./styles.css";
-import TestForm, { AddNewService } from "./testForm"
+import TestForm, { AddNewService, AddCategory, AddRoomType, AddRooms, ServiceCategory } from "./testForm"
 import AddServiceForm from "./../Forms/services/addservice"
 
 function Modals(props: any) {
@@ -21,7 +21,7 @@ function Modals(props: any) {
             <Modal opened={opened} onClose={close} size={size || 'md'} title={title} className='hp-modal'>
                 <Box component="form" mx="auto">
                     <FormWrapper>
-                        <AddNewService handleSubmit={handleSubmit} />
+                        <ServiceCategory handleSubmit={handleSubmit} />
                     </FormWrapper>
                 </Box>
             </Modal >

@@ -82499,9 +82499,32 @@ var BookingForm = function (props) {
 var css_248z = "";
 styleInject(css_248z);
 
+var AddNewService = function (props) { return (React__default.createElement(React__default.Fragment, null,
+    React__default.createElement(Grid, { className: 'form-item' },
+        React__default.createElement(Grid.Col, { span: 5 },
+            React__default.createElement("label", null, "Service Name")),
+        React__default.createElement(Grid.Col, { span: 7 },
+            React__default.createElement(Input.Wrapper, { size: 'sm' },
+                React__default.createElement(Input, null))),
+        React__default.createElement(Grid.Col, { span: 5 },
+            React__default.createElement("label", null, "Price")),
+        React__default.createElement(Grid.Col, { span: 7 },
+            React__default.createElement(Input.Wrapper, { size: 'sm' },
+                React__default.createElement(Input, null))),
+        React__default.createElement(Grid.Col, { span: 5 },
+            React__default.createElement("label", null, "Service Category")),
+        React__default.createElement(Grid.Col, { span: 7 },
+            React__default.createElement("div", null,
+                React__default.createElement(Select, { data: ['React', 'Angular', 'Vue', 'Svelte'] }))),
+        React__default.createElement(Grid.Col, { span: 5 },
+            React__default.createElement("div", null,
+                React__default.createElement(Button$1, { type: 'primary' }, "Add"),
+                "\u00A0",
+                React__default.createElement(Button$1, { htmlType: 'submit' }, "Cancel")))))); };
+
 function Modals(props) {
     var _a = useDisclosure(false), opened = _a[0], _b = _a[1], open = _b.open, close = _b.close;
-    var size = props.size, title = props.title, Form = props.Form; props.type;
+    var size = props.size, title = props.title; props.Form; props.type; var handleSubmit = props.handleSubmit;
     var FormWrapper = function (_a) {
         var children = _a.children;
         return React__default.createElement("div", { className: 'formWrapper' }, children);
@@ -82510,7 +82533,7 @@ function Modals(props) {
         React__default.createElement(Modal, { opened: opened, onClose: close, size: size || 'md', title: title, className: 'hp-modal' },
             React__default.createElement(Box, { component: "form", mx: "auto" },
                 React__default.createElement(FormWrapper, null,
-                    React__default.createElement(Form, null)))),
+                    React__default.createElement(AddNewService, { handleSubmit: handleSubmit })))),
         React__default.createElement(Button, { onClick: open }, "Open modal")));
 }
 

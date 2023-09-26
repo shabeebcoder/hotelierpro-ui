@@ -148,5 +148,136 @@ const AddNewService = (props) => (<>
 
 </>)
 
+const AddCategory = (props) => (<>
+    <Grid className='form-item' >
+        <Grid.Col span={5}>
+            <label>Category Name</label>
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+
+        </Grid.Col>
+
+
+        <Grid.Col span={5}>
+            <div>
+                <Button type='primary'>Add</Button>&nbsp;
+                <Button htmlType='submit'>Cancel</Button>
+            </div>
+        </Grid.Col>
+
+    </Grid>
+
+</>)
+const AddRoomType = (props) => (<>
+    <Grid className='form-item' >
+        <Grid.Col span={5}>
+            <label>Name</label>
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+
+        </Grid.Col>
+        <Grid.Col span={5}>
+            <label>Max Persons</label>
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+
+        </Grid.Col>
+        <Grid.Col span={5}>
+            <label>Price (Regular)</label>
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+
+        </Grid.Col>
+        <Grid.Col span={5}>
+            <label>Price (Single)</label>
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+
+        </Grid.Col>
+
+
+        <Grid.Col span={5}>
+            <div>
+                <Button type='primary'>Add</Button>&nbsp;
+                <Button htmlType='submit'>Cancel</Button>
+            </div>
+        </Grid.Col>
+
+    </Grid>
+
+</>);
+
+const AddRooms = (props) => (<>
+    <Grid className='form-item' >
+        <Grid.Col span={5}>
+            <label>Room Type</label>
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+
+        </Grid.Col>
+        <Grid.Col span={5}>
+            <label>Number of rooms</label>
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+
+        </Grid.Col>
+
+
+
+        <Grid.Col span={5}>
+            <div>
+                <Button type='primary'>Add</Button>&nbsp;
+                <Button htmlType='submit'>Cancel</Button>
+            </div>
+        </Grid.Col>
+
+    </Grid>
+
+</>);
+
+const ServiceCategory = (props) => (<>
+    <Grid className='form-item' >
+        <Grid.Col span={5}>
+            <label>Category Name</label>
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+
+        </Grid.Col>
+
+        <Grid.Col span={5}>
+            <div>
+                <Button type='primary'>Add</Button>&nbsp;
+                <Button htmlType='submit'>Cancel</Button>
+            </div>
+        </Grid.Col>
+
+    </Grid>
+
+</>)
+
 export default AddNewGuest;
-export { AddNewService }
+export { AddNewService, AddCategory, AddRoomType, AddRooms, ServiceCategory }

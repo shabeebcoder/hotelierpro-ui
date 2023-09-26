@@ -37,14 +37,18 @@ export default function Tabs(props: Props) {
 
     return (
         <Tab color="green" defaultValue={defaultValue} className='hp-tab' >
-            <Tab.List>
-                {
-                    tabs.map((row) => <Tab.Tab onClick={() => handleOnClick(row)} value={row.value} >{row.label}</Tab.Tab>)
-                },
-                <Tab.Tab value="account" ml="auto">
-                    <Button className="hpTabActionButton" type='hPprimary' buttonIcon={buttonIcon || ''} >{buttonText}</Button>
-                </Tab.Tab>
-            </Tab.List>
+            <div style={{ display: 'flex', justifyContent: 'space-between', }}>
+
+                <Tab.List>
+                    {
+                        tabs.map((row) => <Tab.Tab onClick={() => handleOnClick(row)} value={row.value} >{row.label}</Tab.Tab>)
+                    },
+
+                </Tab.List>
+                <div style={{ alignSelf: 'flex-end' }} >
+                    <Button className="hpTabActionButton" onClick={btHandleOnClick} type='hPprimary' buttonIcon={buttonIcon || ''} >{buttonText}</Button>
+                </div>
+            </div>
             {
                 panels.map(({ tabId, panel }) => <Tab.Panel value={tabId} pt="xs">
                     {panel}

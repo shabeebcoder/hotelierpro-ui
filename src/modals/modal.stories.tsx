@@ -14,5 +14,6 @@ Primary.args = {
     Form: TestForm,
     title: 'Add new Service',
     size: 'lg',
+    type: 'addCategory',
     handleSubmit: () => alert(JSON.stringify('da'))
 }

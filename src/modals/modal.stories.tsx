@@ -13,5 +13,6 @@ export const Primary = (args) => <Modals {...args} />
 Primary.args = {
     Form: TestForm,
     title: 'Add new Service',
-    size: 'lg'
+    size: 'lg',
+    handleSubmit: () => alert(JSON.stringify('da'))
 }

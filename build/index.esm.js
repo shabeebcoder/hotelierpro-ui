@@ -82501,17 +82501,16 @@ styleInject(css_248z);
 
 function Modals(props) {
     var _a = useDisclosure(false), opened = _a[0], _b = _a[1], open = _b.open, close = _b.close;
-    var size = props.size;
+    var size = props.size, title = props.title, Form = props.Form; props.type;
+    var FormWrapper = function (_a) {
+        var children = _a.children;
+        return React__default.createElement("div", { className: 'formWrapper' }, children);
+    };
     return (React__default.createElement(React__default.Fragment, null,
-        React__default.createElement(Modal, { opened: opened, onClose: close, size: size || 'md', title: "Add New Guest", className: 'hp-modal' },
+        React__default.createElement(Modal, { opened: opened, onClose: close, size: size || 'md', title: title, className: 'hp-modal' },
             React__default.createElement(Box, { component: "form", mx: "auto" },
-                React__default.createElement(TextInput, { label: "Name", placeholder: "Name", withAsterisk: true }),
-                React__default.createElement(TextInput, { label: "Your job", placeholder: "Your job", withAsterisk: true, mt: "md" }),
-                React__default.createElement(TextInput, { label: "Your email", placeholder: "Your email", withAsterisk: true, mt: "md" }),
-                React__default.createElement(TextInput, { label: "Your favorite color", placeholder: "Your favorite color", withAsterisk: true, mt: "md" }),
-                React__default.createElement(NumberInput, { label: "Your age", placeholder: "Your age", withAsterisk: true, mt: "md" }),
-                React__default.createElement(Group, { style: { justifyContent: 'flex-end' }, mt: "md" },
-                    React__default.createElement(Button, { type: "submit" }, "Submit")))),
+                React__default.createElement(FormWrapper, null,
+                    React__default.createElement(Form, null)))),
         React__default.createElement(Button, { onClick: open }, "Open modal")));
 }
 

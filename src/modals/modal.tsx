@@ -2,11 +2,12 @@ import React from 'react';
 import { useDisclosure } from '@mantine/hooks';
 import { Modal, Button, TextInput, Box, Checkbox, Group, NumberInput } from '@mantine/core';
 import "./styles.css";
+import TestForm, { AddNewService } from "./testForm"
 import AddServiceForm from "./../Forms/services/addservice"
 
-function Modals(props) {
+function Modals(props: any) {
     const [opened, { open, close }] = useDisclosure(false);
-    const { size, title, Form, type } = props;
+    const { size, title, Form, type, handleSubmit } = props;
 
 
     const FormWrapper = ({ children }) => {
@@ -20,7 +21,7 @@ function Modals(props) {
             <Modal opened={opened} onClose={close} size={size || 'md'} title={title} className='hp-modal'>
                 <Box component="form" mx="auto">
                     <FormWrapper>
-                        <Form />
+                        <AddNewService handleSubmit={handleSubmit} />
                     </FormWrapper>
                 </Box>
             </Modal >

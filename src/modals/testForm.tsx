@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, Checkbox, Form } from 'antd';
-import { Input, TextInput } from '@mantine/core';
+import { Checkbox, Form } from 'antd';
+import { Input, TextInput, Textarea, Grid, Select } from '@mantine/core';
+import { Button } from "./../Buttons"
 
 const onFinish = (values: any) => {
     console.log('Success:', values);
@@ -16,81 +17,136 @@ type FieldType = {
     remember?: string;
 };
 
-const App = () => (<>
+const AddNewGuest = (props) => (<>
+    <Grid className='form-item' >
+        <Grid.Col span={5}>
+            <label>Company ID</label>
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
 
-    <div className='form-item'>
-        <label>First Name</label>
-        <Input.Wrapper size='sm' >
-            <Input />
-        </Input.Wrapper>
-    </div>
-    <div className='form-item'>
-        <label>Company ID</label>
-        <Input.Wrapper size='sm' >
-            <Input />
-        </Input.Wrapper>
-    </div>
-    <div className='form-item'>
-        <label>Bank</label>
-        <Input.Wrapper size='sm' >
-            <Input />
-        </Input.Wrapper>
-    </div>
-    <div className='form-item'>
-        <label>Account No.</label>
-        <Input.Wrapper size='sm' >
-            <Input />
-        </Input.Wrapper>
-    </div>
-    <div className='form-item'>
-        <label>Address</label>
-        <Input.Wrapper size='sm' >
-            <Input />
-        </Input.Wrapper>
-    </div>
+        </Grid.Col>
 
+        <Grid.Col span={5}>
+            <label>Bank</label>
+
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+        </Grid.Col>
+        <Grid.Col span={5}>
+            <label>Account No.</label>
+
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+
+        </Grid.Col>
+        <Grid.Col span={5}>
+            <label>Email</label>
+
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+        </Grid.Col>
+        <Grid.Col span={5}>
+            <label>Phone No</label>
+
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+        </Grid.Col>
+        <Grid.Col span={5}>
+            <label>Address</label>
+
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+        </Grid.Col>
+        <Grid.Col span={5}>
+            <label>Contact Person</label>
+
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+        </Grid.Col>
+        <Grid.Col span={5}>
+            <label>Notes</label>
+
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Textarea
+                rows={5}
+            />
+        </Grid.Col>
+        <Grid.Col span={5}></Grid.Col>
+        <Grid.Col span={7}> <div>
+            <Button type='primary'>Add</Button>&nbsp;
+            <Button htmlType='submit'>Cancel</Button>
+        </div></Grid.Col>
+    </Grid>
 </>
-
-    // <Form
-    //     name="basic"
-    //     labelCol={{ span: 8 }}
-    //     wrapperCol={{ span: 16 }}
-    //     style={{ maxWidth: 600 }}
-    //     initialValues={{ remember: true }}
-    //     onFinish={onFinish}
-    //     onFinishFailed={onFinishFailed}
-    //     autoComplete="off"
-    // >
-    //     <Form.Item<FieldType>
-    //         label="Username"
-    //         name="username"
-    //         rules={[{ required: true, message: 'Please input your username!' }]}
-    //     >
-    //         <Input />
-    //     </Form.Item>
-
-    //     <Form.Item<FieldType>
-    //         label="Password"
-    //         name="password"
-    //         rules={[{ required: true, message: 'Please input your password!' }]}
-    //     >
-    //         <Input.Password />
-    //     </Form.Item>
-
-    //     <Form.Item<FieldType>
-    //         name="remember"
-    //         valuePropName="checked"
-    //         wrapperCol={{ offset: 8, span: 16 }}
-    //     >
-    //         <Checkbox>Remember me</Checkbox>
-    //     </Form.Item>
-
-    //     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-    //         <Button type="primary" htmlType="submit">
-    //             Submit
-    //         </Button>
-    //     </Form.Item>
-    // </Form>
 );
 
-export default App;
+
+const AddNewService = (props) => (<>
+    <Grid className='form-item' >
+        <Grid.Col span={5}>
+            <label>Service Name</label>
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+
+        </Grid.Col>
+
+        <Grid.Col span={5}>
+            <label>Price</label>
+
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <Input.Wrapper size='sm' >
+                <Input />
+            </Input.Wrapper>
+        </Grid.Col>
+        <Grid.Col span={5}>
+            <label>Service Category</label>
+
+        </Grid.Col>
+        <Grid.Col span={7}>
+            <div>
+
+                <Select
+
+                    data={['React', 'Angular', 'Vue', 'Svelte']}
+                />
+            </div>
+        </Grid.Col>
+        <Grid.Col span={5}>
+            <div>
+                <Button type='primary'>Add</Button>&nbsp;
+                <Button htmlType='submit'>Cancel</Button>
+            </div>
+        </Grid.Col>
+
+    </Grid>
+
+</>)
+
+export default AddNewGuest;
+export { AddNewService }

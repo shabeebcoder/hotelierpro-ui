@@ -5,6 +5,7 @@ import "./styles.css";
 import { Button } from '../Buttons/';
 import { useMemo, useState } from 'react';
 import { Checkbox, Divider, Tabs as AntdTabs } from 'antd';
+import { Modals as FormModal } from "./../modals"
 
 type tab = {
     value: string;
@@ -46,7 +47,14 @@ export default function Tabs(props: Props) {
 
                 </Tab.List>
                 <div style={{ alignSelf: 'flex-end' }} >
-                    <Button className="hpTabActionButton" onClick={btHandleOnClick} type='hPprimary' buttonIcon={buttonIcon || ''} >{buttonText}</Button>
+                    {/* <Button className="hpTabActionButton" onClick={btHandleOnClick} type='hPprimary' buttonIcon={buttonIcon || ''} >{buttonText}</Button> */}
+                    <FormModal
+                        title='Add new Service'
+                        size='lg'
+                        type='addCategory'
+                        handleSubmit={() => alert(JSON.stringify('da'))}
+                        buttonTitle='Add new room'
+                    />
                 </div>
             </div>
             {

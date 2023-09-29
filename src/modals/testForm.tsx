@@ -94,10 +94,10 @@ const AddNewGuest = (props) => (<>
             />
         </Grid.Col>
         <Grid.Col span={5}></Grid.Col>
-        <Grid.Col span={7}> <div>
+        {/* <Grid.Col span={7}> <div>
             <Button type='primary'>Add</Button>&nbsp;
             <Button htmlType='submit'>Cancel</Button>
-        </div></Grid.Col>
+        </div></Grid.Col> */}
     </Grid>
 </>
 );
@@ -161,12 +161,12 @@ const AddCategory = (props) => (<>
         </Grid.Col>
 
 
-        <Grid.Col span={5}>
+        {/* <Grid.Col span={5}>
             <div>
                 <Button type='primary'>Add</Button>&nbsp;
                 <Button htmlType='submit'>Cancel</Button>
             </div>
-        </Grid.Col>
+        </Grid.Col> */}
 
     </Grid>
 
@@ -245,12 +245,12 @@ const AddRooms = (props) => (<>
 
 
 
-        <Grid.Col span={5}>
+        {/* <Grid.Col span={5}>
             <div>
                 <Button type='primary'>Add</Button>&nbsp;
                 <Button htmlType='submit'>Cancel</Button>
             </div>
-        </Grid.Col>
+        </Grid.Col> */}
 
     </Grid>
 
@@ -268,16 +268,16 @@ const ServiceCategory = (props) => (<>
 
         </Grid.Col>
 
-        <Grid.Col span={5}>
+        {/* <Grid.Col span={5}>
             <div>
-                <Button type='primary'>Add</Button>&nbsp;
+                <Button type='primary' onClick={props.props}>Add</Button>&nbsp;
                 <Button htmlType='submit'>Cancel</Button>
             </div>
-        </Grid.Col>
+        </Grid.Col> */}
 
     </Grid>
 
 </>)
 
 export default AddNewGuest;
-export { AddNewService, AddCategory, AddRoomType, AddRooms, ServiceCategory }
+export { AddNewService, AddCategory, AddRoomType, AddRooms, ServiceCategory, AddNewGuest }

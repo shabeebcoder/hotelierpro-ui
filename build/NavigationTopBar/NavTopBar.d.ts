@@ -1,3 +1,8 @@
 import React from 'react';
 import "./styles.css";
-export default function TopbarNavigation(props: any): React.JSX.Element;
+interface Props {
+    defaultValue: 'rooms' | 'guests' | 'services';
+    handleOnClick?: any;
+}
+export default function TopbarNavigation(props: Props): React.JSX.Element;
+export {};

@@ -29,10 +29,13 @@ interface ButtonProps {
     buttonIcon?: any,
     btHandleOnClick: any
     buttonText: string
+    formName?: string
+    modalTitle?: string
+    modalSize?: string
 }
 
 export default function Tabs(props: Props) {
-    const { panels = [], tabs = [], defaultValue, handleOnClick, btHandleOnClick, buttonText, buttonIcon, addRooms } = props;
+    const { panels = [], tabs = [], defaultValue, handleOnClick, btHandleOnClick, buttonText, buttonIcon, addRooms, formName, modalTitle, modalSize } = props;
 
 
 
@@ -49,11 +52,11 @@ export default function Tabs(props: Props) {
                 <div style={{ alignSelf: 'flex-end' }} >
                     {/* <Button className="hpTabActionButton" onClick={btHandleOnClick} type='hPprimary' buttonIcon={buttonIcon || ''} >{buttonText}</Button> */}
                     <FormModal
-                        title='Add new Service'
-                        size='lg'
-                        type='addCategory'
-                        handleSubmit={() => alert(JSON.stringify('da'))}
-                        buttonTitle='Add new room'
+                        title={modalTitle}
+                        size={modalSize || 'lg'}
+                        formName={formName}
+                        handleSubmit={btHandleOnClick}
+                        buttonTitle={'Add new room'}
                     />
                 </div>
             </div>

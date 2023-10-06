@@ -1,16 +1,21 @@
 import React from 'react';
 import { useDisclosure } from '@mantine/hooks';
-import { Modal, Grid, Box, Checkbox, Group, NumberInput } from '@mantine/core';
+import { Modal, Grid, Box, } from '@mantine/core';
 import "./styles.css";
-import TestForm, { AddNewService, AddCategory, AddRoomType, AddRooms, AddNewGuest, ServiceCategory } from "./testForm"
-import AddServiceForm from "./../Forms/services/addservice";
+import { AddNewService, AddCategory, AddRoomType, AddRooms, AddNewGuest, ServiceCategory } from "./testForm"
 import { Button } from "./../Buttons"
+import { useForm } from '@mantine/form';
 
 
 function Modals(props: any) {
     const [opened, { open, close }] = useDisclosure(false);
     const { size, title, Form, type, handleSubmit, children, buttonTitle, formName } = props;
 
+    const form = useForm({
+        initialValues: {
+            type: ''
+        }
+    })
 
     const FormWrapper = ({ children }) => {
         return <div className='formWrapper'>
@@ -18,7 +23,9 @@ function Modals(props: any) {
         </div>
     }
 
-    const getForm = () => {
+    const getForm = (props) => {
+
+
         if (formName == "addServiceCategory") {
 
             return <ServiceCategory handleSubmit={handleSubmit} />
@@ -30,7 +37,7 @@ function Modals(props: any) {
             return <AddRoomType />
         }
         else if (formName == "addNewGuest") {
-            return <AddNewGuest />
+            return <AddNewGuest {...props} />
         } else if (formName == "addCompany") {
             return "Pending"
         }
@@ -40,25 +47,29 @@ function Modals(props: any) {
         return "Form Name Required"
     }
 
+
+
     return (
         <>
-            {/* {'test===>' + tests} */}
+
             <Modal opened={opened} onClose={close} size={size || 'md'} title={title} className='hp-modal'>
                 <Box component="form" mx="auto">
-                    <FormWrapper>
-                        {getForm()}
-                        <Grid>
 
-                            <Grid.Col span={7}> <div>
-                                <Button type='primary'>Add</Button>&nbsp;
-                                <Button htmlType='submit'>Cancel</Button>
-                            </div></Grid.Col>
-                        </Grid>
+                    <FormWrapper>
+                        {getForm({ form })}
+                        {/* <Grid>
+                                <Grid.Col span={7}> <div>
+                                    <Button type='primary' htmlType='submit' >Add</Button>&nbsp;
+                                    <Button >Cancel</Button>
+                                </div>
+                                </Grid.Col>
+                            </Grid> */}
                     </FormWrapper>
+
                 </Box>
             </Modal >
 
-            {/* <Button onClick={open}>Open modal</Button> */}
+
             <Button className="hpTabActionButton" onClick={open} type='hPprimary'  >{buttonTitle}</Button>
 
         </>

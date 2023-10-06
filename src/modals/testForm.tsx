@@ -1,7 +1,8 @@
 import React from 'react';
 import { Checkbox, Form } from 'antd';
-import { Input, TextInput, Textarea, Grid, Select } from '@mantine/core';
+import { Input, TextInput, Textarea, Grid, Select, Radio, Group } from '@mantine/core';
 import { Button } from "./../Buttons"
+import { useForm } from '@mantine/form';
 
 const onFinish = (values: any) => {
     console.log('Success:', values);
@@ -17,91 +18,172 @@ type FieldType = {
     remember?: string;
 };
 
-const AddNewGuest = (props) => (<>
-    <Grid className='form-item' >
-        <Grid.Col span={5}>
-            <label>Company ID</label>
-        </Grid.Col>
-        <Grid.Col span={7}>
-            <Input.Wrapper size='sm' >
-                <Input />
-            </Input.Wrapper>
+// const form = useForm({
+//     initialValues: {}
+// })
 
-        </Grid.Col>
+const AddNewGuest = () => {
 
-        <Grid.Col span={5}>
-            <label>Bank</label>
+    const [guestType, setGuestType] = React.useState('person');
 
-        </Grid.Col>
-        <Grid.Col span={7}>
-            <Input.Wrapper size='sm' >
-                <Input />
-            </Input.Wrapper>
-        </Grid.Col>
-        <Grid.Col span={5}>
-            <label>Account No.</label>
+    const form = useForm({
+        initialValues: {
+            guestType: 'person',
+            companyId: '',
+            bank: '',
+            accountNumber: '',
+            email: '',
+            contactNumber: '',
+            address: '',
+            contactPerson: '',
+            notes: ''
+        }
+    })
 
-        </Grid.Col>
-        <Grid.Col span={7}>
-            <Input.Wrapper size='sm' >
-                <Input />
-            </Input.Wrapper>
 
-        </Grid.Col>
-        <Grid.Col span={5}>
-            <label>Email</label>
+    return (<>
+        <form onSubmit={(e) => {
+            e.preventDefault();
+            form.onSubmit((data) => alert(JSON.stringify(data)))(e)
+            e.stopPropagation();
+        }}>
 
-        </Grid.Col>
-        <Grid.Col span={7}>
-            <Input.Wrapper size='sm' >
-                <Input />
-            </Input.Wrapper>
-        </Grid.Col>
-        <Grid.Col span={5}>
-            <label>Phone No</label>
+            <Grid className='form-item'>
+                <Grid.Col span={5}>
+                    <label>Guest Type</label>
+                </Grid.Col>
+                <Grid.Col span={7}>
+                    <Input.Wrapper size='sm' >
+                        <Radio.Group value={guestType} onChange={setGuestType}  {...form.getInputProps('guestType')}>
+                            <Group>
+                                <Radio label="Person" value="person" />
+                                <Radio label="Company" value="company" />
+                            </Group>
 
-        </Grid.Col>
-        <Grid.Col span={7}>
-            <Input.Wrapper size='sm' >
-                <Input />
-            </Input.Wrapper>
-        </Grid.Col>
-        <Grid.Col span={5}>
-            <label>Address</label>
+                        </Radio.Group>
+                    </Input.Wrapper>
 
-        </Grid.Col>
-        <Grid.Col span={7}>
-            <Input.Wrapper size='sm' >
-                <Input />
-            </Input.Wrapper>
-        </Grid.Col>
-        <Grid.Col span={5}>
-            <label>Contact Person</label>
+                </Grid.Col>
+                <Grid.Col span={5}>
+                    <label>First Name</label>
+                </Grid.Col>
+                <Grid.Col span={7}>
+                    {/* <Input.Wrapper size='sm' > */}
+                    <TextInput   {...form.getInputProps('firstName')} />
+                    {/* </Input.Wrapper> */}
 
-        </Grid.Col>
-        <Grid.Col span={7}>
-            <Input.Wrapper size='sm' >
-                <Input />
-            </Input.Wrapper>
-        </Grid.Col>
-        <Grid.Col span={5}>
-            <label>Notes</label>
+                </Grid.Col>
+                <Grid.Col span={5}>
+                    <label>Middle Name</label>
+                </Grid.Col>
+                <Grid.Col span={7}>
+                    {/* <Input.Wrapper size='sm' > */}
+                    <TextInput   {...form.getInputProps('middleName')} />
+                    {/* </Input.Wrapper> */}
 
-        </Grid.Col>
-        <Grid.Col span={7}>
-            <Textarea
-                rows={5}
-            />
-        </Grid.Col>
-        <Grid.Col span={5}></Grid.Col>
-        {/* <Grid.Col span={7}> <div>
-            <Button type='primary'>Add</Button>&nbsp;
-            <Button htmlType='submit'>Cancel</Button>
-        </div></Grid.Col> */}
-    </Grid>
-</>
-);
+                </Grid.Col>
+                <Grid.Col span={5}>
+                    <label>Last Name</label>
+                </Grid.Col>
+                <Grid.Col span={7}>
+                    {/* <Input.Wrapper size='sm' > */}
+                    <TextInput   {...form.getInputProps('lastName')} />
+                    {/* </Input.Wrapper> */}
 
+                </Grid.Col>
+
+                {
+                    form.values.guestType === "company" && (<>
+                        <Grid.Col span={5}>
+                            <label>Company ID</label>
+                        </Grid.Col>
+                        <Grid.Col span={7}>
+                            {/* <Input.Wrapper size='sm' > */}
+                            <TextInput   {...form.getInputProps('companyId')} />
+                            {/* </Input.Wrapper> */}
+
+                        </Grid.Col>
+
+                        <Grid.Col span={5}>
+                            <label>Bank</label>
+
+                        </Grid.Col>
+                        <Grid.Col span={7}>
+                            <Input.Wrapper size='sm' >
+                                <Input  {...form.getInputProps('bank')} />
+                            </Input.Wrapper>
+                        </Grid.Col>
+                        <Grid.Col span={5}>
+                            <label>Account No.</label>
+
+                        </Grid.Col>
+                        <Grid.Col span={7}>
+                            <Input.Wrapper size='sm' >
+                                <Input {...form.getInputProps('accountNumber')} />
+                            </Input.Wrapper>
+
+                        </Grid.Col>
+                    </>)
+                }
+
+                <Grid.Col span={5}>
+                    <label>Email</label>
+
+                </Grid.Col>
+                <Grid.Col span={7}>
+                    <Input.Wrapper size='sm' >
+                        <Input {...form.getInputProps('email')} />
+                    </Input.Wrapper>
+                </Grid.Col>
+                <Grid.Col span={5}>
+                    <label>Phone No</label>
+
+                </Grid.Col>
+                <Grid.Col span={7}>
+                    <Input.Wrapper size='sm' >
+                        <Input {...form.getInputProps('contactNumber')} />
+                    </Input.Wrapper>
+                </Grid.Col>
+                <Grid.Col span={5}>
+                    <label>Address</label>
+
+                </Grid.Col>
+                <Grid.Col span={7}>
+                    <Input.Wrapper size='sm' >
+                        <Input {...form.getInputProps('address')} />
+                    </Input.Wrapper>
+                </Grid.Col>
+                <Grid.Col span={5}>
+                    <label>Contact Person</label>
+
+                </Grid.Col>
+                <Grid.Col span={7}>
+                    <Input.Wrapper size='sm' >
+                        <Input {...form.getInputProps('contactPerson')} />
+                    </Input.Wrapper>
+                </Grid.Col>
+                <Grid.Col span={5}>
+                    <label>Notes</label>
+
+                </Grid.Col>
+                <Grid.Col span={7}>
+                    <Textarea
+                        {...form.getInputProps('notes')}
+                        rows={5}
+                    />
+                </Grid.Col>
+                <Grid.Col span={5}></Grid.Col>
+                <Grid.Col span={7}> <div>
+                    <Button type='primary' htmlType='submit' >Add</Button>&nbsp;
+                    <Button >Cancel</Button>
+                </div>
+                </Grid.Col>
+            </Grid>
+        </form >
+
+    </>
+    );
+}
 
 const AddNewService = (props) => (<>
     <Grid className='form-item' >
@@ -279,5 +361,5 @@ const ServiceCategory = (props) => (<>
 
 </>)
 
-export default AddNewGuest;
+// export default AddNewGuest;
 export { AddNewService, AddCategory, AddRoomType, AddRooms, ServiceCategory, AddNewGuest }

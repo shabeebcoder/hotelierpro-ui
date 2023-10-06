@@ -35,7 +35,8 @@ Primary.args = {
     handleOnClick: (row) => alert(JSON.stringify(row + '===>here')),
     buttonText: 'Add Rooms',
     btHandleOnClick: () => alert('hey + ==' + 'd'),
-    tanleName: state
+    tanleName: state,
+    formName: ''
 }
 
 // Primary.arg = {

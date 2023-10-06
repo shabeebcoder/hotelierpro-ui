@@ -7,30 +7,50 @@ import { TextInput, Select } from '@mantine/core';
 import { IconPlus, IconCalendar, IconChevronDown } from "@tabler/icons-react"
 import TextArea from "antd/es/input/TextArea";
 import { DateInput } from '@mantine/dates';
-import { useForm } from '@mantine/form';
+import { useForm, } from '@mantine/form';
+import { Modals } from "../modals";
 
 
 
 const BookingForm = (props: any) => {
     // const [form] = Form.useForm();
     const { onSubmitForm } = props;
+    const [dynamicGuest, setDynamicGuest] = React.useState([])
     const [value, setValue] = useState<number | ''>(0);
-    const handlers = useRef<NumberInputHandlers>();
+    const adult = useRef<NumberInputHandlers>();
+    const child = useRef<NumberInputHandlers>();
     const form = useForm({
         initialValues: {
-            firstName: '',
+
             termsOfService: false,
+            checkInDate: '',
+            checkOutDate: '',
+            duration: '',
+            roomType: '',
+            status: '',
+            adult: 1,
+            child: 0,
+            firstNames: '',
+            email: '',
+            price: 0
         },
         validate: {
-            firstName: (value) => (value.length < 2 ? 'Name must have at least 2 letters' : null),
+
+            checkInDate: (value: any) => (value.length < 2 ? 'Check-in Date required' : null),
+            checkOutDate: (value: any) => (value.length < 2 ? 'Check out Date required' : null),
+            duration: (value: any) => (value.length < 2 ? 'Duration is required' : null),
+            roomType: (value: any) => (value.length < 2 ? 'Please select room type' : null),
+            status: (value: any) => (value.length < 2 ? 'Please select a status' : null),
+            adult: (value: any) => (value == 0 ? 'Adult required' : null),
+            // child: (value: any) => (value.length < 2 ? 'Child field required' : null),
+            // firstName: (value: any) => (value.length < 2 ? 'firstName field required' : null),
+            email: (value: any) => (value.length < 2 ? 'Email field required' : null),
+            price: (value: any) => (value == 0 ? 'Price field required' : null),
+
         },
     });
 
-    // const onSubmitForm = (formData) => {
-    //     alert()
-    //     // formData.preventDefault()
-    //     console.log("f  ", formData)
-    // }
+
 
 
     return (
@@ -104,7 +124,7 @@ const BookingForm = (props: any) => {
 
                             <span className="mantine-InputWrapper-label ">Adult</span>
                             <Group spacing={5}>
-                                <ActionIcon size={42} variant="default" onClick={() => handlers.current.decrement()}>
+                                <ActionIcon size={42} variant="default" onClick={() => adult.current.decrement()}>
                                     –
                                 </ActionIcon>
 
@@ -112,7 +132,7 @@ const BookingForm = (props: any) => {
                                     hideControls
                                     value={value}
                                     onChange={(val) => setValue(val)}
-                                    handlersRef={handlers}
+                                    handlersRef={adult}
                                     max={10}
                                     min={0}
                                     step={2}
@@ -120,7 +140,7 @@ const BookingForm = (props: any) => {
                                     {...form.getInputProps('adult')}
                                 />
 
-                                <ActionIcon size={42} variant="default" onClick={() => handlers.current.increment()}>
+                                <ActionIcon size={42} variant="default" onClick={() => adult.current.increment()}>
                                     +
                                 </ActionIcon>
                             </Group>
@@ -130,7 +150,7 @@ const BookingForm = (props: any) => {
                             <span className="mantine-InputWrapper-label ">Child</span>
                             <Group spacing={5}>
 
-                                <ActionIcon size={42} variant="default" onClick={() => handlers.current.decrement()}>
+                                <ActionIcon size={42} variant="default" onClick={() => child.current.decrement()}>
                                     –
                                 </ActionIcon>
 
@@ -138,7 +158,7 @@ const BookingForm = (props: any) => {
                                     hideControls
                                     value={value}
                                     onChange={(val) => setValue(val)}
-                                    handlersRef={handlers}
+                                    handlersRef={child}
                                     max={10}
                                     min={0}
                                     step={2}
@@ -147,7 +167,7 @@ const BookingForm = (props: any) => {
 
                                 />
 
-                                <ActionIcon size={42} variant="default" onClick={() => handlers.current.increment()}>
+                                <ActionIcon size={42} variant="default" onClick={() => child.current.increment()}>
                                     +
                                 </ActionIcon>
                             </Group>
@@ -168,7 +188,7 @@ const BookingForm = (props: any) => {
                             placeholder="First Name"
                             label="First Name"
                             // withAsterisk
-                            {...form.getInputProps('firstName')}
+                            {...form.getInputProps(`firstName`)}
                         />
 
                     </Grid.Col>
@@ -193,6 +213,45 @@ const BookingForm = (props: any) => {
                         />
 
                     </Grid.Col>
+                    {
+                        dynamicGuest.map((row) => {
+
+                            return (<>
+                                <Grid.Col span={4}  >
+
+                                    <TextInput
+                                        placeholder="First Name"
+                                        label="First Name"
+                                        // withAsterisk
+                                        {...form.getInputProps(`firstName-${row}`)}
+                                    />
+
+                                </Grid.Col>
+                                <Grid.Col span={4}  >
+
+                                    <TextInput
+                                        placeholder="Last Name"
+                                        label="Last Name"
+                                        // withAsterisk
+                                        {...form.getInputProps(`lastName-${row}`)}
+
+                                    />
+
+                                </Grid.Col>
+                                <Grid.Col span={4} >
+
+                                    <TextInput
+                                        placeholder="E-mail"
+                                        label="E-mail"
+                                        // withAsterisk
+                                        {...form.getInputProps(`email-${row}`)}
+                                    />
+
+                                </Grid.Col>
+                            </>)
+                        })
+                    }
+
 
 
                 </Grid>
@@ -203,6 +262,7 @@ const BookingForm = (props: any) => {
                             placeholder="Price"
                             label="Price"
                             // withAsterisk
+                            type="number"
                             {...form.getInputProps('price')}
                         />
                     </Grid.Col>
@@ -217,8 +277,23 @@ const BookingForm = (props: any) => {
                     </Grid.Col>
 
                     <Grid.Col span={4} className="action">
-                        <Button leftIcon={<IconPlus />}>Add Guest</Button>&nbsp;
-                        <Button className="outline" leftIcon={<IconPlus />}>New Guest</Button>
+                        <Button leftIcon={<IconPlus />} onClick={() => {
+                            setDynamicGuest([0])
+                            form.setValues({
+                                [`firstName-${dynamicGuest[0]}`]: '',
+                                [`lastName-${dynamicGuest[0]}`]: '',
+                                [`email-${dynamicGuest[0]}`]: ''
+
+                            })
+                        }}>Add Guest</Button>&nbsp;
+                        <Modals
+                            buttonTitle="New Guest"
+                            formName="addNewGuest"
+                            title="Add New Guest"
+                            size="lg"
+                        />
+                        &nbsp;
+                        {/* <Button className="outline" leftIcon={<IconPlus />}>New Guest</Button> */}
                     </Grid.Col>
                 </Grid>
                 <Grid className="" style={{ marginTop: 20 }}>

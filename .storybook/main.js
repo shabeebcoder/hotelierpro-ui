@@ -7,7 +7,8 @@ module.exports = {
 
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions"
+    "@storybook/addon-interactions",
+    "@storybook/addon-actions/register",
   ],
 
   "framework": "@storybook/react"

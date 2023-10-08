@@ -14,16 +14,15 @@ const onSearch = (value: string) => {
 const filterOption = (input: string, option: { label: string; value: string }) =>
     (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
 
-const WeeklyMonthly = () => <Select
-    showSearch
+const WeeklyMonthly = ({ handleWeeklyMonthly }) => <Select
+
     placeholder="Week"
-    optionFilterProp="children"
-    onChange={onChange}
-    onSearch={onSearch}
-    filterOption={filterOption}
+
+    onChange={handleWeeklyMonthly}
+
     options={[
         {
-            value: 'monthly',
+            value: 'month',
             label: 'Month',
         },
         {
@@ -35,7 +34,9 @@ const WeeklyMonthly = () => <Select
 />
 const Header = (props: any) => {
 
-    const { handleNewBookingButton } = props;
+
+
+    const { handleNewBookingButton, handleWeeklyMonthly } = props;
     return (<div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20 }}>
         <div className="left">
             Booking
@@ -45,7 +46,7 @@ const Header = (props: any) => {
             </div>
         </div>
         <div className="right">
-            <WeeklyMonthly />&nbsp;
+            <WeeklyMonthly handleWeeklyMonthly={handleWeeklyMonthly} />&nbsp;
             <Space>
 
                 <Button type="primary" onClick={handleNewBookingButton} >New Booking</Button>

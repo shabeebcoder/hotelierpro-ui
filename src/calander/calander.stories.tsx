@@ -34,10 +34,39 @@ const categoriesSample = [
 
 const rooomsListSample = [
     {
-        "id": 6,
+        "id": 4,
         "roomName": "room-2",
         "roomType": {
             "id": 9,
+            "name": "single",
+            "maxPersons": 2,
+            "singleUsePrice": "10",
+            "regularUsePrice": "12",
+            "hotel": 22,
+            "published_at": "2023-09-24T17:11:04.519Z",
+            "created_at": "2023-09-24T17:11:04.521Z",
+            "updated_at": "2023-09-24T17:11:04.524Z"
+        },
+        "hotel": {
+            "id": 22,
+            "hotelName": "Yoo hotel",
+            "address": "jbcfwejhf",
+            "hotelWebsite": "www.yoo.com",
+            "contact": "23456789",
+            "country": "UAE",
+            "published_at": "2023-09-08T16:55:38.778Z",
+            "created_at": "2023-09-08T16:55:38.793Z",
+            "updated_at": "2023-09-08T16:55:38.793Z"
+        },
+        "published_at": "2023-09-24T17:11:35.989Z",
+        "created_at": "2023-09-24T17:11:35.991Z",
+        "updated_at": "2023-09-24T17:11:35.994Z"
+    },
+    {
+        "id": 2,
+        "roomName": "room-3",
+        "roomType": {
+            "id": 2,
             "name": "single",
             "maxPersons": 2,
             "singleUsePrice": "10",
@@ -65,9 +94,9 @@ const rooomsListSample = [
 ]
 const bookingsSample = [
     {
-        "id": 5,
+        "id": 3,
         "roomType": {
-            "id": 4,
+            "id": 6,
             "name": "single",
             "maxPersons": 2,
             "singleUsePrice": "10",
@@ -78,7 +107,7 @@ const bookingsSample = [
             "updated_at": "2023-09-08T16:28:00.316Z"
         },
         "room": {
-            "id": 2,
+            "id": 4,
             "roomName": "Room name updated",
             "roomType": 4,
             "hotel": 21,
@@ -90,8 +119,8 @@ const bookingsSample = [
         "numberOfPersons": 2,
         "adults": 2,
         "child": 0,
-        "checkInDate": "2023-09-11T00:00:00.000Z",
-        "checkOutDate": "2023-09-16T00:00:00.000Z",
+        "checkInDate": "2023-10-08T00:00:00.000Z",
+        "checkOutDate": "2023-10-12T00:00:00.000Z",
         "nights": "1",
         "price": "10",
         "discount": 2,
@@ -115,7 +144,7 @@ const bookingsSample = [
         "services": []
     },
     {
-        "id": 6,
+        "id": 9,
         "roomType": {
             "id": 4,
             "name": "single",
@@ -128,7 +157,7 @@ const bookingsSample = [
             "updated_at": "2023-09-08T16:28:00.316Z"
         },
         "room": {
-            "id": 2,
+            "id": 8,
             "roomName": "Room name updated",
             "roomType": 4,
             "hotel": 21,

@@ -193,6 +193,7 @@ body {
     justify-content: center;
     align-items: center;
     border-right: 1px solid #f4f4f5;
+    background-color: white;
 }
 
 .front-desk-page-container .calendar-dates-capacity-room-container .selected-dates-range .date-box .date-day-box {
@@ -357,6 +358,7 @@ body {
     font-weight: 300;
     justify-content: center;
     align-items: flex-start;
+    background-color: white;
     /* margin-top: 10px;
     */
     border-right: 1px solid #f4f4f5;

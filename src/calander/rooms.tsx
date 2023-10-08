@@ -8,10 +8,10 @@ export default function (props) {
 
 
 
-    function hasBooking(bookings = [], date) {
+    function hasBooking(bookings = [], date, roomId) {
         var i;
         for (i = 0; i < bookings.length; i++) {
-            if (bookings[i].checkIn.isSame(date.date)) {
+            if (bookings[i].checkIn.isSame(date.date) && roomId === bookings[i].roomId) {
                 return bookings[i];
             }
         }
@@ -19,14 +19,14 @@ export default function (props) {
         return false;
     }
 
-    function renderRoomBox(date, bookings) {
-        const isBooked = hasBooking(bookings, date);
+    function renderRoomBox({ date, bookings, roomId }) {
+        const isBooked = hasBooking(bookings, date, roomId);
         return (
             <div
                 className="room-box"
-
             >
-                {isBooked ? <BookedBar name={isBooked.name} /> : null}
+                {isBooked ? <BookedBar name={isBooked.roomId} /> : null}
+
             </div>
         );
     }
@@ -34,6 +34,7 @@ export default function (props) {
     return (
         <>
             <div className="room-category-capacity-container">
+
                 {roomCategory.map(
                     ({ categoryName, roomTotalCapacity, roomCurrentCapacity, rooms }) => (
                         <div className="category">
@@ -53,12 +54,12 @@ export default function (props) {
                                     </div>
                                 ))}
                             </div> */}
-                            {rooms.map(({ availability, name, bookings }) => (
+                            {rooms.map(({ availability, name, bookings, id }) => (
                                 <div className="room-row">
                                     <div className="room-name">
                                         <span>{name}</span> <i className="fa-solid fa-ellipsis"></i>
                                     </div>
-                                    {availability.map((date) => renderRoomBox(date, bookings))}
+                                    {availability.map((date) => renderRoomBox({ date, bookings, roomId: id }))}
                                 </div>
                             ))}
                         </div>

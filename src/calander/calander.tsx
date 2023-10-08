@@ -19,11 +19,51 @@ interface Prop {
     bookingData: any[]
 }
 
+interface iRoomType {
+    id: any;
+    name: string;
+    maxPersons: any;
+
+}
+
+interface IBooking {
+    id: any,
+    status: string;
+    numberOfPersons: string;
+    adults: number;
+    child: number;
+    checkInDate: any;
+    checkOutDate: any;
+    nights: string | number;
+    price: any;
+    roomType: iRoomType;
+    guest: any
+    room: any
+
+
+}
+
+interface ICalanderData {
+    roomCategory: any[],
+    currentDate: any;
+    dates: any[]
+}
+interface IRoomCategory {
+    categoryName: string,
+    roomTotalCapacity: any,
+    roomCurrentCapacity?: any,
+    rooms: any
+}
+
 export default function Calander(props: Prop) {
     const { currentDates, handleNewBookingButton } = props;
     const { roomList, roomTypeList, bookingData } = props;
 
     const [currentDate, setCurrentDate] = React.useState(moment(currentDates));
+
+    const handleWeeklyMonthly = (value) => {
+        alert(JSON.stringify(value))
+    }
 
     function getYears() {
         var startYear = currentDate.clone().subtract(6, "year");
@@ -41,7 +81,7 @@ export default function Calander(props: Prop) {
     function getTwoWeeksDate() {
         const startDateOfmonth = currentDate.clone().startOf("month");
         let twoWekksDates = [];
-        for (let i = 0; i <= 25; i++) {
+        for (let i = 0; i <= 30; i++) {
             twoWekksDates.push(startDateOfmonth.clone().add(i, "day"));
         }
 
@@ -52,9 +92,9 @@ export default function Calander(props: Prop) {
 
 
 
-    function getCalendarData() {
+    function getCalendarData(): ICalanderData {
 
-        const payload = roomTypeList.map((category) => {
+        const payload: IRoomCategory[] = roomTypeList.map((category) => {
             return {
                 categoryName: category.name,
                 roomTotalCapacity: [],
@@ -63,47 +103,42 @@ export default function Calander(props: Prop) {
                     console.log("x=> room typ", room.roomType.id)
                     console.log("x=>cat", category.id)
                     return {
-
+                        id: room.id,
                         name: room.roomName,
                         availability: [
                             ...getTwoWeeksDate().map((date) => {
                                 return { date: moment(date), availability: 18 };
                             })
                         ],
-                        bookings: bookingData && bookingData.map((book) => {
+                        bookings: bookingData && bookingData.map((book: IBooking) => {
+                            console.log("book==>", book);
+
                             const newDate = moment(book.checkInDate).format('MM/DD/YYYY');
                             return {
                                 name: book?.guest?.fullName || '',
                                 checkIn: moment(newDate),
-                                checkOut: moment(book?.checkOutDate)
+                                checkOut: moment(book?.checkOutDate),
+                                roomId: book?.room?.id,
+                                bookingId: book.id
+
                             }
-
                         })
-                        //     [
-                        //     {
-                        //         name: "shabeeb",
-                        //         checkIn: moment("2023-09-10"),
-                        //         checkOut: moment("2022-09-14")
-                        //     }
-                        // ]
-
                     }
-                    // }
-                    // return
+
 
                 })
             }
         })
 
-        const data = {
-            years: getYears(),
-            months: getMonths(),
+
+
+        return {
+            // years: getYears(),
+            // months: getMonths(),
             dates: getTwoWeeksDate(),
-            currentDate,
+            currentDate: currentDate,
             roomCategory: payload
         };
-
-        return data;
     }
 
     return (
@@ -117,7 +152,7 @@ export default function Calander(props: Prop) {
 
                 <div className="front-desk-page-container">
                     {/* <YearHeader {...getCalendarData()} /> */}
-                    <Header handleNewBookingButton={handleNewBookingButton} />
+                    <Header handleWeeklyMonthly={handleWeeklyMonthly} handleNewBookingButton={handleNewBookingButton} />
 
                     {/* <MonthsHeader {...getCalendarData()} /> */}
                     <div className="calendar-dates-capacity-room-container">

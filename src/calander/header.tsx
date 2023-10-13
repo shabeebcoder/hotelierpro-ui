@@ -36,13 +36,13 @@ const Header = (props: any) => {
 
 
 
-    const { handleNewBookingButton, handleWeeklyMonthly } = props;
+    const { handleNewBookingButton, handleWeeklyMonthly, monthYearHeader, handleOnClickNext, handleOnClickPrevious } = props;
     return (<div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20 }}>
         <div className="left">
             Booking
             <div>
 
-                <TableOutlined /> &nbsp; 22 Dec, 2022 <LeftOutlined /><RightOutlined />
+                <TableOutlined /> &nbsp; {monthYearHeader} <LeftOutlined onClick={handleOnClickPrevious} /><RightOutlined onClick={handleOnClickNext} />
             </div>
         </div>
         <div className="right">

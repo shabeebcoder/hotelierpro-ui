@@ -157,11 +157,11 @@ const bookingsSample = [
             "updated_at": "2023-09-08T16:28:00.316Z"
         },
         "room": {
-            "id": 8,
+            "id": 4,
             "roomName": "Room name updated",
             "roomType": 4,
             "hotel": 21,
-            "published_at": "2023-09-08T16:30:57.389Z",
+            "published_at": "2023-10-08T16:30:57.389Z",
             "created_at": "2023-09-08T16:30:57.391Z",
             "updated_at": "2023-09-15T12:47:37.275Z"
         },
@@ -169,8 +169,8 @@ const bookingsSample = [
         "numberOfPersons": 2,
         "adults": 2,
         "child": 0,
-        "checkInDate": "2023-09-04T00:00:00.000Z",
-        "checkOutDate": "2023-09-16T00:00:00.000Z",
+        "checkInDate": "2023-11-07T00:00:00.000Z",
+        "checkOutDate": "2023-11-09T00:00:00.000Z",
         "nights": "1",
         "price": "10",
         "discount": 2,

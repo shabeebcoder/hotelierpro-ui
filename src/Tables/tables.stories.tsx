@@ -1,10 +1,12 @@
 import React from "react";
-import Tables from "./tables";
+import Tables, { InvoiceTable } from "./tables";
 import RoomListTable from "./RoomListTable"
 import { Space, Table, Tag, Select } from "antd";
 import type { ColumnsType } from "antd/es/table";
 
+
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import moment from "moment";
 
 export default {
   title: "components/Tables",
@@ -216,10 +218,16 @@ const servicescateGoryData = [
 const invoiceListData = [
   {
     key: "1",
+    id: 1,
     invoiceNumber: '#INV-20230723-2',
     client: 'Donna Morris',
-    date: '07/23/2023',
-    status: [],
+    date: moment('27/07/2023', "DD/MM/YYYY").toString(),
+    status: {
+      options: [{ value: "draft", label: "Draft" },
+      { value: "paid", label: "Paid" },
+      { value: "sent", label: "Sent" },],
+      defaultValue: 'sent'
+    },
     total: '$ 245',
     notes: 'abcdsd'
   },
@@ -296,7 +304,7 @@ export const Guests = (args) => <Tables {...args} />;
 export const Companies = (args) => <Tables {...args} />;
 export const Services = (args) => <Tables {...args} />;
 export const ServiceCategory = (args) => <Tables {...args} />;
-export const InvoiceList = (args) => <Tables {...args} />;
+export const InvoiceList = (args) => <InvoiceTable {...args} />;
 
 RoomList.args = {
   type: 'room',
@@ -333,6 +341,9 @@ InvoiceList.args = {
 
   dataSource: invoiceListData,
   type: 'invoiceList',
+  onDelete: (data) => console.log(data),
+  markAs: (mark, selectedRows) => console.log(mark, selectedRows)
+
 };
 
 companyData

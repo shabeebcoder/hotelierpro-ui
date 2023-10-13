@@ -3,6 +3,7 @@ import { Space, Table, Tag, Select, Input, InputNumber, Form, Button, Checkbox }
 import type { ColumnsType } from "antd/es/table";
 import { EditOutlined, SearchOutlined, DeleteOutlined, SaveOutlined, CloseOutlined, CheckOutlined } from "@ant-design/icons";
 import './table.css';
+import InvoiceTable from "./invoiceTable"
 
 interface DataType {
   key: string;
@@ -1491,7 +1492,11 @@ const Tables: any = (props: Props) => {
               defaultValue="All"
               style={{ width: 120 }}
 
-              options={[{ value: 'lucy', label: 'Lucy' }]}
+              options={[{
+                value: "all", label: "All"
+              }, { value: "draft", label: "Draft" },
+              { value: "paid", label: "Paid" },
+              { value: "sent", label: "Sent" }]}
             />
             <Select
               defaultValue="07/23/2023"
@@ -1504,12 +1509,15 @@ const Tables: any = (props: Props) => {
         </div>
         <div>
           <Space wrap>
-            <Button style={{ backgroundColor: '#3A7C7C' }} type="primary">Delete</Button>
+            <Button disabled={true} style={{ backgroundColor: '#3A7C7C' }} type="primary">Delete</Button>
             <Select
+              disabled={true}
               defaultValue="Mark As"
               style={{ width: 120, borderColor: '#3A7C7C' }}
 
-              options={[{ value: 'lucy', label: 'Lucy' }]}
+              options={[{ value: "draft", label: "Draft" },
+              { value: "paid", label: "Paid" },
+              { value: "sent", label: "Sent" },]}
             />
           </Space>
         </div>
@@ -1543,5 +1551,5 @@ const Tables: any = (props: Props) => {
 };
 
 
-
+export { InvoiceTable }
 export default Tables;

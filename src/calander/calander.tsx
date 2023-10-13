@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 import moment from "moment";
-import YearHeader from "./yearheader";
+// import YearHeader from "./yearheader";
 import MonthsHeader from "./monthsHeader";
 import DatesHeader from "./datesHeader";
 import CategoryCapacityHeader from "./categoryCapacity";
@@ -58,11 +58,28 @@ interface IRoomCategory {
 export default function Calander(props: Prop) {
     const { currentDates, handleNewBookingButton } = props;
     const { roomList, roomTypeList, bookingData } = props;
-
     const [currentDate, setCurrentDate] = React.useState(moment(currentDates));
+    const [monthYearHeader, setmonthYearHeader] = React.useState(moment(currentDates).format("MMMM, YYYY"));
+    // const monthYearHeader = moment(currentDates).format("MMMM, YYYY");
+
+    const handleOnClickPrevious = () => {
+        const previousMonth = moment(currentDate).add(-1, 'months');
+        setCurrentDate(previousMonth);
+        setmonthYearHeader(moment(previousMonth).format("MMMM, YYYY"))
+
+    }
+    const handleOnClickNext = () => {
+        const nextMOnth = moment(currentDate).add(1, 'months');
+        setCurrentDate(nextMOnth);
+        setmonthYearHeader(moment(nextMOnth).format("MMMM, YYYY"))
+
+    }
+
 
     const handleWeeklyMonthly = (value) => {
         alert(JSON.stringify(value))
+        const nextMOnth = moment(currentDate).add(1, 'months');
+        setCurrentDate(nextMOnth);
     }
 
     function getYears() {
@@ -152,7 +169,7 @@ export default function Calander(props: Prop) {
 
                 <div className="front-desk-page-container">
                     {/* <YearHeader {...getCalendarData()} /> */}
-                    <Header handleWeeklyMonthly={handleWeeklyMonthly} handleNewBookingButton={handleNewBookingButton} />
+                    <Header handleOnClickNext={handleOnClickNext} handleOnClickPrevious={handleOnClickPrevious} monthYearHeader={monthYearHeader} handleWeeklyMonthly={handleWeeklyMonthly} handleNewBookingButton={handleNewBookingButton} />
 
                     {/* <MonthsHeader {...getCalendarData()} /> */}
                     <div className="calendar-dates-capacity-room-container">

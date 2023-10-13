@@ -22,13 +22,16 @@ type FieldType = {
 //     initialValues: {}
 // })
 
-const AddNewGuest = () => {
+const AddNewGuest = (props) => {
 
     const [guestType, setGuestType] = React.useState('person');
-
+    const { handleCancel, handleSubmit } = props;
     const form = useForm({
         initialValues: {
             guestType: 'person',
+            firstName: '',
+            middleName: '',
+            lastName: '',
             companyId: '',
             bank: '',
             accountNumber: '',
@@ -37,6 +40,11 @@ const AddNewGuest = () => {
             address: '',
             contactPerson: '',
             notes: ''
+        },
+        validate: {
+            firstName: (value: any) => value.length < 2 ? 'First Name Required' : null,
+            lastName: (value: any) => value.length < 2 ? 'Last Name Required' : null,
+            contactNumber: (value: any) => value.length < 2 ? 'Contact Number Required' : null,
         }
     })
 
@@ -44,7 +52,7 @@ const AddNewGuest = () => {
     return (<>
         <form onSubmit={(e) => {
             e.preventDefault();
-            form.onSubmit((data) => alert(JSON.stringify(data)))(e)
+            form.onSubmit((data) => handleSubmit(data))(e)
             e.stopPropagation();
         }}>
 
@@ -175,7 +183,7 @@ const AddNewGuest = () => {
                 <Grid.Col span={5}></Grid.Col>
                 <Grid.Col span={7}> <div>
                     <Button type='primary' htmlType='submit' >Add</Button>&nbsp;
-                    <Button >Cancel</Button>
+                    <Button onClick={handleCancel} >Cancel</Button>
                 </div>
                 </Grid.Col>
             </Grid>

@@ -14,10 +14,14 @@ export const AddCategory = (args) => <Modals {...args} />
 export const AddRoomType = (args) => <Modals {...args} />
 export const AddRooms = (args) => <Modals {...args} />
 
+const handleSubmit = (data: any) => {
+    alert(JSON.stringify(data))
+}
 AddRooms.args = {
     title: 'Add Rooms',
     buttonTitle: 'Add new room',
     formName: 'addRooms'
+
 
 }
 AddRoomType.args = {
@@ -28,13 +32,16 @@ AddRoomType.args = {
 AddCategory.args = {
     title: 'Add Service Category',
     buttonTitle: 'Add Category',
-    formName: 'addServiceCategory'
+    formName: 'addServiceCategory',
+    size: 'lg',
 
 }
 AddNewGuest.args = {
     title: 'Add New Guest',
     buttonTitle: 'Add New Guest',
-    formName: 'addNewGuest'
+    formName: 'addNewGuest',
+    handleSubmit: handleSubmit,
+    size: 'lg',
 
 }
 NewService.args = {

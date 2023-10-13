@@ -50,6 +50,22 @@ const BookingForm = (props: any) => {
         },
     });
 
+    const handleAddGuest = () => {
+        setDynamicGuest([...dynamicGuest, {
+            firstName: '',
+            lastName: '',
+            email: ''
+        }])
+
+        form.setValues({
+            [`firstName-${dynamicGuest.length}`]: '',
+            [`lastName-${dynamicGuest.length}`]: '',
+            [`email-${dynamicGuest.length}`]: ''
+
+        })
+
+    }
+
 
 
 
@@ -214,7 +230,7 @@ const BookingForm = (props: any) => {
 
                     </Grid.Col>
                     {
-                        dynamicGuest.map((row) => {
+                        dynamicGuest.map((row, index) => {
 
                             return (<>
                                 <Grid.Col span={4}  >
@@ -223,7 +239,7 @@ const BookingForm = (props: any) => {
                                         placeholder="First Name"
                                         label="First Name"
                                         // withAsterisk
-                                        {...form.getInputProps(`firstName-${row}`)}
+                                        {...form.getInputProps(`firstName-${index}`)}
                                     />
 
                                 </Grid.Col>
@@ -233,7 +249,7 @@ const BookingForm = (props: any) => {
                                         placeholder="Last Name"
                                         label="Last Name"
                                         // withAsterisk
-                                        {...form.getInputProps(`lastName-${row}`)}
+                                        {...form.getInputProps(`lastName-${index}`)}
 
                                     />
 
@@ -244,7 +260,7 @@ const BookingForm = (props: any) => {
                                         placeholder="E-mail"
                                         label="E-mail"
                                         // withAsterisk
-                                        {...form.getInputProps(`email-${row}`)}
+                                        {...form.getInputProps(`email-${index}`)}
                                     />
 
                                 </Grid.Col>
@@ -277,15 +293,8 @@ const BookingForm = (props: any) => {
                     </Grid.Col>
 
                     <Grid.Col span={4} className="action">
-                        <Button leftIcon={<IconPlus />} onClick={() => {
-                            setDynamicGuest([0])
-                            form.setValues({
-                                [`firstName-${dynamicGuest[0]}`]: '',
-                                [`lastName-${dynamicGuest[0]}`]: '',
-                                [`email-${dynamicGuest[0]}`]: ''
-
-                            })
-                        }}>Add Guest</Button>&nbsp;
+                        <Button leftIcon={<IconPlus />}
+                            onClick={handleAddGuest}>Add Guest</Button>&nbsp;
                         <Modals
                             buttonTitle="New Guest"
                             formName="addNewGuest"

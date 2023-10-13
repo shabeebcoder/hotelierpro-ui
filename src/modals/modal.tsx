@@ -17,11 +17,14 @@ function Modals(props: any) {
         }
     })
 
+
     const FormWrapper = ({ children }) => {
         return <div className='formWrapper'>
             {children}
         </div>
     }
+
+
 
     const getForm = (props) => {
 
@@ -37,7 +40,7 @@ function Modals(props: any) {
             return <AddRoomType />
         }
         else if (formName == "addNewGuest") {
-            return <AddNewGuest {...props} />
+            return <AddNewGuest handleSubmit={handleSubmit} handleCancel={close} {...props} />
         } else if (formName == "addCompany") {
             return "Pending"
         }
@@ -64,13 +67,14 @@ function Modals(props: any) {
                                 </div>
                                 </Grid.Col>
                             </Grid> */}
+
                     </FormWrapper>
 
                 </Box>
             </Modal >
 
 
-            <Button className="hpTabActionButton" onClick={open} type='hPprimary'  >{buttonTitle}</Button>
+            <Button size={size || 'lg'} className="hpTabActionButton" onClick={open} type='hPprimary'  >{buttonTitle}</Button>
 
         </>
     );

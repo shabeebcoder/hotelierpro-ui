@@ -9,4 +9,6 @@ export default {
 export const Invoices = (args) => <Invoice {...args} />
 
 
-Invoices.args = {}
+Invoices.args = {
+    amount : 200
+}

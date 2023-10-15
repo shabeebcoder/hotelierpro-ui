@@ -48,21 +48,61 @@ function Invoice(props) {
             </div>
             <h4 className='sent'>SENT</h4> 
             
-            <div className="price_section_container">
+            {/* <div className="price_section_container">
                     <div className="price_section_header">
                         <ul className='description_first'>
-                            <li>No</li>
-                            <li>Item</li>
+                            <li className='no'>No</li>
+                            <li className='item'>Item</li>
+                            <li className='cost'>Cost</li>
+                            <li className='qty'>Qty.</li>
+                            <li className='price'>Price</li>
                         </ul>
-                        <ul className='description_second'>
-                            <li>Cost</li>
-                            <li>Qty.</li>
-                            <li>Price</li>
-                        </ul>
+                       </div>
+                       </div> */}
+
+                        <table className='Price_Table'>
+                            <tr>
+                                <th className='header_1'>No</th>
+                                <th className='header_2' >Item</th>
+                                <th className='header_3' >Cost</th>
+                                <th className='header_4' >Qty</th>
+                                <th className='header_5' >Price</th>
+                            </tr>
+                            <div className="table">
+                            <tr className='first_column'>
+                                <td className='td1'>1</td>
+                                
+                                <td className='td2'>Accommodation in room “Room 2 Double room”, 1 person(s), 5 Night(s)</td>
+                                <td className='td3'>$ 88</td>
+                                <td className='td4'>5</td>
+                                <td className='td5'>$ 440.00</td>
+                            </tr>
+                            <tr className='second_column'>
+                                <td className='td6'>2</td>
+                                <td className='td7'>Message</td>
+                                <td className='td8'>$ 20</td>
+                                <td className='td9'>1</td>
+                                <td className='td10'>$ 20.00</td>
+                            </tr>
+                            <tr className='third_column'>
+                                <td className='td11'>3</td>
+                                <td className='td12'>Beef Steak</td>
+                                <td className='td13'>$ 16</td>
+                                <td className='td14'>1</td>
+                                <td className='td15'>$ 16.00</td>
+                            </tr>
+                            </div>
+                            <div className="total_price">
+                                <div className="line"></div>
+                                
+                            </div>
+
+                        </table>
+
                        
-                        
-                    </div>
-                </div>
+                    
+
+                
             </div>
         </div>
             

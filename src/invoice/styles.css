@@ -10,6 +10,7 @@
   font-family: Inter;
   padding: 0;
   margin: 0;
+  
 }
 
 
@@ -173,13 +174,14 @@
   left: 1097px;
 }
 
-.price_section_container {
+/* .price_section_container {
   width: 1164px;
   height: 50px;
-  flex-shrink: 0;
   background: rgba(144, 203, 203, 0.12);
   display: flex;
   position: relative;
+  margin: 0;
+  padding: 0;
   top: 208px;
 }
 
@@ -190,22 +192,299 @@
 }
 
 .description_first {
-  display: flex;
-  padding: 0px;
-  position: relative;
-  flex-direction: row;
+  
   list-style: none;
-  left: 40px;
-  justify-content: space-between;
-  gap: 32px;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
   
 }
 
-.description_second {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  position: relative;
-  left: 400px;
-  padding: 0px;
+.no {
+left: 40px;
+position: absolute;
 }
+
+.item {
+  left: 96px;
+  position: absolute;
+}
+
+.cost {
+  left: 569px;
+  position: absolute;
+}
+
+.qty {
+  left: 777px;
+  position: absolute;
+}
+
+.price {
+  left: 961px;
+  position: absolute;
+} */
+
+
+.Price_Table {
+  top: 560px;
+  position: absolute;
+  display: flex;
+  height: 50px;
+  flex-shrink: 0;
+  background: rgba(144, 203, 203, 0.12);
+  width: 1164px;
+  flex-direction: column;
+  
+}
+
+.Price_Table th {
+  color: rgba(0, 0, 0, 0.85);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  height: 50px;
+  
+}
+
+.header_1 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 40px;
+  padding:0;
+  margin: 0;
+  width: 24px;
+
+  
+}
+
+.header_2 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 96px;
+  padding:0;
+  margin: 0;
+  width: 34px;
+  
+  
+}
+
+.header_3 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 568px;
+  padding:0;
+  margin: 0;
+  width: 40px;
+  
+  
+}
+
+
+.header_4 {
+  position: absolute;
+  display: flex;
+  left: 777px;
+  padding:0;
+  margin: 0;
+  width: 30px;
+  height: 50px;
+  align-items: center;
+  
+  
+}
+
+
+.header_5 {
+  position: absolute;
+  left: 961px;
+  padding:0;
+  margin: 0;
+  width: 41px;
+  align-items: center;
+  height: 50px;
+  display: flex;
+  
+  
+  
+}
+
+
+.first_column {
+  top: 90px;
+  position: absolute;
+  display: flex;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+.td1 {
+left: 40px;
+position: absolute;
+display: flex;
+width: fit-content;
+
+}
+
+.td2 {
+  left: 96px;
+  position: absolute;
+  display: flex;
+  width: 324px;
+  }
+
+  .td3 {
+    left: 568px;
+    position: absolute;
+    display: flex;
+    width: max-content;
+    }
+
+    .td4 {
+    left: 777px;
+    position: absolute;
+    display: flex;
+    width: fit-content;
+
+    }
+
+    .td5{
+      left: 961px;
+      position: absolute;
+      display: flex;
+      width: max-content;
+  
+      }
+
+      
+
+
+      .second_column {
+        top: 160px;
+        position: absolute;
+        display: flex;
+        color: rgba(0, 0, 0, 0.85);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 100%;
+      }
+      
+      
+    .td6 {
+    left: 40px;
+    position: absolute;
+    display: flex;
+    width: fit-content;
+      
+    }
+      
+    .td7 {
+     left: 96px;
+     position: absolute;
+     display: flex;
+     width: 324px;
+     }
+      
+    .td8 {
+    left: 568px;
+     position: absolute;
+     display: flex;
+     width: max-content;
+     }
+      
+    .td9 {
+     left: 777px;
+     position: absolute;
+     display: flex;
+     width: fit-content;
+      
+     }
+      
+    .td10{
+    left: 961px;
+     position: absolute;
+     display: flex;
+     width: max-content;
+        
+    }
+     .third_column {
+     top: 230px;
+     position: absolute;
+     display: flex;
+     color: rgba(0, 0, 0, 0.85);
+     font-size: 14px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: normal;
+     width: 100%;
+     }
+            
+            
+    .td11 {
+    left: 40px;
+    position: absolute;
+    display: flex;
+    width: fit-content;
+            
+     }
+            
+    .td12 {
+    left: 96px;
+     position: absolute;
+     display: flex;
+     width: 324px;
+     }
+            
+       .td13{
+      left: 568px;
+      position: absolute;
+      display: flex;
+       width: max-content;
+       }
+            
+      .td14 {
+      left: 777px;
+      position: absolute;
+      display: flex;
+      width: fit-content;
+            
+        }
+            
+      .td15{
+       left: 961px;
+       position: absolute;
+       display: flex;
+       width: max-content;
+              
+           }
+          
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

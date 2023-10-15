@@ -1,3 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
 .invoice-container {
-  color: red;
+  width: 1164px;
+  height: 1335px;
+  flex-shrink: 0;
+  background-color: white;
+  font-family: Inter;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.header {
+  background-color:#4D6969 ;
+  height:230px ;
+  display: flex;
+  border-radius: 4px 4px 0px 0px;
+}
+
+
+.header img{
+  height: 28px;
+  position: relative;
+  top: 75px;
+  left: 32px;
+}
+
+.invo_details h2{
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  
+  
+}
+
+.invo_details {
+  color: white;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 32px;
+  left: 582px;
+  margin: 0;
+  padding: 0;
+ 
+  justify-content: space-evenly;
+  gap: 15px;
+
+  
+
+}
+
+.invo_details li {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+.bill_adress_container {
+  display: flex;
+  position: relative;
+  top: 103px;
+  left: 40px;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  
+}
+
+.bill_to_address_container h3{
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 0px;
+
+}
+
+.bill_to_address_container li {
+  color: rgba(109, 109, 109, 0.85);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.bill_to_address_container  ul{
+
+  left: 0;
+  position: relative;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 14px;
+  margin-top: 0px;
+  justify-content: space-evenly;
+  gap: 5px; ;
+  display: flex;
+  flex-direction: column;
+
+  
+}
+
+
+.bill_from_address_container h3{
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 0px;
+
+}
+
+.bill_from_address_container li {
+  color: rgba(109, 109, 109, 0.85);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.bill_from_address_container  ul{
+
+  left: 0;
+  position: relative;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 14px;
+  margin-top: 0px;
+  justify-content: space-evenly;
+  gap: 5px; ;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+.bill_from_address_container {
+ left: 400px;
+ position: relative;
+}
+
+.sent {
+  color: #F04551;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  position: absolute;
+  top: 254px;
+  left: 1097px;
+}
+
+.price_section_container {
+  width: 1164px;
+  height: 50px;
+  flex-shrink: 0;
+  background: rgba(144, 203, 203, 0.12);
+  display: flex;
+  position: relative;
+  top: 208px;
+}
+
+.price_section_header {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+
+.description_first {
+  display: flex;
+  padding: 0px;
+  position: relative;
+  flex-direction: row;
+  list-style: none;
+  left: 40px;
+  justify-content: space-between;
+  gap: 32px;
+  
+}
+
+.description_second {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  position: relative;
+  left: 400px;
+  padding: 0px;
 }

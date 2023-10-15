@@ -9,5 +9,7 @@ export default {
 export const DocumentsUpload = (args) => <DocumentsModal {...args} />
 
 DocumentsUpload.args = {
+    onCancel: () => alert(),
+    onUpload: () => alert(),
 
 }

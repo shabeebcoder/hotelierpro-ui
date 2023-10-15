@@ -219,6 +219,7 @@ const Tables: any = (props: Props) => {
                     <>
                         <Select
                             // defaultValue={items && items[0]?.label}
+                            className="statusSelect"
                             style={{ width: 120 }}
                             options={items.options}
                             onChange={(e) => console.log("select", e)}
@@ -361,6 +362,7 @@ const Tables: any = (props: Props) => {
     return (
         <Form form={form} component={false}>
             <Table
+                className="invoiceTable"
                 rowSelection={
                     {
                         type: selectionType,

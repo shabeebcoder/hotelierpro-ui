@@ -10,5 +10,6 @@ export const ColorPickers = (args) => <ColorPicker {...args} />
 
 
 ColorPickers.args = {
-
+    title:'backgroundColor',
+    colorCode:"#EDEDED"
 }

@@ -25,10 +25,6 @@ function WebsitePlaceholder(props) {
                     <div className='inside-first-card'style={{background:props.colorCodeBackground}}></div>
                     <div className="inside-second-card" style={{background:props.colorCodecardInside}}></div>
                 </div>
-                <div className='first-card' style={{background:props.colorCodecard}}>
-                    <div className='inside-first-card'style={{background:props.colorCodeBackground}}></div>
-                    <div className="inside-second-card" style={{background:props.colorCodecardInside}}></div>
-                </div>
                 </div>
                 <div className="background-second" style={{background:props.colorCodeBackground}}>
                     <div className='inside-background-second'style={{background:props.colorCodecardTwo}}></div>

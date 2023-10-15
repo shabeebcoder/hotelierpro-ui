@@ -3,6 +3,7 @@
     width: 613px;
     height: 365px;
     flex-shrink: 0;
+    overflow: hidden;
 }
 .header {
     width: 613px;

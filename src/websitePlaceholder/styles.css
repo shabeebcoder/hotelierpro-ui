@@ -23,8 +23,12 @@
 }
 .card-div {
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 20px;
     display: flex;
+    flex-wrap: wrap;
+}
+.card-div-two {
+    vertical-align: baseline;
 }
 .first-card {
     width: 337px;
@@ -32,6 +36,7 @@
     flex-shrink: 0;
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
 .inside-first-card {
     width: 55px;
@@ -53,6 +58,7 @@
     height: 188px;
     flex-shrink: 0;
     margin-left: 21px;
+    margin-top: 20px;
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-end;

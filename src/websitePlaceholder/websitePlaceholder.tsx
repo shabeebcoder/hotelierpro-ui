@@ -3,18 +3,18 @@ import "./styles.css";
 
 function WebsitePlaceholder(props) {
     return (
-        <div>
-            <div className='header'></div>
+        <div className='background' style={{background:props.colorCodeBackground}}>
+            <div className='header' style={{background:props.colorCodeHeader}}></div>
             <div className='main-box'>
-                <div className="first-box"></div>
-                <div className="second-box"></div>
-                <div className="third-box"></div>
-                <div className="fourth-box"></div>
+                <div className="first-box"style={{background:props.colorCodecard}}></div>
             </div>
             <div className='card-div'>
-                <div className='first-card'>
-                    <div className='inside-first-card'></div>
-                    <div className="inside-second-card"></div>
+                <div className='first-card' style={{background:props.colorCodecard}}>
+                    <div className='inside-first-card'style={{background:props.colorCodeBackground}}></div>
+                    <div className="inside-second-card" style={{background:props.colorCodecardInside}}></div>
+                </div>
+                <div className="background-second" style={{background:props.colorCodeBackground}}>
+                    <div className='inside-background-second'style={{background:props.colorCodecardTwo}}></div>
                 </div>
             </div>
         </div>

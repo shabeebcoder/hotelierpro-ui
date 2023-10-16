@@ -1,0 +1,29 @@
+
+.card {
+    width: 285px;
+    height: 370px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid #4D6969;
+    background: #FAFFFF;
+}
+.list {
+    display: flex;
+    justify-content: space-around;
+}
+.list-label {
+    color: #3A7C7C;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 183.333% */
+}
+.list-value {
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 183.333% */
+}

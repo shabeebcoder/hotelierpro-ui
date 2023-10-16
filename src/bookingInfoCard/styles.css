@@ -10,8 +10,18 @@
 .list {
     display: flex;
     justify-content: space-around;
+    list-style: none;
 }
 .list-label {
+    color: #3A7C7C;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 183.333% */
+    margin-left: -20px;
+}
+.list-label-one {
     color: #3A7C7C;
     font-family: Inter;
     font-size: 12px;
@@ -26,4 +36,19 @@
     font-style: normal;
     font-weight: 400;
     line-height: 22px; /* 183.333% */
+    margin-right: 86px;
+}
+.btn {
+    width: 113px;
+    height: 35px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: #3A7C7C;
+    color: #F9F9FB;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 20px;    
 }

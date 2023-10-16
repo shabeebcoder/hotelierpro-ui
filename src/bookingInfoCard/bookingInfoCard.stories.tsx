@@ -8,12 +8,16 @@ export default {
 export const BookingInfoCard = (args) => <BookingInfoCards {...args} />
 
 BookingInfoCard.args = {
-    BookingInfoData:[ {
+    bookingInfoData: [{
         label: 'Booking ID',
         value: '332244 (Sherin)'
     },
+
     {
-        handleNewBooking: () => alert()
-    },
-]
+        label: 'Booking ID',
+        value: '332244 (Sherin)'
+    }
+    ],
+
+    handleNewBooking: () => alert()
 }

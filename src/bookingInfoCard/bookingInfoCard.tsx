@@ -1,16 +1,26 @@
 import React from 'react';
 import "./styles.css";
 
-function BookingInfoCard() {
+function BookingInfoCard(props) {
     return (
         <div className='card'>
-            <ul className='list'>
-                <li className='list-label'>Booking ID</li>
-                <li className='list-label-one'>:</li>
-                <li className='list-value'>332244 (Sherin)</li>
+            <ul className=''>
+                {
+                    props.bookingInfoData.map((row) => {
+                        return (
+                            <li className='list'>
+                                <li className='list-label'>{row.label}</li>
+                                <li className='list-label-one'>:</li>
+                                <li className='list-value'>{row.value}</li>
+                            </li>
+                        )
+                    })
+                }
+
+
             </ul>
             <div>
-                <button className='btn'>+ New Booking</button>
+                <button className='btn' onClick={props.handleNewBooking}>+ New Booking</button>
             </div>
         </div>
     )

@@ -16,8 +16,6 @@ function BookingInfoCard(props) {
                         )
                     })
                 }
-
-
             </ul>
             <div>
                 <button className='btn' onClick={props.handleNewBooking}>+ New Booking</button>

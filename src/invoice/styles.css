@@ -13,17 +13,19 @@
   
 }
 
-
-
-.header {
+.Header {
   background-color:#4D6969 ;
   height:230px ;
+  width: 1164px;
   display: flex;
   border-radius: 4px 4px 0px 0px;
 }
 
 
-.header img{
+
+
+
+.Header img{
   height: 28px;
   position: relative;
   top: 75px;
@@ -174,56 +176,6 @@
   left: 1097px;
 }
 
-/* .price_section_container {
-  width: 1164px;
-  height: 50px;
-  background: rgba(144, 203, 203, 0.12);
-  display: flex;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  top: 208px;
-}
-
-.price_section_header {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-}
-
-.description_first {
-  
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  
-}
-
-.no {
-left: 40px;
-position: absolute;
-}
-
-.item {
-  left: 96px;
-  position: absolute;
-}
-
-.cost {
-  left: 569px;
-  position: absolute;
-}
-
-.qty {
-  left: 777px;
-  position: absolute;
-}
-
-.price {
-  left: 961px;
-  position: absolute;
-} */
 
 
 .Price_Table {
@@ -316,7 +268,7 @@ position: absolute;
 
 
 .first_column {
-  top: 90px;
+  top: 80px;
   position: absolute;
   display: flex;
   color: rgba(0, 0, 0, 0.85);
@@ -369,7 +321,7 @@ width: fit-content;
 
 
       .second_column {
-        top: 160px;
+        top: 140px;
         position: absolute;
         display: flex;
         color: rgba(0, 0, 0, 0.85);
@@ -419,7 +371,7 @@ width: fit-content;
         
     }
      .third_column {
-     top: 230px;
+     top: 200px;
      position: absolute;
      display: flex;
      color: rgba(0, 0, 0, 0.85);
@@ -468,9 +420,275 @@ width: fit-content;
        width: max-content;
               
            }
-          
+
+.total_price svg {
+  left: 570px;
+  top: 260px;
+  position: absolute;
+  display: flex;
+  }
+
+  .Total_part {
+  color: rgba(0, 0, 0, 0.85);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  top: 300px;
+  position: absolute;
+  width: 100%;
   
+  }
+
+  .subtotal{
+    left: 570px;
+    /* top: 340px; */
+    position: absolute;
+    display: flex;
+
+  }
+
+  .subtotal_price{
+    left: 961px;
+    /* top: 340px; */
+    position: absolute;
+    display: flex;
+  }
+
+  .city_tax{
+    left: 570px;
+    /* top: 390px; */
+    position: absolute;
+    display: flex;
+
+  }
   
+  .tax_price {
+    left: 777px;
+    /* top: 390px; */
+    position: absolute;
+    display: flex;
+    color: #6D6D6D;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;  
+  }
+
+  .total_tax_price{
+    left: 961px;
+    /* top: 390px; */
+    position: absolute;
+    display: flex;
+  }
+
+  .VAT{
+    left: 570px;
+    /* top: 430px; */
+    position: absolute;
+    display: flex;
+
+  }
+
+  .rooms{
+    left: 570px;
+    /* top: 470px; */
+    position: absolute;
+    display: flex;
+
+  }
+
+  .Percentage_1 {
+    left: 777px;
+    /* top: 470px; */
+    position: absolute;
+    display: flex;
+    color: #6D6D6D;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;  
+  }
+
+  .rooms_price{
+    left: 961px;
+    /* top: 470px; */
+    position: absolute;
+    display: flex;
+  }
+
+
+  .GS{
+    left: 570px;
+    /* top: 510px; */
+    position: absolute;
+    display: flex;
+
+  }
+
+  .Percentage_2 {
+    left: 777px;
+    /* top: 510px; */
+    position: absolute;
+    display: flex;
+    color: #6D6D6D;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;  
+  }
+
+  .GS_price{
+    left: 961px;
+    /* top: 510px; */
+    position: absolute;
+    display: flex;
+  }
+
+  .Food{
+    left: 570px;
+    /* top: 550px; */
+    position: absolute;
+    display: flex;
+
+  }
+
+  .Percentage_3 {
+    left: 777px;
+    /* top: 550px; */
+    position: absolute;
+    display: flex;
+    color: #6D6D6D;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;  
+  }
+
+  .food_price{
+    left: 961px;
+    /* top: 550px; */
+    position: absolute;
+    display: flex;
+  }
+
+  .line_2 {
+    left: 570px;
+     top: 270px;
+    position: absolute;
+    display: flex;
+    background-color: rgba(161, 161, 161, 0.54);
+    height: 1px;
+    width: 468px;
+
+  }
+
+  .final_total{
+    left: 570px;
+    top: 300px;
+    position: absolute;
+    display: flex;
+
+  }
+
+  .final_total_price{
+    left: 961px;
+    top: 300px;
+    position: absolute;
+    display: flex;
+  }
+
+
+  .paid_total{
+    left: 570px;
+    top: 345px;
+    position: absolute;
+    display: flex;
+
+  }
+
+  .paid_total_price{
+    left: 961px;
+    top: 345px;
+    position: absolute;
+    display: flex;
+  }
+
+
+  .line_3 {
+    left: 570px;
+     top: 390px;
+    position: absolute;
+    display: flex;
+    background-color: rgba(161, 161, 161, 0.54);
+    height: 1px;
+    width: 468px;
+
+  }
+
+
+  .due_total{
+    left: 570px;
+    top: 425px;
+    position: absolute;
+    display: flex;
+
+  }
+
+  .due_total_price{
+    left: 961px;
+    top: 425px;
+    position: absolute;
+    display: flex;
+    color: rgba(240, 69, 81, 0.85);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+
+  .notes {
+    width: 502px;
+    height: 193px ;
+    border-radius: 4px;
+    border: 1px solid rgba(161, 161, 161, 0.54);
+    display: flex;
+    position: absolute;
+    top: 547px;
+    left: 40px;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .notes p {
+
+    color: #6D6D6D;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    top: 23px;
+    left: 23px;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+
+  }
+
+
+
+
+  
+
 
 
 

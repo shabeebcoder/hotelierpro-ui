@@ -2,7 +2,7 @@ import React from "react"
 import RegistrationForm from "./registrationForm"
 
 export default {
-    title: 'component/registrationForm'
+    title: 'components/registrationForm'
 }
 
 

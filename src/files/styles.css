@@ -1,12 +1,14 @@
 .fileContainer {
     display: flex;
-    border: solid 1px rgb(204, 204, 204);
+    /* border: solid 1px rgb(204, 204, 204); */
     width: 200px;
     height: 34px;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
     align-items: center;
+    border-radius: 4px;
+    background: rgba(212, 232, 232, 0.12);
 }
 
 .fileContainer .fileInfo {
@@ -14,6 +16,57 @@
     flex-direction: column;
     justify-content: flex-start;
     text-align: left;
+}
+
+.selectedFileContainer input {
+    color: #000;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.fileContainer .fileInfo ul {
+    padding: 0px;
+    list-style-type: none;
+    margin: 0px;
+    text-align: left;
+}
+
+.fileContainer .fileInfo ul li {
+    margin: -8px;
+    padding-left: 10px;
+    text-align: left;
+    display: flex;
+}
+
+.fileContainer .fileInfo .filename {
+    color: #000;
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Roboto;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    /* 220% */
+}
+
+.fileContainer .fileInfo .fileSize {
+    color: #000;
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Roboto;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    /* 275% */
 }
 
 .fileContainer .fileInfo span {

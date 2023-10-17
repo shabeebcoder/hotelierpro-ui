@@ -12,7 +12,7 @@ function DocumentsModal(props) {
     const [opened, { open, close }] = useDisclosure(true);
     return (
         <><Modal opened={opened} onClose={close} size={'lg'} title="Upload Documents" className='hp-modal'>
-            <Box component="form" mx="auto" style={{ paddingTop: 15 }}>
+            <Box className='uploadmodalContainer' component="form" mx="auto" style={{ paddingTop: 15 }}>
                 <UploadButton title="Profile Photo" handleOnClick={(e) => {
                     e.preventDefault();
                     alert("ds")
@@ -21,7 +21,7 @@ function DocumentsModal(props) {
 
                     <Input placeholder="Document Name" className='input' />
                     <FileButton onChange={() => alert()} accept="image/png,image/jpeg">
-                        {(props) => <Button {...props} leftIcon={<IconCloudUpload />} >Select Document</Button>}
+                        {(props) => <Button className='addDocumentsButton' {...props} leftIcon={<IconCloudUpload />} >Add Document</Button>}
                     </FileButton>
 
                 </div>
@@ -36,8 +36,15 @@ function DocumentsModal(props) {
                     </div>
                 </div>
                 <div className='fileUploadModalfooter'>
-                    <Button onClick={onUpload}>Upload</Button>&nbsp;
-                    <Button onCancel={onCancel}>Cancel</Button>
+                    <ul>
+                        <li>File type jpeg/png/pdf/docx accepted</li>
+                        <li>Maximum File size 2 MB</li>
+                    </ul>
+                    <div>
+
+                        <Button disabled className='uploadButtonInModal' onClick={onUpload}>Upload</Button>&nbsp;
+                        <Button className='cancelButton' onCancel={onCancel}>Cancel</Button>
+                    </div>
                 </div>
 
             </Box>

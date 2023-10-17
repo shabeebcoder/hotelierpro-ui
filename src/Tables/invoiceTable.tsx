@@ -4,6 +4,7 @@ import type { ColumnsType } from "antd/es/table";
 import { EditOutlined, SearchOutlined, DeleteOutlined, SaveOutlined, CloseOutlined, CheckOutlined } from "@ant-design/icons";
 import './table.css';
 import moment from "moment";
+import classNames from "classnames";
 
 interface DataType {
     key: string;
@@ -216,16 +217,20 @@ const Tables: any = (props: Props) => {
             width: '15%',
             render: (items: any) => {
                 return (
-                    <>
+                    <div className={classNames({
+                        'paid': items.defaultValue === "paid",
+                        'draft': items.defaultValue === "draft",
+                        'sents': items.defaultValue === "sent"
+                    })}>
                         <Select
                             // defaultValue={items && items[0]?.label}
-                            className="statusSelect"
+
                             style={{ width: 120 }}
                             options={items.options}
                             onChange={(e) => console.log("select", e)}
                             defaultValue={items.defaultValue}
                         />
-                    </>
+                    </div>
                 );
             },
             filteredValue: [filterState],
@@ -268,7 +273,7 @@ const Tables: any = (props: Props) => {
             key: "notes",
             width: '25%',
             render: (text) => <>{text}</>,
-            sorter: (a, b) => a.roomName.length - b.roomName.length,
+            // sorter: (a, b) => a.roomName.length - b.roomName.length,
             editable: true,
             inputType: 'text'
         },
@@ -310,7 +315,7 @@ const Tables: any = (props: Props) => {
 
 
     const Header = () => {
-        return <div>
+        return <div className="headerContainer">
             <h4 style={{ color: '#4D6969' }}>Invoice</h4>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
 
@@ -340,9 +345,9 @@ const Tables: any = (props: Props) => {
                 </div>
                 <div>
                     <Space wrap>
-                        <Button disabled={selectedRows === ''} style={{ backgroundColor: '#3A7C7C' }} type="primary">Delete</Button>
+                        <Button style={{ backgroundColor: '#3A7C7C' }} type="primary">Delete</Button>
                         <Select
-                            disabled={selectedRows === ''}
+                            // disabled={selectedRows === ''}
                             defaultValue="Mark As"
                             style={{ width: 120, borderColor: '#3A7C7C' }}
 

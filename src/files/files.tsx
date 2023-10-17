@@ -2,7 +2,7 @@ import React from 'react'
 import "./styles.css";
 function Files(props) {
     const { fileName, fileSize, onClose } = props;
-    const FileIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 12 15" fill="none">
+    const FileIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 12 15" fill="none">
         <path d="M2.98125 11.34H9.01875V10.26H2.98125V11.34ZM2.98125 8.28H9.01875V7.2H2.98125V8.28ZM1.125 14.4C0.825 14.4 0.5625 14.292 0.3375 14.076C0.1125 13.86 0 13.608 0 13.32V1.08C0 0.792 0.1125 0.54 0.3375 0.324C0.5625 0.108 0.825 0 1.125 0H7.89375L12 3.942V13.32C12 13.608 11.8875 13.86 11.6625 14.076C11.4375 14.292 11.175 14.4 10.875 14.4H1.125ZM7.33125 4.428V1.08H1.125V13.32H10.875V4.428H7.33125Z" fill="#3A7C7C" />
     </svg>
     const CloseIcon = (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -16,8 +16,10 @@ function Files(props) {
 
                 <FileIcon />
                 <div className='fileInfo'>
-                    <span className='name'>{fileName}</span>
-                    <span className='size'>{fileSize}</span>
+                    <ul>
+                        <li className='filename'>passport.pdf</li>
+                        <li className='fileSize'>18.5 KB</li>
+                    </ul>
 
                 </div>
 

@@ -226,7 +226,7 @@ const invoiceListData = [
       options: [{ value: "draft", label: "Draft" },
       { value: "paid", label: "Paid" },
       { value: "sent", label: "Sent" },],
-      defaultValue: 'sent'
+      defaultValue: 'paid'
     },
     total: '$ 245',
     notes: 'abcdsd'
@@ -237,7 +237,12 @@ const invoiceListData = [
     invoiceNumber: '#INV-20230723-2',
     client: 'Donna Morris',
     date: '07/23/2023',
-    status: [],
+    status: {
+      options: [{ value: "draft", label: "Draft" },
+      { value: "paid", label: "Paid" },
+      { value: "sent", label: "Sent" },],
+      defaultValue: 'draft'
+    },
     total: '$ 245',
     notes: 'abcdsd'
   },
@@ -247,39 +252,60 @@ const invoiceListData = [
     invoiceNumber: '#INV-20230723-2',
     client: 'Donna Morris',
     date: '07/23/2023',
-    status: [],
+    status: {
+      options: [{ value: "draft", label: "Draft" },
+      { value: "paid", label: "Paid" },
+      { value: "sent", label: "Sent" },],
+      defaultValue: 'sent'
+    },
     total: '$ 245',
     notes: 'abcdsd'
   },
   {
     key: "4",
-
+    id: 1,
     invoiceNumber: '#INV-20230723-2',
     client: 'Donna Morris',
-    date: '07/23/2023',
-    status: [],
+    date: moment('27/07/2023', "DD/MM/YYYY").toString(),
+    status: {
+      options: [{ value: "draft", label: "Draft" },
+      { value: "paid", label: "Paid" },
+      { value: "sent", label: "Sent" },],
+      defaultValue: 'paid'
+    },
     total: '$ 245',
     notes: 'abcdsd'
-  }
-  , {
+  },
+  {
     key: "5",
 
     invoiceNumber: '#INV-20230723-2',
     client: 'Donna Morris',
     date: '07/23/2023',
-    status: [],
+    status: {
+      options: [{ value: "draft", label: "Draft" },
+      { value: "paid", label: "Paid" },
+      { value: "sent", label: "Sent" },],
+      defaultValue: 'draft'
+    },
     total: '$ 245',
     notes: 'abcdsd'
   },
   {
     key: "6",
+
     invoiceNumber: '#INV-20230723-2',
     client: 'Donna Morris',
     date: '07/23/2023',
-    status: [],
+    status: {
+      options: [{ value: "draft", label: "Draft" },
+      { value: "paid", label: "Paid" },
+      { value: "sent", label: "Sent" },],
+      defaultValue: 'sent'
+    },
     total: '$ 245',
     notes: 'abcdsd'
-  }
+  },
 ];
 const handleOnSave = (dataToSave) => {
   alert(JSON.stringify(dataToSave))

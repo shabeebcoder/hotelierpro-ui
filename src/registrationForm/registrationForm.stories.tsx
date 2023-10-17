@@ -10,5 +10,13 @@ export default {
 export const RegistrationForms = (args) => <RegistrationForm {...args} />
 
 RegistrationForms.args = {
-
+    infoTableData: [{
+        label: 'Arrival  Date :',
+        value: 'lorem'
+    },
+    {
+        label: 'Departure  Date :',
+        value: 'lorem'
+    },
+    ]
 }

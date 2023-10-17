@@ -9,7 +9,7 @@ import ServicesTable from './services';
 
 function RegistrationForm() {
     return (
-        <div>
+        <div className='registrationFormContainer'>
             <Header />
             <InfoTable />
             <PoliciesInfo />

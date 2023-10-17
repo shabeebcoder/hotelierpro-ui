@@ -4,7 +4,26 @@ import "./styles.css";
 
 function ServicesTable() {
     return (
-        <div>ServicesTable</div>
+        <div>
+            <div>
+                <table>
+                    <tr>
+                        <th>DATE</th>
+                        <th>TYPE</th>
+                        <th>QY</th>
+                        <th>AMOUNT</th>
+                        <th>TOTAL</th>
+                    </tr>
+                    <tr>
+                        <td>.</td>
+                        <td>..</td>
+                        <td>...</td>
+                        <td>....</td>
+                        <td>.....</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     )
 }
 

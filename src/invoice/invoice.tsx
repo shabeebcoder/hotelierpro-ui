@@ -8,9 +8,9 @@ function Invoice(props) {
     return (
         <div className='invoice-container'>
 
-            <div className="showcase">
             
-            <div className="header">
+            
+            <div className="Header">
                 <img className='logo' src="https://hotelierpro.us/Logo/HotelierPro_Logo_white.svg" alt="" />
               
                 <ul className="invo_details">
@@ -47,18 +47,6 @@ function Invoice(props) {
 
             </div>
             <h4 className='sent'>SENT</h4> 
-            
-            {/* <div className="price_section_container">
-                    <div className="price_section_header">
-                        <ul className='description_first'>
-                            <li className='no'>No</li>
-                            <li className='item'>Item</li>
-                            <li className='cost'>Cost</li>
-                            <li className='qty'>Qty.</li>
-                            <li className='price'>Price</li>
-                        </ul>
-                       </div>
-                       </div> */}
 
                         <table className='Price_Table'>
                             <tr>
@@ -93,17 +81,82 @@ function Invoice(props) {
                             </tr>
                             </div>
                             <div className="total_price">
-                                <div className="line"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="467" height="2" viewBox="0 0 467 2" fill="none">
+                                <path d="M0 1H467" stroke="#A1A1A1" stroke-opacity="0.54"/>
+                                </svg>
+                                <table className='Total_part'>
+                                    <tr>
+                                    <td className='subtotal'>Subtotal</td>
+                                    <td className='subtotal_price'>$ 395.83</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td className='city_tax'>City Tax</td>
+                                    <td className='tax_price'>$ 1</td>
+                                    <td className='total_tax_price'>$ 1.00</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td className='VAT'>VAT</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td className='rooms'>Rooms</td>
+                                    <td className='Percentage_1'>20 %</td>
+                                    <td className='rooms_price'>$ 73.33</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td className='GS'>General Services</td>
+                                    <td className='Percentage_2'>20 %</td>
+                                    <td className='GS_price'>$ 3.33</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td className='Food'>Food</td>
+                                    <td className='Percentage_3'>20 %</td>
+                                    <td className='food_price'>$ 2.50</td>
+                                    </tr>
+
+                                    <div className="line_2"></div>
+                                    
+
+                                    <tr>
+                                    <td className='final_total'>Food</td>
+                                    <td className='final_total_price'>$ 2.50</td>
+                                    </tr>
+
+                                    <tr>
+                                    <td className='paid_total'>Paid</td>
+                                    <td className='paid_total_price'>$ 000.00</td>
+                                    </tr>
+
+                                    <div className="line_3"></div>
+
+                                    <tr>
+                                    <td className='due_total'>Amount Due</td>
+                                    <td className='due_total_price'>$ 475.00</td>
+                                    </tr>
+                                    
+                                    
+                                </table>
+
+                                <div className="notes">
+                                    <div className="rectangle"></div>
+                                    <p>Notes...</p>
+                                </div>
+                                
                                 
                             </div>
 
                         </table>
 
+
                        
                     
 
                 
-            </div>
+            
         </div>
             
 

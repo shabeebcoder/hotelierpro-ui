@@ -1,5 +1,6 @@
 import React from "react"
 import RegistrationForm from "./registrationForm"
+import InfoTable from './infoTable'
 
 export default {
     title: 'components/registrationForm'
@@ -59,4 +60,7 @@ RegistrationForms.args = {
         value: 'lorem'
     }
     ]
+
+
+
 }

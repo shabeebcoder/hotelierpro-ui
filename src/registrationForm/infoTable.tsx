@@ -1,7 +1,6 @@
 import React from 'react'
 import "./styles.css";
 
-
 function InfoTable(props) {
     return (
         <div>
@@ -9,15 +8,15 @@ function InfoTable(props) {
                 <div className='full-table'>
                     <div className='table-side'>
                         {
-                            props.infoTableData.map((value)=>{
-                                return (
-                                    <li className='list'>
-                                        <li>{value.label + ":"}</li>
-                                        <li></li>
-                                        <li>{value.value}</li>
-                                    </li>
-                                )
-                            })
+                            // props.infoTableData.map((obj)=>{
+                            //     return (
+                            //         <li className='list'>
+                            //             <li>{obj.label + ":"}</li>
+                            //             <li></li>
+                            //             <li>{obj.value}</li>
+                            //         </li>
+                            //     )
+                            // })
                         }
                     </div>
                 </div>

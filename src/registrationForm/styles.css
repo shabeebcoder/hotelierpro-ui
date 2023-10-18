@@ -112,14 +112,13 @@
     font-weight: 400;
     line-height: normal;
 }
-.policy-ending {
-}
 
-th,td {
+table ,th,td {
     width: 950px;
     height: 52px;
     flex-shrink: 0;
     border: 1px solid rgba(161, 161, 161, 0.54);
+    border-collapse: collapse;
     background: #FFF;
     text-align: center;
 }

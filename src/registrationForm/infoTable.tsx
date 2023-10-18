@@ -1,23 +1,23 @@
 import React from 'react'
 import "./styles.css";
 
-
 function InfoTable(props) {
     return (
         <div>
             <div className='table-info'>
                 <div className='full-table'>
                     <div className='table-side'>
-                        <li className='list'>
-                            <li>Room Amount :</li>
-                            <li></li>
-                            <li>Arrival  Date :</li>
-                        </li>
-                        <li className='list'>
-                            <li>Room Amount :</li>
-                            <li></li>
-                            <li>Arrival  Date :</li>
-                        </li>
+                        {
+                            // props.infoTableData.map((obj)=>{
+                            //     return (
+                            //         <li className='list'>
+                            //             <li>{obj.label + ":"}</li>
+                            //             <li></li>
+                            //             <li>{obj.value}</li>
+                            //         </li>
+                            //     )
+                            // })
+                        }
                     </div>
                 </div>
             </div>

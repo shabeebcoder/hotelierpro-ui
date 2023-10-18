@@ -1,7 +1,7 @@
 import React from 'react'
 import "./styles.css";
 
-function PoliciesInfo() {
+function PoliciesInfo(props) {
     return (
         <div>
             <div>

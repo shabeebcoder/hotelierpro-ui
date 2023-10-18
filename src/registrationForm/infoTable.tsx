@@ -9,12 +9,12 @@ function InfoTable(props) {
                 <div className='full-table'>
                     <div className='table-side'>
                         {
-                            props.infoTableData.map((list)=>{
+                            props.infoTableData.map((value)=>{
                                 return (
                                     <li className='list'>
-                                        <li>{list.label + ":"}</li>
+                                        <li>{value.label + ":"}</li>
                                         <li></li>
-                                        <li>{list.value}</li>
+                                        <li>{value.value}</li>
                                     </li>
                                 )
                             })

@@ -8,16 +8,17 @@ function InfoTable(props) {
             <div className='table-info'>
                 <div className='full-table'>
                     <div className='table-side'>
-                        <li className='list'>
-                            <li>Room Amount :</li>
-                            <li></li>
-                            <li>Arrival  Date :</li>
-                        </li>
-                        <li className='list'>
-                            <li>Room Amount :</li>
-                            <li></li>
-                            <li>Arrival  Date :</li>
-                        </li>
+                        {
+                            props.infoTableData.map((list)=>{
+                                return (
+                                    <li className='list'>
+                                        <li>{list.label + ":"}</li>
+                                        <li></li>
+                                        <li>{list.value}</li>
+                                    </li>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>

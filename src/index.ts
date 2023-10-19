@@ -12,7 +12,10 @@ import { TopbarNavigation } from "./NavigationTopBar";
 import { Calander } from "./calander"
 import { BookingForm } from "./Forms"
 import { Modals } from "./modals"
-import {Invoice} from "./invoice"
+import { Invoice } from "./invoice";
+import { ColorPicker } from "./colorPicker";
+import { DocumentsModal } from "./modals/upload-documents";
+import { WebsitePlaceholder } from "./websitePlaceholder"
 
 
 export {
@@ -31,5 +34,8 @@ export {
     Calander,
     BookingForm,
     Modals,
-    Invoice
+    Invoice,
+    ColorPicker,
+    DocumentsModal,
+    WebsitePlaceholder
 };

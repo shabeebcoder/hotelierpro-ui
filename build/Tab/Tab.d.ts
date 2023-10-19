@@ -21,6 +21,9 @@ interface ButtonProps {
     buttonIcon?: any;
     btHandleOnClick: any;
     buttonText: string;
+    formName?: string;
+    modalTitle?: string;
+    modalSize?: string;
 }
 export default function Tabs(props: Props): React.JSX.Element;
 export {};

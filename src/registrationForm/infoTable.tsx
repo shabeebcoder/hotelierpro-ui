@@ -4,24 +4,19 @@ import "./styles.css";
 
 function InfoTable(props) {
     return (
-        <div>
-            <div className='table-info'>
-                <div className='full-table'>
-                    <div className='table-side'>
-                        {
-                            props.infoTableData?.map((obj)=> {
-                                return (
-                                    <li className='list'>
-                                        <li>{obj.label +":"}</li>
-                                        <li></li>
-                                        <li>{obj.value}</li>
-                                    </li>
-                                )
-                            })
-                        }
-                    </div>
-                </div>
-            </div>
+        <div className='table-user-data-div'>
+            <table className='table-user-data'>
+                <tr>
+                    <td>Arrival  Date :</td>
+                    <td></td>
+                    <td>Departure Data :</td>
+                </tr>
+                <tr>
+                    <td>Room Amount :</td>
+                    <td>Deposit  Amount :</td>
+                    <td>Due Amount :</td>
+                </tr>
+            </table>
         </div>
     )
 }

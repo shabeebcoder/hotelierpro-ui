@@ -58,9 +58,28 @@ RegistrationForms.args = {
         label: 'Dure Amount',
         value: 'lorem'
     },
-    {
-        privacy: [],
-        privacyData: 'lorem'
-    },
     ]
 }
+RegistrationForms.args = {
+    policyInfoData : [{
+        data:'. The hotel is not responsible for damage for your belonging inside the room.'
+    },
+    {
+        data:'. Any deposited your valuable objet in the hotel safety valut services available.'
+    },
+    {
+        data:'. Any extension of stay will be charged to guest based on either the flexible rate or any other packages offered by hotelprior.'
+    },
+    {
+        data:'. If any miss conduct or gone against the house rules you may get dismissed from the proverty .(Non refundable)'
+    },
+    {
+        data:'. Non refundable if you want to check out earlier that booking date.'
+    },
+    {
+        data:'. Please clear you bill on day before departure.'
+    },
+    {
+        data:'. Long- stay payment deposit amount will be refund 10%only.'
+    },
+]}

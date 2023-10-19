@@ -5,7 +5,7 @@ import "./styles.css";
 function ServicesTable() {
     return (
         <div>
-            <div>
+            <div className='table-two-div'>
                 <table className='table-two'>
                     <tr>
                         <th>DATE</th>

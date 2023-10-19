@@ -6,7 +6,7 @@ function ServicesTable() {
     return (
         <div>
             <div>
-                <table>
+                <table className='table-two'>
                     <tr>
                         <th>DATE</th>
                         <th>TYPE</th>

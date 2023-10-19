@@ -7,12 +7,12 @@ import ServicesTable from './services';
 
 
 
-function RegistrationForm() {
+function RegistrationForm(props) {
     return (
         <div className='registrationFormContainer'>
             <Header />
-            <InfoTable />
-            <PoliciesInfo />
+            <InfoTable {...props}/>
+            <PoliciesInfo {...props}/>
             <ServicesTable />
         </div>
     )

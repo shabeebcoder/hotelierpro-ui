@@ -1,7 +1,7 @@
-.main {
+.registrationFormContainer .main {
     overflow: hidden;
 }
-.header-main {
+.registrationFormContainer .header-main {
     width: 1164px;
     height: 230px;
     flex-shrink: 0;
@@ -9,13 +9,13 @@
     background: #4D6969;
     display: flex;
 }
-.logo {
+.registrationFormContainer .logo {
     width: 51.895px;
     height: 28.544px;
     flex-shrink: 0;
     padding-left: 32px;
 }
-.logo-text {
+.registrationFormContainer .logo-text {
     display: flex;
     width: 159.263px;
     height: 34px;
@@ -30,7 +30,7 @@
     line-height: normal;
     padding-left: 10.73px;
 }
-.left-side {
+.registrationFormContainer .left-side {
     width: 50%;
 }
 .left-div {
@@ -39,14 +39,14 @@
     align-items: center;
     padding-top: 70px;
 }
-.right-side {
+.registrationFormContainer .right-side {
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
 }
-.right-side h1{
+.registrationFormContainer .right-side h1{
     color: #FFF;
     font-family: Inter;
     font-size: 24px;
@@ -55,7 +55,7 @@
     line-height: normal;
     margin-left: 115px;
 }
-.right-side h3{
+.registrationFormContainer .right-side h3{
     color: #FFF;
     font-family: Inter;
     font-size: 16px;
@@ -64,7 +64,7 @@
     line-height: normal;
 }
 
-.table-info {
+.registrationFormContainer .table-info {
     width: 950px;
     height: 306px;
     flex-shrink: 0;
@@ -72,10 +72,10 @@
     opacity: 0.6;
     background: #FFF;
 }
-.full-table {
+.registrationFormContainer .full-table {
     margin-top: 16px;
 }
-.list {
+.registrationFormContainer .list {
     display: -webkit-box;
     list-style: none;
     position: relative;
@@ -87,7 +87,7 @@
     font-weight: 500;
     line-height: normal;
 }
-.table-side {
+.registrationFormContainer .table-side {
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -95,7 +95,7 @@
 
 /*policy*/
 
-.policy-text {
+.registrationFormContainer .policy-text {
     color: rgba(0, 0, 0, 0.85);
     font-family: Inter;
     font-size: 16px;
@@ -104,7 +104,7 @@
     line-height: normal;
 }
 
-.policy-para {
+.registrationFormContainer .policy-para {
     color: #000;
     font-family: Inter;
     font-size: 14px;
@@ -113,7 +113,7 @@
     line-height: normal;
 }
 
-table ,th,td {
+.registrationFormContainer table,th,td {
     width: 950px;
     height: 52px;
     flex-shrink: 0;

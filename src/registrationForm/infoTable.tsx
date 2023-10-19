@@ -4,7 +4,13 @@ import "./styles.css";
 
 function InfoTable(props) {
     return (
-        <div className='table-user-data-div'>
+        <div className='table-main-div'>
+            <div className='table-user-data-head-div'>
+                <div className='table-user-data-head'>
+                    <h1>Registration form</h1>
+                </div>
+            </div>
+            <div className='table-user-data-div'>
             <table className='table-user-data'>
                 <tr>
                     <td>Arrival  Date :</td>
@@ -17,6 +23,7 @@ function InfoTable(props) {
                     <td>Due Amount :</td>
                 </tr>
             </table>
+            </div>
         </div>
     )
 }

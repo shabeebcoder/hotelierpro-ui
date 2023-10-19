@@ -1,6 +1,7 @@
 .registrationFormContainer .main {
     overflow: hidden;
 }
+
 .registrationFormContainer .header-main {
     width: 1164px;
     height: 230px;
@@ -68,27 +69,50 @@
 }
 
 /* table one  */
+/* .registrationFormContainer .table-main-div{
+    
+} */
 
 .registrationFormContainer .table-user-data-div {
     margin-left: 107px;
 }
-
-.registrationFormContainer .table-user-data {
-    width: 950px;
-    height: 306px;
-    flex-shrink: 0;
-    color: rgba(0, 0, 0, 0.80);
+.registrationFormContainer .table-user-data-head-div {
+    text-align: -webkit-center;
+}
+.registrationFormContainer .table-user-data-head {
+    display: flex;
+    width: 184px;
+    padding: 15px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.registrationFormContainer .table-user-data-head h1 {
+    color: #3A7C7C;
     font-family: Inter;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    padding-left: 54px;
+    text-align: center;
 }
 
+.registrationFormContainer .table-user-data {
+    width: 950px;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.registrationFormContainer .table-user-data td {
+    border-bottom: 1px solid;
+    padding: 13px;
+    padding-left: 54px;
+}
 /*policy*/
 .registrationFormContainer .policy-div {
     margin-left: 107px;
+    margin-top: 63px;
+    background-color: #fff;
 }
 .registrationFormContainer .policy-text {
     color: rgba(0, 0, 0, 0.85);
@@ -142,7 +166,14 @@
     margin-left: 107px;
 }
 
-.registrationFormContainer .table-two th,
+.registrationFormContainer .table-two th{
+    width: 950px;
+    height: 52px;
+    flex-shrink: 0;
+    border: 1px solid rgba(161, 161, 161, 0.54);
+    border-collapse: collapse;
+    background: #FFF;
+}
 .registrationFormContainer .table-two td {
     width: 950px;
     height: 52px;
@@ -150,7 +181,6 @@
     border: 1px solid rgba(161, 161, 161, 0.54);
     border-collapse: collapse;
     background: #FFF;
-    text-align: center;
 }
 .registrationFormContainer .table-two{
     width: 950px;

@@ -1,6 +1,6 @@
 import React from "react"
 import Invoice from "./invoice";
-import InvoiceEdit from "./invoice";
+import InvoiceEdit from "./invoice-edit";
 
 export default {
     title: 'components/invoice'

@@ -10,6 +10,11 @@ export default {
 export const RegistrationForms = (args) => <RegistrationForm {...args} />
 
 RegistrationForms.args = {
+    HeaderInfo: {
+       name:"HotelierPro",
+       address:"Baniyar Old Bridge, Ganguba Khatmandu ,Nepa",
+       number:"9805125899(Sudan) 98893972922(Sara)"
+    },
     infoTableData: [{
         label: 'Arrival  Date',
         value: 'lorem'
@@ -80,5 +85,26 @@ RegistrationForms.args = {
     {
         data:'. Long- stay payment deposit amount will be refund 10%only.'
     },
-]
+    ],
+    serviceData: [{
+        data:'DATE',
+        details:"lorem"
+    },
+    {
+        data:'TYPE',
+        details:"lorem"
+    },
+    {
+        data:'QY',
+        details:"lorem"
+    },
+    {
+        data:'AMOUNT',
+        details:"lorem"
+    },
+    {
+        data:'TOTAL',
+        details:"lorem"
+    },
+    ]
 }

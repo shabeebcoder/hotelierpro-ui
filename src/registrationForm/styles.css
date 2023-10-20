@@ -81,17 +81,12 @@
 /* table one  */
 
 
-/* .registrationFormContainer .table-main-div{
-    
-} */
 
-.registrationFormContainer .table-user-data-div {
-    margin-left: 107px;
-}
+
 
 .registrationFormContainer .table-user-data-head-div {
-    text-align: -webkit-center;
-    padding: 20px 0px;
+    text-align: center;
+    padding: 24px 0px 34px;
 }
 
 .registrationFormContainer .table-user-data-head {
@@ -117,21 +112,33 @@
     width: 950px;
     border: 1px solid rgba(161, 161, 161, 0.54);
     border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .registrationFormContainer .table-user-data td {
     border-bottom: 1px solid rgba(161, 161, 161, 0.54);
     padding: 13px;
     padding-left: 54px;
+    color: rgba(0, 0, 0, 0.80);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 
 /*policy*/
 
-.registrationFormContainer .policy-div {
+/* .registrationFormContainer .policy-div {
     margin-left: 107px;
     margin-top: 63px;
     background-color: #fff;
+} */
+
+.registrationFormContainer .policy-div {
+    margin-top: 63px;
 }
 
 .registrationFormContainer .policy-text {
@@ -141,6 +148,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    padding-left: 74px;
 }
 
 .registrationFormContainer .policy-para {
@@ -151,7 +159,17 @@
     font-weight: 300;
     line-height: 1.3rem;
     list-style: none;
-    padding-left: 0px;
+    padding-left: 74px;
+}
+
+.registrationFormContainer .policy-text-one {
+    padding-left: 74px;
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .registrationFormContainer .signeture-div {
@@ -162,7 +180,7 @@
     border: 1px solid rgba(161, 161, 161, 0.54);
     background: #FFF;
     float: right;
-    margin-right: 121px;
+    margin-right: 72px;
     margin-top: -95px;
 }
 
@@ -174,19 +192,20 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    margin-right: 270px;
+    margin-right: 237px;
     margin-top: 14px;
 }
+
 
 
 /*table two */
 
 .registrationFormContainer .table-two {
+    width: 950px;
+    margin-left: auto;
+    margin-right: auto;
     border-collapse: collapse;
-}
-
-.registrationFormContainer .table-two-div {
-    margin-left: 107px;
+    text-align: center;
 }
 
 .registrationFormContainer .table-two th {
@@ -205,8 +224,5 @@
     border: 1px solid rgba(161, 161, 161, 0.54);
     border-collapse: collapse;
     background: #FFF;
-}
-
-.registrationFormContainer .table-two {
-    width: 950px;
+    
 }

@@ -10,11 +10,11 @@ import ServicesTable from './services';
 function RegistrationForm(props) {
     return (
         <div className='registrationFormContainer'>
-            <Header />
+            <Header {...props}/>
             <div className='internalContiner'>
                 <InfoTable {...props}/>
                 <PoliciesInfo {...props}/>
-                <ServicesTable />
+                <ServicesTable {...props}/>
             </div>
         </div>
     )

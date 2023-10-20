@@ -18,7 +18,7 @@ function PoliciesInfo(props) {
                     }
                 </ul>
             </div>
-            <h5 >Check by:</h5>
+            <h5 className='policy-text-one'>Check by:</h5>
             <div className='signeture-div'></div>
             <h5 className='signeture-text'>Signature</h5>
         </div>

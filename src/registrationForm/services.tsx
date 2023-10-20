@@ -2,7 +2,7 @@ import React from 'react'
 import "./styles.css";
 
 
-function ServicesTable() {
+function ServicesTable(props) {
     return (
         <div>
             <div className='table-two-div'>
@@ -15,30 +15,13 @@ function ServicesTable() {
                         <th>TOTAL</th>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>.</td>
-                        <td></td>
-                        <td></td>
-                    </tr>    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>    <tr>
-                        <td></td>
-                        <td></td>
-                        <td> </td>
-                        <td></td>
-                        <td></td>
+                       {
+                        props.serviceData?.map((value)=>{
+                            return(
+                                <td>{value.details}</td>
+                            )
+                        })
+                       }
                     </tr>
                 </table>
             </div>

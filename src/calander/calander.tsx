@@ -43,6 +43,7 @@ interface IBooking {
 
 }
 
+
 interface ICalanderData {
     roomCategory: any[],
     currentDate: any;

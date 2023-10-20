@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from 'react';
 import { IconGauge, IconFingerprint, IconChevronRight } from '@tabler/icons-react';
 import { Box, NavLink } from '@mantine/core';
+import {User} from "./../user"
 import "./styles.css";
 
 
@@ -62,7 +63,7 @@ const data = [
     { icon: SettingsIcon, label: 'Settings' },
 ];
 
-export default function SideBar({ handleOnClick, index = 0 }) {
+export default function SideBar({ handleOnClick, index = 0, onLogout, email, imageUrl, fullName }) {
     const [active, setActive] = useState(index);
 
 
@@ -79,6 +80,8 @@ export default function SideBar({ handleOnClick, index = 0 }) {
     ));
 
     return <Box className="sideNavigation" w={220}>
+        <div>
+            
         <div className="brand">
             <BrandIcon />
             <h1>HotelierPro</h1>
@@ -87,5 +90,10 @@ export default function SideBar({ handleOnClick, index = 0 }) {
 
             <Divider />
         </div>
-        {items}</Box>;
+        {items}
+</div>
+        <div style={{paddingBottom: 30}} >
+            <User fullName={fullName} onLogout={onLogout} imageUrl={imageUrl} email = {email}/>
+        </div>
+    </Box>;
 }

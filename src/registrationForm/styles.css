@@ -1,21 +1,28 @@
 .registrationFormContainer .main {
     overflow: hidden;
+    background-color: white;
+}
+
+.registrationFormContainer {
+    background-color: white;
+    padding-bottom: 50px;
 }
 
 .registrationFormContainer .header-main {
-    width: 1164px;
     height: 230px;
     flex-shrink: 0;
     border-radius: 4px 4px 0px 0px;
     background: #4D6969;
     display: flex;
 }
+
 .registrationFormContainer .logo {
     width: 51.895px;
     height: 28.544px;
     flex-shrink: 0;
     padding-left: 32px;
 }
+
 .registrationFormContainer .logo-text {
     display: flex;
     width: 159.263px;
@@ -31,6 +38,7 @@
     line-height: normal;
     padding-left: 10.73px;
 }
+
 .registrationFormContainer .left-side {
     width: 50%;
 }
@@ -41,6 +49,7 @@
     align-items: center;
     padding-top: 70px;
 }
+
 .registrationFormContainer .right-side {
     width: 50%;
     display: flex;
@@ -68,7 +77,10 @@
     line-height: normal;
 }
 
+
 /* table one  */
+
+
 /* .registrationFormContainer .table-main-div{
     
 } */
@@ -76,9 +88,12 @@
 .registrationFormContainer .table-user-data-div {
     margin-left: 107px;
 }
+
 .registrationFormContainer .table-user-data-head-div {
     text-align: -webkit-center;
+    padding: 20px 0px;
 }
+
 .registrationFormContainer .table-user-data-head {
     display: flex;
     width: 184px;
@@ -87,6 +102,7 @@
     align-items: center;
     gap: 10px;
 }
+
 .registrationFormContainer .table-user-data-head h1 {
     color: #3A7C7C;
     font-family: Inter;
@@ -99,21 +115,25 @@
 
 .registrationFormContainer .table-user-data {
     width: 950px;
-    border: 1px solid;
+    border: 1px solid rgba(161, 161, 161, 0.54);
     border-collapse: collapse;
 }
 
 .registrationFormContainer .table-user-data td {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid rgba(161, 161, 161, 0.54);
     padding: 13px;
     padding-left: 54px;
 }
+
+
 /*policy*/
+
 .registrationFormContainer .policy-div {
     margin-left: 107px;
     margin-top: 63px;
     background-color: #fff;
 }
+
 .registrationFormContainer .policy-text {
     color: rgba(0, 0, 0, 0.85);
     font-family: Inter;
@@ -128,8 +148,8 @@
     font-family: Inter;
     font-size: 14px;
     font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    font-weight: 300;
+    line-height: 1.3rem;
     list-style: none;
     padding-left: 0px;
 }
@@ -145,6 +165,7 @@
     margin-right: 121px;
     margin-top: -95px;
 }
+
 .registrationFormContainer .signeture-text {
     float: right;
     color: #6D6D6D;
@@ -159,14 +180,16 @@
 
 
 /*table two */
-.registrationFormContainer .table-two{
+
+.registrationFormContainer .table-two {
     border-collapse: collapse;
 }
+
 .registrationFormContainer .table-two-div {
     margin-left: 107px;
 }
 
-.registrationFormContainer .table-two th{
+.registrationFormContainer .table-two th {
     width: 950px;
     height: 52px;
     flex-shrink: 0;
@@ -174,6 +197,7 @@
     border-collapse: collapse;
     background: #FFF;
 }
+
 .registrationFormContainer .table-two td {
     width: 950px;
     height: 52px;
@@ -182,6 +206,7 @@
     border-collapse: collapse;
     background: #FFF;
 }
-.registrationFormContainer .table-two{
+
+.registrationFormContainer .table-two {
     width: 950px;
 }

@@ -1,6 +1,6 @@
 {
     "name": "hotelier-lib",
-    "version": "2.3.5",
+    "version": "2.4.4",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "files": [
@@ -78,7 +78,6 @@
     },
     "dependencies": {
         "@ant-design/icons": "^5.1.4",
-        "@emotion/react": "^11.11.1",
         "@mantine/core": "^6.0.19",
         "@mantine/dates": "^6.0.20",
         "@mantine/form": "^6.0.20",

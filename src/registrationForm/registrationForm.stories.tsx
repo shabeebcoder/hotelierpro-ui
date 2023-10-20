@@ -58,9 +58,7 @@ RegistrationForms.args = {
         label: 'Dure Amount',
         value: 'lorem'
     },
-    ]
-}
-RegistrationForms.args = {
+    ],
     policyInfoData : [{
         data:'. The hotel is not responsible for damage for your belonging inside the room.'
     },
@@ -82,4 +80,5 @@ RegistrationForms.args = {
     {
         data:'. Long- stay payment deposit amount will be refund 10%only.'
     },
-]}
+]
+}

@@ -366,6 +366,17 @@
     min-height: 28px;
     width: 100% !important;
 }
+.loggedInUserInformation ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+}
 .sideNavigation .mantine-NavLink-label {
     color: #4D6969;
     font-family: Inter;
@@ -392,6 +403,10 @@
     /* padding-top: 100px; */
     padding-left: 10px;
     padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: #3A7C7C; */
 }
 
 .sideNavigation .brand {
@@ -939,473 +954,413 @@ body {
     justify-content: space-between;
 }
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-
-
 .invoice-container {
-  width: 1164px;
-  height: 1335px;
-  flex-shrink: 0;
-  background-color: white;
-  font-family: Inter;
-  padding: 0;
-  margin: 0;
-  
+    width: 1164px;
+    height: 1335px;
+    flex-shrink: 0;
+    background-color: white;
+    font-family: Inter;
+    padding: 0;
+    margin: 0;
 }
 
 .Header {
-  background-color:#4D6969 ;
-  height:230px ;
-  width: 1164px;
-  display: flex;
-  border-radius: 4px 4px 0px 0px;
+    background-color: #4D6969;
+    height: 230px;
+    width: 1164px;
+    display: flex;
+    border-radius: 4px 4px 0px 0px;
 }
 
-
-
-
-
-.Header img{
-  height: 28px;
-  position: relative;
-  top: 75px;
-  left: 32px;
+.Header img {
+    height: 28px;
+    position: relative;
+    top: 75px;
+    left: 32px;
 }
 
-.invo_details h2{
-  color: white;
-  font-size: 24px;
-  font-weight: 600;
-  
-  
+.invo_details h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .invo_details {
-  color: white;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 32px;
-  left: 582px;
-  margin: 0;
-  padding: 0;
- 
-  justify-content: space-evenly;
-  gap: 15px;
-
-  
-
+    color: white;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 32px;
+    left: 582px;
+    margin: 0;
+    padding: 0;
+    justify-content: space-evenly;
+    gap: 15px;
 }
 
 .invo_details li {
-  font-size: 16px;
-  font-weight: 400;
+    font-size: 16px;
+    font-weight: 400;
 }
-
 
 .bill_adress_container {
-  display: flex;
-  position: relative;
-  top: 103px;
-  left: 40px;
-  align-items: flex-start;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-  
+    display: flex;
+    position: relative;
+    top: 103px;
+    left: 40px;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    text-align: left;
 }
 
-.bill_to_address_container h3{
-  color: #000;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  margin-bottom: 0px;
-
+.bill_to_address_container h3 {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 0px;
 }
 
 .bill_to_address_container li {
-  color: rgba(109, 109, 109, 0.85);
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
+    color: rgba(109, 109, 109, 0.85);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
 }
 
-.bill_to_address_container  ul{
-
-  left: 0;
-  position: relative;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 14px;
-  margin-top: 0px;
-  justify-content: space-evenly;
-  gap: 5px; ;
-  display: flex;
-  flex-direction: column;
-
-  
+.bill_to_address_container ul {
+    left: 0;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 14px;
+    margin-top: 0px;
+    justify-content: space-evenly;
+    gap: 5px;
+    ;
+    display: flex;
+    flex-direction: column;
 }
 
-
-.bill_from_address_container h3{
-  color: #000;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  margin-bottom: 0px;
-
+.bill_from_address_container h3 {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 0px;
 }
 
 .bill_from_address_container li {
-  color: rgba(109, 109, 109, 0.85);
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
+    color: rgba(109, 109, 109, 0.85);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
 }
 
-.bill_from_address_container  ul{
-
-  left: 0;
-  position: relative;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 14px;
-  margin-top: 0px;
-  justify-content: space-evenly;
-  gap: 5px; ;
-  display: flex;
-  flex-direction: column;
+.bill_from_address_container ul {
+    left: 0;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 14px;
+    margin-top: 0px;
+    justify-content: space-evenly;
+    gap: 5px;
+    ;
+    display: flex;
+    flex-direction: column;
 }
-
-
-
-
 
 .bill_from_address_container {
- left: 400px;
- position: relative;
+    left: 400px;
+    position: relative;
 }
 
 .sent {
-  color: #F04551;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  position: absolute;
-  top: 254px;
-  left: 1097px;
+    color: #F04551;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    position: absolute;
+    top: 254px;
+    left: 1097px;
 }
 
-
-
 .Price_Table {
-  top: 560px;
-  position: absolute;
-  display: flex;
-  height: 50px;
-  flex-shrink: 0;
-  background: rgba(144, 203, 203, 0.12);
-  width: 1164px;
-  flex-direction: column;
-  
+    top: 560px;
+    position: absolute;
+    display: flex;
+    height: 50px;
+    flex-shrink: 0;
+    background: rgba(144, 203, 203, 0.12);
+    width: 1164px;
+    flex-direction: column;
 }
 
 .Price_Table th {
-  color: rgba(0, 0, 0, 0.85);
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  height: 50px;
-  
+    color: rgba(0, 0, 0, 0.85);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    height: 50px;
 }
 
 .header_1 {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  left: 40px;
-  padding:0;
-  margin: 0;
-  width: 24px;
-
-  
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 40px;
+    padding: 0;
+    margin: 0;
+    width: 24px;
 }
 
 .header_2 {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  left: 96px;
-  padding:0;
-  margin: 0;
-  width: 34px;
-  
-  
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 96px;
+    padding: 0;
+    margin: 0;
+    width: 34px;
 }
 
 .header_3 {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  left: 568px;
-  padding:0;
-  margin: 0;
-  width: 40px;
-  
-  
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 568px;
+    padding: 0;
+    margin: 0;
+    width: 40px;
 }
-
 
 .header_4 {
-  position: absolute;
-  display: flex;
-  left: 777px;
-  padding:0;
-  margin: 0;
-  width: 30px;
-  height: 50px;
-  align-items: center;
-  
-  
+    position: absolute;
+    display: flex;
+    left: 777px;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 50px;
+    align-items: center;
 }
-
 
 .header_5 {
-  position: absolute;
-  left: 961px;
-  padding:0;
-  margin: 0;
-  width: 41px;
-  align-items: center;
-  height: 50px;
-  display: flex;
-  
-  
-  
+    position: absolute;
+    left: 961px;
+    padding: 0;
+    margin: 0;
+    width: 41px;
+    align-items: center;
+    height: 50px;
+    display: flex;
 }
-
 
 .first_column {
-  top: 80px;
-  position: absolute;
-  display: flex;
-  color: rgba(0, 0, 0, 0.85);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+    top: 80px;
+    position: absolute;
+    display: flex;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-
 .td1 {
-left: 40px;
-position: absolute;
-display: flex;
-width: fit-content;
-
+    left: 40px;
+    position: absolute;
+    display: flex;
+    width: fit-content;
 }
 
 .td2 {
-  left: 96px;
-  position: absolute;
-  display: flex;
-  width: 324px;
-  }
+    left: 96px;
+    position: absolute;
+    display: flex;
+    width: 324px;
+}
 
-  .td3 {
+.td3 {
     left: 568px;
     position: absolute;
     display: flex;
     width: max-content;
-    }
+}
 
-    .td4 {
+.td4 {
     left: 777px;
     position: absolute;
     display: flex;
     width: fit-content;
+}
 
-    }
-
-    .td5{
-      left: 961px;
-      position: absolute;
-      display: flex;
-      width: max-content;
-  
-      }
-
-      
-
-
-      .second_column {
-        top: 140px;
-        position: absolute;
-        display: flex;
-        color: rgba(0, 0, 0, 0.85);
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        width: 100%;
-      }
-      
-      
-    .td6 {
-    left: 40px;
-    position: absolute;
-    display: flex;
-    width: fit-content;
-      
-    }
-      
-    .td7 {
-     left: 96px;
-     position: absolute;
-     display: flex;
-     width: 324px;
-     }
-      
-    .td8 {
-    left: 568px;
-     position: absolute;
-     display: flex;
-     width: max-content;
-     }
-      
-    .td9 {
-     left: 777px;
-     position: absolute;
-     display: flex;
-     width: fit-content;
-      
-     }
-      
-    .td10{
+.td5 {
     left: 961px;
-     position: absolute;
-     display: flex;
-     width: max-content;
-        
-    }
-     .third_column {
-     top: 200px;
-     position: absolute;
-     display: flex;
-     color: rgba(0, 0, 0, 0.85);
-     font-size: 14px;
-     font-style: normal;
-     font-weight: 400;
-     line-height: normal;
-     width: 100%;
-     }
-            
-            
-    .td11 {
+    position: absolute;
+    display: flex;
+    width: max-content;
+}
+
+.second_column {
+    top: 140px;
+    position: absolute;
+    display: flex;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+}
+
+.td6 {
     left: 40px;
     position: absolute;
     display: flex;
     width: fit-content;
-            
-     }
-            
-    .td12 {
+}
+
+.td7 {
     left: 96px;
-     position: absolute;
-     display: flex;
-     width: 324px;
-     }
-            
-       .td13{
-      left: 568px;
-      position: absolute;
-      display: flex;
-       width: max-content;
-       }
-            
-      .td14 {
-      left: 777px;
-      position: absolute;
-      display: flex;
-      width: fit-content;
-            
-        }
-            
-      .td15{
-       left: 961px;
-       position: absolute;
-       display: flex;
-       width: max-content;
-              
-           }
+    position: absolute;
+    display: flex;
+    width: 324px;
+}
+
+.td8 {
+    left: 568px;
+    position: absolute;
+    display: flex;
+    width: max-content;
+}
+
+.td9 {
+    left: 777px;
+    position: absolute;
+    display: flex;
+    width: fit-content;
+}
+
+.td10 {
+    left: 961px;
+    position: absolute;
+    display: flex;
+    width: max-content;
+}
+
+.third_column {
+    top: 200px;
+    position: absolute;
+    display: flex;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+}
+
+.td11 {
+    left: 40px;
+    position: absolute;
+    display: flex;
+    width: fit-content;
+}
+
+.td12 {
+    left: 96px;
+    position: absolute;
+    display: flex;
+    width: 324px;
+}
+
+.td13 {
+    left: 568px;
+    position: absolute;
+    display: flex;
+    width: max-content;
+}
+
+.td14 {
+    left: 777px;
+    position: absolute;
+    display: flex;
+    width: fit-content;
+}
+
+.td15 {
+    left: 961px;
+    position: absolute;
+    display: flex;
+    width: max-content;
+}
 
 .total_price svg {
-  left: 570px;
-  top: 260px;
-  position: absolute;
-  display: flex;
-  }
+    left: 570px;
+    top: 260px;
+    position: absolute;
+    display: flex;
+}
 
-  .Total_part {
-  color: rgba(0, 0, 0, 0.85);
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 500;
-  display: flex;
-  flex-direction: column;
-  gap: 45px;
-  top: 300px;
-  position: absolute;
-  width: 100%;
-  
-  }
+.Total_part {
+    color: rgba(0, 0, 0, 0.85);
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    top: 300px;
+    position: absolute;
+    width: 100%;
+}
 
-  .subtotal{
+.subtotal {
     left: 570px;
     /* top: 340px; */
     position: absolute;
     display: flex;
+}
 
-  }
-
-  .subtotal_price{
+.subtotal_price {
     left: 961px;
     /* top: 340px; */
     position: absolute;
     display: flex;
-  }
+}
 
-  .city_tax{
+.city_tax {
     left: 570px;
     /* top: 390px; */
     position: absolute;
     display: flex;
+}
 
-  }
-  
-  .tax_price {
+.tax_price {
     left: 777px;
     /* top: 390px; */
     position: absolute;
@@ -1415,33 +1370,31 @@ width: fit-content;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;  
-  }
+    line-height: normal;
+}
 
-  .total_tax_price{
+.total_tax_price {
     left: 961px;
     /* top: 390px; */
     position: absolute;
     display: flex;
-  }
+}
 
-  .VAT{
+.VAT {
     left: 570px;
     /* top: 430px; */
     position: absolute;
     display: flex;
+}
 
-  }
-
-  .rooms{
+.invoice-container .invoice-container s {
     left: 570px;
     /* top: 470px; */
     position: absolute;
     display: flex;
+}
 
-  }
-
-  .Percentage_1 {
+.Percentage_1 {
     left: 777px;
     /* top: 470px; */
     position: absolute;
@@ -1451,26 +1404,24 @@ width: fit-content;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;  
-  }
+    line-height: normal;
+}
 
-  .rooms_price{
+.invoice-container .rooms_price {
     left: 961px;
     /* top: 470px; */
     position: absolute;
     display: flex;
-  }
+}
 
-
-  .GS{
+.GS {
     left: 570px;
     /* top: 510px; */
     position: absolute;
     display: flex;
+}
 
-  }
-
-  .Percentage_2 {
+.Percentage_2 {
     left: 777px;
     /* top: 510px; */
     position: absolute;
@@ -1480,25 +1431,24 @@ width: fit-content;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;  
-  }
+    line-height: normal;
+}
 
-  .GS_price{
+.GS_price {
     left: 961px;
     /* top: 510px; */
     position: absolute;
     display: flex;
-  }
+}
 
-  .Food{
+.Food {
     left: 570px;
     /* top: 550px; */
     position: absolute;
     display: flex;
+}
 
-  }
-
-  .Percentage_3 {
+.Percentage_3 {
     left: 777px;
     /* top: 550px; */
     position: absolute;
@@ -1508,80 +1458,72 @@ width: fit-content;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;  
-  }
+    line-height: normal;
+}
 
-  .food_price{
+.food_price {
     left: 961px;
     /* top: 550px; */
     position: absolute;
     display: flex;
-  }
+}
 
-  .line_2 {
+.line_2 {
     left: 570px;
-     top: 270px;
+    top: 270px;
     position: absolute;
     display: flex;
     background-color: rgba(161, 161, 161, 0.54);
     height: 1px;
     width: 468px;
+}
 
-  }
-
-  .final_total{
+.final_total {
     left: 570px;
     top: 300px;
     position: absolute;
     display: flex;
+}
 
-  }
-
-  .final_total_price{
+.final_total_price {
     left: 961px;
     top: 300px;
     position: absolute;
     display: flex;
-  }
+}
 
-
-  .paid_total{
+.paid_total {
     left: 570px;
     top: 345px;
     position: absolute;
     display: flex;
+}
 
-  }
-
-  .paid_total_price{
+.paid_total_price {
     left: 961px;
     top: 345px;
     position: absolute;
     display: flex;
-  }
+}
 
-
-  .line_3 {
+.line_3 {
     left: 570px;
-     top: 390px;
+    top: 390px;
     position: absolute;
     display: flex;
     background-color: rgba(161, 161, 161, 0.54);
     height: 1px;
     width: 468px;
+}
 
-  }
-
-
-  .due_total{
+.due_total {
     left: 570px;
     top: 425px;
     position: absolute;
     display: flex;
+}
 
-  }
-
-  .due_total_price{
+.due_total_price {
     left: 961px;
     top: 425px;
     position: absolute;
@@ -1592,12 +1534,11 @@ width: fit-content;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-  }
+}
 
-
-  .notes {
+.notes {
     width: 502px;
-    height: 193px ;
+    height: 193px;
     border-radius: 4px;
     border: 1px solid rgba(161, 161, 161, 0.54);
     display: flex;
@@ -1606,10 +1547,9 @@ width: fit-content;
     left: 40px;
     margin: 0px;
     padding: 0px;
-  }
+}
 
-  .notes p {
-
+.notes p {
     color: #6D6D6D;
     font-family: Inter;
     font-size: 14px;
@@ -1621,32 +1561,7 @@ width: fit-content;
     position: absolute;
     margin: 0px;
     padding: 0px;
-
-  }
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 .color-picker-text {
     color: #000;
     font-family: Roboto;
@@ -2087,4 +2002,133 @@ h6 {
     flex-shrink: 0;
     margin-right: 10px;
     margin-bottom: 27px;
+}
+/* Absolute Center Spinner */
+
+.loaderContainer {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+/* Transparent Overlay */
+
+.loaderContainer:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+    background: -webkit-radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+}
+
+
+/* :not(:required) hides these rules from IE9 and below */
+
+.loaderContainer:not(:required) {
+    /* hide "loaderContainer..." text */
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.loaderContainer:not(:required):after {
+    content: '';
+    display: block;
+    font-size: 10px;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    -webkit-animation: spinner 150ms infinite linear;
+    -moz-animation: spinner 150ms infinite linear;
+    -ms-animation: spinner 150ms infinite linear;
+    -o-animation: spinner 150ms infinite linear;
+    animation: spinner 150ms infinite linear;
+    border-radius: 0.5em;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+    box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+}
+
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }

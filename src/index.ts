@@ -4,7 +4,7 @@ import { Login } from "./Login"
 import { Register } from "./Signup"
 import { RoomTypesForm } from "./Forms/roomType"
 import { Rooms } from "./Forms/room"
-import { RoomList, Tables } from "./Tables";
+import { RoomList, Tables, InvoiceListTable } from "./Tables";
 import { Tabs } from "./Tab"
 import DLS from "./DLS";
 import { SideBar } from "./NavigationSideBar"
@@ -15,7 +15,9 @@ import { Modals } from "./modals"
 import { Invoice } from "./invoice";
 import { ColorPicker } from "./colorPicker";
 import { DocumentsModal } from "./modals/upload-documents";
-import { WebsitePlaceholder } from "./websitePlaceholder"
+import { WebsitePlaceholder } from "./websitePlaceholder";
+import { Loader } from "./loader";
+import {User} from "./user"
 
 
 export {
@@ -37,5 +39,8 @@ export {
     Invoice,
     ColorPicker,
     DocumentsModal,
-    WebsitePlaceholder
+    WebsitePlaceholder,
+    InvoiceListTable,
+    Loader,
+    User
 };

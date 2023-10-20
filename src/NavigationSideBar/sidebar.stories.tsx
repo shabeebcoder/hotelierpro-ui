@@ -19,6 +19,11 @@ let index = 0
 
 SideBar.args = {
     handleOnClick: handleOnClick,
-    index
+    index,
+    onLogout: () => alert("logging out"),
+    fullName: "shabeeb ck",
+    imageUrl: "https://i.ibb.co/cwpx8Mh/Group-73.png",
+    email: 'shabeebcoder@gmail.com'
+    
 }
 

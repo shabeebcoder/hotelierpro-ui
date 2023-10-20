@@ -11,9 +11,11 @@ function RegistrationForm(props) {
     return (
         <div className='registrationFormContainer'>
             <Header />
-            <InfoTable {...props}/>
-            <PoliciesInfo {...props}/>
-            <ServicesTable />
+            <div className='internalContiner'>
+                <InfoTable {...props}/>
+                <PoliciesInfo {...props}/>
+                <ServicesTable />
+            </div>
         </div>
     )
 }

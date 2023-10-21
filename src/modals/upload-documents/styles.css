@@ -1,0 +1,129 @@
+.hp-modal .mantine-Modal-header {
+    border-radius: 8px 8px 0px 0px;
+    background: #D9D9D9;
+    height: 56px;
+    padding: 0px;
+    padding-left: 10px;
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-right: 10px;
+}
+
+.hp-modal .hp-modal .formWrapper {
+    padding: 24px;
+}
+
+.hp-modal .hp-modal .formWrapper .ant-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.hp-modal .formWrapper .form-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-top: 15px;
+    /* max-width: 400px; */
+}
+
+.hp-modal .formWrapper .form-item label {
+    padding-right: 100px;
+}
+
+.hp-modal .formWrapper .form-item label {
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.hp-modal .formWrapper .form-item .mantine-Input-input {
+    border-radius: 4px;
+    border: 1px solid #D9D9D9;
+    background: #FFF;
+    height: 28px;
+    min-height: 28px;
+    max-width: 400px;
+    width: 200px;
+}
+
+.hp-modal .formWrapper .form-item .mantine-Input-input.mantine-Textarea-input {
+    border-radius: 4px;
+    border: 1px solid #D9D9D9;
+    background: #FFF;
+    height: 64px;
+    min-height: 28px;
+    width: 100% !important;
+}
+
+.documents-upload {
+    display: flex;
+    padding-top: 10px;
+}
+
+.documents-upload .input {
+    padding-right: 10px;
+}
+
+.selectedFileContainer {}
+
+.selectedFileContainer .files {
+    display: flex;
+    align-items: center;
+    border-top: solid 1px rgba(0, 0, 0, 0.13);
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+.fileUploadModalfooter {
+    margin-top: 10px;
+    border-top: solid 1px rgba(0, 0, 0, 0.13);
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-between;
+}
+
+.addDocumentsButton {
+    background-color: #3A7C7C;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.uploadmodalContainer .cancelButton {
+    background-color: white;
+    color: #3A7C7C;
+    border-color: #3A7C7C;
+}
+
+.uploadmodalContainer .uploadButtonInModal {
+    background-color: #3A7C7C;
+}
+
+.fileUploadModalfooter li {
+    display: block;
+    color: rgba(240, 69, 81, 1);
+    color: #F04551;
+    font-family: Inter;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-top: 5px;
+}
+
+.fileUploadModalfooter ul {
+    padding: 0px;
+    margin: 0px;
+}

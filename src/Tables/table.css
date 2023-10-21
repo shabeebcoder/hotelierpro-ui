@@ -1,0 +1,101 @@
+.table-row-light {
+    background-color: #ffffff;
+}
+
+.table-row-dark {
+    background-color: rgba(235, 246, 246, 0.42);
+}
+
+.ant-table .ant-table-container .ant-table-content table thead.ant-table-thead .ant-table-cell {
+    background-color: rgba(144, 203, 203, 0.12);
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.title {
+    font-family: 'Inter';
+    font-size: '14px';
+    font-weight: 500;
+    line-height: 'normal'
+}
+
+.subTitle {
+    font-size: 10px;
+    font-weight: 500;
+    font-family: 'Inter'
+}
+
+.editableInput {
+    border-radius: 0px;
+}
+
+:where(.css-dev-only-do-not-override-ed5zg0).ant-table-wrapper .ant-table-column-sorters {
+    justify-content: unset !important;
+    /* margin-inline-start: 10px */
+}
+
+:where(.css-dev-only-do-not-override-ed5zg0).ant-table-wrapper .ant-table-column-title {
+    /* flex: unset; */
+}
+
+.ant-select-selection {
+    background-color: green;
+}
+
+.invoiceTable .paid .ant-select-selector {
+    border-color: #40A321;
+    color: #40A321;
+}
+
+.invoiceTable .draft .ant-select-selector {
+    border-color: #FFAD0D;
+    color: #FFAD0D;
+}
+
+.invoiceTable .sents .ant-select-selector {
+    border-color: #FF4D4F;
+    color: #FF4D4F;
+}
+
+.invoiceTable .ant-checkbox-wrapper {
+    padding-left: 8px;
+}
+
+.invoiceTable :where(.css-dev-only-do-not-override-1vr7spz).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-color: #3A7C7C;
+}
+
+.invoiceTable :where(.css-dev-only-do-not-override-1vr7spz).ant-picker {
+    border-color: #3A7C7C;
+}
+
+.invoiceTable :where(.css-dev-only-do-not-override-1vr7spz).ant-input-group .ant-input-group-addon {
+    border-left-color: #3A7C7C;
+    border-top-color: #3A7C7C;
+    border-bottom-color: #3A7C7C;
+    border-right-color: none;
+    background-color: white;
+}
+
+.invoiceTable .ant-input {
+    border-bottom-color: #3A7C7C;
+    border-right-color: #3A7C7C;
+    border-top-color: #3A7C7C;
+    border-left-color: white;
+    border-left: 0px;
+}
+
+.invoiceTable .ant-btn {
+    font-weight: 300;
+}
+
+.invoiceTable .headerContainer .ant-select-selection-item {
+    color: #3A7C7C;
+    font-weight: 300;
+}
+
+.invoiceTable .headerContainer :where(.css-dev-only-do-not-override-1vr7spz).ant-select .ant-select-arrow {
+    color: black;
+}

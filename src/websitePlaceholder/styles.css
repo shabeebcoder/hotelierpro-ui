@@ -1,0 +1,74 @@
+
+.background {
+    width: 613px;
+    height: 365px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.header {
+    width: 613px;
+    height: 51px;
+    flex-shrink: 0;
+}
+.main-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 613px;
+    margin-top: 20px;
+}
+.first-box {
+    width: 117px;
+    height: 22px;
+    flex-shrink: 0;
+}
+.card-div {
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-div-two {
+    vertical-align: baseline;
+}
+.first-card {
+    width: 337px;
+    height: 85px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.inside-first-card {
+    width: 55px;
+    height: 59px;
+    flex-shrink: 0;
+    margin-top: 13px;
+    margin-left: 17px;
+}
+.inside-second-card {
+    width: 54px;
+    height: 19px;
+    flex-shrink: 0;
+    align-items: center;
+    margin-top: 53px;
+    margin-right: 21px;
+}
+.background-second {
+    width: 188px;
+    height: 188px;
+    flex-shrink: 0;
+    margin-left: 21px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.inside-background-second {
+    width: 88px;
+    height: 22px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    margin-bottom: 27px;
+}

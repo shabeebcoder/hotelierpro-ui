@@ -1,0 +1,81 @@
+.hp-tab .mantine-fq0g4p {
+    border-bottom: none;
+}
+
+.hp-tab .mantine-1rb9ahf {
+    color: #4D6969;
+    /* H5/medium */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 150% */
+}
+
+.mantine-1rb9ahf[data-active],
+.mantine-1rb9ahf[data-active]:hover {
+    border-color: #4D6969;
+}
+
+.ant-tabs-ink-bar {
+    display: none;
+}
+
+:global(.ant-btn-primary) {
+    background-color: var(--secondary-color);
+    &:hover {
+        background-color: var(--secondary-hover-color) !important;
+        border-color: var(--secondary-hover-color) !important;
+    }
+}
+
+.hp-tab .hp-tab-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.mantine-ronp0n:disabled:hover,
+.mantine-ronp0n:hover {
+    background-color: unset;
+    border-color: transparent;
+    cursor: unset;
+}
+
+.mantine-ronp0n:disabled {
+    background-color: none;
+}
+
+.mantine-ronp0n:disabled {
+    opacity: 1
+}
+
+
+/* .ant-tabs-tab-btn :where(.css-dev-only-do-not-override-190m0jy).ant-tabs .ant-tabs-tab-btn:focus:not(:focus-visible),
+ :where(.css-dev-only-do-not-override-190m0jy).ant-tabs .ant-tabs-tab-remove:focus:not(:focus-visible),
+ :where(.css-dev-only-do-not-override-190m0jy).ant-tabs .ant-tabs-tab-btn:active,
+ :where(.css-dev-only-do-not-override-190m0jy).ant-tabs .ant-tabs-tab-remove:active {
+    color: red;
+}
+
+.hey {
+    display: none;
+}
+
+.ant-tabs-nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.ant-tabs-tab {
+    width: 50%;
+    justify-content: center;
+} */
+
+
+/* {
+    display: none;
+} */

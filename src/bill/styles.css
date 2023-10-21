@@ -1,0 +1,28 @@
+.billing {
+    background-color: white;
+    padding: 40px;
+}
+
+.billing .persons {
+    margin-top: 25px;
+}
+
+.billing .t_header {
+    background: rgba(144, 203, 203, 0.12);
+}
+
+.billing .t_header th {
+    border-bottom: none;
+}
+
+.billing table tbody tr td {
+    border-top: none;
+}
+
+.billing .summery td {
+    border-top: solid 1px rgb(218, 215, 215) !important;
+}
+
+.billing table .no-visiblity {
+    border-top: none;
+}

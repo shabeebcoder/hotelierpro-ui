@@ -1,0 +1,93 @@
+.bookFormContainer {
+    background-color: white;
+    max-width: 1000px;
+    padding: 40px;
+}
+
+.bookFormContainer .mantine-InputWrapper-label {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.85);
+    font-family: Inter;
+    font-weight: 500;
+}
+
+.bookFormContainer .footerActions {
+    margin-top: 20px;
+}
+
+.bookFormContainer .footerActions .uploadDocuments {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bookFormContainer .mantine-Input-input {
+    /* max-width: 200px; */
+    background-color: rgba(144, 203, 203, 0.12);
+    border: 1px solid rgba(58, 124, 124, 0.00);
+    border-radius: 4px;
+}
+
+.bookFormContainer .mantine-TextInput-icon svg {
+    height: 16px !important;
+}
+
+.bookFormContainer .guestDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bookFormContainer .mantine-Group-root {
+    gap: unset;
+}
+
+.bookFormContainer .mantine-Group-root .mantine-UnstyledButton-root {
+    background-color: rgba(144, 203, 203, 0.12);
+    gap: unset;
+    border: unset;
+    height: 36px;
+    min-height: unset;
+    border-radius: unset;
+}
+
+.bookFormContainer .guestDetails .action {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 10px;
+}
+
+.bookFormContainer .mantine-Button-root {
+    background-color: #3A7C7C;
+    border-radius: 4px;
+}
+
+.bookFormContainer .mantine-Button-root.outline {
+    background-color: white;
+    color: #3A7C7C;
+    border: 1px solid #3A7C7C;
+}
+
+.bookFormContainer .mantine-Button-label {
+    font-size: 14px;
+    font-weight: 200;
+    font-family: Inter;
+    font-style: normal;
+    line-height: normal;
+}
+
+.bookFormContainer .mantine-Input-input {
+    height: 32px;
+    border-radius: 0px;
+}
+
+.bookFormContainer .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.bookFormContainer .footerActions {
+    display: flex;
+    justify-content: space-between;
+}

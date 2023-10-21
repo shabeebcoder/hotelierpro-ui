@@ -1,0 +1,12 @@
+version: '3'
+services:
+  storybook_production:
+    platform: linux/amd64
+    image: registry.gitlab.com/hotelierpro/ui-library:latest
+    ports:
+      - "6006:6006"
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - NODE_OPTIONS=--max-old-space-size=4096
+

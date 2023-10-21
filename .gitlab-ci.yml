@@ -1,0 +1,38 @@
+stages:
+    - build
+    - deployment
+
+build:
+    stage: build
+    image: docker
+    services:
+        - docker:dind
+    script:
+        - docker login -u $CI_REGISTRY_USER  -p ${CI_CD_PASSWORD} $CI_REGISTRY_IMAGE
+        - docker build -t $CI_REGISTRY_IMAGE .
+        - docker push $CI_REGISTRY_IMAGE
+        - docker logout
+    only:
+    - tags
+
+deploy:
+    stage: deployment
+    image: alpine
+    before_script:
+        - apk add openssh-client
+        - eval $(ssh-agent -s)
+        - echo "${SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add -
+        - mkdir -p ~/.ssh
+        - chmod 700 ~/.ssh
+    script:
+         - ssh -o StrictHostKeyChecking=no root@172.105.58.58 "cd /hotelierPro/ui-library && docker-compose -f docker-compose.stage.yml down && docker-compose -f docker-compose.stage.yml pull && docker-compose -f docker-compose.stage.yml up -d"
+    only:
+    - tags
+
+# npm:
+#     stage: publish-npm
+#     script:
+#         - echo "//registry.npmjs.org/:_authToken=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" > .npmrc && npm publish
+#     only:
+#     - master
+#     - tags

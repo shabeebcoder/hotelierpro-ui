@@ -1,0 +1,12 @@
+.form_card_container .ant-card-head {
+    background: rgba(144, 203, 203, 0.12);
+}
+
+.ant-card-head .ant-card-head-title {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

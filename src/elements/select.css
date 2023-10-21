@@ -1,0 +1,15 @@
+.hotelierSelect .mantine-Input-input {
+    border-radius: 0px;
+    /* border-radius: 4px; */
+    background: rgba(144, 203, 203, 0.12);
+    border-color: rgba(144, 203, 203, 0.12);
+}
+
+.hotelierSelect .mantine-InputWrapper-label {
+    color: rgba(0, 0, 0, 0.85);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

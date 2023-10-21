@@ -1,0 +1,19 @@
+.ant-btn-primary.hotelierButton {
+    background-color: #3A7C7C;
+}
+
+.ant-btn-default.hotelierButton {
+    color: #3A7C7C;
+    border-color: #3A7C7C;
+}
+
+.hpTabActionButton {
+    background-color: #3A7C7C;
+    border-radius: 4px;
+    color: #F9F9FB;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

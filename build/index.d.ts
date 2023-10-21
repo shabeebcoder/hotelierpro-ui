@@ -1,5 +1,5 @@
 import { Button } from "./Buttons";
-import { SuccessAlert } from "./Alert";
+import { Alert } from "./Alert";
 import { Login } from "./Login";
 import { Register } from "./Signup";
 import { RoomTypesForm } from "./Forms/roomType";
@@ -18,4 +18,4 @@ import { DocumentsModal } from "./modals/upload-documents";
 import { WebsitePlaceholder } from "./websitePlaceholder";
 import { Loader } from "./loader";
 import { User } from "./user";
-export { Button, DLS, SuccessAlert, Login, Register, RoomTypesForm, Rooms, Tables, RoomList, Tabs, SideBar, TopbarNavigation, Calander, BookingForm, Modals, Invoice, ColorPicker, DocumentsModal, WebsitePlaceholder, InvoiceListTable, Loader, User };
+export { Button, DLS, Alert, Login, Register, RoomTypesForm, Rooms, Tables, RoomList, Tabs, SideBar, TopbarNavigation, Calander, BookingForm, Modals, Invoice, ColorPicker, DocumentsModal, WebsitePlaceholder, InvoiceListTable, Loader, User };

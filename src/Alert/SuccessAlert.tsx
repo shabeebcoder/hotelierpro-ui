@@ -1,8 +1,8 @@
 import React from "react";
-import { Alert } from "antd";
+import { Alert as Alerts } from "antd";
 
-const App: React.FC = (props: any) => (
-  <Alert message={props.message} type={props.type} />
+const Alert: React.FC = (props: any) => (
+  <Alerts message={props.message} type={props.type} />
 );
 
-export default App;
+export default Alert;

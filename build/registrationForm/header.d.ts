@@ -1,4 +1,4 @@
 import React from 'react';
 import "./styles.css";
-declare function Header(): React.JSX.Element;
+declare function Header(props: any): React.JSX.Element;
 export default Header;

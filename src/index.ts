@@ -1,5 +1,5 @@
 import { Button } from "./Buttons";
-import { SuccessAlert } from "./Alert";
+import { Alert } from "./Alert";
 import { Login } from "./Login"
 import { Register } from "./Signup"
 import { RoomTypesForm } from "./Forms/roomType"
@@ -23,7 +23,7 @@ import {User} from "./user"
 export {
     Button,
     DLS,
-    SuccessAlert,
+    Alert,
     Login,
     Register,
     RoomTypesForm,

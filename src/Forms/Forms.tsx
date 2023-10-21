@@ -38,7 +38,7 @@ const BookingForm = (props: any) => {
 
             checkInDate: (value: any) => (value.length < 2 ? 'Check-in Date required' : null),
             checkOutDate: (value: any) => (value.length < 2 ? 'Check out Date required' : null),
-            duration: (value: any) => (value.length < 2 ? 'Duration is required' : null),
+            duration: (value: any) => (value.length < 1 ? 'Duration is required' : null),
             roomType: (value: any) => (value.length < 2 ? 'Please select room type' : null),
             status: (value: any) => (value.length < 2 ? 'Please select a status' : null),
             adult: (value: any) => (value == 0 ? 'Adult required' : null),

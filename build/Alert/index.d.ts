@@ -1,2 +1,2 @@
-import SuccessAlert from "./SuccessAlert";
-export { SuccessAlert };
+import Alert from "./SuccessAlert";
+export { Alert };

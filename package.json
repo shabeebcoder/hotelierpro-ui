@@ -1,6 +1,6 @@
 {
     "name": "hotelier-lib",
-    "version": "2.4.4",
+    "version": "2.4.5",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "files": [
@@ -16,7 +16,8 @@
         "dev:windows": "start-storybook -p 6006 ",
         "storybook:export": "build-storybook",
         "generate": "node ./util/create-component",
-        "prepublishOnly": "npm run build"
+        "prepublishOnly": "npm run build",
+        "publish-lib": "npm run build && npm publish && yarn dev"
     },
     "repository": {
         "type": "git",

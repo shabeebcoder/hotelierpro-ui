@@ -1,4 +1,4 @@
 import React from 'react';
 import "./styles.css";
-declare function ServicesTable(): React.JSX.Element;
+declare function ServicesTable(props: any): React.JSX.Element;
 export default ServicesTable;

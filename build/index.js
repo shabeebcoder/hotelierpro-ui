@@ -121,131 +121,6 @@ typeof SuppressedError === "function" ? SuppressedError : function (error, suppr
   return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
 };
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _typeof(o) {
-  "@babel/helpers - typeof";
-
-  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
-    return typeof o;
-  } : function (o) {
-    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, _typeof(o);
-}
-
-function _toPrimitive(input, hint) {
-  if (_typeof(input) !== "object" || input === null) return input;
-  var prim = input[Symbol.toPrimitive];
-  if (prim !== undefined) {
-    var res = prim.call(input, hint || "default");
-    if (_typeof(res) !== "object") return res;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return (hint === "string" ? String : Number)(input);
-}
-
-function _toPropertyKey(arg) {
-  var key = _toPrimitive(arg, "string");
-  return _typeof(key) === "symbol" ? key : String(key);
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
-  }
-}
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  Object.defineProperty(Constructor, "prototype", {
-    writable: false
-  });
-  return Constructor;
-}
-
-function _setPrototypeOf$1(o, p) {
-  _setPrototypeOf$1 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-  return _setPrototypeOf$1(o, p);
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
-    }
-  });
-  Object.defineProperty(subClass, "prototype", {
-    writable: false
-  });
-  if (superClass) _setPrototypeOf$1(subClass, superClass);
-}
-
-function _getPrototypeOf$1(o) {
-  _getPrototypeOf$1 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf$1(o);
-}
-
-function _isNativeReflectConstruct$1() {
-  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-  if (Reflect.construct.sham) return false;
-  if (typeof Proxy === "function") return true;
-  try {
-    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-  return self;
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (call && (_typeof(call) === "object" || typeof call === "function")) {
-    return call;
-  } else if (call !== void 0) {
-    throw new TypeError("Derived constructors may only return object or undefined");
-  }
-  return _assertThisInitialized(self);
-}
-
-function _createSuper(Derived) {
-  var hasNativeReflectConstruct = _isNativeReflectConstruct$1();
-  return function _createSuperInternal() {
-    var Super = _getPrototypeOf$1(Derived),
-      result;
-    if (hasNativeReflectConstruct) {
-      var NewTarget = _getPrototypeOf$1(this).constructor;
-      result = Reflect.construct(Super, arguments, NewTarget);
-    } else {
-      result = Super.apply(this, arguments);
-    }
-    return _possibleConstructorReturn(this, result);
-  };
-}
-
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 function createCommonjsModule(fn) {
@@ -329,7 +204,8 @@ function _extends$1() {
   return _extends$1.apply(this, arguments);
 }
 
-/** @license React v16.13.1
+/**
+ * @license React
  * react-is.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -337,45 +213,45 @@ function _extends$1() {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e$2=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l$1=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n$1=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
-Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t$1=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
-function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l$1:case m:case e$2:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n$1:case t$1:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l$1;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h;var Element$3=c;var ForwardRef=n$1;var Fragment=e$2;var Lazy=t$1;var Memo=r;var Portal$2=d;
-var Profiler=g;var StrictMode=f;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l$1};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h};var isElement$3=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n$1};var isFragment$1=function(a){return z(a)===e$2};var isLazy=function(a){return z(a)===t$1};
-var isMemo=function(a){return z(a)===r};var isPortal=function(a){return z(a)===d};var isProfiler=function(a){return z(a)===g};var isStrictMode=function(a){return z(a)===f};var isSuspense=function(a){return z(a)===p};
-var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e$2||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t$1||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n$1||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};var typeOf=z;
+var b$1=Symbol.for("react.element"),c$1=Symbol.for("react.portal"),d$1=Symbol.for("react.fragment"),e$3=Symbol.for("react.strict_mode"),f$1=Symbol.for("react.profiler"),g$1=Symbol.for("react.provider"),h$1=Symbol.for("react.context"),k$1=Symbol.for("react.server_context"),l$2=Symbol.for("react.forward_ref"),m$1=Symbol.for("react.suspense"),n$2=Symbol.for("react.suspense_list"),p$1=Symbol.for("react.memo"),q$1=Symbol.for("react.lazy"),t$2=Symbol.for("react.offscreen"),u;u=Symbol.for("react.module.reference");
+function v$1(a){if("object"===typeof a&&null!==a){var r=a.$$typeof;switch(r){case b$1:switch(a=a.type,a){case d$1:case f$1:case e$3:case m$1:case n$2:return a;default:switch(a=a&&a.$$typeof,a){case k$1:case h$1:case l$2:case q$1:case p$1:case g$1:return a;default:return r}}case c$1:return r}}}var ContextConsumer$1=h$1;var ContextProvider$1=g$1;var Element$4=b$1;var ForwardRef$1=l$2;var Fragment$1=d$1;var Lazy$1=q$1;var Memo$1=p$1;var Portal$3=c$1;var Profiler$1=f$1;var StrictMode$1=e$3;var Suspense$1=m$1;
+var SuspenseList=n$2;var isAsyncMode$1=function(){return !1};var isConcurrentMode$1=function(){return !1};var isContextConsumer$1=function(a){return v$1(a)===h$1};var isContextProvider$1=function(a){return v$1(a)===g$1};var isElement$4=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===b$1};var isForwardRef$1=function(a){return v$1(a)===l$2};var isFragment$2=function(a){return v$1(a)===d$1};var isLazy$1=function(a){return v$1(a)===q$1};var isMemo$1=function(a){return v$1(a)===p$1};
+var isPortal$1=function(a){return v$1(a)===c$1};var isProfiler$1=function(a){return v$1(a)===f$1};var isStrictMode$1=function(a){return v$1(a)===e$3};var isSuspense$1=function(a){return v$1(a)===m$1};var isSuspenseList=function(a){return v$1(a)===n$2};
+var isValidElementType$1=function(a){return "string"===typeof a||"function"===typeof a||a===d$1||a===f$1||a===e$3||a===m$1||a===n$2||a===t$2||"object"===typeof a&&null!==a&&(a.$$typeof===q$1||a.$$typeof===p$1||a.$$typeof===g$1||a.$$typeof===h$1||a.$$typeof===l$2||a.$$typeof===u||void 0!==a.getModuleId)?!0:!1};var typeOf$1=v$1;
 
-var reactIs_production_min = {
-	AsyncMode: AsyncMode,
-	ConcurrentMode: ConcurrentMode,
-	ContextConsumer: ContextConsumer,
-	ContextProvider: ContextProvider,
-	Element: Element$3,
-	ForwardRef: ForwardRef,
-	Fragment: Fragment,
-	Lazy: Lazy,
-	Memo: Memo,
-	Portal: Portal$2,
-	Profiler: Profiler,
-	StrictMode: StrictMode,
-	Suspense: Suspense,
-	isAsyncMode: isAsyncMode,
-	isConcurrentMode: isConcurrentMode,
-	isContextConsumer: isContextConsumer,
-	isContextProvider: isContextProvider,
-	isElement: isElement$3,
-	isForwardRef: isForwardRef,
-	isFragment: isFragment$1,
-	isLazy: isLazy,
-	isMemo: isMemo,
-	isPortal: isPortal,
-	isProfiler: isProfiler,
-	isStrictMode: isStrictMode,
-	isSuspense: isSuspense,
-	isValidElementType: isValidElementType,
-	typeOf: typeOf
+var reactIs_production_min$1 = {
+	ContextConsumer: ContextConsumer$1,
+	ContextProvider: ContextProvider$1,
+	Element: Element$4,
+	ForwardRef: ForwardRef$1,
+	Fragment: Fragment$1,
+	Lazy: Lazy$1,
+	Memo: Memo$1,
+	Portal: Portal$3,
+	Profiler: Profiler$1,
+	StrictMode: StrictMode$1,
+	Suspense: Suspense$1,
+	SuspenseList: SuspenseList,
+	isAsyncMode: isAsyncMode$1,
+	isConcurrentMode: isConcurrentMode$1,
+	isContextConsumer: isContextConsumer$1,
+	isContextProvider: isContextProvider$1,
+	isElement: isElement$4,
+	isForwardRef: isForwardRef$1,
+	isFragment: isFragment$2,
+	isLazy: isLazy$1,
+	isMemo: isMemo$1,
+	isPortal: isPortal$1,
+	isProfiler: isProfiler$1,
+	isStrictMode: isStrictMode$1,
+	isSuspense: isSuspense$1,
+	isSuspenseList: isSuspenseList,
+	isValidElementType: isValidElementType$1,
+	typeOf: typeOf$1
 };
 
-/** @license React v16.13.1
+/**
+ * @license React
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -384,40 +260,69 @@ var reactIs_production_min = {
  * LICENSE file in the root directory of this source tree.
  */
 
-var reactIs_development = createCommonjsModule(function (module, exports) {
-
-
+var reactIs_development$1 = createCommonjsModule(function (module, exports) {
 
 if (process.env.NODE_ENV !== "production") {
   (function() {
 
-// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-// nor polyfill, then a plain number is used for performance.
-var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
-var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
-var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
-var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
-var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
-var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
-var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-// (unstable) APIs that have been removed. Can we remove the symbols?
+// ATTENTION
+// When adding new symbols to this file,
+// Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
+// The Symbol used to tag the ReactElement-like types.
+var REACT_ELEMENT_TYPE = Symbol.for('react.element');
+var REACT_PORTAL_TYPE = Symbol.for('react.portal');
+var REACT_FRAGMENT_TYPE = Symbol.for('react.fragment');
+var REACT_STRICT_MODE_TYPE = Symbol.for('react.strict_mode');
+var REACT_PROFILER_TYPE = Symbol.for('react.profiler');
+var REACT_PROVIDER_TYPE = Symbol.for('react.provider');
+var REACT_CONTEXT_TYPE = Symbol.for('react.context');
+var REACT_SERVER_CONTEXT_TYPE = Symbol.for('react.server_context');
+var REACT_FORWARD_REF_TYPE = Symbol.for('react.forward_ref');
+var REACT_SUSPENSE_TYPE = Symbol.for('react.suspense');
+var REACT_SUSPENSE_LIST_TYPE = Symbol.for('react.suspense_list');
+var REACT_MEMO_TYPE = Symbol.for('react.memo');
+var REACT_LAZY_TYPE = Symbol.for('react.lazy');
+var REACT_OFFSCREEN_TYPE = Symbol.for('react.offscreen');
 
-var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
-var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
-var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
-var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
-var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
-var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
-var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
-var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
-var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
-var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
-var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+// -----------------------------------------------------------------------------
+
+var enableScopeAPI = false; // Experimental Create Event Handle API.
+var enableCacheElement = false;
+var enableTransitionTracing = false; // No known bugs, but needs performance testing
+
+var enableLegacyHidden = false; // Enables unstable_avoidThisFallback feature in Fiber
+// stuff. Intended to enable React core members to more easily debug scheduling
+// issues in DEV builds.
+
+var enableDebugTracing = false; // Track which Fiber(s) schedule render work.
+
+var REACT_MODULE_REFERENCE;
+
+{
+  REACT_MODULE_REFERENCE = Symbol.for('react.module.reference');
+}
 
 function isValidElementType(type) {
-  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+  if (typeof type === 'string' || typeof type === 'function') {
+    return true;
+  } // Note: typeof might be other than 'symbol' or 'number' (e.g. if it's a polyfill).
+
+
+  if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || enableDebugTracing  || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || enableLegacyHidden  || type === REACT_OFFSCREEN_TYPE || enableScopeAPI  || enableCacheElement  || enableTransitionTracing ) {
+    return true;
+  }
+
+  if (typeof type === 'object' && type !== null) {
+    if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || // This needs to include all possible module reference object
+    // types supported by any Flight configuration anywhere since
+    // we don't know which Flight build this will end up being used
+    // with.
+    type.$$typeof === REACT_MODULE_REFERENCE || type.getModuleId !== undefined) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function typeOf(object) {
@@ -429,18 +334,18 @@ function typeOf(object) {
         var type = object.type;
 
         switch (type) {
-          case REACT_ASYNC_MODE_TYPE:
-          case REACT_CONCURRENT_MODE_TYPE:
           case REACT_FRAGMENT_TYPE:
           case REACT_PROFILER_TYPE:
           case REACT_STRICT_MODE_TYPE:
           case REACT_SUSPENSE_TYPE:
+          case REACT_SUSPENSE_LIST_TYPE:
             return type;
 
           default:
             var $$typeofType = type && type.$$typeof;
 
             switch ($$typeofType) {
+              case REACT_SERVER_CONTEXT_TYPE:
               case REACT_CONTEXT_TYPE:
               case REACT_FORWARD_REF_TYPE:
               case REACT_LAZY_TYPE:
@@ -460,10 +365,7 @@ function typeOf(object) {
   }
 
   return undefined;
-} // AsyncMode is deprecated along with isAsyncMode
-
-var AsyncMode = REACT_ASYNC_MODE_TYPE;
-var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+}
 var ContextConsumer = REACT_CONTEXT_TYPE;
 var ContextProvider = REACT_PROVIDER_TYPE;
 var Element = REACT_ELEMENT_TYPE;
@@ -475,21 +377,31 @@ var Portal = REACT_PORTAL_TYPE;
 var Profiler = REACT_PROFILER_TYPE;
 var StrictMode = REACT_STRICT_MODE_TYPE;
 var Suspense = REACT_SUSPENSE_TYPE;
-var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+var SuspenseList = REACT_SUSPENSE_LIST_TYPE;
+var hasWarnedAboutDeprecatedIsAsyncMode = false;
+var hasWarnedAboutDeprecatedIsConcurrentMode = false; // AsyncMode should be deprecated
 
 function isAsyncMode(object) {
   {
     if (!hasWarnedAboutDeprecatedIsAsyncMode) {
       hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
 
-      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
     }
   }
 
-  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+  return false;
 }
 function isConcurrentMode(object) {
-  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+  {
+    if (!hasWarnedAboutDeprecatedIsConcurrentMode) {
+      hasWarnedAboutDeprecatedIsConcurrentMode = true; // Using console['warn'] to evade Babel and ESLint
+
+      console['warn']('The ReactIs.isConcurrentMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
+    }
+  }
+
+  return false;
 }
 function isContextConsumer(object) {
   return typeOf(object) === REACT_CONTEXT_TYPE;
@@ -524,9 +436,10 @@ function isStrictMode(object) {
 function isSuspense(object) {
   return typeOf(object) === REACT_SUSPENSE_TYPE;
 }
+function isSuspenseList(object) {
+  return typeOf(object) === REACT_SUSPENSE_LIST_TYPE;
+}
 
-exports.AsyncMode = AsyncMode;
-exports.ConcurrentMode = ConcurrentMode;
 exports.ContextConsumer = ContextConsumer;
 exports.ContextProvider = ContextProvider;
 exports.Element = Element;
@@ -538,6 +451,7 @@ exports.Portal = Portal;
 exports.Profiler = Profiler;
 exports.StrictMode = StrictMode;
 exports.Suspense = Suspense;
+exports.SuspenseList = SuspenseList;
 exports.isAsyncMode = isAsyncMode;
 exports.isConcurrentMode = isConcurrentMode;
 exports.isContextConsumer = isContextConsumer;
@@ -551,18 +465,19 @@ exports.isPortal = isPortal;
 exports.isProfiler = isProfiler;
 exports.isStrictMode = isStrictMode;
 exports.isSuspense = isSuspense;
+exports.isSuspenseList = isSuspenseList;
 exports.isValidElementType = isValidElementType;
 exports.typeOf = typeOf;
   })();
 }
 });
 
-var reactIs = createCommonjsModule(function (module) {
+var reactIs$1 = createCommonjsModule(function (module) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = reactIs_production_min;
+  module.exports = reactIs_production_min$1;
 } else {
-  module.exports = reactIs_development;
+  module.exports = reactIs_development$1;
 }
 });
 
@@ -575,7 +490,7 @@ function toArray$7(children) {
     }
     if (Array.isArray(child)) {
       ret = ret.concat(toArray$7(child));
-    } else if (reactIs.isFragment(child) && child.props) {
+    } else if (reactIs$1.isFragment(child) && child.props) {
       ret = ret.concat(toArray$7(child.props.children, option));
     } else {
       ret.push(child);
@@ -617,7 +532,7 @@ function note(valid, message) {
     }
   }
 }
-function resetWarned() {
+function resetWarned$1() {
   warned = {};
 }
 function call(method, valid, message) {
@@ -633,9 +548,35 @@ function noteOnce(valid, message) {
   call(note, valid, message);
 }
 warningOnce.preMessage = preMessage;
-warningOnce.resetWarned = resetWarned;
+warningOnce.resetWarned = resetWarned$1;
 warningOnce.noteOnce = noteOnce;
 /* eslint-enable */
+
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
+
+function _toPrimitive(input, hint) {
+  if (_typeof(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (_typeof(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+
+function _toPropertyKey(arg) {
+  var key = _toPrimitive(arg, "string");
+  return _typeof(key) === "symbol" ? key : String(key);
+}
 
 function _defineProperty(obj, key, value) {
   key = _toPropertyKey(key);
@@ -724,7 +665,7 @@ function useComposeRef() {
 }
 function supportRef(nodeOrComponent) {
   var _type$prototype, _nodeOrComponent$prot;
-  var type = reactIs.isMemo(nodeOrComponent) ? nodeOrComponent.type.type : nodeOrComponent.type;
+  var type = reactIs$1.isMemo(nodeOrComponent) ? nodeOrComponent.type.type : nodeOrComponent.type;
 
   // Function component node
   if (typeof type === 'function' && !((_type$prototype = type.prototype) !== null && _type$prototype !== void 0 && _type$prototype.render)) {
@@ -741,7 +682,7 @@ function supportNodeRef(node) {
   if (! /*#__PURE__*/React.isValidElement(node)) {
     return false;
   }
-  if (reactIs.isFragment(node)) {
+  if (reactIs$1.isFragment(node)) {
     return false;
   }
   return supportRef(node);
@@ -1728,6 +1669,105 @@ function unobserve(element, callback) {
   }
 }
 
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
+  }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
+  });
+  return Constructor;
+}
+
+function _setPrototypeOf$1(o, p) {
+  _setPrototypeOf$1 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+  return _setPrototypeOf$1(o, p);
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  Object.defineProperty(subClass, "prototype", {
+    writable: false
+  });
+  if (superClass) _setPrototypeOf$1(subClass, superClass);
+}
+
+function _getPrototypeOf$1(o) {
+  _getPrototypeOf$1 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf$1(o);
+}
+
+function _isNativeReflectConstruct$1() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+  try {
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+  return self;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  } else if (call !== void 0) {
+    throw new TypeError("Derived constructors may only return object or undefined");
+  }
+  return _assertThisInitialized(self);
+}
+
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct$1();
+  return function _createSuperInternal() {
+    var Super = _getPrototypeOf$1(Derived),
+      result;
+    if (hasNativeReflectConstruct) {
+      var NewTarget = _getPrototypeOf$1(this).constructor;
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+    return _possibleConstructorReturn(this, result);
+  };
+}
+
 /**
  * Fallback to findDOMNode if origin ref do not provide any dom element
  */
@@ -2586,8 +2626,31 @@ function createTheme(derivatives) {
   return cacheThemes.get(derivativeArr);
 }
 
+// Create a cache for memo concat
+
+var resultCache = new WeakMap();
+var RESULT_VALUE = {};
+function memoResult(callback, deps) {
+  var current = resultCache;
+  for (var i = 0; i < deps.length; i += 1) {
+    var dep = deps[i];
+    if (!current.has(dep)) {
+      current.set(dep, new WeakMap());
+    }
+    current = current.get(dep);
+  }
+  if (!current.has(RESULT_VALUE)) {
+    current.set(RESULT_VALUE, callback());
+  }
+  return current.get(RESULT_VALUE);
+}
+
 // Create a cache here to avoid always loop generate
 var flattenTokenCache = new WeakMap();
+
+/**
+ * Flatten token to string, this will auto cache the result when token not change
+ */
 function flattenToken(token) {
   var str = flattenTokenCache.get(token) || '';
   if (!str) {
@@ -2929,15 +2992,11 @@ function useCacheToken(theme, tokens) {
     compute = option.getComputedToken;
 
   // Basic - We do basic cache here
-  var mergedToken = React__namespace.useMemo(function () {
+  var mergedToken = memoResult(function () {
     return Object.assign.apply(Object, [{}].concat(_toConsumableArray(tokens)));
-  }, [tokens]);
-  var tokenStr = React__namespace.useMemo(function () {
-    return flattenToken(mergedToken);
-  }, [mergedToken]);
-  var overrideTokenStr = React__namespace.useMemo(function () {
-    return flattenToken(override);
-  }, [override]);
+  }, tokens);
+  var tokenStr = flattenToken(mergedToken);
+  var overrideTokenStr = flattenToken(override);
   var cachedToken = useGlobalCache('token', [salt, theme.id, tokenStr, overrideTokenStr], function () {
     var mergedDerivativeToken = compute ? compute(mergedToken, override, theme) : getComputedToken$1(mergedToken, override, theme, formatToken);
 
@@ -4131,6 +4190,11 @@ function merge$1() {
 }
 
 function noop$5() {}
+let deprecatedWarnList = null;
+function resetWarned() {
+  deprecatedWarnList = null;
+  resetWarned$1();
+}
 // eslint-disable-next-line import/no-mutable-exports
 let warning$2 = noop$5;
 if (process.env.NODE_ENV !== 'production') {
@@ -4150,11 +4214,27 @@ const WarningContext = /*#__PURE__*/React__namespace.createContext({});
  */
 const devUseWarning = process.env.NODE_ENV !== 'production' ? component => {
   const {
-    deprecated
+    strict
   } = React__namespace.useContext(WarningContext);
   const typeWarning = (valid, type, message) => {
-    if (deprecated !== false || type !== 'deprecated') {
-      process.env.NODE_ENV !== "production" ? warning$2(valid, component, message) : void 0;
+    if (!valid) {
+      if (strict === false && type === 'deprecated') {
+        const existWarning = deprecatedWarnList;
+        if (!deprecatedWarnList) {
+          deprecatedWarnList = {};
+        }
+        deprecatedWarnList[component] = deprecatedWarnList[component] || [];
+        if (!deprecatedWarnList[component].includes(message || '')) {
+          deprecatedWarnList[component].push(message || '');
+        }
+        // Warning for the first time
+        if (!existWarning) {
+          // eslint-disable-next-line no-console
+          console.warn('[antd] There exists deprecated usage in your code:', deprecatedWarnList);
+        }
+      } else {
+        process.env.NODE_ENV !== "production" ? warning$2(valid, component, message) : void 0;
+      }
     }
   };
   typeWarning.deprecated = (valid, oldProp, newProp, message) => {
@@ -6024,7 +6104,7 @@ const genRadius = radiusBase => {
     radiusOuter = 6;
   }
   return {
-    borderRadius: radiusBase > 16 ? 16 : radiusBase,
+    borderRadius: radiusBase,
     borderRadiusXS: radiusXS,
     borderRadiusSM: radiusSM,
     borderRadiusLG: radiusLG,
@@ -6093,6 +6173,7 @@ const generateNeutralColorPalettes = (bgBaseColor, textBaseColor) => {
     colorBgContainer: getSolidColor(colorBgBase, 0),
     colorBgElevated: getSolidColor(colorBgBase, 0),
     colorBgSpotlight: getAlphaColor$1(colorTextBase, 0.85),
+    colorBgBlur: 'transparent',
     colorBorder: getSolidColor(colorBgBase, 15),
     colorBorderSecondary: getSolidColor(colorBgBase, 6)
   };
@@ -6170,9 +6251,130 @@ const defaultConfig = {
 };
 const DesignTokenContext = /*#__PURE__*/React__default["default"].createContext(defaultConfig);
 
+const defaultIconPrefixCls = 'anticon';
+const defaultGetPrefixCls = (suffixCls, customizePrefixCls) => {
+  if (customizePrefixCls) {
+    return customizePrefixCls;
+  }
+  return suffixCls ? `ant-${suffixCls}` : 'ant';
+};
+// zombieJ: 🚨 Do not pass `defaultRenderEmpty` here since it will cause circular dependency.
+const ConfigContext = /*#__PURE__*/React__namespace.createContext({
+  // We provide a default function for Context without provider
+  getPrefixCls: defaultGetPrefixCls,
+  iconPrefixCls: defaultIconPrefixCls
+});
+
+/* eslint-disable import/prefer-default-export, prefer-destructuring */
+const dynamicStyleMark = `-ant-${Date.now()}-${Math.random()}`;
+function getStyle$1(globalPrefixCls, theme) {
+  const variables = {};
+  const formatColor = (color, updater) => {
+    let clone = color.clone();
+    clone = (updater === null || updater === void 0 ? void 0 : updater(clone)) || clone;
+    return clone.toRgbString();
+  };
+  const fillColor = (colorVal, type) => {
+    const baseColor = new TinyColor(colorVal);
+    const colorPalettes = generate$1(baseColor.toRgbString());
+    variables[`${type}-color`] = formatColor(baseColor);
+    variables[`${type}-color-disabled`] = colorPalettes[1];
+    variables[`${type}-color-hover`] = colorPalettes[4];
+    variables[`${type}-color-active`] = colorPalettes[6];
+    variables[`${type}-color-outline`] = baseColor.clone().setAlpha(0.2).toRgbString();
+    variables[`${type}-color-deprecated-bg`] = colorPalettes[0];
+    variables[`${type}-color-deprecated-border`] = colorPalettes[2];
+  };
+  // ================ Primary Color ================
+  if (theme.primaryColor) {
+    fillColor(theme.primaryColor, 'primary');
+    const primaryColor = new TinyColor(theme.primaryColor);
+    const primaryColors = generate$1(primaryColor.toRgbString());
+    // Legacy - We should use semantic naming standard
+    primaryColors.forEach((color, index) => {
+      variables[`primary-${index + 1}`] = color;
+    });
+    // Deprecated
+    variables['primary-color-deprecated-l-35'] = formatColor(primaryColor, c => c.lighten(35));
+    variables['primary-color-deprecated-l-20'] = formatColor(primaryColor, c => c.lighten(20));
+    variables['primary-color-deprecated-t-20'] = formatColor(primaryColor, c => c.tint(20));
+    variables['primary-color-deprecated-t-50'] = formatColor(primaryColor, c => c.tint(50));
+    variables['primary-color-deprecated-f-12'] = formatColor(primaryColor, c => c.setAlpha(c.getAlpha() * 0.12));
+    const primaryActiveColor = new TinyColor(primaryColors[0]);
+    variables['primary-color-active-deprecated-f-30'] = formatColor(primaryActiveColor, c => c.setAlpha(c.getAlpha() * 0.3));
+    variables['primary-color-active-deprecated-d-02'] = formatColor(primaryActiveColor, c => c.darken(2));
+  }
+  // ================ Success Color ================
+  if (theme.successColor) {
+    fillColor(theme.successColor, 'success');
+  }
+  // ================ Warning Color ================
+  if (theme.warningColor) {
+    fillColor(theme.warningColor, 'warning');
+  }
+  // ================= Error Color =================
+  if (theme.errorColor) {
+    fillColor(theme.errorColor, 'error');
+  }
+  // ================= Info Color ==================
+  if (theme.infoColor) {
+    fillColor(theme.infoColor, 'info');
+  }
+  // Convert to css variables
+  const cssList = Object.keys(variables).map(key => `--${globalPrefixCls}-${key}: ${variables[key]};`);
+  return `
+  :root {
+    ${cssList.join('\n')}
+  }
+  `.trim();
+}
+function registerTheme(globalPrefixCls, theme) {
+  const style = getStyle$1(globalPrefixCls, theme);
+  if (canUseDom()) {
+    updateCSS(style, `${dynamicStyleMark}-dynamic-theme`);
+  } else {
+    process.env.NODE_ENV !== "production" ? warning$3(false, 'ConfigProvider', 'SSR do not support dynamic theme with css variables.') : void 0;
+  }
+}
+
+const DisabledContext = /*#__PURE__*/React__namespace.createContext(false);
+const DisabledContextProvider = _ref => {
+  let {
+    children,
+    disabled
+  } = _ref;
+  const originDisabled = React__namespace.useContext(DisabledContext);
+  return /*#__PURE__*/React__namespace.createElement(DisabledContext.Provider, {
+    value: disabled !== null && disabled !== void 0 ? disabled : originDisabled
+  }, children);
+};
+var DisabledContext$1 = DisabledContext;
+
+const SizeContext = /*#__PURE__*/React__namespace.createContext(undefined);
+const SizeContextProvider = _ref => {
+  let {
+    children,
+    size
+  } = _ref;
+  const originSize = React__namespace.useContext(SizeContext);
+  return /*#__PURE__*/React__namespace.createElement(SizeContext.Provider, {
+    value: size || originSize
+  }, children);
+};
+var SizeContext$1 = SizeContext;
+
+function useConfig() {
+  const componentDisabled = React.useContext(DisabledContext$1);
+  const componentSize = React.useContext(SizeContext$1);
+  return {
+    componentDisabled,
+    componentSize
+  };
+}
+
 const PresetColors = ['blue', 'purple', 'cyan', 'green', 'magenta', 'pink', 'red', 'orange', 'yellow', 'volcano', 'geekblue', 'lime', 'gold'];
 
-var version$1 = '5.9.2';
+var version$1 = '5.10.0';
 
 function isStableColor(color) {
   return color >= 0 && color <= 255;
@@ -6549,20 +6751,6 @@ function useMergedState(defaultStateValue, option) {
   return [postMergedValue, triggerChange];
 }
 
-const defaultIconPrefixCls = 'anticon';
-const defaultGetPrefixCls = (suffixCls, customizePrefixCls) => {
-  if (customizePrefixCls) {
-    return customizePrefixCls;
-  }
-  return suffixCls ? `ant-${suffixCls}` : 'ant';
-};
-// zombieJ: 🚨 Do not pass `defaultRenderEmpty` here since it will cause circular dependency.
-const ConfigContext = /*#__PURE__*/React__namespace.createContext({
-  // We provide a default function for Context without provider
-  getPrefixCls: defaultGetPrefixCls,
-  iconPrefixCls: defaultIconPrefixCls
-});
-
 // eslint-disable-next-line import/prefer-default-export
 const operationUnit = token => ({
   // FIXME: This use link but is a operation unit. Seems should be a colorPrimary.
@@ -6639,18 +6827,21 @@ const textEllipsis = {
   whiteSpace: 'nowrap',
   textOverflow: 'ellipsis'
 };
-const resetComponent = token => ({
-  boxSizing: 'border-box',
-  margin: 0,
-  padding: 0,
-  color: token.colorText,
-  fontSize: token.fontSize,
-  // font-variant: @font-variant-base;
-  lineHeight: token.lineHeight,
-  listStyle: 'none',
-  // font-feature-settings: @font-feature-settings-base;
-  fontFamily: token.fontFamily
-});
+const resetComponent = function (token) {
+  let needInheritFontFamily = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  return {
+    boxSizing: 'border-box',
+    margin: 0,
+    padding: 0,
+    color: token.colorText,
+    fontSize: token.fontSize,
+    // font-variant: @font-variant-base;
+    lineHeight: token.lineHeight,
+    listStyle: 'none',
+    // font-feature-settings: @font-feature-settings-base;
+    fontFamily: needInheritFontFamily ? 'inherit' : token.fontFamily
+  };
+};
 const resetIcon = () => ({
   display: 'inline-flex',
   alignItems: 'center',
@@ -6940,113 +7131,6 @@ function genPresetColor(token, genCss) {
       textColor
     }));
   }, {});
-}
-
-/* eslint-disable import/prefer-default-export, prefer-destructuring */
-const dynamicStyleMark = `-ant-${Date.now()}-${Math.random()}`;
-function getStyle$1(globalPrefixCls, theme) {
-  const variables = {};
-  const formatColor = (color, updater) => {
-    let clone = color.clone();
-    clone = (updater === null || updater === void 0 ? void 0 : updater(clone)) || clone;
-    return clone.toRgbString();
-  };
-  const fillColor = (colorVal, type) => {
-    const baseColor = new TinyColor(colorVal);
-    const colorPalettes = generate$1(baseColor.toRgbString());
-    variables[`${type}-color`] = formatColor(baseColor);
-    variables[`${type}-color-disabled`] = colorPalettes[1];
-    variables[`${type}-color-hover`] = colorPalettes[4];
-    variables[`${type}-color-active`] = colorPalettes[6];
-    variables[`${type}-color-outline`] = baseColor.clone().setAlpha(0.2).toRgbString();
-    variables[`${type}-color-deprecated-bg`] = colorPalettes[0];
-    variables[`${type}-color-deprecated-border`] = colorPalettes[2];
-  };
-  // ================ Primary Color ================
-  if (theme.primaryColor) {
-    fillColor(theme.primaryColor, 'primary');
-    const primaryColor = new TinyColor(theme.primaryColor);
-    const primaryColors = generate$1(primaryColor.toRgbString());
-    // Legacy - We should use semantic naming standard
-    primaryColors.forEach((color, index) => {
-      variables[`primary-${index + 1}`] = color;
-    });
-    // Deprecated
-    variables['primary-color-deprecated-l-35'] = formatColor(primaryColor, c => c.lighten(35));
-    variables['primary-color-deprecated-l-20'] = formatColor(primaryColor, c => c.lighten(20));
-    variables['primary-color-deprecated-t-20'] = formatColor(primaryColor, c => c.tint(20));
-    variables['primary-color-deprecated-t-50'] = formatColor(primaryColor, c => c.tint(50));
-    variables['primary-color-deprecated-f-12'] = formatColor(primaryColor, c => c.setAlpha(c.getAlpha() * 0.12));
-    const primaryActiveColor = new TinyColor(primaryColors[0]);
-    variables['primary-color-active-deprecated-f-30'] = formatColor(primaryActiveColor, c => c.setAlpha(c.getAlpha() * 0.3));
-    variables['primary-color-active-deprecated-d-02'] = formatColor(primaryActiveColor, c => c.darken(2));
-  }
-  // ================ Success Color ================
-  if (theme.successColor) {
-    fillColor(theme.successColor, 'success');
-  }
-  // ================ Warning Color ================
-  if (theme.warningColor) {
-    fillColor(theme.warningColor, 'warning');
-  }
-  // ================= Error Color =================
-  if (theme.errorColor) {
-    fillColor(theme.errorColor, 'error');
-  }
-  // ================= Info Color ==================
-  if (theme.infoColor) {
-    fillColor(theme.infoColor, 'info');
-  }
-  // Convert to css variables
-  const cssList = Object.keys(variables).map(key => `--${globalPrefixCls}-${key}: ${variables[key]};`);
-  return `
-  :root {
-    ${cssList.join('\n')}
-  }
-  `.trim();
-}
-function registerTheme(globalPrefixCls, theme) {
-  const style = getStyle$1(globalPrefixCls, theme);
-  if (canUseDom()) {
-    updateCSS(style, `${dynamicStyleMark}-dynamic-theme`);
-  } else {
-    process.env.NODE_ENV !== "production" ? warning$3(false, 'ConfigProvider', 'SSR do not support dynamic theme with css variables.') : void 0;
-  }
-}
-
-const DisabledContext = /*#__PURE__*/React__namespace.createContext(false);
-const DisabledContextProvider = _ref => {
-  let {
-    children,
-    disabled
-  } = _ref;
-  const originDisabled = React__namespace.useContext(DisabledContext);
-  return /*#__PURE__*/React__namespace.createElement(DisabledContext.Provider, {
-    value: disabled !== null && disabled !== void 0 ? disabled : originDisabled
-  }, children);
-};
-var DisabledContext$1 = DisabledContext;
-
-const SizeContext = /*#__PURE__*/React__namespace.createContext(undefined);
-const SizeContextProvider = _ref => {
-  let {
-    children,
-    size
-  } = _ref;
-  const originSize = React__namespace.useContext(SizeContext);
-  return /*#__PURE__*/React__namespace.createElement(SizeContext.Provider, {
-    value: size || originSize
-  }, children);
-};
-var SizeContext$1 = SizeContext;
-
-function useConfig() {
-  const componentDisabled = React.useContext(DisabledContext$1);
-  const componentSize = React.useContext(SizeContext$1);
-  return {
-    componentDisabled,
-    componentSize
-  };
 }
 
 function useTheme(theme, parentTheme) {
@@ -8020,8 +8104,9 @@ const ProviderChildren = props => {
     tree,
     colorPicker,
     datePicker,
-    wave
-    // warning: warningConfig,
+    flex,
+    wave,
+    warning: warningConfig
   } = props;
   // =================================== Context ===================================
   const getPrefixCls = React__namespace.useCallback((suffixCls, customizePrefixCls) => {
@@ -8100,10 +8185,10 @@ const ProviderChildren = props => {
     tree,
     colorPicker,
     datePicker,
-    wave
-    // warning: warningConfig,
+    flex,
+    wave,
+    warning: warningConfig
   };
-
   const config = Object.assign({}, parentContext);
   Object.keys(baseConfig).forEach(key => {
     if (baseConfig[key] !== undefined) {
@@ -8194,11 +8279,11 @@ const ProviderChildren = props => {
     }, childNode);
   }
   // ================================== Warning ===================================
-  // if (memoedConfig.warning) {
-  //   childNode = (
-  //     <WarningContext.Provider value={memoedConfig.warning}>{childNode}</WarningContext.Provider>
-  //   );
-  // }
+  if (memoedConfig.warning) {
+    childNode = /*#__PURE__*/React__namespace.createElement(WarningContext.Provider, {
+      value: memoedConfig.warning
+    }, childNode);
+  }
   // =================================== Render ===================================
   if (componentDisabled !== undefined) {
     childNode = /*#__PURE__*/React__namespace.createElement(DisabledContextProvider, {
@@ -8578,7 +8663,7 @@ function pickAttrs(props) {
 const {
   isValidElement
 } = React__namespace;
-function isFragment(child) {
+function isFragment$1(child) {
   return child && isValidElement(child) && child.type === React__namespace.Fragment;
 }
 function replaceElement(element, replacement, props) {
@@ -8989,13 +9074,13 @@ let ErrorBoundary = /*#__PURE__*/function (_React$Component) {
 }(React__namespace.Component);
 var ErrorBoundary$1 = ErrorBoundary;
 
-const Alert = InternalAlert;
-Alert.ErrorBoundary = ErrorBoundary$1;
-var Alert$1 = Alert;
+const Alert$1 = InternalAlert;
+Alert$1.ErrorBoundary = ErrorBoundary$1;
+var Alerts = Alert$1;
 
-const t=t=>"object"==typeof t&&null!=t&&1===t.nodeType,e$1=(t,e)=>(!e||"hidden"!==t)&&("visible"!==t&&"clip"!==t),n=(t,n)=>{if(t.clientHeight<t.scrollHeight||t.clientWidth<t.scrollWidth){const o=getComputedStyle(t,null);return e$1(o.overflowY,n)||e$1(o.overflowX,n)||(t=>{const e=(t=>{if(!t.ownerDocument||!t.ownerDocument.defaultView)return null;try{return t.ownerDocument.defaultView.frameElement}catch(t){return null}})(t);return !!e&&(e.clientHeight<t.scrollHeight||e.clientWidth<t.scrollWidth)})(t)}return !1},o$1=(t,e,n,o,i,l,r,d)=>l<t&&r>e||l>t&&r<e?0:l<=t&&d<=n||r>=e&&d>=n?l-t-o:r>e&&d<n||l<t&&d>n?r-e+i:0,i=t=>{const e=t.parentElement;return null==e?t.getRootNode().host||null:e},l=(e,l)=>{var r,d,s,h;if("undefined"==typeof document)return [];const{scrollMode:c,block:f,inline:u,boundary:a,skipOverflowHiddenElements:g}=l,m="function"==typeof a?a:t=>t!==a;if(!t(e))throw new TypeError("Invalid target");const p=document.scrollingElement||document.documentElement,w=[];let W=e;for(;t(W)&&m(W);){if(W=i(W),W===p){w.push(W);break}null!=W&&W===document.body&&n(W)&&!n(document.documentElement)||null!=W&&n(W,g)&&w.push(W);}const H=null!=(d=null==(r=window.visualViewport)?void 0:r.width)?d:innerWidth,b=null!=(h=null==(s=window.visualViewport)?void 0:s.height)?h:innerHeight,{scrollX:v,scrollY:y}=window,{height:E,width:M,top:x,right:I,bottom:C,left:R}=e.getBoundingClientRect();let T="start"===f||"nearest"===f?x:"end"===f?C:x+E/2,V="center"===u?R+M/2:"end"===u?I:R;const k=[];for(let t=0;t<w.length;t++){const e=w[t],{height:n,width:i,top:l,right:r,bottom:d,left:s}=e.getBoundingClientRect();if("if-needed"===c&&x>=0&&R>=0&&C<=b&&I<=H&&x>=l&&C<=d&&R>=s&&I<=r)return k;const h=getComputedStyle(e),a=parseInt(h.borderLeftWidth,10),g=parseInt(h.borderTopWidth,10),m=parseInt(h.borderRightWidth,10),W=parseInt(h.borderBottomWidth,10);let B=0,D=0;const L="offsetWidth"in e?e.offsetWidth-e.clientWidth-a-m:0,S="offsetHeight"in e?e.offsetHeight-e.clientHeight-g-W:0,X="offsetWidth"in e?0===e.offsetWidth?0:i/e.offsetWidth:0,Y="offsetHeight"in e?0===e.offsetHeight?0:n/e.offsetHeight:0;if(p===e)B="start"===f?T:"end"===f?T-b:"nearest"===f?o$1(y,y+b,b,g,W,y+T,y+T+E,E):T-b/2,D="start"===u?V:"center"===u?V-H/2:"end"===u?V-H:o$1(v,v+H,H,a,m,v+V,v+V+M,M),B=Math.max(0,B+y),D=Math.max(0,D+v);else {B="start"===f?T-l-g:"end"===f?T-d+W+S:"nearest"===f?o$1(l,d,n,g,W+S,T,T+E,E):T-(l+n/2)+S/2,D="start"===u?V-s-a:"center"===u?V-(s+i/2)+L/2:"end"===u?V-r+m+L:o$1(s,r,i,a,m+L,V,V+M,M);const{scrollLeft:t,scrollTop:h}=e;B=Math.max(0,Math.min(h+B/Y,e.scrollHeight-n/Y+S)),D=Math.max(0,Math.min(t+D/X,e.scrollWidth-i/X+L)),T+=h-B,V+=t-D;}k.push({el:e,top:B,left:D});}return k};
+const t$1=t=>"object"==typeof t&&null!=t&&1===t.nodeType,e$2=(t,e)=>(!e||"hidden"!==t)&&("visible"!==t&&"clip"!==t),n$1=(t,n)=>{if(t.clientHeight<t.scrollHeight||t.clientWidth<t.scrollWidth){const o=getComputedStyle(t,null);return e$2(o.overflowY,n)||e$2(o.overflowX,n)||(t=>{const e=(t=>{if(!t.ownerDocument||!t.ownerDocument.defaultView)return null;try{return t.ownerDocument.defaultView.frameElement}catch(t){return null}})(t);return !!e&&(e.clientHeight<t.scrollHeight||e.clientWidth<t.scrollWidth)})(t)}return !1},o$1=(t,e,n,o,l,r,i,s)=>r<t&&i>e||r>t&&i<e?0:r<=t&&s<=n||i>=e&&s>=n?r-t-o:i>e&&s<n||r<t&&s>n?i-e+l:0,l$1=t=>{const e=t.parentElement;return null==e?t.getRootNode().host||null:e},r$1=(e,r)=>{var i,s,d,h;if("undefined"==typeof document)return [];const{scrollMode:c,block:f,inline:u,boundary:a,skipOverflowHiddenElements:g}=r,p="function"==typeof a?a:t=>t!==a;if(!t$1(e))throw new TypeError("Invalid target");const m=document.scrollingElement||document.documentElement,w=[];let W=e;for(;t$1(W)&&p(W);){if(W=l$1(W),W===m){w.push(W);break}null!=W&&W===document.body&&n$1(W)&&!n$1(document.documentElement)||null!=W&&n$1(W,g)&&w.push(W);}const b=null!=(s=null==(i=window.visualViewport)?void 0:i.width)?s:innerWidth,H=null!=(h=null==(d=window.visualViewport)?void 0:d.height)?h:innerHeight,{scrollX:y,scrollY:M}=window,{height:v,width:E,top:x,right:C,bottom:I,left:R}=e.getBoundingClientRect(),{top:T,right:B,bottom:F,left:V}=(t=>{const e=window.getComputedStyle(t);return {top:parseFloat(e.scrollMarginTop)||0,right:parseFloat(e.scrollMarginRight)||0,bottom:parseFloat(e.scrollMarginBottom)||0,left:parseFloat(e.scrollMarginLeft)||0}})(e);let k="start"===f||"nearest"===f?x-T:"end"===f?I+F:x+v/2-T+F,D="center"===u?R+E/2-V+B:"end"===u?C+B:R-V;const L=[];for(let t=0;t<w.length;t++){const e=w[t],{height:n,width:l,top:r,right:i,bottom:s,left:d}=e.getBoundingClientRect();if("if-needed"===c&&x>=0&&R>=0&&I<=H&&C<=b&&x>=r&&I<=s&&R>=d&&C<=i)return L;const h=getComputedStyle(e),a=parseInt(h.borderLeftWidth,10),g=parseInt(h.borderTopWidth,10),p=parseInt(h.borderRightWidth,10),W=parseInt(h.borderBottomWidth,10);let T=0,B=0;const F="offsetWidth"in e?e.offsetWidth-e.clientWidth-a-p:0,V="offsetHeight"in e?e.offsetHeight-e.clientHeight-g-W:0,S="offsetWidth"in e?0===e.offsetWidth?0:l/e.offsetWidth:0,X="offsetHeight"in e?0===e.offsetHeight?0:n/e.offsetHeight:0;if(m===e)T="start"===f?k:"end"===f?k-H:"nearest"===f?o$1(M,M+H,H,g,W,M+k,M+k+v,v):k-H/2,B="start"===u?D:"center"===u?D-b/2:"end"===u?D-b:o$1(y,y+b,b,a,p,y+D,y+D+E,E),T=Math.max(0,T+M),B=Math.max(0,B+y);else {T="start"===f?k-r-g:"end"===f?k-s+W+V:"nearest"===f?o$1(r,s,n,g,W+V,k,k+v,v):k-(r+n/2)+V/2,B="start"===u?D-d-a:"center"===u?D-(d+l/2)+F/2:"end"===u?D-i+p+F:o$1(d,i,l,a,p+F,D,D+E,E);const{scrollLeft:t,scrollTop:h}=e;T=0===X?0:Math.max(0,Math.min(h+T/X,e.scrollHeight-n/X+V)),B=0===S?0:Math.max(0,Math.min(t+B/S,e.scrollWidth-l/S+F)),k+=h-T,D+=t-B;}L.push({el:e,top:T,left:B});}return L};
 
-const o=t=>!1===t?{block:"end",inline:"nearest"}:(t=>t===Object(t)&&0!==Object.keys(t).length)(t)?t:{block:"start",inline:"nearest"};function e(e,r){if(!e.isConnected||!(t=>{let o=t;for(;o&&o.parentNode;){if(o.parentNode===document)return !0;o=o.parentNode instanceof ShadowRoot?o.parentNode.host:o.parentNode;}return !1})(e))return;const n=(t=>{const o=window.getComputedStyle(t);return {top:parseFloat(o.scrollMarginTop)||0,right:parseFloat(o.scrollMarginRight)||0,bottom:parseFloat(o.scrollMarginBottom)||0,left:parseFloat(o.scrollMarginLeft)||0}})(e);if((t=>"object"==typeof t&&"function"==typeof t.behavior)(r))return r.behavior(l(e,r));const l$1="boolean"==typeof r||null==r?void 0:r.behavior;for(const{el:a,top:i,left:s}of l(e,o(r))){const t=i-n.top+n.bottom,o=s-n.left+n.right;a.scroll({top:t,left:o,behavior:l$1});}}
+const o=t=>!1===t?{block:"end",inline:"nearest"}:(t=>t===Object(t)&&0!==Object.keys(t).length)(t)?t:{block:"start",inline:"nearest"};function e$1(e,r){if(!e.isConnected||!(t=>{let o=t;for(;o&&o.parentNode;){if(o.parentNode===document)return !0;o=o.parentNode instanceof ShadowRoot?o.parentNode.host:o.parentNode;}return !1})(e))return;const n=(t=>{const o=window.getComputedStyle(t);return {top:parseFloat(o.scrollMarginTop)||0,right:parseFloat(o.scrollMarginRight)||0,bottom:parseFloat(o.scrollMarginBottom)||0,left:parseFloat(o.scrollMarginLeft)||0}})(e);if((t=>"object"==typeof t&&"function"==typeof t.behavior)(r))return r.behavior(r$1(e,r));const l="boolean"==typeof r||null==r?void 0:r.behavior;for(const{el:a,top:i,left:s}of r$1(e,o(r))){const t=i-n.top+n.bottom,o=s-n.left+n.right;a.scroll({top:t,left:o,behavior:l});}}
 
 function isWindow(obj) {
   return obj !== null && obj !== undefined && obj === obj.window;
@@ -10663,7 +10748,7 @@ function splitCNCharsBySpace(child, needInserted) {
   if (isString(child)) {
     return isTwoCNChar(child) ? /*#__PURE__*/React__default["default"].createElement("span", null, child.split('').join(SPACE)) : /*#__PURE__*/React__default["default"].createElement("span", null, child);
   }
-  if (isFragment(child)) {
+  if (isFragment$1(child)) {
     return /*#__PURE__*/React__default["default"].createElement("span", null, child);
   }
   return child;
@@ -10749,6 +10834,7 @@ const LoadingIcon = props => {
     visible: visible,
     // We do not really use this motionName
     motionName: `${prefixCls}-loading-icon-motion`,
+    motionLeave: visible,
     removeOnLeave: true,
     onAppearStart: getCollapsedWidth,
     onAppearActive: getRealWidth,
@@ -10887,6 +10973,13 @@ const genSharedButtonStyle = token => {
         color: 'currentColor'
       },
       '&:not(:disabled)': Object.assign({}, genFocusStyle(token)),
+      [`&${componentCls}-two-chinese-chars::first-letter`]: {
+        letterSpacing: '0.34em'
+      },
+      [`&${componentCls}-two-chinese-chars > *:not(${iconCls})`]: {
+        marginInlineEnd: '-0.34em',
+        letterSpacing: '0.34em'
+      },
       // make `btn-icon-only` not too narrow
       [`&-icon-only${componentCls}-compact-item`]: {
         flex: 'none'
@@ -11719,7 +11812,7 @@ var getPortalContainer = function getPortalContainer(getContainer) {
   }
   return getContainer;
 };
-var Portal$1 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
+var Portal$2 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
   var open = props.open,
     autoLock = props.autoLock,
     getContainer = props.getContainer,
@@ -11795,7 +11888,7 @@ var Portal$1 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
   }, renderInline ? reffedChildren : /*#__PURE__*/ReactDOM.createPortal(reffedChildren, mergedContainer));
 });
 if (process.env.NODE_ENV !== 'production') {
-  Portal$1.displayName = 'Portal';
+  Portal$2.displayName = 'Portal';
 }
 
 function getUseId() {
@@ -11804,20 +11897,34 @@ function getUseId() {
   return fullClone.useId;
 }
 var uuid$2 = 0;
-function useId$2(id) {
+var useOriginId = getUseId();
+var useId$2 = useOriginId ?
+// Use React `useId`
+function useId(id) {
+  var reactId = useOriginId();
+
+  // Developer passed id is single source of truth
+  if (id) {
+    return id;
+  }
+
+  // Test env always return mock id
+  if (process.env.NODE_ENV === 'test') {
+    return 'test-id';
+  }
+  return reactId;
+} :
+// Use compatible of `useId`
+function useCompatId(id) {
   // Inner id for accessibility usage. Only work in client side
   var _React$useState = React__namespace.useState('ssr-id'),
     _React$useState2 = _slicedToArray(_React$useState, 2),
     innerId = _React$useState2[0],
     setInnerId = _React$useState2[1];
-  var useOriginId = getUseId();
-  var reactNativeId = useOriginId === null || useOriginId === void 0 ? void 0 : useOriginId();
   React__namespace.useEffect(function () {
-    if (!useOriginId) {
-      var nextId = uuid$2;
-      uuid$2 += 1;
-      setInnerId("rc_unique_".concat(nextId));
-    }
+    var nextId = uuid$2;
+    uuid$2 += 1;
+    setInnerId("rc_unique_".concat(nextId));
   }, []);
 
   // Developer passed id is single source of truth
@@ -11831,8 +11938,8 @@ function useId$2(id) {
   }
 
   // Return react native id or inner id
-  return reactNativeId || innerId;
-}
+  return innerId;
+};
 
 var isStyleNameSupport = function isStyleNameSupport(styleName) {
   if (canUseDom() && window.document.documentElement) {
@@ -16949,7 +17056,6 @@ var Input$5 = function Input(_ref, ref) {
     autoFocus: autoFocus,
     className: classnames("".concat(prefixCls, "-selection-search-input"), (_inputNode2 = inputNode) === null || _inputNode2 === void 0 ? void 0 : (_inputNode2$props = _inputNode2.props) === null || _inputNode2$props === void 0 ? void 0 : _inputNode2$props.className),
     role: 'combobox',
-    'aria-label': 'Search',
     'aria-expanded': open || false,
     'aria-haspopup': 'listbox',
     'aria-owns': "".concat(id, "_list"),
@@ -18561,7 +18667,7 @@ var _excluded$y = ["prefixCls", "children", "action", "showAction", "hideAction"
 // getDocument?: (element?: HTMLElement) => Document;
 // New version will not wrap popup with `rc-trigger-popup-content` when multiple children
 function generateTrigger() {
-  var PortalComponent = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Portal$1;
+  var PortalComponent = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Portal$2;
   var Trigger = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var _props$prefixCls = props.prefixCls,
       prefixCls = _props$prefixCls === void 0 ? 'rc-trigger-popup' : _props$prefixCls,
@@ -19050,7 +19156,7 @@ function generateTrigger() {
   }
   return Trigger;
 }
-var Trigger = generateTrigger(Portal$1);
+var Trigger = generateTrigger(Portal$2);
 
 var _excluded$x = ["prefixCls", "disabled", "visible", "children", "popupElement", "animation", "transitionName", "dropdownStyle", "dropdownClassName", "direction", "placement", "builtinPlacements", "dropdownMatchSelectWidth", "dropdownRender", "dropdownAlign", "getPopupContainer", "empty", "getTriggerDOMNode", "onPopupVisibleChange", "onPopupMouseEnter"];
 var getBuiltInPlacements$1 = function getBuiltInPlacements(dropdownMatchSelectWidth) {
@@ -19381,6 +19487,7 @@ var BaseSelect = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) 
   var triggerRef = React__namespace.useRef(null);
   var selectorRef = React__namespace.useRef(null);
   var listRef = React__namespace.useRef(null);
+  var blurRef = React__namespace.useRef(false);
 
   /** Used for component focused management */
   var _useDelayReset = useDelayReset(),
@@ -19513,7 +19620,9 @@ var BaseSelect = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) 
     if (innerOpen && disabled) {
       setInnerOpen(false);
     }
-    if (disabled) {
+
+    // After onBlur is triggered, the focused does not need to be reset
+    if (disabled && !blurRef.current) {
       setMockFocused(false);
     }
   }, [disabled]);
@@ -19617,8 +19726,10 @@ var BaseSelect = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) 
     focusRef.current = true;
   };
   var onContainerBlur = function onContainerBlur() {
+    blurRef.current = true;
     setMockFocused(false, function () {
       focusRef.current = false;
+      blurRef.current = false;
       onToggleOpen(false);
     });
     if (disabled) {
@@ -20152,7 +20263,9 @@ var ScrollBar = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     onScroll = props.onScroll,
     horizontal = props.horizontal,
     spinSize = props.spinSize,
-    containerSize = props.containerSize;
+    containerSize = props.containerSize,
+    style = props.style,
+    propsThumbStyle = props.thumbStyle;
   var _React$useState = React__namespace.useState(false),
     _React$useState2 = _slicedToArray(_React$useState, 2),
     dragging = _React$useState2[0],
@@ -20342,13 +20455,13 @@ var ScrollBar = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
   return /*#__PURE__*/React__namespace.createElement("div", {
     ref: scrollbarRef,
     className: classnames(scrollbarPrefixCls, (_classNames = {}, _defineProperty(_classNames, "".concat(scrollbarPrefixCls, "-horizontal"), horizontal), _defineProperty(_classNames, "".concat(scrollbarPrefixCls, "-vertical"), !horizontal), _defineProperty(_classNames, "".concat(scrollbarPrefixCls, "-visible"), visible), _classNames)),
-    style: containerStyle,
+    style: _objectSpread2(_objectSpread2({}, containerStyle), style),
     onMouseDown: onContainerMouseDown,
     onMouseMove: delayHidden
   }, /*#__PURE__*/React__namespace.createElement("div", {
     ref: thumbRef,
     className: classnames("".concat(scrollbarPrefixCls, "-thumb"), _defineProperty({}, "".concat(scrollbarPrefixCls, "-thumb-moving"), dragging)),
-    style: thumbStyle,
+    style: _objectSpread2(_objectSpread2({}, thumbStyle), propsThumbStyle),
     onMouseDown: onThumbMouseDown
   }));
 });
@@ -20909,7 +21022,7 @@ function useGetSize(mergedData, getKey, heights, itemHeight) {
   return getSize;
 }
 
-var _excluded$u = ["prefixCls", "className", "height", "itemHeight", "fullHeight", "style", "data", "children", "itemKey", "virtual", "direction", "scrollWidth", "component", "onScroll", "onVirtualScroll", "onVisibleChange", "innerProps", "extraRender"];
+var _excluded$u = ["prefixCls", "className", "height", "itemHeight", "fullHeight", "style", "data", "children", "itemKey", "virtual", "direction", "scrollWidth", "component", "onScroll", "onVirtualScroll", "onVisibleChange", "innerProps", "extraRender", "styles"];
 var EMPTY_DATA$1 = [];
 var ScrollStyle = {
   overflowY: 'auto',
@@ -20937,6 +21050,7 @@ function RawList(props, ref) {
     onVisibleChange = props.onVisibleChange,
     innerProps = props.innerProps,
     extraRender = props.extraRender,
+    styles = props.styles,
     restProps = _objectWithoutProperties(props, _excluded$u);
   // ================================= MISC =================================
   var useVirtual = !!(virtual !== false && height && itemHeight);
@@ -21081,7 +21195,10 @@ function RawList(props, ref) {
     size = _React$useState2[0],
     setSize = _React$useState2[1];
   var onHolderResize = function onHolderResize(sizeInfo) {
-    setSize(sizeInfo);
+    setSize({
+      width: sizeInfo.width || sizeInfo.offsetWidth,
+      height: sizeInfo.height || sizeInfo.offsetHeight
+    });
   };
   // Hack on scrollbar to enable flash call
   var verticalScrollBarRef = React.useRef();
@@ -21312,7 +21429,9 @@ function RawList(props, ref) {
     onStartMove: onScrollbarStartMove,
     onStopMove: onScrollbarStopMove,
     spinSize: verticalScrollBarSpinSize,
-    containerSize: size.height
+    containerSize: size.height,
+    style: styles === null || styles === void 0 ? void 0 : styles.verticalScrollBar,
+    thumbStyle: styles === null || styles === void 0 ? void 0 : styles.verticalScrollBarThumb
   }), inVirtual && scrollWidth && /*#__PURE__*/React__namespace.createElement(ScrollBar, {
     ref: horizontalScrollBarRef,
     prefixCls: prefixCls,
@@ -21324,7 +21443,9 @@ function RawList(props, ref) {
     onStopMove: onScrollbarStopMove,
     spinSize: horizontalScrollBarSpinSize,
     containerSize: size.width,
-    horizontal: true
+    horizontal: true,
+    style: styles === null || styles === void 0 ? void 0 : styles.horizontalScrollBar,
+    thumbStyle: styles === null || styles === void 0 ? void 0 : styles.horizontalScrollBarThumb
   }));
 }
 var List$1 = /*#__PURE__*/React__namespace.forwardRef(RawList);
@@ -21674,6 +21795,8 @@ var OptionList = function OptionList(_, ref) {
       className: "".concat(itemPrefixCls, "-option-state"),
       customizeIcon: menuItemSelectedIcon,
       customizeIconProps: {
+        value: value,
+        disabled: disabled,
         isSelected: selected
       }
     }, selected ? '✓' : null));
@@ -22898,7 +23021,7 @@ function genSizeStyle$3(token, suffix) {
       fontSize: token.fontSize,
       height: token.controlHeight,
       // ========================= Selector =========================
-      [`${componentCls}-selector`]: Object.assign(Object.assign({}, resetComponent(token)), {
+      [`${componentCls}-selector`]: Object.assign(Object.assign({}, resetComponent(token, true)), {
         display: 'flex',
         borderRadius,
         [`${componentCls}-selection-search`]: {
@@ -23069,24 +23192,23 @@ const genStatusStyle$3 = function (rootSelectCls, token) {
   const {
     componentCls,
     borderHoverColor,
-    outlineColor,
-    antCls
+    antCls,
+    borderActiveColor
   } = token;
   const overwriteStyle = overwriteDefaultBorder ? {
     [`${componentCls}-selector`]: {
-      borderColor: borderHoverColor
+      borderColor: borderActiveColor
     }
   } : {};
   return {
     [rootSelectCls]: {
       [`&:not(${componentCls}-disabled):not(${componentCls}-customize-input):not(${antCls}-pagination-size-changer)`]: Object.assign(Object.assign({}, overwriteStyle), {
-        [`${componentCls}-focused& ${componentCls}-selector`]: {
-          borderColor: borderHoverColor,
-          boxShadow: `0 0 0 ${token.controlOutlineWidth}px ${outlineColor}`,
-          outline: 0
-        },
         [`&:hover ${componentCls}-selector`]: {
           borderColor: borderHoverColor
+        },
+        [`${componentCls}-focused& ${componentCls}-selector`]: {
+          borderColor: borderActiveColor,
+          outline: 0
         }
       })
     }
@@ -23106,6 +23228,7 @@ const getSearchInputWithoutBorderStyle = token => {
       border: 'none',
       outline: 'none',
       appearance: 'none',
+      fontFamily: 'inherit',
       '&::-webkit-search-cancel-button': {
         display: 'none',
         '-webkit-appearance': 'none'
@@ -23267,13 +23390,13 @@ const genSelectStyle = token => {
   // =====================================================
   genStatusStyle$3(componentCls, merge(token, {
     borderHoverColor: token.colorPrimaryHover,
-    outlineColor: token.controlOutline
+    borderActiveColor: token.colorPrimary
   })), genStatusStyle$3(`${componentCls}-status-error`, merge(token, {
     borderHoverColor: token.colorErrorHover,
-    outlineColor: token.colorErrorOutline
+    borderActiveColor: token.colorError
   }), true), genStatusStyle$3(`${componentCls}-status-warning`, merge(token, {
     borderHoverColor: token.colorWarningHover,
-    outlineColor: token.colorWarningOutline
+    borderActiveColor: token.colorWarning
   }), true),
   // =====================================================
   // ==             Space Compact                       ==
@@ -23345,9 +23468,7 @@ const getBuiltInPlacements = popupOverflow => {
       shiftY: true
     },
     htmlRegion,
-    _experimental: {
-      dynamicInset: true
-    }
+    dynamicInset: true
   };
   return {
     bottomLeft: Object.assign(Object.assign({}, sharedConfig), {
@@ -23801,6 +23922,24 @@ function useBreakpoint() {
   return screensRef.current;
 }
 
+function Popup(props) {
+  var children = props.children,
+    prefixCls = props.prefixCls,
+    id = props.id,
+    overlayInnerStyle = props.overlayInnerStyle,
+    className = props.className,
+    style = props.style;
+  return /*#__PURE__*/React__namespace.createElement("div", {
+    className: classnames("".concat(prefixCls, "-content"), className),
+    style: style
+  }, /*#__PURE__*/React__namespace.createElement("div", {
+    className: "".concat(prefixCls, "-inner"),
+    id: id,
+    role: "tooltip",
+    style: overlayInnerStyle
+  }, typeof children === 'function' ? children() : children));
+}
+
 var autoAdjustOverflowTopBottom = {
   shiftX: 64,
   adjustY: 1
@@ -23884,24 +24023,6 @@ var placements$2 = {
     targetOffset: targetOffset$1
   }
 };
-
-function Popup(props) {
-  var children = props.children,
-    prefixCls = props.prefixCls,
-    id = props.id,
-    overlayInnerStyle = props.overlayInnerStyle,
-    className = props.className,
-    style = props.style;
-  return /*#__PURE__*/React__namespace.createElement("div", {
-    className: classnames("".concat(prefixCls, "-content"), className),
-    style: style
-  }, /*#__PURE__*/React__namespace.createElement("div", {
-    className: "".concat(prefixCls, "-inner"),
-    id: id,
-    role: "tooltip",
-    style: overlayInnerStyle
-  }, typeof children === 'function' ? children() : children));
-}
 
 var _excluded$r = ["overlayClassName", "trigger", "mouseEnterDelay", "mouseLeaveDelay", "overlayStyle", "prefixCls", "children", "onVisibleChange", "afterVisibleChange", "transitionName", "animation", "motion", "placement", "align", "destroyTooltipOnHide", "defaultVisible", "getTooltipContainer", "overlayInnerStyle", "arrowContent", "overlay", "id", "showArrow"];
 var Tooltip$2 = function Tooltip(props, ref) {
@@ -24141,10 +24262,14 @@ function getOverflowOptions(placement, arrowOffset, arrowWidth, autoAdjustOverfl
     case 'top':
     case 'bottom':
       baseOverflow.shiftX = arrowOffset.dropdownArrowOffset * 2 + arrowWidth;
+      baseOverflow.shiftY = true;
+      baseOverflow.adjustY = true;
       break;
     case 'left':
     case 'right':
       baseOverflow.shiftY = arrowOffset.dropdownArrowOffsetVertical * 2 + arrowWidth;
+      baseOverflow.shiftX = true;
+      baseOverflow.adjustX = true;
       break;
   }
   const mergedOverflow = Object.assign(Object.assign({}, baseOverflow), overflow);
@@ -24236,7 +24361,8 @@ function getPlacements(config) {
   Object.keys(PlacementAlignMap).forEach(key => {
     const template = arrowPointAtCenter && ArrowCenterPlacementAlignMap[key] || PlacementAlignMap[key];
     const placementInfo = Object.assign(Object.assign({}, template), {
-      offset: [0, 0]
+      offset: [0, 0],
+      dynamicInset: true
     });
     placementMap[key] = placementInfo;
     // Disable autoArrow since design is fixed position
@@ -24502,52 +24628,6 @@ var __rest$I = undefined && undefined.__rest || function (s, e) {
   }
   return t;
 };
-const splitObject = (obj, keys) => {
-  const picked = {};
-  const omitted = Object.assign({}, obj);
-  keys.forEach(key => {
-    if (obj && key in obj) {
-      picked[key] = obj[key];
-      delete omitted[key];
-    }
-  });
-  return {
-    picked,
-    omitted
-  };
-};
-// Fix Tooltip won't hide at disabled button
-// mouse events don't trigger at disabled button in Chrome
-// https://github.com/react-component/tooltip/issues/18
-function getDisabledCompatibleChildren(element, prefixCls) {
-  const elementType = element.type;
-  if ((elementType.__ANT_BUTTON === true || element.type === 'button') && element.props.disabled || elementType.__ANT_SWITCH === true && (element.props.disabled || element.props.loading) || elementType.__ANT_RADIO === true && element.props.disabled) {
-    // Pick some layout related style properties up to span
-    // Prevent layout bugs like https://github.com/ant-design/ant-design/issues/5254
-    const {
-      picked,
-      omitted
-    } = splitObject(element.props.style, ['position', 'left', 'right', 'top', 'bottom', 'float', 'display', 'zIndex']);
-    const spanStyle = Object.assign(Object.assign({
-      display: 'inline-block'
-    }, picked), {
-      cursor: 'not-allowed',
-      width: element.props.block ? '100%' : undefined
-    });
-    const buttonStyle = Object.assign(Object.assign({}, omitted), {
-      pointerEvents: 'none'
-    });
-    const child = cloneElement(element, {
-      style: buttonStyle,
-      className: null
-    });
-    return /*#__PURE__*/React__namespace.createElement("span", {
-      style: spanStyle,
-      className: classnames(element.props.className, `${prefixCls}-disabled-compatible-wrapper`)
-    }, child);
-  }
-  return element;
-}
 const Tooltip = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
   var _a, _b;
   const {
@@ -24652,7 +24732,7 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
     tempOpen = false;
   }
   // ============================= Render =============================
-  const child = getDisabledCompatibleChildren(isValidElement(children) && !isFragment(children) ? children : /*#__PURE__*/React__namespace.createElement("span", null, children), prefixCls);
+  const child = isValidElement(children) && !isFragment$1(children) ? children : /*#__PURE__*/React__namespace.createElement("span", null, children);
   const childProps = child.props;
   const childCls = !childProps.className || typeof childProps.className === 'string' ? classnames(childProps.className, openClassName || `${prefixCls}-open`) : childProps.className;
   // Style
@@ -25949,7 +26029,8 @@ function PopupTrigger(_ref) {
     mouseLeaveDelay: subMenuCloseDelay,
     onPopupVisibleChange: onVisibleChange,
     forceRender: forceSubMenuRender,
-    popupMotion: mergedMotion
+    popupMotion: mergedMotion,
+    fresh: true
   }, children);
 }
 
@@ -27636,10 +27717,12 @@ const OverrideProvider = /*#__PURE__*/React__namespace.forwardRef((props, ref) =
   // restProps.validator, Not mark as deps since this is a function
   ]);
 
+  const canRef = supportNodeRef(children);
+  const mergedRef = useComposeRef(ref, canRef ? children.ref : null);
   return /*#__PURE__*/React__namespace.createElement(OverrideContext.Provider, {
     value: context
-  }, /*#__PURE__*/React__namespace.createElement(NoCompactStyle, null, supportNodeRef(children) ? /*#__PURE__*/React__namespace.cloneElement(children, {
-    ref
+  }, /*#__PURE__*/React__namespace.createElement(NoCompactStyle, null, canRef ? /*#__PURE__*/React__namespace.cloneElement(children, {
+    ref: mergedRef
   }) : children));
 });
 
@@ -28285,7 +28368,12 @@ const getBaseStyle = token => {
         transition: [`background ${motionDurationSlow} ${motionEaseInOut}`, `padding ${motionDurationSlow} ${motionEaseInOut}`].join(',')
       },
       [`${componentCls}-title-content`]: {
-        transition: `color ${motionDurationSlow}`
+        transition: `color ${motionDurationSlow}`,
+        // https://github.com/ant-design/ant-design/issues/41143
+        [`> ${antCls}-typography-ellipsis-single-line`]: {
+          display: 'inline',
+          verticalAlign: 'unset'
+        }
       },
       [`${componentCls}-item a`]: {
         '&::before': {
@@ -31126,7 +31214,8 @@ function useTimeSelection(_ref) {
   var setTime$1 = function setTime$1(isNewPM, newHour, newMinute, newSecond) {
     var now = generateConfig.getNow();
     var newDate = value || now;
-    var mergedHour = newHour < 0 ? generateConfig.getHour(now) : newHour;
+    var newFormattedHour = !use12Hours || !isNewPM ? newHour : newHour + 12;
+    var mergedHour = newHour < 0 ? generateConfig.getHour(now) : newFormattedHour;
     var mergedMinute = newMinute < 0 ? generateConfig.getMinute(now) : newMinute;
     var mergedSecond = newSecond < 0 ? generateConfig.getSecond(now) : newSecond;
     var newDisabledMinutes = disabledMinutes && disabledMinutes(mergedHour);
@@ -31153,7 +31242,7 @@ function useTimeSelection(_ref) {
         return null;
       }
     }
-    newDate = setTime(generateConfig, newDate, !use12Hours || !isNewPM ? mergedHour : mergedHour + 12, mergedMinute, mergedSecond);
+    newDate = setTime(generateConfig, newDate, mergedHour, mergedMinute, mergedSecond);
     return newDate;
   };
   return setTime$1;
@@ -31557,6 +31646,18 @@ function TimePanel(props) {
 }
 
 var ACTIVE_PANEL = tuple('date', 'time');
+var findValidTime = function findValidTime(refValue, disabledRange, maxValidTime) {
+  var rangeSet = new Set(disabledRange);
+  if (rangeSet.has(refValue)) {
+    for (var i = 0; i <= maxValidTime; i++) {
+      if (!rangeSet.has(i) && i >= refValue) {
+        // first not disabled time
+        return i;
+      }
+    }
+  }
+  return refValue;
+};
 function DatetimePanel(props) {
   var prefixCls = props.prefixCls,
     operationRef = props.operationRef,
@@ -31623,11 +31724,15 @@ function DatetimePanel(props) {
   // ======================== Events ========================
   var onInternalSelect = function onInternalSelect(date, source) {
     var selectedDate = date;
-    if (source === 'date' && !value && timeProps.defaultValue) {
-      // Date with time defaultValue
-      selectedDate = generateConfig.setHour(selectedDate, generateConfig.getHour(timeProps.defaultValue));
-      selectedDate = generateConfig.setMinute(selectedDate, generateConfig.getMinute(timeProps.defaultValue));
-      selectedDate = generateConfig.setSecond(selectedDate, generateConfig.getSecond(timeProps.defaultValue));
+    if (source === 'date') {
+      var _disabledTimes$disabl, _disabledTimes$disabl2, _disabledTimes$disabl3;
+      var _disabledTimes = (disabledTime === null || disabledTime === void 0 ? void 0 : disabledTime(value || timeProps.defaultValue)) || {};
+      var validHour = findValidTime(generateConfig.getHour(selectedDate), ((_disabledTimes$disabl = _disabledTimes.disabledHours) === null || _disabledTimes$disabl === void 0 ? void 0 : _disabledTimes$disabl.call(_disabledTimes)) || [-1], 23);
+      var validMinute = findValidTime(generateConfig.getMinute(selectedDate), ((_disabledTimes$disabl2 = _disabledTimes.disabledMinutes) === null || _disabledTimes$disabl2 === void 0 ? void 0 : _disabledTimes$disabl2.call(_disabledTimes, validHour)) || [-1], 59);
+      var validSeconds = findValidTime(generateConfig.getSecond(selectedDate), ((_disabledTimes$disabl3 = _disabledTimes.disabledSeconds) === null || _disabledTimes$disabl3 === void 0 ? void 0 : _disabledTimes$disabl3.call(_disabledTimes, validHour, validMinute)) || [-1], 59);
+      selectedDate = generateConfig.setHour(selectedDate, validHour);
+      selectedDate = generateConfig.setMinute(selectedDate, validMinute);
+      selectedDate = generateConfig.setSecond(selectedDate, validSeconds);
     } else if (source === 'time' && !value && defaultValue) {
       selectedDate = generateConfig.setYear(selectedDate, generateConfig.getYear(defaultValue));
       selectedDate = generateConfig.setMonth(selectedDate, generateConfig.getMonth(defaultValue));
@@ -35314,12 +35419,14 @@ const genPlaceholderStyle = color => ({
   }
 });
 const genHoverStyle = token => ({
-  borderColor: token.hoverBorderColor
+  borderColor: token.hoverBorderColor,
+  backgroundColor: token.hoverBg
 });
 const genActiveStyle = token => ({
   borderColor: token.activeBorderColor,
   boxShadow: token.activeShadow,
-  outline: 0
+  outline: 0,
+  backgroundColor: token.activeBg
 });
 const genDisabledStyle = token => ({
   color: token.colorTextDisabled,
@@ -35329,7 +35436,8 @@ const genDisabledStyle = token => ({
   cursor: 'not-allowed',
   opacity: 1,
   '&:hover': Object.assign({}, genHoverStyle(merge(token, {
-    hoverBorderColor: token.colorBorder
+    hoverBorderColor: token.colorBorder,
+    hoverBg: token.colorBgContainerDisabled
   })))
 });
 const genInputLargeStyle = token => {
@@ -35367,7 +35475,7 @@ const genStatusStyle = (token, parentCls) => {
       '&:hover': {
         borderColor: colorErrorBorderHover
       },
-      '&:focus, &-focused': Object.assign({}, genActiveStyle(merge(token, {
+      '&:focus, &:focus-within': Object.assign({}, genActiveStyle(merge(token, {
         activeBorderColor: colorError,
         activeShadow: errorActiveShadow
       }))),
@@ -35380,7 +35488,7 @@ const genStatusStyle = (token, parentCls) => {
       '&:hover': {
         borderColor: colorWarningBorderHover
       },
-      '&:focus, &-focused': Object.assign({}, genActiveStyle(merge(token, {
+      '&:focus, &:focus-within': Object.assign({}, genActiveStyle(merge(token, {
         activeBorderColor: colorWarning,
         activeShadow: warningActiveShadow
       }))),
@@ -35408,7 +35516,7 @@ const genBasicInputStyle = token => Object.assign(Object.assign({
   transition: `all ${token.motionDurationMid}`
 }, genPlaceholderStyle(token.colorTextPlaceholder)), {
   '&:hover': Object.assign({}, genHoverStyle(token)),
-  '&:focus, &-focused': Object.assign({}, genActiveStyle(token)),
+  '&:focus, &:focus-within': Object.assign({}, genActiveStyle(token)),
   '&-disabled, &[disabled]': Object.assign({}, genDisabledStyle(token)),
   '&-borderless': {
     '&, &:hover, &:focus, &-focused, &-disabled, &[disabled]': {
@@ -35492,7 +35600,7 @@ const genInputGroupStyle = token => {
         fontWeight: 'normal',
         fontSize: token.fontSize,
         textAlign: 'center',
-        backgroundColor: token.colorFillAlter,
+        backgroundColor: token.addonBg,
         border: `${token.lineWidth}px ${token.lineType} ${token.colorBorder}`,
         borderRadius: token.borderRadius,
         transition: `all ${token.motionDurationSlow}`,
@@ -35757,12 +35865,12 @@ const genAffixStyle = token => {
   return {
     [`${componentCls}-affix-wrapper`]: Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, genBasicInputStyle(token)), {
       display: 'inline-flex',
-      [`&:not(${componentCls}-affix-wrapper-disabled):hover`]: Object.assign(Object.assign({}, genHoverStyle(token)), {
+      [`&:not(${componentCls}-affix-wrapper-disabled):hover`]: {
         zIndex: 1,
         [`${componentCls}-search-with-button &`]: {
           zIndex: 0
         }
-      }),
+      },
       '&-focused, &:focus': {
         zIndex: 1
       },
@@ -36087,24 +36195,23 @@ const initComponentToken$1 = token => {
     controlPaddingHorizontal,
     colorFillAlter,
     colorPrimaryHover,
-    controlOutlineWidth,
-    controlOutline,
-    colorErrorOutline,
-    colorWarningOutline
+    colorPrimary
   } = token;
   return {
-    paddingBlock: Math.max(Math.round((controlHeight - fontSize * lineHeight) / 2 * 10) / 10 - lineWidth, 3),
+    paddingBlock: Math.max(Math.round((controlHeight - fontSize * lineHeight) / 2 * 10) / 10 - lineWidth, 0),
     paddingBlockSM: Math.max(Math.round((controlHeightSM - fontSize * lineHeight) / 2 * 10) / 10 - lineWidth, 0),
     paddingBlockLG: Math.ceil((controlHeightLG - fontSizeLG * lineHeightLG) / 2 * 10) / 10 - lineWidth,
     paddingInline: paddingSM - lineWidth,
     paddingInlineSM: controlPaddingHorizontalSM - lineWidth,
     paddingInlineLG: controlPaddingHorizontal - lineWidth,
     addonBg: colorFillAlter,
-    activeBorderColor: colorPrimaryHover,
+    activeBorderColor: colorPrimary,
     hoverBorderColor: colorPrimaryHover,
-    activeShadow: `0 0 0 ${controlOutlineWidth}px ${controlOutline}`,
-    errorActiveShadow: `0 0 0 ${controlOutlineWidth}px ${colorErrorOutline}`,
-    warningActiveShadow: `0 0 0 ${controlOutlineWidth}px ${colorWarningOutline}`
+    activeShadow: `none`,
+    errorActiveShadow: `none`,
+    warningActiveShadow: `none`,
+    hoverBg: 'transparent',
+    activeBg: 'transparent'
   };
 };
 // ============================== Export ==============================
@@ -36865,14 +36972,17 @@ const genPickerStatusStyle = token => {
     colorError,
     errorActiveShadow,
     colorWarning,
-    warningActiveShadow
+    warningActiveShadow,
+    colorErrorHover,
+    colorWarningHover
   } = token;
   return {
-    [`${componentCls}:not(${componentCls}-disabled)`]: {
+    [`${componentCls}:not(${componentCls}-disabled):not([disabled])`]: {
       [`&${componentCls}-status-error`]: {
-        '&, &:not([disabled]):hover': {
-          backgroundColor: colorBgContainer,
-          borderColor: colorError
+        backgroundColor: colorBgContainer,
+        borderColor: colorError,
+        '&:hover': {
+          borderColor: colorErrorHover
         },
         [`&${componentCls}-focused, &:focus`]: Object.assign({}, genActiveStyle(merge(token, {
           activeBorderColor: colorError,
@@ -36883,9 +36993,10 @@ const genPickerStatusStyle = token => {
         }
       },
       [`&${componentCls}-status-warning`]: {
-        '&, &:not([disabled]):hover': {
-          backgroundColor: colorBgContainer,
-          borderColor: colorWarning
+        backgroundColor: colorBgContainer,
+        borderColor: colorWarning,
+        '&:hover': {
+          borderColor: colorWarningHover
         },
         [`&${componentCls}-focused, &:focus`]: Object.assign({}, genActiveStyle(merge(token, {
           activeBorderColor: colorWarning,
@@ -36955,8 +37066,8 @@ const genPickerStyle = token => {
       border: `${lineWidth}px ${lineType} ${colorBorder}`,
       borderRadius,
       transition: `border ${motionDurationMid}, box-shadow ${motionDurationMid}`,
-      '&:hover, &-focused': Object.assign({}, genHoverStyle(token)),
-      '&-focused': Object.assign({}, genActiveStyle(token)),
+      '&:hover': Object.assign({}, genHoverStyle(token)),
+      [`&-focused${componentCls}`]: Object.assign({}, genActiveStyle(token)),
       [`&${componentCls}-disabled`]: {
         background: colorBgContainerDisabled,
         borderColor: colorBorder,
@@ -36986,6 +37097,7 @@ const genPickerStyle = token => {
           background: 'transparent',
           border: 0,
           borderRadius: 0,
+          fontFamily: 'inherit',
           '&:focus': {
             boxShadow: 'none'
           },
@@ -37334,7 +37446,7 @@ var useStyle$b = genComponentStyleHook('DatePicker', token => {
   zIndexPopup: token.zIndexPopupBase + 50
 }));
 
-const Element$1 = props => {
+const Element$2 = props => {
   const {
     prefixCls,
     className,
@@ -37361,7 +37473,7 @@ const Element$1 = props => {
     style: Object.assign(Object.assign({}, sizeStyle), style)
   });
 };
-var Element$2 = Element$1;
+var Element$3 = Element$2;
 
 const skeletonClsLoading = new Keyframe(`ant-skeleton-loading`, {
   '0%': {
@@ -37686,7 +37798,7 @@ const SkeletonAvatar = props => {
   }, className, rootClassName, hashId);
   return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", {
     className: cls
-  }, /*#__PURE__*/React__namespace.createElement(Element$2, Object.assign({
+  }, /*#__PURE__*/React__namespace.createElement(Element$3, Object.assign({
     prefixCls: `${prefixCls}-avatar`,
     shape: shape,
     size: size
@@ -37715,7 +37827,7 @@ const SkeletonButton = props => {
   }, className, rootClassName, hashId);
   return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", {
     className: cls
-  }, /*#__PURE__*/React__namespace.createElement(Element$2, Object.assign({
+  }, /*#__PURE__*/React__namespace.createElement(Element$3, Object.assign({
     prefixCls: `${prefixCls}-button`,
     size: size
   }, otherProps))));
@@ -37776,7 +37888,7 @@ const SkeletonInput = props => {
   }, className, rootClassName, hashId);
   return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", {
     className: cls
-  }, /*#__PURE__*/React__namespace.createElement(Element$2, Object.assign({
+  }, /*#__PURE__*/React__namespace.createElement(Element$3, Object.assign({
     prefixCls: `${prefixCls}-input`,
     size: size
   }, otherProps))));
@@ -37958,7 +38070,7 @@ const Skeleton = props => {
       // We direct use SkeletonElement as avatar in skeleton internal.
       avatarNode = /*#__PURE__*/React__namespace.createElement("div", {
         className: `${prefixCls}-header`
-      }, /*#__PURE__*/React__namespace.createElement(Element$2, Object.assign({}, avatarProps)));
+      }, /*#__PURE__*/React__namespace.createElement(Element$3, Object.assign({}, avatarProps)));
     }
     let contentNode;
     if (hasTitle || hasParagraph) {
@@ -41185,201 +41297,6 @@ function getEntity(keyEntities, key) {
   return keyEntities[key];
 }
 
-function removeFromCheckedKeys(halfCheckedKeys, checkedKeys) {
-  var filteredKeys = new Set();
-  halfCheckedKeys.forEach(function (key) {
-    if (!checkedKeys.has(key)) {
-      filteredKeys.add(key);
-    }
-  });
-  return filteredKeys;
-}
-function isCheckDisabled(node) {
-  var _ref = node || {},
-    disabled = _ref.disabled,
-    disableCheckbox = _ref.disableCheckbox,
-    checkable = _ref.checkable;
-  return !!(disabled || disableCheckbox) || checkable === false;
-}
-// Fill miss keys
-function fillConductCheck(keys, levelEntities, maxLevel, syntheticGetCheckDisabled) {
-  var checkedKeys = new Set(keys);
-  var halfCheckedKeys = new Set();
-  // Add checked keys top to bottom
-  for (var level = 0; level <= maxLevel; level += 1) {
-    var entities = levelEntities.get(level) || new Set();
-    entities.forEach(function (entity) {
-      var key = entity.key,
-        node = entity.node,
-        _entity$children = entity.children,
-        children = _entity$children === void 0 ? [] : _entity$children;
-      if (checkedKeys.has(key) && !syntheticGetCheckDisabled(node)) {
-        children.filter(function (childEntity) {
-          return !syntheticGetCheckDisabled(childEntity.node);
-        }).forEach(function (childEntity) {
-          checkedKeys.add(childEntity.key);
-        });
-      }
-    });
-  }
-  // Add checked keys from bottom to top
-  var visitedKeys = new Set();
-  for (var _level = maxLevel; _level >= 0; _level -= 1) {
-    var _entities = levelEntities.get(_level) || new Set();
-    _entities.forEach(function (entity) {
-      var parent = entity.parent,
-        node = entity.node;
-      // Skip if no need to check
-      if (syntheticGetCheckDisabled(node) || !entity.parent || visitedKeys.has(entity.parent.key)) {
-        return;
-      }
-      // Skip if parent is disabled
-      if (syntheticGetCheckDisabled(entity.parent.node)) {
-        visitedKeys.add(parent.key);
-        return;
-      }
-      var allChecked = true;
-      var partialChecked = false;
-      (parent.children || []).filter(function (childEntity) {
-        return !syntheticGetCheckDisabled(childEntity.node);
-      }).forEach(function (_ref2) {
-        var key = _ref2.key;
-        var checked = checkedKeys.has(key);
-        if (allChecked && !checked) {
-          allChecked = false;
-        }
-        if (!partialChecked && (checked || halfCheckedKeys.has(key))) {
-          partialChecked = true;
-        }
-      });
-      if (allChecked) {
-        checkedKeys.add(parent.key);
-      }
-      if (partialChecked) {
-        halfCheckedKeys.add(parent.key);
-      }
-      visitedKeys.add(parent.key);
-    });
-  }
-  return {
-    checkedKeys: Array.from(checkedKeys),
-    halfCheckedKeys: Array.from(removeFromCheckedKeys(halfCheckedKeys, checkedKeys))
-  };
-}
-// Remove useless key
-function cleanConductCheck(keys, halfKeys, levelEntities, maxLevel, syntheticGetCheckDisabled) {
-  var checkedKeys = new Set(keys);
-  var halfCheckedKeys = new Set(halfKeys);
-  // Remove checked keys from top to bottom
-  for (var level = 0; level <= maxLevel; level += 1) {
-    var entities = levelEntities.get(level) || new Set();
-    entities.forEach(function (entity) {
-      var key = entity.key,
-        node = entity.node,
-        _entity$children2 = entity.children,
-        children = _entity$children2 === void 0 ? [] : _entity$children2;
-      if (!checkedKeys.has(key) && !halfCheckedKeys.has(key) && !syntheticGetCheckDisabled(node)) {
-        children.filter(function (childEntity) {
-          return !syntheticGetCheckDisabled(childEntity.node);
-        }).forEach(function (childEntity) {
-          checkedKeys.delete(childEntity.key);
-        });
-      }
-    });
-  }
-  // Remove checked keys form bottom to top
-  halfCheckedKeys = new Set();
-  var visitedKeys = new Set();
-  for (var _level2 = maxLevel; _level2 >= 0; _level2 -= 1) {
-    var _entities2 = levelEntities.get(_level2) || new Set();
-    _entities2.forEach(function (entity) {
-      var parent = entity.parent,
-        node = entity.node;
-      // Skip if no need to check
-      if (syntheticGetCheckDisabled(node) || !entity.parent || visitedKeys.has(entity.parent.key)) {
-        return;
-      }
-      // Skip if parent is disabled
-      if (syntheticGetCheckDisabled(entity.parent.node)) {
-        visitedKeys.add(parent.key);
-        return;
-      }
-      var allChecked = true;
-      var partialChecked = false;
-      (parent.children || []).filter(function (childEntity) {
-        return !syntheticGetCheckDisabled(childEntity.node);
-      }).forEach(function (_ref3) {
-        var key = _ref3.key;
-        var checked = checkedKeys.has(key);
-        if (allChecked && !checked) {
-          allChecked = false;
-        }
-        if (!partialChecked && (checked || halfCheckedKeys.has(key))) {
-          partialChecked = true;
-        }
-      });
-      if (!allChecked) {
-        checkedKeys.delete(parent.key);
-      }
-      if (partialChecked) {
-        halfCheckedKeys.add(parent.key);
-      }
-      visitedKeys.add(parent.key);
-    });
-  }
-  return {
-    checkedKeys: Array.from(checkedKeys),
-    halfCheckedKeys: Array.from(removeFromCheckedKeys(halfCheckedKeys, checkedKeys))
-  };
-}
-/**
- * Conduct with keys.
- * @param keyList current key list
- * @param keyEntities key - dataEntity map
- * @param mode `fill` to fill missing key, `clean` to remove useless key
- */
-function conductCheck(keyList, checked, keyEntities, getCheckDisabled) {
-  var warningMissKeys = [];
-  var syntheticGetCheckDisabled;
-  if (getCheckDisabled) {
-    syntheticGetCheckDisabled = getCheckDisabled;
-  } else {
-    syntheticGetCheckDisabled = isCheckDisabled;
-  }
-  // We only handle exist keys
-  var keys = new Set(keyList.filter(function (key) {
-    var hasEntity = !!getEntity(keyEntities, key);
-    if (!hasEntity) {
-      warningMissKeys.push(key);
-    }
-    return hasEntity;
-  }));
-  var levelEntities = new Map();
-  var maxLevel = 0;
-  // Convert entities by level for calculation
-  Object.keys(keyEntities).forEach(function (key) {
-    var entity = keyEntities[key];
-    var level = entity.level;
-    var levelSet = levelEntities.get(level);
-    if (!levelSet) {
-      levelSet = new Set();
-      levelEntities.set(level, levelSet);
-    }
-    levelSet.add(entity);
-    maxLevel = Math.max(maxLevel, level);
-  });
-  warningOnce(!warningMissKeys.length, "Tree missing follow keys: ".concat(warningMissKeys.slice(0, 100).map(function (key) {
-    return "'".concat(key, "'");
-  }).join(', ')));
-  var result;
-  if (checked === true) {
-    result = fillConductCheck(keys, levelEntities, maxLevel, syntheticGetCheckDisabled);
-  } else {
-    result = cleanConductCheck(keys, checked.halfCheckedKeys, levelEntities, maxLevel, syntheticGetCheckDisabled);
-  }
-  return result;
-}
-
 var _excluded$d = ["children"];
 function getPosition(level, index) {
   return "".concat(level, "-").concat(index);
@@ -41712,6 +41629,201 @@ function convertNodePropsToEventData(props) {
     });
   }
   return eventData;
+}
+
+function removeFromCheckedKeys(halfCheckedKeys, checkedKeys) {
+  var filteredKeys = new Set();
+  halfCheckedKeys.forEach(function (key) {
+    if (!checkedKeys.has(key)) {
+      filteredKeys.add(key);
+    }
+  });
+  return filteredKeys;
+}
+function isCheckDisabled(node) {
+  var _ref = node || {},
+    disabled = _ref.disabled,
+    disableCheckbox = _ref.disableCheckbox,
+    checkable = _ref.checkable;
+  return !!(disabled || disableCheckbox) || checkable === false;
+}
+// Fill miss keys
+function fillConductCheck(keys, levelEntities, maxLevel, syntheticGetCheckDisabled) {
+  var checkedKeys = new Set(keys);
+  var halfCheckedKeys = new Set();
+  // Add checked keys top to bottom
+  for (var level = 0; level <= maxLevel; level += 1) {
+    var entities = levelEntities.get(level) || new Set();
+    entities.forEach(function (entity) {
+      var key = entity.key,
+        node = entity.node,
+        _entity$children = entity.children,
+        children = _entity$children === void 0 ? [] : _entity$children;
+      if (checkedKeys.has(key) && !syntheticGetCheckDisabled(node)) {
+        children.filter(function (childEntity) {
+          return !syntheticGetCheckDisabled(childEntity.node);
+        }).forEach(function (childEntity) {
+          checkedKeys.add(childEntity.key);
+        });
+      }
+    });
+  }
+  // Add checked keys from bottom to top
+  var visitedKeys = new Set();
+  for (var _level = maxLevel; _level >= 0; _level -= 1) {
+    var _entities = levelEntities.get(_level) || new Set();
+    _entities.forEach(function (entity) {
+      var parent = entity.parent,
+        node = entity.node;
+      // Skip if no need to check
+      if (syntheticGetCheckDisabled(node) || !entity.parent || visitedKeys.has(entity.parent.key)) {
+        return;
+      }
+      // Skip if parent is disabled
+      if (syntheticGetCheckDisabled(entity.parent.node)) {
+        visitedKeys.add(parent.key);
+        return;
+      }
+      var allChecked = true;
+      var partialChecked = false;
+      (parent.children || []).filter(function (childEntity) {
+        return !syntheticGetCheckDisabled(childEntity.node);
+      }).forEach(function (_ref2) {
+        var key = _ref2.key;
+        var checked = checkedKeys.has(key);
+        if (allChecked && !checked) {
+          allChecked = false;
+        }
+        if (!partialChecked && (checked || halfCheckedKeys.has(key))) {
+          partialChecked = true;
+        }
+      });
+      if (allChecked) {
+        checkedKeys.add(parent.key);
+      }
+      if (partialChecked) {
+        halfCheckedKeys.add(parent.key);
+      }
+      visitedKeys.add(parent.key);
+    });
+  }
+  return {
+    checkedKeys: Array.from(checkedKeys),
+    halfCheckedKeys: Array.from(removeFromCheckedKeys(halfCheckedKeys, checkedKeys))
+  };
+}
+// Remove useless key
+function cleanConductCheck(keys, halfKeys, levelEntities, maxLevel, syntheticGetCheckDisabled) {
+  var checkedKeys = new Set(keys);
+  var halfCheckedKeys = new Set(halfKeys);
+  // Remove checked keys from top to bottom
+  for (var level = 0; level <= maxLevel; level += 1) {
+    var entities = levelEntities.get(level) || new Set();
+    entities.forEach(function (entity) {
+      var key = entity.key,
+        node = entity.node,
+        _entity$children2 = entity.children,
+        children = _entity$children2 === void 0 ? [] : _entity$children2;
+      if (!checkedKeys.has(key) && !halfCheckedKeys.has(key) && !syntheticGetCheckDisabled(node)) {
+        children.filter(function (childEntity) {
+          return !syntheticGetCheckDisabled(childEntity.node);
+        }).forEach(function (childEntity) {
+          checkedKeys.delete(childEntity.key);
+        });
+      }
+    });
+  }
+  // Remove checked keys form bottom to top
+  halfCheckedKeys = new Set();
+  var visitedKeys = new Set();
+  for (var _level2 = maxLevel; _level2 >= 0; _level2 -= 1) {
+    var _entities2 = levelEntities.get(_level2) || new Set();
+    _entities2.forEach(function (entity) {
+      var parent = entity.parent,
+        node = entity.node;
+      // Skip if no need to check
+      if (syntheticGetCheckDisabled(node) || !entity.parent || visitedKeys.has(entity.parent.key)) {
+        return;
+      }
+      // Skip if parent is disabled
+      if (syntheticGetCheckDisabled(entity.parent.node)) {
+        visitedKeys.add(parent.key);
+        return;
+      }
+      var allChecked = true;
+      var partialChecked = false;
+      (parent.children || []).filter(function (childEntity) {
+        return !syntheticGetCheckDisabled(childEntity.node);
+      }).forEach(function (_ref3) {
+        var key = _ref3.key;
+        var checked = checkedKeys.has(key);
+        if (allChecked && !checked) {
+          allChecked = false;
+        }
+        if (!partialChecked && (checked || halfCheckedKeys.has(key))) {
+          partialChecked = true;
+        }
+      });
+      if (!allChecked) {
+        checkedKeys.delete(parent.key);
+      }
+      if (partialChecked) {
+        halfCheckedKeys.add(parent.key);
+      }
+      visitedKeys.add(parent.key);
+    });
+  }
+  return {
+    checkedKeys: Array.from(checkedKeys),
+    halfCheckedKeys: Array.from(removeFromCheckedKeys(halfCheckedKeys, checkedKeys))
+  };
+}
+/**
+ * Conduct with keys.
+ * @param keyList current key list
+ * @param keyEntities key - dataEntity map
+ * @param mode `fill` to fill missing key, `clean` to remove useless key
+ */
+function conductCheck(keyList, checked, keyEntities, getCheckDisabled) {
+  var warningMissKeys = [];
+  var syntheticGetCheckDisabled;
+  if (getCheckDisabled) {
+    syntheticGetCheckDisabled = getCheckDisabled;
+  } else {
+    syntheticGetCheckDisabled = isCheckDisabled;
+  }
+  // We only handle exist keys
+  var keys = new Set(keyList.filter(function (key) {
+    var hasEntity = !!getEntity(keyEntities, key);
+    if (!hasEntity) {
+      warningMissKeys.push(key);
+    }
+    return hasEntity;
+  }));
+  var levelEntities = new Map();
+  var maxLevel = 0;
+  // Convert entities by level for calculation
+  Object.keys(keyEntities).forEach(function (key) {
+    var entity = keyEntities[key];
+    var level = entity.level;
+    var levelSet = levelEntities.get(level);
+    if (!levelSet) {
+      levelSet = new Set();
+      levelEntities.set(level, levelSet);
+    }
+    levelSet.add(entity);
+    maxLevel = Math.max(maxLevel, level);
+  });
+  warningOnce(!warningMissKeys.length, "Tree missing follow keys: ".concat(warningMissKeys.slice(0, 100).map(function (key) {
+    return "'".concat(key, "'");
+  }).join(', ')));
+  var result;
+  if (checked === true) {
+    result = fillConductCheck(keys, levelEntities, maxLevel, syntheticGetCheckDisabled);
+  } else {
+    result = cleanConductCheck(keys, checked.halfCheckedKeys, levelEntities, maxLevel, syntheticGetCheckDisabled);
+  }
+  return result;
 }
 
 // ============================== Styles ==============================
@@ -44122,8 +44234,6 @@ const genInputNumberStyles = token => {
           padding: `0 ${paddingInlineSM}px`
         }
       },
-      '&:hover': Object.assign({}, genHoverStyle(token)),
-      '&-focused': Object.assign({}, genActiveStyle(token)),
       // ===================== Out Of Range =====================
       '&-out-of-range': {
         [`${componentCls}-input-wrap`]: {
@@ -44317,9 +44427,9 @@ const genAffixWrapperStyles = token => {
       '&-sm': {
         borderRadius: borderRadiusSM
       },
-      [`&:not(${componentCls}-affix-wrapper-disabled):hover`]: Object.assign(Object.assign({}, genHoverStyle(token)), {
+      [`&:not(${componentCls}-affix-wrapper-disabled):hover`]: {
         zIndex: 1
-      }),
+      },
       '&-focused, &:focus': {
         zIndex: 1
       },
@@ -44460,12 +44570,12 @@ const InputNumber = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
     [`${prefixCls}-rtl`]: direction === 'rtl',
     [`${prefixCls}-borderless`]: !bordered,
     [`${prefixCls}-in-form-item`]: isFormItemInput
-  }, getStatusClassNames(prefixCls, mergedStatus), compactItemClassnames, hashId);
+  }, getStatusClassNames(prefixCls, mergedStatus), hashId);
   const wrapperClassName = `${prefixCls}-group`;
   const element = /*#__PURE__*/React__namespace.createElement(InputNumber$2, Object.assign({
     ref: inputRef,
     disabled: mergedDisabled,
-    className: classnames(className, rootClassName),
+    className: classnames(className, rootClassName, compactItemClassnames),
     upHandler: upIcon,
     downHandler: downIcon,
     prefixCls: prefixCls,
@@ -47050,7 +47160,7 @@ function useForm$1(form) {
       const fieldId = getFieldId(namePath, wrapForm.__INTERNAL__.name);
       const node = fieldId ? document.getElementById(fieldId) : null;
       if (node) {
-        e(node, Object.assign({
+        e$1(node, Object.assign({
           scrollMode: 'if-needed',
           block: 'nearest'
         }, options));
@@ -52226,7 +52336,7 @@ function Table$2(tableProps) {
   var onFullTableResize = function onFullTableResize(_ref3) {
     var width = _ref3.width;
     var mergedWidth = fullTableRef.current ? fullTableRef.current.offsetWidth : width;
-    if (useInternalHooks && getContainerWidth) {
+    if (useInternalHooks && getContainerWidth && fullTableRef.current) {
       mergedWidth = getContainerWidth(fullTableRef.current, mergedWidth) || mergedWidth;
     }
     if (mergedWidth !== componentWidth) {
@@ -52407,7 +52517,7 @@ function Table$2(tableProps) {
       stickyBottomOffset: offsetSummary,
       className: "".concat(prefixCls, "-summary"),
       ref: scrollSummaryRef
-    }), renderFixedFooterTable), isSticky && /*#__PURE__*/React__namespace.createElement(StickyScrollBar$1, {
+    }), renderFixedFooterTable), isSticky && scrollBodyRef.current && scrollBodyRef.current instanceof Element && /*#__PURE__*/React__namespace.createElement(StickyScrollBar$1, {
       ref: stickyRef,
       offsetScroll: offsetScroll,
       scrollBodyRef: scrollBodyRef,
@@ -52725,6 +52835,7 @@ var Grid$1 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     emptyNode = _useContext.emptyNode,
     scrollX = _useContext.scrollX;
   var _useContext2 = useContext(StaticContext),
+    sticky = _useContext2.sticky,
     scrollY = _useContext2.scrollY,
     listItemHeight = _useContext2.listItemHeight;
 
@@ -52898,9 +53009,21 @@ var Grid$1 = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
   var tblPrefixCls = "".concat(prefixCls, "-tbody");
   var bodyContent;
   if (flattenData.length) {
+    // ========================== Sticky Scroll Bar ==========================
+    var horizontalScrollBarStyle = {};
+    if (sticky) {
+      horizontalScrollBarStyle.position = 'sticky';
+      horizontalScrollBarStyle.bottom = 0;
+      if (_typeof(sticky) === 'object' && sticky.offsetScroll) {
+        horizontalScrollBarStyle.bottom = sticky.offsetScroll;
+      }
+    }
     bodyContent = /*#__PURE__*/React__namespace.createElement(List$1, {
       fullHeight: false,
       ref: listRef,
+      styles: {
+        horizontalScrollBar: horizontalScrollBarStyle
+      },
       className: classnames(tblPrefixCls, "".concat(tblPrefixCls, "-virtual")),
       height: scrollY,
       itemHeight: listItemHeight || 24,
@@ -52953,6 +53076,7 @@ var renderBody = function renderBody(rawData, props) {
 function VirtualTable(props) {
   var columns = props.columns,
     scroll = props.scroll,
+    sticky = props.sticky,
     _props$prefixCls = props.prefixCls,
     prefixCls = _props$prefixCls === void 0 ? DEFAULT_PREFIX : _props$prefixCls,
     className = props.className,
@@ -52980,10 +53104,11 @@ function VirtualTable(props) {
   // ========================= Context ==========================
   var context = React__namespace.useMemo(function () {
     return {
+      sticky: sticky,
       scrollY: scrollY,
       listItemHeight: listItemHeight
     };
-  }, [scrollY, listItemHeight]);
+  }, [sticky, scrollY, listItemHeight]);
 
   // ========================== Render ==========================
   return /*#__PURE__*/React__namespace.createElement(StaticContext.Provider, {
@@ -56479,6 +56604,9 @@ function renderFilterItems(_ref3) {
     return item;
   });
 }
+function wrapStringListType(keys) {
+  return keys || [];
+}
 function FilterDropdown(props) {
   var _a, _b;
   const {
@@ -56522,7 +56650,7 @@ function FilterDropdown(props) {
   const mergedVisible = (_b = filterDropdownOpen !== null && filterDropdownOpen !== void 0 ? filterDropdownOpen : filterDropdownVisible) !== null && _b !== void 0 ? _b : visible;
   // ===================== Select Keys =====================
   const propFilteredKeys = filterState === null || filterState === void 0 ? void 0 : filterState.filteredKeys;
-  const [getFilteredKeysSync, setFilteredKeysSync] = useSyncState(propFilteredKeys || []);
+  const [getFilteredKeysSync, setFilteredKeysSync] = useSyncState(wrapStringListType(propFilteredKeys));
   const onSelectKeys = _ref5 => {
     let {
       selectedKeys
@@ -56549,7 +56677,7 @@ function FilterDropdown(props) {
       return;
     }
     onSelectKeys({
-      selectedKeys: propFilteredKeys || []
+      selectedKeys: wrapStringListType(propFilteredKeys)
     });
   }, [propFilteredKeys]);
   // ====================== Open Keys ======================
@@ -56625,7 +56753,7 @@ function FilterDropdown(props) {
   const onVisibleChange = newVisible => {
     if (newVisible && propFilteredKeys !== undefined) {
       // Sync filteredKeys on appear in controlled mode (propFilteredKeys !== undefined)
-      setFilteredKeysSync(propFilteredKeys || []);
+      setFilteredKeysSync(wrapStringListType(propFilteredKeys));
     }
     triggerVisible(newVisible);
     // Default will filter when closed
@@ -56653,7 +56781,7 @@ function FilterDropdown(props) {
       const key = String(filter.value);
       const item = {
         title: filter.text,
-        key: filter.value !== undefined ? key : index
+        key: filter.value !== undefined ? key : String(index)
       };
       if (filter.children) {
         item.children = getTreeData({
@@ -56916,17 +57044,18 @@ function generateFilterInfo(filterStates) {
       filteredKeys,
       column
     } = _ref2;
+    const keyAsString = key;
     const {
       filters,
       filterDropdown
     } = column;
     if (filterDropdown) {
-      currentFilters[key] = filteredKeys || null;
+      currentFilters[keyAsString] = filteredKeys || null;
     } else if (Array.isArray(filteredKeys)) {
       const keys = flattenKeys(filters);
-      currentFilters[key] = keys.filter(originKey => filteredKeys.includes(String(originKey)));
+      currentFilters[keyAsString] = keys.filter(originKey => filteredKeys.includes(String(originKey)));
     } else {
-      currentFilters[key] = null;
+      currentFilters[keyAsString] = null;
     }
   });
   return currentFilters;
@@ -59127,8 +59256,7 @@ const genTableStyle = token => {
     tableHeaderBg,
     tableHeaderCellSplitColor,
     tableFooterTextColor,
-    tableFooterBg,
-    paddingContentVerticalLG
+    tableFooterBg
   } = token;
   const tableBorder = `${lineWidth}px ${lineType} ${tableBorderColor}`;
   return {
@@ -59149,7 +59277,7 @@ const genTableStyle = token => {
         borderCollapse: 'separate',
         borderSpacing: 0
       },
-      // ============================= Cell =============================
+      // ============================= Cell ==============================
       [`
           ${componentCls}-cell,
           ${componentCls}-thead > tr > th,
@@ -59159,7 +59287,7 @@ const genTableStyle = token => {
           tfoot > tr > td
         `]: {
         position: 'relative',
-        padding: `${paddingContentVerticalLG}px ${tablePaddingHorizontal}px`,
+        padding: `${tablePaddingVertical}px ${tablePaddingHorizontal}px`,
         overflowWrap: 'break-word'
       },
       // ============================ Title =============================
@@ -60662,7 +60790,7 @@ const Ellipsis = _ref => {
       zIndex: -9999,
       visibility: 'hidden',
       pointerEvents: 'none',
-      fontSize: Math.floor(fontSize / 2) * 2
+      fontSize: Math.ceil(fontSize / 2) * 2
     }, style)
   }, content);
   const renderMeasureSlice = (len, ref) => {
@@ -61274,7 +61402,7 @@ function Button$1 (_a) {
             }) }, props, { icon: React__default["default"].createElement(PlusOutlined$1, null) }), children)));
 }
 
-var App$1 = function (props) { return (React__default["default"].createElement(Alert$1, { message: props.message, type: props.type })); };
+var Alert = function (props) { return (React__default["default"].createElement(Alerts, { message: props.message, type: props.type })); };
 
 var css_248z$h = "";
 styleInject(css_248z$h);
@@ -68907,17 +69035,24 @@ var handleScroll = function (axis, endTarget, event, sourceDelta, noOverscroll) 
                 availableScrollTop += position;
             }
         }
-        target = target.parentNode;
+        if (target instanceof ShadowRoot) {
+            target = target.host;
+        }
+        else {
+            target = target.parentNode;
+        }
     } while (
     // portaled content
     (!targetInLock && target !== document.body) ||
         // self content
         (targetInLock && (endTarget.contains(target) || endTarget === target)));
-    if (isDeltaPositive && ((noOverscroll && availableScroll === 0) || (!noOverscroll && delta > availableScroll))) {
+    // handle epsilon around 0 (non standard zoom levels)
+    if (isDeltaPositive &&
+        ((noOverscroll && Math.abs(availableScroll) < 1) || (!noOverscroll && delta > availableScroll))) {
         shouldCancelScroll = true;
     }
     else if (!isDeltaPositive &&
-        ((noOverscroll && availableScrollTop === 0) || (!noOverscroll && -delta > availableScrollTop))) {
+        ((noOverscroll && Math.abs(availableScrollTop) < 1) || (!noOverscroll && -delta > availableScrollTop))) {
         shouldCancelScroll = true;
     }
     return shouldCancelScroll;
@@ -69002,7 +69137,7 @@ function RemoveScrollSideCar(props) {
             return;
         }
         var delta = 'deltaY' in event ? getDeltaXY(event) : getTouchXY(event);
-        var sourceEvent = shouldPreventQueue.current.filter(function (e) { return e.name === event.type && e.target === event.target && deltaCompare(e.delta, delta); })[0];
+        var sourceEvent = shouldPreventQueue.current.filter(function (e) { return e.name === event.type && (e.target === event.target || event.target === e.shadowParent) && deltaCompare(e.delta, delta); })[0];
         // self event, and should be canceled
         if (sourceEvent && sourceEvent.should) {
             if (event.cancelable) {
@@ -69025,7 +69160,7 @@ function RemoveScrollSideCar(props) {
         }
     }, []);
     var shouldCancel = React__namespace.useCallback(function (name, delta, target, should) {
-        var event = { name: name, delta: delta, target: target, should: should };
+        var event = { name: name, delta: delta, target: target, should: should, shadowParent: getOutermostShadowParent(target) };
         shouldPreventQueue.current.push(event);
         setTimeout(function () {
             shouldPreventQueue.current = shouldPreventQueue.current.filter(function (e) { return e !== event; });
@@ -69062,6 +69197,17 @@ function RemoveScrollSideCar(props) {
     return (React__namespace.createElement(React__namespace.Fragment, null,
         inert ? React__namespace.createElement(Style, { styles: generateStyle(id) }) : null,
         removeScrollBar ? React__namespace.createElement(RemoveScrollBar, { gapMode: props.gapMode }) : null));
+}
+function getOutermostShadowParent(node) {
+    var shadowParent = null;
+    while (node !== null) {
+        if (node instanceof ShadowRoot) {
+            shadowParent = node.host;
+            node = node.host;
+        }
+        node = node.parentNode;
+    }
+    return shadowParent;
 }
 
 var SideCar = exportSidecar(effectCar, RemoveScrollSideCar);
@@ -69251,7 +69397,7 @@ function groupOptions({ data }) {
   return sortedData;
 }
 
-function isElement$2(value) {
+function isElement$3(value) {
   if (Array.isArray(value) || value === null) {
     return false;
   }
@@ -71314,6 +71460,243 @@ var createCache = function createCache(options) {
   cache.sheet.hydrate(nodesToHydrate);
   return cache;
 };
+
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
+Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
+function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h;var Element$1=c;var ForwardRef=n;var Fragment=e;var Lazy=t;var Memo=r;var Portal$1=d;
+var Profiler=g;var StrictMode=f;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h};var isElement$2=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n};var isFragment=function(a){return z(a)===e};var isLazy=function(a){return z(a)===t};
+var isMemo=function(a){return z(a)===r};var isPortal=function(a){return z(a)===d};var isProfiler=function(a){return z(a)===g};var isStrictMode=function(a){return z(a)===f};var isSuspense=function(a){return z(a)===p};
+var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};var typeOf=z;
+
+var reactIs_production_min = {
+	AsyncMode: AsyncMode,
+	ConcurrentMode: ConcurrentMode,
+	ContextConsumer: ContextConsumer,
+	ContextProvider: ContextProvider,
+	Element: Element$1,
+	ForwardRef: ForwardRef,
+	Fragment: Fragment,
+	Lazy: Lazy,
+	Memo: Memo,
+	Portal: Portal$1,
+	Profiler: Profiler,
+	StrictMode: StrictMode,
+	Suspense: Suspense,
+	isAsyncMode: isAsyncMode,
+	isConcurrentMode: isConcurrentMode,
+	isContextConsumer: isContextConsumer,
+	isContextProvider: isContextProvider,
+	isElement: isElement$2,
+	isForwardRef: isForwardRef,
+	isFragment: isFragment,
+	isLazy: isLazy,
+	isMemo: isMemo,
+	isPortal: isPortal,
+	isProfiler: isProfiler,
+	isStrictMode: isStrictMode,
+	isSuspense: isSuspense,
+	isValidElementType: isValidElementType,
+	typeOf: typeOf
+};
+
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var reactIs_development = createCommonjsModule(function (module, exports) {
+
+
+
+if (process.env.NODE_ENV !== "production") {
+  (function() {
+
+// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// nor polyfill, then a plain number is used for performance.
+var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+// (unstable) APIs that have been removed. Can we remove the symbols?
+
+var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+
+function isValidElementType(type) {
+  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+}
+
+function typeOf(object) {
+  if (typeof object === 'object' && object !== null) {
+    var $$typeof = object.$$typeof;
+
+    switch ($$typeof) {
+      case REACT_ELEMENT_TYPE:
+        var type = object.type;
+
+        switch (type) {
+          case REACT_ASYNC_MODE_TYPE:
+          case REACT_CONCURRENT_MODE_TYPE:
+          case REACT_FRAGMENT_TYPE:
+          case REACT_PROFILER_TYPE:
+          case REACT_STRICT_MODE_TYPE:
+          case REACT_SUSPENSE_TYPE:
+            return type;
+
+          default:
+            var $$typeofType = type && type.$$typeof;
+
+            switch ($$typeofType) {
+              case REACT_CONTEXT_TYPE:
+              case REACT_FORWARD_REF_TYPE:
+              case REACT_LAZY_TYPE:
+              case REACT_MEMO_TYPE:
+              case REACT_PROVIDER_TYPE:
+                return $$typeofType;
+
+              default:
+                return $$typeof;
+            }
+
+        }
+
+      case REACT_PORTAL_TYPE:
+        return $$typeof;
+    }
+  }
+
+  return undefined;
+} // AsyncMode is deprecated along with isAsyncMode
+
+var AsyncMode = REACT_ASYNC_MODE_TYPE;
+var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+var ContextConsumer = REACT_CONTEXT_TYPE;
+var ContextProvider = REACT_PROVIDER_TYPE;
+var Element = REACT_ELEMENT_TYPE;
+var ForwardRef = REACT_FORWARD_REF_TYPE;
+var Fragment = REACT_FRAGMENT_TYPE;
+var Lazy = REACT_LAZY_TYPE;
+var Memo = REACT_MEMO_TYPE;
+var Portal = REACT_PORTAL_TYPE;
+var Profiler = REACT_PROFILER_TYPE;
+var StrictMode = REACT_STRICT_MODE_TYPE;
+var Suspense = REACT_SUSPENSE_TYPE;
+var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+
+function isAsyncMode(object) {
+  {
+    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+    }
+  }
+
+  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+}
+function isConcurrentMode(object) {
+  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+}
+function isContextConsumer(object) {
+  return typeOf(object) === REACT_CONTEXT_TYPE;
+}
+function isContextProvider(object) {
+  return typeOf(object) === REACT_PROVIDER_TYPE;
+}
+function isElement(object) {
+  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+}
+function isForwardRef(object) {
+  return typeOf(object) === REACT_FORWARD_REF_TYPE;
+}
+function isFragment(object) {
+  return typeOf(object) === REACT_FRAGMENT_TYPE;
+}
+function isLazy(object) {
+  return typeOf(object) === REACT_LAZY_TYPE;
+}
+function isMemo(object) {
+  return typeOf(object) === REACT_MEMO_TYPE;
+}
+function isPortal(object) {
+  return typeOf(object) === REACT_PORTAL_TYPE;
+}
+function isProfiler(object) {
+  return typeOf(object) === REACT_PROFILER_TYPE;
+}
+function isStrictMode(object) {
+  return typeOf(object) === REACT_STRICT_MODE_TYPE;
+}
+function isSuspense(object) {
+  return typeOf(object) === REACT_SUSPENSE_TYPE;
+}
+
+exports.AsyncMode = AsyncMode;
+exports.ConcurrentMode = ConcurrentMode;
+exports.ContextConsumer = ContextConsumer;
+exports.ContextProvider = ContextProvider;
+exports.Element = Element;
+exports.ForwardRef = ForwardRef;
+exports.Fragment = Fragment;
+exports.Lazy = Lazy;
+exports.Memo = Memo;
+exports.Portal = Portal;
+exports.Profiler = Profiler;
+exports.StrictMode = StrictMode;
+exports.Suspense = Suspense;
+exports.isAsyncMode = isAsyncMode;
+exports.isConcurrentMode = isConcurrentMode;
+exports.isContextConsumer = isContextConsumer;
+exports.isContextProvider = isContextProvider;
+exports.isElement = isElement;
+exports.isForwardRef = isForwardRef;
+exports.isFragment = isFragment;
+exports.isLazy = isLazy;
+exports.isMemo = isMemo;
+exports.isPortal = isPortal;
+exports.isProfiler = isProfiler;
+exports.isStrictMode = isStrictMode;
+exports.isSuspense = isSuspense;
+exports.isValidElementType = isValidElementType;
+exports.typeOf = typeOf;
+  })();
+}
+});
+
+var reactIs = createCommonjsModule(function (module) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = reactIs_production_min;
+} else {
+  module.exports = reactIs_development;
+}
+});
 
 var isBrowser = "object" !== 'undefined';
 function getRegisteredStyles(registered, registeredStyles, classNames) {
@@ -78379,7 +78762,7 @@ const defaultProps$P = {
 };
 const PopoverTarget = React.forwardRef((props, ref) => {
   const _a = useComponentDefaultProps("PopoverTarget", defaultProps$P, props), { children, refProp, popupType, shouldOverrideDefaultTargetId } = _a, others = __objRest$_(_a, ["children", "refProp", "popupType", "shouldOverrideDefaultTargetId"]);
-  if (!isElement$2(children)) {
+  if (!isElement$3(children)) {
     throw new Error(POPOVER_ERRORS.children);
   }
   const forwardedProps = others;
@@ -78559,7 +78942,7 @@ function FocusTrap({
 }) {
   const focusTrapRef = useFocusTrap(active);
   const ref = useMergedRef(focusTrapRef, children == null ? void 0 : children.ref);
-  if (!isElement$2(children)) {
+  if (!isElement$3(children)) {
     return children;
   }
   return React.cloneElement(children, { [refProp]: ref });
@@ -85622,7 +86005,6 @@ function Breadcrumbs (props) {
 var DLS = {
     Button: Button$1,
     Breadcrumbs: Breadcrumbs,
-    SuccessAlert: App$1,
 };
 
 var css_248z$b = "";
@@ -86842,7 +87224,7 @@ if (process.env.NODE_ENV !== 'production') {
 var PropTypes = propTypes;
 
 /**
- * @tabler/icons-react v2.34.0 - MIT
+ * @tabler/icons-react v2.39.0 - MIT
  */
 
 var defaultAttributes = {
@@ -86858,7 +87240,7 @@ var defaultAttributes = {
 };
 
 /**
- * @tabler/icons-react v2.34.0 - MIT
+ * @tabler/icons-react v2.39.0 - MIT
  */
 
 var __defProp$l = Object.defineProperty;
@@ -86921,7 +87303,7 @@ var createReactComponent = (iconName, iconNamePascal, iconNode) => {
 };
 
 /**
- * @tabler/icons-react v2.34.0 - MIT
+ * @tabler/icons-react v2.39.0 - MIT
  */
 
 var IconCalendar = createReactComponent("calendar", "IconCalendar", [
@@ -86940,7 +87322,7 @@ var IconCalendar = createReactComponent("calendar", "IconCalendar", [
 ]);
 
 /**
- * @tabler/icons-react v2.34.0 - MIT
+ * @tabler/icons-react v2.39.0 - MIT
  */
 
 var IconCloudUpload = createReactComponent("cloud-upload", "IconCloudUpload", [
@@ -86956,7 +87338,7 @@ var IconCloudUpload = createReactComponent("cloud-upload", "IconCloudUpload", [
 ]);
 
 /**
- * @tabler/icons-react v2.34.0 - MIT
+ * @tabler/icons-react v2.39.0 - MIT
  */
 
 var IconPlus = createReactComponent("plus", "IconPlus", [
@@ -90468,7 +90850,7 @@ var BookingForm = function (props) {
         validate: {
             checkInDate: function (value) { return (value.length < 2 ? 'Check-in Date required' : null); },
             checkOutDate: function (value) { return (value.length < 2 ? 'Check out Date required' : null); },
-            duration: function (value) { return (value.length < 2 ? 'Duration is required' : null); },
+            duration: function (value) { return (value.length < 1 ? 'Duration is required' : null); },
             roomType: function (value) { return (value.length < 2 ? 'Please select room type' : null); },
             status: function (value) { return (value.length < 2 ? 'Please select a status' : null); },
             adult: function (value) { return (value == 0 ? 'Adult required' : null); },
@@ -90791,6 +91173,7 @@ function Loader(_a) {
     return (React__default["default"].createElement("div", { style: { display: loading ? 'unset' : 'none' }, className: 'loaderContainer' }));
 }
 
+exports.Alert = Alert;
 exports.BookingForm = BookingForm;
 exports.Button = Button$1;
 exports.Calander = Calander;
@@ -90807,7 +91190,6 @@ exports.RoomList = RoomList;
 exports.RoomTypesForm = RoomTypeForm;
 exports.Rooms = Rooms$1;
 exports.SideBar = SideBar;
-exports.SuccessAlert = App$1;
 exports.Tables = Tables;
 exports.Tabs = Tabs;
 exports.TopbarNavigation = TopbarNavigation;

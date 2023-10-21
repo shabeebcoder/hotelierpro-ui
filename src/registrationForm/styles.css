@@ -88,7 +88,17 @@
     text-align: center;
     padding: 24px 0px 34px;
 }
-
+.registrationFormContainer .registrationForButton {
+    display: flex;
+    padding: 15px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 0px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .registrationFormContainer .table-user-data-head {
     display: flex;
     width: 184px;
@@ -148,7 +158,6 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    padding-left: 74px;
 }
 
 .registrationFormContainer .policy-para {
@@ -159,11 +168,10 @@
     font-weight: 300;
     line-height: 1.3rem;
     list-style: none;
-    padding-left: 74px;
+    padding: 0px;
 }
 
 .registrationFormContainer .policy-text-one {
-    padding-left: 74px;
     color: #000;
     font-family: Inter;
     font-size: 14px;
@@ -180,7 +188,6 @@
     border: 1px solid rgba(161, 161, 161, 0.54);
     background: #FFF;
     float: right;
-    margin-right: 72px;
     margin-top: -95px;
 }
 
@@ -192,7 +199,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    margin-right: 237px;
+    margin-right: 165px;
     margin-top: 14px;
 }
 
@@ -228,4 +235,9 @@
     border-collapse: collapse;
     background: #FFF;
     
+}
+.registrationFormContainer .internalContiner {
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
 }

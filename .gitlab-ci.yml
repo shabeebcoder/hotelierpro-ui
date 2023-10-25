@@ -4,7 +4,8 @@ stages:
 
 build:
     stage: build
-    image: docker
+    image: 
+        name: docker:stable
     services:
         - name: docker:dind
           alias: thedockerhost

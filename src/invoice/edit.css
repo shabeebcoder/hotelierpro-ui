@@ -1,0 +1,1076 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+.invoice_editable_container {
+    width: 1164px;
+    height: 1335px;
+    flex-shrink: 0;
+    background-color: white;
+    font-family: Inter;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+
+.invoice_editable_container .Header {
+    background-color: #4D6969;
+    height: 230px;
+    width: 1164px;
+    display: flex;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.invoice_editable_container  .Header img {
+    height: 28px;
+    position: relative;
+    top: 75px;
+    left: 32px;
+}
+
+.invoice_editable_container .invo_details h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.invoice_editable_container .invo_details {
+    color: white;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 582px;
+    margin: 0;
+    padding: 0;
+    justify-content: space-evenly;
+    gap: 24px;
+}
+
+.invoice_editable_container  .invo_details li {
+    font-size: 16px;
+    font-weight: 400;
+    justify-content: space-evenly;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.invoice_editable_container  .invo_edit_colon {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 31px;
+    left: 721px;
+    top: 107px;
+}
+
+
+.invoice_editable_container .invo_number_edit  {
+    width: 130px;
+    height: 28px;
+    display: flex;
+    width: 130px;
+    height: 28px;
+    padding: 5px 16px;
+    align-items: center;
+    gap: 13px;
+    color: white;
+    left: 746px;
+    position: absolute;
+    top: 94px;
+}
+
+
+.invoice_editable_container  .invo_date p {
+
+    color: #FFF;
+
+    /* Body/regular */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 157.143% */
+}
+
+.invoice_editable_container  .invo_date {
+    border-radius: 4px;
+    border: 1px solid #FFF;
+    display: flex;
+    width: 130px;
+    height: 28px;
+    padding: 2px 15px;
+    align-items: center;
+    gap: 13px;
+    color: white;
+    left: 746px;
+    position: absolute;
+    top: 138px;
+}
+
+
+.invoice_editable_container .invo_date p {
+
+    color: #FFF;
+
+    /* Body/regular */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 157.143% */
+}
+
+
+.invoice_editable_container .invo_due_date {
+    border-radius: 4px;
+    border: 1px solid #FFF;
+    display: flex;
+    width: 130px;
+    height: 28px;
+    padding: 2px 15px;
+    align-items: center;
+    gap: 13px;
+    color: white;
+    left: 746px;
+    position: absolute;
+    top: 181px;
+
+
+    
+}
+
+.invoice_editable_container .invo_due_date p {
+
+    color: #FFF;
+
+    /* Body/regular */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 157.143% */
+}
+
+
+/* Header End */
+
+
+/* address part */
+
+.invoice_editable_container  .bill_adress_container {
+    display: flex;
+    position: relative;
+    top: 90px;
+    left: 40px;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    
+}
+
+
+/* bill to address */
+
+.invoice_editable_container  .bill_to_address_container h3 {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+
+.invoice_editable_container  .billing_name_editable p{
+    color: var(--character-primary-85, rgba(0, 0, 0, 0.85));
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 183.333% */
+
+}
+
+
+.invoice_editable_container  .billing_name_editable {
+
+    display: flex;
+    width: 200px;
+    height: 32px;
+    padding: 5px 15px;
+    margin-top: 14px;
+    align-items: center;
+    gap: 28px;
+    border-radius: 4px;
+    background: rgba(144, 203, 203, 0.12);
+}
+
+
+
+
+.invoice_editable_container  .billing_address_full_editable {
+    width: 267px;
+    height: 92px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: #F1F8F8;
+    margin-top: 8px;
+
+}
+
+
+
+.invoice_editable_container  .bill_from_address_container h3 {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.invoice_editable_container  .bill_from_address_container li {
+    color: rgba(109, 109, 109, 0.85);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.invoice_editable_container  .bill_from_address_container ul {
+    left: 0;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 14px;
+    margin-top: 0px;
+    justify-content: space-evenly;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.invoice_editable_container .bill_from_address_container {
+    left: 263px;
+    position: relative;
+}
+
+
+.invoice_editable_container  .bill_buttons {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 880px;
+    top: 90px;
+    align-items: center;
+    gap: 14px;
+    
+}
+
+.invoice_editable_container  .bill_buttons :hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+
+
+.invoice_editable_container  .add_booking_button {
+    flex-shrink: 0;
+    color: #F9F9FB;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 121px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid #3A7C7C;
+    background: #3A7C7C;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+
+.invoice_editable_container .add_service_button {
+    flex-shrink: 0;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 121px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #3A7C7C;
+    border: 1px solid #3A7C7C;
+}
+
+
+
+
+
+
+
+
+.invoice_editable_container  .sent {
+    color: #F04551;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    position: absolute;
+    top: 254px;
+    left: 1097px;
+}
+
+.invoice_editable_container  .Price_Table {
+    top: 560px;
+    position: absolute;
+    display: flex;
+    height: 50px;
+    flex-shrink: 0;
+    background: rgba(144, 203, 203, 0.12);
+    width: 1164px;
+    flex-direction: column;
+}
+
+.invoice_editable_container .Price_Table th {
+    color: rgba(0, 0, 0, 0.85);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    height: 50px;
+}
+.invoice_editable_container  .header_1 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 40px;
+    padding: 0;
+    margin: 0;
+    width: 24px;
+}
+
+.invoice_editable_container .header_2 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 96px;
+    padding: 0;
+    margin: 0;
+    width: 34px;
+}
+
+.invoice_editable_container  .header_3 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 568px;
+    padding: 0;
+    margin: 0;
+    width: 40px;
+}
+
+.invoice_editable_container  .header_4 {
+    position: absolute;
+    display: flex;
+    left: 777px;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 50px;
+    align-items: center;
+}
+
+.invoice_editable_container .header_5 {
+    position: absolute;
+    left: 961px;
+    padding: 0;
+    margin: 0;
+    width: 41px;
+    align-items: center;
+    height: 50px;
+    display: flex;
+}
+
+.invoice_editable_container .first_column {
+    top: 80px;
+    position: absolute;
+    display: flex;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.invoice_editable_container  .td1 {
+    left: 40px;
+    position: absolute;
+    display: flex;
+    width: fit-content;
+}
+
+.invoice_editable_container  .td2_editable {
+    left: 85px;
+    position: absolute;
+    display: flex;
+    width: 386px;
+    height: 55px;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    top: -8px;
+    
+}
+
+.invoice_editable_container  .td3_editable {
+    left: 540px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    top: -8px;
+    width: 89px;
+    height: 32px;
+}
+
+.invoice_editable_container .td4_editable {
+    left: 738px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    top: -8px;
+    width: 89px;
+    height: 32px;
+}
+.invoice_editable_container  .td5_editable {
+    left: 946px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    top: -8px;
+    width: 103px;
+    height: 32px;
+}
+
+
+.invoice_editable_container  .td2 {
+    left: 96px;
+    position: absolute;
+    display: flex;
+    width: 324px;
+}
+
+.invoice_editable_container  .td3 {
+    left: 568px;
+    position: absolute;
+    display: flex;
+    width: max-content;
+}
+
+
+
+
+.invoice_editable_container .td4 {
+    left: 777px;
+    position: absolute;
+    display: flex;
+    width: fit-content;
+}
+
+
+
+.invoice_editable_container  .td5 {
+    left: 961px;
+    position: absolute;
+    display: flex;
+    width: max-content;
+}
+
+
+
+.invoice_editable_container .second_column {
+    top: 150px;
+    position: absolute;
+    display: flex;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+}
+
+.invoice_editable_container  .td6 {
+    left: 40px;
+    position: absolute;
+    display: flex;
+    width: fit-content;
+}
+
+.invoice_editable_container .td7 {
+    left: 96px;
+    position: absolute;
+    display: flex;
+    width: 324px;
+}
+
+.invoice_editable_container  .td7_editable {
+    left: 85px;
+    position: absolute;
+    display: flex;
+    width: 386px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    top: -8px;
+    
+}
+
+.invoice_editable_container  .td8_editable {
+    left: 540px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    top: -8px;
+    width: 89px;
+    height: 32px;
+}
+
+.invoice_editable_container .td9_editable {
+    left: 738px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    top: -8px;
+    width: 89px;
+    height: 32px;
+}
+
+.invoice_editable_container  .td10_editable {
+    left: 946px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    top: -8px;
+    width: 103px;
+    height: 32px;
+}
+
+
+
+
+.invoice_editable_container  .td8 {
+    left: 568px;
+    position: absolute;
+    display: flex;
+    width: max-content;
+}
+
+
+
+
+.invoice_editable_container  .td9 {
+    left: 777px;
+    position: absolute;
+    display: flex;
+    width: fit-content;
+}
+
+
+
+.invoice_editable_container .td10 {
+    left: 961px;
+    position: absolute;
+    display: flex;
+    width: max-content;
+}
+
+.invoice_editable_container  .third_column {
+    top: 210px;
+    position: absolute;
+    display: flex;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+}
+
+.invoice_editable_container .td12_editable {
+    left: 85px;
+    position: absolute;
+    display: flex;
+    width: 386px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    top: -8px;
+    
+}
+
+.invoice_editable_container  .td13_editable {
+    left: 540px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    top: -8px;
+    width: 89px;
+    height: 32px;
+}
+
+.invoice_editable_container  .td14_editable {
+    left: 738px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    top: -8px;
+    width: 89px;
+    height: 32px;
+}
+
+.invoice_editable_container  .td15_editable {
+    left: 946px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    top: -8px;
+    width: 103px;
+    height: 32px;
+}
+
+
+.invoice_editable_container  .td11 {
+    left: 40px;
+    position: absolute;
+    display: flex;
+    width: fit-content;
+}
+
+.invoice_editable_container  .td12 {
+    left: 96px;
+    position: absolute;
+    display: flex;
+    width: 324px;
+}
+
+.invoice_editable_container  .td13 {
+    left: 568px;
+    position: absolute;
+    display: flex;
+    width: max-content;
+}
+
+.invoice_editable_container .td14 {
+    left: 777px;
+    position: absolute;
+    display: flex;
+    width: fit-content;
+}
+
+.invoice_editable_container  .td15 {
+    left: 961px;
+    position: absolute;
+    display: flex;
+    width: max-content;
+}
+
+.invoice_editable_container .add_row_button {
+    
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 121px;
+    height: 32px;
+    top: 270px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #3A7C7C;
+    border: 1px solid #3A7C7C;
+    left: 85px;
+    position: absolute;
+    z-index: 30;
+}
+
+.invoice_editable_container .add_row_button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+
+
+
+
+.invoice_editable_container  .total_price svg {
+    left: 570px;
+    top: 260px;
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container  .Total_part {
+    color: rgba(0, 0, 0, 0.85);
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    top: 300px;
+    position: absolute;
+    width: 100%;
+}
+
+
+.invoice_editable_container  .subtotal {
+    left: 570px;
+    /* top: 340px; */
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container  .subtotal_price {
+    left: 961px;
+    /* top: 340px; */
+    position: absolute;
+    display: flex;
+}
+
+
+
+
+
+.invoice_editable_container  .city_tax {
+    left: 570px;
+    /* top: 390px; */
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container  .tax_price {
+    left: 777px;
+    /* top: 390px; */
+    position: absolute;
+    display: flex;
+    color: #6D6D6D;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.invoice_editable_container .tax_price_editable {
+    left: 756px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    /* top: 37px; */
+    width: 70px;
+    height: 32px;
+    margin: -8px 0px;
+}
+
+.invoice_editable_container  .total_tax_price {
+    left: 961px;
+    /* top: 390px; */
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container  .VAT {
+    left: 570px;
+    /* top: 430px; */
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container  .rooms1 {
+    left: 570px;
+    /* top: 510px; */
+    position: absolute;
+    display: flex;
+}
+
+
+.invoice_editable_container  s {
+    left: 570px;
+    /* top: 470px; */
+    position: absolute;
+    display: flex;
+}
+
+
+
+.invoice_editable_container .rooms_percentage1_editable {
+    left: 756px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    /* top: 37px; */
+    width: 70px;
+    height: 32px;
+    margin: -8px 0px;
+}
+
+.invoice_editable_container .Percentage_1 {
+    left: 777px;
+    /* top: 470px; */
+    position: absolute;
+    display: flex;
+    color: #6D6D6D;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+.invoice_editable_container  .rooms_price {
+    left: 961px;
+    /* top: 470px; */
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container .GS {
+    left: 570px;
+    /* top: 510px; */
+    position: absolute;
+    display: flex;
+}
+
+
+.invoice_editable_container  .GS_percentage1_editable {
+    left: 756px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    /* top: 37px; */
+    width: 70px;
+    height: 32px;
+    margin: -8px 0px;
+}
+
+.invoice_editable_container .Percentage_2 {
+    left: 777px;
+    /* top: 510px; */
+    position: absolute;
+    display: flex;
+    color: #6D6D6D;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.invoice_editable_container .GS_price {
+    left: 961px;
+    /* top: 510px; */
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container  .Food {
+    left: 570px;
+    /* top: 550px; */
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container  .food_percentage1_editable {
+    left: 756px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    /* top: 37px; */
+    width: 70px;
+    height: 32px;
+    margin: -8px 0px;
+}
+
+
+.invoice_editable_container .Percentage_3 {
+    left: 777px;
+    /* top: 550px; */
+    position: absolute;
+    display: flex;
+    color: #6D6D6D;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.invoice_editable_container .food_price {
+    left: 961px;
+    /* top: 550px; */
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container  .line_2 {
+    left: 570px;
+    top: 270px;
+    position: absolute;
+    display: flex;
+    background-color: rgba(161, 161, 161, 0.54);
+    height: 1px;
+    width: 468px;
+}
+
+.invoice_editable_container .final_total {
+    left: 570px;
+    top: 300px;
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container .final_total_price {
+    left: 961px;
+    top: 300px;
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container .paid_total {
+    left: 570px;
+    top: 345px;
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container .paid_total_editable {
+    left: 946px;
+    position: absolute;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(109, 109, 109, 0.54);
+    top: 337px;
+    width: 103px;
+    height: 32px;
+    
+}
+
+
+.invoice_editable_container .paid_total_price {
+    left: 961px;
+    top: 345px;
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container  .line_3 {
+    left: 570px;
+    top: 390px;
+    position: absolute;
+    display: flex;
+    background-color: rgba(161, 161, 161, 0.54);
+    height: 1px;
+    width: 468px;
+}
+
+.invoice_editable_container .due_total {
+    left: 570px;
+    top: 425px;
+    position: absolute;
+    display: flex;
+}
+
+.invoice_editable_container  .due_total_price {
+    left: 961px;
+    top: 425px;
+    position: absolute;
+    display: flex;
+    color: rgba(240, 69, 81, 0.85);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.invoice_editable_container  .notes {
+    width: 502px;
+    height: 193px;
+    border-radius: 4px;
+    border: 1px solid rgba(161, 161, 161, 0.54);
+    display: flex;
+    position: absolute;
+    top: 547px;
+    left: 40px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.invoice_editable_container .notes p {
+    color: #6D6D6D;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    top: 23px;
+    left: 23px;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+}

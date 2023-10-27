@@ -1,0 +1,150 @@
+.roomListContainer{
+    background-color: #ffffff; 
+    width: 545px;
+    height: 120px;
+    border-radius: 4px;
+    display: flex;
+    /* justify-content: space-between; */
+    font-family: Inter;
+}
+.roomListContainer  img{
+    height: 100px;
+    width: 140px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+.roomListContainer .info-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* padding-right: 10px; */
+}
+.roomListContainer .room-name{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.roomListContainer .room-name .room-title{
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 500;
+    color: #595959;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+    position: relative;
+}
+.roomListContainer .room-name .room-title:hover::before{
+    content: attr(title);
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    top: 100%; /* Position it below the text */
+    left: 50%;
+    transform: translateX(-50%); /* Center the tooltip */
+    white-space: nowrap;
+    display: block;
+    z-index: 1;
+    font-size: 12px;
+    opacity: 0.9;
+    visibility: visible;
+    width: 100px;
+}
+.roomListContainer .room-name .room-left{
+    color: #F04551;
+    display: flex;
+    align-items: center;
+    margin-right: 43px;
+}
+.roomListContainer .number{
+    font-size: 10px;
+    font-weight: 500;
+}
+.roomListContainer .room-review{
+    margin-top: -4px;
+    font-size: 10px;
+}
+.roomListContainer .room-review .icon-star{
+    color:#FFDD27;
+    height: 12px;
+    width: 12px;
+}
+.roomListContainer .room-review .rating{
+    margin-left: 5px;
+    color: #595959;
+    font-weight: 500;
+}
+.roomListContainer .room-review .divider{
+    margin-left: 5px;
+    color: #E8E8E8;
+}
+.roomListContainer .room-review .review{
+    margin-left: 5px;
+    color: #595959;
+    font-weight: 500;
+}
+.roomListContainer .room-desc{
+    margin-top: 10px;
+    font-size: 10px;
+    color: #595959;
+    font-weight: 500;
+}
+span.description{
+    position: fixed;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 150px;
+    display: block;
+}
+.roomListContainer .room-price{
+    margin-top: 35px;
+}
+.roomListContainer .room-price .price{
+    font-size: 16px;
+    font-weight: bold;
+}
+.roomListContainer .room-price .perNight{
+    font-size: 10px;
+    margin-left: 3px;
+}
+.roomListContainer .room-price .ogi-price{
+    margin-left: 10px;
+    font-size: 12px;
+    color: #F04551;
+    text-decoration: line-through;
+}
+.roomListContainer .booking-container{
+    margin-left: 10px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 54px;
+    margin-bottom: 10px;
+}
+.roomListContainer .booking-container .person{
+    font-size: 12px;
+    font-weight: 500;
+    color: #595959;
+}
+.roomListContainer .booking-container Button{
+    margin-top: 8px;
+}
+.roomListContainer .booking-container .btn-booking{
+    width: 112px;
+    height: 32px;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #09596B;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}

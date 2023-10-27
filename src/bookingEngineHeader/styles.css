@@ -1,0 +1,48 @@
+.bookingEngineHeaderContainer{
+    background-color: #ffffff;
+    width: 1400px;
+    height: 74px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Inter;
+}
+.bookingEngineHeaderContainer .hotel-name{
+    padding-left: 20px;
+    padding-top: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    font-size: 20px;
+    color: #09272B;
+    font-weight: 500;
+    cursor: pointer;
+}
+.bookingEngineHeaderContainer .navbar-headers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 25px;
+    gap: 30px;
+    font-family: Inter;
+    font-weight: 500;
+    color: #09272B;
+    font-size: 16px;
+}
+.bookingEngineHeaderContainer .navbar-headers .heading{
+    text-decoration: none;
+    cursor: pointer;
+}
+.bookingEngineHeaderContainer .navbar-headers .heading:hover{
+    text-decoration: underline;
+}
+.bookingEngineHeaderContainer .navbar-headers .btn-signin{
+    width: 112px;
+    height: 34px;
+    background-color: #09272B;
+    border-radius: 6px;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+}

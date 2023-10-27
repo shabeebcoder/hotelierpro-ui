@@ -2,7 +2,7 @@ version: '3'
 services:
   storybook_production:
     platform: linux/amd64
-    image: registry.gitlab.woxware.dev/hotelierpro/ui-lib
+    image: registry.gitlab.com/hotelierpro/ui-library:latest
     ports:
       - "6006:6006"
     stdin_open: true

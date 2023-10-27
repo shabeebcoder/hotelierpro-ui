@@ -101,7 +101,7 @@ function Invoice(props) {
                                     </tr>
 
                                     <tr>
-                                    <td className='rooms'>Rooms</td>
+                                    <td className='rooms1'>Rooms</td>
                                     <td className='Percentage_1'>20 %</td>
                                     <td className='rooms_price'>$ 73.33</td>
                                     </tr>

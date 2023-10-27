@@ -1,0 +1,78 @@
+.reservationSummaryContainer{
+    width: 395px;
+    height: 525px;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    font-family: Inter;
+    font-weight: 500;
+    padding: 15px 24px 15px 24px;
+}
+.reservationSummaryContainer .checkin-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: -7px;
+    margin-right: 10px;
+}
+.vl{
+    width: 1px;
+    background-color: #ccc;
+    height: 230px;
+    position: absolute;
+    top: 90px;
+    margin-left: 168px;
+}
+.reservationSummaryContainer .checkout-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: -7px;
+    margin-left: 20px;
+}
+.checkin-container,
+.checkout-container {
+  flex: 1; 
+  position: relative;
+  height: 100%;
+}
+.reservationSummaryContainer .price-container .info-container{
+    margin-top: 15px;
+}
+.info-container .roomname-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.info-container .roomname-price .roomname{
+    position: relative;
+}
+.info-container .discount-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.info-container .after-discount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.info-container .btn-confirm{
+    padding-left: 170px;
+    margin-top: 12px;
+    margin-left: -150px;
+}
+.info-container button{
+    width: 347px;
+    height: 36px;
+    background-color: #09596B;
+    border-radius: 4px;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;   
+    cursor: pointer; 
+}

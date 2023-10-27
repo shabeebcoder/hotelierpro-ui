@@ -9,7 +9,7 @@
     margin: 0;
 }
 
-.Header {
+.invoice-container .Header {
     background-color: #4D6969;
     height: 230px;
     width: 1164px;
@@ -17,20 +17,20 @@
     border-radius: 4px 4px 0px 0px;
 }
 
-.Header img {
+.invoice-container .Header img {
     height: 28px;
     position: relative;
     top: 75px;
     left: 32px;
 }
 
-.invo_details h2 {
+.invoice-container .invo_details h2 {
     color: white;
     font-size: 24px;
     font-weight: 600;
 }
 
-.invo_details {
+.invoice-container .invo_details {
     color: white;
     list-style: none;
     display: flex;
@@ -44,12 +44,12 @@
     gap: 15px;
 }
 
-.invo_details li {
+.invoice-container .invo_details li {
     font-size: 16px;
     font-weight: 400;
 }
 
-.bill_adress_container {
+.invoice-container .bill_adress_container {
     display: flex;
     position: relative;
     top: 103px;
@@ -60,7 +60,7 @@
     text-align: left;
 }
 
-.bill_to_address_container h3 {
+.invoice-container .bill_to_address_container h3 {
     color: #000;
     font-family: Inter;
     font-size: 16px;
@@ -70,7 +70,7 @@
     margin-bottom: 0px;
 }
 
-.bill_to_address_container li {
+.invoice-container .bill_to_address_container li {
     color: rgba(109, 109, 109, 0.85);
     font-family: Inter;
     font-size: 14px;
@@ -83,7 +83,7 @@
     margin: 0;
 }
 
-.bill_to_address_container ul {
+.invoice-container .bill_to_address_container ul {
     left: 0;
     position: relative;
     padding-left: 0px;
@@ -97,7 +97,7 @@
     flex-direction: column;
 }
 
-.bill_from_address_container h3 {
+.invoice-container .bill_from_address_container h3 {
     color: #000;
     font-family: Inter;
     font-size: 16px;
@@ -107,7 +107,7 @@
     margin-bottom: 0px;
 }
 
-.bill_from_address_container li {
+.invoice-container .bill_from_address_container li {
     color: rgba(109, 109, 109, 0.85);
     font-family: Inter;
     font-size: 14px;
@@ -120,7 +120,7 @@
     margin: 0;
 }
 
-.bill_from_address_container ul {
+.invoice-container .bill_from_address_container ul {
     left: 0;
     position: relative;
     padding-left: 0px;
@@ -134,12 +134,12 @@
     flex-direction: column;
 }
 
-.bill_from_address_container {
+.invoice-container .bill_from_address_container {
     left: 400px;
     position: relative;
 }
 
-.sent {
+.invoice-container .sent {
     color: #F04551;
     font-family: Inter;
     font-size: 16px;
@@ -162,7 +162,7 @@
     flex-direction: column;
 }
 
-.Price_Table th {
+.invoice-container .Price_Table th {
     color: rgba(0, 0, 0, 0.85);
     font-family: Inter;
     font-size: 14px;
@@ -172,7 +172,7 @@
     height: 50px;
 }
 
-.header_1 {
+.invoice-container .header_1 {
     position: absolute;
     display: flex;
     align-items: center;
@@ -182,7 +182,7 @@
     width: 24px;
 }
 
-.header_2 {
+.invoice-container .header_2 {
     position: absolute;
     display: flex;
     align-items: center;
@@ -192,7 +192,7 @@
     width: 34px;
 }
 
-.header_3 {
+.invoice-container .header_3 {
     position: absolute;
     display: flex;
     align-items: center;
@@ -202,7 +202,7 @@
     width: 40px;
 }
 
-.header_4 {
+.invoice-container .header_4 {
     position: absolute;
     display: flex;
     left: 777px;
@@ -213,7 +213,7 @@
     align-items: center;
 }
 
-.header_5 {
+.invoice-container .header_5 {
     position: absolute;
     left: 961px;
     padding: 0;
@@ -224,7 +224,7 @@
     display: flex;
 }
 
-.first_column {
+.invoice-container .first_column {
     top: 80px;
     position: absolute;
     display: flex;
@@ -235,42 +235,42 @@
     line-height: normal;
 }
 
-.td1 {
+.invoice-container .td1 {
     left: 40px;
     position: absolute;
     display: flex;
     width: fit-content;
 }
 
-.td2 {
+.invoice-container .td2 {
     left: 96px;
     position: absolute;
     display: flex;
     width: 324px;
 }
 
-.td3 {
+.invoice-container .td3 {
     left: 568px;
     position: absolute;
     display: flex;
     width: max-content;
 }
 
-.td4 {
+.invoice-container .td4 {
     left: 777px;
     position: absolute;
     display: flex;
     width: fit-content;
 }
 
-.td5 {
+.invoice-container .td5 {
     left: 961px;
     position: absolute;
     display: flex;
     width: max-content;
 }
 
-.second_column {
+.invoice-container .second_column {
     top: 140px;
     position: absolute;
     display: flex;
@@ -282,42 +282,42 @@
     width: 100%;
 }
 
-.td6 {
+.invoice-container .td6 {
     left: 40px;
     position: absolute;
     display: flex;
     width: fit-content;
 }
 
-.td7 {
+.invoice-container .td7 {
     left: 96px;
     position: absolute;
     display: flex;
     width: 324px;
 }
 
-.td8 {
+.invoice-container .td8 {
     left: 568px;
     position: absolute;
     display: flex;
     width: max-content;
 }
 
-.td9 {
+.invoice-container .td9 {
     left: 777px;
     position: absolute;
     display: flex;
     width: fit-content;
 }
 
-.td10 {
+.invoice-container .td10 {
     left: 961px;
     position: absolute;
     display: flex;
     width: max-content;
 }
 
-.third_column {
+.invoice-container .third_column {
     top: 200px;
     position: absolute;
     display: flex;
@@ -329,49 +329,49 @@
     width: 100%;
 }
 
-.td11 {
+.invoice-container .td11 {
     left: 40px;
     position: absolute;
     display: flex;
     width: fit-content;
 }
 
-.td12 {
+.invoice-container .td12 {
     left: 96px;
     position: absolute;
     display: flex;
     width: 324px;
 }
 
-.td13 {
+.invoice-container .td13 {
     left: 568px;
     position: absolute;
     display: flex;
     width: max-content;
 }
 
-.td14 {
+.invoice-container .td14 {
     left: 777px;
     position: absolute;
     display: flex;
     width: fit-content;
 }
 
-.td15 {
+.invoice-container .td15 {
     left: 961px;
     position: absolute;
     display: flex;
     width: max-content;
 }
 
-.total_price svg {
+.invoice-container .total_price svg {
     left: 570px;
     top: 260px;
     position: absolute;
     display: flex;
 }
 
-.Total_part {
+.invoice-container .Total_part {
     color: rgba(0, 0, 0, 0.85);
     font-family: Inter;
     font-size: 14px;
@@ -384,28 +384,28 @@
     width: 100%;
 }
 
-.subtotal {
+.invoice-container .subtotal {
     left: 570px;
     /* top: 340px; */
     position: absolute;
     display: flex;
 }
 
-.subtotal_price {
+.invoice-container .subtotal_price {
     left: 961px;
     /* top: 340px; */
     position: absolute;
     display: flex;
 }
 
-.city_tax {
+.invoice-container .city_tax {
     left: 570px;
     /* top: 390px; */
     position: absolute;
     display: flex;
 }
 
-.tax_price {
+.invoice-container .tax_price {
     left: 777px;
     /* top: 390px; */
     position: absolute;
@@ -418,19 +418,27 @@
     line-height: normal;
 }
 
-.total_tax_price {
+.invoice-container .total_tax_price {
     left: 961px;
     /* top: 390px; */
     position: absolute;
     display: flex;
 }
 
-.VAT {
+.invoice-container .VAT {
     left: 570px;
     /* top: 430px; */
     position: absolute;
     display: flex;
 }
+
+.invoice-container .rooms1 {
+    left: 570px;
+    /* top: 510px; */
+    position: absolute;
+    display: flex;
+}
+
 
 .invoice-container .invoice-container s {
     left: 570px;
@@ -439,7 +447,7 @@
     display: flex;
 }
 
-.Percentage_1 {
+.invoice-container .Percentage_1 {
     left: 777px;
     /* top: 470px; */
     position: absolute;
@@ -451,6 +459,8 @@
     font-weight: 400;
     line-height: normal;
 }
+
+
 
 .invoice-container .rooms_price {
     left: 961px;
@@ -459,14 +469,14 @@
     display: flex;
 }
 
-.GS {
+.invoice-container .GS {
     left: 570px;
     /* top: 510px; */
     position: absolute;
     display: flex;
 }
 
-.Percentage_2 {
+.invoice-container .Percentage_2 {
     left: 777px;
     /* top: 510px; */
     position: absolute;
@@ -479,21 +489,21 @@
     line-height: normal;
 }
 
-.GS_price {
+.invoice-container .GS_price {
     left: 961px;
     /* top: 510px; */
     position: absolute;
     display: flex;
 }
 
-.Food {
+.invoice-container .Food {
     left: 570px;
     /* top: 550px; */
     position: absolute;
     display: flex;
 }
 
-.Percentage_3 {
+.invoice-container .Percentage_3 {
     left: 777px;
     /* top: 550px; */
     position: absolute;
@@ -506,14 +516,14 @@
     line-height: normal;
 }
 
-.food_price {
+.invoice-container .food_price {
     left: 961px;
     /* top: 550px; */
     position: absolute;
     display: flex;
 }
 
-.line_2 {
+.invoice-container .line_2 {
     left: 570px;
     top: 270px;
     position: absolute;
@@ -523,35 +533,35 @@
     width: 468px;
 }
 
-.final_total {
+.invoice-container .final_total {
     left: 570px;
     top: 300px;
     position: absolute;
     display: flex;
 }
 
-.final_total_price {
+.invoice-container .final_total_price {
     left: 961px;
     top: 300px;
     position: absolute;
     display: flex;
 }
 
-.paid_total {
+.invoice-container .paid_total {
     left: 570px;
     top: 345px;
     position: absolute;
     display: flex;
 }
 
-.paid_total_price {
+.invoice-container .paid_total_price {
     left: 961px;
     top: 345px;
     position: absolute;
     display: flex;
 }
 
-.line_3 {
+.invoice-container .line_3 {
     left: 570px;
     top: 390px;
     position: absolute;
@@ -561,14 +571,14 @@
     width: 468px;
 }
 
-.due_total {
+.invoice-container .due_total {
     left: 570px;
     top: 425px;
     position: absolute;
     display: flex;
 }
 
-.due_total_price {
+.invoice-container .due_total_price {
     left: 961px;
     top: 425px;
     position: absolute;
@@ -581,7 +591,7 @@
     line-height: normal;
 }
 
-.notes {
+.invoice-container .notes {
     width: 502px;
     height: 193px;
     border-radius: 4px;
@@ -594,7 +604,7 @@
     padding: 0px;
 }
 
-.notes p {
+.invoice-container .notes p {
     color: #6D6D6D;
     font-family: Inter;
     font-size: 14px;

@@ -1,0 +1,119 @@
+.preBookingContainer{
+    background-color: #ffffff; 
+    width: 719px;
+    height: 525px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    font-family: Inter;
+    font-weight: 500;
+    padding: 15px;
+}
+.maincontainer{
+    display: flex !important;
+    flex-direction: row;
+ 
+}
+.maincontainer  img{
+    height: 100px;
+    width: 140px;
+    margin-top: 10px;
+    /* margin-left: 10px; */
+    margin-right: 10px;
+    border-radius: 4px;
+}
+.maincontainer .info-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* padding-right: 10px; */
+}
+.maincontainer .room-name{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+}
+.maincontainer .room-name .room-title{
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 500;
+    color: #595959;
+    display: block;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px; */
+    position: relative;
+}
+.maincontainer .room-name .room-left{
+    color: #F04551;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.maincontainer .number{
+    font-size: 10px;
+    font-weight: 500;
+}
+.maincontainer .room-review{
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+.maincontainer .room-review .icon-star{
+    color:#FFDD27;
+    height: 12px;
+    width: 12px;
+}
+.maincontainer .room-review .rating{
+    margin-left: 5px;
+    color: #595959;
+    font-weight: 500;
+}
+.maincontainer .room-review .divider{
+    margin-left: 5px;
+    color: #E8E8E8;
+}
+.maincontainer .room-review .review{
+    margin-left: 5px;
+    color: #595959;
+    font-weight: 500;
+}
+.maincontainer .guest-count{
+    display: flex;
+    flex-direction: column;
+}
+.line{
+    margin-bottom: 13px;
+    margin-top: 20px;
+}
+.line hr{
+    border: 1px solid #C3C3C3;
+}
+
+.datepicker{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    direction: flex;
+    justify-content: center;
+}
+.maincontainer .formContainer{
+    direction: flex;
+    justify-content: center;
+}
+.form .form-item {
+    margin-bottom: 20px;
+    min-width: 255px;
+    width: 200px;
+}
+.guest-count{
+    display: flex;
+    /* align-items: center; */
+}
+.custom-switch{
+    color: #595959;
+    font-size: 12px;
+}
+.switch-container{
+    display: flex;
+}

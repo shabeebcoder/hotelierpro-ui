@@ -14,15 +14,21 @@ function ServicesTable(props) {
                         <th>AMOUNT</th>
                         <th>TOTAL</th>
                     </tr>
-                    <tr>
+                    
                        {
                         props.serviceData?.map((value)=>{
                             return(
-                                <td>{value.details}</td>
+                                <tr>
+                                <td>{value.date}</td>
+                                <td>{value.type}</td>
+                                <td>{value.qty}</td>
+                                <td>{value.amount}</td>
+                                <td>{value.total}</td>
+                                </tr>
                             )
                         })
                        }
-                    </tr>
+                    
                 </table>
             </div>
         </div>

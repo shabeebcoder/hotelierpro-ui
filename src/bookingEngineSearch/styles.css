@@ -1,0 +1,75 @@
+.bookingEngineSearchContainer{
+    background-color: #ffffff;
+    width: 194px;
+    /* height: 316px; */
+    height: auto;
+    border-radius: 4px;    
+}
+.bookingEngineSearchContainer .info-container{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column; 
+    font-family: Inter;
+}
+.bookingEngineSearchContainer .info-container .headingContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;   
+}
+.bookingEngineSearchContainer .info-container .headingContainer .head-filter{
+    font-size: 16px;
+    color: #000000;
+    font-weight: 500;
+}
+.bookingEngineSearchContainer .info-container .headingContainer .head-reset{
+    font-size: 12px;
+    color: #F04551;
+    cursor: pointer;
+    font-weight: 500;
+}
+.bookingEngineSearchContainer .info-container .checkbox-container{
+    display: flex;
+    flex-direction: column;
+    color: #595959;
+    font-weight: 500;
+}
+.bookingEngineSearchContainer .info-container .checkbox-container .checkbox-heading{
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 3px;
+}
+.bookingEngineSearchContainer .info-container .checkbox-container .custom-label{
+   font-size: 12px; 
+   display: flex;
+   align-items: center;
+   margin-bottom: 10px;
+}
+.bookingEngineSearchContainer .info-container .checkbox-container .checkbox-text{
+    margin-left: 8px;
+}
+.bookingEngineSearchContainer .info-container .pricerange-container{
+    margin-top: 5px;
+    font-family: Inter;
+}
+.bookingEngineSearchContainer .info-container .pricerange-container .price-heading{
+    font-size: 14px;
+    color: #595959;
+    font-weight: 500;
+}
+.bookingEngineSearchContainer .info-container .pricerange-container .min-max-price{
+    color: #4D6969;
+    font-size: 10px;
+    font-weight: 500;
+}
+.line hr{
+    border: 1px solid #E8E8E8;
+}
+/* .ant-slider-handle {
+    background-color: #09596B; 
+    width: 1px; 
+    height: 1px; 
+  } */

@@ -1,6 +1,6 @@
 {
     "name": "hotelier-lib",
-    "version": "2.4.6",
+    "version": "2.4.5",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "files": [
@@ -17,7 +17,8 @@
         "storybook:export": "build-storybook",
         "generate": "node ./util/create-component",
         "prepublishOnly": "npm run build",
-        "publish-lib": "npm run build && npm publish && yarn dev"
+        "publish-lib": "npm run build && npm publish && yarn dev",
+        "chromatic": "npx chromatic --project-token=chpt_00cf1271af75641"
     },
     "repository": {
         "type": "git",
@@ -32,7 +33,9 @@
         "Sass",
         "Storybook"
     ],
-    "author": "Harvey Delaney",
+    "author": {
+        "name": "Harvey Delaney"
+    },
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/HarveyD/react-component-library/issues"
@@ -88,9 +91,12 @@
         "@mantine/notifications": "^7.1.5",
         "@tabler/icons-react": "^2.32.0",
         "antd": "^5.4.7",
+        "chromatic": "^7.4.0",
         "classnames": "^2.3.2",
         "postcss": "^8.4.23",
         "react-big-calendar": "^1.8.2",
         "rollup-plugin-import-css": "^3.3.1"
-    }
+    },
+    "readme": "ERROR: No README data found!",
+    "_id": "hotelier-lib@2.4.5"
 }

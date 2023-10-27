@@ -1,0 +1,46 @@
+.postBookingDetailContainer{
+    width: 719px;
+    height: 303px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    font-family: Inter;
+    font-weight: 500;
+}
+.postBookingDetailContainer .bookingContainer{
+    width: 699px;
+    height: 58px;
+    background-color: #E0FAEF;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    position: relative;
+}
+.checktick{
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+.postBookingDetailContainer .bookingdetailsContainer{
+    padding-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.postBookingDetailContainer .bookingdetailsContainer .details-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-top: 18px;
+}
+.postBookingDetailContainer .bookingdetailsContainer .details-2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 36px;
+    padding-top: 23px;
+}

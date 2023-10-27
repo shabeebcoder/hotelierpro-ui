@@ -17,51 +17,41 @@ RegistrationForms.args = {
     },
     infoTableData: [{
         label: 'Arrival  Date',
-        value: 'lorem'
-    },
-    {
-        label: 'Departure  Date',
-        value: 'lorem'
+        value: 'lorem',
+        label1: 'Departure  Date',
+        value1: 'lorem'
     },
     {
         label: 'Name',
-        value: 'lorem'
-    },
-    {
-        label: 'Check In Time',
-        value: 'lorem'
+        value: 'lorem',
+        label1: 'Check In Time',
+        value1: 'lorem',
     },
     {
         label: 'Length of stay',
-        value: 'lorem'
-    },
-    {
-        label: 'Nationality',
-        value: 'lorem'
+        value: 'lorem',
+        label1: 'Nationality',
+        value1: 'lorem',
     },
     {
         label: 'Room Type',
-        value: 'lorem'
-    },
-    {
-        label: 'No of Person',
-        value: 'lorem'
+        value: 'lorem',
+        label1: 'No of Person',
+        value1: 'lorem'
     },
     {
         label: 'Email Phone',
-        value: 'lorem'
-    },
-    {
-        label: 'Passport No',
-        value: 'lorem'
+        value: 'lorem',
+        label1: 'Passport No',
+        value1: 'lorem'
     },
     {
         label: 'Room Amount',
-        value: 'lorem'
-    },
-    {
-        label: 'Dure Amount',
-        value: 'lorem'
+        value: 'lorem',
+        label1: 'Deposit  Amount ',
+        value1: 'lorem',
+        label2: "Due Amount",
+        value2:'....'
     },
     ],
     policyInfoData : [{
@@ -87,24 +77,46 @@ RegistrationForms.args = {
     },
     ],
     serviceData: [{
-        data:'DATE',
-        details:"lorem"
+        date:"",
+        type:"",
+        qty:"",
+        amount:"",
+        total:"",
     },
     {
-        data:'TYPE',
-        details:"lorem"
+        date:"",
+        type:"",
+        qty:"",
+        amount:"",
+        total:"",
     },
     {
-        data:'QY',
-        details:"lorem"
+        date:"",
+        type:"",
+        qty:"",
+        amount:"",
+        total:"",
     },
     {
-        data:'AMOUNT',
-        details:"lorem"
+        date:"",
+        type:"",
+        qty:"",
+        amount:"",
+        total:"",
     },
     {
-        data:'TOTAL',
-        details:"lorem"
+        date:"",
+        type:"",
+        qty:"",
+        amount:"",
+        total:"",
+    },
+    {
+        date:"",
+        type:"",
+        qty:"",
+        amount:"",
+        total:"",
     },
     ]
 }

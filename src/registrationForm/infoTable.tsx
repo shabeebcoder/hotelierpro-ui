@@ -12,16 +12,27 @@ function InfoTable(props) {
             </div>
         </div><div className='table-user-data-div'>
                 <table className='table-user-data'>
-                    <tr>
-                        <td>Arrival  Date :</td>
-                        <td></td>
-                        <td>Departure Data :</td>
-                    </tr>
-                    <tr>
-                        <td>Room Amount :</td>
-                        <td>Deposit  Amount :</td>
-                        <td>Due Amount :</td>
-                    </tr>
+                    {
+                        props.infoTableData.map((obj,index)=>{
+                            const tableRowCount = props.infoTableData.length;
+                            if(index+1===tableRowCount){
+                                return (
+                                    <><tr>
+                                <td>{obj.label}&nbsp;:&nbsp;{obj.value}</td>
+                                <td>{obj.label1}&nbsp;:&nbsp;{obj.value1}</td>
+                                <td>{obj.label2}&nbsp;:&nbsp;{obj.value2}</td>
+                            </tr></>
+                                )
+                            }
+                            return (
+                               <><tr>
+                                <td>{obj.label}&nbsp;:&nbsp;{obj.value}</td>
+                                <td></td>
+                                <td>{obj.label1}&nbsp;:&nbsp;{obj.value1}</td>
+                            </tr></>
+                            )
+                        })
+                    }
                 </table>
             </div>
        

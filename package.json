@@ -95,7 +95,8 @@
         "classnames": "^2.3.2",
         "postcss": "^8.4.23",
         "react-big-calendar": "^1.8.2",
-        "rollup-plugin-import-css": "^3.3.1"
+        "rollup-plugin-import-css": "^3.3.1",
+        "react-icons": "^4.11.0"
     },
     "readme": "ERROR: No README data found!",
     "_id": "hotelier-lib@2.4.5"

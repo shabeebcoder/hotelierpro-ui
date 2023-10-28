@@ -1,3 +1,3 @@
-import bill from "./bill";
+import bill from './bill';
 
-export { bill }
+export { bill };

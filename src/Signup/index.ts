@@ -1,4 +1,3 @@
-import Register from "./Signup";
+import Register from './Signup';
 
-
-export { Register }
+export { Register };

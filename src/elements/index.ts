@@ -1,4 +1,4 @@
-import Select from "./select"
-import { Button } from "./../Buttons"
+import Select from './select';
+import { Button } from './../Buttons';
 
-export { Select, Button }
+export { Select, Button };

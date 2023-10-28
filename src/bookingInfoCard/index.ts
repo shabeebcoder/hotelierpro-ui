@@ -1,4 +1,3 @@
-import BookingInfoCard from "./bookingInfoCard";
+import BookingInfoCard from './bookingInfoCard';
 
-
-export { BookingInfoCard }
+export { BookingInfoCard };

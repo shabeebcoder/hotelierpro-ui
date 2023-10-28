@@ -1,8 +1,7 @@
-import { Button } from "./Buttons";
-import { Breadcrumbs } from "./Breadcrumb";
+import { Button } from './Buttons';
+import { Breadcrumbs } from './Breadcrumb';
 
 export default {
-  Button,
-  Breadcrumbs,
-  
+    Button,
+    Breadcrumbs,
 };

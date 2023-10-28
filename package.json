@@ -18,7 +18,8 @@
         "generate": "node ./util/create-component",
         "prepublishOnly": "npm run build",
         "publish-lib": "npm run build && npm publish && yarn dev",
-        "chromatic": "npx chromatic --project-token=chpt_00cf1271af75641"
+        "chromatic": "npx chromatic --project-token=chpt_00cf1271af75641",
+        "pretty": "prettier --write \"./**/*.{ts,js,jsx,json}\""
     },
     "repository": {
         "type": "git",
@@ -95,8 +96,9 @@
         "classnames": "^2.3.2",
         "postcss": "^8.4.23",
         "react-big-calendar": "^1.8.2",
+        "react-icons": "^4.11.0",
         "rollup-plugin-import-css": "^3.3.1",
-        "react-icons": "^4.11.0"
+        "tslint-config-prettier": "^1.18.0"
     },
     "readme": "ERROR: No README data found!",
     "_id": "hotelier-lib@2.4.5"

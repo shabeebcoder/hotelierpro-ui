@@ -1,3 +1,3 @@
-import UploadButton from "./upload";
+import UploadButton from './upload';
 
-export { UploadButton }
+export { UploadButton };

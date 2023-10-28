@@ -1,4 +1,3 @@
-import Rooms from "./room";
+import Rooms from './room';
 
-
-export { Rooms }
+export { Rooms };

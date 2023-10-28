@@ -1,3 +1,3 @@
-import ServiceForm from "./addservice";
+import ServiceForm from './addservice';
 
-export { ServiceForm }
+export { ServiceForm };

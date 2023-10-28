@@ -1,4 +1,3 @@
-import FileInfo from "./files";
+import FileInfo from './files';
 
-
-export { FileInfo }
+export { FileInfo };

@@ -1,5 +1,3 @@
-import Divider from "./divider";
+import Divider from './divider';
 
-export {
-    Divider
-}
+export { Divider };

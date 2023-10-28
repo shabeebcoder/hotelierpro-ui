@@ -2,6 +2,7 @@
 
 
 
+
 .invoice_editable_container {
     width: 1164px;
     height: 1335px;
@@ -27,6 +28,7 @@
     position: relative;
     top: 75px;
     left: 32px;
+    width: fit-content;
 }
 
 .invoice_editable_container .invo_details h2 {
@@ -48,7 +50,7 @@
     margin: 0;
     padding: 0;
     justify-content: space-evenly;
-    gap: 24px;
+    gap: 26px;
 }
 
 .invoice_editable_container  .invo_details li {
@@ -71,9 +73,9 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    gap: 31px;
-    left: 721px;
-    top: 107px;
+    gap: 34px;
+    left: 719px;
+    top: 106px;
 }
 
 
@@ -105,48 +107,45 @@
     line-height: 22px; /* 157.143% */
 }
 
-.invoice_editable_container  .invo_date {
-    border-radius: 4px;
-    border: 1px solid #FFF;
+.invoice_editable_container .invo_date .mantine-1e6hn20 {
     display: flex;
-    width: 130px;
-    height: 28px;
-    padding: 2px 15px;
+    width: 170px;
+    height: 2px;
+    /* padding: 3px 16px; */
     align-items: center;
     gap: 13px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid #FFF;
+    background: none;
+    left: 510px;
+    top: 124px;
+    position: relative;
     color: white;
-    left: 746px;
-    position: absolute;
-    top: 138px;
 }
 
 
 .invoice_editable_container .invo_date p {
 
     color: #FFF;
-
-    /* Body/regular */
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22px; /* 157.143% */
 }
 
 
-.invoice_editable_container .invo_due_date {
-    border-radius: 4px;
-    border: 1px solid #FFF;
+.invoice_editable_container .invo_due_date .mantine-1e6hn20 {
     display: flex;
-    width: 130px;
+    width: 170px;
     height: 28px;
-    padding: 2px 15px;
+    /* padding: 3px 16px; */
     align-items: center;
     gap: 13px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid #FFF;
+    background-color: #4D6969;
+    left: 510px;
+    top: 134px;
+    position: relative;
     color: white;
-    left: 746px;
-    position: absolute;
-    top: 181px;
 
 
     
@@ -204,11 +203,13 @@
     font-style: normal;
     font-weight: 400;
     line-height: 22px; /* 183.333% */
+    z-index: 1000;
 
+    position: absolute;
 }
 
 
-.invoice_editable_container  .billing_name_editable {
+.invoice_editable_container  .billing_name_editable .mantine-gszoqu {
 
     display: flex;
     width: 200px;
@@ -219,19 +220,41 @@
     gap: 28px;
     border-radius: 4px;
     background: rgba(144, 203, 203, 0.12);
+    color: var(--character-primary-85, rgba(0, 0, 0, 0.85));
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    
+    
 }
 
 
 
 
-.invoice_editable_container  .billing_address_full_editable {
+
+
+
+.invoice_editable_container  .billing_address_full_editable .mantine-gszoqu  {
     width: 267px;
     height: 92px;
     flex-shrink: 0;
     border-radius: 4px;
     background: #F1F8F8;
     margin-top: 8px;
+    border: none;
+    justify-content: flex-start;
+    display: flex;
+    align-items: flex-start;
+    position: absolute;
 
+}
+
+
+.invoice_editable_container  .billing_address_full_editable ::placeholder {
+ display: flex;
+ position: absolute;
+ top: 10px;
 }
 
 
@@ -274,7 +297,7 @@
 }
 
 .invoice_editable_container .bill_from_address_container {
-    left: 263px;
+    left: 330px;
     position: relative;
 }
 
@@ -284,9 +307,10 @@
     flex-direction: row;
     position: relative;
     left: 880px;
-    top: 90px;
+    top: 155px;
     align-items: center;
     gap: 14px;
+    width: fit-content;
     
 }
 
@@ -446,7 +470,7 @@
     width: fit-content;
 }
 
-.invoice_editable_container  .td2_editable {
+.invoice_editable_container  .td2_editable .mantine-gszoqu {
     left: 85px;
     position: absolute;
     display: flex;
@@ -458,7 +482,7 @@
     
 }
 
-.invoice_editable_container  .td3_editable {
+.invoice_editable_container  .td3_editable  .mantine-gszoqu {
     left: 540px;
     position: absolute;
     display: flex;
@@ -469,7 +493,7 @@
     height: 32px;
 }
 
-.invoice_editable_container .td4_editable {
+.invoice_editable_container .td4_editable .mantine-gszoqu{
     left: 738px;
     position: absolute;
     display: flex;
@@ -479,7 +503,7 @@
     width: 89px;
     height: 32px;
 }
-.invoice_editable_container  .td5_editable {
+.invoice_editable_container  .td5_editable .mantine-gszoqu {
     left: 946px;
     position: absolute;
     display: flex;
@@ -552,7 +576,7 @@
     width: 324px;
 }
 
-.invoice_editable_container  .td7_editable {
+.invoice_editable_container  .td7_editable .mantine-gszoqu {
     left: 85px;
     position: absolute;
     display: flex;
@@ -564,7 +588,7 @@
     
 }
 
-.invoice_editable_container  .td8_editable {
+.invoice_editable_container  .td8_editable .mantine-gszoqu {
     left: 540px;
     position: absolute;
     display: flex;
@@ -575,7 +599,7 @@
     height: 32px;
 }
 
-.invoice_editable_container .td9_editable {
+.invoice_editable_container .td9_editable .mantine-gszoqu {
     left: 738px;
     position: absolute;
     display: flex;
@@ -586,7 +610,7 @@
     height: 32px;
 }
 
-.invoice_editable_container  .td10_editable {
+.invoice_editable_container  .td10_editable .mantine-gszoqu {
     left: 946px;
     position: absolute;
     display: flex;
@@ -596,6 +620,7 @@
     width: 103px;
     height: 32px;
 }
+
 
 
 
@@ -638,7 +663,7 @@
     width: 100%;
 }
 
-.invoice_editable_container .td12_editable {
+.invoice_editable_container .td12_editable  .mantine-gszoqu {
     left: 85px;
     position: absolute;
     display: flex;
@@ -650,7 +675,7 @@
     
 }
 
-.invoice_editable_container  .td13_editable {
+.invoice_editable_container  .td13_editable  .mantine-gszoqu {
     left: 540px;
     position: absolute;
     display: flex;
@@ -661,7 +686,7 @@
     height: 32px;
 }
 
-.invoice_editable_container  .td14_editable {
+.invoice_editable_container  .td14_editable  .mantine-gszoqu {
     left: 738px;
     position: absolute;
     display: flex;
@@ -672,7 +697,7 @@
     height: 32px;
 }
 
-.invoice_editable_container  .td15_editable {
+.invoice_editable_container  .td15_editable  .mantine-gszoqu {
     left: 946px;
     position: absolute;
     display: flex;
@@ -810,7 +835,7 @@
 }
 
 
-.invoice_editable_container .tax_price_editable {
+.invoice_editable_container .tax_price_editable .mantine-gszoqu {
     left: 756px;
     position: absolute;
     display: flex;
@@ -853,7 +878,7 @@
 
 
 
-.invoice_editable_container .rooms_percentage1_editable {
+.invoice_editable_container .rooms_percentage1_editable .mantine-gszoqu {
     left: 756px;
     position: absolute;
     display: flex;
@@ -895,7 +920,7 @@
 }
 
 
-.invoice_editable_container  .GS_percentage1_editable {
+.invoice_editable_container  .GS_percentage1_editable .mantine-gszoqu {
     left: 756px;
     position: absolute;
     display: flex;
@@ -934,7 +959,7 @@
     display: flex;
 }
 
-.invoice_editable_container  .food_percentage1_editable {
+.invoice_editable_container  .food_percentage1_editable .mantine-gszoqu {
     left: 756px;
     position: absolute;
     display: flex;
@@ -991,22 +1016,23 @@
     display: flex;
 }
 
-.invoice_editable_container .paid_total {
+.invoice_editable_container .paid_total  {
     left: 570px;
     top: 345px;
     position: absolute;
     display: flex;
 }
 
-.invoice_editable_container .paid_total_editable {
+.invoice_editable_container .paid_total_editable .mantine-gszoqu {
     left: 946px;
     position: absolute;
     display: flex;
     border-radius: 4px;
     border: 1px solid rgba(109, 109, 109, 0.54);
-    top: 337px;
+    top: 19px;
     width: 103px;
     height: 32px;
+    z-index: 1000;
     
 }
 
@@ -1048,7 +1074,7 @@
     line-height: normal;
 }
 
-.invoice_editable_container  .notes {
+.invoice_editable_container  .notes .mantine-gszoqu {
     width: 502px;
     height: 193px;
     border-radius: 4px;
@@ -1057,9 +1083,17 @@
     position: absolute;
     top: 547px;
     left: 40px;
-    margin: 0px;
-    padding: 0px;
+    /* margin: 0px;
+    padding: 0px; */
 }
+
+.invoice_editable_container  .notes ::placeholder {
+    position: absolute;
+    display: flex;
+    top: 10px;
+}
+
+
 
 .invoice_editable_container .notes p {
     color: #6D6D6D;

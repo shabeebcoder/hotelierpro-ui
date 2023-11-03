@@ -1,2 +1,2 @@
-import WebsitePlaceholder from "./websitePlaceholder";
+import WebsitePlaceholder from './websitePlaceholder';
 export { WebsitePlaceholder };

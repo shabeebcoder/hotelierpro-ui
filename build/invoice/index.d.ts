@@ -1,2 +1,2 @@
-import Invoice from "./invoice";
+import Invoice from './invoice';
 export { Invoice };

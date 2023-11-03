@@ -1,2 +1,2 @@
-import TopbarNavigation from "./NavTopBar";
+import TopbarNavigation from './NavTopBar';
 export { TopbarNavigation };

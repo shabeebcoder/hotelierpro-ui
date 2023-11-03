@@ -18,6 +18,14 @@ import { DocumentsModal } from './modals/upload-documents';
 import { WebsitePlaceholder } from './websitePlaceholder';
 import { Loader } from './loader';
 import { User } from './user';
+import { BookingBillingInfoCard } from './bookingBillingInfocard';
+import { BookingEngineHeader } from './bookingEngineHeader';
+import { BookingEngineBanner } from './bookingEngineBanner';
+import { BookingEngineSearch } from './bookingEngineSearch';
+import { BookingEngineRoomList } from './roomList';
+import { ReservationSummary } from './reservationSummary';
+import { PreBookingDetails } from './preBookingDetail';
+import { PostBookingDetails } from './postBookingDetail';
 
 export {
     Button,
@@ -42,4 +50,14 @@ export {
     InvoiceListTable,
     Loader,
     User,
+    BookingBillingInfoCard,
+    BookingEngineHeader,
+    BookingEngineBanner,
+    BookingEngineSearch,
+    BookingEngineRoomList,
+    ReservationSummary,
+    PreBookingDetails,
+    PostBookingDetails
+    
+
 };

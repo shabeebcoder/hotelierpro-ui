@@ -1,2 +1,2 @@
-import RoomTypesForm from "./roomType";
+import RoomTypesForm from './roomType';
 export { RoomTypesForm };

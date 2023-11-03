@@ -1,2 +1,2 @@
-import Tabs from "./Tab";
+import Tabs from './Tab';
 export { Tabs };

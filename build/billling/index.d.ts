@@ -1,2 +1,2 @@
-import BillingTable from "./billingTable";
+import BillingTable from './billingTable';
 export { BillingTable };

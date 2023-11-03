@@ -1,2 +1,2 @@
-import FormCard from "./FormCard";
+import FormCard from './FormCard';
 export { FormCard };

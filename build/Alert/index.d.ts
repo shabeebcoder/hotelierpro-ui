@@ -1,2 +1,2 @@
-import Alert from "./SuccessAlert";
+import Alert from './SuccessAlert';
 export { Alert };

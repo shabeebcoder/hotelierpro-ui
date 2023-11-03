@@ -8,7 +8,7 @@
 }
 
 .hpTabActionButton {
-    background-color: #3A7C7C;
+    background-color: #0b0d0d;
     border-radius: 4px;
     color: #F9F9FB;
     font-family: Inter;
@@ -964,7 +964,7 @@ body {
     margin: 0;
 }
 
-.Header {
+.invoice-container .Header {
     background-color: #4D6969;
     height: 230px;
     width: 1164px;
@@ -972,20 +972,20 @@ body {
     border-radius: 4px 4px 0px 0px;
 }
 
-.Header img {
+.invoice-container .Header img {
     height: 28px;
     position: relative;
     top: 75px;
     left: 32px;
 }
 
-.invo_details h2 {
+.invoice-container .invo_details h2 {
     color: white;
     font-size: 24px;
     font-weight: 600;
 }
 
-.invo_details {
+.invoice-container .invo_details {
     color: white;
     list-style: none;
     display: flex;
@@ -999,12 +999,12 @@ body {
     gap: 15px;
 }
 
-.invo_details li {
+.invoice-container .invo_details li {
     font-size: 16px;
     font-weight: 400;
 }
 
-.bill_adress_container {
+.invoice-container .bill_adress_container {
     display: flex;
     position: relative;
     top: 103px;
@@ -1015,7 +1015,7 @@ body {
     text-align: left;
 }
 
-.bill_to_address_container h3 {
+.invoice-container .bill_to_address_container h3 {
     color: #000;
     font-family: Inter;
     font-size: 16px;
@@ -1025,7 +1025,7 @@ body {
     margin-bottom: 0px;
 }
 
-.bill_to_address_container li {
+.invoice-container .bill_to_address_container li {
     color: rgba(109, 109, 109, 0.85);
     font-family: Inter;
     font-size: 14px;
@@ -1038,7 +1038,7 @@ body {
     margin: 0;
 }
 
-.bill_to_address_container ul {
+.invoice-container .bill_to_address_container ul {
     left: 0;
     position: relative;
     padding-left: 0px;
@@ -1052,7 +1052,7 @@ body {
     flex-direction: column;
 }
 
-.bill_from_address_container h3 {
+.invoice-container .bill_from_address_container h3 {
     color: #000;
     font-family: Inter;
     font-size: 16px;
@@ -1062,7 +1062,7 @@ body {
     margin-bottom: 0px;
 }
 
-.bill_from_address_container li {
+.invoice-container .bill_from_address_container li {
     color: rgba(109, 109, 109, 0.85);
     font-family: Inter;
     font-size: 14px;
@@ -1075,7 +1075,7 @@ body {
     margin: 0;
 }
 
-.bill_from_address_container ul {
+.invoice-container .bill_from_address_container ul {
     left: 0;
     position: relative;
     padding-left: 0px;
@@ -1089,12 +1089,12 @@ body {
     flex-direction: column;
 }
 
-.bill_from_address_container {
+.invoice-container .bill_from_address_container {
     left: 400px;
     position: relative;
 }
 
-.sent {
+.invoice-container .sent {
     color: #F04551;
     font-family: Inter;
     font-size: 16px;
@@ -1117,7 +1117,7 @@ body {
     flex-direction: column;
 }
 
-.Price_Table th {
+.invoice-container .Price_Table th {
     color: rgba(0, 0, 0, 0.85);
     font-family: Inter;
     font-size: 14px;
@@ -1127,7 +1127,7 @@ body {
     height: 50px;
 }
 
-.header_1 {
+.invoice-container .header_1 {
     position: absolute;
     display: flex;
     align-items: center;
@@ -1137,7 +1137,7 @@ body {
     width: 24px;
 }
 
-.header_2 {
+.invoice-container .header_2 {
     position: absolute;
     display: flex;
     align-items: center;
@@ -1147,7 +1147,7 @@ body {
     width: 34px;
 }
 
-.header_3 {
+.invoice-container .header_3 {
     position: absolute;
     display: flex;
     align-items: center;
@@ -1157,7 +1157,7 @@ body {
     width: 40px;
 }
 
-.header_4 {
+.invoice-container .header_4 {
     position: absolute;
     display: flex;
     left: 777px;
@@ -1168,7 +1168,7 @@ body {
     align-items: center;
 }
 
-.header_5 {
+.invoice-container .header_5 {
     position: absolute;
     left: 961px;
     padding: 0;
@@ -1179,7 +1179,7 @@ body {
     display: flex;
 }
 
-.first_column {
+.invoice-container .first_column {
     top: 80px;
     position: absolute;
     display: flex;
@@ -1190,42 +1190,42 @@ body {
     line-height: normal;
 }
 
-.td1 {
+.invoice-container .td1 {
     left: 40px;
     position: absolute;
     display: flex;
     width: fit-content;
 }
 
-.td2 {
+.invoice-container .td2 {
     left: 96px;
     position: absolute;
     display: flex;
     width: 324px;
 }
 
-.td3 {
+.invoice-container .td3 {
     left: 568px;
     position: absolute;
     display: flex;
     width: max-content;
 }
 
-.td4 {
+.invoice-container .td4 {
     left: 777px;
     position: absolute;
     display: flex;
     width: fit-content;
 }
 
-.td5 {
+.invoice-container .td5 {
     left: 961px;
     position: absolute;
     display: flex;
     width: max-content;
 }
 
-.second_column {
+.invoice-container .second_column {
     top: 140px;
     position: absolute;
     display: flex;
@@ -1237,42 +1237,42 @@ body {
     width: 100%;
 }
 
-.td6 {
+.invoice-container .td6 {
     left: 40px;
     position: absolute;
     display: flex;
     width: fit-content;
 }
 
-.td7 {
+.invoice-container .td7 {
     left: 96px;
     position: absolute;
     display: flex;
     width: 324px;
 }
 
-.td8 {
+.invoice-container .td8 {
     left: 568px;
     position: absolute;
     display: flex;
     width: max-content;
 }
 
-.td9 {
+.invoice-container .td9 {
     left: 777px;
     position: absolute;
     display: flex;
     width: fit-content;
 }
 
-.td10 {
+.invoice-container .td10 {
     left: 961px;
     position: absolute;
     display: flex;
     width: max-content;
 }
 
-.third_column {
+.invoice-container .third_column {
     top: 200px;
     position: absolute;
     display: flex;
@@ -1284,49 +1284,49 @@ body {
     width: 100%;
 }
 
-.td11 {
+.invoice-container .td11 {
     left: 40px;
     position: absolute;
     display: flex;
     width: fit-content;
 }
 
-.td12 {
+.invoice-container .td12 {
     left: 96px;
     position: absolute;
     display: flex;
     width: 324px;
 }
 
-.td13 {
+.invoice-container .td13 {
     left: 568px;
     position: absolute;
     display: flex;
     width: max-content;
 }
 
-.td14 {
+.invoice-container .td14 {
     left: 777px;
     position: absolute;
     display: flex;
     width: fit-content;
 }
 
-.td15 {
+.invoice-container .td15 {
     left: 961px;
     position: absolute;
     display: flex;
     width: max-content;
 }
 
-.total_price svg {
+.invoice-container .total_price svg {
     left: 570px;
     top: 260px;
     position: absolute;
     display: flex;
 }
 
-.Total_part {
+.invoice-container .Total_part {
     color: rgba(0, 0, 0, 0.85);
     font-family: Inter;
     font-size: 14px;
@@ -1339,28 +1339,28 @@ body {
     width: 100%;
 }
 
-.subtotal {
+.invoice-container .subtotal {
     left: 570px;
     /* top: 340px; */
     position: absolute;
     display: flex;
 }
 
-.subtotal_price {
+.invoice-container .subtotal_price {
     left: 961px;
     /* top: 340px; */
     position: absolute;
     display: flex;
 }
 
-.city_tax {
+.invoice-container .city_tax {
     left: 570px;
     /* top: 390px; */
     position: absolute;
     display: flex;
 }
 
-.tax_price {
+.invoice-container .tax_price {
     left: 777px;
     /* top: 390px; */
     position: absolute;
@@ -1373,19 +1373,27 @@ body {
     line-height: normal;
 }
 
-.total_tax_price {
+.invoice-container .total_tax_price {
     left: 961px;
     /* top: 390px; */
     position: absolute;
     display: flex;
 }
 
-.VAT {
+.invoice-container .VAT {
     left: 570px;
     /* top: 430px; */
     position: absolute;
     display: flex;
 }
+
+.invoice-container .rooms1 {
+    left: 570px;
+    /* top: 510px; */
+    position: absolute;
+    display: flex;
+}
+
 
 .invoice-container .invoice-container s {
     left: 570px;
@@ -1394,7 +1402,7 @@ body {
     display: flex;
 }
 
-.Percentage_1 {
+.invoice-container .Percentage_1 {
     left: 777px;
     /* top: 470px; */
     position: absolute;
@@ -1406,6 +1414,8 @@ body {
     font-weight: 400;
     line-height: normal;
 }
+
+
 
 .invoice-container .rooms_price {
     left: 961px;
@@ -1414,14 +1424,14 @@ body {
     display: flex;
 }
 
-.GS {
+.invoice-container .GS {
     left: 570px;
     /* top: 510px; */
     position: absolute;
     display: flex;
 }
 
-.Percentage_2 {
+.invoice-container .Percentage_2 {
     left: 777px;
     /* top: 510px; */
     position: absolute;
@@ -1434,21 +1444,21 @@ body {
     line-height: normal;
 }
 
-.GS_price {
+.invoice-container .GS_price {
     left: 961px;
     /* top: 510px; */
     position: absolute;
     display: flex;
 }
 
-.Food {
+.invoice-container .Food {
     left: 570px;
     /* top: 550px; */
     position: absolute;
     display: flex;
 }
 
-.Percentage_3 {
+.invoice-container .Percentage_3 {
     left: 777px;
     /* top: 550px; */
     position: absolute;
@@ -1461,14 +1471,14 @@ body {
     line-height: normal;
 }
 
-.food_price {
+.invoice-container .food_price {
     left: 961px;
     /* top: 550px; */
     position: absolute;
     display: flex;
 }
 
-.line_2 {
+.invoice-container .line_2 {
     left: 570px;
     top: 270px;
     position: absolute;
@@ -1478,35 +1488,35 @@ body {
     width: 468px;
 }
 
-.final_total {
+.invoice-container .final_total {
     left: 570px;
     top: 300px;
     position: absolute;
     display: flex;
 }
 
-.final_total_price {
+.invoice-container .final_total_price {
     left: 961px;
     top: 300px;
     position: absolute;
     display: flex;
 }
 
-.paid_total {
+.invoice-container .paid_total {
     left: 570px;
     top: 345px;
     position: absolute;
     display: flex;
 }
 
-.paid_total_price {
+.invoice-container .paid_total_price {
     left: 961px;
     top: 345px;
     position: absolute;
     display: flex;
 }
 
-.line_3 {
+.invoice-container .line_3 {
     left: 570px;
     top: 390px;
     position: absolute;
@@ -1516,14 +1526,14 @@ body {
     width: 468px;
 }
 
-.due_total {
+.invoice-container .due_total {
     left: 570px;
     top: 425px;
     position: absolute;
     display: flex;
 }
 
-.due_total_price {
+.invoice-container .due_total_price {
     left: 961px;
     top: 425px;
     position: absolute;
@@ -1536,7 +1546,7 @@ body {
     line-height: normal;
 }
 
-.notes {
+.invoice-container .notes {
     width: 502px;
     height: 193px;
     border-radius: 4px;
@@ -1549,7 +1559,7 @@ body {
     padding: 0px;
 }
 
-.notes p {
+.invoice-container .notes p {
     color: #6D6D6D;
     font-family: Inter;
     font-size: 14px;
@@ -2131,4 +2141,686 @@ h6 {
         -o-transform: rotate(360deg);
         transform: rotate(360deg);
     }
+}
+.mainContainer{
+    display: flex ;
+    font-family: Inter;
+    flex-direction: column;
+    font-weight: 500;
+}
+.bookingBillingContainer{
+    display: flex;
+    flex-direction: column;
+    width: 299px;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+.bookingBillingContainer .info-container{
+    padding: 10px;
+    margin-top: 10px;
+}
+.bookingBillingContainer .info-container .roomname-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.bookingBillingContainer .info-container .roomname-price .roomname{
+    position: relative;
+}
+.bookingBillingContainer .info-container .discount-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.bookingBillingContainer .info-container .after-discount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.bookingBillingContainer .info-container .btn-confirm{
+    padding-left: 327px;
+    margin-top: 12px;
+}
+.bookingBillingContainer .info-container button{
+    width: 100px;
+    height: 28px;
+    background-color: #09596B;
+    border-radius: 4px;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;   
+    cursor: pointer; 
+}
+.line{
+    margin-bottom: 16px;
+}
+.line hr{
+    border: 1px solid #E8E8E8;
+}
+.bookingEngineHeaderContainer{
+    background-color: #ffffff;
+    width: 1400px;
+    height: 74px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Inter;
+}
+.bookingEngineHeaderContainer .hotel-name{
+    padding-left: 20px;
+    padding-top: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    font-size: 20px;
+    color: #09272B;
+    font-weight: 500;
+    cursor: pointer;
+}
+.bookingEngineHeaderContainer .navbar-headers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 25px;
+    gap: 30px;
+    font-family: Inter;
+    font-weight: 500;
+    color: #09272B;
+    font-size: 16px;
+}
+.bookingEngineHeaderContainer .navbar-headers .heading{
+    text-decoration: none;
+    cursor: pointer;
+}
+.bookingEngineHeaderContainer .navbar-headers .heading:hover{
+    text-decoration: underline;
+}
+.bookingEngineHeaderContainer .navbar-headers .btn-signin{
+    width: 112px;
+    height: 34px;
+    background-color: #09272B;
+    border-radius: 6px;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+}
+
+.main-container{
+    display: flex;
+    /* flex-direction: column; */
+    width: 1182px;
+    height: 200px;
+    position: relative;
+}
+.main-container .imgContainer{
+    width: 100%;
+    height: 200px;
+    background-color: darkgrey;
+    border-radius: 4px;
+    position: relative;
+}
+img{
+    width: 100%;
+    height: 200;
+}
+.bookingCalendarContainer{
+    width: 1070px;
+    height: 60px;
+    border: 6px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 20px 3px 20px;
+    position: absolute;
+    top: 83%;
+    left: 49.5%;
+    transform: translate(-50%);
+    text-align: center;
+}
+.bookingCalendarContainer #location{
+    width: 335px; 
+    height: 36px; 
+    border: 1px solid #EAEAEA; 
+    border-radius: 4px; 
+    font-size: 14px; 
+    font-weight: 500;
+    color: #474747; 
+    font-family: Inter;
+}
+.bookingCalendarContainer button{
+    width: 112px;
+    height: 36px;
+    background-color:#09596B;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    font-family: Inter;
+    cursor: pointer;
+}
+/* .bookingEngineBanner-imgContainer img{
+    width: 1182px;
+    height: auto;
+    border-radius: 4px;
+    position: relative;
+}
+.bookingCalendarContainer{
+    width: 1070px;
+    height: 60px;
+    border: 6px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 20px 3px 20px;
+    position: absolute;
+    top: 15%;
+    left: 49.5%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.bookingCalendarContainer #location{
+    width: 335px; 
+    height: 36px; 
+    border: 1px solid #EAEAEA; 
+    border-radius: 4px; 
+    font-size: 14px; 
+    font-weight: 500;
+    color: #474747; 
+    font-family: Inter;
+}
+.bookingCalendarContainer button{
+    width: 112px;
+    height: 36px;
+    background-color:#09596B;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    font-family: Inter;
+    cursor: pointer;
+} */
+.bookingEngineSearchContainer{
+    background-color: #ffffff;
+    width: 194px;
+    /* height: 316px; */
+    height: auto;
+    border-radius: 4px;    
+}
+.bookingEngineSearchContainer .info-container{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column; 
+    font-family: Inter;
+}
+.bookingEngineSearchContainer .info-container .headingContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;   
+}
+.bookingEngineSearchContainer .info-container .headingContainer .head-filter{
+    font-size: 16px;
+    color: #000000;
+    font-weight: 500;
+}
+.bookingEngineSearchContainer .info-container .headingContainer .head-reset{
+    font-size: 12px;
+    color: #F04551;
+    cursor: pointer;
+    font-weight: 500;
+}
+.bookingEngineSearchContainer .info-container .checkbox-container{
+    display: flex;
+    flex-direction: column;
+    color: #595959;
+    font-weight: 500;
+}
+.bookingEngineSearchContainer .info-container .checkbox-container .checkbox-heading{
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 3px;
+}
+.bookingEngineSearchContainer .info-container .checkbox-container .custom-label{
+   font-size: 12px; 
+   display: flex;
+   align-items: center;
+   margin-bottom: 10px;
+}
+.bookingEngineSearchContainer .info-container .checkbox-container .checkbox-text{
+    margin-left: 8px;
+}
+.bookingEngineSearchContainer .info-container .pricerange-container{
+    margin-top: 5px;
+    font-family: Inter;
+}
+.bookingEngineSearchContainer .info-container .pricerange-container .price-heading{
+    font-size: 14px;
+    color: #595959;
+    font-weight: 500;
+}
+.bookingEngineSearchContainer .info-container .pricerange-container .min-max-price{
+    color: #4D6969;
+    font-size: 10px;
+    font-weight: 500;
+}
+.line hr{
+    border: 1px solid #E8E8E8;
+}
+/* .ant-slider-handle {
+    background-color: #09596B; 
+    width: 1px; 
+    height: 1px; 
+  } */
+.roomListContainer{
+    background-color: #ffffff; 
+    width: 545px;
+    height: 120px;
+    border-radius: 4px;
+    display: flex;
+    /* justify-content: space-between; */
+    font-family: Inter;
+}
+.roomListContainer  img{
+    height: 100px;
+    width: 140px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+.roomListContainer .info-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* padding-right: 10px; */
+}
+.roomListContainer .room-name{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.roomListContainer .room-name .room-title{
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 500;
+    color: #595959;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+    position: relative;
+}
+.roomListContainer .room-name .room-title:hover::before{
+    content: attr(title);
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    top: 100%; /* Position it below the text */
+    left: 50%;
+    transform: translateX(-50%); /* Center the tooltip */
+    white-space: nowrap;
+    display: block;
+    z-index: 1;
+    font-size: 12px;
+    opacity: 0.9;
+    visibility: visible;
+    width: 100px;
+}
+.roomListContainer .room-name .room-left{
+    color: #F04551;
+    display: flex;
+    align-items: center;
+    margin-right: 43px;
+}
+.roomListContainer .number{
+    font-size: 10px;
+    font-weight: 500;
+}
+.roomListContainer .room-review{
+    margin-top: -4px;
+    font-size: 10px;
+}
+.roomListContainer .room-review .icon-star{
+    color:#FFDD27;
+    height: 12px;
+    width: 12px;
+}
+.roomListContainer .room-review .rating{
+    margin-left: 5px;
+    color: #595959;
+    font-weight: 500;
+}
+.roomListContainer .room-review .divider{
+    margin-left: 5px;
+    color: #E8E8E8;
+}
+.roomListContainer .room-review .review{
+    margin-left: 5px;
+    color: #595959;
+    font-weight: 500;
+}
+.roomListContainer .room-desc{
+    margin-top: 10px;
+    font-size: 10px;
+    color: #595959;
+    font-weight: 500;
+}
+span.description{
+    position: fixed;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 150px;
+    display: block;
+}
+.roomListContainer .room-price{
+    margin-top: 35px;
+}
+.roomListContainer .room-price .price{
+    font-size: 16px;
+    font-weight: bold;
+}
+.roomListContainer .room-price .perNight{
+    font-size: 10px;
+    margin-left: 3px;
+}
+.roomListContainer .room-price .ogi-price{
+    margin-left: 10px;
+    font-size: 12px;
+    color: #F04551;
+    text-decoration: line-through;
+}
+.roomListContainer .booking-container{
+    margin-left: 10px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 54px;
+    margin-bottom: 10px;
+}
+.roomListContainer .booking-container .person{
+    font-size: 12px;
+    font-weight: 500;
+    color: #595959;
+}
+.roomListContainer .booking-container Button{
+    margin-top: 8px;
+}
+.roomListContainer .booking-container .btn-booking{
+    width: 112px;
+    height: 32px;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #09596B;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.reservationSummaryContainer{
+    width: 395px;
+    height: 525px;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    font-family: Inter;
+    font-weight: 500;
+    padding: 15px 24px 15px 24px;
+}
+.reservationSummaryContainer .checkin-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: -7px;
+    margin-right: 10px;
+}
+.vl{
+    width: 1px;
+    background-color: #ccc;
+    height: 230px;
+    position: absolute;
+    top: 90px;
+    margin-left: 168px;
+}
+.reservationSummaryContainer .checkout-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: -7px;
+    margin-left: 20px;
+}
+.checkin-container,
+.checkout-container {
+  flex: 1; 
+  position: relative;
+  height: 100%;
+}
+.reservationSummaryContainer .price-container .info-container{
+    margin-top: 15px;
+}
+.info-container .roomname-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.info-container .roomname-price .roomname{
+    position: relative;
+}
+.info-container .discount-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.info-container .after-discount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.info-container .btn-confirm{
+    padding-left: 170px;
+    margin-top: 12px;
+    margin-left: -150px;
+}
+.info-container button{
+    width: 347px;
+    height: 36px;
+    background-color: #09596B;
+    border-radius: 4px;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;   
+    cursor: pointer; 
+}
+
+.preBookingContainer{
+    background-color: #ffffff; 
+    width: 719px;
+    height: 525px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    font-family: Inter;
+    font-weight: 500;
+    padding: 15px;
+}
+.maincontainer{
+    display: flex !important;
+    flex-direction: row;
+ 
+}
+.maincontainer  img{
+    height: 100px;
+    width: 140px;
+    margin-top: 10px;
+    /* margin-left: 10px; */
+    margin-right: 10px;
+    border-radius: 4px;
+}
+.maincontainer .info-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* padding-right: 10px; */
+}
+.maincontainer .room-name{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+}
+.maincontainer .room-name .room-title{
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 500;
+    color: #595959;
+    display: block;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px; */
+    position: relative;
+}
+.maincontainer .room-name .room-left{
+    color: #F04551;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.maincontainer .number{
+    font-size: 10px;
+    font-weight: 500;
+}
+.maincontainer .room-review{
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+.maincontainer .room-review .icon-star{
+    color:#FFDD27;
+    height: 12px;
+    width: 12px;
+}
+.maincontainer .room-review .rating{
+    margin-left: 5px;
+    color: #595959;
+    font-weight: 500;
+}
+.maincontainer .room-review .divider{
+    margin-left: 5px;
+    color: #E8E8E8;
+}
+.maincontainer .room-review .review{
+    margin-left: 5px;
+    color: #595959;
+    font-weight: 500;
+}
+.maincontainer .guest-count{
+    display: flex;
+    flex-direction: column;
+}
+.line{
+    margin-bottom: 13px;
+    margin-top: 20px;
+}
+.line hr{
+    border: 1px solid #C3C3C3;
+}
+
+.datepicker{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    direction: flex;
+    justify-content: center;
+}
+.maincontainer .formContainer{
+    direction: flex;
+    justify-content: center;
+}
+.form .form-item {
+    margin-bottom: 20px;
+    min-width: 255px;
+    width: 200px;
+}
+.guest-count{
+    display: flex;
+    /* align-items: center; */
+}
+.custom-switch{
+    color: #595959;
+    font-size: 12px;
+}
+.switch-container{
+    display: flex;
+}
+
+.postBookingDetailContainer{
+    width: 719px;
+    height: 303px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    font-family: Inter;
+    font-weight: 500;
+}
+.postBookingDetailContainer .bookingContainer{
+    width: 699px;
+    height: 58px;
+    background-color: #E0FAEF;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    position: relative;
+}
+.checktick{
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+.postBookingDetailContainer .bookingdetailsContainer{
+    padding-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.postBookingDetailContainer .bookingdetailsContainer .details-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-top: 18px;
+}
+.postBookingDetailContainer .bookingdetailsContainer .details-2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 36px;
+    padding-top: 23px;
 }

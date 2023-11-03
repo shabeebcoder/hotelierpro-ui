@@ -1,4 +1,4 @@
 import React from 'react';
-import "./styles.css";
+import "./edit.css";
 declare function Invoice(props: any): React.JSX.Element;
 export default Invoice;

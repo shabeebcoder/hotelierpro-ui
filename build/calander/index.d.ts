@@ -1,2 +1,2 @@
-import Calander from "./calander";
+import Calander from './calander';
 export { Calander };

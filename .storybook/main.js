@@ -6,7 +6,7 @@ module.exports = {
         '../src/**/*.stories.@(js|jsx|ts|tsx)',
     ],
 
-    addons: ['@storybook/addon-styling-webpack'],
+    addons: ['@storybook/addon-styling-webpack', "@storybook/addon-docs"],
 
     framework: {
         name: '@storybook/react-webpack5',

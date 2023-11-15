@@ -1,10 +1,9 @@
 
 import React from "react";
+import {Meta } from  "@storybook/addon-docs"
 
 
-export default {
-    title : "elements-v2/Accordion"
-}
+
 
 import {
     Accordion,
@@ -12,6 +11,14 @@ import {
     AccordionItem,
     AccordionTrigger,
   } from "./accordion"
+  
+
+  const meta:Meta = {
+      component: Accordion,
+      title : "elements-v2/Accordion"
+  }
+  
+export default meta;
   
   export function AccordionDemo() {
     return (

@@ -3074,7 +3074,7 @@
     lodash "^4.17.21"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-docs@7.5.3":
+"@storybook/addon-docs@7.5.3", "@storybook/addon-docs@^7.5.3":
   version "7.5.3"
   resolved "https://registry.npmjs.org/@storybook/addon-docs/-/addon-docs-7.5.3.tgz#36c28c9a54b28e3b4b1450e821d65e07be6da45b"
   integrity sha512-JVQ6iCXKESij/SbE4Wq47dkSSgBRulvA8SUf8NWL5m9qpiHrg0lPSERHfoTLiB5uC/JwF0OKIlhxoWl+zCmtYg==

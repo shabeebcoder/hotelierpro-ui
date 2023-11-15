@@ -1,6 +1,6 @@
 {
     "name": "hotelier-lib",
-    "version": "2.5.7",
+    "version": "2.5.8",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "files": [
@@ -130,6 +130,7 @@
         "@radix-ui/react-toggle": "^1.0.3",
         "@radix-ui/react-toggle-group": "^1.0.4",
         "@radix-ui/react-tooltip": "^1.0.7",
+        "@storybook/addon-docs": "^7.5.3",
         "@tabler/icons-react": "^2.32.0",
         "antd": "^5.4.7",
         "chromatic": "^7.4.0",

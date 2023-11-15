@@ -1,6 +1,6 @@
 {
     "name": "hotelier-lib",
-    "version": "2.4.7",
+    "version": "2.5.2",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "files": [
@@ -12,14 +12,15 @@
         "build": "rollup -c",
         "test": "jest",
         "test:watch": "jest --watch",
-        "dev": "export SET NODE_OPTIONS=--openssl-legacy-provider && storybook dev -p 6006 ",
-        "dev:windows": "storybook dev -p 6006 ",
+        "dev": "export NODE_OPTIONS=--openssl-legacy-provider && concurrently \"storybook dev -p 6006\" \"npx tailwindcss -i ./src/tailwind.css -o ./src/styles.css --watch\"",
+        "dev:windows": "concurrently \"storybook dev -p 6006\" \"npx tailwindcss -i ./src/tailwind.css -o ./src/styles.css --watch\"",
         "storybook:export": "storybook build",
         "generate": "node ./util/create-component",
         "prepublishOnly": "npm run build",
         "publish-lib": "npm run build && npm publish && yarn dev",
         "chromatic": "npx chromatic --project-token=chpt_00cf1271af75641",
-        "pretty": "prettier --write \"./**/*.{ts,js,jsx,json}\""
+        "pretty": "prettier --write \"./**/*.{ts,js,jsx,json}\"",
+        "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./src/styles.css --watch"
     },
     "repository": {
         "type": "git",
@@ -66,7 +67,7 @@
         "@types/jest": "^24.9.1",
         "@types/react": "^16.14.14",
         "@types/react-dom": "^16.9.14",
-        "autoprefixer": "^9.0.0",
+        "autoprefixer": "^10.4.16",
         "babel-loader": "^8.2.2",
         "babel-preset-react-app": "^10.0.0",
         "html-webpack-plugin": "^5.5.3",
@@ -100,10 +101,12 @@
         "antd": "^5.4.7",
         "chromatic": "^7.4.0",
         "classnames": "^2.3.2",
-        "postcss": "^8.4.23",
+        "concurrently": "^8.2.2",
+        "postcss": "^8.4.31",
         "react-big-calendar": "^1.8.2",
         "react-icons": "^4.11.0",
         "rollup-plugin-import-css": "^3.3.1",
+        "tailwindcss": "^3.3.5",
         "tslint-config-prettier": "^1.18.0"
     },
     "readme": "ERROR: No README data found!",

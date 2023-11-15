@@ -63183,36 +63183,6 @@ Typography.Title = Title$3;
 Typography.Paragraph = Paragraph$1;
 var Typography$1 = Typography;
 
-function styleInject(css, ref) {
-  if ( ref === void 0 ) ref = {};
-  var insertAt = ref.insertAt;
-
-  if (!css || typeof document === 'undefined') { return; }
-
-  var head = document.head || document.getElementsByTagName('head')[0];
-  var style = document.createElement('style');
-  style.type = 'text/css';
-
-  if (insertAt === 'top') {
-    if (head.firstChild) {
-      head.insertBefore(style, head.firstChild);
-    } else {
-      head.appendChild(style);
-    }
-  } else {
-    head.appendChild(style);
-  }
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var css_248z$q = "";
-styleInject(css_248z$q);
-
 // This icon file is generated automatically.
 var SaveOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M893.3 293.3L730.7 130.7c-7.5-7.5-16.7-13-26.7-16V112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V338.5c0-17-6.7-33.2-18.7-45.2zM384 184h256v104H384V184zm456 656H184V184h136v136c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V205.8l136 136V840zM512 442c-79.5 0-144 64.5-144 144s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144zm0 224c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z" } }] }, "name": "save", "theme": "outlined" };
 var SaveOutlinedSvg = SaveOutlined$2;
@@ -63254,9 +63224,6 @@ function Button$1 (_a) {
 
 var Alert = function (props) { return (React__default["default"].createElement(Alerts, { message: props.message, type: props.type })); };
 
-var css_248z$p = "";
-styleInject(css_248z$p);
-
 var Title$1 = Typography$1.Title, Text$2 = Typography$1.Text, Link$1 = Typography$1.Link;
 function Login(props) {
     var title = props.title, signUpUrl = props.signUpUrl, forgotPasswordUrl = props.forgotPasswordUrl, onFinish = props.onFinish;
@@ -63280,9 +63247,6 @@ function Login(props) {
                 React__default["default"].createElement(Text$2, { style: { fontSize: 12 } }, "Don't have an account ?"),
                 React__default["default"].createElement(Link$1, { href: signUpUrl, style: { fontSize: 12, color: '#3A7C7C' } }, "Register"))));
 }
-
-var css_248z$o = "";
-styleInject(css_248z$o);
 
 var Title = Typography$1.Title, Text$1 = Typography$1.Text, Link = Typography$1.Link;
 var Option = Select$2.Option;
@@ -63325,10 +63289,7 @@ function Register(props) {
                         React__default["default"].createElement(Link, { href: loginUrl, className: "link-1" }, "Login"))))));
 }
 
-var css_248z$n = "";
-styleInject(css_248z$n);
-
-var App = function (props) {
+var App$1 = function (props) {
     var onFinish = props.onFinish, formName = props.formName, title = props.title, children = props.children, handleCancel = props.handleCancel;
     return (React__default["default"].createElement("div", { className: 'form_card_container' },
         React__default["default"].createElement(Card$1, { title: title },
@@ -63342,7 +63303,7 @@ var App = function (props) {
 
 function RoomTypeForm(props) {
     var handleCancel = props.handleCancel, handleOnFinish = props.handleOnFinish, title = props.title, formName = props.formName;
-    return React__default["default"].createElement(App, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
+    return React__default["default"].createElement(App$1, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
         React__default["default"].createElement(Form$1.Item, { label: "Name", name: "name" },
             React__default["default"].createElement(Input$2, null)),
         React__default["default"].createElement(Form$1.Item, { label: "Max. Persons", name: "maxPerson" },
@@ -63355,7 +63316,7 @@ function RoomTypeForm(props) {
 
 function Rooms$1(props) {
     var handleCancel = props.handleCancel, handleOnFinish = props.handleOnFinish, title = props.title, formName = props.formName, _a = props.roomTypes, roomTypes = _a === void 0 ? [] : _a;
-    return React__default["default"].createElement(App, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
+    return React__default["default"].createElement(App$1, { title: title, formName: formName, onFinish: handleOnFinish, handleCancel: handleCancel },
         React__default["default"].createElement(Form$1.Item, { label: "Room Types", name: "roomTypes" },
             React__default["default"].createElement(Select$2, null, roomTypes.map(function (_a) {
                 var value = _a.value, label = _a.label;
@@ -63364,9 +63325,6 @@ function Rooms$1(props) {
         React__default["default"].createElement(Form$1.Item, { label: "No of Rooms", name: "noOfRooms" },
             React__default["default"].createElement(Input$2, null)));
 }
-
-var css_248z$m = "";
-styleInject(css_248z$m);
 
 var RoomList$1 = function (props) {
     // const originData: Item[] = [];
@@ -87339,12 +87297,6 @@ Tabs$1.Tab = Tab;
 Tabs$1.Panel = TabsPanel;
 Tabs$1.displayName = "@mantine/core/Tabs";
 
-var css_248z$l = "";
-styleInject(css_248z$l);
-
-var css_248z$k = "";
-styleInject(css_248z$k);
-
 // do not edit .js files directly - edit src/index.jst
 
 
@@ -88219,9 +88171,6 @@ var DLS = {
     Breadcrumbs: Breadcrumbs,
 };
 
-var css_248z$j = "";
-styleInject(css_248z$j);
-
 function User(props) {
     var imageUrl = props.imageUrl, fullName = props.fullName, email = props.email, onLogout = props.onLogout;
     return (React__default["default"].createElement("div", { className: 'loggedInUserInformation' },
@@ -88232,9 +88181,6 @@ function User(props) {
             React__default["default"].createElement("li", null, email),
             React__default["default"].createElement("li", { onClick: onLogout }, "logout"))));
 }
-
-var css_248z$i = "";
-styleInject(css_248z$i);
 
 var DashboardIcon = function () {
     return React__default["default"].createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24", fill: "none" },
@@ -88293,9 +88239,6 @@ function SideBar(_a) {
             React__default["default"].createElement(User, { fullName: fullName, onLogout: onLogout, imageUrl: imageUrl, email: email })));
 }
 
-var css_248z$h = "";
-styleInject(css_248z$h);
-
 function StyledTabs(props) {
     return (React__default["default"].createElement(Tabs$1, __assign$1({ unstyled: true, styles: function (theme) { return ({
             tab: __assign$1(__assign$1({}, theme.fn.focusStyles()), { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white, color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[9], border: "".concat(rem(1), " solid ").concat(theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[4]), padding: "".concat(theme.spacing.xs, " ").concat(theme.spacing.md), cursor: 'pointer', fontSize: theme.fontSizes.sm, display: 'flex', alignItems: 'center', '&:disabled': {
@@ -88337,9 +88280,6 @@ function TopbarNavigation(props) {
             React__default["default"].createElement(Tabs$1.Tab, { onClick: function () { return handleOnClick(2); }, value: "services" }, "Services")),
         React__default["default"].createElement(RightIcon, null)));
 }
-
-var css_248z$g = "";
-styleInject(css_248z$g);
 
 function DatesHeader (props) {
     var dates = props.dates, currentDate = props.currentDate;
@@ -88522,9 +88462,6 @@ function Calander(props) {
                     React__default["default"].createElement(DatesHeader, __assign$1({}, getCalendarData())),
                     React__default["default"].createElement(Rooms, __assign$1({}, getCalendarData())))))));
 }
-
-var css_248z$f = "";
-styleInject(css_248z$f);
 
 /*
 object-assign
@@ -93164,9 +93101,6 @@ var BookingForm = function (props) {
                     React__default["default"].createElement(Button, { className: "outline" }, "Upload documents"))))));
 };
 
-var css_248z$e = "";
-styleInject(css_248z$e);
-
 function Invoice(props) {
     props.amount;
     return (React__default["default"].createElement("div", { className: 'invoice-container' },
@@ -93262,9 +93196,6 @@ function Invoice(props) {
     );
 }
 
-var css_248z$d = "";
-styleInject(css_248z$d);
-
 function ColorPicker(props) {
     return (React__default["default"].createElement("div", { className: 'colorPickerContainer' },
         React__default["default"].createElement("div", { className: 'color-picker-text-div' },
@@ -93273,12 +93204,6 @@ function ColorPicker(props) {
             React__default["default"].createElement("h3", { className: 'color-picker-secondary-text' }, props.colorCode),
             React__default["default"].createElement("div", { className: 'color-picker-tertiary-box', style: { backgroundColor: props.colorCode } }))));
 }
-
-var css_248z$c = "";
-styleInject(css_248z$c);
-
-var css_248z$b = "";
-styleInject(css_248z$b);
 
 function Upload(props) {
     var title = props.title, handleOnClick = props.handleOnClick;
@@ -93296,9 +93221,6 @@ function Upload(props) {
                 React__default["default"].createElement("li", null, "File type jpeg/png accepted"),
                 React__default["default"].createElement("li", null, "Maximum File size 1 MB")))));
 }
-
-var css_248z$a = "";
-styleInject(css_248z$a);
 
 function Files(props) {
     props.fileName; props.fileSize; var onClose = props.onClose;
@@ -93351,9 +93273,6 @@ function DocumentsModal(props) {
         React__default["default"].createElement(Button, { size: 'size' , className: "hpTabActionButton", onClick: open }, 'buttonTitle')));
 }
 
-var css_248z$9 = "";
-styleInject(css_248z$9);
-
 function WebsitePlaceholder(props) {
     return (React__default["default"].createElement("div", { className: 'background', style: { background: props.colorCodeBackground } },
         React__default["default"].createElement("div", { className: 'header', style: { background: props.colorCodeHeader } }),
@@ -93377,16 +93296,10 @@ function WebsitePlaceholder(props) {
                 React__default["default"].createElement("div", { className: 'inside-background-second', style: { background: props.colorCodecardTwo } })))));
 }
 
-var css_248z$8 = "";
-styleInject(css_248z$8);
-
 function Loader(_a) {
     var loading = _a.loading;
     return (React__default["default"].createElement("div", { style: { display: loading ? 'unset' : 'none' }, className: 'loaderContainer' }));
 }
-
-var css_248z$7 = "";
-styleInject(css_248z$7);
 
 function BookingBillingInfoCard(props) {
     var roomName = props.roomName, actualPrice = props.actualPrice, discountPrice = props.discountPrice, handleConfirmClick = props.handleConfirmClick;
@@ -93431,9 +93344,6 @@ function BookingBillingInfoCard(props) {
                     React__default["default"].createElement("button", { onClick: handleConfirmClick }, "Confirm"))))));
 }
 
-var css_248z$6 = "";
-styleInject(css_248z$6);
-
 function BookingEngineHeader(props) {
     var hotelFname = props.hotelFname, hotelLname = props.hotelLname, onLogoClick = props.onLogoClick, onHotelClick = props.onHotelClick, onAboutUsClick = props.onAboutUsClick, onContactClick = props.onContactClick, handleSignIn = props.handleSignIn;
     return (React__default["default"].createElement("div", { className: 'bookingEngineHeaderContainer' },
@@ -93446,9 +93356,6 @@ function BookingEngineHeader(props) {
             React__default["default"].createElement("span", { className: "heading", onClick: onContactClick }, "Contact"),
             React__default["default"].createElement("button", { className: 'btn-signin', onClick: handleSignIn }, "Sign In"))));
 }
-
-var css_248z$5 = "";
-styleInject(css_248z$5);
 
 function BookingEngineBanner(props) {
     var handleSearchClick = props.handleSearchClick, onCheckinChange = props.onCheckinChange, onCheckoutChange = props.onCheckoutChange;
@@ -93477,9 +93384,6 @@ function BookingEngineBanner(props) {
                     } })),
             React__default["default"].createElement("button", { onClick: handleSearchClick }, "Search"))));
 }
-
-var css_248z$4 = "";
-styleInject(css_248z$4);
 
 function BookingEngineSearch(props) {
     var roomnames = props.roomnames, onCheckboxChange = props.onCheckboxChange, onPriceChange = props.onPriceChange, minPrice = props.minPrice, maxPrice = props.maxPrice;
@@ -93531,9 +93435,6 @@ function BookingEngineSearch(props) {
                     : true, min: minPrice, max: maxPrice, tooltipVisible: false, onChange: function (e) { return handlePriceChange(e); }, value: priceRange }, sliderStyles)),
                 React__default["default"].createElement("div", { className: "min-max-price" }, "$ ".concat(priceRange[0], " - $ ").concat(priceRange[1]))))));
 }
-
-var css_248z$3 = "";
-styleInject(css_248z$3);
 
 var DefaultContext = {
   color: undefined,
@@ -93655,9 +93556,6 @@ function RoomList(props) {
             React__default["default"].createElement("button", { onClick: handleBookNow, className: "btn-booking" }, "BOOK NOW"))));
 }
 
-var css_248z$2 = "";
-styleInject(css_248z$2);
-
 var ReservationSummary = function (props) {
     var checkinDay = props.checkinDay, checkindate = props.checkindate, checkinMonth = props.checkinMonth, checkinYear = props.checkinYear, checkinTime = props.checkinTime, stayLength = props.stayLength, checkoutDay = props.checkoutDay, checkoutdate = props.checkoutdate, checkoutMonth = props.checkoutMonth, checkoutYear = props.checkoutYear, checkoutTime = props.checkoutTime, roomName = props.roomName, actualPrice = props.actualPrice, discountPrice = props.discountPrice, buttonName = props.buttonName, SelectionChange = props.SelectionChange, onBooknow = props.onBooknow;
     var price = actualPrice - discountPrice;
@@ -93749,9 +93647,6 @@ var ReservationSummary = function (props) {
                 React__default["default"].createElement("div", { className: "btn-confirm" },
                     React__default["default"].createElement("button", { onClick: onBooknow }, buttonName))))));
 };
-
-var css_248z$1 = "";
-styleInject(css_248z$1);
 
 function PreBookingDetail(props) {
     var Roomname = props.Roomname, Leftroom = props.Leftroom, Rating = props.Rating, Review = props.Review, Guest = props.Guest, onCheckinChange = props.onCheckinChange, onCheckoutChange = props.onCheckoutChange, onSelectAdult = props.onSelectAdult, onSelectKids = props.onSelectKids, onSwitchChange = props.onSwitchChange;
@@ -93849,9 +93744,6 @@ function PreBookingDetail(props) {
                     } }, "I am booking for someone else")))));
 }
 
-var css_248z = "";
-styleInject(css_248z);
-
 // THIS FILE IS AUTO GENERATED
 function TiTick (props) {
   return GenIcon({"tag":"svg","attr":{"version":"1.2","baseProfile":"tiny","viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"d":"M16.972 6.251c-.967-.538-2.185-.188-2.72.777l-3.713 6.682-2.125-2.125c-.781-.781-2.047-.781-2.828 0-.781.781-.781 2.047 0 2.828l4 4c.378.379.888.587 1.414.587l.277-.02c.621-.087 1.166-.46 1.471-1.009l5-9c.537-.966.189-2.183-.776-2.72z"}}]})(props);
@@ -93914,6 +93806,8 @@ var PostBookingDetail = function (props) {
                     React__default["default"].createElement(Input$2, { id: "Booking Number", defaultValue: bookingNum, style: { width: "200px", height: "36px", backgroundColor: '#ffffff', color: '#000' }, disabled: true }))))));
 };
 
+var App = function () { return React__default["default"].createElement("div", { className: "bg-red-400 text-white p-4" }, "Checkbox"); };
+
 exports.Alert = Alert;
 exports.BookingBillingInfoCard = BookingBillingInfoCard;
 exports.BookingEngineBanner = BookingEngineBanner;
@@ -93923,6 +93817,7 @@ exports.BookingEngineSearch = BookingEngineSearch;
 exports.BookingForm = BookingForm;
 exports.Button = Button$1;
 exports.Calander = Calander;
+exports.Checkbox = App;
 exports.ColorPicker = ColorPicker;
 exports.DLS = DLS;
 exports.DocumentsModal = DocumentsModal;

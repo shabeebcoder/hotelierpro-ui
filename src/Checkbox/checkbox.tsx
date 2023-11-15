@@ -6,6 +6,6 @@ const onChange = (e: CheckboxChangeEvent) => {
     console.log(`checked = ${e.target.checked}`);
 };
 
-const App: React.FC = () => <Checkbox onChange={onChange}>Checkbox</Checkbox>;
+const App: React.FC = () => <div className="bg-red-400 text-white p-4" >Checkbox</div>;
 
 export default App;

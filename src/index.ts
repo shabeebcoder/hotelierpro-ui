@@ -1,3 +1,4 @@
+import "./styles.css";
 import { Button } from './Buttons';
 import { Alert } from './Alert';
 import { Login } from './Login';
@@ -26,6 +27,7 @@ import { BookingEngineRoomList } from './roomList';
 import { ReservationSummary } from './reservationSummary';
 import { PreBookingDetails } from './preBookingDetail';
 import { PostBookingDetails } from './postBookingDetail';
+import {Checkbox} from "./Checkbox"
 
 export {
     Button,
@@ -57,7 +59,8 @@ export {
     BookingEngineRoomList,
     ReservationSummary,
     PreBookingDetails,
-    PostBookingDetails
+    PostBookingDetails,
+    Checkbox
     
 
 };

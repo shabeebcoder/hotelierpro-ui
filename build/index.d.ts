@@ -1,3 +1,4 @@
+import "./styles.css";
 import { Button } from './Buttons';
 import { Alert } from './Alert';
 import { Login } from './Login';
@@ -26,4 +27,5 @@ import { BookingEngineRoomList } from './roomList';
 import { ReservationSummary } from './reservationSummary';
 import { PreBookingDetails } from './preBookingDetail';
 import { PostBookingDetails } from './postBookingDetail';
-export { Button, DLS, Alert, Login, Register, RoomTypesForm, Rooms, Tables, RoomList, Tabs, SideBar, TopbarNavigation, Calander, BookingForm, Modals, Invoice, ColorPicker, DocumentsModal, WebsitePlaceholder, InvoiceListTable, Loader, User, BookingBillingInfoCard, BookingEngineHeader, BookingEngineBanner, BookingEngineSearch, BookingEngineRoomList, ReservationSummary, PreBookingDetails, PostBookingDetails };
+import { Checkbox } from "./Checkbox";
+export { Button, DLS, Alert, Login, Register, RoomTypesForm, Rooms, Tables, RoomList, Tabs, SideBar, TopbarNavigation, Calander, BookingForm, Modals, Invoice, ColorPicker, DocumentsModal, WebsitePlaceholder, InvoiceListTable, Loader, User, BookingBillingInfoCard, BookingEngineHeader, BookingEngineBanner, BookingEngineSearch, BookingEngineRoomList, ReservationSummary, PreBookingDetails, PostBookingDetails, Checkbox };

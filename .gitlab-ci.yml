@@ -37,7 +37,7 @@ deploy:
         - mkdir -p ~/.ssh
         - chmod 700 ~/.ssh
     script:
-         - ssh -o StrictHostKeyChecking=no root@172.105.58.58 "cd /hotelierPro/ui-library && docker-compose -f docker-compose.stage.yml down && docker-compose -f docker-compose.stage.yml pull && docker-compose -f docker-compose.stage.yml up -d"
+         - ssh -o StrictHostKeyChecking=no root@172.232.113.23 "cd /hotelierPro/ui-library && docker-compose -f docker-compose-stage.yml down && docker-compose -f docker-compose-stage.yml pull && docker-compose -f docker-compose-stage.yml up -d"
     only:
     - tags
 

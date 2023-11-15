@@ -3,7 +3,7 @@ import React from "react"
 import HotelierSelect from "./select"
 
 export default {
-    title: 'elements/select'
+    title: 'elements-v2/select'
 }
 
 

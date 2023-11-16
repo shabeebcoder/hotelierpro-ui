@@ -222,14 +222,8 @@ function AddPersonForm() {
                         <Textarea placeholder="Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." />
                     </div>
                     <div className="flex gap-4 mt-4">
-                        <Button className="capitalize">
+                        <Button className="capitalize" type="submit">
                             create new person
-                        </Button>
-                        <Button
-                            className="capitalize border-primary"
-                            variant="outline"
-                        >
-                            cancel
                         </Button>
                     </div>
                 </form>

@@ -12,19 +12,20 @@ function AddRoomType({onsubmit}) {
 
 
   return (
-    <div>
+    <div className="hidden h-full flex-1 flex-col space-y-3 p-8 md:flex">
       <div className="flex items-center justify-between space-y-2">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight">Add New Room Type </h2>
+          <h2 className="text-2xl font-bold tracking-tight">Add New Room Information </h2>
           <p className="text-muted-foreground">
+
             This form is used to input essential details about the rooms available within your hotel or property. Accurate and complete information is crucial for efficient room management and an improved guest experience. Please fill out the following fields with the relevant information for each room.
           </p>
         </div>
+
       </div>
-      <Separator />
       <div>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onsubmit)}>
+          <form onSubmit={form.handleSubmit(onsubmit)} className="space-y-8">
             <FormField
               control={form.control}
               name="room_type_name"
@@ -37,6 +38,9 @@ function AddRoomType({onsubmit}) {
                   <FormControl>
                     <Input {...field}/>
                   </FormControl>
+                  <FormDescription>
+                  Please enter a unique name for the room. It may contain letters, numbers, and spaces. Avoid special characters or symbols.                                            </FormDescription>
+                  <FormMessage />
                 </FormItem>
               )}
               />
@@ -52,6 +56,9 @@ function AddRoomType({onsubmit}) {
                   <FormControl>
                     <Input type='number' {...field} />
                   </FormControl>
+                  <FormDescription>
+                  Specify the maximum number of individuals allowed in this room. Please consider factors such as room size, safety regulations, and comfort.                                            </FormDescription>
+                  <FormMessage />
                 </FormItem>
               )}
               />
@@ -67,6 +74,10 @@ function AddRoomType({onsubmit}) {
                   <FormControl>
                     <Input type='number' {...field} />
                   </FormControl>
+                  <FormDescription>
+                  Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations.
+                  </FormDescription>
+                  <FormMessage />
                 </FormItem>
               )}
               />
@@ -82,14 +93,16 @@ function AddRoomType({onsubmit}) {
                   <FormControl>
                     <Input type='number' {...field} />
                   </FormControl>
+                  <FormDescription>
+                  Specify the standard price for a single use of this room for regular purposes.
+                  </FormDescription>
+                  <FormMessage />
                 </FormItem>
               )}
               />
-          </form>
-            <div className='pt-2'>
               <Button type="submit">Create new room</Button>&nbsp;&nbsp;&nbsp;
               <Button variant="secondary" type="submit">Cancel room</Button>
-            </div>
+          </form>
         </Form>
       </div>
     </div>

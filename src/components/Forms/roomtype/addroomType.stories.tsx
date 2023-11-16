@@ -12,5 +12,6 @@ export default {
 export const AddRoomTypeExample = (args) => <AddRoomType {...args} />
 
 AddRoomTypeExample.args = {
-    onsublubmit : (data)=> alert(JSON.stringify(data))
+    onsubmit : (data)=> alert(JSON.stringify(data))
+    
 }

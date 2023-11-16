@@ -15,13 +15,15 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFieldArray, useForm } from 'react-hook-form';
 
-function AddPersonForm() {
-    const form = useForm({});
+function AddPersonForm(onSubmit, values, type) {
+    const form = useForm({
+        defaultValues: type === 'create' ? {} : values,
+    });
 
     return (
         <>
             <h2 className="text-2xl font-bold tracking-tight capitalize">
-                add new person
+                {type === 'create' ? 'add new person' : 'update person'}
             </h2>
             <p className="text-muted-foreground">
                 This form is designed for entering vital details about
@@ -223,7 +225,9 @@ function AddPersonForm() {
                     </div>
                     <div className="flex gap-4 mt-4">
                         <Button className="capitalize" type="submit">
-                            create new person
+                            {type === 'create'
+                                ? 'create new person'
+                                : 'update person'}
                         </Button>
                     </div>
                 </form>

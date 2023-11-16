@@ -1,12 +1,16 @@
-import React from 'react'
-import AddPersonForm from "./addperson";
-
+import React from 'react';
+import AddPersonForm from './addperson';
 
 export default {
-    title : "hotelierPro/Form/AddPersonForm"
-}
+    title: 'hotelierPro/Form/AddPersonForm',
+};
 
+export const AddpersonFormSample = (args) => <AddPersonForm {...args} />;
 
-export const AddpersonFormSample = (args) => <AddPersonForm  {...args} />
+const sampleData = { fullName: 'Akshay' };
 
-AddpersonFormSample.args={}
+AddpersonFormSample.args = {
+    onSubmit: (data) => alert(JSON.stringify(data)),
+    values: sampleData,
+    type: 'create',
+};

@@ -800,6 +800,22 @@ body {
   margin-top: 1rem;
 }
 
+.ml-\[5rem\] {
+  margin-left: 5rem;
+}
+
+.ml-\[6\.5rem\] {
+  margin-left: 6.5rem;
+}
+
+.ml-\[7rem\] {
+  margin-left: 7rem;
+}
+
+.ml-\[7\.25rem\] {
+  margin-left: 7.25rem;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -1064,6 +1080,22 @@ body {
   width: max-content;
 }
 
+.w-\[15rem\] {
+  width: 15rem;
+}
+
+.w-\[20rem\] {
+  width: 20rem;
+}
+
+.w-\[17rem\] {
+  width: 17rem;
+}
+
+.w-\[25rem\] {
+  width: 25rem;
+}
+
 .min-w-\[12rem\] {
   min-width: 12rem;
 }
@@ -1087,6 +1119,22 @@ body {
 
 .max-w-xs {
   max-width: 20rem;
+}
+
+.max-w-\[15rem\] {
+  max-width: 15rem;
+}
+
+.max-w-\[10rem\] {
+  max-width: 10rem;
+}
+
+.max-w-\[13rem\] {
+  max-width: 13rem;
+}
+
+.max-w-\[30rem\] {
+  max-width: 30rem;
 }
 
 .flex-1 {
@@ -1651,6 +1699,11 @@ body {
   line-height: 1rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1665,6 +1718,10 @@ body {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 .italic {

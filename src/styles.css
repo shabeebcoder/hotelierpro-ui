@@ -923,6 +923,10 @@ body {
   height: 1px;
 }
 
+.h-11 {
+  height: 2.75rem;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -1083,6 +1087,10 @@ body {
 .max-w-max {
   max-width: -moz-max-content;
   max-width: max-content;
+}
+
+.max-w-sm {
+  max-width: 24rem;
 }
 
 .max-w-xs {
@@ -2570,6 +2578,10 @@ body {
 
   .sm\:mt-0 {
     margin-top: 0px;
+  }
+
+  .sm\:flex {
+    display: flex;
   }
 
   .sm\:max-w-\[425px\] {

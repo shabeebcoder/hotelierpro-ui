@@ -4,7 +4,8 @@ import { Label } from '../../../elements/Label/label'
 import { Button } from '../../../elements/Buttons/buttons'
 import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage, Form } from '../../../elements/Form/form'
 import { useFieldArray, useForm } from "react-hook-form"
-import {Separator} from '../../../elements/Separator/seperator'
+
+
 function AddRoomType({onsubmit}) {
 
   
@@ -15,7 +16,7 @@ function AddRoomType({onsubmit}) {
     <div className="hidden h-full flex-1 flex-col space-y-3 p-8 md:flex">
       <div className="flex items-center justify-between space-y-2">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight">Add New Room Information </h2>
+          <h2 className="text-2xl font-bold tracking-tight">Add New Type Room Information </h2>
           <p className="text-muted-foreground">
 
             This form is used to input essential details about the rooms available within your hotel or property. Accurate and complete information is crucial for efficient room management and an improved guest experience. Please fill out the following fields with the relevant information for each room.

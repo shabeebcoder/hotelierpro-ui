@@ -23,7 +23,6 @@ import {
 import { format } from 'date-fns';
 
 function MaintenanceAlertForm({ onSubmitHandler }) {
-
     const [dateFrom, setDateFrom] = React.useState<Date>();
     const [dateTo, setDateTo] = React.useState<Date>();
     const form = useForm();
@@ -55,18 +54,20 @@ function MaintenanceAlertForm({ onSubmitHandler }) {
                                                     variant={'outline'}
                                                     className={cn(
                                                         'w-[240px] justify-start text-left font-normal',
-                                                        !field.value && 'text-muted-foreground'
+                                                        !field.value &&
+                                                            'text-muted-foreground'
                                                     )}
                                                 >
                                                     <CalendarIcon className="mr-2 h-4 w-4" />
 
                                                     {field.value ? (
-                                                        format(field.value, "PPP")
+                                                        format(
+                                                            field.value,
+                                                            'PPP'
+                                                        )
                                                     ) : (
                                                         <span>Pick a date</span>
                                                     )}
-
-
                                                 </Button>
                                             </PopoverTrigger>
                                             <PopoverContent
@@ -77,17 +78,13 @@ function MaintenanceAlertForm({ onSubmitHandler }) {
                                                     mode="single"
                                                     selected={field.value}
                                                     onSelect={field.onChange}
-
                                                     initialFocus
                                                 />
                                             </PopoverContent>
                                         </Popover>
-
-
                                     </FormItem>
                                 )}
                             />
-
                         </div>
                         <div>
                             <FormField
@@ -102,18 +99,20 @@ function MaintenanceAlertForm({ onSubmitHandler }) {
                                                     variant={'outline'}
                                                     className={cn(
                                                         'w-[240px] justify-start text-left font-normal',
-                                                        !field.value && 'text-muted-foreground'
+                                                        !field.value &&
+                                                            'text-muted-foreground'
                                                     )}
                                                 >
                                                     <CalendarIcon className="mr-2 h-4 w-4" />
 
                                                     {field.value ? (
-                                                        format(field.value, "PPP")
+                                                        format(
+                                                            field.value,
+                                                            'PPP'
+                                                        )
                                                     ) : (
                                                         <span>Pick a date</span>
                                                     )}
-
-
                                                 </Button>
                                             </PopoverTrigger>
                                             <PopoverContent
@@ -124,13 +123,10 @@ function MaintenanceAlertForm({ onSubmitHandler }) {
                                                     mode="single"
                                                     selected={field.value}
                                                     onSelect={field.onChange}
-
                                                     initialFocus
                                                 />
                                             </PopoverContent>
                                         </Popover>
-
-
                                     </FormItem>
                                 )}
                             />

@@ -15,7 +15,7 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFieldArray, useForm } from 'react-hook-form';
 
-function AddPersonForm(onSubmit, values, type) {
+function AddPersonForm({ onSubmit, values, type }) {
     const form = useForm({
         defaultValues: type === 'create' ? {} : values,
     });
@@ -36,7 +36,7 @@ function AddPersonForm(onSubmit, values, type) {
             <br />
             <Form {...form}>
                 <form
-                    onSubmit={form.handleSubmit(() => alert('done'))}
+                    onSubmit={form.handleSubmit(onSubmit)}
                     className="space-y-8"
                 >
                     <FormField
@@ -224,7 +224,7 @@ function AddPersonForm(onSubmit, values, type) {
                         <Textarea placeholder="Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." />
                     </div>
                     <div className="flex gap-4 mt-4">
-                        <Button className="capitalize" type="submit">
+                        <Button className="capitalize">
                             {type === 'create'
                                 ? 'create new person'
                                 : 'update person'}

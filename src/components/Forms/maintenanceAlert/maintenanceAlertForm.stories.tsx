@@ -2,7 +2,7 @@ import React from 'react';
 import MaintenanceAlertForm from './maintenanceAlertForm';
 
 export default {
-    title: 'hotelierPro/Form/maintenance-alert-form',
+    title: 'hotelierPro/Form/MaintenanceAlertForm',
 };
 
 export const maintenanceAlertFormExample = (args) => (

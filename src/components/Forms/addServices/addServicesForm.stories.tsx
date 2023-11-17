@@ -5,8 +5,9 @@ export default {
     title: 'hotelierPro/Form/AddServicesForm',
 };
 
-export const AddServicesFormExample = (args) => <AddServicesForm {...args} />;
-AddServicesForm.args = {
+export const addServicesFormExample = (args) => <AddServicesForm {...args} />;
+
+addServicesFormExample.args = {
     onSubmit: (data) => alert(JSON.stringify(data)),
     selectValues: [
         { label: 'Food', value: 'food' },

@@ -22,12 +22,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useFieldArray, useForm } from 'react-hook-form';
 
 function AddServicesForm({ onSubmit, selectValues }) {
-    console.log(selectValues);
     const arr = [
         { label: 'Food', value: 'food' },
         { label: 'Cleaning', value: 'cleaning' },
     ];
-    const form = useForm({});
+    const form = useForm();
     return (
         <>
             <h2 className="text-2xl font-bold tracking-tight capitalize">
@@ -72,29 +71,39 @@ function AddServicesForm({ onSubmit, selectValues }) {
                             </FormItem>
                         )}
                     />
-                    <div>
-                        <Label>Service Category</Label>
-                        <Select>
-                            <SelectTrigger>
-                                <SelectValue placeholder="Select the preferred service category" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                {arr.map((item, pos) => {
-                                    return (
-                                        <SelectItem
-                                            key={pos}
-                                            value={item.value}
-                                        >
-                                            {item.label}
-                                        </SelectItem>
-                                    );
-                                })}
-                            </SelectContent>
-                        </Select>
-                    </div>
-                    <Button className="capitalize" type="submit">
-                        add service
-                    </Button>
+                    <FormField
+                        control={form.control}
+                        name="serviceCategory"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Service Category</FormLabel>
+                                <Select
+                                    onValueChange={field.onChange}
+                                    defaultValue={field.value}
+                                >
+                                    <FormControl>
+                                        <SelectTrigger>
+                                            <SelectValue placeholder="Select preferred service category" />
+                                        </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent>
+                                        {selectValues.map((item, pos) => {
+                                            return (
+                                                <SelectItem
+                                                    key={pos}
+                                                    value={item.value}
+                                                >
+                                                    {item.label}
+                                                </SelectItem>
+                                            );
+                                        })}
+                                    </SelectContent>
+                                </Select>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <Button className="capitalize">add service</Button>
                 </form>
             </Form>
         </>

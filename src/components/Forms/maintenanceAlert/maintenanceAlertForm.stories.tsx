@@ -5,10 +5,10 @@ export default {
     title: 'hotelierPro/Form/maintenance-alert-form',
 };
 
-export const MaintenanceAlertFormExample = (args) => (
+export const maintenanceAlertFormExample = (args) => (
     <MaintenanceAlertForm {...args} />
 );
 
-MaintenanceAlertForm.args = {
-    onSubmit: (data) => alert(JSON.stringify(data)),
+maintenanceAlertFormExample.args = {
+    onSubmitHandler: (data) => alert(JSON.stringify(data)),
 };

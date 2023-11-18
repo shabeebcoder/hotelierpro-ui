@@ -66,7 +66,8 @@ import { textArea } from "./elements/TextArea"
 import { toasts as toast } from "./elements/Toast"
 import { toggle } from "./elements/Toggle"
 import { toggleGroup } from "./elements/Toggle-group"
-import {toolTip} from "./elements/Tool-tip"
+import { toolTip } from "./elements/Tool-tip"
+import {hotelierpro} from "./components"
 
 export {
     Button,
@@ -136,6 +137,7 @@ export {
     toast,
     toggle,
     toggleGroup,
-    toolTip
+    toolTip,
+    hotelierpro
 };
 

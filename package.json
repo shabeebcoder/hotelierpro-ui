@@ -1,6 +1,6 @@
 {
     "name": "hotelier-lib",
-    "version": "2.5.8",
+    "version": "2.5.9",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "files": [
@@ -142,6 +142,7 @@
         "date-fns": "^2.30.0",
         "loadash": "^1.0.0",
         "lucide-react": "^0.292.0",
+        "node-modules": "^1.0.1",
         "postcss": "^8.4.31",
         "react-big-calendar": "^1.8.2",
         "react-day-picker": "^8.9.1",

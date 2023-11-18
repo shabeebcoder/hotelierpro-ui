@@ -11,17 +11,25 @@ import {
     SelectTrigger,
     SelectValue,
   } from "../../../elements/Select/select"
-function AddRooms() {
-    const form = useForm({})
+function AddRooms(onsubmit, defaultValue ,type) {
+  const form = useForm({
+    defaultValues: type === "create" ? {} : defaultValue
+});
   return (
     <div>
       <div className="hidden h-full flex-1 flex-col space-y-3 p-8 md:flex">
       <div className="flex items-center justify-between space-y-2">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight">Add New Rooms</h2>
+          <h2 className="text-2xl font-bold tracking-tight capitalize">
+            {type === "create" ? "  add new person" : "Update Person" }
+          </h2>
           <p className="text-muted-foreground">
-
-            This form is used to input essential details about the rooms available within your hotel or property. Accurate and complete information is crucial for efficient room management and an improved guest experience. Please fill out the following fields with the relevant information for each room.
+            This form is designed for entering vital details about
+            individuals associated with your hotel or property. Providing
+            accurate and comprehensive information is essential for
+            effective person management and enhancing overall guest
+            experiences. Kindly complete the following fields with the
+            pertinent details for each person.
           </p>
         </div>
 

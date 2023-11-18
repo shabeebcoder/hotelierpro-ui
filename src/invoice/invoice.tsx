@@ -3,6 +3,7 @@ import "./styles.css";
 
 
 
+
 function Invoice(props) {
     const {amount} = props;
     return (

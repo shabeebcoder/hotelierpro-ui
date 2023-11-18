@@ -1,6 +1,7 @@
 import React from 'react'
 import "./edit.css";
-
+import { DatePickerInput } from '@mantine/dates';
+import { TextInput } from '@mantine/core';
 
 
 function Invoice(props) {
@@ -28,13 +29,9 @@ function Invoice(props) {
 
 
                 <div className="invo_details_edit">
-                    <div className="invo_number_edit"><p>INV-20230723-2</p></div>
-                    <div className="invo_date"> <p> 07/23/2023</p> <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 10 12" fill="none">
-                    <path d="M9.15203 3.51758H8.31498C8.25806 3.51758 8.20449 3.54548 8.171 3.59124L5.00025 7.96178L1.82949 3.59124C1.796 3.54548 1.74243 3.51758 1.68551 3.51758H0.84846C0.775916 3.51758 0.733505 3.60017 0.775916 3.65932L4.71118 9.08454C4.85404 9.28097 5.14645 9.28097 5.28819 9.08454L9.22346 3.65932C9.26699 3.60017 9.22458 3.51758 9.15203 3.51758Z" fill="white"/>
-                    </svg></div>
-                    <div className="invo_due_date"><p>09/23/2023</p><svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 10 12" fill="none">
-                    <path d="M9.15203 3.51758H8.31498C8.25806 3.51758 8.20449 3.54548 8.171 3.59124L5.00025 7.96178L1.82949 3.59124C1.796 3.54548 1.74243 3.51758 1.68551 3.51758H0.84846C0.775916 3.51758 0.733505 3.60017 0.775916 3.65932L4.71118 9.08454C4.85404 9.28097 5.14645 9.28097 5.28819 9.08454L9.22346 3.65932C9.26699 3.60017 9.22458 3.51758 9.15203 3.51758Z" fill="white"/>
-                    </svg></div>
+                    <div className="invo_number_edit">INV-20230723-2 </div>
+                    <div className="invo_date"> <DatePickerInput placeholder='Billing Date' className='date_input'/></div>
+                    <div className="invo_due_date">  <DatePickerInput placeholder='Due Date' className='date_inpu2'/>  </div>
                 </div>
                 
 
@@ -47,16 +44,16 @@ function Invoice(props) {
                 <div className="bill_to_address_container">
                     <h3>Bill To :</h3>
                     <div className="billing_address_editable">
-                        <div className="billing_name_editable"><p>Donna</p></div>
-                        <div className="billing_address_full_editable"></div>
+                        <div className="billing_name_editable"> <TextInput placeholder='Name'/> </div>
+                        <div className="billing_address_full_editable"><TextInput placeholder='Address'/> </div>
                     </div>
                 </div>
                 
                 <div className="bill_from_address_container">
                     <h3>Bill From :</h3>
                     <div className="billing_address_editable">
-                        <div className="billing_name_editable"></div>
-                        <div className="billing_address_full_editable"></div>
+                        <div className="billing_name_editable"><TextInput placeholder='Name'/></div>
+                        <div className="billing_address_full_editable"><TextInput placeholder='Address'/> </div>
                     </div>
                 </div>
 
@@ -81,38 +78,38 @@ function Invoice(props) {
                             <div className="table">
                             <tr className='first_column'>
                                 <td className='td1'>1</td>
-                                <div className="td2_editable"></div>
-                                <td className='td2'>Accommodation in room “Room 2 Double room”, 1 person(s), 5 Night(s)</td>
-                                <div className="td3_editable"></div>
-                                <td className='td3'>$ 88</td>
-                                <div className="td4_editable"></div>
-                                <td className='td4'>5</td>
-                                <div className="td5_editable"></div>
-                                <td className='td5'>$ 440.00</td>
+                                <div className="td2_editable"><TextInput placeholder=''/></div>
+                                {/* <td className='td2'>Accommodation in room “Room 2 Double room”, 1 person(s), 5 Night(s)</td> */}
+                                <div className="td3_editable"> <TextInput/> </div>
+                                {/* <td className='td3'>$ 88</td> */}
+                                <div className="td4_editable"><TextInput/></div>
+                                {/* <td className='td4'>5</td> */}
+                                <div className="td5_editable"> <TextInput/> </div>
+                                {/* <td className='td5'>$ 440.00</td> */}
                                 
                             </tr>
                             <tr className='second_column'>
                                 <td className='td6'>2</td>
-                                <div className="td7_editable"></div>
-                                <td className='td7'>Message</td>
-                                <div className="td8_editable"></div>
-                                <td className='td8'>$ 20</td>
-                                <div className="td9_editable"></div>
-                                <td className='td9'>1</td>
-                                <div className="td10_editable"></div>
-                                <td className='td10'>$ 20.00</td>
+                                <div className="td7_editable"><TextInput/></div>
+                                {/* <td className='td7'>Message</td> */}
+                                <div className="td8_editable"><TextInput/></div>
+                                {/* <td className='td8'>$ 20</td> */}
+                                <div className="td9_editable"><TextInput/></div>
+                                {/* <td className='td9'>1</td> */}
+                                <div className="td10_editable"><TextInput/></div>
+                                {/* <td className='td10'>$ 20.00</td> */}
                                 
                             </tr>
                             <tr className='third_column'>
                                 <td className='td11'>3</td>
-                                <div className="td12_editable"></div>
-                                <td className='td12'>Beef Steak</td>
-                                <div className="td13_editable"></div>
-                                <td className='td13'>$ 16</td>
-                                <div className="td14_editable"></div>
-                                <td className='td14'>1</td>
-                                <div className="td15_editable"></div>
-                                <td className='td15'>$ 16.00</td>
+                                <div className="td12_editable"><TextInput/></div>
+                                {/* <td className='td12'>Beef Steak</td> */}
+                                <div className="td13_editable"><TextInput/></div>
+                                {/* <td className='td13'>$ 16</td> */}
+                                <div className="td14_editable"><TextInput/></div>
+                                {/* <td className='td14'>1</td> */}
+                                <div className="td15_editable"><TextInput/></div>
+                                {/* <td className='td15'>$ 16.00</td> */}
                                 
                             </tr>
 
@@ -130,8 +127,8 @@ function Invoice(props) {
 
                                     <tr>
                                     <td className='city_tax'>City Tax</td>
-                                    <div className="tax_price_editable"></div>
-                                    <td className='tax_price'>$ 1</td>
+                                    <div className="tax_price_editable"><TextInput/></div>
+                                    {/* <td className='tax_price'>$ 1</td> */}
                                     <td className='total_tax_price'>$ 1.00</td>
                                     </tr>
 
@@ -141,22 +138,22 @@ function Invoice(props) {
 
                                     <tr>
                                     <td className='rooms1'>Rooms</td>
-                                    <div className="rooms_percentage1_editable"></div>
-                                    <td className='Percentage_1'>20 %</td>
+                                    <div className="rooms_percentage1_editable"><TextInput/></div>
+                                    {/* <td className='Percentage_1'>20 %</td> */}
                                     <td className='rooms_price'>$ 73.33</td>
                                     </tr>
 
                                     <tr>
                                     <td className='GS'>General Services</td>
-                                    <div className="GS_percentage1_editable"></div>
-                                    <td className='Percentage_2'>20 %</td>
+                                    <div className="GS_percentage1_editable"><TextInput/></div>
+                                    {/* <td className='Percentage_2'>20 %</td> */}
                                     <td className='GS_price'>$ 3.33</td>
                                     </tr>
 
                                     <tr>
                                     <td className='Food'>Food</td>
-                                    <div className="food_percentage1_editable"></div>
-                                    <td className='Percentage_3'>20 %</td>
+                                    <div className="food_percentage1_editable"><TextInput/></div>
+                                    {/* <td className='Percentage_3'>20 %</td> */}
                                     <td className='food_price'>$ 2.50</td>
                                     </tr>
 
@@ -170,8 +167,8 @@ function Invoice(props) {
 
                                     <tr>
                                     <td className='paid_total'>Paid</td>
-                                    <div className="paid_total_editable"></div>
-                                    <td className='paid_total_price'>$ 000.00</td>
+                                    <div className="paid_total_editable"> <TextInput/></div>
+                                    {/* <td className='paid_total_price'>$ 000.00</td> */}
                                     </tr>
 
                                     <div className="line_3"></div>
@@ -185,8 +182,8 @@ function Invoice(props) {
                                 </table>
 
                                 <div className="notes">
-                                    <div className="rectangle"></div>
-                                    <p>Notes...</p>
+                                    <div className="rectangle"><TextInput placeholder='Notes...'/></div>
+                                    {/* <p>Notes...</p> */}
                                 </div>
                                 
                                 

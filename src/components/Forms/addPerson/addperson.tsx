@@ -15,20 +15,16 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFieldArray, useForm } from 'react-hook-form';
 
-function AddPersonForm({ onSubmit, defaultValue , type}) {
+function AddPersonForm({ onSubmit, values, type }) {
     const form = useForm({
-        defaultValues: type === "create" ? {} : defaultValue
+        defaultValues: type === 'create' ? {} : values,
     });
-
-    
 
     return (
         <>
             <h2 className="text-2xl font-bold tracking-tight capitalize">
-              {type === "create" ? "  add new person" : "Update Person" }
+                {type === 'create' ? 'add new person' : 'update person'}
             </h2>
-       
-          
             <p className="text-muted-foreground">
                 This form is designed for entering vital details about
                 individuals associated with your hotel or property. Providing
@@ -229,13 +225,9 @@ function AddPersonForm({ onSubmit, defaultValue , type}) {
                     </div>
                     <div className="flex gap-4 mt-4">
                         <Button className="capitalize">
-                            create new person
-                        </Button>
-                        <Button
-                            className="capitalize border-primary"
-                            variant="outline"
-                        >
-                            cancel
+                            {type === 'create'
+                                ? 'create new person'
+                                : 'update person'}
                         </Button>
                     </div>
                 </form>
@@ -244,4 +236,4 @@ function AddPersonForm({ onSubmit, defaultValue , type}) {
     );
 }
 
-export default AddPersonForm
+export default AddPersonForm;

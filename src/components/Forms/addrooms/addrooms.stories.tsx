@@ -9,7 +9,7 @@ export default {
 
 export const AddRoomFormExample = (args) => <AddRooms {...args} />
 const sampleUpdateData = {
-    fullName: "shabeeb",
+    Username: "shabeeb",
     companyId: "shabeeb"
 }
 

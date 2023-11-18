@@ -70,8 +70,8 @@ function AddRooms() {
                 </FormItem>
               )}
             />
-                <Label htmlFor="picture">Upload Image</Label>
             <div className="grid sm:flex w-full max-w-sm items-center gap-1.5">
+                <Label htmlFor="picture">Upload Image</Label>
                 <Input id="picture" type="file" />
                 <img className='w-35 h-11' src="https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="" />
                 <img className='w-33 h-11' src="https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="" />

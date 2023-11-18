@@ -851,6 +851,10 @@ body {
   height: 2.5rem;
 }
 
+.h-11 {
+  height: 2.75rem;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -921,10 +925,6 @@ body {
 
 .h-px {
   height: 1px;
-}
-
-.h-11 {
-  height: 2.75rem;
 }
 
 .max-h-96 {

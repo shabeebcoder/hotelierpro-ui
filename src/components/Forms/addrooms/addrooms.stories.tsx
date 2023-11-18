@@ -6,4 +6,15 @@ export default {
 }
 
 
-export const CreateServiceFormExample = (args) => <AddRooms {...args} />
+
+export const AddRoomFormExample = (args) => <AddRooms {...args} />
+const sampleUpdateData = {
+    fullName: "shabeeb",
+    companyId: "shabeeb"
+}
+
+AddRoomFormExample.args = {
+    onSubmit: (data) => alert(JSON.stringify(data)),
+    defaultValue: sampleUpdateData,
+    type: "create"
+}

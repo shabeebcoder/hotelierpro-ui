@@ -1023,6 +1023,10 @@ body {
   width: 100px;
 }
 
+.w-\[15rem\] {
+  width: 15rem;
+}
+
 .w-\[180px\] {
   width: 180px;
 }
@@ -1681,6 +1685,10 @@ body {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .capitalize {

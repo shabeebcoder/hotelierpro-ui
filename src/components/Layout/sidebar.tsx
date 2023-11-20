@@ -2,13 +2,13 @@ import React from 'react'
 import { cn } from "../../utils";
 import { Button } from "../../elements/Buttons/buttons";
 import { ScrollArea } from "../../elements/Scroll Area/scrollarea"
-// import { usealert } from "react-router-dom";
 
 
 
 
 
-export function Sidebar({ className,  navigate }: any) {
+
+export function Sidebar({ className, navigate  }:any) {
 
 
   const routesConfig: any = {
@@ -32,7 +32,7 @@ export function Sidebar({ className,  navigate }: any) {
             Overview
           </h2>
           <div className="space-y-1">
-            <Button variant="secondary" className="w-full justify-start" onClick={() => alert(routesConfig.dashboardOverview)}>
+            <Button variant="secondary" className="w-full justify-start" onClick={() => navigate(routesConfig.dashboardOverview)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -50,7 +50,7 @@ export function Sidebar({ className,  navigate }: any) {
             </Button>
             <Button variant="ghost" className="w-full justify-start"
 
-              onClick={() => alert(routesConfig.overViewFrontDesk)}
+              onClick={() => navigate(routesConfig.overViewFrontDesk)}
 
             >
               <svg
@@ -71,7 +71,7 @@ export function Sidebar({ className,  navigate }: any) {
               Front-Desk
             </Button>
             <Button variant="ghost" className="w-full justify-start"
-              onClick={() => alert(routesConfig.overViewBilling)}
+              onClick={() => navigate(routesConfig.overViewBilling)}
             >
 
               <svg
@@ -96,7 +96,7 @@ export function Sidebar({ className,  navigate }: any) {
           </h2>
           <div className="space-y-1">
             <Button variant="ghost" className="w-full justify-start"
-              onClick={() => alert(routesConfig.roomsPage)}
+              onClick={() => navigate(routesConfig.roomsPage)}
             >
 
               <svg
@@ -114,7 +114,7 @@ export function Sidebar({ className,  navigate }: any) {
               Rooms
             </Button>
             <Button variant="ghost" className="w-full justify-start"
-              onClick={() => alert(routesConfig.servicePage)}
+              onClick={() => navigate(routesConfig.servicePage)}
             >
 
               <svg
@@ -132,7 +132,7 @@ export function Sidebar({ className,  navigate }: any) {
               </svg>
               Services
             </Button>
-            <Button variant="ghost" className="w-full justify-start" onClick={() => alert(routesConfig.guestPage)}>
+            <Button variant="ghost" className="w-full justify-start" onClick={() => navigate(routesConfig.guestPage)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -157,7 +157,7 @@ export function Sidebar({ className,  navigate }: any) {
           </h2>
           <div className="space-y-1">
             <Button variant="ghost" className="w-full justify-start"
-              onClick={() => alert(routesConfig.reportsBookings)}
+              onClick={() => navigate(routesConfig.reportsBookings)}
             >
 
               <svg
@@ -175,7 +175,7 @@ export function Sidebar({ className,  navigate }: any) {
               Bookings
             </Button>
             <Button variant="ghost" className="w-full justify-start"
-              onClick={() => alert(routesConfig.reportsFinancials)}
+              onClick={() => navigate(routesConfig.reportsFinancials)}
             >
 
               <svg
@@ -193,7 +193,7 @@ export function Sidebar({ className,  navigate }: any) {
               Financials
             </Button>
             <Button variant="ghost" className="w-full justify-start"
-              onClick={() => alert(routesConfig.reportsHouseKeeping)}
+              onClick={() => navigate(routesConfig.reportsHouseKeeping)}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +210,7 @@ export function Sidebar({ className,  navigate }: any) {
               Housekeeping
             </Button>
             <Button variant="ghost" className="w-full justify-start"
-              onClick={() => alert(routesConfig.reportsnightAudit)}
+              onClick={() => navigate(routesConfig.reportsnightAudit)}
             >
 
               <svg

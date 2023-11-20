@@ -70,6 +70,7 @@ import { toolTip } from "./elements/Tool-tip"
 import { hotelierpro } from "./components"
 import MaintainanceForm from "./components/Forms/maintenanceAlert/maintenanceAlertForm"
 import Layout from "./components/Layout/layout";
+import Dashboard from "./components/dashboard/dashboard"
 
 export {
     Button,
@@ -142,6 +143,7 @@ export {
     toolTip,
     hotelierpro,
     MaintainanceForm,
-    Layout
+    Layout,
+    Dashboard
 };
 

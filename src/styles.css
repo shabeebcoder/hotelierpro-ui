@@ -1334,16 +1334,16 @@ body {
   border-radius: calc(var(--radius) - 2px);
 }
 
+.rounded-none {
+  border-radius: 0px;
+}
+
 .rounded-sm {
   border-radius: calc(var(--radius) - 4px);
 }
 
 .rounded-xl {
   border-radius: 0.75rem;
-}
-
-.rounded-none {
-  border-radius: 0px;
 }
 
 .rounded-tl-sm {
@@ -1599,6 +1599,10 @@ body {
   padding-bottom: 1.5rem;
 }
 
+.pb-12 {
+  padding-bottom: 3rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -1633,10 +1637,6 @@ body {
 
 .pt-2 {
   padding-top: 0.5rem;
-}
-
-.pb-12 {
-  padding-bottom: 3rem;
 }
 
 .text-left {
@@ -2714,26 +2714,26 @@ body {
     width: 600px;
   }
 
-  .lg\:grid-cols-\[\.75fr_1fr\] {
-    grid-template-columns: .75fr 1fr;
-  }
-
   .lg\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-\[\.75fr_1fr\] {
+    grid-template-columns: .75fr 1fr;
   }
 
   .lg\:border-l {
     border-left-width: 1px;
   }
 
-  .lg\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   .lg\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .lg\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 

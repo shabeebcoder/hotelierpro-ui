@@ -1,3 +1,4 @@
+import React from 'react'
 import { cn } from "../../utils";
 import { Button } from "../../elements/Buttons/buttons";
 import { ScrollArea } from "../../elements/Scroll Area/scrollarea"
@@ -7,8 +8,8 @@ import { ScrollArea } from "../../elements/Scroll Area/scrollarea"
 
 
 
-export function Sidebar({ className,  }: any) {
-//   const alert = usealert();
+export function Sidebar({ className,  navigate }: any) {
+
 
   const routesConfig: any = {
     roomsPage: "/management/rooms",

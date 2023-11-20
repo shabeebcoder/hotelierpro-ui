@@ -69,6 +69,7 @@ import { toggleGroup } from "./elements/Toggle-group"
 import { toolTip } from "./elements/Tool-tip"
 import { hotelierpro } from "./components"
 import MaintainanceForm from "./components/Forms/maintenanceAlert/maintenanceAlertForm"
+import Layout from "./components/Layout/layout";
 
 export {
     Button,
@@ -140,6 +141,7 @@ export {
     toggleGroup,
     toolTip,
     hotelierpro,
-    MaintainanceForm
+    MaintainanceForm,
+    Layout
 };
 

@@ -67,7 +67,8 @@ import { toasts as toast } from "./elements/Toast"
 import { toggle } from "./elements/Toggle"
 import { toggleGroup } from "./elements/Toggle-group"
 import { toolTip } from "./elements/Tool-tip"
-import {hotelierpro} from "./components"
+import { hotelierpro } from "./components"
+import MaintainanceForm from "./components/Forms/maintenanceAlert/maintenanceAlertForm"
 
 export {
     Button,
@@ -138,6 +139,7 @@ export {
     toggle,
     toggleGroup,
     toolTip,
-    hotelierpro
+    hotelierpro,
+    MaintainanceForm
 };
 

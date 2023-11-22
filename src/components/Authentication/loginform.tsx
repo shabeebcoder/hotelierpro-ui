@@ -27,7 +27,7 @@ export function UserAuthForm({ className, onSubmit, isLoading,  ...props }: User
                         <Input
                             {...register("username")}
                             id="username"
-                            placeholder="username"
+                            placeholder="Email"
                             type="email"
                             autoCapitalize="none"
                             autoComplete="email"
@@ -42,7 +42,7 @@ export function UserAuthForm({ className, onSubmit, isLoading,  ...props }: User
                         <Input
                             {...register("password")}
                             id="password"
-                            placeholder="password"
+                            placeholder="Password"
                             type="password"
                             autoCapitalize="none"
                             autoComplete="email"
@@ -73,9 +73,9 @@ export function UserAuthForm({ className, onSubmit, isLoading,  ...props }: User
                 {isLoading ? (
                     <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                 ) : (
-                    <Icons.gitHub className="mr-2 h-4 w-4" />
+                    <Icons.google className="mr-2 h-4 w-4" />
                 )}{" "}
-                Github
+                Google
             </Button>
         </div>
     )

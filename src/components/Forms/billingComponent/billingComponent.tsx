@@ -100,7 +100,7 @@ function BillingComponent({ onSubmit, selectValues }) {
                                     </FormItem>
                                 )}
                             />
-                            <Button className="w-[15rem]">+ Add person</Button>
+                            <Button className="w-[10rem]">+ Add person</Button>
                         </CardHeader>
                         <CardContent>
                             <Table>

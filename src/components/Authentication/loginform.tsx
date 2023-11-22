@@ -27,7 +27,7 @@ export function UserAuthForm({ className, onSubmit, isLoading,  ...props }: User
                         <Input
                             {...register("username")}
                             id="username"
-                            placeholder="Email"
+                            placeholder="username"
                             type="email"
                             autoCapitalize="none"
                             autoComplete="email"
@@ -42,7 +42,7 @@ export function UserAuthForm({ className, onSubmit, isLoading,  ...props }: User
                         <Input
                             {...register("password")}
                             id="password"
-                            placeholder="Password"
+                            placeholder="password"
                             type="password"
                             autoCapitalize="none"
                             autoComplete="email"
@@ -75,7 +75,7 @@ export function UserAuthForm({ className, onSubmit, isLoading,  ...props }: User
                 ) : (
                     <Icons.google className="mr-2 h-4 w-4" />
                 )}{" "}
-                Google
+                Github
             </Button>
         </div>
     )

@@ -22,5 +22,6 @@ export const LoginExample = (args) => <Login {...args} />
 
 LoginExample.args = {
     isLoading: false,
-    onSubmit : (data) => alert(JSON.stringify(data))
+    onSubmit: (data) => alert(JSON.stringify(data))
+    
 }

@@ -4,6 +4,7 @@ import AuthenticationPage from "./components/Authentication/login";
 import { ToastAction } from "./elements/Toast/toast";
 import { useToast } from "./elements/Toast/use-toast";
 import { Toaster } from "./elements/Toast/toaster";
+import UserSignupPage from "./components/Authentication/signup";
 // import { Alert } from './Alert';
 // import { Login } from './Login';
 // import { Register } from './Signup';
@@ -151,7 +152,8 @@ export {
     AuthenticationPage,
     ToastAction,
     useToast,
-    Toaster
+    Toaster,
+    UserSignupPage
     // Dashboard
 };
 

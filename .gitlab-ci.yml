@@ -1,6 +1,8 @@
 stages:
     - build
+    - test
     - deployment
+    - report
 
 build:
     stage: build
@@ -26,6 +28,13 @@ build:
         - docker logout
     only:
     - tags
+test:
+    stage: test
+    script:
+        - echo "Testing completed"
+    only:
+    - tags
+
 
 deploy:
     stage: deployment
@@ -38,6 +47,12 @@ deploy:
         - chmod 700 ~/.ssh
     script:
          - ssh -o StrictHostKeyChecking=no root@172.232.113.23 "cd /hotelierPro/ui-library && docker-compose -f docker-compose-stage.yml down && docker-compose -f docker-compose-stage.yml pull && docker-compose -f docker-compose-stage.yml up -d"
+    only:
+    - tags
+report:
+    stage: report
+    script:
+        - echo "report ssuccesfully sent"
     only:
     - tags
 

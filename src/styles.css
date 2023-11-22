@@ -758,6 +758,10 @@ body {
   grid-row: span 3 / span 3;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .-mx-1 {
   margin-left: -0.25rem;
   margin-right: -0.25rem;
@@ -845,6 +849,14 @@ body {
 
 .mt-auto {
   margin-top: auto;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .line-clamp-2 {
@@ -968,6 +980,10 @@ body {
 
 .h-px {
   height: 1px;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .max-h-96 {
@@ -1223,6 +1239,10 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+.scroll-m-20 {
+  scroll-margin: 5rem;
 }
 
 .list-none {
@@ -2078,6 +2098,10 @@ body {
 
 .placeholder\:text-muted-foreground::placeholder {
   color: hsl(var(--muted-foreground));
+}
+
+.first\:mt-0:first-child {
+  margin-top: 0px;
 }
 
 .focus-within\:relative:focus-within {

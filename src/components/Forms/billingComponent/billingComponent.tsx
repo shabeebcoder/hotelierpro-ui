@@ -41,6 +41,26 @@ import { useFieldArray, useForm } from 'react-hook-form';
 
 function BillingComponent({ onSubmit, selectValues }) {
     const form = useForm();
+    const invoices = [
+        {
+            invoice: 'INV001',
+            paymentStatus: 'Paid',
+            totalAmount: '$250.00',
+            paymentMethod: 'Credit Card',
+        },
+        {
+            invoice: 'INV002',
+            paymentStatus: 'Pending',
+            totalAmount: '$150.00',
+            paymentMethod: 'PayPal',
+        },
+        {
+            invoice: 'INV003',
+            paymentStatus: 'Unpaid',
+            totalAmount: '$350.00',
+            paymentMethod: 'Bank Transfer',
+        },
+    ];
     return (
         <>
             <Form {...form}>
@@ -49,12 +69,13 @@ function BillingComponent({ onSubmit, selectValues }) {
                     className="space-y-8 mt-8"
                 >
                     <Card>
-                        <CardHeader className="flex">
+                        <CardHeader className="flex justify-between">
                             <FormField
                                 control={form.control}
                                 name="paymentBy"
+                                rules={{ required: true }}
                                 render={({ field }) => (
-                                    <FormItem>
+                                    <FormItem className="w-[10rem]">
                                         <FormLabel>Payment by</FormLabel>
                                         <Select
                                             onValueChange={field.onChange}
@@ -89,8 +110,9 @@ function BillingComponent({ onSubmit, selectValues }) {
                             <FormField
                                 control={form.control}
                                 name="payer"
+                                rules={{ required: true }}
                                 render={({ field }) => (
-                                    <FormItem>
+                                    <FormItem className="w-[10rem]">
                                         <FormLabel>Payer</FormLabel>
                                         <FormControl>
                                             <Input placeholder="" {...field} />
@@ -100,7 +122,7 @@ function BillingComponent({ onSubmit, selectValues }) {
                                     </FormItem>
                                 )}
                             />
-                            <Button className="w-[10rem]">+ Add person</Button>
+                            <Button className="w-[6rem]">+ Add person</Button>
                         </CardHeader>
                         <CardContent>
                             <Table>
@@ -109,7 +131,7 @@ function BillingComponent({ onSubmit, selectValues }) {
                                         <TableHead className="uppercase">
                                             si
                                         </TableHead>
-                                        <TableHead>Room</TableHead>
+                                        <TableHead>Room 1 Single</TableHead>
                                         <TableHead className="uppercase">
                                             cost
                                         </TableHead>
@@ -121,19 +143,72 @@ function BillingComponent({ onSubmit, selectValues }) {
                                         </TableHead>
                                     </TableRow>
                                 </TableHeader>
-                                <TableBody></TableBody>
+                                <TableBody>
+                                    {invoices.map((item, pos) => (
+                                        <TableRow key={pos}>
+                                            <TableCell className="w-[10%]">
+                                                {pos}
+                                            </TableCell>
+                                            <TableCell>
+                                                <Input value={item.invoice} />
+                                            </TableCell>
+                                            <TableCell>
+                                                <Input
+                                                    value={item.paymentStatus}
+                                                    className="w-[50%]"
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <Input
+                                                    value={item.paymentMethod}
+                                                    className="w-[50%]"
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <Input
+                                                    value={item.totalAmount}
+                                                    className="w-[50%]"
+                                                />
+                                            </TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
                                 <TableFooter>
+                                    <TableRow className="py-4">
+                                        <TableCell>
+                                            <Button>+ Add Service</Button>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Button>+ New Service</Button>
+                                        </TableCell>
+                                    </TableRow>
                                     <TableRow>
-                                        <TableCell colSpan={3}>Total</TableCell>
-                                        <TableCell className="text-right">
-                                            $2,500.00
+                                        <TableCell colSpan={4}>Total</TableCell>
+                                        <TableCell>$999</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell colSpan={4}>Paid</TableCell>
+                                        <TableCell>
+                                            <Input value="000" />
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell colSpan={4}>
+                                            Amount Due
+                                        </TableCell>
+                                        <TableCell className="text-red-500">
+                                            $250.00
                                         </TableCell>
                                     </TableRow>
                                 </TableFooter>
                             </Table>
                         </CardContent>
-                        <CardFooter>
-                            <p>Card Footer</p>
+                        <CardFooter className="flex justify-between">
+                            <div className="space-x-4">
+                                <Button>Save</Button>
+                                <Button>Cancel</Button>
+                            </div>
+                            <Button>Save & create invoice</Button>
                         </CardFooter>
                     </Card>
                 </form>

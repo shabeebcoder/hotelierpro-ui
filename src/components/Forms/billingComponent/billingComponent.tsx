@@ -66,79 +66,86 @@ function BillingComponent({ onSubmit, selectValues }) {
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-8 mt-8"
+                    className="space-y-8"
                 >
                     <Card>
-                        <CardHeader className="flex justify-between">
-                            <FormField
-                                control={form.control}
-                                name="paymentBy"
-                                rules={{ required: true }}
-                                render={({ field }) => (
-                                    <FormItem className="w-[10rem]">
-                                        <FormLabel>Payment by</FormLabel>
-                                        <Select
-                                            onValueChange={field.onChange}
-                                            defaultValue={field.value}
-                                        >
+                        <CardHeader>
+                            <div className="flex justify-between items-center px-8 w-[30rem]">
+                                <FormField
+                                    control={form.control}
+                                    name="paymentBy"
+                                    rules={{ required: true }}
+                                    render={({ field }) => (
+                                        <FormItem className="w-[10rem]">
+                                            <FormLabel>Payment by</FormLabel>
+                                            <Select
+                                                onValueChange={field.onChange}
+                                                defaultValue={field.value}
+                                            >
+                                                <FormControl>
+                                                    <SelectTrigger>
+                                                        <SelectValue />
+                                                    </SelectTrigger>
+                                                </FormControl>
+                                                <SelectContent>
+                                                    {selectValues.map(
+                                                        (item, pos) => {
+                                                            return (
+                                                                <SelectItem
+                                                                    key={pos}
+                                                                    value={
+                                                                        item.value
+                                                                    }
+                                                                >
+                                                                    {item.label}
+                                                                </SelectItem>
+                                                            );
+                                                        }
+                                                    )}
+                                                </SelectContent>
+                                            </Select>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                <FormField
+                                    control={form.control}
+                                    name="payer"
+                                    rules={{ required: true }}
+                                    render={({ field }) => (
+                                        <FormItem className="w-[10rem]">
+                                            <FormLabel>Payer</FormLabel>
                                             <FormControl>
-                                                <SelectTrigger>
-                                                    <SelectValue />
-                                                </SelectTrigger>
+                                                <Input
+                                                    placeholder=""
+                                                    {...field}
+                                                />
                                             </FormControl>
-                                            <SelectContent>
-                                                {selectValues.map(
-                                                    (item, pos) => {
-                                                        return (
-                                                            <SelectItem
-                                                                key={pos}
-                                                                value={
-                                                                    item.value
-                                                                }
-                                                            >
-                                                                {item.label}
-                                                            </SelectItem>
-                                                        );
-                                                    }
-                                                )}
-                                            </SelectContent>
-                                        </Select>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="payer"
-                                rules={{ required: true }}
-                                render={({ field }) => (
-                                    <FormItem className="w-[10rem]">
-                                        <FormLabel>Payer</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="" {...field} />
-                                        </FormControl>
-                                        <FormDescription></FormDescription>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <Button className="w-[6rem]">+ Add person</Button>
+                                            <FormDescription></FormDescription>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                <Button className="w-[6rem]">
+                                    + Add person
+                                </Button>
+                            </div>
                         </CardHeader>
                         <CardContent>
                             <Table>
                                 <TableHeader>
                                     <TableRow>
-                                        <TableHead className="uppercase">
+                                        <TableHead className="uppercase text-center w-[2rem]">
                                             si
                                         </TableHead>
                                         <TableHead>Room 1 Single</TableHead>
-                                        <TableHead className="uppercase">
+                                        <TableHead className="uppercase text-center w-[7rem]">
                                             cost
                                         </TableHead>
-                                        <TableHead className="uppercase">
+                                        <TableHead className="uppercase text-center w-[7rem]">
                                             qty
                                         </TableHead>
-                                        <TableHead className="uppercase">
+                                        <TableHead className="uppercase text-center w-[7rem]">
                                             price
                                         </TableHead>
                                     </TableRow>
@@ -146,28 +153,31 @@ function BillingComponent({ onSubmit, selectValues }) {
                                 <TableBody>
                                     {invoices.map((item, pos) => (
                                         <TableRow key={pos}>
-                                            <TableCell className="w-[10%]">
-                                                {pos}
-                                            </TableCell>
-                                            <TableCell>
-                                                <Input value={item.invoice} />
-                                            </TableCell>
+                                            <TableCell>{pos}</TableCell>
                                             <TableCell>
                                                 <Input
-                                                    value={item.paymentStatus}
-                                                    className="w-[50%]"
+                                                    placeholder={item.invoice}
                                                 />
                                             </TableCell>
                                             <TableCell>
                                                 <Input
-                                                    value={item.paymentMethod}
-                                                    className="w-[50%]"
+                                                    placeholder={
+                                                        item.paymentStatus
+                                                    }
                                                 />
                                             </TableCell>
                                             <TableCell>
                                                 <Input
-                                                    value={item.totalAmount}
-                                                    className="w-[50%]"
+                                                    placeholder={
+                                                        item.paymentMethod
+                                                    }
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <Input
+                                                    placeholder={
+                                                        item.totalAmount
+                                                    }
                                                 />
                                             </TableCell>
                                         </TableRow>
@@ -183,17 +193,20 @@ function BillingComponent({ onSubmit, selectValues }) {
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
-                                        <TableCell colSpan={4}>Total</TableCell>
+                                        <TableCell colSpan={2}></TableCell>
+                                        <TableCell colSpan={2}>Total</TableCell>
                                         <TableCell>$999</TableCell>
                                     </TableRow>
                                     <TableRow>
-                                        <TableCell colSpan={4}>Paid</TableCell>
+                                        <TableCell colSpan={2}></TableCell>
+                                        <TableCell colSpan={2}>Paid</TableCell>
                                         <TableCell>
-                                            <Input value="000" />
+                                            <Input placeholder="000" />
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
-                                        <TableCell colSpan={4}>
+                                        <TableCell colSpan={2}></TableCell>
+                                        <TableCell colSpan={2}>
                                             Amount Due
                                         </TableCell>
                                         <TableCell className="text-red-500">

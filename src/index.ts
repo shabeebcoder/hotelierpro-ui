@@ -6,6 +6,7 @@ import { useToast } from "./elements/Toast/use-toast";
 import { Toaster } from "./elements/Toast/toaster";
 import UserSignupPage from "./components/Authentication/signup";
 import VerificationPage from "./components/Authentication/verify-account"
+import ResetPasswordPage from "./components/Authentication/reset-password";
 // import { Alert } from './Alert';
 // import { Login } from './Login';
 // import { Register } from './Signup';
@@ -155,7 +156,8 @@ export {
     useToast,
     Toaster,
     UserSignupPage,
-    VerificationPage
+    VerificationPage,
+    ResetPasswordPage
     // Dashboard
 };
 

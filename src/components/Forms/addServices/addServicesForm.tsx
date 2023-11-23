@@ -74,6 +74,7 @@ function AddServicesForm({ onSubmit, selectValues }) {
                     <FormField
                         control={form.control}
                         name="serviceCategory"
+                        rules={{ required: true }}
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Service Category</FormLabel>

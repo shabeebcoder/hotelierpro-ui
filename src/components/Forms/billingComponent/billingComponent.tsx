@@ -153,31 +153,93 @@ function BillingComponent({ onSubmit, selectValues }) {
                                 <TableBody>
                                     {invoices.map((item, pos) => (
                                         <TableRow key={pos}>
-                                            <TableCell>{pos}</TableCell>
+                                            <TableCell>{pos + 1}</TableCell>
                                             <TableCell>
-                                                <Input
-                                                    placeholder={item.invoice}
+                                                <FormField
+                                                    control={form.control}
+                                                    rules={{ required: true }}
+                                                    name={`${item.invoice}${pos}`}
+                                                    render={({ field }) => (
+                                                        <FormItem className="w-[10rem]">
+                                                            <FormLabel></FormLabel>
+                                                            <FormControl>
+                                                                <Input
+                                                                    placeholder={
+                                                                        item.invoice
+                                                                    }
+                                                                    {...field}
+                                                                />
+                                                            </FormControl>
+                                                            <FormDescription></FormDescription>
+                                                            <FormMessage />
+                                                        </FormItem>
+                                                    )}
                                                 />
                                             </TableCell>
                                             <TableCell>
-                                                <Input
-                                                    placeholder={
-                                                        item.paymentStatus
-                                                    }
+                                                <FormField
+                                                    control={form.control}
+                                                    rules={{ required: true }}
+                                                    name={`${item.paymentMethod}${pos}`}
+                                                    render={({ field }) => (
+                                                        <FormItem className="w-[10rem]">
+                                                            <FormLabel></FormLabel>
+                                                            <FormControl>
+                                                                <Input
+                                                                    placeholder={
+                                                                        item.paymentStatus
+                                                                    }
+                                                                    {...field}
+                                                                />
+                                                            </FormControl>
+                                                            <FormDescription></FormDescription>
+                                                            <FormMessage />
+                                                        </FormItem>
+                                                    )}
                                                 />
                                             </TableCell>
                                             <TableCell>
-                                                <Input
-                                                    placeholder={
-                                                        item.paymentMethod
-                                                    }
+                                                <FormField
+                                                    control={form.control}
+                                                    rules={{ required: true }}
+                                                    name={`${item.paymentMethod}${pos}`}
+                                                    render={({ field }) => (
+                                                        <FormItem className="w-[10rem]">
+                                                            <FormLabel></FormLabel>
+                                                            <FormControl>
+                                                                <Input
+                                                                    placeholder={
+                                                                        item.paymentMethod
+                                                                    }
+                                                                    {...field}
+                                                                />
+                                                            </FormControl>
+                                                            <FormDescription></FormDescription>
+                                                            <FormMessage />
+                                                        </FormItem>
+                                                    )}
                                                 />
                                             </TableCell>
                                             <TableCell>
-                                                <Input
-                                                    placeholder={
-                                                        item.totalAmount
-                                                    }
+                                                <FormField
+                                                    control={form.control}
+                                                    rules={{ required: true }}
+                                                    name={`${item.totalAmount}${pos}`}
+                                                    render={({ field }) => (
+                                                        <FormItem className="w-[10rem]">
+                                                            <FormLabel></FormLabel>
+                                                            <FormControl>
+                                                                <Input
+                                                                    placeholder={
+                                                                        item.totalAmount
+                                                                    }
+                                                                    {...field}
+                                                                />
+                                                            </FormControl>
+                                                            <FormDescription></FormDescription>
+                                                            <FormMessage />
+                                                        </FormItem>
+                                                    )}
                                                 />
                                             </TableCell>
                                         </TableRow>
@@ -189,7 +251,9 @@ function BillingComponent({ onSubmit, selectValues }) {
                                             <Button>+ Add Service</Button>
                                         </TableCell>
                                         <TableCell>
-                                            <Button>+ New Service</Button>
+                                            <Button variant="outline">
+                                                + New Service
+                                            </Button>
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>

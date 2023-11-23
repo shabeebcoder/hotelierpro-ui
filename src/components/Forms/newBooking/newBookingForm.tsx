@@ -20,16 +20,6 @@ import {
     SelectTrigger,
     SelectValue,
 } from '../../../elements/Select/select';
-import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableFooter,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from '../../../elements/Table/table';
 import { Calendar } from '../../../elements/Calendar/calendar';
 import { CalendarIcon } from 'lucide-react';
 import {
@@ -441,7 +431,7 @@ export default function NewBookingForm({
                     <div className="col-span-full">
                         <FormField
                             control={form.control}
-                            name="Notes"
+                            name="notes"
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel className="flex justify-between items-center">

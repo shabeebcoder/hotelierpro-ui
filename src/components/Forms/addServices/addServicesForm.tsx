@@ -22,10 +22,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useFieldArray, useForm } from 'react-hook-form';
 
 function AddServicesForm({ onSubmit, selectValues }) {
-    const arr = [
-        { label: 'Food', value: 'food' },
-        { label: 'Cleaning', value: 'cleaning' },
-    ];
     const form = useForm();
     return (
         <>

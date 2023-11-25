@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
-var ReactDOM = require('react-dom');
+var $7SXl2$reactdom = require('react-dom');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -25,10 +25,10 @@ function _interopNamespace(e) {
   return Object.freeze(n);
 }
 
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var React__namespace = /*#__PURE__*/_interopNamespace(React);
-var ReactDOM__default = /*#__PURE__*/_interopDefaultLegacy(ReactDOM);
-var ReactDOM__namespace = /*#__PURE__*/_interopNamespace(ReactDOM);
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var $7SXl2$reactdom__default = /*#__PURE__*/_interopDefaultLegacy($7SXl2$reactdom);
+var $7SXl2$reactdom__namespace = /*#__PURE__*/_interopNamespace($7SXl2$reactdom);
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -56,7 +56,7 @@ var __assign$1 = function() {
   return __assign$1.apply(this, arguments);
 };
 
-function __rest$8(s, e) {
+function __rest$1(s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
       t[p] = s[p];
@@ -83,68 +83,6 @@ typeof SuppressedError === "function" ? SuppressedError : function (error, suppr
   return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
 };
 
-function createCommonjsModule(fn) {
-  var module = { exports: {} };
-	return fn(module, module.exports), module.exports;
-}
-
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-var classnames = createCommonjsModule(function (module) {
-/* global define */
-
-(function () {
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
-
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else {
-		window.classNames = classNames;
-	}
-}());
-});
-
 function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -161,9048 +99,148 @@ function _extends() {
 }
 
 /**
- * @license React
- * react-is.production.min.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-var b=Symbol.for("react.element"),c=Symbol.for("react.portal"),d=Symbol.for("react.fragment"),e=Symbol.for("react.strict_mode"),f=Symbol.for("react.profiler"),g=Symbol.for("react.provider"),h=Symbol.for("react.context"),k$1=Symbol.for("react.server_context"),l=Symbol.for("react.forward_ref"),m=Symbol.for("react.suspense"),n=Symbol.for("react.suspense_list"),p=Symbol.for("react.memo"),q=Symbol.for("react.lazy"),t=Symbol.for("react.offscreen"),u;u=Symbol.for("react.module.reference");
-function v(a){if("object"===typeof a&&null!==a){var r=a.$$typeof;switch(r){case b:switch(a=a.type,a){case d:case f:case e:case m:case n:return a;default:switch(a=a&&a.$$typeof,a){case k$1:case h:case l:case q:case p:case g:return a;default:return r}}case c:return r}}}var ContextConsumer=h;var ContextProvider=g;var Element$1=b;var ForwardRef=l;var Fragment=d;var Lazy=q;var Memo=p;var Portal=c;var Profiler=f;var StrictMode=e;var Suspense=m;
-var SuspenseList=n;var isAsyncMode=function(){return !1};var isConcurrentMode=function(){return !1};var isContextConsumer=function(a){return v(a)===h};var isContextProvider=function(a){return v(a)===g};var isElement$1=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===b};var isForwardRef=function(a){return v(a)===l};var isFragment$1=function(a){return v(a)===d};var isLazy=function(a){return v(a)===q};var isMemo=function(a){return v(a)===p};
-var isPortal=function(a){return v(a)===c};var isProfiler=function(a){return v(a)===f};var isStrictMode=function(a){return v(a)===e};var isSuspense=function(a){return v(a)===m};var isSuspenseList=function(a){return v(a)===n};
-var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===d||a===f||a===e||a===m||a===n||a===t||"object"===typeof a&&null!==a&&(a.$$typeof===q||a.$$typeof===p||a.$$typeof===g||a.$$typeof===h||a.$$typeof===l||a.$$typeof===u||void 0!==a.getModuleId)?!0:!1};var typeOf=v;
-
-var reactIs_production_min = {
-	ContextConsumer: ContextConsumer,
-	ContextProvider: ContextProvider,
-	Element: Element$1,
-	ForwardRef: ForwardRef,
-	Fragment: Fragment,
-	Lazy: Lazy,
-	Memo: Memo,
-	Portal: Portal,
-	Profiler: Profiler,
-	StrictMode: StrictMode,
-	Suspense: Suspense,
-	SuspenseList: SuspenseList,
-	isAsyncMode: isAsyncMode,
-	isConcurrentMode: isConcurrentMode,
-	isContextConsumer: isContextConsumer,
-	isContextProvider: isContextProvider,
-	isElement: isElement$1,
-	isForwardRef: isForwardRef,
-	isFragment: isFragment$1,
-	isLazy: isLazy,
-	isMemo: isMemo,
-	isPortal: isPortal,
-	isProfiler: isProfiler,
-	isStrictMode: isStrictMode,
-	isSuspense: isSuspense,
-	isSuspenseList: isSuspenseList,
-	isValidElementType: isValidElementType,
-	typeOf: typeOf
-};
-
+ * Set a given ref to a given value
+ * This utility takes care of different types of refs: callback refs and RefObject(s)
+ */ function $6ed0406888f73fc4$var$setRef$1(ref, value) {
+    if (typeof ref === 'function') ref(value);
+    else if (ref !== null && ref !== undefined) ref.current = value;
+}
 /**
- * @license React
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var reactIs_development = createCommonjsModule(function (module, exports) {
-
-if (process.env.NODE_ENV !== "production") {
-  (function() {
-
-// ATTENTION
-// When adding new symbols to this file,
-// Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
-// The Symbol used to tag the ReactElement-like types.
-var REACT_ELEMENT_TYPE = Symbol.for('react.element');
-var REACT_PORTAL_TYPE = Symbol.for('react.portal');
-var REACT_FRAGMENT_TYPE = Symbol.for('react.fragment');
-var REACT_STRICT_MODE_TYPE = Symbol.for('react.strict_mode');
-var REACT_PROFILER_TYPE = Symbol.for('react.profiler');
-var REACT_PROVIDER_TYPE = Symbol.for('react.provider');
-var REACT_CONTEXT_TYPE = Symbol.for('react.context');
-var REACT_SERVER_CONTEXT_TYPE = Symbol.for('react.server_context');
-var REACT_FORWARD_REF_TYPE = Symbol.for('react.forward_ref');
-var REACT_SUSPENSE_TYPE = Symbol.for('react.suspense');
-var REACT_SUSPENSE_LIST_TYPE = Symbol.for('react.suspense_list');
-var REACT_MEMO_TYPE = Symbol.for('react.memo');
-var REACT_LAZY_TYPE = Symbol.for('react.lazy');
-var REACT_OFFSCREEN_TYPE = Symbol.for('react.offscreen');
-
-// -----------------------------------------------------------------------------
-
-var enableScopeAPI = false; // Experimental Create Event Handle API.
-var enableCacheElement = false;
-var enableTransitionTracing = false; // No known bugs, but needs performance testing
-
-var enableLegacyHidden = false; // Enables unstable_avoidThisFallback feature in Fiber
-// stuff. Intended to enable React core members to more easily debug scheduling
-// issues in DEV builds.
-
-var enableDebugTracing = false; // Track which Fiber(s) schedule render work.
-
-var REACT_MODULE_REFERENCE;
-
-{
-  REACT_MODULE_REFERENCE = Symbol.for('react.module.reference');
+ * A utility to compose multiple refs together
+ * Accepts callback refs and RefObject(s)
+ */ function $6ed0406888f73fc4$export$43e446d32b3d21af$1(...refs) {
+    return (node)=>refs.forEach((ref)=>$6ed0406888f73fc4$var$setRef$1(ref, node)
+        )
+    ;
 }
-
-function isValidElementType(type) {
-  if (typeof type === 'string' || typeof type === 'function') {
-    return true;
-  } // Note: typeof might be other than 'symbol' or 'number' (e.g. if it's a polyfill).
-
-
-  if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || enableDebugTracing  || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || enableLegacyHidden  || type === REACT_OFFSCREEN_TYPE || enableScopeAPI  || enableCacheElement  || enableTransitionTracing ) {
-    return true;
-  }
-
-  if (typeof type === 'object' && type !== null) {
-    if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || // This needs to include all possible module reference object
-    // types supported by any Flight configuration anywhere since
-    // we don't know which Flight build this will end up being used
-    // with.
-    type.$$typeof === REACT_MODULE_REFERENCE || type.getModuleId !== undefined) {
-      return true;
-    }
-  }
-
-  return false;
-}
-
-function typeOf(object) {
-  if (typeof object === 'object' && object !== null) {
-    var $$typeof = object.$$typeof;
-
-    switch ($$typeof) {
-      case REACT_ELEMENT_TYPE:
-        var type = object.type;
-
-        switch (type) {
-          case REACT_FRAGMENT_TYPE:
-          case REACT_PROFILER_TYPE:
-          case REACT_STRICT_MODE_TYPE:
-          case REACT_SUSPENSE_TYPE:
-          case REACT_SUSPENSE_LIST_TYPE:
-            return type;
-
-          default:
-            var $$typeofType = type && type.$$typeof;
-
-            switch ($$typeofType) {
-              case REACT_SERVER_CONTEXT_TYPE:
-              case REACT_CONTEXT_TYPE:
-              case REACT_FORWARD_REF_TYPE:
-              case REACT_LAZY_TYPE:
-              case REACT_MEMO_TYPE:
-              case REACT_PROVIDER_TYPE:
-                return $$typeofType;
-
-              default:
-                return $$typeof;
-            }
-
-        }
-
-      case REACT_PORTAL_TYPE:
-        return $$typeof;
-    }
-  }
-
-  return undefined;
-}
-var ContextConsumer = REACT_CONTEXT_TYPE;
-var ContextProvider = REACT_PROVIDER_TYPE;
-var Element = REACT_ELEMENT_TYPE;
-var ForwardRef = REACT_FORWARD_REF_TYPE;
-var Fragment = REACT_FRAGMENT_TYPE;
-var Lazy = REACT_LAZY_TYPE;
-var Memo = REACT_MEMO_TYPE;
-var Portal = REACT_PORTAL_TYPE;
-var Profiler = REACT_PROFILER_TYPE;
-var StrictMode = REACT_STRICT_MODE_TYPE;
-var Suspense = REACT_SUSPENSE_TYPE;
-var SuspenseList = REACT_SUSPENSE_LIST_TYPE;
-var hasWarnedAboutDeprecatedIsAsyncMode = false;
-var hasWarnedAboutDeprecatedIsConcurrentMode = false; // AsyncMode should be deprecated
-
-function isAsyncMode(object) {
-  {
-    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
-
-      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
-    }
-  }
-
-  return false;
-}
-function isConcurrentMode(object) {
-  {
-    if (!hasWarnedAboutDeprecatedIsConcurrentMode) {
-      hasWarnedAboutDeprecatedIsConcurrentMode = true; // Using console['warn'] to evade Babel and ESLint
-
-      console['warn']('The ReactIs.isConcurrentMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
-    }
-  }
-
-  return false;
-}
-function isContextConsumer(object) {
-  return typeOf(object) === REACT_CONTEXT_TYPE;
-}
-function isContextProvider(object) {
-  return typeOf(object) === REACT_PROVIDER_TYPE;
-}
-function isElement(object) {
-  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-}
-function isForwardRef(object) {
-  return typeOf(object) === REACT_FORWARD_REF_TYPE;
-}
-function isFragment(object) {
-  return typeOf(object) === REACT_FRAGMENT_TYPE;
-}
-function isLazy(object) {
-  return typeOf(object) === REACT_LAZY_TYPE;
-}
-function isMemo(object) {
-  return typeOf(object) === REACT_MEMO_TYPE;
-}
-function isPortal(object) {
-  return typeOf(object) === REACT_PORTAL_TYPE;
-}
-function isProfiler(object) {
-  return typeOf(object) === REACT_PROFILER_TYPE;
-}
-function isStrictMode(object) {
-  return typeOf(object) === REACT_STRICT_MODE_TYPE;
-}
-function isSuspense(object) {
-  return typeOf(object) === REACT_SUSPENSE_TYPE;
-}
-function isSuspenseList(object) {
-  return typeOf(object) === REACT_SUSPENSE_LIST_TYPE;
-}
-
-exports.ContextConsumer = ContextConsumer;
-exports.ContextProvider = ContextProvider;
-exports.Element = Element;
-exports.ForwardRef = ForwardRef;
-exports.Fragment = Fragment;
-exports.Lazy = Lazy;
-exports.Memo = Memo;
-exports.Portal = Portal;
-exports.Profiler = Profiler;
-exports.StrictMode = StrictMode;
-exports.Suspense = Suspense;
-exports.SuspenseList = SuspenseList;
-exports.isAsyncMode = isAsyncMode;
-exports.isConcurrentMode = isConcurrentMode;
-exports.isContextConsumer = isContextConsumer;
-exports.isContextProvider = isContextProvider;
-exports.isElement = isElement;
-exports.isForwardRef = isForwardRef;
-exports.isFragment = isFragment;
-exports.isLazy = isLazy;
-exports.isMemo = isMemo;
-exports.isPortal = isPortal;
-exports.isProfiler = isProfiler;
-exports.isStrictMode = isStrictMode;
-exports.isSuspense = isSuspense;
-exports.isSuspenseList = isSuspenseList;
-exports.isValidElementType = isValidElementType;
-exports.typeOf = typeOf;
-  })();
-}
-});
-
-var reactIs = createCommonjsModule(function (module) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = reactIs_production_min;
-} else {
-  module.exports = reactIs_development;
-}
-});
-
-function toArray(children) {
-  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var ret = [];
-  React__default["default"].Children.forEach(children, function (child) {
-    if ((child === undefined || child === null) && !option.keepEmpty) {
-      return;
-    }
-    if (Array.isArray(child)) {
-      ret = ret.concat(toArray(child));
-    } else if (reactIs.isFragment(child) && child.props) {
-      ret = ret.concat(toArray(child.props.children, option));
-    } else {
-      ret.push(child);
-    }
-  });
-  return ret;
-}
-
-/* eslint-disable no-console */
-var warned = {};
-var preWarningFns = [];
-
 /**
- * Pre warning enable you to parse content before console.error.
- * Modify to null will prevent warning.
- */
-var preMessage = function preMessage(fn) {
-  preWarningFns.push(fn);
-};
-function warning$3(valid, message) {
-  // Support uglify
-  if (process.env.NODE_ENV !== 'production' && !valid && console !== undefined) {
-    var finalMessage = preWarningFns.reduce(function (msg, preMessageFn) {
-      return preMessageFn(msg !== null && msg !== void 0 ? msg : '', 'warning');
-    }, message);
-    if (finalMessage) {
-      console.error("Warning: ".concat(finalMessage));
-    }
-  }
-}
-function note(valid, message) {
-  // Support uglify
-  if (process.env.NODE_ENV !== 'production' && !valid && console !== undefined) {
-    var finalMessage = preWarningFns.reduce(function (msg, preMessageFn) {
-      return preMessageFn(msg !== null && msg !== void 0 ? msg : '', 'note');
-    }, message);
-    if (finalMessage) {
-      console.warn("Note: ".concat(finalMessage));
-    }
-  }
-}
-function resetWarned$1() {
-  warned = {};
-}
-function call(method, valid, message) {
-  if (!valid && !warned[message]) {
-    method(false, message);
-    warned[message] = true;
-  }
-}
-function warningOnce(valid, message) {
-  call(warning$3, valid, message);
-}
-function noteOnce(valid, message) {
-  call(note, valid, message);
-}
-warningOnce.preMessage = preMessage;
-warningOnce.resetWarned = resetWarned$1;
-warningOnce.noteOnce = noteOnce;
-/* eslint-enable */
-
-function _typeof(o) {
-  "@babel/helpers - typeof";
-
-  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
-    return typeof o;
-  } : function (o) {
-    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, _typeof(o);
+ * A custom hook that composes multiple refs
+ * Accepts callback refs and RefObject(s)
+ */ function $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(...refs) {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return React.useCallback($6ed0406888f73fc4$export$43e446d32b3d21af$1(...refs), refs);
 }
 
-function _toPrimitive(input, hint) {
-  if (_typeof(input) !== "object" || input === null) return input;
-  var prim = input[Symbol.toPrimitive];
-  if (prim !== undefined) {
-    var res = prim.call(input, hint || "default");
-    if (_typeof(res) !== "object") return res;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return (hint === "string" ? String : Number)(input);
-}
-
-function _toPropertyKey(arg) {
-  var key = _toPrimitive(arg, "string");
-  return _typeof(key) === "symbol" ? key : String(key);
-}
-
-function _defineProperty(obj, key, value) {
-  key = _toPropertyKey(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-
-function ownKeys(e, r) {
-  var t = Object.keys(e);
-  if (Object.getOwnPropertySymbols) {
-    var o = Object.getOwnPropertySymbols(e);
-    r && (o = o.filter(function (r) {
-      return Object.getOwnPropertyDescriptor(e, r).enumerable;
-    })), t.push.apply(t, o);
-  }
-  return t;
-}
-function _objectSpread2(e) {
-  for (var r = 1; r < arguments.length; r++) {
-    var t = null != arguments[r] ? arguments[r] : {};
-    r % 2 ? ownKeys(Object(t), !0).forEach(function (r) {
-      _defineProperty(e, r, t[r]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) {
-      Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
-    });
-  }
-  return e;
-}
-
-function isDOM(node) {
-  // https://developer.mozilla.org/en-US/docs/Web/API/Element
-  // Since XULElement is also subclass of Element, we only need HTMLElement and SVGElement
-  return node instanceof HTMLElement || node instanceof SVGElement;
-}
-
-/**
- * Return if a node is a DOM node. Else will return by `findDOMNode`
- */
-function findDOMNode(node) {
-  if (isDOM(node)) {
-    return node;
-  }
-  if (node instanceof React__default["default"].Component) {
-    return ReactDOM__default["default"].findDOMNode(node);
-  }
-  return null;
-}
-
-function useMemo(getValue, condition, shouldUpdate) {
-  var cacheRef = React__namespace.useRef({});
-  if (!('value' in cacheRef.current) || shouldUpdate(cacheRef.current.condition, condition)) {
-    cacheRef.current.value = getValue();
-    cacheRef.current.condition = condition;
-  }
-  return cacheRef.current.value;
-}
-
-function fillRef(ref, node) {
-  if (typeof ref === 'function') {
-    ref(node);
-  } else if (_typeof(ref) === 'object' && ref && 'current' in ref) {
-    ref.current = node;
-  }
-}
-
-/**
- * Merge refs into one ref function to support ref passing.
- */
-function composeRef() {
-  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
-    refs[_key] = arguments[_key];
-  }
-  var refList = refs.filter(function (ref) {
-    return ref;
-  });
-  if (refList.length <= 1) {
-    return refList[0];
-  }
-  return function (node) {
-    refs.forEach(function (ref) {
-      fillRef(ref, node);
-    });
-  };
-}
-function supportRef(nodeOrComponent) {
-  var _type$prototype, _nodeOrComponent$prot;
-  var type = reactIs.isMemo(nodeOrComponent) ? nodeOrComponent.type.type : nodeOrComponent.type;
-
-  // Function component node
-  if (typeof type === 'function' && !((_type$prototype = type.prototype) !== null && _type$prototype !== void 0 && _type$prototype.render)) {
-    return false;
-  }
-
-  // Class component
-  if (typeof nodeOrComponent === 'function' && !((_nodeOrComponent$prot = nodeOrComponent.prototype) !== null && _nodeOrComponent$prot !== void 0 && _nodeOrComponent$prot.render)) {
-    return false;
-  }
-  return true;
-}
-/* eslint-enable */
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
-  }
-}
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  Object.defineProperty(Constructor, "prototype", {
-    writable: false
-  });
-  return Constructor;
-}
-
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-  return _setPrototypeOf(o, p);
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
-    }
-  });
-  Object.defineProperty(subClass, "prototype", {
-    writable: false
-  });
-  if (superClass) _setPrototypeOf(subClass, superClass);
-}
-
-function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf(o);
-}
-
-function _isNativeReflectConstruct() {
-  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-  if (Reflect.construct.sham) return false;
-  if (typeof Proxy === "function") return true;
-  try {
-    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-  return self;
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (call && (_typeof(call) === "object" || typeof call === "function")) {
-    return call;
-  } else if (call !== void 0) {
-    throw new TypeError("Derived constructors may only return object or undefined");
-  }
-  return _assertThisInitialized(self);
-}
-
-function _createSuper(Derived) {
-  var hasNativeReflectConstruct = _isNativeReflectConstruct();
-  return function _createSuperInternal() {
-    var Super = _getPrototypeOf(Derived),
-      result;
-    if (hasNativeReflectConstruct) {
-      var NewTarget = _getPrototypeOf(this).constructor;
-      result = Reflect.construct(Super, arguments, NewTarget);
-    } else {
-      result = Super.apply(this, arguments);
-    }
-    return _possibleConstructorReturn(this, result);
-  };
-}
-
-function omit(obj, fields) {
-  var clone = _objectSpread2({}, obj);
-  if (Array.isArray(fields)) {
-    fields.forEach(function (key) {
-      delete clone[key];
-    });
-  }
-  return clone;
-}
-
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-  return arr2;
-}
-
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
-}
-
-function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
-}
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
-
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-
-function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
-}
-
-var raf = function raf(callback) {
-  return +setTimeout(callback, 16);
-};
-var caf = function caf(num) {
-  return clearTimeout(num);
-};
-if (typeof window !== 'undefined' && 'requestAnimationFrame' in window) {
-  raf = function raf(callback) {
-    return window.requestAnimationFrame(callback);
-  };
-  caf = function caf(handle) {
-    return window.cancelAnimationFrame(handle);
-  };
-}
-var rafUUID = 0;
-var rafIds = new Map();
-function cleanup(id) {
-  rafIds.delete(id);
-}
-var wrapperRaf = function wrapperRaf(callback) {
-  var times = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-  rafUUID += 1;
-  var id = rafUUID;
-  function callRef(leftTimes) {
-    if (leftTimes === 0) {
-      // Clean up
-      cleanup(id);
-
-      // Trigger
-      callback();
-    } else {
-      // Next raf
-      var realId = raf(function () {
-        callRef(leftTimes - 1);
-      });
-
-      // Bind real raf id
-      rafIds.set(id, realId);
-    }
-  }
-  callRef(times);
-  return id;
-};
-wrapperRaf.cancel = function (id) {
-  var realId = rafIds.get(id);
-  cleanup(id);
-  return caf(realId);
-};
-if (process.env.NODE_ENV !== 'production') {
-  wrapperRaf.ids = function () {
-    return rafIds;
-  };
-}
-
-/* eslint-disable */
-// Inspired by https://github.com/garycourt/murmurhash-js
-// Ported from https://github.com/aappleby/smhasher/blob/61a0530f28277f2e850bfc39600ce61d02b518de/src/MurmurHash2.cpp#L37-L86
-function murmur2(str) {
-  // 'm' and 'r' are mixing constants generated offline.
-  // They're not really 'magic', they just happen to work well.
-  // const m = 0x5bd1e995;
-  // const r = 24;
-  // Initialize the hash
-  var h = 0; // Mix 4 bytes at a time into the hash
-
-  var k,
-      i = 0,
-      len = str.length;
-
-  for (; len >= 4; ++i, len -= 4) {
-    k = str.charCodeAt(i) & 0xff | (str.charCodeAt(++i) & 0xff) << 8 | (str.charCodeAt(++i) & 0xff) << 16 | (str.charCodeAt(++i) & 0xff) << 24;
-    k =
-    /* Math.imul(k, m): */
-    (k & 0xffff) * 0x5bd1e995 + ((k >>> 16) * 0xe995 << 16);
-    k ^=
-    /* k >>> r: */
-    k >>> 24;
-    h =
-    /* Math.imul(k, m): */
-    (k & 0xffff) * 0x5bd1e995 + ((k >>> 16) * 0xe995 << 16) ^
-    /* Math.imul(h, m): */
-    (h & 0xffff) * 0x5bd1e995 + ((h >>> 16) * 0xe995 << 16);
-  } // Handle the last few bytes of the input array
-
-
-  switch (len) {
-    case 3:
-      h ^= (str.charCodeAt(i + 2) & 0xff) << 16;
-
-    case 2:
-      h ^= (str.charCodeAt(i + 1) & 0xff) << 8;
-
-    case 1:
-      h ^= str.charCodeAt(i) & 0xff;
-      h =
-      /* Math.imul(h, m): */
-      (h & 0xffff) * 0x5bd1e995 + ((h >>> 16) * 0xe995 << 16);
-  } // Do a few final mixes of the hash to ensure the last few
-  // bytes are well-incorporated.
-
-
-  h ^= h >>> 13;
-  h =
-  /* Math.imul(h, m): */
-  (h & 0xffff) * 0x5bd1e995 + ((h >>> 16) * 0xe995 << 16);
-  return ((h ^ h >>> 15) >>> 0).toString(36);
-}
-
-function _objectWithoutPropertiesLoose$1(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-  return target;
-}
-
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$1(source, excluded);
-  var key, i;
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-
-/**
- * Deeply compares two object literals.
- * @param obj1 object 1
- * @param obj2 object 2
- * @param shallow shallow compare
- * @returns
- */
-function isEqual(obj1, obj2) {
-  var shallow = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-  // https://github.com/mapbox/mapbox-gl-js/pull/5979/files#diff-fde7145050c47cc3a306856efd5f9c3016e86e859de9afbd02c879be5067e58f
-  var refSet = new Set();
-  function deepEqual(a, b) {
-    var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-    var circular = refSet.has(a);
-    warningOnce(!circular, 'Warning: There may be circular references');
-    if (circular) {
-      return false;
-    }
-    if (a === b) {
-      return true;
-    }
-    if (shallow && level > 1) {
-      return false;
-    }
-    refSet.add(a);
-    var newLevel = level + 1;
-    if (Array.isArray(a)) {
-      if (!Array.isArray(b) || a.length !== b.length) {
-        return false;
-      }
-      for (var i = 0; i < a.length; i++) {
-        if (!deepEqual(a[i], b[i], newLevel)) {
-          return false;
-        }
-      }
-      return true;
-    }
-    if (a && b && _typeof(a) === 'object' && _typeof(b) === 'object') {
-      var keys = Object.keys(a);
-      if (keys.length !== Object.keys(b).length) {
-        return false;
-      }
-      return keys.every(function (key) {
-        return deepEqual(a[key], b[key], newLevel);
-      });
-    }
-    // other
-    return false;
-  }
-  return deepEqual(obj1, obj2);
-}
-
-// [times, realValue]
-
-var SPLIT = '%';
-var Entity = /*#__PURE__*/function () {
-  function Entity(instanceId) {
-    _classCallCheck(this, Entity);
-    _defineProperty(this, "instanceId", void 0);
-    /** @private Internal cache map. Do not access this directly */
-    _defineProperty(this, "cache", new Map());
-    this.instanceId = instanceId;
-  }
-  _createClass(Entity, [{
-    key: "get",
-    value: function get(keys) {
-      return this.cache.get(keys.join(SPLIT)) || null;
-    }
-  }, {
-    key: "update",
-    value: function update(keys, valueFn) {
-      var path = keys.join(SPLIT);
-      var prevValue = this.cache.get(path);
-      var nextValue = valueFn(prevValue);
-      if (nextValue === null) {
-        this.cache.delete(path);
-      } else {
-        this.cache.set(path, nextValue);
-      }
-    }
-  }]);
-  return Entity;
-}();
-
-var ATTR_TOKEN = 'data-token-hash';
-var ATTR_MARK = 'data-css-hash';
-var ATTR_CACHE_PATH = 'data-cache-path';
-
-// Mark css-in-js instance in style element
-var CSS_IN_JS_INSTANCE = '__cssinjs_instance__';
-function createCache() {
-  var cssinjsInstanceId = Math.random().toString(12).slice(2);
-
-  // Tricky SSR: Move all inline style to the head.
-  // PS: We do not recommend tricky mode.
-  if (typeof document !== 'undefined' && document.head && document.body) {
-    var styles = document.body.querySelectorAll("style[".concat(ATTR_MARK, "]")) || [];
-    var firstChild = document.head.firstChild;
-    Array.from(styles).forEach(function (style) {
-      style[CSS_IN_JS_INSTANCE] = style[CSS_IN_JS_INSTANCE] || cssinjsInstanceId;
-
-      // Not force move if no head
-      if (style[CSS_IN_JS_INSTANCE] === cssinjsInstanceId) {
-        document.head.insertBefore(style, firstChild);
-      }
-    });
-
-    // Deduplicate of moved styles
-    var styleHash = {};
-    Array.from(document.querySelectorAll("style[".concat(ATTR_MARK, "]"))).forEach(function (style) {
-      var hash = style.getAttribute(ATTR_MARK);
-      if (styleHash[hash]) {
-        if (style[CSS_IN_JS_INSTANCE] === cssinjsInstanceId) {
-          var _style$parentNode;
-          (_style$parentNode = style.parentNode) === null || _style$parentNode === void 0 ? void 0 : _style$parentNode.removeChild(style);
-        }
-      } else {
-        styleHash[hash] = true;
-      }
-    });
-  }
-  return new Entity(cssinjsInstanceId);
-}
-var StyleContext = /*#__PURE__*/React__namespace.createContext({
-  hashPriority: 'low',
-  cache: createCache(),
-  defaultCache: true
-});
-var StyleContext$1 = StyleContext;
-
-function canUseDom() {
-  return !!(typeof window !== 'undefined' && window.document && window.document.createElement);
-}
-
-function contains(root, n) {
-  if (!root) {
-    return false;
-  }
-
-  // Use native if support
-  if (root.contains) {
-    return root.contains(n);
-  }
-
-  // `document.contains` not support with IE11
-  var node = n;
-  while (node) {
-    if (node === root) {
-      return true;
-    }
-    node = node.parentNode;
-  }
-  return false;
-}
-
-var APPEND_ORDER = 'data-rc-order';
-var APPEND_PRIORITY = 'data-rc-priority';
-var MARK_KEY = "rc-util-key";
-var containerCache = new Map();
-function getMark() {
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-    mark = _ref.mark;
-  if (mark) {
-    return mark.startsWith('data-') ? mark : "data-".concat(mark);
-  }
-  return MARK_KEY;
-}
-function getContainer(option) {
-  if (option.attachTo) {
-    return option.attachTo;
-  }
-  var head = document.querySelector('head');
-  return head || document.body;
-}
-function getOrder(prepend) {
-  if (prepend === 'queue') {
-    return 'prependQueue';
-  }
-  return prepend ? 'prepend' : 'append';
-}
-
-/**
- * Find style which inject by rc-util
- */
-function findStyles(container) {
-  return Array.from((containerCache.get(container) || container).children).filter(function (node) {
-    return node.tagName === 'STYLE';
-  });
-}
-function injectCSS(css) {
-  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  if (!canUseDom()) {
-    return null;
-  }
-  var csp = option.csp,
-    prepend = option.prepend,
-    _option$priority = option.priority,
-    priority = _option$priority === void 0 ? 0 : _option$priority;
-  var mergedOrder = getOrder(prepend);
-  var isPrependQueue = mergedOrder === 'prependQueue';
-  var styleNode = document.createElement('style');
-  styleNode.setAttribute(APPEND_ORDER, mergedOrder);
-  if (isPrependQueue && priority) {
-    styleNode.setAttribute(APPEND_PRIORITY, "".concat(priority));
-  }
-  if (csp !== null && csp !== void 0 && csp.nonce) {
-    styleNode.nonce = csp === null || csp === void 0 ? void 0 : csp.nonce;
-  }
-  styleNode.innerHTML = css;
-  var container = getContainer(option);
-  var firstChild = container.firstChild;
-  if (prepend) {
-    // If is queue `prepend`, it will prepend first style and then append rest style
-    if (isPrependQueue) {
-      var existStyle = findStyles(container).filter(function (node) {
-        // Ignore style which not injected by rc-util with prepend
-        if (!['prepend', 'prependQueue'].includes(node.getAttribute(APPEND_ORDER))) {
-          return false;
-        }
-
-        // Ignore style which priority less then new style
-        var nodePriority = Number(node.getAttribute(APPEND_PRIORITY) || 0);
-        return priority >= nodePriority;
-      });
-      if (existStyle.length) {
-        container.insertBefore(styleNode, existStyle[existStyle.length - 1].nextSibling);
-        return styleNode;
-      }
-    }
-
-    // Use `insertBefore` as `prepend`
-    container.insertBefore(styleNode, firstChild);
-  } else {
-    container.appendChild(styleNode);
-  }
-  return styleNode;
-}
-function findExistNode(key) {
-  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var container = getContainer(option);
-  return findStyles(container).find(function (node) {
-    return node.getAttribute(getMark(option)) === key;
-  });
-}
-function removeCSS(key) {
-  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var existNode = findExistNode(key, option);
-  if (existNode) {
-    var container = getContainer(option);
-    container.removeChild(existNode);
-  }
-}
-
-/**
- * qiankun will inject `appendChild` to insert into other
- */
-function syncRealContainer(container, option) {
-  var cachedRealContainer = containerCache.get(container);
-
-  // Find real container when not cached or cached container removed
-  if (!cachedRealContainer || !contains(document, cachedRealContainer)) {
-    var placeholderStyle = injectCSS('', option);
-    var parentNode = placeholderStyle.parentNode;
-    containerCache.set(container, parentNode);
-    container.removeChild(placeholderStyle);
-  }
-}
-function updateCSS(css, key) {
-  var option = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-  var container = getContainer(option);
-
-  // Sync real parent
-  syncRealContainer(container, option);
-  var existNode = findExistNode(key, option);
-  if (existNode) {
-    var _option$csp, _option$csp2;
-    if ((_option$csp = option.csp) !== null && _option$csp !== void 0 && _option$csp.nonce && existNode.nonce !== ((_option$csp2 = option.csp) === null || _option$csp2 === void 0 ? void 0 : _option$csp2.nonce)) {
-      var _option$csp3;
-      existNode.nonce = (_option$csp3 = option.csp) === null || _option$csp3 === void 0 ? void 0 : _option$csp3.nonce;
-    }
-    if (existNode.innerHTML !== css) {
-      existNode.innerHTML = css;
-    }
-    return existNode;
-  }
-  var newNode = injectCSS(css, option);
-  newNode.setAttribute(getMark(option), key);
-  return newNode;
-}
-
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
-}
-
-function _iterableToArrayLimit(r, l) {
-  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
-  if (null != t) {
-    var e,
-      n,
-      i,
-      u,
-      a = [],
-      f = !0,
-      o = !1;
-    try {
-      if (i = (t = t.call(r)).next, 0 === l) {
-        if (Object(t) !== t) return;
-        f = !1;
-      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
-    } catch (r) {
-      o = !0, n = r;
-    } finally {
-      try {
-        if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
-      } finally {
-        if (o) throw n;
-      }
-    }
-    return a;
-  }
-}
-
-function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-
-function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
-}
-
-// ================================== Cache ==================================
-
-function sameDerivativeOption(left, right) {
-  if (left.length !== right.length) {
-    return false;
-  }
-  for (var i = 0; i < left.length; i++) {
-    if (left[i] !== right[i]) {
-      return false;
-    }
-  }
-  return true;
-}
-var ThemeCache = /*#__PURE__*/function () {
-  function ThemeCache() {
-    _classCallCheck(this, ThemeCache);
-    _defineProperty(this, "cache", void 0);
-    _defineProperty(this, "keys", void 0);
-    _defineProperty(this, "cacheCallTimes", void 0);
-    this.cache = new Map();
-    this.keys = [];
-    this.cacheCallTimes = 0;
-  }
-  _createClass(ThemeCache, [{
-    key: "size",
-    value: function size() {
-      return this.keys.length;
-    }
-  }, {
-    key: "internalGet",
-    value: function internalGet(derivativeOption) {
-      var _cache2, _cache3;
-      var updateCallTimes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-      var cache = {
-        map: this.cache
-      };
-      derivativeOption.forEach(function (derivative) {
-        if (!cache) {
-          cache = undefined;
-        } else {
-          var _cache, _cache$map;
-          cache = (_cache = cache) === null || _cache === void 0 ? void 0 : (_cache$map = _cache.map) === null || _cache$map === void 0 ? void 0 : _cache$map.get(derivative);
-        }
-      });
-      if ((_cache2 = cache) !== null && _cache2 !== void 0 && _cache2.value && updateCallTimes) {
-        cache.value[1] = this.cacheCallTimes++;
-      }
-      return (_cache3 = cache) === null || _cache3 === void 0 ? void 0 : _cache3.value;
-    }
-  }, {
-    key: "get",
-    value: function get(derivativeOption) {
-      var _this$internalGet;
-      return (_this$internalGet = this.internalGet(derivativeOption, true)) === null || _this$internalGet === void 0 ? void 0 : _this$internalGet[0];
-    }
-  }, {
-    key: "has",
-    value: function has(derivativeOption) {
-      return !!this.internalGet(derivativeOption);
-    }
-  }, {
-    key: "set",
-    value: function set(derivativeOption, value) {
-      var _this = this;
-      // New cache
-      if (!this.has(derivativeOption)) {
-        if (this.size() + 1 > ThemeCache.MAX_CACHE_SIZE + ThemeCache.MAX_CACHE_OFFSET) {
-          var _this$keys$reduce = this.keys.reduce(function (result, key) {
-              var _result = _slicedToArray(result, 2),
-                callTimes = _result[1];
-              if (_this.internalGet(key)[1] < callTimes) {
-                return [key, _this.internalGet(key)[1]];
-              }
-              return result;
-            }, [this.keys[0], this.cacheCallTimes]),
-            _this$keys$reduce2 = _slicedToArray(_this$keys$reduce, 1),
-            targetKey = _this$keys$reduce2[0];
-          this.delete(targetKey);
-        }
-        this.keys.push(derivativeOption);
-      }
-      var cache = this.cache;
-      derivativeOption.forEach(function (derivative, index) {
-        if (index === derivativeOption.length - 1) {
-          cache.set(derivative, {
-            value: [value, _this.cacheCallTimes++]
-          });
-        } else {
-          var cacheValue = cache.get(derivative);
-          if (!cacheValue) {
-            cache.set(derivative, {
-              map: new Map()
-            });
-          } else if (!cacheValue.map) {
-            cacheValue.map = new Map();
-          }
-          cache = cache.get(derivative).map;
-        }
-      });
-    }
-  }, {
-    key: "deleteByPath",
-    value: function deleteByPath(currentCache, derivatives) {
-      var cache = currentCache.get(derivatives[0]);
-      if (derivatives.length === 1) {
-        var _cache$value;
-        if (!cache.map) {
-          currentCache.delete(derivatives[0]);
-        } else {
-          currentCache.set(derivatives[0], {
-            map: cache.map
-          });
-        }
-        return (_cache$value = cache.value) === null || _cache$value === void 0 ? void 0 : _cache$value[0];
-      }
-      var result = this.deleteByPath(cache.map, derivatives.slice(1));
-      if ((!cache.map || cache.map.size === 0) && !cache.value) {
-        currentCache.delete(derivatives[0]);
-      }
-      return result;
-    }
-  }, {
-    key: "delete",
-    value: function _delete(derivativeOption) {
-      // If cache exists
-      if (this.has(derivativeOption)) {
-        this.keys = this.keys.filter(function (item) {
-          return !sameDerivativeOption(item, derivativeOption);
+/* -------------------------------------------------------------------------------------------------
+ * Slot
+ * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$export$8c6ed5c666ac1360$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { children: children , ...slotProps } = props;
+    const childrenArray = React.Children.toArray(children);
+    const slottable = childrenArray.find($5e63c961fc1ce211$var$isSlottable$1);
+    if (slottable) {
+        // the new element to render is the one passed as a child of `Slottable`
+        const newElement = slottable.props.children;
+        const newChildren = childrenArray.map((child)=>{
+            if (child === slottable) {
+                // because the new element will be the one rendered, we are only interested
+                // in grabbing its children (`newElement.props.children`)
+                if (React.Children.count(newElement) > 1) return React.Children.only(null);
+                return /*#__PURE__*/ React.isValidElement(newElement) ? newElement.props.children : null;
+            } else return child;
         });
-        return this.deleteByPath(this.cache, derivativeOption);
-      }
-      return undefined;
+        return /*#__PURE__*/ React.createElement($5e63c961fc1ce211$var$SlotClone$1, _extends({}, slotProps, {
+            ref: forwardedRef
+        }), /*#__PURE__*/ React.isValidElement(newElement) ? /*#__PURE__*/ React.cloneElement(newElement, undefined, newChildren) : null);
     }
-  }]);
-  return ThemeCache;
-}();
-_defineProperty(ThemeCache, "MAX_CACHE_SIZE", 20);
-_defineProperty(ThemeCache, "MAX_CACHE_OFFSET", 5);
-
-var uuid = 0;
-
-/**
- * Theme with algorithms to derive tokens from design tokens.
- * Use `createTheme` first which will help to manage the theme instance cache.
- */
-var Theme = /*#__PURE__*/function () {
-  function Theme(derivatives) {
-    _classCallCheck(this, Theme);
-    _defineProperty(this, "derivatives", void 0);
-    _defineProperty(this, "id", void 0);
-    this.derivatives = Array.isArray(derivatives) ? derivatives : [derivatives];
-    this.id = uuid;
-    if (derivatives.length === 0) {
-      warning$3(derivatives.length > 0, '[Ant Design CSS-in-JS] Theme should have at least one derivative function.');
-    }
-    uuid += 1;
-  }
-  _createClass(Theme, [{
-    key: "getDerivativeToken",
-    value: function getDerivativeToken(token) {
-      return this.derivatives.reduce(function (result, derivative) {
-        return derivative(token, result);
-      }, undefined);
-    }
-  }]);
-  return Theme;
-}();
-
-var cacheThemes = new ThemeCache();
-
-/**
- * Same as new Theme, but will always return same one if `derivative` not changed.
- */
-function createTheme(derivatives) {
-  var derivativeArr = Array.isArray(derivatives) ? derivatives : [derivatives];
-  // Create new theme if not exist
-  if (!cacheThemes.has(derivativeArr)) {
-    cacheThemes.set(derivativeArr, new Theme(derivativeArr));
-  }
-
-  // Get theme from cache and return
-  return cacheThemes.get(derivativeArr);
-}
-
-// Create a cache for memo concat
-
-var resultCache = new WeakMap();
-var RESULT_VALUE = {};
-function memoResult(callback, deps) {
-  var current = resultCache;
-  for (var i = 0; i < deps.length; i += 1) {
-    var dep = deps[i];
-    if (!current.has(dep)) {
-      current.set(dep, new WeakMap());
-    }
-    current = current.get(dep);
-  }
-  if (!current.has(RESULT_VALUE)) {
-    current.set(RESULT_VALUE, callback());
-  }
-  return current.get(RESULT_VALUE);
-}
-
-// Create a cache here to avoid always loop generate
-var flattenTokenCache = new WeakMap();
-
-/**
- * Flatten token to string, this will auto cache the result when token not change
- */
-function flattenToken(token) {
-  var str = flattenTokenCache.get(token) || '';
-  if (!str) {
-    Object.keys(token).forEach(function (key) {
-      var value = token[key];
-      str += key;
-      if (value instanceof Theme) {
-        str += value.id;
-      } else if (value && _typeof(value) === 'object') {
-        str += flattenToken(value);
-      } else {
-        str += value;
-      }
+    return /*#__PURE__*/ React.createElement($5e63c961fc1ce211$var$SlotClone$1, _extends({}, slotProps, {
+        ref: forwardedRef
+    }), children);
+});
+$5e63c961fc1ce211$export$8c6ed5c666ac1360$1.displayName = 'Slot';
+/* -------------------------------------------------------------------------------------------------
+ * SlotClone
+ * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$var$SlotClone$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { children: children , ...slotProps } = props;
+    if (/*#__PURE__*/ React.isValidElement(children)) return /*#__PURE__*/ React.cloneElement(children, {
+        ...$5e63c961fc1ce211$var$mergeProps$1(slotProps, children.props),
+        ref: forwardedRef ? $6ed0406888f73fc4$export$43e446d32b3d21af$1(forwardedRef, children.ref) : children.ref
     });
-
-    // Put in cache
-    flattenTokenCache.set(token, str);
-  }
-  return str;
+    return React.Children.count(children) > 1 ? React.Children.only(null) : null;
+});
+$5e63c961fc1ce211$var$SlotClone$1.displayName = 'SlotClone';
+/* -------------------------------------------------------------------------------------------------
+ * Slottable
+ * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$export$d9f1ccf0bdb05d45$1 = ({ children: children  })=>{
+    return /*#__PURE__*/ React.createElement(React.Fragment, null, children);
+};
+/* ---------------------------------------------------------------------------------------------- */ function $5e63c961fc1ce211$var$isSlottable$1(child) {
+    return /*#__PURE__*/ React.isValidElement(child) && child.type === $5e63c961fc1ce211$export$d9f1ccf0bdb05d45$1;
 }
-
-/**
- * Convert derivative token to key string
- */
-function token2key(token, salt) {
-  return murmur2("".concat(salt, "_").concat(flattenToken(token)));
-}
-var randomSelectorKey = "random-".concat(Date.now(), "-").concat(Math.random()).replace(/\./g, '');
-
-// Magic `content` for detect selector support
-var checkContent = '_bAmBoO_';
-function supportSelector(styleStr, handleElement, supportCheck) {
-  if (canUseDom()) {
-    var _getComputedStyle$con, _ele$parentNode;
-    updateCSS(styleStr, randomSelectorKey);
-    var _ele = document.createElement('div');
-    _ele.style.position = 'fixed';
-    _ele.style.left = '0';
-    _ele.style.top = '0';
-    handleElement === null || handleElement === void 0 ? void 0 : handleElement(_ele);
-    document.body.appendChild(_ele);
-    if (process.env.NODE_ENV !== 'production') {
-      _ele.innerHTML = 'Test';
-      _ele.style.zIndex = '9999999';
-    }
-    var support = supportCheck ? supportCheck(_ele) : (_getComputedStyle$con = getComputedStyle(_ele).content) === null || _getComputedStyle$con === void 0 ? void 0 : _getComputedStyle$con.includes(checkContent);
-    (_ele$parentNode = _ele.parentNode) === null || _ele$parentNode === void 0 ? void 0 : _ele$parentNode.removeChild(_ele);
-    removeCSS(randomSelectorKey);
-    return support;
-  }
-  return false;
-}
-var canLayer = undefined;
-function supportLayer() {
-  if (canLayer === undefined) {
-    canLayer = supportSelector("@layer ".concat(randomSelectorKey, " { .").concat(randomSelectorKey, " { content: \"").concat(checkContent, "\"!important; } }"), function (ele) {
-      ele.className = randomSelectorKey;
-    });
-  }
-  return canLayer;
-}
-
-/**
- * Wrap `React.useLayoutEffect` which will not throw warning message in test env
- */
-var useInternalLayoutEffect = process.env.NODE_ENV !== 'test' && canUseDom() ? React__namespace.useLayoutEffect : React__namespace.useEffect;
-var useLayoutEffect = function useLayoutEffect(callback, deps) {
-  var firstMountRef = React__namespace.useRef(true);
-  useInternalLayoutEffect(function () {
-    return callback(firstMountRef.current);
-  }, deps);
-
-  // We tell react that first mount has passed
-  useInternalLayoutEffect(function () {
-    firstMountRef.current = false;
-    return function () {
-      firstMountRef.current = true;
+function $5e63c961fc1ce211$var$mergeProps$1(slotProps, childProps) {
+    // all child props should override
+    const overrideProps = {
+        ...childProps
     };
-  }, []);
-};
-
-// We need fully clone React function here
-// to avoid webpack warning React 17 do not export `useId`
-var fullClone$2 = _objectSpread2({}, React__namespace);
-var useInsertionEffect$1 = fullClone$2.useInsertionEffect;
-/**
- * Polyfill `useInsertionEffect` for React < 18
- * @param renderEffect will be executed in `useMemo`, and do not have callback
- * @param effect will be executed in `useLayoutEffect`
- * @param deps
- */
-var useInsertionEffectPolyfill = function useInsertionEffectPolyfill(renderEffect, effect, deps) {
-  React__namespace.useMemo(renderEffect, deps);
-  useLayoutEffect(function () {
-    return effect(true);
-  }, deps);
-};
-
-/**
- * Compatible `useInsertionEffect`
- * will use `useInsertionEffect` if React version >= 18,
- * otherwise use `useInsertionEffectPolyfill`.
- */
-var useCompatibleInsertionEffect = useInsertionEffect$1 ? function (renderEffect, effect, deps) {
-  return useInsertionEffect$1(function () {
-    renderEffect();
-    return effect();
-  }, deps);
-} : useInsertionEffectPolyfill;
-var useCompatibleInsertionEffect$1 = useCompatibleInsertionEffect;
-
-var fullClone$1 = _objectSpread2({}, React__namespace);
-var useInsertionEffect = fullClone$1.useInsertionEffect;
-
-// DO NOT register functions in useEffect cleanup function, or functions that registered will never be called.
-var useCleanupRegister = function useCleanupRegister(deps) {
-  var effectCleanups = [];
-  var cleanupFlag = false;
-  function register(fn) {
-    if (cleanupFlag) {
-      if (process.env.NODE_ENV !== 'production') {
-        warning$3(false, '[Ant Design CSS-in-JS] You are registering a cleanup function after unmount, which will not have any effect.');
-      }
-      return;
-    }
-    effectCleanups.push(fn);
-  }
-  React__namespace.useEffect(function () {
-    // Compatible with strict mode
-    cleanupFlag = false;
-    return function () {
-      cleanupFlag = true;
-      if (effectCleanups.length) {
-        effectCleanups.forEach(function (fn) {
-          return fn();
-        });
-      }
-    };
-  }, deps);
-  return register;
-};
-var useRun = function useRun() {
-  return function (fn) {
-    fn();
-  };
-};
-
-// Only enable register in React 18
-var useEffectCleanupRegister = typeof useInsertionEffect !== 'undefined' ? useCleanupRegister : useRun;
-var useEffectCleanupRegister$1 = useEffectCleanupRegister;
-
-function useProdHMR() {
-  return false;
-}
-var webpackHMR = false;
-function useDevHMR() {
-  return webpackHMR;
-}
-var useHMR = process.env.NODE_ENV === 'production' ? useProdHMR : useDevHMR;
-
-// Webpack `module.hot.accept` do not support any deps update trigger
-// We have to hack handler to force mark as HRM
-if (process.env.NODE_ENV !== 'production' && typeof module !== 'undefined' && module && module.hot && typeof window !== 'undefined') {
-  var win = window;
-  if (typeof win.webpackHotUpdate === 'function') {
-    var originWebpackHotUpdate = win.webpackHotUpdate;
-    win.webpackHotUpdate = function () {
-      webpackHMR = true;
-      setTimeout(function () {
-        webpackHMR = false;
-      }, 0);
-      return originWebpackHotUpdate.apply(void 0, arguments);
-    };
-  }
-}
-
-function useGlobalCache(prefix, keyPath, cacheFn, onCacheRemove,
-// Add additional effect trigger by `useInsertionEffect`
-onCacheEffect) {
-  var _React$useContext = React__namespace.useContext(StyleContext$1),
-    globalCache = _React$useContext.cache;
-  var fullPath = [prefix].concat(_toConsumableArray(keyPath));
-  var deps = fullPath.join('_');
-  var register = useEffectCleanupRegister$1([deps]);
-  var HMRUpdate = useHMR();
-  var buildCache = function buildCache(updater) {
-    globalCache.update(fullPath, function (prevCache) {
-      var _ref = prevCache || [],
-        _ref2 = _slicedToArray(_ref, 2),
-        _ref2$ = _ref2[0],
-        times = _ref2$ === void 0 ? 0 : _ref2$,
-        cache = _ref2[1];
-
-      // HMR should always ignore cache since developer may change it
-      var tmpCache = cache;
-      if (process.env.NODE_ENV !== 'production' && cache && HMRUpdate) {
-        onCacheRemove === null || onCacheRemove === void 0 ? void 0 : onCacheRemove(tmpCache, HMRUpdate);
-        tmpCache = null;
-      }
-      var mergedCache = tmpCache || cacheFn();
-      var data = [times, mergedCache];
-
-      // Call updater if need additional logic
-      return updater ? updater(data) : data;
-    });
-  };
-
-  // Create cache
-  React__namespace.useMemo(function () {
-    buildCache();
-  }, /* eslint-disable react-hooks/exhaustive-deps */
-  [deps]
-  /* eslint-enable */);
-
-  var cacheEntity = globalCache.get(fullPath);
-
-  // HMR clean the cache but not trigger `useMemo` again
-  // Let's fallback of this
-  // ref https://github.com/ant-design/cssinjs/issues/127
-  if (process.env.NODE_ENV !== 'production' && !cacheEntity) {
-    buildCache();
-    cacheEntity = globalCache.get(fullPath);
-  }
-  var cacheContent = cacheEntity[1];
-
-  // Remove if no need anymore
-  useCompatibleInsertionEffect$1(function () {
-    onCacheEffect === null || onCacheEffect === void 0 ? void 0 : onCacheEffect(cacheContent);
-  }, function (polyfill) {
-    // It's bad to call build again in effect.
-    // But we have to do this since StrictMode will call effect twice
-    // which will clear cache on the first time.
-    buildCache(function (_ref3) {
-      var _ref4 = _slicedToArray(_ref3, 2),
-        times = _ref4[0],
-        cache = _ref4[1];
-      if (polyfill && times === 0) {
-        onCacheEffect === null || onCacheEffect === void 0 ? void 0 : onCacheEffect(cacheContent);
-      }
-      return [times + 1, cache];
-    });
-    return function () {
-      globalCache.update(fullPath, function (prevCache) {
-        var _ref5 = prevCache || [],
-          _ref6 = _slicedToArray(_ref5, 2),
-          _ref6$ = _ref6[0],
-          times = _ref6$ === void 0 ? 0 : _ref6$,
-          cache = _ref6[1];
-        var nextCount = times - 1;
-        if (nextCount === 0) {
-          // Always remove styles in useEffect callback
-          register(function () {
-            return onCacheRemove === null || onCacheRemove === void 0 ? void 0 : onCacheRemove(cache, false);
-          });
-          return null;
-        }
-        return [times - 1, cache];
-      });
-    };
-  }, [deps]);
-  return cacheContent;
-}
-
-var EMPTY_OVERRIDE = {};
-
-// Generate different prefix to make user selector break in production env.
-// This helps developer not to do style override directly on the hash id.
-var hashPrefix = process.env.NODE_ENV !== 'production' ? 'css-dev-only-do-not-override' : 'css';
-var tokenKeys = new Map();
-function recordCleanToken(tokenKey) {
-  tokenKeys.set(tokenKey, (tokenKeys.get(tokenKey) || 0) + 1);
-}
-function removeStyleTags(key, instanceId) {
-  if (typeof document !== 'undefined') {
-    var styles = document.querySelectorAll("style[".concat(ATTR_TOKEN, "=\"").concat(key, "\"]"));
-    styles.forEach(function (style) {
-      if (style[CSS_IN_JS_INSTANCE] === instanceId) {
-        var _style$parentNode;
-        (_style$parentNode = style.parentNode) === null || _style$parentNode === void 0 ? void 0 : _style$parentNode.removeChild(style);
-      }
-    });
-  }
-}
-var TOKEN_THRESHOLD = 0;
-
-// Remove will check current keys first
-function cleanTokenStyle(tokenKey, instanceId) {
-  tokenKeys.set(tokenKey, (tokenKeys.get(tokenKey) || 0) - 1);
-  var tokenKeyList = Array.from(tokenKeys.keys());
-  var cleanableKeyList = tokenKeyList.filter(function (key) {
-    var count = tokenKeys.get(key) || 0;
-    return count <= 0;
-  });
-
-  // Should keep tokens under threshold for not to insert style too often
-  if (tokenKeyList.length - cleanableKeyList.length > TOKEN_THRESHOLD) {
-    cleanableKeyList.forEach(function (key) {
-      removeStyleTags(key, instanceId);
-      tokenKeys.delete(key);
-    });
-  }
-}
-var getComputedToken$1 = function getComputedToken(originToken, overrideToken, theme, format) {
-  var derivativeToken = theme.getDerivativeToken(originToken);
-
-  // Merge with override
-  var mergedDerivativeToken = _objectSpread2(_objectSpread2({}, derivativeToken), overrideToken);
-
-  // Format if needed
-  if (format) {
-    mergedDerivativeToken = format(mergedDerivativeToken);
-  }
-  return mergedDerivativeToken;
-};
-
-/**
- * Cache theme derivative token as global shared one
- * @param theme Theme entity
- * @param tokens List of tokens, used for cache. Please do not dynamic generate object directly
- * @param option Additional config
- * @returns Call Theme.getDerivativeToken(tokenObject) to get token
- */
-function useCacheToken(theme, tokens) {
-  var option = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-  var _useContext = React.useContext(StyleContext$1),
-    instanceId = _useContext.cache.instanceId;
-  var _option$salt = option.salt,
-    salt = _option$salt === void 0 ? '' : _option$salt,
-    _option$override = option.override,
-    override = _option$override === void 0 ? EMPTY_OVERRIDE : _option$override,
-    formatToken = option.formatToken,
-    compute = option.getComputedToken;
-
-  // Basic - We do basic cache here
-  var mergedToken = memoResult(function () {
-    return Object.assign.apply(Object, [{}].concat(_toConsumableArray(tokens)));
-  }, tokens);
-  var tokenStr = flattenToken(mergedToken);
-  var overrideTokenStr = flattenToken(override);
-  var cachedToken = useGlobalCache('token', [salt, theme.id, tokenStr, overrideTokenStr], function () {
-    var mergedDerivativeToken = compute ? compute(mergedToken, override, theme) : getComputedToken$1(mergedToken, override, theme, formatToken);
-
-    // Optimize for `useStyleRegister` performance
-    var tokenKey = token2key(mergedDerivativeToken, salt);
-    mergedDerivativeToken._tokenKey = tokenKey;
-    recordCleanToken(tokenKey);
-    var hashId = "".concat(hashPrefix, "-").concat(murmur2(tokenKey));
-    mergedDerivativeToken._hashId = hashId; // Not used
-
-    return [mergedDerivativeToken, hashId];
-  }, function (cache) {
-    // Remove token will remove all related style
-    cleanTokenStyle(cache[0]._tokenKey, instanceId);
-  });
-  return cachedToken;
-}
-
-var unitlessKeys = {
-  animationIterationCount: 1,
-  borderImageOutset: 1,
-  borderImageSlice: 1,
-  borderImageWidth: 1,
-  boxFlex: 1,
-  boxFlexGroup: 1,
-  boxOrdinalGroup: 1,
-  columnCount: 1,
-  columns: 1,
-  flex: 1,
-  flexGrow: 1,
-  flexPositive: 1,
-  flexShrink: 1,
-  flexNegative: 1,
-  flexOrder: 1,
-  gridRow: 1,
-  gridRowEnd: 1,
-  gridRowSpan: 1,
-  gridRowStart: 1,
-  gridColumn: 1,
-  gridColumnEnd: 1,
-  gridColumnSpan: 1,
-  gridColumnStart: 1,
-  msGridRow: 1,
-  msGridRowSpan: 1,
-  msGridColumn: 1,
-  msGridColumnSpan: 1,
-  fontWeight: 1,
-  lineHeight: 1,
-  opacity: 1,
-  order: 1,
-  orphans: 1,
-  tabSize: 1,
-  widows: 1,
-  zIndex: 1,
-  zoom: 1,
-  WebkitLineClamp: 1,
-  // SVG-related properties
-  fillOpacity: 1,
-  floodOpacity: 1,
-  stopOpacity: 1,
-  strokeDasharray: 1,
-  strokeDashoffset: 1,
-  strokeMiterlimit: 1,
-  strokeOpacity: 1,
-  strokeWidth: 1
-};
-
-var COMMENT = 'comm';
-var RULESET = 'rule';
-var DECLARATION = 'decl';
-var IMPORT = '@import';
-var KEYFRAMES = '@keyframes';
-var LAYER = '@layer';
-
-/**
- * @param {number}
- * @return {number}
- */
-var abs = Math.abs;
-
-/**
- * @param {number}
- * @return {string}
- */
-var from = String.fromCharCode;
-
-/**
- * @param {string} value
- * @return {string}
- */
-function trim (value) {
-	return value.trim()
-}
-
-/**
- * @param {string} value
- * @param {(string|RegExp)} pattern
- * @param {string} replacement
- * @return {string}
- */
-function replace (value, pattern, replacement) {
-	return value.replace(pattern, replacement)
-}
-
-/**
- * @param {string} value
- * @param {string} search
- * @return {number}
- */
-function indexof (value, search) {
-	return value.indexOf(search)
-}
-
-/**
- * @param {string} value
- * @param {number} index
- * @return {number}
- */
-function charat (value, index) {
-	return value.charCodeAt(index) | 0
-}
-
-/**
- * @param {string} value
- * @param {number} begin
- * @param {number} end
- * @return {string}
- */
-function substr (value, begin, end) {
-	return value.slice(begin, end)
-}
-
-/**
- * @param {string} value
- * @return {number}
- */
-function strlen (value) {
-	return value.length
-}
-
-/**
- * @param {any[]} value
- * @return {number}
- */
-function sizeof (value) {
-	return value.length
-}
-
-/**
- * @param {any} value
- * @param {any[]} array
- * @return {any}
- */
-function append (value, array) {
-	return array.push(value), value
-}
-
-var line = 1;
-var column = 1;
-var length = 0;
-var position = 0;
-var character = 0;
-var characters = '';
-
-/**
- * @param {string} value
- * @param {object | null} root
- * @param {object | null} parent
- * @param {string} type
- * @param {string[] | string} props
- * @param {object[] | string} children
- * @param {object[]} siblings
- * @param {number} length
- */
-function node (value, root, parent, type, props, children, length, siblings) {
-	return {value: value, root: root, parent: parent, type: type, props: props, children: children, line: line, column: column, length: length, return: '', siblings: siblings}
-}
-
-/**
- * @return {number}
- */
-function char () {
-	return character
-}
-
-/**
- * @return {number}
- */
-function prev () {
-	character = position > 0 ? charat(characters, --position) : 0;
-
-	if (column--, character === 10)
-		column = 1, line--;
-
-	return character
-}
-
-/**
- * @return {number}
- */
-function next () {
-	character = position < length ? charat(characters, position++) : 0;
-
-	if (column++, character === 10)
-		column = 1, line++;
-
-	return character
-}
-
-/**
- * @return {number}
- */
-function peek () {
-	return charat(characters, position)
-}
-
-/**
- * @return {number}
- */
-function caret () {
-	return position
-}
-
-/**
- * @param {number} begin
- * @param {number} end
- * @return {string}
- */
-function slice (begin, end) {
-	return substr(characters, begin, end)
-}
-
-/**
- * @param {number} type
- * @return {number}
- */
-function token (type) {
-	switch (type) {
-		// \0 \t \n \r \s whitespace token
-		case 0: case 9: case 10: case 13: case 32:
-			return 5
-		// ! + , / > @ ~ isolate token
-		case 33: case 43: case 44: case 47: case 62: case 64: case 126:
-		// ; { } breakpoint token
-		case 59: case 123: case 125:
-			return 4
-		// : accompanied token
-		case 58:
-			return 3
-		// " ' ( [ opening delimit token
-		case 34: case 39: case 40: case 91:
-			return 2
-		// ) ] closing delimit token
-		case 41: case 93:
-			return 1
-	}
-
-	return 0
-}
-
-/**
- * @param {string} value
- * @return {any[]}
- */
-function alloc (value) {
-	return line = column = 1, length = strlen(characters = value), position = 0, []
-}
-
-/**
- * @param {any} value
- * @return {any}
- */
-function dealloc (value) {
-	return characters = '', value
-}
-
-/**
- * @param {number} type
- * @return {string}
- */
-function delimit (type) {
-	return trim(slice(position - 1, delimiter(type === 91 ? type + 2 : type === 40 ? type + 1 : type)))
-}
-
-/**
- * @param {number} type
- * @return {string}
- */
-function whitespace (type) {
-	while (character = peek())
-		if (character < 33)
-			next();
-		else
-			break
-
-	return token(type) > 2 || token(character) > 3 ? '' : ' '
-}
-
-/**
- * @param {number} index
- * @param {number} count
- * @return {string}
- */
-function escaping (index, count) {
-	while (--count && next())
-		// not 0-9 A-F a-f
-		if (character < 48 || character > 102 || (character > 57 && character < 65) || (character > 70 && character < 97))
-			break
-
-	return slice(index, caret() + (count < 6 && peek() == 32 && next() == 32))
-}
-
-/**
- * @param {number} type
- * @return {number}
- */
-function delimiter (type) {
-	while (next())
-		switch (character) {
-			// ] ) " '
-			case type:
-				return position
-			// " '
-			case 34: case 39:
-				if (type !== 34 && type !== 39)
-					delimiter(character);
-				break
-			// (
-			case 40:
-				if (type === 41)
-					delimiter(type);
-				break
-			// \
-			case 92:
-				next();
-				break
-		}
-
-	return position
-}
-
-/**
- * @param {number} type
- * @param {number} index
- * @return {number}
- */
-function commenter (type, index) {
-	while (next())
-		// //
-		if (type + character === 47 + 10)
-			break
-		// /*
-		else if (type + character === 42 + 42 && peek() === 47)
-			break
-
-	return '/*' + slice(index, position - 1) + '*' + from(type === 47 ? type : next())
-}
-
-/**
- * @param {number} index
- * @return {string}
- */
-function identifier (index) {
-	while (!token(peek()))
-		next();
-
-	return slice(index, position)
-}
-
-/**
- * @param {string} value
- * @return {object[]}
- */
-function compile (value) {
-	return dealloc(parse$1('', null, null, null, [''], value = alloc(value), 0, [0], value))
-}
-
-/**
- * @param {string} value
- * @param {object} root
- * @param {object?} parent
- * @param {string[]} rule
- * @param {string[]} rules
- * @param {string[]} rulesets
- * @param {number[]} pseudo
- * @param {number[]} points
- * @param {string[]} declarations
- * @return {object}
- */
-function parse$1 (value, root, parent, rule, rules, rulesets, pseudo, points, declarations) {
-	var index = 0;
-	var offset = 0;
-	var length = pseudo;
-	var atrule = 0;
-	var property = 0;
-	var previous = 0;
-	var variable = 1;
-	var scanning = 1;
-	var ampersand = 1;
-	var character = 0;
-	var type = '';
-	var props = rules;
-	var children = rulesets;
-	var reference = rule;
-	var characters = type;
-
-	while (scanning)
-		switch (previous = character, character = next()) {
-			// (
-			case 40:
-				if (previous != 108 && charat(characters, length - 1) == 58) {
-					if (indexof(characters += replace(delimit(character), '&', '&\f'), '&\f') != -1)
-						ampersand = -1;
-					break
-				}
-			// " ' [
-			case 34: case 39: case 91:
-				characters += delimit(character);
-				break
-			// \t \n \r \s
-			case 9: case 10: case 13: case 32:
-				characters += whitespace(previous);
-				break
-			// \
-			case 92:
-				characters += escaping(caret() - 1, 7);
-				continue
-			// /
-			case 47:
-				switch (peek()) {
-					case 42: case 47:
-						append(comment(commenter(next(), caret()), root, parent, declarations), declarations);
-						break
-					default:
-						characters += '/';
-				}
-				break
-			// {
-			case 123 * variable:
-				points[index++] = strlen(characters) * ampersand;
-			// } ; \0
-			case 125 * variable: case 59: case 0:
-				switch (character) {
-					// \0 }
-					case 0: case 125: scanning = 0;
-					// ;
-					case 59 + offset: if (ampersand == -1) characters = replace(characters, /\f/g, '');
-						if (property > 0 && (strlen(characters) - length))
-							append(property > 32 ? declaration(characters + ';', rule, parent, length - 1, declarations) : declaration(replace(characters, ' ', '') + ';', rule, parent, length - 2, declarations), declarations);
-						break
-					// @ ;
-					case 59: characters += ';';
-					// { rule/at-rule
-					default:
-						append(reference = ruleset(characters, root, parent, index, offset, rules, points, type, props = [], children = [], length, rulesets), rulesets);
-
-						if (character === 123)
-							if (offset === 0)
-								parse$1(characters, root, reference, reference, props, rulesets, length, points, children);
-							else
-								switch (atrule === 99 && charat(characters, 3) === 110 ? 100 : atrule) {
-									// d l m s
-									case 100: case 108: case 109: case 115:
-										parse$1(value, reference, reference, rule && append(ruleset(value, reference, reference, 0, 0, rules, points, type, rules, props = [], length, children), children), rules, children, length, points, rule ? props : children);
-										break
-									default:
-										parse$1(characters, reference, reference, reference, [''], children, 0, points, children);
-								}
-				}
-
-				index = offset = property = 0, variable = ampersand = 1, type = characters = '', length = pseudo;
-				break
-			// :
-			case 58:
-				length = 1 + strlen(characters), property = previous;
-			default:
-				if (variable < 1)
-					if (character == 123)
-						--variable;
-					else if (character == 125 && variable++ == 0 && prev() == 125)
-						continue
-
-				switch (characters += from(character), character * variable) {
-					// &
-					case 38:
-						ampersand = offset > 0 ? 1 : (characters += '\f', -1);
-						break
-					// ,
-					case 44:
-						points[index++] = (strlen(characters) - 1) * ampersand, ampersand = 1;
-						break
-					// @
-					case 64:
-						// -
-						if (peek() === 45)
-							characters += delimit(next());
-
-						atrule = peek(), offset = length = strlen(type = characters += identifier(caret())), character++;
-						break
-					// -
-					case 45:
-						if (previous === 45 && strlen(characters) == 2)
-							variable = 0;
-				}
-		}
-
-	return rulesets
-}
-
-/**
- * @param {string} value
- * @param {object} root
- * @param {object?} parent
- * @param {number} index
- * @param {number} offset
- * @param {string[]} rules
- * @param {number[]} points
- * @param {string} type
- * @param {string[]} props
- * @param {string[]} children
- * @param {number} length
- * @param {object[]} siblings
- * @return {object}
- */
-function ruleset (value, root, parent, index, offset, rules, points, type, props, children, length, siblings) {
-	var post = offset - 1;
-	var rule = offset === 0 ? rules : [''];
-	var size = sizeof(rule);
-
-	for (var i = 0, j = 0, k = 0; i < index; ++i)
-		for (var x = 0, y = substr(value, post + 1, post = abs(j = points[i])), z = value; x < size; ++x)
-			if (z = trim(j > 0 ? rule[x] + ' ' + y : replace(y, /&\f/g, rule[x])))
-				props[k++] = z;
-
-	return node(value, root, parent, offset === 0 ? RULESET : type, props, children, length, siblings)
-}
-
-/**
- * @param {number} value
- * @param {object} root
- * @param {object?} parent
- * @param {object[]} siblings
- * @return {object}
- */
-function comment (value, root, parent, siblings) {
-	return node(value, root, parent, COMMENT, from(char()), substr(value, 2, -2), 0, siblings)
-}
-
-/**
- * @param {string} value
- * @param {object} root
- * @param {object?} parent
- * @param {number} length
- * @param {object[]} siblings
- * @return {object}
- */
-function declaration (value, root, parent, length, siblings) {
-	return node(value, root, parent, DECLARATION, substr(value, 0, length), substr(value, length + 1, -1), length, siblings)
-}
-
-/**
- * @param {object[]} children
- * @param {function} callback
- * @return {string}
- */
-function serialize (children, callback) {
-	var output = '';
-
-	for (var i = 0; i < children.length; i++)
-		output += callback(children[i], i, children, callback) || '';
-
-	return output
-}
-
-/**
- * @param {object} element
- * @param {number} index
- * @param {object[]} children
- * @param {function} callback
- * @return {string}
- */
-function stringify (element, index, children, callback) {
-	switch (element.type) {
-		case LAYER: if (element.children.length) break
-		case IMPORT: case DECLARATION: return element.return = element.return || element.value
-		case COMMENT: return ''
-		case KEYFRAMES: return element.return = element.value + '{' + serialize(element.children, callback) + '}'
-		case RULESET: if (!strlen(element.value = element.props.join(','))) return ''
-	}
-
-	return strlen(children = serialize(element.children, callback)) ? element.return = element.value + '{' + children + '}' : ''
-}
-
-function lintWarning(message, info) {
-  var path = info.path,
-    parentSelectors = info.parentSelectors;
-  warningOnce(false, "[Ant Design CSS-in-JS] ".concat(path ? "Error in ".concat(path, ": ") : '').concat(message).concat(parentSelectors.length ? " Selector: ".concat(parentSelectors.join(' | ')) : ''));
-}
-
-var linter$1 = function linter(key, value, info) {
-  if (key === 'content') {
-    // From emotion: https://github.com/emotion-js/emotion/blob/main/packages/serialize/src/index.js#L63
-    var contentValuePattern = /(attr|counters?|url|(((repeating-)?(linear|radial))|conic)-gradient)\(|(no-)?(open|close)-quote/;
-    var contentValues = ['normal', 'none', 'initial', 'inherit', 'unset'];
-    if (typeof value !== 'string' || contentValues.indexOf(value) === -1 && !contentValuePattern.test(value) && (value.charAt(0) !== value.charAt(value.length - 1) || value.charAt(0) !== '"' && value.charAt(0) !== "'")) {
-      lintWarning("You seem to be using a value for 'content' without quotes, try replacing it with `content: '\"".concat(value, "\"'`."), info);
-    }
-  }
-};
-
-var linter = function linter(key, value, info) {
-  if (key === 'animation') {
-    if (info.hashId && value !== 'none') {
-      lintWarning("You seem to be using hashed animation '".concat(value, "', in which case 'animationName' with Keyframe as value is recommended."), info);
-    }
-  }
-};
-
-var ATTR_CACHE_MAP = 'data-ant-cssinjs-cache-path';
-
-/**
- * This marks style from the css file.
- * Which means not exist in `<style />` tag.
- */
-var CSS_FILE_STYLE = '_FILE_STYLE__';
-var cachePathMap;
-var fromCSSFile = true;
-function prepare() {
-  if (!cachePathMap) {
-    cachePathMap = {};
-    if (canUseDom()) {
-      var div = document.createElement('div');
-      div.className = ATTR_CACHE_MAP;
-      div.style.position = 'fixed';
-      div.style.visibility = 'hidden';
-      div.style.top = '-9999px';
-      document.body.appendChild(div);
-      var content = getComputedStyle(div).content || '';
-      content = content.replace(/^"/, '').replace(/"$/, '');
-
-      // Fill data
-      content.split(';').forEach(function (item) {
-        var _item$split = item.split(':'),
-          _item$split2 = _slicedToArray(_item$split, 2),
-          path = _item$split2[0],
-          hash = _item$split2[1];
-        cachePathMap[path] = hash;
-      });
-
-      // Remove inline record style
-      var inlineMapStyle = document.querySelector("style[".concat(ATTR_CACHE_MAP, "]"));
-      if (inlineMapStyle) {
-        var _inlineMapStyle$paren;
-        fromCSSFile = false;
-        (_inlineMapStyle$paren = inlineMapStyle.parentNode) === null || _inlineMapStyle$paren === void 0 ? void 0 : _inlineMapStyle$paren.removeChild(inlineMapStyle);
-      }
-      document.body.removeChild(div);
-    }
-  }
-}
-function existPath(path) {
-  prepare();
-  return !!cachePathMap[path];
-}
-function getStyleAndHash(path) {
-  var hash = cachePathMap[path];
-  var styleStr = null;
-  if (hash && canUseDom()) {
-    if (fromCSSFile) {
-      styleStr = CSS_FILE_STYLE;
-    } else {
-      var _style = document.querySelector("style[".concat(ATTR_MARK, "=\"").concat(cachePathMap[path], "\"]"));
-      if (_style) {
-        styleStr = _style.innerHTML;
-      } else {
-        // Clean up since not exist anymore
-        delete cachePathMap[path];
-      }
-    }
-  }
-  return [styleStr, hash];
-}
-
-var isClientSide = canUseDom();
-var SKIP_CHECK = '_skip_check_';
-var MULTI_VALUE = '_multi_value_';
-// ============================================================================
-// ==                                 Parser                                 ==
-// ============================================================================
-// Preprocessor style content to browser support one
-function normalizeStyle(styleStr) {
-  var serialized = serialize(compile(styleStr), stringify);
-  return serialized.replace(/\{%%%\:[^;];}/g, ';');
-}
-function isCompoundCSSProperty(value) {
-  return _typeof(value) === 'object' && value && (SKIP_CHECK in value || MULTI_VALUE in value);
-}
-
-// 注入 hash 值
-function injectSelectorHash(key, hashId, hashPriority) {
-  if (!hashId) {
-    return key;
-  }
-  var hashClassName = ".".concat(hashId);
-  var hashSelector = hashPriority === 'low' ? ":where(".concat(hashClassName, ")") : hashClassName;
-
-  // 注入 hashId
-  var keys = key.split(',').map(function (k) {
-    var _firstPath$match;
-    var fullPath = k.trim().split(/\s+/);
-
-    // 如果 Selector 第一个是 HTML Element，那我们就插到它的后面。反之，就插到最前面。
-    var firstPath = fullPath[0] || '';
-    var htmlElement = ((_firstPath$match = firstPath.match(/^\w+/)) === null || _firstPath$match === void 0 ? void 0 : _firstPath$match[0]) || '';
-    firstPath = "".concat(htmlElement).concat(hashSelector).concat(firstPath.slice(htmlElement.length));
-    return [firstPath].concat(_toConsumableArray(fullPath.slice(1))).join(' ');
-  });
-  return keys.join(',');
-}
-// Parse CSSObject to style content
-var parseStyle = function parseStyle(interpolation) {
-  var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var _ref = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {
-      root: true,
-      parentSelectors: []
-    },
-    root = _ref.root,
-    injectHash = _ref.injectHash,
-    parentSelectors = _ref.parentSelectors;
-  var hashId = config.hashId,
-    layer = config.layer,
-    path = config.path,
-    hashPriority = config.hashPriority,
-    _config$transformers = config.transformers,
-    transformers = _config$transformers === void 0 ? [] : _config$transformers,
-    _config$linters = config.linters,
-    linters = _config$linters === void 0 ? [] : _config$linters;
-  var styleStr = '';
-  var effectStyle = {};
-  function parseKeyframes(keyframes) {
-    var animationName = keyframes.getName(hashId);
-    if (!effectStyle[animationName]) {
-      var _parseStyle = parseStyle(keyframes.style, config, {
-          root: false,
-          parentSelectors: parentSelectors
-        }),
-        _parseStyle2 = _slicedToArray(_parseStyle, 1),
-        _parsedStr = _parseStyle2[0];
-      effectStyle[animationName] = "@keyframes ".concat(keyframes.getName(hashId)).concat(_parsedStr);
-    }
-  }
-  function flattenList(list) {
-    var fullList = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-    list.forEach(function (item) {
-      if (Array.isArray(item)) {
-        flattenList(item, fullList);
-      } else if (item) {
-        fullList.push(item);
-      }
-    });
-    return fullList;
-  }
-  var flattenStyleList = flattenList(Array.isArray(interpolation) ? interpolation : [interpolation]);
-  flattenStyleList.forEach(function (originStyle) {
-    // Only root level can use raw string
-    var style = typeof originStyle === 'string' && !root ? {} : originStyle;
-    if (typeof style === 'string') {
-      styleStr += "".concat(style, "\n");
-    } else if (style._keyframe) {
-      // Keyframe
-      parseKeyframes(style);
-    } else {
-      var mergedStyle = transformers.reduce(function (prev, trans) {
-        var _trans$visit;
-        return (trans === null || trans === void 0 ? void 0 : (_trans$visit = trans.visit) === null || _trans$visit === void 0 ? void 0 : _trans$visit.call(trans, prev)) || prev;
-      }, style);
-
-      // Normal CSSObject
-      Object.keys(mergedStyle).forEach(function (key) {
-        var value = mergedStyle[key];
-        if (_typeof(value) === 'object' && value && (key !== 'animationName' || !value._keyframe) && !isCompoundCSSProperty(value)) {
-          var subInjectHash = false;
-
-          // 当成嵌套对象来处理
-          var mergedKey = key.trim();
-          // Whether treat child as root. In most case it is false.
-          var nextRoot = false;
-
-          // 拆分多个选择器
-          if ((root || injectHash) && hashId) {
-            if (mergedKey.startsWith('@')) {
-              // 略过媒体查询，交给子节点继续插入 hashId
-              subInjectHash = true;
-            } else {
-              // 注入 hashId
-              mergedKey = injectSelectorHash(key, hashId, hashPriority);
-            }
-          } else if (root && !hashId && (mergedKey === '&' || mergedKey === '')) {
-            // In case of `{ '&': { a: { color: 'red' } } }` or `{ '': { a: { color: 'red' } } }` without hashId,
-            // we will get `&{a:{color:red;}}` or `{a:{color:red;}}` string for stylis to compile.
-            // But it does not conform to stylis syntax,
-            // and finally we will get `{color:red;}` as css, which is wrong.
-            // So we need to remove key in root, and treat child `{ a: { color: 'red' } }` as root.
-            mergedKey = '';
-            nextRoot = true;
-          }
-          var _parseStyle3 = parseStyle(value, config, {
-              root: nextRoot,
-              injectHash: subInjectHash,
-              parentSelectors: [].concat(_toConsumableArray(parentSelectors), [mergedKey])
-            }),
-            _parseStyle4 = _slicedToArray(_parseStyle3, 2),
-            _parsedStr2 = _parseStyle4[0],
-            childEffectStyle = _parseStyle4[1];
-          effectStyle = _objectSpread2(_objectSpread2({}, effectStyle), childEffectStyle);
-          styleStr += "".concat(mergedKey).concat(_parsedStr2);
-        } else {
-          var _value;
-          function appendStyle(cssKey, cssValue) {
-            if (process.env.NODE_ENV !== 'production' && (_typeof(value) !== 'object' || !(value !== null && value !== void 0 && value[SKIP_CHECK]))) {
-              [linter$1, linter].concat(_toConsumableArray(linters)).forEach(function (linter) {
-                return linter(cssKey, cssValue, {
-                  path: path,
-                  hashId: hashId,
-                  parentSelectors: parentSelectors
-                });
-              });
-            }
-
-            // 如果是样式则直接插入
-            var styleName = cssKey.replace(/[A-Z]/g, function (match) {
-              return "-".concat(match.toLowerCase());
-            });
-
-            // Auto suffix with px
-            var formatValue = cssValue;
-            if (!unitlessKeys[cssKey] && typeof formatValue === 'number' && formatValue !== 0) {
-              formatValue = "".concat(formatValue, "px");
-            }
-
-            // handle animationName & Keyframe value
-            if (cssKey === 'animationName' && cssValue !== null && cssValue !== void 0 && cssValue._keyframe) {
-              parseKeyframes(cssValue);
-              formatValue = cssValue.getName(hashId);
-            }
-            styleStr += "".concat(styleName, ":").concat(formatValue, ";");
-          }
-          var actualValue = (_value = value === null || value === void 0 ? void 0 : value.value) !== null && _value !== void 0 ? _value : value;
-          if (_typeof(value) === 'object' && value !== null && value !== void 0 && value[MULTI_VALUE] && Array.isArray(actualValue)) {
-            actualValue.forEach(function (item) {
-              appendStyle(key, item);
-            });
-          } else {
-            appendStyle(key, actualValue);
-          }
-        }
-      });
-    }
-  });
-  if (!root) {
-    styleStr = "{".concat(styleStr, "}");
-  } else if (layer && supportLayer()) {
-    var layerCells = layer.split(',');
-    var layerName = layerCells[layerCells.length - 1].trim();
-    styleStr = "@layer ".concat(layerName, " {").concat(styleStr, "}");
-
-    // Order of layer if needed
-    if (layerCells.length > 1) {
-      // zombieJ: stylis do not support layer order, so we need to handle it manually.
-      styleStr = "@layer ".concat(layer, "{%%%:%}").concat(styleStr);
-    }
-  }
-  return [styleStr, effectStyle];
-};
-
-// ============================================================================
-// ==                                Register                                ==
-// ============================================================================
-function uniqueHash(path, styleStr) {
-  return murmur2("".concat(path.join('%')).concat(styleStr));
-}
-function Empty() {
-  return null;
-}
-
-/**
- * Register a style to the global style sheet.
- */
-function useStyleRegister(info, styleFn) {
-  var token = info.token,
-    path = info.path,
-    hashId = info.hashId,
-    layer = info.layer,
-    nonce = info.nonce,
-    clientOnly = info.clientOnly,
-    _info$order = info.order,
-    order = _info$order === void 0 ? 0 : _info$order;
-  var _React$useContext = React__namespace.useContext(StyleContext$1),
-    autoClear = _React$useContext.autoClear,
-    mock = _React$useContext.mock,
-    defaultCache = _React$useContext.defaultCache,
-    hashPriority = _React$useContext.hashPriority,
-    container = _React$useContext.container,
-    ssrInline = _React$useContext.ssrInline,
-    transformers = _React$useContext.transformers,
-    linters = _React$useContext.linters,
-    cache = _React$useContext.cache;
-  var tokenKey = token._tokenKey;
-  var fullPath = [tokenKey].concat(_toConsumableArray(path));
-
-  // Check if need insert style
-  var isMergedClientSide = isClientSide;
-  if (process.env.NODE_ENV !== 'production' && mock !== undefined) {
-    isMergedClientSide = mock === 'client';
-  }
-  var _useGlobalCache = useGlobalCache('style', fullPath,
-    // Create cache if needed
-    function () {
-      var cachePath = fullPath.join('|');
-
-      // Get style from SSR inline style directly
-      if (existPath(cachePath)) {
-        var _getStyleAndHash = getStyleAndHash(cachePath),
-          _getStyleAndHash2 = _slicedToArray(_getStyleAndHash, 2),
-          inlineCacheStyleStr = _getStyleAndHash2[0],
-          styleHash = _getStyleAndHash2[1];
-        if (inlineCacheStyleStr) {
-          return [inlineCacheStyleStr, tokenKey, styleHash, {}, clientOnly, order];
-        }
-      }
-
-      // Generate style
-      var styleObj = styleFn();
-      var _parseStyle5 = parseStyle(styleObj, {
-          hashId: hashId,
-          hashPriority: hashPriority,
-          layer: layer,
-          path: path.join('-'),
-          transformers: transformers,
-          linters: linters
-        }),
-        _parseStyle6 = _slicedToArray(_parseStyle5, 2),
-        parsedStyle = _parseStyle6[0],
-        effectStyle = _parseStyle6[1];
-      var styleStr = normalizeStyle(parsedStyle);
-      var styleId = uniqueHash(fullPath, styleStr);
-      return [styleStr, tokenKey, styleId, effectStyle, clientOnly, order];
-    },
-    // Remove cache if no need
-    function (_ref2, fromHMR) {
-      var _ref3 = _slicedToArray(_ref2, 3),
-        styleId = _ref3[2];
-      if ((fromHMR || autoClear) && isClientSide) {
-        removeCSS(styleId, {
-          mark: ATTR_MARK
-        });
-      }
-    },
-    // Effect: Inject style here
-    function (_ref4) {
-      var _ref5 = _slicedToArray(_ref4, 4),
-        styleStr = _ref5[0];
-        _ref5[1];
-        var styleId = _ref5[2],
-        effectStyle = _ref5[3];
-      if (isMergedClientSide && styleStr !== CSS_FILE_STYLE) {
-        var mergedCSSConfig = {
-          mark: ATTR_MARK,
-          prepend: 'queue',
-          attachTo: container,
-          priority: order
+    for(const propName in childProps){
+        const slotPropValue = slotProps[propName];
+        const childPropValue = childProps[propName];
+        const isHandler = /^on[A-Z]/.test(propName);
+        if (isHandler) {
+            // if the handler exists on both, we compose them
+            if (slotPropValue && childPropValue) overrideProps[propName] = (...args)=>{
+                childPropValue(...args);
+                slotPropValue(...args);
+            };
+            else if (slotPropValue) overrideProps[propName] = slotPropValue;
+        } else if (propName === 'style') overrideProps[propName] = {
+            ...slotPropValue,
+            ...childPropValue
         };
-        var nonceStr = typeof nonce === 'function' ? nonce() : nonce;
-        if (nonceStr) {
-          mergedCSSConfig.csp = {
-            nonce: nonceStr
-          };
-        }
-        var _style = updateCSS(styleStr, styleId, mergedCSSConfig);
-        _style[CSS_IN_JS_INSTANCE] = cache.instanceId;
-
-        // Used for `useCacheToken` to remove on batch when token removed
-        _style.setAttribute(ATTR_TOKEN, tokenKey);
-
-        // Debug usage. Dev only
-        if (process.env.NODE_ENV !== 'production') {
-          _style.setAttribute(ATTR_CACHE_PATH, fullPath.join('|'));
-        }
-
-        // Inject client side effect style
-        Object.keys(effectStyle).forEach(function (effectKey) {
-          updateCSS(normalizeStyle(effectStyle[effectKey]), "_effect-".concat(effectKey), mergedCSSConfig);
-        });
-      }
-    }),
-    _useGlobalCache2 = _slicedToArray(_useGlobalCache, 3),
-    cachedStyleStr = _useGlobalCache2[0],
-    cachedTokenKey = _useGlobalCache2[1],
-    cachedStyleId = _useGlobalCache2[2];
-  return function (node) {
-    var styleNode;
-    if (!ssrInline || isMergedClientSide || !defaultCache) {
-      styleNode = /*#__PURE__*/React__namespace.createElement(Empty, null);
-    } else {
-      var _ref6;
-      styleNode = /*#__PURE__*/React__namespace.createElement("style", _extends({}, (_ref6 = {}, _defineProperty(_ref6, ATTR_TOKEN, cachedTokenKey), _defineProperty(_ref6, ATTR_MARK, cachedStyleId), _ref6), {
-        dangerouslySetInnerHTML: {
-          __html: cachedStyleStr
-        }
-      }));
+        else if (propName === 'className') overrideProps[propName] = [
+            slotPropValue,
+            childPropValue
+        ].filter(Boolean).join(' ');
     }
-    return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, styleNode, node);
-  };
-}
-
-function noSplit(list) {
-  list.notSplit = true;
-  return list;
-}
-({
-  // Inset
-  inset: ['top', 'right', 'bottom', 'left'],
-  insetBlock: ['top', 'bottom'],
-  insetBlockStart: ['top'],
-  insetBlockEnd: ['bottom'],
-  insetInline: ['left', 'right'],
-  insetInlineStart: ['left'],
-  insetInlineEnd: ['right'],
-  // Margin
-  marginBlock: ['marginTop', 'marginBottom'],
-  marginBlockStart: ['marginTop'],
-  marginBlockEnd: ['marginBottom'],
-  marginInline: ['marginLeft', 'marginRight'],
-  marginInlineStart: ['marginLeft'],
-  marginInlineEnd: ['marginRight'],
-  // Padding
-  paddingBlock: ['paddingTop', 'paddingBottom'],
-  paddingBlockStart: ['paddingTop'],
-  paddingBlockEnd: ['paddingBottom'],
-  paddingInline: ['paddingLeft', 'paddingRight'],
-  paddingInlineStart: ['paddingLeft'],
-  paddingInlineEnd: ['paddingRight'],
-  // Border
-  borderBlock: noSplit(['borderTop', 'borderBottom']),
-  borderBlockStart: noSplit(['borderTop']),
-  borderBlockEnd: noSplit(['borderBottom']),
-  borderInline: noSplit(['borderLeft', 'borderRight']),
-  borderInlineStart: noSplit(['borderLeft']),
-  borderInlineEnd: noSplit(['borderRight']),
-  // Border width
-  borderBlockWidth: ['borderTopWidth', 'borderBottomWidth'],
-  borderBlockStartWidth: ['borderTopWidth'],
-  borderBlockEndWidth: ['borderBottomWidth'],
-  borderInlineWidth: ['borderLeftWidth', 'borderRightWidth'],
-  borderInlineStartWidth: ['borderLeftWidth'],
-  borderInlineEndWidth: ['borderRightWidth'],
-  // Border style
-  borderBlockStyle: ['borderTopStyle', 'borderBottomStyle'],
-  borderBlockStartStyle: ['borderTopStyle'],
-  borderBlockEndStyle: ['borderBottomStyle'],
-  borderInlineStyle: ['borderLeftStyle', 'borderRightStyle'],
-  borderInlineStartStyle: ['borderLeftStyle'],
-  borderInlineEndStyle: ['borderRightStyle'],
-  // Border color
-  borderBlockColor: ['borderTopColor', 'borderBottomColor'],
-  borderBlockStartColor: ['borderTopColor'],
-  borderBlockEndColor: ['borderBottomColor'],
-  borderInlineColor: ['borderLeftColor', 'borderRightColor'],
-  borderInlineStartColor: ['borderLeftColor'],
-  borderInlineEndColor: ['borderRightColor'],
-  // Border radius
-  borderStartStartRadius: ['borderTopLeftRadius'],
-  borderStartEndRadius: ['borderTopRightRadius'],
-  borderEndStartRadius: ['borderBottomLeftRadius'],
-  borderEndEndRadius: ['borderBottomRightRadius']
-});
-
-var IconContext$1 = /*#__PURE__*/React.createContext({});
-var Context$1 = IconContext$1;
-
-function _toArray(arr) {
-  return _arrayWithHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableRest();
-}
-
-function get$1(entity, path) {
-  var current = entity;
-  for (var i = 0; i < path.length; i += 1) {
-    if (current === null || current === undefined) {
-      return undefined;
-    }
-    current = current[path[i]];
-  }
-  return current;
-}
-
-function internalSet(entity, paths, value, removeIfUndefined) {
-  if (!paths.length) {
-    return value;
-  }
-  var _paths = _toArray(paths),
-    path = _paths[0],
-    restPath = _paths.slice(1);
-  var clone;
-  if (!entity && typeof path === 'number') {
-    clone = [];
-  } else if (Array.isArray(entity)) {
-    clone = _toConsumableArray(entity);
-  } else {
-    clone = _objectSpread2({}, entity);
-  }
-
-  // Delete prop if `removeIfUndefined` and value is undefined
-  if (removeIfUndefined && value === undefined && restPath.length === 1) {
-    delete clone[path][restPath[0]];
-  } else {
-    clone[path] = internalSet(clone[path], restPath, value, removeIfUndefined);
-  }
-  return clone;
-}
-function set$1(entity, paths, value) {
-  var removeIfUndefined = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  // Do nothing if `removeIfUndefined` and parent object not exist
-  if (paths.length && removeIfUndefined && value === undefined && !get$1(entity, paths.slice(0, -1))) {
-    return entity;
-  }
-  return internalSet(entity, paths, value, removeIfUndefined);
-}
-function isObject$1(obj) {
-  return _typeof(obj) === 'object' && obj !== null && Object.getPrototypeOf(obj) === Object.prototype;
-}
-function createEmpty(source) {
-  return Array.isArray(source) ? [] : {};
-}
-var keys = typeof Reflect === 'undefined' ? Object.keys : Reflect.ownKeys;
-
-/**
- * Merge objects which will create
- */
-function merge$1() {
-  for (var _len = arguments.length, sources = new Array(_len), _key = 0; _key < _len; _key++) {
-    sources[_key] = arguments[_key];
-  }
-  var clone = createEmpty(sources[0]);
-  sources.forEach(function (src) {
-    function internalMerge(path, parentLoopSet) {
-      var loopSet = new Set(parentLoopSet);
-      var value = get$1(src, path);
-      var isArr = Array.isArray(value);
-      if (isArr || isObject$1(value)) {
-        // Only add not loop obj
-        if (!loopSet.has(value)) {
-          loopSet.add(value);
-          var originValue = get$1(clone, path);
-          if (isArr) {
-            // Array will always be override
-            clone = set$1(clone, path, []);
-          } else if (!originValue || _typeof(originValue) !== 'object') {
-            // Init container if not exist
-            clone = set$1(clone, path, createEmpty(value));
-          }
-          keys(value).forEach(function (key) {
-            internalMerge([].concat(_toConsumableArray(path), [key]), loopSet);
-          });
-        }
-      } else {
-        clone = set$1(clone, path, value);
-      }
-    }
-    internalMerge([]);
-  });
-  return clone;
-}
-
-function noop$1() {}
-let deprecatedWarnList = null;
-function resetWarned() {
-  deprecatedWarnList = null;
-  resetWarned$1();
-}
-// eslint-disable-next-line import/no-mutable-exports
-let warning$1 = noop$1;
-if (process.env.NODE_ENV !== 'production') {
-  warning$1 = (valid, component, message) => {
-    warningOnce(valid, `[antd: ${component}] ${message}`);
-    // StrictMode will inject console which will not throw warning in React 17.
-    if (process.env.NODE_ENV === 'test') {
-      resetWarned();
-    }
-  };
-}
-const WarningContext = /*#__PURE__*/React__namespace.createContext({});
-/**
- * This is a hook but we not named as `useWarning`
- * since this is only used in development.
- * We should always wrap this in `if (process.env.NODE_ENV !== 'production')` condition
- */
-const devUseWarning = process.env.NODE_ENV !== 'production' ? component => {
-  const {
-    strict
-  } = React__namespace.useContext(WarningContext);
-  const typeWarning = (valid, type, message) => {
-    if (!valid) {
-      if (strict === false && type === 'deprecated') {
-        const existWarning = deprecatedWarnList;
-        if (!deprecatedWarnList) {
-          deprecatedWarnList = {};
-        }
-        deprecatedWarnList[component] = deprecatedWarnList[component] || [];
-        if (!deprecatedWarnList[component].includes(message || '')) {
-          deprecatedWarnList[component].push(message || '');
-        }
-        // Warning for the first time
-        if (!existWarning) {
-          // eslint-disable-next-line no-console
-          console.warn('[antd] There exists deprecated usage in your code:', deprecatedWarnList);
-        }
-      } else {
-        process.env.NODE_ENV !== "production" ? warning$1(valid, component, message) : void 0;
-      }
-    }
-  };
-  typeWarning.deprecated = (valid, oldProp, newProp, message) => {
-    typeWarning(valid, 'deprecated', `\`${oldProp}\` is deprecated. Please use \`${newProp}\` instead.${message ? ` ${message}` : ''}`);
-  };
-  return typeWarning;
-} : () => {
-  const noopWarning = () => {};
-  noopWarning.deprecated = noop$1;
-  return noopWarning;
-};
-var warning$2 = warning$1;
-
-// ZombieJ: We export single file here since
-// ConfigProvider use this which will make loop deps
-// to import whole `rc-field-form`
-var ValidateMessagesContext = /*#__PURE__*/React.createContext(undefined);
-
-var enUS$1 = {
-  // Options.jsx
-  items_per_page: '/ page',
-  jump_to: 'Go to',
-  jump_to_confirm: 'confirm',
-  page: 'Page',
-  // Pagination.jsx
-  prev_page: 'Previous Page',
-  next_page: 'Next Page',
-  prev_5: 'Previous 5 Pages',
-  next_5: 'Next 5 Pages',
-  prev_3: 'Previous 3 Pages',
-  next_3: 'Next 3 Pages',
-  page_size: 'Page Size'
-};
-
-var locale$2 = {
-  locale: 'en_US',
-  today: 'Today',
-  now: 'Now',
-  backToToday: 'Back to today',
-  ok: 'OK',
-  clear: 'Clear',
-  month: 'Month',
-  year: 'Year',
-  timeSelect: 'select time',
-  dateSelect: 'select date',
-  weekSelect: 'Choose a week',
-  monthSelect: 'Choose a month',
-  yearSelect: 'Choose a year',
-  decadeSelect: 'Choose a decade',
-  yearFormat: 'YYYY',
-  dateFormat: 'M/D/YYYY',
-  dayFormat: 'D',
-  dateTimeFormat: 'M/D/YYYY HH:mm:ss',
-  monthBeforeYear: true,
-  previousMonth: 'Previous month (PageUp)',
-  nextMonth: 'Next month (PageDown)',
-  previousYear: 'Last year (Control + left)',
-  nextYear: 'Next year (Control + right)',
-  previousDecade: 'Last decade',
-  nextDecade: 'Next decade',
-  previousCentury: 'Last century',
-  nextCentury: 'Next century'
-};
-
-const locale$1 = {
-  placeholder: 'Select time',
-  rangePlaceholder: ['Start time', 'End time']
-};
-var TimePicker = locale$1;
-
-// Merge into a locale object
-const locale = {
-  lang: Object.assign({
-    placeholder: 'Select date',
-    yearPlaceholder: 'Select year',
-    quarterPlaceholder: 'Select quarter',
-    monthPlaceholder: 'Select month',
-    weekPlaceholder: 'Select week',
-    rangePlaceholder: ['Start date', 'End date'],
-    rangeYearPlaceholder: ['Start year', 'End year'],
-    rangeQuarterPlaceholder: ['Start quarter', 'End quarter'],
-    rangeMonthPlaceholder: ['Start month', 'End month'],
-    rangeWeekPlaceholder: ['Start week', 'End week']
-  }, locale$2),
-  timePickerLocale: Object.assign({}, TimePicker)
-};
-// All settings at:
-// https://github.com/ant-design/ant-design/blob/master/components/date-picker/locale/example.json
-var enUS = locale;
-
-/* eslint-disable no-template-curly-in-string */
-const typeTemplate = '${label} is not a valid ${type}';
-const localeValues = {
-  locale: 'en',
-  Pagination: enUS$1,
-  DatePicker: enUS,
-  TimePicker,
-  Calendar: enUS,
-  global: {
-    placeholder: 'Please select'
-  },
-  Table: {
-    filterTitle: 'Filter menu',
-    filterConfirm: 'OK',
-    filterReset: 'Reset',
-    filterEmptyText: 'No filters',
-    filterCheckall: 'Select all items',
-    filterSearchPlaceholder: 'Search in filters',
-    emptyText: 'No data',
-    selectAll: 'Select current page',
-    selectInvert: 'Invert current page',
-    selectNone: 'Clear all data',
-    selectionAll: 'Select all data',
-    sortTitle: 'Sort',
-    expand: 'Expand row',
-    collapse: 'Collapse row',
-    triggerDesc: 'Click to sort descending',
-    triggerAsc: 'Click to sort ascending',
-    cancelSort: 'Click to cancel sorting'
-  },
-  Tour: {
-    Next: 'Next',
-    Previous: 'Previous',
-    Finish: 'Finish'
-  },
-  Modal: {
-    okText: 'OK',
-    cancelText: 'Cancel',
-    justOkText: 'OK'
-  },
-  Popconfirm: {
-    okText: 'OK',
-    cancelText: 'Cancel'
-  },
-  Transfer: {
-    titles: ['', ''],
-    searchPlaceholder: 'Search here',
-    itemUnit: 'item',
-    itemsUnit: 'items',
-    remove: 'Remove',
-    selectCurrent: 'Select current page',
-    removeCurrent: 'Remove current page',
-    selectAll: 'Select all data',
-    removeAll: 'Remove all data',
-    selectInvert: 'Invert current page'
-  },
-  Upload: {
-    uploading: 'Uploading...',
-    removeFile: 'Remove file',
-    uploadError: 'Upload error',
-    previewFile: 'Preview file',
-    downloadFile: 'Download file'
-  },
-  Empty: {
-    description: 'No data'
-  },
-  Icon: {
-    icon: 'icon'
-  },
-  Text: {
-    edit: 'Edit',
-    copy: 'Copy',
-    copied: 'Copied',
-    expand: 'Expand'
-  },
-  PageHeader: {
-    back: 'Back'
-  },
-  Form: {
-    optional: '(optional)',
-    defaultValidateMessages: {
-      default: 'Field validation error for ${label}',
-      required: 'Please enter ${label}',
-      enum: '${label} must be one of [${enum}]',
-      whitespace: '${label} cannot be a blank character',
-      date: {
-        format: '${label} date format is invalid',
-        parse: '${label} cannot be converted to a date',
-        invalid: '${label} is an invalid date'
-      },
-      types: {
-        string: typeTemplate,
-        method: typeTemplate,
-        array: typeTemplate,
-        object: typeTemplate,
-        number: typeTemplate,
-        date: typeTemplate,
-        boolean: typeTemplate,
-        integer: typeTemplate,
-        float: typeTemplate,
-        regexp: typeTemplate,
-        email: typeTemplate,
-        url: typeTemplate,
-        hex: typeTemplate
-      },
-      string: {
-        len: '${label} must be ${len} characters',
-        min: '${label} must be at least ${min} characters',
-        max: '${label} must be up to ${max} characters',
-        range: '${label} must be between ${min}-${max} characters'
-      },
-      number: {
-        len: '${label} must be equal to ${len}',
-        min: '${label} must be minimum ${min}',
-        max: '${label} must be maximum ${max}',
-        range: '${label} must be between ${min}-${max}'
-      },
-      array: {
-        len: 'Must be ${len} ${label}',
-        min: 'At least ${min} ${label}',
-        max: 'At most ${max} ${label}',
-        range: 'The amount of ${label} must be between ${min}-${max}'
-      },
-      pattern: {
-        mismatch: '${label} does not match the pattern ${pattern}'
-      }
-    }
-  },
-  Image: {
-    preview: 'Preview'
-  },
-  QRCode: {
-    expired: 'QR code expired',
-    refresh: 'Refresh'
-  },
-  ColorPicker: {
-    presetEmpty: 'Empty'
-  }
-};
-var defaultLocale = localeValues;
-
-Object.assign({}, defaultLocale.Modal);
-let localeList = [];
-const generateLocale = () => localeList.reduce((merged, locale) => Object.assign(Object.assign({}, merged), locale), defaultLocale.Modal);
-function changeConfirmLocale(newLocale) {
-  if (newLocale) {
-    const cloneLocale = Object.assign({}, newLocale);
-    localeList.push(cloneLocale);
-    generateLocale();
-    return () => {
-      localeList = localeList.filter(locale => locale !== cloneLocale);
-      generateLocale();
-    };
-  }
-  Object.assign({}, defaultLocale.Modal);
-}
-
-const LocaleContext = /*#__PURE__*/React.createContext(undefined);
-var LocaleContext$1 = LocaleContext;
-
-const ANT_MARK = 'internalMark';
-const LocaleProvider = props => {
-  const {
-    locale = {},
-    children,
-    _ANT_MARK__
-  } = props;
-  if (process.env.NODE_ENV !== 'production') {
-    const warning = devUseWarning('LocaleProvider');
-    process.env.NODE_ENV !== "production" ? warning(_ANT_MARK__ === ANT_MARK, 'deprecated', '`LocaleProvider` is deprecated. Please use `locale` with `ConfigProvider` instead: http://u.ant.design/locale') : void 0;
-  }
-  React__namespace.useEffect(() => {
-    const clearLocale = changeConfirmLocale(locale && locale.Modal);
-    return clearLocale;
-  }, [locale]);
-  const getMemoizedContextValue = React__namespace.useMemo(() => Object.assign(Object.assign({}, locale), {
-    exist: true
-  }), [locale]);
-  return /*#__PURE__*/React__namespace.createElement(LocaleContext$1.Provider, {
-    value: getMemoizedContextValue
-  }, children);
-};
-if (process.env.NODE_ENV !== 'production') {
-  LocaleProvider.displayName = 'LocaleProvider';
-}
-var LocaleProvider$1 = LocaleProvider;
-
-/**
- * Take input from [0, n] and return it as [0, 1]
- * @hidden
- */
-function bound01(n, max) {
-    if (isOnePointZero(n)) {
-        n = '100%';
-    }
-    var isPercent = isPercentage(n);
-    n = max === 360 ? n : Math.min(max, Math.max(0, parseFloat(n)));
-    // Automatically convert percentage into number
-    if (isPercent) {
-        n = parseInt(String(n * max), 10) / 100;
-    }
-    // Handle floating point rounding errors
-    if (Math.abs(n - max) < 0.000001) {
-        return 1;
-    }
-    // Convert into [0, 1] range if it isn't already
-    if (max === 360) {
-        // If n is a hue given in degrees,
-        // wrap around out-of-range values into [0, 360] range
-        // then convert into [0, 1].
-        n = (n < 0 ? (n % max) + max : n % max) / parseFloat(String(max));
-    }
-    else {
-        // If n not a hue given in degrees
-        // Convert into [0, 1] range if it isn't already.
-        n = (n % max) / parseFloat(String(max));
-    }
-    return n;
-}
-/**
- * Force a number between 0 and 1
- * @hidden
- */
-function clamp01(val) {
-    return Math.min(1, Math.max(0, val));
-}
-/**
- * Need to handle 1.0 as 100%, since once it is a number, there is no difference between it and 1
- * <http://stackoverflow.com/questions/7422072/javascript-how-to-detect-number-as-a-decimal-including-1-0>
- * @hidden
- */
-function isOnePointZero(n) {
-    return typeof n === 'string' && n.indexOf('.') !== -1 && parseFloat(n) === 1;
-}
-/**
- * Check to see if string passed in is a percentage
- * @hidden
- */
-function isPercentage(n) {
-    return typeof n === 'string' && n.indexOf('%') !== -1;
-}
-/**
- * Return a valid alpha value [0,1] with all invalid values being set to 1
- * @hidden
- */
-function boundAlpha(a) {
-    a = parseFloat(a);
-    if (isNaN(a) || a < 0 || a > 1) {
-        a = 1;
-    }
-    return a;
-}
-/**
- * Replace a decimal with it's percentage value
- * @hidden
- */
-function convertToPercentage(n) {
-    if (n <= 1) {
-        return "".concat(Number(n) * 100, "%");
-    }
-    return n;
-}
-/**
- * Force a hex value to have 2 characters
- * @hidden
- */
-function pad2(c) {
-    return c.length === 1 ? '0' + c : String(c);
-}
-
-// `rgbToHsl`, `rgbToHsv`, `hslToRgb`, `hsvToRgb` modified from:
-// <http://mjijackson.com/2008/02/rgb-to-hsl-and-rgb-to-hsv-color-model-conversion-algorithms-in-javascript>
-/**
- * Handle bounds / percentage checking to conform to CSS color spec
- * <http://www.w3.org/TR/css3-color/>
- * *Assumes:* r, g, b in [0, 255] or [0, 1]
- * *Returns:* { r, g, b } in [0, 255]
- */
-function rgbToRgb(r, g, b) {
     return {
-        r: bound01(r, 255) * 255,
-        g: bound01(g, 255) * 255,
-        b: bound01(b, 255) * 255,
+        ...slotProps,
+        ...overrideProps
     };
-}
-/**
- * Converts an RGB color value to HSL.
- * *Assumes:* r, g, and b are contained in [0, 255] or [0, 1]
- * *Returns:* { h, s, l } in [0,1]
- */
-function rgbToHsl(r, g, b) {
-    r = bound01(r, 255);
-    g = bound01(g, 255);
-    b = bound01(b, 255);
-    var max = Math.max(r, g, b);
-    var min = Math.min(r, g, b);
-    var h = 0;
-    var s = 0;
-    var l = (max + min) / 2;
-    if (max === min) {
-        s = 0;
-        h = 0; // achromatic
-    }
-    else {
-        var d = max - min;
-        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-        switch (max) {
-            case r:
-                h = (g - b) / d + (g < b ? 6 : 0);
-                break;
-            case g:
-                h = (b - r) / d + 2;
-                break;
-            case b:
-                h = (r - g) / d + 4;
-                break;
-        }
-        h /= 6;
-    }
-    return { h: h, s: s, l: l };
-}
-function hue2rgb(p, q, t) {
-    if (t < 0) {
-        t += 1;
-    }
-    if (t > 1) {
-        t -= 1;
-    }
-    if (t < 1 / 6) {
-        return p + (q - p) * (6 * t);
-    }
-    if (t < 1 / 2) {
-        return q;
-    }
-    if (t < 2 / 3) {
-        return p + (q - p) * (2 / 3 - t) * 6;
-    }
-    return p;
-}
-/**
- * Converts an HSL color value to RGB.
- *
- * *Assumes:* h is contained in [0, 1] or [0, 360] and s and l are contained [0, 1] or [0, 100]
- * *Returns:* { r, g, b } in the set [0, 255]
- */
-function hslToRgb(h, s, l) {
-    var r;
-    var g;
-    var b;
-    h = bound01(h, 360);
-    s = bound01(s, 100);
-    l = bound01(l, 100);
-    if (s === 0) {
-        // achromatic
-        g = l;
-        b = l;
-        r = l;
-    }
-    else {
-        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-        var p = 2 * l - q;
-        r = hue2rgb(p, q, h + 1 / 3);
-        g = hue2rgb(p, q, h);
-        b = hue2rgb(p, q, h - 1 / 3);
-    }
-    return { r: r * 255, g: g * 255, b: b * 255 };
-}
-/**
- * Converts an RGB color value to HSV
- *
- * *Assumes:* r, g, and b are contained in the set [0, 255] or [0, 1]
- * *Returns:* { h, s, v } in [0,1]
- */
-function rgbToHsv(r, g, b) {
-    r = bound01(r, 255);
-    g = bound01(g, 255);
-    b = bound01(b, 255);
-    var max = Math.max(r, g, b);
-    var min = Math.min(r, g, b);
-    var h = 0;
-    var v = max;
-    var d = max - min;
-    var s = max === 0 ? 0 : d / max;
-    if (max === min) {
-        h = 0; // achromatic
-    }
-    else {
-        switch (max) {
-            case r:
-                h = (g - b) / d + (g < b ? 6 : 0);
-                break;
-            case g:
-                h = (b - r) / d + 2;
-                break;
-            case b:
-                h = (r - g) / d + 4;
-                break;
-        }
-        h /= 6;
-    }
-    return { h: h, s: s, v: v };
-}
-/**
- * Converts an HSV color value to RGB.
- *
- * *Assumes:* h is contained in [0, 1] or [0, 360] and s and v are contained in [0, 1] or [0, 100]
- * *Returns:* { r, g, b } in the set [0, 255]
- */
-function hsvToRgb(h, s, v) {
-    h = bound01(h, 360) * 6;
-    s = bound01(s, 100);
-    v = bound01(v, 100);
-    var i = Math.floor(h);
-    var f = h - i;
-    var p = v * (1 - s);
-    var q = v * (1 - f * s);
-    var t = v * (1 - (1 - f) * s);
-    var mod = i % 6;
-    var r = [v, q, p, p, t, v][mod];
-    var g = [t, v, v, q, p, p][mod];
-    var b = [p, p, t, v, v, q][mod];
-    return { r: r * 255, g: g * 255, b: b * 255 };
-}
-/**
- * Converts an RGB color to hex
- *
- * Assumes r, g, and b are contained in the set [0, 255]
- * Returns a 3 or 6 character hex
- */
-function rgbToHex(r, g, b, allow3Char) {
-    var hex = [
-        pad2(Math.round(r).toString(16)),
-        pad2(Math.round(g).toString(16)),
-        pad2(Math.round(b).toString(16)),
-    ];
-    // Return a 3 character hex if possible
-    if (allow3Char &&
-        hex[0].startsWith(hex[0].charAt(1)) &&
-        hex[1].startsWith(hex[1].charAt(1)) &&
-        hex[2].startsWith(hex[2].charAt(1))) {
-        return hex[0].charAt(0) + hex[1].charAt(0) + hex[2].charAt(0);
-    }
-    return hex.join('');
-}
-/**
- * Converts an RGBA color plus alpha transparency to hex
- *
- * Assumes r, g, b are contained in the set [0, 255] and
- * a in [0, 1]. Returns a 4 or 8 character rgba hex
- */
-// eslint-disable-next-line max-params
-function rgbaToHex(r, g, b, a, allow4Char) {
-    var hex = [
-        pad2(Math.round(r).toString(16)),
-        pad2(Math.round(g).toString(16)),
-        pad2(Math.round(b).toString(16)),
-        pad2(convertDecimalToHex(a)),
-    ];
-    // Return a 4 character hex if possible
-    if (allow4Char &&
-        hex[0].startsWith(hex[0].charAt(1)) &&
-        hex[1].startsWith(hex[1].charAt(1)) &&
-        hex[2].startsWith(hex[2].charAt(1)) &&
-        hex[3].startsWith(hex[3].charAt(1))) {
-        return hex[0].charAt(0) + hex[1].charAt(0) + hex[2].charAt(0) + hex[3].charAt(0);
-    }
-    return hex.join('');
-}
-/** Converts a decimal to a hex value */
-function convertDecimalToHex(d) {
-    return Math.round(parseFloat(d) * 255).toString(16);
-}
-/** Converts a hex value to a decimal */
-function convertHexToDecimal(h) {
-    return parseIntFromHex(h) / 255;
-}
-/** Parse a base-16 hex value into a base-10 integer */
-function parseIntFromHex(val) {
-    return parseInt(val, 16);
-}
-function numberInputToObject(color) {
-    return {
-        r: color >> 16,
-        g: (color & 0xff00) >> 8,
-        b: color & 0xff,
-    };
-}
-
-// https://github.com/bahamas10/css-color-names/blob/master/css-color-names.json
-/**
- * @hidden
- */
-var names = {
-    aliceblue: '#f0f8ff',
-    antiquewhite: '#faebd7',
-    aqua: '#00ffff',
-    aquamarine: '#7fffd4',
-    azure: '#f0ffff',
-    beige: '#f5f5dc',
-    bisque: '#ffe4c4',
-    black: '#000000',
-    blanchedalmond: '#ffebcd',
-    blue: '#0000ff',
-    blueviolet: '#8a2be2',
-    brown: '#a52a2a',
-    burlywood: '#deb887',
-    cadetblue: '#5f9ea0',
-    chartreuse: '#7fff00',
-    chocolate: '#d2691e',
-    coral: '#ff7f50',
-    cornflowerblue: '#6495ed',
-    cornsilk: '#fff8dc',
-    crimson: '#dc143c',
-    cyan: '#00ffff',
-    darkblue: '#00008b',
-    darkcyan: '#008b8b',
-    darkgoldenrod: '#b8860b',
-    darkgray: '#a9a9a9',
-    darkgreen: '#006400',
-    darkgrey: '#a9a9a9',
-    darkkhaki: '#bdb76b',
-    darkmagenta: '#8b008b',
-    darkolivegreen: '#556b2f',
-    darkorange: '#ff8c00',
-    darkorchid: '#9932cc',
-    darkred: '#8b0000',
-    darksalmon: '#e9967a',
-    darkseagreen: '#8fbc8f',
-    darkslateblue: '#483d8b',
-    darkslategray: '#2f4f4f',
-    darkslategrey: '#2f4f4f',
-    darkturquoise: '#00ced1',
-    darkviolet: '#9400d3',
-    deeppink: '#ff1493',
-    deepskyblue: '#00bfff',
-    dimgray: '#696969',
-    dimgrey: '#696969',
-    dodgerblue: '#1e90ff',
-    firebrick: '#b22222',
-    floralwhite: '#fffaf0',
-    forestgreen: '#228b22',
-    fuchsia: '#ff00ff',
-    gainsboro: '#dcdcdc',
-    ghostwhite: '#f8f8ff',
-    goldenrod: '#daa520',
-    gold: '#ffd700',
-    gray: '#808080',
-    green: '#008000',
-    greenyellow: '#adff2f',
-    grey: '#808080',
-    honeydew: '#f0fff0',
-    hotpink: '#ff69b4',
-    indianred: '#cd5c5c',
-    indigo: '#4b0082',
-    ivory: '#fffff0',
-    khaki: '#f0e68c',
-    lavenderblush: '#fff0f5',
-    lavender: '#e6e6fa',
-    lawngreen: '#7cfc00',
-    lemonchiffon: '#fffacd',
-    lightblue: '#add8e6',
-    lightcoral: '#f08080',
-    lightcyan: '#e0ffff',
-    lightgoldenrodyellow: '#fafad2',
-    lightgray: '#d3d3d3',
-    lightgreen: '#90ee90',
-    lightgrey: '#d3d3d3',
-    lightpink: '#ffb6c1',
-    lightsalmon: '#ffa07a',
-    lightseagreen: '#20b2aa',
-    lightskyblue: '#87cefa',
-    lightslategray: '#778899',
-    lightslategrey: '#778899',
-    lightsteelblue: '#b0c4de',
-    lightyellow: '#ffffe0',
-    lime: '#00ff00',
-    limegreen: '#32cd32',
-    linen: '#faf0e6',
-    magenta: '#ff00ff',
-    maroon: '#800000',
-    mediumaquamarine: '#66cdaa',
-    mediumblue: '#0000cd',
-    mediumorchid: '#ba55d3',
-    mediumpurple: '#9370db',
-    mediumseagreen: '#3cb371',
-    mediumslateblue: '#7b68ee',
-    mediumspringgreen: '#00fa9a',
-    mediumturquoise: '#48d1cc',
-    mediumvioletred: '#c71585',
-    midnightblue: '#191970',
-    mintcream: '#f5fffa',
-    mistyrose: '#ffe4e1',
-    moccasin: '#ffe4b5',
-    navajowhite: '#ffdead',
-    navy: '#000080',
-    oldlace: '#fdf5e6',
-    olive: '#808000',
-    olivedrab: '#6b8e23',
-    orange: '#ffa500',
-    orangered: '#ff4500',
-    orchid: '#da70d6',
-    palegoldenrod: '#eee8aa',
-    palegreen: '#98fb98',
-    paleturquoise: '#afeeee',
-    palevioletred: '#db7093',
-    papayawhip: '#ffefd5',
-    peachpuff: '#ffdab9',
-    peru: '#cd853f',
-    pink: '#ffc0cb',
-    plum: '#dda0dd',
-    powderblue: '#b0e0e6',
-    purple: '#800080',
-    rebeccapurple: '#663399',
-    red: '#ff0000',
-    rosybrown: '#bc8f8f',
-    royalblue: '#4169e1',
-    saddlebrown: '#8b4513',
-    salmon: '#fa8072',
-    sandybrown: '#f4a460',
-    seagreen: '#2e8b57',
-    seashell: '#fff5ee',
-    sienna: '#a0522d',
-    silver: '#c0c0c0',
-    skyblue: '#87ceeb',
-    slateblue: '#6a5acd',
-    slategray: '#708090',
-    slategrey: '#708090',
-    snow: '#fffafa',
-    springgreen: '#00ff7f',
-    steelblue: '#4682b4',
-    tan: '#d2b48c',
-    teal: '#008080',
-    thistle: '#d8bfd8',
-    tomato: '#ff6347',
-    turquoise: '#40e0d0',
-    violet: '#ee82ee',
-    wheat: '#f5deb3',
-    white: '#ffffff',
-    whitesmoke: '#f5f5f5',
-    yellow: '#ffff00',
-    yellowgreen: '#9acd32',
-};
-
-/* eslint-disable @typescript-eslint/no-redundant-type-constituents */
-/**
- * Given a string or object, convert that input to RGB
- *
- * Possible string inputs:
- * ```
- * "red"
- * "#f00" or "f00"
- * "#ff0000" or "ff0000"
- * "#ff000000" or "ff000000"
- * "rgb 255 0 0" or "rgb (255, 0, 0)"
- * "rgb 1.0 0 0" or "rgb (1, 0, 0)"
- * "rgba (255, 0, 0, 1)" or "rgba 255, 0, 0, 1"
- * "rgba (1.0, 0, 0, 1)" or "rgba 1.0, 0, 0, 1"
- * "hsl(0, 100%, 50%)" or "hsl 0 100% 50%"
- * "hsla(0, 100%, 50%, 1)" or "hsla 0 100% 50%, 1"
- * "hsv(0, 100%, 100%)" or "hsv 0 100% 100%"
- * ```
- */
-function inputToRGB(color) {
-    var rgb = { r: 0, g: 0, b: 0 };
-    var a = 1;
-    var s = null;
-    var v = null;
-    var l = null;
-    var ok = false;
-    var format = false;
-    if (typeof color === 'string') {
-        color = stringInputToObject(color);
-    }
-    if (typeof color === 'object') {
-        if (isValidCSSUnit(color.r) && isValidCSSUnit(color.g) && isValidCSSUnit(color.b)) {
-            rgb = rgbToRgb(color.r, color.g, color.b);
-            ok = true;
-            format = String(color.r).substr(-1) === '%' ? 'prgb' : 'rgb';
-        }
-        else if (isValidCSSUnit(color.h) && isValidCSSUnit(color.s) && isValidCSSUnit(color.v)) {
-            s = convertToPercentage(color.s);
-            v = convertToPercentage(color.v);
-            rgb = hsvToRgb(color.h, s, v);
-            ok = true;
-            format = 'hsv';
-        }
-        else if (isValidCSSUnit(color.h) && isValidCSSUnit(color.s) && isValidCSSUnit(color.l)) {
-            s = convertToPercentage(color.s);
-            l = convertToPercentage(color.l);
-            rgb = hslToRgb(color.h, s, l);
-            ok = true;
-            format = 'hsl';
-        }
-        if (Object.prototype.hasOwnProperty.call(color, 'a')) {
-            a = color.a;
-        }
-    }
-    a = boundAlpha(a);
-    return {
-        ok: ok,
-        format: color.format || format,
-        r: Math.min(255, Math.max(rgb.r, 0)),
-        g: Math.min(255, Math.max(rgb.g, 0)),
-        b: Math.min(255, Math.max(rgb.b, 0)),
-        a: a,
-    };
-}
-// <http://www.w3.org/TR/css3-values/#integers>
-var CSS_INTEGER = '[-\\+]?\\d+%?';
-// <http://www.w3.org/TR/css3-values/#number-value>
-var CSS_NUMBER = '[-\\+]?\\d*\\.\\d+%?';
-// Allow positive/negative integer/number.  Don't capture the either/or, just the entire outcome.
-var CSS_UNIT = "(?:".concat(CSS_NUMBER, ")|(?:").concat(CSS_INTEGER, ")");
-// Actual matching.
-// Parentheses and commas are optional, but not required.
-// Whitespace can take the place of commas or opening paren
-var PERMISSIVE_MATCH3 = "[\\s|\\(]+(".concat(CSS_UNIT, ")[,|\\s]+(").concat(CSS_UNIT, ")[,|\\s]+(").concat(CSS_UNIT, ")\\s*\\)?");
-var PERMISSIVE_MATCH4 = "[\\s|\\(]+(".concat(CSS_UNIT, ")[,|\\s]+(").concat(CSS_UNIT, ")[,|\\s]+(").concat(CSS_UNIT, ")[,|\\s]+(").concat(CSS_UNIT, ")\\s*\\)?");
-var matchers = {
-    CSS_UNIT: new RegExp(CSS_UNIT),
-    rgb: new RegExp('rgb' + PERMISSIVE_MATCH3),
-    rgba: new RegExp('rgba' + PERMISSIVE_MATCH4),
-    hsl: new RegExp('hsl' + PERMISSIVE_MATCH3),
-    hsla: new RegExp('hsla' + PERMISSIVE_MATCH4),
-    hsv: new RegExp('hsv' + PERMISSIVE_MATCH3),
-    hsva: new RegExp('hsva' + PERMISSIVE_MATCH4),
-    hex3: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
-    hex6: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/,
-    hex4: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
-    hex8: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/,
-};
-/**
- * Permissive string parsing.  Take in a number of formats, and output an object
- * based on detected format.  Returns `{ r, g, b }` or `{ h, s, l }` or `{ h, s, v}`
- */
-function stringInputToObject(color) {
-    color = color.trim().toLowerCase();
-    if (color.length === 0) {
-        return false;
-    }
-    var named = false;
-    if (names[color]) {
-        color = names[color];
-        named = true;
-    }
-    else if (color === 'transparent') {
-        return { r: 0, g: 0, b: 0, a: 0, format: 'name' };
-    }
-    // Try to match string input using regular expressions.
-    // Keep most of the number bounding out of this function - don't worry about [0,1] or [0,100] or [0,360]
-    // Just return an object and let the conversion functions handle that.
-    // This way the result will be the same whether the tinycolor is initialized with string or object.
-    var match = matchers.rgb.exec(color);
-    if (match) {
-        return { r: match[1], g: match[2], b: match[3] };
-    }
-    match = matchers.rgba.exec(color);
-    if (match) {
-        return { r: match[1], g: match[2], b: match[3], a: match[4] };
-    }
-    match = matchers.hsl.exec(color);
-    if (match) {
-        return { h: match[1], s: match[2], l: match[3] };
-    }
-    match = matchers.hsla.exec(color);
-    if (match) {
-        return { h: match[1], s: match[2], l: match[3], a: match[4] };
-    }
-    match = matchers.hsv.exec(color);
-    if (match) {
-        return { h: match[1], s: match[2], v: match[3] };
-    }
-    match = matchers.hsva.exec(color);
-    if (match) {
-        return { h: match[1], s: match[2], v: match[3], a: match[4] };
-    }
-    match = matchers.hex8.exec(color);
-    if (match) {
-        return {
-            r: parseIntFromHex(match[1]),
-            g: parseIntFromHex(match[2]),
-            b: parseIntFromHex(match[3]),
-            a: convertHexToDecimal(match[4]),
-            format: named ? 'name' : 'hex8',
-        };
-    }
-    match = matchers.hex6.exec(color);
-    if (match) {
-        return {
-            r: parseIntFromHex(match[1]),
-            g: parseIntFromHex(match[2]),
-            b: parseIntFromHex(match[3]),
-            format: named ? 'name' : 'hex',
-        };
-    }
-    match = matchers.hex4.exec(color);
-    if (match) {
-        return {
-            r: parseIntFromHex(match[1] + match[1]),
-            g: parseIntFromHex(match[2] + match[2]),
-            b: parseIntFromHex(match[3] + match[3]),
-            a: convertHexToDecimal(match[4] + match[4]),
-            format: named ? 'name' : 'hex8',
-        };
-    }
-    match = matchers.hex3.exec(color);
-    if (match) {
-        return {
-            r: parseIntFromHex(match[1] + match[1]),
-            g: parseIntFromHex(match[2] + match[2]),
-            b: parseIntFromHex(match[3] + match[3]),
-            format: named ? 'name' : 'hex',
-        };
-    }
-    return false;
-}
-/**
- * Check to see if it looks like a CSS unit
- * (see `matchers` above for definition).
- */
-function isValidCSSUnit(color) {
-    return Boolean(matchers.CSS_UNIT.exec(String(color)));
-}
-
-var TinyColor = /** @class */ (function () {
-    function TinyColor(color, opts) {
-        if (color === void 0) { color = ''; }
-        if (opts === void 0) { opts = {}; }
-        var _a;
-        // If input is already a tinycolor, return itself
-        if (color instanceof TinyColor) {
-            // eslint-disable-next-line no-constructor-return
-            return color;
-        }
-        if (typeof color === 'number') {
-            color = numberInputToObject(color);
-        }
-        this.originalInput = color;
-        var rgb = inputToRGB(color);
-        this.originalInput = color;
-        this.r = rgb.r;
-        this.g = rgb.g;
-        this.b = rgb.b;
-        this.a = rgb.a;
-        this.roundA = Math.round(100 * this.a) / 100;
-        this.format = (_a = opts.format) !== null && _a !== void 0 ? _a : rgb.format;
-        this.gradientType = opts.gradientType;
-        // Don't let the range of [0,255] come back in [0,1].
-        // Potentially lose a little bit of precision here, but will fix issues where
-        // .5 gets interpreted as half of the total, instead of half of 1
-        // If it was supposed to be 128, this was already taken care of by `inputToRgb`
-        if (this.r < 1) {
-            this.r = Math.round(this.r);
-        }
-        if (this.g < 1) {
-            this.g = Math.round(this.g);
-        }
-        if (this.b < 1) {
-            this.b = Math.round(this.b);
-        }
-        this.isValid = rgb.ok;
-    }
-    TinyColor.prototype.isDark = function () {
-        return this.getBrightness() < 128;
-    };
-    TinyColor.prototype.isLight = function () {
-        return !this.isDark();
-    };
-    /**
-     * Returns the perceived brightness of the color, from 0-255.
-     */
-    TinyColor.prototype.getBrightness = function () {
-        // http://www.w3.org/TR/AERT#color-contrast
-        var rgb = this.toRgb();
-        return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
-    };
-    /**
-     * Returns the perceived luminance of a color, from 0-1.
-     */
-    TinyColor.prototype.getLuminance = function () {
-        // http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
-        var rgb = this.toRgb();
-        var R;
-        var G;
-        var B;
-        var RsRGB = rgb.r / 255;
-        var GsRGB = rgb.g / 255;
-        var BsRGB = rgb.b / 255;
-        if (RsRGB <= 0.03928) {
-            R = RsRGB / 12.92;
-        }
-        else {
-            // eslint-disable-next-line prefer-exponentiation-operator
-            R = Math.pow((RsRGB + 0.055) / 1.055, 2.4);
-        }
-        if (GsRGB <= 0.03928) {
-            G = GsRGB / 12.92;
-        }
-        else {
-            // eslint-disable-next-line prefer-exponentiation-operator
-            G = Math.pow((GsRGB + 0.055) / 1.055, 2.4);
-        }
-        if (BsRGB <= 0.03928) {
-            B = BsRGB / 12.92;
-        }
-        else {
-            // eslint-disable-next-line prefer-exponentiation-operator
-            B = Math.pow((BsRGB + 0.055) / 1.055, 2.4);
-        }
-        return 0.2126 * R + 0.7152 * G + 0.0722 * B;
-    };
-    /**
-     * Returns the alpha value of a color, from 0-1.
-     */
-    TinyColor.prototype.getAlpha = function () {
-        return this.a;
-    };
-    /**
-     * Sets the alpha value on the current color.
-     *
-     * @param alpha - The new alpha value. The accepted range is 0-1.
-     */
-    TinyColor.prototype.setAlpha = function (alpha) {
-        this.a = boundAlpha(alpha);
-        this.roundA = Math.round(100 * this.a) / 100;
-        return this;
-    };
-    /**
-     * Returns whether the color is monochrome.
-     */
-    TinyColor.prototype.isMonochrome = function () {
-        var s = this.toHsl().s;
-        return s === 0;
-    };
-    /**
-     * Returns the object as a HSVA object.
-     */
-    TinyColor.prototype.toHsv = function () {
-        var hsv = rgbToHsv(this.r, this.g, this.b);
-        return { h: hsv.h * 360, s: hsv.s, v: hsv.v, a: this.a };
-    };
-    /**
-     * Returns the hsva values interpolated into a string with the following format:
-     * "hsva(xxx, xxx, xxx, xx)".
-     */
-    TinyColor.prototype.toHsvString = function () {
-        var hsv = rgbToHsv(this.r, this.g, this.b);
-        var h = Math.round(hsv.h * 360);
-        var s = Math.round(hsv.s * 100);
-        var v = Math.round(hsv.v * 100);
-        return this.a === 1 ? "hsv(".concat(h, ", ").concat(s, "%, ").concat(v, "%)") : "hsva(".concat(h, ", ").concat(s, "%, ").concat(v, "%, ").concat(this.roundA, ")");
-    };
-    /**
-     * Returns the object as a HSLA object.
-     */
-    TinyColor.prototype.toHsl = function () {
-        var hsl = rgbToHsl(this.r, this.g, this.b);
-        return { h: hsl.h * 360, s: hsl.s, l: hsl.l, a: this.a };
-    };
-    /**
-     * Returns the hsla values interpolated into a string with the following format:
-     * "hsla(xxx, xxx, xxx, xx)".
-     */
-    TinyColor.prototype.toHslString = function () {
-        var hsl = rgbToHsl(this.r, this.g, this.b);
-        var h = Math.round(hsl.h * 360);
-        var s = Math.round(hsl.s * 100);
-        var l = Math.round(hsl.l * 100);
-        return this.a === 1 ? "hsl(".concat(h, ", ").concat(s, "%, ").concat(l, "%)") : "hsla(".concat(h, ", ").concat(s, "%, ").concat(l, "%, ").concat(this.roundA, ")");
-    };
-    /**
-     * Returns the hex value of the color.
-     * @param allow3Char will shorten hex value to 3 char if possible
-     */
-    TinyColor.prototype.toHex = function (allow3Char) {
-        if (allow3Char === void 0) { allow3Char = false; }
-        return rgbToHex(this.r, this.g, this.b, allow3Char);
-    };
-    /**
-     * Returns the hex value of the color -with a # prefixed.
-     * @param allow3Char will shorten hex value to 3 char if possible
-     */
-    TinyColor.prototype.toHexString = function (allow3Char) {
-        if (allow3Char === void 0) { allow3Char = false; }
-        return '#' + this.toHex(allow3Char);
-    };
-    /**
-     * Returns the hex 8 value of the color.
-     * @param allow4Char will shorten hex value to 4 char if possible
-     */
-    TinyColor.prototype.toHex8 = function (allow4Char) {
-        if (allow4Char === void 0) { allow4Char = false; }
-        return rgbaToHex(this.r, this.g, this.b, this.a, allow4Char);
-    };
-    /**
-     * Returns the hex 8 value of the color -with a # prefixed.
-     * @param allow4Char will shorten hex value to 4 char if possible
-     */
-    TinyColor.prototype.toHex8String = function (allow4Char) {
-        if (allow4Char === void 0) { allow4Char = false; }
-        return '#' + this.toHex8(allow4Char);
-    };
-    /**
-     * Returns the shorter hex value of the color depends on its alpha -with a # prefixed.
-     * @param allowShortChar will shorten hex value to 3 or 4 char if possible
-     */
-    TinyColor.prototype.toHexShortString = function (allowShortChar) {
-        if (allowShortChar === void 0) { allowShortChar = false; }
-        return this.a === 1 ? this.toHexString(allowShortChar) : this.toHex8String(allowShortChar);
-    };
-    /**
-     * Returns the object as a RGBA object.
-     */
-    TinyColor.prototype.toRgb = function () {
-        return {
-            r: Math.round(this.r),
-            g: Math.round(this.g),
-            b: Math.round(this.b),
-            a: this.a,
-        };
-    };
-    /**
-     * Returns the RGBA values interpolated into a string with the following format:
-     * "RGBA(xxx, xxx, xxx, xx)".
-     */
-    TinyColor.prototype.toRgbString = function () {
-        var r = Math.round(this.r);
-        var g = Math.round(this.g);
-        var b = Math.round(this.b);
-        return this.a === 1 ? "rgb(".concat(r, ", ").concat(g, ", ").concat(b, ")") : "rgba(".concat(r, ", ").concat(g, ", ").concat(b, ", ").concat(this.roundA, ")");
-    };
-    /**
-     * Returns the object as a RGBA object.
-     */
-    TinyColor.prototype.toPercentageRgb = function () {
-        var fmt = function (x) { return "".concat(Math.round(bound01(x, 255) * 100), "%"); };
-        return {
-            r: fmt(this.r),
-            g: fmt(this.g),
-            b: fmt(this.b),
-            a: this.a,
-        };
-    };
-    /**
-     * Returns the RGBA relative values interpolated into a string
-     */
-    TinyColor.prototype.toPercentageRgbString = function () {
-        var rnd = function (x) { return Math.round(bound01(x, 255) * 100); };
-        return this.a === 1
-            ? "rgb(".concat(rnd(this.r), "%, ").concat(rnd(this.g), "%, ").concat(rnd(this.b), "%)")
-            : "rgba(".concat(rnd(this.r), "%, ").concat(rnd(this.g), "%, ").concat(rnd(this.b), "%, ").concat(this.roundA, ")");
-    };
-    /**
-     * The 'real' name of the color -if there is one.
-     */
-    TinyColor.prototype.toName = function () {
-        if (this.a === 0) {
-            return 'transparent';
-        }
-        if (this.a < 1) {
-            return false;
-        }
-        var hex = '#' + rgbToHex(this.r, this.g, this.b, false);
-        for (var _i = 0, _a = Object.entries(names); _i < _a.length; _i++) {
-            var _b = _a[_i], key = _b[0], value = _b[1];
-            if (hex === value) {
-                return key;
-            }
-        }
-        return false;
-    };
-    TinyColor.prototype.toString = function (format) {
-        var formatSet = Boolean(format);
-        format = format !== null && format !== void 0 ? format : this.format;
-        var formattedString = false;
-        var hasAlpha = this.a < 1 && this.a >= 0;
-        var needsAlphaFormat = !formatSet && hasAlpha && (format.startsWith('hex') || format === 'name');
-        if (needsAlphaFormat) {
-            // Special case for "transparent", all other non-alpha formats
-            // will return rgba when there is transparency.
-            if (format === 'name' && this.a === 0) {
-                return this.toName();
-            }
-            return this.toRgbString();
-        }
-        if (format === 'rgb') {
-            formattedString = this.toRgbString();
-        }
-        if (format === 'prgb') {
-            formattedString = this.toPercentageRgbString();
-        }
-        if (format === 'hex' || format === 'hex6') {
-            formattedString = this.toHexString();
-        }
-        if (format === 'hex3') {
-            formattedString = this.toHexString(true);
-        }
-        if (format === 'hex4') {
-            formattedString = this.toHex8String(true);
-        }
-        if (format === 'hex8') {
-            formattedString = this.toHex8String();
-        }
-        if (format === 'name') {
-            formattedString = this.toName();
-        }
-        if (format === 'hsl') {
-            formattedString = this.toHslString();
-        }
-        if (format === 'hsv') {
-            formattedString = this.toHsvString();
-        }
-        return formattedString || this.toHexString();
-    };
-    TinyColor.prototype.toNumber = function () {
-        return (Math.round(this.r) << 16) + (Math.round(this.g) << 8) + Math.round(this.b);
-    };
-    TinyColor.prototype.clone = function () {
-        return new TinyColor(this.toString());
-    };
-    /**
-     * Lighten the color a given amount. Providing 100 will always return white.
-     * @param amount - valid between 1-100
-     */
-    TinyColor.prototype.lighten = function (amount) {
-        if (amount === void 0) { amount = 10; }
-        var hsl = this.toHsl();
-        hsl.l += amount / 100;
-        hsl.l = clamp01(hsl.l);
-        return new TinyColor(hsl);
-    };
-    /**
-     * Brighten the color a given amount, from 0 to 100.
-     * @param amount - valid between 1-100
-     */
-    TinyColor.prototype.brighten = function (amount) {
-        if (amount === void 0) { amount = 10; }
-        var rgb = this.toRgb();
-        rgb.r = Math.max(0, Math.min(255, rgb.r - Math.round(255 * -(amount / 100))));
-        rgb.g = Math.max(0, Math.min(255, rgb.g - Math.round(255 * -(amount / 100))));
-        rgb.b = Math.max(0, Math.min(255, rgb.b - Math.round(255 * -(amount / 100))));
-        return new TinyColor(rgb);
-    };
-    /**
-     * Darken the color a given amount, from 0 to 100.
-     * Providing 100 will always return black.
-     * @param amount - valid between 1-100
-     */
-    TinyColor.prototype.darken = function (amount) {
-        if (amount === void 0) { amount = 10; }
-        var hsl = this.toHsl();
-        hsl.l -= amount / 100;
-        hsl.l = clamp01(hsl.l);
-        return new TinyColor(hsl);
-    };
-    /**
-     * Mix the color with pure white, from 0 to 100.
-     * Providing 0 will do nothing, providing 100 will always return white.
-     * @param amount - valid between 1-100
-     */
-    TinyColor.prototype.tint = function (amount) {
-        if (amount === void 0) { amount = 10; }
-        return this.mix('white', amount);
-    };
-    /**
-     * Mix the color with pure black, from 0 to 100.
-     * Providing 0 will do nothing, providing 100 will always return black.
-     * @param amount - valid between 1-100
-     */
-    TinyColor.prototype.shade = function (amount) {
-        if (amount === void 0) { amount = 10; }
-        return this.mix('black', amount);
-    };
-    /**
-     * Desaturate the color a given amount, from 0 to 100.
-     * Providing 100 will is the same as calling greyscale
-     * @param amount - valid between 1-100
-     */
-    TinyColor.prototype.desaturate = function (amount) {
-        if (amount === void 0) { amount = 10; }
-        var hsl = this.toHsl();
-        hsl.s -= amount / 100;
-        hsl.s = clamp01(hsl.s);
-        return new TinyColor(hsl);
-    };
-    /**
-     * Saturate the color a given amount, from 0 to 100.
-     * @param amount - valid between 1-100
-     */
-    TinyColor.prototype.saturate = function (amount) {
-        if (amount === void 0) { amount = 10; }
-        var hsl = this.toHsl();
-        hsl.s += amount / 100;
-        hsl.s = clamp01(hsl.s);
-        return new TinyColor(hsl);
-    };
-    /**
-     * Completely desaturates a color into greyscale.
-     * Same as calling `desaturate(100)`
-     */
-    TinyColor.prototype.greyscale = function () {
-        return this.desaturate(100);
-    };
-    /**
-     * Spin takes a positive or negative amount within [-360, 360] indicating the change of hue.
-     * Values outside of this range will be wrapped into this range.
-     */
-    TinyColor.prototype.spin = function (amount) {
-        var hsl = this.toHsl();
-        var hue = (hsl.h + amount) % 360;
-        hsl.h = hue < 0 ? 360 + hue : hue;
-        return new TinyColor(hsl);
-    };
-    /**
-     * Mix the current color a given amount with another color, from 0 to 100.
-     * 0 means no mixing (return current color).
-     */
-    TinyColor.prototype.mix = function (color, amount) {
-        if (amount === void 0) { amount = 50; }
-        var rgb1 = this.toRgb();
-        var rgb2 = new TinyColor(color).toRgb();
-        var p = amount / 100;
-        var rgba = {
-            r: (rgb2.r - rgb1.r) * p + rgb1.r,
-            g: (rgb2.g - rgb1.g) * p + rgb1.g,
-            b: (rgb2.b - rgb1.b) * p + rgb1.b,
-            a: (rgb2.a - rgb1.a) * p + rgb1.a,
-        };
-        return new TinyColor(rgba);
-    };
-    TinyColor.prototype.analogous = function (results, slices) {
-        if (results === void 0) { results = 6; }
-        if (slices === void 0) { slices = 30; }
-        var hsl = this.toHsl();
-        var part = 360 / slices;
-        var ret = [this];
-        for (hsl.h = (hsl.h - ((part * results) >> 1) + 720) % 360; --results;) {
-            hsl.h = (hsl.h + part) % 360;
-            ret.push(new TinyColor(hsl));
-        }
-        return ret;
-    };
-    /**
-     * taken from https://github.com/infusion/jQuery-xcolor/blob/master/jquery.xcolor.js
-     */
-    TinyColor.prototype.complement = function () {
-        var hsl = this.toHsl();
-        hsl.h = (hsl.h + 180) % 360;
-        return new TinyColor(hsl);
-    };
-    TinyColor.prototype.monochromatic = function (results) {
-        if (results === void 0) { results = 6; }
-        var hsv = this.toHsv();
-        var h = hsv.h;
-        var s = hsv.s;
-        var v = hsv.v;
-        var res = [];
-        var modification = 1 / results;
-        while (results--) {
-            res.push(new TinyColor({ h: h, s: s, v: v }));
-            v = (v + modification) % 1;
-        }
-        return res;
-    };
-    TinyColor.prototype.splitcomplement = function () {
-        var hsl = this.toHsl();
-        var h = hsl.h;
-        return [
-            this,
-            new TinyColor({ h: (h + 72) % 360, s: hsl.s, l: hsl.l }),
-            new TinyColor({ h: (h + 216) % 360, s: hsl.s, l: hsl.l }),
-        ];
-    };
-    /**
-     * Compute how the color would appear on a background
-     */
-    TinyColor.prototype.onBackground = function (background) {
-        var fg = this.toRgb();
-        var bg = new TinyColor(background).toRgb();
-        var alpha = fg.a + bg.a * (1 - fg.a);
-        return new TinyColor({
-            r: (fg.r * fg.a + bg.r * bg.a * (1 - fg.a)) / alpha,
-            g: (fg.g * fg.a + bg.g * bg.a * (1 - fg.a)) / alpha,
-            b: (fg.b * fg.a + bg.b * bg.a * (1 - fg.a)) / alpha,
-            a: alpha,
-        });
-    };
-    /**
-     * Alias for `polyad(3)`
-     */
-    TinyColor.prototype.triad = function () {
-        return this.polyad(3);
-    };
-    /**
-     * Alias for `polyad(4)`
-     */
-    TinyColor.prototype.tetrad = function () {
-        return this.polyad(4);
-    };
-    /**
-     * Get polyad colors, like (for 1, 2, 3, 4, 5, 6, 7, 8, etc...)
-     * monad, dyad, triad, tetrad, pentad, hexad, heptad, octad, etc...
-     */
-    TinyColor.prototype.polyad = function (n) {
-        var hsl = this.toHsl();
-        var h = hsl.h;
-        var result = [this];
-        var increment = 360 / n;
-        for (var i = 1; i < n; i++) {
-            result.push(new TinyColor({ h: (h + i * increment) % 360, s: hsl.s, l: hsl.l }));
-        }
-        return result;
-    };
-    /**
-     * compare color vs current color
-     */
-    TinyColor.prototype.equals = function (color) {
-        return this.toRgbString() === new TinyColor(color).toRgbString();
-    };
-    return TinyColor;
-}());
-
-var hueStep = 2; // 色相阶梯
-
-var saturationStep = 0.16; // 饱和度阶梯，浅色部分
-
-var saturationStep2 = 0.05; // 饱和度阶梯，深色部分
-
-var brightnessStep1 = 0.05; // 亮度阶梯，浅色部分
-
-var brightnessStep2 = 0.15; // 亮度阶梯，深色部分
-
-var lightColorCount = 5; // 浅色数量，主色上
-
-var darkColorCount = 4; // 深色数量，主色下
-// 暗色主题颜色映射关系表
-
-var darkColorMap = [{
-  index: 7,
-  opacity: 0.15
-}, {
-  index: 6,
-  opacity: 0.25
-}, {
-  index: 5,
-  opacity: 0.3
-}, {
-  index: 5,
-  opacity: 0.45
-}, {
-  index: 5,
-  opacity: 0.65
-}, {
-  index: 5,
-  opacity: 0.85
-}, {
-  index: 4,
-  opacity: 0.9
-}, {
-  index: 3,
-  opacity: 0.95
-}, {
-  index: 2,
-  opacity: 0.97
-}, {
-  index: 1,
-  opacity: 0.98
-}];
-
-// Wrapper function ported from TinyColor.prototype.toHsv
-// Keep it here because of `hsv.h * 360`
-function toHsv(_ref) {
-  var r = _ref.r,
-      g = _ref.g,
-      b = _ref.b;
-  var hsv = rgbToHsv(r, g, b);
-  return {
-    h: hsv.h * 360,
-    s: hsv.s,
-    v: hsv.v
-  };
-} // Wrapper function ported from TinyColor.prototype.toHexString
-// Keep it here because of the prefix `#`
-
-
-function toHex(_ref2) {
-  var r = _ref2.r,
-      g = _ref2.g,
-      b = _ref2.b;
-  return "#".concat(rgbToHex(r, g, b, false));
-} // Wrapper function ported from TinyColor.prototype.mix, not treeshakable.
-// Amount in range [0, 1]
-// Assume color1 & color2 has no alpha, since the following src code did so.
-
-
-function mix(rgb1, rgb2, amount) {
-  var p = amount / 100;
-  var rgb = {
-    r: (rgb2.r - rgb1.r) * p + rgb1.r,
-    g: (rgb2.g - rgb1.g) * p + rgb1.g,
-    b: (rgb2.b - rgb1.b) * p + rgb1.b
-  };
-  return rgb;
-}
-
-function getHue(hsv, i, light) {
-  var hue; // 根据色相不同，色相转向不同
-
-  if (Math.round(hsv.h) >= 60 && Math.round(hsv.h) <= 240) {
-    hue = light ? Math.round(hsv.h) - hueStep * i : Math.round(hsv.h) + hueStep * i;
-  } else {
-    hue = light ? Math.round(hsv.h) + hueStep * i : Math.round(hsv.h) - hueStep * i;
-  }
-
-  if (hue < 0) {
-    hue += 360;
-  } else if (hue >= 360) {
-    hue -= 360;
-  }
-
-  return hue;
-}
-
-function getSaturation(hsv, i, light) {
-  // grey color don't change saturation
-  if (hsv.h === 0 && hsv.s === 0) {
-    return hsv.s;
-  }
-
-  var saturation;
-
-  if (light) {
-    saturation = hsv.s - saturationStep * i;
-  } else if (i === darkColorCount) {
-    saturation = hsv.s + saturationStep;
-  } else {
-    saturation = hsv.s + saturationStep2 * i;
-  } // 边界值修正
-
-
-  if (saturation > 1) {
-    saturation = 1;
-  } // 第一格的 s 限制在 0.06-0.1 之间
-
-
-  if (light && i === lightColorCount && saturation > 0.1) {
-    saturation = 0.1;
-  }
-
-  if (saturation < 0.06) {
-    saturation = 0.06;
-  }
-
-  return Number(saturation.toFixed(2));
-}
-
-function getValue(hsv, i, light) {
-  var value;
-
-  if (light) {
-    value = hsv.v + brightnessStep1 * i;
-  } else {
-    value = hsv.v - brightnessStep2 * i;
-  }
-
-  if (value > 1) {
-    value = 1;
-  }
-
-  return Number(value.toFixed(2));
-}
-
-function generate$1(color) {
-  var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var patterns = [];
-  var pColor = inputToRGB(color);
-
-  for (var i = lightColorCount; i > 0; i -= 1) {
-    var hsv = toHsv(pColor);
-    var colorString = toHex(inputToRGB({
-      h: getHue(hsv, i, true),
-      s: getSaturation(hsv, i, true),
-      v: getValue(hsv, i, true)
-    }));
-    patterns.push(colorString);
-  }
-
-  patterns.push(toHex(pColor));
-
-  for (var _i = 1; _i <= darkColorCount; _i += 1) {
-    var _hsv = toHsv(pColor);
-
-    var _colorString = toHex(inputToRGB({
-      h: getHue(_hsv, _i),
-      s: getSaturation(_hsv, _i),
-      v: getValue(_hsv, _i)
-    }));
-
-    patterns.push(_colorString);
-  } // dark theme patterns
-
-
-  if (opts.theme === 'dark') {
-    return darkColorMap.map(function (_ref3) {
-      var index = _ref3.index,
-          opacity = _ref3.opacity;
-      var darkColorString = toHex(mix(inputToRGB(opts.backgroundColor || '#141414'), inputToRGB(patterns[index]), opacity * 100));
-      return darkColorString;
-    });
-  }
-
-  return patterns;
-}
-
-var presetPrimaryColors = {
-  red: '#F5222D',
-  volcano: '#FA541C',
-  orange: '#FA8C16',
-  gold: '#FAAD14',
-  yellow: '#FADB14',
-  lime: '#A0D911',
-  green: '#52C41A',
-  cyan: '#13C2C2',
-  blue: '#1677FF',
-  geekblue: '#2F54EB',
-  purple: '#722ED1',
-  magenta: '#EB2F96',
-  grey: '#666666'
-};
-var presetPalettes = {};
-var presetDarkPalettes = {};
-Object.keys(presetPrimaryColors).forEach(function (key) {
-  presetPalettes[key] = generate$1(presetPrimaryColors[key]);
-  presetPalettes[key].primary = presetPalettes[key][5]; // dark presetPalettes
-
-  presetDarkPalettes[key] = generate$1(presetPrimaryColors[key], {
-    theme: 'dark',
-    backgroundColor: '#141414'
-  });
-  presetDarkPalettes[key].primary = presetDarkPalettes[key][5];
-});
-var blue = presetPalettes.blue;
-
-const genControlHeight = token => {
-  const {
-    controlHeight
-  } = token;
-  return {
-    controlHeightSM: controlHeight * 0.75,
-    controlHeightXS: controlHeight * 0.5,
-    controlHeightLG: controlHeight * 1.25
-  };
-};
-var genControlHeight$1 = genControlHeight;
-
-function genSizeMapToken(token) {
-  const {
-    sizeUnit,
-    sizeStep
-  } = token;
-  return {
-    sizeXXL: sizeUnit * (sizeStep + 8),
-    sizeXL: sizeUnit * (sizeStep + 4),
-    sizeLG: sizeUnit * (sizeStep + 2),
-    sizeMD: sizeUnit * (sizeStep + 1),
-    sizeMS: sizeUnit * sizeStep,
-    size: sizeUnit * sizeStep,
-    sizeSM: sizeUnit * (sizeStep - 1),
-    sizeXS: sizeUnit * (sizeStep - 2),
-    sizeXXS: sizeUnit * (sizeStep - 3) // 4
-  };
-}
-
-const defaultPresetColors = {
-  blue: '#1677ff',
-  purple: '#722ED1',
-  cyan: '#13C2C2',
-  green: '#52C41A',
-  magenta: '#EB2F96',
-  pink: '#eb2f96',
-  red: '#F5222D',
-  orange: '#FA8C16',
-  yellow: '#FADB14',
-  volcano: '#FA541C',
-  geekblue: '#2F54EB',
-  gold: '#FAAD14',
-  lime: '#A0D911'
-};
-const seedToken = Object.assign(Object.assign({}, defaultPresetColors), {
-  // Color
-  colorPrimary: '#1677ff',
-  colorSuccess: '#52c41a',
-  colorWarning: '#faad14',
-  colorError: '#ff4d4f',
-  colorInfo: '#1677ff',
-  colorLink: '',
-  colorTextBase: '',
-  colorBgBase: '',
-  // Font
-  fontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-'Noto Color Emoji'`,
-  fontFamilyCode: `'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace`,
-  fontSize: 14,
-  // Line
-  lineWidth: 1,
-  lineType: 'solid',
-  // Motion
-  motionUnit: 0.1,
-  motionBase: 0,
-  motionEaseOutCirc: 'cubic-bezier(0.08, 0.82, 0.17, 1)',
-  motionEaseInOutCirc: 'cubic-bezier(0.78, 0.14, 0.15, 0.86)',
-  motionEaseOut: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
-  motionEaseInOut: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
-  motionEaseOutBack: 'cubic-bezier(0.12, 0.4, 0.29, 1.46)',
-  motionEaseInBack: 'cubic-bezier(0.71, -0.46, 0.88, 0.6)',
-  motionEaseInQuint: 'cubic-bezier(0.755, 0.05, 0.855, 0.06)',
-  motionEaseOutQuint: 'cubic-bezier(0.23, 1, 0.32, 1)',
-  // Radius
-  borderRadius: 6,
-  // Size
-  sizeUnit: 4,
-  sizeStep: 4,
-  sizePopupArrow: 16,
-  // Control Base
-  controlHeight: 32,
-  // zIndex
-  zIndexBase: 0,
-  zIndexPopupBase: 1000,
-  // Image
-  opacityImage: 1,
-  // Wireframe
-  wireframe: false,
-  // Motion
-  motion: true
-});
-var seedToken$1 = seedToken;
-
-function genColorMapToken(seed, _ref) {
-  let {
-    generateColorPalettes,
-    generateNeutralColorPalettes
-  } = _ref;
-  const {
-    colorSuccess: colorSuccessBase,
-    colorWarning: colorWarningBase,
-    colorError: colorErrorBase,
-    colorInfo: colorInfoBase,
-    colorPrimary: colorPrimaryBase,
-    colorBgBase,
-    colorTextBase
-  } = seed;
-  const primaryColors = generateColorPalettes(colorPrimaryBase);
-  const successColors = generateColorPalettes(colorSuccessBase);
-  const warningColors = generateColorPalettes(colorWarningBase);
-  const errorColors = generateColorPalettes(colorErrorBase);
-  const infoColors = generateColorPalettes(colorInfoBase);
-  const neutralColors = generateNeutralColorPalettes(colorBgBase, colorTextBase);
-  // Color Link
-  const colorLink = seed.colorLink || seed.colorInfo;
-  const linkColors = generateColorPalettes(colorLink);
-  return Object.assign(Object.assign({}, neutralColors), {
-    colorPrimaryBg: primaryColors[1],
-    colorPrimaryBgHover: primaryColors[2],
-    colorPrimaryBorder: primaryColors[3],
-    colorPrimaryBorderHover: primaryColors[4],
-    colorPrimaryHover: primaryColors[5],
-    colorPrimary: primaryColors[6],
-    colorPrimaryActive: primaryColors[7],
-    colorPrimaryTextHover: primaryColors[8],
-    colorPrimaryText: primaryColors[9],
-    colorPrimaryTextActive: primaryColors[10],
-    colorSuccessBg: successColors[1],
-    colorSuccessBgHover: successColors[2],
-    colorSuccessBorder: successColors[3],
-    colorSuccessBorderHover: successColors[4],
-    colorSuccessHover: successColors[4],
-    colorSuccess: successColors[6],
-    colorSuccessActive: successColors[7],
-    colorSuccessTextHover: successColors[8],
-    colorSuccessText: successColors[9],
-    colorSuccessTextActive: successColors[10],
-    colorErrorBg: errorColors[1],
-    colorErrorBgHover: errorColors[2],
-    colorErrorBorder: errorColors[3],
-    colorErrorBorderHover: errorColors[4],
-    colorErrorHover: errorColors[5],
-    colorError: errorColors[6],
-    colorErrorActive: errorColors[7],
-    colorErrorTextHover: errorColors[8],
-    colorErrorText: errorColors[9],
-    colorErrorTextActive: errorColors[10],
-    colorWarningBg: warningColors[1],
-    colorWarningBgHover: warningColors[2],
-    colorWarningBorder: warningColors[3],
-    colorWarningBorderHover: warningColors[4],
-    colorWarningHover: warningColors[4],
-    colorWarning: warningColors[6],
-    colorWarningActive: warningColors[7],
-    colorWarningTextHover: warningColors[8],
-    colorWarningText: warningColors[9],
-    colorWarningTextActive: warningColors[10],
-    colorInfoBg: infoColors[1],
-    colorInfoBgHover: infoColors[2],
-    colorInfoBorder: infoColors[3],
-    colorInfoBorderHover: infoColors[4],
-    colorInfoHover: infoColors[4],
-    colorInfo: infoColors[6],
-    colorInfoActive: infoColors[7],
-    colorInfoTextHover: infoColors[8],
-    colorInfoText: infoColors[9],
-    colorInfoTextActive: infoColors[10],
-    colorLinkHover: linkColors[4],
-    colorLink: linkColors[6],
-    colorLinkActive: linkColors[7],
-    colorBgMask: new TinyColor('#000').setAlpha(0.45).toRgbString(),
-    colorWhite: '#fff'
-  });
-}
-
-const genRadius = radiusBase => {
-  let radiusLG = radiusBase;
-  let radiusSM = radiusBase;
-  let radiusXS = radiusBase;
-  let radiusOuter = radiusBase;
-  // radiusLG
-  if (radiusBase < 6 && radiusBase >= 5) {
-    radiusLG = radiusBase + 1;
-  } else if (radiusBase < 16 && radiusBase >= 6) {
-    radiusLG = radiusBase + 2;
-  } else if (radiusBase >= 16) {
-    radiusLG = 16;
-  }
-  // radiusSM
-  if (radiusBase < 7 && radiusBase >= 5) {
-    radiusSM = 4;
-  } else if (radiusBase < 8 && radiusBase >= 7) {
-    radiusSM = 5;
-  } else if (radiusBase < 14 && radiusBase >= 8) {
-    radiusSM = 6;
-  } else if (radiusBase < 16 && radiusBase >= 14) {
-    radiusSM = 7;
-  } else if (radiusBase >= 16) {
-    radiusSM = 8;
-  }
-  // radiusXS
-  if (radiusBase < 6 && radiusBase >= 2) {
-    radiusXS = 1;
-  } else if (radiusBase >= 6) {
-    radiusXS = 2;
-  }
-  // radiusOuter
-  if (radiusBase > 4 && radiusBase < 8) {
-    radiusOuter = 4;
-  } else if (radiusBase >= 8) {
-    radiusOuter = 6;
-  }
-  return {
-    borderRadius: radiusBase,
-    borderRadiusXS: radiusXS,
-    borderRadiusSM: radiusSM,
-    borderRadiusLG: radiusLG,
-    borderRadiusOuter: radiusOuter
-  };
-};
-var genRadius$1 = genRadius;
-
-function genCommonMapToken(token) {
-  const {
-    motionUnit,
-    motionBase,
-    borderRadius,
-    lineWidth
-  } = token;
-  return Object.assign({
-    // motion
-    motionDurationFast: `${(motionBase + motionUnit).toFixed(1)}s`,
-    motionDurationMid: `${(motionBase + motionUnit * 2).toFixed(1)}s`,
-    motionDurationSlow: `${(motionBase + motionUnit * 3).toFixed(1)}s`,
-    // line
-    lineWidthBold: lineWidth + 1
-  }, genRadius$1(borderRadius));
-}
-
-const getAlphaColor$1 = (baseColor, alpha) => new TinyColor(baseColor).setAlpha(alpha).toRgbString();
-const getSolidColor = (baseColor, brightness) => {
-  const instance = new TinyColor(baseColor);
-  return instance.darken(brightness).toHexString();
-};
-
-const generateColorPalettes = baseColor => {
-  const colors = generate$1(baseColor);
-  return {
-    1: colors[0],
-    2: colors[1],
-    3: colors[2],
-    4: colors[3],
-    5: colors[4],
-    6: colors[5],
-    7: colors[6],
-    8: colors[4],
-    9: colors[5],
-    10: colors[6]
-    // 8: colors[7],
-    // 9: colors[8],
-    // 10: colors[9],
-  };
-};
-
-const generateNeutralColorPalettes = (bgBaseColor, textBaseColor) => {
-  const colorBgBase = bgBaseColor || '#fff';
-  const colorTextBase = textBaseColor || '#000';
-  return {
-    colorBgBase,
-    colorTextBase,
-    colorText: getAlphaColor$1(colorTextBase, 0.88),
-    colorTextSecondary: getAlphaColor$1(colorTextBase, 0.65),
-    colorTextTertiary: getAlphaColor$1(colorTextBase, 0.45),
-    colorTextQuaternary: getAlphaColor$1(colorTextBase, 0.25),
-    colorFill: getAlphaColor$1(colorTextBase, 0.15),
-    colorFillSecondary: getAlphaColor$1(colorTextBase, 0.06),
-    colorFillTertiary: getAlphaColor$1(colorTextBase, 0.04),
-    colorFillQuaternary: getAlphaColor$1(colorTextBase, 0.02),
-    colorBgLayout: getSolidColor(colorBgBase, 4),
-    colorBgContainer: getSolidColor(colorBgBase, 0),
-    colorBgElevated: getSolidColor(colorBgBase, 0),
-    colorBgSpotlight: getAlphaColor$1(colorTextBase, 0.85),
-    colorBgBlur: 'transparent',
-    colorBorder: getSolidColor(colorBgBase, 15),
-    colorBorderSecondary: getSolidColor(colorBgBase, 6)
-  };
-};
-
-// https://zhuanlan.zhihu.com/p/32746810
-function getFontSizes(base) {
-  const fontSizes = new Array(10).fill(null).map((_, index) => {
-    const i = index - 1;
-    const baseSize = base * Math.pow(2.71828, i / 5);
-    const intSize = index > 1 ? Math.floor(baseSize) : Math.ceil(baseSize);
-    // Convert to even
-    return Math.floor(intSize / 2) * 2;
-  });
-  fontSizes[1] = base;
-  return fontSizes.map(size => {
-    const height = size + 8;
-    return {
-      size,
-      lineHeight: height / size
-    };
-  });
-}
-
-const genFontMapToken = fontSize => {
-  const fontSizePairs = getFontSizes(fontSize);
-  const fontSizes = fontSizePairs.map(pair => pair.size);
-  const lineHeights = fontSizePairs.map(pair => pair.lineHeight);
-  return {
-    fontSizeSM: fontSizes[0],
-    fontSize: fontSizes[1],
-    fontSizeLG: fontSizes[2],
-    fontSizeXL: fontSizes[3],
-    fontSizeHeading1: fontSizes[6],
-    fontSizeHeading2: fontSizes[5],
-    fontSizeHeading3: fontSizes[4],
-    fontSizeHeading4: fontSizes[3],
-    fontSizeHeading5: fontSizes[2],
-    lineHeight: lineHeights[1],
-    lineHeightLG: lineHeights[2],
-    lineHeightSM: lineHeights[0],
-    lineHeightHeading1: lineHeights[6],
-    lineHeightHeading2: lineHeights[5],
-    lineHeightHeading3: lineHeights[4],
-    lineHeightHeading4: lineHeights[3],
-    lineHeightHeading5: lineHeights[2]
-  };
-};
-var genFontMapToken$1 = genFontMapToken;
-
-function derivative(token) {
-  const colorPalettes = Object.keys(defaultPresetColors).map(colorKey => {
-    const colors = generate$1(token[colorKey]);
-    return new Array(10).fill(1).reduce((prev, _, i) => {
-      prev[`${colorKey}-${i + 1}`] = colors[i];
-      prev[`${colorKey}${i + 1}`] = colors[i];
-      return prev;
-    }, {});
-  }).reduce((prev, cur) => {
-    prev = Object.assign(Object.assign({}, prev), cur);
-    return prev;
-  }, {});
-  return Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, token), colorPalettes), genColorMapToken(token, {
-    generateColorPalettes,
-    generateNeutralColorPalettes
-  })), genFontMapToken$1(token.fontSize)), genSizeMapToken(token)), genControlHeight$1(token)), genCommonMapToken(token));
-}
-
-const defaultTheme = createTheme(derivative);
-// ================================ Context =================================
-// To ensure snapshot stable. We disable hashed in test env.
-const defaultConfig = {
-  token: seedToken$1,
-  override: {
-    override: seedToken$1
-  },
-  hashed: true
-};
-const DesignTokenContext = /*#__PURE__*/React__default["default"].createContext(defaultConfig);
-
-const defaultIconPrefixCls = 'anticon';
-const defaultGetPrefixCls = (suffixCls, customizePrefixCls) => {
-  if (customizePrefixCls) {
-    return customizePrefixCls;
-  }
-  return suffixCls ? `ant-${suffixCls}` : 'ant';
-};
-// zombieJ: 🚨 Do not pass `defaultRenderEmpty` here since it will cause circular dependency.
-const ConfigContext = /*#__PURE__*/React__namespace.createContext({
-  // We provide a default function for Context without provider
-  getPrefixCls: defaultGetPrefixCls,
-  iconPrefixCls: defaultIconPrefixCls
-});
-
-/* eslint-disable import/prefer-default-export, prefer-destructuring */
-const dynamicStyleMark = `-ant-${Date.now()}-${Math.random()}`;
-function getStyle(globalPrefixCls, theme) {
-  const variables = {};
-  const formatColor = (color, updater) => {
-    let clone = color.clone();
-    clone = (updater === null || updater === void 0 ? void 0 : updater(clone)) || clone;
-    return clone.toRgbString();
-  };
-  const fillColor = (colorVal, type) => {
-    const baseColor = new TinyColor(colorVal);
-    const colorPalettes = generate$1(baseColor.toRgbString());
-    variables[`${type}-color`] = formatColor(baseColor);
-    variables[`${type}-color-disabled`] = colorPalettes[1];
-    variables[`${type}-color-hover`] = colorPalettes[4];
-    variables[`${type}-color-active`] = colorPalettes[6];
-    variables[`${type}-color-outline`] = baseColor.clone().setAlpha(0.2).toRgbString();
-    variables[`${type}-color-deprecated-bg`] = colorPalettes[0];
-    variables[`${type}-color-deprecated-border`] = colorPalettes[2];
-  };
-  // ================ Primary Color ================
-  if (theme.primaryColor) {
-    fillColor(theme.primaryColor, 'primary');
-    const primaryColor = new TinyColor(theme.primaryColor);
-    const primaryColors = generate$1(primaryColor.toRgbString());
-    // Legacy - We should use semantic naming standard
-    primaryColors.forEach((color, index) => {
-      variables[`primary-${index + 1}`] = color;
-    });
-    // Deprecated
-    variables['primary-color-deprecated-l-35'] = formatColor(primaryColor, c => c.lighten(35));
-    variables['primary-color-deprecated-l-20'] = formatColor(primaryColor, c => c.lighten(20));
-    variables['primary-color-deprecated-t-20'] = formatColor(primaryColor, c => c.tint(20));
-    variables['primary-color-deprecated-t-50'] = formatColor(primaryColor, c => c.tint(50));
-    variables['primary-color-deprecated-f-12'] = formatColor(primaryColor, c => c.setAlpha(c.getAlpha() * 0.12));
-    const primaryActiveColor = new TinyColor(primaryColors[0]);
-    variables['primary-color-active-deprecated-f-30'] = formatColor(primaryActiveColor, c => c.setAlpha(c.getAlpha() * 0.3));
-    variables['primary-color-active-deprecated-d-02'] = formatColor(primaryActiveColor, c => c.darken(2));
-  }
-  // ================ Success Color ================
-  if (theme.successColor) {
-    fillColor(theme.successColor, 'success');
-  }
-  // ================ Warning Color ================
-  if (theme.warningColor) {
-    fillColor(theme.warningColor, 'warning');
-  }
-  // ================= Error Color =================
-  if (theme.errorColor) {
-    fillColor(theme.errorColor, 'error');
-  }
-  // ================= Info Color ==================
-  if (theme.infoColor) {
-    fillColor(theme.infoColor, 'info');
-  }
-  // Convert to css variables
-  const cssList = Object.keys(variables).map(key => `--${globalPrefixCls}-${key}: ${variables[key]};`);
-  return `
-  :root {
-    ${cssList.join('\n')}
-  }
-  `.trim();
-}
-function registerTheme(globalPrefixCls, theme) {
-  const style = getStyle(globalPrefixCls, theme);
-  if (canUseDom()) {
-    updateCSS(style, `${dynamicStyleMark}-dynamic-theme`);
-  } else {
-    process.env.NODE_ENV !== "production" ? warning$2(false, 'ConfigProvider', 'SSR do not support dynamic theme with css variables.') : void 0;
-  }
-}
-
-const DisabledContext = /*#__PURE__*/React__namespace.createContext(false);
-const DisabledContextProvider = _ref => {
-  let {
-    children,
-    disabled
-  } = _ref;
-  const originDisabled = React__namespace.useContext(DisabledContext);
-  return /*#__PURE__*/React__namespace.createElement(DisabledContext.Provider, {
-    value: disabled !== null && disabled !== void 0 ? disabled : originDisabled
-  }, children);
-};
-var DisabledContext$1 = DisabledContext;
-
-const SizeContext = /*#__PURE__*/React__namespace.createContext(undefined);
-const SizeContextProvider = _ref => {
-  let {
-    children,
-    size
-  } = _ref;
-  const originSize = React__namespace.useContext(SizeContext);
-  return /*#__PURE__*/React__namespace.createElement(SizeContext.Provider, {
-    value: size || originSize
-  }, children);
-};
-var SizeContext$1 = SizeContext;
-
-function useConfig() {
-  const componentDisabled = React.useContext(DisabledContext$1);
-  const componentSize = React.useContext(SizeContext$1);
-  return {
-    componentDisabled,
-    componentSize
-  };
-}
-
-var version$1 = '5.11.2';
-
-function isStableColor(color) {
-  return color >= 0 && color <= 255;
-}
-function getAlphaColor(frontColor, backgroundColor) {
-  const {
-    r: fR,
-    g: fG,
-    b: fB,
-    a: originAlpha
-  } = new TinyColor(frontColor).toRgb();
-  if (originAlpha < 1) {
-    return frontColor;
-  }
-  const {
-    r: bR,
-    g: bG,
-    b: bB
-  } = new TinyColor(backgroundColor).toRgb();
-  for (let fA = 0.01; fA <= 1; fA += 0.01) {
-    const r = Math.round((fR - bR * (1 - fA)) / fA);
-    const g = Math.round((fG - bG * (1 - fA)) / fA);
-    const b = Math.round((fB - bB * (1 - fA)) / fA);
-    if (isStableColor(r) && isStableColor(g) && isStableColor(b)) {
-      return new TinyColor({
-        r,
-        g,
-        b,
-        a: Math.round(fA * 100) / 100
-      }).toRgbString();
-    }
-  }
-  // fallback
-  /* istanbul ignore next */
-  return new TinyColor({
-    r: fR,
-    g: fG,
-    b: fB,
-    a: 1
-  }).toRgbString();
-}
-
-var __rest$7 = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-/**
- * Seed (designer) > Derivative (designer) > Alias (developer).
- *
- * Merge seed & derivative & override token and generate alias token for developer.
- */
-function formatToken(derivativeToken) {
-  const {
-      override
-    } = derivativeToken,
-    restToken = __rest$7(derivativeToken, ["override"]);
-  const overrideTokens = Object.assign({}, override);
-  Object.keys(seedToken$1).forEach(token => {
-    delete overrideTokens[token];
-  });
-  const mergedToken = Object.assign(Object.assign({}, restToken), overrideTokens);
-  const screenXS = 480;
-  const screenSM = 576;
-  const screenMD = 768;
-  const screenLG = 992;
-  const screenXL = 1200;
-  const screenXXL = 1600;
-  // Motion
-  if (mergedToken.motion === false) {
-    const fastDuration = '0s';
-    mergedToken.motionDurationFast = fastDuration;
-    mergedToken.motionDurationMid = fastDuration;
-    mergedToken.motionDurationSlow = fastDuration;
-  }
-  // Generate alias token
-  const aliasToken = Object.assign(Object.assign(Object.assign({}, mergedToken), {
-    // ============== Background ============== //
-    colorFillContent: mergedToken.colorFillSecondary,
-    colorFillContentHover: mergedToken.colorFill,
-    colorFillAlter: mergedToken.colorFillQuaternary,
-    colorBgContainerDisabled: mergedToken.colorFillTertiary,
-    // ============== Split ============== //
-    colorBorderBg: mergedToken.colorBgContainer,
-    colorSplit: getAlphaColor(mergedToken.colorBorderSecondary, mergedToken.colorBgContainer),
-    // ============== Text ============== //
-    colorTextPlaceholder: mergedToken.colorTextQuaternary,
-    colorTextDisabled: mergedToken.colorTextQuaternary,
-    colorTextHeading: mergedToken.colorText,
-    colorTextLabel: mergedToken.colorTextSecondary,
-    colorTextDescription: mergedToken.colorTextTertiary,
-    colorTextLightSolid: mergedToken.colorWhite,
-    colorHighlight: mergedToken.colorError,
-    colorBgTextHover: mergedToken.colorFillSecondary,
-    colorBgTextActive: mergedToken.colorFill,
-    colorIcon: mergedToken.colorTextTertiary,
-    colorIconHover: mergedToken.colorText,
-    colorErrorOutline: getAlphaColor(mergedToken.colorErrorBg, mergedToken.colorBgContainer),
-    colorWarningOutline: getAlphaColor(mergedToken.colorWarningBg, mergedToken.colorBgContainer),
-    // Font
-    fontSizeIcon: mergedToken.fontSizeSM,
-    // Line
-    lineWidthFocus: mergedToken.lineWidth * 4,
-    // Control
-    lineWidth: mergedToken.lineWidth,
-    controlOutlineWidth: mergedToken.lineWidth * 2,
-    // Checkbox size and expand icon size
-    controlInteractiveSize: mergedToken.controlHeight / 2,
-    controlItemBgHover: mergedToken.colorFillTertiary,
-    controlItemBgActive: mergedToken.colorPrimaryBg,
-    controlItemBgActiveHover: mergedToken.colorPrimaryBgHover,
-    controlItemBgActiveDisabled: mergedToken.colorFill,
-    controlTmpOutline: mergedToken.colorFillQuaternary,
-    controlOutline: getAlphaColor(mergedToken.colorPrimaryBg, mergedToken.colorBgContainer),
-    lineType: mergedToken.lineType,
-    borderRadius: mergedToken.borderRadius,
-    borderRadiusXS: mergedToken.borderRadiusXS,
-    borderRadiusSM: mergedToken.borderRadiusSM,
-    borderRadiusLG: mergedToken.borderRadiusLG,
-    fontWeightStrong: 600,
-    opacityLoading: 0.65,
-    linkDecoration: 'none',
-    linkHoverDecoration: 'none',
-    linkFocusDecoration: 'none',
-    controlPaddingHorizontal: 12,
-    controlPaddingHorizontalSM: 8,
-    paddingXXS: mergedToken.sizeXXS,
-    paddingXS: mergedToken.sizeXS,
-    paddingSM: mergedToken.sizeSM,
-    padding: mergedToken.size,
-    paddingMD: mergedToken.sizeMD,
-    paddingLG: mergedToken.sizeLG,
-    paddingXL: mergedToken.sizeXL,
-    paddingContentHorizontalLG: mergedToken.sizeLG,
-    paddingContentVerticalLG: mergedToken.sizeMS,
-    paddingContentHorizontal: mergedToken.sizeMS,
-    paddingContentVertical: mergedToken.sizeSM,
-    paddingContentHorizontalSM: mergedToken.size,
-    paddingContentVerticalSM: mergedToken.sizeXS,
-    marginXXS: mergedToken.sizeXXS,
-    marginXS: mergedToken.sizeXS,
-    marginSM: mergedToken.sizeSM,
-    margin: mergedToken.size,
-    marginMD: mergedToken.sizeMD,
-    marginLG: mergedToken.sizeLG,
-    marginXL: mergedToken.sizeXL,
-    marginXXL: mergedToken.sizeXXL,
-    boxShadow: `
-      0 6px 16px 0 rgba(0, 0, 0, 0.08),
-      0 3px 6px -4px rgba(0, 0, 0, 0.12),
-      0 9px 28px 8px rgba(0, 0, 0, 0.05)
-    `,
-    boxShadowSecondary: `
-      0 6px 16px 0 rgba(0, 0, 0, 0.08),
-      0 3px 6px -4px rgba(0, 0, 0, 0.12),
-      0 9px 28px 8px rgba(0, 0, 0, 0.05)
-    `,
-    boxShadowTertiary: `
-      0 1px 2px 0 rgba(0, 0, 0, 0.03),
-      0 1px 6px -1px rgba(0, 0, 0, 0.02),
-      0 2px 4px 0 rgba(0, 0, 0, 0.02)
-    `,
-    screenXS,
-    screenXSMin: screenXS,
-    screenXSMax: screenSM - 1,
-    screenSM,
-    screenSMMin: screenSM,
-    screenSMMax: screenMD - 1,
-    screenMD,
-    screenMDMin: screenMD,
-    screenMDMax: screenLG - 1,
-    screenLG,
-    screenLGMin: screenLG,
-    screenLGMax: screenXL - 1,
-    screenXL,
-    screenXLMin: screenXL,
-    screenXLMax: screenXXL - 1,
-    screenXXL,
-    screenXXLMin: screenXXL,
-    boxShadowPopoverArrow: '2px 2px 5px rgba(0, 0, 0, 0.05)',
-    boxShadowCard: `
-      0 1px 2px -2px ${new TinyColor('rgba(0, 0, 0, 0.16)').toRgbString()},
-      0 3px 6px 0 ${new TinyColor('rgba(0, 0, 0, 0.12)').toRgbString()},
-      0 5px 12px 4px ${new TinyColor('rgba(0, 0, 0, 0.09)').toRgbString()}
-    `,
-    boxShadowDrawerRight: `
-      -6px 0 16px 0 rgba(0, 0, 0, 0.08),
-      -3px 0 6px -4px rgba(0, 0, 0, 0.12),
-      -9px 0 28px 8px rgba(0, 0, 0, 0.05)
-    `,
-    boxShadowDrawerLeft: `
-      6px 0 16px 0 rgba(0, 0, 0, 0.08),
-      3px 0 6px -4px rgba(0, 0, 0, 0.12),
-      9px 0 28px 8px rgba(0, 0, 0, 0.05)
-    `,
-    boxShadowDrawerUp: `
-      0 6px 16px 0 rgba(0, 0, 0, 0.08),
-      0 3px 6px -4px rgba(0, 0, 0, 0.12),
-      0 9px 28px 8px rgba(0, 0, 0, 0.05)
-    `,
-    boxShadowDrawerDown: `
-      0 -6px 16px 0 rgba(0, 0, 0, 0.08),
-      0 -3px 6px -4px rgba(0, 0, 0, 0.12),
-      0 -9px 28px 8px rgba(0, 0, 0, 0.05)
-    `,
-    boxShadowTabsOverflowLeft: 'inset 10px 0 8px -8px rgba(0, 0, 0, 0.08)',
-    boxShadowTabsOverflowRight: 'inset -10px 0 8px -8px rgba(0, 0, 0, 0.08)',
-    boxShadowTabsOverflowTop: 'inset 0 10px 8px -8px rgba(0, 0, 0, 0.08)',
-    boxShadowTabsOverflowBottom: 'inset 0 -10px 8px -8px rgba(0, 0, 0, 0.08)'
-  }), overrideTokens);
-  return aliasToken;
-}
-
-var __rest$6 = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-const getComputedToken = (originToken, overrideToken, theme) => {
-  const derivativeToken = theme.getDerivativeToken(originToken);
-  const {
-      override
-    } = overrideToken,
-    components = __rest$6(overrideToken, ["override"]);
-  // Merge with override
-  let mergedDerivativeToken = Object.assign(Object.assign({}, derivativeToken), {
-    override
-  });
-  // Format if needed
-  mergedDerivativeToken = formatToken(mergedDerivativeToken);
-  if (components) {
-    Object.entries(components).forEach(_ref => {
-      let [key, value] = _ref;
-      const {
-          theme: componentTheme
-        } = value,
-        componentTokens = __rest$6(value, ["theme"]);
-      let mergedComponentToken = componentTokens;
-      if (componentTheme) {
-        mergedComponentToken = getComputedToken(Object.assign(Object.assign({}, mergedDerivativeToken), componentTokens), {
-          override: componentTokens
-        }, componentTheme);
-      }
-      mergedDerivativeToken[key] = mergedComponentToken;
-    });
-  }
-  return mergedDerivativeToken;
-};
-// ================================== Hook ==================================
-function useToken() {
-  const {
-    token: rootDesignToken,
-    hashed,
-    theme,
-    override
-  } = React__default["default"].useContext(DesignTokenContext);
-  const salt = `${version$1}-${hashed || ''}`;
-  const mergedTheme = theme || defaultTheme;
-  const [token, hashId] = useCacheToken(mergedTheme, [seedToken$1, rootDesignToken], {
-    salt,
-    override,
-    getComputedToken,
-    // formatToken will not be consumed after 1.15.0 with getComputedToken.
-    // But token will break if @ant-design/cssinjs is under 1.15.0 without it
-    formatToken
-  });
-  return [mergedTheme, token, hashed ? hashId : ''];
-}
-
-function useEvent(callback) {
-  var fnRef = React__namespace.useRef();
-  fnRef.current = callback;
-  var memoFn = React__namespace.useCallback(function () {
-    var _fnRef$current;
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-    return (_fnRef$current = fnRef.current) === null || _fnRef$current === void 0 ? void 0 : _fnRef$current.call.apply(_fnRef$current, [fnRef].concat(args));
-  }, []);
-  return memoFn;
-}
-
-/**
- * Same as React.useState but `setState` accept `ignoreDestroy` param to not to setState after destroyed.
- * We do not make this auto is to avoid real memory leak.
- * Developer should confirm it's safe to ignore themselves.
- */
-function useSafeState(defaultValue) {
-  var destroyRef = React__namespace.useRef(false);
-  var _React$useState = React__namespace.useState(defaultValue),
-    _React$useState2 = _slicedToArray(_React$useState, 2),
-    value = _React$useState2[0],
-    setValue = _React$useState2[1];
-  React__namespace.useEffect(function () {
-    destroyRef.current = false;
-    return function () {
-      destroyRef.current = true;
-    };
-  }, []);
-  function safeSetState(updater, ignoreDestroy) {
-    if (ignoreDestroy && destroyRef.current) {
-      return;
-    }
-    setValue(updater);
-  }
-  return [value, safeSetState];
-}
-
-const resetIcon = () => ({
-  display: 'inline-flex',
-  alignItems: 'center',
-  color: 'inherit',
-  fontStyle: 'normal',
-  lineHeight: 0,
-  textAlign: 'center',
-  textTransform: 'none',
-  // for SVG icon, see https://blog.prototypr.io/align-svg-icons-to-text-and-say-goodbye-to-font-icons-d44b3d7b26b4
-  verticalAlign: '-0.125em',
-  textRendering: 'optimizeLegibility',
-  '-webkit-font-smoothing': 'antialiased',
-  '-moz-osx-font-smoothing': 'grayscale',
-  '> *': {
-    lineHeight: 1
-  },
-  svg: {
-    display: 'inline-block'
-  }
-});
-const genLinkStyle = token => ({
-  a: {
-    color: token.colorLink,
-    textDecoration: token.linkDecoration,
-    backgroundColor: 'transparent',
-    outline: 'none',
-    cursor: 'pointer',
-    transition: `color ${token.motionDurationSlow}`,
-    '-webkit-text-decoration-skip': 'objects',
-    '&:hover': {
-      color: token.colorLinkHover
-    },
-    '&:active': {
-      color: token.colorLinkActive
-    },
-    [`&:active,
-  &:hover`]: {
-      textDecoration: token.linkHoverDecoration,
-      outline: 0
-    },
-    // https://github.com/ant-design/ant-design/issues/22503
-    '&:focus': {
-      textDecoration: token.linkFocusDecoration,
-      outline: 0
-    },
-    '&[disabled]': {
-      color: token.colorTextDisabled,
-      cursor: 'not-allowed'
-    }
-  }
-});
-const genCommonStyle = (token, componentPrefixCls) => {
-  const {
-    fontFamily,
-    fontSize
-  } = token;
-  const rootPrefixSelector = `[class^="${componentPrefixCls}"], [class*=" ${componentPrefixCls}"]`;
-  return {
-    [rootPrefixSelector]: {
-      fontFamily,
-      fontSize,
-      boxSizing: 'border-box',
-      '&::before, &::after': {
-        boxSizing: 'border-box'
-      },
-      [rootPrefixSelector]: {
-        boxSizing: 'border-box',
-        '&::before, &::after': {
-          boxSizing: 'border-box'
-        }
-      }
-    }
-  };
-};
-const genFocusOutline = token => ({
-  outline: `${token.lineWidthFocus}px solid ${token.colorPrimaryBorder}`,
-  outlineOffset: 1,
-  transition: 'outline-offset 0s, outline 0s'
-});
-const genFocusStyle = token => ({
-  '&:focus-visible': Object.assign({}, genFocusOutline(token))
-});
-
-const enableStatistic = process.env.NODE_ENV !== 'production' || typeof CSSINJS_STATISTIC !== 'undefined';
-let recording = true;
-/**
- * This function will do as `Object.assign` in production. But will use Object.defineProperty:get to
- * pass all value access in development. To support statistic field usage with alias token.
- */
-function merge() {
-  for (var _len = arguments.length, objs = new Array(_len), _key = 0; _key < _len; _key++) {
-    objs[_key] = arguments[_key];
-  }
-  /* istanbul ignore next */
-  if (!enableStatistic) {
-    return Object.assign.apply(Object, [{}].concat(objs));
-  }
-  recording = false;
-  const ret = {};
-  objs.forEach(obj => {
-    const keys = Object.keys(obj);
-    keys.forEach(key => {
-      Object.defineProperty(ret, key, {
-        configurable: true,
-        enumerable: true,
-        get: () => obj[key]
-      });
-    });
-  });
-  recording = true;
-  return ret;
-}
-/** @internal Internal Usage. Not use in your production. */
-const statistic = {};
-/* istanbul ignore next */
-function noop() {}
-/** Statistic token usage case. Should use `merge` function if you do not want spread record. */
-function statisticToken(token) {
-  let tokenKeys;
-  let proxy = token;
-  let flush = noop;
-  if (enableStatistic && typeof Proxy !== 'undefined') {
-    tokenKeys = new Set();
-    proxy = new Proxy(token, {
-      get(obj, prop) {
-        if (recording) {
-          tokenKeys.add(prop);
-        }
-        return obj[prop];
-      }
-    });
-    flush = (componentName, componentToken) => {
-      var _a;
-      statistic[componentName] = {
-        global: Array.from(tokenKeys),
-        component: Object.assign(Object.assign({}, (_a = statistic[componentName]) === null || _a === void 0 ? void 0 : _a.component), componentToken)
-      };
-    };
-  }
-  return {
-    token: proxy,
-    keys: tokenKeys,
-    flush
-  };
-}
-
-const useResetIconStyle = (iconPrefixCls, csp) => {
-  const [theme, token] = useToken();
-  // Generate style for icons
-  return useStyleRegister({
-    theme,
-    token,
-    hashId: '',
-    path: ['ant-design-icons', iconPrefixCls],
-    nonce: () => csp === null || csp === void 0 ? void 0 : csp.nonce
-  }, () => [{
-    [`.${iconPrefixCls}`]: Object.assign(Object.assign({}, resetIcon()), {
-      [`.${iconPrefixCls} .${iconPrefixCls}-icon`]: {
-        display: 'block'
-      }
-    })
-  }]);
-};
-var useStyle$3 = useResetIconStyle;
-
-/* eslint-disable no-redeclare */
-function genComponentStyleHook(componentName, styleFn, getDefaultToken) {
-  let options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
-  const cells = Array.isArray(componentName) ? componentName : [componentName, componentName];
-  const [component] = cells;
-  const concatComponent = cells.join('-');
-  return prefixCls => {
-    const [theme, token, hashId] = useToken();
-    const {
-      getPrefixCls,
-      iconPrefixCls,
-      csp
-    } = React.useContext(ConfigContext);
-    const rootPrefixCls = getPrefixCls();
-    // Shared config
-    const sharedConfig = {
-      theme,
-      token,
-      hashId,
-      nonce: () => csp === null || csp === void 0 ? void 0 : csp.nonce,
-      clientOnly: options.clientOnly,
-      // antd is always at top of styles
-      order: options.order || -999
-    };
-    // Generate style for all a tags in antd component.
-    useStyleRegister(Object.assign(Object.assign({}, sharedConfig), {
-      clientOnly: false,
-      path: ['Shared', rootPrefixCls]
-    }), () => [{
-      // Link
-      '&': genLinkStyle(token)
-    }]);
-    // Generate style for icons
-    useStyle$3(iconPrefixCls, csp);
-    return [useStyleRegister(Object.assign(Object.assign({}, sharedConfig), {
-      path: [concatComponent, prefixCls, iconPrefixCls]
-    }), () => {
-      const {
-        token: proxyToken,
-        flush
-      } = statisticToken(token);
-      const customComponentToken = Object.assign({}, token[component]);
-      if (options.deprecatedTokens) {
-        const {
-          deprecatedTokens
-        } = options;
-        deprecatedTokens.forEach(_ref => {
-          let [oldTokenKey, newTokenKey] = _ref;
-          var _a;
-          if (process.env.NODE_ENV !== 'production') {
-            process.env.NODE_ENV !== "production" ? warningOnce(!(customComponentToken === null || customComponentToken === void 0 ? void 0 : customComponentToken[oldTokenKey]), `The token '${String(oldTokenKey)}' of ${component} had deprecated, use '${String(newTokenKey)}' instead.`) : void 0;
-          }
-          // Should wrap with `if` clause, or there will be `undefined` in object.
-          if ((customComponentToken === null || customComponentToken === void 0 ? void 0 : customComponentToken[oldTokenKey]) || (customComponentToken === null || customComponentToken === void 0 ? void 0 : customComponentToken[newTokenKey])) {
-            (_a = customComponentToken[newTokenKey]) !== null && _a !== void 0 ? _a : customComponentToken[newTokenKey] = customComponentToken === null || customComponentToken === void 0 ? void 0 : customComponentToken[oldTokenKey];
-          }
-        });
-      }
-      const defaultComponentToken = typeof getDefaultToken === 'function' ? getDefaultToken(merge(proxyToken, customComponentToken !== null && customComponentToken !== void 0 ? customComponentToken : {})) : getDefaultToken;
-      const mergedComponentToken = Object.assign(Object.assign({}, defaultComponentToken), customComponentToken);
-      const componentCls = `.${prefixCls}`;
-      const mergedToken = merge(proxyToken, {
-        componentCls,
-        prefixCls,
-        iconCls: `.${iconPrefixCls}`,
-        antCls: `.${rootPrefixCls}`
-      }, mergedComponentToken);
-      const styleInterpolation = styleFn(mergedToken, {
-        hashId,
-        prefixCls,
-        rootPrefixCls,
-        iconPrefixCls,
-        overrideComponentToken: customComponentToken
-      });
-      flush(component, mergedComponentToken);
-      return [options.resetStyle === false ? null : genCommonStyle(mergedToken, prefixCls), styleInterpolation];
-    }), hashId];
-  };
-}
-const genSubStyleComponent = (componentName, styleFn, getDefaultToken, options) => {
-  const useStyle = genComponentStyleHook(componentName, styleFn, getDefaultToken, Object.assign({
-    resetStyle: false,
-    // Sub Style should default after root one
-    order: -998
-  }, options));
-  const StyledComponent = _ref2 => {
-    let {
-      prefixCls
-    } = _ref2;
-    useStyle(prefixCls);
-    return null;
-  };
-  if (process.env.NODE_ENV !== 'production') {
-    StyledComponent.displayName = `SubStyle_${Array.isArray(componentName) ? componentName.join('.') : componentName}`;
-  }
-  return StyledComponent;
-};
-
-function useTheme(theme, parentTheme) {
-  const themeConfig = theme || {};
-  const parentThemeConfig = themeConfig.inherit === false || !parentTheme ? defaultConfig : parentTheme;
-  return useMemo(() => {
-    if (!theme) {
-      return parentTheme;
-    }
-    // Override
-    const mergedComponents = Object.assign({}, parentThemeConfig.components);
-    Object.keys(theme.components || {}).forEach(componentName => {
-      mergedComponents[componentName] = Object.assign(Object.assign({}, mergedComponents[componentName]), theme.components[componentName]);
-    });
-    // Base token
-    return Object.assign(Object.assign(Object.assign({}, parentThemeConfig), themeConfig), {
-      token: Object.assign(Object.assign({}, parentThemeConfig.token), themeConfig.token),
-      components: mergedComponents
-    });
-  }, [themeConfig, parentThemeConfig], (prev, next) => prev.some((prevTheme, index) => {
-    const nextTheme = next[index];
-    return !isEqual(prevTheme, nextTheme, true);
-  }));
-}
-
-var _excluded$3 = ["children"];
-var Context = /*#__PURE__*/React__namespace.createContext({});
-function MotionProvider(_ref) {
-  var children = _ref.children,
-    props = _objectWithoutProperties(_ref, _excluded$3);
-  return /*#__PURE__*/React__namespace.createElement(Context.Provider, {
-    value: props
-  }, children);
-}
-
-var DomWrapper = /*#__PURE__*/function (_React$Component) {
-  _inherits(DomWrapper, _React$Component);
-  var _super = _createSuper(DomWrapper);
-  function DomWrapper() {
-    _classCallCheck(this, DomWrapper);
-    return _super.apply(this, arguments);
-  }
-  _createClass(DomWrapper, [{
-    key: "render",
-    value: function render() {
-      return this.props.children;
-    }
-  }]);
-  return DomWrapper;
-}(React__namespace.Component);
-
-var STATUS_NONE = 'none';
-var STATUS_APPEAR = 'appear';
-var STATUS_ENTER = 'enter';
-var STATUS_LEAVE = 'leave';
-var STEP_NONE = 'none';
-var STEP_PREPARE = 'prepare';
-var STEP_START = 'start';
-var STEP_ACTIVE = 'active';
-var STEP_ACTIVATED = 'end';
-/**
- * Used for disabled motion case.
- * Prepare stage will still work but start & active will be skipped.
- */
-var STEP_PREPARED = 'prepared';
-
-// ================= Transition =================
-// Event wrapper. Copy from react source code
-function makePrefixMap(styleProp, eventName) {
-  var prefixes = {};
-  prefixes[styleProp.toLowerCase()] = eventName.toLowerCase();
-  prefixes["Webkit".concat(styleProp)] = "webkit".concat(eventName);
-  prefixes["Moz".concat(styleProp)] = "moz".concat(eventName);
-  prefixes["ms".concat(styleProp)] = "MS".concat(eventName);
-  prefixes["O".concat(styleProp)] = "o".concat(eventName.toLowerCase());
-  return prefixes;
-}
-function getVendorPrefixes(domSupport, win) {
-  var prefixes = {
-    animationend: makePrefixMap('Animation', 'AnimationEnd'),
-    transitionend: makePrefixMap('Transition', 'TransitionEnd')
-  };
-  if (domSupport) {
-    if (!('AnimationEvent' in win)) {
-      delete prefixes.animationend.animation;
-    }
-    if (!('TransitionEvent' in win)) {
-      delete prefixes.transitionend.transition;
-    }
-  }
-  return prefixes;
-}
-var vendorPrefixes = getVendorPrefixes(canUseDom(), typeof window !== 'undefined' ? window : {});
-var style = {};
-if (canUseDom()) {
-  var _document$createEleme = document.createElement('div');
-  style = _document$createEleme.style;
-}
-var prefixedEventNames = {};
-function getVendorPrefixedEventName(eventName) {
-  if (prefixedEventNames[eventName]) {
-    return prefixedEventNames[eventName];
-  }
-  var prefixMap = vendorPrefixes[eventName];
-  if (prefixMap) {
-    var stylePropList = Object.keys(prefixMap);
-    var len = stylePropList.length;
-    for (var i = 0; i < len; i += 1) {
-      var styleProp = stylePropList[i];
-      if (Object.prototype.hasOwnProperty.call(prefixMap, styleProp) && styleProp in style) {
-        prefixedEventNames[eventName] = prefixMap[styleProp];
-        return prefixedEventNames[eventName];
-      }
-    }
-  }
-  return '';
-}
-var internalAnimationEndName = getVendorPrefixedEventName('animationend');
-var internalTransitionEndName = getVendorPrefixedEventName('transitionend');
-var supportTransition = !!(internalAnimationEndName && internalTransitionEndName);
-var animationEndName = internalAnimationEndName || 'animationend';
-var transitionEndName = internalTransitionEndName || 'transitionend';
-function getTransitionName(transitionName, transitionType) {
-  if (!transitionName) return null;
-  if (_typeof(transitionName) === 'object') {
-    var type = transitionType.replace(/-\w/g, function (match) {
-      return match[1].toUpperCase();
-    });
-    return transitionName[type];
-  }
-  return "".concat(transitionName, "-").concat(transitionType);
-}
-
-var useDomMotionEvents = (function (callback) {
-  var cacheElementRef = React.useRef();
-
-  // Cache callback
-  var callbackRef = React.useRef(callback);
-  callbackRef.current = callback;
-
-  // Internal motion event handler
-  var onInternalMotionEnd = React__namespace.useCallback(function (event) {
-    callbackRef.current(event);
-  }, []);
-
-  // Remove events
-  function removeMotionEvents(element) {
-    if (element) {
-      element.removeEventListener(transitionEndName, onInternalMotionEnd);
-      element.removeEventListener(animationEndName, onInternalMotionEnd);
-    }
-  }
-
-  // Patch events
-  function patchMotionEvents(element) {
-    if (cacheElementRef.current && cacheElementRef.current !== element) {
-      removeMotionEvents(cacheElementRef.current);
-    }
-    if (element && element !== cacheElementRef.current) {
-      element.addEventListener(transitionEndName, onInternalMotionEnd);
-      element.addEventListener(animationEndName, onInternalMotionEnd);
-
-      // Save as cache in case dom removed trigger by `motionDeadline`
-      cacheElementRef.current = element;
-    }
-  }
-
-  // Clean up when removed
-  React__namespace.useEffect(function () {
-    return function () {
-      removeMotionEvents(cacheElementRef.current);
-    };
-  }, []);
-  return [patchMotionEvents, removeMotionEvents];
-});
-
-// It's safe to use `useLayoutEffect` but the warning is annoying
-var useIsomorphicLayoutEffect = canUseDom() ? React.useLayoutEffect : React.useEffect;
-
-var useNextFrame = (function () {
-  var nextFrameRef = React__namespace.useRef(null);
-  function cancelNextFrame() {
-    wrapperRaf.cancel(nextFrameRef.current);
-  }
-  function nextFrame(callback) {
-    var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
-    cancelNextFrame();
-    var nextFrameId = wrapperRaf(function () {
-      if (delay <= 1) {
-        callback({
-          isCanceled: function isCanceled() {
-            return nextFrameId !== nextFrameRef.current;
-          }
-        });
-      } else {
-        nextFrame(callback, delay - 1);
-      }
-    });
-    nextFrameRef.current = nextFrameId;
-  }
-  React__namespace.useEffect(function () {
-    return function () {
-      cancelNextFrame();
-    };
-  }, []);
-  return [nextFrame, cancelNextFrame];
-});
-
-var FULL_STEP_QUEUE = [STEP_PREPARE, STEP_START, STEP_ACTIVE, STEP_ACTIVATED];
-var SIMPLE_STEP_QUEUE = [STEP_PREPARE, STEP_PREPARED];
-
-/** Skip current step */
-var SkipStep = false;
-/** Current step should be update in */
-var DoStep = true;
-function isActive(step) {
-  return step === STEP_ACTIVE || step === STEP_ACTIVATED;
-}
-var useStepQueue = (function (status, prepareOnly, callback) {
-  var _useState = useSafeState(STEP_NONE),
-    _useState2 = _slicedToArray(_useState, 2),
-    step = _useState2[0],
-    setStep = _useState2[1];
-  var _useNextFrame = useNextFrame(),
-    _useNextFrame2 = _slicedToArray(_useNextFrame, 2),
-    nextFrame = _useNextFrame2[0],
-    cancelNextFrame = _useNextFrame2[1];
-  function startQueue() {
-    setStep(STEP_PREPARE, true);
-  }
-  var STEP_QUEUE = prepareOnly ? SIMPLE_STEP_QUEUE : FULL_STEP_QUEUE;
-  useIsomorphicLayoutEffect(function () {
-    if (step !== STEP_NONE && step !== STEP_ACTIVATED) {
-      var index = STEP_QUEUE.indexOf(step);
-      var nextStep = STEP_QUEUE[index + 1];
-      var result = callback(step);
-      if (result === SkipStep) {
-        // Skip when no needed
-        setStep(nextStep, true);
-      } else if (nextStep) {
-        // Do as frame for step update
-        nextFrame(function (info) {
-          function doNext() {
-            // Skip since current queue is ood
-            if (info.isCanceled()) return;
-            setStep(nextStep, true);
-          }
-          if (result === true) {
-            doNext();
-          } else {
-            // Only promise should be async
-            Promise.resolve(result).then(doNext);
-          }
-        });
-      }
-    }
-  }, [status, step]);
-  React__namespace.useEffect(function () {
-    return function () {
-      cancelNextFrame();
-    };
-  }, []);
-  return [startQueue, step];
-});
-
-function useStatus(supportMotion, visible, getElement, _ref) {
-  var _ref$motionEnter = _ref.motionEnter,
-    motionEnter = _ref$motionEnter === void 0 ? true : _ref$motionEnter,
-    _ref$motionAppear = _ref.motionAppear,
-    motionAppear = _ref$motionAppear === void 0 ? true : _ref$motionAppear,
-    _ref$motionLeave = _ref.motionLeave,
-    motionLeave = _ref$motionLeave === void 0 ? true : _ref$motionLeave,
-    motionDeadline = _ref.motionDeadline,
-    motionLeaveImmediately = _ref.motionLeaveImmediately,
-    onAppearPrepare = _ref.onAppearPrepare,
-    onEnterPrepare = _ref.onEnterPrepare,
-    onLeavePrepare = _ref.onLeavePrepare,
-    onAppearStart = _ref.onAppearStart,
-    onEnterStart = _ref.onEnterStart,
-    onLeaveStart = _ref.onLeaveStart,
-    onAppearActive = _ref.onAppearActive,
-    onEnterActive = _ref.onEnterActive,
-    onLeaveActive = _ref.onLeaveActive,
-    onAppearEnd = _ref.onAppearEnd,
-    onEnterEnd = _ref.onEnterEnd,
-    onLeaveEnd = _ref.onLeaveEnd,
-    onVisibleChanged = _ref.onVisibleChanged;
-  // Used for outer render usage to avoid `visible: false & status: none` to render nothing
-  var _useState = useSafeState(),
-    _useState2 = _slicedToArray(_useState, 2),
-    asyncVisible = _useState2[0],
-    setAsyncVisible = _useState2[1];
-  var _useState3 = useSafeState(STATUS_NONE),
-    _useState4 = _slicedToArray(_useState3, 2),
-    status = _useState4[0],
-    setStatus = _useState4[1];
-  var _useState5 = useSafeState(null),
-    _useState6 = _slicedToArray(_useState5, 2),
-    style = _useState6[0],
-    setStyle = _useState6[1];
-  var mountedRef = React.useRef(false);
-  var deadlineRef = React.useRef(null);
-
-  // =========================== Dom Node ===========================
-  function getDomElement() {
-    return getElement();
-  }
-
-  // ========================== Motion End ==========================
-  var activeRef = React.useRef(false);
-
-  /**
-   * Clean up status & style
-   */
-  function updateMotionEndStatus() {
-    setStatus(STATUS_NONE, true);
-    setStyle(null, true);
-  }
-  function onInternalMotionEnd(event) {
-    var element = getDomElement();
-    if (event && !event.deadline && event.target !== element) {
-      // event exists
-      // not initiated by deadline
-      // transitionEnd not fired by inner elements
-      return;
-    }
-    var currentActive = activeRef.current;
-    var canEnd;
-    if (status === STATUS_APPEAR && currentActive) {
-      canEnd = onAppearEnd === null || onAppearEnd === void 0 ? void 0 : onAppearEnd(element, event);
-    } else if (status === STATUS_ENTER && currentActive) {
-      canEnd = onEnterEnd === null || onEnterEnd === void 0 ? void 0 : onEnterEnd(element, event);
-    } else if (status === STATUS_LEAVE && currentActive) {
-      canEnd = onLeaveEnd === null || onLeaveEnd === void 0 ? void 0 : onLeaveEnd(element, event);
-    }
-
-    // Only update status when `canEnd` and not destroyed
-    if (status !== STATUS_NONE && currentActive && canEnd !== false) {
-      updateMotionEndStatus();
-    }
-  }
-  var _useDomMotionEvents = useDomMotionEvents(onInternalMotionEnd),
-    _useDomMotionEvents2 = _slicedToArray(_useDomMotionEvents, 1),
-    patchMotionEvents = _useDomMotionEvents2[0];
-
-  // ============================= Step =============================
-  var getEventHandlers = function getEventHandlers(targetStatus) {
-    var _ref2, _ref3, _ref4;
-    switch (targetStatus) {
-      case STATUS_APPEAR:
-        return _ref2 = {}, _defineProperty(_ref2, STEP_PREPARE, onAppearPrepare), _defineProperty(_ref2, STEP_START, onAppearStart), _defineProperty(_ref2, STEP_ACTIVE, onAppearActive), _ref2;
-      case STATUS_ENTER:
-        return _ref3 = {}, _defineProperty(_ref3, STEP_PREPARE, onEnterPrepare), _defineProperty(_ref3, STEP_START, onEnterStart), _defineProperty(_ref3, STEP_ACTIVE, onEnterActive), _ref3;
-      case STATUS_LEAVE:
-        return _ref4 = {}, _defineProperty(_ref4, STEP_PREPARE, onLeavePrepare), _defineProperty(_ref4, STEP_START, onLeaveStart), _defineProperty(_ref4, STEP_ACTIVE, onLeaveActive), _ref4;
-      default:
-        return {};
-    }
-  };
-  var eventHandlers = React__namespace.useMemo(function () {
-    return getEventHandlers(status);
-  }, [status]);
-  var _useStepQueue = useStepQueue(status, !supportMotion, function (newStep) {
-      // Only prepare step can be skip
-      if (newStep === STEP_PREPARE) {
-        var onPrepare = eventHandlers[STEP_PREPARE];
-        if (!onPrepare) {
-          return SkipStep;
-        }
-        return onPrepare(getDomElement());
-      }
-
-      // Rest step is sync update
-      if (step in eventHandlers) {
-        var _eventHandlers$step;
-        setStyle(((_eventHandlers$step = eventHandlers[step]) === null || _eventHandlers$step === void 0 ? void 0 : _eventHandlers$step.call(eventHandlers, getDomElement(), null)) || null);
-      }
-      if (step === STEP_ACTIVE) {
-        // Patch events when motion needed
-        patchMotionEvents(getDomElement());
-        if (motionDeadline > 0) {
-          clearTimeout(deadlineRef.current);
-          deadlineRef.current = setTimeout(function () {
-            onInternalMotionEnd({
-              deadline: true
-            });
-          }, motionDeadline);
-        }
-      }
-      if (step === STEP_PREPARED) {
-        updateMotionEndStatus();
-      }
-      return DoStep;
-    }),
-    _useStepQueue2 = _slicedToArray(_useStepQueue, 2),
-    startStep = _useStepQueue2[0],
-    step = _useStepQueue2[1];
-  var active = isActive(step);
-  activeRef.current = active;
-
-  // ============================ Status ============================
-  // Update with new status
-  useIsomorphicLayoutEffect(function () {
-    setAsyncVisible(visible);
-    var isMounted = mountedRef.current;
-    mountedRef.current = true;
-
-    // if (!supportMotion) {
-    //   return;
-    // }
-
-    var nextStatus;
-
-    // Appear
-    if (!isMounted && visible && motionAppear) {
-      nextStatus = STATUS_APPEAR;
-    }
-
-    // Enter
-    if (isMounted && visible && motionEnter) {
-      nextStatus = STATUS_ENTER;
-    }
-
-    // Leave
-    if (isMounted && !visible && motionLeave || !isMounted && motionLeaveImmediately && !visible && motionLeave) {
-      nextStatus = STATUS_LEAVE;
-    }
-    var nextEventHandlers = getEventHandlers(nextStatus);
-
-    // Update to next status
-    if (nextStatus && (supportMotion || nextEventHandlers[STEP_PREPARE])) {
-      setStatus(nextStatus);
-      startStep();
-    } else {
-      // Set back in case no motion but prev status has prepare step
-      setStatus(STATUS_NONE);
-    }
-  }, [visible]);
-
-  // ============================ Effect ============================
-  // Reset when motion changed
-  React.useEffect(function () {
-    if (
-    // Cancel appear
-    status === STATUS_APPEAR && !motionAppear ||
-    // Cancel enter
-    status === STATUS_ENTER && !motionEnter ||
-    // Cancel leave
-    status === STATUS_LEAVE && !motionLeave) {
-      setStatus(STATUS_NONE);
-    }
-  }, [motionAppear, motionEnter, motionLeave]);
-  React.useEffect(function () {
-    return function () {
-      mountedRef.current = false;
-      clearTimeout(deadlineRef.current);
-    };
-  }, []);
-
-  // Trigger `onVisibleChanged`
-  var firstMountChangeRef = React__namespace.useRef(false);
-  React.useEffect(function () {
-    // [visible & motion not end] => [!visible & motion end] still need trigger onVisibleChanged
-    if (asyncVisible) {
-      firstMountChangeRef.current = true;
-    }
-    if (asyncVisible !== undefined && status === STATUS_NONE) {
-      // Skip first render is invisible since it's nothing changed
-      if (firstMountChangeRef.current || asyncVisible) {
-        onVisibleChanged === null || onVisibleChanged === void 0 ? void 0 : onVisibleChanged(asyncVisible);
-      }
-      firstMountChangeRef.current = true;
-    }
-  }, [asyncVisible, status]);
-
-  // ============================ Styles ============================
-  var mergedStyle = style;
-  if (eventHandlers[STEP_PREPARE] && step === STEP_START) {
-    mergedStyle = _objectSpread2({
-      transition: 'none'
-    }, mergedStyle);
-  }
-  return [status, step, mergedStyle, asyncVisible !== null && asyncVisible !== void 0 ? asyncVisible : visible];
-}
-
-/**
- * `transitionSupport` is used for none transition test case.
- * Default we use browser transition event support check.
- */
-function genCSSMotion(config) {
-  var transitionSupport = config;
-  if (_typeof(config) === 'object') {
-    transitionSupport = config.transitionSupport;
-  }
-  function isSupportTransition(props, contextMotion) {
-    return !!(props.motionName && transitionSupport && contextMotion !== false);
-  }
-  var CSSMotion = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
-    var _props$visible = props.visible,
-      visible = _props$visible === void 0 ? true : _props$visible,
-      _props$removeOnLeave = props.removeOnLeave,
-      removeOnLeave = _props$removeOnLeave === void 0 ? true : _props$removeOnLeave,
-      forceRender = props.forceRender,
-      children = props.children,
-      motionName = props.motionName,
-      leavedClassName = props.leavedClassName,
-      eventProps = props.eventProps;
-    var _React$useContext = React__namespace.useContext(Context),
-      contextMotion = _React$useContext.motion;
-    var supportMotion = isSupportTransition(props, contextMotion);
-
-    // Ref to the react node, it may be a HTMLElement
-    var nodeRef = React.useRef();
-    // Ref to the dom wrapper in case ref can not pass to HTMLElement
-    var wrapperNodeRef = React.useRef();
-    function getDomElement() {
-      try {
-        // Here we're avoiding call for findDOMNode since it's deprecated
-        // in strict mode. We're calling it only when node ref is not
-        // an instance of DOM HTMLElement. Otherwise use
-        // findDOMNode as a final resort
-        return nodeRef.current instanceof HTMLElement ? nodeRef.current : findDOMNode(wrapperNodeRef.current);
-      } catch (e) {
-        // Only happen when `motionDeadline` trigger but element removed.
-        return null;
-      }
-    }
-    var _useStatus = useStatus(supportMotion, visible, getDomElement, props),
-      _useStatus2 = _slicedToArray(_useStatus, 4),
-      status = _useStatus2[0],
-      statusStep = _useStatus2[1],
-      statusStyle = _useStatus2[2],
-      mergedVisible = _useStatus2[3];
-
-    // Record whether content has rendered
-    // Will return null for un-rendered even when `removeOnLeave={false}`
-    var renderedRef = React__namespace.useRef(mergedVisible);
-    if (mergedVisible) {
-      renderedRef.current = true;
-    }
-
-    // ====================== Refs ======================
-    var setNodeRef = React__namespace.useCallback(function (node) {
-      nodeRef.current = node;
-      fillRef(ref, node);
-    }, [ref]);
-
-    // ===================== Render =====================
-    var motionChildren;
-    var mergedProps = _objectSpread2(_objectSpread2({}, eventProps), {}, {
-      visible: visible
-    });
-    if (!children) {
-      // No children
-      motionChildren = null;
-    } else if (status === STATUS_NONE) {
-      // Stable children
-      if (mergedVisible) {
-        motionChildren = children(_objectSpread2({}, mergedProps), setNodeRef);
-      } else if (!removeOnLeave && renderedRef.current && leavedClassName) {
-        motionChildren = children(_objectSpread2(_objectSpread2({}, mergedProps), {}, {
-          className: leavedClassName
-        }), setNodeRef);
-      } else if (forceRender || !removeOnLeave && !leavedClassName) {
-        motionChildren = children(_objectSpread2(_objectSpread2({}, mergedProps), {}, {
-          style: {
-            display: 'none'
-          }
-        }), setNodeRef);
-      } else {
-        motionChildren = null;
-      }
-    } else {
-      var _classNames;
-      // In motion
-      var statusSuffix;
-      if (statusStep === STEP_PREPARE) {
-        statusSuffix = 'prepare';
-      } else if (isActive(statusStep)) {
-        statusSuffix = 'active';
-      } else if (statusStep === STEP_START) {
-        statusSuffix = 'start';
-      }
-      var motionCls = getTransitionName(motionName, "".concat(status, "-").concat(statusSuffix));
-      motionChildren = children(_objectSpread2(_objectSpread2({}, mergedProps), {}, {
-        className: classnames(getTransitionName(motionName, status), (_classNames = {}, _defineProperty(_classNames, motionCls, motionCls && statusSuffix), _defineProperty(_classNames, motionName, typeof motionName === 'string'), _classNames)),
-        style: statusStyle
-      }), setNodeRef);
-    }
-
-    // Auto inject ref if child node not have `ref` props
-    if ( /*#__PURE__*/React__namespace.isValidElement(motionChildren) && supportRef(motionChildren)) {
-      var _ref = motionChildren,
-        originNodeRef = _ref.ref;
-      if (!originNodeRef) {
-        motionChildren = /*#__PURE__*/React__namespace.cloneElement(motionChildren, {
-          ref: setNodeRef
-        });
-      }
-    }
-    return /*#__PURE__*/React__namespace.createElement(DomWrapper, {
-      ref: wrapperNodeRef
-    }, motionChildren);
-  });
-  CSSMotion.displayName = 'CSSMotion';
-  return CSSMotion;
-}
-var CSSMotion = genCSSMotion(supportTransition);
-
-var STATUS_ADD = 'add';
-var STATUS_KEEP = 'keep';
-var STATUS_REMOVE = 'remove';
-var STATUS_REMOVED = 'removed';
-function wrapKeyToObject(key) {
-  var keyObj;
-  if (key && _typeof(key) === 'object' && 'key' in key) {
-    keyObj = key;
-  } else {
-    keyObj = {
-      key: key
-    };
-  }
-  return _objectSpread2(_objectSpread2({}, keyObj), {}, {
-    key: String(keyObj.key)
-  });
-}
-function parseKeys() {
-  var keys = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  return keys.map(wrapKeyToObject);
-}
-function diffKeys() {
-  var prevKeys = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  var currentKeys = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-  var list = [];
-  var currentIndex = 0;
-  var currentLen = currentKeys.length;
-  var prevKeyObjects = parseKeys(prevKeys);
-  var currentKeyObjects = parseKeys(currentKeys);
-
-  // Check prev keys to insert or keep
-  prevKeyObjects.forEach(function (keyObj) {
-    var hit = false;
-    for (var i = currentIndex; i < currentLen; i += 1) {
-      var currentKeyObj = currentKeyObjects[i];
-      if (currentKeyObj.key === keyObj.key) {
-        // New added keys should add before current key
-        if (currentIndex < i) {
-          list = list.concat(currentKeyObjects.slice(currentIndex, i).map(function (obj) {
-            return _objectSpread2(_objectSpread2({}, obj), {}, {
-              status: STATUS_ADD
-            });
-          }));
-          currentIndex = i;
-        }
-        list.push(_objectSpread2(_objectSpread2({}, currentKeyObj), {}, {
-          status: STATUS_KEEP
-        }));
-        currentIndex += 1;
-        hit = true;
-        break;
-      }
-    }
-
-    // If not hit, it means key is removed
-    if (!hit) {
-      list.push(_objectSpread2(_objectSpread2({}, keyObj), {}, {
-        status: STATUS_REMOVE
-      }));
-    }
-  });
-
-  // Add rest to the list
-  if (currentIndex < currentLen) {
-    list = list.concat(currentKeyObjects.slice(currentIndex).map(function (obj) {
-      return _objectSpread2(_objectSpread2({}, obj), {}, {
-        status: STATUS_ADD
-      });
-    }));
-  }
-
-  /**
-   * Merge same key when it remove and add again:
-   *    [1 - add, 2 - keep, 1 - remove] -> [1 - keep, 2 - keep]
-   */
-  var keys = {};
-  list.forEach(function (_ref) {
-    var key = _ref.key;
-    keys[key] = (keys[key] || 0) + 1;
-  });
-  var duplicatedKeys = Object.keys(keys).filter(function (key) {
-    return keys[key] > 1;
-  });
-  duplicatedKeys.forEach(function (matchKey) {
-    // Remove `STATUS_REMOVE` node.
-    list = list.filter(function (_ref2) {
-      var key = _ref2.key,
-        status = _ref2.status;
-      return key !== matchKey || status !== STATUS_REMOVE;
-    });
-
-    // Update `STATUS_ADD` to `STATUS_KEEP`
-    list.forEach(function (node) {
-      if (node.key === matchKey) {
-        // eslint-disable-next-line no-param-reassign
-        node.status = STATUS_KEEP;
-      }
-    });
-  });
-  return list;
-}
-
-var _excluded$2 = ["component", "children", "onVisibleChanged", "onAllRemoved"],
-  _excluded2 = ["status"];
-var MOTION_PROP_NAMES = ['eventProps', 'visible', 'children', 'motionName', 'motionAppear', 'motionEnter', 'motionLeave', 'motionLeaveImmediately', 'motionDeadline', 'removeOnLeave', 'leavedClassName', 'onAppearPrepare', 'onAppearStart', 'onAppearActive', 'onAppearEnd', 'onEnterStart', 'onEnterActive', 'onEnterEnd', 'onLeaveStart', 'onLeaveActive', 'onLeaveEnd'];
-/**
- * Generate a CSSMotionList component with config
- * @param transitionSupport No need since CSSMotionList no longer depends on transition support
- * @param CSSMotion CSSMotion component
- */
-function genCSSMotionList(transitionSupport) {
-  var CSSMotion$1 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : CSSMotion;
-  var CSSMotionList = /*#__PURE__*/function (_React$Component) {
-    _inherits(CSSMotionList, _React$Component);
-    var _super = _createSuper(CSSMotionList);
-    function CSSMotionList() {
-      var _this;
-      _classCallCheck(this, CSSMotionList);
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-      _this = _super.call.apply(_super, [this].concat(args));
-      _defineProperty(_assertThisInitialized(_this), "state", {
-        keyEntities: []
-      });
-      // ZombieJ: Return the count of rest keys. It's safe to refactor if need more info.
-      _defineProperty(_assertThisInitialized(_this), "removeKey", function (removeKey) {
-        var keyEntities = _this.state.keyEntities;
-        var nextKeyEntities = keyEntities.map(function (entity) {
-          if (entity.key !== removeKey) return entity;
-          return _objectSpread2(_objectSpread2({}, entity), {}, {
-            status: STATUS_REMOVED
-          });
-        });
-        _this.setState({
-          keyEntities: nextKeyEntities
-        });
-        return nextKeyEntities.filter(function (_ref) {
-          var status = _ref.status;
-          return status !== STATUS_REMOVED;
-        }).length;
-      });
-      return _this;
-    }
-    _createClass(CSSMotionList, [{
-      key: "render",
-      value: function render() {
-        var _this2 = this;
-        var keyEntities = this.state.keyEntities;
-        var _this$props = this.props,
-          component = _this$props.component,
-          children = _this$props.children,
-          _onVisibleChanged = _this$props.onVisibleChanged,
-          onAllRemoved = _this$props.onAllRemoved,
-          restProps = _objectWithoutProperties(_this$props, _excluded$2);
-        var Component = component || React__namespace.Fragment;
-        var motionProps = {};
-        MOTION_PROP_NAMES.forEach(function (prop) {
-          motionProps[prop] = restProps[prop];
-          delete restProps[prop];
-        });
-        delete restProps.keys;
-        return /*#__PURE__*/React__namespace.createElement(Component, restProps, keyEntities.map(function (_ref2, index) {
-          var status = _ref2.status,
-            eventProps = _objectWithoutProperties(_ref2, _excluded2);
-          var visible = status === STATUS_ADD || status === STATUS_KEEP;
-          return /*#__PURE__*/React__namespace.createElement(CSSMotion$1, _extends({}, motionProps, {
-            key: eventProps.key,
-            visible: visible,
-            eventProps: eventProps,
-            onVisibleChanged: function onVisibleChanged(changedVisible) {
-              _onVisibleChanged === null || _onVisibleChanged === void 0 ? void 0 : _onVisibleChanged(changedVisible, {
-                key: eventProps.key
-              });
-              if (!changedVisible) {
-                var restKeysCount = _this2.removeKey(eventProps.key);
-                if (restKeysCount === 0 && onAllRemoved) {
-                  onAllRemoved();
-                }
-              }
-            }
-          }), function (props, ref) {
-            return children(_objectSpread2(_objectSpread2({}, props), {}, {
-              index: index
-            }), ref);
-          });
-        }));
-      }
-    }], [{
-      key: "getDerivedStateFromProps",
-      value: function getDerivedStateFromProps(_ref3, _ref4) {
-        var keys = _ref3.keys;
-        var keyEntities = _ref4.keyEntities;
-        var parsedKeyObjects = parseKeys(keys);
-        var mixedKeyEntities = diffKeys(keyEntities, parsedKeyObjects);
-        return {
-          keyEntities: mixedKeyEntities.filter(function (entity) {
-            var prevEntity = keyEntities.find(function (_ref5) {
-              var key = _ref5.key;
-              return entity.key === key;
-            });
-
-            // Remove if already mark as removed
-            if (prevEntity && prevEntity.status === STATUS_REMOVED && entity.status === STATUS_REMOVE) {
-              return false;
-            }
-            return true;
-          })
-        };
-      }
-    }]);
-    return CSSMotionList;
-  }(React__namespace.Component);
-  _defineProperty(CSSMotionList, "defaultProps", {
-    component: 'div'
-  });
-  return CSSMotionList;
-}
-genCSSMotionList(supportTransition);
-
-function MotionWrapper(props) {
-  const {
-    children
-  } = props;
-  const [, token] = useToken();
-  const {
-    motion
-  } = token;
-  const needWrapMotionProviderRef = React__namespace.useRef(false);
-  needWrapMotionProviderRef.current = needWrapMotionProviderRef.current || motion === false;
-  if (needWrapMotionProviderRef.current) {
-    return /*#__PURE__*/React__namespace.createElement(MotionProvider, {
-      motion: motion
-    }, children);
-  }
-  return children;
-}
-
-/**
- * Warning for ConfigProviderProps.
- * This will be empty function in production.
- */
-const PropWarning = /*#__PURE__*/React__namespace.memo(_ref => {
-  let {
-    dropdownMatchSelectWidth
-  } = _ref;
-  const warning = devUseWarning('ConfigProvider');
-  warning.deprecated(dropdownMatchSelectWidth === undefined, 'dropdownMatchSelectWidth', 'popupMatchSelectWidth');
-  return null;
-});
-if (process.env.NODE_ENV !== 'production') {
-  PropWarning.displayName = 'PropWarning';
-}
-var PropWarning$1 = process.env.NODE_ENV !== 'production' ? PropWarning : () => null;
-
-var __rest$5 = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-/**
- * Since too many feedback using static method like `Modal.confirm` not getting theme, we record the
- * theme register info here to help developer get warning info.
- */
-let existThemeConfig = false;
-process.env.NODE_ENV !== 'production' ? componentName => {
-  process.env.NODE_ENV !== "production" ? warning$2(!existThemeConfig, componentName, `Static function can not consume context like dynamic theme. Please use 'App' component instead.`) : void 0;
-} : /* istanbul ignore next */
-null;
-// These props is used by `useContext` directly in sub component
-const PASSED_PROPS = ['getTargetContainer', 'getPopupContainer', 'renderEmpty', 'pageHeader', 'input', 'pagination', 'form', 'select', 'button'];
-const defaultPrefixCls = 'ant';
-let globalPrefixCls;
-function getGlobalPrefixCls() {
-  return globalPrefixCls || defaultPrefixCls;
-}
-function isLegacyTheme(theme) {
-  return Object.keys(theme).some(key => key.endsWith('Color'));
-}
-const setGlobalConfig = _ref => {
-  let {
-    prefixCls,
-    iconPrefixCls,
-    theme
-  } = _ref;
-  if (prefixCls !== undefined) {
-    globalPrefixCls = prefixCls;
-  }
-  if (theme) {
-    if (isLegacyTheme(theme)) {
-      process.env.NODE_ENV !== "production" ? warning$2(false, 'ConfigProvider', '`config` of css variable theme is not work in v5. Please use new `theme` config instead.') : void 0;
-      registerTheme(getGlobalPrefixCls(), theme);
-    }
-  }
-};
-const ProviderChildren = props => {
-  const {
-    children,
-    csp: customCsp,
-    autoInsertSpaceInButton,
-    alert,
-    anchor,
-    form,
-    locale,
-    componentSize,
-    direction,
-    space,
-    virtual,
-    dropdownMatchSelectWidth,
-    popupMatchSelectWidth,
-    popupOverflow,
-    legacyLocale,
-    parentContext,
-    iconPrefixCls: customIconPrefixCls,
-    theme,
-    componentDisabled,
-    segmented,
-    statistic,
-    spin,
-    calendar,
-    carousel,
-    cascader,
-    collapse,
-    typography,
-    checkbox,
-    descriptions,
-    divider,
-    drawer,
-    skeleton,
-    steps,
-    image,
-    layout,
-    list,
-    mentions,
-    modal,
-    progress,
-    result,
-    slider,
-    breadcrumb,
-    menu,
-    pagination,
-    input,
-    empty,
-    badge,
-    radio,
-    rate,
-    switch: SWITCH,
-    transfer,
-    avatar,
-    message,
-    tag,
-    table,
-    card,
-    tabs,
-    timeline,
-    timePicker,
-    upload,
-    notification,
-    tree,
-    colorPicker,
-    datePicker,
-    rangePicker,
-    flex,
-    wave,
-    dropdown,
-    warning: warningConfig
-  } = props;
-  // =================================== Context ===================================
-  const getPrefixCls = React__namespace.useCallback((suffixCls, customizePrefixCls) => {
-    const {
-      prefixCls
-    } = props;
-    if (customizePrefixCls) {
-      return customizePrefixCls;
-    }
-    const mergedPrefixCls = prefixCls || parentContext.getPrefixCls('');
-    return suffixCls ? `${mergedPrefixCls}-${suffixCls}` : mergedPrefixCls;
-  }, [parentContext.getPrefixCls, props.prefixCls]);
-  const iconPrefixCls = customIconPrefixCls || parentContext.iconPrefixCls || defaultIconPrefixCls;
-  const csp = customCsp || parentContext.csp;
-  useStyle$3(iconPrefixCls, csp);
-  const mergedTheme = useTheme(theme, parentContext.theme);
-  if (process.env.NODE_ENV !== 'production') {
-    existThemeConfig = existThemeConfig || !!mergedTheme;
-  }
-  const baseConfig = {
-    csp,
-    autoInsertSpaceInButton,
-    alert,
-    anchor,
-    locale: locale || legacyLocale,
-    direction,
-    space,
-    virtual,
-    popupMatchSelectWidth: popupMatchSelectWidth !== null && popupMatchSelectWidth !== void 0 ? popupMatchSelectWidth : dropdownMatchSelectWidth,
-    popupOverflow,
-    getPrefixCls,
-    iconPrefixCls,
-    theme: mergedTheme,
-    segmented,
-    statistic,
-    spin,
-    calendar,
-    carousel,
-    cascader,
-    collapse,
-    typography,
-    checkbox,
-    descriptions,
-    divider,
-    drawer,
-    skeleton,
-    steps,
-    image,
-    input,
-    layout,
-    list,
-    mentions,
-    modal,
-    progress,
-    result,
-    slider,
-    breadcrumb,
-    menu,
-    pagination,
-    empty,
-    badge,
-    radio,
-    rate,
-    switch: SWITCH,
-    transfer,
-    avatar,
-    message,
-    tag,
-    table,
-    card,
-    tabs,
-    timeline,
-    timePicker,
-    upload,
-    notification,
-    tree,
-    colorPicker,
-    datePicker,
-    rangePicker,
-    flex,
-    wave,
-    dropdown,
-    warning: warningConfig
-  };
-  const config = Object.assign({}, parentContext);
-  Object.keys(baseConfig).forEach(key => {
-    if (baseConfig[key] !== undefined) {
-      config[key] = baseConfig[key];
-    }
-  });
-  // Pass the props used by `useContext` directly with child component.
-  // These props should merged into `config`.
-  PASSED_PROPS.forEach(propName => {
-    const propValue = props[propName];
-    if (propValue) {
-      config[propName] = propValue;
-    }
-  });
-  // https://github.com/ant-design/ant-design/issues/27617
-  const memoedConfig = useMemo(() => config, config, (prevConfig, currentConfig) => {
-    const prevKeys = Object.keys(prevConfig);
-    const currentKeys = Object.keys(currentConfig);
-    return prevKeys.length !== currentKeys.length || prevKeys.some(key => prevConfig[key] !== currentConfig[key]);
-  });
-  const memoIconContextValue = React__namespace.useMemo(() => ({
-    prefixCls: iconPrefixCls,
-    csp
-  }), [iconPrefixCls, csp]);
-  let childNode = /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(PropWarning$1, {
-    dropdownMatchSelectWidth: dropdownMatchSelectWidth
-  }), children);
-  const validateMessages = React__namespace.useMemo(() => {
-    var _a, _b, _c, _d;
-    return merge$1(((_a = defaultLocale.Form) === null || _a === void 0 ? void 0 : _a.defaultValidateMessages) || {}, ((_c = (_b = memoedConfig.locale) === null || _b === void 0 ? void 0 : _b.Form) === null || _c === void 0 ? void 0 : _c.defaultValidateMessages) || {}, ((_d = memoedConfig.form) === null || _d === void 0 ? void 0 : _d.validateMessages) || {}, (form === null || form === void 0 ? void 0 : form.validateMessages) || {});
-  }, [memoedConfig, form === null || form === void 0 ? void 0 : form.validateMessages]);
-  if (Object.keys(validateMessages).length > 0) {
-    childNode = /*#__PURE__*/React__namespace.createElement(ValidateMessagesContext.Provider, {
-      value: validateMessages
-    }, childNode);
-  }
-  if (locale) {
-    childNode = /*#__PURE__*/React__namespace.createElement(LocaleProvider$1, {
-      locale: locale,
-      _ANT_MARK__: ANT_MARK
-    }, childNode);
-  }
-  if (iconPrefixCls || csp) {
-    childNode = /*#__PURE__*/React__namespace.createElement(Context$1.Provider, {
-      value: memoIconContextValue
-    }, childNode);
-  }
-  if (componentSize) {
-    childNode = /*#__PURE__*/React__namespace.createElement(SizeContextProvider, {
-      size: componentSize
-    }, childNode);
-  }
-  // =================================== Motion ===================================
-  childNode = /*#__PURE__*/React__namespace.createElement(MotionWrapper, null, childNode);
-  // ================================ Dynamic theme ================================
-  const memoTheme = React__namespace.useMemo(() => {
-    const _a = mergedTheme || {},
-      {
-        algorithm,
-        token,
-        components
-      } = _a,
-      rest = __rest$5(_a, ["algorithm", "token", "components"]);
-    const themeObj = algorithm && (!Array.isArray(algorithm) || algorithm.length > 0) ? createTheme(algorithm) : defaultTheme;
-    const parsedComponents = {};
-    Object.entries(components || {}).forEach(_ref2 => {
-      let [componentName, componentToken] = _ref2;
-      const parsedToken = Object.assign({}, componentToken);
-      if ('algorithm' in parsedToken) {
-        if (parsedToken.algorithm === true) {
-          parsedToken.theme = themeObj;
-        } else if (Array.isArray(parsedToken.algorithm) || typeof parsedToken.algorithm === 'function') {
-          parsedToken.theme = createTheme(parsedToken.algorithm);
-        }
-        delete parsedToken.algorithm;
-      }
-      parsedComponents[componentName] = parsedToken;
-    });
-    const mergedToken = Object.assign(Object.assign({}, seedToken$1), token);
-    return Object.assign(Object.assign({}, rest), {
-      theme: themeObj,
-      token: mergedToken,
-      components: parsedComponents,
-      override: Object.assign({
-        override: mergedToken
-      }, parsedComponents)
-    });
-  }, [mergedTheme]);
-  if (theme) {
-    childNode = /*#__PURE__*/React__namespace.createElement(DesignTokenContext.Provider, {
-      value: memoTheme
-    }, childNode);
-  }
-  // ================================== Warning ===================================
-  if (memoedConfig.warning) {
-    childNode = /*#__PURE__*/React__namespace.createElement(WarningContext.Provider, {
-      value: memoedConfig.warning
-    }, childNode);
-  }
-  // =================================== Render ===================================
-  if (componentDisabled !== undefined) {
-    childNode = /*#__PURE__*/React__namespace.createElement(DisabledContextProvider, {
-      disabled: componentDisabled
-    }, childNode);
-  }
-  return /*#__PURE__*/React__namespace.createElement(ConfigContext.Provider, {
-    value: memoedConfig
-  }, childNode);
-};
-const ConfigProvider = props => {
-  const context = React__namespace.useContext(ConfigContext);
-  const antLocale = React__namespace.useContext(LocaleContext$1);
-  return /*#__PURE__*/React__namespace.createElement(ProviderChildren, Object.assign({
-    parentContext: context,
-    legacyLocale: antLocale
-  }, props));
-};
-ConfigProvider.ConfigContext = ConfigContext;
-ConfigProvider.SizeContext = SizeContext$1;
-ConfigProvider.config = setGlobalConfig;
-ConfigProvider.useConfig = useConfig;
-Object.defineProperty(ConfigProvider, 'SizeContext', {
-  get: () => {
-    process.env.NODE_ENV !== "production" ? warning$2(false, 'ConfigProvider', 'ConfigProvider.SizeContext is deprecated. Please use `ConfigProvider.useConfig().componentSize` instead.') : void 0;
-    return SizeContext$1;
-  }
-});
-if (process.env.NODE_ENV !== 'production') {
-  ConfigProvider.displayName = 'ConfigProvider';
-}
-
-function getRoot(ele) {
-  var _ele$getRootNode;
-  return ele === null || ele === void 0 || (_ele$getRootNode = ele.getRootNode) === null || _ele$getRootNode === void 0 ? void 0 : _ele$getRootNode.call(ele);
-}
-
-/**
- * Check if is in shadowRoot
- */
-function inShadow(ele) {
-  return getRoot(ele) instanceof ShadowRoot;
-}
-
-/**
- * Return shadowRoot if possible
- */
-function getShadowRoot(ele) {
-  return inShadow(ele) ? getRoot(ele) : null;
-}
-
-function camelCase(input) {
-  return input.replace(/-(.)/g, function (match, g) {
-    return g.toUpperCase();
-  });
-}
-function warning(valid, message) {
-  warningOnce(valid, "[@ant-design/icons] ".concat(message));
-}
-function isIconDefinition(target) {
-  return _typeof(target) === 'object' && typeof target.name === 'string' && typeof target.theme === 'string' && (_typeof(target.icon) === 'object' || typeof target.icon === 'function');
-}
-function normalizeAttrs() {
-  var attrs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return Object.keys(attrs).reduce(function (acc, key) {
-    var val = attrs[key];
-    switch (key) {
-      case 'class':
-        acc.className = val;
-        delete acc.class;
-        break;
-      default:
-        delete acc[key];
-        acc[camelCase(key)] = val;
-    }
-    return acc;
-  }, {});
-}
-function generate(node, key, rootProps) {
-  if (!rootProps) {
-    return /*#__PURE__*/React__default["default"].createElement(node.tag, _objectSpread2({
-      key: key
-    }, normalizeAttrs(node.attrs)), (node.children || []).map(function (child, index) {
-      return generate(child, "".concat(key, "-").concat(node.tag, "-").concat(index));
-    }));
-  }
-  return /*#__PURE__*/React__default["default"].createElement(node.tag, _objectSpread2(_objectSpread2({
-    key: key
-  }, normalizeAttrs(node.attrs)), rootProps), (node.children || []).map(function (child, index) {
-    return generate(child, "".concat(key, "-").concat(node.tag, "-").concat(index));
-  }));
-}
-function getSecondaryColor(primaryColor) {
-  // choose the second color
-  return generate$1(primaryColor)[0];
-}
-function normalizeTwoToneColors(twoToneColor) {
-  if (!twoToneColor) {
-    return [];
-  }
-  return Array.isArray(twoToneColor) ? twoToneColor : [twoToneColor];
-}
-var iconStyles = "\n.anticon {\n  display: inline-block;\n  color: inherit;\n  font-style: normal;\n  line-height: 0;\n  text-align: center;\n  text-transform: none;\n  vertical-align: -0.125em;\n  text-rendering: optimizeLegibility;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.anticon > * {\n  line-height: 1;\n}\n\n.anticon svg {\n  display: inline-block;\n}\n\n.anticon::before {\n  display: none;\n}\n\n.anticon .anticon-icon {\n  display: block;\n}\n\n.anticon[tabindex] {\n  cursor: pointer;\n}\n\n.anticon-spin::before,\n.anticon-spin {\n  display: inline-block;\n  -webkit-animation: loadingCircle 1s infinite linear;\n  animation: loadingCircle 1s infinite linear;\n}\n\n@-webkit-keyframes loadingCircle {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes loadingCircle {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n";
-var useInsertStyles = function useInsertStyles(eleRef) {
-  var _useContext = React.useContext(Context$1),
-    csp = _useContext.csp,
-    prefixCls = _useContext.prefixCls;
-  var mergedStyleStr = iconStyles;
-  if (prefixCls) {
-    mergedStyleStr = mergedStyleStr.replace(/anticon/g, prefixCls);
-  }
-  React.useEffect(function () {
-    var ele = eleRef.current;
-    var shadowRoot = getShadowRoot(ele);
-    updateCSS(mergedStyleStr, '@ant-design-icons', {
-      prepend: true,
-      csp: csp,
-      attachTo: shadowRoot
-    });
-  }, []);
-};
-
-var _excluded$1 = ["icon", "className", "onClick", "style", "primaryColor", "secondaryColor"];
-var twoToneColorPalette = {
-  primaryColor: '#333',
-  secondaryColor: '#E6E6E6',
-  calculated: false
-};
-function setTwoToneColors(_ref) {
-  var primaryColor = _ref.primaryColor,
-    secondaryColor = _ref.secondaryColor;
-  twoToneColorPalette.primaryColor = primaryColor;
-  twoToneColorPalette.secondaryColor = secondaryColor || getSecondaryColor(primaryColor);
-  twoToneColorPalette.calculated = !!secondaryColor;
-}
-function getTwoToneColors() {
-  return _objectSpread2({}, twoToneColorPalette);
-}
-var IconBase$1 = function IconBase(props) {
-  var icon = props.icon,
-    className = props.className,
-    onClick = props.onClick,
-    style = props.style,
-    primaryColor = props.primaryColor,
-    secondaryColor = props.secondaryColor,
-    restProps = _objectWithoutProperties(props, _excluded$1);
-  var svgRef = React__namespace.useRef();
-  var colors = twoToneColorPalette;
-  if (primaryColor) {
-    colors = {
-      primaryColor: primaryColor,
-      secondaryColor: secondaryColor || getSecondaryColor(primaryColor)
-    };
-  }
-  useInsertStyles(svgRef);
-  warning(isIconDefinition(icon), "icon should be icon definiton, but got ".concat(icon));
-  if (!isIconDefinition(icon)) {
-    return null;
-  }
-  var target = icon;
-  if (target && typeof target.icon === 'function') {
-    target = _objectSpread2(_objectSpread2({}, target), {}, {
-      icon: target.icon(colors.primaryColor, colors.secondaryColor)
-    });
-  }
-  return generate(target.icon, "svg-".concat(target.name), _objectSpread2(_objectSpread2({
-    className: className,
-    onClick: onClick,
-    style: style,
-    'data-icon': target.name,
-    width: '1em',
-    height: '1em',
-    fill: 'currentColor',
-    'aria-hidden': 'true'
-  }, restProps), {}, {
-    ref: svgRef
-  }));
-};
-IconBase$1.displayName = 'IconReact';
-IconBase$1.getTwoToneColors = getTwoToneColors;
-IconBase$1.setTwoToneColors = setTwoToneColors;
-var ReactIcon = IconBase$1;
-
-function setTwoToneColor(twoToneColor) {
-  var _normalizeTwoToneColo = normalizeTwoToneColors(twoToneColor),
-    _normalizeTwoToneColo2 = _slicedToArray(_normalizeTwoToneColo, 2),
-    primaryColor = _normalizeTwoToneColo2[0],
-    secondaryColor = _normalizeTwoToneColo2[1];
-  return ReactIcon.setTwoToneColors({
-    primaryColor: primaryColor,
-    secondaryColor: secondaryColor
-  });
-}
-function getTwoToneColor() {
-  var colors = ReactIcon.getTwoToneColors();
-  if (!colors.calculated) {
-    return colors.primaryColor;
-  }
-  return [colors.primaryColor, colors.secondaryColor];
-}
-
-var _excluded = ["className", "icon", "spin", "rotate", "tabIndex", "onClick", "twoToneColor"];
-// Initial setting
-// should move it to antd main repo?
-setTwoToneColor(blue.primary);
-
-// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/34757#issuecomment-488848720
-
-var Icon = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
-  var _classNames;
-  var className = props.className,
-    icon = props.icon,
-    spin = props.spin,
-    rotate = props.rotate,
-    tabIndex = props.tabIndex,
-    onClick = props.onClick,
-    twoToneColor = props.twoToneColor,
-    restProps = _objectWithoutProperties(props, _excluded);
-  var _React$useContext = React__namespace.useContext(Context$1),
-    _React$useContext$pre = _React$useContext.prefixCls,
-    prefixCls = _React$useContext$pre === void 0 ? 'anticon' : _React$useContext$pre,
-    rootClassName = _React$useContext.rootClassName;
-  var classString = classnames(rootClassName, prefixCls, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-").concat(icon.name), !!icon.name), _defineProperty(_classNames, "".concat(prefixCls, "-spin"), !!spin || icon.name === 'loading'), _classNames), className);
-  var iconTabIndex = tabIndex;
-  if (iconTabIndex === undefined && onClick) {
-    iconTabIndex = -1;
-  }
-  var svgStyle = rotate ? {
-    msTransform: "rotate(".concat(rotate, "deg)"),
-    transform: "rotate(".concat(rotate, "deg)")
-  } : undefined;
-  var _normalizeTwoToneColo = normalizeTwoToneColors(twoToneColor),
-    _normalizeTwoToneColo2 = _slicedToArray(_normalizeTwoToneColo, 2),
-    primaryColor = _normalizeTwoToneColo2[0],
-    secondaryColor = _normalizeTwoToneColo2[1];
-  return /*#__PURE__*/React__namespace.createElement("span", _extends({
-    role: "img",
-    "aria-label": icon.name
-  }, restProps, {
-    ref: ref,
-    tabIndex: iconTabIndex,
-    onClick: onClick,
-    className: classString
-  }), /*#__PURE__*/React__namespace.createElement(ReactIcon, {
-    icon: icon,
-    primaryColor: primaryColor,
-    secondaryColor: secondaryColor,
-    style: svgStyle
-  }));
-});
-Icon.displayName = 'AntdIcon';
-Icon.getTwoToneColor = getTwoToneColor;
-Icon.setTwoToneColor = setTwoToneColor;
-var AntdIcon = Icon;
-
-const {
-  isValidElement
-} = React__namespace;
-function isFragment(child) {
-  return child && isValidElement(child) && child.type === React__namespace.Fragment;
-}
-function replaceElement(element, replacement, props) {
-  if (!isValidElement(element)) {
-    return replacement;
-  }
-  return /*#__PURE__*/React__namespace.cloneElement(element, typeof props === 'function' ? props(element.props || {}) : props);
-}
-function cloneElement(element, props) {
-  return replaceElement(element, element, props);
-}
-
-// This icon file is generated automatically.
-var LoadingOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z" } }] }, "name": "loading", "theme": "outlined" };
-var LoadingOutlinedSvg = LoadingOutlined$2;
-
-var LoadingOutlined = function LoadingOutlined(props, ref) {
-  return /*#__PURE__*/React__namespace.createElement(AntdIcon, _extends({}, props, {
-    ref: ref,
-    icon: LoadingOutlinedSvg
-  }));
-};
-if (process.env.NODE_ENV !== 'production') {
-  LoadingOutlined.displayName = 'LoadingOutlined';
-}
-var LoadingOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(LoadingOutlined);
-
-function _regeneratorRuntime() {
-  _regeneratorRuntime = function _regeneratorRuntime() {
-    return e;
-  };
-  var t,
-    e = {},
-    r = Object.prototype,
-    n = r.hasOwnProperty,
-    o = Object.defineProperty || function (t, e, r) {
-      t[e] = r.value;
-    },
-    i = "function" == typeof Symbol ? Symbol : {},
-    a = i.iterator || "@@iterator",
-    c = i.asyncIterator || "@@asyncIterator",
-    u = i.toStringTag || "@@toStringTag";
-  function define(t, e, r) {
-    return Object.defineProperty(t, e, {
-      value: r,
-      enumerable: !0,
-      configurable: !0,
-      writable: !0
-    }), t[e];
-  }
-  try {
-    define({}, "");
-  } catch (t) {
-    define = function define(t, e, r) {
-      return t[e] = r;
-    };
-  }
-  function wrap(t, e, r, n) {
-    var i = e && e.prototype instanceof Generator ? e : Generator,
-      a = Object.create(i.prototype),
-      c = new Context(n || []);
-    return o(a, "_invoke", {
-      value: makeInvokeMethod(t, r, c)
-    }), a;
-  }
-  function tryCatch(t, e, r) {
-    try {
-      return {
-        type: "normal",
-        arg: t.call(e, r)
-      };
-    } catch (t) {
-      return {
-        type: "throw",
-        arg: t
-      };
-    }
-  }
-  e.wrap = wrap;
-  var h = "suspendedStart",
-    l = "suspendedYield",
-    f = "executing",
-    s = "completed",
-    y = {};
-  function Generator() {}
-  function GeneratorFunction() {}
-  function GeneratorFunctionPrototype() {}
-  var p = {};
-  define(p, a, function () {
-    return this;
-  });
-  var d = Object.getPrototypeOf,
-    v = d && d(d(values([])));
-  v && v !== r && n.call(v, a) && (p = v);
-  var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p);
-  function defineIteratorMethods(t) {
-    ["next", "throw", "return"].forEach(function (e) {
-      define(t, e, function (t) {
-        return this._invoke(e, t);
-      });
-    });
-  }
-  function AsyncIterator(t, e) {
-    function invoke(r, o, i, a) {
-      var c = tryCatch(t[r], t, o);
-      if ("throw" !== c.type) {
-        var u = c.arg,
-          h = u.value;
-        return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) {
-          invoke("next", t, i, a);
-        }, function (t) {
-          invoke("throw", t, i, a);
-        }) : e.resolve(h).then(function (t) {
-          u.value = t, i(u);
-        }, function (t) {
-          return invoke("throw", t, i, a);
-        });
-      }
-      a(c.arg);
-    }
-    var r;
-    o(this, "_invoke", {
-      value: function value(t, n) {
-        function callInvokeWithMethodAndArg() {
-          return new e(function (e, r) {
-            invoke(t, n, e, r);
-          });
-        }
-        return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
-      }
-    });
-  }
-  function makeInvokeMethod(e, r, n) {
-    var o = h;
-    return function (i, a) {
-      if (o === f) throw new Error("Generator is already running");
-      if (o === s) {
-        if ("throw" === i) throw a;
-        return {
-          value: t,
-          done: !0
-        };
-      }
-      for (n.method = i, n.arg = a;;) {
-        var c = n.delegate;
-        if (c) {
-          var u = maybeInvokeDelegate(c, n);
-          if (u) {
-            if (u === y) continue;
-            return u;
-          }
-        }
-        if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) {
-          if (o === h) throw o = s, n.arg;
-          n.dispatchException(n.arg);
-        } else "return" === n.method && n.abrupt("return", n.arg);
-        o = f;
-        var p = tryCatch(e, r, n);
-        if ("normal" === p.type) {
-          if (o = n.done ? s : l, p.arg === y) continue;
-          return {
-            value: p.arg,
-            done: n.done
-          };
-        }
-        "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg);
-      }
-    };
-  }
-  function maybeInvokeDelegate(e, r) {
-    var n = r.method,
-      o = e.iterator[n];
-    if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y;
-    var i = tryCatch(o, e.iterator, r.arg);
-    if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y;
-    var a = i.arg;
-    return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y);
-  }
-  function pushTryEntry(t) {
-    var e = {
-      tryLoc: t[0]
-    };
-    1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e);
-  }
-  function resetTryEntry(t) {
-    var e = t.completion || {};
-    e.type = "normal", delete e.arg, t.completion = e;
-  }
-  function Context(t) {
-    this.tryEntries = [{
-      tryLoc: "root"
-    }], t.forEach(pushTryEntry, this), this.reset(!0);
-  }
-  function values(e) {
-    if (e || "" === e) {
-      var r = e[a];
-      if (r) return r.call(e);
-      if ("function" == typeof e.next) return e;
-      if (!isNaN(e.length)) {
-        var o = -1,
-          i = function next() {
-            for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next;
-            return next.value = t, next.done = !0, next;
-          };
-        return i.next = i;
-      }
-    }
-    throw new TypeError(_typeof(e) + " is not iterable");
-  }
-  return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", {
-    value: GeneratorFunctionPrototype,
-    configurable: !0
-  }), o(GeneratorFunctionPrototype, "constructor", {
-    value: GeneratorFunction,
-    configurable: !0
-  }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
-    var e = "function" == typeof t && t.constructor;
-    return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name));
-  }, e.mark = function (t) {
-    return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t;
-  }, e.awrap = function (t) {
-    return {
-      __await: t
-    };
-  }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () {
-    return this;
-  }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) {
-    void 0 === i && (i = Promise);
-    var a = new AsyncIterator(wrap(t, r, n, o), i);
-    return e.isGeneratorFunction(r) ? a : a.next().then(function (t) {
-      return t.done ? t.value : a.next();
-    });
-  }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () {
-    return this;
-  }), define(g, "toString", function () {
-    return "[object Generator]";
-  }), e.keys = function (t) {
-    var e = Object(t),
-      r = [];
-    for (var n in e) r.push(n);
-    return r.reverse(), function next() {
-      for (; r.length;) {
-        var t = r.pop();
-        if (t in e) return next.value = t, next.done = !1, next;
-      }
-      return next.done = !0, next;
-    };
-  }, e.values = values, Context.prototype = {
-    constructor: Context,
-    reset: function reset(e) {
-      if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t);
-    },
-    stop: function stop() {
-      this.done = !0;
-      var t = this.tryEntries[0].completion;
-      if ("throw" === t.type) throw t.arg;
-      return this.rval;
-    },
-    dispatchException: function dispatchException(e) {
-      if (this.done) throw e;
-      var r = this;
-      function handle(n, o) {
-        return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o;
-      }
-      for (var o = this.tryEntries.length - 1; o >= 0; --o) {
-        var i = this.tryEntries[o],
-          a = i.completion;
-        if ("root" === i.tryLoc) return handle("end");
-        if (i.tryLoc <= this.prev) {
-          var c = n.call(i, "catchLoc"),
-            u = n.call(i, "finallyLoc");
-          if (c && u) {
-            if (this.prev < i.catchLoc) return handle(i.catchLoc, !0);
-            if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
-          } else if (c) {
-            if (this.prev < i.catchLoc) return handle(i.catchLoc, !0);
-          } else {
-            if (!u) throw new Error("try statement without catch or finally");
-            if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
-          }
-        }
-      }
-    },
-    abrupt: function abrupt(t, e) {
-      for (var r = this.tryEntries.length - 1; r >= 0; --r) {
-        var o = this.tryEntries[r];
-        if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) {
-          var i = o;
-          break;
-        }
-      }
-      i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null);
-      var a = i ? i.completion : {};
-      return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a);
-    },
-    complete: function complete(t, e) {
-      if ("throw" === t.type) throw t.arg;
-      return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y;
-    },
-    finish: function finish(t) {
-      for (var e = this.tryEntries.length - 1; e >= 0; --e) {
-        var r = this.tryEntries[e];
-        if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y;
-      }
-    },
-    "catch": function _catch(t) {
-      for (var e = this.tryEntries.length - 1; e >= 0; --e) {
-        var r = this.tryEntries[e];
-        if (r.tryLoc === t) {
-          var n = r.completion;
-          if ("throw" === n.type) {
-            var o = n.arg;
-            resetTryEntry(r);
-          }
-          return o;
-        }
-      }
-      throw new Error("illegal catch attempt");
-    },
-    delegateYield: function delegateYield(e, r, n) {
-      return this.delegate = {
-        iterator: values(e),
-        resultName: r,
-        nextLoc: n
-      }, "next" === this.method && (this.arg = t), y;
-    }
-  }, e;
-}
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-  try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
-  }
-  if (info.done) {
-    resolve(value);
-  } else {
-    Promise.resolve(value).then(_next, _throw);
-  }
-}
-function _asyncToGenerator(fn) {
-  return function () {
-    var self = this,
-      args = arguments;
-    return new Promise(function (resolve, reject) {
-      var gen = fn.apply(self, args);
-      function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
-      }
-      function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
-      }
-      _next(undefined);
-    });
-  };
-}
-
-// Let compiler not to search module usage
-var fullClone = _objectSpread2({}, ReactDOM__namespace);
-var version = fullClone.version,
-  reactRender = fullClone.render,
-  unmountComponentAtNode = fullClone.unmountComponentAtNode;
-var createRoot;
-try {
-  var mainVersion = Number((version || '').split('.')[0]);
-  if (mainVersion >= 18) {
-    createRoot = fullClone.createRoot;
-  }
-} catch (e) {
-  // Do nothing;
-}
-function toggleWarning(skip) {
-  var __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = fullClone.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-  if (__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED && _typeof(__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED) === 'object') {
-    __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.usingClientEntryPoint = skip;
-  }
-}
-var MARK = '__rc_react_root__';
-
-// ========================== Render ==========================
-
-function modernRender(node, container) {
-  toggleWarning(true);
-  var root = container[MARK] || createRoot(container);
-  toggleWarning(false);
-  root.render(node);
-  container[MARK] = root;
-}
-function legacyRender(node, container) {
-  reactRender(node, container);
-}
-function render(node, container) {
-  if (createRoot) {
-    modernRender(node, container);
-    return;
-  }
-  legacyRender(node, container);
-}
-
-// ========================= Unmount ==========================
-function modernUnmount(_x) {
-  return _modernUnmount.apply(this, arguments);
-}
-function _modernUnmount() {
-  _modernUnmount = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(container) {
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
-        case 0:
-          return _context.abrupt("return", Promise.resolve().then(function () {
-            var _container$MARK;
-            (_container$MARK = container[MARK]) === null || _container$MARK === void 0 || _container$MARK.unmount();
-            delete container[MARK];
-          }));
-        case 1:
-        case "end":
-          return _context.stop();
-      }
-    }, _callee);
-  }));
-  return _modernUnmount.apply(this, arguments);
-}
-function legacyUnmount(container) {
-  unmountComponentAtNode(container);
-}
-function unmount(_x2) {
-  return _unmount.apply(this, arguments);
-}
-function _unmount() {
-  _unmount = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(container) {
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
-        case 0:
-          if (!(createRoot !== undefined)) {
-            _context2.next = 2;
-            break;
-          }
-          return _context2.abrupt("return", modernUnmount(container));
-        case 2:
-          legacyUnmount(container);
-        case 3:
-        case "end":
-          return _context2.stop();
-      }
-    }, _callee2);
-  }));
-  return _unmount.apply(this, arguments);
-}
-
-var isVisible = (function (element) {
-  if (!element) {
-    return false;
-  }
-  if (element instanceof Element) {
-    if (element.offsetParent) {
-      return true;
-    }
-    if (element.getBBox) {
-      var _getBBox = element.getBBox(),
-        width = _getBBox.width,
-        height = _getBBox.height;
-      if (width || height) {
-        return true;
-      }
-    }
-    if (element.getBoundingClientRect) {
-      var _element$getBoundingC = element.getBoundingClientRect(),
-        _width = _element$getBoundingC.width,
-        _height = _element$getBoundingC.height;
-      if (_width || _height) {
-        return true;
-      }
-    }
-  }
-  return false;
-});
-
-const genWaveStyle = token => {
-  const {
-    componentCls,
-    colorPrimary
-  } = token;
-  return {
-    [componentCls]: {
-      position: 'absolute',
-      background: 'transparent',
-      pointerEvents: 'none',
-      boxSizing: 'border-box',
-      color: `var(--wave-color, ${colorPrimary})`,
-      boxShadow: `0 0 0 0 currentcolor`,
-      opacity: 0.2,
-      // =================== Motion ===================
-      '&.wave-motion-appear': {
-        transition: [`box-shadow 0.4s ${token.motionEaseOutCirc}`, `opacity 2s ${token.motionEaseOutCirc}`].join(','),
-        '&-active': {
-          boxShadow: `0 0 0 6px currentcolor`,
-          opacity: 0
-        },
-        '&.wave-quick': {
-          transition: [`box-shadow 0.3s ${token.motionEaseInOut}`, `opacity 0.35s ${token.motionEaseInOut}`].join(',')
-        }
-      }
-    }
-  };
-};
-var useStyle$2 = genComponentStyleHook('Wave', token => [genWaveStyle(token)]);
-
-function isNotGrey(color) {
-  // eslint-disable-next-line no-useless-escape
-  const match = (color || '').match(/rgba?\((\d*), (\d*), (\d*)(, [\d.]*)?\)/);
-  if (match && match[1] && match[2] && match[3]) {
-    return !(match[1] === match[2] && match[2] === match[3]);
-  }
-  return true;
-}
-function isValidWaveColor(color) {
-  return color && color !== '#fff' && color !== '#ffffff' && color !== 'rgb(255, 255, 255)' && color !== 'rgba(255, 255, 255, 1)' && isNotGrey(color) && !/rgba\((?:\d*, ){3}0\)/.test(color) &&
-  // any transparent rgba color
-  color !== 'transparent';
-}
-function getTargetWaveColor(node) {
-  const {
-    borderTopColor,
-    borderColor,
-    backgroundColor
-  } = getComputedStyle(node);
-  if (isValidWaveColor(borderTopColor)) {
-    return borderTopColor;
-  }
-  if (isValidWaveColor(borderColor)) {
-    return borderColor;
-  }
-  if (isValidWaveColor(backgroundColor)) {
-    return backgroundColor;
-  }
-  return null;
-}
-
-const TARGET_CLS = 'ant-wave-target';
-
-function validateNum(value) {
-  return Number.isNaN(value) ? 0 : value;
-}
-const WaveEffect = props => {
-  const {
-    className,
-    target,
-    component
-  } = props;
-  const divRef = React__namespace.useRef(null);
-  const [color, setWaveColor] = React__namespace.useState(null);
-  const [borderRadius, setBorderRadius] = React__namespace.useState([]);
-  const [left, setLeft] = React__namespace.useState(0);
-  const [top, setTop] = React__namespace.useState(0);
-  const [width, setWidth] = React__namespace.useState(0);
-  const [height, setHeight] = React__namespace.useState(0);
-  const [enabled, setEnabled] = React__namespace.useState(false);
-  const waveStyle = {
-    left,
-    top,
-    width,
-    height,
-    borderRadius: borderRadius.map(radius => `${radius}px`).join(' ')
-  };
-  if (color) {
-    waveStyle['--wave-color'] = color;
-  }
-  function syncPos() {
-    const nodeStyle = getComputedStyle(target);
-    // Get wave color from target
-    setWaveColor(getTargetWaveColor(target));
-    const isStatic = nodeStyle.position === 'static';
-    // Rect
-    const {
-      borderLeftWidth,
-      borderTopWidth
-    } = nodeStyle;
-    setLeft(isStatic ? target.offsetLeft : validateNum(-parseFloat(borderLeftWidth)));
-    setTop(isStatic ? target.offsetTop : validateNum(-parseFloat(borderTopWidth)));
-    setWidth(target.offsetWidth);
-    setHeight(target.offsetHeight);
-    // Get border radius
-    const {
-      borderTopLeftRadius,
-      borderTopRightRadius,
-      borderBottomLeftRadius,
-      borderBottomRightRadius
-    } = nodeStyle;
-    setBorderRadius([borderTopLeftRadius, borderTopRightRadius, borderBottomRightRadius, borderBottomLeftRadius].map(radius => validateNum(parseFloat(radius))));
-  }
-  React__namespace.useEffect(() => {
-    if (target) {
-      // We need delay to check position here
-      // since UI may change after click
-      const id = wrapperRaf(() => {
-        syncPos();
-        setEnabled(true);
-      });
-      // Add resize observer to follow size
-      let resizeObserver;
-      if (typeof ResizeObserver !== 'undefined') {
-        resizeObserver = new ResizeObserver(syncPos);
-        resizeObserver.observe(target);
-      }
-      return () => {
-        wrapperRaf.cancel(id);
-        resizeObserver === null || resizeObserver === void 0 ? void 0 : resizeObserver.disconnect();
-      };
-    }
-  }, []);
-  if (!enabled) {
-    return null;
-  }
-  const isSmallComponent = (component === 'Checkbox' || component === 'Radio') && (target === null || target === void 0 ? void 0 : target.classList.contains(TARGET_CLS));
-  return /*#__PURE__*/React__namespace.createElement(CSSMotion, {
-    visible: true,
-    motionAppear: true,
-    motionName: "wave-motion",
-    motionDeadline: 5000,
-    onAppearEnd: (_, event) => {
-      var _a;
-      if (event.deadline || event.propertyName === 'opacity') {
-        const holder = (_a = divRef.current) === null || _a === void 0 ? void 0 : _a.parentElement;
-        unmount(holder).then(() => {
-          holder === null || holder === void 0 ? void 0 : holder.remove();
-        });
-      }
-      return false;
-    }
-  }, _ref => {
-    let {
-      className: motionClassName
-    } = _ref;
-    return /*#__PURE__*/React__namespace.createElement("div", {
-      ref: divRef,
-      className: classnames(className, {
-        'wave-quick': isSmallComponent
-      }, motionClassName),
-      style: waveStyle
-    });
-  });
-};
-const showWaveEffect = (target, info) => {
-  var _a;
-  const {
-    component
-  } = info;
-  // Skip for unchecked checkbox
-  if (component === 'Checkbox' && !((_a = target.querySelector('input')) === null || _a === void 0 ? void 0 : _a.checked)) {
-    return;
-  }
-  // Create holder
-  const holder = document.createElement('div');
-  holder.style.position = 'absolute';
-  holder.style.left = '0px';
-  holder.style.top = '0px';
-  target === null || target === void 0 ? void 0 : target.insertBefore(holder, target === null || target === void 0 ? void 0 : target.firstChild);
-  render( /*#__PURE__*/React__namespace.createElement(WaveEffect, Object.assign({}, info, {
-    target: target
-  })), holder);
-};
-var showWaveEffect$1 = showWaveEffect;
-
-function useWave(nodeRef, className, component) {
-  const {
-    wave
-  } = React__namespace.useContext(ConfigContext);
-  const [, token, hashId] = useToken();
-  const showWave = useEvent(event => {
-    const node = nodeRef.current;
-    if ((wave === null || wave === void 0 ? void 0 : wave.disabled) || !node) {
-      return;
-    }
-    const targetNode = node.querySelector(`.${TARGET_CLS}`) || node;
-    const {
-      showEffect
-    } = wave || {};
-    // Customize wave effect
-    (showEffect || showWaveEffect$1)(targetNode, {
-      className,
-      token,
-      component,
-      event,
-      hashId
-    });
-  });
-  const rafId = React__namespace.useRef();
-  // Merge trigger event into one for each frame
-  const showDebounceWave = event => {
-    wrapperRaf.cancel(rafId.current);
-    rafId.current = wrapperRaf(() => {
-      showWave(event);
-    });
-  };
-  return showDebounceWave;
-}
-
-const Wave = props => {
-  const {
-    children,
-    disabled,
-    component
-  } = props;
-  const {
-    getPrefixCls
-  } = React.useContext(ConfigContext);
-  const containerRef = React.useRef(null);
-  // ============================== Style ===============================
-  const prefixCls = getPrefixCls('wave');
-  const [, hashId] = useStyle$2(prefixCls);
-  // =============================== Wave ===============================
-  const showWave = useWave(containerRef, classnames(prefixCls, hashId), component);
-  // ============================== Effect ==============================
-  React__default["default"].useEffect(() => {
-    const node = containerRef.current;
-    if (!node || node.nodeType !== 1 || disabled) {
-      return;
-    }
-    // Click handler
-    const onClick = e => {
-      // Fix radio button click twice
-      if (!isVisible(e.target) ||
-      // No need wave
-      !node.getAttribute || node.getAttribute('disabled') || node.disabled || node.className.includes('disabled') || node.className.includes('-leave')) {
-        return;
-      }
-      showWave(e);
-    };
-    // Bind events
-    node.addEventListener('click', onClick, true);
-    return () => {
-      node.removeEventListener('click', onClick, true);
-    };
-  }, [disabled]);
-  // ============================== Render ==============================
-  if (! /*#__PURE__*/React__default["default"].isValidElement(children)) {
-    return children !== null && children !== void 0 ? children : null;
-  }
-  const ref = supportRef(children) ? composeRef(children.ref, containerRef) : containerRef;
-  return cloneElement(children, {
-    ref
-  });
-};
-if (process.env.NODE_ENV !== 'production') {
-  Wave.displayName = 'Wave';
-}
-var Wave$1 = Wave;
-
-const useSize = customSize => {
-  const size = React__default["default"].useContext(SizeContext$1);
-  const mergedSize = React__default["default"].useMemo(() => {
-    if (!customSize) {
-      return size;
-    }
-    if (typeof customSize === 'string') {
-      return customSize !== null && customSize !== void 0 ? customSize : size;
-    }
-    if (customSize instanceof Function) {
-      return customSize(size);
-    }
-    return size;
-  }, [customSize, size]);
-  return mergedSize;
-};
-var useSize$1 = useSize;
-
-const genSpaceCompactStyle = token => {
-  const {
-    componentCls
-  } = token;
-  return {
-    [componentCls]: {
-      '&-block': {
-        display: 'flex',
-        width: '100%'
-      },
-      '&-vertical': {
-        flexDirection: 'column'
-      }
-    }
-  };
-};
-// ============================== Export ==============================
-var genSpaceCompactStyle$1 = genSpaceCompactStyle;
-
-const genSpaceStyle = token => {
-  const {
-    componentCls
-  } = token;
-  return {
-    [componentCls]: {
-      display: 'inline-flex',
-      '&-rtl': {
-        direction: 'rtl'
-      },
-      '&-vertical': {
-        flexDirection: 'column'
-      },
-      '&-align': {
-        flexDirection: 'column',
-        '&-center': {
-          alignItems: 'center'
-        },
-        '&-start': {
-          alignItems: 'flex-start'
-        },
-        '&-end': {
-          alignItems: 'flex-end'
-        },
-        '&-baseline': {
-          alignItems: 'baseline'
-        }
-      },
-      [`${componentCls}-item:empty`]: {
-        display: 'none'
-      }
-    }
-  };
-};
-const genSpaceGapStyle = token => {
-  const {
-    componentCls
-  } = token;
-  return {
-    [componentCls]: {
-      '&-gap-row-small': {
-        rowGap: token.spaceGapSmallSize
-      },
-      '&-gap-row-middle': {
-        rowGap: token.spaceGapMiddleSize
-      },
-      '&-gap-row-large': {
-        rowGap: token.spaceGapLargeSize
-      },
-      '&-gap-col-small': {
-        columnGap: token.spaceGapSmallSize
-      },
-      '&-gap-col-middle': {
-        columnGap: token.spaceGapMiddleSize
-      },
-      '&-gap-col-large': {
-        columnGap: token.spaceGapLargeSize
-      }
-    }
-  };
-};
-// ============================== Export ==============================
-var useStyle$1 = genComponentStyleHook('Space', token => {
-  const spaceToken = merge(token, {
-    spaceGapSmallSize: token.paddingXS,
-    spaceGapMiddleSize: token.padding,
-    spaceGapLargeSize: token.paddingLG
-  });
-  return [genSpaceStyle(spaceToken), genSpaceGapStyle(spaceToken), genSpaceCompactStyle$1(spaceToken)];
-}, () => ({}), {
-  // Space component don't apply extra font style
-  // https://github.com/ant-design/ant-design/issues/40315
-  resetStyle: false
-});
-
-var __rest$4 = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-const SpaceCompactItemContext = /*#__PURE__*/React__namespace.createContext(null);
-const useCompactItemContext = (prefixCls, direction) => {
-  const compactItemContext = React__namespace.useContext(SpaceCompactItemContext);
-  const compactItemClassnames = React__namespace.useMemo(() => {
-    if (!compactItemContext) {
-      return '';
-    }
-    const {
-      compactDirection,
-      isFirstItem,
-      isLastItem
-    } = compactItemContext;
-    const separator = compactDirection === 'vertical' ? '-vertical-' : '-';
-    return classnames(`${prefixCls}-compact${separator}item`, {
-      [`${prefixCls}-compact${separator}first-item`]: isFirstItem,
-      [`${prefixCls}-compact${separator}last-item`]: isLastItem,
-      [`${prefixCls}-compact${separator}item-rtl`]: direction === 'rtl'
-    });
-  }, [prefixCls, direction, compactItemContext]);
-  return {
-    compactSize: compactItemContext === null || compactItemContext === void 0 ? void 0 : compactItemContext.compactSize,
-    compactDirection: compactItemContext === null || compactItemContext === void 0 ? void 0 : compactItemContext.compactDirection,
-    compactItemClassnames
-  };
-};
-const CompactItem = _a => {
-  var {
-      children
-    } = _a,
-    otherProps = __rest$4(_a, ["children"]);
-  return /*#__PURE__*/React__namespace.createElement(SpaceCompactItemContext.Provider, {
-    value: otherProps
-  }, children);
-};
-const Compact = props => {
-  const {
-    getPrefixCls,
-    direction: directionConfig
-  } = React__namespace.useContext(ConfigContext);
-  const {
-      size,
-      direction,
-      block,
-      prefixCls: customizePrefixCls,
-      className,
-      rootClassName,
-      children
-    } = props,
-    restProps = __rest$4(props, ["size", "direction", "block", "prefixCls", "className", "rootClassName", "children"]);
-  const mergedSize = useSize$1(ctx => size !== null && size !== void 0 ? size : ctx);
-  const prefixCls = getPrefixCls('space-compact', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$1(prefixCls);
-  const clx = classnames(prefixCls, hashId, {
-    [`${prefixCls}-rtl`]: directionConfig === 'rtl',
-    [`${prefixCls}-block`]: block,
-    [`${prefixCls}-vertical`]: direction === 'vertical'
-  }, className, rootClassName);
-  const compactItemContext = React__namespace.useContext(SpaceCompactItemContext);
-  const childNodes = toArray(children);
-  const nodes = React__namespace.useMemo(() => childNodes.map((child, i) => {
-    const key = child && child.key || `${prefixCls}-item-${i}`;
-    return /*#__PURE__*/React__namespace.createElement(CompactItem, {
-      key: key,
-      compactSize: mergedSize,
-      compactDirection: direction,
-      isFirstItem: i === 0 && (!compactItemContext || (compactItemContext === null || compactItemContext === void 0 ? void 0 : compactItemContext.isFirstItem)),
-      isLastItem: i === childNodes.length - 1 && (!compactItemContext || (compactItemContext === null || compactItemContext === void 0 ? void 0 : compactItemContext.isLastItem))
-    }, child);
-  }), [size, childNodes, compactItemContext]);
-  // =========================== Render ===========================
-  if (childNodes.length === 0) {
-    return null;
-  }
-  return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", Object.assign({
-    className: clx
-  }, restProps), nodes));
-};
-var Compact$1 = Compact;
-
-var __rest$3 = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-const GroupSizeContext = /*#__PURE__*/React__namespace.createContext(undefined);
-const ButtonGroup = props => {
-  const {
-    getPrefixCls,
-    direction
-  } = React__namespace.useContext(ConfigContext);
-  const {
-      prefixCls: customizePrefixCls,
-      size,
-      className
-    } = props,
-    others = __rest$3(props, ["prefixCls", "size", "className"]);
-  const prefixCls = getPrefixCls('btn-group', customizePrefixCls);
-  const [,, hashId] = useToken();
-  let sizeCls = '';
-  switch (size) {
-    case 'large':
-      sizeCls = 'lg';
-      break;
-    case 'small':
-      sizeCls = 'sm';
-      break;
-    // Do nothing
-  }
-
-  if (process.env.NODE_ENV !== 'production') {
-    const warning = devUseWarning('Button.Group');
-    process.env.NODE_ENV !== "production" ? warning(!size || ['large', 'small', 'middle'].includes(size), 'usage', 'Invalid prop `size`.') : void 0;
-  }
-  const classes = classnames(prefixCls, {
-    [`${prefixCls}-${sizeCls}`]: sizeCls,
-    [`${prefixCls}-rtl`]: direction === 'rtl'
-  }, className, hashId);
-  return /*#__PURE__*/React__namespace.createElement(GroupSizeContext.Provider, {
-    value: size
-  }, /*#__PURE__*/React__namespace.createElement("div", Object.assign({}, others, {
-    className: classes
-  })));
-};
-var Group = ButtonGroup;
-
-const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
-const isTwoCNChar = rxTwoCNChar.test.bind(rxTwoCNChar);
-function isString$1(str) {
-  return typeof str === 'string';
-}
-function isUnBorderedButtonType(type) {
-  return type === 'text' || type === 'link';
-}
-function splitCNCharsBySpace(child, needInserted) {
-  if (child === null || child === undefined) {
-    return;
-  }
-  const SPACE = needInserted ? ' ' : '';
-  if (typeof child !== 'string' && typeof child !== 'number' && isString$1(child.type) && isTwoCNChar(child.props.children)) {
-    return cloneElement(child, {
-      children: child.props.children.split('').join(SPACE)
-    });
-  }
-  if (isString$1(child)) {
-    return isTwoCNChar(child) ? /*#__PURE__*/React__default["default"].createElement("span", null, child.split('').join(SPACE)) : /*#__PURE__*/React__default["default"].createElement("span", null, child);
-  }
-  if (isFragment(child)) {
-    return /*#__PURE__*/React__default["default"].createElement("span", null, child);
-  }
-  return child;
-}
-function spaceChildren(children, needInserted) {
-  let isPrevChildPure = false;
-  const childList = [];
-  React__default["default"].Children.forEach(children, child => {
-    const type = typeof child;
-    const isCurrentChildPure = type === 'string' || type === 'number';
-    if (isPrevChildPure && isCurrentChildPure) {
-      const lastIndex = childList.length - 1;
-      const lastChild = childList[lastIndex];
-      childList[lastIndex] = `${lastChild}${child}`;
-    } else {
-      childList.push(child);
-    }
-    isPrevChildPure = isCurrentChildPure;
-  });
-  return React__default["default"].Children.map(childList, child => splitCNCharsBySpace(child, needInserted));
-}
-
-const IconWrapper = /*#__PURE__*/React.forwardRef((props, ref) => {
-  const {
-    className,
-    style,
-    children,
-    prefixCls
-  } = props;
-  const iconWrapperCls = classnames(`${prefixCls}-icon`, className);
-  return /*#__PURE__*/React__default["default"].createElement("span", {
-    ref: ref,
-    className: iconWrapperCls,
-    style: style
-  }, children);
-});
-var IconWrapper$1 = IconWrapper;
-
-const InnerLoadingIcon = /*#__PURE__*/React.forwardRef((_ref, ref) => {
-  let {
-    prefixCls,
-    className,
-    style,
-    iconClassName
-  } = _ref;
-  const mergedIconCls = classnames(`${prefixCls}-loading-icon`, className);
-  return /*#__PURE__*/React__default["default"].createElement(IconWrapper$1, {
-    prefixCls: prefixCls,
-    className: mergedIconCls,
-    style: style,
-    ref: ref
-  }, /*#__PURE__*/React__default["default"].createElement(LoadingOutlined$1, {
-    className: iconClassName
-  }));
-});
-const getCollapsedWidth = () => ({
-  width: 0,
-  opacity: 0,
-  transform: 'scale(0)'
-});
-const getRealWidth = node => ({
-  width: node.scrollWidth,
-  opacity: 1,
-  transform: 'scale(1)'
-});
-const LoadingIcon = props => {
-  const {
-    prefixCls,
-    loading,
-    existIcon,
-    className,
-    style
-  } = props;
-  const visible = !!loading;
-  if (existIcon) {
-    return /*#__PURE__*/React__default["default"].createElement(InnerLoadingIcon, {
-      prefixCls: prefixCls,
-      className: className,
-      style: style
-    });
-  }
-  return /*#__PURE__*/React__default["default"].createElement(CSSMotion, {
-    visible: visible,
-    // We do not really use this motionName
-    motionName: `${prefixCls}-loading-icon-motion`,
-    motionLeave: visible,
-    removeOnLeave: true,
-    onAppearStart: getCollapsedWidth,
-    onAppearActive: getRealWidth,
-    onEnterStart: getCollapsedWidth,
-    onEnterActive: getRealWidth,
-    onLeaveStart: getRealWidth,
-    onLeaveActive: getCollapsedWidth
-  }, (_ref2, ref) => {
-    let {
-      className: motionCls,
-      style: motionStyle
-    } = _ref2;
-    return /*#__PURE__*/React__default["default"].createElement(InnerLoadingIcon, {
-      prefixCls: prefixCls,
-      className: className,
-      style: Object.assign(Object.assign({}, style), motionStyle),
-      ref: ref,
-      iconClassName: motionCls
-    });
-  });
-};
-var LoadingIcon$1 = LoadingIcon;
-
-const genButtonBorderStyle = (buttonTypeCls, borderColor) => ({
-  // Border
-  [`> span, > ${buttonTypeCls}`]: {
-    '&:not(:last-child)': {
-      [`&, & > ${buttonTypeCls}`]: {
-        '&:not(:disabled)': {
-          borderInlineEndColor: borderColor
-        }
-      }
-    },
-    '&:not(:first-child)': {
-      [`&, & > ${buttonTypeCls}`]: {
-        '&:not(:disabled)': {
-          borderInlineStartColor: borderColor
-        }
-      }
-    }
-  }
-});
-const genGroupStyle = token => {
-  const {
-    componentCls,
-    fontSize,
-    lineWidth,
-    groupBorderColor,
-    colorErrorHover
-  } = token;
-  return {
-    [`${componentCls}-group`]: [{
-      position: 'relative',
-      display: 'inline-flex',
-      // Border
-      [`> span, > ${componentCls}`]: {
-        '&:not(:last-child)': {
-          [`&, & > ${componentCls}`]: {
-            borderStartEndRadius: 0,
-            borderEndEndRadius: 0
-          }
-        },
-        '&:not(:first-child)': {
-          marginInlineStart: -lineWidth,
-          [`&, & > ${componentCls}`]: {
-            borderStartStartRadius: 0,
-            borderEndStartRadius: 0
-          }
-        }
-      },
-      [componentCls]: {
-        position: 'relative',
-        zIndex: 1,
-        [`&:hover,
-          &:focus,
-          &:active`]: {
-          zIndex: 2
-        },
-        '&[disabled]': {
-          zIndex: 0
-        }
-      },
-      [`${componentCls}-icon-only`]: {
-        fontSize
-      }
-    },
-    // Border Color
-    genButtonBorderStyle(`${componentCls}-primary`, groupBorderColor), genButtonBorderStyle(`${componentCls}-danger`, colorErrorHover)]
-  };
-};
-var genGroupStyle$1 = genGroupStyle;
-
-// ============================== Shared ==============================
-const genSharedButtonStyle = token => {
-  const {
-    componentCls,
-    iconCls,
-    fontWeight
-  } = token;
-  return {
-    [componentCls]: {
-      outline: 'none',
-      position: 'relative',
-      display: 'inline-block',
-      fontWeight,
-      whiteSpace: 'nowrap',
-      textAlign: 'center',
-      backgroundImage: 'none',
-      backgroundColor: 'transparent',
-      border: `${token.lineWidth}px ${token.lineType} transparent`,
-      cursor: 'pointer',
-      transition: `all ${token.motionDurationMid} ${token.motionEaseInOut}`,
-      userSelect: 'none',
-      touchAction: 'manipulation',
-      lineHeight: token.lineHeight,
-      color: token.colorText,
-      '&:disabled > *': {
-        pointerEvents: 'none'
-      },
-      '> span': {
-        display: 'inline-block'
-      },
-      [`${componentCls}-icon`]: {
-        lineHeight: 0
-      },
-      // Leave a space between icon and text.
-      [`> ${iconCls} + span, > span + ${iconCls}`]: {
-        marginInlineStart: token.marginXS
-      },
-      [`&:not(${componentCls}-icon-only) > ${componentCls}-icon`]: {
-        [`&${componentCls}-loading-icon, &:not(:last-child)`]: {
-          marginInlineEnd: token.marginXS
-        }
-      },
-      '> a': {
-        color: 'currentColor'
-      },
-      '&:not(:disabled)': Object.assign({}, genFocusStyle(token)),
-      [`&${componentCls}-two-chinese-chars::first-letter`]: {
-        letterSpacing: '0.34em'
-      },
-      [`&${componentCls}-two-chinese-chars > *:not(${iconCls})`]: {
-        marginInlineEnd: '-0.34em',
-        letterSpacing: '0.34em'
-      },
-      // make `btn-icon-only` not too narrow
-      [`&-icon-only${componentCls}-compact-item`]: {
-        flex: 'none'
-      },
-      // Special styles for Primary Button
-      [`&-compact-item${componentCls}-primary`]: {
-        [`&:not([disabled]) + ${componentCls}-compact-item${componentCls}-primary:not([disabled])`]: {
-          position: 'relative',
-          '&:before': {
-            position: 'absolute',
-            top: -token.lineWidth,
-            insetInlineStart: -token.lineWidth,
-            display: 'inline-block',
-            width: token.lineWidth,
-            height: `calc(100% + ${token.lineWidth * 2}px)`,
-            backgroundColor: token.colorPrimaryHover,
-            content: '""'
-          }
-        }
-      },
-      // Special styles for Primary Button
-      '&-compact-vertical-item': {
-        [`&${componentCls}-primary`]: {
-          [`&:not([disabled]) + ${componentCls}-compact-vertical-item${componentCls}-primary:not([disabled])`]: {
-            position: 'relative',
-            '&:before': {
-              position: 'absolute',
-              top: -token.lineWidth,
-              insetInlineStart: -token.lineWidth,
-              display: 'inline-block',
-              width: `calc(100% + ${token.lineWidth * 2}px)`,
-              height: token.lineWidth,
-              backgroundColor: token.colorPrimaryHover,
-              content: '""'
-            }
-          }
-        }
-      }
-    }
-  };
-};
-const genHoverActiveButtonStyle = (btnCls, hoverStyle, activeStyle) => ({
-  [`&:not(:disabled):not(${btnCls}-disabled)`]: {
-    '&:hover': hoverStyle,
-    '&:active': activeStyle
-  }
-});
-// ============================== Shape ===============================
-const genCircleButtonStyle = token => ({
-  minWidth: token.controlHeight,
-  paddingInlineStart: 0,
-  paddingInlineEnd: 0,
-  borderRadius: '50%'
-});
-const genRoundButtonStyle = token => ({
-  borderRadius: token.controlHeight,
-  paddingInlineStart: token.controlHeight / 2,
-  paddingInlineEnd: token.controlHeight / 2
-});
-// =============================== Type ===============================
-const genDisabledStyle = token => ({
-  cursor: 'not-allowed',
-  borderColor: token.borderColorDisabled,
-  color: token.colorTextDisabled,
-  backgroundColor: token.colorBgContainerDisabled,
-  boxShadow: 'none'
-});
-const genGhostButtonStyle = (btnCls, background, textColor, borderColor, textColorDisabled, borderColorDisabled, hoverStyle, activeStyle) => ({
-  [`&${btnCls}-background-ghost`]: Object.assign(Object.assign({
-    color: textColor || undefined,
-    backgroundColor: background,
-    borderColor: borderColor || undefined,
-    boxShadow: 'none'
-  }, genHoverActiveButtonStyle(btnCls, Object.assign({
-    backgroundColor: background
-  }, hoverStyle), Object.assign({
-    backgroundColor: background
-  }, activeStyle))), {
-    '&:disabled': {
-      cursor: 'not-allowed',
-      color: textColorDisabled || undefined,
-      borderColor: borderColorDisabled || undefined
-    }
-  })
-});
-const genSolidDisabledButtonStyle = token => ({
-  [`&:disabled, &${token.componentCls}-disabled`]: Object.assign({}, genDisabledStyle(token))
-});
-const genSolidButtonStyle = token => Object.assign({}, genSolidDisabledButtonStyle(token));
-const genPureDisabledButtonStyle = token => ({
-  [`&:disabled, &${token.componentCls}-disabled`]: {
-    cursor: 'not-allowed',
-    color: token.colorTextDisabled
-  }
-});
-// Type: Default
-const genDefaultButtonStyle = token => Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, genSolidButtonStyle(token)), {
-  backgroundColor: token.defaultBg,
-  borderColor: token.defaultBorderColor,
-  color: token.defaultColor,
-  boxShadow: token.defaultShadow
-}), genHoverActiveButtonStyle(token.componentCls, {
-  color: token.colorPrimaryHover,
-  borderColor: token.colorPrimaryHover
-}, {
-  color: token.colorPrimaryActive,
-  borderColor: token.colorPrimaryActive
-})), genGhostButtonStyle(token.componentCls, token.ghostBg, token.defaultGhostColor, token.defaultGhostBorderColor, token.colorTextDisabled, token.colorBorder)), {
-  [`&${token.componentCls}-dangerous`]: Object.assign(Object.assign(Object.assign({
-    color: token.colorError,
-    borderColor: token.colorError
-  }, genHoverActiveButtonStyle(token.componentCls, {
-    color: token.colorErrorHover,
-    borderColor: token.colorErrorBorderHover
-  }, {
-    color: token.colorErrorActive,
-    borderColor: token.colorErrorActive
-  })), genGhostButtonStyle(token.componentCls, token.ghostBg, token.colorError, token.colorError, token.colorTextDisabled, token.colorBorder)), genSolidDisabledButtonStyle(token))
-});
-// Type: Primary
-const genPrimaryButtonStyle = token => Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, genSolidButtonStyle(token)), {
-  color: token.primaryColor,
-  backgroundColor: token.colorPrimary,
-  boxShadow: token.primaryShadow
-}), genHoverActiveButtonStyle(token.componentCls, {
-  color: token.colorTextLightSolid,
-  backgroundColor: token.colorPrimaryHover
-}, {
-  color: token.colorTextLightSolid,
-  backgroundColor: token.colorPrimaryActive
-})), genGhostButtonStyle(token.componentCls, token.ghostBg, token.colorPrimary, token.colorPrimary, token.colorTextDisabled, token.colorBorder, {
-  color: token.colorPrimaryHover,
-  borderColor: token.colorPrimaryHover
-}, {
-  color: token.colorPrimaryActive,
-  borderColor: token.colorPrimaryActive
-})), {
-  [`&${token.componentCls}-dangerous`]: Object.assign(Object.assign(Object.assign({
-    backgroundColor: token.colorError,
-    boxShadow: token.dangerShadow,
-    color: token.dangerColor
-  }, genHoverActiveButtonStyle(token.componentCls, {
-    backgroundColor: token.colorErrorHover
-  }, {
-    backgroundColor: token.colorErrorActive
-  })), genGhostButtonStyle(token.componentCls, token.ghostBg, token.colorError, token.colorError, token.colorTextDisabled, token.colorBorder, {
-    color: token.colorErrorHover,
-    borderColor: token.colorErrorHover
-  }, {
-    color: token.colorErrorActive,
-    borderColor: token.colorErrorActive
-  })), genSolidDisabledButtonStyle(token))
-});
-// Type: Dashed
-const genDashedButtonStyle = token => Object.assign(Object.assign({}, genDefaultButtonStyle(token)), {
-  borderStyle: 'dashed'
-});
-// Type: Link
-const genLinkButtonStyle = token => Object.assign(Object.assign(Object.assign({
-  color: token.colorLink
-}, genHoverActiveButtonStyle(token.componentCls, {
-  color: token.colorLinkHover,
-  backgroundColor: token.linkHoverBg
-}, {
-  color: token.colorLinkActive
-})), genPureDisabledButtonStyle(token)), {
-  [`&${token.componentCls}-dangerous`]: Object.assign(Object.assign({
-    color: token.colorError
-  }, genHoverActiveButtonStyle(token.componentCls, {
-    color: token.colorErrorHover
-  }, {
-    color: token.colorErrorActive
-  })), genPureDisabledButtonStyle(token))
-});
-// Type: Text
-const genTextButtonStyle = token => Object.assign(Object.assign(Object.assign({}, genHoverActiveButtonStyle(token.componentCls, {
-  color: token.colorText,
-  backgroundColor: token.textHoverBg
-}, {
-  color: token.colorText,
-  backgroundColor: token.colorBgTextActive
-})), genPureDisabledButtonStyle(token)), {
-  [`&${token.componentCls}-dangerous`]: Object.assign(Object.assign({
-    color: token.colorError
-  }, genPureDisabledButtonStyle(token)), genHoverActiveButtonStyle(token.componentCls, {
-    color: token.colorErrorHover,
-    backgroundColor: token.colorErrorBg
-  }, {
-    color: token.colorErrorHover,
-    backgroundColor: token.colorErrorBg
-  }))
-});
-const genTypeButtonStyle = token => {
-  const {
-    componentCls
-  } = token;
-  return {
-    [`${componentCls}-default`]: genDefaultButtonStyle(token),
-    [`${componentCls}-primary`]: genPrimaryButtonStyle(token),
-    [`${componentCls}-dashed`]: genDashedButtonStyle(token),
-    [`${componentCls}-link`]: genLinkButtonStyle(token),
-    [`${componentCls}-text`]: genTextButtonStyle(token),
-    [`${componentCls}-ghost`]: genGhostButtonStyle(token.componentCls, token.ghostBg, token.colorBgContainer, token.colorBgContainer, token.colorTextDisabled, token.colorBorder)
-  };
-};
-// =============================== Size ===============================
-const genSizeButtonStyle = function (token) {
-  let sizePrefixCls = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-  const {
-    componentCls,
-    controlHeight,
-    fontSize,
-    lineHeight,
-    lineWidth,
-    borderRadius,
-    buttonPaddingHorizontal,
-    iconCls
-  } = token;
-  const paddingVertical = Math.max(0, (controlHeight - fontSize * lineHeight) / 2 - lineWidth);
-  const iconOnlyCls = `${componentCls}-icon-only`;
-  return [
-  // Size
-  {
-    [`${componentCls}${sizePrefixCls}`]: {
-      fontSize,
-      height: controlHeight,
-      padding: `${paddingVertical}px ${buttonPaddingHorizontal}px`,
-      borderRadius,
-      [`&${iconOnlyCls}`]: {
-        width: controlHeight,
-        paddingInlineStart: 0,
-        paddingInlineEnd: 0,
-        [`&${componentCls}-round`]: {
-          width: 'auto'
-        },
-        [iconCls]: {
-          fontSize: token.buttonIconOnlyFontSize
-        }
-      },
-      // Loading
-      [`&${componentCls}-loading`]: {
-        opacity: token.opacityLoading,
-        cursor: 'default'
-      },
-      [`${componentCls}-loading-icon`]: {
-        transition: `width ${token.motionDurationSlow} ${token.motionEaseInOut}, opacity ${token.motionDurationSlow} ${token.motionEaseInOut}`
-      }
-    }
-  },
-  // Shape - patch prefixCls again to override solid border radius style
-  {
-    [`${componentCls}${componentCls}-circle${sizePrefixCls}`]: genCircleButtonStyle(token)
-  }, {
-    [`${componentCls}${componentCls}-round${sizePrefixCls}`]: genRoundButtonStyle(token)
-  }];
-};
-const genSizeBaseButtonStyle = token => genSizeButtonStyle(merge(token, {
-  fontSize: token.contentFontSize
-}));
-const genSizeSmallButtonStyle = token => {
-  const smallToken = merge(token, {
-    controlHeight: token.controlHeightSM,
-    fontSize: token.contentFontSizeSM,
-    padding: token.paddingXS,
-    buttonPaddingHorizontal: token.paddingInlineSM,
-    borderRadius: token.borderRadiusSM,
-    buttonIconOnlyFontSize: token.onlyIconSizeSM
-  });
-  return genSizeButtonStyle(smallToken, `${token.componentCls}-sm`);
-};
-const genSizeLargeButtonStyle = token => {
-  const largeToken = merge(token, {
-    controlHeight: token.controlHeightLG,
-    fontSize: token.contentFontSizeLG,
-    buttonPaddingHorizontal: token.paddingInlineLG,
-    borderRadius: token.borderRadiusLG,
-    buttonIconOnlyFontSize: token.onlyIconSizeLG
-  });
-  return genSizeButtonStyle(largeToken, `${token.componentCls}-lg`);
-};
-const genBlockButtonStyle = token => {
-  const {
-    componentCls
-  } = token;
-  return {
-    [componentCls]: {
-      [`&${componentCls}-block`]: {
-        width: '100%'
-      }
-    }
-  };
-};
-// ============================== Export ==============================
-const prepareToken = token => {
-  const {
-    paddingInline,
-    onlyIconSize
-  } = token;
-  const buttonToken = merge(token, {
-    buttonPaddingHorizontal: paddingInline,
-    buttonIconOnlyFontSize: onlyIconSize
-  });
-  return buttonToken;
-};
-const prepareComponentToken = token => ({
-  fontWeight: 400,
-  defaultShadow: `0 ${token.controlOutlineWidth}px 0 ${token.controlTmpOutline}`,
-  primaryShadow: `0 ${token.controlOutlineWidth}px 0 ${token.controlOutline}`,
-  dangerShadow: `0 ${token.controlOutlineWidth}px 0 ${token.colorErrorOutline}`,
-  primaryColor: token.colorTextLightSolid,
-  dangerColor: token.colorTextLightSolid,
-  borderColorDisabled: token.colorBorder,
-  defaultGhostColor: token.colorBgContainer,
-  ghostBg: 'transparent',
-  defaultGhostBorderColor: token.colorBgContainer,
-  paddingInline: token.paddingContentHorizontal - token.lineWidth,
-  paddingInlineLG: token.paddingContentHorizontal - token.lineWidth,
-  paddingInlineSM: 8 - token.lineWidth,
-  onlyIconSize: token.fontSizeLG,
-  onlyIconSizeSM: token.fontSizeLG - 2,
-  onlyIconSizeLG: token.fontSizeLG + 2,
-  groupBorderColor: token.colorPrimaryHover,
-  linkHoverBg: 'transparent',
-  textHoverBg: token.colorBgTextHover,
-  defaultColor: token.colorText,
-  defaultBg: token.colorBgContainer,
-  defaultBorderColor: token.colorBorder,
-  defaultBorderColorDisabled: token.colorBorder,
-  contentFontSize: token.fontSize,
-  contentFontSizeSM: token.fontSize,
-  contentFontSizeLG: token.fontSizeLG
-});
-var useStyle = genComponentStyleHook('Button', token => {
-  const buttonToken = prepareToken(token);
-  return [
-  // Shared
-  genSharedButtonStyle(buttonToken),
-  // Size
-  genSizeSmallButtonStyle(buttonToken), genSizeBaseButtonStyle(buttonToken), genSizeLargeButtonStyle(buttonToken),
-  // Block
-  genBlockButtonStyle(buttonToken),
-  // Group (type, ghost, danger, loading)
-  genTypeButtonStyle(buttonToken),
-  // Button Group
-  genGroupStyle$1(buttonToken)];
-}, prepareComponentToken);
-
-// handle border collapse
-function compactItemBorder(token, parentCls, options) {
-  const {
-    focusElCls,
-    focus,
-    borderElCls
-  } = options;
-  const childCombinator = borderElCls ? '> *' : '';
-  const hoverEffects = ['hover', focus ? 'focus' : null, 'active'].filter(Boolean).map(n => `&:${n} ${childCombinator}`).join(',');
-  return {
-    [`&-item:not(${parentCls}-last-item)`]: {
-      marginInlineEnd: -token.lineWidth
-    },
-    '&-item': Object.assign(Object.assign({
-      [hoverEffects]: {
-        zIndex: 2
-      }
-    }, focusElCls ? {
-      [`&${focusElCls}`]: {
-        zIndex: 2
-      }
-    } : {}), {
-      [`&[disabled] ${childCombinator}`]: {
-        zIndex: 0
-      }
-    })
-  };
-}
-// handle border-radius
-function compactItemBorderRadius(prefixCls, parentCls, options) {
-  const {
-    borderElCls
-  } = options;
-  const childCombinator = borderElCls ? `> ${borderElCls}` : '';
-  return {
-    [`&-item:not(${parentCls}-first-item):not(${parentCls}-last-item) ${childCombinator}`]: {
-      borderRadius: 0
-    },
-    [`&-item:not(${parentCls}-last-item)${parentCls}-first-item`]: {
-      [`& ${childCombinator}, &${prefixCls}-sm ${childCombinator}, &${prefixCls}-lg ${childCombinator}`]: {
-        borderStartEndRadius: 0,
-        borderEndEndRadius: 0
-      }
-    },
-    [`&-item:not(${parentCls}-first-item)${parentCls}-last-item`]: {
-      [`& ${childCombinator}, &${prefixCls}-sm ${childCombinator}, &${prefixCls}-lg ${childCombinator}`]: {
-        borderStartStartRadius: 0,
-        borderEndStartRadius: 0
-      }
-    }
-  };
-}
-function genCompactItemStyle(token) {
-  let options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
-    focus: true
-  };
-  const {
-    componentCls
-  } = token;
-  const compactCls = `${componentCls}-compact`;
-  return {
-    [compactCls]: Object.assign(Object.assign({}, compactItemBorder(token, compactCls, options)), compactItemBorderRadius(componentCls, compactCls, options))
-  };
-}
-
-function compactItemVerticalBorder(token, parentCls) {
-  return {
-    // border collapse
-    [`&-item:not(${parentCls}-last-item)`]: {
-      marginBottom: -token.lineWidth
-    },
-    '&-item': {
-      '&:hover,&:focus,&:active': {
-        zIndex: 2
-      },
-      '&[disabled]': {
-        zIndex: 0
-      }
-    }
-  };
-}
-function compactItemBorderVerticalRadius(prefixCls, parentCls) {
-  return {
-    [`&-item:not(${parentCls}-first-item):not(${parentCls}-last-item)`]: {
-      borderRadius: 0
-    },
-    [`&-item${parentCls}-first-item:not(${parentCls}-last-item)`]: {
-      [`&, &${prefixCls}-sm, &${prefixCls}-lg`]: {
-        borderEndEndRadius: 0,
-        borderEndStartRadius: 0
-      }
-    },
-    [`&-item${parentCls}-last-item:not(${parentCls}-first-item)`]: {
-      [`&, &${prefixCls}-sm, &${prefixCls}-lg`]: {
-        borderStartStartRadius: 0,
-        borderStartEndRadius: 0
-      }
-    }
-  };
-}
-function genCompactItemVerticalStyle(token) {
-  const compactCls = `${token.componentCls}-compact-vertical`;
-  return {
-    [compactCls]: Object.assign(Object.assign({}, compactItemVerticalBorder(token, compactCls)), compactItemBorderVerticalRadius(token.componentCls, compactCls))
-  };
-}
-
-// Style as inline component
-// ============================== Export ==============================
-var CompactCmp = genSubStyleComponent(['Button', 'compact'], token => {
-  const buttonToken = prepareToken(token);
-  return [
-  // Space Compact
-  genCompactItemStyle(buttonToken), genCompactItemVerticalStyle(buttonToken)];
-}, prepareComponentToken);
-
-var __rest$2 = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-function getLoadingConfig(loading) {
-  if (typeof loading === 'object' && loading) {
-    let delay = loading === null || loading === void 0 ? void 0 : loading.delay;
-    delay = !Number.isNaN(delay) && typeof delay === 'number' ? delay : 0;
-    return {
-      loading: delay <= 0,
-      delay
-    };
-  }
-  return {
-    loading: !!loading,
-    delay: 0
-  };
-}
-const InternalButton = (props, ref) => {
-  var _a, _b;
-  const {
-      loading = false,
-      prefixCls: customizePrefixCls,
-      type = 'default',
-      danger,
-      shape = 'default',
-      size: customizeSize,
-      styles,
-      disabled: customDisabled,
-      className,
-      rootClassName,
-      children,
-      icon,
-      ghost = false,
-      block = false,
-      // React does not recognize the `htmlType` prop on a DOM element. Here we pick it out of `rest`.
-      htmlType = 'button',
-      classNames: customClassNames,
-      style: customStyle = {}
-    } = props,
-    rest = __rest$2(props, ["loading", "prefixCls", "type", "danger", "shape", "size", "styles", "disabled", "className", "rootClassName", "children", "icon", "ghost", "block", "htmlType", "classNames", "style"]);
-  const {
-    getPrefixCls,
-    autoInsertSpaceInButton,
-    direction,
-    button
-  } = React.useContext(ConfigContext);
-  const prefixCls = getPrefixCls('btn', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle(prefixCls);
-  const disabled = React.useContext(DisabledContext$1);
-  const mergedDisabled = customDisabled !== null && customDisabled !== void 0 ? customDisabled : disabled;
-  const groupSize = React.useContext(GroupSizeContext);
-  const loadingOrDelay = React.useMemo(() => getLoadingConfig(loading), [loading]);
-  const [innerLoading, setLoading] = React.useState(loadingOrDelay.loading);
-  const [hasTwoCNChar, setHasTwoCNChar] = React.useState(false);
-  const internalRef = /*#__PURE__*/React.createRef();
-  const buttonRef = composeRef(ref, internalRef);
-  const needInserted = React.Children.count(children) === 1 && !icon && !isUnBorderedButtonType(type);
-  React.useEffect(() => {
-    let delayTimer = null;
-    if (loadingOrDelay.delay > 0) {
-      delayTimer = setTimeout(() => {
-        delayTimer = null;
-        setLoading(true);
-      }, loadingOrDelay.delay);
-    } else {
-      setLoading(loadingOrDelay.loading);
-    }
-    function cleanupTimer() {
-      if (delayTimer) {
-        clearTimeout(delayTimer);
-        delayTimer = null;
-      }
-    }
-    return cleanupTimer;
-  }, [loadingOrDelay]);
-  React.useEffect(() => {
-    // FIXME: for HOC usage like <FormatMessage />
-    if (!buttonRef || !buttonRef.current || autoInsertSpaceInButton === false) {
-      return;
-    }
-    const buttonText = buttonRef.current.textContent;
-    if (needInserted && isTwoCNChar(buttonText)) {
-      if (!hasTwoCNChar) {
-        setHasTwoCNChar(true);
-      }
-    } else if (hasTwoCNChar) {
-      setHasTwoCNChar(false);
-    }
-  }, [buttonRef]);
-  const handleClick = e => {
-    const {
-      onClick
-    } = props;
-    // FIXME: https://github.com/ant-design/ant-design/issues/30207
-    if (innerLoading || mergedDisabled) {
-      e.preventDefault();
-      return;
-    }
-    onClick === null || onClick === void 0 ? void 0 : onClick(e);
-  };
-  if (process.env.NODE_ENV !== 'production') {
-    const warning = devUseWarning('Button');
-    process.env.NODE_ENV !== "production" ? warning(!(typeof icon === 'string' && icon.length > 2), 'breaking', `\`icon\` is using ReactNode instead of string naming in v4. Please check \`${icon}\` at https://ant.design/components/icon`) : void 0;
-    process.env.NODE_ENV !== "production" ? warning(!(ghost && isUnBorderedButtonType(type)), 'usage', "`link` or `text` button can't be a `ghost` button.") : void 0;
-  }
-  const autoInsertSpace = autoInsertSpaceInButton !== false;
-  const {
-    compactSize,
-    compactItemClassnames
-  } = useCompactItemContext(prefixCls, direction);
-  const sizeClassNameMap = {
-    large: 'lg',
-    small: 'sm',
-    middle: undefined
-  };
-  const sizeFullName = useSize$1(ctxSize => {
-    var _a, _b;
-    return (_b = (_a = customizeSize !== null && customizeSize !== void 0 ? customizeSize : compactSize) !== null && _a !== void 0 ? _a : groupSize) !== null && _b !== void 0 ? _b : ctxSize;
-  });
-  const sizeCls = sizeFullName ? sizeClassNameMap[sizeFullName] || '' : '';
-  const iconType = innerLoading ? 'loading' : icon;
-  const linkButtonRestProps = omit(rest, ['navigate']);
-  const classes = classnames(prefixCls, hashId, {
-    [`${prefixCls}-${shape}`]: shape !== 'default' && shape,
-    [`${prefixCls}-${type}`]: type,
-    [`${prefixCls}-${sizeCls}`]: sizeCls,
-    [`${prefixCls}-icon-only`]: !children && children !== 0 && !!iconType,
-    [`${prefixCls}-background-ghost`]: ghost && !isUnBorderedButtonType(type),
-    [`${prefixCls}-loading`]: innerLoading,
-    [`${prefixCls}-two-chinese-chars`]: hasTwoCNChar && autoInsertSpace && !innerLoading,
-    [`${prefixCls}-block`]: block,
-    [`${prefixCls}-dangerous`]: !!danger,
-    [`${prefixCls}-rtl`]: direction === 'rtl'
-  }, compactItemClassnames, className, rootClassName, button === null || button === void 0 ? void 0 : button.className);
-  const fullStyle = Object.assign(Object.assign({}, button === null || button === void 0 ? void 0 : button.style), customStyle);
-  const iconClasses = classnames(customClassNames === null || customClassNames === void 0 ? void 0 : customClassNames.icon, (_a = button === null || button === void 0 ? void 0 : button.classNames) === null || _a === void 0 ? void 0 : _a.icon);
-  const iconStyle = Object.assign(Object.assign({}, (styles === null || styles === void 0 ? void 0 : styles.icon) || {}), ((_b = button === null || button === void 0 ? void 0 : button.styles) === null || _b === void 0 ? void 0 : _b.icon) || {});
-  const iconNode = icon && !innerLoading ? /*#__PURE__*/React__default["default"].createElement(IconWrapper$1, {
-    prefixCls: prefixCls,
-    className: iconClasses,
-    style: iconStyle
-  }, icon) : /*#__PURE__*/React__default["default"].createElement(LoadingIcon$1, {
-    existIcon: !!icon,
-    prefixCls: prefixCls,
-    loading: !!innerLoading
-  });
-  const kids = children || children === 0 ? spaceChildren(children, needInserted && autoInsertSpace) : null;
-  if (linkButtonRestProps.href !== undefined) {
-    return wrapSSR( /*#__PURE__*/React__default["default"].createElement("a", Object.assign({}, linkButtonRestProps, {
-      className: classnames(classes, {
-        [`${prefixCls}-disabled`]: mergedDisabled
-      }),
-      style: fullStyle,
-      onClick: handleClick,
-      ref: buttonRef,
-      tabIndex: mergedDisabled ? -1 : 0
-    }), iconNode, kids));
-  }
-  let buttonNode = /*#__PURE__*/React__default["default"].createElement("button", Object.assign({}, rest, {
-    type: htmlType,
-    className: classes,
-    style: fullStyle,
-    onClick: handleClick,
-    disabled: mergedDisabled,
-    ref: buttonRef
-  }), iconNode, kids, compactItemClassnames && /*#__PURE__*/React__default["default"].createElement(CompactCmp, {
-    key: "compact",
-    prefixCls: prefixCls
-  }));
-  if (!isUnBorderedButtonType(type)) {
-    buttonNode = /*#__PURE__*/React__default["default"].createElement(Wave$1, {
-      component: "Button",
-      disabled: !!innerLoading
-    }, buttonNode);
-  }
-  return wrapSSR(buttonNode);
-};
-const Button$1 = /*#__PURE__*/React.forwardRef(InternalButton);
-if (process.env.NODE_ENV !== 'production') {
-  Button$1.displayName = 'Button';
-}
-Button$1.Group = Group;
-Button$1.__ANT_BUTTON = true;
-var Button$2 = Button$1;
-
-// This icon file is generated automatically.
-var PlusOutlined$2 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z" } }, { "tag": "path", "attrs": { "d": "M192 474h672q8 0 8 8v60q0 8-8 8H160q-8 0-8-8v-60q0-8 8-8z" } }] }, "name": "plus", "theme": "outlined" };
-var PlusOutlinedSvg = PlusOutlined$2;
-
-var PlusOutlined = function PlusOutlined(props, ref) {
-  return /*#__PURE__*/React__namespace.createElement(AntdIcon, _extends({}, props, {
-    ref: ref,
-    icon: PlusOutlinedSvg
-  }));
-};
-if (process.env.NODE_ENV !== 'production') {
-  PlusOutlined.displayName = 'PlusOutlined';
-}
-var PlusOutlined$1 = /*#__PURE__*/React__namespace.forwardRef(PlusOutlined);
-
-function isPresetSize(size) {
-  return ['small', 'middle', 'large'].includes(size);
-}
-function isValidGapNumber(size) {
-  if (!size) {
-    // The case of size = 0 is deliberately excluded here, because the default value of the gap attribute in CSS is 0, so if the user passes 0 in, we can directly ignore it.
-    return false;
-  }
-  return typeof size === 'number' && !Number.isNaN(size);
-}
-
-const SpaceContext = /*#__PURE__*/React__default["default"].createContext({
-  latestIndex: 0
-});
-const SpaceContextProvider = SpaceContext.Provider;
-
-const Item = _ref => {
-  let {
-    className,
-    index,
-    children,
-    split,
-    style
-  } = _ref;
-  const {
-    latestIndex
-  } = React__namespace.useContext(SpaceContext);
-  if (children === null || children === undefined) {
-    return null;
-  }
-  return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
-    className: className,
-    style: style
-  }, children), index < latestIndex && split && /*#__PURE__*/React__namespace.createElement("span", {
-    className: `${className}-split`
-  }, split));
-};
-var Item$1 = Item;
-
-var __rest$1 = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-const Space = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
-  var _a, _b;
-  const {
-    getPrefixCls,
-    space,
-    direction: directionConfig
-  } = React__namespace.useContext(ConfigContext);
-  const {
-      size = (space === null || space === void 0 ? void 0 : space.size) || 'small',
-      align,
-      className,
-      rootClassName,
-      children,
-      direction = 'horizontal',
-      prefixCls: customizePrefixCls,
-      split,
-      style,
-      wrap = false,
-      classNames: customClassNames,
-      styles
-    } = props,
-    otherProps = __rest$1(props, ["size", "align", "className", "rootClassName", "children", "direction", "prefixCls", "split", "style", "wrap", "classNames", "styles"]);
-  const [horizontalSize, verticalSize] = Array.isArray(size) ? size : [size, size];
-  const isPresetVerticalSize = isPresetSize(verticalSize);
-  const isPresetHorizontalSize = isPresetSize(horizontalSize);
-  const isValidVerticalSize = isValidGapNumber(verticalSize);
-  const isValidHorizontalSize = isValidGapNumber(horizontalSize);
-  const childNodes = toArray(children, {
-    keepEmpty: true
-  });
-  const mergedAlign = align === undefined && direction === 'horizontal' ? 'center' : align;
-  const prefixCls = getPrefixCls('space', customizePrefixCls);
-  const [wrapSSR, hashId] = useStyle$1(prefixCls);
-  const cls = classnames(prefixCls, space === null || space === void 0 ? void 0 : space.className, hashId, `${prefixCls}-${direction}`, {
-    [`${prefixCls}-rtl`]: directionConfig === 'rtl',
-    [`${prefixCls}-align-${mergedAlign}`]: mergedAlign,
-    [`${prefixCls}-gap-row-${verticalSize}`]: isPresetVerticalSize,
-    [`${prefixCls}-gap-col-${horizontalSize}`]: isPresetHorizontalSize
-  }, className, rootClassName);
-  const itemClassName = classnames(`${prefixCls}-item`, (_a = customClassNames === null || customClassNames === void 0 ? void 0 : customClassNames.item) !== null && _a !== void 0 ? _a : (_b = space === null || space === void 0 ? void 0 : space.classNames) === null || _b === void 0 ? void 0 : _b.item);
-  // Calculate latest one
-  let latestIndex = 0;
-  const nodes = childNodes.map((child, i) => {
-    var _a, _b;
-    if (child !== null && child !== undefined) {
-      latestIndex = i;
-    }
-    const key = child && child.key || `${itemClassName}-${i}`;
-    return /*#__PURE__*/React__namespace.createElement(Item$1, {
-      className: itemClassName,
-      key: key,
-      index: i,
-      split: split,
-      style: (_a = styles === null || styles === void 0 ? void 0 : styles.item) !== null && _a !== void 0 ? _a : (_b = space === null || space === void 0 ? void 0 : space.styles) === null || _b === void 0 ? void 0 : _b.item
-    }, child);
-  });
-  const spaceContext = React__namespace.useMemo(() => ({
-    latestIndex
-  }), [latestIndex]);
-  // =========================== Render ===========================
-  if (childNodes.length === 0) {
-    return null;
-  }
-  const gapStyle = {};
-  if (wrap) {
-    gapStyle.flexWrap = 'wrap';
-  }
-  if (!isPresetHorizontalSize && isValidHorizontalSize) {
-    gapStyle.columnGap = horizontalSize;
-  }
-  if (!isPresetVerticalSize && isValidVerticalSize) {
-    gapStyle.rowGap = verticalSize;
-  }
-  return wrapSSR( /*#__PURE__*/React__namespace.createElement("div", Object.assign({
-    ref: ref,
-    className: cls,
-    style: Object.assign(Object.assign(Object.assign({}, gapStyle), space === null || space === void 0 ? void 0 : space.style), style)
-  }, otherProps), /*#__PURE__*/React__namespace.createElement(SpaceContextProvider, {
-    value: spaceContext
-  }, nodes)));
-});
-if (process.env.NODE_ENV !== 'production') {
-  Space.displayName = 'Space';
-}
-const CompoundedSpace = Space;
-CompoundedSpace.Compact = Compact$1;
-var Space$1 = CompoundedSpace;
-
-function HotelierButton(_a) {
-    var children = _a.children, props = __rest$8(_a, ["children"]);
-    var type = props.type, className = props.className, disabled = props.disabled, rest = __rest$8(props, ["type", "className", "disabled"]);
-    // Use a state variable to control rendering on the client side.
-    var _b = React.useState(false), isClient = _b[0], setIsClient = _b[1];
-    React.useEffect(function () {
-        // Set isClient to true when the component is mounted on the client side.
-        setIsClient(true);
-    }, []);
-    // Render the button only on the client side.
-    return isClient ? (React__default["default"].createElement(Space$1, { wrap: true },
-        React__default["default"].createElement(Button$2, __assign$1({ className: classnames('hotelierButton', className, {
-                'hPprimary': type === "hPprimary"
-            }) }, rest, { icon: React__default["default"].createElement(PlusOutlined$1, null), disabled: disabled }), children))) : null;
 }
 
 function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else if("object"==typeof e)if(Array.isArray(e))for(t=0;t<e.length;t++)e[t]&&(f=r(e[t]))&&(n&&(n+=" "),n+=f);else for(t in e)e[t]&&(n&&(n+=" "),n+=t);return n}function clsx(){for(var e,t,f=0,n="";f<arguments.length;)(e=arguments[f++])&&(t=r(e))&&(n&&(n+=" "),n+=t);return n}
+
+const falsyToString = (value)=>typeof value === "boolean" ? "".concat(value) : value === 0 ? "0" : value;
+const cx = clsx;
+const cva = (base, config)=>{
+    return (props)=>{
+        var ref;
+        if ((config === null || config === void 0 ? void 0 : config.variants) == null) return cx(base, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
+        const { variants , defaultVariants  } = config;
+        const getVariantClassNames = Object.keys(variants).map((variant)=>{
+            const variantProp = props === null || props === void 0 ? void 0 : props[variant];
+            const defaultVariantProp = defaultVariants === null || defaultVariants === void 0 ? void 0 : defaultVariants[variant];
+            if (variantProp === null) return null;
+            const variantKey = falsyToString(variantProp) || falsyToString(defaultVariantProp);
+            return variants[variant][variantKey];
+        });
+        const propsWithoutUndefined = props && Object.entries(props).reduce((acc, param)=>{
+            let [key, value] = param;
+            if (value === undefined) {
+                return acc;
+            }
+            acc[key] = value;
+            return acc;
+        }, {});
+        const getCompoundVariantClassNames = config === null || config === void 0 ? void 0 : (ref = config.compoundVariants) === null || ref === void 0 ? void 0 : ref.reduce((acc, param1)=>{
+            let { class: cvClass , className: cvClassName , ...compoundVariantOptions } = param1;
+            return Object.entries(compoundVariantOptions).every((param)=>{
+                let [key, value] = param;
+                return Array.isArray(value) ? value.includes({
+                    ...defaultVariants,
+                    ...propsWithoutUndefined
+                }[key]) : ({
+                    ...defaultVariants,
+                    ...propsWithoutUndefined
+                })[key] === value;
+            }) ? [
+                ...acc,
+                cvClass,
+                cvClassName
+            ] : acc;
+        }, []);
+        return cx(base, getVariantClassNames, getCompoundVariantClassNames, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
+    };
+};
 
 const CLASS_PART_SEPARATOR = '-';
 function createClassUtils(config) {
@@ -11699,148 +2737,6 @@ function cn() {
     return twMerge(clsx(inputs));
 }
 
-/**
- * Set a given ref to a given value
- * This utility takes care of different types of refs: callback refs and RefObject(s)
- */ function $6ed0406888f73fc4$var$setRef$1(ref, value) {
-    if (typeof ref === 'function') ref(value);
-    else if (ref !== null && ref !== undefined) ref.current = value;
-}
-/**
- * A utility to compose multiple refs together
- * Accepts callback refs and RefObject(s)
- */ function $6ed0406888f73fc4$export$43e446d32b3d21af$1(...refs) {
-    return (node)=>refs.forEach((ref)=>$6ed0406888f73fc4$var$setRef$1(ref, node)
-        )
-    ;
-}
-/**
- * A custom hook that composes multiple refs
- * Accepts callback refs and RefObject(s)
- */ function $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(...refs) {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    return React.useCallback($6ed0406888f73fc4$export$43e446d32b3d21af$1(...refs), refs);
-}
-
-/* -------------------------------------------------------------------------------------------------
- * Slot
- * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$export$8c6ed5c666ac1360$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { children: children , ...slotProps } = props;
-    const childrenArray = React.Children.toArray(children);
-    const slottable = childrenArray.find($5e63c961fc1ce211$var$isSlottable$1);
-    if (slottable) {
-        // the new element to render is the one passed as a child of `Slottable`
-        const newElement = slottable.props.children;
-        const newChildren = childrenArray.map((child)=>{
-            if (child === slottable) {
-                // because the new element will be the one rendered, we are only interested
-                // in grabbing its children (`newElement.props.children`)
-                if (React.Children.count(newElement) > 1) return React.Children.only(null);
-                return /*#__PURE__*/ React.isValidElement(newElement) ? newElement.props.children : null;
-            } else return child;
-        });
-        return /*#__PURE__*/ React.createElement($5e63c961fc1ce211$var$SlotClone$1, _extends({}, slotProps, {
-            ref: forwardedRef
-        }), /*#__PURE__*/ React.isValidElement(newElement) ? /*#__PURE__*/ React.cloneElement(newElement, undefined, newChildren) : null);
-    }
-    return /*#__PURE__*/ React.createElement($5e63c961fc1ce211$var$SlotClone$1, _extends({}, slotProps, {
-        ref: forwardedRef
-    }), children);
-});
-$5e63c961fc1ce211$export$8c6ed5c666ac1360$1.displayName = 'Slot';
-/* -------------------------------------------------------------------------------------------------
- * SlotClone
- * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$var$SlotClone$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { children: children , ...slotProps } = props;
-    if (/*#__PURE__*/ React.isValidElement(children)) return /*#__PURE__*/ React.cloneElement(children, {
-        ...$5e63c961fc1ce211$var$mergeProps$1(slotProps, children.props),
-        ref: forwardedRef ? $6ed0406888f73fc4$export$43e446d32b3d21af$1(forwardedRef, children.ref) : children.ref
-    });
-    return React.Children.count(children) > 1 ? React.Children.only(null) : null;
-});
-$5e63c961fc1ce211$var$SlotClone$1.displayName = 'SlotClone';
-/* -------------------------------------------------------------------------------------------------
- * Slottable
- * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$export$d9f1ccf0bdb05d45$1 = ({ children: children  })=>{
-    return /*#__PURE__*/ React.createElement(React.Fragment, null, children);
-};
-/* ---------------------------------------------------------------------------------------------- */ function $5e63c961fc1ce211$var$isSlottable$1(child) {
-    return /*#__PURE__*/ React.isValidElement(child) && child.type === $5e63c961fc1ce211$export$d9f1ccf0bdb05d45$1;
-}
-function $5e63c961fc1ce211$var$mergeProps$1(slotProps, childProps) {
-    // all child props should override
-    const overrideProps = {
-        ...childProps
-    };
-    for(const propName in childProps){
-        const slotPropValue = slotProps[propName];
-        const childPropValue = childProps[propName];
-        const isHandler = /^on[A-Z]/.test(propName);
-        if (isHandler) {
-            // if the handler exists on both, we compose them
-            if (slotPropValue && childPropValue) overrideProps[propName] = (...args)=>{
-                childPropValue(...args);
-                slotPropValue(...args);
-            };
-            else if (slotPropValue) overrideProps[propName] = slotPropValue;
-        } else if (propName === 'style') overrideProps[propName] = {
-            ...slotPropValue,
-            ...childPropValue
-        };
-        else if (propName === 'className') overrideProps[propName] = [
-            slotPropValue,
-            childPropValue
-        ].filter(Boolean).join(' ');
-    }
-    return {
-        ...slotProps,
-        ...overrideProps
-    };
-}
-
-const falsyToString = (value)=>typeof value === "boolean" ? "".concat(value) : value === 0 ? "0" : value;
-const cx = clsx;
-const cva = (base, config)=>{
-    return (props)=>{
-        var ref;
-        if ((config === null || config === void 0 ? void 0 : config.variants) == null) return cx(base, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
-        const { variants , defaultVariants  } = config;
-        const getVariantClassNames = Object.keys(variants).map((variant)=>{
-            const variantProp = props === null || props === void 0 ? void 0 : props[variant];
-            const defaultVariantProp = defaultVariants === null || defaultVariants === void 0 ? void 0 : defaultVariants[variant];
-            if (variantProp === null) return null;
-            const variantKey = falsyToString(variantProp) || falsyToString(defaultVariantProp);
-            return variants[variant][variantKey];
-        });
-        const propsWithoutUndefined = props && Object.entries(props).reduce((acc, param)=>{
-            let [key, value] = param;
-            if (value === undefined) {
-                return acc;
-            }
-            acc[key] = value;
-            return acc;
-        }, {});
-        const getCompoundVariantClassNames = config === null || config === void 0 ? void 0 : (ref = config.compoundVariants) === null || ref === void 0 ? void 0 : ref.reduce((acc, param1)=>{
-            let { class: cvClass , className: cvClassName , ...compoundVariantOptions } = param1;
-            return Object.entries(compoundVariantOptions).every((param)=>{
-                let [key, value] = param;
-                return Array.isArray(value) ? value.includes({
-                    ...defaultVariants,
-                    ...propsWithoutUndefined
-                }[key]) : ({
-                    ...defaultVariants,
-                    ...propsWithoutUndefined
-                })[key] === value;
-            }) ? [
-                ...acc,
-                cvClass,
-                cvClassName
-            ] : acc;
-        }, []);
-        return cx(base, getVariantClassNames, getCompoundVariantClassNames, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
-    };
-};
-
 var buttonVariants = cva("inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50", {
     variants: {
         variant: {
@@ -11864,7 +2760,7 @@ var buttonVariants = cva("inline-flex items-center justify-center whitespace-now
     },
 });
 var Button = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, variant = _a.variant, size = _a.size, _b = _a.asChild, asChild = _b === void 0 ? false : _b, props = __rest$8(_a, ["className", "variant", "size", "asChild"]);
+    var className = _a.className, variant = _a.variant, size = _a.size, _b = _a.asChild, asChild = _b === void 0 ? false : _b, props = __rest$1(_a, ["className", "variant", "size", "asChild"]);
     var Comp = asChild ? $5e63c961fc1ce211$export$8c6ed5c666ac1360$1 : "button";
     return (React__namespace.createElement(Comp, __assign$1({ className: cn(buttonVariants({ variant: variant, size: size, className: className })), ref: ref }, props)));
 });
@@ -11931,7 +2827,7 @@ var Icons = {
 };
 
 var Input = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, type = _a.type, props = __rest$8(_a, ["className", "type"]);
+    var className = _a.className, type = _a.type, props = __rest$1(_a, ["className", "type"]);
     return (React__namespace.createElement("input", __assign$1({ type: type, className: cn("flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50", className), ref: ref }, props)));
 });
 Input.displayName = "Input";
@@ -12013,7 +2909,7 @@ const $8927f6f2acc4f386$var$NODES$1 = [
  * this utility with them. This is because it's possible for those handlers to be called implicitly during render
  * e.g. when focus is within a component as it is unmounted, or when managing focus on mount.
  */ function $8927f6f2acc4f386$export$6d1a0317bde7de7f$1(target, event) {
-    if (target) ReactDOM.flushSync(()=>target.dispatchEvent(event)
+    if (target) $7SXl2$reactdom.flushSync(()=>target.dispatchEvent(event)
     );
 }
 
@@ -12031,7 +2927,7 @@ const $b73a6c6685e72184$export$b04be29aa201d4f5 = /*#__PURE__*/ React.forwardRef
 
 var labelVariants = cva("text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70");
 var Label = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($b73a6c6685e72184$export$be92b6f5f03c0fe9, __assign$1({ ref: ref, className: cn(labelVariants(), className) }, props)));
 });
 Label.displayName = $b73a6c6685e72184$export$be92b6f5f03c0fe9.displayName;
@@ -12136,7 +3032,72 @@ const INPUT_VALIDATION_RULES = {
     validate: 'validate',
 };
 
-React__default["default"].createContext(null);
+const HookFormContext = React__default["default"].createContext(null);
+/**
+ * This custom hook allows you to access the form context. useFormContext is intended to be used in deeply nested structures, where it would become inconvenient to pass the context as a prop. To be used with {@link FormProvider}.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/useformcontext) • [Demo](https://codesandbox.io/s/react-hook-form-v7-form-context-ytudi)
+ *
+ * @returns return all useForm methods
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const methods = useForm();
+ *   const onSubmit = data => console.log(data);
+ *
+ *   return (
+ *     <FormProvider {...methods} >
+ *       <form onSubmit={methods.handleSubmit(onSubmit)}>
+ *         <NestedInput />
+ *         <input type="submit" />
+ *       </form>
+ *     </FormProvider>
+ *   );
+ * }
+ *
+ *  function NestedInput() {
+ *   const { register } = useFormContext(); // retrieve all hook methods
+ *   return <input {...register("test")} />;
+ * }
+ * ```
+ */
+const useFormContext = () => React__default["default"].useContext(HookFormContext);
+/**
+ * A provider component that propagates the `useForm` methods to all children components via [React Context](https://reactjs.org/docs/context.html) API. To be used with {@link useFormContext}.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/useformcontext) • [Demo](https://codesandbox.io/s/react-hook-form-v7-form-context-ytudi)
+ *
+ * @param props - all useForm methods
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const methods = useForm();
+ *   const onSubmit = data => console.log(data);
+ *
+ *   return (
+ *     <FormProvider {...methods} >
+ *       <form onSubmit={methods.handleSubmit(onSubmit)}>
+ *         <NestedInput />
+ *         <input type="submit" />
+ *       </form>
+ *     </FormProvider>
+ *   );
+ * }
+ *
+ *  function NestedInput() {
+ *   const { register } = useFormContext(); // retrieve all hook methods
+ *   return <input {...register("test")} />;
+ * }
+ * ```
+ */
+const FormProvider = (props) => {
+    const { children, ...data } = props;
+    return (React__default["default"].createElement(HookFormContext.Provider, { value: data }, children));
+};
 
 var getProxyFormState = (formState, control, localProxyFormState, isRoot = true) => {
     const result = {
@@ -12170,6 +3131,15 @@ var shouldRenderFormState = (formStateData, _proxyFormState, updateFormState, is
 
 var convertToArrayPayload = (value) => (Array.isArray(value) ? value : [value]);
 
+var shouldSubscribeByName = (name, signalName, exact) => !name ||
+    !signalName ||
+    name === signalName ||
+    convertToArrayPayload(name).some((currentName) => currentName &&
+        (exact
+            ? currentName === signalName
+            : currentName.startsWith(signalName) ||
+                signalName.startsWith(currentName)));
+
 function useSubscribe(props) {
     const _props = React__default["default"].useRef(props);
     _props.current = props;
@@ -12185,6 +3155,73 @@ function useSubscribe(props) {
     }, [props.disabled]);
 }
 
+/**
+ * This custom hook allows you to subscribe to each form state, and isolate the re-render at the custom hook level. It has its scope in terms of form state subscription, so it would not affect other useFormState and useForm. Using this hook can reduce the re-render impact on large and complex form application.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/useformstate) • [Demo](https://codesandbox.io/s/useformstate-75xly)
+ *
+ * @param props - include options on specify fields to subscribe. {@link UseFormStateReturn}
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const { register, handleSubmit, control } = useForm({
+ *     defaultValues: {
+ *     firstName: "firstName"
+ *   }});
+ *   const { dirtyFields } = useFormState({
+ *     control
+ *   });
+ *   const onSubmit = (data) => console.log(data);
+ *
+ *   return (
+ *     <form onSubmit={handleSubmit(onSubmit)}>
+ *       <input {...register("firstName")} placeholder="First Name" />
+ *       {dirtyFields.firstName && <p>Field is dirty.</p>}
+ *       <input type="submit" />
+ *     </form>
+ *   );
+ * }
+ * ```
+ */
+function useFormState(props) {
+    const methods = useFormContext();
+    const { control = methods.control, disabled, name, exact } = props || {};
+    const [formState, updateFormState] = React__default["default"].useState(control._formState);
+    const _mounted = React__default["default"].useRef(true);
+    const _localProxyFormState = React__default["default"].useRef({
+        isDirty: false,
+        isLoading: false,
+        dirtyFields: false,
+        touchedFields: false,
+        isValidating: false,
+        isValid: false,
+        errors: false,
+    });
+    const _name = React__default["default"].useRef(name);
+    _name.current = name;
+    useSubscribe({
+        disabled,
+        next: (value) => _mounted.current &&
+            shouldSubscribeByName(_name.current, value.name, exact) &&
+            shouldRenderFormState(value, _localProxyFormState.current, control._updateFormState) &&
+            updateFormState({
+                ...control._formState,
+                ...value,
+            }),
+        subject: control._subjects.state,
+    });
+    React__default["default"].useEffect(() => {
+        _mounted.current = true;
+        _localProxyFormState.current.isValid && control._updateValid(true);
+        return () => {
+            _mounted.current = false;
+        };
+    }, [control]);
+    return getProxyFormState(formState, control, _localProxyFormState.current, false);
+}
+
 var isString = (value) => typeof value === 'string';
 
 var generateWatchOutput = (names, _names, formValues, isGlobal, defaultValue) => {
@@ -12198,6 +3235,41 @@ var generateWatchOutput = (names, _names, formValues, isGlobal, defaultValue) =>
     isGlobal && (_names.watchAll = true);
     return formValues;
 };
+
+/**
+ * Custom hook to subscribe to field change and isolate re-rendering at the component level.
+ *
+ * @remarks
+ *
+ * [API](https://react-hook-form.com/docs/usewatch) • [Demo](https://codesandbox.io/s/react-hook-form-v7-ts-usewatch-h9i5e)
+ *
+ * @example
+ * ```tsx
+ * const { control } = useForm();
+ * const values = useWatch({
+ *   name: "fieldName"
+ *   control,
+ * })
+ * ```
+ */
+function useWatch(props) {
+    const methods = useFormContext();
+    const { control = methods.control, name, defaultValue, disabled, exact, } = props || {};
+    const _name = React__default["default"].useRef(name);
+    _name.current = name;
+    useSubscribe({
+        disabled,
+        subject: control._subjects.values,
+        next: (formState) => {
+            if (shouldSubscribeByName(_name.current, formState.name, exact)) {
+                updateValue(cloneObject(generateWatchOutput(_name.current, control._names, formState.values || control._formValues, false, defaultValue)));
+            }
+        },
+    });
+    const [value, updateValue] = React__default["default"].useState(control._getWatch(name, defaultValue));
+    React__default["default"].useEffect(() => control._removeUnmounted());
+    return value;
+}
 
 var isKey = (value) => /^\w*$/.test(value);
 
@@ -12225,6 +3297,182 @@ function set(object, path, value) {
     }
     return object;
 }
+
+/**
+ * Custom hook to work with controlled component, this function provide you with both form and field level state. Re-render is isolated at the hook level.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/usecontroller) • [Demo](https://codesandbox.io/s/usecontroller-0o8px)
+ *
+ * @param props - the path name to the form field value, and validation rules.
+ *
+ * @returns field properties, field and form state. {@link UseControllerReturn}
+ *
+ * @example
+ * ```tsx
+ * function Input(props) {
+ *   const { field, fieldState, formState } = useController(props);
+ *   return (
+ *     <div>
+ *       <input {...field} placeholder={props.name} />
+ *       <p>{fieldState.isTouched && "Touched"}</p>
+ *       <p>{formState.isSubmitted ? "submitted" : ""}</p>
+ *     </div>
+ *   );
+ * }
+ * ```
+ */
+function useController(props) {
+    const methods = useFormContext();
+    const { name, disabled, control = methods.control, shouldUnregister } = props;
+    const isArrayField = isNameInFieldArray(control._names.array, name);
+    const value = useWatch({
+        control,
+        name,
+        defaultValue: get(control._formValues, name, get(control._defaultValues, name, props.defaultValue)),
+        exact: true,
+    });
+    const formState = useFormState({
+        control,
+        name,
+    });
+    const _registerProps = React__default["default"].useRef(control.register(name, {
+        ...props.rules,
+        value,
+    }));
+    _registerProps.current = control.register(name, props.rules);
+    React__default["default"].useEffect(() => {
+        const _shouldUnregisterField = control._options.shouldUnregister || shouldUnregister;
+        const updateMounted = (name, value) => {
+            const field = get(control._fields, name);
+            if (field) {
+                field._f.mount = value;
+            }
+        };
+        updateMounted(name, true);
+        if (_shouldUnregisterField) {
+            const value = cloneObject(get(control._options.defaultValues, name));
+            set(control._defaultValues, name, value);
+            if (isUndefined(get(control._formValues, name))) {
+                set(control._formValues, name, value);
+            }
+        }
+        return () => {
+            (isArrayField
+                ? _shouldUnregisterField && !control._state.action
+                : _shouldUnregisterField)
+                ? control.unregister(name)
+                : updateMounted(name, false);
+        };
+    }, [name, control, isArrayField, shouldUnregister]);
+    React__default["default"].useEffect(() => {
+        if (get(control._fields, name)) {
+            control._updateDisabledField({
+                disabled,
+                fields: control._fields,
+                name,
+                value: get(control._fields, name)._f.value,
+            });
+        }
+    }, [disabled, name, control]);
+    return {
+        field: {
+            name,
+            value,
+            ...(isBoolean(disabled) || isBoolean(formState.disabled)
+                ? { disabled: formState.disabled || disabled }
+                : {}),
+            onChange: React__default["default"].useCallback((event) => _registerProps.current.onChange({
+                target: {
+                    value: getEventValue(event),
+                    name: name,
+                },
+                type: EVENTS.CHANGE,
+            }), [name]),
+            onBlur: React__default["default"].useCallback(() => _registerProps.current.onBlur({
+                target: {
+                    value: get(control._formValues, name),
+                    name: name,
+                },
+                type: EVENTS.BLUR,
+            }), [name, control]),
+            ref: (elm) => {
+                const field = get(control._fields, name);
+                if (field && elm) {
+                    field._f.ref = {
+                        focus: () => elm.focus(),
+                        select: () => elm.select(),
+                        setCustomValidity: (message) => elm.setCustomValidity(message),
+                        reportValidity: () => elm.reportValidity(),
+                    };
+                }
+            },
+        },
+        formState,
+        fieldState: Object.defineProperties({}, {
+            invalid: {
+                enumerable: true,
+                get: () => !!get(formState.errors, name),
+            },
+            isDirty: {
+                enumerable: true,
+                get: () => !!get(formState.dirtyFields, name),
+            },
+            isTouched: {
+                enumerable: true,
+                get: () => !!get(formState.touchedFields, name),
+            },
+            error: {
+                enumerable: true,
+                get: () => get(formState.errors, name),
+            },
+        }),
+    };
+}
+
+/**
+ * Component based on `useController` hook to work with controlled component.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/usecontroller/controller) • [Demo](https://codesandbox.io/s/react-hook-form-v6-controller-ts-jwyzw) • [Video](https://www.youtube.com/watch?v=N2UNk_UCVyA)
+ *
+ * @param props - the path name to the form field value, and validation rules.
+ *
+ * @returns provide field handler functions, field and form state.
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const { control } = useForm<FormValues>({
+ *     defaultValues: {
+ *       test: ""
+ *     }
+ *   });
+ *
+ *   return (
+ *     <form>
+ *       <Controller
+ *         control={control}
+ *         name="test"
+ *         render={({ field: { onChange, onBlur, value, ref }, formState, fieldState }) => (
+ *           <>
+ *             <input
+ *               onChange={onChange} // send value to hook form
+ *               onBlur={onBlur} // notify when input is touched
+ *               value={value} // return updated value
+ *               ref={ref} // set ref for focus management
+ *             />
+ *             <p>{formState.isSubmitted ? "submitted" : ""}</p>
+ *             <p>{fieldState.isTouched ? "touched" : ""}</p>
+ *           </>
+ *         )}
+ *       />
+ *     </form>
+ *   );
+ * }
+ * ```
+ */
+const Controller = (props) => props.render(useController(props));
 
 var appendErrors = (name, validateAllFieldCriteria, errors, type, message) => validateAllFieldCriteria
     ? {
@@ -13803,7 +5051,7 @@ function useForm(props = {}) {
 }
 
 function UserAuthForm$1(_a) {
-    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading, props = __rest$8(_a, ["className", "onSubmit", "isLoading"]);
+    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading, props = __rest$1(_a, ["className", "onSubmit", "isLoading"]);
     var _b = useForm(), handleSubmit = _b.handleSubmit, register = _b.register;
     return (React__namespace.createElement("div", __assign$1({ className: cn("grid gap-6", className) }, props),
         React__namespace.createElement("form", { onSubmit: handleSubmit(onSubmit) },
@@ -13832,7 +5080,7 @@ function UserAuthForm$1(_a) {
 }
 
 function AuthenticationPage$1(_a) {
-    var signUpUrl = _a.signUpUrl, props = __rest$8(_a, ["signUpUrl"]);
+    var signUpUrl = _a.signUpUrl, props = __rest$1(_a, ["signUpUrl"]);
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement("div", { className: "md:hidden" },
             React__default["default"].createElement("img", { src: "/examples/authentication-light.png", width: 1280, height: 843, alt: "Authentication", className: "block dark:hidden" }),
@@ -14860,7 +6108,7 @@ const $5cb92bef7577960e$export$aecb2ddcb55c95be = $5cb92bef7577960e$export$4d5eb
 const $f1701beae083dbae$export$602eac185826482c$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
     var _globalThis$document;
     const { container: container = globalThis === null || globalThis === void 0 ? void 0 : (_globalThis$document = globalThis.document) === null || _globalThis$document === void 0 ? void 0 : _globalThis$document.body , ...portalProps } = props;
-    return container ? /*#__PURE__*/ ReactDOM__default["default"].createPortal(/*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({}, portalProps, {
+    return container ? /*#__PURE__*/ $7SXl2$reactdom__default["default"].createPortal(/*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({}, portalProps, {
         ref: forwardedRef
     })), container) : null;
 });
@@ -14960,7 +6208,7 @@ $921a889cee6df7e8$export$99c2b779aa4e8b8b$1.displayName = 'Presence';
                 if (event.target === node1 && isCurrentAnimation) // With React 18 concurrency this update is applied
                 // a frame after the animation ends, creating a flash of visible content.
                 // By manually flushing we ensure they sync within a frame, removing the flash.
-                ReactDOM.flushSync(()=>send('ANIMATION_END')
+                $7SXl2$reactdom.flushSync(()=>send('ANIMATION_END')
                 );
             };
             const handleAnimationStart = (event)=>{
@@ -15437,7 +6685,7 @@ const $054eb8030ebde76e$var$ToastImpl = /*#__PURE__*/ React.forwardRef((props, f
     }, announceTextContent), /*#__PURE__*/ React.createElement($054eb8030ebde76e$var$ToastInteractiveProvider, {
         scope: __scopeToast,
         onClose: handleClose
-    }, /*#__PURE__*/ ReactDOM.createPortal(/*#__PURE__*/ React.createElement($054eb8030ebde76e$var$Collection.ItemSlot, {
+    }, /*#__PURE__*/ $7SXl2$reactdom.createPortal(/*#__PURE__*/ React.createElement($054eb8030ebde76e$var$Collection.ItemSlot, {
         scope: __scopeToast
     }, /*#__PURE__*/ React.createElement($5cb92bef7577960e$export$be92b6f5f03c0fe9, {
         asChild: true,
@@ -15726,7 +6974,7 @@ const $054eb8030ebde76e$export$f39c2d165cd861fe = $054eb8030ebde76e$export$811e7
 
 var ToastProvider = $054eb8030ebde76e$export$2881499e37b75b9a;
 var ToastViewport = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($054eb8030ebde76e$export$d5c6c08dc2d3ca7, __assign$1({ ref: ref, className: cn("fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]", className) }, props)));
 });
 ToastViewport.displayName = $054eb8030ebde76e$export$d5c6c08dc2d3ca7.displayName;
@@ -15742,28 +6990,28 @@ var toastVariants = cva("group pointer-events-auto relative flex w-full items-ce
     },
 });
 var Toast = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, variant = _a.variant, props = __rest$8(_a, ["className", "variant"]);
+    var className = _a.className, variant = _a.variant, props = __rest$1(_a, ["className", "variant"]);
     return (React__namespace.createElement($054eb8030ebde76e$export$be92b6f5f03c0fe9, __assign$1({ ref: ref, className: cn(toastVariants({ variant: variant }), className) }, props)));
 });
 Toast.displayName = $054eb8030ebde76e$export$be92b6f5f03c0fe9.displayName;
 var ToastAction = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($054eb8030ebde76e$export$e19cd5f9376f8cee, __assign$1({ ref: ref, className: cn("inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium transition-colors hover:bg-secondary focus:outline-none focus:ring-1 focus:ring-ring disabled:pointer-events-none disabled:opacity-50 group-[.destructive]:border-muted/40 group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive group-[.destructive]:hover:text-destructive-foreground group-[.destructive]:focus:ring-destructive", className) }, props)));
 });
 ToastAction.displayName = $054eb8030ebde76e$export$e19cd5f9376f8cee.displayName;
 var ToastClose = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($054eb8030ebde76e$export$f39c2d165cd861fe, __assign$1({ ref: ref, className: cn("absolute right-1 top-1 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-1 group-hover:opacity-100 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600", className), "toast-close": "" }, props),
         React__namespace.createElement(Cross2Icon, { className: "h-4 w-4" })));
 });
 ToastClose.displayName = $054eb8030ebde76e$export$f39c2d165cd861fe.displayName;
 var ToastTitle = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($054eb8030ebde76e$export$f99233281efd08a0, __assign$1({ ref: ref, className: cn("text-sm font-semibold [&+div]:text-xs", className) }, props)));
 });
 ToastTitle.displayName = $054eb8030ebde76e$export$f99233281efd08a0.displayName;
 var ToastDescription = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($054eb8030ebde76e$export$393edc798c47379d, __assign$1({ ref: ref, className: cn("text-sm opacity-90", className) }, props)));
 });
 ToastDescription.displayName = $054eb8030ebde76e$export$393edc798c47379d.displayName;
@@ -15830,7 +7078,7 @@ function dispatch(action) {
     });
 }
 function toast(_a) {
-    var props = __rest$8(_a, []);
+    var props = __rest$1(_a, []);
     var id = genId();
     var update = function (props) {
         return dispatch({
@@ -15870,7 +7118,7 @@ function Toaster() {
     var toasts = useToast().toasts;
     return (React__default["default"].createElement(ToastProvider, null,
         toasts.map(function (_a) {
-            var id = _a.id, title = _a.title, description = _a.description, action = _a.action, props = __rest$8(_a, ["id", "title", "description", "action"]);
+            var id = _a.id, title = _a.title, description = _a.description, action = _a.action, props = __rest$1(_a, ["id", "title", "description", "action"]);
             return (React__default["default"].createElement(Toast, __assign$1({ key: id }, props),
                 React__default["default"].createElement("div", { className: "grid gap-1" },
                     title && React__default["default"].createElement(ToastTitle, null, title),
@@ -17995,7 +9243,7 @@ function useFloating(options) {
       };
       if (isMountedRef.current && !deepEqual(dataRef.current, fullData)) {
         dataRef.current = fullData;
-        ReactDOM__namespace.flushSync(() => {
+        $7SXl2$reactdom__namespace.flushSync(() => {
           setData(fullData);
         });
       }
@@ -18660,7 +9908,7 @@ function createSidecarMedium(options) {
 }
 
 var SideCar$2 = function (_a) {
-    var sideCar = _a.sideCar, rest = __rest$8(_a, ["sideCar"]);
+    var sideCar = _a.sideCar, rest = __rest$1(_a, ["sideCar"]);
     if (!sideCar) {
         throw new Error('Sidecar: please provide `sideCar` property to import the right car');
     }
@@ -18691,7 +9939,7 @@ var RemoveScroll$1 = React__namespace.forwardRef(function (props, parentRef) {
         onWheelCapture: nothing$1,
         onTouchMoveCapture: nothing$1,
     }), callbacks = _a[0], setCallbacks = _a[1];
-    var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? 'div' : _b, rest = __rest$8(props, ["forwardProps", "children", "className", "removeScrollBar", "enabled", "shards", "sideCar", "noIsolation", "inert", "allowPinchZoom", "as"]);
+    var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? 'div' : _b, rest = __rest$1(props, ["forwardProps", "children", "className", "removeScrollBar", "enabled", "shards", "sideCar", "noIsolation", "inert", "allowPinchZoom", "as"]);
     var SideCar = sideCar;
     var containerRef = useMergeRefs([ref, parentRef]);
     var containerProps = __assign$1(__assign$1({}, rest), callbacks);
@@ -18987,13 +10235,13 @@ var extractRef$1 = function (ref) {
 };
 var deltaCompare$1 = function (x, y) { return x[0] === y[0] && x[1] === y[1]; };
 var generateStyle$1 = function (id) { return "\n  .block-interactivity-".concat(id, " {pointer-events: none;}\n  .allow-interactivity-").concat(id, " {pointer-events: all;}\n"); };
-var idCounter$1 = 0;
+var idCounter$2 = 0;
 var lockStack$1 = [];
 function RemoveScrollSideCar$1(props) {
     var shouldPreventQueue = React__namespace.useRef([]);
     var touchStartRef = React__namespace.useRef([0, 0]);
     var activeAxis = React__namespace.useRef();
-    var id = React__namespace.useState(idCounter$1++)[0];
+    var id = React__namespace.useState(idCounter$2++)[0];
     var Style = React__namespace.useState(function () { return styleSingleton(); })[0];
     var lastProps = React__namespace.useRef(props);
     React__namespace.useEffect(function () {
@@ -19345,7 +10593,7 @@ const $cc7e05a45900e73f$export$c973a4b3cb86a03d = /*#__PURE__*/ React.forwardRef
     }, []);
     if (!context.open) {
         const frag = fragment;
-        return frag ? /*#__PURE__*/ ReactDOM.createPortal(/*#__PURE__*/ React.createElement($cc7e05a45900e73f$var$SelectContentProvider, {
+        return frag ? /*#__PURE__*/ $7SXl2$reactdom.createPortal(/*#__PURE__*/ React.createElement($cc7e05a45900e73f$var$SelectContentProvider, {
             scope: props.__scopeSelect
         }, /*#__PURE__*/ React.createElement($cc7e05a45900e73f$var$Collection.Slot, {
             scope: props.__scopeSelect
@@ -19991,7 +11239,7 @@ const $cc7e05a45900e73f$export$3572fb0fb821ff49 = /*#__PURE__*/ React.forwardRef
         id: itemContext.textId
     }, itemTextProps, {
         ref: composedRefs
-    })), itemContext.isSelected && context.valueNode && !context.valueNodeHasChildren ? /*#__PURE__*/ ReactDOM.createPortal(itemTextProps.children, context.valueNode) : null);
+    })), itemContext.isSelected && context.valueNode && !context.valueNodeHasChildren ? /*#__PURE__*/ $7SXl2$reactdom.createPortal(itemTextProps.children, context.valueNode) : null);
 });
 /* -------------------------------------------------------------------------------------------------
  * SelectItemIndicator
@@ -20259,7 +11507,7 @@ var Select = $cc7e05a45900e73f$export$be92b6f5f03c0fe9;
 var SelectGroup = $cc7e05a45900e73f$export$eb2fcfdbd7ba97d4;
 var SelectValue = $cc7e05a45900e73f$export$4c8d1a57a761ef94;
 var SelectTrigger = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest$8(_a, ["className", "children"]);
+    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
     return (React__namespace.createElement($cc7e05a45900e73f$export$41fb9f06171c75f4, __assign$1({ ref: ref, className: cn("flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1", className) }, props),
         children,
         React__namespace.createElement($cc7e05a45900e73f$export$f04a61298a47a40f, { asChild: true },
@@ -20267,20 +11515,20 @@ var SelectTrigger = React__namespace.forwardRef(function (_a, ref) {
 });
 SelectTrigger.displayName = $cc7e05a45900e73f$export$41fb9f06171c75f4.displayName;
 var SelectScrollUpButton = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($cc7e05a45900e73f$export$2f60d3ec9ad468f2, __assign$1({ ref: ref, className: cn("flex cursor-default items-center justify-center py-1", className) }, props),
         React__namespace.createElement(ChevronUpIcon, null)));
 });
 SelectScrollUpButton.displayName = $cc7e05a45900e73f$export$2f60d3ec9ad468f2.displayName;
 var SelectScrollDownButton = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($cc7e05a45900e73f$export$bf1aedc3039c8d63, __assign$1({ ref: ref, className: cn("flex cursor-default items-center justify-center py-1", className) }, props),
         React__namespace.createElement(ChevronDownIcon, null)));
 });
 SelectScrollDownButton.displayName =
     $cc7e05a45900e73f$export$bf1aedc3039c8d63.displayName;
 var SelectContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, _b = _a.position, position = _b === void 0 ? "popper" : _b, props = __rest$8(_a, ["className", "children", "position"]);
+    var className = _a.className, children = _a.children, _b = _a.position, position = _b === void 0 ? "popper" : _b, props = __rest$1(_a, ["className", "children", "position"]);
     return (React__namespace.createElement($cc7e05a45900e73f$export$602eac185826482c, null,
         React__namespace.createElement($cc7e05a45900e73f$export$7c6e2c02157bb7d2, __assign$1({ ref: ref, className: cn("relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", position === "popper" &&
                 "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1", className), position: position }, props),
@@ -20291,12 +11539,12 @@ var SelectContent = React__namespace.forwardRef(function (_a, ref) {
 });
 SelectContent.displayName = $cc7e05a45900e73f$export$7c6e2c02157bb7d2.displayName;
 var SelectLabel = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($cc7e05a45900e73f$export$b04be29aa201d4f5, __assign$1({ ref: ref, className: cn("px-2 py-1.5 text-sm font-semibold", className) }, props)));
 });
 SelectLabel.displayName = $cc7e05a45900e73f$export$b04be29aa201d4f5.displayName;
 var SelectItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest$8(_a, ["className", "children"]);
+    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
     return (React__namespace.createElement($cc7e05a45900e73f$export$6d08773d2e66f8f2, __assign$1({ ref: ref, className: cn("relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props),
         React__namespace.createElement("span", { className: "absolute right-2 flex h-3.5 w-3.5 items-center justify-center" },
             React__namespace.createElement($cc7e05a45900e73f$export$c3468e2714d175fa, null,
@@ -20305,13 +11553,13 @@ var SelectItem = React__namespace.forwardRef(function (_a, ref) {
 });
 SelectItem.displayName = $cc7e05a45900e73f$export$6d08773d2e66f8f2.displayName;
 var SelectSeparator = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($cc7e05a45900e73f$export$1ff3c3f08ae963c0, __assign$1({ ref: ref, className: cn("-mx-1 my-1 h-px bg-muted", className) }, props)));
 });
 SelectSeparator.displayName = $cc7e05a45900e73f$export$1ff3c3f08ae963c0.displayName;
 
 function UserAuthForm(_a) {
-    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading, props = __rest$8(_a, ["className", "onSubmit", "isLoading"]);
+    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading, props = __rest$1(_a, ["className", "onSubmit", "isLoading"]);
     var _b = useForm(), handleSubmit = _b.handleSubmit, register = _b.register;
     return (React__namespace.createElement("div", __assign$1({ className: cn("grid gap-6", className) }, props),
         React__namespace.createElement("form", { onSubmit: handleSubmit(onSubmit) },
@@ -20359,7 +11607,7 @@ function UserAuthForm(_a) {
 }
 
 function AuthenticationPage(_a) {
-    var loginUrl = _a.loginUrl, props = __rest$8(_a, ["loginUrl"]);
+    var loginUrl = _a.loginUrl, props = __rest$1(_a, ["loginUrl"]);
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement("div", { className: "md:hidden" },
             React__default["default"].createElement("img", { src: "/examples/authentication-light.png", width: 1280, height: 843, alt: "Authentication", className: "block dark:hidden" }),
@@ -20478,7 +11726,7 @@ function VerificationPage() {
 }
 
 function ResetPasswordForm(_a) {
-    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading; _a.generatePassword; var _c = _a.buttonTitle, buttonTitle = _c === void 0 ? "" : _c, props = __rest$8(_a, ["className", "onSubmit", "isLoading", "generatePassword", "buttonTitle"]);
+    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading; _a.generatePassword; var _c = _a.buttonTitle, buttonTitle = _c === void 0 ? "" : _c, props = __rest$1(_a, ["className", "onSubmit", "isLoading", "generatePassword", "buttonTitle"]);
     var _d = useForm(), handleSubmit = _d.handleSubmit, register = _d.register;
     return (React__namespace.createElement("div", __assign$1({ className: cn("grid gap-6", className) }, props),
         React__namespace.createElement("form", { onSubmit: handleSubmit(onSubmit) },
@@ -20501,7 +11749,7 @@ function ResetPasswordForm(_a) {
 }
 
 function ResetPasswordPage(_a) {
-    var loginUrl = _a.loginUrl; _a.forgotPassword; var _c = _a.title, title = _c === void 0 ? "" : _c, _d = _a.subTitle, subTitle = _d === void 0 ? "" : _d, props = __rest$8(_a, ["loginUrl", "forgotPassword", "title", "subTitle"]);
+    var loginUrl = _a.loginUrl; _a.forgotPassword; var _c = _a.title, title = _c === void 0 ? "" : _c, _d = _a.subTitle, subTitle = _d === void 0 ? "" : _d, props = __rest$1(_a, ["loginUrl", "forgotPassword", "title", "subTitle"]);
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement("div", { className: "md:hidden" },
             React__default["default"].createElement("img", { src: "/examples/authentication-light.png", width: 1280, height: 843, alt: "Authentication", className: "block dark:hidden" }),
@@ -20534,7 +11782,7 @@ function ResetPasswordPage(_a) {
 }
 
 function ForgotPasswordForm(_a) {
-    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading; _a.generatePassword; var _c = _a.buttonTitle, buttonTitle = _c === void 0 ? "" : _c, props = __rest$8(_a, ["className", "onSubmit", "isLoading", "generatePassword", "buttonTitle"]);
+    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading; _a.generatePassword; var _c = _a.buttonTitle, buttonTitle = _c === void 0 ? "" : _c, props = __rest$1(_a, ["className", "onSubmit", "isLoading", "generatePassword", "buttonTitle"]);
     var _d = useForm(), handleSubmit = _d.handleSubmit, register = _d.register;
     return (React__namespace.createElement("div", __assign$1({ className: cn("grid gap-6", className) }, props),
         React__namespace.createElement("form", { onSubmit: handleSubmit(onSubmit) },
@@ -20554,7 +11802,7 @@ function ForgotPasswordForm(_a) {
 }
 
 function ForgotPasswordPage(_a) {
-    var loginUrl = _a.loginUrl; _a.forgotPassword; var _c = _a.title, title = _c === void 0 ? "" : _c, _d = _a.subTitle, subTitle = _d === void 0 ? "" : _d, props = __rest$8(_a, ["loginUrl", "forgotPassword", "title", "subTitle"]);
+    var loginUrl = _a.loginUrl; _a.forgotPassword; var _c = _a.title, title = _c === void 0 ? "" : _c, _d = _a.subTitle, subTitle = _d === void 0 ? "" : _d, props = __rest$1(_a, ["loginUrl", "forgotPassword", "title", "subTitle"]);
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement("div", { className: "md:hidden" },
             React__default["default"].createElement("img", { src: "/examples/authentication-light.png", width: 1280, height: 843, alt: "Authentication", className: "block dark:hidden" }),
@@ -22886,22 +14134,22 @@ function isSubRowSelected(row, selection, table) {
 
 const reSplitAlphaNumeric = /([0-9]+)/gm;
 const alphanumeric = (rowA, rowB, columnId) => {
-  return compareAlphanumeric(toString(rowA.getValue(columnId)).toLowerCase(), toString(rowB.getValue(columnId)).toLowerCase());
+  return compareAlphanumeric(toString$1(rowA.getValue(columnId)).toLowerCase(), toString$1(rowB.getValue(columnId)).toLowerCase());
 };
 const alphanumericCaseSensitive = (rowA, rowB, columnId) => {
-  return compareAlphanumeric(toString(rowA.getValue(columnId)), toString(rowB.getValue(columnId)));
+  return compareAlphanumeric(toString$1(rowA.getValue(columnId)), toString$1(rowB.getValue(columnId)));
 };
 
 // The text filter is more basic (less numeric support)
 // but is much faster
 const text = (rowA, rowB, columnId) => {
-  return compareBasic(toString(rowA.getValue(columnId)).toLowerCase(), toString(rowB.getValue(columnId)).toLowerCase());
+  return compareBasic(toString$1(rowA.getValue(columnId)).toLowerCase(), toString$1(rowB.getValue(columnId)).toLowerCase());
 };
 
 // The text filter is more basic (less numeric support)
 // but is much faster
 const textCaseSensitive = (rowA, rowB, columnId) => {
-  return compareBasic(toString(rowA.getValue(columnId)), toString(rowB.getValue(columnId)));
+  return compareBasic(toString$1(rowA.getValue(columnId)), toString$1(rowB.getValue(columnId)));
 };
 const datetime = (rowA, rowB, columnId) => {
   const a = rowA.getValue(columnId);
@@ -22921,7 +14169,7 @@ const basic = (rowA, rowB, columnId) => {
 function compareBasic(a, b) {
   return a === b ? 0 : a > b ? 1 : -1;
 }
-function toString(a) {
+function toString$1(a) {
   if (typeof a === 'number') {
     if (isNaN(a) || a === Infinity || a === -Infinity) {
       return '';
@@ -24143,43 +15391,43 @@ function useReactTable(options) {
 }
 
 var Table$1 = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement("div", { className: "relative w-full overflow-auto" },
         React__namespace.createElement("table", __assign$1({ ref: ref, className: cn("w-full caption-bottom text-sm", className) }, props))));
 });
 Table$1.displayName = "Table";
 var TableHeader = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement("thead", __assign$1({ ref: ref, className: cn("[&_tr]:border-b", className) }, props)));
 });
 TableHeader.displayName = "TableHeader";
 var TableBody = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement("tbody", __assign$1({ ref: ref, className: cn("[&_tr:last-child]:border-0", className) }, props)));
 });
 TableBody.displayName = "TableBody";
 var TableFooter = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement("tfoot", __assign$1({ ref: ref, className: cn("border-t bg-muted/50 font-medium [&>tr]:last:border-b-0", className) }, props)));
 });
 TableFooter.displayName = "TableFooter";
 var TableRow = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement("tr", __assign$1({ ref: ref, className: cn("border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted", className) }, props)));
 });
 TableRow.displayName = "TableRow";
 var TableHead = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement("th", __assign$1({ ref: ref, className: cn("h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", className) }, props)));
 });
 TableHead.displayName = "TableHead";
 var TableCell = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement("td", __assign$1({ ref: ref, className: cn("p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", className) }, props)));
 });
 TableCell.displayName = "TableCell";
 var TableCaption = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement("caption", __assign$1({ ref: ref, className: cn("mt-4 text-sm text-muted-foreground", className) }, props)));
 });
 TableCaption.displayName = "TableCaption";
@@ -25465,7 +16713,7 @@ const $d08ef79370b62062$export$6d4de93b380beddf = $d08ef79370b62062$export$f34ec
 var DropdownMenu = $d08ef79370b62062$export$be92b6f5f03c0fe9;
 var DropdownMenuTrigger = $d08ef79370b62062$export$41fb9f06171c75f4;
 var DropdownMenuSubTrigger = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, inset = _a.inset, children = _a.children, props = __rest$8(_a, ["className", "inset", "children"]);
+    var className = _a.className, inset = _a.inset, children = _a.children, props = __rest$1(_a, ["className", "inset", "children"]);
     return (React__namespace.createElement($d08ef79370b62062$export$2ea8a7a591ac5eac, __assign$1({ ref: ref, className: cn("flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent", inset && "pl-8", className) }, props),
         children,
         React__namespace.createElement(ChevronRightIcon, { className: "ml-auto h-4 w-4" })));
@@ -25473,24 +16721,24 @@ var DropdownMenuSubTrigger = React__namespace.forwardRef(function (_a, ref) {
 DropdownMenuSubTrigger.displayName =
     $d08ef79370b62062$export$2ea8a7a591ac5eac.displayName;
 var DropdownMenuSubContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($d08ef79370b62062$export$6d4de93b380beddf, __assign$1({ ref: ref, className: cn("z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props)));
 });
 DropdownMenuSubContent.displayName =
     $d08ef79370b62062$export$6d4de93b380beddf.displayName;
 var DropdownMenuContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, _b = _a.sideOffset, sideOffset = _b === void 0 ? 4 : _b, props = __rest$8(_a, ["className", "sideOffset"]);
+    var className = _a.className, _b = _a.sideOffset, sideOffset = _b === void 0 ? 4 : _b, props = __rest$1(_a, ["className", "sideOffset"]);
     return (React__namespace.createElement($d08ef79370b62062$export$602eac185826482c, null,
         React__namespace.createElement($d08ef79370b62062$export$7c6e2c02157bb7d2, __assign$1({ ref: ref, sideOffset: sideOffset, className: cn("z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md", "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props))));
 });
 DropdownMenuContent.displayName = $d08ef79370b62062$export$7c6e2c02157bb7d2.displayName;
 var DropdownMenuItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, inset = _a.inset, props = __rest$8(_a, ["className", "inset"]);
+    var className = _a.className, inset = _a.inset, props = __rest$1(_a, ["className", "inset"]);
     return (React__namespace.createElement($d08ef79370b62062$export$6d08773d2e66f8f2, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", inset && "pl-8", className) }, props)));
 });
 DropdownMenuItem.displayName = $d08ef79370b62062$export$6d08773d2e66f8f2.displayName;
 var DropdownMenuCheckboxItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, checked = _a.checked, props = __rest$8(_a, ["className", "children", "checked"]);
+    var className = _a.className, children = _a.children, checked = _a.checked, props = __rest$1(_a, ["className", "children", "checked"]);
     return (React__namespace.createElement($d08ef79370b62062$export$16ce288f89fa631c, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className), checked: checked }, props),
         React__namespace.createElement("span", { className: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" },
             React__namespace.createElement($d08ef79370b62062$export$c3468e2714d175fa, null,
@@ -25500,7 +16748,7 @@ var DropdownMenuCheckboxItem = React__namespace.forwardRef(function (_a, ref) {
 DropdownMenuCheckboxItem.displayName =
     $d08ef79370b62062$export$16ce288f89fa631c.displayName;
 var DropdownMenuRadioItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest$8(_a, ["className", "children"]);
+    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
     return (React__namespace.createElement($d08ef79370b62062$export$371ab307eab489c0, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props),
         React__namespace.createElement("span", { className: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" },
             React__namespace.createElement($d08ef79370b62062$export$c3468e2714d175fa, null,
@@ -25509,12 +16757,12 @@ var DropdownMenuRadioItem = React__namespace.forwardRef(function (_a, ref) {
 });
 DropdownMenuRadioItem.displayName = $d08ef79370b62062$export$371ab307eab489c0.displayName;
 var DropdownMenuLabel = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, inset = _a.inset, props = __rest$8(_a, ["className", "inset"]);
+    var className = _a.className, inset = _a.inset, props = __rest$1(_a, ["className", "inset"]);
     return (React__namespace.createElement($d08ef79370b62062$export$b04be29aa201d4f5, __assign$1({ ref: ref, className: cn("px-2 py-1.5 text-sm font-semibold", inset && "pl-8", className) }, props)));
 });
 DropdownMenuLabel.displayName = $d08ef79370b62062$export$b04be29aa201d4f5.displayName;
 var DropdownMenuSeparator = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($d08ef79370b62062$export$1ff3c3f08ae963c0, __assign$1({ ref: ref, className: cn("-mx-1 my-1 h-px bg-muted", className) }, props)));
 });
 DropdownMenuSeparator.displayName = $d08ef79370b62062$export$1ff3c3f08ae963c0.displayName;
@@ -25598,7 +16846,7 @@ var badgeVariants = cva("inline-flex items-center rounded-md border px-2.5 py-0.
     },
 });
 function Badge(_a) {
-    var className = _a.className, variant = _a.variant, props = __rest$8(_a, ["className", "variant"]);
+    var className = _a.className, variant = _a.variant, props = __rest$1(_a, ["className", "variant"]);
     return (React__namespace.createElement("div", __assign$1({ className: cn(badgeVariants({ variant: variant }), className) }, props)));
 }
 
@@ -25956,7 +17204,7 @@ const $8927f6f2acc4f386$var$NODES = [
  * this utility with them. This is because it's possible for those handlers to be called implicitly during render
  * e.g. when focus is within a component as it is unmounted, or when managing focus on mount.
  */ function $8927f6f2acc4f386$export$6d1a0317bde7de7f(target, event) {
-    if (target) ReactDOM.flushSync(()=>target.dispatchEvent(event)
+    if (target) $7SXl2$reactdom.flushSync(()=>target.dispatchEvent(event)
     );
 }
 
@@ -26446,7 +17694,7 @@ function $d3863c46a17e8a28$var$removeLinks(items) {
 const $f1701beae083dbae$export$602eac185826482c = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
     var _globalThis$document;
     const { container: container = globalThis === null || globalThis === void 0 ? void 0 : (_globalThis$document = globalThis.document) === null || _globalThis$document === void 0 ? void 0 : _globalThis$document.body , ...portalProps } = props;
-    return container ? /*#__PURE__*/ ReactDOM__default["default"].createPortal(/*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034.div, _extends({}, portalProps, {
+    return container ? /*#__PURE__*/ $7SXl2$reactdom__default["default"].createPortal(/*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034.div, _extends({}, portalProps, {
         ref: forwardedRef
     })), container) : null;
 });
@@ -26538,7 +17786,7 @@ $921a889cee6df7e8$export$99c2b779aa4e8b8b.displayName = 'Presence';
                 if (event.target === node1 && isCurrentAnimation) // With React 18 concurrency this update is applied
                 // a frame after the animation ends, creating a flash of visible content.
                 // By manually flushing we ensure they sync within a frame, removing the flash.
-                ReactDOM.flushSync(()=>send('ANIMATION_END')
+                $7SXl2$reactdom.flushSync(()=>send('ANIMATION_END')
                 );
             };
             const handleAnimationStart = (event)=>{
@@ -26616,7 +17864,7 @@ var RemoveScroll = React__namespace.forwardRef(function (props, parentRef) {
         onWheelCapture: nothing,
         onTouchMoveCapture: nothing,
     }), callbacks = _a[0], setCallbacks = _a[1];
-    var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? 'div' : _b, rest = __rest$8(props, ["forwardProps", "children", "className", "removeScrollBar", "enabled", "shards", "sideCar", "noIsolation", "inert", "allowPinchZoom", "as"]);
+    var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? 'div' : _b, rest = __rest$1(props, ["forwardProps", "children", "className", "removeScrollBar", "enabled", "shards", "sideCar", "noIsolation", "inert", "allowPinchZoom", "as"]);
     var SideCar = sideCar;
     var containerRef = useMergeRefs([ref, parentRef]);
     var containerProps = __assign$1(__assign$1({}, rest), callbacks);
@@ -26758,13 +18006,13 @@ var extractRef = function (ref) {
 };
 var deltaCompare = function (x, y) { return x[0] === y[0] && x[1] === y[1]; };
 var generateStyle = function (id) { return "\n  .block-interactivity-".concat(id, " {pointer-events: none;}\n  .allow-interactivity-").concat(id, " {pointer-events: all;}\n"); };
-var idCounter = 0;
+var idCounter$1 = 0;
 var lockStack = [];
 function RemoveScrollSideCar(props) {
     var shouldPreventQueue = React__namespace.useRef([]);
     var touchStartRef = React__namespace.useRef([0, 0]);
     var activeAxis = React__namespace.useRef();
-    var id = React__namespace.useState(idCounter++)[0];
+    var id = React__namespace.useState(idCounter$1++)[0];
     var Style = React__namespace.useState(function () { return styleSingleton(); })[0];
     var lastProps = React__namespace.useRef(props);
     React__namespace.useEffect(function () {
@@ -26897,7 +18145,7 @@ var $67UHm$RemoveScroll = ReactRemoveScroll;
  * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DIALOG_NAME$1 = 'Dialog';
 const [$5d3850c4d0b4e6c7$var$createDialogContext$1, $5d3850c4d0b4e6c7$export$cc702773b8ea3e41$1] = $c512c27ab02ef895$export$50c7b4e9d9f19c1($5d3850c4d0b4e6c7$var$DIALOG_NAME$1);
 const [$5d3850c4d0b4e6c7$var$DialogProvider$1, $5d3850c4d0b4e6c7$var$useDialogContext$1] = $5d3850c4d0b4e6c7$var$createDialogContext$1($5d3850c4d0b4e6c7$var$DIALOG_NAME$1);
-const $5d3850c4d0b4e6c7$export$3ddf2d174ce01153 = (props)=>{
+const $5d3850c4d0b4e6c7$export$3ddf2d174ce01153$1 = (props)=>{
     const { __scopeDialog: __scopeDialog , children: children , open: openProp , defaultOpen: defaultOpen , onOpenChange: onOpenChange , modal: modal = true  } = props;
     const triggerRef = React.useRef(null);
     const contentRef = React.useRef(null);
@@ -27082,7 +18330,7 @@ const $5d3850c4d0b4e6c7$export$b6d9565de1e068cf$1 = /*#__PURE__*/ React.forwardR
 /* -----------------------------------------------------------------------------------------------*/ function $5d3850c4d0b4e6c7$var$getState$1(open) {
     return open ? 'open' : 'closed';
 }
-const $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9 = $5d3850c4d0b4e6c7$export$3ddf2d174ce01153;
+const $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1 = $5d3850c4d0b4e6c7$export$3ddf2d174ce01153$1;
 const $5d3850c4d0b4e6c7$export$602eac185826482c$1 = $5d3850c4d0b4e6c7$export$dad7c95542bacce0$1;
 const $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1 = $5d3850c4d0b4e6c7$export$bd1d06c79be19e17$1;
 const $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1 = $5d3850c4d0b4e6c7$export$b6d9565de1e068cf$1;
@@ -27223,13 +18471,57 @@ function commandScore(string, abbreviation) {
 
 var commandScore_1 = commandScore;
 
-var ue='[cmdk-list-sizer=""]',M='[cmdk-group=""]',N='[cmdk-group-items=""]',de='[cmdk-group-heading=""]',ee='[cmdk-item=""]',Z=`${ee}:not([aria-disabled="true"])`,z="cmdk-item-select",S="data-value",fe=(n,a)=>commandScore_1(n,a),te=React__namespace.createContext(void 0),k=()=>React__namespace.useContext(te),re=React__namespace.createContext(void 0),U=()=>React__namespace.useContext(re),ne=React__namespace.createContext(void 0),oe=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useRef(null),o=x(()=>({search:"",value:"",filtered:{count:0,items:new Map,groups:new Set}})),u=x(()=>new Set),l=x(()=>new Map),p=x(()=>new Map),f=x(()=>new Set),d=ae(n),{label:v,children:E,value:R,onValueChange:w,filter:O,shouldFilter:ie,...D}=n,F=React__namespace.useId(),g=React__namespace.useId(),A=React__namespace.useId(),y=ye();L(()=>{if(R!==void 0){let e=R.trim().toLowerCase();o.current.value=e,y(6,W),h.emit();}},[R]);let h=React__namespace.useMemo(()=>({subscribe:e=>(f.current.add(e),()=>f.current.delete(e)),snapshot:()=>o.current,setState:(e,c,i)=>{var s,m,b;if(!Object.is(o.current[e],c)){if(o.current[e]=c,e==="search")j(),G(),y(1,V);else if(e==="value")if(((s=d.current)==null?void 0:s.value)!==void 0){(b=(m=d.current).onValueChange)==null||b.call(m,c);return}else i||y(5,W);h.emit();}},emit:()=>{f.current.forEach(e=>e());}}),[]),K=React__namespace.useMemo(()=>({value:(e,c)=>{c!==p.current.get(e)&&(p.current.set(e,c),o.current.filtered.items.set(e,B(c)),y(2,()=>{G(),h.emit();}));},item:(e,c)=>(u.current.add(e),c&&(l.current.has(c)?l.current.get(c).add(e):l.current.set(c,new Set([e]))),y(3,()=>{j(),G(),o.current.value||V(),h.emit();}),()=>{p.current.delete(e),u.current.delete(e),o.current.filtered.items.delete(e),y(4,()=>{j(),V(),h.emit();});}),group:e=>(l.current.has(e)||l.current.set(e,new Set),()=>{p.current.delete(e),l.current.delete(e);}),filter:()=>d.current.shouldFilter,label:v||n["aria-label"],listId:F,inputId:A,labelId:g}),[]);function B(e){var i;let c=((i=d.current)==null?void 0:i.filter)??fe;return e?c(e,o.current.search):0}function G(){if(!r.current||!o.current.search||d.current.shouldFilter===!1)return;let e=o.current.filtered.items,c=[];o.current.filtered.groups.forEach(s=>{let m=l.current.get(s),b=0;m.forEach(P=>{let ce=e.get(P);b=Math.max(ce,b);}),c.push([s,b]);});let i=r.current.querySelector(ue);I().sort((s,m)=>{let b=s.getAttribute(S),P=m.getAttribute(S);return (e.get(P)??0)-(e.get(b)??0)}).forEach(s=>{let m=s.closest(N);m?m.appendChild(s.parentElement===m?s:s.closest(`${N} > *`)):i.appendChild(s.parentElement===i?s:s.closest(`${N} > *`));}),c.sort((s,m)=>m[1]-s[1]).forEach(s=>{let m=r.current.querySelector(`${M}[${S}="${s[0]}"]`);m==null||m.parentElement.appendChild(m);});}function V(){let e=I().find(i=>!i.ariaDisabled),c=e==null?void 0:e.getAttribute(S);h.setState("value",c||void 0);}function j(){if(!o.current.search||d.current.shouldFilter===!1){o.current.filtered.count=u.current.size;return}o.current.filtered.groups=new Set;let e=0;for(let c of u.current){let i=p.current.get(c),s=B(i);o.current.filtered.items.set(c,s),s>0&&e++;}for(let[c,i]of l.current)for(let s of i)if(o.current.filtered.items.get(s)>0){o.current.filtered.groups.add(c);break}o.current.filtered.count=e;}function W(){var c,i,s;let e=_();e&&(((c=e.parentElement)==null?void 0:c.firstChild)===e&&((s=(i=e.closest(M))==null?void 0:i.querySelector(de))==null||s.scrollIntoView({block:"nearest"})),e.scrollIntoView({block:"nearest"}));}function _(){return r.current.querySelector(`${ee}[aria-selected="true"]`)}function I(){return Array.from(r.current.querySelectorAll(Z))}function q(e){let i=I()[e];i&&h.setState("value",i.getAttribute(S));}function $(e){var b;let c=_(),i=I(),s=i.findIndex(P=>P===c),m=i[s+e];(b=d.current)!=null&&b.loop&&(m=s+e<0?i[i.length-1]:s+e===i.length?i[0]:i[s+e]),m&&h.setState("value",m.getAttribute(S));}function J(e){let c=_(),i=c==null?void 0:c.closest(M),s;for(;i&&!s;)i=e>0?Se(i,M):Ce(i,M),s=i==null?void 0:i.querySelector(Z);s?h.setState("value",s.getAttribute(S)):$(e);}let Q=()=>q(I().length-1),X=e=>{e.preventDefault(),e.metaKey?Q():e.altKey?J(1):$(1);},Y=e=>{e.preventDefault(),e.metaKey?q(0):e.altKey?J(-1):$(-1);};return React__namespace.createElement("div",{ref:H([r,a]),...D,"cmdk-root":"",onKeyDown:e=>{var c;if((c=D.onKeyDown)==null||c.call(D,e),!e.defaultPrevented)switch(e.key){case"n":case"j":{e.ctrlKey&&X(e);break}case"ArrowDown":{X(e);break}case"p":case"k":{e.ctrlKey&&Y(e);break}case"ArrowUp":{Y(e);break}case"Home":{e.preventDefault(),q(0);break}case"End":{e.preventDefault(),Q();break}case"Enter":{e.preventDefault();let i=_();if(i){let s=new Event(z);i.dispatchEvent(s);}}}}},React__namespace.createElement("label",{"cmdk-label":"",htmlFor:K.inputId,id:K.labelId,style:xe},v),React__namespace.createElement(re.Provider,{value:h},React__namespace.createElement(te.Provider,{value:K},E)))}),me=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useId(),o=React__namespace.useRef(null),u=React__namespace.useContext(ne),l=k(),p=ae(n);L(()=>l.item(r,u),[]);let f=se(r,o,[n.value,n.children,o]),d=U(),v=T(g=>g.value&&g.value===f.current),E=T(g=>l.filter()===!1?!0:g.search?g.filtered.items.get(r)>0:!0);React__namespace.useEffect(()=>{let g=o.current;if(!(!g||n.disabled))return g.addEventListener(z,R),()=>g.removeEventListener(z,R)},[E,n.onSelect,n.disabled]);function R(){var g,A;(A=(g=p.current).onSelect)==null||A.call(g,f.current);}function w(){d.setState("value",f.current,!0);}if(!E)return null;let{disabled:O,value:ie,onSelect:D,...F}=n;return React__namespace.createElement("div",{ref:H([o,a]),...F,"cmdk-item":"",role:"option","aria-disabled":O||void 0,"aria-selected":v||void 0,"data-selected":v||void 0,onPointerMove:O?void 0:w,onClick:O?void 0:R},n.children)}),pe=React__namespace.forwardRef((n,a)=>{let{heading:r,children:o,...u}=n,l=React__namespace.useId(),p=React__namespace.useRef(null),f=React__namespace.useRef(null),d=React__namespace.useId(),v=k(),E=T(w=>v.filter()===!1?!0:w.search?w.filtered.groups.has(l):!0);L(()=>v.group(l),[]),se(l,p,[n.value,n.heading,f]);let R=React__namespace.createElement(ne.Provider,{value:l},o);return React__namespace.createElement("div",{ref:H([p,a]),...u,"cmdk-group":"",role:"presentation",hidden:E?void 0:!0},r&&React__namespace.createElement("div",{ref:f,"cmdk-group-heading":"","aria-hidden":!0,id:d},r),React__namespace.createElement("div",{"cmdk-group-items":"",role:"group","aria-labelledby":r?d:void 0},R))}),ge=React__namespace.forwardRef((n,a)=>{let{alwaysRender:r,...o}=n,u=React__namespace.useRef(null),l=T(p=>!p.search);return !r&&!l?null:React__namespace.createElement("div",{ref:H([u,a]),...o,"cmdk-separator":"",role:"separator"})}),ve=React__namespace.forwardRef((n,a)=>{let{onValueChange:r,...o}=n,u=n.value!=null,l=U(),p=T(d=>d.search),f=k();return React__namespace.useEffect(()=>{n.value!=null&&l.setState("search",n.value);},[n.value]),React__namespace.createElement("input",{ref:a,...o,"cmdk-input":"",autoComplete:"off",autoCorrect:"off",spellCheck:!1,"aria-autocomplete":"list",role:"combobox","aria-expanded":!0,"aria-controls":f.listId,"aria-labelledby":f.labelId,id:f.inputId,type:"text",value:u?n.value:p,onChange:d=>{u||l.setState("search",d.target.value),r==null||r(d.target.value);}})}),Re=React__namespace.forwardRef((n,a)=>{let{children:r,...o}=n,u=React__namespace.useRef(null),l=React__namespace.useRef(null),p=k();return React__namespace.useEffect(()=>{if(l.current&&u.current){let f=l.current,d=u.current,v,E=new ResizeObserver(()=>{v=requestAnimationFrame(()=>{let R=f.getBoundingClientRect().height;d.style.setProperty("--cmdk-list-height",R.toFixed(1)+"px");});});return E.observe(f),()=>{cancelAnimationFrame(v),E.unobserve(f);}}},[]),React__namespace.createElement("div",{ref:H([u,a]),...o,"cmdk-list":"",role:"listbox","aria-label":"Suggestions",id:p.listId,"aria-labelledby":p.inputId},React__namespace.createElement("div",{ref:l,"cmdk-list-sizer":""},r))}),be=React__namespace.forwardRef((n,a)=>{let{open:r,onOpenChange:o,container:u,...l}=n;return React__namespace.createElement($5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9,{open:r,onOpenChange:o},React__namespace.createElement($5d3850c4d0b4e6c7$export$602eac185826482c$1,{container:u},React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1,{"cmdk-overlay":""}),React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1,{"aria-label":n.label,"cmdk-dialog":""},React__namespace.createElement(oe,{ref:a,...l}))))}),he=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useRef(!0),o=T(u=>u.filtered.count===0);return React__namespace.useEffect(()=>{r.current=!1;},[]),r.current||!o?null:React__namespace.createElement("div",{ref:a,...n,"cmdk-empty":"",role:"presentation"})}),Ee=React__namespace.forwardRef((n,a)=>{let{progress:r,children:o,...u}=n;return React__namespace.createElement("div",{ref:a,...u,"cmdk-loading":"",role:"progressbar","aria-valuenow":r,"aria-valuemin":0,"aria-valuemax":100,"aria-label":"Loading..."},React__namespace.createElement("div",{"aria-hidden":!0},o))}),Le=Object.assign(oe,{List:Re,Item:me,Input:ve,Group:pe,Separator:ge,Dialog:be,Empty:he,Loading:Ee});function Se(n,a){let r=n.nextElementSibling;for(;r;){if(r.matches(a))return r;r=r.nextElementSibling;}}function Ce(n,a){let r=n.previousElementSibling;for(;r;){if(r.matches(a))return r;r=r.previousElementSibling;}}function ae(n){let a=React__namespace.useRef(n);return L(()=>{a.current=n;}),a}var L=typeof window>"u"?React__namespace.useEffect:React__namespace.useLayoutEffect;function x(n){let a=React__namespace.useRef();return a.current===void 0&&(a.current=n()),a}function H(n){return a=>{n.forEach(r=>{typeof r=="function"?r(a):r!=null&&(r.current=a);});}}function T(n){let a=U(),r=()=>n(a.snapshot());return React__namespace.useSyncExternalStore(a.subscribe,r,r)}function se(n,a,r){let o=React__namespace.useRef(),u=k();return L(()=>{var p;let l=(()=>{var f;for(let d of r){if(typeof d=="string")return d.trim().toLowerCase();if(typeof d=="object"&&"current"in d&&d.current)return (f=d.current.textContent)==null?void 0:f.trim().toLowerCase()}})();u.value(n,l),(p=a.current)==null||p.setAttribute(S,l),o.current=l;}),o}var ye=()=>{let[n,a]=React__namespace.useState(),r=x(()=>new Map);return L(()=>{r.current.forEach(o=>o()),r.current=new Map;},[n]),(o,u)=>{r.current.set(o,u),a({});}},xe={position:"absolute",width:"1px",height:"1px",padding:"0",margin:"-1px",overflow:"hidden",clip:"rect(0, 0, 0, 0)",whiteSpace:"nowrap",borderWidth:"0"};
+var ue='[cmdk-list-sizer=""]',M='[cmdk-group=""]',N='[cmdk-group-items=""]',de='[cmdk-group-heading=""]',ee='[cmdk-item=""]',Z=`${ee}:not([aria-disabled="true"])`,z="cmdk-item-select",S="data-value",fe=(n,a)=>commandScore_1(n,a),te=React__namespace.createContext(void 0),k=()=>React__namespace.useContext(te),re=React__namespace.createContext(void 0),U=()=>React__namespace.useContext(re),ne=React__namespace.createContext(void 0),oe=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useRef(null),o=x(()=>({search:"",value:"",filtered:{count:0,items:new Map,groups:new Set}})),u=x(()=>new Set),l=x(()=>new Map),p=x(()=>new Map),f=x(()=>new Set),d=ae(n),{label:v,children:E,value:R,onValueChange:w,filter:O,shouldFilter:ie,...D}=n,F=React__namespace.useId(),g=React__namespace.useId(),A=React__namespace.useId(),y=ye();L(()=>{if(R!==void 0){let e=R.trim().toLowerCase();o.current.value=e,y(6,W),h.emit();}},[R]);let h=React__namespace.useMemo(()=>({subscribe:e=>(f.current.add(e),()=>f.current.delete(e)),snapshot:()=>o.current,setState:(e,c,i)=>{var s,m,b;if(!Object.is(o.current[e],c)){if(o.current[e]=c,e==="search")j(),G(),y(1,V);else if(e==="value")if(((s=d.current)==null?void 0:s.value)!==void 0){(b=(m=d.current).onValueChange)==null||b.call(m,c);return}else i||y(5,W);h.emit();}},emit:()=>{f.current.forEach(e=>e());}}),[]),K=React__namespace.useMemo(()=>({value:(e,c)=>{c!==p.current.get(e)&&(p.current.set(e,c),o.current.filtered.items.set(e,B(c)),y(2,()=>{G(),h.emit();}));},item:(e,c)=>(u.current.add(e),c&&(l.current.has(c)?l.current.get(c).add(e):l.current.set(c,new Set([e]))),y(3,()=>{j(),G(),o.current.value||V(),h.emit();}),()=>{p.current.delete(e),u.current.delete(e),o.current.filtered.items.delete(e),y(4,()=>{j(),V(),h.emit();});}),group:e=>(l.current.has(e)||l.current.set(e,new Set),()=>{p.current.delete(e),l.current.delete(e);}),filter:()=>d.current.shouldFilter,label:v||n["aria-label"],listId:F,inputId:A,labelId:g}),[]);function B(e){var i;let c=((i=d.current)==null?void 0:i.filter)??fe;return e?c(e,o.current.search):0}function G(){if(!r.current||!o.current.search||d.current.shouldFilter===!1)return;let e=o.current.filtered.items,c=[];o.current.filtered.groups.forEach(s=>{let m=l.current.get(s),b=0;m.forEach(P=>{let ce=e.get(P);b=Math.max(ce,b);}),c.push([s,b]);});let i=r.current.querySelector(ue);I().sort((s,m)=>{let b=s.getAttribute(S),P=m.getAttribute(S);return (e.get(P)??0)-(e.get(b)??0)}).forEach(s=>{let m=s.closest(N);m?m.appendChild(s.parentElement===m?s:s.closest(`${N} > *`)):i.appendChild(s.parentElement===i?s:s.closest(`${N} > *`));}),c.sort((s,m)=>m[1]-s[1]).forEach(s=>{let m=r.current.querySelector(`${M}[${S}="${s[0]}"]`);m==null||m.parentElement.appendChild(m);});}function V(){let e=I().find(i=>!i.ariaDisabled),c=e==null?void 0:e.getAttribute(S);h.setState("value",c||void 0);}function j(){if(!o.current.search||d.current.shouldFilter===!1){o.current.filtered.count=u.current.size;return}o.current.filtered.groups=new Set;let e=0;for(let c of u.current){let i=p.current.get(c),s=B(i);o.current.filtered.items.set(c,s),s>0&&e++;}for(let[c,i]of l.current)for(let s of i)if(o.current.filtered.items.get(s)>0){o.current.filtered.groups.add(c);break}o.current.filtered.count=e;}function W(){var c,i,s;let e=_();e&&(((c=e.parentElement)==null?void 0:c.firstChild)===e&&((s=(i=e.closest(M))==null?void 0:i.querySelector(de))==null||s.scrollIntoView({block:"nearest"})),e.scrollIntoView({block:"nearest"}));}function _(){return r.current.querySelector(`${ee}[aria-selected="true"]`)}function I(){return Array.from(r.current.querySelectorAll(Z))}function q(e){let i=I()[e];i&&h.setState("value",i.getAttribute(S));}function $(e){var b;let c=_(),i=I(),s=i.findIndex(P=>P===c),m=i[s+e];(b=d.current)!=null&&b.loop&&(m=s+e<0?i[i.length-1]:s+e===i.length?i[0]:i[s+e]),m&&h.setState("value",m.getAttribute(S));}function J(e){let c=_(),i=c==null?void 0:c.closest(M),s;for(;i&&!s;)i=e>0?Se(i,M):Ce(i,M),s=i==null?void 0:i.querySelector(Z);s?h.setState("value",s.getAttribute(S)):$(e);}let Q=()=>q(I().length-1),X=e=>{e.preventDefault(),e.metaKey?Q():e.altKey?J(1):$(1);},Y=e=>{e.preventDefault(),e.metaKey?q(0):e.altKey?J(-1):$(-1);};return React__namespace.createElement("div",{ref:H([r,a]),...D,"cmdk-root":"",onKeyDown:e=>{var c;if((c=D.onKeyDown)==null||c.call(D,e),!e.defaultPrevented)switch(e.key){case"n":case"j":{e.ctrlKey&&X(e);break}case"ArrowDown":{X(e);break}case"p":case"k":{e.ctrlKey&&Y(e);break}case"ArrowUp":{Y(e);break}case"Home":{e.preventDefault(),q(0);break}case"End":{e.preventDefault(),Q();break}case"Enter":{e.preventDefault();let i=_();if(i){let s=new Event(z);i.dispatchEvent(s);}}}}},React__namespace.createElement("label",{"cmdk-label":"",htmlFor:K.inputId,id:K.labelId,style:xe},v),React__namespace.createElement(re.Provider,{value:h},React__namespace.createElement(te.Provider,{value:K},E)))}),me=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useId(),o=React__namespace.useRef(null),u=React__namespace.useContext(ne),l=k(),p=ae(n);L(()=>l.item(r,u),[]);let f=se(r,o,[n.value,n.children,o]),d=U(),v=T(g=>g.value&&g.value===f.current),E=T(g=>l.filter()===!1?!0:g.search?g.filtered.items.get(r)>0:!0);React__namespace.useEffect(()=>{let g=o.current;if(!(!g||n.disabled))return g.addEventListener(z,R),()=>g.removeEventListener(z,R)},[E,n.onSelect,n.disabled]);function R(){var g,A;(A=(g=p.current).onSelect)==null||A.call(g,f.current);}function w(){d.setState("value",f.current,!0);}if(!E)return null;let{disabled:O,value:ie,onSelect:D,...F}=n;return React__namespace.createElement("div",{ref:H([o,a]),...F,"cmdk-item":"",role:"option","aria-disabled":O||void 0,"aria-selected":v||void 0,"data-selected":v||void 0,onPointerMove:O?void 0:w,onClick:O?void 0:R},n.children)}),pe=React__namespace.forwardRef((n,a)=>{let{heading:r,children:o,...u}=n,l=React__namespace.useId(),p=React__namespace.useRef(null),f=React__namespace.useRef(null),d=React__namespace.useId(),v=k(),E=T(w=>v.filter()===!1?!0:w.search?w.filtered.groups.has(l):!0);L(()=>v.group(l),[]),se(l,p,[n.value,n.heading,f]);let R=React__namespace.createElement(ne.Provider,{value:l},o);return React__namespace.createElement("div",{ref:H([p,a]),...u,"cmdk-group":"",role:"presentation",hidden:E?void 0:!0},r&&React__namespace.createElement("div",{ref:f,"cmdk-group-heading":"","aria-hidden":!0,id:d},r),React__namespace.createElement("div",{"cmdk-group-items":"",role:"group","aria-labelledby":r?d:void 0},R))}),ge=React__namespace.forwardRef((n,a)=>{let{alwaysRender:r,...o}=n,u=React__namespace.useRef(null),l=T(p=>!p.search);return !r&&!l?null:React__namespace.createElement("div",{ref:H([u,a]),...o,"cmdk-separator":"",role:"separator"})}),ve=React__namespace.forwardRef((n,a)=>{let{onValueChange:r,...o}=n,u=n.value!=null,l=U(),p=T(d=>d.search),f=k();return React__namespace.useEffect(()=>{n.value!=null&&l.setState("search",n.value);},[n.value]),React__namespace.createElement("input",{ref:a,...o,"cmdk-input":"",autoComplete:"off",autoCorrect:"off",spellCheck:!1,"aria-autocomplete":"list",role:"combobox","aria-expanded":!0,"aria-controls":f.listId,"aria-labelledby":f.labelId,id:f.inputId,type:"text",value:u?n.value:p,onChange:d=>{u||l.setState("search",d.target.value),r==null||r(d.target.value);}})}),Re=React__namespace.forwardRef((n,a)=>{let{children:r,...o}=n,u=React__namespace.useRef(null),l=React__namespace.useRef(null),p=k();return React__namespace.useEffect(()=>{if(l.current&&u.current){let f=l.current,d=u.current,v,E=new ResizeObserver(()=>{v=requestAnimationFrame(()=>{let R=f.getBoundingClientRect().height;d.style.setProperty("--cmdk-list-height",R.toFixed(1)+"px");});});return E.observe(f),()=>{cancelAnimationFrame(v),E.unobserve(f);}}},[]),React__namespace.createElement("div",{ref:H([u,a]),...o,"cmdk-list":"",role:"listbox","aria-label":"Suggestions",id:p.listId,"aria-labelledby":p.inputId},React__namespace.createElement("div",{ref:l,"cmdk-list-sizer":""},r))}),be=React__namespace.forwardRef((n,a)=>{let{open:r,onOpenChange:o,container:u,...l}=n;return React__namespace.createElement($5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1,{open:r,onOpenChange:o},React__namespace.createElement($5d3850c4d0b4e6c7$export$602eac185826482c$1,{container:u},React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1,{"cmdk-overlay":""}),React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1,{"aria-label":n.label,"cmdk-dialog":""},React__namespace.createElement(oe,{ref:a,...l}))))}),he=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useRef(!0),o=T(u=>u.filtered.count===0);return React__namespace.useEffect(()=>{r.current=!1;},[]),r.current||!o?null:React__namespace.createElement("div",{ref:a,...n,"cmdk-empty":"",role:"presentation"})}),Ee=React__namespace.forwardRef((n,a)=>{let{progress:r,children:o,...u}=n;return React__namespace.createElement("div",{ref:a,...u,"cmdk-loading":"",role:"progressbar","aria-valuenow":r,"aria-valuemin":0,"aria-valuemax":100,"aria-label":"Loading..."},React__namespace.createElement("div",{"aria-hidden":!0},o))}),Le=Object.assign(oe,{List:Re,Item:me,Input:ve,Group:pe,Separator:ge,Dialog:be,Empty:he,Loading:Ee});function Se(n,a){let r=n.nextElementSibling;for(;r;){if(r.matches(a))return r;r=r.nextElementSibling;}}function Ce(n,a){let r=n.previousElementSibling;for(;r;){if(r.matches(a))return r;r=r.previousElementSibling;}}function ae(n){let a=React__namespace.useRef(n);return L(()=>{a.current=n;}),a}var L=typeof window>"u"?React__namespace.useEffect:React__namespace.useLayoutEffect;function x(n){let a=React__namespace.useRef();return a.current===void 0&&(a.current=n()),a}function H(n){return a=>{n.forEach(r=>{typeof r=="function"?r(a):r!=null&&(r.current=a);});}}function T(n){let a=U(),r=()=>n(a.snapshot());return React__namespace.useSyncExternalStore(a.subscribe,r,r)}function se(n,a,r){let o=React__namespace.useRef(),u=k();return L(()=>{var p;let l=(()=>{var f;for(let d of r){if(typeof d=="string")return d.trim().toLowerCase();if(typeof d=="object"&&"current"in d&&d.current)return (f=d.current.textContent)==null?void 0:f.trim().toLowerCase()}})();u.value(n,l),(p=a.current)==null||p.setAttribute(S,l),o.current=l;}),o}var ye=()=>{let[n,a]=React__namespace.useState(),r=x(()=>new Map);return L(()=>{r.current.forEach(o=>o()),r.current=new Map;},[n]),(o,u)=>{r.current.set(o,u),a({});}},xe={position:"absolute",width:"1px",height:"1px",padding:"0",margin:"-1px",overflow:"hidden",clip:"rect(0, 0, 0, 0)",whiteSpace:"nowrap",borderWidth:"0"};
 
 /* -------------------------------------------------------------------------------------------------
  * Dialog
  * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DIALOG_NAME = 'Dialog';
 const [$5d3850c4d0b4e6c7$var$createDialogContext, $5d3850c4d0b4e6c7$export$cc702773b8ea3e41] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($5d3850c4d0b4e6c7$var$DIALOG_NAME);
 const [$5d3850c4d0b4e6c7$var$DialogProvider, $5d3850c4d0b4e6c7$var$useDialogContext] = $5d3850c4d0b4e6c7$var$createDialogContext($5d3850c4d0b4e6c7$var$DIALOG_NAME);
+const $5d3850c4d0b4e6c7$export$3ddf2d174ce01153 = (props)=>{
+    const { __scopeDialog: __scopeDialog , children: children , open: openProp , defaultOpen: defaultOpen , onOpenChange: onOpenChange , modal: modal = true  } = props;
+    const triggerRef = React.useRef(null);
+    const contentRef = React.useRef(null);
+    const [open = false, setOpen] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
+        prop: openProp,
+        defaultProp: defaultOpen,
+        onChange: onOpenChange
+    });
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogProvider, {
+        scope: __scopeDialog,
+        triggerRef: triggerRef,
+        contentRef: contentRef,
+        contentId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        titleId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        descriptionId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        open: open,
+        onOpenChange: setOpen,
+        onOpenToggle: React.useCallback(()=>setOpen((prevOpen)=>!prevOpen
+            )
+        , [
+            setOpen
+        ]),
+        modal: modal
+    }, children);
+};
+/* -------------------------------------------------------------------------------------------------
+ * DialogTrigger
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$TRIGGER_NAME = 'DialogTrigger';
+const $5d3850c4d0b4e6c7$export$2e1e1122cf0cba88 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , ...triggerProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$TRIGGER_NAME, __scopeDialog);
+    const composedTriggerRef = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, context.triggerRef);
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends({
+        type: "button",
+        "aria-haspopup": "dialog",
+        "aria-expanded": context.open,
+        "aria-controls": context.contentId,
+        "data-state": $5d3850c4d0b4e6c7$var$getState(context.open)
+    }, triggerProps, {
+        ref: composedTriggerRef,
+        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, context.onOpenToggle)
+    }));
+});
 /* -------------------------------------------------------------------------------------------------
  * DialogPortal
  * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$PORTAL_NAME = 'DialogPortal';
@@ -27433,6 +18725,8 @@ const $5d3850c4d0b4e6c7$export$fba2fb7cd781b7ac = /*#__PURE__*/ React.forwardRef
 /* -----------------------------------------------------------------------------------------------*/ function $5d3850c4d0b4e6c7$var$getState(open) {
     return open ? 'open' : 'closed';
 }
+const $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9 = $5d3850c4d0b4e6c7$export$3ddf2d174ce01153;
+const $5d3850c4d0b4e6c7$export$41fb9f06171c75f4 = $5d3850c4d0b4e6c7$export$2e1e1122cf0cba88;
 const $5d3850c4d0b4e6c7$export$602eac185826482c = $5d3850c4d0b4e6c7$export$dad7c95542bacce0;
 const $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff = $5d3850c4d0b4e6c7$export$bd1d06c79be19e17;
 const $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2 = $5d3850c4d0b4e6c7$export$b6d9565de1e068cf;
@@ -27442,12 +18736,12 @@ const $5d3850c4d0b4e6c7$export$f39c2d165cd861fe = $5d3850c4d0b4e6c7$export$fba2f
 
 var DialogPortal = $5d3850c4d0b4e6c7$export$602eac185826482c;
 var DialogOverlay = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff, __assign$1({ ref: ref, className: cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props)));
 });
 DialogOverlay.displayName = $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff.displayName;
 var DialogContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest$8(_a, ["className", "children"]);
+    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
     return (React__namespace.createElement(DialogPortal, null,
         React__namespace.createElement(DialogOverlay, null),
         React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2, __assign$1({ ref: ref, className: cn("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg", className) }, props),
@@ -27458,47 +18752,47 @@ var DialogContent = React__namespace.forwardRef(function (_a, ref) {
 });
 DialogContent.displayName = $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2.displayName;
 var DialogTitle = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($5d3850c4d0b4e6c7$export$f99233281efd08a0, __assign$1({ ref: ref, className: cn("text-lg font-semibold leading-none tracking-tight", className) }, props)));
 });
 DialogTitle.displayName = $5d3850c4d0b4e6c7$export$f99233281efd08a0.displayName;
 var DialogDescription = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($5d3850c4d0b4e6c7$export$393edc798c47379d, __assign$1({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
 });
 DialogDescription.displayName = $5d3850c4d0b4e6c7$export$393edc798c47379d.displayName;
 
 var Command = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__default["default"].createElement(Le, __assign$1({ ref: ref, className: cn("flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground", className) }, props)));
 });
 Command.displayName = Le.displayName;
 var CommandInput = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__default["default"].createElement("div", { className: "flex items-center border-b px-3", "cmdk-input-wrapper": "" },
         React__default["default"].createElement(MagnifyingGlassIcon, { className: "mr-2 h-4 w-4 shrink-0 opacity-50" }),
         React__default["default"].createElement(Le.Input, __assign$1({ ref: ref, className: cn("flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50", className) }, props))));
 });
 CommandInput.displayName = Le.Input.displayName;
 var CommandList = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__default["default"].createElement(Le.List, __assign$1({ ref: ref, className: cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className) }, props)));
 });
 CommandList.displayName = Le.List.displayName;
 var CommandEmpty = React__default["default"].forwardRef(function (props, ref) { return (React__default["default"].createElement(Le.Empty, __assign$1({ ref: ref, className: "py-6 text-center text-sm" }, props))); });
 CommandEmpty.displayName = Le.Empty.displayName;
 var CommandGroup = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__default["default"].createElement(Le.Group, __assign$1({ ref: ref, className: cn("overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground", className) }, props)));
 });
 CommandGroup.displayName = Le.Group.displayName;
 var CommandSeparator = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__default["default"].createElement(Le.Separator, __assign$1({ ref: ref, className: cn("-mx-1 h-px bg-border", className) }, props)));
 });
 CommandSeparator.displayName = Le.Separator.displayName;
 var CommandItem = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__default["default"].createElement(Le.Item, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props)));
 });
 CommandItem.displayName = Le.Item.displayName;
@@ -27718,7 +19012,7 @@ const $cb5cc270b50c6fcd$export$7c6e2c02157bb7d2 = $cb5cc270b50c6fcd$export$d7e1f
 var Popover = $cb5cc270b50c6fcd$export$be92b6f5f03c0fe9;
 var PopoverTrigger = $cb5cc270b50c6fcd$export$41fb9f06171c75f4;
 var PopoverContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, _b = _a.align, align = _b === void 0 ? "center" : _b, _c = _a.sideOffset, sideOffset = _c === void 0 ? 4 : _c, props = __rest$8(_a, ["className", "align", "sideOffset"]);
+    var className = _a.className, _b = _a.align, align = _b === void 0 ? "center" : _b, _c = _a.sideOffset, sideOffset = _c === void 0 ? 4 : _c, props = __rest$1(_a, ["className", "align", "sideOffset"]);
     return (React__namespace.createElement($cb5cc270b50c6fcd$export$602eac185826482c, null,
         React__namespace.createElement($cb5cc270b50c6fcd$export$7c6e2c02157bb7d2, __assign$1({ ref: ref, align: align, sideOffset: sideOffset, className: cn("z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props))));
 });
@@ -27767,7 +19061,7 @@ function $89eedd556c436f6a$var$isValidOrientation(orientation) {
 const $89eedd556c436f6a$export$be92b6f5f03c0fe9 = $89eedd556c436f6a$export$1ff3c3f08ae963c0;
 
 var Separator = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, _b = _a.orientation, orientation = _b === void 0 ? "horizontal" : _b, _c = _a.decorative, decorative = _c === void 0 ? true : _c, props = __rest$8(_a, ["className", "orientation", "decorative"]);
+    var className = _a.className, _b = _a.orientation, orientation = _b === void 0 ? "horizontal" : _b, _c = _a.decorative, decorative = _c === void 0 ? true : _c, props = __rest$1(_a, ["className", "orientation", "decorative"]);
     return (React__namespace.createElement($89eedd556c436f6a$export$be92b6f5f03c0fe9, __assign$1({ ref: ref, decorative: decorative, orientation: orientation, className: cn("shrink-0 bg-border", orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]", className) }, props)));
 });
 Separator.displayName = $89eedd556c436f6a$export$be92b6f5f03c0fe9.displayName;
@@ -28020,7 +19314,7 @@ const $e698a72e93240346$export$be92b6f5f03c0fe9 = $e698a72e93240346$export$48513
 const $e698a72e93240346$export$adb584737d712b70 = $e698a72e93240346$export$59aad738f51d1c05;
 
 var Checkbox = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($e698a72e93240346$export$be92b6f5f03c0fe9, __assign$1({ ref: ref, className: cn("peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground", className) }, props),
         React__namespace.createElement($e698a72e93240346$export$adb584737d712b70, { className: cn("flex items-center justify-center text-current") },
             React__namespace.createElement(CheckIcon, { className: "h-4 w-4" }))));
@@ -28172,6 +19466,1313 @@ function RoomTable(_a) {
 var Table = {
     rooms: RoomTable
 };
+
+var Textarea = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$1(_a, ["className"]);
+    return (React__namespace.createElement("textarea", __assign$1({ className: cn("flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50", className), ref: ref }, props)));
+});
+Textarea.displayName = "Textarea";
+
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+/** Detect free variable `global` from Node.js. */
+
+var freeGlobal = typeof commonjsGlobal == 'object' && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
+
+var _freeGlobal = freeGlobal;
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = _freeGlobal || freeSelf || Function('return this')();
+
+var _root = root;
+
+/** Built-in value references. */
+var Symbol$1 = _root.Symbol;
+
+var _Symbol = Symbol$1;
+
+/**
+ * A specialized version of `_.map` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+function arrayMap(array, iteratee) {
+  var index = -1,
+      length = array == null ? 0 : array.length,
+      result = Array(length);
+
+  while (++index < length) {
+    result[index] = iteratee(array[index], index, array);
+  }
+  return result;
+}
+
+var _arrayMap = arrayMap;
+
+/**
+ * Checks if `value` is classified as an `Array` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+ * @example
+ *
+ * _.isArray([1, 2, 3]);
+ * // => true
+ *
+ * _.isArray(document.body.children);
+ * // => false
+ *
+ * _.isArray('abc');
+ * // => false
+ *
+ * _.isArray(_.noop);
+ * // => false
+ */
+var isArray = Array.isArray;
+
+var isArray_1 = isArray;
+
+/** Used for built-in method references. */
+var objectProto$1 = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto$1.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString$1 = objectProto$1.toString;
+
+/** Built-in value references. */
+var symToStringTag$1 = _Symbol ? _Symbol.toStringTag : undefined;
+
+/**
+ * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the raw `toStringTag`.
+ */
+function getRawTag(value) {
+  var isOwn = hasOwnProperty.call(value, symToStringTag$1),
+      tag = value[symToStringTag$1];
+
+  try {
+    value[symToStringTag$1] = undefined;
+    var unmasked = true;
+  } catch (e) {}
+
+  var result = nativeObjectToString$1.call(value);
+  if (unmasked) {
+    if (isOwn) {
+      value[symToStringTag$1] = tag;
+    } else {
+      delete value[symToStringTag$1];
+    }
+  }
+  return result;
+}
+
+var _getRawTag = getRawTag;
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/**
+ * Converts `value` to a string using `Object.prototype.toString`.
+ *
+ * @private
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ */
+function objectToString(value) {
+  return nativeObjectToString.call(value);
+}
+
+var _objectToString = objectToString;
+
+/** `Object#toString` result references. */
+var nullTag = '[object Null]',
+    undefinedTag = '[object Undefined]';
+
+/** Built-in value references. */
+var symToStringTag = _Symbol ? _Symbol.toStringTag : undefined;
+
+/**
+ * The base implementation of `getTag` without fallbacks for buggy environments.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  if (value == null) {
+    return value === undefined ? undefinedTag : nullTag;
+  }
+  return (symToStringTag && symToStringTag in Object(value))
+    ? _getRawTag(value)
+    : _objectToString(value);
+}
+
+var _baseGetTag = baseGetTag;
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return value != null && typeof value == 'object';
+}
+
+var isObjectLike_1 = isObjectLike;
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike_1(value) && _baseGetTag(value) == symbolTag);
+}
+
+var isSymbol_1 = isSymbol;
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = _Symbol ? _Symbol.prototype : undefined,
+    symbolToString = symbolProto ? symbolProto.toString : undefined;
+
+/**
+ * The base implementation of `_.toString` which doesn't convert nullish
+ * values to empty strings.
+ *
+ * @private
+ * @param {*} value The value to process.
+ * @returns {string} Returns the string.
+ */
+function baseToString(value) {
+  // Exit early for strings to avoid a performance hit in some environments.
+  if (typeof value == 'string') {
+    return value;
+  }
+  if (isArray_1(value)) {
+    // Recursively convert values (susceptible to call stack limits).
+    return _arrayMap(value, baseToString) + '';
+  }
+  if (isSymbol_1(value)) {
+    return symbolToString ? symbolToString.call(value) : '';
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+var _baseToString = baseToString;
+
+/**
+ * Converts `value` to a string. An empty string is returned for `null`
+ * and `undefined` values. The sign of `-0` is preserved.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ * @example
+ *
+ * _.toString(null);
+ * // => ''
+ *
+ * _.toString(-0);
+ * // => '-0'
+ *
+ * _.toString([1, 2, 3]);
+ * // => '1,2,3'
+ */
+function toString(value) {
+  return value == null ? '' : _baseToString(value);
+}
+
+var toString_1 = toString;
+
+/** Used to generate unique IDs. */
+var idCounter = 0;
+
+/**
+ * Generates a unique ID. If `prefix` is given, the ID is appended to it.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Util
+ * @param {string} [prefix=''] The value to prefix the ID with.
+ * @returns {string} Returns the unique ID.
+ * @example
+ *
+ * _.uniqueId('contact_');
+ * // => 'contact_104'
+ *
+ * _.uniqueId();
+ * // => '105'
+ */
+function uniqueId(prefix) {
+  var id = ++idCounter;
+  return toString_1(prefix) + id;
+}
+
+var uniqueId_1 = uniqueId;
+
+var Form$1 = FormProvider;
+var FormFieldContext = React__default["default"].createContext({});
+var FormField = function (_a) {
+    var props = __rest$1(_a, []);
+    return (React__default["default"].createElement(FormFieldContext.Provider, { value: { name: props.name } },
+        React__default["default"].createElement(Controller, __assign$1({}, props))));
+};
+var useFormField = function () {
+    var fieldContext = React__default["default"].useContext(FormFieldContext);
+    var itemContext = React__default["default"].useContext(FormItemContext);
+    var _a = useFormContext(), getFieldState = _a.getFieldState, formState = _a.formState;
+    var fieldState = getFieldState(fieldContext.name, formState);
+    if (!fieldContext) {
+        throw new Error("useFormField should be used within <FormField>");
+    }
+    var id = itemContext.id;
+    return __assign$1({ id: id, name: fieldContext.name, formItemId: "".concat(id, "-form-item"), formDescriptionId: "".concat(id, "-form-item-description"), formMessageId: "".concat(id, "-form-item-message") }, fieldState);
+};
+var FormItemContext = React__default["default"].createContext({});
+var FormItem = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$1(_a, ["className"]);
+    var u_id = React__default["default"].useState(uniqueId_1('prefix-'))[0];
+    var id = u_id;
+    return (React__default["default"].createElement(FormItemContext.Provider, { value: { id: id } },
+        React__default["default"].createElement("div", __assign$1({ ref: ref, className: cn("space-y-2", className) }, props))));
+});
+FormItem.displayName = "FormItem";
+var FormLabel = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$1(_a, ["className"]);
+    var _b = useFormField(), error = _b.error, formItemId = _b.formItemId;
+    return (React__default["default"].createElement(Label, __assign$1({ ref: ref, className: cn(error && "text-destructive", className), htmlFor: formItemId }, props)));
+});
+FormLabel.displayName = "FormLabel";
+var FormControl = React__default["default"].forwardRef(function (_a, ref) {
+    var props = __rest$1(_a, []);
+    var _b = useFormField(), error = _b.error, formItemId = _b.formItemId, formDescriptionId = _b.formDescriptionId, formMessageId = _b.formMessageId;
+    return (React__default["default"].createElement($5e63c961fc1ce211$export$8c6ed5c666ac1360$1, __assign$1({ ref: ref, id: formItemId, "aria-describedby": !error
+            ? "".concat(formDescriptionId)
+            : "".concat(formDescriptionId, " ").concat(formMessageId), "aria-invalid": !!error }, props)));
+});
+FormControl.displayName = "FormControl";
+var FormDescription = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$1(_a, ["className"]);
+    var formDescriptionId = useFormField().formDescriptionId;
+    return (React__default["default"].createElement("p", __assign$1({ ref: ref, id: formDescriptionId, className: cn("text-[0.8rem] text-muted-foreground", className) }, props)));
+});
+FormDescription.displayName = "FormDescription";
+var FormMessage = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
+    var _b = useFormField(), error = _b.error, formMessageId = _b.formMessageId;
+    var body = error ? String(error === null || error === void 0 ? void 0 : error.message) : children;
+    if (!body) {
+        return null;
+    }
+    return (React__default["default"].createElement("p", __assign$1({ ref: ref, id: formMessageId, className: cn("text-[0.8rem] font-medium text-destructive", className) }, props), body));
+});
+FormMessage.displayName = "FormMessage";
+
+function AddPersonForm(_a) {
+    var onSubmit = _a.onSubmit, values = _a.values, type = _a.type;
+    var form = useForm({
+        defaultValues: type === 'create' ? {} : values,
+    });
+    return (React__default["default"].createElement(React__default["default"].Fragment, null,
+        React__default["default"].createElement(Form$1, __assign$1({}, form),
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 p-1", id: "addPerson" },
+                React__default["default"].createElement(FormField, { control: form.control, name: "fullName", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "full name"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$1({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the complete name of the person. This should serve as a distinctive label for convenient and precise identification."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "companyId", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "company iD"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$1({}, field))),
+                            React__default["default"].createElement(FormDescription, null,
+                                ' ',
+                                "Enter the unique identification number or code assigned to the company. This serves as a distinct identifier for the company for easy reference and identification."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "bank", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "bank"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$1({}, field))),
+                            React__default["default"].createElement(FormDescription, null,
+                                ' ',
+                                "Enter the official name or designation of the bank associated with this account. Provide the full and accurate name for clear identification."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "accNO", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "account no"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$1({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the unique account number or identifier associated with this account. It serves as a distinct label for easy identification and reference in the system."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "email", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "email"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$1({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the email address associated with your account. Make sure it is a valid and accessible email for communication and account-related notifications."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "phoneNo", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "phone no"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$1({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the contact number associated with the person. It should be a valid phone number for communication purposes and should uniquely identify this person in case of any queries or contacts."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "address", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "address"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$1({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the physical location details, including street address, city, and postal code, for precise identification of this particular location. Provide a clear and comprehensive address to facilitate accurate location referencing."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "contactPerson", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "contact person"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$1({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the name of the primary contact person associated with this person. Provide the full name for clear identification and communication purposes."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement("div", null,
+                    React__default["default"].createElement(Label, null, "Notes"),
+                    React__default["default"].createElement(Textarea, { placeholder: "Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." }))))));
+}
+
+var Form = {
+    addPerson: AddPersonForm
+};
+
+var Sheet = $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9;
+var SheetTrigger = $5d3850c4d0b4e6c7$export$41fb9f06171c75f4;
+var SheetClose = $5d3850c4d0b4e6c7$export$f39c2d165cd861fe;
+var SheetPortal = $5d3850c4d0b4e6c7$export$602eac185826482c;
+var SheetOverlay = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$1(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff, __assign$1({ className: cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props, { ref: ref })));
+});
+SheetOverlay.displayName = $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff.displayName;
+var sheetVariants = cva("fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500", {
+    variants: {
+        side: {
+            top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
+            bottom: "inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
+            left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
+            right: "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+        },
+    },
+    defaultVariants: {
+        side: "right",
+    },
+});
+var SheetContent = React__namespace.forwardRef(function (_a, ref) {
+    var _b = _a.side, side = _b === void 0 ? "right" : _b, className = _a.className, children = _a.children, props = __rest$1(_a, ["side", "className", "children"]);
+    return (React__namespace.createElement(SheetPortal, null,
+        React__namespace.createElement(SheetOverlay, null),
+        React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2, __assign$1({ ref: ref, className: cn(sheetVariants({ side: side }), className) }, props),
+            children,
+            React__namespace.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, { className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary" },
+                React__namespace.createElement(Cross2Icon, { className: "h-4 w-4" }),
+                React__namespace.createElement("span", { className: "sr-only" }, "Close")))));
+});
+SheetContent.displayName = $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2.displayName;
+var SheetHeader = function (_a) {
+    var className = _a.className, props = __rest$1(_a, ["className"]);
+    return (React__namespace.createElement("div", __assign$1({ className: cn("flex flex-col space-y-2 text-center sm:text-left", className) }, props)));
+};
+SheetHeader.displayName = "SheetHeader";
+var SheetFooter = function (_a) {
+    var className = _a.className, props = __rest$1(_a, ["className"]);
+    return (React__namespace.createElement("div", __assign$1({ className: cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className) }, props)));
+};
+SheetFooter.displayName = "SheetFooter";
+var SheetTitle = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$1(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$f99233281efd08a0, __assign$1({ ref: ref, className: cn("text-lg font-semibold text-foreground", className) }, props)));
+});
+SheetTitle.displayName = $5d3850c4d0b4e6c7$export$f99233281efd08a0.displayName;
+var SheetDescription = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$1(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$393edc798c47379d, __assign$1({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
+});
+SheetDescription.displayName = $5d3850c4d0b4e6c7$export$393edc798c47379d.displayName;
+
+function $6c2e24571c90391f$export$3e6543de14f8614f(initialState, machine) {
+    return React.useReducer((state, event)=>{
+        const nextState = machine[state][event];
+        return nextState !== null && nextState !== void 0 ? nextState : state;
+    }, initialState);
+}
+
+
+/* -------------------------------------------------------------------------------------------------
+ * ScrollArea
+ * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$SCROLL_AREA_NAME = 'ScrollArea';
+const [$57acba87d6e25586$var$createScrollAreaContext, $57acba87d6e25586$export$488468afe3a6f2b1] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($57acba87d6e25586$var$SCROLL_AREA_NAME);
+const [$57acba87d6e25586$var$ScrollAreaProvider, $57acba87d6e25586$var$useScrollAreaContext] = $57acba87d6e25586$var$createScrollAreaContext($57acba87d6e25586$var$SCROLL_AREA_NAME);
+const $57acba87d6e25586$export$ccf8d8d7bbf3c2cc = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeScrollArea: __scopeScrollArea , type: type = 'hover' , dir: dir , scrollHideDelay: scrollHideDelay = 600 , ...scrollAreaProps } = props;
+    const [scrollArea, setScrollArea] = React.useState(null);
+    const [viewport, setViewport] = React.useState(null);
+    const [content, setContent] = React.useState(null);
+    const [scrollbarX, setScrollbarX] = React.useState(null);
+    const [scrollbarY, setScrollbarY] = React.useState(null);
+    const [cornerWidth, setCornerWidth] = React.useState(0);
+    const [cornerHeight, setCornerHeight] = React.useState(0);
+    const [scrollbarXEnabled, setScrollbarXEnabled] = React.useState(false);
+    const [scrollbarYEnabled, setScrollbarYEnabled] = React.useState(false);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, (node)=>setScrollArea(node)
+    );
+    const direction = $f631663db3294ace$export$b39126d51d94e6f3(dir);
+    return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaProvider, {
+        scope: __scopeScrollArea,
+        type: type,
+        dir: direction,
+        scrollHideDelay: scrollHideDelay,
+        scrollArea: scrollArea,
+        viewport: viewport,
+        onViewportChange: setViewport,
+        content: content,
+        onContentChange: setContent,
+        scrollbarX: scrollbarX,
+        onScrollbarXChange: setScrollbarX,
+        scrollbarXEnabled: scrollbarXEnabled,
+        onScrollbarXEnabledChange: setScrollbarXEnabled,
+        scrollbarY: scrollbarY,
+        onScrollbarYChange: setScrollbarY,
+        scrollbarYEnabled: scrollbarYEnabled,
+        onScrollbarYEnabledChange: setScrollbarYEnabled,
+        onCornerWidthChange: setCornerWidth,
+        onCornerHeightChange: setCornerHeight
+    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
+        dir: direction
+    }, scrollAreaProps, {
+        ref: composedRefs,
+        style: {
+            position: 'relative',
+            // Pass corner sizes as CSS vars to reduce re-renders of context consumers
+            ['--radix-scroll-area-corner-width']: cornerWidth + 'px',
+            ['--radix-scroll-area-corner-height']: cornerHeight + 'px',
+            ...props.style
+        }
+    })));
+});
+/* -------------------------------------------------------------------------------------------------
+ * ScrollAreaViewport
+ * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$VIEWPORT_NAME = 'ScrollAreaViewport';
+const $57acba87d6e25586$export$a21cbf9f11fca853 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeScrollArea: __scopeScrollArea , children: children , ...viewportProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$VIEWPORT_NAME, __scopeScrollArea);
+    const ref = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref, context.onViewportChange);
+    return /*#__PURE__*/ React.createElement(React.Fragment, null, /*#__PURE__*/ React.createElement("style", {
+        dangerouslySetInnerHTML: {
+            __html: `[data-radix-scroll-area-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-scroll-area-viewport]::-webkit-scrollbar{display:none}`
+        }
+    }), /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
+        "data-radix-scroll-area-viewport": ""
+    }, viewportProps, {
+        ref: composedRefs,
+        style: {
+            /**
+       * We don't support `visible` because the intention is to have at least one scrollbar
+       * if this component is used and `visible` will behave like `auto` in that case
+       * https://developer.mozilla.org/en-US/docs/Web/CSS/overflowed#description
+       *
+       * We don't handle `auto` because the intention is for the native implementation
+       * to be hidden if using this component. We just want to ensure the node is scrollable
+       * so could have used either `scroll` or `auto` here. We picked `scroll` to prevent
+       * the browser from having to work out whether to render native scrollbars or not,
+       * we tell it to with the intention of hiding them in CSS.
+       */ overflowX: context.scrollbarXEnabled ? 'scroll' : 'hidden',
+            overflowY: context.scrollbarYEnabled ? 'scroll' : 'hidden',
+            ...props.style
+        }
+    }), /*#__PURE__*/ React.createElement("div", {
+        ref: context.onContentChange,
+        style: {
+            minWidth: '100%',
+            display: 'table'
+        }
+    }, children)));
+});
+/* -------------------------------------------------------------------------------------------------
+ * ScrollAreaScrollbar
+ * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$SCROLLBAR_NAME = 'ScrollAreaScrollbar';
+const $57acba87d6e25586$export$2fabd85d0eba3c57 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { forceMount: forceMount , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const { onScrollbarXEnabledChange: onScrollbarXEnabledChange , onScrollbarYEnabledChange: onScrollbarYEnabledChange  } = context;
+    const isHorizontal = props.orientation === 'horizontal';
+    React.useEffect(()=>{
+        isHorizontal ? onScrollbarXEnabledChange(true) : onScrollbarYEnabledChange(true);
+        return ()=>{
+            isHorizontal ? onScrollbarXEnabledChange(false) : onScrollbarYEnabledChange(false);
+        };
+    }, [
+        isHorizontal,
+        onScrollbarXEnabledChange,
+        onScrollbarYEnabledChange
+    ]);
+    return context.type === 'hover' ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarHover, _extends({}, scrollbarProps, {
+        ref: forwardedRef,
+        forceMount: forceMount
+    })) : context.type === 'scroll' ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarScroll, _extends({}, scrollbarProps, {
+        ref: forwardedRef,
+        forceMount: forceMount
+    })) : context.type === 'auto' ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarAuto, _extends({}, scrollbarProps, {
+        ref: forwardedRef,
+        forceMount: forceMount
+    })) : context.type === 'always' ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarVisible, _extends({}, scrollbarProps, {
+        ref: forwardedRef
+    })) : null;
+});
+/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$ScrollAreaScrollbarHover = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { forceMount: forceMount , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const [visible, setVisible] = React.useState(false);
+    React.useEffect(()=>{
+        const scrollArea = context.scrollArea;
+        let hideTimer = 0;
+        if (scrollArea) {
+            const handlePointerEnter = ()=>{
+                window.clearTimeout(hideTimer);
+                setVisible(true);
+            };
+            const handlePointerLeave = ()=>{
+                hideTimer = window.setTimeout(()=>setVisible(false)
+                , context.scrollHideDelay);
+            };
+            scrollArea.addEventListener('pointerenter', handlePointerEnter);
+            scrollArea.addEventListener('pointerleave', handlePointerLeave);
+            return ()=>{
+                window.clearTimeout(hideTimer);
+                scrollArea.removeEventListener('pointerenter', handlePointerEnter);
+                scrollArea.removeEventListener('pointerleave', handlePointerLeave);
+            };
+        }
+    }, [
+        context.scrollArea,
+        context.scrollHideDelay
+    ]);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || visible
+    }, /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarAuto, _extends({
+        "data-state": visible ? 'visible' : 'hidden'
+    }, scrollbarProps, {
+        ref: forwardedRef
+    })));
+});
+const $57acba87d6e25586$var$ScrollAreaScrollbarScroll = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { forceMount: forceMount , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const isHorizontal = props.orientation === 'horizontal';
+    const debounceScrollEnd = $57acba87d6e25586$var$useDebounceCallback(()=>send('SCROLL_END')
+    , 100);
+    const [state, send] = $6c2e24571c90391f$export$3e6543de14f8614f('hidden', {
+        hidden: {
+            SCROLL: 'scrolling'
+        },
+        scrolling: {
+            SCROLL_END: 'idle',
+            POINTER_ENTER: 'interacting'
+        },
+        interacting: {
+            SCROLL: 'interacting',
+            POINTER_LEAVE: 'idle'
+        },
+        idle: {
+            HIDE: 'hidden',
+            SCROLL: 'scrolling',
+            POINTER_ENTER: 'interacting'
+        }
+    });
+    React.useEffect(()=>{
+        if (state === 'idle') {
+            const hideTimer = window.setTimeout(()=>send('HIDE')
+            , context.scrollHideDelay);
+            return ()=>window.clearTimeout(hideTimer)
+            ;
+        }
+    }, [
+        state,
+        context.scrollHideDelay,
+        send
+    ]);
+    React.useEffect(()=>{
+        const viewport = context.viewport;
+        const scrollDirection = isHorizontal ? 'scrollLeft' : 'scrollTop';
+        if (viewport) {
+            let prevScrollPos = viewport[scrollDirection];
+            const handleScroll = ()=>{
+                const scrollPos = viewport[scrollDirection];
+                const hasScrollInDirectionChanged = prevScrollPos !== scrollPos;
+                if (hasScrollInDirectionChanged) {
+                    send('SCROLL');
+                    debounceScrollEnd();
+                }
+                prevScrollPos = scrollPos;
+            };
+            viewport.addEventListener('scroll', handleScroll);
+            return ()=>viewport.removeEventListener('scroll', handleScroll)
+            ;
+        }
+    }, [
+        context.viewport,
+        isHorizontal,
+        send,
+        debounceScrollEnd
+    ]);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || state !== 'hidden'
+    }, /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarVisible, _extends({
+        "data-state": state === 'hidden' ? 'hidden' : 'visible'
+    }, scrollbarProps, {
+        ref: forwardedRef,
+        onPointerEnter: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerEnter, ()=>send('POINTER_ENTER')
+        ),
+        onPointerLeave: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerLeave, ()=>send('POINTER_LEAVE')
+        )
+    })));
+});
+const $57acba87d6e25586$var$ScrollAreaScrollbarAuto = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const { forceMount: forceMount , ...scrollbarProps } = props;
+    const [visible, setVisible] = React.useState(false);
+    const isHorizontal = props.orientation === 'horizontal';
+    const handleResize = $57acba87d6e25586$var$useDebounceCallback(()=>{
+        if (context.viewport) {
+            const isOverflowX = context.viewport.offsetWidth < context.viewport.scrollWidth;
+            const isOverflowY = context.viewport.offsetHeight < context.viewport.scrollHeight;
+            setVisible(isHorizontal ? isOverflowX : isOverflowY);
+        }
+    }, 10);
+    $57acba87d6e25586$var$useResizeObserver(context.viewport, handleResize);
+    $57acba87d6e25586$var$useResizeObserver(context.content, handleResize);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || visible
+    }, /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarVisible, _extends({
+        "data-state": visible ? 'visible' : 'hidden'
+    }, scrollbarProps, {
+        ref: forwardedRef
+    })));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$ScrollAreaScrollbarVisible = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { orientation: orientation = 'vertical' , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const thumbRef = React.useRef(null);
+    const pointerOffsetRef = React.useRef(0);
+    const [sizes, setSizes] = React.useState({
+        content: 0,
+        viewport: 0,
+        scrollbar: {
+            size: 0,
+            paddingStart: 0,
+            paddingEnd: 0
+        }
+    });
+    const thumbRatio = $57acba87d6e25586$var$getThumbRatio(sizes.viewport, sizes.content);
+    const commonProps = {
+        ...scrollbarProps,
+        sizes: sizes,
+        onSizesChange: setSizes,
+        hasThumb: Boolean(thumbRatio > 0 && thumbRatio < 1),
+        onThumbChange: (thumb)=>thumbRef.current = thumb
+        ,
+        onThumbPointerUp: ()=>pointerOffsetRef.current = 0
+        ,
+        onThumbPointerDown: (pointerPos)=>pointerOffsetRef.current = pointerPos
+    };
+    function getScrollPosition(pointerPos, dir) {
+        return $57acba87d6e25586$var$getScrollPositionFromPointer(pointerPos, pointerOffsetRef.current, sizes, dir);
+    }
+    if (orientation === 'horizontal') return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarX, _extends({}, commonProps, {
+        ref: forwardedRef,
+        onThumbPositionChange: ()=>{
+            if (context.viewport && thumbRef.current) {
+                const scrollPos = context.viewport.scrollLeft;
+                const offset = $57acba87d6e25586$var$getThumbOffsetFromScroll(scrollPos, sizes, context.dir);
+                thumbRef.current.style.transform = `translate3d(${offset}px, 0, 0)`;
+            }
+        },
+        onWheelScroll: (scrollPos)=>{
+            if (context.viewport) context.viewport.scrollLeft = scrollPos;
+        },
+        onDragScroll: (pointerPos)=>{
+            if (context.viewport) context.viewport.scrollLeft = getScrollPosition(pointerPos, context.dir);
+        }
+    }));
+    if (orientation === 'vertical') return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarY, _extends({}, commonProps, {
+        ref: forwardedRef,
+        onThumbPositionChange: ()=>{
+            if (context.viewport && thumbRef.current) {
+                const scrollPos = context.viewport.scrollTop;
+                const offset = $57acba87d6e25586$var$getThumbOffsetFromScroll(scrollPos, sizes);
+                thumbRef.current.style.transform = `translate3d(0, ${offset}px, 0)`;
+            }
+        },
+        onWheelScroll: (scrollPos)=>{
+            if (context.viewport) context.viewport.scrollTop = scrollPos;
+        },
+        onDragScroll: (pointerPos)=>{
+            if (context.viewport) context.viewport.scrollTop = getScrollPosition(pointerPos);
+        }
+    }));
+    return null;
+});
+/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$ScrollAreaScrollbarX = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { sizes: sizes , onSizesChange: onSizesChange , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const [computedStyle, setComputedStyle] = React.useState();
+    const ref = React.useRef(null);
+    const composeRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref, context.onScrollbarXChange);
+    React.useEffect(()=>{
+        if (ref.current) setComputedStyle(getComputedStyle(ref.current));
+    }, [
+        ref
+    ]);
+    return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarImpl, _extends({
+        "data-orientation": "horizontal"
+    }, scrollbarProps, {
+        ref: composeRefs,
+        sizes: sizes,
+        style: {
+            bottom: 0,
+            left: context.dir === 'rtl' ? 'var(--radix-scroll-area-corner-width)' : 0,
+            right: context.dir === 'ltr' ? 'var(--radix-scroll-area-corner-width)' : 0,
+            ['--radix-scroll-area-thumb-width']: $57acba87d6e25586$var$getThumbSize(sizes) + 'px',
+            ...props.style
+        },
+        onThumbPointerDown: (pointerPos)=>props.onThumbPointerDown(pointerPos.x)
+        ,
+        onDragScroll: (pointerPos)=>props.onDragScroll(pointerPos.x)
+        ,
+        onWheelScroll: (event, maxScrollPos)=>{
+            if (context.viewport) {
+                const scrollPos = context.viewport.scrollLeft + event.deltaX;
+                props.onWheelScroll(scrollPos); // prevent window scroll when wheeling on scrollbar
+                if ($57acba87d6e25586$var$isScrollingWithinScrollbarBounds(scrollPos, maxScrollPos)) event.preventDefault();
+            }
+        },
+        onResize: ()=>{
+            if (ref.current && context.viewport && computedStyle) onSizesChange({
+                content: context.viewport.scrollWidth,
+                viewport: context.viewport.offsetWidth,
+                scrollbar: {
+                    size: ref.current.clientWidth,
+                    paddingStart: $57acba87d6e25586$var$toInt(computedStyle.paddingLeft),
+                    paddingEnd: $57acba87d6e25586$var$toInt(computedStyle.paddingRight)
+                }
+            });
+        }
+    }));
+});
+const $57acba87d6e25586$var$ScrollAreaScrollbarY = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { sizes: sizes , onSizesChange: onSizesChange , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const [computedStyle, setComputedStyle] = React.useState();
+    const ref = React.useRef(null);
+    const composeRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref, context.onScrollbarYChange);
+    React.useEffect(()=>{
+        if (ref.current) setComputedStyle(getComputedStyle(ref.current));
+    }, [
+        ref
+    ]);
+    return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarImpl, _extends({
+        "data-orientation": "vertical"
+    }, scrollbarProps, {
+        ref: composeRefs,
+        sizes: sizes,
+        style: {
+            top: 0,
+            right: context.dir === 'ltr' ? 0 : undefined,
+            left: context.dir === 'rtl' ? 0 : undefined,
+            bottom: 'var(--radix-scroll-area-corner-height)',
+            ['--radix-scroll-area-thumb-height']: $57acba87d6e25586$var$getThumbSize(sizes) + 'px',
+            ...props.style
+        },
+        onThumbPointerDown: (pointerPos)=>props.onThumbPointerDown(pointerPos.y)
+        ,
+        onDragScroll: (pointerPos)=>props.onDragScroll(pointerPos.y)
+        ,
+        onWheelScroll: (event, maxScrollPos)=>{
+            if (context.viewport) {
+                const scrollPos = context.viewport.scrollTop + event.deltaY;
+                props.onWheelScroll(scrollPos); // prevent window scroll when wheeling on scrollbar
+                if ($57acba87d6e25586$var$isScrollingWithinScrollbarBounds(scrollPos, maxScrollPos)) event.preventDefault();
+            }
+        },
+        onResize: ()=>{
+            if (ref.current && context.viewport && computedStyle) onSizesChange({
+                content: context.viewport.scrollHeight,
+                viewport: context.viewport.offsetHeight,
+                scrollbar: {
+                    size: ref.current.clientHeight,
+                    paddingStart: $57acba87d6e25586$var$toInt(computedStyle.paddingTop),
+                    paddingEnd: $57acba87d6e25586$var$toInt(computedStyle.paddingBottom)
+                }
+            });
+        }
+    }));
+});
+/* -----------------------------------------------------------------------------------------------*/ const [$57acba87d6e25586$var$ScrollbarProvider, $57acba87d6e25586$var$useScrollbarContext] = $57acba87d6e25586$var$createScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME);
+const $57acba87d6e25586$var$ScrollAreaScrollbarImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeScrollArea: __scopeScrollArea , sizes: sizes , hasThumb: hasThumb , onThumbChange: onThumbChange , onThumbPointerUp: onThumbPointerUp , onThumbPointerDown: onThumbPointerDown , onThumbPositionChange: onThumbPositionChange , onDragScroll: onDragScroll , onWheelScroll: onWheelScroll , onResize: onResize , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, __scopeScrollArea);
+    const [scrollbar, setScrollbar] = React.useState(null);
+    const composeRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, (node)=>setScrollbar(node)
+    );
+    const rectRef = React.useRef(null);
+    const prevWebkitUserSelectRef = React.useRef('');
+    const viewport = context.viewport;
+    const maxScrollPos = sizes.content - sizes.viewport;
+    const handleWheelScroll = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onWheelScroll);
+    const handleThumbPositionChange = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onThumbPositionChange);
+    const handleResize = $57acba87d6e25586$var$useDebounceCallback(onResize, 10);
+    function handleDragScroll(event) {
+        if (rectRef.current) {
+            const x = event.clientX - rectRef.current.left;
+            const y = event.clientY - rectRef.current.top;
+            onDragScroll({
+                x: x,
+                y: y
+            });
+        }
+    }
+    /**
+   * We bind wheel event imperatively so we can switch off passive
+   * mode for document wheel event to allow it to be prevented
+   */ React.useEffect(()=>{
+        const handleWheel = (event)=>{
+            const element = event.target;
+            const isScrollbarWheel = scrollbar === null || scrollbar === void 0 ? void 0 : scrollbar.contains(element);
+            if (isScrollbarWheel) handleWheelScroll(event, maxScrollPos);
+        };
+        document.addEventListener('wheel', handleWheel, {
+            passive: false
+        });
+        return ()=>document.removeEventListener('wheel', handleWheel, {
+                passive: false
+            })
+        ;
+    }, [
+        viewport,
+        scrollbar,
+        maxScrollPos,
+        handleWheelScroll
+    ]);
+    /**
+   * Update thumb position on sizes change
+   */ React.useEffect(handleThumbPositionChange, [
+        sizes,
+        handleThumbPositionChange
+    ]);
+    $57acba87d6e25586$var$useResizeObserver(scrollbar, handleResize);
+    $57acba87d6e25586$var$useResizeObserver(context.content, handleResize);
+    return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollbarProvider, {
+        scope: __scopeScrollArea,
+        scrollbar: scrollbar,
+        hasThumb: hasThumb,
+        onThumbChange: $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onThumbChange),
+        onThumbPointerUp: $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onThumbPointerUp),
+        onThumbPositionChange: handleThumbPositionChange,
+        onThumbPointerDown: $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onThumbPointerDown)
+    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({}, scrollbarProps, {
+        ref: composeRefs,
+        style: {
+            position: 'absolute',
+            ...scrollbarProps.style
+        },
+        onPointerDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDown, (event)=>{
+            const mainPointer = 0;
+            if (event.button === mainPointer) {
+                const element = event.target;
+                element.setPointerCapture(event.pointerId);
+                rectRef.current = scrollbar.getBoundingClientRect(); // pointer capture doesn't prevent text selection in Safari
+                // so we remove text selection manually when scrolling
+                prevWebkitUserSelectRef.current = document.body.style.webkitUserSelect;
+                document.body.style.webkitUserSelect = 'none';
+                if (context.viewport) context.viewport.style.scrollBehavior = 'auto';
+                handleDragScroll(event);
+            }
+        }),
+        onPointerMove: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerMove, handleDragScroll),
+        onPointerUp: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerUp, (event)=>{
+            const element = event.target;
+            if (element.hasPointerCapture(event.pointerId)) element.releasePointerCapture(event.pointerId);
+            document.body.style.webkitUserSelect = prevWebkitUserSelectRef.current;
+            if (context.viewport) context.viewport.style.scrollBehavior = '';
+            rectRef.current = null;
+        })
+    })));
+});
+/* -------------------------------------------------------------------------------------------------
+ * ScrollAreaThumb
+ * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$THUMB_NAME = 'ScrollAreaThumb';
+const $57acba87d6e25586$export$9fba1154677d7cd2 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { forceMount: forceMount , ...thumbProps } = props;
+    const scrollbarContext = $57acba87d6e25586$var$useScrollbarContext($57acba87d6e25586$var$THUMB_NAME, props.__scopeScrollArea);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || scrollbarContext.hasThumb
+    }, /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaThumbImpl, _extends({
+        ref: forwardedRef
+    }, thumbProps)));
+});
+const $57acba87d6e25586$var$ScrollAreaThumbImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeScrollArea: __scopeScrollArea , style: style , ...thumbProps } = props;
+    const scrollAreaContext = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$THUMB_NAME, __scopeScrollArea);
+    const scrollbarContext = $57acba87d6e25586$var$useScrollbarContext($57acba87d6e25586$var$THUMB_NAME, __scopeScrollArea);
+    const { onThumbPositionChange: onThumbPositionChange  } = scrollbarContext;
+    const composedRef = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, (node)=>scrollbarContext.onThumbChange(node)
+    );
+    const removeUnlinkedScrollListenerRef = React.useRef();
+    const debounceScrollEnd = $57acba87d6e25586$var$useDebounceCallback(()=>{
+        if (removeUnlinkedScrollListenerRef.current) {
+            removeUnlinkedScrollListenerRef.current();
+            removeUnlinkedScrollListenerRef.current = undefined;
+        }
+    }, 100);
+    React.useEffect(()=>{
+        const viewport = scrollAreaContext.viewport;
+        if (viewport) {
+            /**
+       * We only bind to native scroll event so we know when scroll starts and ends.
+       * When scroll starts we start a requestAnimationFrame loop that checks for
+       * changes to scroll position. That rAF loop triggers our thumb position change
+       * when relevant to avoid scroll-linked effects. We cancel the loop when scroll ends.
+       * https://developer.mozilla.org/en-US/docs/Mozilla/Performance/Scroll-linked_effects
+       */ const handleScroll = ()=>{
+                debounceScrollEnd();
+                if (!removeUnlinkedScrollListenerRef.current) {
+                    const listener = $57acba87d6e25586$var$addUnlinkedScrollListener(viewport, onThumbPositionChange);
+                    removeUnlinkedScrollListenerRef.current = listener;
+                    onThumbPositionChange();
+                }
+            };
+            onThumbPositionChange();
+            viewport.addEventListener('scroll', handleScroll);
+            return ()=>viewport.removeEventListener('scroll', handleScroll)
+            ;
+        }
+    }, [
+        scrollAreaContext.viewport,
+        debounceScrollEnd,
+        onThumbPositionChange
+    ]);
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
+        "data-state": scrollbarContext.hasThumb ? 'visible' : 'hidden'
+    }, thumbProps, {
+        ref: composedRef,
+        style: {
+            width: 'var(--radix-scroll-area-thumb-width)',
+            height: 'var(--radix-scroll-area-thumb-height)',
+            ...style
+        },
+        onPointerDownCapture: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDownCapture, (event)=>{
+            const thumb = event.target;
+            const thumbRect = thumb.getBoundingClientRect();
+            const x = event.clientX - thumbRect.left;
+            const y = event.clientY - thumbRect.top;
+            scrollbarContext.onThumbPointerDown({
+                x: x,
+                y: y
+            });
+        }),
+        onPointerUp: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerUp, scrollbarContext.onThumbPointerUp)
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * ScrollAreaCorner
+ * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$CORNER_NAME = 'ScrollAreaCorner';
+const $57acba87d6e25586$export$56969d565df7cc4b = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$CORNER_NAME, props.__scopeScrollArea);
+    const hasBothScrollbarsVisible = Boolean(context.scrollbarX && context.scrollbarY);
+    const hasCorner = context.type !== 'scroll' && hasBothScrollbarsVisible;
+    return hasCorner ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaCornerImpl, _extends({}, props, {
+        ref: forwardedRef
+    })) : null;
+});
+/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$ScrollAreaCornerImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeScrollArea: __scopeScrollArea , ...cornerProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$CORNER_NAME, __scopeScrollArea);
+    const [width1, setWidth] = React.useState(0);
+    const [height1, setHeight] = React.useState(0);
+    const hasSize = Boolean(width1 && height1);
+    $57acba87d6e25586$var$useResizeObserver(context.scrollbarX, ()=>{
+        var _context$scrollbarX;
+        const height = ((_context$scrollbarX = context.scrollbarX) === null || _context$scrollbarX === void 0 ? void 0 : _context$scrollbarX.offsetHeight) || 0;
+        context.onCornerHeightChange(height);
+        setHeight(height);
+    });
+    $57acba87d6e25586$var$useResizeObserver(context.scrollbarY, ()=>{
+        var _context$scrollbarY;
+        const width = ((_context$scrollbarY = context.scrollbarY) === null || _context$scrollbarY === void 0 ? void 0 : _context$scrollbarY.offsetWidth) || 0;
+        context.onCornerWidthChange(width);
+        setWidth(width);
+    });
+    return hasSize ? /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({}, cornerProps, {
+        ref: forwardedRef,
+        style: {
+            width: width1,
+            height: height1,
+            position: 'absolute',
+            right: context.dir === 'ltr' ? 0 : undefined,
+            left: context.dir === 'rtl' ? 0 : undefined,
+            bottom: 0,
+            ...props.style
+        }
+    })) : null;
+});
+/* -----------------------------------------------------------------------------------------------*/ function $57acba87d6e25586$var$toInt(value) {
+    return value ? parseInt(value, 10) : 0;
+}
+function $57acba87d6e25586$var$getThumbRatio(viewportSize, contentSize) {
+    const ratio = viewportSize / contentSize;
+    return isNaN(ratio) ? 0 : ratio;
+}
+function $57acba87d6e25586$var$getThumbSize(sizes) {
+    const ratio = $57acba87d6e25586$var$getThumbRatio(sizes.viewport, sizes.content);
+    const scrollbarPadding = sizes.scrollbar.paddingStart + sizes.scrollbar.paddingEnd;
+    const thumbSize = (sizes.scrollbar.size - scrollbarPadding) * ratio; // minimum of 18 matches macOS minimum
+    return Math.max(thumbSize, 18);
+}
+function $57acba87d6e25586$var$getScrollPositionFromPointer(pointerPos, pointerOffset, sizes, dir = 'ltr') {
+    const thumbSizePx = $57acba87d6e25586$var$getThumbSize(sizes);
+    const thumbCenter = thumbSizePx / 2;
+    const offset = pointerOffset || thumbCenter;
+    const thumbOffsetFromEnd = thumbSizePx - offset;
+    const minPointerPos = sizes.scrollbar.paddingStart + offset;
+    const maxPointerPos = sizes.scrollbar.size - sizes.scrollbar.paddingEnd - thumbOffsetFromEnd;
+    const maxScrollPos = sizes.content - sizes.viewport;
+    const scrollRange = dir === 'ltr' ? [
+        0,
+        maxScrollPos
+    ] : [
+        maxScrollPos * -1,
+        0
+    ];
+    const interpolate = $57acba87d6e25586$var$linearScale([
+        minPointerPos,
+        maxPointerPos
+    ], scrollRange);
+    return interpolate(pointerPos);
+}
+function $57acba87d6e25586$var$getThumbOffsetFromScroll(scrollPos, sizes, dir = 'ltr') {
+    const thumbSizePx = $57acba87d6e25586$var$getThumbSize(sizes);
+    const scrollbarPadding = sizes.scrollbar.paddingStart + sizes.scrollbar.paddingEnd;
+    const scrollbar = sizes.scrollbar.size - scrollbarPadding;
+    const maxScrollPos = sizes.content - sizes.viewport;
+    const maxThumbPos = scrollbar - thumbSizePx;
+    const scrollClampRange = dir === 'ltr' ? [
+        0,
+        maxScrollPos
+    ] : [
+        maxScrollPos * -1,
+        0
+    ];
+    const scrollWithoutMomentum = $ae6933e535247d3d$export$7d15b64cf5a3a4c4(scrollPos, scrollClampRange);
+    const interpolate = $57acba87d6e25586$var$linearScale([
+        0,
+        maxScrollPos
+    ], [
+        0,
+        maxThumbPos
+    ]);
+    return interpolate(scrollWithoutMomentum);
+} // https://github.com/tmcw-up-for-adoption/simple-linear-scale/blob/master/index.js
+function $57acba87d6e25586$var$linearScale(input, output) {
+    return (value)=>{
+        if (input[0] === input[1] || output[0] === output[1]) return output[0];
+        const ratio = (output[1] - output[0]) / (input[1] - input[0]);
+        return output[0] + ratio * (value - input[0]);
+    };
+}
+function $57acba87d6e25586$var$isScrollingWithinScrollbarBounds(scrollPos, maxScrollPos) {
+    return scrollPos > 0 && scrollPos < maxScrollPos;
+} // Custom scroll handler to avoid scroll-linked effects
+// https://developer.mozilla.org/en-US/docs/Mozilla/Performance/Scroll-linked_effects
+const $57acba87d6e25586$var$addUnlinkedScrollListener = (node, handler = ()=>{})=>{
+    let prevPosition = {
+        left: node.scrollLeft,
+        top: node.scrollTop
+    };
+    let rAF = 0;
+    (function loop() {
+        const position = {
+            left: node.scrollLeft,
+            top: node.scrollTop
+        };
+        const isHorizontalScroll = prevPosition.left !== position.left;
+        const isVerticalScroll = prevPosition.top !== position.top;
+        if (isHorizontalScroll || isVerticalScroll) handler();
+        prevPosition = position;
+        rAF = window.requestAnimationFrame(loop);
+    })();
+    return ()=>window.cancelAnimationFrame(rAF)
+    ;
+};
+function $57acba87d6e25586$var$useDebounceCallback(callback, delay) {
+    const handleCallback = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(callback);
+    const debounceTimerRef = React.useRef(0);
+    React.useEffect(()=>()=>window.clearTimeout(debounceTimerRef.current)
+    , []);
+    return React.useCallback(()=>{
+        window.clearTimeout(debounceTimerRef.current);
+        debounceTimerRef.current = window.setTimeout(handleCallback, delay);
+    }, [
+        handleCallback,
+        delay
+    ]);
+}
+function $57acba87d6e25586$var$useResizeObserver(element, onResize) {
+    const handleResize = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onResize);
+    $9f79659886946c16$export$e5c5a5f917a5871c$1(()=>{
+        let rAF = 0;
+        if (element) {
+            /**
+       * Resize Observer will throw an often benign error that says `ResizeObserver loop
+       * completed with undelivered notifications`. This means that ResizeObserver was not
+       * able to deliver all observations within a single animation frame, so we use
+       * `requestAnimationFrame` to ensure we don't deliver unnecessary observations.
+       * Further reading: https://github.com/WICG/resize-observer/issues/38
+       */ const resizeObserver = new ResizeObserver(()=>{
+                cancelAnimationFrame(rAF);
+                rAF = window.requestAnimationFrame(handleResize);
+            });
+            resizeObserver.observe(element);
+            return ()=>{
+                window.cancelAnimationFrame(rAF);
+                resizeObserver.unobserve(element);
+            };
+        }
+    }, [
+        element,
+        handleResize
+    ]);
+}
+/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$export$be92b6f5f03c0fe9 = $57acba87d6e25586$export$ccf8d8d7bbf3c2cc;
+const $57acba87d6e25586$export$d5c6c08dc2d3ca7 = $57acba87d6e25586$export$a21cbf9f11fca853;
+const $57acba87d6e25586$export$ac61190d9fc311a9 = $57acba87d6e25586$export$56969d565df7cc4b;
+
+var ScrollArea = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
+    return (React__namespace.createElement($57acba87d6e25586$export$be92b6f5f03c0fe9, __assign$1({ ref: ref, className: cn("relative overflow-hidden", className) }, props),
+        React__namespace.createElement($57acba87d6e25586$export$d5c6c08dc2d3ca7, { className: "h-full w-full rounded-[inherit]" }, children),
+        React__namespace.createElement(ScrollBar, null),
+        React__namespace.createElement($57acba87d6e25586$export$ac61190d9fc311a9, null)));
+});
+ScrollArea.displayName = $57acba87d6e25586$export$be92b6f5f03c0fe9.displayName;
+var ScrollBar = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, _b = _a.orientation, orientation = _b === void 0 ? "vertical" : _b, props = __rest$1(_a, ["className", "orientation"]);
+    return (React__namespace.createElement($57acba87d6e25586$export$2fabd85d0eba3c57, __assign$1({ ref: ref, orientation: orientation, className: cn("flex touch-none select-none transition-colors", orientation === "vertical" &&
+            "h-full w-2.5 border-l border-l-transparent p-[1px]", orientation === "horizontal" &&
+            "h-2.5 flex-col border-t border-t-transparent p-[1px]", className) }, props),
+        React__namespace.createElement($57acba87d6e25586$export$9fba1154677d7cd2, { className: "relative flex-1 rounded-full bg-border" })));
+});
+ScrollBar.displayName = $57acba87d6e25586$export$2fabd85d0eba3c57.displayName;
+
+function Drawer(_a) {
+    var _b = _a.open, open = _b === void 0 ? false : _b; _a.handleFormSubmit; _a.handleTrigger; var children = _a.children, title = _a.title, description = _a.description; _a.isLoading; var Form = _a.Form, SubmitButton = _a.SubmitButton;
+    return (React__default["default"].createElement("div", null,
+        React__default["default"].createElement(Sheet, { open: open },
+            React__default["default"].createElement(SheetTrigger, { asChild: true }, children),
+            React__default["default"].createElement(SheetContent, null,
+                React__default["default"].createElement(ScrollArea, { className: "h-screen pb-10 " },
+                    React__default["default"].createElement(SheetHeader, { className: 'pb-4' },
+                        React__default["default"].createElement(SheetTitle, null, title),
+                        React__default["default"].createElement(SheetDescription, null, description)),
+                    React__default["default"].createElement(Form, null),
+                    React__default["default"].createElement(SheetFooter, null,
+                        React__default["default"].createElement(SheetClose, { asChild: true }, SubmitButton && React__default["default"].createElement(SubmitButton, null))))))));
+}
 
 /* -------------------------------------------------------------------------------------------------
  * Menubar
@@ -28523,40 +21124,40 @@ const $0520064cdfc1bd2d$export$6d4de93b380beddf = $0520064cdfc1bd2d$export$1b21e
 
 var MenubarMenu = $0520064cdfc1bd2d$export$d9b273488cd8ce6f;
 var Menubar = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($0520064cdfc1bd2d$export$be92b6f5f03c0fe9, __assign$1({ ref: ref, className: cn("flex h-9 items-center space-x-1 rounded-md border bg-background p-1 shadow-sm", className) }, props)));
 });
 Menubar.displayName = $0520064cdfc1bd2d$export$be92b6f5f03c0fe9.displayName;
 var MenubarTrigger = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($0520064cdfc1bd2d$export$41fb9f06171c75f4, __assign$1({ ref: ref, className: cn("flex cursor-default select-none items-center rounded-sm px-3 py-1 text-sm font-medium outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground", className) }, props)));
 });
 MenubarTrigger.displayName = $0520064cdfc1bd2d$export$41fb9f06171c75f4.displayName;
 var MenubarSubTrigger = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, inset = _a.inset, children = _a.children, props = __rest$8(_a, ["className", "inset", "children"]);
+    var className = _a.className, inset = _a.inset, children = _a.children, props = __rest$1(_a, ["className", "inset", "children"]);
     return (React__namespace.createElement($0520064cdfc1bd2d$export$2ea8a7a591ac5eac, __assign$1({ ref: ref, className: cn("flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground", inset && "pl-8", className) }, props),
         children,
         React__namespace.createElement(ChevronRightIcon, { className: "ml-auto h-4 w-4" })));
 });
 MenubarSubTrigger.displayName = $0520064cdfc1bd2d$export$2ea8a7a591ac5eac.displayName;
 var MenubarSubContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($0520064cdfc1bd2d$export$6d4de93b380beddf, __assign$1({ ref: ref, className: cn("z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props)));
 });
 MenubarSubContent.displayName = $0520064cdfc1bd2d$export$6d4de93b380beddf.displayName;
 var MenubarContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, _b = _a.align, align = _b === void 0 ? "start" : _b, _c = _a.alignOffset, alignOffset = _c === void 0 ? -4 : _c, _d = _a.sideOffset, sideOffset = _d === void 0 ? 8 : _d, props = __rest$8(_a, ["className", "align", "alignOffset", "sideOffset"]);
+    var className = _a.className, _b = _a.align, align = _b === void 0 ? "start" : _b, _c = _a.alignOffset, alignOffset = _c === void 0 ? -4 : _c, _d = _a.sideOffset, sideOffset = _d === void 0 ? 8 : _d, props = __rest$1(_a, ["className", "align", "alignOffset", "sideOffset"]);
     return (React__namespace.createElement($0520064cdfc1bd2d$export$602eac185826482c, null,
         React__namespace.createElement($0520064cdfc1bd2d$export$7c6e2c02157bb7d2, __assign$1({ ref: ref, align: align, alignOffset: alignOffset, sideOffset: sideOffset, className: cn("z-50 min-w-[12rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props))));
 });
 MenubarContent.displayName = $0520064cdfc1bd2d$export$7c6e2c02157bb7d2.displayName;
 var MenubarItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, inset = _a.inset, props = __rest$8(_a, ["className", "inset"]);
+    var className = _a.className, inset = _a.inset, props = __rest$1(_a, ["className", "inset"]);
     return (React__namespace.createElement($0520064cdfc1bd2d$export$6d08773d2e66f8f2, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", inset && "pl-8", className) }, props)));
 });
 MenubarItem.displayName = $0520064cdfc1bd2d$export$6d08773d2e66f8f2.displayName;
 var MenubarCheckboxItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, checked = _a.checked, props = __rest$8(_a, ["className", "children", "checked"]);
+    var className = _a.className, children = _a.children, checked = _a.checked, props = __rest$1(_a, ["className", "children", "checked"]);
     return (React__namespace.createElement($0520064cdfc1bd2d$export$16ce288f89fa631c, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className), checked: checked }, props),
         React__namespace.createElement("span", { className: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" },
             React__namespace.createElement($0520064cdfc1bd2d$export$c3468e2714d175fa, null,
@@ -28565,7 +21166,7 @@ var MenubarCheckboxItem = React__namespace.forwardRef(function (_a, ref) {
 });
 MenubarCheckboxItem.displayName = $0520064cdfc1bd2d$export$16ce288f89fa631c.displayName;
 var MenubarRadioItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest$8(_a, ["className", "children"]);
+    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
     return (React__namespace.createElement($0520064cdfc1bd2d$export$371ab307eab489c0, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props),
         React__namespace.createElement("span", { className: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" },
             React__namespace.createElement($0520064cdfc1bd2d$export$c3468e2714d175fa, null,
@@ -28574,18 +21175,18 @@ var MenubarRadioItem = React__namespace.forwardRef(function (_a, ref) {
 });
 MenubarRadioItem.displayName = $0520064cdfc1bd2d$export$371ab307eab489c0.displayName;
 var MenubarLabel = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, inset = _a.inset, props = __rest$8(_a, ["className", "inset"]);
+    var className = _a.className, inset = _a.inset, props = __rest$1(_a, ["className", "inset"]);
     return (React__namespace.createElement($0520064cdfc1bd2d$export$b04be29aa201d4f5, __assign$1({ ref: ref, className: cn("px-2 py-1.5 text-sm font-semibold", inset && "pl-8", className) }, props)));
 });
 MenubarLabel.displayName = $0520064cdfc1bd2d$export$b04be29aa201d4f5.displayName;
 var MenubarSeparator = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$8(_a, ["className"]);
+    var className = _a.className, props = __rest$1(_a, ["className"]);
     return (React__namespace.createElement($0520064cdfc1bd2d$export$1ff3c3f08ae963c0, __assign$1({ ref: ref, className: cn("-mx-1 my-1 h-px bg-muted", className) }, props)));
 });
 MenubarSeparator.displayName = $0520064cdfc1bd2d$export$1ff3c3f08ae963c0.displayName;
 
 function Menu(_a) {
-    var menu = _a.menu; __rest$8(_a, ["menu"]);
+    var menu = _a.menu; __rest$1(_a, ["menu"]);
     return (React__default["default"].createElement(Menubar, { className: "rounded-none border-b border-none px-2 lg:px-4" }, menu.map(function (_a) {
         var title = _a.title, content = _a.content, props = _a.props;
         return (React__default["default"].createElement(MenubarMenu, null,
@@ -28616,7 +21217,7 @@ function Sidebar(_a) {
 }
 
 function Layout(_a) {
-    var children = _a.children, props = __rest$8(_a, ["children"]);
+    var children = _a.children, props = __rest$1(_a, ["children"]);
     return (React__default["default"].createElement("div", { className: " min-h-screen " },
         React__default["default"].createElement(Menu, __assign$1({ menu: props.menu }, props)),
         React__default["default"].createElement("div", { className: "border-t min-h-screen" },
@@ -28628,8 +21229,10 @@ function Layout(_a) {
 }
 
 exports.AuthenticationPage = AuthenticationPage$1;
-exports.Button = HotelierButton;
+exports.Button = Button;
+exports.Drawer = Drawer;
 exports.ForgotPasswordPage = ForgotPasswordPage;
+exports.Form = Form;
 exports.Icons = Icons;
 exports.Layout = Layout;
 exports.ResetPasswordPage = ResetPasswordPage;

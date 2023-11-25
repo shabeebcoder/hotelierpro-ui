@@ -15,7 +15,7 @@ export default {
 
 
 export function ToastDemo() {
-    const { toast } = useToast()
+    const { toast } = useToast();
 
     return (<>
         <Toaster />

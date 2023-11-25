@@ -61,4 +61,6 @@ export default {
             ],
         }, ],
     },
+    external: ['react', 'react-dom', 'fs', 'path'], // Specify Node.js built-in modules as external
+
 };

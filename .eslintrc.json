@@ -1,0 +1,4 @@
+{
+    "plugins": ["ssr-friendly"],
+    "extends": ["plugin:ssr-friendly/recommended"]
+  }

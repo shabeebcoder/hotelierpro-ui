@@ -1,3 +1,10 @@
-import React from 'react';
+import React, { HTMLAttributes, ReactNode } from 'react';
 import "./styles.css";
-export default function ({ children, ...props }: any): React.JSX.Element;
+interface Props extends HTMLAttributes<HTMLButtonElement> {
+    children: ReactNode;
+    type: 'primary' | 'default' | 'dashed' | 'text' | 'link' | 'hPprimary';
+    disabled: boolean;
+    className?: string;
+}
+export default function HotelierButton({ children, ...props }: Props): React.JSX.Element;
+export {};

@@ -21195,8 +21195,8 @@ function Layout(_a) {
         React__default.createElement(Menu, __assign$1({ menu: props.menu }, props)),
         React__default.createElement("div", { className: "border-t min-h-screen" },
             React__default.createElement("div", { className: "bg-background" },
-                React__default.createElement("div", { className: "grid lg:grid-cols-5" },
-                    React__default.createElement(Sidebar, __assign$1({ className: " " }, props)),
+                React__default.createElement("div", { className: "grid lg:grid-cols-6" },
+                    React__default.createElement(Sidebar, __assign$1({ className: "", style: { width: 300 } }, props)),
                     React__default.createElement("div", { className: "col-span-3 min-h-screen lg:col-span-4 lg:border-l" },
                         React__default.createElement("div", { className: "h-full px-4 py-4 lg:px-4" }, children)))))));
 }

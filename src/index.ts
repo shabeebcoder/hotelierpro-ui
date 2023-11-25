@@ -12,6 +12,7 @@ import { Icons } from "./elements/Icons/icons"
 import { Table } from "./components/Tables/index"
 import { Form } from "./components/Forms";
 import Drawer from "./components/Drawer/drawer";
+import DataTable from "./components/Data-table/data-table";
 // import { Alert } from './Alert';
 // import { Login } from './Login';
 // import { Register } from './Signup';
@@ -167,7 +168,8 @@ export {
     ResetPasswordPage,
     ForgotPasswordPage,
     Form,
-    Drawer
+    Drawer,
+    DataTable
     // Dashboard
 };
 

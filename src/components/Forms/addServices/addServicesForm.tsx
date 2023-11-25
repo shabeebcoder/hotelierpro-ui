@@ -25,9 +25,9 @@ function AddServicesForm({ onSubmit, selectValues }) {
     const form = useForm();
     return (
         <>
-            <h2 className="text-2xl font-bold tracking-tight capitalize">
+            {/* <h2 className="text-2xl font-bold tracking-tight capitalize">
                 add services
-            </h2>
+            </h2> */}
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}

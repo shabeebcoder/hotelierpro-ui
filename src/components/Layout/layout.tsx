@@ -11,8 +11,8 @@ export default function Layout({ children, ...props }) {
             <Menu menu={props.menu} {...props} />
             <div className="border-t min-h-screen">
                 <div className="bg-background">
-                    <div className="grid lg:grid-cols-5" >
-                        <Sidebar className=" " {...props} />
+                    <div className="grid lg:grid-cols-6" >
+                        <Sidebar className="" style={{width: 300}} {...props} />
                         <div className="col-span-3 min-h-screen lg:col-span-4 lg:border-l">
                             <div className="h-full px-4 py-4 lg:px-4">
                                 {children}

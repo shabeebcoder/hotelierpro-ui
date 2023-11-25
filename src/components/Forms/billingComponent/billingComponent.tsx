@@ -41,99 +41,251 @@ import { useFieldArray, useForm } from 'react-hook-form';
 
 function BillingComponent({ onSubmit, selectValues }) {
     const form = useForm();
+    const invoices = [
+        {
+            invoice: 'INV001',
+            paymentStatus: 'Paid',
+            totalAmount: '$250.00',
+            paymentMethod: 'Credit Card',
+        },
+        {
+            invoice: 'INV002',
+            paymentStatus: 'Pending',
+            totalAmount: '$150.00',
+            paymentMethod: 'PayPal',
+        },
+        {
+            invoice: 'INV003',
+            paymentStatus: 'Unpaid',
+            totalAmount: '$350.00',
+            paymentMethod: 'Bank Transfer',
+        },
+    ];
     return (
         <>
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-8 mt-8"
+                    className="space-y-8"
                 >
                     <Card>
-                        <CardHeader className="flex">
-                            <FormField
-                                control={form.control}
-                                name="paymentBy"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Payment by</FormLabel>
-                                        <Select
-                                            onValueChange={field.onChange}
-                                            defaultValue={field.value}
-                                        >
+                        <CardHeader>
+                            <div className="flex justify-between items-center px-8 w-[30rem]">
+                                <FormField
+                                    control={form.control}
+                                    name="paymentBy"
+                                    rules={{ required: true }}
+                                    render={({ field }) => (
+                                        <FormItem className="w-[10rem]">
+                                            <FormLabel>Payment by</FormLabel>
+                                            <Select
+                                                onValueChange={field.onChange}
+                                                defaultValue={field.value}
+                                            >
+                                                <FormControl>
+                                                    <SelectTrigger>
+                                                        <SelectValue />
+                                                    </SelectTrigger>
+                                                </FormControl>
+                                                <SelectContent>
+                                                    {selectValues.map(
+                                                        (item, pos) => {
+                                                            return (
+                                                                <SelectItem
+                                                                    key={pos}
+                                                                    value={
+                                                                        item.value
+                                                                    }
+                                                                >
+                                                                    {item.label}
+                                                                </SelectItem>
+                                                            );
+                                                        }
+                                                    )}
+                                                </SelectContent>
+                                            </Select>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                <FormField
+                                    control={form.control}
+                                    name="payer"
+                                    rules={{ required: true }}
+                                    render={({ field }) => (
+                                        <FormItem className="w-[10rem]">
+                                            <FormLabel>Payer</FormLabel>
                                             <FormControl>
-                                                <SelectTrigger>
-                                                    <SelectValue />
-                                                </SelectTrigger>
+                                                <Input
+                                                    placeholder=""
+                                                    {...field}
+                                                />
                                             </FormControl>
-                                            <SelectContent>
-                                                {selectValues.map(
-                                                    (item, pos) => {
-                                                        return (
-                                                            <SelectItem
-                                                                key={pos}
-                                                                value={
-                                                                    item.value
-                                                                }
-                                                            >
-                                                                {item.label}
-                                                            </SelectItem>
-                                                        );
-                                                    }
-                                                )}
-                                            </SelectContent>
-                                        </Select>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="payer"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Payer</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="" {...field} />
-                                        </FormControl>
-                                        <FormDescription></FormDescription>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <Button className="w-[15rem]">+ Add person</Button>
+                                            <FormDescription></FormDescription>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                <Button className="w-[6rem]">
+                                    + Add person
+                                </Button>
+                            </div>
                         </CardHeader>
                         <CardContent>
                             <Table>
                                 <TableHeader>
                                     <TableRow>
-                                        <TableHead className="uppercase">
+                                        <TableHead className="uppercase text-center w-[2rem]">
                                             si
                                         </TableHead>
-                                        <TableHead>Room</TableHead>
-                                        <TableHead className="uppercase">
+                                        <TableHead>Room 1 Single</TableHead>
+                                        <TableHead className="uppercase text-center w-[7rem]">
                                             cost
                                         </TableHead>
-                                        <TableHead className="uppercase">
+                                        <TableHead className="uppercase text-center w-[7rem]">
                                             qty
                                         </TableHead>
-                                        <TableHead className="uppercase">
+                                        <TableHead className="uppercase text-center w-[7rem]">
                                             price
                                         </TableHead>
                                     </TableRow>
                                 </TableHeader>
-                                <TableBody></TableBody>
+                                <TableBody>
+                                    {invoices.map((item, pos) => (
+                                        <TableRow key={pos}>
+                                            <TableCell>{pos + 1}</TableCell>
+                                            <TableCell>
+                                                <FormField
+                                                    control={form.control}
+                                                    rules={{ required: true }}
+                                                    name={`${item.invoice}${pos}`}
+                                                    render={({ field }) => (
+                                                        <FormItem className="w-[10rem]">
+                                                            <FormLabel></FormLabel>
+                                                            <FormControl>
+                                                                <Input
+                                                                    placeholder={
+                                                                        item.invoice
+                                                                    }
+                                                                    {...field}
+                                                                />
+                                                            </FormControl>
+                                                            <FormDescription></FormDescription>
+                                                            <FormMessage />
+                                                        </FormItem>
+                                                    )}
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <FormField
+                                                    control={form.control}
+                                                    rules={{ required: true }}
+                                                    name={`${item.paymentMethod}${pos}`}
+                                                    render={({ field }) => (
+                                                        <FormItem className="w-[10rem]">
+                                                            <FormLabel></FormLabel>
+                                                            <FormControl>
+                                                                <Input
+                                                                    placeholder={
+                                                                        item.paymentStatus
+                                                                    }
+                                                                    {...field}
+                                                                />
+                                                            </FormControl>
+                                                            <FormDescription></FormDescription>
+                                                            <FormMessage />
+                                                        </FormItem>
+                                                    )}
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <FormField
+                                                    control={form.control}
+                                                    rules={{ required: true }}
+                                                    name={`${item.paymentMethod}${pos}`}
+                                                    render={({ field }) => (
+                                                        <FormItem className="w-[10rem]">
+                                                            <FormLabel></FormLabel>
+                                                            <FormControl>
+                                                                <Input
+                                                                    placeholder={
+                                                                        item.paymentMethod
+                                                                    }
+                                                                    {...field}
+                                                                />
+                                                            </FormControl>
+                                                            <FormDescription></FormDescription>
+                                                            <FormMessage />
+                                                        </FormItem>
+                                                    )}
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <FormField
+                                                    control={form.control}
+                                                    rules={{ required: true }}
+                                                    name={`${item.totalAmount}${pos}`}
+                                                    render={({ field }) => (
+                                                        <FormItem className="w-[10rem]">
+                                                            <FormLabel></FormLabel>
+                                                            <FormControl>
+                                                                <Input
+                                                                    placeholder={
+                                                                        item.totalAmount
+                                                                    }
+                                                                    {...field}
+                                                                />
+                                                            </FormControl>
+                                                            <FormDescription></FormDescription>
+                                                            <FormMessage />
+                                                        </FormItem>
+                                                    )}
+                                                />
+                                            </TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
                                 <TableFooter>
+                                    <TableRow className="py-4">
+                                        <TableCell>
+                                            <Button>+ Add Service</Button>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Button variant="outline">
+                                                + New Service
+                                            </Button>
+                                        </TableCell>
+                                    </TableRow>
                                     <TableRow>
-                                        <TableCell colSpan={3}>Total</TableCell>
-                                        <TableCell className="text-right">
-                                            $2,500.00
+                                        <TableCell colSpan={2}></TableCell>
+                                        <TableCell colSpan={2}>Total</TableCell>
+                                        <TableCell>$999</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell colSpan={2}></TableCell>
+                                        <TableCell colSpan={2}>Paid</TableCell>
+                                        <TableCell>
+                                            <Input placeholder="000" />
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell colSpan={2}></TableCell>
+                                        <TableCell colSpan={2}>
+                                            Amount Due
+                                        </TableCell>
+                                        <TableCell className="text-red-500">
+                                            $250.00
                                         </TableCell>
                                     </TableRow>
                                 </TableFooter>
                             </Table>
                         </CardContent>
-                        <CardFooter>
-                            <p>Card Footer</p>
+                        <CardFooter className="flex justify-between">
+                            <div className="space-x-4">
+                                <Button>Save</Button>
+                                <Button>Cancel</Button>
+                            </div>
+                            <Button>Save & create invoice</Button>
                         </CardFooter>
                     </Card>
                 </form>

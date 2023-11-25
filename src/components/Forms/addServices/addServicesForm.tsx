@@ -22,10 +22,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useFieldArray, useForm } from 'react-hook-form';
 
 function AddServicesForm({ onSubmit, selectValues }) {
-    const arr = [
-        { label: 'Food', value: 'food' },
-        { label: 'Cleaning', value: 'cleaning' },
-    ];
     const form = useForm();
     return (
         <>
@@ -74,6 +70,7 @@ function AddServicesForm({ onSubmit, selectValues }) {
                     <FormField
                         control={form.control}
                         name="serviceCategory"
+                        rules={{ required: true }}
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Service Category</FormLabel>

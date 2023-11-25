@@ -13,18 +13,18 @@ function AddRoomType({onsubmit}) {
 
 
   return (
-    <div className="hidden h-full flex-1 flex-col space-y-3 p-8 md:flex">
-      <div className="flex items-center justify-between space-y-2">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Add New Type Room Information </h2>
-          <p className="text-muted-foreground">
+    // <div className="hidden h-full flex-1 flex-col space-y-3 p-8 md:flex">
+    //   <div className="flex items-center justify-between space-y-2">
+    //     <div>
+    //       <h2 className="text-2xl font-bold tracking-tight">Add New Type Room Information </h2>
+    //       <p className="text-muted-foreground">
 
-            This form is used to input essential details about the rooms available within your hotel or property. Accurate and complete information is crucial for efficient room management and an improved guest experience. Please fill out the following fields with the relevant information for each room.
-          </p>
-        </div>
+    //         This form is used to input essential details about the rooms available within your hotel or property. Accurate and complete information is crucial for efficient room management and an improved guest experience. Please fill out the following fields with the relevant information for each room.
+    //       </p>
+    //     </div>
 
-      </div>
-      <div>
+    //   </div>
+    //   <div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onsubmit)} className="space-y-8">
             <FormField
@@ -105,8 +105,8 @@ function AddRoomType({onsubmit}) {
               <Button variant="secondary" type="submit">Cancel room</Button>
           </form>
         </Form>
-      </div>
-    </div>
+    //   </div>
+    // </div>
   )
 }
 

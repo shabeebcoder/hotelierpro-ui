@@ -19345,7 +19345,7 @@ function DataTableColumnHeader(_a) {
                     "Hide")))));
 }
 
-function DataTableRowActions(_a) {
+function DataTableRowActions$1(_a) {
     var row = _a.row;
     var task = row.original;
     return (React__default["default"].createElement(DropdownMenu, null,
@@ -19358,7 +19358,7 @@ function DataTableRowActions(_a) {
             React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
             React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
 }
-var columns = [
+var columns$1 = [
     {
         id: "select",
         header: function (_a) {
@@ -19452,7 +19452,7 @@ var columns = [
         id: "actions",
         cell: function (_a) {
             var row = _a.row;
-            return React__default["default"].createElement(DataTableRowActions, { row: row });
+            return React__default["default"].createElement(DataTableRowActions$1, { row: row });
         },
     },
 ];
@@ -19460,11 +19460,112 @@ var columns = [
 function RoomTable(_a) {
     var data = _a.data;
     return (React__default["default"].createElement("div", null,
-        React__default["default"].createElement(DataTable, { data: data, columns: columns })));
+        React__default["default"].createElement(DataTable, { data: data, columns: columns$1 })));
 }
 
+function DataTableRowActions(_a) {
+    var row = _a.row;
+    var task = row.original;
+    return (React__default["default"].createElement(DropdownMenu, null,
+        React__default["default"].createElement(DropdownMenuTrigger, { asChild: true },
+            React__default["default"].createElement(Button, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
+                React__default["default"].createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
+                React__default["default"].createElement("span", { className: "sr-only" }, "Open menu"))),
+        React__default["default"].createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
+}
+var columns = [
+    {
+        id: "select",
+        header: function (_a) {
+            var table = _a.table;
+            return (React__default["default"].createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "roomName",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Type Name" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("roomName"));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "maxPerson",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Max Person (Per Room)" }));
+        },
+        cell: function (_a) {
+            // if (!status) {
+            //     return null
+            // }
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex  text-center" }, row.getValue("maxPerson")));
+        },
+        // filterFn: (row:any, id:any, value:any) => {
+        //     return value.includes(row.getValue(id))
+        // },
+    },
+    {
+        accessorKey: "regularPrice",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Pice (Regular)" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
+                React__default["default"].createElement("span", null,
+                    "$ ",
+                    row.getValue("regularPrice"))));
+        },
+        // filterFn: (row:any, id:any, value:any) => {
+        //     return value.includes(row.getValue(id))
+        // },
+    },
+    {
+        accessorKey: "singlePrice",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Price (Single use)" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
+                React__default["default"].createElement("span", null,
+                    "$ ",
+                    row.getValue("singlePrice"))));
+        },
+        // filterFn: (row:any, id:any, value:any) => {
+        //     return value.includes(row.getValue(id))
+        // },
+    },
+    {
+        id: "actions",
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default["default"].createElement(DataTableRowActions, { row: row });
+        },
+    },
+];
+
 var Table = {
-    rooms: RoomTable
+    rooms: RoomTable,
+    roomtype: columns
 };
 
 var Textarea = React__namespace.forwardRef(function (_a, ref) {
@@ -19927,8 +20028,90 @@ function AddPersonForm(_a) {
                     React__default["default"].createElement(Textarea, { placeholder: "Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." }))))));
 }
 
+function AddRooms(onsubmit, defaultValue, type) {
+    var form = useForm({
+        defaultValues: type === "create" ? {} : defaultValue
+    });
+    return (React__default["default"].createElement("div", null,
+        React__default["default"].createElement(Form$1, __assign$1({}, form),
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8" },
+                React__default["default"].createElement(FormField, { control: form.control, name: "email", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, null, "Room Types"),
+                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default["default"].createElement(FormControl, null,
+                                    React__default["default"].createElement(SelectTrigger, null,
+                                        React__default["default"].createElement(SelectValue, null))),
+                                React__default["default"].createElement(SelectContent, null,
+                                    React__default["default"].createElement(SelectItem, { value: "m@example.com" }, "Single"),
+                                    React__default["default"].createElement(SelectItem, { value: "m@google.com" }, "Double"),
+                                    React__default["default"].createElement(SelectItem, { value: "m@support.com" }, "other"))),
+                            React__default["default"].createElement(FormDescription, null, "Select the type of room from the options below. Choose the most appropriate category that describes the nature or purpose of the room."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "username", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, null, "No of Rooms"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$1({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the total number of rooms available in your property or facility. This should include all types of rooms, such as bedrooms, meeting rooms, and offices."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement("div", { className: "grid sm:flex w-full max-w-sm items-center gap-1.5" },
+                    React__default["default"].createElement(Label, { htmlFor: "picture" }, "Upload Image"),
+                    React__default["default"].createElement(Input, { id: "picture", type: "file" }),
+                    " \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0",
+                    React__default["default"].createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
+                    React__default["default"].createElement("img", { className: 'w-33 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
+                    React__default["default"].createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }))))));
+}
+
+function AddServicesForm(_a) {
+    var onSubmit = _a.onSubmit, selectValues = _a.selectValues;
+    var form = useForm();
+    return (React__default["default"].createElement(React__default["default"].Fragment, null,
+        React__default["default"].createElement(Form$1, __assign$1({}, form),
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 mt-8" },
+                React__default["default"].createElement(FormField, { control: form.control, name: "serviceName", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "service name"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$1({}, field))),
+                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "price", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "price($)"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$1({}, field))),
+                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "serviceCategory", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, null, "Service Category"),
+                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default["default"].createElement(FormControl, null,
+                                    React__default["default"].createElement(SelectTrigger, null,
+                                        React__default["default"].createElement(SelectValue, { placeholder: "Select preferred service category" }))),
+                                React__default["default"].createElement(SelectContent, null, selectValues.map(function (item, pos) {
+                                    return (React__default["default"].createElement(SelectItem, { key: pos, value: item.value }, item.label));
+                                }))),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(Button, { className: "capitalize" }, "add service")))));
+}
+
 var Form = {
-    addPerson: AddPersonForm
+    addPerson: AddPersonForm,
+    addRooms: AddRooms,
+    addServices: AddServicesForm
 };
 
 var Sheet = $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9;
@@ -21230,6 +21413,7 @@ function Layout(_a) {
 
 exports.AuthenticationPage = AuthenticationPage$1;
 exports.Button = Button;
+exports.DataTable = DataTable;
 exports.Drawer = Drawer;
 exports.ForgotPasswordPage = ForgotPasswordPage;
 exports.Form = Form;

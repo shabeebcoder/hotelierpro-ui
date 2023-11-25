@@ -12,5 +12,6 @@ import { Icons } from "./elements/Icons/icons";
 import { Table } from "./components/Tables/index";
 import { Form } from "./components/Forms";
 import Drawer from "./components/Drawer/drawer";
+import DataTable from "./components/Data-table/data-table";
 import Layout from "./components/Layout/layout";
-export { Button, Table, Icons, Layout, AuthenticationPage, ToastAction, useToast, Toaster, UserSignupPage, VerificationPage, ResetPasswordPage, ForgotPasswordPage, Form, Drawer };
+export { Button, Table, Icons, Layout, AuthenticationPage, ToastAction, useToast, Toaster, UserSignupPage, VerificationPage, ResetPasswordPage, ForgotPasswordPage, Form, Drawer, DataTable };

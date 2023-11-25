@@ -767,6 +767,11 @@ body {
   margin-right: -0.25rem;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -785,11 +790,6 @@ body {
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
-
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 
 .-ml-3 {
@@ -887,12 +887,12 @@ body {
   display: inline-flex;
 }
 
-.table {
-  display: table;
-}
-
 .\!table {
   display: table !important;
+}
+
+.table {
+  display: table;
 }
 
 .grid {
@@ -929,6 +929,10 @@ body {
 
 .h-2\.5 {
   height: 0.625rem;
+}
+
+.h-24 {
+  height: 6rem;
 }
 
 .h-3 {
@@ -993,10 +997,6 @@ body {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-24 {
-  height: 6rem;
 }
 
 .max-h-96 {
@@ -1091,8 +1091,16 @@ body {
   width: 100px;
 }
 
+.w-\[150px\] {
+  width: 150px;
+}
+
 .w-\[15rem\] {
   width: 15rem;
+}
+
+.w-\[160px\] {
+  width: 160px;
 }
 
 .w-\[180px\] {
@@ -1139,6 +1147,10 @@ body {
   width: 60%;
 }
 
+.w-\[70px\] {
+  width: 70px;
+}
+
 .w-auto {
   width: auto;
 }
@@ -1150,18 +1162,6 @@ body {
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-\[150px\] {
-  width: 150px;
-}
-
-.w-\[70px\] {
-  width: 70px;
-}
-
-.w-\[160px\] {
-  width: 160px;
 }
 
 .min-w-\[12rem\] {
@@ -1377,6 +1377,12 @@ body {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
@@ -1423,12 +1429,6 @@ body {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
-}
-
-.space-x-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .overflow-auto {
@@ -1671,6 +1671,11 @@ body {
   padding: 1px;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1739,15 +1744,6 @@ body {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
-.pb-1 {
-  padding-bottom: 0.25rem;
 }
 
 .pb-10 {
@@ -2506,6 +2502,10 @@ body {
   background-color: hsl(var(--accent) / 0.5);
 }
 
+.data-\[state\=open\]\:bg-muted[data-state=open] {
+  background-color: hsl(var(--muted));
+}
+
 .data-\[state\=open\]\:bg-secondary[data-state=open] {
   background-color: hsl(var(--secondary));
 }
@@ -2516,10 +2516,6 @@ body {
 
 .data-\[state\=unchecked\]\:bg-input[data-state=unchecked] {
   background-color: hsl(var(--input));
-}
-
-.data-\[state\=open\]\:bg-muted[data-state=open] {
-  background-color: hsl(var(--muted));
 }
 
 .data-\[state\=active\]\:text-foreground[data-state=active] {
@@ -2926,16 +2922,16 @@ body {
     display: none;
   }
 
+  .lg\:w-\[250px\] {
+    width: 250px;
+  }
+
   .lg\:w-\[500px\] {
     width: 500px;
   }
 
   .lg\:w-\[600px\] {
     width: 600px;
-  }
-
-  .lg\:w-\[250px\] {
-    width: 250px;
   }
 
   .lg\:max-w-none {
@@ -2981,14 +2977,14 @@ body {
     padding-right: 0px;
   }
 
-  .lg\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .lg\:px-3 {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+  }
+
+  .lg\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -3164,23 +3160,4 @@ body {
 
 .\[\&_tr\]\:border-b tr {
   border-bottom-width: 1px;
-}
-.ant-btn-primary.hotelierButton {
-    background-color: #3A7C7C;
-}
-
-.ant-btn-default.hotelierButton {
-    color: #3A7C7C;
-    border-color: #3A7C7C;
-}
-
-.hpTabActionButton {
-    background-color: #0b0d0d;
-    border-radius: 4px;
-    color: #F9F9FB;
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
 }

@@ -15,5 +15,15 @@ export declare const Icons: {
     apple: (props: IconProps) => React.JSX.Element;
     paypal: (props: IconProps) => React.JSX.Element;
     spinner: (props: IconProps) => React.JSX.Element;
+    playIcon: (props: IconProps) => React.JSX.Element;
+    windows: (props: IconProps) => React.JSX.Element;
+    note: (props: IconProps) => React.JSX.Element;
+    building: (props: IconProps) => React.JSX.Element;
+    service: (props: IconProps) => React.JSX.Element;
+    people: (props: IconProps) => React.JSX.Element;
+    calander: (props: IconProps) => React.JSX.Element;
+    stats: (props: IconProps) => React.JSX.Element;
+    hotel: (props: IconProps) => React.JSX.Element;
+    moon: (props: IconProps) => React.JSX.Element;
 };
 export {};

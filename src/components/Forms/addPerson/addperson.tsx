@@ -22,7 +22,7 @@ function AddPersonForm({ onSubmit, values, type }) {
 
     return (
         <>
-            <h2 className="text-2xl font-bold tracking-tight capitalize">
+            {/* <h2 className="text-2xl font-bold tracking-tight capitalize">
                 {type === 'create' ? 'add new person' : 'update person'}
             </h2>
             <p className="text-muted-foreground">
@@ -33,11 +33,12 @@ function AddPersonForm({ onSubmit, values, type }) {
                 experiences. Kindly complete the following fields with the
                 pertinent details for each person.
             </p>
-            <br />
-            <Form {...form}>
+            <br /> */}
+            <Form {...form} >
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-8"
+                    className="space-y-8 p-1"
+                    id="addPerson"
                 >
                     <FormField
                         control={form.control}
@@ -223,13 +224,7 @@ function AddPersonForm({ onSubmit, values, type }) {
                         <Label>Notes</Label>
                         <Textarea placeholder="Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." />
                     </div>
-                    <div className="flex gap-4 mt-4">
-                        <Button className="capitalize">
-                            {type === 'create'
-                                ? 'create new person'
-                                : 'update person'}
-                        </Button>
-                    </div>
+                
                 </form>
             </Form>
         </>

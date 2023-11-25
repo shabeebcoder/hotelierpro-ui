@@ -46,21 +46,7 @@ export function UserAuthForm({ className, onSubmit, isLoading, ...props }: UserA
                             disabled={isLoading}
                         />
                     </div>
-                    <div className="grid gap-1">
-                        <Label className="sr-only" htmlFor="email">
-                            Username
-                        </Label>
-                        <Input
-                            {...register("username")}
-                            id="username"
-                            placeholder="Username"
-                            type="text"
-                            autoCapitalize="none"
-                            autoComplete="email"
-                            autoCorrect="off"
-                            disabled={isLoading}
-                        />
-                    </div>
+        
                     <div className="grid gap-1">
                         <Label className="sr-only" htmlFor="email">
                             Fullname

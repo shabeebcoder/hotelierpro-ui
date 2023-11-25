@@ -12,48 +12,51 @@ import { useForm } from "react-hook-form"
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
 
-export function ResetPasswordForm({ className, onSubmit, isLoading,  buttonTitle=false,  ...props }: UserAuthFormProps | any) {
+export function ResetPasswordForm({ className, onSubmit, isLoading, generatePassword=false, buttonTitle = "", ...props }: UserAuthFormProps | any) {
 
-    const {handleSubmit, register} = useForm()
+    const { handleSubmit, register } = useForm()
 
     return (
         <div className={cn("grid gap-6", className)} {...props}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid gap-5">
+
                     <div className="grid gap-1">
-                        <Label className="sr-only" htmlFor="email">
-                            Password
-                        </Label>
-                        <Input
-                            {...register("password")}
-                            id="password"
-                            placeholder="New Password"
-                        
-                            autoCapitalize="none"
-                          
-                            autoCorrect="off"
-                            disabled={isLoading}
-                        />
-                    </div>
-                    <div className="grid gap-1">
-                        <Label className="sr-only" htmlFor="email">
-                            Re-type Password
-                        </Label>
-                        <Input
-                            {...register("re_type_password")}
-                            id="res_type_password"
-                            placeholder="Re-Type Password"
-                         
-                            autoCorrect="off"
-                            disabled={isLoading}
-                        />
-                    </div>
+                            <Label className="sr-only" htmlFor="email">
+                                Password
+                            </Label>
+                            <Input
+                                {...register("password")}
+                                id="password"
+                                placeholder="New Password"
+
+                                autoCapitalize="none"
+
+                                autoCorrect="off"
+                                disabled={isLoading}
+                            />
+                        </div>
+
+                            <div className="grid gap-1">
+                                <Label className="sr-only" htmlFor="email">
+                                    Re-type Password
+                                </Label>
+                                <Input
+                                    {...register("re_type_password")}
+                                    id="res_type_password"
+                                    placeholder="Re-Type Password"
+
+                                    autoCorrect="off"
+                                    disabled={isLoading}
+                                />
+                            </div>
+                
 
                     <Button disabled={isLoading}>
                         {isLoading && (
                             <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                         )}
-                      {buttonTitle ? buttonTitle :  "Update Password"}
+                        {buttonTitle ? buttonTitle : "Update Password"}
                     </Button>
                 </div>
             </form>

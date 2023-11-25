@@ -12,9 +12,9 @@ import { useForm } from "react-hook-form"
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
 
-export function UserAuthForm({ className, onSubmit, isLoading,  ...props }: UserAuthFormProps | any) {
+export function UserAuthForm({ className, onSubmit, isLoading, ...props }: UserAuthFormProps | any) {
 
-    const {handleSubmit, register} = useForm()
+    const { handleSubmit, register } = useForm()
 
     return (
         <div className={cn("grid gap-6", className)} {...props}>
@@ -57,6 +57,15 @@ export function UserAuthForm({ className, onSubmit, isLoading,  ...props }: User
                         )}
                         Sign In with Email
                     </Button>
+                    <p className="px-7 text-center text-sm text-muted-foreground">
+                        <a
+                            href="/forgot-password"
+                            className="underline underline-offset-4 hover:text-primary"
+                        >
+                            Forgot password?
+                        </a>
+                        .
+                    </p>
                 </div>
             </form>
             <div className="relative">

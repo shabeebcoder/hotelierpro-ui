@@ -6,4 +6,19 @@ export default {
 }
 
 
-export const IconExample = (args) => <Icons.logo  />
+export const IconExample = (args) => {
+
+    return (
+        <>
+        {Object.keys(Icons).map((key:any) => {
+            const IconComponent = Icons[key];
+            return (<>
+                <br />
+                {key}
+                <IconComponent style={{ height: 20 }} key={key} />
+                </>
+            );
+        })}
+    </>
+    )
+}

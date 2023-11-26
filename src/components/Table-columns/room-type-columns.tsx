@@ -10,6 +10,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "../../elements/Dropdown-menu/dropdownmenu";
+import Confirmation from '../Confirmation/alert';
 
 
 
@@ -33,10 +34,10 @@ function DataTableRowActions({
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-[160px]">
-                <DropdownMenuItem onClick={()=>task.actions.handleUpdate(task)}>Update
+                <DropdownMenuItem onClick={() => task.actions.handleUpdate(task)}>Update
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={()=>task.actions.handleDelete(task)}>Delete</DropdownMenuItem>
-                <DropdownMenuItem onClick={()=>task.actions.handleMainance(task)}>Maintainance</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => task.actions.handleDelete(task)}>Delete</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => task.actions.handleMainance(task)}>Maintainance</DropdownMenuItem>
 
             </DropdownMenuContent>
         </DropdownMenu>
@@ -75,7 +76,7 @@ export const columns: any = [
         enableSorting: false,
         enableHiding: false,
     },
- 
+
     {
         accessorKey: "maxPerson",
         header: ({ column }: any) => (

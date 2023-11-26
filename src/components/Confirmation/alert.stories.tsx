@@ -13,6 +13,7 @@ account and remove your data from our servers."
     onCancel={() => alert()}
     onConfirm={() => alert()}
     continueBtn="delete"
->
-    <button>Hello world</button>
-</Confirmation>
+    children=''
+    // open={true}
+/>
+   

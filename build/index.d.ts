@@ -13,5 +13,6 @@ import { Table } from "./components/Table-columns";
 import { Form } from "./components/Forms";
 import Drawer from "./components/Drawer/drawer";
 import DataTable from "./components/Data-table/data-table";
+import Confirmation from "./components/Confirmation/alert";
 import Layout from "./components/Layout/layout";
-export { Button, Table, Icons, Layout, AuthenticationPage, ToastAction, useToast, Toaster, UserSignupPage, VerificationPage, ResetPasswordPage, ForgotPasswordPage, Form, Drawer, DataTable };
+export { Button, Table, Icons, Layout, AuthenticationPage, ToastAction, useToast, Toaster, UserSignupPage, VerificationPage, ResetPasswordPage, ForgotPasswordPage, Form, Drawer, DataTable, Confirmation };

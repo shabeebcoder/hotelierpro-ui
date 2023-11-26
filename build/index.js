@@ -5638,6 +5638,29 @@ function $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(originalEventHandler, ourEv
     };
 }
 
+function $c512c27ab02ef895$export$fd42f52fd3ae1109(rootComponentName, defaultContext) {
+    const Context = /*#__PURE__*/ React.createContext(defaultContext);
+    function Provider(props) {
+        const { children: children , ...context } = props; // Only re-memoize when prop values change
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        const value = React.useMemo(()=>context
+        , Object.values(context));
+        return /*#__PURE__*/ React.createElement(Context.Provider, {
+            value: value
+        }, children);
+    }
+    function useContext(consumerName) {
+        const context = React.useContext(Context);
+        if (context) return context;
+        if (defaultContext !== undefined) return defaultContext; // if a defaultContext wasn't specified, it's a required context.
+        throw new Error(`\`${consumerName}\` must be used within \`${rootComponentName}\``);
+    }
+    Provider.displayName = rootComponentName + 'Provider';
+    return [
+        Provider,
+        useContext
+    ];
+}
 /* -------------------------------------------------------------------------------------------------
  * createContextScope
  * -----------------------------------------------------------------------------------------------*/ function $c512c27ab02ef895$export$50c7b4e9d9f19c1$1(scopeName, createContextScopeDeps = []) {
@@ -21967,6 +21990,12 @@ const $5d3850c4d0b4e6c7$export$fba2fb7cd781b7ac = /*#__PURE__*/ React.forwardRef
 /* -----------------------------------------------------------------------------------------------*/ function $5d3850c4d0b4e6c7$var$getState$1(open) {
     return open ? 'open' : 'closed';
 }
+const $5d3850c4d0b4e6c7$var$TITLE_WARNING_NAME = 'DialogTitleWarning';
+const [$5d3850c4d0b4e6c7$export$69b62a49393917d6, $5d3850c4d0b4e6c7$var$useWarningContext] = $c512c27ab02ef895$export$fd42f52fd3ae1109($5d3850c4d0b4e6c7$var$TITLE_WARNING_NAME, {
+    contentName: $5d3850c4d0b4e6c7$var$CONTENT_NAME$1,
+    titleName: $5d3850c4d0b4e6c7$var$TITLE_NAME,
+    docsSlug: 'dialog'
+});
 const $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1 = $5d3850c4d0b4e6c7$export$3ddf2d174ce01153$1;
 const $5d3850c4d0b4e6c7$export$41fb9f06171c75f4 = $5d3850c4d0b4e6c7$export$2e1e1122cf0cba88;
 const $5d3850c4d0b4e6c7$export$602eac185826482c$1 = $5d3850c4d0b4e6c7$export$dad7c95542bacce0$1;
@@ -28377,6 +28406,178 @@ function DataTable(_a) {
 }
 
 /* -------------------------------------------------------------------------------------------------
+ * AlertDialog
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$ROOT_NAME = 'AlertDialog';
+const [$905f4ae918aab1aa$var$createAlertDialogContext, $905f4ae918aab1aa$export$b8891880751c2c5b] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($905f4ae918aab1aa$var$ROOT_NAME, [
+    $5d3850c4d0b4e6c7$export$cc702773b8ea3e41$1
+]);
+const $905f4ae918aab1aa$var$useDialogScope = $5d3850c4d0b4e6c7$export$cc702773b8ea3e41$1();
+const $905f4ae918aab1aa$export$de466dd8317b0b75 = (props)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...alertDialogProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1, _extends({}, dialogScope, alertDialogProps, {
+        modal: true
+    }));
+};
+const $905f4ae918aab1aa$export$6edd7a623ef0f40b = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...triggerProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$41fb9f06171c75f4, _extends({}, dialogScope, triggerProps, {
+        ref: forwardedRef
+    }));
+});
+const $905f4ae918aab1aa$export$660f2bfdb986706c = (props)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...portalProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$602eac185826482c$1, _extends({}, dialogScope, portalProps));
+};
+const $905f4ae918aab1aa$export$a707a4895ce23256 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...overlayProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1, _extends({}, dialogScope, overlayProps, {
+        ref: forwardedRef
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogContent
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$CONTENT_NAME = 'AlertDialogContent';
+const [$905f4ae918aab1aa$var$AlertDialogContentProvider, $905f4ae918aab1aa$var$useAlertDialogContentContext] = $905f4ae918aab1aa$var$createAlertDialogContext($905f4ae918aab1aa$var$CONTENT_NAME);
+const $905f4ae918aab1aa$export$94e6af45f0af4efd = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , children: children , ...contentProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    const contentRef = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, contentRef);
+    const cancelRef = React.useRef(null);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$69b62a49393917d6, {
+        contentName: $905f4ae918aab1aa$var$CONTENT_NAME,
+        titleName: $905f4ae918aab1aa$var$TITLE_NAME,
+        docsSlug: "alert-dialog"
+    }, /*#__PURE__*/ React.createElement($905f4ae918aab1aa$var$AlertDialogContentProvider, {
+        scope: __scopeAlertDialog,
+        cancelRef: cancelRef
+    }, /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1, _extends({
+        role: "alertdialog"
+    }, dialogScope, contentProps, {
+        ref: composedRefs,
+        onOpenAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(contentProps.onOpenAutoFocus, (event)=>{
+            var _cancelRef$current;
+            event.preventDefault();
+            (_cancelRef$current = cancelRef.current) === null || _cancelRef$current === void 0 || _cancelRef$current.focus({
+                preventScroll: true
+            });
+        }),
+        onPointerDownOutside: (event)=>event.preventDefault()
+        ,
+        onInteractOutside: (event)=>event.preventDefault()
+    }), /*#__PURE__*/ React.createElement($5e63c961fc1ce211$export$d9f1ccf0bdb05d45$1, null, children), false)));
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogTitle
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$TITLE_NAME = 'AlertDialogTitle';
+const $905f4ae918aab1aa$export$225e0da62d314b7 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...titleProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$f99233281efd08a0, _extends({}, dialogScope, titleProps, {
+        ref: forwardedRef
+    }));
+});
+const $905f4ae918aab1aa$export$a23b55cde55ad9a5 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...descriptionProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$393edc798c47379d, _extends({}, dialogScope, descriptionProps, {
+        ref: forwardedRef
+    }));
+});
+const $905f4ae918aab1aa$export$b454f818c58ee85d = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...actionProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, _extends({}, dialogScope, actionProps, {
+        ref: forwardedRef
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogCancel
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$CANCEL_NAME = 'AlertDialogCancel';
+const $905f4ae918aab1aa$export$2f67a923571aaea0 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...cancelProps } = props;
+    const { cancelRef: cancelRef  } = $905f4ae918aab1aa$var$useAlertDialogContentContext($905f4ae918aab1aa$var$CANCEL_NAME, __scopeAlertDialog);
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    const ref = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, cancelRef);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, _extends({}, dialogScope, cancelProps, {
+        ref: ref
+    }));
+});
+const $905f4ae918aab1aa$export$be92b6f5f03c0fe9 = $905f4ae918aab1aa$export$de466dd8317b0b75;
+const $905f4ae918aab1aa$export$41fb9f06171c75f4 = $905f4ae918aab1aa$export$6edd7a623ef0f40b;
+const $905f4ae918aab1aa$export$602eac185826482c = $905f4ae918aab1aa$export$660f2bfdb986706c;
+const $905f4ae918aab1aa$export$c6fdb837b070b4ff = $905f4ae918aab1aa$export$a707a4895ce23256;
+const $905f4ae918aab1aa$export$7c6e2c02157bb7d2 = $905f4ae918aab1aa$export$94e6af45f0af4efd;
+const $905f4ae918aab1aa$export$e19cd5f9376f8cee = $905f4ae918aab1aa$export$b454f818c58ee85d;
+const $905f4ae918aab1aa$export$848c9b7ead0df967 = $905f4ae918aab1aa$export$2f67a923571aaea0;
+const $905f4ae918aab1aa$export$f99233281efd08a0 = $905f4ae918aab1aa$export$225e0da62d314b7;
+const $905f4ae918aab1aa$export$393edc798c47379d = $905f4ae918aab1aa$export$a23b55cde55ad9a5;
+
+var AlertDialog = $905f4ae918aab1aa$export$be92b6f5f03c0fe9;
+var AlertDialogTrigger = $905f4ae918aab1aa$export$41fb9f06171c75f4;
+var AlertDialogPortal = $905f4ae918aab1aa$export$602eac185826482c;
+var AlertDialogOverlay = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($905f4ae918aab1aa$export$c6fdb837b070b4ff, __assign$2({ className: cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props, { ref: ref })));
+});
+AlertDialogOverlay.displayName = $905f4ae918aab1aa$export$c6fdb837b070b4ff.displayName;
+var AlertDialogContent = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement(AlertDialogPortal, null,
+        React__namespace.createElement(AlertDialogOverlay, null),
+        React__namespace.createElement($905f4ae918aab1aa$export$7c6e2c02157bb7d2, __assign$2({ ref: ref, className: cn("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg", className) }, props))));
+});
+AlertDialogContent.displayName = $905f4ae918aab1aa$export$7c6e2c02157bb7d2.displayName;
+var AlertDialogHeader = function (_a) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement("div", __assign$2({ className: cn("flex flex-col space-y-2 text-center sm:text-left", className) }, props)));
+};
+AlertDialogHeader.displayName = "AlertDialogHeader";
+var AlertDialogFooter = function (_a) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement("div", __assign$2({ className: cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className) }, props)));
+};
+AlertDialogFooter.displayName = "AlertDialogFooter";
+var AlertDialogTitle = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($905f4ae918aab1aa$export$f99233281efd08a0, __assign$2({ ref: ref, className: cn("text-lg font-semibold", className) }, props)));
+});
+AlertDialogTitle.displayName = $905f4ae918aab1aa$export$f99233281efd08a0.displayName;
+var AlertDialogDescription = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($905f4ae918aab1aa$export$393edc798c47379d, __assign$2({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
+});
+AlertDialogDescription.displayName =
+    $905f4ae918aab1aa$export$393edc798c47379d.displayName;
+var AlertDialogAction = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($905f4ae918aab1aa$export$e19cd5f9376f8cee, __assign$2({ ref: ref, className: cn(buttonVariants(), className) }, props)));
+});
+AlertDialogAction.displayName = $905f4ae918aab1aa$export$e19cd5f9376f8cee.displayName;
+var AlertDialogCancel = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($905f4ae918aab1aa$export$848c9b7ead0df967, __assign$2({ ref: ref, className: cn(buttonVariants({ variant: "outline" }), "mt-2 sm:mt-0", className) }, props)));
+});
+AlertDialogCancel.displayName = $905f4ae918aab1aa$export$848c9b7ead0df967.displayName;
+
+function Confirmation(_a) {
+    var children = _a.children, title = _a.title, description = _a.description, onCancel = _a.onCancel, onConfirm = _a.onConfirm, _b = _a.cancelBtn, cancelBtn = _b === void 0 ? "Cancel" : _b, _c = _a.open, open = _c === void 0 ? false : _c, _d = _a.continueBtn, continueBtn = _d === void 0 ? "Continue" : _d;
+    return (React__default["default"].createElement(AlertDialog, { open: open },
+        React__default["default"].createElement(AlertDialogTrigger, { asChild: true }, children || ''),
+        React__default["default"].createElement(AlertDialogContent, null,
+            React__default["default"].createElement(AlertDialogHeader, null,
+                React__default["default"].createElement(AlertDialogTitle, null, title),
+                React__default["default"].createElement(AlertDialogDescription, null, description)),
+            React__default["default"].createElement(AlertDialogFooter, null,
+                React__default["default"].createElement(AlertDialogCancel, { onClick: onCancel }, cancelBtn),
+                React__default["default"].createElement(AlertDialogAction, { onClick: onConfirm }, continueBtn)))));
+}
+
+/* -------------------------------------------------------------------------------------------------
  * Menubar
  * -----------------------------------------------------------------------------------------------*/ const $0520064cdfc1bd2d$var$MENUBAR_NAME = 'Menubar';
 const [$0520064cdfc1bd2d$var$Collection, $0520064cdfc1bd2d$var$useCollection, $0520064cdfc1bd2d$var$createCollectionScope] = $e02a7d9cb1dc128c$export$c74125a8e3af6bb2($0520064cdfc1bd2d$var$MENUBAR_NAME);
@@ -28832,6 +29033,7 @@ function Layout(_a) {
 
 exports.AuthenticationPage = AuthenticationPage$1;
 exports.Button = Button$1;
+exports.Confirmation = Confirmation;
 exports.DataTable = DataTable;
 exports.Drawer = Drawer;
 exports.ForgotPasswordPage = ForgotPasswordPage;

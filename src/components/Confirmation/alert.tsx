@@ -10,13 +10,14 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "../../elements/Alert Dialog/alertDialog";
+import { Icons } from "./../../elements/Icons/icons"
 
 
-export function Confirmation({ children, title, description, onCancel, onConfirm, cancelBtn = "Cancel",  continueBtn="Continue" }): any {
+export function Confirmation({ children, loading = true, title, description, onCancel, onConfirm, cancelBtn = "Cancel", open = false, continueBtn = "Continue", loadingBtnText="Deleting..." }): any {
     return (
-        <AlertDialog>
+        <AlertDialog open={true}>
             <AlertDialogTrigger asChild>
-                {children}
+                {children || ''}
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
@@ -26,8 +27,13 @@ export function Confirmation({ children, title, description, onCancel, onConfirm
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                    <AlertDialogCancel onClick={onCancel}>{cancelBtn}</AlertDialogCancel>
-                    <AlertDialogAction onClick={onConfirm}>{continueBtn}</AlertDialogAction>
+                    <AlertDialogCancel disabled={loading} onClick={onCancel}>{cancelBtn}</AlertDialogCancel>
+                    <AlertDialogAction disabled={loading} onClick={onConfirm}>
+                        {loading ? (<>
+                            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                            {loadingBtnText}
+                        </>) : continueBtn}
+                    </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>

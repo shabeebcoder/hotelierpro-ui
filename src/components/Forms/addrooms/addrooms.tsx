@@ -11,7 +11,7 @@ import {
     SelectTrigger,
     SelectValue,
   } from "../../../elements/Select/select"
-function AddRooms(onsubmit, defaultValue ,type) {
+function AddRooms(onsubmit, defaultValue ,type):any {
   const form = useForm({
     defaultValues: type === "create" ? {} : defaultValue
 });

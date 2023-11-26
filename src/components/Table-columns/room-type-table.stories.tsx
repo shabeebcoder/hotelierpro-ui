@@ -1,6 +1,6 @@
 import React from 'react'
 import {columns} from "./room-type-columns"
-import Table from "./../../Data-table/data-table";
+import Table from "../Data-table/data-table";
 
 export default {
     title: "hotelierpro/tables/room-type"

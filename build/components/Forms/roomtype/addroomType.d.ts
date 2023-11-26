@@ -1,5 +1,4 @@
-import React from 'react';
 declare function AddRoomType({ onsubmit }: {
     onsubmit: any;
-}): React.JSX.Element;
+}): any;
 export default AddRoomType;

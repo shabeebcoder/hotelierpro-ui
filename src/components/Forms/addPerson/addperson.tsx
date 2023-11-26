@@ -15,7 +15,7 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFieldArray, useForm } from 'react-hook-form';
 
-function AddPersonForm({ onSubmit, values, type }) {
+function AddPersonForm({ onSubmit, values, type }):any {
     const form = useForm({
         defaultValues: type === 'create' ? {} : values,
     });

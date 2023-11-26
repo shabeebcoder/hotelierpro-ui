@@ -21,7 +21,7 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFieldArray, useForm } from 'react-hook-form';
 
-function AddServicesForm({ onSubmit, selectValues }) {
+function AddServicesForm({ onSubmit, selectValues }):any {
     const form = useForm();
     return (
         <>
@@ -32,6 +32,7 @@ function AddServicesForm({ onSubmit, selectValues }) {
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
                     className="space-y-8 mt-8"
+                    id="addService"
                 >
                     <FormField
                         control={form.control}
@@ -100,7 +101,7 @@ function AddServicesForm({ onSubmit, selectValues }) {
                             </FormItem>
                         )}
                     />
-                    <Button className="capitalize">add service</Button>
+                    {/* <Button className="capitalize">add service</Button> */}
                 </form>
             </Form>
         </>

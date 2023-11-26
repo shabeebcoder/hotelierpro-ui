@@ -1,15 +1,15 @@
 
 import React from 'react'
-import { Checkbox } from "./../../../elements/Checkbox/checkbox"
-import { DataTableColumnHeader } from "./../../Data-table/data-table-column-header";
+import { Checkbox } from "../../elements/Checkbox/checkbox"
+import { DataTableColumnHeader } from "../Data-table/data-table-column-header";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons"
-import { Button } from "../../../elements/Buttons/buttons"
+import { Button } from "../../elements/Buttons/buttons"
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from "../../../elements/Dropdown-menu/dropdownmenu";
+} from "../../elements/Dropdown-menu/dropdownmenu";
 
 
 
@@ -17,7 +17,6 @@ import {
 function DataTableRowActions({
     row,
 }: any) {
-
 
     const task: any = row.original
 
@@ -69,13 +68,26 @@ export const columns: any = [
     {
         accessorKey: "roomName",
         header: ({ column }: any) => (
-            <DataTableColumnHeader column={column} title="Room Type Name" />
+            <DataTableColumnHeader column={column} title="Room Name" />
         ),
         cell: ({ row }: any) => <div className="w-[150px]">{row.getValue("roomName")}</div>,
         enableSorting: false,
         enableHiding: false,
     },
- 
+    {
+        accessorKey: "roomType",
+        header: ({ column }: any) => (
+            <DataTableColumnHeader column={column} title="Room Type" />
+        ),
+        cell: ({ row }: any) => {
+
+            return (
+                <div className="flex items-center text-center">
+                    <span>{row.getValue("roomType")}</span>
+                </div>
+            )
+        },
+    },
     {
         accessorKey: "maxPerson",
         header: ({ column }: any) => (

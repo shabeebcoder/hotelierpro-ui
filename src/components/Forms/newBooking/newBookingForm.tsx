@@ -44,6 +44,7 @@ export default function NewBookingForm({
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
                     className="grid grid-cols-3 grid-rows-8 gap-8"
+                    id="newBooking"
                 >
                     <FormField
                         control={form.control}
@@ -474,10 +475,10 @@ export default function NewBookingForm({
                             )}
                         />
                     </div>
-                    <div className="flex items-center gap-4 col-span-full">
+                    {/* <div className="flex items-center gap-4 col-span-full">
                         <Button>Save</Button>
                         <Button variant="outline">Cancel</Button>
-                    </div>
+                    </div> */}
                 </form>
             </Form>
         </>

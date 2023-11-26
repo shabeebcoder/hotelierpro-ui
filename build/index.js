@@ -20108,10 +20108,68 @@ function AddServicesForm(_a) {
                 React__default["default"].createElement(Button, { className: "capitalize" }, "add service")))));
 }
 
+function AddRoomType(_a) {
+    var onsubmit = _a.onsubmit;
+    var form = useForm({});
+    return (
+    // <div className="hidden h-full flex-1 flex-col space-y-3 p-8 md:flex">
+    //   <div className="flex items-center justify-between space-y-2">
+    //     <div>
+    //       <h2 className="text-2xl font-bold tracking-tight">Add New Type Room Information </h2>
+    //       <p className="text-muted-foreground">
+    //         This form is used to input essential details about the rooms available within your hotel or property. Accurate and complete information is crucial for efficient room management and an improved guest experience. Please fill out the following fields with the relevant information for each room.
+    //       </p>
+    //     </div>
+    //   </div>
+    //   <div>
+    React__default["default"].createElement(Form$1, __assign$1({}, form),
+        React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8" },
+            React__default["default"].createElement(FormField, { control: form.control, name: "room_type_name", rules: { required: true }, render: function (_a) {
+                    var field = _a.field;
+                    return (React__default["default"].createElement(FormItem, null,
+                        React__default["default"].createElement(FormLabel, null, "Name"),
+                        React__default["default"].createElement(FormControl, null,
+                            React__default["default"].createElement(Input, __assign$1({}, field))),
+                        React__default["default"].createElement(FormDescription, null, "Please enter a unique name for the room. It may contain letters, numbers, and spaces. Avoid special characters or symbols.                                            "),
+                        React__default["default"].createElement(FormMessage, null)));
+                } }),
+            React__default["default"].createElement(FormField, { control: form.control, name: "max_person", rules: { required: true }, render: function (_a) {
+                    var field = _a.field;
+                    return (React__default["default"].createElement(FormItem, null,
+                        React__default["default"].createElement(FormLabel, null, "Max. Persons(per rooms)"),
+                        React__default["default"].createElement(FormControl, null,
+                            React__default["default"].createElement(Input, __assign$1({ type: 'number' }, field))),
+                        React__default["default"].createElement(FormDescription, null, "Specify the maximum number of individuals allowed in this room. Please consider factors such as room size, safety regulations, and comfort.                                            "),
+                        React__default["default"].createElement(FormMessage, null)));
+                } }),
+            React__default["default"].createElement(FormField, { control: form.control, name: "regular_price", rules: { required: true }, render: function (_a) {
+                    var field = _a.field;
+                    return (React__default["default"].createElement(FormItem, null,
+                        React__default["default"].createElement(FormLabel, null, "Price(Regular use)"),
+                        React__default["default"].createElement(FormControl, null,
+                            React__default["default"].createElement(Input, __assign$1({ type: 'number' }, field))),
+                        React__default["default"].createElement(FormDescription, null, "Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations."),
+                        React__default["default"].createElement(FormMessage, null)));
+                } }),
+            React__default["default"].createElement(FormField, { control: form.control, name: "sing_price", rules: { required: true }, render: function (_a) {
+                    var field = _a.field;
+                    return (React__default["default"].createElement(FormItem, null,
+                        React__default["default"].createElement(FormLabel, null, "Price(Single use)"),
+                        React__default["default"].createElement(FormControl, null,
+                            React__default["default"].createElement(Input, __assign$1({ type: 'number' }, field))),
+                        React__default["default"].createElement(FormDescription, null, "Specify the standard price for a single use of this room for regular purposes."),
+                        React__default["default"].createElement(FormMessage, null)));
+                } })))
+    //   </div>
+    // </div>
+    );
+}
+
 var Form = {
     addPerson: AddPersonForm,
     addRooms: AddRooms,
-    addServices: AddServicesForm
+    addServices: AddServicesForm,
+    addRoomType: AddRoomType
 };
 
 var Sheet = $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9;

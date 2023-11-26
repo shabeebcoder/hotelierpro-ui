@@ -1,6 +1,5 @@
-import React from 'react';
 declare function AddServicesForm({ onSubmit, selectValues }: {
     onSubmit: any;
     selectValues: any;
-}): React.JSX.Element;
+}): any;
 export default AddServicesForm;

@@ -1,5 +1,5 @@
 import React from 'react'
-import DataTable from '../../Data-table/data-table'
+import DataTable from '../Data-table/data-table'
 import { columns } from "./room-table-column"
 
 

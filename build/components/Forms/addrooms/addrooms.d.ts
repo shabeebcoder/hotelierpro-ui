@@ -1,3 +1,2 @@
-import React from 'react';
-declare function AddRooms(onsubmit: any, defaultValue: any, type: any): React.JSX.Element;
+declare function AddRooms(onsubmit: any, defaultValue: any, type: any): any;
 export default AddRooms;

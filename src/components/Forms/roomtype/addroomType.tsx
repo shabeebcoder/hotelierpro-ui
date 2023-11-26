@@ -6,10 +6,36 @@ import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessa
 import { useFieldArray, useForm } from "react-hook-form"
 
 
-function AddRoomType({ onsubmit, id }): any {
+function AddRoomType({
+  onsubmit,
+  id,
+  defaultValues = {},
+  fields = {
+    name: {
+      label: "Name",
+      description: "Please enter a unique name for the room. It may contain letters, numbers, and spaces. Avoid special characters or symbols."
+    },
+    maxPerson: {
+      label: "Max. Persons(per rooms)",
+      description: "Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations."
+    },
+    regularPrice: {
+      label: "Price(Regular use)",
+      description: "Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations."
+    },
+    singlePrice: {
+      label: "Price(Single use)",
+      description: "Specify the standard price for a single use of this room for regular purposes."
+    },
 
 
-  const form = useForm({})
+  }
+}): any {
+
+
+  const form = useForm({
+    defaultValues
+  })
 
 
   return (
@@ -26,17 +52,17 @@ function AddRoomType({ onsubmit, id }): any {
     //   </div>
     //   <div>
     <Form {...form}>
-      <form   id={id} onSubmit={form.handleSubmit(onsubmit)} className="space-y-8">
+      <form id={id} onSubmit={form.handleSubmit(onsubmit)} className="space-y-8">
         <FormField
           control={form.control}
-          name="room_type_name"
-        
+          name="name"
+
           rules={
             { required: true }
           }
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{fields.name.label}</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -48,36 +74,18 @@ function AddRoomType({ onsubmit, id }): any {
         />
         <FormField
           control={form.control}
-          name="max_person"
+          name="maxPerson"
           rules={
             { required: true }
           }
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Max. Persons(per rooms)</FormLabel>
+              <FormLabel>{fields.maxPerson.label}</FormLabel>
               <FormControl>
                 <Input type='number' {...field} />
               </FormControl>
               <FormDescription>
-                Specify the maximum number of individuals allowed in this room. Please consider factors such as room size, safety regulations, and comfort.                                            </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="regular_price"
-          rules={
-            { required: true }
-          }
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Price(Regular use)</FormLabel>
-              <FormControl>
-                <Input type='number' {...field} />
-              </FormControl>
-              <FormDescription>
-                Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations.
+                {fields.maxPerson.description}
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -85,18 +93,41 @@ function AddRoomType({ onsubmit, id }): any {
         />
         <FormField
           control={form.control}
-          name="sing_price"
+          name="regularPrice"
           rules={
             { required: true }
           }
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Price(Single use)</FormLabel>
+              <FormLabel>{fields.regularPrice.label}</FormLabel>
               <FormControl>
                 <Input type='number' {...field} />
               </FormControl>
               <FormDescription>
-                Specify the standard price for a single use of this room for regular purposes.
+                {fields.regularPrice.description}
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="singlePrice"
+          rules={
+            { required: true }
+          }
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{
+                fields.singlePrice.label
+              }</FormLabel>
+              <FormControl>
+                <Input type='number' {...field} />
+              </FormControl>
+              <FormDescription>
+                {
+                  fields.singlePrice.description
+                }
               </FormDescription>
               <FormMessage />
             </FormItem>

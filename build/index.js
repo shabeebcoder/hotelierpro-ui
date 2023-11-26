@@ -28565,7 +28565,7 @@ var AlertDialogCancel = React__namespace.forwardRef(function (_a, ref) {
 AlertDialogCancel.displayName = $905f4ae918aab1aa$export$848c9b7ead0df967.displayName;
 
 function Confirmation(_a) {
-    var children = _a.children, title = _a.title, description = _a.description, onCancel = _a.onCancel, onConfirm = _a.onConfirm, _b = _a.cancelBtn, cancelBtn = _b === void 0 ? "Cancel" : _b, _c = _a.open, open = _c === void 0 ? false : _c, _d = _a.continueBtn, continueBtn = _d === void 0 ? "Continue" : _d;
+    var children = _a.children, _b = _a.loading, loading = _b === void 0 ? false : _b, title = _a.title, description = _a.description, onCancel = _a.onCancel, onConfirm = _a.onConfirm, _c = _a.cancelBtn, cancelBtn = _c === void 0 ? "Cancel" : _c, _d = _a.open, open = _d === void 0 ? false : _d, _e = _a.continueBtn, continueBtn = _e === void 0 ? "Continue" : _e, _f = _a.loadingBtnText, loadingBtnText = _f === void 0 ? "Deleting..." : _f;
     return (React__default["default"].createElement(AlertDialog, { open: open },
         React__default["default"].createElement(AlertDialogTrigger, { asChild: true }, children || ''),
         React__default["default"].createElement(AlertDialogContent, null,
@@ -28573,8 +28573,10 @@ function Confirmation(_a) {
                 React__default["default"].createElement(AlertDialogTitle, null, title),
                 React__default["default"].createElement(AlertDialogDescription, null, description)),
             React__default["default"].createElement(AlertDialogFooter, null,
-                React__default["default"].createElement(AlertDialogCancel, { onClick: onCancel }, cancelBtn),
-                React__default["default"].createElement(AlertDialogAction, { onClick: onConfirm }, continueBtn)))));
+                React__default["default"].createElement(AlertDialogCancel, { disabled: loading, onClick: onCancel }, cancelBtn),
+                React__default["default"].createElement(AlertDialogAction, { disabled: loading, onClick: onConfirm }, loading ? (React__default["default"].createElement(React__default["default"].Fragment, null,
+                    React__default["default"].createElement(Icons.spinner, { className: "mr-2 h-4 w-4 animate-spin" }),
+                    loadingBtnText)) : continueBtn)))));
 }
 
 /* -------------------------------------------------------------------------------------------------

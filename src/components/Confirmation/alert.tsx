@@ -13,9 +13,9 @@ import {
 import { Icons } from "./../../elements/Icons/icons"
 
 
-export function Confirmation({ children, loading = true, title, description, onCancel, onConfirm, cancelBtn = "Cancel", open = false, continueBtn = "Continue", loadingBtnText="Deleting..." }): any {
+export function Confirmation({ children, loading = false, title, description, onCancel, onConfirm, cancelBtn = "Cancel", open = false, continueBtn = "Continue", loadingBtnText="Deleting..." }): any {
     return (
-        <AlertDialog open={true}>
+        <AlertDialog open={open}>
             <AlertDialogTrigger asChild>
                 {children || ''}
             </AlertDialogTrigger>

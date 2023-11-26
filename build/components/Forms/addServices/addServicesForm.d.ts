@@ -1,6 +1,6 @@
-declare function AddServicesForm({ onSubmit, selectValues, id }: {
+declare function AddServicesForm({ onSubmit, serviceCategory, id }: {
     onSubmit: any;
-    selectValues: any;
+    serviceCategory: any;
     id: any;
 }): any;
 export default AddServicesForm;

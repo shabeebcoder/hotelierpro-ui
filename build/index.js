@@ -14152,13 +14152,13 @@ var FormMessage = React__default["default"].forwardRef(function (_a, ref) {
 FormMessage.displayName = "FormMessage";
 
 function AddPersonForm(_a) {
-    var onSubmit = _a.onSubmit, values = _a.values, type = _a.type;
+    var onSubmit = _a.onSubmit, values = _a.values, type = _a.type, id = _a.id;
     var form = useForm({
         defaultValues: type === 'create' ? {} : values,
     });
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(Form$1, __assign$2({}, form),
-            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 p-1", id: "addPerson" },
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 p-1", id: id },
                 React__default["default"].createElement(FormField, { control: form.control, name: "fullName", rules: { required: true }, render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
@@ -14168,7 +14168,7 @@ function AddPersonForm(_a) {
                             React__default["default"].createElement(FormDescription, null, "Enter the complete name of the person. This should serve as a distinctive label for convenient and precise identification."),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "companyId", rules: { required: true }, render: function (_a) {
+                React__default["default"].createElement(FormField, { control: form.control, name: "companyId", render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
                             React__default["default"].createElement(FormLabel, { className: "capitalize" }, "company iD"),
@@ -14179,7 +14179,7 @@ function AddPersonForm(_a) {
                                 "Enter the unique identification number or code assigned to the company. This serves as a distinct identifier for the company for easy reference and identification."),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "bank", rules: { required: true }, render: function (_a) {
+                React__default["default"].createElement(FormField, { control: form.control, name: "bank", render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
                             React__default["default"].createElement(FormLabel, { className: "capitalize" }, "bank"),
@@ -14190,7 +14190,7 @@ function AddPersonForm(_a) {
                                 "Enter the official name or designation of the bank associated with this account. Provide the full and accurate name for clear identification."),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "accNO", rules: { required: true }, render: function (_a) {
+                React__default["default"].createElement(FormField, { control: form.control, name: "accountNumber", render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
                             React__default["default"].createElement(FormLabel, { className: "capitalize" }, "account no"),
@@ -14208,7 +14208,7 @@ function AddPersonForm(_a) {
                             React__default["default"].createElement(FormDescription, null, "Enter the email address associated with your account. Make sure it is a valid and accessible email for communication and account-related notifications."),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "phoneNo", rules: { required: true }, render: function (_a) {
+                React__default["default"].createElement(FormField, { control: form.control, name: "phoneNumber", rules: { required: true }, render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
                             React__default["default"].createElement(FormLabel, { className: "capitalize" }, "phone no"),
@@ -14217,7 +14217,7 @@ function AddPersonForm(_a) {
                             React__default["default"].createElement(FormDescription, null, "Enter the contact number associated with the person. It should be a valid phone number for communication purposes and should uniquely identify this person in case of any queries or contacts."),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "address", rules: { required: true }, render: function (_a) {
+                React__default["default"].createElement(FormField, { control: form.control, name: "country", render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
                             React__default["default"].createElement(FormLabel, { className: "capitalize" }, "address"),
@@ -14237,53 +14237,12 @@ function AddPersonForm(_a) {
                     } }),
                 React__default["default"].createElement("div", null,
                     React__default["default"].createElement(Label, null, "Notes"),
-                    React__default["default"].createElement(Textarea, { placeholder: "Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." }))))));
-}
-
-function AddRooms(onsubmit, defaultValue, type, id) {
-    var form = useForm({
-        defaultValues: type === "create" ? {} : defaultValue
-    });
-    return (React__default["default"].createElement("div", null,
-        React__default["default"].createElement(Form$1, __assign$2({}, form),
-            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8", id: id },
-                React__default["default"].createElement(FormField, { control: form.control, name: "email", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, null, "Room Types"),
-                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
-                                React__default["default"].createElement(FormControl, null,
-                                    React__default["default"].createElement(SelectTrigger, null,
-                                        React__default["default"].createElement(SelectValue, null))),
-                                React__default["default"].createElement(SelectContent, null,
-                                    React__default["default"].createElement(SelectItem, { value: "m@example.com" }, "Single"),
-                                    React__default["default"].createElement(SelectItem, { value: "m@google.com" }, "Double"),
-                                    React__default["default"].createElement(SelectItem, { value: "m@support.com" }, "other"))),
-                            React__default["default"].createElement(FormDescription, null, "Select the type of room from the options below. Choose the most appropriate category that describes the nature or purpose of the room."),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "username", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, null, "No of Rooms"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$2({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the total number of rooms available in your property or facility. This should include all types of rooms, such as bedrooms, meeting rooms, and offices."),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement("div", { className: "grid sm:flex flex-col w-full max-w-sm  gap-1.5" },
-                    React__default["default"].createElement("div", null,
-                        React__default["default"].createElement(Label, { htmlFor: "picture" }, "Upload Image"),
-                        React__default["default"].createElement(Input, { id: "picture", type: "file" }),
-                        " \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"),
-                    React__default["default"].createElement("div", { className: 'flex gap-1.5' },
-                        React__default["default"].createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
-                        React__default["default"].createElement("img", { className: 'w-33 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
-                        React__default["default"].createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" })))))));
+                    React__default["default"].createElement(Textarea, { placeholder: "Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." })),
+                React__default["default"].createElement(Button$1, null, "submit")))));
 }
 
 function AddServicesForm(_a) {
-    var onSubmit = _a.onSubmit, selectValues = _a.selectValues, id = _a.id;
+    var onSubmit = _a.onSubmit, serviceCategory = _a.serviceCategory, id = _a.id;
     var form = useForm();
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(Form$1, __assign$2({}, form),
@@ -14314,68 +14273,11 @@ function AddServicesForm(_a) {
                                 React__default["default"].createElement(FormControl, null,
                                     React__default["default"].createElement(SelectTrigger, null,
                                         React__default["default"].createElement(SelectValue, { placeholder: "Select preferred service category" }))),
-                                React__default["default"].createElement(SelectContent, null, selectValues.map(function (item, pos) {
-                                    return (React__default["default"].createElement(SelectItem, { key: pos, value: item.value }, item.label));
+                                React__default["default"].createElement(SelectContent, null, serviceCategory.map(function (item, index) {
+                                    return (React__default["default"].createElement(SelectItem, { key: index, value: item.value }, item.label));
                                 }))),
                             React__default["default"].createElement(FormMessage, null)));
                     } })))));
-}
-
-function AddRoomType(_a) {
-    var onsubmit = _a.onsubmit, id = _a.id;
-    var form = useForm({});
-    return (
-    // <div className="hidden h-full flex-1 flex-col space-y-3 p-8 md:flex">
-    //   <div className="flex items-center justify-between space-y-2">
-    //     <div>
-    //       <h2 className="text-2xl font-bold tracking-tight">Add New Type Room Information </h2>
-    //       <p className="text-muted-foreground">
-    //         This form is used to input essential details about the rooms available within your hotel or property. Accurate and complete information is crucial for efficient room management and an improved guest experience. Please fill out the following fields with the relevant information for each room.
-    //       </p>
-    //     </div>
-    //   </div>
-    //   <div>
-    React__default["default"].createElement(Form$1, __assign$2({}, form),
-        React__default["default"].createElement("form", { id: id, onSubmit: form.handleSubmit(onsubmit), className: "space-y-8" },
-            React__default["default"].createElement(FormField, { control: form.control, name: "room_type_name", rules: { required: true }, render: function (_a) {
-                    var field = _a.field;
-                    return (React__default["default"].createElement(FormItem, null,
-                        React__default["default"].createElement(FormLabel, null, "Name"),
-                        React__default["default"].createElement(FormControl, null,
-                            React__default["default"].createElement(Input, __assign$2({}, field))),
-                        React__default["default"].createElement(FormDescription, null, "Please enter a unique name for the room. It may contain letters, numbers, and spaces. Avoid special characters or symbols.                                            "),
-                        React__default["default"].createElement(FormMessage, null)));
-                } }),
-            React__default["default"].createElement(FormField, { control: form.control, name: "max_person", rules: { required: true }, render: function (_a) {
-                    var field = _a.field;
-                    return (React__default["default"].createElement(FormItem, null,
-                        React__default["default"].createElement(FormLabel, null, "Max. Persons(per rooms)"),
-                        React__default["default"].createElement(FormControl, null,
-                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
-                        React__default["default"].createElement(FormDescription, null, "Specify the maximum number of individuals allowed in this room. Please consider factors such as room size, safety regulations, and comfort.                                            "),
-                        React__default["default"].createElement(FormMessage, null)));
-                } }),
-            React__default["default"].createElement(FormField, { control: form.control, name: "regular_price", rules: { required: true }, render: function (_a) {
-                    var field = _a.field;
-                    return (React__default["default"].createElement(FormItem, null,
-                        React__default["default"].createElement(FormLabel, null, "Price(Regular use)"),
-                        React__default["default"].createElement(FormControl, null,
-                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
-                        React__default["default"].createElement(FormDescription, null, "Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations."),
-                        React__default["default"].createElement(FormMessage, null)));
-                } }),
-            React__default["default"].createElement(FormField, { control: form.control, name: "sing_price", rules: { required: true }, render: function (_a) {
-                    var field = _a.field;
-                    return (React__default["default"].createElement(FormItem, null,
-                        React__default["default"].createElement(FormLabel, null, "Price(Single use)"),
-                        React__default["default"].createElement(FormControl, null,
-                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
-                        React__default["default"].createElement(FormDescription, null, "Specify the standard price for a single use of this room for regular purposes."),
-                        React__default["default"].createElement(FormMessage, null)));
-                } })))
-    //   </div>
-    // </div>
-    );
 }
 
 function _typeof(o) {
@@ -21645,219 +21547,172 @@ var PopoverContent = React__namespace.forwardRef(function (_a, ref) {
 });
 PopoverContent.displayName = $cb5cc270b50c6fcd$export$7c6e2c02157bb7d2.displayName;
 
-function NewBookingForm(_a) {
-    var onSubmit = _a.onSubmit, durationValues = _a.durationValues, roomTypeValues = _a.roomTypeValues, statusValues = _a.statusValues, id = _a.id;
+function MaintenanceAlertForm(_a) {
+    var onSubmitHandler = _a.onSubmitHandler;
+    var _b = React__default["default"].useState(); _b[0]; _b[1];
+    var _c = React__default["default"].useState(); _c[0]; _c[1];
+    var form = useForm();
+    return (React__default["default"].createElement(React__default["default"].Fragment, null,
+        React__default["default"].createElement("p", { className: "text-muted-foreground mb-12" }, "During the maintenance period the room will be inactive on dashboard"),
+        React__default["default"].createElement("p", { className: "text-muted-foreground mb-8" }, "Select Maintenance period"),
+        React__default["default"].createElement(Form$1, __assign$2({}, form),
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmitHandler), className: "space-y-8" },
+                React__default["default"].createElement("div", { className: "flex gap-8" },
+                    React__default["default"].createElement("div", null,
+                        React__default["default"].createElement(FormField, { control: form.control, name: "from", render: function (_a) {
+                                var field = _a.field;
+                                return (React__default["default"].createElement(FormItem, { className: "flex flex-col" },
+                                    React__default["default"].createElement(FormLabel, null, "From"),
+                                    React__default["default"].createElement(Popover, null,
+                                        React__default["default"].createElement(PopoverTrigger, { asChild: true },
+                                            React__default["default"].createElement(Button$1, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal', !field.value &&
+                                                    'text-muted-foreground') },
+                                                React__default["default"].createElement(Calendar, { className: "mr-2 h-4 w-4" }),
+                                                field.value ? (format(field.value, 'PPP')) : (React__default["default"].createElement("span", null, "Pick a date")))),
+                                        React__default["default"].createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
+                                            React__default["default"].createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
+                            } })),
+                    React__default["default"].createElement("div", null,
+                        React__default["default"].createElement(FormField, { control: form.control, name: "to", render: function (_a) {
+                                var field = _a.field;
+                                return (React__default["default"].createElement(FormItem, { className: "flex flex-col" },
+                                    React__default["default"].createElement(FormLabel, null, "To"),
+                                    React__default["default"].createElement(Popover, null,
+                                        React__default["default"].createElement(PopoverTrigger, { asChild: true },
+                                            React__default["default"].createElement(Button$1, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal', !field.value &&
+                                                    'text-muted-foreground') },
+                                                React__default["default"].createElement(Calendar, { className: "mr-2 h-4 w-4" }),
+                                                field.value ? (format(field.value, 'PPP')) : (React__default["default"].createElement("span", null, "Pick a date")))),
+                                        React__default["default"].createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
+                                            React__default["default"].createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
+                            } }))),
+                React__default["default"].createElement(Button$1, { className: "mt-8" }, "Save Date")))));
+}
+
+function AddRoomType(_a) {
+    var onsubmit = _a.onsubmit, id = _a.id;
     var form = useForm({});
+    return (
+    // <div className="hidden h-full flex-1 flex-col space-y-3 p-8 md:flex">
+    //   <div className="flex items-center justify-between space-y-2">
+    //     <div>
+    //       <h2 className="text-2xl font-bold tracking-tight">Add New Type Room Information </h2>
+    //       <p className="text-muted-foreground">
+    //         This form is used to input essential details about the rooms available within your hotel or property. Accurate and complete information is crucial for efficient room management and an improved guest experience. Please fill out the following fields with the relevant information for each room.
+    //       </p>
+    //     </div>
+    //   </div>
+    //   <div>
+    React__default["default"].createElement(Form$1, __assign$2({}, form),
+        React__default["default"].createElement("form", { id: id, onSubmit: form.handleSubmit(onsubmit), className: "space-y-8" },
+            React__default["default"].createElement(FormField, { control: form.control, name: "room_type_name", rules: { required: true }, render: function (_a) {
+                    var field = _a.field;
+                    return (React__default["default"].createElement(FormItem, null,
+                        React__default["default"].createElement(FormLabel, null, "Name"),
+                        React__default["default"].createElement(FormControl, null,
+                            React__default["default"].createElement(Input, __assign$2({}, field))),
+                        React__default["default"].createElement(FormDescription, null, "Please enter a unique name for the room. It may contain letters, numbers, and spaces. Avoid special characters or symbols.                                            "),
+                        React__default["default"].createElement(FormMessage, null)));
+                } }),
+            React__default["default"].createElement(FormField, { control: form.control, name: "max_person", rules: { required: true }, render: function (_a) {
+                    var field = _a.field;
+                    return (React__default["default"].createElement(FormItem, null,
+                        React__default["default"].createElement(FormLabel, null, "Max. Persons(per rooms)"),
+                        React__default["default"].createElement(FormControl, null,
+                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
+                        React__default["default"].createElement(FormDescription, null, "Specify the maximum number of individuals allowed in this room. Please consider factors such as room size, safety regulations, and comfort.                                            "),
+                        React__default["default"].createElement(FormMessage, null)));
+                } }),
+            React__default["default"].createElement(FormField, { control: form.control, name: "regular_price", rules: { required: true }, render: function (_a) {
+                    var field = _a.field;
+                    return (React__default["default"].createElement(FormItem, null,
+                        React__default["default"].createElement(FormLabel, null, "Price(Regular use)"),
+                        React__default["default"].createElement(FormControl, null,
+                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
+                        React__default["default"].createElement(FormDescription, null, "Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations."),
+                        React__default["default"].createElement(FormMessage, null)));
+                } }),
+            React__default["default"].createElement(FormField, { control: form.control, name: "sing_price", rules: { required: true }, render: function (_a) {
+                    var field = _a.field;
+                    return (React__default["default"].createElement(FormItem, null,
+                        React__default["default"].createElement(FormLabel, null, "Price(Single use)"),
+                        React__default["default"].createElement(FormControl, null,
+                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
+                        React__default["default"].createElement(FormDescription, null, "Specify the standard price for a single use of this room for regular purposes."),
+                        React__default["default"].createElement(FormMessage, null)));
+                } })))
+    //   </div>
+    // </div>
+    );
+}
+
+function AddRooms(_a) {
+    var onSubmit = _a.onSubmit, defaultValue = _a.defaultValue, type = _a.type, id = _a.id, _b = _a.roomTypes, roomTypes = _b === void 0 ? [] : _b;
+    var form = useForm({
+        defaultValues: type === "create" ? {} : defaultValue
+    });
+    return (React__default["default"].createElement("div", null,
+        React__default["default"].createElement(Form$1, __assign$2({}, form),
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8", id: id },
+                React__default["default"].createElement(FormField, { control: form.control, name: "roomType", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, null, "Room Types"),
+                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default["default"].createElement(FormControl, null,
+                                    React__default["default"].createElement(SelectTrigger, null,
+                                        React__default["default"].createElement(SelectValue, null))),
+                                React__default["default"].createElement(SelectContent, null, roomTypes.map(function (item) { return React__default["default"].createElement(SelectItem, { value: item.value }, item.label); }))),
+                            React__default["default"].createElement(FormDescription, null, "Select the type of room from the options below. Choose the most appropriate category that describes the nature or purpose of the room."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "numberOfRooms", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, null, "No of Rooms"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the total number of rooms available in your property or facility. This should include all types of rooms, such as bedrooms, meeting rooms, and offices."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement("div", { className: "grid sm:flex flex-col w-full max-w-sm  gap-1.5" },
+                    React__default["default"].createElement("div", null,
+                        React__default["default"].createElement(Label, { htmlFor: "picture" }, "Upload Image"),
+                        React__default["default"].createElement(Input, { id: "picture", type: "file" }),
+                        " \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"),
+                    React__default["default"].createElement("div", { className: 'flex gap-1.5' },
+                        React__default["default"].createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
+                        React__default["default"].createElement("img", { className: 'w-33 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
+                        React__default["default"].createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }))),
+                React__default["default"].createElement(Button$1, { type: "submit" }, "Create new room"),
+                "\u00A0\u00A0\u00A0",
+                React__default["default"].createElement(Button$1, { variant: "secondary", type: "submit" }, "Cancel room")))));
+}
+
+function AddServiceCategoryForm(_a) {
+    var onSubmit = _a.onSubmit; _a.serviceCategory; var id = _a.id;
+    var form = useForm();
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(Form$1, __assign$2({}, form),
-            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "grid grid-cols-3 grid-rows-8 gap-8", id: id },
-                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "checkInDate", render: function (_a) {
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 mt-8", id: id },
+                React__default["default"].createElement(FormField, { control: form.control, name: "serviceCategoryName", rules: { required: true }, render: function (_a) {
                         var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, { className: "flex flex-col" },
-                            React__default["default"].createElement(FormLabel, null, "Check in Date"),
-                            React__default["default"].createElement(Popover, null,
-                                React__default["default"].createElement(PopoverTrigger, { asChild: true },
-                                    React__default["default"].createElement(Button$1, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal', !field.value &&
-                                            'text-muted-foreground') },
-                                        React__default["default"].createElement(Calendar, { className: "mr-2 h-4 w-4" }),
-                                        field.value ? (format(field.value, 'PPP')) : (React__default["default"].createElement("span", null, "select date")))),
-                                React__default["default"].createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
-                                    React__default["default"].createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "duration", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, { className: "w-[15rem]" },
-                            React__default["default"].createElement(FormLabel, null, "Duration"),
-                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
-                                React__default["default"].createElement(FormControl, null,
-                                    React__default["default"].createElement(SelectTrigger, null,
-                                        React__default["default"].createElement(SelectValue, null))),
-                                React__default["default"].createElement(SelectContent, null, durationValues.map(function (item, pos) {
-                                    return (React__default["default"].createElement(SelectItem, { key: pos, value: item }, item));
-                                }))),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "checkOutDate", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, { className: "flex flex-col" },
-                            React__default["default"].createElement(FormLabel, null, "Check out Date"),
-                            React__default["default"].createElement(Popover, null,
-                                React__default["default"].createElement(PopoverTrigger, { asChild: true },
-                                    React__default["default"].createElement(Button$1, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal', !field.value &&
-                                            'text-muted-foreground') },
-                                        React__default["default"].createElement(Calendar, { className: "mr-2 h-4 w-4" }),
-                                        field.value ? (format(field.value, 'PPP')) : (React__default["default"].createElement("span", null, "select date")))),
-                                React__default["default"].createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
-                                    React__default["default"].createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "roomtype", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, { className: "w-[15rem]" },
-                            React__default["default"].createElement(FormLabel, null, "Room Type"),
-                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
-                                React__default["default"].createElement(FormControl, null,
-                                    React__default["default"].createElement(SelectTrigger, null,
-                                        React__default["default"].createElement(SelectValue, null))),
-                                React__default["default"].createElement(SelectContent, null, roomTypeValues.map(function (item, pos) {
-                                    return (React__default["default"].createElement(SelectItem, { key: pos, value: item }, item));
-                                }))),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "status", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, { className: "w-[15rem]" },
-                            React__default["default"].createElement(FormLabel, null, "Status"),
-                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
-                                React__default["default"].createElement(FormControl, null,
-                                    React__default["default"].createElement(SelectTrigger, null,
-                                        React__default["default"].createElement(SelectValue, null))),
-                                React__default["default"].createElement(SelectContent, null, statusValues.map(function (item, pos) {
-                                    return (React__default["default"].createElement(SelectItem, { key: pos, value: item }, item));
-                                }))),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement("div", { className: "flex items-center" },
-                    React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "adult", render: function (_a) {
-                            _a.field;
-                            return (React__default["default"].createElement(FormItem, { className: "w-[7rem]" },
-                                React__default["default"].createElement(FormLabel, null, "Adult"),
-                                React__default["default"].createElement("br", null),
-                                React__default["default"].createElement(FormControl, null),
-                                React__default["default"].createElement("p", { className: "border rounded w-[5rem] flex justify-between px-4" },
-                                    React__default["default"].createElement("span", { onClick: function () { return alert('clicked'); } },
-                                        ' ',
-                                        "-",
-                                        ' '),
-                                    "0",
-                                    React__default["default"].createElement("span", { onClick: function () { return alert('clicked'); } },
-                                        ' ',
-                                        "+",
-                                        ' ')),
-                                React__default["default"].createElement(FormMessage, null)));
-                        } }),
-                    React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "child", render: function (_a) {
-                            _a.field;
-                            return (React__default["default"].createElement(FormItem, { className: "w-[7rem]" },
-                                React__default["default"].createElement(FormLabel, null, "Child"),
-                                React__default["default"].createElement("br", null),
-                                React__default["default"].createElement(FormControl, null,
-                                    React__default["default"].createElement("p", { className: "border rounded w-[5rem] flex justify-between px-4" },
-                                        React__default["default"].createElement("span", { onClick: function () { return alert('clicked'); } },
-                                            ' ',
-                                            "-",
-                                            ' '),
-                                        "0",
-                                        React__default["default"].createElement("span", { onClick: function () { return alert('clicked'); } },
-                                            ' ',
-                                            "+",
-                                            ' '))),
-                                React__default["default"].createElement(FormMessage, null)));
-                        } })),
-                React__default["default"].createElement("h3", { className: "col-span-full text-md font-semibold" }, "Guest Details"),
-                ' ',
-                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "firstName", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
-                            React__default["default"].createElement(FormLabel, null, "First Name"),
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "service name"),
                             React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$2({ placeholder: "Enter First Name" }, field))),
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
                             React__default["default"].createElement(FormDescription, null),
                             React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "lastName", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
-                            React__default["default"].createElement(FormLabel, null, "Last Name"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$2({ placeholder: "Enter Last Name" }, field))),
-                            React__default["default"].createElement(FormDescription, null),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "email", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
-                            React__default["default"].createElement(FormLabel, null, "Email"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$2({ type: "email", placeholder: "Enter Email" }, field))),
-                            React__default["default"].createElement(FormDescription, null),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "firstName", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
-                            React__default["default"].createElement(FormLabel, null, "First Name"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$2({ placeholder: "Enter First Name" }, field))),
-                            React__default["default"].createElement(FormDescription, null),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "lastName", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
-                            React__default["default"].createElement(FormLabel, null, "Last Name"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$2({ placeholder: "Enter Last Name" }, field))),
-                            React__default["default"].createElement(FormDescription, null),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "email", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
-                            React__default["default"].createElement(FormLabel, null, "Email"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$2({ type: "email", placeholder: "Enter Email" }, field))),
-                            React__default["default"].createElement(FormDescription, null),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "price", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
-                            React__default["default"].createElement(FormLabel, null, "Price"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$2({ placeholder: "0$" }, field))),
-                            React__default["default"].createElement(FormDescription, null),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "discount", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
-                            React__default["default"].createElement(FormLabel, null, "Discount"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$2({ placeholder: "5%" }, field))),
-                            React__default["default"].createElement(FormDescription, null),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement("div", { className: "flex items-center gap-4" },
-                    React__default["default"].createElement(Button$1, null, "+ Add Guest"),
-                    React__default["default"].createElement(Button$1, { variant: "outline" }, "+ New Guest")),
-                React__default["default"].createElement("div", { className: "col-span-full" },
-                    React__default["default"].createElement(FormField, { control: form.control, name: "notes", render: function (_a) {
-                            var field = _a.field;
-                            return (React__default["default"].createElement(FormItem, null,
-                                React__default["default"].createElement(FormLabel, { className: "flex justify-between items-center" },
-                                    React__default["default"].createElement("p", null, "Notes"),
-                                    React__default["default"].createElement(FormField, { control: form.control, name: "singleUse", render: function (_a) {
-                                            var field = _a.field;
-                                            return (React__default["default"].createElement(FormItem, { className: "flex items-center gap-2" },
-                                                React__default["default"].createElement(FormControl, null,
-                                                    React__default["default"].createElement(Checkbox, { checked: field.value, onCheckedChange: field.onChange })),
-                                                React__default["default"].createElement("div", { className: "space-y-1 leading-none" },
-                                                    React__default["default"].createElement(FormLabel, null, "Single Use"),
-                                                    React__default["default"].createElement(FormDescription, null))));
-                                        } })),
-                                React__default["default"].createElement(FormControl, null,
-                                    React__default["default"].createElement(Textarea, __assign$2({ placeholder: "", className: "resize-none" }, field))),
-                                React__default["default"].createElement(FormDescription, null),
-                                React__default["default"].createElement(FormMessage, null)));
-                        } }))))));
+                    } })))));
 }
 
 var Form = {
     addPerson: AddPersonForm,
-    addRooms: AddRooms,
-    addServices: AddServicesForm,
-    addRoomType: AddRoomType,
-    newBooking: NewBookingForm
+    addService: AddServicesForm,
+    maintainance: MaintenanceAlertForm,
+    roomType: AddRoomType,
+    addroom: AddRooms,
+    serviceCategory: AddServiceCategoryForm
 };
 
 /* -------------------------------------------------------------------------------------------------

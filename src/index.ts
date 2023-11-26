@@ -13,6 +13,7 @@ import { Table } from "./components/Table-columns"
 import { Form } from "./components/Forms";
 import Drawer from "./components/Drawer/drawer";
 import DataTable from "./components/Data-table/data-table";
+import Confirmation from "./components/Confirmation/alert"
 // import { Alert } from './Alert';
 // import { Login } from './Login';
 // import { Register } from './Signup';
@@ -169,8 +170,8 @@ export {
     ForgotPasswordPage,
     Form,
     Drawer,
-    DataTable
-    
+    DataTable,
+    Confirmation
     // Dashboard
 };
 

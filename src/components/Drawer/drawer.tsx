@@ -16,18 +16,24 @@ import AddPerson from "../Forms/addPerson/addperson"
 import { ScrollArea } from "../../elements/Scroll Area/scrollarea"
 import { Icons } from "../../elements/Icons/icons"
 
+interface IDrawer {
+    open: boolean;
+    children: any;
+    title?: String;
+    description?: String;
+    Form?: any;
+    SubmitButton?:any
+
+}
 
 function Drawer({
     open = false,
-    handleFormSubmit,
-    handleTrigger,
     children,
     title,
     description,
-    isLoading,
     Form,
     SubmitButton
-}: any) {
+}: IDrawer) {
 
     return (
         <div>
@@ -47,9 +53,9 @@ function Drawer({
                         <Form />
 
                         <SheetFooter >
-                            <SheetClose asChild>
+                            {/* <SheetClose asChild> */}
                                 {SubmitButton && <SubmitButton />}
-                            </SheetClose>
+                            {/* </SheetClose> */}
                         </SheetFooter>
                     </ScrollArea>
                 </SheetContent>

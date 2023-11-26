@@ -15,7 +15,7 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFieldArray, useForm } from 'react-hook-form';
 
-function AddPersonForm({ onSubmit, values, type }):any {
+function AddPersonForm({ onSubmit, values, type, id }):any {
     const form = useForm({
         defaultValues: type === 'create' ? {} : values,
     });
@@ -38,7 +38,7 @@ function AddPersonForm({ onSubmit, values, type }):any {
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
                     className="space-y-8 p-1"
-                    id="addPerson"
+                    id={id}
                 >
                     <FormField
                         control={form.control}
@@ -64,7 +64,7 @@ function AddPersonForm({ onSubmit, values, type }):any {
                     <FormField
                         control={form.control}
                         name="companyId"
-                        rules={{ required: true }}
+                     
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
@@ -87,7 +87,7 @@ function AddPersonForm({ onSubmit, values, type }):any {
                     <FormField
                         control={form.control}
                         name="bank"
-                        rules={{ required: true }}
+                
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
@@ -109,8 +109,8 @@ function AddPersonForm({ onSubmit, values, type }):any {
                     />
                     <FormField
                         control={form.control}
-                        name="accNO"
-                        rules={{ required: true }}
+                        name="accountNumber"
+                    
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
@@ -153,7 +153,7 @@ function AddPersonForm({ onSubmit, values, type }):any {
                     />
                     <FormField
                         control={form.control}
-                        name="phoneNo"
+                        name="phoneNumber"
                         rules={{ required: true }}
                         render={({ field }) => (
                             <FormItem>
@@ -176,8 +176,8 @@ function AddPersonForm({ onSubmit, values, type }):any {
                     />
                     <FormField
                         control={form.control}
-                        name="address"
-                        rules={{ required: true }}
+                        name="country"
+                       
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
@@ -224,7 +224,7 @@ function AddPersonForm({ onSubmit, values, type }):any {
                         <Label>Notes</Label>
                         <Textarea placeholder="Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." />
                     </div>
-                
+                    <Button>submit</Button>
                 </form>
             </Form>
         </>

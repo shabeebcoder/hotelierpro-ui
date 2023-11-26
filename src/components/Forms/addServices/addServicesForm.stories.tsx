@@ -2,14 +2,14 @@ import React from 'react';
 import AddServicesForm from './addServicesForm';
 
 export default {
-    title: 'hotelierPro/Form/AddServicesForm',
+    title: 'hotelierPro/Form/AddServiceForm',
 };
 
 export const addServicesFormExample = (args) => <AddServicesForm {...args} />;
 
 addServicesFormExample.args = {
     onSubmit: (data) => alert(JSON.stringify(data)),
-    selectValues: [
+    serviceCategory: [
         { label: 'Food', value: 'food' },
         { label: 'Cleaning', value: 'cleaning' },
     ],

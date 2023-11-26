@@ -6,7 +6,7 @@ import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessa
 import { useFieldArray, useForm } from "react-hook-form"
 
 
-function AddRoomType({ onsubmit }): any {
+function AddRoomType({ onsubmit, id }): any {
 
 
   const form = useForm({})
@@ -26,7 +26,7 @@ function AddRoomType({ onsubmit }): any {
     //   </div>
     //   <div>
     <Form {...form}>
-      <form   id="newType" onSubmit={form.handleSubmit(onsubmit)} className="space-y-8">
+      <form   id={id} onSubmit={form.handleSubmit(onsubmit)} className="space-y-8">
         <FormField
           control={form.control}
           name="room_type_name"

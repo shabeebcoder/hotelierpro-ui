@@ -16,5 +16,12 @@ const sampleUpdateData = {
 AddRoomFormExample.args = {
     onSubmit: (data) => alert(JSON.stringify(data)),
     defaultValue: sampleUpdateData,
-    type: "create"
+    type: "create",
+    id: "1",
+    roomTypes: [
+        {
+            value: 'single',
+            label: 'Single'
+        }
+    ]
 }

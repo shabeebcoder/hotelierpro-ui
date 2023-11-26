@@ -36,6 +36,7 @@ export default function NewBookingForm({
     durationValues,
     roomTypeValues,
     statusValues,
+    id
 }) {
     const form = useForm({});
     return (
@@ -44,7 +45,7 @@ export default function NewBookingForm({
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
                     className="grid grid-cols-3 grid-rows-8 gap-8"
-                    id="newBooking"
+                    id={id}
                 >
                     <FormField
                         control={form.control}

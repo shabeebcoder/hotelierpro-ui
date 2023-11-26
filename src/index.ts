@@ -9,7 +9,7 @@ import VerificationPage from "./components/Authentication/verify-account"
 import ResetPasswordPage from "./components/Authentication/reset-password";
 import ForgotPasswordPage from "./components/Authentication/forgotPasswordPage";
 import { Icons } from "./elements/Icons/icons"
-import { Table } from "./components/Table-columns/index"
+import { Table } from "./components/Table-columns"
 import { Form } from "./components/Forms";
 import Drawer from "./components/Drawer/drawer";
 import DataTable from "./components/Data-table/data-table";
@@ -170,6 +170,7 @@ export {
     Form,
     Drawer,
     DataTable
+    
     // Dashboard
 };
 

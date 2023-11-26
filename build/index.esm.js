@@ -13277,7 +13277,7 @@ function DataTableColumnHeader(_a) {
                     "Hide")))));
 }
 
-function DataTableRowActions$3(_a) {
+function DataTableRowActions$4(_a) {
     var row = _a.row;
     var task = row.original;
     return (React__default.createElement(DropdownMenu, null,
@@ -13290,7 +13290,7 @@ function DataTableRowActions$3(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
 }
-var columns$3 = [
+var columns$4 = [
     {
         id: "select",
         header: function (_a) {
@@ -13372,12 +13372,12 @@ var columns$3 = [
         id: "actions",
         cell: function (_a) {
             var row = _a.row;
-            return React__default.createElement(DataTableRowActions$3, { row: row });
+            return React__default.createElement(DataTableRowActions$4, { row: row });
         },
     },
 ];
 
-function DataTableRowActions$2(_a) {
+function DataTableRowActions$3(_a) {
     var row = _a.row;
     row.original;
     return (React__default.createElement(DropdownMenu, null,
@@ -13389,7 +13389,7 @@ function DataTableRowActions$2(_a) {
             React__default.createElement(DropdownMenuItem, null, "Update"),
             React__default.createElement(DropdownMenuItem, null, "Delete"))));
 }
-var columns$2 = [
+var columns$3 = [
     {
         id: "select",
         header: function (_a) {
@@ -13494,12 +13494,12 @@ var columns$2 = [
         id: "actions",
         cell: function (_a) {
             var row = _a.row;
-            return React__default.createElement(DataTableRowActions$2, { row: row });
+            return React__default.createElement(DataTableRowActions$3, { row: row });
         },
     },
 ];
 
-function DataTableRowActions$1(_a) {
+function DataTableRowActions$2(_a) {
     var row = _a.row;
     var task = row.original;
     return (React__default.createElement(DropdownMenu, null,
@@ -13512,7 +13512,7 @@ function DataTableRowActions$1(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
 }
-var columns$1 = [
+var columns$2 = [
     {
         id: "select",
         header: function (_a) {
@@ -13606,12 +13606,12 @@ var columns$1 = [
         id: "actions",
         cell: function (_a) {
             var row = _a.row;
-            return React__default.createElement(DataTableRowActions$1, { row: row });
+            return React__default.createElement(DataTableRowActions$2, { row: row });
         },
     },
 ];
 
-function DataTableRowActions(_a) {
+function DataTableRowActions$1(_a) {
     var row = _a.row;
     var task = row.original;
     return (React__default.createElement(DropdownMenu, null,
@@ -13624,7 +13624,7 @@ function DataTableRowActions(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
 }
-var columns = [
+var columns$1 = [
     {
         id: "select",
         header: function (_a) {
@@ -13691,16 +13691,66 @@ var columns = [
         id: "actions",
         cell: function (_a) {
             var row = _a.row;
+            return React__default.createElement(DataTableRowActions$1, { row: row });
+        },
+    },
+];
+
+function DataTableRowActions(_a) {
+    var row = _a.row;
+    var task = row.original;
+    return (React__default.createElement(DropdownMenu, null,
+        React__default.createElement(DropdownMenuTrigger, { asChild: true },
+            React__default.createElement(Button$1, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
+                React__default.createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
+                React__default.createElement("span", { className: "sr-only" }, "Open menu"))),
+        React__default.createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
+            React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
+            React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
+            React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
+}
+var columns = [
+    {
+        id: "select",
+        header: function (_a) {
+            var table = _a.table;
+            return (React__default.createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "categoryName",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Service category Name" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default.createElement("div", { className: "w-[150px]" }, row.getValue("categoryName"));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        id: "actions",
+        cell: function (_a) {
+            var row = _a.row;
             return React__default.createElement(DataTableRowActions, { row: row });
         },
     },
 ];
 
 var Table$2 = {
-    Roomtypes: columns$3,
-    Guests: columns$2,
-    Rooms: columns$1,
-    Services: columns,
+    roomtypes: columns$4,
+    guests: columns$3,
+    rooms: columns$2,
+    services: columns$1,
+    serviceCategory: columns
 };
 
 var Textarea = React.forwardRef(function (_a, ref) {
@@ -14163,13 +14213,13 @@ function AddPersonForm(_a) {
                     React__default.createElement(Textarea, { placeholder: "Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." }))))));
 }
 
-function AddRooms(onsubmit, defaultValue, type) {
+function AddRooms(onsubmit, defaultValue, type, id) {
     var form = useForm({
         defaultValues: type === "create" ? {} : defaultValue
     });
     return (React__default.createElement("div", null,
         React__default.createElement(Form$1, __assign$2({}, form),
-            React__default.createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8" },
+            React__default.createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8", id: id },
                 React__default.createElement(FormField, { control: form.control, name: "email", render: function (_a) {
                         var field = _a.field;
                         return (React__default.createElement(FormItem, null,
@@ -14194,21 +14244,23 @@ function AddRooms(onsubmit, defaultValue, type) {
                             React__default.createElement(FormDescription, null, "Enter the total number of rooms available in your property or facility. This should include all types of rooms, such as bedrooms, meeting rooms, and offices."),
                             React__default.createElement(FormMessage, null)));
                     } }),
-                React__default.createElement("div", { className: "grid sm:flex w-full max-w-sm items-center gap-1.5" },
-                    React__default.createElement(Label, { htmlFor: "picture" }, "Upload Image"),
-                    React__default.createElement(Input, { id: "picture", type: "file" }),
-                    " \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0",
-                    React__default.createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
-                    React__default.createElement("img", { className: 'w-33 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
-                    React__default.createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }))))));
+                React__default.createElement("div", { className: "grid sm:flex flex-col w-full max-w-sm  gap-1.5" },
+                    React__default.createElement("div", null,
+                        React__default.createElement(Label, { htmlFor: "picture" }, "Upload Image"),
+                        React__default.createElement(Input, { id: "picture", type: "file" }),
+                        " \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"),
+                    React__default.createElement("div", { className: 'flex gap-1.5' },
+                        React__default.createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
+                        React__default.createElement("img", { className: 'w-33 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
+                        React__default.createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" })))))));
 }
 
 function AddServicesForm(_a) {
-    var onSubmit = _a.onSubmit, selectValues = _a.selectValues;
+    var onSubmit = _a.onSubmit, selectValues = _a.selectValues, id = _a.id;
     var form = useForm();
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(Form$1, __assign$2({}, form),
-            React__default.createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 mt-8", id: "addService" },
+            React__default.createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 mt-8", id: id },
                 React__default.createElement(FormField, { control: form.control, name: "serviceName", rules: { required: true }, render: function (_a) {
                         var field = _a.field;
                         return (React__default.createElement(FormItem, null,
@@ -14243,7 +14295,7 @@ function AddServicesForm(_a) {
 }
 
 function AddRoomType(_a) {
-    var onsubmit = _a.onsubmit;
+    var onsubmit = _a.onsubmit, id = _a.id;
     var form = useForm({});
     return (
     // <div className="hidden h-full flex-1 flex-col space-y-3 p-8 md:flex">
@@ -14257,7 +14309,7 @@ function AddRoomType(_a) {
     //   </div>
     //   <div>
     React__default.createElement(Form$1, __assign$2({}, form),
-        React__default.createElement("form", { id: "newType", onSubmit: form.handleSubmit(onsubmit), className: "space-y-8" },
+        React__default.createElement("form", { id: id, onSubmit: form.handleSubmit(onsubmit), className: "space-y-8" },
             React__default.createElement(FormField, { control: form.control, name: "room_type_name", rules: { required: true }, render: function (_a) {
                     var field = _a.field;
                     return (React__default.createElement(FormItem, null,
@@ -21567,11 +21619,11 @@ var PopoverContent = React.forwardRef(function (_a, ref) {
 PopoverContent.displayName = $cb5cc270b50c6fcd$export$7c6e2c02157bb7d2.displayName;
 
 function NewBookingForm(_a) {
-    var onSubmit = _a.onSubmit, durationValues = _a.durationValues, roomTypeValues = _a.roomTypeValues, statusValues = _a.statusValues;
+    var onSubmit = _a.onSubmit, durationValues = _a.durationValues, roomTypeValues = _a.roomTypeValues, statusValues = _a.statusValues, id = _a.id;
     var form = useForm({});
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(Form$1, __assign$2({}, form),
-            React__default.createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "grid grid-cols-3 grid-rows-8 gap-8", id: "newBooking" },
+            React__default.createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "grid grid-cols-3 grid-rows-8 gap-8", id: id },
                 React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "checkInDate", render: function (_a) {
                         var field = _a.field;
                         return (React__default.createElement(FormItem, { className: "flex flex-col" },
@@ -22044,7 +22096,6 @@ const $5d3850c4d0b4e6c7$export$f39c2d165cd861fe = $5d3850c4d0b4e6c7$export$fba2f
 
 var Sheet = $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1;
 var SheetTrigger = $5d3850c4d0b4e6c7$export$41fb9f06171c75f4;
-var SheetClose = $5d3850c4d0b4e6c7$export$f39c2d165cd861fe;
 var SheetPortal = $5d3850c4d0b4e6c7$export$602eac185826482c$1;
 var SheetOverlay = React.forwardRef(function (_a, ref) {
     var className = _a.className, props = __rest$2(_a, ["className"]);
@@ -22871,7 +22922,7 @@ var ScrollBar = React.forwardRef(function (_a, ref) {
 ScrollBar.displayName = $57acba87d6e25586$export$2fabd85d0eba3c57.displayName;
 
 function Drawer(_a) {
-    var _b = _a.open, open = _b === void 0 ? false : _b; _a.handleFormSubmit; _a.handleTrigger; var children = _a.children, title = _a.title, description = _a.description; _a.isLoading; var Form = _a.Form, SubmitButton = _a.SubmitButton;
+    var _b = _a.open, open = _b === void 0 ? false : _b, children = _a.children, title = _a.title, description = _a.description, Form = _a.Form, SubmitButton = _a.SubmitButton;
     return (React__default.createElement("div", null,
         React__default.createElement(Sheet, { open: open },
             React__default.createElement(SheetTrigger, { asChild: true }, children),
@@ -22881,8 +22932,7 @@ function Drawer(_a) {
                         React__default.createElement(SheetTitle, null, title),
                         React__default.createElement(SheetDescription, null, description)),
                     React__default.createElement(Form, null),
-                    React__default.createElement(SheetFooter, null,
-                        React__default.createElement(SheetClose, { asChild: true }, SubmitButton && React__default.createElement(SubmitButton, null))))))));
+                    React__default.createElement(SheetFooter, null, SubmitButton && React__default.createElement(SubmitButton, null)))))));
 }
 
 /**

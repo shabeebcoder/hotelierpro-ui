@@ -2,6 +2,7 @@ import React from 'react'
 import Sheet from "./drawer";
 import { Button } from "../../elements/Buttons/buttons";
 import AddPersonForm from "./../Forms/addPerson/addperson"
+import {Form} from "./../Forms"
 
 
 export default {
@@ -14,8 +15,9 @@ export const SheetExample = (args) => {
 
     const [open, setOpen] = React.useState(false);
 
-    const handleFormSubmit = () => {
-        alert("Fds")
+    const handleFormSubmit = (data) => {
+        
+        alert(JSON.stringify(data))
     }
 
     const handleTrigger = () => {
@@ -27,13 +29,11 @@ export const SheetExample = (args) => {
         title={title}
         description={description}
         open={open}
-        handleTrigger={() => alert()}
-        handleFormSubmit={handleFormSubmit}
-        Form={() => <AddPersonForm
-            onSubmit={(data) =>  setOpen(!open)}
+        Form={() => <Form.addPerson
+            onSubmit={(data)=> handleFormSubmit(data)}
             values=""
             type=""
-
+            id="addperson"
         />}
         SubmitButton={() => <div className="flex gap-4 mt-4">
             <Button form='addPerson' className="capitalize">

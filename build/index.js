@@ -45,18 +45,18 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 
-var __assign$1 = function() {
-  __assign$1 = Object.assign || function __assign(t) {
+var __assign$2 = function() {
+  __assign$2 = Object.assign || function __assign(t) {
       for (var s, i = 1, n = arguments.length; i < n; i++) {
           s = arguments[i];
           for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
       }
       return t;
   };
-  return __assign$1.apply(this, arguments);
+  return __assign$2.apply(this, arguments);
 };
 
-function __rest$1(s, e) {
+function __rest$2(s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
       t[p] = s[p];
@@ -68,7 +68,7 @@ function __rest$1(s, e) {
   return t;
 }
 
-function __spreadArray(to, from, pack) {
+function __spreadArray$1(to, from, pack) {
   if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
       if (ar || !(i in from)) {
           if (!ar) ar = Array.prototype.slice.call(from, 0, i);
@@ -2759,45 +2759,45 @@ var buttonVariants = cva("inline-flex items-center justify-center whitespace-now
         size: "default",
     },
 });
-var Button = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, variant = _a.variant, size = _a.size, _b = _a.asChild, asChild = _b === void 0 ? false : _b, props = __rest$1(_a, ["className", "variant", "size", "asChild"]);
+var Button$1 = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, variant = _a.variant, size = _a.size, _b = _a.asChild, asChild = _b === void 0 ? false : _b, props = __rest$2(_a, ["className", "variant", "size", "asChild"]);
     var Comp = asChild ? $5e63c961fc1ce211$export$8c6ed5c666ac1360$1 : "button";
-    return (React__namespace.createElement(Comp, __assign$1({ className: cn(buttonVariants({ variant: variant, size: size, className: className })), ref: ref }, props)));
+    return (React__namespace.createElement(Comp, __assign$2({ className: cn(buttonVariants({ variant: variant, size: size, className: className })), ref: ref }, props)));
 });
-Button.displayName = "Button";
+Button$1.displayName = "Button";
 
 var Icons = {
-    logo: function (props) { return (React__default["default"].createElement("svg", __assign$1({ xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 256 256" }, props),
+    logo: function (props) { return (React__default["default"].createElement("svg", __assign$2({ xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 256 256" }, props),
         React__default["default"].createElement("rect", { width: "256", height: "256", fill: "none" }),
         React__default["default"].createElement("line", { x1: "208", y1: "128", x2: "128", y2: "208", fill: "none", stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "16" }),
         React__default["default"].createElement("line", { x1: "192", y1: "40", x2: "40", y2: "192", fill: "none", stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "16" }))); },
-    twitter: function (props) { return (React__default["default"].createElement("svg", __assign$1({}, props, { height: "23", viewBox: "0 0 1200 1227", width: "23", xmlns: "http://www.w3.org/2000/svg" }),
+    twitter: function (props) { return (React__default["default"].createElement("svg", __assign$2({}, props, { height: "23", viewBox: "0 0 1200 1227", width: "23", xmlns: "http://www.w3.org/2000/svg" }),
         React__default["default"].createElement("path", { d: "M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" }))); },
-    gitHub: function (props) { return (React__default["default"].createElement("svg", __assign$1({ viewBox: "0 0 438.549 438.549" }, props),
+    gitHub: function (props) { return (React__default["default"].createElement("svg", __assign$2({ viewBox: "0 0 438.549 438.549" }, props),
         React__default["default"].createElement("path", { fill: "currentColor", d: "M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z" }))); },
-    radix: function (props) { return (React__default["default"].createElement("svg", __assign$1({ viewBox: "0 0 25 25", fill: "none" }, props),
+    radix: function (props) { return (React__default["default"].createElement("svg", __assign$2({ viewBox: "0 0 25 25", fill: "none" }, props),
         React__default["default"].createElement("path", { d: "M12 25C7.58173 25 4 21.4183 4 17C4 12.5817 7.58173 9 12 9V25Z", fill: "currentcolor" }),
         React__default["default"].createElement("path", { d: "M12 0H4V8H12V0Z", fill: "currentcolor" }),
         React__default["default"].createElement("path", { d: "M17 8C19.2091 8 21 6.20914 21 4C21 1.79086 19.2091 0 17 0C14.7909 0 13 1.79086 13 4C13 6.20914 14.7909 8 17 8Z", fill: "currentcolor" }))); },
-    aria: function (props) { return (React__default["default"].createElement("svg", __assign$1({ role: "img", viewBox: "0 0 24 24", fill: "currentColor" }, props),
+    aria: function (props) { return (React__default["default"].createElement("svg", __assign$2({ role: "img", viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { d: "M13.966 22.624l-1.69-4.281H8.122l3.892-9.144 5.662 13.425zM8.884 1.376H0v21.248zm15.116 0h-8.884L24 22.624Z" }))); },
-    npm: function (props) { return (React__default["default"].createElement("svg", __assign$1({ viewBox: "0 0 24 24" }, props),
+    npm: function (props) { return (React__default["default"].createElement("svg", __assign$2({ viewBox: "0 0 24 24" }, props),
         React__default["default"].createElement("path", { d: "M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0zM5.13 5.323l13.837.019-.009 13.836h-3.464l.01-10.382h-3.456L12.04 19.17H5.113z", fill: "currentColor" }))); },
-    yarn: function (props) { return (React__default["default"].createElement("svg", __assign$1({ viewBox: "0 0 24 24" }, props),
+    yarn: function (props) { return (React__default["default"].createElement("svg", __assign$2({ viewBox: "0 0 24 24" }, props),
         React__default["default"].createElement("path", { d: "M12 0C5.375 0 0 5.375 0 12s5.375 12 12 12 12-5.375 12-12S18.625 0 12 0zm.768 4.105c.183 0 .363.053.525.157.125.083.287.185.755 1.154.31-.088.468-.042.551-.019.204.056.366.19.463.375.477.917.542 2.553.334 3.605-.241 1.232-.755 2.029-1.131 2.576.324.329.778.899 1.117 1.825.278.774.31 1.478.273 2.015a5.51 5.51 0 0 0 .602-.329c.593-.366 1.487-.917 2.553-.931.714-.009 1.269.445 1.353 1.103a1.23 1.23 0 0 1-.945 1.362c-.649.158-.95.278-1.821.843-1.232.797-2.539 1.242-3.012 1.39a1.686 1.686 0 0 1-.704.343c-.737.181-3.266.315-3.466.315h-.046c-.783 0-1.214-.241-1.45-.491-.658.329-1.51.19-2.122-.134a1.078 1.078 0 0 1-.58-1.153 1.243 1.243 0 0 1-.153-.195c-.162-.25-.528-.936-.454-1.946.056-.723.556-1.367.88-1.71a5.522 5.522 0 0 1 .408-2.256c.306-.727.885-1.348 1.32-1.737-.32-.537-.644-1.367-.329-2.21.227-.602.412-.936.82-1.08h-.005c.199-.074.389-.153.486-.259a3.418 3.418 0 0 1 2.298-1.103c.037-.093.079-.185.125-.283.31-.658.639-1.029 1.024-1.168a.94.94 0 0 1 .328-.06zm.006.7c-.507.016-1.001 1.519-1.001 1.519s-1.27-.204-2.266.871c-.199.218-.468.334-.746.44-.079.028-.176.023-.417.672-.371.991.625 2.094.625 2.094s-1.186.839-1.626 1.881c-.486 1.144-.338 2.261-.338 2.261s-.843.732-.899 1.487c-.051.663.139 1.2.343 1.515.227.343.51.176.51.176s-.561.653-.037.931c.477.25 1.283.394 1.71-.037.31-.31.371-1.001.486-1.283.028-.065.12.111.209.199.097.093.264.195.264.195s-.755.324-.445 1.066c.102.246.468.403 1.066.398.222-.005 2.664-.139 3.313-.296.375-.088.505-.283.505-.283s1.566-.431 2.998-1.357c.917-.598 1.293-.76 2.034-.936.612-.148.57-1.098-.241-1.084-.839.009-1.575.44-2.196.825-1.163.718-1.742.672-1.742.672l-.018-.032c-.079-.13.371-1.293-.134-2.678-.547-1.515-1.413-1.881-1.344-1.997.297-.5 1.038-1.297 1.334-2.78.176-.899.13-2.377-.269-3.151-.074-.144-.732.241-.732.241s-.616-1.371-.788-1.483a.271.271 0 0 0-.157-.046z", fill: "currentColor" }))); },
-    pnpm: function (props) { return (React__default["default"].createElement("svg", __assign$1({ viewBox: "0 0 24 24" }, props),
+    pnpm: function (props) { return (React__default["default"].createElement("svg", __assign$2({ viewBox: "0 0 24 24" }, props),
         React__default["default"].createElement("path", { d: "M0 0v7.5h7.5V0zm8.25 0v7.5h7.498V0zm8.25 0v7.5H24V0zM8.25 8.25v7.5h7.498v-7.5zm8.25 0v7.5H24v-7.5zM0 16.5V24h7.5v-7.5zm8.25 0V24h7.498v-7.5zm8.25 0V24H24v-7.5z", fill: "currentColor" }))); },
-    react: function (props) { return (React__default["default"].createElement("svg", __assign$1({ viewBox: "0 0 24 24" }, props),
+    react: function (props) { return (React__default["default"].createElement("svg", __assign$2({ viewBox: "0 0 24 24" }, props),
         React__default["default"].createElement("path", { d: "M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z", fill: "currentColor" }))); },
-    tailwind: function (props) { return (React__default["default"].createElement("svg", __assign$1({ viewBox: "0 0 24 24" }, props),
+    tailwind: function (props) { return (React__default["default"].createElement("svg", __assign$2({ viewBox: "0 0 24 24" }, props),
         React__default["default"].createElement("path", { d: "M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z", fill: "currentColor" }))); },
-    google: function (props) { return (React__default["default"].createElement("svg", __assign$1({ role: "img", viewBox: "0 0 24 24" }, props),
+    google: function (props) { return (React__default["default"].createElement("svg", __assign$2({ role: "img", viewBox: "0 0 24 24" }, props),
         React__default["default"].createElement("path", { fill: "currentColor", d: "M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" }))); },
-    apple: function (props) { return (React__default["default"].createElement("svg", __assign$1({ role: "img", viewBox: "0 0 24 24" }, props),
+    apple: function (props) { return (React__default["default"].createElement("svg", __assign$2({ role: "img", viewBox: "0 0 24 24" }, props),
         React__default["default"].createElement("path", { d: "M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701", fill: "currentColor" }))); },
-    paypal: function (props) { return (React__default["default"].createElement("svg", __assign$1({ role: "img", viewBox: "0 0 24 24" }, props),
+    paypal: function (props) { return (React__default["default"].createElement("svg", __assign$2({ role: "img", viewBox: "0 0 24 24" }, props),
         React__default["default"].createElement("path", { d: "M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z", fill: "currentColor" }))); },
-    spinner: function (props) { return (React__default["default"].createElement("svg", __assign$1({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, props),
+    spinner: function (props) { return (React__default["default"].createElement("svg", __assign$2({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, props),
         React__default["default"].createElement("path", { d: "M21 12a9 9 0 1 1-6.219-8.56" }))); },
     playIcon: function (props) { return (React__default["default"].createElement("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className: "mr-2 h-4 w-4" },
         React__default["default"].createElement("circle", { cx: "12", cy: "12", r: "10" }),
@@ -2827,8 +2827,8 @@ var Icons = {
 };
 
 var Input = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, type = _a.type, props = __rest$1(_a, ["className", "type"]);
-    return (React__namespace.createElement("input", __assign$1({ type: type, className: cn("flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50", className), ref: ref }, props)));
+    var className = _a.className, type = _a.type, props = __rest$2(_a, ["className", "type"]);
+    return (React__namespace.createElement("input", __assign$2({ type: type, className: cn("flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50", className), ref: ref }, props)));
 });
 Input.displayName = "Input";
 
@@ -2927,8 +2927,8 @@ const $b73a6c6685e72184$export$b04be29aa201d4f5 = /*#__PURE__*/ React.forwardRef
 
 var labelVariants = cva("text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70");
 var Label = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($b73a6c6685e72184$export$be92b6f5f03c0fe9, __assign$1({ ref: ref, className: cn(labelVariants(), className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($b73a6c6685e72184$export$be92b6f5f03c0fe9, __assign$2({ ref: ref, className: cn(labelVariants(), className) }, props)));
 });
 Label.displayName = $b73a6c6685e72184$export$be92b6f5f03c0fe9.displayName;
 
@@ -4047,14 +4047,14 @@ var skipValidation = (isBlurEvent, isTouched, isSubmitted, reValidateMode, mode)
 
 var unsetEmptyArray = (ref, name) => !compact(get(ref, name)).length && unset(ref, name);
 
-const defaultOptions = {
+const defaultOptions$1 = {
     mode: VALIDATION_MODE.onSubmit,
     reValidateMode: VALIDATION_MODE.onChange,
     shouldFocusError: true,
 };
 function createFormControl(props = {}, flushRootRender) {
     let _options = {
-        ...defaultOptions,
+        ...defaultOptions$1,
         ...props,
     };
     let _formState = {
@@ -5051,18 +5051,18 @@ function useForm(props = {}) {
 }
 
 function UserAuthForm$1(_a) {
-    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading, props = __rest$1(_a, ["className", "onSubmit", "isLoading"]);
+    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading, props = __rest$2(_a, ["className", "onSubmit", "isLoading"]);
     var _b = useForm(), handleSubmit = _b.handleSubmit, register = _b.register;
-    return (React__namespace.createElement("div", __assign$1({ className: cn("grid gap-6", className) }, props),
+    return (React__namespace.createElement("div", __assign$2({ className: cn("grid gap-6", className) }, props),
         React__namespace.createElement("form", { onSubmit: handleSubmit(onSubmit) },
             React__namespace.createElement("div", { className: "grid gap-5" },
                 React__namespace.createElement("div", { className: "grid gap-1" },
                     React__namespace.createElement(Label, { className: "sr-only", htmlFor: "email" }, "Email"),
-                    React__namespace.createElement(Input, __assign$1({}, register("username"), { id: "username", placeholder: "username", type: "email", autoCapitalize: "none", autoComplete: "email", autoCorrect: "off", disabled: isLoading }))),
+                    React__namespace.createElement(Input, __assign$2({}, register("username"), { id: "username", placeholder: "username", type: "email", autoCapitalize: "none", autoComplete: "email", autoCorrect: "off", disabled: isLoading }))),
                 React__namespace.createElement("div", { className: "grid gap-1" },
                     React__namespace.createElement(Label, { className: "sr-only", htmlFor: "email" }, "Email"),
-                    React__namespace.createElement(Input, __assign$1({}, register("password"), { id: "password", placeholder: "password", type: "password", autoCapitalize: "none", autoComplete: "email", autoCorrect: "off", disabled: isLoading }))),
-                React__namespace.createElement(Button, { disabled: isLoading },
+                    React__namespace.createElement(Input, __assign$2({}, register("password"), { id: "password", placeholder: "password", type: "password", autoCapitalize: "none", autoComplete: "email", autoCorrect: "off", disabled: isLoading }))),
+                React__namespace.createElement(Button$1, { disabled: isLoading },
                     isLoading && (React__namespace.createElement(Icons.spinner, { className: "mr-2 h-4 w-4 animate-spin" })),
                     "Sign In with Email"),
                 React__namespace.createElement("p", { className: "px-7 text-center text-sm text-muted-foreground" },
@@ -5073,14 +5073,14 @@ function UserAuthForm$1(_a) {
                 React__namespace.createElement("span", { className: "w-full border-t" })),
             React__namespace.createElement("div", { className: "relative flex justify-center text-xs uppercase" },
                 React__namespace.createElement("span", { className: "bg-background px-2 text-muted-foreground" }, "Or continue with"))),
-        React__namespace.createElement(Button, { variant: "outline", type: "button", disabled: isLoading },
+        React__namespace.createElement(Button$1, { variant: "outline", type: "button", disabled: isLoading },
             isLoading ? (React__namespace.createElement(Icons.spinner, { className: "mr-2 h-4 w-4 animate-spin" })) : (React__namespace.createElement(Icons.google, { className: "mr-2 h-4 w-4" })),
             " ",
             "Github")));
 }
 
 function AuthenticationPage$1(_a) {
-    var signUpUrl = _a.signUpUrl, props = __rest$1(_a, ["signUpUrl"]);
+    var signUpUrl = _a.signUpUrl, props = __rest$2(_a, ["signUpUrl"]);
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement("div", { className: "md:hidden" },
             React__default["default"].createElement("img", { src: "/examples/authentication-light.png", width: 1280, height: 843, alt: "Authentication", className: "block dark:hidden" }),
@@ -5100,7 +5100,7 @@ function AuthenticationPage$1(_a) {
                     React__default["default"].createElement("div", { className: "flex flex-col space-y-2 text-center" },
                         React__default["default"].createElement("h1", { className: "text-2xl font-semibold tracking-tight" }, "Login to your account"),
                         React__default["default"].createElement("p", { className: "text-sm text-muted-foreground" }, "Enter your email to login your account")),
-                    React__default["default"].createElement(UserAuthForm$1, __assign$1({}, props)),
+                    React__default["default"].createElement(UserAuthForm$1, __assign$2({}, props)),
                     React__default["default"].createElement("p", { className: "px-8 text-center text-sm text-muted-foreground" },
                         "By clicking continue, you agree to our",
                         " ",
@@ -6974,8 +6974,8 @@ const $054eb8030ebde76e$export$f39c2d165cd861fe = $054eb8030ebde76e$export$811e7
 
 var ToastProvider = $054eb8030ebde76e$export$2881499e37b75b9a;
 var ToastViewport = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($054eb8030ebde76e$export$d5c6c08dc2d3ca7, __assign$1({ ref: ref, className: cn("fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($054eb8030ebde76e$export$d5c6c08dc2d3ca7, __assign$2({ ref: ref, className: cn("fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]", className) }, props)));
 });
 ToastViewport.displayName = $054eb8030ebde76e$export$d5c6c08dc2d3ca7.displayName;
 var toastVariants = cva("group pointer-events-auto relative flex w-full items-center justify-between space-x-2 overflow-hidden rounded-md border p-4 pr-6 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full", {
@@ -6990,36 +6990,36 @@ var toastVariants = cva("group pointer-events-auto relative flex w-full items-ce
     },
 });
 var Toast = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, variant = _a.variant, props = __rest$1(_a, ["className", "variant"]);
-    return (React__namespace.createElement($054eb8030ebde76e$export$be92b6f5f03c0fe9, __assign$1({ ref: ref, className: cn(toastVariants({ variant: variant }), className) }, props)));
+    var className = _a.className, variant = _a.variant, props = __rest$2(_a, ["className", "variant"]);
+    return (React__namespace.createElement($054eb8030ebde76e$export$be92b6f5f03c0fe9, __assign$2({ ref: ref, className: cn(toastVariants({ variant: variant }), className) }, props)));
 });
 Toast.displayName = $054eb8030ebde76e$export$be92b6f5f03c0fe9.displayName;
 var ToastAction = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($054eb8030ebde76e$export$e19cd5f9376f8cee, __assign$1({ ref: ref, className: cn("inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium transition-colors hover:bg-secondary focus:outline-none focus:ring-1 focus:ring-ring disabled:pointer-events-none disabled:opacity-50 group-[.destructive]:border-muted/40 group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive group-[.destructive]:hover:text-destructive-foreground group-[.destructive]:focus:ring-destructive", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($054eb8030ebde76e$export$e19cd5f9376f8cee, __assign$2({ ref: ref, className: cn("inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium transition-colors hover:bg-secondary focus:outline-none focus:ring-1 focus:ring-ring disabled:pointer-events-none disabled:opacity-50 group-[.destructive]:border-muted/40 group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive group-[.destructive]:hover:text-destructive-foreground group-[.destructive]:focus:ring-destructive", className) }, props)));
 });
 ToastAction.displayName = $054eb8030ebde76e$export$e19cd5f9376f8cee.displayName;
 var ToastClose = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($054eb8030ebde76e$export$f39c2d165cd861fe, __assign$1({ ref: ref, className: cn("absolute right-1 top-1 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-1 group-hover:opacity-100 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600", className), "toast-close": "" }, props),
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($054eb8030ebde76e$export$f39c2d165cd861fe, __assign$2({ ref: ref, className: cn("absolute right-1 top-1 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-1 group-hover:opacity-100 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600", className), "toast-close": "" }, props),
         React__namespace.createElement(Cross2Icon, { className: "h-4 w-4" })));
 });
 ToastClose.displayName = $054eb8030ebde76e$export$f39c2d165cd861fe.displayName;
 var ToastTitle = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($054eb8030ebde76e$export$f99233281efd08a0, __assign$1({ ref: ref, className: cn("text-sm font-semibold [&+div]:text-xs", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($054eb8030ebde76e$export$f99233281efd08a0, __assign$2({ ref: ref, className: cn("text-sm font-semibold [&+div]:text-xs", className) }, props)));
 });
 ToastTitle.displayName = $054eb8030ebde76e$export$f99233281efd08a0.displayName;
 var ToastDescription = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($054eb8030ebde76e$export$393edc798c47379d, __assign$1({ ref: ref, className: cn("text-sm opacity-90", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($054eb8030ebde76e$export$393edc798c47379d, __assign$2({ ref: ref, className: cn("text-sm opacity-90", className) }, props)));
 });
 ToastDescription.displayName = $054eb8030ebde76e$export$393edc798c47379d.displayName;
 
 var TOAST_LIMIT = 1;
 var TOAST_REMOVE_DELAY = 1000000;
 var count$1 = 0;
-function genId() {
+function genId$1() {
     count$1 = (count$1 + 1) % Number.MAX_VALUE;
     return count$1.toString();
 }
@@ -7040,10 +7040,10 @@ var addToRemoveQueue = function (toastId) {
 var reducer = function (state, action) {
     switch (action.type) {
         case "ADD_TOAST":
-            return __assign$1(__assign$1({}, state), { toasts: __spreadArray([action.toast], state.toasts, true).slice(0, TOAST_LIMIT) });
+            return __assign$2(__assign$2({}, state), { toasts: __spreadArray$1([action.toast], state.toasts, true).slice(0, TOAST_LIMIT) });
         case "UPDATE_TOAST":
-            return __assign$1(__assign$1({}, state), { toasts: state.toasts.map(function (t) {
-                    return t.id === action.toast.id ? __assign$1(__assign$1({}, t), action.toast) : t;
+            return __assign$2(__assign$2({}, state), { toasts: state.toasts.map(function (t) {
+                    return t.id === action.toast.id ? __assign$2(__assign$2({}, t), action.toast) : t;
                 }) });
         case "DISMISS_TOAST": {
             var toastId_1 = action.toastId;
@@ -7057,16 +7057,16 @@ var reducer = function (state, action) {
                     addToRemoveQueue(toast.id);
                 });
             }
-            return __assign$1(__assign$1({}, state), { toasts: state.toasts.map(function (t) {
+            return __assign$2(__assign$2({}, state), { toasts: state.toasts.map(function (t) {
                     return t.id === toastId_1 || toastId_1 === undefined
-                        ? __assign$1(__assign$1({}, t), { open: false }) : t;
+                        ? __assign$2(__assign$2({}, t), { open: false }) : t;
                 }) });
         }
         case "REMOVE_TOAST":
             if (action.toastId === undefined) {
-                return __assign$1(__assign$1({}, state), { toasts: [] });
+                return __assign$2(__assign$2({}, state), { toasts: [] });
             }
-            return __assign$1(__assign$1({}, state), { toasts: state.toasts.filter(function (t) { return t.id !== action.toastId; }) });
+            return __assign$2(__assign$2({}, state), { toasts: state.toasts.filter(function (t) { return t.id !== action.toastId; }) });
     }
 };
 var listeners = [];
@@ -7078,18 +7078,18 @@ function dispatch(action) {
     });
 }
 function toast(_a) {
-    var props = __rest$1(_a, []);
-    var id = genId();
+    var props = __rest$2(_a, []);
+    var id = genId$1();
     var update = function (props) {
         return dispatch({
             type: "UPDATE_TOAST",
-            toast: __assign$1(__assign$1({}, props), { id: id }),
+            toast: __assign$2(__assign$2({}, props), { id: id }),
         });
     };
     var dismiss = function () { return dispatch({ type: "DISMISS_TOAST", toastId: id }); };
     dispatch({
         type: "ADD_TOAST",
-        toast: __assign$1(__assign$1({}, props), { id: id, open: true, onOpenChange: function (open) {
+        toast: __assign$2(__assign$2({}, props), { id: id, open: true, onOpenChange: function (open) {
                 if (!open)
                     dismiss();
             } }),
@@ -7111,15 +7111,15 @@ function useToast() {
             }
         };
     }, [state]);
-    return __assign$1(__assign$1({}, state), { toast: toast, dismiss: function (toastId) { return dispatch({ type: "DISMISS_TOAST", toastId: toastId }); } });
+    return __assign$2(__assign$2({}, state), { toast: toast, dismiss: function (toastId) { return dispatch({ type: "DISMISS_TOAST", toastId: toastId }); } });
 }
 
 function Toaster() {
     var toasts = useToast().toasts;
     return (React__default["default"].createElement(ToastProvider, null,
         toasts.map(function (_a) {
-            var id = _a.id, title = _a.title, description = _a.description, action = _a.action, props = __rest$1(_a, ["id", "title", "description", "action"]);
-            return (React__default["default"].createElement(Toast, __assign$1({ key: id }, props),
+            var id = _a.id, title = _a.title, description = _a.description, action = _a.action, props = __rest$2(_a, ["id", "title", "description", "action"]);
+            return (React__default["default"].createElement(Toast, __assign$2({ key: id }, props),
                 React__default["default"].createElement("div", { className: "grid gap-1" },
                     title && React__default["default"].createElement(ToastTitle, null, title),
                     description && (React__default["default"].createElement(ToastDescription, null, description))),
@@ -7449,8 +7449,8 @@ function $1746a345f3d73bb7$export$f680877a34711e37$1(deterministicId) {
 }
 
 const sides = ['top', 'right', 'bottom', 'left'];
-const min$1 = Math.min;
-const max$1 = Math.max;
+const min$2 = Math.min;
+const max$2 = Math.max;
 const round = Math.round;
 const floor = Math.floor;
 const createCoords = v => ({
@@ -7468,7 +7468,7 @@ const oppositeAlignmentMap = {
   end: 'start'
 };
 function clamp(start, value, end) {
-  return max$1(start, min$1(value, end));
+  return max$2(start, min$2(value, end));
 }
 function evaluate(value, param) {
   return typeof value === 'function' ? value(param) : value;
@@ -7832,22 +7832,22 @@ const arrow$1 = options => ({
     // If the padding is large enough that it causes the arrow to no longer be
     // centered, modify the padding so that it is centered.
     const largestPossiblePadding = clientSize / 2 - arrowDimensions[length] / 2 - 1;
-    const minPadding = min$1(paddingObject[minProp], largestPossiblePadding);
-    const maxPadding = min$1(paddingObject[maxProp], largestPossiblePadding);
+    const minPadding = min$2(paddingObject[minProp], largestPossiblePadding);
+    const maxPadding = min$2(paddingObject[maxProp], largestPossiblePadding);
 
     // Make sure the arrow doesn't overflow the floating element if the center
     // point is outside the floating element's bounds.
-    const min$1$1 = minPadding;
+    const min$1 = minPadding;
     const max = clientSize - arrowDimensions[length] - maxPadding;
     const center = clientSize / 2 - arrowDimensions[length] / 2 + centerToReference;
-    const offset = clamp(min$1$1, center, max);
+    const offset = clamp(min$1, center, max);
 
     // If the reference is small enough that the arrow's padding causes it to
     // to point to nothing for an aligned placement, adjust the offset of the
     // floating element itself. To ensure `shift()` continues to take action,
     // a single reset is performed when this is true.
-    const shouldAddOffset = !middlewareData.arrow && getAlignment(placement) != null && center != offset && rects.reference[length] / 2 - (center < min$1$1 ? minPadding : maxPadding) - arrowDimensions[length] / 2 < 0;
-    const alignmentOffset = shouldAddOffset ? center < min$1$1 ? center - min$1$1 : center - max : 0;
+    const shouldAddOffset = !middlewareData.arrow && getAlignment(placement) != null && center != offset && rects.reference[length] / 2 - (center < min$1 ? minPadding : maxPadding) - arrowDimensions[length] / 2 < 0;
+    const alignmentOffset = shouldAddOffset ? center < min$1 ? center - min$1 : center - max : 0;
     return {
       [axis]: coords[axis] + alignmentOffset,
       data: {
@@ -8308,20 +8308,20 @@ const size = function (options) {
       let availableWidth = overflowAvailableWidth;
       if (isYAxis) {
         const maximumClippingWidth = width - overflow.left - overflow.right;
-        availableWidth = alignment || noShift ? min$1(overflowAvailableWidth, maximumClippingWidth) : maximumClippingWidth;
+        availableWidth = alignment || noShift ? min$2(overflowAvailableWidth, maximumClippingWidth) : maximumClippingWidth;
       } else {
         const maximumClippingHeight = height - overflow.top - overflow.bottom;
-        availableHeight = alignment || noShift ? min$1(overflowAvailableHeight, maximumClippingHeight) : maximumClippingHeight;
+        availableHeight = alignment || noShift ? min$2(overflowAvailableHeight, maximumClippingHeight) : maximumClippingHeight;
       }
       if (noShift && !alignment) {
-        const xMin = max$1(overflow.left, 0);
-        const xMax = max$1(overflow.right, 0);
-        const yMin = max$1(overflow.top, 0);
-        const yMax = max$1(overflow.bottom, 0);
+        const xMin = max$2(overflow.left, 0);
+        const xMax = max$2(overflow.right, 0);
+        const yMin = max$2(overflow.top, 0);
+        const yMax = max$2(overflow.bottom, 0);
         if (isYAxis) {
-          availableWidth = width - 2 * (xMin !== 0 || xMax !== 0 ? xMin + xMax : max$1(overflow.left, overflow.right));
+          availableWidth = width - 2 * (xMin !== 0 || xMax !== 0 ? xMin + xMax : max$2(overflow.left, overflow.right));
         } else {
-          availableHeight = height - 2 * (yMin !== 0 || yMax !== 0 ? yMin + yMax : max$1(overflow.top, overflow.bottom));
+          availableHeight = height - 2 * (yMin !== 0 || yMax !== 0 ? yMin + yMax : max$2(overflow.top, overflow.bottom));
         }
       }
       await apply({
@@ -8646,12 +8646,12 @@ function getDocumentRect(element) {
   const html = getDocumentElement(element);
   const scroll = getNodeScroll(element);
   const body = element.ownerDocument.body;
-  const width = max$1(html.scrollWidth, html.clientWidth, body.scrollWidth, body.clientWidth);
-  const height = max$1(html.scrollHeight, html.clientHeight, body.scrollHeight, body.clientHeight);
+  const width = max$2(html.scrollWidth, html.clientWidth, body.scrollWidth, body.clientWidth);
+  const height = max$2(html.scrollHeight, html.clientHeight, body.scrollHeight, body.clientHeight);
   let x = -scroll.scrollLeft + getWindowScrollBarX(element);
   const y = -scroll.scrollTop;
   if (getComputedStyle$1(body).direction === 'rtl') {
-    x += max$1(html.clientWidth, body.clientWidth) - width;
+    x += max$2(html.clientWidth, body.clientWidth) - width;
   }
   return {
     width,
@@ -8777,10 +8777,10 @@ function getClippingRect(_ref) {
   const firstClippingAncestor = clippingAncestors[0];
   const clippingRect = clippingAncestors.reduce((accRect, clippingAncestor) => {
     const rect = getClientRectFromClippingAncestor(element, clippingAncestor, strategy);
-    accRect.top = max$1(rect.top, accRect.top);
-    accRect.right = min$1(rect.right, accRect.right);
-    accRect.bottom = min$1(rect.bottom, accRect.bottom);
-    accRect.left = max$1(rect.left, accRect.left);
+    accRect.top = max$2(rect.top, accRect.top);
+    accRect.right = min$2(rect.right, accRect.right);
+    accRect.bottom = min$2(rect.bottom, accRect.bottom);
+    accRect.left = max$2(rect.left, accRect.left);
     return accRect;
   }, getClientRectFromClippingAncestor(element, firstClippingAncestor, strategy));
   return {
@@ -8924,7 +8924,7 @@ function observeMove(element, onMove) {
     const rootMargin = -insetTop + "px " + -insetRight + "px " + -insetBottom + "px " + -insetLeft + "px";
     const options = {
       rootMargin,
-      threshold: max$1(0, min$1(1, threshold)) || 1
+      threshold: max$2(0, min$2(1, threshold)) || 1
     };
     let isFirstUpdate = true;
     function handleObserve(entries) {
@@ -9903,12 +9903,12 @@ function innerCreateMedium(defaults, middleware) {
 function createSidecarMedium(options) {
     if (options === void 0) { options = {}; }
     var medium = innerCreateMedium(null);
-    medium.options = __assign$1({ async: true, ssr: false }, options);
+    medium.options = __assign$2({ async: true, ssr: false }, options);
     return medium;
 }
 
 var SideCar$2 = function (_a) {
-    var sideCar = _a.sideCar, rest = __rest$1(_a, ["sideCar"]);
+    var sideCar = _a.sideCar, rest = __rest$2(_a, ["sideCar"]);
     if (!sideCar) {
         throw new Error('Sidecar: please provide `sideCar` property to import the right car');
     }
@@ -9916,7 +9916,7 @@ var SideCar$2 = function (_a) {
     if (!Target) {
         throw new Error('Sidecar medium not found');
     }
-    return React__namespace.createElement(Target, __assign$1({}, rest));
+    return React__namespace.createElement(Target, __assign$2({}, rest));
 };
 SideCar$2.isSideCarExport = true;
 function exportSidecar(medium, exported) {
@@ -9939,13 +9939,13 @@ var RemoveScroll$1 = React__namespace.forwardRef(function (props, parentRef) {
         onWheelCapture: nothing$1,
         onTouchMoveCapture: nothing$1,
     }), callbacks = _a[0], setCallbacks = _a[1];
-    var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? 'div' : _b, rest = __rest$1(props, ["forwardProps", "children", "className", "removeScrollBar", "enabled", "shards", "sideCar", "noIsolation", "inert", "allowPinchZoom", "as"]);
+    var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? 'div' : _b, rest = __rest$2(props, ["forwardProps", "children", "className", "removeScrollBar", "enabled", "shards", "sideCar", "noIsolation", "inert", "allowPinchZoom", "as"]);
     var SideCar = sideCar;
     var containerRef = useMergeRefs([ref, parentRef]);
-    var containerProps = __assign$1(__assign$1({}, rest), callbacks);
+    var containerProps = __assign$2(__assign$2({}, rest), callbacks);
     return (React__namespace.createElement(React__namespace.Fragment, null,
         enabled && (React__namespace.createElement(SideCar, { sideCar: effectCar$1, removeScrollBar: removeScrollBar, shards: shards, noIsolation: noIsolation, inert: inert, setCallbacks: setCallbacks, allowPinchZoom: !!allowPinchZoom, lockRef: ref })),
-        forwardProps ? (React__namespace.cloneElement(React__namespace.Children.only(children), __assign$1(__assign$1({}, containerProps), { ref: containerRef }))) : (React__namespace.createElement(Container, __assign$1({}, containerProps, { className: className, ref: containerRef }), children))));
+        forwardProps ? (React__namespace.cloneElement(React__namespace.Children.only(children), __assign$2(__assign$2({}, containerProps), { ref: containerRef }))) : (React__namespace.createElement(Container, __assign$2({}, containerProps, { className: className, ref: containerRef }), children))));
 });
 RemoveScroll$1.defaultProps = {
     enabled: true,
@@ -10250,7 +10250,7 @@ function RemoveScrollSideCar$1(props) {
     React__namespace.useEffect(function () {
         if (props.inert) {
             document.body.classList.add("block-interactivity-".concat(id));
-            var allow_1 = __spreadArray([props.lockRef.current], (props.shards || []).map(extractRef$1), true).filter(Boolean);
+            var allow_1 = __spreadArray$1([props.lockRef.current], (props.shards || []).map(extractRef$1), true).filter(Boolean);
             allow_1.forEach(function (el) { return el.classList.add("allow-interactivity-".concat(id)); });
             return function () {
                 document.body.classList.remove("block-interactivity-".concat(id));
@@ -10369,9 +10369,9 @@ function RemoveScrollSideCar$1(props) {
 
 var SideCar$1 = exportSidecar(effectCar$1, RemoveScrollSideCar$1);
 
-var ReactRemoveScroll$1 = React__namespace.forwardRef(function (props, ref) { return (React__namespace.createElement(RemoveScroll$1, __assign$1({}, props, { ref: ref, sideCar: SideCar$1 }))); });
+var ReactRemoveScroll$1 = React__namespace.forwardRef(function (props, ref) { return (React__namespace.createElement(RemoveScroll$1, __assign$2({}, props, { ref: ref, sideCar: SideCar$1 }))); });
 ReactRemoveScroll$1.classNames = RemoveScroll$1.classNames;
-var $am6gm$RemoveScroll = ReactRemoveScroll$1;
+var $67UHm$RemoveScroll$1 = ReactRemoveScroll$1;
 
 const $cc7e05a45900e73f$var$OPEN_KEYS = [
     ' ',
@@ -10779,7 +10779,7 @@ const $cc7e05a45900e73f$var$SelectContentImpl = /*#__PURE__*/ React.forwardRef((
         position: position,
         isPositioned: isPositioned,
         searchRef: searchRef
-    }, /*#__PURE__*/ React.createElement($am6gm$RemoveScroll, {
+    }, /*#__PURE__*/ React.createElement($67UHm$RemoveScroll$1, {
         as: $5e63c961fc1ce211$export$8c6ed5c666ac1360$1,
         allowPinchZoom: true
     }, /*#__PURE__*/ React.createElement($d3863c46a17e8a28$export$20e40289641fbbb6$1, {
@@ -11507,30 +11507,30 @@ var Select = $cc7e05a45900e73f$export$be92b6f5f03c0fe9;
 var SelectGroup = $cc7e05a45900e73f$export$eb2fcfdbd7ba97d4;
 var SelectValue = $cc7e05a45900e73f$export$4c8d1a57a761ef94;
 var SelectTrigger = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
-    return (React__namespace.createElement($cc7e05a45900e73f$export$41fb9f06171c75f4, __assign$1({ ref: ref, className: cn("flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1", className) }, props),
+    var className = _a.className, children = _a.children, props = __rest$2(_a, ["className", "children"]);
+    return (React__namespace.createElement($cc7e05a45900e73f$export$41fb9f06171c75f4, __assign$2({ ref: ref, className: cn("flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1", className) }, props),
         children,
         React__namespace.createElement($cc7e05a45900e73f$export$f04a61298a47a40f, { asChild: true },
             React__namespace.createElement(CaretSortIcon, { className: "h-4 w-4 opacity-50" }))));
 });
 SelectTrigger.displayName = $cc7e05a45900e73f$export$41fb9f06171c75f4.displayName;
 var SelectScrollUpButton = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($cc7e05a45900e73f$export$2f60d3ec9ad468f2, __assign$1({ ref: ref, className: cn("flex cursor-default items-center justify-center py-1", className) }, props),
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($cc7e05a45900e73f$export$2f60d3ec9ad468f2, __assign$2({ ref: ref, className: cn("flex cursor-default items-center justify-center py-1", className) }, props),
         React__namespace.createElement(ChevronUpIcon, null)));
 });
 SelectScrollUpButton.displayName = $cc7e05a45900e73f$export$2f60d3ec9ad468f2.displayName;
 var SelectScrollDownButton = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($cc7e05a45900e73f$export$bf1aedc3039c8d63, __assign$1({ ref: ref, className: cn("flex cursor-default items-center justify-center py-1", className) }, props),
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($cc7e05a45900e73f$export$bf1aedc3039c8d63, __assign$2({ ref: ref, className: cn("flex cursor-default items-center justify-center py-1", className) }, props),
         React__namespace.createElement(ChevronDownIcon, null)));
 });
 SelectScrollDownButton.displayName =
     $cc7e05a45900e73f$export$bf1aedc3039c8d63.displayName;
 var SelectContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, _b = _a.position, position = _b === void 0 ? "popper" : _b, props = __rest$1(_a, ["className", "children", "position"]);
+    var className = _a.className, children = _a.children, _b = _a.position, position = _b === void 0 ? "popper" : _b, props = __rest$2(_a, ["className", "children", "position"]);
     return (React__namespace.createElement($cc7e05a45900e73f$export$602eac185826482c, null,
-        React__namespace.createElement($cc7e05a45900e73f$export$7c6e2c02157bb7d2, __assign$1({ ref: ref, className: cn("relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", position === "popper" &&
+        React__namespace.createElement($cc7e05a45900e73f$export$7c6e2c02157bb7d2, __assign$2({ ref: ref, className: cn("relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", position === "popper" &&
                 "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1", className), position: position }, props),
             React__namespace.createElement(SelectScrollUpButton, null),
             React__namespace.createElement($cc7e05a45900e73f$export$d5c6c08dc2d3ca7, { className: cn("p-1", position === "popper" &&
@@ -11539,13 +11539,13 @@ var SelectContent = React__namespace.forwardRef(function (_a, ref) {
 });
 SelectContent.displayName = $cc7e05a45900e73f$export$7c6e2c02157bb7d2.displayName;
 var SelectLabel = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($cc7e05a45900e73f$export$b04be29aa201d4f5, __assign$1({ ref: ref, className: cn("px-2 py-1.5 text-sm font-semibold", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($cc7e05a45900e73f$export$b04be29aa201d4f5, __assign$2({ ref: ref, className: cn("px-2 py-1.5 text-sm font-semibold", className) }, props)));
 });
 SelectLabel.displayName = $cc7e05a45900e73f$export$b04be29aa201d4f5.displayName;
 var SelectItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
-    return (React__namespace.createElement($cc7e05a45900e73f$export$6d08773d2e66f8f2, __assign$1({ ref: ref, className: cn("relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props),
+    var className = _a.className, children = _a.children, props = __rest$2(_a, ["className", "children"]);
+    return (React__namespace.createElement($cc7e05a45900e73f$export$6d08773d2e66f8f2, __assign$2({ ref: ref, className: cn("relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props),
         React__namespace.createElement("span", { className: "absolute right-2 flex h-3.5 w-3.5 items-center justify-center" },
             React__namespace.createElement($cc7e05a45900e73f$export$c3468e2714d175fa, null,
                 React__namespace.createElement(CheckIcon, { className: "h-4 w-4" }))),
@@ -11553,29 +11553,29 @@ var SelectItem = React__namespace.forwardRef(function (_a, ref) {
 });
 SelectItem.displayName = $cc7e05a45900e73f$export$6d08773d2e66f8f2.displayName;
 var SelectSeparator = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($cc7e05a45900e73f$export$1ff3c3f08ae963c0, __assign$1({ ref: ref, className: cn("-mx-1 my-1 h-px bg-muted", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($cc7e05a45900e73f$export$1ff3c3f08ae963c0, __assign$2({ ref: ref, className: cn("-mx-1 my-1 h-px bg-muted", className) }, props)));
 });
 SelectSeparator.displayName = $cc7e05a45900e73f$export$1ff3c3f08ae963c0.displayName;
 
 function UserAuthForm(_a) {
-    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading, props = __rest$1(_a, ["className", "onSubmit", "isLoading"]);
+    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading, props = __rest$2(_a, ["className", "onSubmit", "isLoading"]);
     var _b = useForm(), handleSubmit = _b.handleSubmit, register = _b.register;
-    return (React__namespace.createElement("div", __assign$1({ className: cn("grid gap-6", className) }, props),
+    return (React__namespace.createElement("div", __assign$2({ className: cn("grid gap-6", className) }, props),
         React__namespace.createElement("form", { onSubmit: handleSubmit(onSubmit) },
             React__namespace.createElement("div", { className: "grid gap-5" },
                 React__namespace.createElement("div", { className: "grid gap-1" },
                     React__namespace.createElement(Label, { className: "sr-only", htmlFor: "email" }, "Email"),
-                    React__namespace.createElement(Input, __assign$1({}, register("email"), { id: "email", placeholder: "Email", type: "email", autoCapitalize: "none", autoComplete: "email", autoCorrect: "off", disabled: isLoading }))),
+                    React__namespace.createElement(Input, __assign$2({}, register("email"), { id: "email", placeholder: "Email", type: "email", autoCapitalize: "none", autoComplete: "email", autoCorrect: "off", disabled: isLoading }))),
                 React__namespace.createElement("div", { className: "grid gap-1" },
                     React__namespace.createElement(Label, { className: "sr-only", htmlFor: "email" }, "Fullname"),
-                    React__namespace.createElement(Input, __assign$1({}, register("fullname"), { id: "fullname", placeholder: "Full Name", type: "text", autoCapitalize: "none", autoCorrect: "off", disabled: isLoading }))),
+                    React__namespace.createElement(Input, __assign$2({}, register("fullname"), { id: "fullname", placeholder: "Full Name", type: "text", autoCapitalize: "none", autoCorrect: "off", disabled: isLoading }))),
                 React__namespace.createElement("div", { className: "grid gap-1" },
                     React__namespace.createElement(Label, { className: "sr-only", htmlFor: "email" }, "Hotel Name"),
-                    React__namespace.createElement(Input, __assign$1({}, register("hotel_name"), { id: "hotel_name", placeholder: "Hotel Name", type: "text", autoCapitalize: "none", autoCorrect: "off", disabled: isLoading }))),
+                    React__namespace.createElement(Input, __assign$2({}, register("hotel_name"), { id: "hotel_name", placeholder: "Hotel Name", type: "text", autoCapitalize: "none", autoCorrect: "off", disabled: isLoading }))),
                 React__namespace.createElement("div", { className: "grid gap-1" },
                     React__namespace.createElement(Label, { className: "sr-only", htmlFor: "email" }, "Phone Number"),
-                    React__namespace.createElement(Input, __assign$1({}, register("contact"), { id: "contact", placeholder: "Phone Number", type: "text", autoCapitalize: "none", autoCorrect: "off", disabled: isLoading }))),
+                    React__namespace.createElement(Input, __assign$2({}, register("contact"), { id: "contact", placeholder: "Phone Number", type: "text", autoCapitalize: "none", autoCorrect: "off", disabled: isLoading }))),
                 React__namespace.createElement("div", { className: "grid gap-1" },
                     React__namespace.createElement(Label, { className: "sr-only", htmlFor: "email" }, "Country"),
                     React__namespace.createElement(Select, null,
@@ -11591,8 +11591,8 @@ function UserAuthForm(_a) {
                                 React__namespace.createElement(SelectItem, { value: "pineapple" }, "Pineapple"))))),
                 React__namespace.createElement("div", { className: "grid gap-1" },
                     React__namespace.createElement(Label, { className: "sr-only", htmlFor: "email" }, "Password"),
-                    React__namespace.createElement(Input, __assign$1({}, register("password"), { id: "password", placeholder: "Password", type: "password", autoCapitalize: "none", autoCorrect: "off", disabled: isLoading }))),
-                React__namespace.createElement(Button, { disabled: isLoading },
+                    React__namespace.createElement(Input, __assign$2({}, register("password"), { id: "password", placeholder: "Password", type: "password", autoCapitalize: "none", autoCorrect: "off", disabled: isLoading }))),
+                React__namespace.createElement(Button$1, { disabled: isLoading },
                     isLoading && (React__namespace.createElement(Icons.spinner, { className: "mr-2 h-4 w-4 animate-spin" })),
                     "Sign up"))),
         React__namespace.createElement("div", { className: "relative" },
@@ -11600,14 +11600,14 @@ function UserAuthForm(_a) {
                 React__namespace.createElement("span", { className: "w-full border-t" })),
             React__namespace.createElement("div", { className: "relative flex justify-center text-xs uppercase" },
                 React__namespace.createElement("span", { className: "bg-background px-2 text-muted-foreground" }, "Or continue with"))),
-        React__namespace.createElement(Button, { variant: "outline", type: "button", disabled: isLoading },
+        React__namespace.createElement(Button$1, { variant: "outline", type: "button", disabled: isLoading },
             isLoading ? (React__namespace.createElement(Icons.spinner, { className: "mr-2 h-4 w-4 animate-spin" })) : (React__namespace.createElement(Icons.google, { className: "mr-2 h-4 w-4" })),
             " ",
             "Google")));
 }
 
 function AuthenticationPage(_a) {
-    var loginUrl = _a.loginUrl, props = __rest$1(_a, ["loginUrl"]);
+    var loginUrl = _a.loginUrl, props = __rest$2(_a, ["loginUrl"]);
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement("div", { className: "md:hidden" },
             React__default["default"].createElement("img", { src: "/examples/authentication-light.png", width: 1280, height: 843, alt: "Authentication", className: "block dark:hidden" }),
@@ -11627,7 +11627,7 @@ function AuthenticationPage(_a) {
                     React__default["default"].createElement("div", { className: "flex flex-col space-y-2 text-center" },
                         React__default["default"].createElement("h1", { className: "text-2xl font-semibold tracking-tight" }, "Create an account"),
                         React__default["default"].createElement("p", { className: "text-sm text-muted-foreground" }, "Enter your email below to create your account")),
-                    React__default["default"].createElement(UserAuthForm, __assign$1({}, props)),
+                    React__default["default"].createElement(UserAuthForm, __assign$2({}, props)),
                     React__default["default"].createElement("p", { className: "px-8 text-center text-sm text-muted-foreground" },
                         "By clicking continue, you agree to our",
                         " ",
@@ -11648,17 +11648,17 @@ var DefaultContext = {
 };
 var IconContext = React__default["default"].createContext && React__default["default"].createContext(DefaultContext);
 
-var __assign = undefined && undefined.__assign || function () {
-  __assign = Object.assign || function (t) {
+var __assign$1 = undefined && undefined.__assign || function () {
+  __assign$1 = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
       s = arguments[i];
       for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
     }
     return t;
   };
-  return __assign.apply(this, arguments);
+  return __assign$1.apply(this, arguments);
 };
-var __rest = undefined && undefined.__rest || function (s, e) {
+var __rest$1 = undefined && undefined.__rest || function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
@@ -11668,7 +11668,7 @@ var __rest = undefined && undefined.__rest || function (s, e) {
 };
 function Tree2Element(tree) {
   return tree && tree.map(function (node, i) {
-    return React__default["default"].createElement(node.tag, __assign({
+    return React__default["default"].createElement(node.tag, __assign$1({
       key: i
     }, node.attr), Tree2Element(node.child));
   });
@@ -11676,8 +11676,8 @@ function Tree2Element(tree) {
 function GenIcon(data) {
   // eslint-disable-next-line react/display-name
   return function (props) {
-    return React__default["default"].createElement(IconBase, __assign({
-      attr: __assign({}, data.attr)
+    return React__default["default"].createElement(IconBase, __assign$1({
+      attr: __assign$1({}, data.attr)
     }, props), Tree2Element(data.child));
   };
 }
@@ -11686,18 +11686,18 @@ function IconBase(props) {
     var attr = props.attr,
       size = props.size,
       title = props.title,
-      svgProps = __rest(props, ["attr", "size", "title"]);
+      svgProps = __rest$1(props, ["attr", "size", "title"]);
     var computedSize = size || conf.size || "1em";
     var className;
     if (conf.className) className = conf.className;
     if (props.className) className = (className ? className + " " : "") + props.className;
-    return React__default["default"].createElement("svg", __assign({
+    return React__default["default"].createElement("svg", __assign$1({
       stroke: "currentColor",
       fill: "currentColor",
       strokeWidth: "0"
     }, conf.attr, attr, svgProps, {
       className: className,
-      style: __assign(__assign({
+      style: __assign$1(__assign$1({
         color: props.color || conf.color
       }, conf.style), props.style),
       height: computedSize,
@@ -11722,22 +11722,22 @@ function VerificationPage() {
                 React__default["default"].createElement(CgCheckO, { fontSize: 100, color: '#3A7C7C' })),
             React__default["default"].createElement("h2", { className: "mt-5 scroll-m-20  pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0" }, "You'r accout verification success!"),
             React__default["default"].createElement("a", { href: "/login" },
-                React__default["default"].createElement(Button, { className: 'mt-5' }, "Go to login"))));
+                React__default["default"].createElement(Button$1, { className: 'mt-5' }, "Go to login"))));
 }
 
 function ResetPasswordForm(_a) {
-    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading; _a.generatePassword; var _c = _a.buttonTitle, buttonTitle = _c === void 0 ? "" : _c, props = __rest$1(_a, ["className", "onSubmit", "isLoading", "generatePassword", "buttonTitle"]);
+    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading; _a.generatePassword; var _c = _a.buttonTitle, buttonTitle = _c === void 0 ? "" : _c, props = __rest$2(_a, ["className", "onSubmit", "isLoading", "generatePassword", "buttonTitle"]);
     var _d = useForm(), handleSubmit = _d.handleSubmit, register = _d.register;
-    return (React__namespace.createElement("div", __assign$1({ className: cn("grid gap-6", className) }, props),
+    return (React__namespace.createElement("div", __assign$2({ className: cn("grid gap-6", className) }, props),
         React__namespace.createElement("form", { onSubmit: handleSubmit(onSubmit) },
             React__namespace.createElement("div", { className: "grid gap-5" },
                 React__namespace.createElement("div", { className: "grid gap-1" },
                     React__namespace.createElement(Label, { className: "sr-only", htmlFor: "email" }, "Password"),
-                    React__namespace.createElement(Input, __assign$1({}, register("password"), { id: "password", placeholder: "New Password", autoCapitalize: "none", autoCorrect: "off", disabled: isLoading }))),
+                    React__namespace.createElement(Input, __assign$2({}, register("password"), { id: "password", placeholder: "New Password", autoCapitalize: "none", autoCorrect: "off", disabled: isLoading }))),
                 React__namespace.createElement("div", { className: "grid gap-1" },
                     React__namespace.createElement(Label, { className: "sr-only", htmlFor: "email" }, "Re-type Password"),
-                    React__namespace.createElement(Input, __assign$1({}, register("re_type_password"), { id: "res_type_password", placeholder: "Re-Type Password", autoCorrect: "off", disabled: isLoading }))),
-                React__namespace.createElement(Button, { disabled: isLoading },
+                    React__namespace.createElement(Input, __assign$2({}, register("re_type_password"), { id: "res_type_password", placeholder: "Re-Type Password", autoCorrect: "off", disabled: isLoading }))),
+                React__namespace.createElement(Button$1, { disabled: isLoading },
                     isLoading && (React__namespace.createElement(Icons.spinner, { className: "mr-2 h-4 w-4 animate-spin" })),
                     buttonTitle ? buttonTitle : "Update Password"))),
         React__namespace.createElement("div", { className: "relative" },
@@ -11745,11 +11745,11 @@ function ResetPasswordForm(_a) {
                 React__namespace.createElement("span", { className: "w-full border-t" })),
             React__namespace.createElement("div", { className: "relative flex justify-center text-xs uppercase" },
                 React__namespace.createElement("span", { className: "bg-background px-2 text-muted-foreground" }, "Or continue with login"))),
-        React__namespace.createElement(Button, { variant: "outline", type: "button", disabled: isLoading }, "Got to Login Page")));
+        React__namespace.createElement(Button$1, { variant: "outline", type: "button", disabled: isLoading }, "Got to Login Page")));
 }
 
 function ResetPasswordPage(_a) {
-    var loginUrl = _a.loginUrl; _a.forgotPassword; var _c = _a.title, title = _c === void 0 ? "" : _c, _d = _a.subTitle, subTitle = _d === void 0 ? "" : _d, props = __rest$1(_a, ["loginUrl", "forgotPassword", "title", "subTitle"]);
+    var loginUrl = _a.loginUrl; _a.forgotPassword; var _c = _a.title, title = _c === void 0 ? "" : _c, _d = _a.subTitle, subTitle = _d === void 0 ? "" : _d, props = __rest$2(_a, ["loginUrl", "forgotPassword", "title", "subTitle"]);
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement("div", { className: "md:hidden" },
             React__default["default"].createElement("img", { src: "/examples/authentication-light.png", width: 1280, height: 843, alt: "Authentication", className: "block dark:hidden" }),
@@ -11769,7 +11769,7 @@ function ResetPasswordPage(_a) {
                     React__default["default"].createElement("div", { className: "flex flex-col space-y-2 text-center" },
                         React__default["default"].createElement("h1", { className: "text-2xl font-semibold tracking-tight" }, title ? title : "Update password"),
                         React__default["default"].createElement("p", { className: "text-sm text-muted-foreground" }, subTitle ? subTitle : "Provide new password")),
-                    React__default["default"].createElement(ResetPasswordForm, __assign$1({ title: "Create new password", subTitle: "Please create a new password", buttonTitle: "create new account", generatePassword: true }, props)),
+                    React__default["default"].createElement(ResetPasswordForm, __assign$2({ title: "Create new password", subTitle: "Please create a new password", buttonTitle: "create new account", generatePassword: true }, props)),
                     React__default["default"].createElement("p", { className: "px-8 text-center text-sm text-muted-foreground" },
                         "By clicking continue, you agree to our",
                         " ",
@@ -11782,15 +11782,15 @@ function ResetPasswordPage(_a) {
 }
 
 function ForgotPasswordForm(_a) {
-    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading; _a.generatePassword; var _c = _a.buttonTitle, buttonTitle = _c === void 0 ? "" : _c, props = __rest$1(_a, ["className", "onSubmit", "isLoading", "generatePassword", "buttonTitle"]);
+    var className = _a.className, onSubmit = _a.onSubmit, isLoading = _a.isLoading; _a.generatePassword; var _c = _a.buttonTitle, buttonTitle = _c === void 0 ? "" : _c, props = __rest$2(_a, ["className", "onSubmit", "isLoading", "generatePassword", "buttonTitle"]);
     var _d = useForm(), handleSubmit = _d.handleSubmit, register = _d.register;
-    return (React__namespace.createElement("div", __assign$1({ className: cn("grid gap-6", className) }, props),
+    return (React__namespace.createElement("div", __assign$2({ className: cn("grid gap-6", className) }, props),
         React__namespace.createElement("form", { onSubmit: handleSubmit(onSubmit) },
             React__namespace.createElement("div", { className: "grid gap-5" },
                 React__namespace.createElement("div", { className: "grid gap-1" },
                     React__namespace.createElement(Label, { className: "sr-only", htmlFor: "email" }, "Username"),
-                    React__namespace.createElement(Input, __assign$1({}, register("username"), { id: "username", placeholder: "email", type: "email", autoCapitalize: "none", autoCorrect: "off", disabled: isLoading }))),
-                React__namespace.createElement(Button, { disabled: isLoading },
+                    React__namespace.createElement(Input, __assign$2({}, register("username"), { id: "username", placeholder: "email", type: "email", autoCapitalize: "none", autoCorrect: "off", disabled: isLoading }))),
+                React__namespace.createElement(Button$1, { disabled: isLoading },
                     isLoading && (React__namespace.createElement(Icons.spinner, { className: "mr-2 h-4 w-4 animate-spin" })),
                     buttonTitle ? buttonTitle : "Update Password"))),
         React__namespace.createElement("div", { className: "relative" },
@@ -11798,11 +11798,11 @@ function ForgotPasswordForm(_a) {
                 React__namespace.createElement("span", { className: "w-full border-t" })),
             React__namespace.createElement("div", { className: "relative flex justify-center text-xs uppercase" },
                 React__namespace.createElement("span", { className: "bg-background px-2 text-muted-foreground" }, "Or continue with login"))),
-        React__namespace.createElement(Button, { variant: "outline", type: "button", disabled: isLoading }, "Got to Login Page")));
+        React__namespace.createElement(Button$1, { variant: "outline", type: "button", disabled: isLoading }, "Got to Login Page")));
 }
 
 function ForgotPasswordPage(_a) {
-    var loginUrl = _a.loginUrl; _a.forgotPassword; var _c = _a.title, title = _c === void 0 ? "" : _c, _d = _a.subTitle, subTitle = _d === void 0 ? "" : _d, props = __rest$1(_a, ["loginUrl", "forgotPassword", "title", "subTitle"]);
+    var loginUrl = _a.loginUrl; _a.forgotPassword; var _c = _a.title, title = _c === void 0 ? "" : _c, _d = _a.subTitle, subTitle = _d === void 0 ? "" : _d, props = __rest$2(_a, ["loginUrl", "forgotPassword", "title", "subTitle"]);
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement("div", { className: "md:hidden" },
             React__default["default"].createElement("img", { src: "/examples/authentication-light.png", width: 1280, height: 843, alt: "Authentication", className: "block dark:hidden" }),
@@ -11822,7 +11822,7 @@ function ForgotPasswordPage(_a) {
                     React__default["default"].createElement("div", { className: "flex flex-col space-y-2 text-center" },
                         React__default["default"].createElement("h1", { className: "text-2xl font-semibold tracking-tight" }, title ? title : "Update password"),
                         React__default["default"].createElement("p", { className: "text-sm text-muted-foreground" }, subTitle ? subTitle : "Provide new password")),
-                    React__default["default"].createElement(ForgotPasswordForm, __assign$1({}, props, { buttonTitle: "Send reset link" })),
+                    React__default["default"].createElement(ForgotPasswordForm, __assign$2({}, props, { buttonTitle: "Send reset link" })),
                     React__default["default"].createElement("p", { className: "px-8 text-center text-sm text-muted-foreground" },
                         "By clicking continue, you agree to our",
                         " ",
@@ -11832,6 +11832,11084 @@ function ForgotPasswordPage(_a) {
                         " ",
                         React__default["default"].createElement("a", { href: "/privacy", className: "underline underline-offset-4 hover:text-primary" }, "Privacy Policy"),
                         "."))))));
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * Checkbox
+ * -----------------------------------------------------------------------------------------------*/ const $e698a72e93240346$var$CHECKBOX_NAME = 'Checkbox';
+const [$e698a72e93240346$var$createCheckboxContext, $e698a72e93240346$export$b566c4ff5488ea01] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($e698a72e93240346$var$CHECKBOX_NAME);
+const [$e698a72e93240346$var$CheckboxProvider, $e698a72e93240346$var$useCheckboxContext] = $e698a72e93240346$var$createCheckboxContext($e698a72e93240346$var$CHECKBOX_NAME);
+const $e698a72e93240346$export$48513f6b9f8ce62d = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeCheckbox: __scopeCheckbox , name: name , checked: checkedProp , defaultChecked: defaultChecked , required: required , disabled: disabled , value: value = 'on' , onCheckedChange: onCheckedChange , ...checkboxProps } = props;
+    const [button, setButton] = React.useState(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, (node)=>setButton(node)
+    );
+    const hasConsumerStoppedPropagationRef = React.useRef(false); // We set this to true by default so that events bubble to forms without JS (SSR)
+    const isFormControl = button ? Boolean(button.closest('form')) : true;
+    const [checked = false, setChecked] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
+        prop: checkedProp,
+        defaultProp: defaultChecked,
+        onChange: onCheckedChange
+    });
+    const initialCheckedStateRef = React.useRef(checked);
+    React.useEffect(()=>{
+        const form = button === null || button === void 0 ? void 0 : button.form;
+        if (form) {
+            const reset = ()=>setChecked(initialCheckedStateRef.current)
+            ;
+            form.addEventListener('reset', reset);
+            return ()=>form.removeEventListener('reset', reset)
+            ;
+        }
+    }, [
+        button,
+        setChecked
+    ]);
+    return /*#__PURE__*/ React.createElement($e698a72e93240346$var$CheckboxProvider, {
+        scope: __scopeCheckbox,
+        state: checked,
+        disabled: disabled
+    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends({
+        type: "button",
+        role: "checkbox",
+        "aria-checked": $e698a72e93240346$var$isIndeterminate(checked) ? 'mixed' : checked,
+        "aria-required": required,
+        "data-state": $e698a72e93240346$var$getState(checked),
+        "data-disabled": disabled ? '' : undefined,
+        disabled: disabled,
+        value: value
+    }, checkboxProps, {
+        ref: composedRefs,
+        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onKeyDown, (event)=>{
+            // According to WAI ARIA, Checkboxes don't activate on enter keypress
+            if (event.key === 'Enter') event.preventDefault();
+        }),
+        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, (event)=>{
+            setChecked((prevChecked)=>$e698a72e93240346$var$isIndeterminate(prevChecked) ? true : !prevChecked
+            );
+            if (isFormControl) {
+                hasConsumerStoppedPropagationRef.current = event.isPropagationStopped(); // if checkbox is in a form, stop propagation from the button so that we only propagate
+                // one click event (from the input). We propagate changes from an input so that native
+                // form validation works and form events reflect checkbox updates.
+                if (!hasConsumerStoppedPropagationRef.current) event.stopPropagation();
+            }
+        })
+    })), isFormControl && /*#__PURE__*/ React.createElement($e698a72e93240346$var$BubbleInput, {
+        control: button,
+        bubbles: !hasConsumerStoppedPropagationRef.current,
+        name: name,
+        value: value,
+        checked: checked,
+        required: required,
+        disabled: disabled // We transform because the input is absolutely positioned but we have
+        ,
+        style: {
+            transform: 'translateX(-100%)'
+        }
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * CheckboxIndicator
+ * -----------------------------------------------------------------------------------------------*/ const $e698a72e93240346$var$INDICATOR_NAME = 'CheckboxIndicator';
+const $e698a72e93240346$export$59aad738f51d1c05 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeCheckbox: __scopeCheckbox , forceMount: forceMount , ...indicatorProps } = props;
+    const context = $e698a72e93240346$var$useCheckboxContext($e698a72e93240346$var$INDICATOR_NAME, __scopeCheckbox);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || $e698a72e93240346$var$isIndeterminate(context.state) || context.state === true
+    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.span, _extends({
+        "data-state": $e698a72e93240346$var$getState(context.state),
+        "data-disabled": context.disabled ? '' : undefined
+    }, indicatorProps, {
+        ref: forwardedRef,
+        style: {
+            pointerEvents: 'none',
+            ...props.style
+        }
+    })));
+});
+/* ---------------------------------------------------------------------------------------------- */ const $e698a72e93240346$var$BubbleInput = (props)=>{
+    const { control: control , checked: checked , bubbles: bubbles = true , ...inputProps } = props;
+    const ref = React.useRef(null);
+    const prevChecked = $010c2913dbd2fe3d$export$5cae361ad82dce8b(checked);
+    const controlSize = $db6c3485150b8e66$export$1ab7ae714698c4b8(control); // Bubble checked change to parents (e.g form change event)
+    React.useEffect(()=>{
+        const input = ref.current;
+        const inputProto = window.HTMLInputElement.prototype;
+        const descriptor = Object.getOwnPropertyDescriptor(inputProto, 'checked');
+        const setChecked = descriptor.set;
+        if (prevChecked !== checked && setChecked) {
+            const event = new Event('click', {
+                bubbles: bubbles
+            });
+            input.indeterminate = $e698a72e93240346$var$isIndeterminate(checked);
+            setChecked.call(input, $e698a72e93240346$var$isIndeterminate(checked) ? false : checked);
+            input.dispatchEvent(event);
+        }
+    }, [
+        prevChecked,
+        checked,
+        bubbles
+    ]);
+    return /*#__PURE__*/ React.createElement("input", _extends({
+        type: "checkbox",
+        "aria-hidden": true,
+        defaultChecked: $e698a72e93240346$var$isIndeterminate(checked) ? false : checked
+    }, inputProps, {
+        tabIndex: -1,
+        ref: ref,
+        style: {
+            ...props.style,
+            ...controlSize,
+            position: 'absolute',
+            pointerEvents: 'none',
+            opacity: 0,
+            margin: 0
+        }
+    }));
+};
+function $e698a72e93240346$var$isIndeterminate(checked) {
+    return checked === 'indeterminate';
+}
+function $e698a72e93240346$var$getState(checked) {
+    return $e698a72e93240346$var$isIndeterminate(checked) ? 'indeterminate' : checked ? 'checked' : 'unchecked';
+}
+const $e698a72e93240346$export$be92b6f5f03c0fe9 = $e698a72e93240346$export$48513f6b9f8ce62d;
+const $e698a72e93240346$export$adb584737d712b70 = $e698a72e93240346$export$59aad738f51d1c05;
+
+var Checkbox = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($e698a72e93240346$export$be92b6f5f03c0fe9, __assign$2({ ref: ref, className: cn("peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground", className) }, props),
+        React__namespace.createElement($e698a72e93240346$export$adb584737d712b70, { className: cn("flex items-center justify-center text-current") },
+            React__namespace.createElement(CheckIcon, { className: "h-4 w-4" }))));
+});
+Checkbox.displayName = $e698a72e93240346$export$be92b6f5f03c0fe9.displayName;
+
+const $d7bdfb9eb0fdf311$var$ENTRY_FOCUS = 'rovingFocusGroup.onEntryFocus';
+const $d7bdfb9eb0fdf311$var$EVENT_OPTIONS = {
+    bubbles: false,
+    cancelable: true
+};
+/* -------------------------------------------------------------------------------------------------
+ * RovingFocusGroup
+ * -----------------------------------------------------------------------------------------------*/ const $d7bdfb9eb0fdf311$var$GROUP_NAME = 'RovingFocusGroup';
+const [$d7bdfb9eb0fdf311$var$Collection, $d7bdfb9eb0fdf311$var$useCollection, $d7bdfb9eb0fdf311$var$createCollectionScope] = $e02a7d9cb1dc128c$export$c74125a8e3af6bb2($d7bdfb9eb0fdf311$var$GROUP_NAME);
+const [$d7bdfb9eb0fdf311$var$createRovingFocusGroupContext, $d7bdfb9eb0fdf311$export$c7109489551a4f4] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($d7bdfb9eb0fdf311$var$GROUP_NAME, [
+    $d7bdfb9eb0fdf311$var$createCollectionScope
+]);
+const [$d7bdfb9eb0fdf311$var$RovingFocusProvider, $d7bdfb9eb0fdf311$var$useRovingFocusContext] = $d7bdfb9eb0fdf311$var$createRovingFocusGroupContext($d7bdfb9eb0fdf311$var$GROUP_NAME);
+const $d7bdfb9eb0fdf311$export$8699f7c8af148338 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    return /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$var$Collection.Provider, {
+        scope: props.__scopeRovingFocusGroup
+    }, /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$var$Collection.Slot, {
+        scope: props.__scopeRovingFocusGroup
+    }, /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$var$RovingFocusGroupImpl, _extends({}, props, {
+        ref: forwardedRef
+    }))));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $d7bdfb9eb0fdf311$var$RovingFocusGroupImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeRovingFocusGroup: __scopeRovingFocusGroup , orientation: orientation , loop: loop = false , dir: dir , currentTabStopId: currentTabStopIdProp , defaultCurrentTabStopId: defaultCurrentTabStopId , onCurrentTabStopIdChange: onCurrentTabStopIdChange , onEntryFocus: onEntryFocus , ...groupProps } = props;
+    const ref = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref);
+    const direction = $f631663db3294ace$export$b39126d51d94e6f3(dir);
+    const [currentTabStopId = null, setCurrentTabStopId] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
+        prop: currentTabStopIdProp,
+        defaultProp: defaultCurrentTabStopId,
+        onChange: onCurrentTabStopIdChange
+    });
+    const [isTabbingBackOut, setIsTabbingBackOut] = React.useState(false);
+    const handleEntryFocus = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onEntryFocus);
+    const getItems = $d7bdfb9eb0fdf311$var$useCollection(__scopeRovingFocusGroup);
+    const isClickFocusRef = React.useRef(false);
+    const [focusableItemsCount, setFocusableItemsCount] = React.useState(0);
+    React.useEffect(()=>{
+        const node = ref.current;
+        if (node) {
+            node.addEventListener($d7bdfb9eb0fdf311$var$ENTRY_FOCUS, handleEntryFocus);
+            return ()=>node.removeEventListener($d7bdfb9eb0fdf311$var$ENTRY_FOCUS, handleEntryFocus)
+            ;
+        }
+    }, [
+        handleEntryFocus
+    ]);
+    return /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$var$RovingFocusProvider, {
+        scope: __scopeRovingFocusGroup,
+        orientation: orientation,
+        dir: direction,
+        loop: loop,
+        currentTabStopId: currentTabStopId,
+        onItemFocus: React.useCallback((tabStopId)=>setCurrentTabStopId(tabStopId)
+        , [
+            setCurrentTabStopId
+        ]),
+        onItemShiftTab: React.useCallback(()=>setIsTabbingBackOut(true)
+        , []),
+        onFocusableItemAdd: React.useCallback(()=>setFocusableItemsCount((prevCount)=>prevCount + 1
+            )
+        , []),
+        onFocusableItemRemove: React.useCallback(()=>setFocusableItemsCount((prevCount)=>prevCount - 1
+            )
+        , [])
+    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
+        tabIndex: isTabbingBackOut || focusableItemsCount === 0 ? -1 : 0,
+        "data-orientation": orientation
+    }, groupProps, {
+        ref: composedRefs,
+        style: {
+            outline: 'none',
+            ...props.style
+        },
+        onMouseDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onMouseDown, ()=>{
+            isClickFocusRef.current = true;
+        }),
+        onFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocus, (event)=>{
+            // We normally wouldn't need this check, because we already check
+            // that the focus is on the current target and not bubbling to it.
+            // We do this because Safari doesn't focus buttons when clicked, and
+            // instead, the wrapper will get focused and not through a bubbling event.
+            const isKeyboardFocus = !isClickFocusRef.current;
+            if (event.target === event.currentTarget && isKeyboardFocus && !isTabbingBackOut) {
+                const entryFocusEvent = new CustomEvent($d7bdfb9eb0fdf311$var$ENTRY_FOCUS, $d7bdfb9eb0fdf311$var$EVENT_OPTIONS);
+                event.currentTarget.dispatchEvent(entryFocusEvent);
+                if (!entryFocusEvent.defaultPrevented) {
+                    const items = getItems().filter((item)=>item.focusable
+                    );
+                    const activeItem = items.find((item)=>item.active
+                    );
+                    const currentItem = items.find((item)=>item.id === currentTabStopId
+                    );
+                    const candidateItems = [
+                        activeItem,
+                        currentItem,
+                        ...items
+                    ].filter(Boolean);
+                    const candidateNodes = candidateItems.map((item)=>item.ref.current
+                    );
+                    $d7bdfb9eb0fdf311$var$focusFirst(candidateNodes);
+                }
+            }
+            isClickFocusRef.current = false;
+        }),
+        onBlur: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onBlur, ()=>setIsTabbingBackOut(false)
+        )
+    })));
+});
+/* -------------------------------------------------------------------------------------------------
+ * RovingFocusGroupItem
+ * -----------------------------------------------------------------------------------------------*/ const $d7bdfb9eb0fdf311$var$ITEM_NAME = 'RovingFocusGroupItem';
+const $d7bdfb9eb0fdf311$export$ab9df7c53fe8454 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeRovingFocusGroup: __scopeRovingFocusGroup , focusable: focusable = true , active: active = false , tabStopId: tabStopId , ...itemProps } = props;
+    const autoId = $1746a345f3d73bb7$export$f680877a34711e37$1();
+    const id = tabStopId || autoId;
+    const context = $d7bdfb9eb0fdf311$var$useRovingFocusContext($d7bdfb9eb0fdf311$var$ITEM_NAME, __scopeRovingFocusGroup);
+    const isCurrentTabStop = context.currentTabStopId === id;
+    const getItems = $d7bdfb9eb0fdf311$var$useCollection(__scopeRovingFocusGroup);
+    const { onFocusableItemAdd: onFocusableItemAdd , onFocusableItemRemove: onFocusableItemRemove  } = context;
+    React.useEffect(()=>{
+        if (focusable) {
+            onFocusableItemAdd();
+            return ()=>onFocusableItemRemove()
+            ;
+        }
+    }, [
+        focusable,
+        onFocusableItemAdd,
+        onFocusableItemRemove
+    ]);
+    return /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$var$Collection.ItemSlot, {
+        scope: __scopeRovingFocusGroup,
+        id: id,
+        focusable: focusable,
+        active: active
+    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.span, _extends({
+        tabIndex: isCurrentTabStop ? 0 : -1,
+        "data-orientation": context.orientation
+    }, itemProps, {
+        ref: forwardedRef,
+        onMouseDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onMouseDown, (event)=>{
+            // We prevent focusing non-focusable items on `mousedown`.
+            // Even though the item has tabIndex={-1}, that only means take it out of the tab order.
+            if (!focusable) event.preventDefault(); // Safari doesn't focus a button when clicked so we run our logic on mousedown also
+            else context.onItemFocus(id);
+        }),
+        onFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocus, ()=>context.onItemFocus(id)
+        ),
+        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onKeyDown, (event)=>{
+            if (event.key === 'Tab' && event.shiftKey) {
+                context.onItemShiftTab();
+                return;
+            }
+            if (event.target !== event.currentTarget) return;
+            const focusIntent = $d7bdfb9eb0fdf311$var$getFocusIntent(event, context.orientation, context.dir);
+            if (focusIntent !== undefined) {
+                event.preventDefault();
+                const items = getItems().filter((item)=>item.focusable
+                );
+                let candidateNodes = items.map((item)=>item.ref.current
+                );
+                if (focusIntent === 'last') candidateNodes.reverse();
+                else if (focusIntent === 'prev' || focusIntent === 'next') {
+                    if (focusIntent === 'prev') candidateNodes.reverse();
+                    const currentIndex = candidateNodes.indexOf(event.currentTarget);
+                    candidateNodes = context.loop ? $d7bdfb9eb0fdf311$var$wrapArray(candidateNodes, currentIndex + 1) : candidateNodes.slice(currentIndex + 1);
+                }
+                /**
+         * Imperative focus during keydown is risky so we prevent React's batching updates
+         * to avoid potential bugs. See: https://github.com/facebook/react/issues/20332
+         */ setTimeout(()=>$d7bdfb9eb0fdf311$var$focusFirst(candidateNodes)
+                );
+            }
+        })
+    })));
+});
+/* -----------------------------------------------------------------------------------------------*/ // prettier-ignore
+const $d7bdfb9eb0fdf311$var$MAP_KEY_TO_FOCUS_INTENT = {
+    ArrowLeft: 'prev',
+    ArrowUp: 'prev',
+    ArrowRight: 'next',
+    ArrowDown: 'next',
+    PageUp: 'first',
+    Home: 'first',
+    PageDown: 'last',
+    End: 'last'
+};
+function $d7bdfb9eb0fdf311$var$getDirectionAwareKey(key, dir) {
+    if (dir !== 'rtl') return key;
+    return key === 'ArrowLeft' ? 'ArrowRight' : key === 'ArrowRight' ? 'ArrowLeft' : key;
+}
+function $d7bdfb9eb0fdf311$var$getFocusIntent(event, orientation, dir) {
+    const key = $d7bdfb9eb0fdf311$var$getDirectionAwareKey(event.key, dir);
+    if (orientation === 'vertical' && [
+        'ArrowLeft',
+        'ArrowRight'
+    ].includes(key)) return undefined;
+    if (orientation === 'horizontal' && [
+        'ArrowUp',
+        'ArrowDown'
+    ].includes(key)) return undefined;
+    return $d7bdfb9eb0fdf311$var$MAP_KEY_TO_FOCUS_INTENT[key];
+}
+function $d7bdfb9eb0fdf311$var$focusFirst(candidates) {
+    const PREVIOUSLY_FOCUSED_ELEMENT = document.activeElement;
+    for (const candidate of candidates){
+        // if focus is already where we want to go, we don't want to keep going through the candidates
+        if (candidate === PREVIOUSLY_FOCUSED_ELEMENT) return;
+        candidate.focus();
+        if (document.activeElement !== PREVIOUSLY_FOCUSED_ELEMENT) return;
+    }
+}
+/**
+ * Wraps an array around itself at a given start index
+ * Example: `wrapArray(['a', 'b', 'c', 'd'], 2) === ['c', 'd', 'a', 'b']`
+ */ function $d7bdfb9eb0fdf311$var$wrapArray(array, startIndex) {
+    return array.map((_, index)=>array[(startIndex + index) % array.length]
+    );
+}
+const $d7bdfb9eb0fdf311$export$be92b6f5f03c0fe9 = $d7bdfb9eb0fdf311$export$8699f7c8af148338;
+const $d7bdfb9eb0fdf311$export$6d08773d2e66f8f2 = $d7bdfb9eb0fdf311$export$ab9df7c53fe8454;
+
+const $6cc32821e9371a1c$var$SELECTION_KEYS = [
+    'Enter',
+    ' '
+];
+const $6cc32821e9371a1c$var$FIRST_KEYS = [
+    'ArrowDown',
+    'PageUp',
+    'Home'
+];
+const $6cc32821e9371a1c$var$LAST_KEYS = [
+    'ArrowUp',
+    'PageDown',
+    'End'
+];
+const $6cc32821e9371a1c$var$FIRST_LAST_KEYS = [
+    ...$6cc32821e9371a1c$var$FIRST_KEYS,
+    ...$6cc32821e9371a1c$var$LAST_KEYS
+];
+const $6cc32821e9371a1c$var$SUB_OPEN_KEYS = {
+    ltr: [
+        ...$6cc32821e9371a1c$var$SELECTION_KEYS,
+        'ArrowRight'
+    ],
+    rtl: [
+        ...$6cc32821e9371a1c$var$SELECTION_KEYS,
+        'ArrowLeft'
+    ]
+};
+const $6cc32821e9371a1c$var$SUB_CLOSE_KEYS = {
+    ltr: [
+        'ArrowLeft'
+    ],
+    rtl: [
+        'ArrowRight'
+    ]
+};
+/* -------------------------------------------------------------------------------------------------
+ * Menu
+ * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$MENU_NAME = 'Menu';
+const [$6cc32821e9371a1c$var$Collection, $6cc32821e9371a1c$var$useCollection, $6cc32821e9371a1c$var$createCollectionScope] = $e02a7d9cb1dc128c$export$c74125a8e3af6bb2($6cc32821e9371a1c$var$MENU_NAME);
+const [$6cc32821e9371a1c$var$createMenuContext, $6cc32821e9371a1c$export$4027731b685e72eb] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($6cc32821e9371a1c$var$MENU_NAME, [
+    $6cc32821e9371a1c$var$createCollectionScope,
+    $cf1ac5d9fe0e8206$export$722aac194ae923,
+    $d7bdfb9eb0fdf311$export$c7109489551a4f4
+]);
+const $6cc32821e9371a1c$var$usePopperScope = $cf1ac5d9fe0e8206$export$722aac194ae923();
+const $6cc32821e9371a1c$var$useRovingFocusGroupScope = $d7bdfb9eb0fdf311$export$c7109489551a4f4();
+const [$6cc32821e9371a1c$var$MenuProvider, $6cc32821e9371a1c$var$useMenuContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$MENU_NAME);
+const [$6cc32821e9371a1c$var$MenuRootProvider, $6cc32821e9371a1c$var$useMenuRootContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$MENU_NAME);
+const $6cc32821e9371a1c$export$d9b273488cd8ce6f = (props)=>{
+    const { __scopeMenu: __scopeMenu , open: open = false , children: children , dir: dir , onOpenChange: onOpenChange , modal: modal = true  } = props;
+    const popperScope = $6cc32821e9371a1c$var$usePopperScope(__scopeMenu);
+    const [content, setContent] = React.useState(null);
+    const isUsingKeyboardRef = React.useRef(false);
+    const handleOpenChange = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onOpenChange);
+    const direction = $f631663db3294ace$export$b39126d51d94e6f3(dir);
+    React.useEffect(()=>{
+        // Capture phase ensures we set the boolean before any side effects execute
+        // in response to the key or pointer event as they might depend on this value.
+        const handleKeyDown = ()=>{
+            isUsingKeyboardRef.current = true;
+            document.addEventListener('pointerdown', handlePointer, {
+                capture: true,
+                once: true
+            });
+            document.addEventListener('pointermove', handlePointer, {
+                capture: true,
+                once: true
+            });
+        };
+        const handlePointer = ()=>isUsingKeyboardRef.current = false
+        ;
+        document.addEventListener('keydown', handleKeyDown, {
+            capture: true
+        });
+        return ()=>{
+            document.removeEventListener('keydown', handleKeyDown, {
+                capture: true
+            });
+            document.removeEventListener('pointerdown', handlePointer, {
+                capture: true
+            });
+            document.removeEventListener('pointermove', handlePointer, {
+                capture: true
+            });
+        };
+    }, []);
+    return /*#__PURE__*/ React.createElement($cf1ac5d9fe0e8206$export$be92b6f5f03c0fe9, popperScope, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuProvider, {
+        scope: __scopeMenu,
+        open: open,
+        onOpenChange: handleOpenChange,
+        content: content,
+        onContentChange: setContent
+    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuRootProvider, {
+        scope: __scopeMenu,
+        onClose: React.useCallback(()=>handleOpenChange(false)
+        , [
+            handleOpenChange
+        ]),
+        isUsingKeyboardRef: isUsingKeyboardRef,
+        dir: direction,
+        modal: modal
+    }, children)));
+};
+const $6cc32821e9371a1c$export$9fa5ebd18bee4d43 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeMenu: __scopeMenu , ...anchorProps } = props;
+    const popperScope = $6cc32821e9371a1c$var$usePopperScope(__scopeMenu);
+    return /*#__PURE__*/ React.createElement($cf1ac5d9fe0e8206$export$b688253958b8dfe7, _extends({}, popperScope, anchorProps, {
+        ref: forwardedRef
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * MenuPortal
+ * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$PORTAL_NAME = 'MenuPortal';
+const [$6cc32821e9371a1c$var$PortalProvider, $6cc32821e9371a1c$var$usePortalContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$PORTAL_NAME, {
+    forceMount: undefined
+});
+const $6cc32821e9371a1c$export$793392f970497feb = (props)=>{
+    const { __scopeMenu: __scopeMenu , forceMount: forceMount , children: children , container: container  } = props;
+    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$PORTAL_NAME, __scopeMenu);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$PortalProvider, {
+        scope: __scopeMenu,
+        forceMount: forceMount
+    }, /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || context.open
+    }, /*#__PURE__*/ React.createElement($f1701beae083dbae$export$602eac185826482c$1, {
+        asChild: true,
+        container: container
+    }, children)));
+};
+/* -------------------------------------------------------------------------------------------------
+ * MenuContent
+ * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$CONTENT_NAME = 'MenuContent';
+const [$6cc32821e9371a1c$var$MenuContentProvider, $6cc32821e9371a1c$var$useMenuContentContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$CONTENT_NAME);
+const $6cc32821e9371a1c$export$479f0f2f71193efe = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const portalContext = $6cc32821e9371a1c$var$usePortalContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
+    const { forceMount: forceMount = portalContext.forceMount , ...contentProps } = props;
+    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
+    const rootContext = $6cc32821e9371a1c$var$useMenuRootContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$Collection.Provider, {
+        scope: props.__scopeMenu
+    }, /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || context.open
+    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$Collection.Slot, {
+        scope: props.__scopeMenu
+    }, rootContext.modal ? /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuRootContentModal, _extends({}, contentProps, {
+        ref: forwardedRef
+    })) : /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuRootContentNonModal, _extends({}, contentProps, {
+        ref: forwardedRef
+    })))));
+});
+/* ---------------------------------------------------------------------------------------------- */ const $6cc32821e9371a1c$var$MenuRootContentModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
+    const ref = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref); // Hide everything from ARIA except the `MenuContent`
+    React.useEffect(()=>{
+        const content = ref.current;
+        if (content) return hideOthers(content);
+    }, []);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuContentImpl, _extends({}, props, {
+        ref: composedRefs // we make sure we're not trapping once it's been closed
+        ,
+        trapFocus: context.open // make sure to only disable pointer events when open
+        ,
+        disableOutsidePointerEvents: context.open,
+        disableOutsideScroll: true // When focus is trapped, a `focusout` event may still happen.
+        ,
+        onFocusOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocusOutside, (event)=>event.preventDefault()
+        , {
+            checkForDefaultPrevented: false
+        }),
+        onDismiss: ()=>context.onOpenChange(false)
+    }));
+});
+const $6cc32821e9371a1c$var$MenuRootContentNonModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuContentImpl, _extends({}, props, {
+        ref: forwardedRef,
+        trapFocus: false,
+        disableOutsidePointerEvents: false,
+        disableOutsideScroll: false,
+        onDismiss: ()=>context.onOpenChange(false)
+    }));
+});
+/* ---------------------------------------------------------------------------------------------- */ const $6cc32821e9371a1c$var$MenuContentImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeMenu: __scopeMenu , loop: loop = false , trapFocus: trapFocus , onOpenAutoFocus: onOpenAutoFocus , onCloseAutoFocus: onCloseAutoFocus , disableOutsidePointerEvents: disableOutsidePointerEvents , onEntryFocus: onEntryFocus , onEscapeKeyDown: onEscapeKeyDown , onPointerDownOutside: onPointerDownOutside , onFocusOutside: onFocusOutside , onInteractOutside: onInteractOutside , onDismiss: onDismiss , disableOutsideScroll: disableOutsideScroll , ...contentProps } = props;
+    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$CONTENT_NAME, __scopeMenu);
+    const rootContext = $6cc32821e9371a1c$var$useMenuRootContext($6cc32821e9371a1c$var$CONTENT_NAME, __scopeMenu);
+    const popperScope = $6cc32821e9371a1c$var$usePopperScope(__scopeMenu);
+    const rovingFocusGroupScope = $6cc32821e9371a1c$var$useRovingFocusGroupScope(__scopeMenu);
+    const getItems = $6cc32821e9371a1c$var$useCollection(__scopeMenu);
+    const [currentItemId, setCurrentItemId] = React.useState(null);
+    const contentRef = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, contentRef, context.onContentChange);
+    const timerRef = React.useRef(0);
+    const searchRef = React.useRef('');
+    const pointerGraceTimerRef = React.useRef(0);
+    const pointerGraceIntentRef = React.useRef(null);
+    const pointerDirRef = React.useRef('right');
+    const lastPointerXRef = React.useRef(0);
+    const ScrollLockWrapper = disableOutsideScroll ? $67UHm$RemoveScroll$1 : React.Fragment;
+    const scrollLockWrapperProps = disableOutsideScroll ? {
+        as: $5e63c961fc1ce211$export$8c6ed5c666ac1360$1,
+        allowPinchZoom: true
+    } : undefined;
+    const handleTypeaheadSearch = (key)=>{
+        var _items$find, _items$find2;
+        const search = searchRef.current + key;
+        const items = getItems().filter((item)=>!item.disabled
+        );
+        const currentItem = document.activeElement;
+        const currentMatch = (_items$find = items.find((item)=>item.ref.current === currentItem
+        )) === null || _items$find === void 0 ? void 0 : _items$find.textValue;
+        const values = items.map((item)=>item.textValue
+        );
+        const nextMatch = $6cc32821e9371a1c$var$getNextMatch(values, search, currentMatch);
+        const newItem = (_items$find2 = items.find((item)=>item.textValue === nextMatch
+        )) === null || _items$find2 === void 0 ? void 0 : _items$find2.ref.current; // Reset `searchRef` 1 second after it was last updated
+        (function updateSearch(value) {
+            searchRef.current = value;
+            window.clearTimeout(timerRef.current);
+            if (value !== '') timerRef.current = window.setTimeout(()=>updateSearch('')
+            , 1000);
+        })(search);
+        if (newItem) /**
+       * Imperative focus during keydown is risky so we prevent React's batching updates
+       * to avoid potential bugs. See: https://github.com/facebook/react/issues/20332
+       */ setTimeout(()=>newItem.focus()
+        );
+    };
+    React.useEffect(()=>{
+        return ()=>window.clearTimeout(timerRef.current)
+        ;
+    }, []); // Make sure the whole tree has focus guards as our `MenuContent` may be
+    // the last element in the DOM (beacuse of the `Portal`)
+    $3db38b7d1fb3fe6a$export$b7ece24a22aeda8c$1();
+    const isPointerMovingToSubmenu = React.useCallback((event)=>{
+        var _pointerGraceIntentRe, _pointerGraceIntentRe2;
+        const isMovingTowards = pointerDirRef.current === ((_pointerGraceIntentRe = pointerGraceIntentRef.current) === null || _pointerGraceIntentRe === void 0 ? void 0 : _pointerGraceIntentRe.side);
+        return isMovingTowards && $6cc32821e9371a1c$var$isPointerInGraceArea(event, (_pointerGraceIntentRe2 = pointerGraceIntentRef.current) === null || _pointerGraceIntentRe2 === void 0 ? void 0 : _pointerGraceIntentRe2.area);
+    }, []);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuContentProvider, {
+        scope: __scopeMenu,
+        searchRef: searchRef,
+        onItemEnter: React.useCallback((event)=>{
+            if (isPointerMovingToSubmenu(event)) event.preventDefault();
+        }, [
+            isPointerMovingToSubmenu
+        ]),
+        onItemLeave: React.useCallback((event)=>{
+            var _contentRef$current;
+            if (isPointerMovingToSubmenu(event)) return;
+            (_contentRef$current = contentRef.current) === null || _contentRef$current === void 0 || _contentRef$current.focus();
+            setCurrentItemId(null);
+        }, [
+            isPointerMovingToSubmenu
+        ]),
+        onTriggerLeave: React.useCallback((event)=>{
+            if (isPointerMovingToSubmenu(event)) event.preventDefault();
+        }, [
+            isPointerMovingToSubmenu
+        ]),
+        pointerGraceTimerRef: pointerGraceTimerRef,
+        onPointerGraceIntentChange: React.useCallback((intent)=>{
+            pointerGraceIntentRef.current = intent;
+        }, [])
+    }, /*#__PURE__*/ React.createElement(ScrollLockWrapper, scrollLockWrapperProps, /*#__PURE__*/ React.createElement($d3863c46a17e8a28$export$20e40289641fbbb6$1, {
+        asChild: true,
+        trapped: trapFocus,
+        onMountAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(onOpenAutoFocus, (event)=>{
+            var _contentRef$current2;
+            // when opening, explicitly focus the content area only and leave
+            // `onEntryFocus` in  control of focusing first item
+            event.preventDefault();
+            (_contentRef$current2 = contentRef.current) === null || _contentRef$current2 === void 0 || _contentRef$current2.focus();
+        }),
+        onUnmountAutoFocus: onCloseAutoFocus
+    }, /*#__PURE__*/ React.createElement($5cb92bef7577960e$export$177fb62ff3ec1f22$1, {
+        asChild: true,
+        disableOutsidePointerEvents: disableOutsidePointerEvents,
+        onEscapeKeyDown: onEscapeKeyDown,
+        onPointerDownOutside: onPointerDownOutside,
+        onFocusOutside: onFocusOutside,
+        onInteractOutside: onInteractOutside,
+        onDismiss: onDismiss
+    }, /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$export$be92b6f5f03c0fe9, _extends({
+        asChild: true
+    }, rovingFocusGroupScope, {
+        dir: rootContext.dir,
+        orientation: "vertical",
+        loop: loop,
+        currentTabStopId: currentItemId,
+        onCurrentTabStopIdChange: setCurrentItemId,
+        onEntryFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(onEntryFocus, (event)=>{
+            // only focus first item when using keyboard
+            if (!rootContext.isUsingKeyboardRef.current) event.preventDefault();
+        })
+    }), /*#__PURE__*/ React.createElement($cf1ac5d9fe0e8206$export$7c6e2c02157bb7d2, _extends({
+        role: "menu",
+        "aria-orientation": "vertical",
+        "data-state": $6cc32821e9371a1c$var$getOpenState(context.open),
+        "data-radix-menu-content": "",
+        dir: rootContext.dir
+    }, popperScope, contentProps, {
+        ref: composedRefs,
+        style: {
+            outline: 'none',
+            ...contentProps.style
+        },
+        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(contentProps.onKeyDown, (event)=>{
+            // submenu key events bubble through portals. We only care about keys in this menu.
+            const target = event.target;
+            const isKeyDownInside = target.closest('[data-radix-menu-content]') === event.currentTarget;
+            const isModifierKey = event.ctrlKey || event.altKey || event.metaKey;
+            const isCharacterKey = event.key.length === 1;
+            if (isKeyDownInside) {
+                // menus should not be navigated using tab key so we prevent it
+                if (event.key === 'Tab') event.preventDefault();
+                if (!isModifierKey && isCharacterKey) handleTypeaheadSearch(event.key);
+            } // focus first/last item based on key pressed
+            const content = contentRef.current;
+            if (event.target !== content) return;
+            if (!$6cc32821e9371a1c$var$FIRST_LAST_KEYS.includes(event.key)) return;
+            event.preventDefault();
+            const items = getItems().filter((item)=>!item.disabled
+            );
+            const candidateNodes = items.map((item)=>item.ref.current
+            );
+            if ($6cc32821e9371a1c$var$LAST_KEYS.includes(event.key)) candidateNodes.reverse();
+            $6cc32821e9371a1c$var$focusFirst(candidateNodes);
+        }),
+        onBlur: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onBlur, (event)=>{
+            // clear search buffer when leaving the menu
+            if (!event.currentTarget.contains(event.target)) {
+                window.clearTimeout(timerRef.current);
+                searchRef.current = '';
+            }
+        }),
+        onPointerMove: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerMove, $6cc32821e9371a1c$var$whenMouse((event)=>{
+            const target = event.target;
+            const pointerXHasChanged = lastPointerXRef.current !== event.clientX; // We don't use `event.movementX` for this check because Safari will
+            // always return `0` on a pointer event.
+            if (event.currentTarget.contains(target) && pointerXHasChanged) {
+                const newDir = event.clientX > lastPointerXRef.current ? 'right' : 'left';
+                pointerDirRef.current = newDir;
+                lastPointerXRef.current = event.clientX;
+            }
+        }))
+    })))))));
+});
+const $6cc32821e9371a1c$export$dd37bec0e8a99143 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeMenu: __scopeMenu , ...labelProps } = props;
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({}, labelProps, {
+        ref: forwardedRef
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * MenuItem
+ * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$ITEM_NAME = 'MenuItem';
+const $6cc32821e9371a1c$var$ITEM_SELECT = 'menu.itemSelect';
+const $6cc32821e9371a1c$export$2ce376c2cc3355c8 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { disabled: disabled = false , onSelect: onSelect , ...itemProps } = props;
+    const ref = React.useRef(null);
+    const rootContext = $6cc32821e9371a1c$var$useMenuRootContext($6cc32821e9371a1c$var$ITEM_NAME, props.__scopeMenu);
+    const contentContext = $6cc32821e9371a1c$var$useMenuContentContext($6cc32821e9371a1c$var$ITEM_NAME, props.__scopeMenu);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref);
+    const isPointerDownRef = React.useRef(false);
+    const handleSelect = ()=>{
+        const menuItem = ref.current;
+        if (!disabled && menuItem) {
+            const itemSelectEvent = new CustomEvent($6cc32821e9371a1c$var$ITEM_SELECT, {
+                bubbles: true,
+                cancelable: true
+            });
+            menuItem.addEventListener($6cc32821e9371a1c$var$ITEM_SELECT, (event)=>onSelect === null || onSelect === void 0 ? void 0 : onSelect(event)
+            , {
+                once: true
+            });
+            $8927f6f2acc4f386$export$6d1a0317bde7de7f$1(menuItem, itemSelectEvent);
+            if (itemSelectEvent.defaultPrevented) isPointerDownRef.current = false;
+            else rootContext.onClose();
+        }
+    };
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuItemImpl, _extends({}, itemProps, {
+        ref: composedRefs,
+        disabled: disabled,
+        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, handleSelect),
+        onPointerDown: (event)=>{
+            var _props$onPointerDown;
+            (_props$onPointerDown = props.onPointerDown) === null || _props$onPointerDown === void 0 || _props$onPointerDown.call(props, event);
+            isPointerDownRef.current = true;
+        },
+        onPointerUp: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerUp, (event)=>{
+            var _event$currentTarget;
+            // Pointer down can move to a different menu item which should activate it on pointer up.
+            // We dispatch a click for selection to allow composition with click based triggers and to
+            // prevent Firefox from getting stuck in text selection mode when the menu closes.
+            if (!isPointerDownRef.current) (_event$currentTarget = event.currentTarget) === null || _event$currentTarget === void 0 || _event$currentTarget.click();
+        }),
+        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onKeyDown, (event)=>{
+            const isTypingAhead = contentContext.searchRef.current !== '';
+            if (disabled || isTypingAhead && event.key === ' ') return;
+            if ($6cc32821e9371a1c$var$SELECTION_KEYS.includes(event.key)) {
+                event.currentTarget.click();
+                /**
+         * We prevent default browser behaviour for selection keys as they should trigger
+         * a selection only:
+         * - prevents space from scrolling the page.
+         * - if keydown causes focus to move, prevents keydown from firing on the new target.
+         */ event.preventDefault();
+            }
+        })
+    }));
+});
+/* ---------------------------------------------------------------------------------------------- */ const $6cc32821e9371a1c$var$MenuItemImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeMenu: __scopeMenu , disabled: disabled = false , textValue: textValue , ...itemProps } = props;
+    const contentContext = $6cc32821e9371a1c$var$useMenuContentContext($6cc32821e9371a1c$var$ITEM_NAME, __scopeMenu);
+    const rovingFocusGroupScope = $6cc32821e9371a1c$var$useRovingFocusGroupScope(__scopeMenu);
+    const ref = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref);
+    const [isFocused, setIsFocused] = React.useState(false); // get the item's `.textContent` as default strategy for typeahead `textValue`
+    const [textContent, setTextContent] = React.useState('');
+    React.useEffect(()=>{
+        const menuItem = ref.current;
+        if (menuItem) {
+            var _menuItem$textContent;
+            setTextContent(((_menuItem$textContent = menuItem.textContent) !== null && _menuItem$textContent !== void 0 ? _menuItem$textContent : '').trim());
+        }
+    }, [
+        itemProps.children
+    ]);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$Collection.ItemSlot, {
+        scope: __scopeMenu,
+        disabled: disabled,
+        textValue: textValue !== null && textValue !== void 0 ? textValue : textContent
+    }, /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$export$6d08773d2e66f8f2, _extends({
+        asChild: true
+    }, rovingFocusGroupScope, {
+        focusable: !disabled
+    }), /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
+        role: "menuitem",
+        "data-highlighted": isFocused ? '' : undefined,
+        "aria-disabled": disabled || undefined,
+        "data-disabled": disabled ? '' : undefined
+    }, itemProps, {
+        ref: composedRefs,
+        onPointerMove: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerMove, $6cc32821e9371a1c$var$whenMouse((event)=>{
+            if (disabled) contentContext.onItemLeave(event);
+            else {
+                contentContext.onItemEnter(event);
+                if (!event.defaultPrevented) {
+                    const item = event.currentTarget;
+                    item.focus();
+                }
+            }
+        })),
+        onPointerLeave: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerLeave, $6cc32821e9371a1c$var$whenMouse((event)=>contentContext.onItemLeave(event)
+        )),
+        onFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocus, ()=>setIsFocused(true)
+        ),
+        onBlur: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onBlur, ()=>setIsFocused(false)
+        )
+    }))));
+});
+const $6cc32821e9371a1c$export$f6f243521332502d = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { checked: checked = false , onCheckedChange: onCheckedChange , ...checkboxItemProps } = props;
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$ItemIndicatorProvider, {
+        scope: props.__scopeMenu,
+        checked: checked
+    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$2ce376c2cc3355c8, _extends({
+        role: "menuitemcheckbox",
+        "aria-checked": $6cc32821e9371a1c$var$isIndeterminate(checked) ? 'mixed' : checked
+    }, checkboxItemProps, {
+        ref: forwardedRef,
+        "data-state": $6cc32821e9371a1c$var$getCheckedState(checked),
+        onSelect: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(checkboxItemProps.onSelect, ()=>onCheckedChange === null || onCheckedChange === void 0 ? void 0 : onCheckedChange($6cc32821e9371a1c$var$isIndeterminate(checked) ? true : !checked)
+        , {
+            checkForDefaultPrevented: false
+        })
+    })));
+});
+/* -------------------------------------------------------------------------------------------------
+ * MenuRadioGroup
+ * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$RADIO_GROUP_NAME = 'MenuRadioGroup';
+const [$6cc32821e9371a1c$var$RadioGroupProvider, $6cc32821e9371a1c$var$useRadioGroupContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$RADIO_GROUP_NAME, {
+    value: undefined,
+    onValueChange: ()=>{}
+});
+/* -------------------------------------------------------------------------------------------------
+ * MenuRadioItem
+ * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$RADIO_ITEM_NAME = 'MenuRadioItem';
+const $6cc32821e9371a1c$export$69bd225e9817f6d0 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { value: value , ...radioItemProps } = props;
+    const context = $6cc32821e9371a1c$var$useRadioGroupContext($6cc32821e9371a1c$var$RADIO_ITEM_NAME, props.__scopeMenu);
+    const checked = value === context.value;
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$ItemIndicatorProvider, {
+        scope: props.__scopeMenu,
+        checked: checked
+    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$2ce376c2cc3355c8, _extends({
+        role: "menuitemradio",
+        "aria-checked": checked
+    }, radioItemProps, {
+        ref: forwardedRef,
+        "data-state": $6cc32821e9371a1c$var$getCheckedState(checked),
+        onSelect: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(radioItemProps.onSelect, ()=>{
+            var _context$onValueChang;
+            return (_context$onValueChang = context.onValueChange) === null || _context$onValueChang === void 0 ? void 0 : _context$onValueChang.call(context, value);
+        }, {
+            checkForDefaultPrevented: false
+        })
+    })));
+});
+/* -------------------------------------------------------------------------------------------------
+ * MenuItemIndicator
+ * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$ITEM_INDICATOR_NAME = 'MenuItemIndicator';
+const [$6cc32821e9371a1c$var$ItemIndicatorProvider, $6cc32821e9371a1c$var$useItemIndicatorContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$ITEM_INDICATOR_NAME, {
+    checked: false
+});
+const $6cc32821e9371a1c$export$a2593e23056970a3 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeMenu: __scopeMenu , forceMount: forceMount , ...itemIndicatorProps } = props;
+    const indicatorContext = $6cc32821e9371a1c$var$useItemIndicatorContext($6cc32821e9371a1c$var$ITEM_INDICATOR_NAME, __scopeMenu);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || $6cc32821e9371a1c$var$isIndeterminate(indicatorContext.checked) || indicatorContext.checked === true
+    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.span, _extends({}, itemIndicatorProps, {
+        ref: forwardedRef,
+        "data-state": $6cc32821e9371a1c$var$getCheckedState(indicatorContext.checked)
+    })));
+});
+const $6cc32821e9371a1c$export$1cec7dcdd713e220 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeMenu: __scopeMenu , ...separatorProps } = props;
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
+        role: "separator",
+        "aria-orientation": "horizontal"
+    }, separatorProps, {
+        ref: forwardedRef
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * MenuSub
+ * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$SUB_NAME = 'MenuSub';
+const [$6cc32821e9371a1c$var$MenuSubProvider, $6cc32821e9371a1c$var$useMenuSubContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$SUB_NAME);
+/* -------------------------------------------------------------------------------------------------
+ * MenuSubTrigger
+ * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$SUB_TRIGGER_NAME = 'MenuSubTrigger';
+const $6cc32821e9371a1c$export$5fbbb3ba7297405f = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$SUB_TRIGGER_NAME, props.__scopeMenu);
+    const rootContext = $6cc32821e9371a1c$var$useMenuRootContext($6cc32821e9371a1c$var$SUB_TRIGGER_NAME, props.__scopeMenu);
+    const subContext = $6cc32821e9371a1c$var$useMenuSubContext($6cc32821e9371a1c$var$SUB_TRIGGER_NAME, props.__scopeMenu);
+    const contentContext = $6cc32821e9371a1c$var$useMenuContentContext($6cc32821e9371a1c$var$SUB_TRIGGER_NAME, props.__scopeMenu);
+    const openTimerRef = React.useRef(null);
+    const { pointerGraceTimerRef: pointerGraceTimerRef , onPointerGraceIntentChange: onPointerGraceIntentChange  } = contentContext;
+    const scope = {
+        __scopeMenu: props.__scopeMenu
+    };
+    const clearOpenTimer = React.useCallback(()=>{
+        if (openTimerRef.current) window.clearTimeout(openTimerRef.current);
+        openTimerRef.current = null;
+    }, []);
+    React.useEffect(()=>clearOpenTimer
+    , [
+        clearOpenTimer
+    ]);
+    React.useEffect(()=>{
+        const pointerGraceTimer = pointerGraceTimerRef.current;
+        return ()=>{
+            window.clearTimeout(pointerGraceTimer);
+            onPointerGraceIntentChange(null);
+        };
+    }, [
+        pointerGraceTimerRef,
+        onPointerGraceIntentChange
+    ]);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$9fa5ebd18bee4d43, _extends({
+        asChild: true
+    }, scope), /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuItemImpl, _extends({
+        id: subContext.triggerId,
+        "aria-haspopup": "menu",
+        "aria-expanded": context.open,
+        "aria-controls": subContext.contentId,
+        "data-state": $6cc32821e9371a1c$var$getOpenState(context.open)
+    }, props, {
+        ref: $6ed0406888f73fc4$export$43e446d32b3d21af$1(forwardedRef, subContext.onTriggerChange) // This is redundant for mouse users but we cannot determine pointer type from
+        ,
+        onClick: (event)=>{
+            var _props$onClick;
+            (_props$onClick = props.onClick) === null || _props$onClick === void 0 || _props$onClick.call(props, event);
+            if (props.disabled || event.defaultPrevented) return;
+            /**
+       * We manually focus because iOS Safari doesn't always focus on click (e.g. buttons)
+       * and we rely heavily on `onFocusOutside` for submenus to close when switching
+       * between separate submenus.
+       */ event.currentTarget.focus();
+            if (!context.open) context.onOpenChange(true);
+        },
+        onPointerMove: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerMove, $6cc32821e9371a1c$var$whenMouse((event)=>{
+            contentContext.onItemEnter(event);
+            if (event.defaultPrevented) return;
+            if (!props.disabled && !context.open && !openTimerRef.current) {
+                contentContext.onPointerGraceIntentChange(null);
+                openTimerRef.current = window.setTimeout(()=>{
+                    context.onOpenChange(true);
+                    clearOpenTimer();
+                }, 100);
+            }
+        })),
+        onPointerLeave: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerLeave, $6cc32821e9371a1c$var$whenMouse((event)=>{
+            var _context$content;
+            clearOpenTimer();
+            const contentRect = (_context$content = context.content) === null || _context$content === void 0 ? void 0 : _context$content.getBoundingClientRect();
+            if (contentRect) {
+                var _context$content2;
+                // TODO: make sure to update this when we change positioning logic
+                const side = (_context$content2 = context.content) === null || _context$content2 === void 0 ? void 0 : _context$content2.dataset.side;
+                const rightSide = side === 'right';
+                const bleed = rightSide ? -5 : 5;
+                const contentNearEdge = contentRect[rightSide ? 'left' : 'right'];
+                const contentFarEdge = contentRect[rightSide ? 'right' : 'left'];
+                contentContext.onPointerGraceIntentChange({
+                    area: [
+                        // consistently within polygon bounds
+                        {
+                            x: event.clientX + bleed,
+                            y: event.clientY
+                        },
+                        {
+                            x: contentNearEdge,
+                            y: contentRect.top
+                        },
+                        {
+                            x: contentFarEdge,
+                            y: contentRect.top
+                        },
+                        {
+                            x: contentFarEdge,
+                            y: contentRect.bottom
+                        },
+                        {
+                            x: contentNearEdge,
+                            y: contentRect.bottom
+                        }
+                    ],
+                    side: side
+                });
+                window.clearTimeout(pointerGraceTimerRef.current);
+                pointerGraceTimerRef.current = window.setTimeout(()=>contentContext.onPointerGraceIntentChange(null)
+                , 300);
+            } else {
+                contentContext.onTriggerLeave(event);
+                if (event.defaultPrevented) return; // There's 100ms where the user may leave an item before the submenu was opened.
+                contentContext.onPointerGraceIntentChange(null);
+            }
+        })),
+        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onKeyDown, (event)=>{
+            const isTypingAhead = contentContext.searchRef.current !== '';
+            if (props.disabled || isTypingAhead && event.key === ' ') return;
+            if ($6cc32821e9371a1c$var$SUB_OPEN_KEYS[rootContext.dir].includes(event.key)) {
+                var _context$content3;
+                context.onOpenChange(true); // The trigger may hold focus if opened via pointer interaction
+                // so we ensure content is given focus again when switching to keyboard.
+                (_context$content3 = context.content) === null || _context$content3 === void 0 || _context$content3.focus(); // prevent window from scrolling
+                event.preventDefault();
+            }
+        })
+    })));
+});
+/* -------------------------------------------------------------------------------------------------
+ * MenuSubContent
+ * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$SUB_CONTENT_NAME = 'MenuSubContent';
+const $6cc32821e9371a1c$export$e7142ab31822bde6 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const portalContext = $6cc32821e9371a1c$var$usePortalContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
+    const { forceMount: forceMount = portalContext.forceMount , ...subContentProps } = props;
+    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
+    const rootContext = $6cc32821e9371a1c$var$useMenuRootContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
+    const subContext = $6cc32821e9371a1c$var$useMenuSubContext($6cc32821e9371a1c$var$SUB_CONTENT_NAME, props.__scopeMenu);
+    const ref = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$Collection.Provider, {
+        scope: props.__scopeMenu
+    }, /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || context.open
+    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$Collection.Slot, {
+        scope: props.__scopeMenu
+    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuContentImpl, _extends({
+        id: subContext.contentId,
+        "aria-labelledby": subContext.triggerId
+    }, subContentProps, {
+        ref: composedRefs,
+        align: "start",
+        side: rootContext.dir === 'rtl' ? 'left' : 'right',
+        disableOutsidePointerEvents: false,
+        disableOutsideScroll: false,
+        trapFocus: false,
+        onOpenAutoFocus: (event)=>{
+            var _ref$current;
+            // when opening a submenu, focus content for keyboard users only
+            if (rootContext.isUsingKeyboardRef.current) (_ref$current = ref.current) === null || _ref$current === void 0 || _ref$current.focus();
+            event.preventDefault();
+        } // The menu might close because of focusing another menu item in the parent menu. We
+        ,
+        onCloseAutoFocus: (event)=>event.preventDefault()
+        ,
+        onFocusOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocusOutside, (event)=>{
+            // We prevent closing when the trigger is focused to avoid triggering a re-open animation
+            // on pointer interaction.
+            if (event.target !== subContext.trigger) context.onOpenChange(false);
+        }),
+        onEscapeKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onEscapeKeyDown, (event)=>{
+            rootContext.onClose(); // ensure pressing escape in submenu doesn't escape full screen mode
+            event.preventDefault();
+        }),
+        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onKeyDown, (event)=>{
+            // Submenu key events bubble through portals. We only care about keys in this menu.
+            const isKeyDownInside = event.currentTarget.contains(event.target);
+            const isCloseKey = $6cc32821e9371a1c$var$SUB_CLOSE_KEYS[rootContext.dir].includes(event.key);
+            if (isKeyDownInside && isCloseKey) {
+                var _subContext$trigger;
+                context.onOpenChange(false); // We focus manually because we prevented it in `onCloseAutoFocus`
+                (_subContext$trigger = subContext.trigger) === null || _subContext$trigger === void 0 || _subContext$trigger.focus(); // prevent window from scrolling
+                event.preventDefault();
+            }
+        })
+    })))));
+});
+/* -----------------------------------------------------------------------------------------------*/ function $6cc32821e9371a1c$var$getOpenState(open) {
+    return open ? 'open' : 'closed';
+}
+function $6cc32821e9371a1c$var$isIndeterminate(checked) {
+    return checked === 'indeterminate';
+}
+function $6cc32821e9371a1c$var$getCheckedState(checked) {
+    return $6cc32821e9371a1c$var$isIndeterminate(checked) ? 'indeterminate' : checked ? 'checked' : 'unchecked';
+}
+function $6cc32821e9371a1c$var$focusFirst(candidates) {
+    const PREVIOUSLY_FOCUSED_ELEMENT = document.activeElement;
+    for (const candidate of candidates){
+        // if focus is already where we want to go, we don't want to keep going through the candidates
+        if (candidate === PREVIOUSLY_FOCUSED_ELEMENT) return;
+        candidate.focus();
+        if (document.activeElement !== PREVIOUSLY_FOCUSED_ELEMENT) return;
+    }
+}
+/**
+ * Wraps an array around itself at a given start index
+ * Example: `wrapArray(['a', 'b', 'c', 'd'], 2) === ['c', 'd', 'a', 'b']`
+ */ function $6cc32821e9371a1c$var$wrapArray(array, startIndex) {
+    return array.map((_, index)=>array[(startIndex + index) % array.length]
+    );
+}
+/**
+ * This is the "meat" of the typeahead matching logic. It takes in all the values,
+ * the search and the current match, and returns the next match (or `undefined`).
+ *
+ * We normalize the search because if a user has repeatedly pressed a character,
+ * we want the exact same behavior as if we only had that one character
+ * (ie. cycle through options starting with that character)
+ *
+ * We also reorder the values by wrapping the array around the current match.
+ * This is so we always look forward from the current match, and picking the first
+ * match will always be the correct one.
+ *
+ * Finally, if the normalized search is exactly one character, we exclude the
+ * current match from the values because otherwise it would be the first to match always
+ * and focus would never move. This is as opposed to the regular case, where we
+ * don't want focus to move if the current match still matches.
+ */ function $6cc32821e9371a1c$var$getNextMatch(values, search, currentMatch) {
+    const isRepeated = search.length > 1 && Array.from(search).every((char)=>char === search[0]
+    );
+    const normalizedSearch = isRepeated ? search[0] : search;
+    const currentMatchIndex = currentMatch ? values.indexOf(currentMatch) : -1;
+    let wrappedValues = $6cc32821e9371a1c$var$wrapArray(values, Math.max(currentMatchIndex, 0));
+    const excludeCurrentMatch = normalizedSearch.length === 1;
+    if (excludeCurrentMatch) wrappedValues = wrappedValues.filter((v)=>v !== currentMatch
+    );
+    const nextMatch = wrappedValues.find((value)=>value.toLowerCase().startsWith(normalizedSearch.toLowerCase())
+    );
+    return nextMatch !== currentMatch ? nextMatch : undefined;
+}
+// Determine if a point is inside of a polygon.
+// Based on https://github.com/substack/point-in-polygon
+function $6cc32821e9371a1c$var$isPointInPolygon(point, polygon) {
+    const { x: x , y: y  } = point;
+    let inside = false;
+    for(let i = 0, j = polygon.length - 1; i < polygon.length; j = i++){
+        const xi = polygon[i].x;
+        const yi = polygon[i].y;
+        const xj = polygon[j].x;
+        const yj = polygon[j].y; // prettier-ignore
+        const intersect = yi > y !== yj > y && x < (xj - xi) * (y - yi) / (yj - yi) + xi;
+        if (intersect) inside = !inside;
+    }
+    return inside;
+}
+function $6cc32821e9371a1c$var$isPointerInGraceArea(event, area) {
+    if (!area) return false;
+    const cursorPos = {
+        x: event.clientX,
+        y: event.clientY
+    };
+    return $6cc32821e9371a1c$var$isPointInPolygon(cursorPos, area);
+}
+function $6cc32821e9371a1c$var$whenMouse(handler) {
+    return (event)=>event.pointerType === 'mouse' ? handler(event) : undefined
+    ;
+}
+const $6cc32821e9371a1c$export$be92b6f5f03c0fe9 = $6cc32821e9371a1c$export$d9b273488cd8ce6f;
+const $6cc32821e9371a1c$export$b688253958b8dfe7 = $6cc32821e9371a1c$export$9fa5ebd18bee4d43;
+const $6cc32821e9371a1c$export$602eac185826482c = $6cc32821e9371a1c$export$793392f970497feb;
+const $6cc32821e9371a1c$export$7c6e2c02157bb7d2 = $6cc32821e9371a1c$export$479f0f2f71193efe;
+const $6cc32821e9371a1c$export$b04be29aa201d4f5 = $6cc32821e9371a1c$export$dd37bec0e8a99143;
+const $6cc32821e9371a1c$export$6d08773d2e66f8f2 = $6cc32821e9371a1c$export$2ce376c2cc3355c8;
+const $6cc32821e9371a1c$export$16ce288f89fa631c = $6cc32821e9371a1c$export$f6f243521332502d;
+const $6cc32821e9371a1c$export$371ab307eab489c0 = $6cc32821e9371a1c$export$69bd225e9817f6d0;
+const $6cc32821e9371a1c$export$c3468e2714d175fa = $6cc32821e9371a1c$export$a2593e23056970a3;
+const $6cc32821e9371a1c$export$1ff3c3f08ae963c0 = $6cc32821e9371a1c$export$1cec7dcdd713e220;
+const $6cc32821e9371a1c$export$2ea8a7a591ac5eac = $6cc32821e9371a1c$export$5fbbb3ba7297405f;
+const $6cc32821e9371a1c$export$6d4de93b380beddf = $6cc32821e9371a1c$export$e7142ab31822bde6;
+
+/* -------------------------------------------------------------------------------------------------
+ * DropdownMenu
+ * -----------------------------------------------------------------------------------------------*/ const $d08ef79370b62062$var$DROPDOWN_MENU_NAME = 'DropdownMenu';
+const [$d08ef79370b62062$var$createDropdownMenuContext, $d08ef79370b62062$export$c0623cd925aeb687] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($d08ef79370b62062$var$DROPDOWN_MENU_NAME, [
+    $6cc32821e9371a1c$export$4027731b685e72eb
+]);
+const $d08ef79370b62062$var$useMenuScope = $6cc32821e9371a1c$export$4027731b685e72eb();
+const [$d08ef79370b62062$var$DropdownMenuProvider, $d08ef79370b62062$var$useDropdownMenuContext] = $d08ef79370b62062$var$createDropdownMenuContext($d08ef79370b62062$var$DROPDOWN_MENU_NAME);
+const $d08ef79370b62062$export$e44a253a59704894 = (props)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , children: children , dir: dir , open: openProp , defaultOpen: defaultOpen , onOpenChange: onOpenChange , modal: modal = true  } = props;
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    const triggerRef = React.useRef(null);
+    const [open = false, setOpen] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
+        prop: openProp,
+        defaultProp: defaultOpen,
+        onChange: onOpenChange
+    });
+    return /*#__PURE__*/ React.createElement($d08ef79370b62062$var$DropdownMenuProvider, {
+        scope: __scopeDropdownMenu,
+        triggerId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        triggerRef: triggerRef,
+        contentId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        open: open,
+        onOpenChange: setOpen,
+        onOpenToggle: React.useCallback(()=>setOpen((prevOpen)=>!prevOpen
+            )
+        , [
+            setOpen
+        ]),
+        modal: modal
+    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$be92b6f5f03c0fe9, _extends({}, menuScope, {
+        open: open,
+        onOpenChange: setOpen,
+        dir: dir,
+        modal: modal
+    }), children));
+};
+/* -------------------------------------------------------------------------------------------------
+ * DropdownMenuTrigger
+ * -----------------------------------------------------------------------------------------------*/ const $d08ef79370b62062$var$TRIGGER_NAME = 'DropdownMenuTrigger';
+const $d08ef79370b62062$export$d2469213b3befba9 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , disabled: disabled = false , ...triggerProps } = props;
+    const context = $d08ef79370b62062$var$useDropdownMenuContext($d08ef79370b62062$var$TRIGGER_NAME, __scopeDropdownMenu);
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$b688253958b8dfe7, _extends({
+        asChild: true
+    }, menuScope), /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends({
+        type: "button",
+        id: context.triggerId,
+        "aria-haspopup": "menu",
+        "aria-expanded": context.open,
+        "aria-controls": context.open ? context.contentId : undefined,
+        "data-state": context.open ? 'open' : 'closed',
+        "data-disabled": disabled ? '' : undefined,
+        disabled: disabled
+    }, triggerProps, {
+        ref: $6ed0406888f73fc4$export$43e446d32b3d21af$1(forwardedRef, context.triggerRef),
+        onPointerDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDown, (event)=>{
+            // only call handler if it's the left button (mousedown gets triggered by all mouse buttons)
+            // but not when the control key is pressed (avoiding MacOS right click)
+            if (!disabled && event.button === 0 && event.ctrlKey === false) {
+                context.onOpenToggle(); // prevent trigger focusing when opening
+                // this allows the content to be given focus without competition
+                if (!context.open) event.preventDefault();
+            }
+        }),
+        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onKeyDown, (event)=>{
+            if (disabled) return;
+            if ([
+                'Enter',
+                ' '
+            ].includes(event.key)) context.onOpenToggle();
+            if (event.key === 'ArrowDown') context.onOpenChange(true); // prevent keydown from scrolling window / first focused item to execute
+            // that keydown (inadvertently closing the menu)
+            if ([
+                'Enter',
+                ' ',
+                'ArrowDown'
+            ].includes(event.key)) event.preventDefault();
+        })
+    })));
+});
+const $d08ef79370b62062$export$cd369b4d4d54efc9 = (props)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , ...portalProps } = props;
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$602eac185826482c, _extends({}, menuScope, portalProps));
+};
+/* -------------------------------------------------------------------------------------------------
+ * DropdownMenuContent
+ * -----------------------------------------------------------------------------------------------*/ const $d08ef79370b62062$var$CONTENT_NAME = 'DropdownMenuContent';
+const $d08ef79370b62062$export$6e76d93a37c01248 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , ...contentProps } = props;
+    const context = $d08ef79370b62062$var$useDropdownMenuContext($d08ef79370b62062$var$CONTENT_NAME, __scopeDropdownMenu);
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    const hasInteractedOutsideRef = React.useRef(false);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$7c6e2c02157bb7d2, _extends({
+        id: context.contentId,
+        "aria-labelledby": context.triggerId
+    }, menuScope, contentProps, {
+        ref: forwardedRef,
+        onCloseAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onCloseAutoFocus, (event)=>{
+            var _context$triggerRef$c;
+            if (!hasInteractedOutsideRef.current) (_context$triggerRef$c = context.triggerRef.current) === null || _context$triggerRef$c === void 0 || _context$triggerRef$c.focus();
+            hasInteractedOutsideRef.current = false; // Always prevent auto focus because we either focus manually or want user agent focus
+            event.preventDefault();
+        }),
+        onInteractOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onInteractOutside, (event)=>{
+            const originalEvent = event.detail.originalEvent;
+            const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
+            const isRightClick = originalEvent.button === 2 || ctrlLeftClick;
+            if (!context.modal || isRightClick) hasInteractedOutsideRef.current = true;
+        }),
+        style: {
+            ...props.style,
+            '--radix-dropdown-menu-content-transform-origin': 'var(--radix-popper-transform-origin)',
+            '--radix-dropdown-menu-content-available-width': 'var(--radix-popper-available-width)',
+            '--radix-dropdown-menu-content-available-height': 'var(--radix-popper-available-height)',
+            '--radix-dropdown-menu-trigger-width': 'var(--radix-popper-anchor-width)',
+            '--radix-dropdown-menu-trigger-height': 'var(--radix-popper-anchor-height)'
+        }
+    }));
+});
+const $d08ef79370b62062$export$76e48c5b57f24495 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , ...labelProps } = props;
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$b04be29aa201d4f5, _extends({}, menuScope, labelProps, {
+        ref: forwardedRef
+    }));
+});
+const $d08ef79370b62062$export$ed97964d1871885d = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , ...itemProps } = props;
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$6d08773d2e66f8f2, _extends({}, menuScope, itemProps, {
+        ref: forwardedRef
+    }));
+});
+const $d08ef79370b62062$export$53a69729da201fa9 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , ...checkboxItemProps } = props;
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$16ce288f89fa631c, _extends({}, menuScope, checkboxItemProps, {
+        ref: forwardedRef
+    }));
+});
+const $d08ef79370b62062$export$e4f69b41b1637536 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , ...radioItemProps } = props;
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$371ab307eab489c0, _extends({}, menuScope, radioItemProps, {
+        ref: forwardedRef
+    }));
+});
+const $d08ef79370b62062$export$42355ae145153fb6 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , ...itemIndicatorProps } = props;
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$c3468e2714d175fa, _extends({}, menuScope, itemIndicatorProps, {
+        ref: forwardedRef
+    }));
+});
+const $d08ef79370b62062$export$da160178fd3bc7e9 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , ...separatorProps } = props;
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$1ff3c3f08ae963c0, _extends({}, menuScope, separatorProps, {
+        ref: forwardedRef
+    }));
+});
+const $d08ef79370b62062$export$21dcb7ec56f874cf = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , ...subTriggerProps } = props;
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$2ea8a7a591ac5eac, _extends({}, menuScope, subTriggerProps, {
+        ref: forwardedRef
+    }));
+});
+const $d08ef79370b62062$export$f34ec8bc2482cc5f = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , ...subContentProps } = props;
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$6d4de93b380beddf, _extends({}, menuScope, subContentProps, {
+        ref: forwardedRef,
+        style: {
+            ...props.style,
+            '--radix-dropdown-menu-content-transform-origin': 'var(--radix-popper-transform-origin)',
+            '--radix-dropdown-menu-content-available-width': 'var(--radix-popper-available-width)',
+            '--radix-dropdown-menu-content-available-height': 'var(--radix-popper-available-height)',
+            '--radix-dropdown-menu-trigger-width': 'var(--radix-popper-anchor-width)',
+            '--radix-dropdown-menu-trigger-height': 'var(--radix-popper-anchor-height)'
+        }
+    }));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $d08ef79370b62062$export$be92b6f5f03c0fe9 = $d08ef79370b62062$export$e44a253a59704894;
+const $d08ef79370b62062$export$41fb9f06171c75f4 = $d08ef79370b62062$export$d2469213b3befba9;
+const $d08ef79370b62062$export$602eac185826482c = $d08ef79370b62062$export$cd369b4d4d54efc9;
+const $d08ef79370b62062$export$7c6e2c02157bb7d2 = $d08ef79370b62062$export$6e76d93a37c01248;
+const $d08ef79370b62062$export$b04be29aa201d4f5 = $d08ef79370b62062$export$76e48c5b57f24495;
+const $d08ef79370b62062$export$6d08773d2e66f8f2 = $d08ef79370b62062$export$ed97964d1871885d;
+const $d08ef79370b62062$export$16ce288f89fa631c = $d08ef79370b62062$export$53a69729da201fa9;
+const $d08ef79370b62062$export$371ab307eab489c0 = $d08ef79370b62062$export$e4f69b41b1637536;
+const $d08ef79370b62062$export$c3468e2714d175fa = $d08ef79370b62062$export$42355ae145153fb6;
+const $d08ef79370b62062$export$1ff3c3f08ae963c0 = $d08ef79370b62062$export$da160178fd3bc7e9;
+const $d08ef79370b62062$export$2ea8a7a591ac5eac = $d08ef79370b62062$export$21dcb7ec56f874cf;
+const $d08ef79370b62062$export$6d4de93b380beddf = $d08ef79370b62062$export$f34ec8bc2482cc5f;
+
+var DropdownMenu = $d08ef79370b62062$export$be92b6f5f03c0fe9;
+var DropdownMenuTrigger = $d08ef79370b62062$export$41fb9f06171c75f4;
+var DropdownMenuSubTrigger = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, inset = _a.inset, children = _a.children, props = __rest$2(_a, ["className", "inset", "children"]);
+    return (React__namespace.createElement($d08ef79370b62062$export$2ea8a7a591ac5eac, __assign$2({ ref: ref, className: cn("flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent", inset && "pl-8", className) }, props),
+        children,
+        React__namespace.createElement(ChevronRightIcon, { className: "ml-auto h-4 w-4" })));
+});
+DropdownMenuSubTrigger.displayName =
+    $d08ef79370b62062$export$2ea8a7a591ac5eac.displayName;
+var DropdownMenuSubContent = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($d08ef79370b62062$export$6d4de93b380beddf, __assign$2({ ref: ref, className: cn("z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props)));
+});
+DropdownMenuSubContent.displayName =
+    $d08ef79370b62062$export$6d4de93b380beddf.displayName;
+var DropdownMenuContent = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, _b = _a.sideOffset, sideOffset = _b === void 0 ? 4 : _b, props = __rest$2(_a, ["className", "sideOffset"]);
+    return (React__namespace.createElement($d08ef79370b62062$export$602eac185826482c, null,
+        React__namespace.createElement($d08ef79370b62062$export$7c6e2c02157bb7d2, __assign$2({ ref: ref, sideOffset: sideOffset, className: cn("z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md", "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props))));
+});
+DropdownMenuContent.displayName = $d08ef79370b62062$export$7c6e2c02157bb7d2.displayName;
+var DropdownMenuItem = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, inset = _a.inset, props = __rest$2(_a, ["className", "inset"]);
+    return (React__namespace.createElement($d08ef79370b62062$export$6d08773d2e66f8f2, __assign$2({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", inset && "pl-8", className) }, props)));
+});
+DropdownMenuItem.displayName = $d08ef79370b62062$export$6d08773d2e66f8f2.displayName;
+var DropdownMenuCheckboxItem = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, children = _a.children, checked = _a.checked, props = __rest$2(_a, ["className", "children", "checked"]);
+    return (React__namespace.createElement($d08ef79370b62062$export$16ce288f89fa631c, __assign$2({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className), checked: checked }, props),
+        React__namespace.createElement("span", { className: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" },
+            React__namespace.createElement($d08ef79370b62062$export$c3468e2714d175fa, null,
+                React__namespace.createElement(CheckIcon, { className: "h-4 w-4" }))),
+        children));
+});
+DropdownMenuCheckboxItem.displayName =
+    $d08ef79370b62062$export$16ce288f89fa631c.displayName;
+var DropdownMenuRadioItem = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, children = _a.children, props = __rest$2(_a, ["className", "children"]);
+    return (React__namespace.createElement($d08ef79370b62062$export$371ab307eab489c0, __assign$2({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props),
+        React__namespace.createElement("span", { className: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" },
+            React__namespace.createElement($d08ef79370b62062$export$c3468e2714d175fa, null,
+                React__namespace.createElement(DotFilledIcon, { className: "h-4 w-4 fill-current" }))),
+        children));
+});
+DropdownMenuRadioItem.displayName = $d08ef79370b62062$export$371ab307eab489c0.displayName;
+var DropdownMenuLabel = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, inset = _a.inset, props = __rest$2(_a, ["className", "inset"]);
+    return (React__namespace.createElement($d08ef79370b62062$export$b04be29aa201d4f5, __assign$2({ ref: ref, className: cn("px-2 py-1.5 text-sm font-semibold", inset && "pl-8", className) }, props)));
+});
+DropdownMenuLabel.displayName = $d08ef79370b62062$export$b04be29aa201d4f5.displayName;
+var DropdownMenuSeparator = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($d08ef79370b62062$export$1ff3c3f08ae963c0, __assign$2({ ref: ref, className: cn("-mx-1 my-1 h-px bg-muted", className) }, props)));
+});
+DropdownMenuSeparator.displayName = $d08ef79370b62062$export$1ff3c3f08ae963c0.displayName;
+
+function DataTableColumnHeader(_a) {
+    var column = _a.column, title = _a.title, className = _a.className;
+    if (!column.getCanSort()) {
+        return React__default["default"].createElement("div", { className: cn(className) }, title);
+    }
+    return (React__default["default"].createElement("div", { className: cn("flex items-center space-x-2", className) },
+        React__default["default"].createElement(DropdownMenu, null,
+            React__default["default"].createElement(DropdownMenuTrigger, { asChild: true },
+                React__default["default"].createElement(Button$1, { variant: "ghost", size: "sm", className: "-ml-3 h-8 data-[state=open]:bg-accent" },
+                    React__default["default"].createElement("span", null, title),
+                    column.getIsSorted() === "desc" ? (React__default["default"].createElement(ArrowDownIcon, { className: "ml-2 h-4 w-4" })) : column.getIsSorted() === "asc" ? (React__default["default"].createElement(ArrowUpIcon, { className: "ml-2 h-4 w-4" })) : (React__default["default"].createElement(CaretSortIcon, { className: "ml-2 h-4 w-4" })))),
+            React__default["default"].createElement(DropdownMenuContent, { align: "start" },
+                React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return column.toggleSorting(false); } },
+                    React__default["default"].createElement(ArrowUpIcon, { className: "mr-2 h-3.5 w-3.5 text-muted-foreground/70" }),
+                    "Asc"),
+                React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return column.toggleSorting(true); } },
+                    React__default["default"].createElement(ArrowDownIcon, { className: "mr-2 h-3.5 w-3.5 text-muted-foreground/70" }),
+                    "Desc"),
+                React__default["default"].createElement(DropdownMenuSeparator, null),
+                React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return column.toggleVisibility(false); } },
+                    React__default["default"].createElement(EyeNoneIcon, { className: "mr-2 h-3.5 w-3.5 text-muted-foreground/70" }),
+                    "Hide")))));
+}
+
+function DataTableRowActions$3(_a) {
+    var row = _a.row;
+    var task = row.original;
+    return (React__default["default"].createElement(DropdownMenu, null,
+        React__default["default"].createElement(DropdownMenuTrigger, { asChild: true },
+            React__default["default"].createElement(Button$1, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
+                React__default["default"].createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
+                React__default["default"].createElement("span", { className: "sr-only" }, "Open menu"))),
+        React__default["default"].createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
+}
+var columns$3 = [
+    {
+        id: "select",
+        header: function (_a) {
+            var table = _a.table;
+            return (React__default["default"].createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "roomName",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Type Name" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("roomName"));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "maxPerson",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Max Person (Per Room)" }));
+        },
+        cell: function (_a) {
+            // if (!status) {
+            //     return null
+            // }
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex  text-center" }, row.getValue("maxPerson")));
+        },
+        // filterFn: (row:any, id:any, value:any) => {
+        //     return value.includes(row.getValue(id))
+        // },
+    },
+    {
+        accessorKey: "regularPrice",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Pice (Regular)" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
+                React__default["default"].createElement("span", null,
+                    "$ ",
+                    row.getValue("regularPrice"))));
+        },
+        // filterFn: (row:any, id:any, value:any) => {
+        //     return value.includes(row.getValue(id))
+        // },
+    },
+    {
+        accessorKey: "singlePrice",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Price (Single use)" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
+                React__default["default"].createElement("span", null,
+                    "$ ",
+                    row.getValue("singlePrice"))));
+        },
+        // filterFn: (row:any, id:any, value:any) => {
+        //     return value.includes(row.getValue(id))
+        // },
+    },
+    {
+        id: "actions",
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default["default"].createElement(DataTableRowActions$3, { row: row });
+        },
+    },
+];
+
+function DataTableRowActions$2(_a) {
+    var row = _a.row;
+    row.original;
+    return (React__default["default"].createElement(DropdownMenu, null,
+        React__default["default"].createElement(DropdownMenuTrigger, { asChild: true },
+            React__default["default"].createElement(Button$1, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
+                React__default["default"].createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
+                React__default["default"].createElement("span", { className: "sr-only" }, "Open menu"))),
+        React__default["default"].createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
+            React__default["default"].createElement(DropdownMenuItem, null, "Update"),
+            React__default["default"].createElement(DropdownMenuItem, null, "Delete"))));
+}
+var columns$2 = [
+    {
+        id: "select",
+        header: function (_a) {
+            var table = _a.table;
+            return (React__default["default"].createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "fullName",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Name" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("fullName"));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "passportId",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Passport ID" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("passportId")));
+        },
+    },
+    {
+        accessorKey: "country",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Country" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("country")));
+        },
+        filterFn: function (row, id, value) {
+            return value.includes(row.getValue(id));
+        },
+    },
+    {
+        accessorKey: "address",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Address" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
+                React__default["default"].createElement("span", null, row.getValue("address"))));
+        },
+        filterFn: function (row, id, value) {
+            return value.includes(row.getValue(id));
+        },
+    },
+    {
+        accessorKey: "email",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "E-mail" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
+                React__default["default"].createElement("span", null,
+                    "$",
+                    row.getValue("email"))));
+        },
+        filterFn: function (row, id, value) {
+            return value.includes(row.getValue(id));
+        },
+    },
+    {
+        accessorKey: "phone",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Phone Number" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
+                React__default["default"].createElement("span", null,
+                    "$",
+                    row.getValue("phone"))));
+        },
+        filterFn: function (row, id, value) {
+            return value.includes(row.getValue(id));
+        },
+    },
+    {
+        id: "actions",
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default["default"].createElement(DataTableRowActions$2, { row: row });
+        },
+    },
+];
+
+function DataTableRowActions$1(_a) {
+    var row = _a.row;
+    var task = row.original;
+    return (React__default["default"].createElement(DropdownMenu, null,
+        React__default["default"].createElement(DropdownMenuTrigger, { asChild: true },
+            React__default["default"].createElement(Button$1, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
+                React__default["default"].createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
+                React__default["default"].createElement("span", { className: "sr-only" }, "Open menu"))),
+        React__default["default"].createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
+}
+var columns$1 = [
+    {
+        id: "select",
+        header: function (_a) {
+            var table = _a.table;
+            return (React__default["default"].createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "roomName",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Name" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("roomName"));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "roomType",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Type" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
+                React__default["default"].createElement("span", null, row.getValue("roomType"))));
+        },
+    },
+    {
+        accessorKey: "maxPerson",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Max Person (Per Room)" }));
+        },
+        cell: function (_a) {
+            // if (!status) {
+            //     return null
+            // }
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex  text-center" }, row.getValue("maxPerson")));
+        },
+        // filterFn: (row:any, id:any, value:any) => {
+        //     return value.includes(row.getValue(id))
+        // },
+    },
+    {
+        accessorKey: "regularPrice",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Pice (Regular)" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
+                React__default["default"].createElement("span", null,
+                    "$ ",
+                    row.getValue("regularPrice"))));
+        },
+        // filterFn: (row:any, id:any, value:any) => {
+        //     return value.includes(row.getValue(id))
+        // },
+    },
+    {
+        accessorKey: "singlePrice",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Price (Single use)" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
+                React__default["default"].createElement("span", null,
+                    "$ ",
+                    row.getValue("singlePrice"))));
+        },
+        // filterFn: (row:any, id:any, value:any) => {
+        //     return value.includes(row.getValue(id))
+        // },
+    },
+    {
+        id: "actions",
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default["default"].createElement(DataTableRowActions$1, { row: row });
+        },
+    },
+];
+
+function DataTableRowActions(_a) {
+    var row = _a.row;
+    var task = row.original;
+    return (React__default["default"].createElement(DropdownMenu, null,
+        React__default["default"].createElement(DropdownMenuTrigger, { asChild: true },
+            React__default["default"].createElement(Button$1, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
+                React__default["default"].createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
+                React__default["default"].createElement("span", { className: "sr-only" }, "Open menu"))),
+        React__default["default"].createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
+}
+var columns = [
+    {
+        id: "select",
+        header: function (_a) {
+            var table = _a.table;
+            return (React__default["default"].createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default["default"].createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "serviceName",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Service Name" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("serviceName"));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "price",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Price" }));
+        },
+        cell: function (_a) {
+            // const label = labels.find((label: any) => label.value === row.original.label)
+            var row = _a.row;
+            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
+                React__default["default"].createElement("span", null,
+                    "$ ",
+                    row.getValue("price"))));
+        },
+    },
+    {
+        accessorKey: "serviceCategory",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Service Category" }));
+        },
+        cell: function (_a) {
+            // const status = statuses.find(
+            //     (status: any) => status.value === row.getValue("status")
+            // )
+            var row = _a.row;
+            // if (!status) {
+            //     return null
+            // }
+            return (React__default["default"].createElement("div", { className: "flex items-center" },
+                React__default["default"].createElement("span", null, row.getValue("serviceCategory"))));
+        },
+        // filterFn: (row, id, value) => {
+        //     return value.includes(row.getValue(id))
+        // },
+    },
+    {
+        id: "actions",
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default["default"].createElement(DataTableRowActions, { row: row });
+        },
+    },
+];
+
+var Table$2 = {
+    Roomtypes: columns$3,
+    Guests: columns$2,
+    Rooms: columns$1,
+    Services: columns,
+};
+
+var Textarea = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement("textarea", __assign$2({ className: cn("flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50", className), ref: ref }, props)));
+});
+Textarea.displayName = "Textarea";
+
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+/** Detect free variable `global` from Node.js. */
+
+var freeGlobal = typeof commonjsGlobal == 'object' && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
+
+var _freeGlobal = freeGlobal;
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = _freeGlobal || freeSelf || Function('return this')();
+
+var _root = root;
+
+/** Built-in value references. */
+var Symbol$1 = _root.Symbol;
+
+var _Symbol = Symbol$1;
+
+/**
+ * A specialized version of `_.map` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+function arrayMap(array, iteratee) {
+  var index = -1,
+      length = array == null ? 0 : array.length,
+      result = Array(length);
+
+  while (++index < length) {
+    result[index] = iteratee(array[index], index, array);
+  }
+  return result;
+}
+
+var _arrayMap = arrayMap;
+
+/**
+ * Checks if `value` is classified as an `Array` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+ * @example
+ *
+ * _.isArray([1, 2, 3]);
+ * // => true
+ *
+ * _.isArray(document.body.children);
+ * // => false
+ *
+ * _.isArray('abc');
+ * // => false
+ *
+ * _.isArray(_.noop);
+ * // => false
+ */
+var isArray = Array.isArray;
+
+var isArray_1 = isArray;
+
+/** Used for built-in method references. */
+var objectProto$1 = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto$1.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString$1 = objectProto$1.toString;
+
+/** Built-in value references. */
+var symToStringTag$1 = _Symbol ? _Symbol.toStringTag : undefined;
+
+/**
+ * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the raw `toStringTag`.
+ */
+function getRawTag(value) {
+  var isOwn = hasOwnProperty.call(value, symToStringTag$1),
+      tag = value[symToStringTag$1];
+
+  try {
+    value[symToStringTag$1] = undefined;
+    var unmasked = true;
+  } catch (e) {}
+
+  var result = nativeObjectToString$1.call(value);
+  if (unmasked) {
+    if (isOwn) {
+      value[symToStringTag$1] = tag;
+    } else {
+      delete value[symToStringTag$1];
+    }
+  }
+  return result;
+}
+
+var _getRawTag = getRawTag;
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/**
+ * Converts `value` to a string using `Object.prototype.toString`.
+ *
+ * @private
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ */
+function objectToString(value) {
+  return nativeObjectToString.call(value);
+}
+
+var _objectToString = objectToString;
+
+/** `Object#toString` result references. */
+var nullTag = '[object Null]',
+    undefinedTag = '[object Undefined]';
+
+/** Built-in value references. */
+var symToStringTag = _Symbol ? _Symbol.toStringTag : undefined;
+
+/**
+ * The base implementation of `getTag` without fallbacks for buggy environments.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  if (value == null) {
+    return value === undefined ? undefinedTag : nullTag;
+  }
+  return (symToStringTag && symToStringTag in Object(value))
+    ? _getRawTag(value)
+    : _objectToString(value);
+}
+
+var _baseGetTag = baseGetTag;
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return value != null && typeof value == 'object';
+}
+
+var isObjectLike_1 = isObjectLike;
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike_1(value) && _baseGetTag(value) == symbolTag);
+}
+
+var isSymbol_1 = isSymbol;
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = _Symbol ? _Symbol.prototype : undefined,
+    symbolToString = symbolProto ? symbolProto.toString : undefined;
+
+/**
+ * The base implementation of `_.toString` which doesn't convert nullish
+ * values to empty strings.
+ *
+ * @private
+ * @param {*} value The value to process.
+ * @returns {string} Returns the string.
+ */
+function baseToString(value) {
+  // Exit early for strings to avoid a performance hit in some environments.
+  if (typeof value == 'string') {
+    return value;
+  }
+  if (isArray_1(value)) {
+    // Recursively convert values (susceptible to call stack limits).
+    return _arrayMap(value, baseToString) + '';
+  }
+  if (isSymbol_1(value)) {
+    return symbolToString ? symbolToString.call(value) : '';
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+var _baseToString = baseToString;
+
+/**
+ * Converts `value` to a string. An empty string is returned for `null`
+ * and `undefined` values. The sign of `-0` is preserved.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ * @example
+ *
+ * _.toString(null);
+ * // => ''
+ *
+ * _.toString(-0);
+ * // => '-0'
+ *
+ * _.toString([1, 2, 3]);
+ * // => '1,2,3'
+ */
+function toString$1(value) {
+  return value == null ? '' : _baseToString(value);
+}
+
+var toString_1 = toString$1;
+
+/** Used to generate unique IDs. */
+var idCounter$1 = 0;
+
+/**
+ * Generates a unique ID. If `prefix` is given, the ID is appended to it.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Util
+ * @param {string} [prefix=''] The value to prefix the ID with.
+ * @returns {string} Returns the unique ID.
+ * @example
+ *
+ * _.uniqueId('contact_');
+ * // => 'contact_104'
+ *
+ * _.uniqueId();
+ * // => '105'
+ */
+function uniqueId(prefix) {
+  var id = ++idCounter$1;
+  return toString_1(prefix) + id;
+}
+
+var uniqueId_1 = uniqueId;
+
+var Form$1 = FormProvider;
+var FormFieldContext = React__default["default"].createContext({});
+var FormField = function (_a) {
+    var props = __rest$2(_a, []);
+    return (React__default["default"].createElement(FormFieldContext.Provider, { value: { name: props.name } },
+        React__default["default"].createElement(Controller, __assign$2({}, props))));
+};
+var useFormField = function () {
+    var fieldContext = React__default["default"].useContext(FormFieldContext);
+    var itemContext = React__default["default"].useContext(FormItemContext);
+    var _a = useFormContext(), getFieldState = _a.getFieldState, formState = _a.formState;
+    var fieldState = getFieldState(fieldContext.name, formState);
+    if (!fieldContext) {
+        throw new Error("useFormField should be used within <FormField>");
+    }
+    var id = itemContext.id;
+    return __assign$2({ id: id, name: fieldContext.name, formItemId: "".concat(id, "-form-item"), formDescriptionId: "".concat(id, "-form-item-description"), formMessageId: "".concat(id, "-form-item-message") }, fieldState);
+};
+var FormItemContext = React__default["default"].createContext({});
+var FormItem = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    var u_id = React__default["default"].useState(uniqueId_1('prefix-'))[0];
+    var id = u_id;
+    return (React__default["default"].createElement(FormItemContext.Provider, { value: { id: id } },
+        React__default["default"].createElement("div", __assign$2({ ref: ref, className: cn("space-y-2", className) }, props))));
+});
+FormItem.displayName = "FormItem";
+var FormLabel = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    var _b = useFormField(), error = _b.error, formItemId = _b.formItemId;
+    return (React__default["default"].createElement(Label, __assign$2({ ref: ref, className: cn(error && "text-destructive", className), htmlFor: formItemId }, props)));
+});
+FormLabel.displayName = "FormLabel";
+var FormControl = React__default["default"].forwardRef(function (_a, ref) {
+    var props = __rest$2(_a, []);
+    var _b = useFormField(), error = _b.error, formItemId = _b.formItemId, formDescriptionId = _b.formDescriptionId, formMessageId = _b.formMessageId;
+    return (React__default["default"].createElement($5e63c961fc1ce211$export$8c6ed5c666ac1360$1, __assign$2({ ref: ref, id: formItemId, "aria-describedby": !error
+            ? "".concat(formDescriptionId)
+            : "".concat(formDescriptionId, " ").concat(formMessageId), "aria-invalid": !!error }, props)));
+});
+FormControl.displayName = "FormControl";
+var FormDescription = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    var formDescriptionId = useFormField().formDescriptionId;
+    return (React__default["default"].createElement("p", __assign$2({ ref: ref, id: formDescriptionId, className: cn("text-[0.8rem] text-muted-foreground", className) }, props)));
+});
+FormDescription.displayName = "FormDescription";
+var FormMessage = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, children = _a.children, props = __rest$2(_a, ["className", "children"]);
+    var _b = useFormField(), error = _b.error, formMessageId = _b.formMessageId;
+    var body = error ? String(error === null || error === void 0 ? void 0 : error.message) : children;
+    if (!body) {
+        return null;
+    }
+    return (React__default["default"].createElement("p", __assign$2({ ref: ref, id: formMessageId, className: cn("text-[0.8rem] font-medium text-destructive", className) }, props), body));
+});
+FormMessage.displayName = "FormMessage";
+
+function AddPersonForm(_a) {
+    var onSubmit = _a.onSubmit, values = _a.values, type = _a.type;
+    var form = useForm({
+        defaultValues: type === 'create' ? {} : values,
+    });
+    return (React__default["default"].createElement(React__default["default"].Fragment, null,
+        React__default["default"].createElement(Form$1, __assign$2({}, form),
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 p-1", id: "addPerson" },
+                React__default["default"].createElement(FormField, { control: form.control, name: "fullName", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "full name"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the complete name of the person. This should serve as a distinctive label for convenient and precise identification."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "companyId", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "company iD"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
+                            React__default["default"].createElement(FormDescription, null,
+                                ' ',
+                                "Enter the unique identification number or code assigned to the company. This serves as a distinct identifier for the company for easy reference and identification."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "bank", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "bank"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
+                            React__default["default"].createElement(FormDescription, null,
+                                ' ',
+                                "Enter the official name or designation of the bank associated with this account. Provide the full and accurate name for clear identification."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "accNO", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "account no"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the unique account number or identifier associated with this account. It serves as a distinct label for easy identification and reference in the system."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "email", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "email"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the email address associated with your account. Make sure it is a valid and accessible email for communication and account-related notifications."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "phoneNo", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "phone no"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the contact number associated with the person. It should be a valid phone number for communication purposes and should uniquely identify this person in case of any queries or contacts."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "address", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "address"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the physical location details, including street address, city, and postal code, for precise identification of this particular location. Provide a clear and comprehensive address to facilitate accurate location referencing."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "contactPerson", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "contact person"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the name of the primary contact person associated with this person. Provide the full name for clear identification and communication purposes."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement("div", null,
+                    React__default["default"].createElement(Label, null, "Notes"),
+                    React__default["default"].createElement(Textarea, { placeholder: "Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." }))))));
+}
+
+function AddRooms(onsubmit, defaultValue, type) {
+    var form = useForm({
+        defaultValues: type === "create" ? {} : defaultValue
+    });
+    return (React__default["default"].createElement("div", null,
+        React__default["default"].createElement(Form$1, __assign$2({}, form),
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8" },
+                React__default["default"].createElement(FormField, { control: form.control, name: "email", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, null, "Room Types"),
+                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default["default"].createElement(FormControl, null,
+                                    React__default["default"].createElement(SelectTrigger, null,
+                                        React__default["default"].createElement(SelectValue, null))),
+                                React__default["default"].createElement(SelectContent, null,
+                                    React__default["default"].createElement(SelectItem, { value: "m@example.com" }, "Single"),
+                                    React__default["default"].createElement(SelectItem, { value: "m@google.com" }, "Double"),
+                                    React__default["default"].createElement(SelectItem, { value: "m@support.com" }, "other"))),
+                            React__default["default"].createElement(FormDescription, null, "Select the type of room from the options below. Choose the most appropriate category that describes the nature or purpose of the room."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "username", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, null, "No of Rooms"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
+                            React__default["default"].createElement(FormDescription, null, "Enter the total number of rooms available in your property or facility. This should include all types of rooms, such as bedrooms, meeting rooms, and offices."),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement("div", { className: "grid sm:flex w-full max-w-sm items-center gap-1.5" },
+                    React__default["default"].createElement(Label, { htmlFor: "picture" }, "Upload Image"),
+                    React__default["default"].createElement(Input, { id: "picture", type: "file" }),
+                    " \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0",
+                    React__default["default"].createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
+                    React__default["default"].createElement("img", { className: 'w-33 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
+                    React__default["default"].createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }))))));
+}
+
+function AddServicesForm(_a) {
+    var onSubmit = _a.onSubmit, selectValues = _a.selectValues;
+    var form = useForm();
+    return (React__default["default"].createElement(React__default["default"].Fragment, null,
+        React__default["default"].createElement(Form$1, __assign$2({}, form),
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 mt-8", id: "addService" },
+                React__default["default"].createElement(FormField, { control: form.control, name: "serviceName", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "service name"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
+                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "price", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "price($)"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
+                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "serviceCategory", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, null, "Service Category"),
+                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default["default"].createElement(FormControl, null,
+                                    React__default["default"].createElement(SelectTrigger, null,
+                                        React__default["default"].createElement(SelectValue, { placeholder: "Select preferred service category" }))),
+                                React__default["default"].createElement(SelectContent, null, selectValues.map(function (item, pos) {
+                                    return (React__default["default"].createElement(SelectItem, { key: pos, value: item.value }, item.label));
+                                }))),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } })))));
+}
+
+function AddRoomType(_a) {
+    var onsubmit = _a.onsubmit;
+    var form = useForm({});
+    return (
+    // <div className="hidden h-full flex-1 flex-col space-y-3 p-8 md:flex">
+    //   <div className="flex items-center justify-between space-y-2">
+    //     <div>
+    //       <h2 className="text-2xl font-bold tracking-tight">Add New Type Room Information </h2>
+    //       <p className="text-muted-foreground">
+    //         This form is used to input essential details about the rooms available within your hotel or property. Accurate and complete information is crucial for efficient room management and an improved guest experience. Please fill out the following fields with the relevant information for each room.
+    //       </p>
+    //     </div>
+    //   </div>
+    //   <div>
+    React__default["default"].createElement(Form$1, __assign$2({}, form),
+        React__default["default"].createElement("form", { id: "newType", onSubmit: form.handleSubmit(onsubmit), className: "space-y-8" },
+            React__default["default"].createElement(FormField, { control: form.control, name: "room_type_name", rules: { required: true }, render: function (_a) {
+                    var field = _a.field;
+                    return (React__default["default"].createElement(FormItem, null,
+                        React__default["default"].createElement(FormLabel, null, "Name"),
+                        React__default["default"].createElement(FormControl, null,
+                            React__default["default"].createElement(Input, __assign$2({}, field))),
+                        React__default["default"].createElement(FormDescription, null, "Please enter a unique name for the room. It may contain letters, numbers, and spaces. Avoid special characters or symbols.                                            "),
+                        React__default["default"].createElement(FormMessage, null)));
+                } }),
+            React__default["default"].createElement(FormField, { control: form.control, name: "max_person", rules: { required: true }, render: function (_a) {
+                    var field = _a.field;
+                    return (React__default["default"].createElement(FormItem, null,
+                        React__default["default"].createElement(FormLabel, null, "Max. Persons(per rooms)"),
+                        React__default["default"].createElement(FormControl, null,
+                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
+                        React__default["default"].createElement(FormDescription, null, "Specify the maximum number of individuals allowed in this room. Please consider factors such as room size, safety regulations, and comfort.                                            "),
+                        React__default["default"].createElement(FormMessage, null)));
+                } }),
+            React__default["default"].createElement(FormField, { control: form.control, name: "regular_price", rules: { required: true }, render: function (_a) {
+                    var field = _a.field;
+                    return (React__default["default"].createElement(FormItem, null,
+                        React__default["default"].createElement(FormLabel, null, "Price(Regular use)"),
+                        React__default["default"].createElement(FormControl, null,
+                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
+                        React__default["default"].createElement(FormDescription, null, "Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations."),
+                        React__default["default"].createElement(FormMessage, null)));
+                } }),
+            React__default["default"].createElement(FormField, { control: form.control, name: "sing_price", rules: { required: true }, render: function (_a) {
+                    var field = _a.field;
+                    return (React__default["default"].createElement(FormItem, null,
+                        React__default["default"].createElement(FormLabel, null, "Price(Single use)"),
+                        React__default["default"].createElement(FormControl, null,
+                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
+                        React__default["default"].createElement(FormDescription, null, "Specify the standard price for a single use of this room for regular purposes."),
+                        React__default["default"].createElement(FormMessage, null)));
+                } })))
+    //   </div>
+    // </div>
+    );
+}
+
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
+
+function toInteger(dirtyNumber) {
+  if (dirtyNumber === null || dirtyNumber === true || dirtyNumber === false) {
+    return NaN;
+  }
+  var number = Number(dirtyNumber);
+  if (isNaN(number)) {
+    return number;
+  }
+  return number < 0 ? Math.ceil(number) : Math.floor(number);
+}
+
+function requiredArgs(required, args) {
+  if (args.length < required) {
+    throw new TypeError(required + ' argument' + (required > 1 ? 's' : '') + ' required, but only ' + args.length + ' present');
+  }
+}
+
+/**
+ * @name toDate
+ * @category Common Helpers
+ * @summary Convert the given argument to an instance of Date.
+ *
+ * @description
+ * Convert the given argument to an instance of Date.
+ *
+ * If the argument is an instance of Date, the function returns its clone.
+ *
+ * If the argument is a number, it is treated as a timestamp.
+ *
+ * If the argument is none of the above, the function returns Invalid Date.
+ *
+ * **Note**: *all* Date arguments passed to any *date-fns* function is processed by `toDate`.
+ *
+ * @param {Date|Number} argument - the value to convert
+ * @returns {Date} the parsed date in the local time zone
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // Clone the date:
+ * const result = toDate(new Date(2014, 1, 11, 11, 30, 30))
+ * //=> Tue Feb 11 2014 11:30:30
+ *
+ * @example
+ * // Convert the timestamp to date:
+ * const result = toDate(1392098430000)
+ * //=> Tue Feb 11 2014 11:30:30
+ */
+function toDate(argument) {
+  requiredArgs(1, arguments);
+  var argStr = Object.prototype.toString.call(argument);
+
+  // Clone the date
+  if (argument instanceof Date || _typeof(argument) === 'object' && argStr === '[object Date]') {
+    // Prevent the date to lose the milliseconds when passed to new Date() in IE10
+    return new Date(argument.getTime());
+  } else if (typeof argument === 'number' || argStr === '[object Number]') {
+    return new Date(argument);
+  } else {
+    if ((typeof argument === 'string' || argStr === '[object String]') && typeof console !== 'undefined') {
+      // eslint-disable-next-line no-console
+      console.warn("Starting with v2.0.0-beta.1 date-fns doesn't accept strings as date arguments. Please use `parseISO` to parse strings. See: https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#string-arguments");
+      // eslint-disable-next-line no-console
+      console.warn(new Error().stack);
+    }
+    return new Date(NaN);
+  }
+}
+
+/**
+ * @name addDays
+ * @category Day Helpers
+ * @summary Add the specified number of days to the given date.
+ *
+ * @description
+ * Add the specified number of days to the given date.
+ *
+ * @param {Date|Number} date - the date to be changed
+ * @param {Number} amount - the amount of days to be added. Positive decimals will be rounded using `Math.floor`, decimals less than zero will be rounded using `Math.ceil`.
+ * @returns {Date} - the new date with the days added
+ * @throws {TypeError} - 2 arguments required
+ *
+ * @example
+ * // Add 10 days to 1 September 2014:
+ * const result = addDays(new Date(2014, 8, 1), 10)
+ * //=> Thu Sep 11 2014 00:00:00
+ */
+function addDays(dirtyDate, dirtyAmount) {
+  requiredArgs(2, arguments);
+  var date = toDate(dirtyDate);
+  var amount = toInteger(dirtyAmount);
+  if (isNaN(amount)) {
+    return new Date(NaN);
+  }
+  if (!amount) {
+    // If 0 days, no-op to avoid changing times in the hour before end of DST
+    return date;
+  }
+  date.setDate(date.getDate() + amount);
+  return date;
+}
+
+/**
+ * @name addMonths
+ * @category Month Helpers
+ * @summary Add the specified number of months to the given date.
+ *
+ * @description
+ * Add the specified number of months to the given date.
+ *
+ * @param {Date|Number} date - the date to be changed
+ * @param {Number} amount - the amount of months to be added. Positive decimals will be rounded using `Math.floor`, decimals less than zero will be rounded using `Math.ceil`.
+ * @returns {Date} the new date with the months added
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Add 5 months to 1 September 2014:
+ * const result = addMonths(new Date(2014, 8, 1), 5)
+ * //=> Sun Feb 01 2015 00:00:00
+ */
+function addMonths(dirtyDate, dirtyAmount) {
+  requiredArgs(2, arguments);
+  var date = toDate(dirtyDate);
+  var amount = toInteger(dirtyAmount);
+  if (isNaN(amount)) {
+    return new Date(NaN);
+  }
+  if (!amount) {
+    // If 0 months, no-op to avoid changing times in the hour before end of DST
+    return date;
+  }
+  var dayOfMonth = date.getDate();
+
+  // The JS Date object supports date math by accepting out-of-bounds values for
+  // month, day, etc. For example, new Date(2020, 0, 0) returns 31 Dec 2019 and
+  // new Date(2020, 13, 1) returns 1 Feb 2021.  This is *almost* the behavior we
+  // want except that dates will wrap around the end of a month, meaning that
+  // new Date(2020, 13, 31) will return 3 Mar 2021 not 28 Feb 2021 as desired. So
+  // we'll default to the end of the desired month by adding 1 to the desired
+  // month and using a date of 0 to back up one day to the end of the desired
+  // month.
+  var endOfDesiredMonth = new Date(date.getTime());
+  endOfDesiredMonth.setMonth(date.getMonth() + amount + 1, 0);
+  var daysInMonth = endOfDesiredMonth.getDate();
+  if (dayOfMonth >= daysInMonth) {
+    // If we're already at the end of the month, then this is the correct date
+    // and we're done.
+    return endOfDesiredMonth;
+  } else {
+    // Otherwise, we now know that setting the original day-of-month value won't
+    // cause an overflow, so set the desired day-of-month. Note that we can't
+    // just set the date of `endOfDesiredMonth` because that object may have had
+    // its time changed in the unusual case where where a DST transition was on
+    // the last day of the month and its local time was in the hour skipped or
+    // repeated next to a DST transition.  So we use `date` instead which is
+    // guaranteed to still have the original time.
+    date.setFullYear(endOfDesiredMonth.getFullYear(), endOfDesiredMonth.getMonth(), dayOfMonth);
+    return date;
+  }
+}
+
+/**
+ * @name addMilliseconds
+ * @category Millisecond Helpers
+ * @summary Add the specified number of milliseconds to the given date.
+ *
+ * @description
+ * Add the specified number of milliseconds to the given date.
+ *
+ * @param {Date|Number} date - the date to be changed
+ * @param {Number} amount - the amount of milliseconds to be added. Positive decimals will be rounded using `Math.floor`, decimals less than zero will be rounded using `Math.ceil`.
+ * @returns {Date} the new date with the milliseconds added
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Add 750 milliseconds to 10 July 2014 12:45:30.000:
+ * const result = addMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
+ * //=> Thu Jul 10 2014 12:45:30.750
+ */
+function addMilliseconds(dirtyDate, dirtyAmount) {
+  requiredArgs(2, arguments);
+  var timestamp = toDate(dirtyDate).getTime();
+  var amount = toInteger(dirtyAmount);
+  return new Date(timestamp + amount);
+}
+
+var defaultOptions = {};
+function getDefaultOptions() {
+  return defaultOptions;
+}
+
+/**
+ * @name startOfWeek
+ * @category Week Helpers
+ * @summary Return the start of a week for the given date.
+ *
+ * @description
+ * Return the start of a week for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|Number} date - the original date
+ * @param {Object} [options] - an object with options.
+ * @param {Locale} [options.locale=defaultLocale] - the locale object. See [Locale]{@link https://date-fns.org/docs/Locale}
+ * @param {0|1|2|3|4|5|6} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Date} the start of a week
+ * @throws {TypeError} 1 argument required
+ * @throws {RangeError} `options.weekStartsOn` must be between 0 and 6
+ *
+ * @example
+ * // The start of a week for 2 September 2014 11:55:00:
+ * const result = startOfWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Sun Aug 31 2014 00:00:00
+ *
+ * @example
+ * // If the week starts on Monday, the start of the week for 2 September 2014 11:55:00:
+ * const result = startOfWeek(new Date(2014, 8, 2, 11, 55, 0), { weekStartsOn: 1 })
+ * //=> Mon Sep 01 2014 00:00:00
+ */
+function startOfWeek(dirtyDate, options) {
+  var _ref, _ref2, _ref3, _options$weekStartsOn, _options$locale, _options$locale$optio, _defaultOptions$local, _defaultOptions$local2;
+  requiredArgs(1, arguments);
+  var defaultOptions = getDefaultOptions();
+  var weekStartsOn = toInteger((_ref = (_ref2 = (_ref3 = (_options$weekStartsOn = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn !== void 0 ? _options$weekStartsOn : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.weekStartsOn) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.weekStartsOn) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.weekStartsOn) !== null && _ref !== void 0 ? _ref : 0);
+
+  // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
+  if (!(weekStartsOn >= 0 && weekStartsOn <= 6)) {
+    throw new RangeError('weekStartsOn must be between 0 and 6 inclusively');
+  }
+  var date = toDate(dirtyDate);
+  var day = date.getDay();
+  var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
+  date.setDate(date.getDate() - diff);
+  date.setHours(0, 0, 0, 0);
+  return date;
+}
+
+/**
+ * @name startOfISOWeek
+ * @category ISO Week Helpers
+ * @summary Return the start of an ISO week for the given date.
+ *
+ * @description
+ * Return the start of an ISO week for the given date.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|Number} date - the original date
+ * @returns {Date} the start of an ISO week
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // The start of an ISO week for 2 September 2014 11:55:00:
+ * const result = startOfISOWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Mon Sep 01 2014 00:00:00
+ */
+function startOfISOWeek(dirtyDate) {
+  requiredArgs(1, arguments);
+  return startOfWeek(dirtyDate, {
+    weekStartsOn: 1
+  });
+}
+
+/**
+ * @name getISOWeekYear
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Get the ISO week-numbering year of the given date.
+ *
+ * @description
+ * Get the ISO week-numbering year of the given date,
+ * which always starts 3 days before the year's first Thursday.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|Number} date - the given date
+ * @returns {Number} the ISO week-numbering year
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // Which ISO-week numbering year is 2 January 2005?
+ * const result = getISOWeekYear(new Date(2005, 0, 2))
+ * //=> 2004
+ */
+function getISOWeekYear(dirtyDate) {
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  var year = date.getFullYear();
+  var fourthOfJanuaryOfNextYear = new Date(0);
+  fourthOfJanuaryOfNextYear.setFullYear(year + 1, 0, 4);
+  fourthOfJanuaryOfNextYear.setHours(0, 0, 0, 0);
+  var startOfNextYear = startOfISOWeek(fourthOfJanuaryOfNextYear);
+  var fourthOfJanuaryOfThisYear = new Date(0);
+  fourthOfJanuaryOfThisYear.setFullYear(year, 0, 4);
+  fourthOfJanuaryOfThisYear.setHours(0, 0, 0, 0);
+  var startOfThisYear = startOfISOWeek(fourthOfJanuaryOfThisYear);
+  if (date.getTime() >= startOfNextYear.getTime()) {
+    return year + 1;
+  } else if (date.getTime() >= startOfThisYear.getTime()) {
+    return year;
+  } else {
+    return year - 1;
+  }
+}
+
+/**
+ * @name startOfISOWeekYear
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Return the start of an ISO week-numbering year for the given date.
+ *
+ * @description
+ * Return the start of an ISO week-numbering year,
+ * which always starts 3 days before the year's first Thursday.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|Number} date - the original date
+ * @returns {Date} the start of an ISO week-numbering year
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // The start of an ISO week-numbering year for 2 July 2005:
+ * const result = startOfISOWeekYear(new Date(2005, 6, 2))
+ * //=> Mon Jan 03 2005 00:00:00
+ */
+function startOfISOWeekYear(dirtyDate) {
+  requiredArgs(1, arguments);
+  var year = getISOWeekYear(dirtyDate);
+  var fourthOfJanuary = new Date(0);
+  fourthOfJanuary.setFullYear(year, 0, 4);
+  fourthOfJanuary.setHours(0, 0, 0, 0);
+  var date = startOfISOWeek(fourthOfJanuary);
+  return date;
+}
+
+/**
+ * Google Chrome as of 67.0.3396.87 introduced timezones with offset that includes seconds.
+ * They usually appear for dates that denote time before the timezones were introduced
+ * (e.g. for 'Europe/Prague' timezone the offset is GMT+00:57:44 before 1 October 1891
+ * and GMT+01:00:00 after that date)
+ *
+ * Date#getTimezoneOffset returns the offset in minutes and would return 57 for the example above,
+ * which would lead to incorrect calculations.
+ *
+ * This function returns the timezone offset in milliseconds that takes seconds in account.
+ */
+function getTimezoneOffsetInMilliseconds(date) {
+  var utcDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds(), date.getMilliseconds()));
+  utcDate.setUTCFullYear(date.getFullYear());
+  return date.getTime() - utcDate.getTime();
+}
+
+/**
+ * @name startOfDay
+ * @category Day Helpers
+ * @summary Return the start of a day for the given date.
+ *
+ * @description
+ * Return the start of a day for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|Number} date - the original date
+ * @returns {Date} the start of a day
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // The start of a day for 2 September 2014 11:55:00:
+ * const result = startOfDay(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 02 2014 00:00:00
+ */
+function startOfDay(dirtyDate) {
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  date.setHours(0, 0, 0, 0);
+  return date;
+}
+
+var MILLISECONDS_IN_DAY$1 = 86400000;
+
+/**
+ * @name differenceInCalendarDays
+ * @category Day Helpers
+ * @summary Get the number of calendar days between the given dates.
+ *
+ * @description
+ * Get the number of calendar days between the given dates. This means that the times are removed
+ * from the dates and then the difference in days is calculated.
+ *
+ * @param {Date|Number} dateLeft - the later date
+ * @param {Date|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar days
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // How many calendar days are between
+ * // 2 July 2011 23:00:00 and 2 July 2012 00:00:00?
+ * const result = differenceInCalendarDays(
+ *   new Date(2012, 6, 2, 0, 0),
+ *   new Date(2011, 6, 2, 23, 0)
+ * )
+ * //=> 366
+ * // How many calendar days are between
+ * // 2 July 2011 23:59:00 and 3 July 2011 00:01:00?
+ * const result = differenceInCalendarDays(
+ *   new Date(2011, 6, 3, 0, 1),
+ *   new Date(2011, 6, 2, 23, 59)
+ * )
+ * //=> 1
+ */
+function differenceInCalendarDays(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var startOfDayLeft = startOfDay(dirtyDateLeft);
+  var startOfDayRight = startOfDay(dirtyDateRight);
+  var timestampLeft = startOfDayLeft.getTime() - getTimezoneOffsetInMilliseconds(startOfDayLeft);
+  var timestampRight = startOfDayRight.getTime() - getTimezoneOffsetInMilliseconds(startOfDayRight);
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a day is not constant
+  // (e.g. it's different in the day of the daylight saving time clock shift)
+  return Math.round((timestampLeft - timestampRight) / MILLISECONDS_IN_DAY$1);
+}
+
+/**
+ * @name addWeeks
+ * @category Week Helpers
+ * @summary Add the specified number of weeks to the given date.
+ *
+ * @description
+ * Add the specified number of week to the given date.
+ *
+ * @param {Date|Number} date - the date to be changed
+ * @param {Number} amount - the amount of weeks to be added. Positive decimals will be rounded using `Math.floor`, decimals less than zero will be rounded using `Math.ceil`.
+ * @returns {Date} the new date with the weeks added
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Add 4 weeks to 1 September 2014:
+ * const result = addWeeks(new Date(2014, 8, 1), 4)
+ * //=> Mon Sep 29 2014 00:00:00
+ */
+function addWeeks(dirtyDate, dirtyAmount) {
+  requiredArgs(2, arguments);
+  var amount = toInteger(dirtyAmount);
+  var days = amount * 7;
+  return addDays(dirtyDate, days);
+}
+
+/**
+ * @name addYears
+ * @category Year Helpers
+ * @summary Add the specified number of years to the given date.
+ *
+ * @description
+ * Add the specified number of years to the given date.
+ *
+ * @param {Date|Number} date - the date to be changed
+ * @param {Number} amount - the amount of years to be added. Positive decimals will be rounded using `Math.floor`, decimals less than zero will be rounded using `Math.ceil`.
+ * @returns {Date} the new date with the years added
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Add 5 years to 1 September 2014:
+ * const result = addYears(new Date(2014, 8, 1), 5)
+ * //=> Sun Sep 01 2019 00:00:00
+ */
+function addYears(dirtyDate, dirtyAmount) {
+  requiredArgs(2, arguments);
+  var amount = toInteger(dirtyAmount);
+  return addMonths(dirtyDate, amount * 12);
+}
+
+/**
+ * @name max
+ * @category Common Helpers
+ * @summary Return the latest of the given dates.
+ *
+ * @description
+ * Return the latest of the given dates.
+ *
+ * @param {Date[]|Number[]} datesArray - the dates to compare
+ * @returns {Date} the latest of the dates
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // Which of these dates is the latest?
+ * const result = max([
+ *   new Date(1989, 6, 10),
+ *   new Date(1987, 1, 11),
+ *   new Date(1995, 6, 2),
+ *   new Date(1990, 0, 1)
+ * ])
+ * //=> Sun Jul 02 1995 00:00:00
+ */
+function max$1(dirtyDatesArray) {
+  requiredArgs(1, arguments);
+  var datesArray;
+  // `dirtyDatesArray` is Array, Set or Map, or object with custom `forEach` method
+  if (dirtyDatesArray && typeof dirtyDatesArray.forEach === 'function') {
+    datesArray = dirtyDatesArray;
+
+    // If `dirtyDatesArray` is Array-like Object, convert to Array.
+  } else if (_typeof(dirtyDatesArray) === 'object' && dirtyDatesArray !== null) {
+    datesArray = Array.prototype.slice.call(dirtyDatesArray);
+  } else {
+    // `dirtyDatesArray` is non-iterable, return Invalid Date
+    return new Date(NaN);
+  }
+  var result;
+  datesArray.forEach(function (dirtyDate) {
+    var currentDate = toDate(dirtyDate);
+    if (result === undefined || result < currentDate || isNaN(Number(currentDate))) {
+      result = currentDate;
+    }
+  });
+  return result || new Date(NaN);
+}
+
+/**
+ * @name min
+ * @category Common Helpers
+ * @summary Returns the earliest of the given dates.
+ *
+ * @description
+ * Returns the earliest of the given dates.
+ *
+ * @param {Date[]|Number[]} datesArray - the dates to compare
+ * @returns {Date} - the earliest of the dates
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // Which of these dates is the earliest?
+ * const result = min([
+ *   new Date(1989, 6, 10),
+ *   new Date(1987, 1, 11),
+ *   new Date(1995, 6, 2),
+ *   new Date(1990, 0, 1)
+ * ])
+ * //=> Wed Feb 11 1987 00:00:00
+ */
+function min$1(dirtyDatesArray) {
+  requiredArgs(1, arguments);
+  var datesArray;
+  // `dirtyDatesArray` is Array, Set or Map, or object with custom `forEach` method
+  if (dirtyDatesArray && typeof dirtyDatesArray.forEach === 'function') {
+    datesArray = dirtyDatesArray;
+    // If `dirtyDatesArray` is Array-like Object, convert to Array.
+  } else if (_typeof(dirtyDatesArray) === 'object' && dirtyDatesArray !== null) {
+    datesArray = Array.prototype.slice.call(dirtyDatesArray);
+  } else {
+    // `dirtyDatesArray` is non-iterable, return Invalid Date
+    return new Date(NaN);
+  }
+  var result;
+  datesArray.forEach(function (dirtyDate) {
+    var currentDate = toDate(dirtyDate);
+    if (result === undefined || result > currentDate || isNaN(currentDate.getDate())) {
+      result = currentDate;
+    }
+  });
+  return result || new Date(NaN);
+}
+
+/**
+ * @name isSameDay
+ * @category Day Helpers
+ * @summary Are the given dates in the same day (and year and month)?
+ *
+ * @description
+ * Are the given dates in the same day (and year and month)?
+ *
+ * @param {Date|Number} dateLeft - the first date to check
+ * @param {Date|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same day (and year and month)
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Are 4 September 06:00:00 and 4 September 18:00:00 in the same day?
+ * const result = isSameDay(new Date(2014, 8, 4, 6, 0), new Date(2014, 8, 4, 18, 0))
+ * //=> true
+ *
+ * @example
+ * // Are 4 September and 4 October in the same day?
+ * const result = isSameDay(new Date(2014, 8, 4), new Date(2014, 9, 4))
+ * //=> false
+ *
+ * @example
+ * // Are 4 September, 2014 and 4 September, 2015 in the same day?
+ * const result = isSameDay(new Date(2014, 8, 4), new Date(2015, 8, 4))
+ * //=> false
+ */
+function isSameDay(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var dateLeftStartOfDay = startOfDay(dirtyDateLeft);
+  var dateRightStartOfDay = startOfDay(dirtyDateRight);
+  return dateLeftStartOfDay.getTime() === dateRightStartOfDay.getTime();
+}
+
+/**
+ * @name isDate
+ * @category Common Helpers
+ * @summary Is the given value a date?
+ *
+ * @description
+ * Returns true if the given value is an instance of Date. The function works for dates transferred across iframes.
+ *
+ * @param {*} value - the value to check
+ * @returns {boolean} true if the given value is a date
+ * @throws {TypeError} 1 arguments required
+ *
+ * @example
+ * // For a valid date:
+ * const result = isDate(new Date())
+ * //=> true
+ *
+ * @example
+ * // For an invalid date:
+ * const result = isDate(new Date(NaN))
+ * //=> true
+ *
+ * @example
+ * // For some value:
+ * const result = isDate('2014-02-31')
+ * //=> false
+ *
+ * @example
+ * // For an object:
+ * const result = isDate({})
+ * //=> false
+ */
+function isDate(value) {
+  requiredArgs(1, arguments);
+  return value instanceof Date || _typeof(value) === 'object' && Object.prototype.toString.call(value) === '[object Date]';
+}
+
+/**
+ * @name isValid
+ * @category Common Helpers
+ * @summary Is the given date valid?
+ *
+ * @description
+ * Returns false if argument is Invalid Date and true otherwise.
+ * Argument is converted to Date using `toDate`. See [toDate]{@link https://date-fns.org/docs/toDate}
+ * Invalid Date is a Date, whose time value is NaN.
+ *
+ * Time value of Date: http://es5.github.io/#x15.9.1.1
+ *
+ * @param {*} date - the date to check
+ * @returns {Boolean} the date is valid
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // For the valid date:
+ * const result = isValid(new Date(2014, 1, 31))
+ * //=> true
+ *
+ * @example
+ * // For the value, convertable into a date:
+ * const result = isValid(1393804800000)
+ * //=> true
+ *
+ * @example
+ * // For the invalid date:
+ * const result = isValid(new Date(''))
+ * //=> false
+ */
+function isValid(dirtyDate) {
+  requiredArgs(1, arguments);
+  if (!isDate(dirtyDate) && typeof dirtyDate !== 'number') {
+    return false;
+  }
+  var date = toDate(dirtyDate);
+  return !isNaN(Number(date));
+}
+
+/**
+ * @name differenceInCalendarMonths
+ * @category Month Helpers
+ * @summary Get the number of calendar months between the given dates.
+ *
+ * @description
+ * Get the number of calendar months between the given dates.
+ *
+ * @param {Date|Number} dateLeft - the later date
+ * @param {Date|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar months
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // How many calendar months are between 31 January 2014 and 1 September 2014?
+ * const result = differenceInCalendarMonths(
+ *   new Date(2014, 8, 1),
+ *   new Date(2014, 0, 31)
+ * )
+ * //=> 8
+ */
+function differenceInCalendarMonths(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var dateLeft = toDate(dirtyDateLeft);
+  var dateRight = toDate(dirtyDateRight);
+  var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear();
+  var monthDiff = dateLeft.getMonth() - dateRight.getMonth();
+  return yearDiff * 12 + monthDiff;
+}
+
+var MILLISECONDS_IN_WEEK$4 = 604800000;
+
+/**
+ * @name differenceInCalendarWeeks
+ * @category Week Helpers
+ * @summary Get the number of calendar weeks between the given dates.
+ *
+ * @description
+ * Get the number of calendar weeks between the given dates.
+ *
+ * @param {Date|Number} dateLeft - the later date
+ * @param {Date|Number} dateRight - the earlier date
+ * @param {Object} [options] - an object with options.
+ * @param {Locale} [options.locale=defaultLocale] - the locale object. See [Locale]{@link https://date-fns.org/docs/Locale}
+ * @param {0|1|2|3|4|5|6} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Number} the number of calendar weeks
+ * @throws {TypeError} 2 arguments required
+ * @throws {RangeError} `options.weekStartsOn` must be between 0 and 6
+ *
+ * @example
+ * // How many calendar weeks are between 5 July 2014 and 20 July 2014?
+ * const result = differenceInCalendarWeeks(
+ *   new Date(2014, 6, 20),
+ *   new Date(2014, 6, 5)
+ * )
+ * //=> 3
+ *
+ * @example
+ * // If the week starts on Monday,
+ * // how many calendar weeks are between 5 July 2014 and 20 July 2014?
+ * const result = differenceInCalendarWeeks(
+ *   new Date(2014, 6, 20),
+ *   new Date(2014, 6, 5),
+ *   { weekStartsOn: 1 }
+ * )
+ * //=> 2
+ */
+function differenceInCalendarWeeks(dirtyDateLeft, dirtyDateRight, options) {
+  requiredArgs(2, arguments);
+  var startOfWeekLeft = startOfWeek(dirtyDateLeft, options);
+  var startOfWeekRight = startOfWeek(dirtyDateRight, options);
+  var timestampLeft = startOfWeekLeft.getTime() - getTimezoneOffsetInMilliseconds(startOfWeekLeft);
+  var timestampRight = startOfWeekRight.getTime() - getTimezoneOffsetInMilliseconds(startOfWeekRight);
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round((timestampLeft - timestampRight) / MILLISECONDS_IN_WEEK$4);
+}
+
+/**
+ * @name endOfMonth
+ * @category Month Helpers
+ * @summary Return the end of a month for the given date.
+ *
+ * @description
+ * Return the end of a month for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|Number} date - the original date
+ * @returns {Date} the end of a month
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // The end of a month for 2 September 2014 11:55:00:
+ * const result = endOfMonth(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 30 2014 23:59:59.999
+ */
+function endOfMonth(dirtyDate) {
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  var month = date.getMonth();
+  date.setFullYear(date.getFullYear(), month + 1, 0);
+  date.setHours(23, 59, 59, 999);
+  return date;
+}
+
+/**
+ * @name startOfMonth
+ * @category Month Helpers
+ * @summary Return the start of a month for the given date.
+ *
+ * @description
+ * Return the start of a month for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|Number} date - the original date
+ * @returns {Date} the start of a month
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // The start of a month for 2 September 2014 11:55:00:
+ * const result = startOfMonth(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Mon Sep 01 2014 00:00:00
+ */
+function startOfMonth(dirtyDate) {
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  date.setDate(1);
+  date.setHours(0, 0, 0, 0);
+  return date;
+}
+
+/**
+ * @name startOfYear
+ * @category Year Helpers
+ * @summary Return the start of a year for the given date.
+ *
+ * @description
+ * Return the start of a year for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|Number} date - the original date
+ * @returns {Date} the start of a year
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // The start of a year for 2 September 2014 11:55:00:
+ * const result = startOfYear(new Date(2014, 8, 2, 11, 55, 00))
+ * //=> Wed Jan 01 2014 00:00:00
+ */
+function startOfYear(dirtyDate) {
+  requiredArgs(1, arguments);
+  var cleanDate = toDate(dirtyDate);
+  var date = new Date(0);
+  date.setFullYear(cleanDate.getFullYear(), 0, 1);
+  date.setHours(0, 0, 0, 0);
+  return date;
+}
+
+/**
+ * @name endOfWeek
+ * @category Week Helpers
+ * @summary Return the end of a week for the given date.
+ *
+ * @description
+ * Return the end of a week for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|Number} date - the original date
+ * @param {Object} [options] - an object with options.
+ * @param {Locale} [options.locale=defaultLocale] - the locale object. See [Locale]{@link https://date-fns.org/docs/Locale}
+ * @param {0|1|2|3|4|5|6} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Date} the end of a week
+ * @throws {TypeError} 1 argument required
+ * @throws {RangeError} `options.weekStartsOn` must be between 0 and 6
+ *
+ * @example
+ * // The end of a week for 2 September 2014 11:55:00:
+ * const result = endOfWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Sat Sep 06 2014 23:59:59.999
+ *
+ * @example
+ * // If the week starts on Monday, the end of the week for 2 September 2014 11:55:00:
+ * const result = endOfWeek(new Date(2014, 8, 2, 11, 55, 0), { weekStartsOn: 1 })
+ * //=> Sun Sep 07 2014 23:59:59.999
+ */
+function endOfWeek(dirtyDate, options) {
+  var _ref, _ref2, _ref3, _options$weekStartsOn, _options$locale, _options$locale$optio, _defaultOptions$local, _defaultOptions$local2;
+  requiredArgs(1, arguments);
+  var defaultOptions = getDefaultOptions();
+  var weekStartsOn = toInteger((_ref = (_ref2 = (_ref3 = (_options$weekStartsOn = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn !== void 0 ? _options$weekStartsOn : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.weekStartsOn) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.weekStartsOn) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.weekStartsOn) !== null && _ref !== void 0 ? _ref : 0);
+
+  // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
+  if (!(weekStartsOn >= 0 && weekStartsOn <= 6)) {
+    throw new RangeError('weekStartsOn must be between 0 and 6 inclusively');
+  }
+  var date = toDate(dirtyDate);
+  var day = date.getDay();
+  var diff = (day < weekStartsOn ? -7 : 0) + 6 - (day - weekStartsOn);
+  date.setDate(date.getDate() + diff);
+  date.setHours(23, 59, 59, 999);
+  return date;
+}
+
+/**
+ * @name endOfISOWeek
+ * @category ISO Week Helpers
+ * @summary Return the end of an ISO week for the given date.
+ *
+ * @description
+ * Return the end of an ISO week for the given date.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|Number} date - the original date
+ * @returns {Date} the end of an ISO week
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // The end of an ISO week for 2 September 2014 11:55:00:
+ * const result = endOfISOWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Sun Sep 07 2014 23:59:59.999
+ */
+function endOfISOWeek(dirtyDate) {
+  requiredArgs(1, arguments);
+  return endOfWeek(dirtyDate, {
+    weekStartsOn: 1
+  });
+}
+
+/**
+ * @name subMilliseconds
+ * @category Millisecond Helpers
+ * @summary Subtract the specified number of milliseconds from the given date.
+ *
+ * @description
+ * Subtract the specified number of milliseconds from the given date.
+ *
+ * @param {Date|Number} date - the date to be changed
+ * @param {Number} amount - the amount of milliseconds to be subtracted. Positive decimals will be rounded using `Math.floor`, decimals less than zero will be rounded using `Math.ceil`.
+ * @returns {Date} the new date with the milliseconds subtracted
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Subtract 750 milliseconds from 10 July 2014 12:45:30.000:
+ * const result = subMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
+ * //=> Thu Jul 10 2014 12:45:29.250
+ */
+function subMilliseconds(dirtyDate, dirtyAmount) {
+  requiredArgs(2, arguments);
+  var amount = toInteger(dirtyAmount);
+  return addMilliseconds(dirtyDate, -amount);
+}
+
+var MILLISECONDS_IN_DAY = 86400000;
+function getUTCDayOfYear(dirtyDate) {
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  var timestamp = date.getTime();
+  date.setUTCMonth(0, 1);
+  date.setUTCHours(0, 0, 0, 0);
+  var startOfYearTimestamp = date.getTime();
+  var difference = timestamp - startOfYearTimestamp;
+  return Math.floor(difference / MILLISECONDS_IN_DAY) + 1;
+}
+
+function startOfUTCISOWeek(dirtyDate) {
+  requiredArgs(1, arguments);
+  var weekStartsOn = 1;
+  var date = toDate(dirtyDate);
+  var day = date.getUTCDay();
+  var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
+  date.setUTCDate(date.getUTCDate() - diff);
+  date.setUTCHours(0, 0, 0, 0);
+  return date;
+}
+
+function getUTCISOWeekYear(dirtyDate) {
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  var year = date.getUTCFullYear();
+  var fourthOfJanuaryOfNextYear = new Date(0);
+  fourthOfJanuaryOfNextYear.setUTCFullYear(year + 1, 0, 4);
+  fourthOfJanuaryOfNextYear.setUTCHours(0, 0, 0, 0);
+  var startOfNextYear = startOfUTCISOWeek(fourthOfJanuaryOfNextYear);
+  var fourthOfJanuaryOfThisYear = new Date(0);
+  fourthOfJanuaryOfThisYear.setUTCFullYear(year, 0, 4);
+  fourthOfJanuaryOfThisYear.setUTCHours(0, 0, 0, 0);
+  var startOfThisYear = startOfUTCISOWeek(fourthOfJanuaryOfThisYear);
+  if (date.getTime() >= startOfNextYear.getTime()) {
+    return year + 1;
+  } else if (date.getTime() >= startOfThisYear.getTime()) {
+    return year;
+  } else {
+    return year - 1;
+  }
+}
+
+function startOfUTCISOWeekYear(dirtyDate) {
+  requiredArgs(1, arguments);
+  var year = getUTCISOWeekYear(dirtyDate);
+  var fourthOfJanuary = new Date(0);
+  fourthOfJanuary.setUTCFullYear(year, 0, 4);
+  fourthOfJanuary.setUTCHours(0, 0, 0, 0);
+  var date = startOfUTCISOWeek(fourthOfJanuary);
+  return date;
+}
+
+var MILLISECONDS_IN_WEEK$3 = 604800000;
+function getUTCISOWeek(dirtyDate) {
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  var diff = startOfUTCISOWeek(date).getTime() - startOfUTCISOWeekYear(date).getTime();
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round(diff / MILLISECONDS_IN_WEEK$3) + 1;
+}
+
+function startOfUTCWeek(dirtyDate, options) {
+  var _ref, _ref2, _ref3, _options$weekStartsOn, _options$locale, _options$locale$optio, _defaultOptions$local, _defaultOptions$local2;
+  requiredArgs(1, arguments);
+  var defaultOptions = getDefaultOptions();
+  var weekStartsOn = toInteger((_ref = (_ref2 = (_ref3 = (_options$weekStartsOn = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn !== void 0 ? _options$weekStartsOn : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.weekStartsOn) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.weekStartsOn) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.weekStartsOn) !== null && _ref !== void 0 ? _ref : 0);
+
+  // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
+  if (!(weekStartsOn >= 0 && weekStartsOn <= 6)) {
+    throw new RangeError('weekStartsOn must be between 0 and 6 inclusively');
+  }
+  var date = toDate(dirtyDate);
+  var day = date.getUTCDay();
+  var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
+  date.setUTCDate(date.getUTCDate() - diff);
+  date.setUTCHours(0, 0, 0, 0);
+  return date;
+}
+
+function getUTCWeekYear(dirtyDate, options) {
+  var _ref, _ref2, _ref3, _options$firstWeekCon, _options$locale, _options$locale$optio, _defaultOptions$local, _defaultOptions$local2;
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  var year = date.getUTCFullYear();
+  var defaultOptions = getDefaultOptions();
+  var firstWeekContainsDate = toInteger((_ref = (_ref2 = (_ref3 = (_options$firstWeekCon = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon !== void 0 ? _options$firstWeekCon : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.firstWeekContainsDate) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.firstWeekContainsDate) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.firstWeekContainsDate) !== null && _ref !== void 0 ? _ref : 1);
+
+  // Test if weekStartsOn is between 1 and 7 _and_ is not NaN
+  if (!(firstWeekContainsDate >= 1 && firstWeekContainsDate <= 7)) {
+    throw new RangeError('firstWeekContainsDate must be between 1 and 7 inclusively');
+  }
+  var firstWeekOfNextYear = new Date(0);
+  firstWeekOfNextYear.setUTCFullYear(year + 1, 0, firstWeekContainsDate);
+  firstWeekOfNextYear.setUTCHours(0, 0, 0, 0);
+  var startOfNextYear = startOfUTCWeek(firstWeekOfNextYear, options);
+  var firstWeekOfThisYear = new Date(0);
+  firstWeekOfThisYear.setUTCFullYear(year, 0, firstWeekContainsDate);
+  firstWeekOfThisYear.setUTCHours(0, 0, 0, 0);
+  var startOfThisYear = startOfUTCWeek(firstWeekOfThisYear, options);
+  if (date.getTime() >= startOfNextYear.getTime()) {
+    return year + 1;
+  } else if (date.getTime() >= startOfThisYear.getTime()) {
+    return year;
+  } else {
+    return year - 1;
+  }
+}
+
+function startOfUTCWeekYear(dirtyDate, options) {
+  var _ref, _ref2, _ref3, _options$firstWeekCon, _options$locale, _options$locale$optio, _defaultOptions$local, _defaultOptions$local2;
+  requiredArgs(1, arguments);
+  var defaultOptions = getDefaultOptions();
+  var firstWeekContainsDate = toInteger((_ref = (_ref2 = (_ref3 = (_options$firstWeekCon = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon !== void 0 ? _options$firstWeekCon : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.firstWeekContainsDate) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.firstWeekContainsDate) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.firstWeekContainsDate) !== null && _ref !== void 0 ? _ref : 1);
+  var year = getUTCWeekYear(dirtyDate, options);
+  var firstWeek = new Date(0);
+  firstWeek.setUTCFullYear(year, 0, firstWeekContainsDate);
+  firstWeek.setUTCHours(0, 0, 0, 0);
+  var date = startOfUTCWeek(firstWeek, options);
+  return date;
+}
+
+var MILLISECONDS_IN_WEEK$2 = 604800000;
+function getUTCWeek(dirtyDate, options) {
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  var diff = startOfUTCWeek(date, options).getTime() - startOfUTCWeekYear(date, options).getTime();
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round(diff / MILLISECONDS_IN_WEEK$2) + 1;
+}
+
+function addLeadingZeros(number, targetLength) {
+  var sign = number < 0 ? '-' : '';
+  var output = Math.abs(number).toString();
+  while (output.length < targetLength) {
+    output = '0' + output;
+  }
+  return sign + output;
+}
+
+/*
+ * |     | Unit                           |     | Unit                           |
+ * |-----|--------------------------------|-----|--------------------------------|
+ * |  a  | AM, PM                         |  A* |                                |
+ * |  d  | Day of month                   |  D  |                                |
+ * |  h  | Hour [1-12]                    |  H  | Hour [0-23]                    |
+ * |  m  | Minute                         |  M  | Month                          |
+ * |  s  | Second                         |  S  | Fraction of second             |
+ * |  y  | Year (abs)                     |  Y  |                                |
+ *
+ * Letters marked by * are not implemented but reserved by Unicode standard.
+ */
+var formatters$3 = {
+  // Year
+  y: function y(date, token) {
+    // From http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_tokens
+    // | Year     |     y | yy |   yyy |  yyyy | yyyyy |
+    // |----------|-------|----|-------|-------|-------|
+    // | AD 1     |     1 | 01 |   001 |  0001 | 00001 |
+    // | AD 12    |    12 | 12 |   012 |  0012 | 00012 |
+    // | AD 123   |   123 | 23 |   123 |  0123 | 00123 |
+    // | AD 1234  |  1234 | 34 |  1234 |  1234 | 01234 |
+    // | AD 12345 | 12345 | 45 | 12345 | 12345 | 12345 |
+
+    var signedYear = date.getUTCFullYear();
+    // Returns 1 for 1 BC (which is year 0 in JavaScript)
+    var year = signedYear > 0 ? signedYear : 1 - signedYear;
+    return addLeadingZeros(token === 'yy' ? year % 100 : year, token.length);
+  },
+  // Month
+  M: function M(date, token) {
+    var month = date.getUTCMonth();
+    return token === 'M' ? String(month + 1) : addLeadingZeros(month + 1, 2);
+  },
+  // Day of the month
+  d: function d(date, token) {
+    return addLeadingZeros(date.getUTCDate(), token.length);
+  },
+  // AM or PM
+  a: function a(date, token) {
+    var dayPeriodEnumValue = date.getUTCHours() / 12 >= 1 ? 'pm' : 'am';
+    switch (token) {
+      case 'a':
+      case 'aa':
+        return dayPeriodEnumValue.toUpperCase();
+      case 'aaa':
+        return dayPeriodEnumValue;
+      case 'aaaaa':
+        return dayPeriodEnumValue[0];
+      case 'aaaa':
+      default:
+        return dayPeriodEnumValue === 'am' ? 'a.m.' : 'p.m.';
+    }
+  },
+  // Hour [1-12]
+  h: function h(date, token) {
+    return addLeadingZeros(date.getUTCHours() % 12 || 12, token.length);
+  },
+  // Hour [0-23]
+  H: function H(date, token) {
+    return addLeadingZeros(date.getUTCHours(), token.length);
+  },
+  // Minute
+  m: function m(date, token) {
+    return addLeadingZeros(date.getUTCMinutes(), token.length);
+  },
+  // Second
+  s: function s(date, token) {
+    return addLeadingZeros(date.getUTCSeconds(), token.length);
+  },
+  // Fraction of second
+  S: function S(date, token) {
+    var numberOfDigits = token.length;
+    var milliseconds = date.getUTCMilliseconds();
+    var fractionalSeconds = Math.floor(milliseconds * Math.pow(10, numberOfDigits - 3));
+    return addLeadingZeros(fractionalSeconds, token.length);
+  }
+};
+var formatters$4 = formatters$3;
+
+var dayPeriodEnum = {
+  am: 'am',
+  pm: 'pm',
+  midnight: 'midnight',
+  noon: 'noon',
+  morning: 'morning',
+  afternoon: 'afternoon',
+  evening: 'evening',
+  night: 'night'
+};
+/*
+ * |     | Unit                           |     | Unit                           |
+ * |-----|--------------------------------|-----|--------------------------------|
+ * |  a  | AM, PM                         |  A* | Milliseconds in day            |
+ * |  b  | AM, PM, noon, midnight         |  B  | Flexible day period            |
+ * |  c  | Stand-alone local day of week  |  C* | Localized hour w/ day period   |
+ * |  d  | Day of month                   |  D  | Day of year                    |
+ * |  e  | Local day of week              |  E  | Day of week                    |
+ * |  f  |                                |  F* | Day of week in month           |
+ * |  g* | Modified Julian day            |  G  | Era                            |
+ * |  h  | Hour [1-12]                    |  H  | Hour [0-23]                    |
+ * |  i! | ISO day of week                |  I! | ISO week of year               |
+ * |  j* | Localized hour w/ day period   |  J* | Localized hour w/o day period  |
+ * |  k  | Hour [1-24]                    |  K  | Hour [0-11]                    |
+ * |  l* | (deprecated)                   |  L  | Stand-alone month              |
+ * |  m  | Minute                         |  M  | Month                          |
+ * |  n  |                                |  N  |                                |
+ * |  o! | Ordinal number modifier        |  O  | Timezone (GMT)                 |
+ * |  p! | Long localized time            |  P! | Long localized date            |
+ * |  q  | Stand-alone quarter            |  Q  | Quarter                        |
+ * |  r* | Related Gregorian year         |  R! | ISO week-numbering year        |
+ * |  s  | Second                         |  S  | Fraction of second             |
+ * |  t! | Seconds timestamp              |  T! | Milliseconds timestamp         |
+ * |  u  | Extended year                  |  U* | Cyclic year                    |
+ * |  v* | Timezone (generic non-locat.)  |  V* | Timezone (location)            |
+ * |  w  | Local week of year             |  W* | Week of month                  |
+ * |  x  | Timezone (ISO-8601 w/o Z)      |  X  | Timezone (ISO-8601)            |
+ * |  y  | Year (abs)                     |  Y  | Local week-numbering year      |
+ * |  z  | Timezone (specific non-locat.) |  Z* | Timezone (aliases)             |
+ *
+ * Letters marked by * are not implemented but reserved by Unicode standard.
+ *
+ * Letters marked by ! are non-standard, but implemented by date-fns:
+ * - `o` modifies the previous token to turn it into an ordinal (see `format` docs)
+ * - `i` is ISO day of week. For `i` and `ii` is returns numeric ISO week days,
+ *   i.e. 7 for Sunday, 1 for Monday, etc.
+ * - `I` is ISO week of year, as opposed to `w` which is local week of year.
+ * - `R` is ISO week-numbering year, as opposed to `Y` which is local week-numbering year.
+ *   `R` is supposed to be used in conjunction with `I` and `i`
+ *   for universal ISO week-numbering date, whereas
+ *   `Y` is supposed to be used in conjunction with `w` and `e`
+ *   for week-numbering date specific to the locale.
+ * - `P` is long localized date format
+ * - `p` is long localized time format
+ */
+
+var formatters$1 = {
+  // Era
+  G: function G(date, token, localize) {
+    var era = date.getUTCFullYear() > 0 ? 1 : 0;
+    switch (token) {
+      // AD, BC
+      case 'G':
+      case 'GG':
+      case 'GGG':
+        return localize.era(era, {
+          width: 'abbreviated'
+        });
+      // A, B
+      case 'GGGGG':
+        return localize.era(era, {
+          width: 'narrow'
+        });
+      // Anno Domini, Before Christ
+      case 'GGGG':
+      default:
+        return localize.era(era, {
+          width: 'wide'
+        });
+    }
+  },
+  // Year
+  y: function y(date, token, localize) {
+    // Ordinal number
+    if (token === 'yo') {
+      var signedYear = date.getUTCFullYear();
+      // Returns 1 for 1 BC (which is year 0 in JavaScript)
+      var year = signedYear > 0 ? signedYear : 1 - signedYear;
+      return localize.ordinalNumber(year, {
+        unit: 'year'
+      });
+    }
+    return formatters$4.y(date, token);
+  },
+  // Local week-numbering year
+  Y: function Y(date, token, localize, options) {
+    var signedWeekYear = getUTCWeekYear(date, options);
+    // Returns 1 for 1 BC (which is year 0 in JavaScript)
+    var weekYear = signedWeekYear > 0 ? signedWeekYear : 1 - signedWeekYear;
+
+    // Two digit year
+    if (token === 'YY') {
+      var twoDigitYear = weekYear % 100;
+      return addLeadingZeros(twoDigitYear, 2);
+    }
+
+    // Ordinal number
+    if (token === 'Yo') {
+      return localize.ordinalNumber(weekYear, {
+        unit: 'year'
+      });
+    }
+
+    // Padding
+    return addLeadingZeros(weekYear, token.length);
+  },
+  // ISO week-numbering year
+  R: function R(date, token) {
+    var isoWeekYear = getUTCISOWeekYear(date);
+
+    // Padding
+    return addLeadingZeros(isoWeekYear, token.length);
+  },
+  // Extended year. This is a single number designating the year of this calendar system.
+  // The main difference between `y` and `u` localizers are B.C. years:
+  // | Year | `y` | `u` |
+  // |------|-----|-----|
+  // | AC 1 |   1 |   1 |
+  // | BC 1 |   1 |   0 |
+  // | BC 2 |   2 |  -1 |
+  // Also `yy` always returns the last two digits of a year,
+  // while `uu` pads single digit years to 2 characters and returns other years unchanged.
+  u: function u(date, token) {
+    var year = date.getUTCFullYear();
+    return addLeadingZeros(year, token.length);
+  },
+  // Quarter
+  Q: function Q(date, token, localize) {
+    var quarter = Math.ceil((date.getUTCMonth() + 1) / 3);
+    switch (token) {
+      // 1, 2, 3, 4
+      case 'Q':
+        return String(quarter);
+      // 01, 02, 03, 04
+      case 'QQ':
+        return addLeadingZeros(quarter, 2);
+      // 1st, 2nd, 3rd, 4th
+      case 'Qo':
+        return localize.ordinalNumber(quarter, {
+          unit: 'quarter'
+        });
+      // Q1, Q2, Q3, Q4
+      case 'QQQ':
+        return localize.quarter(quarter, {
+          width: 'abbreviated',
+          context: 'formatting'
+        });
+      // 1, 2, 3, 4 (narrow quarter; could be not numerical)
+      case 'QQQQQ':
+        return localize.quarter(quarter, {
+          width: 'narrow',
+          context: 'formatting'
+        });
+      // 1st quarter, 2nd quarter, ...
+      case 'QQQQ':
+      default:
+        return localize.quarter(quarter, {
+          width: 'wide',
+          context: 'formatting'
+        });
+    }
+  },
+  // Stand-alone quarter
+  q: function q(date, token, localize) {
+    var quarter = Math.ceil((date.getUTCMonth() + 1) / 3);
+    switch (token) {
+      // 1, 2, 3, 4
+      case 'q':
+        return String(quarter);
+      // 01, 02, 03, 04
+      case 'qq':
+        return addLeadingZeros(quarter, 2);
+      // 1st, 2nd, 3rd, 4th
+      case 'qo':
+        return localize.ordinalNumber(quarter, {
+          unit: 'quarter'
+        });
+      // Q1, Q2, Q3, Q4
+      case 'qqq':
+        return localize.quarter(quarter, {
+          width: 'abbreviated',
+          context: 'standalone'
+        });
+      // 1, 2, 3, 4 (narrow quarter; could be not numerical)
+      case 'qqqqq':
+        return localize.quarter(quarter, {
+          width: 'narrow',
+          context: 'standalone'
+        });
+      // 1st quarter, 2nd quarter, ...
+      case 'qqqq':
+      default:
+        return localize.quarter(quarter, {
+          width: 'wide',
+          context: 'standalone'
+        });
+    }
+  },
+  // Month
+  M: function M(date, token, localize) {
+    var month = date.getUTCMonth();
+    switch (token) {
+      case 'M':
+      case 'MM':
+        return formatters$4.M(date, token);
+      // 1st, 2nd, ..., 12th
+      case 'Mo':
+        return localize.ordinalNumber(month + 1, {
+          unit: 'month'
+        });
+      // Jan, Feb, ..., Dec
+      case 'MMM':
+        return localize.month(month, {
+          width: 'abbreviated',
+          context: 'formatting'
+        });
+      // J, F, ..., D
+      case 'MMMMM':
+        return localize.month(month, {
+          width: 'narrow',
+          context: 'formatting'
+        });
+      // January, February, ..., December
+      case 'MMMM':
+      default:
+        return localize.month(month, {
+          width: 'wide',
+          context: 'formatting'
+        });
+    }
+  },
+  // Stand-alone month
+  L: function L(date, token, localize) {
+    var month = date.getUTCMonth();
+    switch (token) {
+      // 1, 2, ..., 12
+      case 'L':
+        return String(month + 1);
+      // 01, 02, ..., 12
+      case 'LL':
+        return addLeadingZeros(month + 1, 2);
+      // 1st, 2nd, ..., 12th
+      case 'Lo':
+        return localize.ordinalNumber(month + 1, {
+          unit: 'month'
+        });
+      // Jan, Feb, ..., Dec
+      case 'LLL':
+        return localize.month(month, {
+          width: 'abbreviated',
+          context: 'standalone'
+        });
+      // J, F, ..., D
+      case 'LLLLL':
+        return localize.month(month, {
+          width: 'narrow',
+          context: 'standalone'
+        });
+      // January, February, ..., December
+      case 'LLLL':
+      default:
+        return localize.month(month, {
+          width: 'wide',
+          context: 'standalone'
+        });
+    }
+  },
+  // Local week of year
+  w: function w(date, token, localize, options) {
+    var week = getUTCWeek(date, options);
+    if (token === 'wo') {
+      return localize.ordinalNumber(week, {
+        unit: 'week'
+      });
+    }
+    return addLeadingZeros(week, token.length);
+  },
+  // ISO week of year
+  I: function I(date, token, localize) {
+    var isoWeek = getUTCISOWeek(date);
+    if (token === 'Io') {
+      return localize.ordinalNumber(isoWeek, {
+        unit: 'week'
+      });
+    }
+    return addLeadingZeros(isoWeek, token.length);
+  },
+  // Day of the month
+  d: function d(date, token, localize) {
+    if (token === 'do') {
+      return localize.ordinalNumber(date.getUTCDate(), {
+        unit: 'date'
+      });
+    }
+    return formatters$4.d(date, token);
+  },
+  // Day of year
+  D: function D(date, token, localize) {
+    var dayOfYear = getUTCDayOfYear(date);
+    if (token === 'Do') {
+      return localize.ordinalNumber(dayOfYear, {
+        unit: 'dayOfYear'
+      });
+    }
+    return addLeadingZeros(dayOfYear, token.length);
+  },
+  // Day of week
+  E: function E(date, token, localize) {
+    var dayOfWeek = date.getUTCDay();
+    switch (token) {
+      // Tue
+      case 'E':
+      case 'EE':
+      case 'EEE':
+        return localize.day(dayOfWeek, {
+          width: 'abbreviated',
+          context: 'formatting'
+        });
+      // T
+      case 'EEEEE':
+        return localize.day(dayOfWeek, {
+          width: 'narrow',
+          context: 'formatting'
+        });
+      // Tu
+      case 'EEEEEE':
+        return localize.day(dayOfWeek, {
+          width: 'short',
+          context: 'formatting'
+        });
+      // Tuesday
+      case 'EEEE':
+      default:
+        return localize.day(dayOfWeek, {
+          width: 'wide',
+          context: 'formatting'
+        });
+    }
+  },
+  // Local day of week
+  e: function e(date, token, localize, options) {
+    var dayOfWeek = date.getUTCDay();
+    var localDayOfWeek = (dayOfWeek - options.weekStartsOn + 8) % 7 || 7;
+    switch (token) {
+      // Numerical value (Nth day of week with current locale or weekStartsOn)
+      case 'e':
+        return String(localDayOfWeek);
+      // Padded numerical value
+      case 'ee':
+        return addLeadingZeros(localDayOfWeek, 2);
+      // 1st, 2nd, ..., 7th
+      case 'eo':
+        return localize.ordinalNumber(localDayOfWeek, {
+          unit: 'day'
+        });
+      case 'eee':
+        return localize.day(dayOfWeek, {
+          width: 'abbreviated',
+          context: 'formatting'
+        });
+      // T
+      case 'eeeee':
+        return localize.day(dayOfWeek, {
+          width: 'narrow',
+          context: 'formatting'
+        });
+      // Tu
+      case 'eeeeee':
+        return localize.day(dayOfWeek, {
+          width: 'short',
+          context: 'formatting'
+        });
+      // Tuesday
+      case 'eeee':
+      default:
+        return localize.day(dayOfWeek, {
+          width: 'wide',
+          context: 'formatting'
+        });
+    }
+  },
+  // Stand-alone local day of week
+  c: function c(date, token, localize, options) {
+    var dayOfWeek = date.getUTCDay();
+    var localDayOfWeek = (dayOfWeek - options.weekStartsOn + 8) % 7 || 7;
+    switch (token) {
+      // Numerical value (same as in `e`)
+      case 'c':
+        return String(localDayOfWeek);
+      // Padded numerical value
+      case 'cc':
+        return addLeadingZeros(localDayOfWeek, token.length);
+      // 1st, 2nd, ..., 7th
+      case 'co':
+        return localize.ordinalNumber(localDayOfWeek, {
+          unit: 'day'
+        });
+      case 'ccc':
+        return localize.day(dayOfWeek, {
+          width: 'abbreviated',
+          context: 'standalone'
+        });
+      // T
+      case 'ccccc':
+        return localize.day(dayOfWeek, {
+          width: 'narrow',
+          context: 'standalone'
+        });
+      // Tu
+      case 'cccccc':
+        return localize.day(dayOfWeek, {
+          width: 'short',
+          context: 'standalone'
+        });
+      // Tuesday
+      case 'cccc':
+      default:
+        return localize.day(dayOfWeek, {
+          width: 'wide',
+          context: 'standalone'
+        });
+    }
+  },
+  // ISO day of week
+  i: function i(date, token, localize) {
+    var dayOfWeek = date.getUTCDay();
+    var isoDayOfWeek = dayOfWeek === 0 ? 7 : dayOfWeek;
+    switch (token) {
+      // 2
+      case 'i':
+        return String(isoDayOfWeek);
+      // 02
+      case 'ii':
+        return addLeadingZeros(isoDayOfWeek, token.length);
+      // 2nd
+      case 'io':
+        return localize.ordinalNumber(isoDayOfWeek, {
+          unit: 'day'
+        });
+      // Tue
+      case 'iii':
+        return localize.day(dayOfWeek, {
+          width: 'abbreviated',
+          context: 'formatting'
+        });
+      // T
+      case 'iiiii':
+        return localize.day(dayOfWeek, {
+          width: 'narrow',
+          context: 'formatting'
+        });
+      // Tu
+      case 'iiiiii':
+        return localize.day(dayOfWeek, {
+          width: 'short',
+          context: 'formatting'
+        });
+      // Tuesday
+      case 'iiii':
+      default:
+        return localize.day(dayOfWeek, {
+          width: 'wide',
+          context: 'formatting'
+        });
+    }
+  },
+  // AM or PM
+  a: function a(date, token, localize) {
+    var hours = date.getUTCHours();
+    var dayPeriodEnumValue = hours / 12 >= 1 ? 'pm' : 'am';
+    switch (token) {
+      case 'a':
+      case 'aa':
+        return localize.dayPeriod(dayPeriodEnumValue, {
+          width: 'abbreviated',
+          context: 'formatting'
+        });
+      case 'aaa':
+        return localize.dayPeriod(dayPeriodEnumValue, {
+          width: 'abbreviated',
+          context: 'formatting'
+        }).toLowerCase();
+      case 'aaaaa':
+        return localize.dayPeriod(dayPeriodEnumValue, {
+          width: 'narrow',
+          context: 'formatting'
+        });
+      case 'aaaa':
+      default:
+        return localize.dayPeriod(dayPeriodEnumValue, {
+          width: 'wide',
+          context: 'formatting'
+        });
+    }
+  },
+  // AM, PM, midnight, noon
+  b: function b(date, token, localize) {
+    var hours = date.getUTCHours();
+    var dayPeriodEnumValue;
+    if (hours === 12) {
+      dayPeriodEnumValue = dayPeriodEnum.noon;
+    } else if (hours === 0) {
+      dayPeriodEnumValue = dayPeriodEnum.midnight;
+    } else {
+      dayPeriodEnumValue = hours / 12 >= 1 ? 'pm' : 'am';
+    }
+    switch (token) {
+      case 'b':
+      case 'bb':
+        return localize.dayPeriod(dayPeriodEnumValue, {
+          width: 'abbreviated',
+          context: 'formatting'
+        });
+      case 'bbb':
+        return localize.dayPeriod(dayPeriodEnumValue, {
+          width: 'abbreviated',
+          context: 'formatting'
+        }).toLowerCase();
+      case 'bbbbb':
+        return localize.dayPeriod(dayPeriodEnumValue, {
+          width: 'narrow',
+          context: 'formatting'
+        });
+      case 'bbbb':
+      default:
+        return localize.dayPeriod(dayPeriodEnumValue, {
+          width: 'wide',
+          context: 'formatting'
+        });
+    }
+  },
+  // in the morning, in the afternoon, in the evening, at night
+  B: function B(date, token, localize) {
+    var hours = date.getUTCHours();
+    var dayPeriodEnumValue;
+    if (hours >= 17) {
+      dayPeriodEnumValue = dayPeriodEnum.evening;
+    } else if (hours >= 12) {
+      dayPeriodEnumValue = dayPeriodEnum.afternoon;
+    } else if (hours >= 4) {
+      dayPeriodEnumValue = dayPeriodEnum.morning;
+    } else {
+      dayPeriodEnumValue = dayPeriodEnum.night;
+    }
+    switch (token) {
+      case 'B':
+      case 'BB':
+      case 'BBB':
+        return localize.dayPeriod(dayPeriodEnumValue, {
+          width: 'abbreviated',
+          context: 'formatting'
+        });
+      case 'BBBBB':
+        return localize.dayPeriod(dayPeriodEnumValue, {
+          width: 'narrow',
+          context: 'formatting'
+        });
+      case 'BBBB':
+      default:
+        return localize.dayPeriod(dayPeriodEnumValue, {
+          width: 'wide',
+          context: 'formatting'
+        });
+    }
+  },
+  // Hour [1-12]
+  h: function h(date, token, localize) {
+    if (token === 'ho') {
+      var hours = date.getUTCHours() % 12;
+      if (hours === 0) hours = 12;
+      return localize.ordinalNumber(hours, {
+        unit: 'hour'
+      });
+    }
+    return formatters$4.h(date, token);
+  },
+  // Hour [0-23]
+  H: function H(date, token, localize) {
+    if (token === 'Ho') {
+      return localize.ordinalNumber(date.getUTCHours(), {
+        unit: 'hour'
+      });
+    }
+    return formatters$4.H(date, token);
+  },
+  // Hour [0-11]
+  K: function K(date, token, localize) {
+    var hours = date.getUTCHours() % 12;
+    if (token === 'Ko') {
+      return localize.ordinalNumber(hours, {
+        unit: 'hour'
+      });
+    }
+    return addLeadingZeros(hours, token.length);
+  },
+  // Hour [1-24]
+  k: function k(date, token, localize) {
+    var hours = date.getUTCHours();
+    if (hours === 0) hours = 24;
+    if (token === 'ko') {
+      return localize.ordinalNumber(hours, {
+        unit: 'hour'
+      });
+    }
+    return addLeadingZeros(hours, token.length);
+  },
+  // Minute
+  m: function m(date, token, localize) {
+    if (token === 'mo') {
+      return localize.ordinalNumber(date.getUTCMinutes(), {
+        unit: 'minute'
+      });
+    }
+    return formatters$4.m(date, token);
+  },
+  // Second
+  s: function s(date, token, localize) {
+    if (token === 'so') {
+      return localize.ordinalNumber(date.getUTCSeconds(), {
+        unit: 'second'
+      });
+    }
+    return formatters$4.s(date, token);
+  },
+  // Fraction of second
+  S: function S(date, token) {
+    return formatters$4.S(date, token);
+  },
+  // Timezone (ISO-8601. If offset is 0, output is always `'Z'`)
+  X: function X(date, token, _localize, options) {
+    var originalDate = options._originalDate || date;
+    var timezoneOffset = originalDate.getTimezoneOffset();
+    if (timezoneOffset === 0) {
+      return 'Z';
+    }
+    switch (token) {
+      // Hours and optional minutes
+      case 'X':
+        return formatTimezoneWithOptionalMinutes(timezoneOffset);
+
+      // Hours, minutes and optional seconds without `:` delimiter
+      // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
+      // so this token always has the same output as `XX`
+      case 'XXXX':
+      case 'XX':
+        // Hours and minutes without `:` delimiter
+        return formatTimezone(timezoneOffset);
+
+      // Hours, minutes and optional seconds with `:` delimiter
+      // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
+      // so this token always has the same output as `XXX`
+      case 'XXXXX':
+      case 'XXX': // Hours and minutes with `:` delimiter
+      default:
+        return formatTimezone(timezoneOffset, ':');
+    }
+  },
+  // Timezone (ISO-8601. If offset is 0, output is `'+00:00'` or equivalent)
+  x: function x(date, token, _localize, options) {
+    var originalDate = options._originalDate || date;
+    var timezoneOffset = originalDate.getTimezoneOffset();
+    switch (token) {
+      // Hours and optional minutes
+      case 'x':
+        return formatTimezoneWithOptionalMinutes(timezoneOffset);
+
+      // Hours, minutes and optional seconds without `:` delimiter
+      // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
+      // so this token always has the same output as `xx`
+      case 'xxxx':
+      case 'xx':
+        // Hours and minutes without `:` delimiter
+        return formatTimezone(timezoneOffset);
+
+      // Hours, minutes and optional seconds with `:` delimiter
+      // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
+      // so this token always has the same output as `xxx`
+      case 'xxxxx':
+      case 'xxx': // Hours and minutes with `:` delimiter
+      default:
+        return formatTimezone(timezoneOffset, ':');
+    }
+  },
+  // Timezone (GMT)
+  O: function O(date, token, _localize, options) {
+    var originalDate = options._originalDate || date;
+    var timezoneOffset = originalDate.getTimezoneOffset();
+    switch (token) {
+      // Short
+      case 'O':
+      case 'OO':
+      case 'OOO':
+        return 'GMT' + formatTimezoneShort(timezoneOffset, ':');
+      // Long
+      case 'OOOO':
+      default:
+        return 'GMT' + formatTimezone(timezoneOffset, ':');
+    }
+  },
+  // Timezone (specific non-location)
+  z: function z(date, token, _localize, options) {
+    var originalDate = options._originalDate || date;
+    var timezoneOffset = originalDate.getTimezoneOffset();
+    switch (token) {
+      // Short
+      case 'z':
+      case 'zz':
+      case 'zzz':
+        return 'GMT' + formatTimezoneShort(timezoneOffset, ':');
+      // Long
+      case 'zzzz':
+      default:
+        return 'GMT' + formatTimezone(timezoneOffset, ':');
+    }
+  },
+  // Seconds timestamp
+  t: function t(date, token, _localize, options) {
+    var originalDate = options._originalDate || date;
+    var timestamp = Math.floor(originalDate.getTime() / 1000);
+    return addLeadingZeros(timestamp, token.length);
+  },
+  // Milliseconds timestamp
+  T: function T(date, token, _localize, options) {
+    var originalDate = options._originalDate || date;
+    var timestamp = originalDate.getTime();
+    return addLeadingZeros(timestamp, token.length);
+  }
+};
+function formatTimezoneShort(offset, dirtyDelimiter) {
+  var sign = offset > 0 ? '-' : '+';
+  var absOffset = Math.abs(offset);
+  var hours = Math.floor(absOffset / 60);
+  var minutes = absOffset % 60;
+  if (minutes === 0) {
+    return sign + String(hours);
+  }
+  var delimiter = dirtyDelimiter || '';
+  return sign + String(hours) + delimiter + addLeadingZeros(minutes, 2);
+}
+function formatTimezoneWithOptionalMinutes(offset, dirtyDelimiter) {
+  if (offset % 60 === 0) {
+    var sign = offset > 0 ? '-' : '+';
+    return sign + addLeadingZeros(Math.abs(offset) / 60, 2);
+  }
+  return formatTimezone(offset, dirtyDelimiter);
+}
+function formatTimezone(offset, dirtyDelimiter) {
+  var delimiter = dirtyDelimiter || '';
+  var sign = offset > 0 ? '-' : '+';
+  var absOffset = Math.abs(offset);
+  var hours = addLeadingZeros(Math.floor(absOffset / 60), 2);
+  var minutes = addLeadingZeros(absOffset % 60, 2);
+  return sign + hours + delimiter + minutes;
+}
+var formatters$2 = formatters$1;
+
+var dateLongFormatter = function dateLongFormatter(pattern, formatLong) {
+  switch (pattern) {
+    case 'P':
+      return formatLong.date({
+        width: 'short'
+      });
+    case 'PP':
+      return formatLong.date({
+        width: 'medium'
+      });
+    case 'PPP':
+      return formatLong.date({
+        width: 'long'
+      });
+    case 'PPPP':
+    default:
+      return formatLong.date({
+        width: 'full'
+      });
+  }
+};
+var timeLongFormatter = function timeLongFormatter(pattern, formatLong) {
+  switch (pattern) {
+    case 'p':
+      return formatLong.time({
+        width: 'short'
+      });
+    case 'pp':
+      return formatLong.time({
+        width: 'medium'
+      });
+    case 'ppp':
+      return formatLong.time({
+        width: 'long'
+      });
+    case 'pppp':
+    default:
+      return formatLong.time({
+        width: 'full'
+      });
+  }
+};
+var dateTimeLongFormatter = function dateTimeLongFormatter(pattern, formatLong) {
+  var matchResult = pattern.match(/(P+)(p+)?/) || [];
+  var datePattern = matchResult[1];
+  var timePattern = matchResult[2];
+  if (!timePattern) {
+    return dateLongFormatter(pattern, formatLong);
+  }
+  var dateTimeFormat;
+  switch (datePattern) {
+    case 'P':
+      dateTimeFormat = formatLong.dateTime({
+        width: 'short'
+      });
+      break;
+    case 'PP':
+      dateTimeFormat = formatLong.dateTime({
+        width: 'medium'
+      });
+      break;
+    case 'PPP':
+      dateTimeFormat = formatLong.dateTime({
+        width: 'long'
+      });
+      break;
+    case 'PPPP':
+    default:
+      dateTimeFormat = formatLong.dateTime({
+        width: 'full'
+      });
+      break;
+  }
+  return dateTimeFormat.replace('{{date}}', dateLongFormatter(datePattern, formatLong)).replace('{{time}}', timeLongFormatter(timePattern, formatLong));
+};
+var longFormatters = {
+  p: timeLongFormatter,
+  P: dateTimeLongFormatter
+};
+var longFormatters$1 = longFormatters;
+
+var protectedDayOfYearTokens = ['D', 'DD'];
+var protectedWeekYearTokens = ['YY', 'YYYY'];
+function isProtectedDayOfYearToken(token) {
+  return protectedDayOfYearTokens.indexOf(token) !== -1;
+}
+function isProtectedWeekYearToken(token) {
+  return protectedWeekYearTokens.indexOf(token) !== -1;
+}
+function throwProtectedError(token, format, input) {
+  if (token === 'YYYY') {
+    throw new RangeError("Use `yyyy` instead of `YYYY` (in `".concat(format, "`) for formatting years to the input `").concat(input, "`; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md"));
+  } else if (token === 'YY') {
+    throw new RangeError("Use `yy` instead of `YY` (in `".concat(format, "`) for formatting years to the input `").concat(input, "`; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md"));
+  } else if (token === 'D') {
+    throw new RangeError("Use `d` instead of `D` (in `".concat(format, "`) for formatting days of the month to the input `").concat(input, "`; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md"));
+  } else if (token === 'DD') {
+    throw new RangeError("Use `dd` instead of `DD` (in `".concat(format, "`) for formatting days of the month to the input `").concat(input, "`; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md"));
+  }
+}
+
+var formatDistanceLocale = {
+  lessThanXSeconds: {
+    one: 'less than a second',
+    other: 'less than {{count}} seconds'
+  },
+  xSeconds: {
+    one: '1 second',
+    other: '{{count}} seconds'
+  },
+  halfAMinute: 'half a minute',
+  lessThanXMinutes: {
+    one: 'less than a minute',
+    other: 'less than {{count}} minutes'
+  },
+  xMinutes: {
+    one: '1 minute',
+    other: '{{count}} minutes'
+  },
+  aboutXHours: {
+    one: 'about 1 hour',
+    other: 'about {{count}} hours'
+  },
+  xHours: {
+    one: '1 hour',
+    other: '{{count}} hours'
+  },
+  xDays: {
+    one: '1 day',
+    other: '{{count}} days'
+  },
+  aboutXWeeks: {
+    one: 'about 1 week',
+    other: 'about {{count}} weeks'
+  },
+  xWeeks: {
+    one: '1 week',
+    other: '{{count}} weeks'
+  },
+  aboutXMonths: {
+    one: 'about 1 month',
+    other: 'about {{count}} months'
+  },
+  xMonths: {
+    one: '1 month',
+    other: '{{count}} months'
+  },
+  aboutXYears: {
+    one: 'about 1 year',
+    other: 'about {{count}} years'
+  },
+  xYears: {
+    one: '1 year',
+    other: '{{count}} years'
+  },
+  overXYears: {
+    one: 'over 1 year',
+    other: 'over {{count}} years'
+  },
+  almostXYears: {
+    one: 'almost 1 year',
+    other: 'almost {{count}} years'
+  }
+};
+var formatDistance = function formatDistance(token, count, options) {
+  var result;
+  var tokenValue = formatDistanceLocale[token];
+  if (typeof tokenValue === 'string') {
+    result = tokenValue;
+  } else if (count === 1) {
+    result = tokenValue.one;
+  } else {
+    result = tokenValue.other.replace('{{count}}', count.toString());
+  }
+  if (options !== null && options !== void 0 && options.addSuffix) {
+    if (options.comparison && options.comparison > 0) {
+      return 'in ' + result;
+    } else {
+      return result + ' ago';
+    }
+  }
+  return result;
+};
+var formatDistance$1 = formatDistance;
+
+function buildFormatLongFn(args) {
+  return function () {
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    // TODO: Remove String()
+    var width = options.width ? String(options.width) : args.defaultWidth;
+    var format = args.formats[width] || args.formats[args.defaultWidth];
+    return format;
+  };
+}
+
+var dateFormats = {
+  full: 'EEEE, MMMM do, y',
+  long: 'MMMM do, y',
+  medium: 'MMM d, y',
+  short: 'MM/dd/yyyy'
+};
+var timeFormats = {
+  full: 'h:mm:ss a zzzz',
+  long: 'h:mm:ss a z',
+  medium: 'h:mm:ss a',
+  short: 'h:mm a'
+};
+var dateTimeFormats = {
+  full: "{{date}} 'at' {{time}}",
+  long: "{{date}} 'at' {{time}}",
+  medium: '{{date}}, {{time}}',
+  short: '{{date}}, {{time}}'
+};
+var formatLong = {
+  date: buildFormatLongFn({
+    formats: dateFormats,
+    defaultWidth: 'full'
+  }),
+  time: buildFormatLongFn({
+    formats: timeFormats,
+    defaultWidth: 'full'
+  }),
+  dateTime: buildFormatLongFn({
+    formats: dateTimeFormats,
+    defaultWidth: 'full'
+  })
+};
+var formatLong$1 = formatLong;
+
+var formatRelativeLocale = {
+  lastWeek: "'last' eeee 'at' p",
+  yesterday: "'yesterday at' p",
+  today: "'today at' p",
+  tomorrow: "'tomorrow at' p",
+  nextWeek: "eeee 'at' p",
+  other: 'P'
+};
+var formatRelative = function formatRelative(token, _date, _baseDate, _options) {
+  return formatRelativeLocale[token];
+};
+var formatRelative$1 = formatRelative;
+
+function buildLocalizeFn(args) {
+  return function (dirtyIndex, options) {
+    var context = options !== null && options !== void 0 && options.context ? String(options.context) : 'standalone';
+    var valuesArray;
+    if (context === 'formatting' && args.formattingValues) {
+      var defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
+      var width = options !== null && options !== void 0 && options.width ? String(options.width) : defaultWidth;
+      valuesArray = args.formattingValues[width] || args.formattingValues[defaultWidth];
+    } else {
+      var _defaultWidth = args.defaultWidth;
+      var _width = options !== null && options !== void 0 && options.width ? String(options.width) : args.defaultWidth;
+      valuesArray = args.values[_width] || args.values[_defaultWidth];
+    }
+    var index = args.argumentCallback ? args.argumentCallback(dirtyIndex) : dirtyIndex;
+    // @ts-ignore: For some reason TypeScript just don't want to match it, no matter how hard we try. I challenge you to try to remove it!
+    return valuesArray[index];
+  };
+}
+
+var eraValues = {
+  narrow: ['B', 'A'],
+  abbreviated: ['BC', 'AD'],
+  wide: ['Before Christ', 'Anno Domini']
+};
+var quarterValues = {
+  narrow: ['1', '2', '3', '4'],
+  abbreviated: ['Q1', 'Q2', 'Q3', 'Q4'],
+  wide: ['1st quarter', '2nd quarter', '3rd quarter', '4th quarter']
+};
+
+// Note: in English, the names of days of the week and months are capitalized.
+// If you are making a new locale based on this one, check if the same is true for the language you're working on.
+// Generally, formatted dates should look like they are in the middle of a sentence,
+// e.g. in Spanish language the weekdays and months should be in the lowercase.
+var monthValues = {
+  narrow: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+  abbreviated: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  wide: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+};
+var dayValues = {
+  narrow: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+  short: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+  abbreviated: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  wide: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+};
+var dayPeriodValues = {
+  narrow: {
+    am: 'a',
+    pm: 'p',
+    midnight: 'mi',
+    noon: 'n',
+    morning: 'morning',
+    afternoon: 'afternoon',
+    evening: 'evening',
+    night: 'night'
+  },
+  abbreviated: {
+    am: 'AM',
+    pm: 'PM',
+    midnight: 'midnight',
+    noon: 'noon',
+    morning: 'morning',
+    afternoon: 'afternoon',
+    evening: 'evening',
+    night: 'night'
+  },
+  wide: {
+    am: 'a.m.',
+    pm: 'p.m.',
+    midnight: 'midnight',
+    noon: 'noon',
+    morning: 'morning',
+    afternoon: 'afternoon',
+    evening: 'evening',
+    night: 'night'
+  }
+};
+var formattingDayPeriodValues = {
+  narrow: {
+    am: 'a',
+    pm: 'p',
+    midnight: 'mi',
+    noon: 'n',
+    morning: 'in the morning',
+    afternoon: 'in the afternoon',
+    evening: 'in the evening',
+    night: 'at night'
+  },
+  abbreviated: {
+    am: 'AM',
+    pm: 'PM',
+    midnight: 'midnight',
+    noon: 'noon',
+    morning: 'in the morning',
+    afternoon: 'in the afternoon',
+    evening: 'in the evening',
+    night: 'at night'
+  },
+  wide: {
+    am: 'a.m.',
+    pm: 'p.m.',
+    midnight: 'midnight',
+    noon: 'noon',
+    morning: 'in the morning',
+    afternoon: 'in the afternoon',
+    evening: 'in the evening',
+    night: 'at night'
+  }
+};
+var ordinalNumber = function ordinalNumber(dirtyNumber, _options) {
+  var number = Number(dirtyNumber);
+
+  // If ordinal numbers depend on context, for example,
+  // if they are different for different grammatical genders,
+  // use `options.unit`.
+  //
+  // `unit` can be 'year', 'quarter', 'month', 'week', 'date', 'dayOfYear',
+  // 'day', 'hour', 'minute', 'second'.
+
+  var rem100 = number % 100;
+  if (rem100 > 20 || rem100 < 10) {
+    switch (rem100 % 10) {
+      case 1:
+        return number + 'st';
+      case 2:
+        return number + 'nd';
+      case 3:
+        return number + 'rd';
+    }
+  }
+  return number + 'th';
+};
+var localize = {
+  ordinalNumber: ordinalNumber,
+  era: buildLocalizeFn({
+    values: eraValues,
+    defaultWidth: 'wide'
+  }),
+  quarter: buildLocalizeFn({
+    values: quarterValues,
+    defaultWidth: 'wide',
+    argumentCallback: function argumentCallback(quarter) {
+      return quarter - 1;
+    }
+  }),
+  month: buildLocalizeFn({
+    values: monthValues,
+    defaultWidth: 'wide'
+  }),
+  day: buildLocalizeFn({
+    values: dayValues,
+    defaultWidth: 'wide'
+  }),
+  dayPeriod: buildLocalizeFn({
+    values: dayPeriodValues,
+    defaultWidth: 'wide',
+    formattingValues: formattingDayPeriodValues,
+    defaultFormattingWidth: 'wide'
+  })
+};
+var localize$1 = localize;
+
+function buildMatchFn(args) {
+  return function (string) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var width = options.width;
+    var matchPattern = width && args.matchPatterns[width] || args.matchPatterns[args.defaultMatchWidth];
+    var matchResult = string.match(matchPattern);
+    if (!matchResult) {
+      return null;
+    }
+    var matchedString = matchResult[0];
+    var parsePatterns = width && args.parsePatterns[width] || args.parsePatterns[args.defaultParseWidth];
+    var key = Array.isArray(parsePatterns) ? findIndex(parsePatterns, function (pattern) {
+      return pattern.test(matchedString);
+    }) : findKey(parsePatterns, function (pattern) {
+      return pattern.test(matchedString);
+    });
+    var value;
+    value = args.valueCallback ? args.valueCallback(key) : key;
+    value = options.valueCallback ? options.valueCallback(value) : value;
+    var rest = string.slice(matchedString.length);
+    return {
+      value: value,
+      rest: rest
+    };
+  };
+}
+function findKey(object, predicate) {
+  for (var key in object) {
+    if (object.hasOwnProperty(key) && predicate(object[key])) {
+      return key;
+    }
+  }
+  return undefined;
+}
+function findIndex(array, predicate) {
+  for (var key = 0; key < array.length; key++) {
+    if (predicate(array[key])) {
+      return key;
+    }
+  }
+  return undefined;
+}
+
+function buildMatchPatternFn(args) {
+  return function (string) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var matchResult = string.match(args.matchPattern);
+    if (!matchResult) return null;
+    var matchedString = matchResult[0];
+    var parseResult = string.match(args.parsePattern);
+    if (!parseResult) return null;
+    var value = args.valueCallback ? args.valueCallback(parseResult[0]) : parseResult[0];
+    value = options.valueCallback ? options.valueCallback(value) : value;
+    var rest = string.slice(matchedString.length);
+    return {
+      value: value,
+      rest: rest
+    };
+  };
+}
+
+var matchOrdinalNumberPattern = /^(\d+)(th|st|nd|rd)?/i;
+var parseOrdinalNumberPattern = /\d+/i;
+var matchEraPatterns = {
+  narrow: /^(b|a)/i,
+  abbreviated: /^(b\.?\s?c\.?|b\.?\s?c\.?\s?e\.?|a\.?\s?d\.?|c\.?\s?e\.?)/i,
+  wide: /^(before christ|before common era|anno domini|common era)/i
+};
+var parseEraPatterns = {
+  any: [/^b/i, /^(a|c)/i]
+};
+var matchQuarterPatterns = {
+  narrow: /^[1234]/i,
+  abbreviated: /^q[1234]/i,
+  wide: /^[1234](th|st|nd|rd)? quarter/i
+};
+var parseQuarterPatterns = {
+  any: [/1/i, /2/i, /3/i, /4/i]
+};
+var matchMonthPatterns = {
+  narrow: /^[jfmasond]/i,
+  abbreviated: /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i,
+  wide: /^(january|february|march|april|may|june|july|august|september|october|november|december)/i
+};
+var parseMonthPatterns = {
+  narrow: [/^j/i, /^f/i, /^m/i, /^a/i, /^m/i, /^j/i, /^j/i, /^a/i, /^s/i, /^o/i, /^n/i, /^d/i],
+  any: [/^ja/i, /^f/i, /^mar/i, /^ap/i, /^may/i, /^jun/i, /^jul/i, /^au/i, /^s/i, /^o/i, /^n/i, /^d/i]
+};
+var matchDayPatterns = {
+  narrow: /^[smtwf]/i,
+  short: /^(su|mo|tu|we|th|fr|sa)/i,
+  abbreviated: /^(sun|mon|tue|wed|thu|fri|sat)/i,
+  wide: /^(sunday|monday|tuesday|wednesday|thursday|friday|saturday)/i
+};
+var parseDayPatterns = {
+  narrow: [/^s/i, /^m/i, /^t/i, /^w/i, /^t/i, /^f/i, /^s/i],
+  any: [/^su/i, /^m/i, /^tu/i, /^w/i, /^th/i, /^f/i, /^sa/i]
+};
+var matchDayPeriodPatterns = {
+  narrow: /^(a|p|mi|n|(in the|at) (morning|afternoon|evening|night))/i,
+  any: /^([ap]\.?\s?m\.?|midnight|noon|(in the|at) (morning|afternoon|evening|night))/i
+};
+var parseDayPeriodPatterns = {
+  any: {
+    am: /^a/i,
+    pm: /^p/i,
+    midnight: /^mi/i,
+    noon: /^no/i,
+    morning: /morning/i,
+    afternoon: /afternoon/i,
+    evening: /evening/i,
+    night: /night/i
+  }
+};
+var match = {
+  ordinalNumber: buildMatchPatternFn({
+    matchPattern: matchOrdinalNumberPattern,
+    parsePattern: parseOrdinalNumberPattern,
+    valueCallback: function valueCallback(value) {
+      return parseInt(value, 10);
+    }
+  }),
+  era: buildMatchFn({
+    matchPatterns: matchEraPatterns,
+    defaultMatchWidth: 'wide',
+    parsePatterns: parseEraPatterns,
+    defaultParseWidth: 'any'
+  }),
+  quarter: buildMatchFn({
+    matchPatterns: matchQuarterPatterns,
+    defaultMatchWidth: 'wide',
+    parsePatterns: parseQuarterPatterns,
+    defaultParseWidth: 'any',
+    valueCallback: function valueCallback(index) {
+      return index + 1;
+    }
+  }),
+  month: buildMatchFn({
+    matchPatterns: matchMonthPatterns,
+    defaultMatchWidth: 'wide',
+    parsePatterns: parseMonthPatterns,
+    defaultParseWidth: 'any'
+  }),
+  day: buildMatchFn({
+    matchPatterns: matchDayPatterns,
+    defaultMatchWidth: 'wide',
+    parsePatterns: parseDayPatterns,
+    defaultParseWidth: 'any'
+  }),
+  dayPeriod: buildMatchFn({
+    matchPatterns: matchDayPeriodPatterns,
+    defaultMatchWidth: 'any',
+    parsePatterns: parseDayPeriodPatterns,
+    defaultParseWidth: 'any'
+  })
+};
+var match$1 = match;
+
+/**
+ * @type {Locale}
+ * @category Locales
+ * @summary English locale (United States).
+ * @language English
+ * @iso-639-2 eng
+ * @author Sasha Koss [@kossnocorp]{@link https://github.com/kossnocorp}
+ * @author Lesha Koss [@leshakoss]{@link https://github.com/leshakoss}
+ */
+var locale = {
+  code: 'en-US',
+  formatDistance: formatDistance$1,
+  formatLong: formatLong$1,
+  formatRelative: formatRelative$1,
+  localize: localize$1,
+  match: match$1,
+  options: {
+    weekStartsOn: 0 /* Sunday */,
+    firstWeekContainsDate: 1
+  }
+};
+var enUS = locale;
+
+// - [yYQqMLwIdDecihHKkms]o matches any available ordinal number token
+//   (one of the certain letters followed by `o`)
+// - (\w)\1* matches any sequences of the same letter
+// - '' matches two quote characters in a row
+// - '(''|[^'])+('|$) matches anything surrounded by two quote characters ('),
+//   except a single quote symbol, which ends the sequence.
+//   Two quote characters do not end the sequence.
+//   If there is no matching single quote
+//   then the sequence will continue until the end of the string.
+// - . matches any single character unmatched by previous parts of the RegExps
+var formattingTokensRegExp = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g;
+
+// This RegExp catches symbols escaped by quotes, and also
+// sequences of symbols P, p, and the combinations like `PPPPPPPppppp`
+var longFormattingTokensRegExp = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g;
+var escapedStringRegExp = /^'([^]*?)'?$/;
+var doubleQuoteRegExp = /''/g;
+var unescapedLatinCharacterRegExp = /[a-zA-Z]/;
+
+/**
+ * @name format
+ * @category Common Helpers
+ * @summary Format the date.
+ *
+ * @description
+ * Return the formatted date string in the given format. The result may vary by locale.
+ *
+ * > ⚠️ Please note that the `format` tokens differ from Moment.js and other libraries.
+ * > See: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
+ *
+ * The characters wrapped between two single quotes characters (') are escaped.
+ * Two single quotes in a row, whether inside or outside a quoted sequence, represent a 'real' single quote.
+ * (see the last example)
+ *
+ * Format of the string is based on Unicode Technical Standard #35:
+ * https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table
+ * with a few additions (see note 7 below the table).
+ *
+ * Accepted patterns:
+ * | Unit                            | Pattern | Result examples                   | Notes |
+ * |---------------------------------|---------|-----------------------------------|-------|
+ * | Era                             | G..GGG  | AD, BC                            |       |
+ * |                                 | GGGG    | Anno Domini, Before Christ        | 2     |
+ * |                                 | GGGGG   | A, B                              |       |
+ * | Calendar year                   | y       | 44, 1, 1900, 2017                 | 5     |
+ * |                                 | yo      | 44th, 1st, 0th, 17th              | 5,7   |
+ * |                                 | yy      | 44, 01, 00, 17                    | 5     |
+ * |                                 | yyy     | 044, 001, 1900, 2017              | 5     |
+ * |                                 | yyyy    | 0044, 0001, 1900, 2017            | 5     |
+ * |                                 | yyyyy   | ...                               | 3,5   |
+ * | Local week-numbering year       | Y       | 44, 1, 1900, 2017                 | 5     |
+ * |                                 | Yo      | 44th, 1st, 1900th, 2017th         | 5,7   |
+ * |                                 | YY      | 44, 01, 00, 17                    | 5,8   |
+ * |                                 | YYY     | 044, 001, 1900, 2017              | 5     |
+ * |                                 | YYYY    | 0044, 0001, 1900, 2017            | 5,8   |
+ * |                                 | YYYYY   | ...                               | 3,5   |
+ * | ISO week-numbering year         | R       | -43, 0, 1, 1900, 2017             | 5,7   |
+ * |                                 | RR      | -43, 00, 01, 1900, 2017           | 5,7   |
+ * |                                 | RRR     | -043, 000, 001, 1900, 2017        | 5,7   |
+ * |                                 | RRRR    | -0043, 0000, 0001, 1900, 2017     | 5,7   |
+ * |                                 | RRRRR   | ...                               | 3,5,7 |
+ * | Extended year                   | u       | -43, 0, 1, 1900, 2017             | 5     |
+ * |                                 | uu      | -43, 01, 1900, 2017               | 5     |
+ * |                                 | uuu     | -043, 001, 1900, 2017             | 5     |
+ * |                                 | uuuu    | -0043, 0001, 1900, 2017           | 5     |
+ * |                                 | uuuuu   | ...                               | 3,5   |
+ * | Quarter (formatting)            | Q       | 1, 2, 3, 4                        |       |
+ * |                                 | Qo      | 1st, 2nd, 3rd, 4th                | 7     |
+ * |                                 | QQ      | 01, 02, 03, 04                    |       |
+ * |                                 | QQQ     | Q1, Q2, Q3, Q4                    |       |
+ * |                                 | QQQQ    | 1st quarter, 2nd quarter, ...     | 2     |
+ * |                                 | QQQQQ   | 1, 2, 3, 4                        | 4     |
+ * | Quarter (stand-alone)           | q       | 1, 2, 3, 4                        |       |
+ * |                                 | qo      | 1st, 2nd, 3rd, 4th                | 7     |
+ * |                                 | qq      | 01, 02, 03, 04                    |       |
+ * |                                 | qqq     | Q1, Q2, Q3, Q4                    |       |
+ * |                                 | qqqq    | 1st quarter, 2nd quarter, ...     | 2     |
+ * |                                 | qqqqq   | 1, 2, 3, 4                        | 4     |
+ * | Month (formatting)              | M       | 1, 2, ..., 12                     |       |
+ * |                                 | Mo      | 1st, 2nd, ..., 12th               | 7     |
+ * |                                 | MM      | 01, 02, ..., 12                   |       |
+ * |                                 | MMM     | Jan, Feb, ..., Dec                |       |
+ * |                                 | MMMM    | January, February, ..., December  | 2     |
+ * |                                 | MMMMM   | J, F, ..., D                      |       |
+ * | Month (stand-alone)             | L       | 1, 2, ..., 12                     |       |
+ * |                                 | Lo      | 1st, 2nd, ..., 12th               | 7     |
+ * |                                 | LL      | 01, 02, ..., 12                   |       |
+ * |                                 | LLL     | Jan, Feb, ..., Dec                |       |
+ * |                                 | LLLL    | January, February, ..., December  | 2     |
+ * |                                 | LLLLL   | J, F, ..., D                      |       |
+ * | Local week of year              | w       | 1, 2, ..., 53                     |       |
+ * |                                 | wo      | 1st, 2nd, ..., 53th               | 7     |
+ * |                                 | ww      | 01, 02, ..., 53                   |       |
+ * | ISO week of year                | I       | 1, 2, ..., 53                     | 7     |
+ * |                                 | Io      | 1st, 2nd, ..., 53th               | 7     |
+ * |                                 | II      | 01, 02, ..., 53                   | 7     |
+ * | Day of month                    | d       | 1, 2, ..., 31                     |       |
+ * |                                 | do      | 1st, 2nd, ..., 31st               | 7     |
+ * |                                 | dd      | 01, 02, ..., 31                   |       |
+ * | Day of year                     | D       | 1, 2, ..., 365, 366               | 9     |
+ * |                                 | Do      | 1st, 2nd, ..., 365th, 366th       | 7     |
+ * |                                 | DD      | 01, 02, ..., 365, 366             | 9     |
+ * |                                 | DDD     | 001, 002, ..., 365, 366           |       |
+ * |                                 | DDDD    | ...                               | 3     |
+ * | Day of week (formatting)        | E..EEE  | Mon, Tue, Wed, ..., Sun           |       |
+ * |                                 | EEEE    | Monday, Tuesday, ..., Sunday      | 2     |
+ * |                                 | EEEEE   | M, T, W, T, F, S, S               |       |
+ * |                                 | EEEEEE  | Mo, Tu, We, Th, Fr, Sa, Su        |       |
+ * | ISO day of week (formatting)    | i       | 1, 2, 3, ..., 7                   | 7     |
+ * |                                 | io      | 1st, 2nd, ..., 7th                | 7     |
+ * |                                 | ii      | 01, 02, ..., 07                   | 7     |
+ * |                                 | iii     | Mon, Tue, Wed, ..., Sun           | 7     |
+ * |                                 | iiii    | Monday, Tuesday, ..., Sunday      | 2,7   |
+ * |                                 | iiiii   | M, T, W, T, F, S, S               | 7     |
+ * |                                 | iiiiii  | Mo, Tu, We, Th, Fr, Sa, Su        | 7     |
+ * | Local day of week (formatting)  | e       | 2, 3, 4, ..., 1                   |       |
+ * |                                 | eo      | 2nd, 3rd, ..., 1st                | 7     |
+ * |                                 | ee      | 02, 03, ..., 01                   |       |
+ * |                                 | eee     | Mon, Tue, Wed, ..., Sun           |       |
+ * |                                 | eeee    | Monday, Tuesday, ..., Sunday      | 2     |
+ * |                                 | eeeee   | M, T, W, T, F, S, S               |       |
+ * |                                 | eeeeee  | Mo, Tu, We, Th, Fr, Sa, Su        |       |
+ * | Local day of week (stand-alone) | c       | 2, 3, 4, ..., 1                   |       |
+ * |                                 | co      | 2nd, 3rd, ..., 1st                | 7     |
+ * |                                 | cc      | 02, 03, ..., 01                   |       |
+ * |                                 | ccc     | Mon, Tue, Wed, ..., Sun           |       |
+ * |                                 | cccc    | Monday, Tuesday, ..., Sunday      | 2     |
+ * |                                 | ccccc   | M, T, W, T, F, S, S               |       |
+ * |                                 | cccccc  | Mo, Tu, We, Th, Fr, Sa, Su        |       |
+ * | AM, PM                          | a..aa   | AM, PM                            |       |
+ * |                                 | aaa     | am, pm                            |       |
+ * |                                 | aaaa    | a.m., p.m.                        | 2     |
+ * |                                 | aaaaa   | a, p                              |       |
+ * | AM, PM, noon, midnight          | b..bb   | AM, PM, noon, midnight            |       |
+ * |                                 | bbb     | am, pm, noon, midnight            |       |
+ * |                                 | bbbb    | a.m., p.m., noon, midnight        | 2     |
+ * |                                 | bbbbb   | a, p, n, mi                       |       |
+ * | Flexible day period             | B..BBB  | at night, in the morning, ...     |       |
+ * |                                 | BBBB    | at night, in the morning, ...     | 2     |
+ * |                                 | BBBBB   | at night, in the morning, ...     |       |
+ * | Hour [1-12]                     | h       | 1, 2, ..., 11, 12                 |       |
+ * |                                 | ho      | 1st, 2nd, ..., 11th, 12th         | 7     |
+ * |                                 | hh      | 01, 02, ..., 11, 12               |       |
+ * | Hour [0-23]                     | H       | 0, 1, 2, ..., 23                  |       |
+ * |                                 | Ho      | 0th, 1st, 2nd, ..., 23rd          | 7     |
+ * |                                 | HH      | 00, 01, 02, ..., 23               |       |
+ * | Hour [0-11]                     | K       | 1, 2, ..., 11, 0                  |       |
+ * |                                 | Ko      | 1st, 2nd, ..., 11th, 0th          | 7     |
+ * |                                 | KK      | 01, 02, ..., 11, 00               |       |
+ * | Hour [1-24]                     | k       | 24, 1, 2, ..., 23                 |       |
+ * |                                 | ko      | 24th, 1st, 2nd, ..., 23rd         | 7     |
+ * |                                 | kk      | 24, 01, 02, ..., 23               |       |
+ * | Minute                          | m       | 0, 1, ..., 59                     |       |
+ * |                                 | mo      | 0th, 1st, ..., 59th               | 7     |
+ * |                                 | mm      | 00, 01, ..., 59                   |       |
+ * | Second                          | s       | 0, 1, ..., 59                     |       |
+ * |                                 | so      | 0th, 1st, ..., 59th               | 7     |
+ * |                                 | ss      | 00, 01, ..., 59                   |       |
+ * | Fraction of second              | S       | 0, 1, ..., 9                      |       |
+ * |                                 | SS      | 00, 01, ..., 99                   |       |
+ * |                                 | SSS     | 000, 001, ..., 999                |       |
+ * |                                 | SSSS    | ...                               | 3     |
+ * | Timezone (ISO-8601 w/ Z)        | X       | -08, +0530, Z                     |       |
+ * |                                 | XX      | -0800, +0530, Z                   |       |
+ * |                                 | XXX     | -08:00, +05:30, Z                 |       |
+ * |                                 | XXXX    | -0800, +0530, Z, +123456          | 2     |
+ * |                                 | XXXXX   | -08:00, +05:30, Z, +12:34:56      |       |
+ * | Timezone (ISO-8601 w/o Z)       | x       | -08, +0530, +00                   |       |
+ * |                                 | xx      | -0800, +0530, +0000               |       |
+ * |                                 | xxx     | -08:00, +05:30, +00:00            | 2     |
+ * |                                 | xxxx    | -0800, +0530, +0000, +123456      |       |
+ * |                                 | xxxxx   | -08:00, +05:30, +00:00, +12:34:56 |       |
+ * | Timezone (GMT)                  | O...OOO | GMT-8, GMT+5:30, GMT+0            |       |
+ * |                                 | OOOO    | GMT-08:00, GMT+05:30, GMT+00:00   | 2     |
+ * | Timezone (specific non-locat.)  | z...zzz | GMT-8, GMT+5:30, GMT+0            | 6     |
+ * |                                 | zzzz    | GMT-08:00, GMT+05:30, GMT+00:00   | 2,6   |
+ * | Seconds timestamp               | t       | 512969520                         | 7     |
+ * |                                 | tt      | ...                               | 3,7   |
+ * | Milliseconds timestamp          | T       | 512969520900                      | 7     |
+ * |                                 | TT      | ...                               | 3,7   |
+ * | Long localized date             | P       | 04/29/1453                        | 7     |
+ * |                                 | PP      | Apr 29, 1453                      | 7     |
+ * |                                 | PPP     | April 29th, 1453                  | 7     |
+ * |                                 | PPPP    | Friday, April 29th, 1453          | 2,7   |
+ * | Long localized time             | p       | 12:00 AM                          | 7     |
+ * |                                 | pp      | 12:00:00 AM                       | 7     |
+ * |                                 | ppp     | 12:00:00 AM GMT+2                 | 7     |
+ * |                                 | pppp    | 12:00:00 AM GMT+02:00             | 2,7   |
+ * | Combination of date and time    | Pp      | 04/29/1453, 12:00 AM              | 7     |
+ * |                                 | PPpp    | Apr 29, 1453, 12:00:00 AM         | 7     |
+ * |                                 | PPPppp  | April 29th, 1453 at ...           | 7     |
+ * |                                 | PPPPpppp| Friday, April 29th, 1453 at ...   | 2,7   |
+ * Notes:
+ * 1. "Formatting" units (e.g. formatting quarter) in the default en-US locale
+ *    are the same as "stand-alone" units, but are different in some languages.
+ *    "Formatting" units are declined according to the rules of the language
+ *    in the context of a date. "Stand-alone" units are always nominative singular:
+ *
+ *    `format(new Date(2017, 10, 6), 'do LLLL', {locale: cs}) //=> '6. listopad'`
+ *
+ *    `format(new Date(2017, 10, 6), 'do MMMM', {locale: cs}) //=> '6. listopadu'`
+ *
+ * 2. Any sequence of the identical letters is a pattern, unless it is escaped by
+ *    the single quote characters (see below).
+ *    If the sequence is longer than listed in table (e.g. `EEEEEEEEEEE`)
+ *    the output will be the same as default pattern for this unit, usually
+ *    the longest one (in case of ISO weekdays, `EEEE`). Default patterns for units
+ *    are marked with "2" in the last column of the table.
+ *
+ *    `format(new Date(2017, 10, 6), 'MMM') //=> 'Nov'`
+ *
+ *    `format(new Date(2017, 10, 6), 'MMMM') //=> 'November'`
+ *
+ *    `format(new Date(2017, 10, 6), 'MMMMM') //=> 'N'`
+ *
+ *    `format(new Date(2017, 10, 6), 'MMMMMM') //=> 'November'`
+ *
+ *    `format(new Date(2017, 10, 6), 'MMMMMMM') //=> 'November'`
+ *
+ * 3. Some patterns could be unlimited length (such as `yyyyyyyy`).
+ *    The output will be padded with zeros to match the length of the pattern.
+ *
+ *    `format(new Date(2017, 10, 6), 'yyyyyyyy') //=> '00002017'`
+ *
+ * 4. `QQQQQ` and `qqqqq` could be not strictly numerical in some locales.
+ *    These tokens represent the shortest form of the quarter.
+ *
+ * 5. The main difference between `y` and `u` patterns are B.C. years:
+ *
+ *    | Year | `y` | `u` |
+ *    |------|-----|-----|
+ *    | AC 1 |   1 |   1 |
+ *    | BC 1 |   1 |   0 |
+ *    | BC 2 |   2 |  -1 |
+ *
+ *    Also `yy` always returns the last two digits of a year,
+ *    while `uu` pads single digit years to 2 characters and returns other years unchanged:
+ *
+ *    | Year | `yy` | `uu` |
+ *    |------|------|------|
+ *    | 1    |   01 |   01 |
+ *    | 14   |   14 |   14 |
+ *    | 376  |   76 |  376 |
+ *    | 1453 |   53 | 1453 |
+ *
+ *    The same difference is true for local and ISO week-numbering years (`Y` and `R`),
+ *    except local week-numbering years are dependent on `options.weekStartsOn`
+ *    and `options.firstWeekContainsDate` (compare [getISOWeekYear]{@link https://date-fns.org/docs/getISOWeekYear}
+ *    and [getWeekYear]{@link https://date-fns.org/docs/getWeekYear}).
+ *
+ * 6. Specific non-location timezones are currently unavailable in `date-fns`,
+ *    so right now these tokens fall back to GMT timezones.
+ *
+ * 7. These patterns are not in the Unicode Technical Standard #35:
+ *    - `i`: ISO day of week
+ *    - `I`: ISO week of year
+ *    - `R`: ISO week-numbering year
+ *    - `t`: seconds timestamp
+ *    - `T`: milliseconds timestamp
+ *    - `o`: ordinal number modifier
+ *    - `P`: long localized date
+ *    - `p`: long localized time
+ *
+ * 8. `YY` and `YYYY` tokens represent week-numbering years but they are often confused with years.
+ *    You should enable `options.useAdditionalWeekYearTokens` to use them. See: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
+ *
+ * 9. `D` and `DD` tokens represent days of the year but they are often confused with days of the month.
+ *    You should enable `options.useAdditionalDayOfYearTokens` to use them. See: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
+ *
+ * @param {Date|Number} date - the original date
+ * @param {String} format - the string of tokens
+ * @param {Object} [options] - an object with options.
+ * @param {Locale} [options.locale=defaultLocale] - the locale object. See [Locale]{@link https://date-fns.org/docs/Locale}
+ * @param {0|1|2|3|4|5|6} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @param {Number} [options.firstWeekContainsDate=1] - the day of January, which is
+ * @param {Boolean} [options.useAdditionalWeekYearTokens=false] - if true, allows usage of the week-numbering year tokens `YY` and `YYYY`;
+ *   see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
+ * @param {Boolean} [options.useAdditionalDayOfYearTokens=false] - if true, allows usage of the day of year tokens `D` and `DD`;
+ *   see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
+ * @returns {String} the formatted date string
+ * @throws {TypeError} 2 arguments required
+ * @throws {RangeError} `date` must not be Invalid Date
+ * @throws {RangeError} `options.locale` must contain `localize` property
+ * @throws {RangeError} `options.locale` must contain `formatLong` property
+ * @throws {RangeError} `options.weekStartsOn` must be between 0 and 6
+ * @throws {RangeError} `options.firstWeekContainsDate` must be between 1 and 7
+ * @throws {RangeError} use `yyyy` instead of `YYYY` for formatting years using [format provided] to the input [input provided]; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
+ * @throws {RangeError} use `yy` instead of `YY` for formatting years using [format provided] to the input [input provided]; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
+ * @throws {RangeError} use `d` instead of `D` for formatting days of the month using [format provided] to the input [input provided]; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
+ * @throws {RangeError} use `dd` instead of `DD` for formatting days of the month using [format provided] to the input [input provided]; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
+ * @throws {RangeError} format string contains an unescaped latin alphabet character
+ *
+ * @example
+ * // Represent 11 February 2014 in middle-endian format:
+ * const result = format(new Date(2014, 1, 11), 'MM/dd/yyyy')
+ * //=> '02/11/2014'
+ *
+ * @example
+ * // Represent 2 July 2014 in Esperanto:
+ * import { eoLocale } from 'date-fns/locale/eo'
+ * const result = format(new Date(2014, 6, 2), "do 'de' MMMM yyyy", {
+ *   locale: eoLocale
+ * })
+ * //=> '2-a de julio 2014'
+ *
+ * @example
+ * // Escape string by single quote characters:
+ * const result = format(new Date(2014, 6, 2, 15), "h 'o''clock'")
+ * //=> "3 o'clock"
+ */
+
+function format(dirtyDate, dirtyFormatStr, options) {
+  var _ref, _options$locale, _ref2, _ref3, _ref4, _options$firstWeekCon, _options$locale2, _options$locale2$opti, _defaultOptions$local, _defaultOptions$local2, _ref5, _ref6, _ref7, _options$weekStartsOn, _options$locale3, _options$locale3$opti, _defaultOptions$local3, _defaultOptions$local4;
+  requiredArgs(2, arguments);
+  var formatStr = String(dirtyFormatStr);
+  var defaultOptions = getDefaultOptions();
+  var locale = (_ref = (_options$locale = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale !== void 0 ? _options$locale : defaultOptions.locale) !== null && _ref !== void 0 ? _ref : enUS;
+  var firstWeekContainsDate = toInteger((_ref2 = (_ref3 = (_ref4 = (_options$firstWeekCon = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon !== void 0 ? _options$firstWeekCon : options === null || options === void 0 ? void 0 : (_options$locale2 = options.locale) === null || _options$locale2 === void 0 ? void 0 : (_options$locale2$opti = _options$locale2.options) === null || _options$locale2$opti === void 0 ? void 0 : _options$locale2$opti.firstWeekContainsDate) !== null && _ref4 !== void 0 ? _ref4 : defaultOptions.firstWeekContainsDate) !== null && _ref3 !== void 0 ? _ref3 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.firstWeekContainsDate) !== null && _ref2 !== void 0 ? _ref2 : 1);
+
+  // Test if weekStartsOn is between 1 and 7 _and_ is not NaN
+  if (!(firstWeekContainsDate >= 1 && firstWeekContainsDate <= 7)) {
+    throw new RangeError('firstWeekContainsDate must be between 1 and 7 inclusively');
+  }
+  var weekStartsOn = toInteger((_ref5 = (_ref6 = (_ref7 = (_options$weekStartsOn = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn !== void 0 ? _options$weekStartsOn : options === null || options === void 0 ? void 0 : (_options$locale3 = options.locale) === null || _options$locale3 === void 0 ? void 0 : (_options$locale3$opti = _options$locale3.options) === null || _options$locale3$opti === void 0 ? void 0 : _options$locale3$opti.weekStartsOn) !== null && _ref7 !== void 0 ? _ref7 : defaultOptions.weekStartsOn) !== null && _ref6 !== void 0 ? _ref6 : (_defaultOptions$local3 = defaultOptions.locale) === null || _defaultOptions$local3 === void 0 ? void 0 : (_defaultOptions$local4 = _defaultOptions$local3.options) === null || _defaultOptions$local4 === void 0 ? void 0 : _defaultOptions$local4.weekStartsOn) !== null && _ref5 !== void 0 ? _ref5 : 0);
+
+  // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
+  if (!(weekStartsOn >= 0 && weekStartsOn <= 6)) {
+    throw new RangeError('weekStartsOn must be between 0 and 6 inclusively');
+  }
+  if (!locale.localize) {
+    throw new RangeError('locale must contain localize property');
+  }
+  if (!locale.formatLong) {
+    throw new RangeError('locale must contain formatLong property');
+  }
+  var originalDate = toDate(dirtyDate);
+  if (!isValid(originalDate)) {
+    throw new RangeError('Invalid time value');
+  }
+
+  // Convert the date in system timezone to the same date in UTC+00:00 timezone.
+  // This ensures that when UTC functions will be implemented, locales will be compatible with them.
+  // See an issue about UTC functions: https://github.com/date-fns/date-fns/issues/376
+  var timezoneOffset = getTimezoneOffsetInMilliseconds(originalDate);
+  var utcDate = subMilliseconds(originalDate, timezoneOffset);
+  var formatterOptions = {
+    firstWeekContainsDate: firstWeekContainsDate,
+    weekStartsOn: weekStartsOn,
+    locale: locale,
+    _originalDate: originalDate
+  };
+  var result = formatStr.match(longFormattingTokensRegExp).map(function (substring) {
+    var firstCharacter = substring[0];
+    if (firstCharacter === 'p' || firstCharacter === 'P') {
+      var longFormatter = longFormatters$1[firstCharacter];
+      return longFormatter(substring, locale.formatLong);
+    }
+    return substring;
+  }).join('').match(formattingTokensRegExp).map(function (substring) {
+    // Replace two single quote characters with one single quote character
+    if (substring === "''") {
+      return "'";
+    }
+    var firstCharacter = substring[0];
+    if (firstCharacter === "'") {
+      return cleanEscapedString(substring);
+    }
+    var formatter = formatters$2[firstCharacter];
+    if (formatter) {
+      if (!(options !== null && options !== void 0 && options.useAdditionalWeekYearTokens) && isProtectedWeekYearToken(substring)) {
+        throwProtectedError(substring, dirtyFormatStr, String(dirtyDate));
+      }
+      if (!(options !== null && options !== void 0 && options.useAdditionalDayOfYearTokens) && isProtectedDayOfYearToken(substring)) {
+        throwProtectedError(substring, dirtyFormatStr, String(dirtyDate));
+      }
+      return formatter(utcDate, substring, locale.localize, formatterOptions);
+    }
+    if (firstCharacter.match(unescapedLatinCharacterRegExp)) {
+      throw new RangeError('Format string contains an unescaped latin alphabet character `' + firstCharacter + '`');
+    }
+    return substring;
+  }).join('');
+  return result;
+}
+function cleanEscapedString(input) {
+  var matched = input.match(escapedStringRegExp);
+  if (!matched) {
+    return input;
+  }
+  return matched[1].replace(doubleQuoteRegExp, "'");
+}
+
+/**
+ * @name getDaysInMonth
+ * @category Month Helpers
+ * @summary Get the number of days in a month of the given date.
+ *
+ * @description
+ * Get the number of days in a month of the given date.
+ *
+ * @param {Date|Number} date - the given date
+ * @returns {Number} the number of days in a month
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // How many days are in February 2000?
+ * const result = getDaysInMonth(new Date(2000, 1))
+ * //=> 29
+ */
+function getDaysInMonth(dirtyDate) {
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  var year = date.getFullYear();
+  var monthIndex = date.getMonth();
+  var lastDayOfMonth = new Date(0);
+  lastDayOfMonth.setFullYear(year, monthIndex + 1, 0);
+  lastDayOfMonth.setHours(0, 0, 0, 0);
+  return lastDayOfMonth.getDate();
+}
+
+var MILLISECONDS_IN_WEEK$1 = 604800000;
+
+/**
+ * @name getISOWeek
+ * @category ISO Week Helpers
+ * @summary Get the ISO week of the given date.
+ *
+ * @description
+ * Get the ISO week of the given date.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|Number} date - the given date
+ * @returns {Number} the ISO week
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // Which week of the ISO-week numbering year is 2 January 2005?
+ * const result = getISOWeek(new Date(2005, 0, 2))
+ * //=> 53
+ */
+function getISOWeek(dirtyDate) {
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  var diff = startOfISOWeek(date).getTime() - startOfISOWeekYear(date).getTime();
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round(diff / MILLISECONDS_IN_WEEK$1) + 1;
+}
+
+/**
+ * @name getTime
+ * @category Timestamp Helpers
+ * @summary Get the milliseconds timestamp of the given date.
+ *
+ * @description
+ * Get the milliseconds timestamp of the given date.
+ *
+ * @param {Date|Number} date - the given date
+ * @returns {Number} the timestamp
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // Get the timestamp of 29 February 2012 11:45:05.123:
+ * const result = getTime(new Date(2012, 1, 29, 11, 45, 5, 123))
+ * //=> 1330515905123
+ */
+function getTime(dirtyDate) {
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  var timestamp = date.getTime();
+  return timestamp;
+}
+
+/**
+ * @name getUnixTime
+ * @category Timestamp Helpers
+ * @summary Get the seconds timestamp of the given date.
+ *
+ * @description
+ * Get the seconds timestamp of the given date.
+ *
+ * @param {Date|Number} date - the given date
+ * @returns {Number} the timestamp
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // Get the timestamp of 29 February 2012 11:45:05 CET:
+ * const result = getUnixTime(new Date(2012, 1, 29, 11, 45, 5))
+ * //=> 1330512305
+ */
+function getUnixTime(dirtyDate) {
+  requiredArgs(1, arguments);
+  return Math.floor(getTime(dirtyDate) / 1000);
+}
+
+/**
+ * @name getWeekYear
+ * @category Week-Numbering Year Helpers
+ * @summary Get the local week-numbering year of the given date.
+ *
+ * @description
+ * Get the local week-numbering year of the given date.
+ * The exact calculation depends on the values of
+ * `options.weekStartsOn` (which is the index of the first day of the week)
+ * and `options.firstWeekContainsDate` (which is the day of January, which is always in
+ * the first week of the week-numbering year)
+ *
+ * Week numbering: https://en.wikipedia.org/wiki/Week#Week_numbering
+ *
+ * @param {Date|Number} date - the given date
+ * @param {Object} [options] - an object with options.
+ * @param {Locale} [options.locale=defaultLocale] - the locale object. See [Locale]{@link https://date-fns.org/docs/Locale}
+ * @param {0|1|2|3|4|5|6} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @param {1|2|3|4|5|6|7} [options.firstWeekContainsDate=1] - the day of January, which is always in the first week of the year
+ * @returns {Number} the local week-numbering year
+ * @throws {TypeError} 1 argument required
+ * @throws {RangeError} `options.weekStartsOn` must be between 0 and 6
+ * @throws {RangeError} `options.firstWeekContainsDate` must be between 1 and 7
+ *
+ * @example
+ * // Which week numbering year is 26 December 2004 with the default settings?
+ * const result = getWeekYear(new Date(2004, 11, 26))
+ * //=> 2005
+ *
+ * @example
+ * // Which week numbering year is 26 December 2004 if week starts on Saturday?
+ * const result = getWeekYear(new Date(2004, 11, 26), { weekStartsOn: 6 })
+ * //=> 2004
+ *
+ * @example
+ * // Which week numbering year is 26 December 2004 if the first week contains 4 January?
+ * const result = getWeekYear(new Date(2004, 11, 26), { firstWeekContainsDate: 4 })
+ * //=> 2004
+ */
+function getWeekYear(dirtyDate, options) {
+  var _ref, _ref2, _ref3, _options$firstWeekCon, _options$locale, _options$locale$optio, _defaultOptions$local, _defaultOptions$local2;
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  var year = date.getFullYear();
+  var defaultOptions = getDefaultOptions();
+  var firstWeekContainsDate = toInteger((_ref = (_ref2 = (_ref3 = (_options$firstWeekCon = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon !== void 0 ? _options$firstWeekCon : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.firstWeekContainsDate) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.firstWeekContainsDate) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.firstWeekContainsDate) !== null && _ref !== void 0 ? _ref : 1);
+
+  // Test if weekStartsOn is between 1 and 7 _and_ is not NaN
+  if (!(firstWeekContainsDate >= 1 && firstWeekContainsDate <= 7)) {
+    throw new RangeError('firstWeekContainsDate must be between 1 and 7 inclusively');
+  }
+  var firstWeekOfNextYear = new Date(0);
+  firstWeekOfNextYear.setFullYear(year + 1, 0, firstWeekContainsDate);
+  firstWeekOfNextYear.setHours(0, 0, 0, 0);
+  var startOfNextYear = startOfWeek(firstWeekOfNextYear, options);
+  var firstWeekOfThisYear = new Date(0);
+  firstWeekOfThisYear.setFullYear(year, 0, firstWeekContainsDate);
+  firstWeekOfThisYear.setHours(0, 0, 0, 0);
+  var startOfThisYear = startOfWeek(firstWeekOfThisYear, options);
+  if (date.getTime() >= startOfNextYear.getTime()) {
+    return year + 1;
+  } else if (date.getTime() >= startOfThisYear.getTime()) {
+    return year;
+  } else {
+    return year - 1;
+  }
+}
+
+/**
+ * @name startOfWeekYear
+ * @category Week-Numbering Year Helpers
+ * @summary Return the start of a local week-numbering year for the given date.
+ *
+ * @description
+ * Return the start of a local week-numbering year.
+ * The exact calculation depends on the values of
+ * `options.weekStartsOn` (which is the index of the first day of the week)
+ * and `options.firstWeekContainsDate` (which is the day of January, which is always in
+ * the first week of the week-numbering year)
+ *
+ * Week numbering: https://en.wikipedia.org/wiki/Week#Week_numbering
+ *
+ * @param {Date|Number} date - the original date
+ * @param {Object} [options] - an object with options.
+ * @param {Locale} [options.locale=defaultLocale] - the locale object. See [Locale]{@link https://date-fns.org/docs/Locale}
+ * @param {0|1|2|3|4|5|6} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @param {1|2|3|4|5|6|7} [options.firstWeekContainsDate=1] - the day of January, which is always in the first week of the year
+ * @returns {Date} the start of a week-numbering year
+ * @throws {TypeError} 1 argument required
+ * @throws {RangeError} `options.weekStartsOn` must be between 0 and 6
+ * @throws {RangeError} `options.firstWeekContainsDate` must be between 1 and 7
+ *
+ * @example
+ * // The start of an a week-numbering year for 2 July 2005 with default settings:
+ * const result = startOfWeekYear(new Date(2005, 6, 2))
+ * //=> Sun Dec 26 2004 00:00:00
+ *
+ * @example
+ * // The start of a week-numbering year for 2 July 2005
+ * // if Monday is the first day of week
+ * // and 4 January is always in the first week of the year:
+ * const result = startOfWeekYear(new Date(2005, 6, 2), {
+ *   weekStartsOn: 1,
+ *   firstWeekContainsDate: 4
+ * })
+ * //=> Mon Jan 03 2005 00:00:00
+ */
+function startOfWeekYear(dirtyDate, options) {
+  var _ref, _ref2, _ref3, _options$firstWeekCon, _options$locale, _options$locale$optio, _defaultOptions$local, _defaultOptions$local2;
+  requiredArgs(1, arguments);
+  var defaultOptions = getDefaultOptions();
+  var firstWeekContainsDate = toInteger((_ref = (_ref2 = (_ref3 = (_options$firstWeekCon = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon !== void 0 ? _options$firstWeekCon : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.firstWeekContainsDate) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.firstWeekContainsDate) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.firstWeekContainsDate) !== null && _ref !== void 0 ? _ref : 1);
+  var year = getWeekYear(dirtyDate, options);
+  var firstWeek = new Date(0);
+  firstWeek.setFullYear(year, 0, firstWeekContainsDate);
+  firstWeek.setHours(0, 0, 0, 0);
+  var date = startOfWeek(firstWeek, options);
+  return date;
+}
+
+var MILLISECONDS_IN_WEEK = 604800000;
+
+/**
+ * @name getWeek
+ * @category Week Helpers
+ * @summary Get the local week index of the given date.
+ *
+ * @description
+ * Get the local week index of the given date.
+ * The exact calculation depends on the values of
+ * `options.weekStartsOn` (which is the index of the first day of the week)
+ * and `options.firstWeekContainsDate` (which is the day of January, which is always in
+ * the first week of the week-numbering year)
+ *
+ * Week numbering: https://en.wikipedia.org/wiki/Week#Week_numbering
+ *
+ * @param {Date|Number} date - the given date
+ * @param {Object} [options] - an object with options.
+ * @param {Locale} [options.locale=defaultLocale] - the locale object. See [Locale]{@link https://date-fns.org/docs/Locale}
+ * @param {0|1|2|3|4|5|6} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @param {1|2|3|4|5|6|7} [options.firstWeekContainsDate=1] - the day of January, which is always in the first week of the year
+ * @returns {Number} the week
+ * @throws {TypeError} 1 argument required
+ * @throws {RangeError} `options.weekStartsOn` must be between 0 and 6
+ * @throws {RangeError} `options.firstWeekContainsDate` must be between 1 and 7
+ *
+ * @example
+ * // Which week of the local week numbering year is 2 January 2005 with default options?
+ * const result = getWeek(new Date(2005, 0, 2))
+ * //=> 2
+ *
+ * // Which week of the local week numbering year is 2 January 2005,
+ * // if Monday is the first day of the week,
+ * // and the first week of the year always contains 4 January?
+ * const result = getWeek(new Date(2005, 0, 2), {
+ *   weekStartsOn: 1,
+ *   firstWeekContainsDate: 4
+ * })
+ * //=> 53
+ */
+
+function getWeek(dirtyDate, options) {
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  var diff = startOfWeek(date, options).getTime() - startOfWeekYear(date, options).getTime();
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round(diff / MILLISECONDS_IN_WEEK) + 1;
+}
+
+/**
+ * @name lastDayOfMonth
+ * @category Month Helpers
+ * @summary Return the last day of a month for the given date.
+ *
+ * @description
+ * Return the last day of a month for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|Number} date - the original date
+ * @returns {Date} the last day of a month
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // The last day of a month for 2 September 2014 11:55:00:
+ * const result = lastDayOfMonth(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 30 2014 00:00:00
+ */
+function lastDayOfMonth(dirtyDate) {
+  requiredArgs(1, arguments);
+  var date = toDate(dirtyDate);
+  var month = date.getMonth();
+  date.setFullYear(date.getFullYear(), month + 1, 0);
+  date.setHours(0, 0, 0, 0);
+  return date;
+}
+
+/**
+ * @name getWeeksInMonth
+ * @category Week Helpers
+ * @summary Get the number of calendar weeks a month spans.
+ *
+ * @description
+ * Get the number of calendar weeks the month in the given date spans.
+ *
+ * @param {Date|Number} date - the given date
+ * @param {Object} [options] - an object with options.
+ * @param {Locale} [options.locale=defaultLocale] - the locale object. See [Locale]{@link https://date-fns.org/docs/Locale}
+ * @param {0|1|2|3|4|5|6} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Number} the number of calendar weeks
+ * @throws {TypeError} 2 arguments required
+ * @throws {RangeError} `options.weekStartsOn` must be between 0 and 6
+ *
+ * @example
+ * // How many calendar weeks does February 2015 span?
+ * const result = getWeeksInMonth(new Date(2015, 1, 8))
+ * //=> 4
+ *
+ * @example
+ * // If the week starts on Monday,
+ * // how many calendar weeks does July 2017 span?
+ * const result = getWeeksInMonth(new Date(2017, 6, 5), { weekStartsOn: 1 })
+ * //=> 6
+ */
+function getWeeksInMonth(date, options) {
+  requiredArgs(1, arguments);
+  return differenceInCalendarWeeks(lastDayOfMonth(date), startOfMonth(date), options) + 1;
+}
+
+/**
+ * @name isAfter
+ * @category Common Helpers
+ * @summary Is the first date after the second one?
+ *
+ * @description
+ * Is the first date after the second one?
+ *
+ * @param {Date|Number} date - the date that should be after the other one to return true
+ * @param {Date|Number} dateToCompare - the date to compare with
+ * @returns {Boolean} the first date is after the second date
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Is 10 July 1989 after 11 February 1987?
+ * const result = isAfter(new Date(1989, 6, 10), new Date(1987, 1, 11))
+ * //=> true
+ */
+function isAfter(dirtyDate, dirtyDateToCompare) {
+  requiredArgs(2, arguments);
+  var date = toDate(dirtyDate);
+  var dateToCompare = toDate(dirtyDateToCompare);
+  return date.getTime() > dateToCompare.getTime();
+}
+
+/**
+ * @name isBefore
+ * @category Common Helpers
+ * @summary Is the first date before the second one?
+ *
+ * @description
+ * Is the first date before the second one?
+ *
+ * @param {Date|Number} date - the date that should be before the other one to return true
+ * @param {Date|Number} dateToCompare - the date to compare with
+ * @returns {Boolean} the first date is before the second date
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Is 10 July 1989 before 11 February 1987?
+ * const result = isBefore(new Date(1989, 6, 10), new Date(1987, 1, 11))
+ * //=> false
+ */
+function isBefore(dirtyDate, dirtyDateToCompare) {
+  requiredArgs(2, arguments);
+  var date = toDate(dirtyDate);
+  var dateToCompare = toDate(dirtyDateToCompare);
+  return date.getTime() < dateToCompare.getTime();
+}
+
+/**
+ * @name isSameMonth
+ * @category Month Helpers
+ * @summary Are the given dates in the same month (and year)?
+ *
+ * @description
+ * Are the given dates in the same month (and year)?
+ *
+ * @param {Date|Number} dateLeft - the first date to check
+ * @param {Date|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same month (and year)
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Are 2 September 2014 and 25 September 2014 in the same month?
+ * const result = isSameMonth(new Date(2014, 8, 2), new Date(2014, 8, 25))
+ * //=> true
+ *
+ * @example
+ * // Are 2 September 2014 and 25 September 2015 in the same month?
+ * const result = isSameMonth(new Date(2014, 8, 2), new Date(2015, 8, 25))
+ * //=> false
+ */
+function isSameMonth(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var dateLeft = toDate(dirtyDateLeft);
+  var dateRight = toDate(dirtyDateRight);
+  return dateLeft.getFullYear() === dateRight.getFullYear() && dateLeft.getMonth() === dateRight.getMonth();
+}
+
+/**
+ * @name isSameYear
+ * @category Year Helpers
+ * @summary Are the given dates in the same year?
+ *
+ * @description
+ * Are the given dates in the same year?
+ *
+ * @param {Date|Number} dateLeft - the first date to check
+ * @param {Date|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same year
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Are 2 September 2014 and 25 September 2014 in the same year?
+ * const result = isSameYear(new Date(2014, 8, 2), new Date(2014, 8, 25))
+ * //=> true
+ */
+function isSameYear(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var dateLeft = toDate(dirtyDateLeft);
+  var dateRight = toDate(dirtyDateRight);
+  return dateLeft.getFullYear() === dateRight.getFullYear();
+}
+
+/**
+ * @name subDays
+ * @category Day Helpers
+ * @summary Subtract the specified number of days from the given date.
+ *
+ * @description
+ * Subtract the specified number of days from the given date.
+ *
+ * @param {Date|Number} date - the date to be changed
+ * @param {Number} amount - the amount of days to be subtracted. Positive decimals will be rounded using `Math.floor`, decimals less than zero will be rounded using `Math.ceil`.
+ * @returns {Date} the new date with the days subtracted
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Subtract 10 days from 1 September 2014:
+ * const result = subDays(new Date(2014, 8, 1), 10)
+ * //=> Fri Aug 22 2014 00:00:00
+ */
+function subDays(dirtyDate, dirtyAmount) {
+  requiredArgs(2, arguments);
+  var amount = toInteger(dirtyAmount);
+  return addDays(dirtyDate, -amount);
+}
+
+/**
+ * @name setMonth
+ * @category Month Helpers
+ * @summary Set the month to the given date.
+ *
+ * @description
+ * Set the month to the given date.
+ *
+ * @param {Date|Number} date - the date to be changed
+ * @param {Number} month - the month of the new date
+ * @returns {Date} the new date with the month set
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Set February to 1 September 2014:
+ * const result = setMonth(new Date(2014, 8, 1), 1)
+ * //=> Sat Feb 01 2014 00:00:00
+ */
+function setMonth(dirtyDate, dirtyMonth) {
+  requiredArgs(2, arguments);
+  var date = toDate(dirtyDate);
+  var month = toInteger(dirtyMonth);
+  var year = date.getFullYear();
+  var day = date.getDate();
+  var dateWithDesiredMonth = new Date(0);
+  dateWithDesiredMonth.setFullYear(year, month, 15);
+  dateWithDesiredMonth.setHours(0, 0, 0, 0);
+  var daysInMonth = getDaysInMonth(dateWithDesiredMonth);
+  // Set the last day of the new month
+  // if the original date was the last day of the longer month
+  date.setMonth(month, Math.min(day, daysInMonth));
+  return date;
+}
+
+/**
+ * @name setYear
+ * @category Year Helpers
+ * @summary Set the year to the given date.
+ *
+ * @description
+ * Set the year to the given date.
+ *
+ * @param {Date|Number} date - the date to be changed
+ * @param {Number} year - the year of the new date
+ * @returns {Date} the new date with the year set
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Set year 2013 to 1 September 2014:
+ * const result = setYear(new Date(2014, 8, 1), 2013)
+ * //=> Sun Sep 01 2013 00:00:00
+ */
+function setYear(dirtyDate, dirtyYear) {
+  requiredArgs(2, arguments);
+  var date = toDate(dirtyDate);
+  var year = toInteger(dirtyYear);
+
+  // Check if date is Invalid Date because Date.prototype.setFullYear ignores the value of Invalid Date
+  if (isNaN(date.getTime())) {
+    return new Date(NaN);
+  }
+  date.setFullYear(year);
+  return date;
+}
+
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+/* global Reflect, Promise, SuppressedError, Symbol */
+
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+}
+
+typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
+    var e = new Error(message);
+    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
+
+var jsxRuntime = {exports: {}};
+
+var reactJsxRuntime_production_min = {};
+
+/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var hasRequiredReactJsxRuntime_production_min;
+
+function requireReactJsxRuntime_production_min () {
+	if (hasRequiredReactJsxRuntime_production_min) return reactJsxRuntime_production_min;
+	hasRequiredReactJsxRuntime_production_min = 1;
+var f=React__default["default"],k=Symbol.for("react.element"),l=Symbol.for("react.fragment"),m=Object.prototype.hasOwnProperty,n=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,p={key:!0,ref:!0,__self:!0,__source:!0};
+	function q(c,a,g){var b,d={},e=null,h=null;void 0!==g&&(e=""+g);void 0!==a.key&&(e=""+a.key);void 0!==a.ref&&(h=a.ref);for(b in a)m.call(a,b)&&!p.hasOwnProperty(b)&&(d[b]=a[b]);if(c&&c.defaultProps)for(b in a=c.defaultProps,a)void 0===d[b]&&(d[b]=a[b]);return {$$typeof:k,type:c,key:e,ref:h,props:d,_owner:n.current}}reactJsxRuntime_production_min.Fragment=l;reactJsxRuntime_production_min.jsx=q;reactJsxRuntime_production_min.jsxs=q;
+	return reactJsxRuntime_production_min;
+}
+
+var reactJsxRuntime_development = {};
+
+/**
+ * @license React
+ * react-jsx-runtime.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var hasRequiredReactJsxRuntime_development;
+
+function requireReactJsxRuntime_development () {
+	if (hasRequiredReactJsxRuntime_development) return reactJsxRuntime_development;
+	hasRequiredReactJsxRuntime_development = 1;
+
+	if (process.env.NODE_ENV !== "production") {
+	  (function() {
+
+	var React = React__default["default"];
+
+	// ATTENTION
+	// When adding new symbols to this file,
+	// Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
+	// The Symbol used to tag the ReactElement-like types.
+	var REACT_ELEMENT_TYPE = Symbol.for('react.element');
+	var REACT_PORTAL_TYPE = Symbol.for('react.portal');
+	var REACT_FRAGMENT_TYPE = Symbol.for('react.fragment');
+	var REACT_STRICT_MODE_TYPE = Symbol.for('react.strict_mode');
+	var REACT_PROFILER_TYPE = Symbol.for('react.profiler');
+	var REACT_PROVIDER_TYPE = Symbol.for('react.provider');
+	var REACT_CONTEXT_TYPE = Symbol.for('react.context');
+	var REACT_FORWARD_REF_TYPE = Symbol.for('react.forward_ref');
+	var REACT_SUSPENSE_TYPE = Symbol.for('react.suspense');
+	var REACT_SUSPENSE_LIST_TYPE = Symbol.for('react.suspense_list');
+	var REACT_MEMO_TYPE = Symbol.for('react.memo');
+	var REACT_LAZY_TYPE = Symbol.for('react.lazy');
+	var REACT_OFFSCREEN_TYPE = Symbol.for('react.offscreen');
+	var MAYBE_ITERATOR_SYMBOL = Symbol.iterator;
+	var FAUX_ITERATOR_SYMBOL = '@@iterator';
+	function getIteratorFn(maybeIterable) {
+	  if (maybeIterable === null || typeof maybeIterable !== 'object') {
+	    return null;
+	  }
+
+	  var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
+
+	  if (typeof maybeIterator === 'function') {
+	    return maybeIterator;
+	  }
+
+	  return null;
+	}
+
+	var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+
+	function error(format) {
+	  {
+	    {
+	      for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+	        args[_key2 - 1] = arguments[_key2];
+	      }
+
+	      printWarning('error', format, args);
+	    }
+	  }
+	}
+
+	function printWarning(level, format, args) {
+	  // When changing this logic, you might want to also
+	  // update consoleWithStackDev.www.js as well.
+	  {
+	    var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
+	    var stack = ReactDebugCurrentFrame.getStackAddendum();
+
+	    if (stack !== '') {
+	      format += '%s';
+	      args = args.concat([stack]);
+	    } // eslint-disable-next-line react-internal/safe-string-coercion
+
+
+	    var argsWithFormat = args.map(function (item) {
+	      return String(item);
+	    }); // Careful: RN currently depends on this prefix
+
+	    argsWithFormat.unshift('Warning: ' + format); // We intentionally don't use spread (or .apply) directly because it
+	    // breaks IE9: https://github.com/facebook/react/issues/13610
+	    // eslint-disable-next-line react-internal/no-production-logging
+
+	    Function.prototype.apply.call(console[level], console, argsWithFormat);
+	  }
+	}
+
+	// -----------------------------------------------------------------------------
+
+	var enableScopeAPI = false; // Experimental Create Event Handle API.
+	var enableCacheElement = false;
+	var enableTransitionTracing = false; // No known bugs, but needs performance testing
+
+	var enableLegacyHidden = false; // Enables unstable_avoidThisFallback feature in Fiber
+	// stuff. Intended to enable React core members to more easily debug scheduling
+	// issues in DEV builds.
+
+	var enableDebugTracing = false; // Track which Fiber(s) schedule render work.
+
+	var REACT_MODULE_REFERENCE;
+
+	{
+	  REACT_MODULE_REFERENCE = Symbol.for('react.module.reference');
+	}
+
+	function isValidElementType(type) {
+	  if (typeof type === 'string' || typeof type === 'function') {
+	    return true;
+	  } // Note: typeof might be other than 'symbol' or 'number' (e.g. if it's a polyfill).
+
+
+	  if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || enableDebugTracing  || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || enableLegacyHidden  || type === REACT_OFFSCREEN_TYPE || enableScopeAPI  || enableCacheElement  || enableTransitionTracing ) {
+	    return true;
+	  }
+
+	  if (typeof type === 'object' && type !== null) {
+	    if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || // This needs to include all possible module reference object
+	    // types supported by any Flight configuration anywhere since
+	    // we don't know which Flight build this will end up being used
+	    // with.
+	    type.$$typeof === REACT_MODULE_REFERENCE || type.getModuleId !== undefined) {
+	      return true;
+	    }
+	  }
+
+	  return false;
+	}
+
+	function getWrappedName(outerType, innerType, wrapperName) {
+	  var displayName = outerType.displayName;
+
+	  if (displayName) {
+	    return displayName;
+	  }
+
+	  var functionName = innerType.displayName || innerType.name || '';
+	  return functionName !== '' ? wrapperName + "(" + functionName + ")" : wrapperName;
+	} // Keep in sync with react-reconciler/getComponentNameFromFiber
+
+
+	function getContextName(type) {
+	  return type.displayName || 'Context';
+	} // Note that the reconciler package should generally prefer to use getComponentNameFromFiber() instead.
+
+
+	function getComponentNameFromType(type) {
+	  if (type == null) {
+	    // Host root, text node or just invalid type.
+	    return null;
+	  }
+
+	  {
+	    if (typeof type.tag === 'number') {
+	      error('Received an unexpected object in getComponentNameFromType(). ' + 'This is likely a bug in React. Please file an issue.');
+	    }
+	  }
+
+	  if (typeof type === 'function') {
+	    return type.displayName || type.name || null;
+	  }
+
+	  if (typeof type === 'string') {
+	    return type;
+	  }
+
+	  switch (type) {
+	    case REACT_FRAGMENT_TYPE:
+	      return 'Fragment';
+
+	    case REACT_PORTAL_TYPE:
+	      return 'Portal';
+
+	    case REACT_PROFILER_TYPE:
+	      return 'Profiler';
+
+	    case REACT_STRICT_MODE_TYPE:
+	      return 'StrictMode';
+
+	    case REACT_SUSPENSE_TYPE:
+	      return 'Suspense';
+
+	    case REACT_SUSPENSE_LIST_TYPE:
+	      return 'SuspenseList';
+
+	  }
+
+	  if (typeof type === 'object') {
+	    switch (type.$$typeof) {
+	      case REACT_CONTEXT_TYPE:
+	        var context = type;
+	        return getContextName(context) + '.Consumer';
+
+	      case REACT_PROVIDER_TYPE:
+	        var provider = type;
+	        return getContextName(provider._context) + '.Provider';
+
+	      case REACT_FORWARD_REF_TYPE:
+	        return getWrappedName(type, type.render, 'ForwardRef');
+
+	      case REACT_MEMO_TYPE:
+	        var outerName = type.displayName || null;
+
+	        if (outerName !== null) {
+	          return outerName;
+	        }
+
+	        return getComponentNameFromType(type.type) || 'Memo';
+
+	      case REACT_LAZY_TYPE:
+	        {
+	          var lazyComponent = type;
+	          var payload = lazyComponent._payload;
+	          var init = lazyComponent._init;
+
+	          try {
+	            return getComponentNameFromType(init(payload));
+	          } catch (x) {
+	            return null;
+	          }
+	        }
+
+	      // eslint-disable-next-line no-fallthrough
+	    }
+	  }
+
+	  return null;
+	}
+
+	var assign = Object.assign;
+
+	// Helpers to patch console.logs to avoid logging during side-effect free
+	// replaying on render function. This currently only patches the object
+	// lazily which won't cover if the log function was extracted eagerly.
+	// We could also eagerly patch the method.
+	var disabledDepth = 0;
+	var prevLog;
+	var prevInfo;
+	var prevWarn;
+	var prevError;
+	var prevGroup;
+	var prevGroupCollapsed;
+	var prevGroupEnd;
+
+	function disabledLog() {}
+
+	disabledLog.__reactDisabledLog = true;
+	function disableLogs() {
+	  {
+	    if (disabledDepth === 0) {
+	      /* eslint-disable react-internal/no-production-logging */
+	      prevLog = console.log;
+	      prevInfo = console.info;
+	      prevWarn = console.warn;
+	      prevError = console.error;
+	      prevGroup = console.group;
+	      prevGroupCollapsed = console.groupCollapsed;
+	      prevGroupEnd = console.groupEnd; // https://github.com/facebook/react/issues/19099
+
+	      var props = {
+	        configurable: true,
+	        enumerable: true,
+	        value: disabledLog,
+	        writable: true
+	      }; // $FlowFixMe Flow thinks console is immutable.
+
+	      Object.defineProperties(console, {
+	        info: props,
+	        log: props,
+	        warn: props,
+	        error: props,
+	        group: props,
+	        groupCollapsed: props,
+	        groupEnd: props
+	      });
+	      /* eslint-enable react-internal/no-production-logging */
+	    }
+
+	    disabledDepth++;
+	  }
+	}
+	function reenableLogs() {
+	  {
+	    disabledDepth--;
+
+	    if (disabledDepth === 0) {
+	      /* eslint-disable react-internal/no-production-logging */
+	      var props = {
+	        configurable: true,
+	        enumerable: true,
+	        writable: true
+	      }; // $FlowFixMe Flow thinks console is immutable.
+
+	      Object.defineProperties(console, {
+	        log: assign({}, props, {
+	          value: prevLog
+	        }),
+	        info: assign({}, props, {
+	          value: prevInfo
+	        }),
+	        warn: assign({}, props, {
+	          value: prevWarn
+	        }),
+	        error: assign({}, props, {
+	          value: prevError
+	        }),
+	        group: assign({}, props, {
+	          value: prevGroup
+	        }),
+	        groupCollapsed: assign({}, props, {
+	          value: prevGroupCollapsed
+	        }),
+	        groupEnd: assign({}, props, {
+	          value: prevGroupEnd
+	        })
+	      });
+	      /* eslint-enable react-internal/no-production-logging */
+	    }
+
+	    if (disabledDepth < 0) {
+	      error('disabledDepth fell below zero. ' + 'This is a bug in React. Please file an issue.');
+	    }
+	  }
+	}
+
+	var ReactCurrentDispatcher = ReactSharedInternals.ReactCurrentDispatcher;
+	var prefix;
+	function describeBuiltInComponentFrame(name, source, ownerFn) {
+	  {
+	    if (prefix === undefined) {
+	      // Extract the VM specific prefix used by each line.
+	      try {
+	        throw Error();
+	      } catch (x) {
+	        var match = x.stack.trim().match(/\n( *(at )?)/);
+	        prefix = match && match[1] || '';
+	      }
+	    } // We use the prefix to ensure our stacks line up with native stack frames.
+
+
+	    return '\n' + prefix + name;
+	  }
+	}
+	var reentry = false;
+	var componentFrameCache;
+
+	{
+	  var PossiblyWeakMap = typeof WeakMap === 'function' ? WeakMap : Map;
+	  componentFrameCache = new PossiblyWeakMap();
+	}
+
+	function describeNativeComponentFrame(fn, construct) {
+	  // If something asked for a stack inside a fake render, it should get ignored.
+	  if ( !fn || reentry) {
+	    return '';
+	  }
+
+	  {
+	    var frame = componentFrameCache.get(fn);
+
+	    if (frame !== undefined) {
+	      return frame;
+	    }
+	  }
+
+	  var control;
+	  reentry = true;
+	  var previousPrepareStackTrace = Error.prepareStackTrace; // $FlowFixMe It does accept undefined.
+
+	  Error.prepareStackTrace = undefined;
+	  var previousDispatcher;
+
+	  {
+	    previousDispatcher = ReactCurrentDispatcher.current; // Set the dispatcher in DEV because this might be call in the render function
+	    // for warnings.
+
+	    ReactCurrentDispatcher.current = null;
+	    disableLogs();
+	  }
+
+	  try {
+	    // This should throw.
+	    if (construct) {
+	      // Something should be setting the props in the constructor.
+	      var Fake = function () {
+	        throw Error();
+	      }; // $FlowFixMe
+
+
+	      Object.defineProperty(Fake.prototype, 'props', {
+	        set: function () {
+	          // We use a throwing setter instead of frozen or non-writable props
+	          // because that won't throw in a non-strict mode function.
+	          throw Error();
+	        }
+	      });
+
+	      if (typeof Reflect === 'object' && Reflect.construct) {
+	        // We construct a different control for this case to include any extra
+	        // frames added by the construct call.
+	        try {
+	          Reflect.construct(Fake, []);
+	        } catch (x) {
+	          control = x;
+	        }
+
+	        Reflect.construct(fn, [], Fake);
+	      } else {
+	        try {
+	          Fake.call();
+	        } catch (x) {
+	          control = x;
+	        }
+
+	        fn.call(Fake.prototype);
+	      }
+	    } else {
+	      try {
+	        throw Error();
+	      } catch (x) {
+	        control = x;
+	      }
+
+	      fn();
+	    }
+	  } catch (sample) {
+	    // This is inlined manually because closure doesn't do it for us.
+	    if (sample && control && typeof sample.stack === 'string') {
+	      // This extracts the first frame from the sample that isn't also in the control.
+	      // Skipping one frame that we assume is the frame that calls the two.
+	      var sampleLines = sample.stack.split('\n');
+	      var controlLines = control.stack.split('\n');
+	      var s = sampleLines.length - 1;
+	      var c = controlLines.length - 1;
+
+	      while (s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c]) {
+	        // We expect at least one stack frame to be shared.
+	        // Typically this will be the root most one. However, stack frames may be
+	        // cut off due to maximum stack limits. In this case, one maybe cut off
+	        // earlier than the other. We assume that the sample is longer or the same
+	        // and there for cut off earlier. So we should find the root most frame in
+	        // the sample somewhere in the control.
+	        c--;
+	      }
+
+	      for (; s >= 1 && c >= 0; s--, c--) {
+	        // Next we find the first one that isn't the same which should be the
+	        // frame that called our sample function and the control.
+	        if (sampleLines[s] !== controlLines[c]) {
+	          // In V8, the first line is describing the message but other VMs don't.
+	          // If we're about to return the first line, and the control is also on the same
+	          // line, that's a pretty good indicator that our sample threw at same line as
+	          // the control. I.e. before we entered the sample frame. So we ignore this result.
+	          // This can happen if you passed a class to function component, or non-function.
+	          if (s !== 1 || c !== 1) {
+	            do {
+	              s--;
+	              c--; // We may still have similar intermediate frames from the construct call.
+	              // The next one that isn't the same should be our match though.
+
+	              if (c < 0 || sampleLines[s] !== controlLines[c]) {
+	                // V8 adds a "new" prefix for native classes. Let's remove it to make it prettier.
+	                var _frame = '\n' + sampleLines[s].replace(' at new ', ' at '); // If our component frame is labeled "<anonymous>"
+	                // but we have a user-provided "displayName"
+	                // splice it in to make the stack more readable.
+
+
+	                if (fn.displayName && _frame.includes('<anonymous>')) {
+	                  _frame = _frame.replace('<anonymous>', fn.displayName);
+	                }
+
+	                {
+	                  if (typeof fn === 'function') {
+	                    componentFrameCache.set(fn, _frame);
+	                  }
+	                } // Return the line we found.
+
+
+	                return _frame;
+	              }
+	            } while (s >= 1 && c >= 0);
+	          }
+
+	          break;
+	        }
+	      }
+	    }
+	  } finally {
+	    reentry = false;
+
+	    {
+	      ReactCurrentDispatcher.current = previousDispatcher;
+	      reenableLogs();
+	    }
+
+	    Error.prepareStackTrace = previousPrepareStackTrace;
+	  } // Fallback to just using the name if we couldn't make it throw.
+
+
+	  var name = fn ? fn.displayName || fn.name : '';
+	  var syntheticFrame = name ? describeBuiltInComponentFrame(name) : '';
+
+	  {
+	    if (typeof fn === 'function') {
+	      componentFrameCache.set(fn, syntheticFrame);
+	    }
+	  }
+
+	  return syntheticFrame;
+	}
+	function describeFunctionComponentFrame(fn, source, ownerFn) {
+	  {
+	    return describeNativeComponentFrame(fn, false);
+	  }
+	}
+
+	function shouldConstruct(Component) {
+	  var prototype = Component.prototype;
+	  return !!(prototype && prototype.isReactComponent);
+	}
+
+	function describeUnknownElementTypeFrameInDEV(type, source, ownerFn) {
+
+	  if (type == null) {
+	    return '';
+	  }
+
+	  if (typeof type === 'function') {
+	    {
+	      return describeNativeComponentFrame(type, shouldConstruct(type));
+	    }
+	  }
+
+	  if (typeof type === 'string') {
+	    return describeBuiltInComponentFrame(type);
+	  }
+
+	  switch (type) {
+	    case REACT_SUSPENSE_TYPE:
+	      return describeBuiltInComponentFrame('Suspense');
+
+	    case REACT_SUSPENSE_LIST_TYPE:
+	      return describeBuiltInComponentFrame('SuspenseList');
+	  }
+
+	  if (typeof type === 'object') {
+	    switch (type.$$typeof) {
+	      case REACT_FORWARD_REF_TYPE:
+	        return describeFunctionComponentFrame(type.render);
+
+	      case REACT_MEMO_TYPE:
+	        // Memo may contain any component type so we recursively resolve it.
+	        return describeUnknownElementTypeFrameInDEV(type.type, source, ownerFn);
+
+	      case REACT_LAZY_TYPE:
+	        {
+	          var lazyComponent = type;
+	          var payload = lazyComponent._payload;
+	          var init = lazyComponent._init;
+
+	          try {
+	            // Lazy may contain any component type so we recursively resolve it.
+	            return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
+	          } catch (x) {}
+	        }
+	    }
+	  }
+
+	  return '';
+	}
+
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+	var loggedTypeFailures = {};
+	var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
+
+	function setCurrentlyValidatingElement(element) {
+	  {
+	    if (element) {
+	      var owner = element._owner;
+	      var stack = describeUnknownElementTypeFrameInDEV(element.type, element._source, owner ? owner.type : null);
+	      ReactDebugCurrentFrame.setExtraStackFrame(stack);
+	    } else {
+	      ReactDebugCurrentFrame.setExtraStackFrame(null);
+	    }
+	  }
+	}
+
+	function checkPropTypes(typeSpecs, values, location, componentName, element) {
+	  {
+	    // $FlowFixMe This is okay but Flow doesn't know it.
+	    var has = Function.call.bind(hasOwnProperty);
+
+	    for (var typeSpecName in typeSpecs) {
+	      if (has(typeSpecs, typeSpecName)) {
+	        var error$1 = void 0; // Prop type validation may throw. In case they do, we don't want to
+	        // fail the render phase where it didn't fail before. So we log it.
+	        // After these have been cleaned up, we'll let them throw.
+
+	        try {
+	          // This is intentionally an invariant that gets caught. It's the same
+	          // behavior as without this statement except with a better message.
+	          if (typeof typeSpecs[typeSpecName] !== 'function') {
+	            // eslint-disable-next-line react-internal/prod-error-codes
+	            var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' + 'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.');
+	            err.name = 'Invariant Violation';
+	            throw err;
+	          }
+
+	          error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED');
+	        } catch (ex) {
+	          error$1 = ex;
+	        }
+
+	        if (error$1 && !(error$1 instanceof Error)) {
+	          setCurrentlyValidatingElement(element);
+
+	          error('%s: type specification of %s' + ' `%s` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a %s. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).', componentName || 'React class', location, typeSpecName, typeof error$1);
+
+	          setCurrentlyValidatingElement(null);
+	        }
+
+	        if (error$1 instanceof Error && !(error$1.message in loggedTypeFailures)) {
+	          // Only monitor this failure once because there tends to be a lot of the
+	          // same error.
+	          loggedTypeFailures[error$1.message] = true;
+	          setCurrentlyValidatingElement(element);
+
+	          error('Failed %s type: %s', location, error$1.message);
+
+	          setCurrentlyValidatingElement(null);
+	        }
+	      }
+	    }
+	  }
+	}
+
+	var isArrayImpl = Array.isArray; // eslint-disable-next-line no-redeclare
+
+	function isArray(a) {
+	  return isArrayImpl(a);
+	}
+
+	/*
+	 * The `'' + value` pattern (used in in perf-sensitive code) throws for Symbol
+	 * and Temporal.* types. See https://github.com/facebook/react/pull/22064.
+	 *
+	 * The functions in this module will throw an easier-to-understand,
+	 * easier-to-debug exception with a clear errors message message explaining the
+	 * problem. (Instead of a confusing exception thrown inside the implementation
+	 * of the `value` object).
+	 */
+	// $FlowFixMe only called in DEV, so void return is not possible.
+	function typeName(value) {
+	  {
+	    // toStringTag is needed for namespaced types like Temporal.Instant
+	    var hasToStringTag = typeof Symbol === 'function' && Symbol.toStringTag;
+	    var type = hasToStringTag && value[Symbol.toStringTag] || value.constructor.name || 'Object';
+	    return type;
+	  }
+	} // $FlowFixMe only called in DEV, so void return is not possible.
+
+
+	function willCoercionThrow(value) {
+	  {
+	    try {
+	      testStringCoercion(value);
+	      return false;
+	    } catch (e) {
+	      return true;
+	    }
+	  }
+	}
+
+	function testStringCoercion(value) {
+	  // If you ended up here by following an exception call stack, here's what's
+	  // happened: you supplied an object or symbol value to React (as a prop, key,
+	  // DOM attribute, CSS property, string ref, etc.) and when React tried to
+	  // coerce it to a string using `'' + value`, an exception was thrown.
+	  //
+	  // The most common types that will cause this exception are `Symbol` instances
+	  // and Temporal objects like `Temporal.Instant`. But any object that has a
+	  // `valueOf` or `[Symbol.toPrimitive]` method that throws will also cause this
+	  // exception. (Library authors do this to prevent users from using built-in
+	  // numeric operators like `+` or comparison operators like `>=` because custom
+	  // methods are needed to perform accurate arithmetic or comparison.)
+	  //
+	  // To fix the problem, coerce this object or symbol value to a string before
+	  // passing it to React. The most reliable way is usually `String(value)`.
+	  //
+	  // To find which value is throwing, check the browser or debugger console.
+	  // Before this exception was thrown, there should be `console.error` output
+	  // that shows the type (Symbol, Temporal.PlainDate, etc.) that caused the
+	  // problem and how that type was used: key, atrribute, input value prop, etc.
+	  // In most cases, this console output also shows the component and its
+	  // ancestor components where the exception happened.
+	  //
+	  // eslint-disable-next-line react-internal/safe-string-coercion
+	  return '' + value;
+	}
+	function checkKeyStringCoercion(value) {
+	  {
+	    if (willCoercionThrow(value)) {
+	      error('The provided key is an unsupported type %s.' + ' This value must be coerced to a string before before using it here.', typeName(value));
+
+	      return testStringCoercion(value); // throw (to help callers find troubleshooting comments)
+	    }
+	  }
+	}
+
+	var ReactCurrentOwner = ReactSharedInternals.ReactCurrentOwner;
+	var RESERVED_PROPS = {
+	  key: true,
+	  ref: true,
+	  __self: true,
+	  __source: true
+	};
+	var specialPropKeyWarningShown;
+	var specialPropRefWarningShown;
+	var didWarnAboutStringRefs;
+
+	{
+	  didWarnAboutStringRefs = {};
+	}
+
+	function hasValidRef(config) {
+	  {
+	    if (hasOwnProperty.call(config, 'ref')) {
+	      var getter = Object.getOwnPropertyDescriptor(config, 'ref').get;
+
+	      if (getter && getter.isReactWarning) {
+	        return false;
+	      }
+	    }
+	  }
+
+	  return config.ref !== undefined;
+	}
+
+	function hasValidKey(config) {
+	  {
+	    if (hasOwnProperty.call(config, 'key')) {
+	      var getter = Object.getOwnPropertyDescriptor(config, 'key').get;
+
+	      if (getter && getter.isReactWarning) {
+	        return false;
+	      }
+	    }
+	  }
+
+	  return config.key !== undefined;
+	}
+
+	function warnIfStringRefCannotBeAutoConverted(config, self) {
+	  {
+	    if (typeof config.ref === 'string' && ReactCurrentOwner.current && self && ReactCurrentOwner.current.stateNode !== self) {
+	      var componentName = getComponentNameFromType(ReactCurrentOwner.current.type);
+
+	      if (!didWarnAboutStringRefs[componentName]) {
+	        error('Component "%s" contains the string ref "%s". ' + 'Support for string refs will be removed in a future major release. ' + 'This case cannot be automatically converted to an arrow function. ' + 'We ask you to manually fix this case by using useRef() or createRef() instead. ' + 'Learn more about using refs safely here: ' + 'https://reactjs.org/link/strict-mode-string-ref', getComponentNameFromType(ReactCurrentOwner.current.type), config.ref);
+
+	        didWarnAboutStringRefs[componentName] = true;
+	      }
+	    }
+	  }
+	}
+
+	function defineKeyPropWarningGetter(props, displayName) {
+	  {
+	    var warnAboutAccessingKey = function () {
+	      if (!specialPropKeyWarningShown) {
+	        specialPropKeyWarningShown = true;
+
+	        error('%s: `key` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://reactjs.org/link/special-props)', displayName);
+	      }
+	    };
+
+	    warnAboutAccessingKey.isReactWarning = true;
+	    Object.defineProperty(props, 'key', {
+	      get: warnAboutAccessingKey,
+	      configurable: true
+	    });
+	  }
+	}
+
+	function defineRefPropWarningGetter(props, displayName) {
+	  {
+	    var warnAboutAccessingRef = function () {
+	      if (!specialPropRefWarningShown) {
+	        specialPropRefWarningShown = true;
+
+	        error('%s: `ref` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://reactjs.org/link/special-props)', displayName);
+	      }
+	    };
+
+	    warnAboutAccessingRef.isReactWarning = true;
+	    Object.defineProperty(props, 'ref', {
+	      get: warnAboutAccessingRef,
+	      configurable: true
+	    });
+	  }
+	}
+	/**
+	 * Factory method to create a new React element. This no longer adheres to
+	 * the class pattern, so do not use new to call it. Also, instanceof check
+	 * will not work. Instead test $$typeof field against Symbol.for('react.element') to check
+	 * if something is a React Element.
+	 *
+	 * @param {*} type
+	 * @param {*} props
+	 * @param {*} key
+	 * @param {string|object} ref
+	 * @param {*} owner
+	 * @param {*} self A *temporary* helper to detect places where `this` is
+	 * different from the `owner` when React.createElement is called, so that we
+	 * can warn. We want to get rid of owner and replace string `ref`s with arrow
+	 * functions, and as long as `this` and owner are the same, there will be no
+	 * change in behavior.
+	 * @param {*} source An annotation object (added by a transpiler or otherwise)
+	 * indicating filename, line number, and/or other information.
+	 * @internal
+	 */
+
+
+	var ReactElement = function (type, key, ref, self, source, owner, props) {
+	  var element = {
+	    // This tag allows us to uniquely identify this as a React Element
+	    $$typeof: REACT_ELEMENT_TYPE,
+	    // Built-in properties that belong on the element
+	    type: type,
+	    key: key,
+	    ref: ref,
+	    props: props,
+	    // Record the component responsible for creating this element.
+	    _owner: owner
+	  };
+
+	  {
+	    // The validation flag is currently mutative. We put it on
+	    // an external backing store so that we can freeze the whole object.
+	    // This can be replaced with a WeakMap once they are implemented in
+	    // commonly used development environments.
+	    element._store = {}; // To make comparing ReactElements easier for testing purposes, we make
+	    // the validation flag non-enumerable (where possible, which should
+	    // include every environment we run tests in), so the test framework
+	    // ignores it.
+
+	    Object.defineProperty(element._store, 'validated', {
+	      configurable: false,
+	      enumerable: false,
+	      writable: true,
+	      value: false
+	    }); // self and source are DEV only properties.
+
+	    Object.defineProperty(element, '_self', {
+	      configurable: false,
+	      enumerable: false,
+	      writable: false,
+	      value: self
+	    }); // Two elements created in two different places should be considered
+	    // equal for testing purposes and therefore we hide it from enumeration.
+
+	    Object.defineProperty(element, '_source', {
+	      configurable: false,
+	      enumerable: false,
+	      writable: false,
+	      value: source
+	    });
+
+	    if (Object.freeze) {
+	      Object.freeze(element.props);
+	      Object.freeze(element);
+	    }
+	  }
+
+	  return element;
+	};
+	/**
+	 * https://github.com/reactjs/rfcs/pull/107
+	 * @param {*} type
+	 * @param {object} props
+	 * @param {string} key
+	 */
+
+	function jsxDEV(type, config, maybeKey, source, self) {
+	  {
+	    var propName; // Reserved names are extracted
+
+	    var props = {};
+	    var key = null;
+	    var ref = null; // Currently, key can be spread in as a prop. This causes a potential
+	    // issue if key is also explicitly declared (ie. <div {...props} key="Hi" />
+	    // or <div key="Hi" {...props} /> ). We want to deprecate key spread,
+	    // but as an intermediary step, we will use jsxDEV for everything except
+	    // <div {...props} key="Hi" />, because we aren't currently able to tell if
+	    // key is explicitly declared to be undefined or not.
+
+	    if (maybeKey !== undefined) {
+	      {
+	        checkKeyStringCoercion(maybeKey);
+	      }
+
+	      key = '' + maybeKey;
+	    }
+
+	    if (hasValidKey(config)) {
+	      {
+	        checkKeyStringCoercion(config.key);
+	      }
+
+	      key = '' + config.key;
+	    }
+
+	    if (hasValidRef(config)) {
+	      ref = config.ref;
+	      warnIfStringRefCannotBeAutoConverted(config, self);
+	    } // Remaining properties are added to a new props object
+
+
+	    for (propName in config) {
+	      if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {
+	        props[propName] = config[propName];
+	      }
+	    } // Resolve default props
+
+
+	    if (type && type.defaultProps) {
+	      var defaultProps = type.defaultProps;
+
+	      for (propName in defaultProps) {
+	        if (props[propName] === undefined) {
+	          props[propName] = defaultProps[propName];
+	        }
+	      }
+	    }
+
+	    if (key || ref) {
+	      var displayName = typeof type === 'function' ? type.displayName || type.name || 'Unknown' : type;
+
+	      if (key) {
+	        defineKeyPropWarningGetter(props, displayName);
+	      }
+
+	      if (ref) {
+	        defineRefPropWarningGetter(props, displayName);
+	      }
+	    }
+
+	    return ReactElement(type, key, ref, self, source, ReactCurrentOwner.current, props);
+	  }
+	}
+
+	var ReactCurrentOwner$1 = ReactSharedInternals.ReactCurrentOwner;
+	var ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
+
+	function setCurrentlyValidatingElement$1(element) {
+	  {
+	    if (element) {
+	      var owner = element._owner;
+	      var stack = describeUnknownElementTypeFrameInDEV(element.type, element._source, owner ? owner.type : null);
+	      ReactDebugCurrentFrame$1.setExtraStackFrame(stack);
+	    } else {
+	      ReactDebugCurrentFrame$1.setExtraStackFrame(null);
+	    }
+	  }
+	}
+
+	var propTypesMisspellWarningShown;
+
+	{
+	  propTypesMisspellWarningShown = false;
+	}
+	/**
+	 * Verifies the object is a ReactElement.
+	 * See https://reactjs.org/docs/react-api.html#isvalidelement
+	 * @param {?object} object
+	 * @return {boolean} True if `object` is a ReactElement.
+	 * @final
+	 */
+
+
+	function isValidElement(object) {
+	  {
+	    return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+	  }
+	}
+
+	function getDeclarationErrorAddendum() {
+	  {
+	    if (ReactCurrentOwner$1.current) {
+	      var name = getComponentNameFromType(ReactCurrentOwner$1.current.type);
+
+	      if (name) {
+	        return '\n\nCheck the render method of `' + name + '`.';
+	      }
+	    }
+
+	    return '';
+	  }
+	}
+
+	function getSourceInfoErrorAddendum(source) {
+	  {
+	    if (source !== undefined) {
+	      var fileName = source.fileName.replace(/^.*[\\\/]/, '');
+	      var lineNumber = source.lineNumber;
+	      return '\n\nCheck your code at ' + fileName + ':' + lineNumber + '.';
+	    }
+
+	    return '';
+	  }
+	}
+	/**
+	 * Warn if there's no key explicitly set on dynamic arrays of children or
+	 * object keys are not valid. This allows us to keep track of children between
+	 * updates.
+	 */
+
+
+	var ownerHasKeyUseWarning = {};
+
+	function getCurrentComponentErrorInfo(parentType) {
+	  {
+	    var info = getDeclarationErrorAddendum();
+
+	    if (!info) {
+	      var parentName = typeof parentType === 'string' ? parentType : parentType.displayName || parentType.name;
+
+	      if (parentName) {
+	        info = "\n\nCheck the top-level render call using <" + parentName + ">.";
+	      }
+	    }
+
+	    return info;
+	  }
+	}
+	/**
+	 * Warn if the element doesn't have an explicit key assigned to it.
+	 * This element is in an array. The array could grow and shrink or be
+	 * reordered. All children that haven't already been validated are required to
+	 * have a "key" property assigned to it. Error statuses are cached so a warning
+	 * will only be shown once.
+	 *
+	 * @internal
+	 * @param {ReactElement} element Element that requires a key.
+	 * @param {*} parentType element's parent's type.
+	 */
+
+
+	function validateExplicitKey(element, parentType) {
+	  {
+	    if (!element._store || element._store.validated || element.key != null) {
+	      return;
+	    }
+
+	    element._store.validated = true;
+	    var currentComponentErrorInfo = getCurrentComponentErrorInfo(parentType);
+
+	    if (ownerHasKeyUseWarning[currentComponentErrorInfo]) {
+	      return;
+	    }
+
+	    ownerHasKeyUseWarning[currentComponentErrorInfo] = true; // Usually the current owner is the offender, but if it accepts children as a
+	    // property, it may be the creator of the child that's responsible for
+	    // assigning it a key.
+
+	    var childOwner = '';
+
+	    if (element && element._owner && element._owner !== ReactCurrentOwner$1.current) {
+	      // Give the component that originally created this child.
+	      childOwner = " It was passed a child from " + getComponentNameFromType(element._owner.type) + ".";
+	    }
+
+	    setCurrentlyValidatingElement$1(element);
+
+	    error('Each child in a list should have a unique "key" prop.' + '%s%s See https://reactjs.org/link/warning-keys for more information.', currentComponentErrorInfo, childOwner);
+
+	    setCurrentlyValidatingElement$1(null);
+	  }
+	}
+	/**
+	 * Ensure that every element either is passed in a static location, in an
+	 * array with an explicit keys property defined, or in an object literal
+	 * with valid key property.
+	 *
+	 * @internal
+	 * @param {ReactNode} node Statically passed child of any type.
+	 * @param {*} parentType node's parent's type.
+	 */
+
+
+	function validateChildKeys(node, parentType) {
+	  {
+	    if (typeof node !== 'object') {
+	      return;
+	    }
+
+	    if (isArray(node)) {
+	      for (var i = 0; i < node.length; i++) {
+	        var child = node[i];
+
+	        if (isValidElement(child)) {
+	          validateExplicitKey(child, parentType);
+	        }
+	      }
+	    } else if (isValidElement(node)) {
+	      // This element was passed in a valid location.
+	      if (node._store) {
+	        node._store.validated = true;
+	      }
+	    } else if (node) {
+	      var iteratorFn = getIteratorFn(node);
+
+	      if (typeof iteratorFn === 'function') {
+	        // Entry iterators used to provide implicit keys,
+	        // but now we print a separate warning for them later.
+	        if (iteratorFn !== node.entries) {
+	          var iterator = iteratorFn.call(node);
+	          var step;
+
+	          while (!(step = iterator.next()).done) {
+	            if (isValidElement(step.value)) {
+	              validateExplicitKey(step.value, parentType);
+	            }
+	          }
+	        }
+	      }
+	    }
+	  }
+	}
+	/**
+	 * Given an element, validate that its props follow the propTypes definition,
+	 * provided by the type.
+	 *
+	 * @param {ReactElement} element
+	 */
+
+
+	function validatePropTypes(element) {
+	  {
+	    var type = element.type;
+
+	    if (type === null || type === undefined || typeof type === 'string') {
+	      return;
+	    }
+
+	    var propTypes;
+
+	    if (typeof type === 'function') {
+	      propTypes = type.propTypes;
+	    } else if (typeof type === 'object' && (type.$$typeof === REACT_FORWARD_REF_TYPE || // Note: Memo only checks outer props here.
+	    // Inner props are checked in the reconciler.
+	    type.$$typeof === REACT_MEMO_TYPE)) {
+	      propTypes = type.propTypes;
+	    } else {
+	      return;
+	    }
+
+	    if (propTypes) {
+	      // Intentionally inside to avoid triggering lazy initializers:
+	      var name = getComponentNameFromType(type);
+	      checkPropTypes(propTypes, element.props, 'prop', name, element);
+	    } else if (type.PropTypes !== undefined && !propTypesMisspellWarningShown) {
+	      propTypesMisspellWarningShown = true; // Intentionally inside to avoid triggering lazy initializers:
+
+	      var _name = getComponentNameFromType(type);
+
+	      error('Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?', _name || 'Unknown');
+	    }
+
+	    if (typeof type.getDefaultProps === 'function' && !type.getDefaultProps.isReactClassApproved) {
+	      error('getDefaultProps is only used on classic React.createClass ' + 'definitions. Use a static property named `defaultProps` instead.');
+	    }
+	  }
+	}
+	/**
+	 * Given a fragment, validate that it can only be provided with fragment props
+	 * @param {ReactElement} fragment
+	 */
+
+
+	function validateFragmentProps(fragment) {
+	  {
+	    var keys = Object.keys(fragment.props);
+
+	    for (var i = 0; i < keys.length; i++) {
+	      var key = keys[i];
+
+	      if (key !== 'children' && key !== 'key') {
+	        setCurrentlyValidatingElement$1(fragment);
+
+	        error('Invalid prop `%s` supplied to `React.Fragment`. ' + 'React.Fragment can only have `key` and `children` props.', key);
+
+	        setCurrentlyValidatingElement$1(null);
+	        break;
+	      }
+	    }
+
+	    if (fragment.ref !== null) {
+	      setCurrentlyValidatingElement$1(fragment);
+
+	      error('Invalid attribute `ref` supplied to `React.Fragment`.');
+
+	      setCurrentlyValidatingElement$1(null);
+	    }
+	  }
+	}
+
+	function jsxWithValidation(type, props, key, isStaticChildren, source, self) {
+	  {
+	    var validType = isValidElementType(type); // We warn in this case but don't throw. We expect the element creation to
+	    // succeed and there will likely be errors in render.
+
+	    if (!validType) {
+	      var info = '';
+
+	      if (type === undefined || typeof type === 'object' && type !== null && Object.keys(type).length === 0) {
+	        info += ' You likely forgot to export your component from the file ' + "it's defined in, or you might have mixed up default and named imports.";
+	      }
+
+	      var sourceInfo = getSourceInfoErrorAddendum(source);
+
+	      if (sourceInfo) {
+	        info += sourceInfo;
+	      } else {
+	        info += getDeclarationErrorAddendum();
+	      }
+
+	      var typeString;
+
+	      if (type === null) {
+	        typeString = 'null';
+	      } else if (isArray(type)) {
+	        typeString = 'array';
+	      } else if (type !== undefined && type.$$typeof === REACT_ELEMENT_TYPE) {
+	        typeString = "<" + (getComponentNameFromType(type.type) || 'Unknown') + " />";
+	        info = ' Did you accidentally export a JSX literal instead of a component?';
+	      } else {
+	        typeString = typeof type;
+	      }
+
+	      error('React.jsx: type is invalid -- expected a string (for ' + 'built-in components) or a class/function (for composite ' + 'components) but got: %s.%s', typeString, info);
+	    }
+
+	    var element = jsxDEV(type, props, key, source, self); // The result can be nullish if a mock or a custom function is used.
+	    // TODO: Drop this when these are no longer allowed as the type argument.
+
+	    if (element == null) {
+	      return element;
+	    } // Skip key warning if the type isn't valid since our key validation logic
+	    // doesn't expect a non-string/function type and can throw confusing errors.
+	    // We don't want exception behavior to differ between dev and prod.
+	    // (Rendering will throw with a helpful message and as soon as the type is
+	    // fixed, the key warnings will appear.)
+
+
+	    if (validType) {
+	      var children = props.children;
+
+	      if (children !== undefined) {
+	        if (isStaticChildren) {
+	          if (isArray(children)) {
+	            for (var i = 0; i < children.length; i++) {
+	              validateChildKeys(children[i], type);
+	            }
+
+	            if (Object.freeze) {
+	              Object.freeze(children);
+	            }
+	          } else {
+	            error('React.jsx: Static children should always be an array. ' + 'You are likely explicitly calling React.jsxs or React.jsxDEV. ' + 'Use the Babel transform instead.');
+	          }
+	        } else {
+	          validateChildKeys(children, type);
+	        }
+	      }
+	    }
+
+	    if (type === REACT_FRAGMENT_TYPE) {
+	      validateFragmentProps(element);
+	    } else {
+	      validatePropTypes(element);
+	    }
+
+	    return element;
+	  }
+	} // These two functions exist to still get child warnings in dev
+	// even with the prod transform. This means that jsxDEV is purely
+	// opt-in behavior for better messages but that we won't stop
+	// giving you warnings if you use production apis.
+
+	function jsxWithValidationStatic(type, props, key) {
+	  {
+	    return jsxWithValidation(type, props, key, true);
+	  }
+	}
+	function jsxWithValidationDynamic(type, props, key) {
+	  {
+	    return jsxWithValidation(type, props, key, false);
+	  }
+	}
+
+	var jsx =  jsxWithValidationDynamic ; // we may want to special case jsxs internally to take advantage of static children.
+	// for now we can ship identical prod functions
+
+	var jsxs =  jsxWithValidationStatic ;
+
+	reactJsxRuntime_development.Fragment = REACT_FRAGMENT_TYPE;
+	reactJsxRuntime_development.jsx = jsx;
+	reactJsxRuntime_development.jsxs = jsxs;
+	  })();
+	}
+	return reactJsxRuntime_development;
+}
+
+if (process.env.NODE_ENV === 'production') {
+  jsxRuntime.exports = requireReactJsxRuntime_production_min();
+} else {
+  jsxRuntime.exports = requireReactJsxRuntime_development();
+}
+
+var jsxRuntimeExports = jsxRuntime.exports;
+
+/** Returns true when the props are of type {@link DayPickerMultipleProps}. */
+function isDayPickerMultiple(props) {
+    return props.mode === 'multiple';
+}
+
+/** Returns true when the props are of type {@link DayPickerRangeProps}. */
+function isDayPickerRange(props) {
+    return props.mode === 'range';
+}
+
+/** Returns true when the props are of type {@link DayPickerSingleProps}. */
+function isDayPickerSingle(props) {
+    return props.mode === 'single';
+}
+
+/**
+ * The name of the default CSS classes.
+ */
+var defaultClassNames = {
+    root: 'rdp',
+    multiple_months: 'rdp-multiple_months',
+    with_weeknumber: 'rdp-with_weeknumber',
+    vhidden: 'rdp-vhidden',
+    button_reset: 'rdp-button_reset',
+    button: 'rdp-button',
+    caption: 'rdp-caption',
+    caption_start: 'rdp-caption_start',
+    caption_end: 'rdp-caption_end',
+    caption_between: 'rdp-caption_between',
+    caption_label: 'rdp-caption_label',
+    caption_dropdowns: 'rdp-caption_dropdowns',
+    dropdown: 'rdp-dropdown',
+    dropdown_month: 'rdp-dropdown_month',
+    dropdown_year: 'rdp-dropdown_year',
+    dropdown_icon: 'rdp-dropdown_icon',
+    months: 'rdp-months',
+    month: 'rdp-month',
+    table: 'rdp-table',
+    tbody: 'rdp-tbody',
+    tfoot: 'rdp-tfoot',
+    head: 'rdp-head',
+    head_row: 'rdp-head_row',
+    head_cell: 'rdp-head_cell',
+    nav: 'rdp-nav',
+    nav_button: 'rdp-nav_button',
+    nav_button_previous: 'rdp-nav_button_previous',
+    nav_button_next: 'rdp-nav_button_next',
+    nav_icon: 'rdp-nav_icon',
+    row: 'rdp-row',
+    weeknumber: 'rdp-weeknumber',
+    cell: 'rdp-cell',
+    day: 'rdp-day',
+    day_today: 'rdp-day_today',
+    day_outside: 'rdp-day_outside',
+    day_selected: 'rdp-day_selected',
+    day_disabled: 'rdp-day_disabled',
+    day_hidden: 'rdp-day_hidden',
+    day_range_start: 'rdp-day_range_start',
+    day_range_end: 'rdp-day_range_end',
+    day_range_middle: 'rdp-day_range_middle'
+};
+
+/**
+ * The default formatter for the caption.
+ */
+function formatCaption(month, options) {
+    return format(month, 'LLLL y', options);
+}
+
+/**
+ * The default formatter for the Day button.
+ */
+function formatDay(day, options) {
+    return format(day, 'd', options);
+}
+
+/**
+ * The default formatter for the Month caption.
+ */
+function formatMonthCaption(month, options) {
+    return format(month, 'LLLL', options);
+}
+
+/**
+ * The default formatter for the week number.
+ */
+function formatWeekNumber(weekNumber) {
+    return "".concat(weekNumber);
+}
+
+/**
+ * The default formatter for the name of the weekday.
+ */
+function formatWeekdayName(weekday, options) {
+    return format(weekday, 'cccccc', options);
+}
+
+/**
+ * The default formatter for the Year caption.
+ */
+function formatYearCaption(year, options) {
+    return format(year, 'yyyy', options);
+}
+
+var formatters = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    formatCaption: formatCaption,
+    formatDay: formatDay,
+    formatMonthCaption: formatMonthCaption,
+    formatWeekNumber: formatWeekNumber,
+    formatWeekdayName: formatWeekdayName,
+    formatYearCaption: formatYearCaption
+});
+
+/**
+ * The default ARIA label for the day button.
+ */
+var labelDay = function (day, activeModifiers, options) {
+    return format(day, 'do MMMM (EEEE)', options);
+};
+
+/**
+ * The default ARIA label for the WeekNumber element.
+ */
+var labelMonthDropdown = function () {
+    return 'Month: ';
+};
+
+/**
+ * The default ARIA label for next month button in navigation
+ */
+var labelNext = function () {
+    return 'Go to next month';
+};
+
+/**
+ * The default ARIA label for previous month button in navigation
+ */
+var labelPrevious = function () {
+    return 'Go to previous month';
+};
+
+/**
+ * The default ARIA label for the Weekday element.
+ */
+var labelWeekday = function (day, options) {
+    return format(day, 'cccc', options);
+};
+
+/**
+ * The default ARIA label for the WeekNumber element.
+ */
+var labelWeekNumber = function (n) {
+    return "Week n. ".concat(n);
+};
+
+/**
+ * The default ARIA label for the WeekNumber element.
+ */
+var labelYearDropdown = function () {
+    return 'Year: ';
+};
+
+var labels = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    labelDay: labelDay,
+    labelMonthDropdown: labelMonthDropdown,
+    labelNext: labelNext,
+    labelPrevious: labelPrevious,
+    labelWeekNumber: labelWeekNumber,
+    labelWeekday: labelWeekday,
+    labelYearDropdown: labelYearDropdown
+});
+
+/**
+ * Returns the default values to use in the DayPickerContext, in case they are
+ * not passed down with the DayPicker initial props.
+ */
+function getDefaultContextValues() {
+    var captionLayout = 'buttons';
+    var classNames = defaultClassNames;
+    var locale = enUS;
+    var modifiersClassNames = {};
+    var modifiers = {};
+    var numberOfMonths = 1;
+    var styles = {};
+    var today = new Date();
+    return {
+        captionLayout: captionLayout,
+        classNames: classNames,
+        formatters: formatters,
+        labels: labels,
+        locale: locale,
+        modifiersClassNames: modifiersClassNames,
+        modifiers: modifiers,
+        numberOfMonths: numberOfMonths,
+        styles: styles,
+        today: today,
+        mode: 'default'
+    };
+}
+
+/** Return the `fromDate` and `toDate` prop values values parsing the DayPicker props. */
+function parseFromToProps(props) {
+    var fromYear = props.fromYear, toYear = props.toYear, fromMonth = props.fromMonth, toMonth = props.toMonth;
+    var fromDate = props.fromDate, toDate = props.toDate;
+    if (fromMonth) {
+        fromDate = startOfMonth(fromMonth);
+    }
+    else if (fromYear) {
+        fromDate = new Date(fromYear, 0, 1);
+    }
+    if (toMonth) {
+        toDate = endOfMonth(toMonth);
+    }
+    else if (toYear) {
+        toDate = new Date(toYear, 11, 31);
+    }
+    return {
+        fromDate: fromDate ? startOfDay(fromDate) : undefined,
+        toDate: toDate ? startOfDay(toDate) : undefined
+    };
+}
+
+/**
+ * The DayPicker context shares the props passed to DayPicker within internal
+ * and custom components. It is used to set the default values and perform
+ * one-time calculations required to render the days.
+ *
+ * Access to this context from the {@link useDayPicker} hook.
+ */
+var DayPickerContext = React.createContext(undefined);
+/**
+ * The provider for the {@link DayPickerContext}, assigning the defaults from the
+ * initial DayPicker props.
+ */
+function DayPickerProvider(props) {
+    var _a;
+    var initialProps = props.initialProps;
+    var defaultContextValues = getDefaultContextValues();
+    var _b = parseFromToProps(initialProps), fromDate = _b.fromDate, toDate = _b.toDate;
+    var captionLayout = (_a = initialProps.captionLayout) !== null && _a !== void 0 ? _a : defaultContextValues.captionLayout;
+    if (captionLayout !== 'buttons' && (!fromDate || !toDate)) {
+        // When no from/to dates are set, the caption is always buttons
+        captionLayout = 'buttons';
+    }
+    var onSelect;
+    if (isDayPickerSingle(initialProps) ||
+        isDayPickerMultiple(initialProps) ||
+        isDayPickerRange(initialProps)) {
+        onSelect = initialProps.onSelect;
+    }
+    var value = __assign(__assign(__assign({}, defaultContextValues), initialProps), { captionLayout: captionLayout, classNames: __assign(__assign({}, defaultContextValues.classNames), initialProps.classNames), components: __assign({}, initialProps.components), formatters: __assign(__assign({}, defaultContextValues.formatters), initialProps.formatters), fromDate: fromDate, labels: __assign(__assign({}, defaultContextValues.labels), initialProps.labels), mode: initialProps.mode || defaultContextValues.mode, modifiers: __assign(__assign({}, defaultContextValues.modifiers), initialProps.modifiers), modifiersClassNames: __assign(__assign({}, defaultContextValues.modifiersClassNames), initialProps.modifiersClassNames), onSelect: onSelect, styles: __assign(__assign({}, defaultContextValues.styles), initialProps.styles), toDate: toDate });
+    return (jsxRuntimeExports.jsx(DayPickerContext.Provider, __assign({ value: value }, { children: props.children })));
+}
+/**
+ * Hook to access the {@link DayPickerContextValue}.
+ *
+ * Use the DayPicker context to access to the props passed to DayPicker inside
+ * internal or custom components.
+ */
+function useDayPicker() {
+    var context = React.useContext(DayPickerContext);
+    if (!context) {
+        throw new Error("useDayPicker must be used within a DayPickerProvider.");
+    }
+    return context;
+}
+
+/** Render the caption for the displayed month. This component is used when `captionLayout="buttons"`. */
+function CaptionLabel(props) {
+    var _a = useDayPicker(), locale = _a.locale, classNames = _a.classNames, styles = _a.styles, formatCaption = _a.formatters.formatCaption;
+    return (jsxRuntimeExports.jsx("div", __assign({ className: classNames.caption_label, style: styles.caption_label, "aria-live": "polite", role: "presentation", id: props.id }, { children: formatCaption(props.displayMonth, { locale: locale }) })));
+}
+
+/**
+ * Render the icon in the styled drop-down.
+ */
+function IconDropdown(props) {
+    return (jsxRuntimeExports.jsx("svg", __assign({ width: "8px", height: "8px", viewBox: "0 0 120 120", "data-testid": "iconDropdown" }, props, { children: jsxRuntimeExports.jsx("path", { d: "M4.22182541,48.2218254 C8.44222828,44.0014225 15.2388494,43.9273804 19.5496459,47.9996989 L19.7781746,48.2218254 L60,88.443 L100.221825,48.2218254 C104.442228,44.0014225 111.238849,43.9273804 115.549646,47.9996989 L115.778175,48.2218254 C119.998577,52.4422283 120.07262,59.2388494 116.000301,63.5496459 L115.778175,63.7781746 L67.7781746,111.778175 C63.5577717,115.998577 56.7611506,116.07262 52.4503541,112.000301 L52.2218254,111.778175 L4.22182541,63.7781746 C-0.0739418023,59.4824074 -0.0739418023,52.5175926 4.22182541,48.2218254 Z", fill: "currentColor", fillRule: "nonzero" }) })));
+}
+
+/**
+ * Render a styled select component – displaying a caption and a custom
+ * drop-down icon.
+ */
+function Dropdown(props) {
+    var _a, _b;
+    var onChange = props.onChange, value = props.value, children = props.children, caption = props.caption, className = props.className, style = props.style;
+    var dayPicker = useDayPicker();
+    var IconDropdownComponent = (_b = (_a = dayPicker.components) === null || _a === void 0 ? void 0 : _a.IconDropdown) !== null && _b !== void 0 ? _b : IconDropdown;
+    return (jsxRuntimeExports.jsxs("div", __assign({ className: className, style: style }, { children: [jsxRuntimeExports.jsx("span", __assign({ className: dayPicker.classNames.vhidden }, { children: props['aria-label'] })), jsxRuntimeExports.jsx("select", __assign({ name: props.name, "aria-label": props['aria-label'], className: dayPicker.classNames.dropdown, style: dayPicker.styles.dropdown, value: value, onChange: onChange }, { children: children })), jsxRuntimeExports.jsxs("div", __assign({ className: dayPicker.classNames.caption_label, style: dayPicker.styles.caption_label, "aria-hidden": "true" }, { children: [caption, jsxRuntimeExports.jsx(IconDropdownComponent, { className: dayPicker.classNames.dropdown_icon, style: dayPicker.styles.dropdown_icon })] }))] })));
+}
+
+/** Render the dropdown to navigate between months. */
+function MonthsDropdown(props) {
+    var _a;
+    var _b = useDayPicker(), fromDate = _b.fromDate, toDate = _b.toDate, styles = _b.styles, locale = _b.locale, formatMonthCaption = _b.formatters.formatMonthCaption, classNames = _b.classNames, components = _b.components, labelMonthDropdown = _b.labels.labelMonthDropdown;
+    // Dropdown should appear only when both from/toDate is set
+    if (!fromDate)
+        return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {});
+    if (!toDate)
+        return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {});
+    var dropdownMonths = [];
+    if (isSameYear(fromDate, toDate)) {
+        // only display the months included in the range
+        var date = startOfMonth(fromDate);
+        for (var month = fromDate.getMonth(); month <= toDate.getMonth(); month++) {
+            dropdownMonths.push(setMonth(date, month));
+        }
+    }
+    else {
+        // display all the 12 months
+        var date = startOfMonth(new Date()); // Any date should be OK, as we just need the year
+        for (var month = 0; month <= 11; month++) {
+            dropdownMonths.push(setMonth(date, month));
+        }
+    }
+    var handleChange = function (e) {
+        var selectedMonth = Number(e.target.value);
+        var newMonth = setMonth(startOfMonth(props.displayMonth), selectedMonth);
+        props.onChange(newMonth);
+    };
+    var DropdownComponent = (_a = components === null || components === void 0 ? void 0 : components.Dropdown) !== null && _a !== void 0 ? _a : Dropdown;
+    return (jsxRuntimeExports.jsx(DropdownComponent, __assign({ name: "months", "aria-label": labelMonthDropdown(), className: classNames.dropdown_month, style: styles.dropdown_month, onChange: handleChange, value: props.displayMonth.getMonth(), caption: formatMonthCaption(props.displayMonth, { locale: locale }) }, { children: dropdownMonths.map(function (m) { return (jsxRuntimeExports.jsx("option", __assign({ value: m.getMonth() }, { children: formatMonthCaption(m, { locale: locale }) }), m.getMonth())); }) })));
+}
+
+/**
+ * Render a dropdown to change the year. Take in account the `nav.fromDate` and
+ * `toDate` from context.
+ */
+function YearsDropdown(props) {
+    var _a;
+    var displayMonth = props.displayMonth;
+    var _b = useDayPicker(), fromDate = _b.fromDate, toDate = _b.toDate, locale = _b.locale, styles = _b.styles, classNames = _b.classNames, components = _b.components, formatYearCaption = _b.formatters.formatYearCaption, labelYearDropdown = _b.labels.labelYearDropdown;
+    var years = [];
+    // Dropdown should appear only when both from/toDate is set
+    if (!fromDate)
+        return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {});
+    if (!toDate)
+        return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {});
+    var fromYear = fromDate.getFullYear();
+    var toYear = toDate.getFullYear();
+    for (var year = fromYear; year <= toYear; year++) {
+        years.push(setYear(startOfYear(new Date()), year));
+    }
+    var handleChange = function (e) {
+        var newMonth = setYear(startOfMonth(displayMonth), Number(e.target.value));
+        props.onChange(newMonth);
+    };
+    var DropdownComponent = (_a = components === null || components === void 0 ? void 0 : components.Dropdown) !== null && _a !== void 0 ? _a : Dropdown;
+    return (jsxRuntimeExports.jsx(DropdownComponent, __assign({ name: "years", "aria-label": labelYearDropdown(), className: classNames.dropdown_year, style: styles.dropdown_year, onChange: handleChange, value: displayMonth.getFullYear(), caption: formatYearCaption(displayMonth, { locale: locale }) }, { children: years.map(function (year) { return (jsxRuntimeExports.jsx("option", __assign({ value: year.getFullYear() }, { children: formatYearCaption(year, { locale: locale }) }), year.getFullYear())); }) })));
+}
+
+/**
+ * Helper hook for using controlled/uncontrolled values from a component props.
+ *
+ * When the value is not controlled, pass `undefined` as `controlledValue` and
+ * use the returned setter to update it.
+ *
+ * When the value is controlled, pass the controlled value as second
+ * argument, which will be always returned as `value`.
+ */
+function useControlledValue(defaultValue, controlledValue) {
+    var _a = React.useState(defaultValue), uncontrolledValue = _a[0], setValue = _a[1];
+    var value = controlledValue === undefined ? uncontrolledValue : controlledValue;
+    return [value, setValue];
+}
+
+/** Return the initial month according to the given options. */
+function getInitialMonth(context) {
+    var month = context.month, defaultMonth = context.defaultMonth, today = context.today;
+    var initialMonth = month || defaultMonth || today || new Date();
+    var toDate = context.toDate, fromDate = context.fromDate, _a = context.numberOfMonths, numberOfMonths = _a === void 0 ? 1 : _a;
+    // Fix the initialMonth if is after the to-date
+    if (toDate && differenceInCalendarMonths(toDate, initialMonth) < 0) {
+        var offset = -1 * (numberOfMonths - 1);
+        initialMonth = addMonths(toDate, offset);
+    }
+    // Fix the initialMonth if is before the from-date
+    if (fromDate && differenceInCalendarMonths(initialMonth, fromDate) < 0) {
+        initialMonth = fromDate;
+    }
+    return startOfMonth(initialMonth);
+}
+
+/** Controls the navigation state. */
+function useNavigationState() {
+    var context = useDayPicker();
+    var initialMonth = getInitialMonth(context);
+    var _a = useControlledValue(initialMonth, context.month), month = _a[0], setMonth = _a[1];
+    var goToMonth = function (date) {
+        var _a;
+        if (context.disableNavigation)
+            return;
+        var month = startOfMonth(date);
+        setMonth(month);
+        (_a = context.onMonthChange) === null || _a === void 0 ? void 0 : _a.call(context, month);
+    };
+    return [month, goToMonth];
+}
+
+/**
+ * Return the months to display in the component according to the number of
+ * months and the from/to date.
+ */
+function getDisplayMonths(month, _a) {
+    var reverseMonths = _a.reverseMonths, numberOfMonths = _a.numberOfMonths;
+    var start = startOfMonth(month);
+    var end = startOfMonth(addMonths(start, numberOfMonths));
+    var monthsDiff = differenceInCalendarMonths(end, start);
+    var months = [];
+    for (var i = 0; i < monthsDiff; i++) {
+        var nextMonth = addMonths(start, i);
+        months.push(nextMonth);
+    }
+    if (reverseMonths)
+        months = months.reverse();
+    return months;
+}
+
+/**
+ * Returns the next month the user can navigate to according to the given
+ * options.
+ *
+ * Please note that the next month is not always the next calendar month:
+ *
+ * - if after the `toDate` range, is undefined;
+ * - if the navigation is paged, is the number of months displayed ahead.
+ *
+ */
+function getNextMonth(startingMonth, options) {
+    if (options.disableNavigation) {
+        return undefined;
+    }
+    var toDate = options.toDate, pagedNavigation = options.pagedNavigation, _a = options.numberOfMonths, numberOfMonths = _a === void 0 ? 1 : _a;
+    var offset = pagedNavigation ? numberOfMonths : 1;
+    var month = startOfMonth(startingMonth);
+    if (!toDate) {
+        return addMonths(month, offset);
+    }
+    var monthsDiff = differenceInCalendarMonths(toDate, startingMonth);
+    if (monthsDiff < numberOfMonths) {
+        return undefined;
+    }
+    // Jump forward as the number of months when paged navigation
+    return addMonths(month, offset);
+}
+
+/**
+ * Returns the next previous the user can navigate to, according to the given
+ * options.
+ *
+ * Please note that the previous month is not always the previous calendar
+ * month:
+ *
+ * - if before the `fromDate` date, is `undefined`;
+ * - if the navigation is paged, is the number of months displayed before.
+ *
+ */
+function getPreviousMonth(startingMonth, options) {
+    if (options.disableNavigation) {
+        return undefined;
+    }
+    var fromDate = options.fromDate, pagedNavigation = options.pagedNavigation, _a = options.numberOfMonths, numberOfMonths = _a === void 0 ? 1 : _a;
+    var offset = pagedNavigation ? numberOfMonths : 1;
+    var month = startOfMonth(startingMonth);
+    if (!fromDate) {
+        return addMonths(month, -offset);
+    }
+    var monthsDiff = differenceInCalendarMonths(month, fromDate);
+    if (monthsDiff <= 0) {
+        return undefined;
+    }
+    // Jump back as the number of months when paged navigation
+    return addMonths(month, -offset);
+}
+
+/**
+ * The Navigation context shares details and methods to navigate the months in DayPicker.
+ * Access this context from the {@link useNavigation} hook.
+ */
+var NavigationContext = React.createContext(undefined);
+/** Provides the values for the {@link NavigationContext}. */
+function NavigationProvider(props) {
+    var dayPicker = useDayPicker();
+    var _a = useNavigationState(), currentMonth = _a[0], goToMonth = _a[1];
+    var displayMonths = getDisplayMonths(currentMonth, dayPicker);
+    var nextMonth = getNextMonth(currentMonth, dayPicker);
+    var previousMonth = getPreviousMonth(currentMonth, dayPicker);
+    var isDateDisplayed = function (date) {
+        return displayMonths.some(function (displayMonth) {
+            return isSameMonth(date, displayMonth);
+        });
+    };
+    var goToDate = function (date, refDate) {
+        if (isDateDisplayed(date)) {
+            return;
+        }
+        if (refDate && isBefore(date, refDate)) {
+            goToMonth(addMonths(date, 1 + dayPicker.numberOfMonths * -1));
+        }
+        else {
+            goToMonth(date);
+        }
+    };
+    var value = {
+        currentMonth: currentMonth,
+        displayMonths: displayMonths,
+        goToMonth: goToMonth,
+        goToDate: goToDate,
+        previousMonth: previousMonth,
+        nextMonth: nextMonth,
+        isDateDisplayed: isDateDisplayed
+    };
+    return (jsxRuntimeExports.jsx(NavigationContext.Provider, __assign({ value: value }, { children: props.children })));
+}
+/**
+ * Hook to access the {@link NavigationContextValue}. Use this hook to navigate
+ * between months or years in DayPicker.
+ *
+ * This hook is meant to be used inside internal or custom components.
+ */
+function useNavigation() {
+    var context = React.useContext(NavigationContext);
+    if (!context) {
+        throw new Error('useNavigation must be used within a NavigationProvider');
+    }
+    return context;
+}
+
+/**
+ * Render a caption with the dropdowns to navigate between months and years.
+ */
+function CaptionDropdowns(props) {
+    var _a;
+    var _b = useDayPicker(), classNames = _b.classNames, styles = _b.styles, components = _b.components;
+    var goToMonth = useNavigation().goToMonth;
+    var handleMonthChange = function (newMonth) {
+        goToMonth(addMonths(newMonth, props.displayIndex ? -props.displayIndex : 0));
+    };
+    var CaptionLabelComponent = (_a = components === null || components === void 0 ? void 0 : components.CaptionLabel) !== null && _a !== void 0 ? _a : CaptionLabel;
+    var captionLabel = (jsxRuntimeExports.jsx(CaptionLabelComponent, { id: props.id, displayMonth: props.displayMonth }));
+    return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames.caption_dropdowns, style: styles.caption_dropdowns }, { children: [jsxRuntimeExports.jsx("div", __assign({ className: classNames.vhidden }, { children: captionLabel })), jsxRuntimeExports.jsx(MonthsDropdown, { onChange: handleMonthChange, displayMonth: props.displayMonth }), jsxRuntimeExports.jsx(YearsDropdown, { onChange: handleMonthChange, displayMonth: props.displayMonth })] })));
+}
+
+/**
+ * Render the "previous month" button in the navigation.
+ */
+function IconLeft(props) {
+    return (jsxRuntimeExports.jsx("svg", __assign({ width: "16px", height: "16px", viewBox: "0 0 120 120" }, props, { children: jsxRuntimeExports.jsx("path", { d: "M69.490332,3.34314575 C72.6145263,0.218951416 77.6798462,0.218951416 80.8040405,3.34314575 C83.8617626,6.40086786 83.9268205,11.3179931 80.9992143,14.4548388 L80.8040405,14.6568542 L35.461,60 L80.8040405,105.343146 C83.8617626,108.400868 83.9268205,113.317993 80.9992143,116.454839 L80.8040405,116.656854 C77.7463184,119.714576 72.8291931,119.779634 69.6923475,116.852028 L69.490332,116.656854 L18.490332,65.6568542 C15.4326099,62.5991321 15.367552,57.6820069 18.2951583,54.5451612 L18.490332,54.3431458 L69.490332,3.34314575 Z", fill: "currentColor", fillRule: "nonzero" }) })));
+}
+
+/**
+ * Render the "next month" button in the navigation.
+ */
+function IconRight(props) {
+    return (jsxRuntimeExports.jsx("svg", __assign({ width: "16px", height: "16px", viewBox: "0 0 120 120" }, props, { children: jsxRuntimeExports.jsx("path", { d: "M49.8040405,3.34314575 C46.6798462,0.218951416 41.6145263,0.218951416 38.490332,3.34314575 C35.4326099,6.40086786 35.367552,11.3179931 38.2951583,14.4548388 L38.490332,14.6568542 L83.8333725,60 L38.490332,105.343146 C35.4326099,108.400868 35.367552,113.317993 38.2951583,116.454839 L38.490332,116.656854 C41.5480541,119.714576 46.4651794,119.779634 49.602025,116.852028 L49.8040405,116.656854 L100.804041,65.6568542 C103.861763,62.5991321 103.926821,57.6820069 100.999214,54.5451612 L100.804041,54.3431458 L49.8040405,3.34314575 Z", fill: "currentColor" }) })));
+}
+
+/** Render a button HTML element applying the reset class name. */
+var Button = React.forwardRef(function (props, ref) {
+    var _a = useDayPicker(), classNames = _a.classNames, styles = _a.styles;
+    var classNamesArr = [classNames.button_reset, classNames.button];
+    if (props.className) {
+        classNamesArr.push(props.className);
+    }
+    var className = classNamesArr.join(' ');
+    var style = __assign(__assign({}, styles.button_reset), styles.button);
+    if (props.style) {
+        Object.assign(style, props.style);
+    }
+    return (jsxRuntimeExports.jsx("button", __assign({}, props, { ref: ref, type: "button", className: className, style: style })));
+});
+
+/** A component rendering the navigation buttons or the drop-downs. */
+function Navigation(props) {
+    var _a, _b;
+    var _c = useDayPicker(), dir = _c.dir, locale = _c.locale, classNames = _c.classNames, styles = _c.styles, _d = _c.labels, labelPrevious = _d.labelPrevious, labelNext = _d.labelNext, components = _c.components;
+    if (!props.nextMonth && !props.previousMonth) {
+        return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {});
+    }
+    var previousLabel = labelPrevious(props.previousMonth, { locale: locale });
+    var previousClassName = [
+        classNames.nav_button,
+        classNames.nav_button_previous
+    ].join(' ');
+    var nextLabel = labelNext(props.nextMonth, { locale: locale });
+    var nextClassName = [
+        classNames.nav_button,
+        classNames.nav_button_next
+    ].join(' ');
+    var IconRightComponent = (_a = components === null || components === void 0 ? void 0 : components.IconRight) !== null && _a !== void 0 ? _a : IconRight;
+    var IconLeftComponent = (_b = components === null || components === void 0 ? void 0 : components.IconLeft) !== null && _b !== void 0 ? _b : IconLeft;
+    return (jsxRuntimeExports.jsxs("div", __assign({ className: classNames.nav, style: styles.nav }, { children: [!props.hidePrevious && (jsxRuntimeExports.jsx(Button, __assign({ name: "previous-month", "aria-label": previousLabel, className: previousClassName, style: styles.nav_button_previous, disabled: !props.previousMonth, onClick: props.onPreviousClick }, { children: dir === 'rtl' ? (jsxRuntimeExports.jsx(IconRightComponent, { className: classNames.nav_icon, style: styles.nav_icon })) : (jsxRuntimeExports.jsx(IconLeftComponent, { className: classNames.nav_icon, style: styles.nav_icon })) }))), !props.hideNext && (jsxRuntimeExports.jsx(Button, __assign({ name: "next-month", "aria-label": nextLabel, className: nextClassName, style: styles.nav_button_next, disabled: !props.nextMonth, onClick: props.onNextClick }, { children: dir === 'rtl' ? (jsxRuntimeExports.jsx(IconLeftComponent, { className: classNames.nav_icon, style: styles.nav_icon })) : (jsxRuntimeExports.jsx(IconRightComponent, { className: classNames.nav_icon, style: styles.nav_icon })) })))] })));
+}
+
+/**
+ * Render a caption with a button-based navigation.
+ */
+function CaptionNavigation(props) {
+    var numberOfMonths = useDayPicker().numberOfMonths;
+    var _a = useNavigation(), previousMonth = _a.previousMonth, nextMonth = _a.nextMonth, goToMonth = _a.goToMonth, displayMonths = _a.displayMonths;
+    var displayIndex = displayMonths.findIndex(function (month) {
+        return isSameMonth(props.displayMonth, month);
+    });
+    var isFirst = displayIndex === 0;
+    var isLast = displayIndex === displayMonths.length - 1;
+    var hideNext = numberOfMonths > 1 && (isFirst || !isLast);
+    var hidePrevious = numberOfMonths > 1 && (isLast || !isFirst);
+    var handlePreviousClick = function () {
+        if (!previousMonth)
+            return;
+        goToMonth(previousMonth);
+    };
+    var handleNextClick = function () {
+        if (!nextMonth)
+            return;
+        goToMonth(nextMonth);
+    };
+    return (jsxRuntimeExports.jsx(Navigation, { displayMonth: props.displayMonth, hideNext: hideNext, hidePrevious: hidePrevious, nextMonth: nextMonth, previousMonth: previousMonth, onPreviousClick: handlePreviousClick, onNextClick: handleNextClick }));
+}
+
+/**
+ * Render the caption of a month. The caption has a different layout when
+ * setting the {@link DayPickerBase.captionLayout} prop.
+ */
+function Caption(props) {
+    var _a;
+    var _b = useDayPicker(), classNames = _b.classNames, disableNavigation = _b.disableNavigation, styles = _b.styles, captionLayout = _b.captionLayout, components = _b.components;
+    var CaptionLabelComponent = (_a = components === null || components === void 0 ? void 0 : components.CaptionLabel) !== null && _a !== void 0 ? _a : CaptionLabel;
+    var caption;
+    if (disableNavigation) {
+        caption = (jsxRuntimeExports.jsx(CaptionLabelComponent, { id: props.id, displayMonth: props.displayMonth }));
+    }
+    else if (captionLayout === 'dropdown') {
+        caption = (jsxRuntimeExports.jsx(CaptionDropdowns, { displayMonth: props.displayMonth, id: props.id }));
+    }
+    else if (captionLayout === 'dropdown-buttons') {
+        caption = (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx(CaptionDropdowns, { displayMonth: props.displayMonth, displayIndex: props.displayIndex, id: props.id }), jsxRuntimeExports.jsx(CaptionNavigation, { displayMonth: props.displayMonth, displayIndex: props.displayIndex, id: props.id })] }));
+    }
+    else {
+        caption = (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx(CaptionLabelComponent, { id: props.id, displayMonth: props.displayMonth, displayIndex: props.displayIndex }), jsxRuntimeExports.jsx(CaptionNavigation, { displayMonth: props.displayMonth, id: props.id })] }));
+    }
+    return (jsxRuntimeExports.jsx("div", __assign({ className: classNames.caption, style: styles.caption }, { children: caption })));
+}
+
+/** Render the Footer component (empty as default).*/
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function Footer(props) {
+    var _a = useDayPicker(), footer = _a.footer, styles = _a.styles, tfoot = _a.classNames.tfoot;
+    if (!footer)
+        return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {});
+    return (jsxRuntimeExports.jsx("tfoot", __assign({ className: tfoot, style: styles.tfoot }, { children: jsxRuntimeExports.jsx("tr", { children: jsxRuntimeExports.jsx("td", __assign({ colSpan: 8 }, { children: footer })) }) })));
+}
+
+/**
+ * Generate a series of 7 days, starting from the week, to use for formatting
+ * the weekday names (Monday, Tuesday, etc.).
+ */
+function getWeekdays(locale, 
+/** The index of the first day of the week (0 - Sunday). */
+weekStartsOn, 
+/** Use ISOWeek instead of locale/ */
+ISOWeek) {
+    var start = ISOWeek
+        ? startOfISOWeek(new Date())
+        : startOfWeek(new Date(), { locale: locale, weekStartsOn: weekStartsOn });
+    var days = [];
+    for (var i = 0; i < 7; i++) {
+        var day = addDays(start, i);
+        days.push(day);
+    }
+    return days;
+}
+
+/**
+ * Render the HeadRow component - i.e. the table head row with the weekday names.
+ */
+function HeadRow() {
+    var _a = useDayPicker(), classNames = _a.classNames, styles = _a.styles, showWeekNumber = _a.showWeekNumber, locale = _a.locale, weekStartsOn = _a.weekStartsOn, ISOWeek = _a.ISOWeek, formatWeekdayName = _a.formatters.formatWeekdayName, labelWeekday = _a.labels.labelWeekday;
+    var weekdays = getWeekdays(locale, weekStartsOn, ISOWeek);
+    return (jsxRuntimeExports.jsxs("tr", __assign({ style: styles.head_row, className: classNames.head_row }, { children: [showWeekNumber && (jsxRuntimeExports.jsx("td", { style: styles.head_cell, className: classNames.head_cell })), weekdays.map(function (weekday, i) { return (jsxRuntimeExports.jsx("th", __assign({ scope: "col", className: classNames.head_cell, style: styles.head_cell, "aria-label": labelWeekday(weekday, { locale: locale }) }, { children: formatWeekdayName(weekday, { locale: locale }) }), i)); })] })));
+}
+
+/** Render the table head. */
+function Head() {
+    var _a;
+    var _b = useDayPicker(), classNames = _b.classNames, styles = _b.styles, components = _b.components;
+    var HeadRowComponent = (_a = components === null || components === void 0 ? void 0 : components.HeadRow) !== null && _a !== void 0 ? _a : HeadRow;
+    return (jsxRuntimeExports.jsx("thead", __assign({ style: styles.head, className: classNames.head }, { children: jsxRuntimeExports.jsx(HeadRowComponent, {}) })));
+}
+
+/** Render the content of the day cell. */
+function DayContent(props) {
+    var _a = useDayPicker(), locale = _a.locale, formatDay = _a.formatters.formatDay;
+    return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: formatDay(props.date, { locale: locale }) });
+}
+
+/**
+ * The SelectMultiple context shares details about the selected days when in
+ * multiple selection mode.
+ *
+ * Access this context from the {@link useSelectMultiple} hook.
+ */
+var SelectMultipleContext = React.createContext(undefined);
+/** Provides the values for the {@link SelectMultipleContext}. */
+function SelectMultipleProvider(props) {
+    if (!isDayPickerMultiple(props.initialProps)) {
+        var emptyContextValue = {
+            selected: undefined,
+            modifiers: {
+                disabled: []
+            }
+        };
+        return (jsxRuntimeExports.jsx(SelectMultipleContext.Provider, __assign({ value: emptyContextValue }, { children: props.children })));
+    }
+    return (jsxRuntimeExports.jsx(SelectMultipleProviderInternal, { initialProps: props.initialProps, children: props.children }));
+}
+function SelectMultipleProviderInternal(_a) {
+    var initialProps = _a.initialProps, children = _a.children;
+    var selected = initialProps.selected, min = initialProps.min, max = initialProps.max;
+    var onDayClick = function (day, activeModifiers, e) {
+        var _a, _b;
+        (_a = initialProps.onDayClick) === null || _a === void 0 ? void 0 : _a.call(initialProps, day, activeModifiers, e);
+        var isMinSelected = Boolean(activeModifiers.selected && min && (selected === null || selected === void 0 ? void 0 : selected.length) === min);
+        if (isMinSelected) {
+            return;
+        }
+        var isMaxSelected = Boolean(!activeModifiers.selected && max && (selected === null || selected === void 0 ? void 0 : selected.length) === max);
+        if (isMaxSelected) {
+            return;
+        }
+        var selectedDays = selected ? __spreadArray([], selected, true) : [];
+        if (activeModifiers.selected) {
+            var index = selectedDays.findIndex(function (selectedDay) {
+                return isSameDay(day, selectedDay);
+            });
+            selectedDays.splice(index, 1);
+        }
+        else {
+            selectedDays.push(day);
+        }
+        (_b = initialProps.onSelect) === null || _b === void 0 ? void 0 : _b.call(initialProps, selectedDays, day, activeModifiers, e);
+    };
+    var modifiers = {
+        disabled: []
+    };
+    if (selected) {
+        modifiers.disabled.push(function (day) {
+            var isMaxSelected = max && selected.length > max - 1;
+            var isSelected = selected.some(function (selectedDay) {
+                return isSameDay(selectedDay, day);
+            });
+            return Boolean(isMaxSelected && !isSelected);
+        });
+    }
+    var contextValue = {
+        selected: selected,
+        onDayClick: onDayClick,
+        modifiers: modifiers
+    };
+    return (jsxRuntimeExports.jsx(SelectMultipleContext.Provider, __assign({ value: contextValue }, { children: children })));
+}
+/**
+ * Hook to access the {@link SelectMultipleContextValue}.
+ *
+ * This hook is meant to be used inside internal or custom components.
+ */
+function useSelectMultiple() {
+    var context = React.useContext(SelectMultipleContext);
+    if (!context) {
+        throw new Error('useSelectMultiple must be used within a SelectMultipleProvider');
+    }
+    return context;
+}
+
+/**
+ * Add a day to an existing range.
+ *
+ * The returned range takes in account the `undefined` values and if the added
+ * day is already present in the range.
+ */
+function addToRange(day, range) {
+    var _a = range || {}, from = _a.from, to = _a.to;
+    if (from && to) {
+        if (isSameDay(to, day) && isSameDay(from, day)) {
+            return undefined;
+        }
+        if (isSameDay(to, day)) {
+            return { from: to, to: undefined };
+        }
+        if (isSameDay(from, day)) {
+            return undefined;
+        }
+        if (isAfter(from, day)) {
+            return { from: day, to: to };
+        }
+        return { from: from, to: day };
+    }
+    if (to) {
+        if (isAfter(day, to)) {
+            return { from: to, to: day };
+        }
+        return { from: day, to: to };
+    }
+    if (from) {
+        if (isBefore(day, from)) {
+            return { from: day, to: from };
+        }
+        return { from: from, to: day };
+    }
+    return { from: day, to: undefined };
+}
+
+/**
+ * The SelectRange context shares details about the selected days when in
+ * range selection mode.
+ *
+ * Access this context from the {@link useSelectRange} hook.
+ */
+var SelectRangeContext = React.createContext(undefined);
+/** Provides the values for the {@link SelectRangeProvider}. */
+function SelectRangeProvider(props) {
+    if (!isDayPickerRange(props.initialProps)) {
+        var emptyContextValue = {
+            selected: undefined,
+            modifiers: {
+                range_start: [],
+                range_end: [],
+                range_middle: [],
+                disabled: []
+            }
+        };
+        return (jsxRuntimeExports.jsx(SelectRangeContext.Provider, __assign({ value: emptyContextValue }, { children: props.children })));
+    }
+    return (jsxRuntimeExports.jsx(SelectRangeProviderInternal, { initialProps: props.initialProps, children: props.children }));
+}
+function SelectRangeProviderInternal(_a) {
+    var initialProps = _a.initialProps, children = _a.children;
+    var selected = initialProps.selected;
+    var _b = selected || {}, selectedFrom = _b.from, selectedTo = _b.to;
+    var min = initialProps.min;
+    var max = initialProps.max;
+    var onDayClick = function (day, activeModifiers, e) {
+        var _a, _b;
+        (_a = initialProps.onDayClick) === null || _a === void 0 ? void 0 : _a.call(initialProps, day, activeModifiers, e);
+        var newRange = addToRange(day, selected);
+        (_b = initialProps.onSelect) === null || _b === void 0 ? void 0 : _b.call(initialProps, newRange, day, activeModifiers, e);
+    };
+    var modifiers = {
+        range_start: [],
+        range_end: [],
+        range_middle: [],
+        disabled: []
+    };
+    if (selectedFrom) {
+        modifiers.range_start = [selectedFrom];
+        if (!selectedTo) {
+            modifiers.range_end = [selectedFrom];
+        }
+        else {
+            modifiers.range_end = [selectedTo];
+            if (!isSameDay(selectedFrom, selectedTo)) {
+                modifiers.range_middle = [
+                    {
+                        after: selectedFrom,
+                        before: selectedTo
+                    }
+                ];
+            }
+        }
+    }
+    else if (selectedTo) {
+        modifiers.range_start = [selectedTo];
+        modifiers.range_end = [selectedTo];
+    }
+    if (min) {
+        if (selectedFrom && !selectedTo) {
+            modifiers.disabled.push({
+                after: subDays(selectedFrom, min - 1),
+                before: addDays(selectedFrom, min - 1)
+            });
+        }
+        if (selectedFrom && selectedTo) {
+            modifiers.disabled.push({
+                after: selectedFrom,
+                before: addDays(selectedFrom, min - 1)
+            });
+        }
+        if (!selectedFrom && selectedTo) {
+            modifiers.disabled.push({
+                after: subDays(selectedTo, min - 1),
+                before: addDays(selectedTo, min - 1)
+            });
+        }
+    }
+    if (max) {
+        if (selectedFrom && !selectedTo) {
+            modifiers.disabled.push({
+                before: addDays(selectedFrom, -max + 1)
+            });
+            modifiers.disabled.push({
+                after: addDays(selectedFrom, max - 1)
+            });
+        }
+        if (selectedFrom && selectedTo) {
+            var selectedCount = differenceInCalendarDays(selectedTo, selectedFrom) + 1;
+            var offset = max - selectedCount;
+            modifiers.disabled.push({
+                before: subDays(selectedFrom, offset)
+            });
+            modifiers.disabled.push({
+                after: addDays(selectedTo, offset)
+            });
+        }
+        if (!selectedFrom && selectedTo) {
+            modifiers.disabled.push({
+                before: addDays(selectedTo, -max + 1)
+            });
+            modifiers.disabled.push({
+                after: addDays(selectedTo, max - 1)
+            });
+        }
+    }
+    return (jsxRuntimeExports.jsx(SelectRangeContext.Provider, __assign({ value: { selected: selected, onDayClick: onDayClick, modifiers: modifiers } }, { children: children })));
+}
+/**
+ * Hook to access the {@link SelectRangeContextValue}.
+ *
+ * This hook is meant to be used inside internal or custom components.
+ */
+function useSelectRange() {
+    var context = React.useContext(SelectRangeContext);
+    if (!context) {
+        throw new Error('useSelectRange must be used within a SelectRangeProvider');
+    }
+    return context;
+}
+
+/** Normalize to array a matcher input. */
+function matcherToArray(matcher) {
+    if (Array.isArray(matcher)) {
+        return __spreadArray([], matcher, true);
+    }
+    else if (matcher !== undefined) {
+        return [matcher];
+    }
+    else {
+        return [];
+    }
+}
+
+/** Create CustomModifiers from dayModifiers */
+function getCustomModifiers(dayModifiers) {
+    var customModifiers = {};
+    Object.entries(dayModifiers).forEach(function (_a) {
+        var modifier = _a[0], matcher = _a[1];
+        customModifiers[modifier] = matcherToArray(matcher);
+    });
+    return customModifiers;
+}
+
+/** The name of the modifiers that are used internally by DayPicker. */
+var InternalModifier;
+(function (InternalModifier) {
+    InternalModifier["Outside"] = "outside";
+    /** Name of the modifier applied to the disabled days, using the `disabled` prop. */
+    InternalModifier["Disabled"] = "disabled";
+    /** Name of the modifier applied to the selected days using the `selected` prop). */
+    InternalModifier["Selected"] = "selected";
+    /** Name of the modifier applied to the hidden days using the `hidden` prop). */
+    InternalModifier["Hidden"] = "hidden";
+    /** Name of the modifier applied to the day specified using the `today` prop). */
+    InternalModifier["Today"] = "today";
+    /** The modifier applied to the day starting a selected range, when in range selection mode.  */
+    InternalModifier["RangeStart"] = "range_start";
+    /** The modifier applied to the day ending a selected range, when in range selection mode.  */
+    InternalModifier["RangeEnd"] = "range_end";
+    /** The modifier applied to the days between the start and the end of a selected range, when in range selection mode.  */
+    InternalModifier["RangeMiddle"] = "range_middle";
+})(InternalModifier || (InternalModifier = {}));
+
+var Selected = InternalModifier.Selected, Disabled = InternalModifier.Disabled, Hidden = InternalModifier.Hidden, Today = InternalModifier.Today, RangeEnd = InternalModifier.RangeEnd, RangeMiddle = InternalModifier.RangeMiddle, RangeStart = InternalModifier.RangeStart, Outside = InternalModifier.Outside;
+/** Return the {@link InternalModifiers} from the DayPicker and select contexts. */
+function getInternalModifiers(dayPicker, selectMultiple, selectRange) {
+    var _a;
+    var internalModifiers = (_a = {},
+        _a[Selected] = matcherToArray(dayPicker.selected),
+        _a[Disabled] = matcherToArray(dayPicker.disabled),
+        _a[Hidden] = matcherToArray(dayPicker.hidden),
+        _a[Today] = [dayPicker.today],
+        _a[RangeEnd] = [],
+        _a[RangeMiddle] = [],
+        _a[RangeStart] = [],
+        _a[Outside] = [],
+        _a);
+    if (dayPicker.fromDate) {
+        internalModifiers[Disabled].push({ before: dayPicker.fromDate });
+    }
+    if (dayPicker.toDate) {
+        internalModifiers[Disabled].push({ after: dayPicker.toDate });
+    }
+    if (isDayPickerMultiple(dayPicker)) {
+        internalModifiers[Disabled] = internalModifiers[Disabled].concat(selectMultiple.modifiers[Disabled]);
+    }
+    else if (isDayPickerRange(dayPicker)) {
+        internalModifiers[Disabled] = internalModifiers[Disabled].concat(selectRange.modifiers[Disabled]);
+        internalModifiers[RangeStart] = selectRange.modifiers[RangeStart];
+        internalModifiers[RangeMiddle] = selectRange.modifiers[RangeMiddle];
+        internalModifiers[RangeEnd] = selectRange.modifiers[RangeEnd];
+    }
+    return internalModifiers;
+}
+
+/** The Modifiers context store the modifiers used in DayPicker. To access the value of this context, use {@link useModifiers}. */
+var ModifiersContext = React.createContext(undefined);
+/** Provide the value for the {@link ModifiersContext}. */
+function ModifiersProvider(props) {
+    var dayPicker = useDayPicker();
+    var selectMultiple = useSelectMultiple();
+    var selectRange = useSelectRange();
+    var internalModifiers = getInternalModifiers(dayPicker, selectMultiple, selectRange);
+    var customModifiers = getCustomModifiers(dayPicker.modifiers);
+    var modifiers = __assign(__assign({}, internalModifiers), customModifiers);
+    return (jsxRuntimeExports.jsx(ModifiersContext.Provider, __assign({ value: modifiers }, { children: props.children })));
+}
+/**
+ * Return the modifiers used by DayPicker.
+ *
+ * This hook is meant to be used inside internal or custom components.
+ * Requires to be wrapped into {@link ModifiersProvider}.
+ *
+ */
+function useModifiers() {
+    var context = React.useContext(ModifiersContext);
+    if (!context) {
+        throw new Error('useModifiers must be used within a ModifiersProvider');
+    }
+    return context;
+}
+
+/** Returns true if `matcher` is of type {@link DateInterval}. */
+function isDateInterval(matcher) {
+    return Boolean(matcher &&
+        typeof matcher === 'object' &&
+        'before' in matcher &&
+        'after' in matcher);
+}
+/** Returns true if `value` is a {@link DateRange} type. */
+function isDateRange(value) {
+    return Boolean(value && typeof value === 'object' && 'from' in value);
+}
+/** Returns true if `value` is of type {@link DateAfter}. */
+function isDateAfterType(value) {
+    return Boolean(value && typeof value === 'object' && 'after' in value);
+}
+/** Returns true if `value` is of type {@link DateBefore}. */
+function isDateBeforeType(value) {
+    return Boolean(value && typeof value === 'object' && 'before' in value);
+}
+/** Returns true if `value` is a {@link DayOfWeek} type. */
+function isDayOfWeekType(value) {
+    return Boolean(value && typeof value === 'object' && 'dayOfWeek' in value);
+}
+
+/** Return `true` whether `date` is inside `range`. */
+function isDateInRange(date, range) {
+    var _a;
+    var from = range.from, to = range.to;
+    if (from && to) {
+        var isRangeInverted = differenceInCalendarDays(to, from) < 0;
+        if (isRangeInverted) {
+            _a = [to, from], from = _a[0], to = _a[1];
+        }
+        var isInRange = differenceInCalendarDays(date, from) >= 0 &&
+            differenceInCalendarDays(to, date) >= 0;
+        return isInRange;
+    }
+    if (to) {
+        return isSameDay(to, date);
+    }
+    if (from) {
+        return isSameDay(from, date);
+    }
+    return false;
+}
+
+/** Returns true if `value` is a Date type. */
+function isDateType(value) {
+    return isDate(value);
+}
+/** Returns true if `value` is an array of valid dates. */
+function isArrayOfDates(value) {
+    return Array.isArray(value) && value.every(isDate);
+}
+/**
+ * Returns whether a day matches against at least one of the given Matchers.
+ *
+ * ```
+ * const day = new Date(2022, 5, 19);
+ * const matcher1: DateRange = {
+ *    from: new Date(2021, 12, 21),
+ *    to: new Date(2021, 12, 30)
+ * }
+ * const matcher2: DateRange = {
+ *    from: new Date(2022, 5, 1),
+ *    to: new Date(2022, 5, 23)
+ * }
+ *
+ * const isMatch(day, [matcher1, matcher2]); // true, since day is in the matcher1 range.
+ * ```
+ * */
+function isMatch(day, matchers) {
+    return matchers.some(function (matcher) {
+        if (typeof matcher === 'boolean') {
+            return matcher;
+        }
+        if (isDateType(matcher)) {
+            return isSameDay(day, matcher);
+        }
+        if (isArrayOfDates(matcher)) {
+            return matcher.includes(day);
+        }
+        if (isDateRange(matcher)) {
+            return isDateInRange(day, matcher);
+        }
+        if (isDayOfWeekType(matcher)) {
+            return matcher.dayOfWeek.includes(day.getDay());
+        }
+        if (isDateInterval(matcher)) {
+            var diffBefore = differenceInCalendarDays(matcher.before, day);
+            var diffAfter = differenceInCalendarDays(matcher.after, day);
+            var isDayBefore = diffBefore > 0;
+            var isDayAfter = diffAfter < 0;
+            var isClosedInterval = isAfter(matcher.before, matcher.after);
+            if (isClosedInterval) {
+                return isDayAfter && isDayBefore;
+            }
+            else {
+                return isDayBefore || isDayAfter;
+            }
+        }
+        if (isDateAfterType(matcher)) {
+            return differenceInCalendarDays(day, matcher.after) > 0;
+        }
+        if (isDateBeforeType(matcher)) {
+            return differenceInCalendarDays(matcher.before, day) > 0;
+        }
+        if (typeof matcher === 'function') {
+            return matcher(day);
+        }
+        return false;
+    });
+}
+
+/** Return the active modifiers for the given day. */
+function getActiveModifiers(day, 
+/** The modifiers to match for the given date. */
+modifiers, 
+/** The month where the day is displayed, to add the "outside" modifiers.  */
+displayMonth) {
+    var matchedModifiers = Object.keys(modifiers).reduce(function (result, key) {
+        var modifier = modifiers[key];
+        if (isMatch(day, modifier)) {
+            result.push(key);
+        }
+        return result;
+    }, []);
+    var activeModifiers = {};
+    matchedModifiers.forEach(function (modifier) { return (activeModifiers[modifier] = true); });
+    if (displayMonth && !isSameMonth(day, displayMonth)) {
+        activeModifiers.outside = true;
+    }
+    return activeModifiers;
+}
+
+/**
+ * Returns the day that should be the target of the focus when DayPicker is
+ * rendered the first time.
+ *
+ * TODO: this function doesn't consider if the day is outside the month. We
+ * implemented this check in `useDayRender` but it should probably go here. See
+ * https://github.com/gpbl/react-day-picker/pull/1576
+ */
+function getInitialFocusTarget(displayMonths, modifiers) {
+    var firstDayInMonth = startOfMonth(displayMonths[0]);
+    var lastDayInMonth = endOfMonth(displayMonths[displayMonths.length - 1]);
+    // TODO: cleanup code
+    var firstFocusableDay;
+    var today;
+    var date = firstDayInMonth;
+    while (date <= lastDayInMonth) {
+        var activeModifiers = getActiveModifiers(date, modifiers);
+        var isFocusable = !activeModifiers.disabled && !activeModifiers.hidden;
+        if (!isFocusable) {
+            date = addDays(date, 1);
+            continue;
+        }
+        if (activeModifiers.selected) {
+            return date;
+        }
+        if (activeModifiers.today && !today) {
+            today = date;
+        }
+        if (!firstFocusableDay) {
+            firstFocusableDay = date;
+        }
+        date = addDays(date, 1);
+    }
+    if (today) {
+        return today;
+    }
+    else {
+        return firstFocusableDay;
+    }
+}
+
+var MAX_RETRY = 365;
+/** Return the next date to be focused. */
+function getNextFocus(focusedDay, options) {
+    var moveBy = options.moveBy, direction = options.direction, context = options.context, modifiers = options.modifiers, _a = options.retry, retry = _a === void 0 ? { count: 0, lastFocused: focusedDay } : _a;
+    var weekStartsOn = context.weekStartsOn, fromDate = context.fromDate, toDate = context.toDate, locale = context.locale;
+    var moveFns = {
+        day: addDays,
+        week: addWeeks,
+        month: addMonths,
+        year: addYears,
+        startOfWeek: function (date) {
+            return context.ISOWeek
+                ? startOfISOWeek(date)
+                : startOfWeek(date, { locale: locale, weekStartsOn: weekStartsOn });
+        },
+        endOfWeek: function (date) {
+            return context.ISOWeek
+                ? endOfISOWeek(date)
+                : endOfWeek(date, { locale: locale, weekStartsOn: weekStartsOn });
+        }
+    };
+    var newFocusedDay = moveFns[moveBy](focusedDay, direction === 'after' ? 1 : -1);
+    if (direction === 'before' && fromDate) {
+        newFocusedDay = max$1([fromDate, newFocusedDay]);
+    }
+    else if (direction === 'after' && toDate) {
+        newFocusedDay = min$1([toDate, newFocusedDay]);
+    }
+    var isFocusable = true;
+    if (modifiers) {
+        var activeModifiers = getActiveModifiers(newFocusedDay, modifiers);
+        isFocusable = !activeModifiers.disabled && !activeModifiers.hidden;
+    }
+    if (isFocusable) {
+        return newFocusedDay;
+    }
+    else {
+        if (retry.count > MAX_RETRY) {
+            return retry.lastFocused;
+        }
+        return getNextFocus(newFocusedDay, {
+            moveBy: moveBy,
+            direction: direction,
+            context: context,
+            modifiers: modifiers,
+            retry: __assign(__assign({}, retry), { count: retry.count + 1 })
+        });
+    }
+}
+
+/**
+ * The Focus context shares details about the focused day for the keyboard
+ *
+ * Access this context from the {@link useFocusContext} hook.
+ */
+var FocusContext = React.createContext(undefined);
+/** The provider for the {@link FocusContext}. */
+function FocusProvider(props) {
+    var navigation = useNavigation();
+    var modifiers = useModifiers();
+    var _a = React.useState(), focusedDay = _a[0], setFocusedDay = _a[1];
+    var _b = React.useState(), lastFocused = _b[0], setLastFocused = _b[1];
+    var initialFocusTarget = getInitialFocusTarget(navigation.displayMonths, modifiers);
+    // TODO: cleanup and test obscure code below
+    var focusTarget = (focusedDay !== null && focusedDay !== void 0 ? focusedDay : (lastFocused && navigation.isDateDisplayed(lastFocused)))
+        ? lastFocused
+        : initialFocusTarget;
+    var blur = function () {
+        setLastFocused(focusedDay);
+        setFocusedDay(undefined);
+    };
+    var focus = function (date) {
+        setFocusedDay(date);
+    };
+    var context = useDayPicker();
+    var moveFocus = function (moveBy, direction) {
+        if (!focusedDay)
+            return;
+        var nextFocused = getNextFocus(focusedDay, {
+            moveBy: moveBy,
+            direction: direction,
+            context: context,
+            modifiers: modifiers
+        });
+        if (isSameDay(focusedDay, nextFocused))
+            return undefined;
+        navigation.goToDate(nextFocused, focusedDay);
+        focus(nextFocused);
+    };
+    var value = {
+        focusedDay: focusedDay,
+        focusTarget: focusTarget,
+        blur: blur,
+        focus: focus,
+        focusDayAfter: function () { return moveFocus('day', 'after'); },
+        focusDayBefore: function () { return moveFocus('day', 'before'); },
+        focusWeekAfter: function () { return moveFocus('week', 'after'); },
+        focusWeekBefore: function () { return moveFocus('week', 'before'); },
+        focusMonthBefore: function () { return moveFocus('month', 'before'); },
+        focusMonthAfter: function () { return moveFocus('month', 'after'); },
+        focusYearBefore: function () { return moveFocus('year', 'before'); },
+        focusYearAfter: function () { return moveFocus('year', 'after'); },
+        focusStartOfWeek: function () { return moveFocus('startOfWeek', 'before'); },
+        focusEndOfWeek: function () { return moveFocus('endOfWeek', 'after'); }
+    };
+    return (jsxRuntimeExports.jsx(FocusContext.Provider, __assign({ value: value }, { children: props.children })));
+}
+/**
+ * Hook to access the {@link FocusContextValue}. Use this hook to handle the
+ * focus state of the elements.
+ *
+ * This hook is meant to be used inside internal or custom components.
+ */
+function useFocusContext() {
+    var context = React.useContext(FocusContext);
+    if (!context) {
+        throw new Error('useFocusContext must be used within a FocusProvider');
+    }
+    return context;
+}
+
+/**
+ * Return the active modifiers for the specified day.
+ *
+ * This hook is meant to be used inside internal or custom components.
+ *
+ * @param day
+ * @param displayMonth
+ */
+function useActiveModifiers(day, 
+/**
+ * The month where the date is displayed. If not the same as `date`, the day
+ * is an "outside day".
+ */
+displayMonth) {
+    var modifiers = useModifiers();
+    var activeModifiers = getActiveModifiers(day, modifiers, displayMonth);
+    return activeModifiers;
+}
+
+/**
+ * The SelectSingle context shares details about the selected days when in
+ * single selection mode.
+ *
+ * Access this context from the {@link useSelectSingle} hook.
+ */
+var SelectSingleContext = React.createContext(undefined);
+/** Provides the values for the {@link SelectSingleProvider}. */
+function SelectSingleProvider(props) {
+    if (!isDayPickerSingle(props.initialProps)) {
+        var emptyContextValue = {
+            selected: undefined
+        };
+        return (jsxRuntimeExports.jsx(SelectSingleContext.Provider, __assign({ value: emptyContextValue }, { children: props.children })));
+    }
+    return (jsxRuntimeExports.jsx(SelectSingleProviderInternal, { initialProps: props.initialProps, children: props.children }));
+}
+function SelectSingleProviderInternal(_a) {
+    var initialProps = _a.initialProps, children = _a.children;
+    var onDayClick = function (day, activeModifiers, e) {
+        var _a, _b, _c;
+        (_a = initialProps.onDayClick) === null || _a === void 0 ? void 0 : _a.call(initialProps, day, activeModifiers, e);
+        if (activeModifiers.selected && !initialProps.required) {
+            (_b = initialProps.onSelect) === null || _b === void 0 ? void 0 : _b.call(initialProps, undefined, day, activeModifiers, e);
+            return;
+        }
+        (_c = initialProps.onSelect) === null || _c === void 0 ? void 0 : _c.call(initialProps, day, day, activeModifiers, e);
+    };
+    var contextValue = {
+        selected: initialProps.selected,
+        onDayClick: onDayClick
+    };
+    return (jsxRuntimeExports.jsx(SelectSingleContext.Provider, __assign({ value: contextValue }, { children: children })));
+}
+/**
+ * Hook to access the {@link SelectSingleContextValue}.
+ *
+ * This hook is meant to be used inside internal or custom components.
+ */
+function useSelectSingle() {
+    var context = React.useContext(SelectSingleContext);
+    if (!context) {
+        throw new Error('useSelectSingle must be used within a SelectSingleProvider');
+    }
+    return context;
+}
+
+/**
+ * This hook returns details about the content to render in the day cell.
+ *
+ *
+ * When a day cell is rendered in the table, DayPicker can either:
+ *
+ * - render nothing: when the day is outside the month or has matched the
+ *   "hidden" modifier.
+ * - render a button when `onDayClick` or a selection mode is set.
+ * - render a non-interactive element: when no selection mode is set, the day
+ *   cell shouldn’t respond to any interaction. DayPicker should render a `div`
+ *   or a `span`.
+ *
+ * ### Usage
+ *
+ * Use this hook to customize the behavior of the {@link Day} component. Create a
+ * new `Day` component using this hook and pass it to the `components` prop.
+ * The source of {@link Day} can be a good starting point.
+ *
+ */
+function useDayEventHandlers(date, activeModifiers) {
+    var dayPicker = useDayPicker();
+    var single = useSelectSingle();
+    var multiple = useSelectMultiple();
+    var range = useSelectRange();
+    var _a = useFocusContext(), focusDayAfter = _a.focusDayAfter, focusDayBefore = _a.focusDayBefore, focusWeekAfter = _a.focusWeekAfter, focusWeekBefore = _a.focusWeekBefore, blur = _a.blur, focus = _a.focus, focusMonthBefore = _a.focusMonthBefore, focusMonthAfter = _a.focusMonthAfter, focusYearBefore = _a.focusYearBefore, focusYearAfter = _a.focusYearAfter, focusStartOfWeek = _a.focusStartOfWeek, focusEndOfWeek = _a.focusEndOfWeek;
+    var onClick = function (e) {
+        var _a, _b, _c, _d;
+        if (isDayPickerSingle(dayPicker)) {
+            (_a = single.onDayClick) === null || _a === void 0 ? void 0 : _a.call(single, date, activeModifiers, e);
+        }
+        else if (isDayPickerMultiple(dayPicker)) {
+            (_b = multiple.onDayClick) === null || _b === void 0 ? void 0 : _b.call(multiple, date, activeModifiers, e);
+        }
+        else if (isDayPickerRange(dayPicker)) {
+            (_c = range.onDayClick) === null || _c === void 0 ? void 0 : _c.call(range, date, activeModifiers, e);
+        }
+        else {
+            (_d = dayPicker.onDayClick) === null || _d === void 0 ? void 0 : _d.call(dayPicker, date, activeModifiers, e);
+        }
+    };
+    var onFocus = function (e) {
+        var _a;
+        focus(date);
+        (_a = dayPicker.onDayFocus) === null || _a === void 0 ? void 0 : _a.call(dayPicker, date, activeModifiers, e);
+    };
+    var onBlur = function (e) {
+        var _a;
+        blur();
+        (_a = dayPicker.onDayBlur) === null || _a === void 0 ? void 0 : _a.call(dayPicker, date, activeModifiers, e);
+    };
+    var onMouseEnter = function (e) {
+        var _a;
+        (_a = dayPicker.onDayMouseEnter) === null || _a === void 0 ? void 0 : _a.call(dayPicker, date, activeModifiers, e);
+    };
+    var onMouseLeave = function (e) {
+        var _a;
+        (_a = dayPicker.onDayMouseLeave) === null || _a === void 0 ? void 0 : _a.call(dayPicker, date, activeModifiers, e);
+    };
+    var onPointerEnter = function (e) {
+        var _a;
+        (_a = dayPicker.onDayPointerEnter) === null || _a === void 0 ? void 0 : _a.call(dayPicker, date, activeModifiers, e);
+    };
+    var onPointerLeave = function (e) {
+        var _a;
+        (_a = dayPicker.onDayPointerLeave) === null || _a === void 0 ? void 0 : _a.call(dayPicker, date, activeModifiers, e);
+    };
+    var onTouchCancel = function (e) {
+        var _a;
+        (_a = dayPicker.onDayTouchCancel) === null || _a === void 0 ? void 0 : _a.call(dayPicker, date, activeModifiers, e);
+    };
+    var onTouchEnd = function (e) {
+        var _a;
+        (_a = dayPicker.onDayTouchEnd) === null || _a === void 0 ? void 0 : _a.call(dayPicker, date, activeModifiers, e);
+    };
+    var onTouchMove = function (e) {
+        var _a;
+        (_a = dayPicker.onDayTouchMove) === null || _a === void 0 ? void 0 : _a.call(dayPicker, date, activeModifiers, e);
+    };
+    var onTouchStart = function (e) {
+        var _a;
+        (_a = dayPicker.onDayTouchStart) === null || _a === void 0 ? void 0 : _a.call(dayPicker, date, activeModifiers, e);
+    };
+    var onKeyUp = function (e) {
+        var _a;
+        (_a = dayPicker.onDayKeyUp) === null || _a === void 0 ? void 0 : _a.call(dayPicker, date, activeModifiers, e);
+    };
+    var onKeyDown = function (e) {
+        var _a;
+        switch (e.key) {
+            case 'ArrowLeft':
+                e.preventDefault();
+                e.stopPropagation();
+                dayPicker.dir === 'rtl' ? focusDayAfter() : focusDayBefore();
+                break;
+            case 'ArrowRight':
+                e.preventDefault();
+                e.stopPropagation();
+                dayPicker.dir === 'rtl' ? focusDayBefore() : focusDayAfter();
+                break;
+            case 'ArrowDown':
+                e.preventDefault();
+                e.stopPropagation();
+                focusWeekAfter();
+                break;
+            case 'ArrowUp':
+                e.preventDefault();
+                e.stopPropagation();
+                focusWeekBefore();
+                break;
+            case 'PageUp':
+                e.preventDefault();
+                e.stopPropagation();
+                e.shiftKey ? focusYearBefore() : focusMonthBefore();
+                break;
+            case 'PageDown':
+                e.preventDefault();
+                e.stopPropagation();
+                e.shiftKey ? focusYearAfter() : focusMonthAfter();
+                break;
+            case 'Home':
+                e.preventDefault();
+                e.stopPropagation();
+                focusStartOfWeek();
+                break;
+            case 'End':
+                e.preventDefault();
+                e.stopPropagation();
+                focusEndOfWeek();
+                break;
+        }
+        (_a = dayPicker.onDayKeyDown) === null || _a === void 0 ? void 0 : _a.call(dayPicker, date, activeModifiers, e);
+    };
+    var eventHandlers = {
+        onClick: onClick,
+        onFocus: onFocus,
+        onBlur: onBlur,
+        onKeyDown: onKeyDown,
+        onKeyUp: onKeyUp,
+        onMouseEnter: onMouseEnter,
+        onMouseLeave: onMouseLeave,
+        onPointerEnter: onPointerEnter,
+        onPointerLeave: onPointerLeave,
+        onTouchCancel: onTouchCancel,
+        onTouchEnd: onTouchEnd,
+        onTouchMove: onTouchMove,
+        onTouchStart: onTouchStart
+    };
+    return eventHandlers;
+}
+
+/**
+ * Return the current selected days when DayPicker is in selection mode. Days
+ * selected by the custom selection mode are not returned.
+ *
+ * This hook is meant to be used inside internal or custom components.
+ *
+ */
+function useSelectedDays() {
+    var dayPicker = useDayPicker();
+    var single = useSelectSingle();
+    var multiple = useSelectMultiple();
+    var range = useSelectRange();
+    var selectedDays = isDayPickerSingle(dayPicker)
+        ? single.selected
+        : isDayPickerMultiple(dayPicker)
+            ? multiple.selected
+            : isDayPickerRange(dayPicker)
+                ? range.selected
+                : undefined;
+    return selectedDays;
+}
+
+function isInternalModifier(modifier) {
+    return Object.values(InternalModifier).includes(modifier);
+}
+/**
+ * Return the class names for the Day element, according to the given active
+ * modifiers.
+ *
+ * Custom class names are set via `modifiersClassNames` or `classNames`,
+ * where the first have the precedence.
+ */
+function getDayClassNames(dayPicker, activeModifiers) {
+    var classNames = [dayPicker.classNames.day];
+    Object.keys(activeModifiers).forEach(function (modifier) {
+        var customClassName = dayPicker.modifiersClassNames[modifier];
+        if (customClassName) {
+            classNames.push(customClassName);
+        }
+        else if (isInternalModifier(modifier)) {
+            var internalClassName = dayPicker.classNames["day_".concat(modifier)];
+            if (internalClassName) {
+                classNames.push(internalClassName);
+            }
+        }
+    });
+    return classNames;
+}
+
+/** Return the style for the Day element, according to the given active modifiers. */
+function getDayStyle(dayPicker, activeModifiers) {
+    var style = __assign({}, dayPicker.styles.day);
+    Object.keys(activeModifiers).forEach(function (modifier) {
+        var _a;
+        style = __assign(__assign({}, style), (_a = dayPicker.modifiersStyles) === null || _a === void 0 ? void 0 : _a[modifier]);
+    });
+    return style;
+}
+
+/**
+ * Return props and data used to render the {@link Day} component.
+ *
+ * Use this hook when creating a component to replace the built-in `Day`
+ * component.
+ */
+function useDayRender(
+/** The date to render. */
+day, 
+/** The month where the date is displayed (if not the same as `date`, it means it is an "outside" day). */
+displayMonth, 
+/** A ref to the button element that will be target of focus when rendered (if required). */
+buttonRef) {
+    var _a;
+    var _b, _c;
+    var dayPicker = useDayPicker();
+    var focusContext = useFocusContext();
+    var activeModifiers = useActiveModifiers(day, displayMonth);
+    var eventHandlers = useDayEventHandlers(day, activeModifiers);
+    var selectedDays = useSelectedDays();
+    var isButton = Boolean(dayPicker.onDayClick || dayPicker.mode !== 'default');
+    // Focus the button if the day is focused according to the focus context
+    React.useEffect(function () {
+        var _a;
+        if (activeModifiers.outside)
+            return;
+        if (!focusContext.focusedDay)
+            return;
+        if (!isButton)
+            return;
+        if (isSameDay(focusContext.focusedDay, day)) {
+            (_a = buttonRef.current) === null || _a === void 0 ? void 0 : _a.focus();
+        }
+    }, [
+        focusContext.focusedDay,
+        day,
+        buttonRef,
+        isButton,
+        activeModifiers.outside
+    ]);
+    var className = getDayClassNames(dayPicker, activeModifiers).join(' ');
+    var style = getDayStyle(dayPicker, activeModifiers);
+    var isHidden = Boolean((activeModifiers.outside && !dayPicker.showOutsideDays) ||
+        activeModifiers.hidden);
+    var DayContentComponent = (_c = (_b = dayPicker.components) === null || _b === void 0 ? void 0 : _b.DayContent) !== null && _c !== void 0 ? _c : DayContent;
+    var children = (jsxRuntimeExports.jsx(DayContentComponent, { date: day, displayMonth: displayMonth, activeModifiers: activeModifiers }));
+    var divProps = {
+        style: style,
+        className: className,
+        children: children,
+        role: 'gridcell'
+    };
+    var isFocusTarget = focusContext.focusTarget &&
+        isSameDay(focusContext.focusTarget, day) &&
+        !activeModifiers.outside;
+    var isFocused = focusContext.focusedDay && isSameDay(focusContext.focusedDay, day);
+    var buttonProps = __assign(__assign(__assign({}, divProps), (_a = { disabled: activeModifiers.disabled, role: 'gridcell' }, _a['aria-selected'] = activeModifiers.selected, _a.tabIndex = isFocused || isFocusTarget ? 0 : -1, _a)), eventHandlers);
+    var dayRender = {
+        isButton: isButton,
+        isHidden: isHidden,
+        activeModifiers: activeModifiers,
+        selectedDays: selectedDays,
+        buttonProps: buttonProps,
+        divProps: divProps
+    };
+    return dayRender;
+}
+
+/**
+ * The content of a day cell – as a button or span element according to its
+ * modifiers.
+ */
+function Day(props) {
+    var buttonRef = React.useRef(null);
+    var dayRender = useDayRender(props.date, props.displayMonth, buttonRef);
+    if (dayRender.isHidden) {
+        return jsxRuntimeExports.jsx("div", { role: "gridcell" });
+    }
+    if (!dayRender.isButton) {
+        return jsxRuntimeExports.jsx("div", __assign({}, dayRender.divProps));
+    }
+    return jsxRuntimeExports.jsx(Button, __assign({ name: "day", ref: buttonRef }, dayRender.buttonProps));
+}
+
+/**
+ * Render the week number element. If `onWeekNumberClick` is passed to DayPicker, it
+ * renders a button, otherwise a span element.
+ */
+function WeekNumber(props) {
+    var weekNumber = props.number, dates = props.dates;
+    var _a = useDayPicker(), onWeekNumberClick = _a.onWeekNumberClick, styles = _a.styles, classNames = _a.classNames, locale = _a.locale, labelWeekNumber = _a.labels.labelWeekNumber, formatWeekNumber = _a.formatters.formatWeekNumber;
+    var content = formatWeekNumber(Number(weekNumber), { locale: locale });
+    if (!onWeekNumberClick) {
+        return (jsxRuntimeExports.jsx("span", __assign({ className: classNames.weeknumber, style: styles.weeknumber }, { children: content })));
+    }
+    var label = labelWeekNumber(Number(weekNumber), { locale: locale });
+    var handleClick = function (e) {
+        onWeekNumberClick(weekNumber, dates, e);
+    };
+    return (jsxRuntimeExports.jsx(Button, __assign({ name: "week-number", "aria-label": label, className: classNames.weeknumber, style: styles.weeknumber, onClick: handleClick }, { children: content })));
+}
+
+/** Render a row in the calendar, with the days and the week number. */
+function Row(props) {
+    var _a, _b;
+    var _c = useDayPicker(), styles = _c.styles, classNames = _c.classNames, showWeekNumber = _c.showWeekNumber, components = _c.components;
+    var DayComponent = (_a = components === null || components === void 0 ? void 0 : components.Day) !== null && _a !== void 0 ? _a : Day;
+    var WeeknumberComponent = (_b = components === null || components === void 0 ? void 0 : components.WeekNumber) !== null && _b !== void 0 ? _b : WeekNumber;
+    var weekNumberCell;
+    if (showWeekNumber) {
+        weekNumberCell = (jsxRuntimeExports.jsx("td", __assign({ className: classNames.cell, style: styles.cell }, { children: jsxRuntimeExports.jsx(WeeknumberComponent, { number: props.weekNumber, dates: props.dates }) })));
+    }
+    return (jsxRuntimeExports.jsxs("tr", __assign({ className: classNames.row, style: styles.row }, { children: [weekNumberCell, props.dates.map(function (date) { return (jsxRuntimeExports.jsx("td", __assign({ className: classNames.cell, style: styles.cell, role: "presentation" }, { children: jsxRuntimeExports.jsx(DayComponent, { displayMonth: props.displayMonth, date: date }) }), getUnixTime(date))); })] })));
+}
+
+/** Return the weeks between two dates.  */
+function daysToMonthWeeks(fromDate, toDate, options) {
+    var toWeek = (options === null || options === void 0 ? void 0 : options.ISOWeek)
+        ? endOfISOWeek(toDate)
+        : endOfWeek(toDate, options);
+    var fromWeek = (options === null || options === void 0 ? void 0 : options.ISOWeek)
+        ? startOfISOWeek(fromDate)
+        : startOfWeek(fromDate, options);
+    var nOfDays = differenceInCalendarDays(toWeek, fromWeek);
+    var days = [];
+    for (var i = 0; i <= nOfDays; i++) {
+        days.push(addDays(fromWeek, i));
+    }
+    var weeksInMonth = days.reduce(function (result, date) {
+        var weekNumber = (options === null || options === void 0 ? void 0 : options.ISOWeek)
+            ? getISOWeek(date)
+            : getWeek(date, options);
+        var existingWeek = result.find(function (value) { return value.weekNumber === weekNumber; });
+        if (existingWeek) {
+            existingWeek.dates.push(date);
+            return result;
+        }
+        result.push({
+            weekNumber: weekNumber,
+            dates: [date]
+        });
+        return result;
+    }, []);
+    return weeksInMonth;
+}
+
+/**
+ * Return the weeks belonging to the given month, adding the "outside days" to
+ * the first and last week.
+ */
+function getMonthWeeks(month, options) {
+    var weeksInMonth = daysToMonthWeeks(startOfMonth(month), endOfMonth(month), options);
+    if (options === null || options === void 0 ? void 0 : options.useFixedWeeks) {
+        // Add extra weeks to the month, up to 6 weeks
+        var nrOfMonthWeeks = getWeeksInMonth(month, options);
+        if (nrOfMonthWeeks < 6) {
+            var lastWeek = weeksInMonth[weeksInMonth.length - 1];
+            var lastDate = lastWeek.dates[lastWeek.dates.length - 1];
+            var toDate = addWeeks(lastDate, 6 - nrOfMonthWeeks);
+            var extraWeeks = daysToMonthWeeks(addWeeks(lastDate, 1), toDate, options);
+            weeksInMonth.push.apply(weeksInMonth, extraWeeks);
+        }
+    }
+    return weeksInMonth;
+}
+
+/** Render the table with the calendar. */
+function Table$1(props) {
+    var _a, _b, _c;
+    var _d = useDayPicker(), locale = _d.locale, classNames = _d.classNames, styles = _d.styles, hideHead = _d.hideHead, fixedWeeks = _d.fixedWeeks, components = _d.components, weekStartsOn = _d.weekStartsOn, firstWeekContainsDate = _d.firstWeekContainsDate, ISOWeek = _d.ISOWeek;
+    var weeks = getMonthWeeks(props.displayMonth, {
+        useFixedWeeks: Boolean(fixedWeeks),
+        ISOWeek: ISOWeek,
+        locale: locale,
+        weekStartsOn: weekStartsOn,
+        firstWeekContainsDate: firstWeekContainsDate
+    });
+    var HeadComponent = (_a = components === null || components === void 0 ? void 0 : components.Head) !== null && _a !== void 0 ? _a : Head;
+    var RowComponent = (_b = components === null || components === void 0 ? void 0 : components.Row) !== null && _b !== void 0 ? _b : Row;
+    var FooterComponent = (_c = components === null || components === void 0 ? void 0 : components.Footer) !== null && _c !== void 0 ? _c : Footer;
+    return (jsxRuntimeExports.jsxs("table", __assign({ id: props.id, className: classNames.table, style: styles.table, role: "grid", "aria-labelledby": props['aria-labelledby'] }, { children: [!hideHead && jsxRuntimeExports.jsx(HeadComponent, {}), jsxRuntimeExports.jsx("tbody", __assign({ className: classNames.tbody, style: styles.tbody }, { children: weeks.map(function (week) { return (jsxRuntimeExports.jsx(RowComponent, { displayMonth: props.displayMonth, dates: week.dates, weekNumber: week.weekNumber }, week.weekNumber)); }) })), jsxRuntimeExports.jsx(FooterComponent, { displayMonth: props.displayMonth })] })));
+}
+
+/*
+The MIT License (MIT)
+
+Copyright (c) 2018-present, React Training LLC
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/*
+ * Welcome to @reach/auto-id!
+ * Let's see if we can make sense of why this hook exists and its
+ * implementation.
+ *
+ * Some background:
+ *   1. Accessibility APIs rely heavily on element IDs
+ *   2. Requiring developers to put IDs on every element in Reach UI is both
+ *      cumbersome and error-prone
+ *   3. With a component model, we can generate IDs for them!
+ *
+ * Solution 1: Generate random IDs.
+ *
+ * This works great as long as you don't server render your app. When React (in
+ * the client) tries to reuse the markup from the server, the IDs won't match
+ * and React will then recreate the entire DOM tree.
+ *
+ * Solution 2: Increment an integer
+ *
+ * This sounds great. Since we're rendering the exact same tree on the server
+ * and client, we can increment a counter and get a deterministic result between
+ * client and server. Also, JS integers can go up to nine-quadrillion. I'm
+ * pretty sure the tab will be closed before an app never needs
+ * 10 quadrillion IDs!
+ *
+ * Problem solved, right?
+ *
+ * Ah, but there's a catch! React's concurrent rendering makes this approach
+ * non-deterministic. While the client and server will end up with the same
+ * elements in the end, depending on suspense boundaries (and possibly some user
+ * input during the initial render) the incrementing integers won't always match
+ * up.
+ *
+ * Solution 3: Don't use IDs at all on the server; patch after first render.
+ *
+ * What we've done here is solution 2 with some tricks. With this approach, the
+ * ID returned is an empty string on the first render. This way the server and
+ * client have the same markup no matter how wild the concurrent rendering may
+ * have gotten.
+ *
+ * After the render, we patch up the components with an incremented ID. This
+ * causes a double render on any components with `useId`. Shouldn't be a problem
+ * since the components using this hook should be small, and we're only updating
+ * the ID attribute on the DOM, nothing big is happening.
+ *
+ * It doesn't have to be an incremented number, though--we could do generate
+ * random strings instead, but incrementing a number is probably the cheapest
+ * thing we can do.
+ *
+ * Additionally, we only do this patchup on the very first client render ever.
+ * Any calls to `useId` that happen dynamically in the client will be
+ * populated immediately with a value. So, we only get the double render after
+ * server hydration and never again, SO BACK OFF ALRIGHT?
+ */
+function canUseDOM() {
+    return !!(typeof window !== 'undefined' &&
+        window.document &&
+        window.document.createElement);
+}
+/**
+ * React currently throws a warning when using useLayoutEffect on the server. To
+ * get around it, we can conditionally useEffect on the server (no-op) and
+ * useLayoutEffect in the browser. We occasionally need useLayoutEffect to
+ * ensure we don't get a render flash for certain operations, but we may also
+ * need affected components to render on the server. One example is when setting
+ * a component's descendants to retrieve their index values.
+ *
+ * Important to note that using this hook as an escape hatch will break the
+ * eslint dependency warnings unless you rename the import to `useLayoutEffect`.
+ * Use sparingly only when the effect won't effect the rendered HTML to avoid
+ * any server/client mismatch.
+ *
+ * If a useLayoutEffect is needed and the result would create a mismatch, it's
+ * likely that the component in question shouldn't be rendered on the server at
+ * all, so a better approach would be to lazily render those in a parent
+ * component after client-side hydration.
+ *
+ * https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
+ * https://github.com/reduxjs/react-redux/blob/master/src/utils/useIsomorphicLayoutEffect.js
+ *
+ * @param effect
+ * @param deps
+ */
+var useIsomorphicLayoutEffect = canUseDOM() ? React.useLayoutEffect : React.useEffect;
+var serverHandoffComplete = false;
+var id = 0;
+function genId() {
+    return "react-day-picker-".concat(++id);
+}
+function useId(providedId) {
+    // TODO: Remove error flag when updating internal deps to React 18. None of
+    // our tricks will play well with concurrent rendering anyway.
+    var _a;
+    // If this instance isn't part of the initial render, we don't have to do the
+    // double render/patch-up dance. We can just generate the ID and return it.
+    var initialId = providedId !== null && providedId !== void 0 ? providedId : (serverHandoffComplete ? genId() : null);
+    var _b = React.useState(initialId), id = _b[0], setId = _b[1];
+    useIsomorphicLayoutEffect(function () {
+        if (id === null) {
+            // Patch the ID after render. We do this in `useLayoutEffect` to avoid any
+            // rendering flicker, though it'll make the first render slower (unlikely
+            // to matter, but you're welcome to measure your app and let us know if
+            // it's a problem).
+            setId(genId());
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+    React.useEffect(function () {
+        if (serverHandoffComplete === false) {
+            // Flag all future uses of `useId` to skip the update dance. This is in
+            // `useEffect` because it goes after `useLayoutEffect`, ensuring we don't
+            // accidentally bail out of the patch-up dance prematurely.
+            serverHandoffComplete = true;
+        }
+    }, []);
+    return (_a = providedId !== null && providedId !== void 0 ? providedId : id) !== null && _a !== void 0 ? _a : undefined;
+}
+
+/** Render a month. */
+function Month(props) {
+    var _a;
+    var _b;
+    var dayPicker = useDayPicker();
+    var dir = dayPicker.dir, classNames = dayPicker.classNames, styles = dayPicker.styles, components = dayPicker.components;
+    var displayMonths = useNavigation().displayMonths;
+    var captionId = useId(dayPicker.id ? "".concat(dayPicker.id, "-").concat(props.displayIndex) : undefined);
+    var tableId = dayPicker.id
+        ? "".concat(dayPicker.id, "-grid-").concat(props.displayIndex)
+        : undefined;
+    var className = [classNames.month];
+    var style = styles.month;
+    var isStart = props.displayIndex === 0;
+    var isEnd = props.displayIndex === displayMonths.length - 1;
+    var isCenter = !isStart && !isEnd;
+    if (dir === 'rtl') {
+        _a = [isStart, isEnd], isEnd = _a[0], isStart = _a[1];
+    }
+    if (isStart) {
+        className.push(classNames.caption_start);
+        style = __assign(__assign({}, style), styles.caption_start);
+    }
+    if (isEnd) {
+        className.push(classNames.caption_end);
+        style = __assign(__assign({}, style), styles.caption_end);
+    }
+    if (isCenter) {
+        className.push(classNames.caption_between);
+        style = __assign(__assign({}, style), styles.caption_between);
+    }
+    var CaptionComponent = (_b = components === null || components === void 0 ? void 0 : components.Caption) !== null && _b !== void 0 ? _b : Caption;
+    return (jsxRuntimeExports.jsxs("div", __assign({ className: className.join(' '), style: style }, { children: [jsxRuntimeExports.jsx(CaptionComponent, { id: captionId, displayMonth: props.displayMonth, displayIndex: props.displayIndex }), jsxRuntimeExports.jsx(Table$1, { id: tableId, "aria-labelledby": captionId, displayMonth: props.displayMonth })] }), props.displayIndex));
+}
+
+/**
+ * Render the wrapper for the month grids.
+ */
+function Months(props) {
+    var _a = useDayPicker(), classNames = _a.classNames, styles = _a.styles;
+    return (jsxRuntimeExports.jsx("div", __assign({ className: classNames.months, style: styles.months }, { children: props.children })));
+}
+
+/** Render the container with the months according to the number of months to display. */
+function Root(_a) {
+    var _b, _c;
+    var initialProps = _a.initialProps;
+    var dayPicker = useDayPicker();
+    var focusContext = useFocusContext();
+    var navigation = useNavigation();
+    var _d = React.useState(false), hasInitialFocus = _d[0], setHasInitialFocus = _d[1];
+    // Focus the focus target when initialFocus is passed in
+    React.useEffect(function () {
+        if (!dayPicker.initialFocus)
+            return;
+        if (!focusContext.focusTarget)
+            return;
+        if (hasInitialFocus)
+            return;
+        focusContext.focus(focusContext.focusTarget);
+        setHasInitialFocus(true);
+    }, [
+        dayPicker.initialFocus,
+        hasInitialFocus,
+        focusContext.focus,
+        focusContext.focusTarget,
+        focusContext
+    ]);
+    // Apply classnames according to props
+    var classNames = [dayPicker.classNames.root, dayPicker.className];
+    if (dayPicker.numberOfMonths > 1) {
+        classNames.push(dayPicker.classNames.multiple_months);
+    }
+    if (dayPicker.showWeekNumber) {
+        classNames.push(dayPicker.classNames.with_weeknumber);
+    }
+    var style = __assign(__assign({}, dayPicker.styles.root), dayPicker.style);
+    var dataAttributes = Object.keys(initialProps)
+        .filter(function (key) { return key.startsWith('data-'); })
+        .reduce(function (attrs, key) {
+        var _a;
+        return __assign(__assign({}, attrs), (_a = {}, _a[key] = initialProps[key], _a));
+    }, {});
+    var MonthsComponent = (_c = (_b = initialProps.components) === null || _b === void 0 ? void 0 : _b.Months) !== null && _c !== void 0 ? _c : Months;
+    return (jsxRuntimeExports.jsx("div", __assign({ className: classNames.join(' '), style: style, dir: dayPicker.dir, id: dayPicker.id, nonce: initialProps.nonce, title: initialProps.title, lang: initialProps.lang }, dataAttributes, { children: jsxRuntimeExports.jsx(MonthsComponent, { children: navigation.displayMonths.map(function (month, i) { return (jsxRuntimeExports.jsx(Month, { displayIndex: i, displayMonth: month }, i)); }) }) })));
+}
+
+/** Provide the value for all the context providers. */
+function RootProvider(props) {
+    var children = props.children, initialProps = __rest(props, ["children"]);
+    return (jsxRuntimeExports.jsx(DayPickerProvider, __assign({ initialProps: initialProps }, { children: jsxRuntimeExports.jsx(NavigationProvider, { children: jsxRuntimeExports.jsx(SelectSingleProvider, __assign({ initialProps: initialProps }, { children: jsxRuntimeExports.jsx(SelectMultipleProvider, __assign({ initialProps: initialProps }, { children: jsxRuntimeExports.jsx(SelectRangeProvider, __assign({ initialProps: initialProps }, { children: jsxRuntimeExports.jsx(ModifiersProvider, { children: jsxRuntimeExports.jsx(FocusProvider, { children: children }) }) })) })) })) }) })));
+}
+
+/**
+ * DayPicker render a date picker component to let users pick dates from a
+ * calendar. See http://react-day-picker.js.org for updated documentation and
+ * examples.
+ *
+ * ### Customization
+ *
+ * DayPicker offers different customization props. For example,
+ *
+ * - show multiple months using `numberOfMonths`
+ * - display a dropdown to navigate the months via `captionLayout`
+ * - display the week numbers with `showWeekNumbers`
+ * - disable or hide days with `disabled` or `hidden`
+ *
+ * ### Controlling the months
+ *
+ * Change the initially displayed month using the `defaultMonth` prop. The
+ * displayed months are controlled by DayPicker and stored in its internal
+ * state. To control the months yourself, use `month` instead of `defaultMonth`
+ * and use the `onMonthChange` event to set it.
+ *
+ * To limit the months the user can navigate to, use
+ * `fromDate`/`fromMonth`/`fromYear` or `toDate`/`toMonth`/`toYear`.
+ *
+ * ### Selection modes
+ *
+ * DayPicker supports different selection mode that can be toggled using the
+ * `mode` prop:
+ *
+ * - `mode="single"`: only one day can be selected. Use `required` to make the
+ *   selection required. Use the `onSelect` event handler to get the selected
+ *   days.
+ * - `mode="multiple"`: users can select one or more days. Limit the amount of
+ *   days that can be selected with the `min` or the `max` props.
+ * - `mode="range"`: users can select a range of days. Limit the amount of days
+ *   in the range with the `min` or the `max` props.
+ * - `mode="default"` (default): the built-in selections are disabled. Implement
+ *   your own selection mode with `onDayClick`.
+ *
+ * The selection modes should cover the most common use cases. In case you
+ * need a more refined way of selecting days, use `mode="default"`. Use the
+ * `selected` props and add the day event handlers to add/remove days from the
+ * selection.
+ *
+ * ### Modifiers
+ *
+ * A _modifier_ represents different styles or states for the days displayed in
+ * the calendar (like "selected" or "disabled"). Define custom modifiers using
+ * the `modifiers` prop.
+ *
+ * ### Formatters and custom component
+ *
+ * You can customize how the content is displayed in the date picker by using
+ * either the formatters or replacing the internal components.
+ *
+ * For the most common cases you want to use the `formatters` prop to change how
+ * the content is formatted in the calendar. Use the `components` prop to
+ * replace the internal components, like the navigation icons.
+ *
+ * ### Styling
+ *
+ * DayPicker comes with a default, basic style in `react-day-picker/style` – use
+ * it as template for your own style.
+ *
+ * If you are using CSS modules, pass the imported styles object the
+ * `classNames` props.
+ *
+ * You can also style the elements via inline styles using the `styles` prop.
+ *
+ * ### Form fields
+ *
+ * If you need to bind the date picker to a form field, you can use the
+ * `useInput` hooks for a basic behavior. See the `useInput` source as an
+ * example to bind the date picker with form fields.
+ *
+ * ### Localization
+ *
+ * To localize DayPicker, import the locale from `date-fns` package and use the
+ * `locale` prop.
+ *
+ * For example, to use Spanish locale:
+ *
+ * ```
+ * import { es } from 'date-fns/locale';
+ * <DayPicker locale={es} />
+ * ```
+ */
+function DayPicker(props) {
+    return (jsxRuntimeExports.jsx(RootProvider, __assign({}, props, { children: jsxRuntimeExports.jsx(Root, { initialProps: props }) })));
+}
+
+function Calendar$1(_a) {
+    var className = _a.className, classNames = _a.classNames, _b = _a.showOutsideDays, showOutsideDays = _b === void 0 ? true : _b, props = __rest$2(_a, ["className", "classNames", "showOutsideDays"]);
+    return (React__namespace.createElement(DayPicker, __assign$2({ showOutsideDays: showOutsideDays, className: cn("p-3", className), classNames: __assign$2({ months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0", month: "space-y-4", caption: "flex justify-center pt-1 relative items-center", caption_label: "text-sm font-medium", nav: "space-x-1 flex items-center", nav_button: cn(buttonVariants({ variant: "outline" }), "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"), nav_button_previous: "absolute left-1", nav_button_next: "absolute right-1", table: "w-full border-collapse space-y-1", head_row: "flex", head_cell: "text-muted-foreground rounded-md w-8 font-normal text-[0.8rem]", row: "flex w-full mt-2", cell: cn("relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50", props.mode === "range"
+                ? "[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md"
+                : "[&:has([aria-selected])]:rounded-md"), day: cn(buttonVariants({ variant: "ghost" }), "h-8 w-8 p-0 font-normal aria-selected:opacity-100"), day_range_start: "day-range-start", day_range_end: "day-range-end", day_selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground", day_today: "bg-accent text-accent-foreground", day_outside: "day-outside text-muted-foreground opacity-50  aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30", day_disabled: "text-muted-foreground opacity-50", day_range_middle: "aria-selected:bg-accent aria-selected:text-accent-foreground", day_hidden: "invisible" }, classNames), components: {
+            IconLeft: function (_a) {
+                __rest$2(_a, []);
+                return React__namespace.createElement(ChevronLeftIcon, { className: "h-4 w-4" });
+            },
+            IconRight: function (_a) {
+                __rest$2(_a, []);
+                return React__namespace.createElement(ChevronRightIcon, { className: "h-4 w-4" });
+            },
+        } }, props)));
+}
+Calendar$1.displayName = "Calendar";
+
+/**
+ * lucide-react v0.292.0 - ISC
+ */
+
+var defaultAttributes = {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: 24,
+  height: 24,
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 2,
+  strokeLinecap: "round",
+  strokeLinejoin: "round"
+};
+
+/**
+ * lucide-react v0.292.0 - ISC
+ */
+
+const toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+const createLucideIcon = (iconName, iconNode) => {
+  const Component = React.forwardRef(
+    ({ color = "currentColor", size = 24, strokeWidth = 2, absoluteStrokeWidth, children, ...rest }, ref) => React.createElement(
+      "svg",
+      {
+        ref,
+        ...defaultAttributes,
+        width: size,
+        height: size,
+        stroke: color,
+        strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
+        className: `lucide lucide-${toKebabCase(iconName)}`,
+        ...rest
+      },
+      [
+        ...iconNode.map(([tag, attrs]) => React.createElement(tag, attrs)),
+        ...(Array.isArray(children) ? children : [children]) || []
+      ]
+    )
+  );
+  Component.displayName = `${iconName}`;
+  return Component;
+};
+
+/**
+ * lucide-react v0.292.0 - ISC
+ */
+
+const Calendar = createLucideIcon("Calendar", [
+  [
+    "rect",
+    {
+      width: "18",
+      height: "18",
+      x: "3",
+      y: "4",
+      rx: "2",
+      ry: "2",
+      key: "eu3xkr"
+    }
+  ],
+  ["line", { x1: "16", x2: "16", y1: "2", y2: "6", key: "m3sa8f" }],
+  ["line", { x1: "8", x2: "8", y1: "2", y2: "6", key: "18kwsl" }],
+  ["line", { x1: "3", x2: "21", y1: "10", y2: "10", key: "xt86sb" }]
+]);
+
+/* -------------------------------------------------------------------------------------------------
+ * Popover
+ * -----------------------------------------------------------------------------------------------*/ const $cb5cc270b50c6fcd$var$POPOVER_NAME = 'Popover';
+const [$cb5cc270b50c6fcd$var$createPopoverContext, $cb5cc270b50c6fcd$export$c8393c9e73286932] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($cb5cc270b50c6fcd$var$POPOVER_NAME, [
+    $cf1ac5d9fe0e8206$export$722aac194ae923
+]);
+const $cb5cc270b50c6fcd$var$usePopperScope = $cf1ac5d9fe0e8206$export$722aac194ae923();
+const [$cb5cc270b50c6fcd$var$PopoverProvider, $cb5cc270b50c6fcd$var$usePopoverContext] = $cb5cc270b50c6fcd$var$createPopoverContext($cb5cc270b50c6fcd$var$POPOVER_NAME);
+const $cb5cc270b50c6fcd$export$5b6b19405a83ff9d = (props)=>{
+    const { __scopePopover: __scopePopover , children: children , open: openProp , defaultOpen: defaultOpen , onOpenChange: onOpenChange , modal: modal = false  } = props;
+    const popperScope = $cb5cc270b50c6fcd$var$usePopperScope(__scopePopover);
+    const triggerRef = React.useRef(null);
+    const [hasCustomAnchor, setHasCustomAnchor] = React.useState(false);
+    const [open = false, setOpen] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
+        prop: openProp,
+        defaultProp: defaultOpen,
+        onChange: onOpenChange
+    });
+    return /*#__PURE__*/ React.createElement($cf1ac5d9fe0e8206$export$be92b6f5f03c0fe9, popperScope, /*#__PURE__*/ React.createElement($cb5cc270b50c6fcd$var$PopoverProvider, {
+        scope: __scopePopover,
+        contentId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        triggerRef: triggerRef,
+        open: open,
+        onOpenChange: setOpen,
+        onOpenToggle: React.useCallback(()=>setOpen((prevOpen)=>!prevOpen
+            )
+        , [
+            setOpen
+        ]),
+        hasCustomAnchor: hasCustomAnchor,
+        onCustomAnchorAdd: React.useCallback(()=>setHasCustomAnchor(true)
+        , []),
+        onCustomAnchorRemove: React.useCallback(()=>setHasCustomAnchor(false)
+        , []),
+        modal: modal
+    }, children));
+};
+/* -------------------------------------------------------------------------------------------------
+ * PopoverTrigger
+ * -----------------------------------------------------------------------------------------------*/ const $cb5cc270b50c6fcd$var$TRIGGER_NAME = 'PopoverTrigger';
+const $cb5cc270b50c6fcd$export$7dacb05d26466c3 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopePopover: __scopePopover , ...triggerProps } = props;
+    const context = $cb5cc270b50c6fcd$var$usePopoverContext($cb5cc270b50c6fcd$var$TRIGGER_NAME, __scopePopover);
+    const popperScope = $cb5cc270b50c6fcd$var$usePopperScope(__scopePopover);
+    const composedTriggerRef = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, context.triggerRef);
+    const trigger = /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends({
+        type: "button",
+        "aria-haspopup": "dialog",
+        "aria-expanded": context.open,
+        "aria-controls": context.contentId,
+        "data-state": $cb5cc270b50c6fcd$var$getState(context.open)
+    }, triggerProps, {
+        ref: composedTriggerRef,
+        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, context.onOpenToggle)
+    }));
+    return context.hasCustomAnchor ? trigger : /*#__PURE__*/ React.createElement($cf1ac5d9fe0e8206$export$b688253958b8dfe7, _extends({
+        asChild: true
+    }, popperScope), trigger);
+});
+/* -------------------------------------------------------------------------------------------------
+ * PopoverPortal
+ * -----------------------------------------------------------------------------------------------*/ const $cb5cc270b50c6fcd$var$PORTAL_NAME = 'PopoverPortal';
+const [$cb5cc270b50c6fcd$var$PortalProvider, $cb5cc270b50c6fcd$var$usePortalContext] = $cb5cc270b50c6fcd$var$createPopoverContext($cb5cc270b50c6fcd$var$PORTAL_NAME, {
+    forceMount: undefined
+});
+const $cb5cc270b50c6fcd$export$dd679ffb4362d2d4 = (props)=>{
+    const { __scopePopover: __scopePopover , forceMount: forceMount , children: children , container: container  } = props;
+    const context = $cb5cc270b50c6fcd$var$usePopoverContext($cb5cc270b50c6fcd$var$PORTAL_NAME, __scopePopover);
+    return /*#__PURE__*/ React.createElement($cb5cc270b50c6fcd$var$PortalProvider, {
+        scope: __scopePopover,
+        forceMount: forceMount
+    }, /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || context.open
+    }, /*#__PURE__*/ React.createElement($f1701beae083dbae$export$602eac185826482c$1, {
+        asChild: true,
+        container: container
+    }, children)));
+};
+/* -------------------------------------------------------------------------------------------------
+ * PopoverContent
+ * -----------------------------------------------------------------------------------------------*/ const $cb5cc270b50c6fcd$var$CONTENT_NAME = 'PopoverContent';
+const $cb5cc270b50c6fcd$export$d7e1f420b25549ff = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const portalContext = $cb5cc270b50c6fcd$var$usePortalContext($cb5cc270b50c6fcd$var$CONTENT_NAME, props.__scopePopover);
+    const { forceMount: forceMount = portalContext.forceMount , ...contentProps } = props;
+    const context = $cb5cc270b50c6fcd$var$usePopoverContext($cb5cc270b50c6fcd$var$CONTENT_NAME, props.__scopePopover);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || context.open
+    }, context.modal ? /*#__PURE__*/ React.createElement($cb5cc270b50c6fcd$var$PopoverContentModal, _extends({}, contentProps, {
+        ref: forwardedRef
+    })) : /*#__PURE__*/ React.createElement($cb5cc270b50c6fcd$var$PopoverContentNonModal, _extends({}, contentProps, {
+        ref: forwardedRef
+    })));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $cb5cc270b50c6fcd$var$PopoverContentModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $cb5cc270b50c6fcd$var$usePopoverContext($cb5cc270b50c6fcd$var$CONTENT_NAME, props.__scopePopover);
+    const contentRef = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, contentRef);
+    const isRightClickOutsideRef = React.useRef(false); // aria-hide everything except the content (better supported equivalent to setting aria-modal)
+    React.useEffect(()=>{
+        const content = contentRef.current;
+        if (content) return hideOthers(content);
+    }, []);
+    return /*#__PURE__*/ React.createElement($67UHm$RemoveScroll$1, {
+        as: $5e63c961fc1ce211$export$8c6ed5c666ac1360$1,
+        allowPinchZoom: true
+    }, /*#__PURE__*/ React.createElement($cb5cc270b50c6fcd$var$PopoverContentImpl, _extends({}, props, {
+        ref: composedRefs // we make sure we're not trapping once it's been closed
+        ,
+        trapFocus: context.open,
+        disableOutsidePointerEvents: true,
+        onCloseAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onCloseAutoFocus, (event)=>{
+            var _context$triggerRef$c;
+            event.preventDefault();
+            if (!isRightClickOutsideRef.current) (_context$triggerRef$c = context.triggerRef.current) === null || _context$triggerRef$c === void 0 || _context$triggerRef$c.focus();
+        }),
+        onPointerDownOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDownOutside, (event)=>{
+            const originalEvent = event.detail.originalEvent;
+            const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
+            const isRightClick = originalEvent.button === 2 || ctrlLeftClick;
+            isRightClickOutsideRef.current = isRightClick;
+        }, {
+            checkForDefaultPrevented: false
+        }) // When focus is trapped, a `focusout` event may still happen.
+        ,
+        onFocusOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocusOutside, (event)=>event.preventDefault()
+        , {
+            checkForDefaultPrevented: false
+        })
+    })));
+});
+const $cb5cc270b50c6fcd$var$PopoverContentNonModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $cb5cc270b50c6fcd$var$usePopoverContext($cb5cc270b50c6fcd$var$CONTENT_NAME, props.__scopePopover);
+    const hasInteractedOutsideRef = React.useRef(false);
+    const hasPointerDownOutsideRef = React.useRef(false);
+    return /*#__PURE__*/ React.createElement($cb5cc270b50c6fcd$var$PopoverContentImpl, _extends({}, props, {
+        ref: forwardedRef,
+        trapFocus: false,
+        disableOutsidePointerEvents: false,
+        onCloseAutoFocus: (event)=>{
+            var _props$onCloseAutoFoc;
+            (_props$onCloseAutoFoc = props.onCloseAutoFocus) === null || _props$onCloseAutoFoc === void 0 || _props$onCloseAutoFoc.call(props, event);
+            if (!event.defaultPrevented) {
+                var _context$triggerRef$c2;
+                if (!hasInteractedOutsideRef.current) (_context$triggerRef$c2 = context.triggerRef.current) === null || _context$triggerRef$c2 === void 0 || _context$triggerRef$c2.focus(); // Always prevent auto focus because we either focus manually or want user agent focus
+                event.preventDefault();
+            }
+            hasInteractedOutsideRef.current = false;
+            hasPointerDownOutsideRef.current = false;
+        },
+        onInteractOutside: (event)=>{
+            var _props$onInteractOuts, _context$triggerRef$c3;
+            (_props$onInteractOuts = props.onInteractOutside) === null || _props$onInteractOuts === void 0 || _props$onInteractOuts.call(props, event);
+            if (!event.defaultPrevented) {
+                hasInteractedOutsideRef.current = true;
+                if (event.detail.originalEvent.type === 'pointerdown') hasPointerDownOutsideRef.current = true;
+            } // Prevent dismissing when clicking the trigger.
+            // As the trigger is already setup to close, without doing so would
+            // cause it to close and immediately open.
+            const target = event.target;
+            const targetIsTrigger = (_context$triggerRef$c3 = context.triggerRef.current) === null || _context$triggerRef$c3 === void 0 ? void 0 : _context$triggerRef$c3.contains(target);
+            if (targetIsTrigger) event.preventDefault(); // On Safari if the trigger is inside a container with tabIndex={0}, when clicked
+            // we will get the pointer down outside event on the trigger, but then a subsequent
+            // focus outside event on the container, we ignore any focus outside event when we've
+            // already had a pointer down outside event.
+            if (event.detail.originalEvent.type === 'focusin' && hasPointerDownOutsideRef.current) event.preventDefault();
+        }
+    }));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $cb5cc270b50c6fcd$var$PopoverContentImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopePopover: __scopePopover , trapFocus: trapFocus , onOpenAutoFocus: onOpenAutoFocus , onCloseAutoFocus: onCloseAutoFocus , disableOutsidePointerEvents: disableOutsidePointerEvents , onEscapeKeyDown: onEscapeKeyDown , onPointerDownOutside: onPointerDownOutside , onFocusOutside: onFocusOutside , onInteractOutside: onInteractOutside , ...contentProps } = props;
+    const context = $cb5cc270b50c6fcd$var$usePopoverContext($cb5cc270b50c6fcd$var$CONTENT_NAME, __scopePopover);
+    const popperScope = $cb5cc270b50c6fcd$var$usePopperScope(__scopePopover); // Make sure the whole tree has focus guards as our `Popover` may be
+    // the last element in the DOM (beacuse of the `Portal`)
+    $3db38b7d1fb3fe6a$export$b7ece24a22aeda8c$1();
+    return /*#__PURE__*/ React.createElement($d3863c46a17e8a28$export$20e40289641fbbb6$1, {
+        asChild: true,
+        loop: true,
+        trapped: trapFocus,
+        onMountAutoFocus: onOpenAutoFocus,
+        onUnmountAutoFocus: onCloseAutoFocus
+    }, /*#__PURE__*/ React.createElement($5cb92bef7577960e$export$177fb62ff3ec1f22$1, {
+        asChild: true,
+        disableOutsidePointerEvents: disableOutsidePointerEvents,
+        onInteractOutside: onInteractOutside,
+        onEscapeKeyDown: onEscapeKeyDown,
+        onPointerDownOutside: onPointerDownOutside,
+        onFocusOutside: onFocusOutside,
+        onDismiss: ()=>context.onOpenChange(false)
+    }, /*#__PURE__*/ React.createElement($cf1ac5d9fe0e8206$export$7c6e2c02157bb7d2, _extends({
+        "data-state": $cb5cc270b50c6fcd$var$getState(context.open),
+        role: "dialog",
+        id: context.contentId
+    }, popperScope, contentProps, {
+        ref: forwardedRef,
+        style: {
+            ...contentProps.style,
+            '--radix-popover-content-transform-origin': 'var(--radix-popper-transform-origin)',
+            '--radix-popover-content-available-width': 'var(--radix-popper-available-width)',
+            '--radix-popover-content-available-height': 'var(--radix-popper-available-height)',
+            '--radix-popover-trigger-width': 'var(--radix-popper-anchor-width)',
+            '--radix-popover-trigger-height': 'var(--radix-popper-anchor-height)'
+        }
+    }))));
+});
+/* -----------------------------------------------------------------------------------------------*/ function $cb5cc270b50c6fcd$var$getState(open) {
+    return open ? 'open' : 'closed';
+}
+const $cb5cc270b50c6fcd$export$be92b6f5f03c0fe9 = $cb5cc270b50c6fcd$export$5b6b19405a83ff9d;
+const $cb5cc270b50c6fcd$export$41fb9f06171c75f4 = $cb5cc270b50c6fcd$export$7dacb05d26466c3;
+const $cb5cc270b50c6fcd$export$602eac185826482c = $cb5cc270b50c6fcd$export$dd679ffb4362d2d4;
+const $cb5cc270b50c6fcd$export$7c6e2c02157bb7d2 = $cb5cc270b50c6fcd$export$d7e1f420b25549ff;
+
+var Popover = $cb5cc270b50c6fcd$export$be92b6f5f03c0fe9;
+var PopoverTrigger = $cb5cc270b50c6fcd$export$41fb9f06171c75f4;
+var PopoverContent = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, _b = _a.align, align = _b === void 0 ? "center" : _b, _c = _a.sideOffset, sideOffset = _c === void 0 ? 4 : _c, props = __rest$2(_a, ["className", "align", "sideOffset"]);
+    return (React__namespace.createElement($cb5cc270b50c6fcd$export$602eac185826482c, null,
+        React__namespace.createElement($cb5cc270b50c6fcd$export$7c6e2c02157bb7d2, __assign$2({ ref: ref, align: align, sideOffset: sideOffset, className: cn("z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props))));
+});
+PopoverContent.displayName = $cb5cc270b50c6fcd$export$7c6e2c02157bb7d2.displayName;
+
+function NewBookingForm(_a) {
+    var onSubmit = _a.onSubmit, durationValues = _a.durationValues, roomTypeValues = _a.roomTypeValues, statusValues = _a.statusValues;
+    var form = useForm({});
+    return (React__default["default"].createElement(React__default["default"].Fragment, null,
+        React__default["default"].createElement(Form$1, __assign$2({}, form),
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "grid grid-cols-3 grid-rows-8 gap-8", id: "newBooking" },
+                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "checkInDate", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, { className: "flex flex-col" },
+                            React__default["default"].createElement(FormLabel, null, "Check in Date"),
+                            React__default["default"].createElement(Popover, null,
+                                React__default["default"].createElement(PopoverTrigger, { asChild: true },
+                                    React__default["default"].createElement(Button$1, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal', !field.value &&
+                                            'text-muted-foreground') },
+                                        React__default["default"].createElement(Calendar, { className: "mr-2 h-4 w-4" }),
+                                        field.value ? (format(field.value, 'PPP')) : (React__default["default"].createElement("span", null, "select date")))),
+                                React__default["default"].createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
+                                    React__default["default"].createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "duration", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, { className: "w-[15rem]" },
+                            React__default["default"].createElement(FormLabel, null, "Duration"),
+                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default["default"].createElement(FormControl, null,
+                                    React__default["default"].createElement(SelectTrigger, null,
+                                        React__default["default"].createElement(SelectValue, null))),
+                                React__default["default"].createElement(SelectContent, null, durationValues.map(function (item, pos) {
+                                    return (React__default["default"].createElement(SelectItem, { key: pos, value: item }, item));
+                                }))),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "checkOutDate", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, { className: "flex flex-col" },
+                            React__default["default"].createElement(FormLabel, null, "Check out Date"),
+                            React__default["default"].createElement(Popover, null,
+                                React__default["default"].createElement(PopoverTrigger, { asChild: true },
+                                    React__default["default"].createElement(Button$1, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal', !field.value &&
+                                            'text-muted-foreground') },
+                                        React__default["default"].createElement(Calendar, { className: "mr-2 h-4 w-4" }),
+                                        field.value ? (format(field.value, 'PPP')) : (React__default["default"].createElement("span", null, "select date")))),
+                                React__default["default"].createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
+                                    React__default["default"].createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "roomtype", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, { className: "w-[15rem]" },
+                            React__default["default"].createElement(FormLabel, null, "Room Type"),
+                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default["default"].createElement(FormControl, null,
+                                    React__default["default"].createElement(SelectTrigger, null,
+                                        React__default["default"].createElement(SelectValue, null))),
+                                React__default["default"].createElement(SelectContent, null, roomTypeValues.map(function (item, pos) {
+                                    return (React__default["default"].createElement(SelectItem, { key: pos, value: item }, item));
+                                }))),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "status", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, { className: "w-[15rem]" },
+                            React__default["default"].createElement(FormLabel, null, "Status"),
+                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default["default"].createElement(FormControl, null,
+                                    React__default["default"].createElement(SelectTrigger, null,
+                                        React__default["default"].createElement(SelectValue, null))),
+                                React__default["default"].createElement(SelectContent, null, statusValues.map(function (item, pos) {
+                                    return (React__default["default"].createElement(SelectItem, { key: pos, value: item }, item));
+                                }))),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement("div", { className: "flex items-center" },
+                    React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "adult", render: function (_a) {
+                            _a.field;
+                            return (React__default["default"].createElement(FormItem, { className: "w-[7rem]" },
+                                React__default["default"].createElement(FormLabel, null, "Adult"),
+                                React__default["default"].createElement("br", null),
+                                React__default["default"].createElement(FormControl, null),
+                                React__default["default"].createElement("p", { className: "border rounded w-[5rem] flex justify-between px-4" },
+                                    React__default["default"].createElement("span", { onClick: function () { return alert('clicked'); } },
+                                        ' ',
+                                        "-",
+                                        ' '),
+                                    "0",
+                                    React__default["default"].createElement("span", { onClick: function () { return alert('clicked'); } },
+                                        ' ',
+                                        "+",
+                                        ' ')),
+                                React__default["default"].createElement(FormMessage, null)));
+                        } }),
+                    React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "child", render: function (_a) {
+                            _a.field;
+                            return (React__default["default"].createElement(FormItem, { className: "w-[7rem]" },
+                                React__default["default"].createElement(FormLabel, null, "Child"),
+                                React__default["default"].createElement("br", null),
+                                React__default["default"].createElement(FormControl, null,
+                                    React__default["default"].createElement("p", { className: "border rounded w-[5rem] flex justify-between px-4" },
+                                        React__default["default"].createElement("span", { onClick: function () { return alert('clicked'); } },
+                                            ' ',
+                                            "-",
+                                            ' '),
+                                        "0",
+                                        React__default["default"].createElement("span", { onClick: function () { return alert('clicked'); } },
+                                            ' ',
+                                            "+",
+                                            ' '))),
+                                React__default["default"].createElement(FormMessage, null)));
+                        } })),
+                React__default["default"].createElement("h3", { className: "col-span-full text-md font-semibold" }, "Guest Details"),
+                ' ',
+                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "firstName", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
+                            React__default["default"].createElement(FormLabel, null, "First Name"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({ placeholder: "Enter First Name" }, field))),
+                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "lastName", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
+                            React__default["default"].createElement(FormLabel, null, "Last Name"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({ placeholder: "Enter Last Name" }, field))),
+                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "email", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
+                            React__default["default"].createElement(FormLabel, null, "Email"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({ type: "email", placeholder: "Enter Email" }, field))),
+                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "firstName", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
+                            React__default["default"].createElement(FormLabel, null, "First Name"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({ placeholder: "Enter First Name" }, field))),
+                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "lastName", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
+                            React__default["default"].createElement(FormLabel, null, "Last Name"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({ placeholder: "Enter Last Name" }, field))),
+                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "email", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
+                            React__default["default"].createElement(FormLabel, null, "Email"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({ type: "email", placeholder: "Enter Email" }, field))),
+                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "price", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
+                            React__default["default"].createElement(FormLabel, null, "Price"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({ placeholder: "0$" }, field))),
+                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "discount", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
+                            React__default["default"].createElement(FormLabel, null, "Discount"),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({ placeholder: "5%" }, field))),
+                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement("div", { className: "flex items-center gap-4" },
+                    React__default["default"].createElement(Button$1, null, "+ Add Guest"),
+                    React__default["default"].createElement(Button$1, { variant: "outline" }, "+ New Guest")),
+                React__default["default"].createElement("div", { className: "col-span-full" },
+                    React__default["default"].createElement(FormField, { control: form.control, name: "notes", render: function (_a) {
+                            var field = _a.field;
+                            return (React__default["default"].createElement(FormItem, null,
+                                React__default["default"].createElement(FormLabel, { className: "flex justify-between items-center" },
+                                    React__default["default"].createElement("p", null, "Notes"),
+                                    React__default["default"].createElement(FormField, { control: form.control, name: "singleUse", render: function (_a) {
+                                            var field = _a.field;
+                                            return (React__default["default"].createElement(FormItem, { className: "flex items-center gap-2" },
+                                                React__default["default"].createElement(FormControl, null,
+                                                    React__default["default"].createElement(Checkbox, { checked: field.value, onCheckedChange: field.onChange })),
+                                                React__default["default"].createElement("div", { className: "space-y-1 leading-none" },
+                                                    React__default["default"].createElement(FormLabel, null, "Single Use"),
+                                                    React__default["default"].createElement(FormDescription, null))));
+                                        } })),
+                                React__default["default"].createElement(FormControl, null,
+                                    React__default["default"].createElement(Textarea, __assign$2({ placeholder: "", className: "resize-none" }, field))),
+                                React__default["default"].createElement(FormDescription, null),
+                                React__default["default"].createElement(FormMessage, null)));
+                        } }))))));
+}
+
+var Form = {
+    addPerson: AddPersonForm,
+    addRooms: AddRooms,
+    addServices: AddServicesForm,
+    addRoomType: AddRoomType,
+    newBooking: NewBookingForm
+};
+
+/* -------------------------------------------------------------------------------------------------
+ * Dialog
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DIALOG_NAME$1 = 'Dialog';
+const [$5d3850c4d0b4e6c7$var$createDialogContext$1, $5d3850c4d0b4e6c7$export$cc702773b8ea3e41$1] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($5d3850c4d0b4e6c7$var$DIALOG_NAME$1);
+const [$5d3850c4d0b4e6c7$var$DialogProvider$1, $5d3850c4d0b4e6c7$var$useDialogContext$1] = $5d3850c4d0b4e6c7$var$createDialogContext$1($5d3850c4d0b4e6c7$var$DIALOG_NAME$1);
+const $5d3850c4d0b4e6c7$export$3ddf2d174ce01153$1 = (props)=>{
+    const { __scopeDialog: __scopeDialog , children: children , open: openProp , defaultOpen: defaultOpen , onOpenChange: onOpenChange , modal: modal = true  } = props;
+    const triggerRef = React.useRef(null);
+    const contentRef = React.useRef(null);
+    const [open = false, setOpen] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
+        prop: openProp,
+        defaultProp: defaultOpen,
+        onChange: onOpenChange
+    });
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogProvider$1, {
+        scope: __scopeDialog,
+        triggerRef: triggerRef,
+        contentRef: contentRef,
+        contentId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        titleId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        descriptionId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        open: open,
+        onOpenChange: setOpen,
+        onOpenToggle: React.useCallback(()=>setOpen((prevOpen)=>!prevOpen
+            )
+        , [
+            setOpen
+        ]),
+        modal: modal
+    }, children);
+};
+/* -------------------------------------------------------------------------------------------------
+ * DialogTrigger
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$TRIGGER_NAME = 'DialogTrigger';
+const $5d3850c4d0b4e6c7$export$2e1e1122cf0cba88 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , ...triggerProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$TRIGGER_NAME, __scopeDialog);
+    const composedTriggerRef = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, context.triggerRef);
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends({
+        type: "button",
+        "aria-haspopup": "dialog",
+        "aria-expanded": context.open,
+        "aria-controls": context.contentId,
+        "data-state": $5d3850c4d0b4e6c7$var$getState$1(context.open)
+    }, triggerProps, {
+        ref: composedTriggerRef,
+        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, context.onOpenToggle)
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * DialogPortal
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$PORTAL_NAME$1 = 'DialogPortal';
+const [$5d3850c4d0b4e6c7$var$PortalProvider$1, $5d3850c4d0b4e6c7$var$usePortalContext$1] = $5d3850c4d0b4e6c7$var$createDialogContext$1($5d3850c4d0b4e6c7$var$PORTAL_NAME$1, {
+    forceMount: undefined
+});
+const $5d3850c4d0b4e6c7$export$dad7c95542bacce0$1 = (props)=>{
+    const { __scopeDialog: __scopeDialog , forceMount: forceMount , children: children , container: container  } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$PORTAL_NAME$1, __scopeDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$PortalProvider$1, {
+        scope: __scopeDialog,
+        forceMount: forceMount
+    }, React.Children.map(children, (child)=>/*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+            present: forceMount || context.open
+        }, /*#__PURE__*/ React.createElement($f1701beae083dbae$export$602eac185826482c$1, {
+            asChild: true,
+            container: container
+        }, child))
+    ));
+};
+/* -------------------------------------------------------------------------------------------------
+ * DialogOverlay
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$OVERLAY_NAME$1 = 'DialogOverlay';
+const $5d3850c4d0b4e6c7$export$bd1d06c79be19e17$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext$1($5d3850c4d0b4e6c7$var$OVERLAY_NAME$1, props.__scopeDialog);
+    const { forceMount: forceMount = portalContext.forceMount , ...overlayProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$OVERLAY_NAME$1, props.__scopeDialog);
+    return context.modal ? /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || context.open
+    }, /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogOverlayImpl$1, _extends({}, overlayProps, {
+        ref: forwardedRef
+    }))) : null;
+});
+const $5d3850c4d0b4e6c7$var$DialogOverlayImpl$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , ...overlayProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$OVERLAY_NAME$1, __scopeDialog);
+    return(/*#__PURE__*/ // Make sure `Content` is scrollable even when it doesn't live inside `RemoveScroll`
+    // ie. when `Overlay` and `Content` are siblings
+    React.createElement($67UHm$RemoveScroll$1, {
+        as: $5e63c961fc1ce211$export$8c6ed5c666ac1360$1,
+        allowPinchZoom: true,
+        shards: [
+            context.contentRef
+        ]
+    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
+        "data-state": $5d3850c4d0b4e6c7$var$getState$1(context.open)
+    }, overlayProps, {
+        ref: forwardedRef // We re-enable pointer-events prevented by `Dialog.Content` to allow scrolling the overlay.
+        ,
+        style: {
+            pointerEvents: 'auto',
+            ...overlayProps.style
+        }
+    }))));
+});
+/* -------------------------------------------------------------------------------------------------
+ * DialogContent
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$CONTENT_NAME$1 = 'DialogContent';
+const $5d3850c4d0b4e6c7$export$b6d9565de1e068cf$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
+    const { forceMount: forceMount = portalContext.forceMount , ...contentProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || context.open
+    }, context.modal ? /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentModal$1, _extends({}, contentProps, {
+        ref: forwardedRef
+    })) : /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentNonModal$1, _extends({}, contentProps, {
+        ref: forwardedRef
+    })));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentModal$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
+    const contentRef = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, context.contentRef, contentRef); // aria-hide everything except the content (better supported equivalent to setting aria-modal)
+    React.useEffect(()=>{
+        const content = contentRef.current;
+        if (content) return hideOthers(content);
+    }, []);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl$1, _extends({}, props, {
+        ref: composedRefs // we make sure focus isn't trapped once `DialogContent` has been closed
+        ,
+        trapFocus: context.open,
+        disableOutsidePointerEvents: true,
+        onCloseAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onCloseAutoFocus, (event)=>{
+            var _context$triggerRef$c;
+            event.preventDefault();
+            (_context$triggerRef$c = context.triggerRef.current) === null || _context$triggerRef$c === void 0 || _context$triggerRef$c.focus();
+        }),
+        onPointerDownOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDownOutside, (event)=>{
+            const originalEvent = event.detail.originalEvent;
+            const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
+            const isRightClick = originalEvent.button === 2 || ctrlLeftClick; // If the event is a right-click, we shouldn't close because
+            // it is effectively as if we right-clicked the `Overlay`.
+            if (isRightClick) event.preventDefault();
+        }) // When focus is trapped, a `focusout` event may still happen.
+        ,
+        onFocusOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocusOutside, (event)=>event.preventDefault()
+        )
+    }));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentNonModal$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
+    const hasInteractedOutsideRef = React.useRef(false);
+    const hasPointerDownOutsideRef = React.useRef(false);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl$1, _extends({}, props, {
+        ref: forwardedRef,
+        trapFocus: false,
+        disableOutsidePointerEvents: false,
+        onCloseAutoFocus: (event)=>{
+            var _props$onCloseAutoFoc;
+            (_props$onCloseAutoFoc = props.onCloseAutoFocus) === null || _props$onCloseAutoFoc === void 0 || _props$onCloseAutoFoc.call(props, event);
+            if (!event.defaultPrevented) {
+                var _context$triggerRef$c2;
+                if (!hasInteractedOutsideRef.current) (_context$triggerRef$c2 = context.triggerRef.current) === null || _context$triggerRef$c2 === void 0 || _context$triggerRef$c2.focus(); // Always prevent auto focus because we either focus manually or want user agent focus
+                event.preventDefault();
+            }
+            hasInteractedOutsideRef.current = false;
+            hasPointerDownOutsideRef.current = false;
+        },
+        onInteractOutside: (event)=>{
+            var _props$onInteractOuts, _context$triggerRef$c3;
+            (_props$onInteractOuts = props.onInteractOutside) === null || _props$onInteractOuts === void 0 || _props$onInteractOuts.call(props, event);
+            if (!event.defaultPrevented) {
+                hasInteractedOutsideRef.current = true;
+                if (event.detail.originalEvent.type === 'pointerdown') hasPointerDownOutsideRef.current = true;
+            } // Prevent dismissing when clicking the trigger.
+            // As the trigger is already setup to close, without doing so would
+            // cause it to close and immediately open.
+            const target = event.target;
+            const targetIsTrigger = (_context$triggerRef$c3 = context.triggerRef.current) === null || _context$triggerRef$c3 === void 0 ? void 0 : _context$triggerRef$c3.contains(target);
+            if (targetIsTrigger) event.preventDefault(); // On Safari if the trigger is inside a container with tabIndex={0}, when clicked
+            // we will get the pointer down outside event on the trigger, but then a subsequent
+            // focus outside event on the container, we ignore any focus outside event when we've
+            // already had a pointer down outside event.
+            if (event.detail.originalEvent.type === 'focusin' && hasPointerDownOutsideRef.current) event.preventDefault();
+        }
+    }));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentImpl$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , trapFocus: trapFocus , onOpenAutoFocus: onOpenAutoFocus , onCloseAutoFocus: onCloseAutoFocus , ...contentProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, __scopeDialog);
+    const contentRef = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, contentRef); // Make sure the whole tree has focus guards as our `Dialog` will be
+    // the last element in the DOM (beacuse of the `Portal`)
+    $3db38b7d1fb3fe6a$export$b7ece24a22aeda8c$1();
+    return /*#__PURE__*/ React.createElement(React.Fragment, null, /*#__PURE__*/ React.createElement($d3863c46a17e8a28$export$20e40289641fbbb6$1, {
+        asChild: true,
+        loop: true,
+        trapped: trapFocus,
+        onMountAutoFocus: onOpenAutoFocus,
+        onUnmountAutoFocus: onCloseAutoFocus
+    }, /*#__PURE__*/ React.createElement($5cb92bef7577960e$export$177fb62ff3ec1f22$1, _extends({
+        role: "dialog",
+        id: context.contentId,
+        "aria-describedby": context.descriptionId,
+        "aria-labelledby": context.titleId,
+        "data-state": $5d3850c4d0b4e6c7$var$getState$1(context.open)
+    }, contentProps, {
+        ref: composedRefs,
+        onDismiss: ()=>context.onOpenChange(false)
+    }))), false);
+});
+/* -------------------------------------------------------------------------------------------------
+ * DialogTitle
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$TITLE_NAME = 'DialogTitle';
+const $5d3850c4d0b4e6c7$export$16f7638e4a34b909 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , ...titleProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$TITLE_NAME, __scopeDialog);
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.h2, _extends({
+        id: context.titleId
+    }, titleProps, {
+        ref: forwardedRef
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * DialogDescription
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DESCRIPTION_NAME = 'DialogDescription';
+const $5d3850c4d0b4e6c7$export$94e94c2ec2c954d5 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , ...descriptionProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$DESCRIPTION_NAME, __scopeDialog);
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.p, _extends({
+        id: context.descriptionId
+    }, descriptionProps, {
+        ref: forwardedRef
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * DialogClose
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$CLOSE_NAME = 'DialogClose';
+const $5d3850c4d0b4e6c7$export$fba2fb7cd781b7ac = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , ...closeProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CLOSE_NAME, __scopeDialog);
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends({
+        type: "button"
+    }, closeProps, {
+        ref: forwardedRef,
+        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, ()=>context.onOpenChange(false)
+        )
+    }));
+});
+/* -----------------------------------------------------------------------------------------------*/ function $5d3850c4d0b4e6c7$var$getState$1(open) {
+    return open ? 'open' : 'closed';
+}
+const $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1 = $5d3850c4d0b4e6c7$export$3ddf2d174ce01153$1;
+const $5d3850c4d0b4e6c7$export$41fb9f06171c75f4 = $5d3850c4d0b4e6c7$export$2e1e1122cf0cba88;
+const $5d3850c4d0b4e6c7$export$602eac185826482c$1 = $5d3850c4d0b4e6c7$export$dad7c95542bacce0$1;
+const $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1 = $5d3850c4d0b4e6c7$export$bd1d06c79be19e17$1;
+const $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1 = $5d3850c4d0b4e6c7$export$b6d9565de1e068cf$1;
+const $5d3850c4d0b4e6c7$export$f99233281efd08a0 = $5d3850c4d0b4e6c7$export$16f7638e4a34b909;
+const $5d3850c4d0b4e6c7$export$393edc798c47379d = $5d3850c4d0b4e6c7$export$94e94c2ec2c954d5;
+const $5d3850c4d0b4e6c7$export$f39c2d165cd861fe = $5d3850c4d0b4e6c7$export$fba2fb7cd781b7ac;
+
+var Sheet = $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1;
+var SheetTrigger = $5d3850c4d0b4e6c7$export$41fb9f06171c75f4;
+var SheetClose = $5d3850c4d0b4e6c7$export$f39c2d165cd861fe;
+var SheetPortal = $5d3850c4d0b4e6c7$export$602eac185826482c$1;
+var SheetOverlay = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1, __assign$2({ className: cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props, { ref: ref })));
+});
+SheetOverlay.displayName = $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1.displayName;
+var sheetVariants = cva("fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500", {
+    variants: {
+        side: {
+            top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
+            bottom: "inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
+            left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
+            right: "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+        },
+    },
+    defaultVariants: {
+        side: "right",
+    },
+});
+var SheetContent = React__namespace.forwardRef(function (_a, ref) {
+    var _b = _a.side, side = _b === void 0 ? "right" : _b, className = _a.className, children = _a.children, props = __rest$2(_a, ["side", "className", "children"]);
+    return (React__namespace.createElement(SheetPortal, null,
+        React__namespace.createElement(SheetOverlay, null),
+        React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1, __assign$2({ ref: ref, className: cn(sheetVariants({ side: side }), className) }, props),
+            children,
+            React__namespace.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, { className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary" },
+                React__namespace.createElement(Cross2Icon, { className: "h-4 w-4" }),
+                React__namespace.createElement("span", { className: "sr-only" }, "Close")))));
+});
+SheetContent.displayName = $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1.displayName;
+var SheetHeader = function (_a) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement("div", __assign$2({ className: cn("flex flex-col space-y-2 text-center sm:text-left", className) }, props)));
+};
+SheetHeader.displayName = "SheetHeader";
+var SheetFooter = function (_a) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement("div", __assign$2({ className: cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className) }, props)));
+};
+SheetFooter.displayName = "SheetFooter";
+var SheetTitle = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$f99233281efd08a0, __assign$2({ ref: ref, className: cn("text-lg font-semibold text-foreground", className) }, props)));
+});
+SheetTitle.displayName = $5d3850c4d0b4e6c7$export$f99233281efd08a0.displayName;
+var SheetDescription = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$393edc798c47379d, __assign$2({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
+});
+SheetDescription.displayName = $5d3850c4d0b4e6c7$export$393edc798c47379d.displayName;
+
+function $6c2e24571c90391f$export$3e6543de14f8614f(initialState, machine) {
+    return React.useReducer((state, event)=>{
+        const nextState = machine[state][event];
+        return nextState !== null && nextState !== void 0 ? nextState : state;
+    }, initialState);
+}
+
+
+/* -------------------------------------------------------------------------------------------------
+ * ScrollArea
+ * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$SCROLL_AREA_NAME = 'ScrollArea';
+const [$57acba87d6e25586$var$createScrollAreaContext, $57acba87d6e25586$export$488468afe3a6f2b1] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($57acba87d6e25586$var$SCROLL_AREA_NAME);
+const [$57acba87d6e25586$var$ScrollAreaProvider, $57acba87d6e25586$var$useScrollAreaContext] = $57acba87d6e25586$var$createScrollAreaContext($57acba87d6e25586$var$SCROLL_AREA_NAME);
+const $57acba87d6e25586$export$ccf8d8d7bbf3c2cc = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeScrollArea: __scopeScrollArea , type: type = 'hover' , dir: dir , scrollHideDelay: scrollHideDelay = 600 , ...scrollAreaProps } = props;
+    const [scrollArea, setScrollArea] = React.useState(null);
+    const [viewport, setViewport] = React.useState(null);
+    const [content, setContent] = React.useState(null);
+    const [scrollbarX, setScrollbarX] = React.useState(null);
+    const [scrollbarY, setScrollbarY] = React.useState(null);
+    const [cornerWidth, setCornerWidth] = React.useState(0);
+    const [cornerHeight, setCornerHeight] = React.useState(0);
+    const [scrollbarXEnabled, setScrollbarXEnabled] = React.useState(false);
+    const [scrollbarYEnabled, setScrollbarYEnabled] = React.useState(false);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, (node)=>setScrollArea(node)
+    );
+    const direction = $f631663db3294ace$export$b39126d51d94e6f3(dir);
+    return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaProvider, {
+        scope: __scopeScrollArea,
+        type: type,
+        dir: direction,
+        scrollHideDelay: scrollHideDelay,
+        scrollArea: scrollArea,
+        viewport: viewport,
+        onViewportChange: setViewport,
+        content: content,
+        onContentChange: setContent,
+        scrollbarX: scrollbarX,
+        onScrollbarXChange: setScrollbarX,
+        scrollbarXEnabled: scrollbarXEnabled,
+        onScrollbarXEnabledChange: setScrollbarXEnabled,
+        scrollbarY: scrollbarY,
+        onScrollbarYChange: setScrollbarY,
+        scrollbarYEnabled: scrollbarYEnabled,
+        onScrollbarYEnabledChange: setScrollbarYEnabled,
+        onCornerWidthChange: setCornerWidth,
+        onCornerHeightChange: setCornerHeight
+    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
+        dir: direction
+    }, scrollAreaProps, {
+        ref: composedRefs,
+        style: {
+            position: 'relative',
+            // Pass corner sizes as CSS vars to reduce re-renders of context consumers
+            ['--radix-scroll-area-corner-width']: cornerWidth + 'px',
+            ['--radix-scroll-area-corner-height']: cornerHeight + 'px',
+            ...props.style
+        }
+    })));
+});
+/* -------------------------------------------------------------------------------------------------
+ * ScrollAreaViewport
+ * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$VIEWPORT_NAME = 'ScrollAreaViewport';
+const $57acba87d6e25586$export$a21cbf9f11fca853 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeScrollArea: __scopeScrollArea , children: children , ...viewportProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$VIEWPORT_NAME, __scopeScrollArea);
+    const ref = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref, context.onViewportChange);
+    return /*#__PURE__*/ React.createElement(React.Fragment, null, /*#__PURE__*/ React.createElement("style", {
+        dangerouslySetInnerHTML: {
+            __html: `[data-radix-scroll-area-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-scroll-area-viewport]::-webkit-scrollbar{display:none}`
+        }
+    }), /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
+        "data-radix-scroll-area-viewport": ""
+    }, viewportProps, {
+        ref: composedRefs,
+        style: {
+            /**
+       * We don't support `visible` because the intention is to have at least one scrollbar
+       * if this component is used and `visible` will behave like `auto` in that case
+       * https://developer.mozilla.org/en-US/docs/Web/CSS/overflowed#description
+       *
+       * We don't handle `auto` because the intention is for the native implementation
+       * to be hidden if using this component. We just want to ensure the node is scrollable
+       * so could have used either `scroll` or `auto` here. We picked `scroll` to prevent
+       * the browser from having to work out whether to render native scrollbars or not,
+       * we tell it to with the intention of hiding them in CSS.
+       */ overflowX: context.scrollbarXEnabled ? 'scroll' : 'hidden',
+            overflowY: context.scrollbarYEnabled ? 'scroll' : 'hidden',
+            ...props.style
+        }
+    }), /*#__PURE__*/ React.createElement("div", {
+        ref: context.onContentChange,
+        style: {
+            minWidth: '100%',
+            display: 'table'
+        }
+    }, children)));
+});
+/* -------------------------------------------------------------------------------------------------
+ * ScrollAreaScrollbar
+ * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$SCROLLBAR_NAME = 'ScrollAreaScrollbar';
+const $57acba87d6e25586$export$2fabd85d0eba3c57 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { forceMount: forceMount , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const { onScrollbarXEnabledChange: onScrollbarXEnabledChange , onScrollbarYEnabledChange: onScrollbarYEnabledChange  } = context;
+    const isHorizontal = props.orientation === 'horizontal';
+    React.useEffect(()=>{
+        isHorizontal ? onScrollbarXEnabledChange(true) : onScrollbarYEnabledChange(true);
+        return ()=>{
+            isHorizontal ? onScrollbarXEnabledChange(false) : onScrollbarYEnabledChange(false);
+        };
+    }, [
+        isHorizontal,
+        onScrollbarXEnabledChange,
+        onScrollbarYEnabledChange
+    ]);
+    return context.type === 'hover' ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarHover, _extends({}, scrollbarProps, {
+        ref: forwardedRef,
+        forceMount: forceMount
+    })) : context.type === 'scroll' ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarScroll, _extends({}, scrollbarProps, {
+        ref: forwardedRef,
+        forceMount: forceMount
+    })) : context.type === 'auto' ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarAuto, _extends({}, scrollbarProps, {
+        ref: forwardedRef,
+        forceMount: forceMount
+    })) : context.type === 'always' ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarVisible, _extends({}, scrollbarProps, {
+        ref: forwardedRef
+    })) : null;
+});
+/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$ScrollAreaScrollbarHover = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { forceMount: forceMount , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const [visible, setVisible] = React.useState(false);
+    React.useEffect(()=>{
+        const scrollArea = context.scrollArea;
+        let hideTimer = 0;
+        if (scrollArea) {
+            const handlePointerEnter = ()=>{
+                window.clearTimeout(hideTimer);
+                setVisible(true);
+            };
+            const handlePointerLeave = ()=>{
+                hideTimer = window.setTimeout(()=>setVisible(false)
+                , context.scrollHideDelay);
+            };
+            scrollArea.addEventListener('pointerenter', handlePointerEnter);
+            scrollArea.addEventListener('pointerleave', handlePointerLeave);
+            return ()=>{
+                window.clearTimeout(hideTimer);
+                scrollArea.removeEventListener('pointerenter', handlePointerEnter);
+                scrollArea.removeEventListener('pointerleave', handlePointerLeave);
+            };
+        }
+    }, [
+        context.scrollArea,
+        context.scrollHideDelay
+    ]);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || visible
+    }, /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarAuto, _extends({
+        "data-state": visible ? 'visible' : 'hidden'
+    }, scrollbarProps, {
+        ref: forwardedRef
+    })));
+});
+const $57acba87d6e25586$var$ScrollAreaScrollbarScroll = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { forceMount: forceMount , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const isHorizontal = props.orientation === 'horizontal';
+    const debounceScrollEnd = $57acba87d6e25586$var$useDebounceCallback(()=>send('SCROLL_END')
+    , 100);
+    const [state, send] = $6c2e24571c90391f$export$3e6543de14f8614f('hidden', {
+        hidden: {
+            SCROLL: 'scrolling'
+        },
+        scrolling: {
+            SCROLL_END: 'idle',
+            POINTER_ENTER: 'interacting'
+        },
+        interacting: {
+            SCROLL: 'interacting',
+            POINTER_LEAVE: 'idle'
+        },
+        idle: {
+            HIDE: 'hidden',
+            SCROLL: 'scrolling',
+            POINTER_ENTER: 'interacting'
+        }
+    });
+    React.useEffect(()=>{
+        if (state === 'idle') {
+            const hideTimer = window.setTimeout(()=>send('HIDE')
+            , context.scrollHideDelay);
+            return ()=>window.clearTimeout(hideTimer)
+            ;
+        }
+    }, [
+        state,
+        context.scrollHideDelay,
+        send
+    ]);
+    React.useEffect(()=>{
+        const viewport = context.viewport;
+        const scrollDirection = isHorizontal ? 'scrollLeft' : 'scrollTop';
+        if (viewport) {
+            let prevScrollPos = viewport[scrollDirection];
+            const handleScroll = ()=>{
+                const scrollPos = viewport[scrollDirection];
+                const hasScrollInDirectionChanged = prevScrollPos !== scrollPos;
+                if (hasScrollInDirectionChanged) {
+                    send('SCROLL');
+                    debounceScrollEnd();
+                }
+                prevScrollPos = scrollPos;
+            };
+            viewport.addEventListener('scroll', handleScroll);
+            return ()=>viewport.removeEventListener('scroll', handleScroll)
+            ;
+        }
+    }, [
+        context.viewport,
+        isHorizontal,
+        send,
+        debounceScrollEnd
+    ]);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || state !== 'hidden'
+    }, /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarVisible, _extends({
+        "data-state": state === 'hidden' ? 'hidden' : 'visible'
+    }, scrollbarProps, {
+        ref: forwardedRef,
+        onPointerEnter: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerEnter, ()=>send('POINTER_ENTER')
+        ),
+        onPointerLeave: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerLeave, ()=>send('POINTER_LEAVE')
+        )
+    })));
+});
+const $57acba87d6e25586$var$ScrollAreaScrollbarAuto = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const { forceMount: forceMount , ...scrollbarProps } = props;
+    const [visible, setVisible] = React.useState(false);
+    const isHorizontal = props.orientation === 'horizontal';
+    const handleResize = $57acba87d6e25586$var$useDebounceCallback(()=>{
+        if (context.viewport) {
+            const isOverflowX = context.viewport.offsetWidth < context.viewport.scrollWidth;
+            const isOverflowY = context.viewport.offsetHeight < context.viewport.scrollHeight;
+            setVisible(isHorizontal ? isOverflowX : isOverflowY);
+        }
+    }, 10);
+    $57acba87d6e25586$var$useResizeObserver(context.viewport, handleResize);
+    $57acba87d6e25586$var$useResizeObserver(context.content, handleResize);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || visible
+    }, /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarVisible, _extends({
+        "data-state": visible ? 'visible' : 'hidden'
+    }, scrollbarProps, {
+        ref: forwardedRef
+    })));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$ScrollAreaScrollbarVisible = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { orientation: orientation = 'vertical' , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const thumbRef = React.useRef(null);
+    const pointerOffsetRef = React.useRef(0);
+    const [sizes, setSizes] = React.useState({
+        content: 0,
+        viewport: 0,
+        scrollbar: {
+            size: 0,
+            paddingStart: 0,
+            paddingEnd: 0
+        }
+    });
+    const thumbRatio = $57acba87d6e25586$var$getThumbRatio(sizes.viewport, sizes.content);
+    const commonProps = {
+        ...scrollbarProps,
+        sizes: sizes,
+        onSizesChange: setSizes,
+        hasThumb: Boolean(thumbRatio > 0 && thumbRatio < 1),
+        onThumbChange: (thumb)=>thumbRef.current = thumb
+        ,
+        onThumbPointerUp: ()=>pointerOffsetRef.current = 0
+        ,
+        onThumbPointerDown: (pointerPos)=>pointerOffsetRef.current = pointerPos
+    };
+    function getScrollPosition(pointerPos, dir) {
+        return $57acba87d6e25586$var$getScrollPositionFromPointer(pointerPos, pointerOffsetRef.current, sizes, dir);
+    }
+    if (orientation === 'horizontal') return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarX, _extends({}, commonProps, {
+        ref: forwardedRef,
+        onThumbPositionChange: ()=>{
+            if (context.viewport && thumbRef.current) {
+                const scrollPos = context.viewport.scrollLeft;
+                const offset = $57acba87d6e25586$var$getThumbOffsetFromScroll(scrollPos, sizes, context.dir);
+                thumbRef.current.style.transform = `translate3d(${offset}px, 0, 0)`;
+            }
+        },
+        onWheelScroll: (scrollPos)=>{
+            if (context.viewport) context.viewport.scrollLeft = scrollPos;
+        },
+        onDragScroll: (pointerPos)=>{
+            if (context.viewport) context.viewport.scrollLeft = getScrollPosition(pointerPos, context.dir);
+        }
+    }));
+    if (orientation === 'vertical') return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarY, _extends({}, commonProps, {
+        ref: forwardedRef,
+        onThumbPositionChange: ()=>{
+            if (context.viewport && thumbRef.current) {
+                const scrollPos = context.viewport.scrollTop;
+                const offset = $57acba87d6e25586$var$getThumbOffsetFromScroll(scrollPos, sizes);
+                thumbRef.current.style.transform = `translate3d(0, ${offset}px, 0)`;
+            }
+        },
+        onWheelScroll: (scrollPos)=>{
+            if (context.viewport) context.viewport.scrollTop = scrollPos;
+        },
+        onDragScroll: (pointerPos)=>{
+            if (context.viewport) context.viewport.scrollTop = getScrollPosition(pointerPos);
+        }
+    }));
+    return null;
+});
+/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$ScrollAreaScrollbarX = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { sizes: sizes , onSizesChange: onSizesChange , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const [computedStyle, setComputedStyle] = React.useState();
+    const ref = React.useRef(null);
+    const composeRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref, context.onScrollbarXChange);
+    React.useEffect(()=>{
+        if (ref.current) setComputedStyle(getComputedStyle(ref.current));
+    }, [
+        ref
+    ]);
+    return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarImpl, _extends({
+        "data-orientation": "horizontal"
+    }, scrollbarProps, {
+        ref: composeRefs,
+        sizes: sizes,
+        style: {
+            bottom: 0,
+            left: context.dir === 'rtl' ? 'var(--radix-scroll-area-corner-width)' : 0,
+            right: context.dir === 'ltr' ? 'var(--radix-scroll-area-corner-width)' : 0,
+            ['--radix-scroll-area-thumb-width']: $57acba87d6e25586$var$getThumbSize(sizes) + 'px',
+            ...props.style
+        },
+        onThumbPointerDown: (pointerPos)=>props.onThumbPointerDown(pointerPos.x)
+        ,
+        onDragScroll: (pointerPos)=>props.onDragScroll(pointerPos.x)
+        ,
+        onWheelScroll: (event, maxScrollPos)=>{
+            if (context.viewport) {
+                const scrollPos = context.viewport.scrollLeft + event.deltaX;
+                props.onWheelScroll(scrollPos); // prevent window scroll when wheeling on scrollbar
+                if ($57acba87d6e25586$var$isScrollingWithinScrollbarBounds(scrollPos, maxScrollPos)) event.preventDefault();
+            }
+        },
+        onResize: ()=>{
+            if (ref.current && context.viewport && computedStyle) onSizesChange({
+                content: context.viewport.scrollWidth,
+                viewport: context.viewport.offsetWidth,
+                scrollbar: {
+                    size: ref.current.clientWidth,
+                    paddingStart: $57acba87d6e25586$var$toInt(computedStyle.paddingLeft),
+                    paddingEnd: $57acba87d6e25586$var$toInt(computedStyle.paddingRight)
+                }
+            });
+        }
+    }));
+});
+const $57acba87d6e25586$var$ScrollAreaScrollbarY = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { sizes: sizes , onSizesChange: onSizesChange , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
+    const [computedStyle, setComputedStyle] = React.useState();
+    const ref = React.useRef(null);
+    const composeRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref, context.onScrollbarYChange);
+    React.useEffect(()=>{
+        if (ref.current) setComputedStyle(getComputedStyle(ref.current));
+    }, [
+        ref
+    ]);
+    return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarImpl, _extends({
+        "data-orientation": "vertical"
+    }, scrollbarProps, {
+        ref: composeRefs,
+        sizes: sizes,
+        style: {
+            top: 0,
+            right: context.dir === 'ltr' ? 0 : undefined,
+            left: context.dir === 'rtl' ? 0 : undefined,
+            bottom: 'var(--radix-scroll-area-corner-height)',
+            ['--radix-scroll-area-thumb-height']: $57acba87d6e25586$var$getThumbSize(sizes) + 'px',
+            ...props.style
+        },
+        onThumbPointerDown: (pointerPos)=>props.onThumbPointerDown(pointerPos.y)
+        ,
+        onDragScroll: (pointerPos)=>props.onDragScroll(pointerPos.y)
+        ,
+        onWheelScroll: (event, maxScrollPos)=>{
+            if (context.viewport) {
+                const scrollPos = context.viewport.scrollTop + event.deltaY;
+                props.onWheelScroll(scrollPos); // prevent window scroll when wheeling on scrollbar
+                if ($57acba87d6e25586$var$isScrollingWithinScrollbarBounds(scrollPos, maxScrollPos)) event.preventDefault();
+            }
+        },
+        onResize: ()=>{
+            if (ref.current && context.viewport && computedStyle) onSizesChange({
+                content: context.viewport.scrollHeight,
+                viewport: context.viewport.offsetHeight,
+                scrollbar: {
+                    size: ref.current.clientHeight,
+                    paddingStart: $57acba87d6e25586$var$toInt(computedStyle.paddingTop),
+                    paddingEnd: $57acba87d6e25586$var$toInt(computedStyle.paddingBottom)
+                }
+            });
+        }
+    }));
+});
+/* -----------------------------------------------------------------------------------------------*/ const [$57acba87d6e25586$var$ScrollbarProvider, $57acba87d6e25586$var$useScrollbarContext] = $57acba87d6e25586$var$createScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME);
+const $57acba87d6e25586$var$ScrollAreaScrollbarImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeScrollArea: __scopeScrollArea , sizes: sizes , hasThumb: hasThumb , onThumbChange: onThumbChange , onThumbPointerUp: onThumbPointerUp , onThumbPointerDown: onThumbPointerDown , onThumbPositionChange: onThumbPositionChange , onDragScroll: onDragScroll , onWheelScroll: onWheelScroll , onResize: onResize , ...scrollbarProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, __scopeScrollArea);
+    const [scrollbar, setScrollbar] = React.useState(null);
+    const composeRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, (node)=>setScrollbar(node)
+    );
+    const rectRef = React.useRef(null);
+    const prevWebkitUserSelectRef = React.useRef('');
+    const viewport = context.viewport;
+    const maxScrollPos = sizes.content - sizes.viewport;
+    const handleWheelScroll = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onWheelScroll);
+    const handleThumbPositionChange = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onThumbPositionChange);
+    const handleResize = $57acba87d6e25586$var$useDebounceCallback(onResize, 10);
+    function handleDragScroll(event) {
+        if (rectRef.current) {
+            const x = event.clientX - rectRef.current.left;
+            const y = event.clientY - rectRef.current.top;
+            onDragScroll({
+                x: x,
+                y: y
+            });
+        }
+    }
+    /**
+   * We bind wheel event imperatively so we can switch off passive
+   * mode for document wheel event to allow it to be prevented
+   */ React.useEffect(()=>{
+        const handleWheel = (event)=>{
+            const element = event.target;
+            const isScrollbarWheel = scrollbar === null || scrollbar === void 0 ? void 0 : scrollbar.contains(element);
+            if (isScrollbarWheel) handleWheelScroll(event, maxScrollPos);
+        };
+        document.addEventListener('wheel', handleWheel, {
+            passive: false
+        });
+        return ()=>document.removeEventListener('wheel', handleWheel, {
+                passive: false
+            })
+        ;
+    }, [
+        viewport,
+        scrollbar,
+        maxScrollPos,
+        handleWheelScroll
+    ]);
+    /**
+   * Update thumb position on sizes change
+   */ React.useEffect(handleThumbPositionChange, [
+        sizes,
+        handleThumbPositionChange
+    ]);
+    $57acba87d6e25586$var$useResizeObserver(scrollbar, handleResize);
+    $57acba87d6e25586$var$useResizeObserver(context.content, handleResize);
+    return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollbarProvider, {
+        scope: __scopeScrollArea,
+        scrollbar: scrollbar,
+        hasThumb: hasThumb,
+        onThumbChange: $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onThumbChange),
+        onThumbPointerUp: $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onThumbPointerUp),
+        onThumbPositionChange: handleThumbPositionChange,
+        onThumbPointerDown: $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onThumbPointerDown)
+    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({}, scrollbarProps, {
+        ref: composeRefs,
+        style: {
+            position: 'absolute',
+            ...scrollbarProps.style
+        },
+        onPointerDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDown, (event)=>{
+            const mainPointer = 0;
+            if (event.button === mainPointer) {
+                const element = event.target;
+                element.setPointerCapture(event.pointerId);
+                rectRef.current = scrollbar.getBoundingClientRect(); // pointer capture doesn't prevent text selection in Safari
+                // so we remove text selection manually when scrolling
+                prevWebkitUserSelectRef.current = document.body.style.webkitUserSelect;
+                document.body.style.webkitUserSelect = 'none';
+                if (context.viewport) context.viewport.style.scrollBehavior = 'auto';
+                handleDragScroll(event);
+            }
+        }),
+        onPointerMove: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerMove, handleDragScroll),
+        onPointerUp: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerUp, (event)=>{
+            const element = event.target;
+            if (element.hasPointerCapture(event.pointerId)) element.releasePointerCapture(event.pointerId);
+            document.body.style.webkitUserSelect = prevWebkitUserSelectRef.current;
+            if (context.viewport) context.viewport.style.scrollBehavior = '';
+            rectRef.current = null;
+        })
+    })));
+});
+/* -------------------------------------------------------------------------------------------------
+ * ScrollAreaThumb
+ * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$THUMB_NAME = 'ScrollAreaThumb';
+const $57acba87d6e25586$export$9fba1154677d7cd2 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { forceMount: forceMount , ...thumbProps } = props;
+    const scrollbarContext = $57acba87d6e25586$var$useScrollbarContext($57acba87d6e25586$var$THUMB_NAME, props.__scopeScrollArea);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || scrollbarContext.hasThumb
+    }, /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaThumbImpl, _extends({
+        ref: forwardedRef
+    }, thumbProps)));
+});
+const $57acba87d6e25586$var$ScrollAreaThumbImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeScrollArea: __scopeScrollArea , style: style , ...thumbProps } = props;
+    const scrollAreaContext = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$THUMB_NAME, __scopeScrollArea);
+    const scrollbarContext = $57acba87d6e25586$var$useScrollbarContext($57acba87d6e25586$var$THUMB_NAME, __scopeScrollArea);
+    const { onThumbPositionChange: onThumbPositionChange  } = scrollbarContext;
+    const composedRef = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, (node)=>scrollbarContext.onThumbChange(node)
+    );
+    const removeUnlinkedScrollListenerRef = React.useRef();
+    const debounceScrollEnd = $57acba87d6e25586$var$useDebounceCallback(()=>{
+        if (removeUnlinkedScrollListenerRef.current) {
+            removeUnlinkedScrollListenerRef.current();
+            removeUnlinkedScrollListenerRef.current = undefined;
+        }
+    }, 100);
+    React.useEffect(()=>{
+        const viewport = scrollAreaContext.viewport;
+        if (viewport) {
+            /**
+       * We only bind to native scroll event so we know when scroll starts and ends.
+       * When scroll starts we start a requestAnimationFrame loop that checks for
+       * changes to scroll position. That rAF loop triggers our thumb position change
+       * when relevant to avoid scroll-linked effects. We cancel the loop when scroll ends.
+       * https://developer.mozilla.org/en-US/docs/Mozilla/Performance/Scroll-linked_effects
+       */ const handleScroll = ()=>{
+                debounceScrollEnd();
+                if (!removeUnlinkedScrollListenerRef.current) {
+                    const listener = $57acba87d6e25586$var$addUnlinkedScrollListener(viewport, onThumbPositionChange);
+                    removeUnlinkedScrollListenerRef.current = listener;
+                    onThumbPositionChange();
+                }
+            };
+            onThumbPositionChange();
+            viewport.addEventListener('scroll', handleScroll);
+            return ()=>viewport.removeEventListener('scroll', handleScroll)
+            ;
+        }
+    }, [
+        scrollAreaContext.viewport,
+        debounceScrollEnd,
+        onThumbPositionChange
+    ]);
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
+        "data-state": scrollbarContext.hasThumb ? 'visible' : 'hidden'
+    }, thumbProps, {
+        ref: composedRef,
+        style: {
+            width: 'var(--radix-scroll-area-thumb-width)',
+            height: 'var(--radix-scroll-area-thumb-height)',
+            ...style
+        },
+        onPointerDownCapture: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDownCapture, (event)=>{
+            const thumb = event.target;
+            const thumbRect = thumb.getBoundingClientRect();
+            const x = event.clientX - thumbRect.left;
+            const y = event.clientY - thumbRect.top;
+            scrollbarContext.onThumbPointerDown({
+                x: x,
+                y: y
+            });
+        }),
+        onPointerUp: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerUp, scrollbarContext.onThumbPointerUp)
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * ScrollAreaCorner
+ * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$CORNER_NAME = 'ScrollAreaCorner';
+const $57acba87d6e25586$export$56969d565df7cc4b = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$CORNER_NAME, props.__scopeScrollArea);
+    const hasBothScrollbarsVisible = Boolean(context.scrollbarX && context.scrollbarY);
+    const hasCorner = context.type !== 'scroll' && hasBothScrollbarsVisible;
+    return hasCorner ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaCornerImpl, _extends({}, props, {
+        ref: forwardedRef
+    })) : null;
+});
+/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$ScrollAreaCornerImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeScrollArea: __scopeScrollArea , ...cornerProps } = props;
+    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$CORNER_NAME, __scopeScrollArea);
+    const [width1, setWidth] = React.useState(0);
+    const [height1, setHeight] = React.useState(0);
+    const hasSize = Boolean(width1 && height1);
+    $57acba87d6e25586$var$useResizeObserver(context.scrollbarX, ()=>{
+        var _context$scrollbarX;
+        const height = ((_context$scrollbarX = context.scrollbarX) === null || _context$scrollbarX === void 0 ? void 0 : _context$scrollbarX.offsetHeight) || 0;
+        context.onCornerHeightChange(height);
+        setHeight(height);
+    });
+    $57acba87d6e25586$var$useResizeObserver(context.scrollbarY, ()=>{
+        var _context$scrollbarY;
+        const width = ((_context$scrollbarY = context.scrollbarY) === null || _context$scrollbarY === void 0 ? void 0 : _context$scrollbarY.offsetWidth) || 0;
+        context.onCornerWidthChange(width);
+        setWidth(width);
+    });
+    return hasSize ? /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({}, cornerProps, {
+        ref: forwardedRef,
+        style: {
+            width: width1,
+            height: height1,
+            position: 'absolute',
+            right: context.dir === 'ltr' ? 0 : undefined,
+            left: context.dir === 'rtl' ? 0 : undefined,
+            bottom: 0,
+            ...props.style
+        }
+    })) : null;
+});
+/* -----------------------------------------------------------------------------------------------*/ function $57acba87d6e25586$var$toInt(value) {
+    return value ? parseInt(value, 10) : 0;
+}
+function $57acba87d6e25586$var$getThumbRatio(viewportSize, contentSize) {
+    const ratio = viewportSize / contentSize;
+    return isNaN(ratio) ? 0 : ratio;
+}
+function $57acba87d6e25586$var$getThumbSize(sizes) {
+    const ratio = $57acba87d6e25586$var$getThumbRatio(sizes.viewport, sizes.content);
+    const scrollbarPadding = sizes.scrollbar.paddingStart + sizes.scrollbar.paddingEnd;
+    const thumbSize = (sizes.scrollbar.size - scrollbarPadding) * ratio; // minimum of 18 matches macOS minimum
+    return Math.max(thumbSize, 18);
+}
+function $57acba87d6e25586$var$getScrollPositionFromPointer(pointerPos, pointerOffset, sizes, dir = 'ltr') {
+    const thumbSizePx = $57acba87d6e25586$var$getThumbSize(sizes);
+    const thumbCenter = thumbSizePx / 2;
+    const offset = pointerOffset || thumbCenter;
+    const thumbOffsetFromEnd = thumbSizePx - offset;
+    const minPointerPos = sizes.scrollbar.paddingStart + offset;
+    const maxPointerPos = sizes.scrollbar.size - sizes.scrollbar.paddingEnd - thumbOffsetFromEnd;
+    const maxScrollPos = sizes.content - sizes.viewport;
+    const scrollRange = dir === 'ltr' ? [
+        0,
+        maxScrollPos
+    ] : [
+        maxScrollPos * -1,
+        0
+    ];
+    const interpolate = $57acba87d6e25586$var$linearScale([
+        minPointerPos,
+        maxPointerPos
+    ], scrollRange);
+    return interpolate(pointerPos);
+}
+function $57acba87d6e25586$var$getThumbOffsetFromScroll(scrollPos, sizes, dir = 'ltr') {
+    const thumbSizePx = $57acba87d6e25586$var$getThumbSize(sizes);
+    const scrollbarPadding = sizes.scrollbar.paddingStart + sizes.scrollbar.paddingEnd;
+    const scrollbar = sizes.scrollbar.size - scrollbarPadding;
+    const maxScrollPos = sizes.content - sizes.viewport;
+    const maxThumbPos = scrollbar - thumbSizePx;
+    const scrollClampRange = dir === 'ltr' ? [
+        0,
+        maxScrollPos
+    ] : [
+        maxScrollPos * -1,
+        0
+    ];
+    const scrollWithoutMomentum = $ae6933e535247d3d$export$7d15b64cf5a3a4c4(scrollPos, scrollClampRange);
+    const interpolate = $57acba87d6e25586$var$linearScale([
+        0,
+        maxScrollPos
+    ], [
+        0,
+        maxThumbPos
+    ]);
+    return interpolate(scrollWithoutMomentum);
+} // https://github.com/tmcw-up-for-adoption/simple-linear-scale/blob/master/index.js
+function $57acba87d6e25586$var$linearScale(input, output) {
+    return (value)=>{
+        if (input[0] === input[1] || output[0] === output[1]) return output[0];
+        const ratio = (output[1] - output[0]) / (input[1] - input[0]);
+        return output[0] + ratio * (value - input[0]);
+    };
+}
+function $57acba87d6e25586$var$isScrollingWithinScrollbarBounds(scrollPos, maxScrollPos) {
+    return scrollPos > 0 && scrollPos < maxScrollPos;
+} // Custom scroll handler to avoid scroll-linked effects
+// https://developer.mozilla.org/en-US/docs/Mozilla/Performance/Scroll-linked_effects
+const $57acba87d6e25586$var$addUnlinkedScrollListener = (node, handler = ()=>{})=>{
+    let prevPosition = {
+        left: node.scrollLeft,
+        top: node.scrollTop
+    };
+    let rAF = 0;
+    (function loop() {
+        const position = {
+            left: node.scrollLeft,
+            top: node.scrollTop
+        };
+        const isHorizontalScroll = prevPosition.left !== position.left;
+        const isVerticalScroll = prevPosition.top !== position.top;
+        if (isHorizontalScroll || isVerticalScroll) handler();
+        prevPosition = position;
+        rAF = window.requestAnimationFrame(loop);
+    })();
+    return ()=>window.cancelAnimationFrame(rAF)
+    ;
+};
+function $57acba87d6e25586$var$useDebounceCallback(callback, delay) {
+    const handleCallback = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(callback);
+    const debounceTimerRef = React.useRef(0);
+    React.useEffect(()=>()=>window.clearTimeout(debounceTimerRef.current)
+    , []);
+    return React.useCallback(()=>{
+        window.clearTimeout(debounceTimerRef.current);
+        debounceTimerRef.current = window.setTimeout(handleCallback, delay);
+    }, [
+        handleCallback,
+        delay
+    ]);
+}
+function $57acba87d6e25586$var$useResizeObserver(element, onResize) {
+    const handleResize = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onResize);
+    $9f79659886946c16$export$e5c5a5f917a5871c$1(()=>{
+        let rAF = 0;
+        if (element) {
+            /**
+       * Resize Observer will throw an often benign error that says `ResizeObserver loop
+       * completed with undelivered notifications`. This means that ResizeObserver was not
+       * able to deliver all observations within a single animation frame, so we use
+       * `requestAnimationFrame` to ensure we don't deliver unnecessary observations.
+       * Further reading: https://github.com/WICG/resize-observer/issues/38
+       */ const resizeObserver = new ResizeObserver(()=>{
+                cancelAnimationFrame(rAF);
+                rAF = window.requestAnimationFrame(handleResize);
+            });
+            resizeObserver.observe(element);
+            return ()=>{
+                window.cancelAnimationFrame(rAF);
+                resizeObserver.unobserve(element);
+            };
+        }
+    }, [
+        element,
+        handleResize
+    ]);
+}
+/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$export$be92b6f5f03c0fe9 = $57acba87d6e25586$export$ccf8d8d7bbf3c2cc;
+const $57acba87d6e25586$export$d5c6c08dc2d3ca7 = $57acba87d6e25586$export$a21cbf9f11fca853;
+const $57acba87d6e25586$export$ac61190d9fc311a9 = $57acba87d6e25586$export$56969d565df7cc4b;
+
+var ScrollArea = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, children = _a.children, props = __rest$2(_a, ["className", "children"]);
+    return (React__namespace.createElement($57acba87d6e25586$export$be92b6f5f03c0fe9, __assign$2({ ref: ref, className: cn("relative overflow-hidden", className) }, props),
+        React__namespace.createElement($57acba87d6e25586$export$d5c6c08dc2d3ca7, { className: "h-full w-full rounded-[inherit]" }, children),
+        React__namespace.createElement(ScrollBar, null),
+        React__namespace.createElement($57acba87d6e25586$export$ac61190d9fc311a9, null)));
+});
+ScrollArea.displayName = $57acba87d6e25586$export$be92b6f5f03c0fe9.displayName;
+var ScrollBar = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, _b = _a.orientation, orientation = _b === void 0 ? "vertical" : _b, props = __rest$2(_a, ["className", "orientation"]);
+    return (React__namespace.createElement($57acba87d6e25586$export$2fabd85d0eba3c57, __assign$2({ ref: ref, orientation: orientation, className: cn("flex touch-none select-none transition-colors", orientation === "vertical" &&
+            "h-full w-2.5 border-l border-l-transparent p-[1px]", orientation === "horizontal" &&
+            "h-2.5 flex-col border-t border-t-transparent p-[1px]", className) }, props),
+        React__namespace.createElement($57acba87d6e25586$export$9fba1154677d7cd2, { className: "relative flex-1 rounded-full bg-border" })));
+});
+ScrollBar.displayName = $57acba87d6e25586$export$2fabd85d0eba3c57.displayName;
+
+function Drawer(_a) {
+    var _b = _a.open, open = _b === void 0 ? false : _b; _a.handleFormSubmit; _a.handleTrigger; var children = _a.children, title = _a.title, description = _a.description; _a.isLoading; var Form = _a.Form, SubmitButton = _a.SubmitButton;
+    return (React__default["default"].createElement("div", null,
+        React__default["default"].createElement(Sheet, { open: open },
+            React__default["default"].createElement(SheetTrigger, { asChild: true }, children),
+            React__default["default"].createElement(SheetContent, null,
+                React__default["default"].createElement(ScrollArea, { className: "h-screen pb-10 " },
+                    React__default["default"].createElement(SheetHeader, { className: 'pb-4' },
+                        React__default["default"].createElement(SheetTitle, null, title),
+                        React__default["default"].createElement(SheetDescription, null, description)),
+                    React__default["default"].createElement(Form, null),
+                    React__default["default"].createElement(SheetFooter, null,
+                        React__default["default"].createElement(SheetClose, { asChild: true }, SubmitButton && React__default["default"].createElement(SubmitButton, null))))))));
 }
 
 /**
@@ -14134,22 +25212,22 @@ function isSubRowSelected(row, selection, table) {
 
 const reSplitAlphaNumeric = /([0-9]+)/gm;
 const alphanumeric = (rowA, rowB, columnId) => {
-  return compareAlphanumeric(toString$1(rowA.getValue(columnId)).toLowerCase(), toString$1(rowB.getValue(columnId)).toLowerCase());
+  return compareAlphanumeric(toString(rowA.getValue(columnId)).toLowerCase(), toString(rowB.getValue(columnId)).toLowerCase());
 };
 const alphanumericCaseSensitive = (rowA, rowB, columnId) => {
-  return compareAlphanumeric(toString$1(rowA.getValue(columnId)), toString$1(rowB.getValue(columnId)));
+  return compareAlphanumeric(toString(rowA.getValue(columnId)), toString(rowB.getValue(columnId)));
 };
 
 // The text filter is more basic (less numeric support)
 // but is much faster
 const text = (rowA, rowB, columnId) => {
-  return compareBasic(toString$1(rowA.getValue(columnId)).toLowerCase(), toString$1(rowB.getValue(columnId)).toLowerCase());
+  return compareBasic(toString(rowA.getValue(columnId)).toLowerCase(), toString(rowB.getValue(columnId)).toLowerCase());
 };
 
 // The text filter is more basic (less numeric support)
 // but is much faster
 const textCaseSensitive = (rowA, rowB, columnId) => {
-  return compareBasic(toString$1(rowA.getValue(columnId)), toString$1(rowB.getValue(columnId)));
+  return compareBasic(toString(rowA.getValue(columnId)), toString(rowB.getValue(columnId)));
 };
 const datetime = (rowA, rowB, columnId) => {
   const a = rowA.getValue(columnId);
@@ -14169,7 +25247,7 @@ const basic = (rowA, rowB, columnId) => {
 function compareBasic(a, b) {
   return a === b ? 0 : a > b ? 1 : -1;
 }
-function toString$1(a) {
+function toString(a) {
   if (typeof a === 'number') {
     if (isNaN(a) || a === Infinity || a === -Infinity) {
       return '';
@@ -15390,45 +26468,45 @@ function useReactTable(options) {
   return tableRef.current;
 }
 
-var Table$1 = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
+var Table = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$2(_a, ["className"]);
     return (React__namespace.createElement("div", { className: "relative w-full overflow-auto" },
-        React__namespace.createElement("table", __assign$1({ ref: ref, className: cn("w-full caption-bottom text-sm", className) }, props))));
+        React__namespace.createElement("table", __assign$2({ ref: ref, className: cn("w-full caption-bottom text-sm", className) }, props))));
 });
-Table$1.displayName = "Table";
+Table.displayName = "Table";
 var TableHeader = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement("thead", __assign$1({ ref: ref, className: cn("[&_tr]:border-b", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement("thead", __assign$2({ ref: ref, className: cn("[&_tr]:border-b", className) }, props)));
 });
 TableHeader.displayName = "TableHeader";
 var TableBody = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement("tbody", __assign$1({ ref: ref, className: cn("[&_tr:last-child]:border-0", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement("tbody", __assign$2({ ref: ref, className: cn("[&_tr:last-child]:border-0", className) }, props)));
 });
 TableBody.displayName = "TableBody";
 var TableFooter = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement("tfoot", __assign$1({ ref: ref, className: cn("border-t bg-muted/50 font-medium [&>tr]:last:border-b-0", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement("tfoot", __assign$2({ ref: ref, className: cn("border-t bg-muted/50 font-medium [&>tr]:last:border-b-0", className) }, props)));
 });
 TableFooter.displayName = "TableFooter";
 var TableRow = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement("tr", __assign$1({ ref: ref, className: cn("border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement("tr", __assign$2({ ref: ref, className: cn("border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted", className) }, props)));
 });
 TableRow.displayName = "TableRow";
 var TableHead = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement("th", __assign$1({ ref: ref, className: cn("h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement("th", __assign$2({ ref: ref, className: cn("h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", className) }, props)));
 });
 TableHead.displayName = "TableHead";
 var TableCell = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement("td", __assign$1({ ref: ref, className: cn("p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement("td", __assign$2({ ref: ref, className: cn("p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", className) }, props)));
 });
 TableCell.displayName = "TableCell";
 var TableCaption = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement("caption", __assign$1({ ref: ref, className: cn("mt-4 text-sm text-muted-foreground", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement("caption", __assign$2({ ref: ref, className: cn("mt-4 text-sm text-muted-foreground", className) }, props)));
 });
 TableCaption.displayName = "TableCaption";
 
@@ -15457,1321 +26535,25 @@ function DataTablePagination(_a) {
                 " ",
                 table.getPageCount()),
             React__default["default"].createElement("div", { className: "flex items-center space-x-2" },
-                React__default["default"].createElement(Button, { variant: "outline", className: "hidden h-8 w-8 p-0 lg:flex", onClick: function () { return table.setPageIndex(0); }, disabled: !table.getCanPreviousPage() },
+                React__default["default"].createElement(Button$1, { variant: "outline", className: "hidden h-8 w-8 p-0 lg:flex", onClick: function () { return table.setPageIndex(0); }, disabled: !table.getCanPreviousPage() },
                     React__default["default"].createElement("span", { className: "sr-only" }, "Go to first page"),
                     React__default["default"].createElement(DoubleArrowLeftIcon, { className: "h-4 w-4" })),
-                React__default["default"].createElement(Button, { variant: "outline", className: "h-8 w-8 p-0", onClick: function () { return table.previousPage(); }, disabled: !table.getCanPreviousPage() },
+                React__default["default"].createElement(Button$1, { variant: "outline", className: "h-8 w-8 p-0", onClick: function () { return table.previousPage(); }, disabled: !table.getCanPreviousPage() },
                     React__default["default"].createElement("span", { className: "sr-only" }, "Go to previous page"),
                     React__default["default"].createElement(ChevronLeftIcon, { className: "h-4 w-4" })),
-                React__default["default"].createElement(Button, { variant: "outline", className: "h-8 w-8 p-0", onClick: function () { return table.nextPage(); }, disabled: !table.getCanNextPage() },
+                React__default["default"].createElement(Button$1, { variant: "outline", className: "h-8 w-8 p-0", onClick: function () { return table.nextPage(); }, disabled: !table.getCanNextPage() },
                     React__default["default"].createElement("span", { className: "sr-only" }, "Go to next page"),
                     React__default["default"].createElement(ChevronRightIcon, { className: "h-4 w-4" })),
-                React__default["default"].createElement(Button, { variant: "outline", className: "hidden h-8 w-8 p-0 lg:flex", onClick: function () { return table.setPageIndex(table.getPageCount() - 1); }, disabled: !table.getCanNextPage() },
+                React__default["default"].createElement(Button$1, { variant: "outline", className: "hidden h-8 w-8 p-0 lg:flex", onClick: function () { return table.setPageIndex(table.getPageCount() - 1); }, disabled: !table.getCanNextPage() },
                     React__default["default"].createElement("span", { className: "sr-only" }, "Go to last page"),
                     React__default["default"].createElement(DoubleArrowRightIcon, { className: "h-4 w-4" }))))));
 }
-
-const $d7bdfb9eb0fdf311$var$ENTRY_FOCUS = 'rovingFocusGroup.onEntryFocus';
-const $d7bdfb9eb0fdf311$var$EVENT_OPTIONS = {
-    bubbles: false,
-    cancelable: true
-};
-/* -------------------------------------------------------------------------------------------------
- * RovingFocusGroup
- * -----------------------------------------------------------------------------------------------*/ const $d7bdfb9eb0fdf311$var$GROUP_NAME = 'RovingFocusGroup';
-const [$d7bdfb9eb0fdf311$var$Collection, $d7bdfb9eb0fdf311$var$useCollection, $d7bdfb9eb0fdf311$var$createCollectionScope] = $e02a7d9cb1dc128c$export$c74125a8e3af6bb2($d7bdfb9eb0fdf311$var$GROUP_NAME);
-const [$d7bdfb9eb0fdf311$var$createRovingFocusGroupContext, $d7bdfb9eb0fdf311$export$c7109489551a4f4] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($d7bdfb9eb0fdf311$var$GROUP_NAME, [
-    $d7bdfb9eb0fdf311$var$createCollectionScope
-]);
-const [$d7bdfb9eb0fdf311$var$RovingFocusProvider, $d7bdfb9eb0fdf311$var$useRovingFocusContext] = $d7bdfb9eb0fdf311$var$createRovingFocusGroupContext($d7bdfb9eb0fdf311$var$GROUP_NAME);
-const $d7bdfb9eb0fdf311$export$8699f7c8af148338 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    return /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$var$Collection.Provider, {
-        scope: props.__scopeRovingFocusGroup
-    }, /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$var$Collection.Slot, {
-        scope: props.__scopeRovingFocusGroup
-    }, /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$var$RovingFocusGroupImpl, _extends({}, props, {
-        ref: forwardedRef
-    }))));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $d7bdfb9eb0fdf311$var$RovingFocusGroupImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeRovingFocusGroup: __scopeRovingFocusGroup , orientation: orientation , loop: loop = false , dir: dir , currentTabStopId: currentTabStopIdProp , defaultCurrentTabStopId: defaultCurrentTabStopId , onCurrentTabStopIdChange: onCurrentTabStopIdChange , onEntryFocus: onEntryFocus , ...groupProps } = props;
-    const ref = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref);
-    const direction = $f631663db3294ace$export$b39126d51d94e6f3(dir);
-    const [currentTabStopId = null, setCurrentTabStopId] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
-        prop: currentTabStopIdProp,
-        defaultProp: defaultCurrentTabStopId,
-        onChange: onCurrentTabStopIdChange
-    });
-    const [isTabbingBackOut, setIsTabbingBackOut] = React.useState(false);
-    const handleEntryFocus = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onEntryFocus);
-    const getItems = $d7bdfb9eb0fdf311$var$useCollection(__scopeRovingFocusGroup);
-    const isClickFocusRef = React.useRef(false);
-    const [focusableItemsCount, setFocusableItemsCount] = React.useState(0);
-    React.useEffect(()=>{
-        const node = ref.current;
-        if (node) {
-            node.addEventListener($d7bdfb9eb0fdf311$var$ENTRY_FOCUS, handleEntryFocus);
-            return ()=>node.removeEventListener($d7bdfb9eb0fdf311$var$ENTRY_FOCUS, handleEntryFocus)
-            ;
-        }
-    }, [
-        handleEntryFocus
-    ]);
-    return /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$var$RovingFocusProvider, {
-        scope: __scopeRovingFocusGroup,
-        orientation: orientation,
-        dir: direction,
-        loop: loop,
-        currentTabStopId: currentTabStopId,
-        onItemFocus: React.useCallback((tabStopId)=>setCurrentTabStopId(tabStopId)
-        , [
-            setCurrentTabStopId
-        ]),
-        onItemShiftTab: React.useCallback(()=>setIsTabbingBackOut(true)
-        , []),
-        onFocusableItemAdd: React.useCallback(()=>setFocusableItemsCount((prevCount)=>prevCount + 1
-            )
-        , []),
-        onFocusableItemRemove: React.useCallback(()=>setFocusableItemsCount((prevCount)=>prevCount - 1
-            )
-        , [])
-    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
-        tabIndex: isTabbingBackOut || focusableItemsCount === 0 ? -1 : 0,
-        "data-orientation": orientation
-    }, groupProps, {
-        ref: composedRefs,
-        style: {
-            outline: 'none',
-            ...props.style
-        },
-        onMouseDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onMouseDown, ()=>{
-            isClickFocusRef.current = true;
-        }),
-        onFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocus, (event)=>{
-            // We normally wouldn't need this check, because we already check
-            // that the focus is on the current target and not bubbling to it.
-            // We do this because Safari doesn't focus buttons when clicked, and
-            // instead, the wrapper will get focused and not through a bubbling event.
-            const isKeyboardFocus = !isClickFocusRef.current;
-            if (event.target === event.currentTarget && isKeyboardFocus && !isTabbingBackOut) {
-                const entryFocusEvent = new CustomEvent($d7bdfb9eb0fdf311$var$ENTRY_FOCUS, $d7bdfb9eb0fdf311$var$EVENT_OPTIONS);
-                event.currentTarget.dispatchEvent(entryFocusEvent);
-                if (!entryFocusEvent.defaultPrevented) {
-                    const items = getItems().filter((item)=>item.focusable
-                    );
-                    const activeItem = items.find((item)=>item.active
-                    );
-                    const currentItem = items.find((item)=>item.id === currentTabStopId
-                    );
-                    const candidateItems = [
-                        activeItem,
-                        currentItem,
-                        ...items
-                    ].filter(Boolean);
-                    const candidateNodes = candidateItems.map((item)=>item.ref.current
-                    );
-                    $d7bdfb9eb0fdf311$var$focusFirst(candidateNodes);
-                }
-            }
-            isClickFocusRef.current = false;
-        }),
-        onBlur: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onBlur, ()=>setIsTabbingBackOut(false)
-        )
-    })));
-});
-/* -------------------------------------------------------------------------------------------------
- * RovingFocusGroupItem
- * -----------------------------------------------------------------------------------------------*/ const $d7bdfb9eb0fdf311$var$ITEM_NAME = 'RovingFocusGroupItem';
-const $d7bdfb9eb0fdf311$export$ab9df7c53fe8454 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeRovingFocusGroup: __scopeRovingFocusGroup , focusable: focusable = true , active: active = false , tabStopId: tabStopId , ...itemProps } = props;
-    const autoId = $1746a345f3d73bb7$export$f680877a34711e37$1();
-    const id = tabStopId || autoId;
-    const context = $d7bdfb9eb0fdf311$var$useRovingFocusContext($d7bdfb9eb0fdf311$var$ITEM_NAME, __scopeRovingFocusGroup);
-    const isCurrentTabStop = context.currentTabStopId === id;
-    const getItems = $d7bdfb9eb0fdf311$var$useCollection(__scopeRovingFocusGroup);
-    const { onFocusableItemAdd: onFocusableItemAdd , onFocusableItemRemove: onFocusableItemRemove  } = context;
-    React.useEffect(()=>{
-        if (focusable) {
-            onFocusableItemAdd();
-            return ()=>onFocusableItemRemove()
-            ;
-        }
-    }, [
-        focusable,
-        onFocusableItemAdd,
-        onFocusableItemRemove
-    ]);
-    return /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$var$Collection.ItemSlot, {
-        scope: __scopeRovingFocusGroup,
-        id: id,
-        focusable: focusable,
-        active: active
-    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.span, _extends({
-        tabIndex: isCurrentTabStop ? 0 : -1,
-        "data-orientation": context.orientation
-    }, itemProps, {
-        ref: forwardedRef,
-        onMouseDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onMouseDown, (event)=>{
-            // We prevent focusing non-focusable items on `mousedown`.
-            // Even though the item has tabIndex={-1}, that only means take it out of the tab order.
-            if (!focusable) event.preventDefault(); // Safari doesn't focus a button when clicked so we run our logic on mousedown also
-            else context.onItemFocus(id);
-        }),
-        onFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocus, ()=>context.onItemFocus(id)
-        ),
-        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onKeyDown, (event)=>{
-            if (event.key === 'Tab' && event.shiftKey) {
-                context.onItemShiftTab();
-                return;
-            }
-            if (event.target !== event.currentTarget) return;
-            const focusIntent = $d7bdfb9eb0fdf311$var$getFocusIntent(event, context.orientation, context.dir);
-            if (focusIntent !== undefined) {
-                event.preventDefault();
-                const items = getItems().filter((item)=>item.focusable
-                );
-                let candidateNodes = items.map((item)=>item.ref.current
-                );
-                if (focusIntent === 'last') candidateNodes.reverse();
-                else if (focusIntent === 'prev' || focusIntent === 'next') {
-                    if (focusIntent === 'prev') candidateNodes.reverse();
-                    const currentIndex = candidateNodes.indexOf(event.currentTarget);
-                    candidateNodes = context.loop ? $d7bdfb9eb0fdf311$var$wrapArray(candidateNodes, currentIndex + 1) : candidateNodes.slice(currentIndex + 1);
-                }
-                /**
-         * Imperative focus during keydown is risky so we prevent React's batching updates
-         * to avoid potential bugs. See: https://github.com/facebook/react/issues/20332
-         */ setTimeout(()=>$d7bdfb9eb0fdf311$var$focusFirst(candidateNodes)
-                );
-            }
-        })
-    })));
-});
-/* -----------------------------------------------------------------------------------------------*/ // prettier-ignore
-const $d7bdfb9eb0fdf311$var$MAP_KEY_TO_FOCUS_INTENT = {
-    ArrowLeft: 'prev',
-    ArrowUp: 'prev',
-    ArrowRight: 'next',
-    ArrowDown: 'next',
-    PageUp: 'first',
-    Home: 'first',
-    PageDown: 'last',
-    End: 'last'
-};
-function $d7bdfb9eb0fdf311$var$getDirectionAwareKey(key, dir) {
-    if (dir !== 'rtl') return key;
-    return key === 'ArrowLeft' ? 'ArrowRight' : key === 'ArrowRight' ? 'ArrowLeft' : key;
-}
-function $d7bdfb9eb0fdf311$var$getFocusIntent(event, orientation, dir) {
-    const key = $d7bdfb9eb0fdf311$var$getDirectionAwareKey(event.key, dir);
-    if (orientation === 'vertical' && [
-        'ArrowLeft',
-        'ArrowRight'
-    ].includes(key)) return undefined;
-    if (orientation === 'horizontal' && [
-        'ArrowUp',
-        'ArrowDown'
-    ].includes(key)) return undefined;
-    return $d7bdfb9eb0fdf311$var$MAP_KEY_TO_FOCUS_INTENT[key];
-}
-function $d7bdfb9eb0fdf311$var$focusFirst(candidates) {
-    const PREVIOUSLY_FOCUSED_ELEMENT = document.activeElement;
-    for (const candidate of candidates){
-        // if focus is already where we want to go, we don't want to keep going through the candidates
-        if (candidate === PREVIOUSLY_FOCUSED_ELEMENT) return;
-        candidate.focus();
-        if (document.activeElement !== PREVIOUSLY_FOCUSED_ELEMENT) return;
-    }
-}
-/**
- * Wraps an array around itself at a given start index
- * Example: `wrapArray(['a', 'b', 'c', 'd'], 2) === ['c', 'd', 'a', 'b']`
- */ function $d7bdfb9eb0fdf311$var$wrapArray(array, startIndex) {
-    return array.map((_, index)=>array[(startIndex + index) % array.length]
-    );
-}
-const $d7bdfb9eb0fdf311$export$be92b6f5f03c0fe9 = $d7bdfb9eb0fdf311$export$8699f7c8af148338;
-const $d7bdfb9eb0fdf311$export$6d08773d2e66f8f2 = $d7bdfb9eb0fdf311$export$ab9df7c53fe8454;
-
-const $6cc32821e9371a1c$var$SELECTION_KEYS = [
-    'Enter',
-    ' '
-];
-const $6cc32821e9371a1c$var$FIRST_KEYS = [
-    'ArrowDown',
-    'PageUp',
-    'Home'
-];
-const $6cc32821e9371a1c$var$LAST_KEYS = [
-    'ArrowUp',
-    'PageDown',
-    'End'
-];
-const $6cc32821e9371a1c$var$FIRST_LAST_KEYS = [
-    ...$6cc32821e9371a1c$var$FIRST_KEYS,
-    ...$6cc32821e9371a1c$var$LAST_KEYS
-];
-const $6cc32821e9371a1c$var$SUB_OPEN_KEYS = {
-    ltr: [
-        ...$6cc32821e9371a1c$var$SELECTION_KEYS,
-        'ArrowRight'
-    ],
-    rtl: [
-        ...$6cc32821e9371a1c$var$SELECTION_KEYS,
-        'ArrowLeft'
-    ]
-};
-const $6cc32821e9371a1c$var$SUB_CLOSE_KEYS = {
-    ltr: [
-        'ArrowLeft'
-    ],
-    rtl: [
-        'ArrowRight'
-    ]
-};
-/* -------------------------------------------------------------------------------------------------
- * Menu
- * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$MENU_NAME = 'Menu';
-const [$6cc32821e9371a1c$var$Collection, $6cc32821e9371a1c$var$useCollection, $6cc32821e9371a1c$var$createCollectionScope] = $e02a7d9cb1dc128c$export$c74125a8e3af6bb2($6cc32821e9371a1c$var$MENU_NAME);
-const [$6cc32821e9371a1c$var$createMenuContext, $6cc32821e9371a1c$export$4027731b685e72eb] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($6cc32821e9371a1c$var$MENU_NAME, [
-    $6cc32821e9371a1c$var$createCollectionScope,
-    $cf1ac5d9fe0e8206$export$722aac194ae923,
-    $d7bdfb9eb0fdf311$export$c7109489551a4f4
-]);
-const $6cc32821e9371a1c$var$usePopperScope = $cf1ac5d9fe0e8206$export$722aac194ae923();
-const $6cc32821e9371a1c$var$useRovingFocusGroupScope = $d7bdfb9eb0fdf311$export$c7109489551a4f4();
-const [$6cc32821e9371a1c$var$MenuProvider, $6cc32821e9371a1c$var$useMenuContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$MENU_NAME);
-const [$6cc32821e9371a1c$var$MenuRootProvider, $6cc32821e9371a1c$var$useMenuRootContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$MENU_NAME);
-const $6cc32821e9371a1c$export$d9b273488cd8ce6f = (props)=>{
-    const { __scopeMenu: __scopeMenu , open: open = false , children: children , dir: dir , onOpenChange: onOpenChange , modal: modal = true  } = props;
-    const popperScope = $6cc32821e9371a1c$var$usePopperScope(__scopeMenu);
-    const [content, setContent] = React.useState(null);
-    const isUsingKeyboardRef = React.useRef(false);
-    const handleOpenChange = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onOpenChange);
-    const direction = $f631663db3294ace$export$b39126d51d94e6f3(dir);
-    React.useEffect(()=>{
-        // Capture phase ensures we set the boolean before any side effects execute
-        // in response to the key or pointer event as they might depend on this value.
-        const handleKeyDown = ()=>{
-            isUsingKeyboardRef.current = true;
-            document.addEventListener('pointerdown', handlePointer, {
-                capture: true,
-                once: true
-            });
-            document.addEventListener('pointermove', handlePointer, {
-                capture: true,
-                once: true
-            });
-        };
-        const handlePointer = ()=>isUsingKeyboardRef.current = false
-        ;
-        document.addEventListener('keydown', handleKeyDown, {
-            capture: true
-        });
-        return ()=>{
-            document.removeEventListener('keydown', handleKeyDown, {
-                capture: true
-            });
-            document.removeEventListener('pointerdown', handlePointer, {
-                capture: true
-            });
-            document.removeEventListener('pointermove', handlePointer, {
-                capture: true
-            });
-        };
-    }, []);
-    return /*#__PURE__*/ React.createElement($cf1ac5d9fe0e8206$export$be92b6f5f03c0fe9, popperScope, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuProvider, {
-        scope: __scopeMenu,
-        open: open,
-        onOpenChange: handleOpenChange,
-        content: content,
-        onContentChange: setContent
-    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuRootProvider, {
-        scope: __scopeMenu,
-        onClose: React.useCallback(()=>handleOpenChange(false)
-        , [
-            handleOpenChange
-        ]),
-        isUsingKeyboardRef: isUsingKeyboardRef,
-        dir: direction,
-        modal: modal
-    }, children)));
-};
-const $6cc32821e9371a1c$export$9fa5ebd18bee4d43 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeMenu: __scopeMenu , ...anchorProps } = props;
-    const popperScope = $6cc32821e9371a1c$var$usePopperScope(__scopeMenu);
-    return /*#__PURE__*/ React.createElement($cf1ac5d9fe0e8206$export$b688253958b8dfe7, _extends({}, popperScope, anchorProps, {
-        ref: forwardedRef
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * MenuPortal
- * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$PORTAL_NAME = 'MenuPortal';
-const [$6cc32821e9371a1c$var$PortalProvider, $6cc32821e9371a1c$var$usePortalContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$PORTAL_NAME, {
-    forceMount: undefined
-});
-const $6cc32821e9371a1c$export$793392f970497feb = (props)=>{
-    const { __scopeMenu: __scopeMenu , forceMount: forceMount , children: children , container: container  } = props;
-    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$PORTAL_NAME, __scopeMenu);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$PortalProvider, {
-        scope: __scopeMenu,
-        forceMount: forceMount
-    }, /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || context.open
-    }, /*#__PURE__*/ React.createElement($f1701beae083dbae$export$602eac185826482c$1, {
-        asChild: true,
-        container: container
-    }, children)));
-};
-/* -------------------------------------------------------------------------------------------------
- * MenuContent
- * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$CONTENT_NAME = 'MenuContent';
-const [$6cc32821e9371a1c$var$MenuContentProvider, $6cc32821e9371a1c$var$useMenuContentContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$CONTENT_NAME);
-const $6cc32821e9371a1c$export$479f0f2f71193efe = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const portalContext = $6cc32821e9371a1c$var$usePortalContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
-    const { forceMount: forceMount = portalContext.forceMount , ...contentProps } = props;
-    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
-    const rootContext = $6cc32821e9371a1c$var$useMenuRootContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$Collection.Provider, {
-        scope: props.__scopeMenu
-    }, /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || context.open
-    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$Collection.Slot, {
-        scope: props.__scopeMenu
-    }, rootContext.modal ? /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuRootContentModal, _extends({}, contentProps, {
-        ref: forwardedRef
-    })) : /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuRootContentNonModal, _extends({}, contentProps, {
-        ref: forwardedRef
-    })))));
-});
-/* ---------------------------------------------------------------------------------------------- */ const $6cc32821e9371a1c$var$MenuRootContentModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
-    const ref = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref); // Hide everything from ARIA except the `MenuContent`
-    React.useEffect(()=>{
-        const content = ref.current;
-        if (content) return hideOthers(content);
-    }, []);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuContentImpl, _extends({}, props, {
-        ref: composedRefs // we make sure we're not trapping once it's been closed
-        ,
-        trapFocus: context.open // make sure to only disable pointer events when open
-        ,
-        disableOutsidePointerEvents: context.open,
-        disableOutsideScroll: true // When focus is trapped, a `focusout` event may still happen.
-        ,
-        onFocusOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocusOutside, (event)=>event.preventDefault()
-        , {
-            checkForDefaultPrevented: false
-        }),
-        onDismiss: ()=>context.onOpenChange(false)
-    }));
-});
-const $6cc32821e9371a1c$var$MenuRootContentNonModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuContentImpl, _extends({}, props, {
-        ref: forwardedRef,
-        trapFocus: false,
-        disableOutsidePointerEvents: false,
-        disableOutsideScroll: false,
-        onDismiss: ()=>context.onOpenChange(false)
-    }));
-});
-/* ---------------------------------------------------------------------------------------------- */ const $6cc32821e9371a1c$var$MenuContentImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeMenu: __scopeMenu , loop: loop = false , trapFocus: trapFocus , onOpenAutoFocus: onOpenAutoFocus , onCloseAutoFocus: onCloseAutoFocus , disableOutsidePointerEvents: disableOutsidePointerEvents , onEntryFocus: onEntryFocus , onEscapeKeyDown: onEscapeKeyDown , onPointerDownOutside: onPointerDownOutside , onFocusOutside: onFocusOutside , onInteractOutside: onInteractOutside , onDismiss: onDismiss , disableOutsideScroll: disableOutsideScroll , ...contentProps } = props;
-    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$CONTENT_NAME, __scopeMenu);
-    const rootContext = $6cc32821e9371a1c$var$useMenuRootContext($6cc32821e9371a1c$var$CONTENT_NAME, __scopeMenu);
-    const popperScope = $6cc32821e9371a1c$var$usePopperScope(__scopeMenu);
-    const rovingFocusGroupScope = $6cc32821e9371a1c$var$useRovingFocusGroupScope(__scopeMenu);
-    const getItems = $6cc32821e9371a1c$var$useCollection(__scopeMenu);
-    const [currentItemId, setCurrentItemId] = React.useState(null);
-    const contentRef = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, contentRef, context.onContentChange);
-    const timerRef = React.useRef(0);
-    const searchRef = React.useRef('');
-    const pointerGraceTimerRef = React.useRef(0);
-    const pointerGraceIntentRef = React.useRef(null);
-    const pointerDirRef = React.useRef('right');
-    const lastPointerXRef = React.useRef(0);
-    const ScrollLockWrapper = disableOutsideScroll ? $am6gm$RemoveScroll : React.Fragment;
-    const scrollLockWrapperProps = disableOutsideScroll ? {
-        as: $5e63c961fc1ce211$export$8c6ed5c666ac1360$1,
-        allowPinchZoom: true
-    } : undefined;
-    const handleTypeaheadSearch = (key)=>{
-        var _items$find, _items$find2;
-        const search = searchRef.current + key;
-        const items = getItems().filter((item)=>!item.disabled
-        );
-        const currentItem = document.activeElement;
-        const currentMatch = (_items$find = items.find((item)=>item.ref.current === currentItem
-        )) === null || _items$find === void 0 ? void 0 : _items$find.textValue;
-        const values = items.map((item)=>item.textValue
-        );
-        const nextMatch = $6cc32821e9371a1c$var$getNextMatch(values, search, currentMatch);
-        const newItem = (_items$find2 = items.find((item)=>item.textValue === nextMatch
-        )) === null || _items$find2 === void 0 ? void 0 : _items$find2.ref.current; // Reset `searchRef` 1 second after it was last updated
-        (function updateSearch(value) {
-            searchRef.current = value;
-            window.clearTimeout(timerRef.current);
-            if (value !== '') timerRef.current = window.setTimeout(()=>updateSearch('')
-            , 1000);
-        })(search);
-        if (newItem) /**
-       * Imperative focus during keydown is risky so we prevent React's batching updates
-       * to avoid potential bugs. See: https://github.com/facebook/react/issues/20332
-       */ setTimeout(()=>newItem.focus()
-        );
-    };
-    React.useEffect(()=>{
-        return ()=>window.clearTimeout(timerRef.current)
-        ;
-    }, []); // Make sure the whole tree has focus guards as our `MenuContent` may be
-    // the last element in the DOM (beacuse of the `Portal`)
-    $3db38b7d1fb3fe6a$export$b7ece24a22aeda8c$1();
-    const isPointerMovingToSubmenu = React.useCallback((event)=>{
-        var _pointerGraceIntentRe, _pointerGraceIntentRe2;
-        const isMovingTowards = pointerDirRef.current === ((_pointerGraceIntentRe = pointerGraceIntentRef.current) === null || _pointerGraceIntentRe === void 0 ? void 0 : _pointerGraceIntentRe.side);
-        return isMovingTowards && $6cc32821e9371a1c$var$isPointerInGraceArea(event, (_pointerGraceIntentRe2 = pointerGraceIntentRef.current) === null || _pointerGraceIntentRe2 === void 0 ? void 0 : _pointerGraceIntentRe2.area);
-    }, []);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuContentProvider, {
-        scope: __scopeMenu,
-        searchRef: searchRef,
-        onItemEnter: React.useCallback((event)=>{
-            if (isPointerMovingToSubmenu(event)) event.preventDefault();
-        }, [
-            isPointerMovingToSubmenu
-        ]),
-        onItemLeave: React.useCallback((event)=>{
-            var _contentRef$current;
-            if (isPointerMovingToSubmenu(event)) return;
-            (_contentRef$current = contentRef.current) === null || _contentRef$current === void 0 || _contentRef$current.focus();
-            setCurrentItemId(null);
-        }, [
-            isPointerMovingToSubmenu
-        ]),
-        onTriggerLeave: React.useCallback((event)=>{
-            if (isPointerMovingToSubmenu(event)) event.preventDefault();
-        }, [
-            isPointerMovingToSubmenu
-        ]),
-        pointerGraceTimerRef: pointerGraceTimerRef,
-        onPointerGraceIntentChange: React.useCallback((intent)=>{
-            pointerGraceIntentRef.current = intent;
-        }, [])
-    }, /*#__PURE__*/ React.createElement(ScrollLockWrapper, scrollLockWrapperProps, /*#__PURE__*/ React.createElement($d3863c46a17e8a28$export$20e40289641fbbb6$1, {
-        asChild: true,
-        trapped: trapFocus,
-        onMountAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(onOpenAutoFocus, (event)=>{
-            var _contentRef$current2;
-            // when opening, explicitly focus the content area only and leave
-            // `onEntryFocus` in  control of focusing first item
-            event.preventDefault();
-            (_contentRef$current2 = contentRef.current) === null || _contentRef$current2 === void 0 || _contentRef$current2.focus();
-        }),
-        onUnmountAutoFocus: onCloseAutoFocus
-    }, /*#__PURE__*/ React.createElement($5cb92bef7577960e$export$177fb62ff3ec1f22$1, {
-        asChild: true,
-        disableOutsidePointerEvents: disableOutsidePointerEvents,
-        onEscapeKeyDown: onEscapeKeyDown,
-        onPointerDownOutside: onPointerDownOutside,
-        onFocusOutside: onFocusOutside,
-        onInteractOutside: onInteractOutside,
-        onDismiss: onDismiss
-    }, /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$export$be92b6f5f03c0fe9, _extends({
-        asChild: true
-    }, rovingFocusGroupScope, {
-        dir: rootContext.dir,
-        orientation: "vertical",
-        loop: loop,
-        currentTabStopId: currentItemId,
-        onCurrentTabStopIdChange: setCurrentItemId,
-        onEntryFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(onEntryFocus, (event)=>{
-            // only focus first item when using keyboard
-            if (!rootContext.isUsingKeyboardRef.current) event.preventDefault();
-        })
-    }), /*#__PURE__*/ React.createElement($cf1ac5d9fe0e8206$export$7c6e2c02157bb7d2, _extends({
-        role: "menu",
-        "aria-orientation": "vertical",
-        "data-state": $6cc32821e9371a1c$var$getOpenState(context.open),
-        "data-radix-menu-content": "",
-        dir: rootContext.dir
-    }, popperScope, contentProps, {
-        ref: composedRefs,
-        style: {
-            outline: 'none',
-            ...contentProps.style
-        },
-        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(contentProps.onKeyDown, (event)=>{
-            // submenu key events bubble through portals. We only care about keys in this menu.
-            const target = event.target;
-            const isKeyDownInside = target.closest('[data-radix-menu-content]') === event.currentTarget;
-            const isModifierKey = event.ctrlKey || event.altKey || event.metaKey;
-            const isCharacterKey = event.key.length === 1;
-            if (isKeyDownInside) {
-                // menus should not be navigated using tab key so we prevent it
-                if (event.key === 'Tab') event.preventDefault();
-                if (!isModifierKey && isCharacterKey) handleTypeaheadSearch(event.key);
-            } // focus first/last item based on key pressed
-            const content = contentRef.current;
-            if (event.target !== content) return;
-            if (!$6cc32821e9371a1c$var$FIRST_LAST_KEYS.includes(event.key)) return;
-            event.preventDefault();
-            const items = getItems().filter((item)=>!item.disabled
-            );
-            const candidateNodes = items.map((item)=>item.ref.current
-            );
-            if ($6cc32821e9371a1c$var$LAST_KEYS.includes(event.key)) candidateNodes.reverse();
-            $6cc32821e9371a1c$var$focusFirst(candidateNodes);
-        }),
-        onBlur: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onBlur, (event)=>{
-            // clear search buffer when leaving the menu
-            if (!event.currentTarget.contains(event.target)) {
-                window.clearTimeout(timerRef.current);
-                searchRef.current = '';
-            }
-        }),
-        onPointerMove: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerMove, $6cc32821e9371a1c$var$whenMouse((event)=>{
-            const target = event.target;
-            const pointerXHasChanged = lastPointerXRef.current !== event.clientX; // We don't use `event.movementX` for this check because Safari will
-            // always return `0` on a pointer event.
-            if (event.currentTarget.contains(target) && pointerXHasChanged) {
-                const newDir = event.clientX > lastPointerXRef.current ? 'right' : 'left';
-                pointerDirRef.current = newDir;
-                lastPointerXRef.current = event.clientX;
-            }
-        }))
-    })))))));
-});
-const $6cc32821e9371a1c$export$dd37bec0e8a99143 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeMenu: __scopeMenu , ...labelProps } = props;
-    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({}, labelProps, {
-        ref: forwardedRef
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * MenuItem
- * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$ITEM_NAME = 'MenuItem';
-const $6cc32821e9371a1c$var$ITEM_SELECT = 'menu.itemSelect';
-const $6cc32821e9371a1c$export$2ce376c2cc3355c8 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { disabled: disabled = false , onSelect: onSelect , ...itemProps } = props;
-    const ref = React.useRef(null);
-    const rootContext = $6cc32821e9371a1c$var$useMenuRootContext($6cc32821e9371a1c$var$ITEM_NAME, props.__scopeMenu);
-    const contentContext = $6cc32821e9371a1c$var$useMenuContentContext($6cc32821e9371a1c$var$ITEM_NAME, props.__scopeMenu);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref);
-    const isPointerDownRef = React.useRef(false);
-    const handleSelect = ()=>{
-        const menuItem = ref.current;
-        if (!disabled && menuItem) {
-            const itemSelectEvent = new CustomEvent($6cc32821e9371a1c$var$ITEM_SELECT, {
-                bubbles: true,
-                cancelable: true
-            });
-            menuItem.addEventListener($6cc32821e9371a1c$var$ITEM_SELECT, (event)=>onSelect === null || onSelect === void 0 ? void 0 : onSelect(event)
-            , {
-                once: true
-            });
-            $8927f6f2acc4f386$export$6d1a0317bde7de7f$1(menuItem, itemSelectEvent);
-            if (itemSelectEvent.defaultPrevented) isPointerDownRef.current = false;
-            else rootContext.onClose();
-        }
-    };
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuItemImpl, _extends({}, itemProps, {
-        ref: composedRefs,
-        disabled: disabled,
-        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, handleSelect),
-        onPointerDown: (event)=>{
-            var _props$onPointerDown;
-            (_props$onPointerDown = props.onPointerDown) === null || _props$onPointerDown === void 0 || _props$onPointerDown.call(props, event);
-            isPointerDownRef.current = true;
-        },
-        onPointerUp: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerUp, (event)=>{
-            var _event$currentTarget;
-            // Pointer down can move to a different menu item which should activate it on pointer up.
-            // We dispatch a click for selection to allow composition with click based triggers and to
-            // prevent Firefox from getting stuck in text selection mode when the menu closes.
-            if (!isPointerDownRef.current) (_event$currentTarget = event.currentTarget) === null || _event$currentTarget === void 0 || _event$currentTarget.click();
-        }),
-        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onKeyDown, (event)=>{
-            const isTypingAhead = contentContext.searchRef.current !== '';
-            if (disabled || isTypingAhead && event.key === ' ') return;
-            if ($6cc32821e9371a1c$var$SELECTION_KEYS.includes(event.key)) {
-                event.currentTarget.click();
-                /**
-         * We prevent default browser behaviour for selection keys as they should trigger
-         * a selection only:
-         * - prevents space from scrolling the page.
-         * - if keydown causes focus to move, prevents keydown from firing on the new target.
-         */ event.preventDefault();
-            }
-        })
-    }));
-});
-/* ---------------------------------------------------------------------------------------------- */ const $6cc32821e9371a1c$var$MenuItemImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeMenu: __scopeMenu , disabled: disabled = false , textValue: textValue , ...itemProps } = props;
-    const contentContext = $6cc32821e9371a1c$var$useMenuContentContext($6cc32821e9371a1c$var$ITEM_NAME, __scopeMenu);
-    const rovingFocusGroupScope = $6cc32821e9371a1c$var$useRovingFocusGroupScope(__scopeMenu);
-    const ref = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref);
-    const [isFocused, setIsFocused] = React.useState(false); // get the item's `.textContent` as default strategy for typeahead `textValue`
-    const [textContent, setTextContent] = React.useState('');
-    React.useEffect(()=>{
-        const menuItem = ref.current;
-        if (menuItem) {
-            var _menuItem$textContent;
-            setTextContent(((_menuItem$textContent = menuItem.textContent) !== null && _menuItem$textContent !== void 0 ? _menuItem$textContent : '').trim());
-        }
-    }, [
-        itemProps.children
-    ]);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$Collection.ItemSlot, {
-        scope: __scopeMenu,
-        disabled: disabled,
-        textValue: textValue !== null && textValue !== void 0 ? textValue : textContent
-    }, /*#__PURE__*/ React.createElement($d7bdfb9eb0fdf311$export$6d08773d2e66f8f2, _extends({
-        asChild: true
-    }, rovingFocusGroupScope, {
-        focusable: !disabled
-    }), /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
-        role: "menuitem",
-        "data-highlighted": isFocused ? '' : undefined,
-        "aria-disabled": disabled || undefined,
-        "data-disabled": disabled ? '' : undefined
-    }, itemProps, {
-        ref: composedRefs,
-        onPointerMove: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerMove, $6cc32821e9371a1c$var$whenMouse((event)=>{
-            if (disabled) contentContext.onItemLeave(event);
-            else {
-                contentContext.onItemEnter(event);
-                if (!event.defaultPrevented) {
-                    const item = event.currentTarget;
-                    item.focus();
-                }
-            }
-        })),
-        onPointerLeave: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerLeave, $6cc32821e9371a1c$var$whenMouse((event)=>contentContext.onItemLeave(event)
-        )),
-        onFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocus, ()=>setIsFocused(true)
-        ),
-        onBlur: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onBlur, ()=>setIsFocused(false)
-        )
-    }))));
-});
-const $6cc32821e9371a1c$export$f6f243521332502d = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { checked: checked = false , onCheckedChange: onCheckedChange , ...checkboxItemProps } = props;
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$ItemIndicatorProvider, {
-        scope: props.__scopeMenu,
-        checked: checked
-    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$2ce376c2cc3355c8, _extends({
-        role: "menuitemcheckbox",
-        "aria-checked": $6cc32821e9371a1c$var$isIndeterminate(checked) ? 'mixed' : checked
-    }, checkboxItemProps, {
-        ref: forwardedRef,
-        "data-state": $6cc32821e9371a1c$var$getCheckedState(checked),
-        onSelect: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(checkboxItemProps.onSelect, ()=>onCheckedChange === null || onCheckedChange === void 0 ? void 0 : onCheckedChange($6cc32821e9371a1c$var$isIndeterminate(checked) ? true : !checked)
-        , {
-            checkForDefaultPrevented: false
-        })
-    })));
-});
-/* -------------------------------------------------------------------------------------------------
- * MenuRadioGroup
- * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$RADIO_GROUP_NAME = 'MenuRadioGroup';
-const [$6cc32821e9371a1c$var$RadioGroupProvider, $6cc32821e9371a1c$var$useRadioGroupContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$RADIO_GROUP_NAME, {
-    value: undefined,
-    onValueChange: ()=>{}
-});
-/* -------------------------------------------------------------------------------------------------
- * MenuRadioItem
- * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$RADIO_ITEM_NAME = 'MenuRadioItem';
-const $6cc32821e9371a1c$export$69bd225e9817f6d0 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { value: value , ...radioItemProps } = props;
-    const context = $6cc32821e9371a1c$var$useRadioGroupContext($6cc32821e9371a1c$var$RADIO_ITEM_NAME, props.__scopeMenu);
-    const checked = value === context.value;
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$ItemIndicatorProvider, {
-        scope: props.__scopeMenu,
-        checked: checked
-    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$2ce376c2cc3355c8, _extends({
-        role: "menuitemradio",
-        "aria-checked": checked
-    }, radioItemProps, {
-        ref: forwardedRef,
-        "data-state": $6cc32821e9371a1c$var$getCheckedState(checked),
-        onSelect: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(radioItemProps.onSelect, ()=>{
-            var _context$onValueChang;
-            return (_context$onValueChang = context.onValueChange) === null || _context$onValueChang === void 0 ? void 0 : _context$onValueChang.call(context, value);
-        }, {
-            checkForDefaultPrevented: false
-        })
-    })));
-});
-/* -------------------------------------------------------------------------------------------------
- * MenuItemIndicator
- * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$ITEM_INDICATOR_NAME = 'MenuItemIndicator';
-const [$6cc32821e9371a1c$var$ItemIndicatorProvider, $6cc32821e9371a1c$var$useItemIndicatorContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$ITEM_INDICATOR_NAME, {
-    checked: false
-});
-const $6cc32821e9371a1c$export$a2593e23056970a3 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeMenu: __scopeMenu , forceMount: forceMount , ...itemIndicatorProps } = props;
-    const indicatorContext = $6cc32821e9371a1c$var$useItemIndicatorContext($6cc32821e9371a1c$var$ITEM_INDICATOR_NAME, __scopeMenu);
-    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || $6cc32821e9371a1c$var$isIndeterminate(indicatorContext.checked) || indicatorContext.checked === true
-    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.span, _extends({}, itemIndicatorProps, {
-        ref: forwardedRef,
-        "data-state": $6cc32821e9371a1c$var$getCheckedState(indicatorContext.checked)
-    })));
-});
-const $6cc32821e9371a1c$export$1cec7dcdd713e220 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeMenu: __scopeMenu , ...separatorProps } = props;
-    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
-        role: "separator",
-        "aria-orientation": "horizontal"
-    }, separatorProps, {
-        ref: forwardedRef
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * MenuSub
- * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$SUB_NAME = 'MenuSub';
-const [$6cc32821e9371a1c$var$MenuSubProvider, $6cc32821e9371a1c$var$useMenuSubContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$SUB_NAME);
-/* -------------------------------------------------------------------------------------------------
- * MenuSubTrigger
- * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$SUB_TRIGGER_NAME = 'MenuSubTrigger';
-const $6cc32821e9371a1c$export$5fbbb3ba7297405f = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$SUB_TRIGGER_NAME, props.__scopeMenu);
-    const rootContext = $6cc32821e9371a1c$var$useMenuRootContext($6cc32821e9371a1c$var$SUB_TRIGGER_NAME, props.__scopeMenu);
-    const subContext = $6cc32821e9371a1c$var$useMenuSubContext($6cc32821e9371a1c$var$SUB_TRIGGER_NAME, props.__scopeMenu);
-    const contentContext = $6cc32821e9371a1c$var$useMenuContentContext($6cc32821e9371a1c$var$SUB_TRIGGER_NAME, props.__scopeMenu);
-    const openTimerRef = React.useRef(null);
-    const { pointerGraceTimerRef: pointerGraceTimerRef , onPointerGraceIntentChange: onPointerGraceIntentChange  } = contentContext;
-    const scope = {
-        __scopeMenu: props.__scopeMenu
-    };
-    const clearOpenTimer = React.useCallback(()=>{
-        if (openTimerRef.current) window.clearTimeout(openTimerRef.current);
-        openTimerRef.current = null;
-    }, []);
-    React.useEffect(()=>clearOpenTimer
-    , [
-        clearOpenTimer
-    ]);
-    React.useEffect(()=>{
-        const pointerGraceTimer = pointerGraceTimerRef.current;
-        return ()=>{
-            window.clearTimeout(pointerGraceTimer);
-            onPointerGraceIntentChange(null);
-        };
-    }, [
-        pointerGraceTimerRef,
-        onPointerGraceIntentChange
-    ]);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$9fa5ebd18bee4d43, _extends({
-        asChild: true
-    }, scope), /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuItemImpl, _extends({
-        id: subContext.triggerId,
-        "aria-haspopup": "menu",
-        "aria-expanded": context.open,
-        "aria-controls": subContext.contentId,
-        "data-state": $6cc32821e9371a1c$var$getOpenState(context.open)
-    }, props, {
-        ref: $6ed0406888f73fc4$export$43e446d32b3d21af$1(forwardedRef, subContext.onTriggerChange) // This is redundant for mouse users but we cannot determine pointer type from
-        ,
-        onClick: (event)=>{
-            var _props$onClick;
-            (_props$onClick = props.onClick) === null || _props$onClick === void 0 || _props$onClick.call(props, event);
-            if (props.disabled || event.defaultPrevented) return;
-            /**
-       * We manually focus because iOS Safari doesn't always focus on click (e.g. buttons)
-       * and we rely heavily on `onFocusOutside` for submenus to close when switching
-       * between separate submenus.
-       */ event.currentTarget.focus();
-            if (!context.open) context.onOpenChange(true);
-        },
-        onPointerMove: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerMove, $6cc32821e9371a1c$var$whenMouse((event)=>{
-            contentContext.onItemEnter(event);
-            if (event.defaultPrevented) return;
-            if (!props.disabled && !context.open && !openTimerRef.current) {
-                contentContext.onPointerGraceIntentChange(null);
-                openTimerRef.current = window.setTimeout(()=>{
-                    context.onOpenChange(true);
-                    clearOpenTimer();
-                }, 100);
-            }
-        })),
-        onPointerLeave: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerLeave, $6cc32821e9371a1c$var$whenMouse((event)=>{
-            var _context$content;
-            clearOpenTimer();
-            const contentRect = (_context$content = context.content) === null || _context$content === void 0 ? void 0 : _context$content.getBoundingClientRect();
-            if (contentRect) {
-                var _context$content2;
-                // TODO: make sure to update this when we change positioning logic
-                const side = (_context$content2 = context.content) === null || _context$content2 === void 0 ? void 0 : _context$content2.dataset.side;
-                const rightSide = side === 'right';
-                const bleed = rightSide ? -5 : 5;
-                const contentNearEdge = contentRect[rightSide ? 'left' : 'right'];
-                const contentFarEdge = contentRect[rightSide ? 'right' : 'left'];
-                contentContext.onPointerGraceIntentChange({
-                    area: [
-                        // consistently within polygon bounds
-                        {
-                            x: event.clientX + bleed,
-                            y: event.clientY
-                        },
-                        {
-                            x: contentNearEdge,
-                            y: contentRect.top
-                        },
-                        {
-                            x: contentFarEdge,
-                            y: contentRect.top
-                        },
-                        {
-                            x: contentFarEdge,
-                            y: contentRect.bottom
-                        },
-                        {
-                            x: contentNearEdge,
-                            y: contentRect.bottom
-                        }
-                    ],
-                    side: side
-                });
-                window.clearTimeout(pointerGraceTimerRef.current);
-                pointerGraceTimerRef.current = window.setTimeout(()=>contentContext.onPointerGraceIntentChange(null)
-                , 300);
-            } else {
-                contentContext.onTriggerLeave(event);
-                if (event.defaultPrevented) return; // There's 100ms where the user may leave an item before the submenu was opened.
-                contentContext.onPointerGraceIntentChange(null);
-            }
-        })),
-        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onKeyDown, (event)=>{
-            const isTypingAhead = contentContext.searchRef.current !== '';
-            if (props.disabled || isTypingAhead && event.key === ' ') return;
-            if ($6cc32821e9371a1c$var$SUB_OPEN_KEYS[rootContext.dir].includes(event.key)) {
-                var _context$content3;
-                context.onOpenChange(true); // The trigger may hold focus if opened via pointer interaction
-                // so we ensure content is given focus again when switching to keyboard.
-                (_context$content3 = context.content) === null || _context$content3 === void 0 || _context$content3.focus(); // prevent window from scrolling
-                event.preventDefault();
-            }
-        })
-    })));
-});
-/* -------------------------------------------------------------------------------------------------
- * MenuSubContent
- * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$SUB_CONTENT_NAME = 'MenuSubContent';
-const $6cc32821e9371a1c$export$e7142ab31822bde6 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const portalContext = $6cc32821e9371a1c$var$usePortalContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
-    const { forceMount: forceMount = portalContext.forceMount , ...subContentProps } = props;
-    const context = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
-    const rootContext = $6cc32821e9371a1c$var$useMenuRootContext($6cc32821e9371a1c$var$CONTENT_NAME, props.__scopeMenu);
-    const subContext = $6cc32821e9371a1c$var$useMenuSubContext($6cc32821e9371a1c$var$SUB_CONTENT_NAME, props.__scopeMenu);
-    const ref = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$Collection.Provider, {
-        scope: props.__scopeMenu
-    }, /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || context.open
-    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$Collection.Slot, {
-        scope: props.__scopeMenu
-    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$var$MenuContentImpl, _extends({
-        id: subContext.contentId,
-        "aria-labelledby": subContext.triggerId
-    }, subContentProps, {
-        ref: composedRefs,
-        align: "start",
-        side: rootContext.dir === 'rtl' ? 'left' : 'right',
-        disableOutsidePointerEvents: false,
-        disableOutsideScroll: false,
-        trapFocus: false,
-        onOpenAutoFocus: (event)=>{
-            var _ref$current;
-            // when opening a submenu, focus content for keyboard users only
-            if (rootContext.isUsingKeyboardRef.current) (_ref$current = ref.current) === null || _ref$current === void 0 || _ref$current.focus();
-            event.preventDefault();
-        } // The menu might close because of focusing another menu item in the parent menu. We
-        ,
-        onCloseAutoFocus: (event)=>event.preventDefault()
-        ,
-        onFocusOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocusOutside, (event)=>{
-            // We prevent closing when the trigger is focused to avoid triggering a re-open animation
-            // on pointer interaction.
-            if (event.target !== subContext.trigger) context.onOpenChange(false);
-        }),
-        onEscapeKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onEscapeKeyDown, (event)=>{
-            rootContext.onClose(); // ensure pressing escape in submenu doesn't escape full screen mode
-            event.preventDefault();
-        }),
-        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onKeyDown, (event)=>{
-            // Submenu key events bubble through portals. We only care about keys in this menu.
-            const isKeyDownInside = event.currentTarget.contains(event.target);
-            const isCloseKey = $6cc32821e9371a1c$var$SUB_CLOSE_KEYS[rootContext.dir].includes(event.key);
-            if (isKeyDownInside && isCloseKey) {
-                var _subContext$trigger;
-                context.onOpenChange(false); // We focus manually because we prevented it in `onCloseAutoFocus`
-                (_subContext$trigger = subContext.trigger) === null || _subContext$trigger === void 0 || _subContext$trigger.focus(); // prevent window from scrolling
-                event.preventDefault();
-            }
-        })
-    })))));
-});
-/* -----------------------------------------------------------------------------------------------*/ function $6cc32821e9371a1c$var$getOpenState(open) {
-    return open ? 'open' : 'closed';
-}
-function $6cc32821e9371a1c$var$isIndeterminate(checked) {
-    return checked === 'indeterminate';
-}
-function $6cc32821e9371a1c$var$getCheckedState(checked) {
-    return $6cc32821e9371a1c$var$isIndeterminate(checked) ? 'indeterminate' : checked ? 'checked' : 'unchecked';
-}
-function $6cc32821e9371a1c$var$focusFirst(candidates) {
-    const PREVIOUSLY_FOCUSED_ELEMENT = document.activeElement;
-    for (const candidate of candidates){
-        // if focus is already where we want to go, we don't want to keep going through the candidates
-        if (candidate === PREVIOUSLY_FOCUSED_ELEMENT) return;
-        candidate.focus();
-        if (document.activeElement !== PREVIOUSLY_FOCUSED_ELEMENT) return;
-    }
-}
-/**
- * Wraps an array around itself at a given start index
- * Example: `wrapArray(['a', 'b', 'c', 'd'], 2) === ['c', 'd', 'a', 'b']`
- */ function $6cc32821e9371a1c$var$wrapArray(array, startIndex) {
-    return array.map((_, index)=>array[(startIndex + index) % array.length]
-    );
-}
-/**
- * This is the "meat" of the typeahead matching logic. It takes in all the values,
- * the search and the current match, and returns the next match (or `undefined`).
- *
- * We normalize the search because if a user has repeatedly pressed a character,
- * we want the exact same behavior as if we only had that one character
- * (ie. cycle through options starting with that character)
- *
- * We also reorder the values by wrapping the array around the current match.
- * This is so we always look forward from the current match, and picking the first
- * match will always be the correct one.
- *
- * Finally, if the normalized search is exactly one character, we exclude the
- * current match from the values because otherwise it would be the first to match always
- * and focus would never move. This is as opposed to the regular case, where we
- * don't want focus to move if the current match still matches.
- */ function $6cc32821e9371a1c$var$getNextMatch(values, search, currentMatch) {
-    const isRepeated = search.length > 1 && Array.from(search).every((char)=>char === search[0]
-    );
-    const normalizedSearch = isRepeated ? search[0] : search;
-    const currentMatchIndex = currentMatch ? values.indexOf(currentMatch) : -1;
-    let wrappedValues = $6cc32821e9371a1c$var$wrapArray(values, Math.max(currentMatchIndex, 0));
-    const excludeCurrentMatch = normalizedSearch.length === 1;
-    if (excludeCurrentMatch) wrappedValues = wrappedValues.filter((v)=>v !== currentMatch
-    );
-    const nextMatch = wrappedValues.find((value)=>value.toLowerCase().startsWith(normalizedSearch.toLowerCase())
-    );
-    return nextMatch !== currentMatch ? nextMatch : undefined;
-}
-// Determine if a point is inside of a polygon.
-// Based on https://github.com/substack/point-in-polygon
-function $6cc32821e9371a1c$var$isPointInPolygon(point, polygon) {
-    const { x: x , y: y  } = point;
-    let inside = false;
-    for(let i = 0, j = polygon.length - 1; i < polygon.length; j = i++){
-        const xi = polygon[i].x;
-        const yi = polygon[i].y;
-        const xj = polygon[j].x;
-        const yj = polygon[j].y; // prettier-ignore
-        const intersect = yi > y !== yj > y && x < (xj - xi) * (y - yi) / (yj - yi) + xi;
-        if (intersect) inside = !inside;
-    }
-    return inside;
-}
-function $6cc32821e9371a1c$var$isPointerInGraceArea(event, area) {
-    if (!area) return false;
-    const cursorPos = {
-        x: event.clientX,
-        y: event.clientY
-    };
-    return $6cc32821e9371a1c$var$isPointInPolygon(cursorPos, area);
-}
-function $6cc32821e9371a1c$var$whenMouse(handler) {
-    return (event)=>event.pointerType === 'mouse' ? handler(event) : undefined
-    ;
-}
-const $6cc32821e9371a1c$export$be92b6f5f03c0fe9 = $6cc32821e9371a1c$export$d9b273488cd8ce6f;
-const $6cc32821e9371a1c$export$b688253958b8dfe7 = $6cc32821e9371a1c$export$9fa5ebd18bee4d43;
-const $6cc32821e9371a1c$export$602eac185826482c = $6cc32821e9371a1c$export$793392f970497feb;
-const $6cc32821e9371a1c$export$7c6e2c02157bb7d2 = $6cc32821e9371a1c$export$479f0f2f71193efe;
-const $6cc32821e9371a1c$export$b04be29aa201d4f5 = $6cc32821e9371a1c$export$dd37bec0e8a99143;
-const $6cc32821e9371a1c$export$6d08773d2e66f8f2 = $6cc32821e9371a1c$export$2ce376c2cc3355c8;
-const $6cc32821e9371a1c$export$16ce288f89fa631c = $6cc32821e9371a1c$export$f6f243521332502d;
-const $6cc32821e9371a1c$export$371ab307eab489c0 = $6cc32821e9371a1c$export$69bd225e9817f6d0;
-const $6cc32821e9371a1c$export$c3468e2714d175fa = $6cc32821e9371a1c$export$a2593e23056970a3;
-const $6cc32821e9371a1c$export$1ff3c3f08ae963c0 = $6cc32821e9371a1c$export$1cec7dcdd713e220;
-const $6cc32821e9371a1c$export$2ea8a7a591ac5eac = $6cc32821e9371a1c$export$5fbbb3ba7297405f;
-const $6cc32821e9371a1c$export$6d4de93b380beddf = $6cc32821e9371a1c$export$e7142ab31822bde6;
-
-/* -------------------------------------------------------------------------------------------------
- * DropdownMenu
- * -----------------------------------------------------------------------------------------------*/ const $d08ef79370b62062$var$DROPDOWN_MENU_NAME = 'DropdownMenu';
-const [$d08ef79370b62062$var$createDropdownMenuContext, $d08ef79370b62062$export$c0623cd925aeb687] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($d08ef79370b62062$var$DROPDOWN_MENU_NAME, [
-    $6cc32821e9371a1c$export$4027731b685e72eb
-]);
-const $d08ef79370b62062$var$useMenuScope = $6cc32821e9371a1c$export$4027731b685e72eb();
-const [$d08ef79370b62062$var$DropdownMenuProvider, $d08ef79370b62062$var$useDropdownMenuContext] = $d08ef79370b62062$var$createDropdownMenuContext($d08ef79370b62062$var$DROPDOWN_MENU_NAME);
-const $d08ef79370b62062$export$e44a253a59704894 = (props)=>{
-    const { __scopeDropdownMenu: __scopeDropdownMenu , children: children , dir: dir , open: openProp , defaultOpen: defaultOpen , onOpenChange: onOpenChange , modal: modal = true  } = props;
-    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
-    const triggerRef = React.useRef(null);
-    const [open = false, setOpen] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
-        prop: openProp,
-        defaultProp: defaultOpen,
-        onChange: onOpenChange
-    });
-    return /*#__PURE__*/ React.createElement($d08ef79370b62062$var$DropdownMenuProvider, {
-        scope: __scopeDropdownMenu,
-        triggerId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
-        triggerRef: triggerRef,
-        contentId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
-        open: open,
-        onOpenChange: setOpen,
-        onOpenToggle: React.useCallback(()=>setOpen((prevOpen)=>!prevOpen
-            )
-        , [
-            setOpen
-        ]),
-        modal: modal
-    }, /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$be92b6f5f03c0fe9, _extends({}, menuScope, {
-        open: open,
-        onOpenChange: setOpen,
-        dir: dir,
-        modal: modal
-    }), children));
-};
-/* -------------------------------------------------------------------------------------------------
- * DropdownMenuTrigger
- * -----------------------------------------------------------------------------------------------*/ const $d08ef79370b62062$var$TRIGGER_NAME = 'DropdownMenuTrigger';
-const $d08ef79370b62062$export$d2469213b3befba9 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDropdownMenu: __scopeDropdownMenu , disabled: disabled = false , ...triggerProps } = props;
-    const context = $d08ef79370b62062$var$useDropdownMenuContext($d08ef79370b62062$var$TRIGGER_NAME, __scopeDropdownMenu);
-    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$b688253958b8dfe7, _extends({
-        asChild: true
-    }, menuScope), /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends({
-        type: "button",
-        id: context.triggerId,
-        "aria-haspopup": "menu",
-        "aria-expanded": context.open,
-        "aria-controls": context.open ? context.contentId : undefined,
-        "data-state": context.open ? 'open' : 'closed',
-        "data-disabled": disabled ? '' : undefined,
-        disabled: disabled
-    }, triggerProps, {
-        ref: $6ed0406888f73fc4$export$43e446d32b3d21af$1(forwardedRef, context.triggerRef),
-        onPointerDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDown, (event)=>{
-            // only call handler if it's the left button (mousedown gets triggered by all mouse buttons)
-            // but not when the control key is pressed (avoiding MacOS right click)
-            if (!disabled && event.button === 0 && event.ctrlKey === false) {
-                context.onOpenToggle(); // prevent trigger focusing when opening
-                // this allows the content to be given focus without competition
-                if (!context.open) event.preventDefault();
-            }
-        }),
-        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onKeyDown, (event)=>{
-            if (disabled) return;
-            if ([
-                'Enter',
-                ' '
-            ].includes(event.key)) context.onOpenToggle();
-            if (event.key === 'ArrowDown') context.onOpenChange(true); // prevent keydown from scrolling window / first focused item to execute
-            // that keydown (inadvertently closing the menu)
-            if ([
-                'Enter',
-                ' ',
-                'ArrowDown'
-            ].includes(event.key)) event.preventDefault();
-        })
-    })));
-});
-const $d08ef79370b62062$export$cd369b4d4d54efc9 = (props)=>{
-    const { __scopeDropdownMenu: __scopeDropdownMenu , ...portalProps } = props;
-    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$602eac185826482c, _extends({}, menuScope, portalProps));
-};
-/* -------------------------------------------------------------------------------------------------
- * DropdownMenuContent
- * -----------------------------------------------------------------------------------------------*/ const $d08ef79370b62062$var$CONTENT_NAME = 'DropdownMenuContent';
-const $d08ef79370b62062$export$6e76d93a37c01248 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDropdownMenu: __scopeDropdownMenu , ...contentProps } = props;
-    const context = $d08ef79370b62062$var$useDropdownMenuContext($d08ef79370b62062$var$CONTENT_NAME, __scopeDropdownMenu);
-    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
-    const hasInteractedOutsideRef = React.useRef(false);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$7c6e2c02157bb7d2, _extends({
-        id: context.contentId,
-        "aria-labelledby": context.triggerId
-    }, menuScope, contentProps, {
-        ref: forwardedRef,
-        onCloseAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onCloseAutoFocus, (event)=>{
-            var _context$triggerRef$c;
-            if (!hasInteractedOutsideRef.current) (_context$triggerRef$c = context.triggerRef.current) === null || _context$triggerRef$c === void 0 || _context$triggerRef$c.focus();
-            hasInteractedOutsideRef.current = false; // Always prevent auto focus because we either focus manually or want user agent focus
-            event.preventDefault();
-        }),
-        onInteractOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onInteractOutside, (event)=>{
-            const originalEvent = event.detail.originalEvent;
-            const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
-            const isRightClick = originalEvent.button === 2 || ctrlLeftClick;
-            if (!context.modal || isRightClick) hasInteractedOutsideRef.current = true;
-        }),
-        style: {
-            ...props.style,
-            '--radix-dropdown-menu-content-transform-origin': 'var(--radix-popper-transform-origin)',
-            '--radix-dropdown-menu-content-available-width': 'var(--radix-popper-available-width)',
-            '--radix-dropdown-menu-content-available-height': 'var(--radix-popper-available-height)',
-            '--radix-dropdown-menu-trigger-width': 'var(--radix-popper-anchor-width)',
-            '--radix-dropdown-menu-trigger-height': 'var(--radix-popper-anchor-height)'
-        }
-    }));
-});
-const $d08ef79370b62062$export$76e48c5b57f24495 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDropdownMenu: __scopeDropdownMenu , ...labelProps } = props;
-    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$b04be29aa201d4f5, _extends({}, menuScope, labelProps, {
-        ref: forwardedRef
-    }));
-});
-const $d08ef79370b62062$export$ed97964d1871885d = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDropdownMenu: __scopeDropdownMenu , ...itemProps } = props;
-    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$6d08773d2e66f8f2, _extends({}, menuScope, itemProps, {
-        ref: forwardedRef
-    }));
-});
-const $d08ef79370b62062$export$53a69729da201fa9 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDropdownMenu: __scopeDropdownMenu , ...checkboxItemProps } = props;
-    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$16ce288f89fa631c, _extends({}, menuScope, checkboxItemProps, {
-        ref: forwardedRef
-    }));
-});
-const $d08ef79370b62062$export$e4f69b41b1637536 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDropdownMenu: __scopeDropdownMenu , ...radioItemProps } = props;
-    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$371ab307eab489c0, _extends({}, menuScope, radioItemProps, {
-        ref: forwardedRef
-    }));
-});
-const $d08ef79370b62062$export$42355ae145153fb6 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDropdownMenu: __scopeDropdownMenu , ...itemIndicatorProps } = props;
-    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$c3468e2714d175fa, _extends({}, menuScope, itemIndicatorProps, {
-        ref: forwardedRef
-    }));
-});
-const $d08ef79370b62062$export$da160178fd3bc7e9 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDropdownMenu: __scopeDropdownMenu , ...separatorProps } = props;
-    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$1ff3c3f08ae963c0, _extends({}, menuScope, separatorProps, {
-        ref: forwardedRef
-    }));
-});
-const $d08ef79370b62062$export$21dcb7ec56f874cf = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDropdownMenu: __scopeDropdownMenu , ...subTriggerProps } = props;
-    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$2ea8a7a591ac5eac, _extends({}, menuScope, subTriggerProps, {
-        ref: forwardedRef
-    }));
-});
-const $d08ef79370b62062$export$f34ec8bc2482cc5f = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDropdownMenu: __scopeDropdownMenu , ...subContentProps } = props;
-    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
-    return /*#__PURE__*/ React.createElement($6cc32821e9371a1c$export$6d4de93b380beddf, _extends({}, menuScope, subContentProps, {
-        ref: forwardedRef,
-        style: {
-            ...props.style,
-            '--radix-dropdown-menu-content-transform-origin': 'var(--radix-popper-transform-origin)',
-            '--radix-dropdown-menu-content-available-width': 'var(--radix-popper-available-width)',
-            '--radix-dropdown-menu-content-available-height': 'var(--radix-popper-available-height)',
-            '--radix-dropdown-menu-trigger-width': 'var(--radix-popper-anchor-width)',
-            '--radix-dropdown-menu-trigger-height': 'var(--radix-popper-anchor-height)'
-        }
-    }));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $d08ef79370b62062$export$be92b6f5f03c0fe9 = $d08ef79370b62062$export$e44a253a59704894;
-const $d08ef79370b62062$export$41fb9f06171c75f4 = $d08ef79370b62062$export$d2469213b3befba9;
-const $d08ef79370b62062$export$602eac185826482c = $d08ef79370b62062$export$cd369b4d4d54efc9;
-const $d08ef79370b62062$export$7c6e2c02157bb7d2 = $d08ef79370b62062$export$6e76d93a37c01248;
-const $d08ef79370b62062$export$b04be29aa201d4f5 = $d08ef79370b62062$export$76e48c5b57f24495;
-const $d08ef79370b62062$export$6d08773d2e66f8f2 = $d08ef79370b62062$export$ed97964d1871885d;
-const $d08ef79370b62062$export$16ce288f89fa631c = $d08ef79370b62062$export$53a69729da201fa9;
-const $d08ef79370b62062$export$371ab307eab489c0 = $d08ef79370b62062$export$e4f69b41b1637536;
-const $d08ef79370b62062$export$c3468e2714d175fa = $d08ef79370b62062$export$42355ae145153fb6;
-const $d08ef79370b62062$export$1ff3c3f08ae963c0 = $d08ef79370b62062$export$da160178fd3bc7e9;
-const $d08ef79370b62062$export$2ea8a7a591ac5eac = $d08ef79370b62062$export$21dcb7ec56f874cf;
-const $d08ef79370b62062$export$6d4de93b380beddf = $d08ef79370b62062$export$f34ec8bc2482cc5f;
-
-var DropdownMenu = $d08ef79370b62062$export$be92b6f5f03c0fe9;
-var DropdownMenuTrigger = $d08ef79370b62062$export$41fb9f06171c75f4;
-var DropdownMenuSubTrigger = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, inset = _a.inset, children = _a.children, props = __rest$1(_a, ["className", "inset", "children"]);
-    return (React__namespace.createElement($d08ef79370b62062$export$2ea8a7a591ac5eac, __assign$1({ ref: ref, className: cn("flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent", inset && "pl-8", className) }, props),
-        children,
-        React__namespace.createElement(ChevronRightIcon, { className: "ml-auto h-4 w-4" })));
-});
-DropdownMenuSubTrigger.displayName =
-    $d08ef79370b62062$export$2ea8a7a591ac5eac.displayName;
-var DropdownMenuSubContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($d08ef79370b62062$export$6d4de93b380beddf, __assign$1({ ref: ref, className: cn("z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props)));
-});
-DropdownMenuSubContent.displayName =
-    $d08ef79370b62062$export$6d4de93b380beddf.displayName;
-var DropdownMenuContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, _b = _a.sideOffset, sideOffset = _b === void 0 ? 4 : _b, props = __rest$1(_a, ["className", "sideOffset"]);
-    return (React__namespace.createElement($d08ef79370b62062$export$602eac185826482c, null,
-        React__namespace.createElement($d08ef79370b62062$export$7c6e2c02157bb7d2, __assign$1({ ref: ref, sideOffset: sideOffset, className: cn("z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md", "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props))));
-});
-DropdownMenuContent.displayName = $d08ef79370b62062$export$7c6e2c02157bb7d2.displayName;
-var DropdownMenuItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, inset = _a.inset, props = __rest$1(_a, ["className", "inset"]);
-    return (React__namespace.createElement($d08ef79370b62062$export$6d08773d2e66f8f2, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", inset && "pl-8", className) }, props)));
-});
-DropdownMenuItem.displayName = $d08ef79370b62062$export$6d08773d2e66f8f2.displayName;
-var DropdownMenuCheckboxItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, checked = _a.checked, props = __rest$1(_a, ["className", "children", "checked"]);
-    return (React__namespace.createElement($d08ef79370b62062$export$16ce288f89fa631c, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className), checked: checked }, props),
-        React__namespace.createElement("span", { className: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" },
-            React__namespace.createElement($d08ef79370b62062$export$c3468e2714d175fa, null,
-                React__namespace.createElement(CheckIcon, { className: "h-4 w-4" }))),
-        children));
-});
-DropdownMenuCheckboxItem.displayName =
-    $d08ef79370b62062$export$16ce288f89fa631c.displayName;
-var DropdownMenuRadioItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
-    return (React__namespace.createElement($d08ef79370b62062$export$371ab307eab489c0, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props),
-        React__namespace.createElement("span", { className: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" },
-            React__namespace.createElement($d08ef79370b62062$export$c3468e2714d175fa, null,
-                React__namespace.createElement(DotFilledIcon, { className: "h-4 w-4 fill-current" }))),
-        children));
-});
-DropdownMenuRadioItem.displayName = $d08ef79370b62062$export$371ab307eab489c0.displayName;
-var DropdownMenuLabel = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, inset = _a.inset, props = __rest$1(_a, ["className", "inset"]);
-    return (React__namespace.createElement($d08ef79370b62062$export$b04be29aa201d4f5, __assign$1({ ref: ref, className: cn("px-2 py-1.5 text-sm font-semibold", inset && "pl-8", className) }, props)));
-});
-DropdownMenuLabel.displayName = $d08ef79370b62062$export$b04be29aa201d4f5.displayName;
-var DropdownMenuSeparator = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($d08ef79370b62062$export$1ff3c3f08ae963c0, __assign$1({ ref: ref, className: cn("-mx-1 my-1 h-px bg-muted", className) }, props)));
-});
-DropdownMenuSeparator.displayName = $d08ef79370b62062$export$1ff3c3f08ae963c0.displayName;
 
 function DataTableViewOptions(_a) {
     var table = _a.table;
     return (React__default["default"].createElement(DropdownMenu, null,
         React__default["default"].createElement($d08ef79370b62062$export$d2469213b3befba9, { asChild: true },
-            React__default["default"].createElement(Button, { variant: "outline", size: "sm", className: "ml-auto hidden h-8 lg:flex" },
+            React__default["default"].createElement(Button$1, { variant: "outline", size: "sm", className: "ml-auto hidden h-8 lg:flex" },
                 React__default["default"].createElement(MixerHorizontalIcon, { className: "mr-2 h-4 w-4" }),
                 "View")),
         React__default["default"].createElement(DropdownMenuContent, { align: "end", className: "w-[150px]" },
@@ -16846,8 +26628,8 @@ var badgeVariants = cva("inline-flex items-center rounded-md border px-2.5 py-0.
     },
 });
 function Badge(_a) {
-    var className = _a.className, variant = _a.variant, props = __rest$1(_a, ["className", "variant"]);
-    return (React__namespace.createElement("div", __assign$1({ className: cn(badgeVariants({ variant: variant }), className) }, props)));
+    var className = _a.className, variant = _a.variant, props = __rest$2(_a, ["className", "variant"]);
+    return (React__namespace.createElement("div", __assign$2({ className: cn(badgeVariants({ variant: variant }), className) }, props)));
 }
 
 function $e42e1063c40fb3ef$export$b9ecd428b558ff10(originalEventHandler, ourEventHandler, { checkForDefaultPrevented: checkForDefaultPrevented = true  } = {}) {
@@ -17864,13 +27646,13 @@ var RemoveScroll = React__namespace.forwardRef(function (props, parentRef) {
         onWheelCapture: nothing,
         onTouchMoveCapture: nothing,
     }), callbacks = _a[0], setCallbacks = _a[1];
-    var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? 'div' : _b, rest = __rest$1(props, ["forwardProps", "children", "className", "removeScrollBar", "enabled", "shards", "sideCar", "noIsolation", "inert", "allowPinchZoom", "as"]);
+    var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? 'div' : _b, rest = __rest$2(props, ["forwardProps", "children", "className", "removeScrollBar", "enabled", "shards", "sideCar", "noIsolation", "inert", "allowPinchZoom", "as"]);
     var SideCar = sideCar;
     var containerRef = useMergeRefs([ref, parentRef]);
-    var containerProps = __assign$1(__assign$1({}, rest), callbacks);
+    var containerProps = __assign$2(__assign$2({}, rest), callbacks);
     return (React__namespace.createElement(React__namespace.Fragment, null,
         enabled && (React__namespace.createElement(SideCar, { sideCar: effectCar, removeScrollBar: removeScrollBar, shards: shards, noIsolation: noIsolation, inert: inert, setCallbacks: setCallbacks, allowPinchZoom: !!allowPinchZoom, lockRef: ref })),
-        forwardProps ? (React__namespace.cloneElement(React__namespace.Children.only(children), __assign$1(__assign$1({}, containerProps), { ref: containerRef }))) : (React__namespace.createElement(Container, __assign$1({}, containerProps, { className: className, ref: containerRef }), children))));
+        forwardProps ? (React__namespace.cloneElement(React__namespace.Children.only(children), __assign$2(__assign$2({}, containerProps), { ref: containerRef }))) : (React__namespace.createElement(Container, __assign$2({}, containerProps, { className: className, ref: containerRef }), children))));
 });
 RemoveScroll.defaultProps = {
     enabled: true,
@@ -18006,13 +27788,13 @@ var extractRef = function (ref) {
 };
 var deltaCompare = function (x, y) { return x[0] === y[0] && x[1] === y[1]; };
 var generateStyle = function (id) { return "\n  .block-interactivity-".concat(id, " {pointer-events: none;}\n  .allow-interactivity-").concat(id, " {pointer-events: all;}\n"); };
-var idCounter$1 = 0;
+var idCounter = 0;
 var lockStack = [];
 function RemoveScrollSideCar(props) {
     var shouldPreventQueue = React__namespace.useRef([]);
     var touchStartRef = React__namespace.useRef([0, 0]);
     var activeAxis = React__namespace.useRef();
-    var id = React__namespace.useState(idCounter$1++)[0];
+    var id = React__namespace.useState(idCounter++)[0];
     var Style = React__namespace.useState(function () { return styleSingleton(); })[0];
     var lastProps = React__namespace.useRef(props);
     React__namespace.useEffect(function () {
@@ -18021,7 +27803,7 @@ function RemoveScrollSideCar(props) {
     React__namespace.useEffect(function () {
         if (props.inert) {
             document.body.classList.add("block-interactivity-".concat(id));
-            var allow_1 = __spreadArray([props.lockRef.current], (props.shards || []).map(extractRef), true).filter(Boolean);
+            var allow_1 = __spreadArray$1([props.lockRef.current], (props.shards || []).map(extractRef), true).filter(Boolean);
             allow_1.forEach(function (el) { return el.classList.add("allow-interactivity-".concat(id)); });
             return function () {
                 document.body.classList.remove("block-interactivity-".concat(id));
@@ -18136,16 +27918,16 @@ function RemoveScrollSideCar(props) {
 
 var SideCar = exportSidecar(effectCar, RemoveScrollSideCar);
 
-var ReactRemoveScroll = React__namespace.forwardRef(function (props, ref) { return (React__namespace.createElement(RemoveScroll, __assign$1({}, props, { ref: ref, sideCar: SideCar }))); });
+var ReactRemoveScroll = React__namespace.forwardRef(function (props, ref) { return (React__namespace.createElement(RemoveScroll, __assign$2({}, props, { ref: ref, sideCar: SideCar }))); });
 ReactRemoveScroll.classNames = RemoveScroll.classNames;
 var $67UHm$RemoveScroll = ReactRemoveScroll;
 
 /* -------------------------------------------------------------------------------------------------
  * Dialog
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DIALOG_NAME$1 = 'Dialog';
-const [$5d3850c4d0b4e6c7$var$createDialogContext$1, $5d3850c4d0b4e6c7$export$cc702773b8ea3e41$1] = $c512c27ab02ef895$export$50c7b4e9d9f19c1($5d3850c4d0b4e6c7$var$DIALOG_NAME$1);
-const [$5d3850c4d0b4e6c7$var$DialogProvider$1, $5d3850c4d0b4e6c7$var$useDialogContext$1] = $5d3850c4d0b4e6c7$var$createDialogContext$1($5d3850c4d0b4e6c7$var$DIALOG_NAME$1);
-const $5d3850c4d0b4e6c7$export$3ddf2d174ce01153$1 = (props)=>{
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DIALOG_NAME = 'Dialog';
+const [$5d3850c4d0b4e6c7$var$createDialogContext, $5d3850c4d0b4e6c7$export$cc702773b8ea3e41] = $c512c27ab02ef895$export$50c7b4e9d9f19c1($5d3850c4d0b4e6c7$var$DIALOG_NAME);
+const [$5d3850c4d0b4e6c7$var$DialogProvider, $5d3850c4d0b4e6c7$var$useDialogContext] = $5d3850c4d0b4e6c7$var$createDialogContext($5d3850c4d0b4e6c7$var$DIALOG_NAME);
+const $5d3850c4d0b4e6c7$export$3ddf2d174ce01153 = (props)=>{
     const { __scopeDialog: __scopeDialog , children: children , open: openProp , defaultOpen: defaultOpen , onOpenChange: onOpenChange , modal: modal = true  } = props;
     const triggerRef = React.useRef(null);
     const contentRef = React.useRef(null);
@@ -18154,7 +27936,7 @@ const $5d3850c4d0b4e6c7$export$3ddf2d174ce01153$1 = (props)=>{
         defaultProp: defaultOpen,
         onChange: onOpenChange
     });
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogProvider$1, {
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogProvider, {
         scope: __scopeDialog,
         triggerRef: triggerRef,
         contentRef: contentRef,
@@ -18173,14 +27955,14 @@ const $5d3850c4d0b4e6c7$export$3ddf2d174ce01153$1 = (props)=>{
 };
 /* -------------------------------------------------------------------------------------------------
  * DialogPortal
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$PORTAL_NAME$1 = 'DialogPortal';
-const [$5d3850c4d0b4e6c7$var$PortalProvider$1, $5d3850c4d0b4e6c7$var$usePortalContext$1] = $5d3850c4d0b4e6c7$var$createDialogContext$1($5d3850c4d0b4e6c7$var$PORTAL_NAME$1, {
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$PORTAL_NAME = 'DialogPortal';
+const [$5d3850c4d0b4e6c7$var$PortalProvider, $5d3850c4d0b4e6c7$var$usePortalContext] = $5d3850c4d0b4e6c7$var$createDialogContext($5d3850c4d0b4e6c7$var$PORTAL_NAME, {
     forceMount: undefined
 });
-const $5d3850c4d0b4e6c7$export$dad7c95542bacce0$1 = (props)=>{
+const $5d3850c4d0b4e6c7$export$dad7c95542bacce0 = (props)=>{
     const { __scopeDialog: __scopeDialog , forceMount: forceMount , children: children , container: container  } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$PORTAL_NAME$1, __scopeDialog);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$PortalProvider$1, {
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$PORTAL_NAME, __scopeDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$PortalProvider, {
         scope: __scopeDialog,
         forceMount: forceMount
     }, React.Children.map(children, (child)=>/*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b, {
@@ -18193,20 +27975,20 @@ const $5d3850c4d0b4e6c7$export$dad7c95542bacce0$1 = (props)=>{
 };
 /* -------------------------------------------------------------------------------------------------
  * DialogOverlay
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$OVERLAY_NAME$1 = 'DialogOverlay';
-const $5d3850c4d0b4e6c7$export$bd1d06c79be19e17$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext$1($5d3850c4d0b4e6c7$var$OVERLAY_NAME$1, props.__scopeDialog);
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$OVERLAY_NAME = 'DialogOverlay';
+const $5d3850c4d0b4e6c7$export$bd1d06c79be19e17 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext($5d3850c4d0b4e6c7$var$OVERLAY_NAME, props.__scopeDialog);
     const { forceMount: forceMount = portalContext.forceMount , ...overlayProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$OVERLAY_NAME$1, props.__scopeDialog);
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$OVERLAY_NAME, props.__scopeDialog);
     return context.modal ? /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b, {
         present: forceMount || context.open
-    }, /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogOverlayImpl$1, _extends({}, overlayProps, {
+    }, /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogOverlayImpl, _extends({}, overlayProps, {
         ref: forwardedRef
     }))) : null;
 });
-const $5d3850c4d0b4e6c7$var$DialogOverlayImpl$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+const $5d3850c4d0b4e6c7$var$DialogOverlayImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
     const { __scopeDialog: __scopeDialog , ...overlayProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$OVERLAY_NAME$1, __scopeDialog);
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$OVERLAY_NAME, __scopeDialog);
     return(/*#__PURE__*/ // Make sure `Content` is scrollable even when it doesn't live inside `RemoveScroll`
     // ie. when `Overlay` and `Content` are siblings
     React.createElement($67UHm$RemoveScroll, {
@@ -18216,7 +27998,7 @@ const $5d3850c4d0b4e6c7$var$DialogOverlayImpl$1 = /*#__PURE__*/ React.forwardRef
             context.contentRef
         ]
     }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034.div, _extends({
-        "data-state": $5d3850c4d0b4e6c7$var$getState$1(context.open)
+        "data-state": $5d3850c4d0b4e6c7$var$getState(context.open)
     }, overlayProps, {
         ref: forwardedRef // We re-enable pointer-events prevented by `Dialog.Content` to allow scrolling the overlay.
         ,
@@ -18228,28 +28010,28 @@ const $5d3850c4d0b4e6c7$var$DialogOverlayImpl$1 = /*#__PURE__*/ React.forwardRef
 });
 /* -------------------------------------------------------------------------------------------------
  * DialogContent
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$CONTENT_NAME$1 = 'DialogContent';
-const $5d3850c4d0b4e6c7$export$b6d9565de1e068cf$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$CONTENT_NAME = 'DialogContent';
+const $5d3850c4d0b4e6c7$export$b6d9565de1e068cf = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
     const { forceMount: forceMount = portalContext.forceMount , ...contentProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
     return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b, {
         present: forceMount || context.open
-    }, context.modal ? /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentModal$1, _extends({}, contentProps, {
+    }, context.modal ? /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentModal, _extends({}, contentProps, {
         ref: forwardedRef
-    })) : /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentNonModal$1, _extends({}, contentProps, {
+    })) : /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentNonModal, _extends({}, contentProps, {
         ref: forwardedRef
     })));
 });
-/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentModal$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
+/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
     const contentRef = React.useRef(null);
     const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05(forwardedRef, context.contentRef, contentRef); // aria-hide everything except the content (better supported equivalent to setting aria-modal)
     React.useEffect(()=>{
         const content = contentRef.current;
         if (content) return hideOthers(content);
     }, []);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl$1, _extends({}, props, {
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl, _extends({}, props, {
         ref: composedRefs // we make sure focus isn't trapped once `DialogContent` has been closed
         ,
         trapFocus: context.open,
@@ -18271,10 +28053,10 @@ const $5d3850c4d0b4e6c7$export$b6d9565de1e068cf$1 = /*#__PURE__*/ React.forwardR
         )
     }));
 });
-/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentNonModal$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
+/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentNonModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
     const hasInteractedOutsideRef = React.useRef(false);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl$1, _extends({}, props, {
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl, _extends({}, props, {
         ref: forwardedRef,
         trapFocus: false,
         disableOutsidePointerEvents: false,
@@ -18303,9 +28085,9 @@ const $5d3850c4d0b4e6c7$export$b6d9565de1e068cf$1 = /*#__PURE__*/ React.forwardR
         }
     }));
 });
-/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentImpl$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
     const { __scopeDialog: __scopeDialog , trapFocus: trapFocus , onOpenAutoFocus: onOpenAutoFocus , onCloseAutoFocus: onCloseAutoFocus , ...contentProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, __scopeDialog);
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, __scopeDialog);
     const contentRef = React.useRef(null);
     const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05(forwardedRef, contentRef); // Make sure the whole tree has focus guards as our `Dialog` will be
     // the last element in the DOM (beacuse of the `Portal`)
@@ -18321,19 +28103,19 @@ const $5d3850c4d0b4e6c7$export$b6d9565de1e068cf$1 = /*#__PURE__*/ React.forwardR
         id: context.contentId,
         "aria-describedby": context.descriptionId,
         "aria-labelledby": context.titleId,
-        "data-state": $5d3850c4d0b4e6c7$var$getState$1(context.open)
+        "data-state": $5d3850c4d0b4e6c7$var$getState(context.open)
     }, contentProps, {
         ref: composedRefs,
         onDismiss: ()=>context.onOpenChange(false)
     }))), false);
 });
-/* -----------------------------------------------------------------------------------------------*/ function $5d3850c4d0b4e6c7$var$getState$1(open) {
+/* -----------------------------------------------------------------------------------------------*/ function $5d3850c4d0b4e6c7$var$getState(open) {
     return open ? 'open' : 'closed';
 }
-const $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1 = $5d3850c4d0b4e6c7$export$3ddf2d174ce01153$1;
-const $5d3850c4d0b4e6c7$export$602eac185826482c$1 = $5d3850c4d0b4e6c7$export$dad7c95542bacce0$1;
-const $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1 = $5d3850c4d0b4e6c7$export$bd1d06c79be19e17$1;
-const $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1 = $5d3850c4d0b4e6c7$export$b6d9565de1e068cf$1;
+const $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9 = $5d3850c4d0b4e6c7$export$3ddf2d174ce01153;
+const $5d3850c4d0b4e6c7$export$602eac185826482c = $5d3850c4d0b4e6c7$export$dad7c95542bacce0;
+const $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff = $5d3850c4d0b4e6c7$export$bd1d06c79be19e17;
+const $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2 = $5d3850c4d0b4e6c7$export$b6d9565de1e068cf;
 
 // The scores are arranged so that a continuous match of characters will
 // result in a total score of 1.
@@ -18471,552 +28253,70 @@ function commandScore(string, abbreviation) {
 
 var commandScore_1 = commandScore;
 
-var ue='[cmdk-list-sizer=""]',M='[cmdk-group=""]',N='[cmdk-group-items=""]',de='[cmdk-group-heading=""]',ee='[cmdk-item=""]',Z=`${ee}:not([aria-disabled="true"])`,z="cmdk-item-select",S="data-value",fe=(n,a)=>commandScore_1(n,a),te=React__namespace.createContext(void 0),k=()=>React__namespace.useContext(te),re=React__namespace.createContext(void 0),U=()=>React__namespace.useContext(re),ne=React__namespace.createContext(void 0),oe=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useRef(null),o=x(()=>({search:"",value:"",filtered:{count:0,items:new Map,groups:new Set}})),u=x(()=>new Set),l=x(()=>new Map),p=x(()=>new Map),f=x(()=>new Set),d=ae(n),{label:v,children:E,value:R,onValueChange:w,filter:O,shouldFilter:ie,...D}=n,F=React__namespace.useId(),g=React__namespace.useId(),A=React__namespace.useId(),y=ye();L(()=>{if(R!==void 0){let e=R.trim().toLowerCase();o.current.value=e,y(6,W),h.emit();}},[R]);let h=React__namespace.useMemo(()=>({subscribe:e=>(f.current.add(e),()=>f.current.delete(e)),snapshot:()=>o.current,setState:(e,c,i)=>{var s,m,b;if(!Object.is(o.current[e],c)){if(o.current[e]=c,e==="search")j(),G(),y(1,V);else if(e==="value")if(((s=d.current)==null?void 0:s.value)!==void 0){(b=(m=d.current).onValueChange)==null||b.call(m,c);return}else i||y(5,W);h.emit();}},emit:()=>{f.current.forEach(e=>e());}}),[]),K=React__namespace.useMemo(()=>({value:(e,c)=>{c!==p.current.get(e)&&(p.current.set(e,c),o.current.filtered.items.set(e,B(c)),y(2,()=>{G(),h.emit();}));},item:(e,c)=>(u.current.add(e),c&&(l.current.has(c)?l.current.get(c).add(e):l.current.set(c,new Set([e]))),y(3,()=>{j(),G(),o.current.value||V(),h.emit();}),()=>{p.current.delete(e),u.current.delete(e),o.current.filtered.items.delete(e),y(4,()=>{j(),V(),h.emit();});}),group:e=>(l.current.has(e)||l.current.set(e,new Set),()=>{p.current.delete(e),l.current.delete(e);}),filter:()=>d.current.shouldFilter,label:v||n["aria-label"],listId:F,inputId:A,labelId:g}),[]);function B(e){var i;let c=((i=d.current)==null?void 0:i.filter)??fe;return e?c(e,o.current.search):0}function G(){if(!r.current||!o.current.search||d.current.shouldFilter===!1)return;let e=o.current.filtered.items,c=[];o.current.filtered.groups.forEach(s=>{let m=l.current.get(s),b=0;m.forEach(P=>{let ce=e.get(P);b=Math.max(ce,b);}),c.push([s,b]);});let i=r.current.querySelector(ue);I().sort((s,m)=>{let b=s.getAttribute(S),P=m.getAttribute(S);return (e.get(P)??0)-(e.get(b)??0)}).forEach(s=>{let m=s.closest(N);m?m.appendChild(s.parentElement===m?s:s.closest(`${N} > *`)):i.appendChild(s.parentElement===i?s:s.closest(`${N} > *`));}),c.sort((s,m)=>m[1]-s[1]).forEach(s=>{let m=r.current.querySelector(`${M}[${S}="${s[0]}"]`);m==null||m.parentElement.appendChild(m);});}function V(){let e=I().find(i=>!i.ariaDisabled),c=e==null?void 0:e.getAttribute(S);h.setState("value",c||void 0);}function j(){if(!o.current.search||d.current.shouldFilter===!1){o.current.filtered.count=u.current.size;return}o.current.filtered.groups=new Set;let e=0;for(let c of u.current){let i=p.current.get(c),s=B(i);o.current.filtered.items.set(c,s),s>0&&e++;}for(let[c,i]of l.current)for(let s of i)if(o.current.filtered.items.get(s)>0){o.current.filtered.groups.add(c);break}o.current.filtered.count=e;}function W(){var c,i,s;let e=_();e&&(((c=e.parentElement)==null?void 0:c.firstChild)===e&&((s=(i=e.closest(M))==null?void 0:i.querySelector(de))==null||s.scrollIntoView({block:"nearest"})),e.scrollIntoView({block:"nearest"}));}function _(){return r.current.querySelector(`${ee}[aria-selected="true"]`)}function I(){return Array.from(r.current.querySelectorAll(Z))}function q(e){let i=I()[e];i&&h.setState("value",i.getAttribute(S));}function $(e){var b;let c=_(),i=I(),s=i.findIndex(P=>P===c),m=i[s+e];(b=d.current)!=null&&b.loop&&(m=s+e<0?i[i.length-1]:s+e===i.length?i[0]:i[s+e]),m&&h.setState("value",m.getAttribute(S));}function J(e){let c=_(),i=c==null?void 0:c.closest(M),s;for(;i&&!s;)i=e>0?Se(i,M):Ce(i,M),s=i==null?void 0:i.querySelector(Z);s?h.setState("value",s.getAttribute(S)):$(e);}let Q=()=>q(I().length-1),X=e=>{e.preventDefault(),e.metaKey?Q():e.altKey?J(1):$(1);},Y=e=>{e.preventDefault(),e.metaKey?q(0):e.altKey?J(-1):$(-1);};return React__namespace.createElement("div",{ref:H([r,a]),...D,"cmdk-root":"",onKeyDown:e=>{var c;if((c=D.onKeyDown)==null||c.call(D,e),!e.defaultPrevented)switch(e.key){case"n":case"j":{e.ctrlKey&&X(e);break}case"ArrowDown":{X(e);break}case"p":case"k":{e.ctrlKey&&Y(e);break}case"ArrowUp":{Y(e);break}case"Home":{e.preventDefault(),q(0);break}case"End":{e.preventDefault(),Q();break}case"Enter":{e.preventDefault();let i=_();if(i){let s=new Event(z);i.dispatchEvent(s);}}}}},React__namespace.createElement("label",{"cmdk-label":"",htmlFor:K.inputId,id:K.labelId,style:xe},v),React__namespace.createElement(re.Provider,{value:h},React__namespace.createElement(te.Provider,{value:K},E)))}),me=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useId(),o=React__namespace.useRef(null),u=React__namespace.useContext(ne),l=k(),p=ae(n);L(()=>l.item(r,u),[]);let f=se(r,o,[n.value,n.children,o]),d=U(),v=T(g=>g.value&&g.value===f.current),E=T(g=>l.filter()===!1?!0:g.search?g.filtered.items.get(r)>0:!0);React__namespace.useEffect(()=>{let g=o.current;if(!(!g||n.disabled))return g.addEventListener(z,R),()=>g.removeEventListener(z,R)},[E,n.onSelect,n.disabled]);function R(){var g,A;(A=(g=p.current).onSelect)==null||A.call(g,f.current);}function w(){d.setState("value",f.current,!0);}if(!E)return null;let{disabled:O,value:ie,onSelect:D,...F}=n;return React__namespace.createElement("div",{ref:H([o,a]),...F,"cmdk-item":"",role:"option","aria-disabled":O||void 0,"aria-selected":v||void 0,"data-selected":v||void 0,onPointerMove:O?void 0:w,onClick:O?void 0:R},n.children)}),pe=React__namespace.forwardRef((n,a)=>{let{heading:r,children:o,...u}=n,l=React__namespace.useId(),p=React__namespace.useRef(null),f=React__namespace.useRef(null),d=React__namespace.useId(),v=k(),E=T(w=>v.filter()===!1?!0:w.search?w.filtered.groups.has(l):!0);L(()=>v.group(l),[]),se(l,p,[n.value,n.heading,f]);let R=React__namespace.createElement(ne.Provider,{value:l},o);return React__namespace.createElement("div",{ref:H([p,a]),...u,"cmdk-group":"",role:"presentation",hidden:E?void 0:!0},r&&React__namespace.createElement("div",{ref:f,"cmdk-group-heading":"","aria-hidden":!0,id:d},r),React__namespace.createElement("div",{"cmdk-group-items":"",role:"group","aria-labelledby":r?d:void 0},R))}),ge=React__namespace.forwardRef((n,a)=>{let{alwaysRender:r,...o}=n,u=React__namespace.useRef(null),l=T(p=>!p.search);return !r&&!l?null:React__namespace.createElement("div",{ref:H([u,a]),...o,"cmdk-separator":"",role:"separator"})}),ve=React__namespace.forwardRef((n,a)=>{let{onValueChange:r,...o}=n,u=n.value!=null,l=U(),p=T(d=>d.search),f=k();return React__namespace.useEffect(()=>{n.value!=null&&l.setState("search",n.value);},[n.value]),React__namespace.createElement("input",{ref:a,...o,"cmdk-input":"",autoComplete:"off",autoCorrect:"off",spellCheck:!1,"aria-autocomplete":"list",role:"combobox","aria-expanded":!0,"aria-controls":f.listId,"aria-labelledby":f.labelId,id:f.inputId,type:"text",value:u?n.value:p,onChange:d=>{u||l.setState("search",d.target.value),r==null||r(d.target.value);}})}),Re=React__namespace.forwardRef((n,a)=>{let{children:r,...o}=n,u=React__namespace.useRef(null),l=React__namespace.useRef(null),p=k();return React__namespace.useEffect(()=>{if(l.current&&u.current){let f=l.current,d=u.current,v,E=new ResizeObserver(()=>{v=requestAnimationFrame(()=>{let R=f.getBoundingClientRect().height;d.style.setProperty("--cmdk-list-height",R.toFixed(1)+"px");});});return E.observe(f),()=>{cancelAnimationFrame(v),E.unobserve(f);}}},[]),React__namespace.createElement("div",{ref:H([u,a]),...o,"cmdk-list":"",role:"listbox","aria-label":"Suggestions",id:p.listId,"aria-labelledby":p.inputId},React__namespace.createElement("div",{ref:l,"cmdk-list-sizer":""},r))}),be=React__namespace.forwardRef((n,a)=>{let{open:r,onOpenChange:o,container:u,...l}=n;return React__namespace.createElement($5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1,{open:r,onOpenChange:o},React__namespace.createElement($5d3850c4d0b4e6c7$export$602eac185826482c$1,{container:u},React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1,{"cmdk-overlay":""}),React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1,{"aria-label":n.label,"cmdk-dialog":""},React__namespace.createElement(oe,{ref:a,...l}))))}),he=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useRef(!0),o=T(u=>u.filtered.count===0);return React__namespace.useEffect(()=>{r.current=!1;},[]),r.current||!o?null:React__namespace.createElement("div",{ref:a,...n,"cmdk-empty":"",role:"presentation"})}),Ee=React__namespace.forwardRef((n,a)=>{let{progress:r,children:o,...u}=n;return React__namespace.createElement("div",{ref:a,...u,"cmdk-loading":"",role:"progressbar","aria-valuenow":r,"aria-valuemin":0,"aria-valuemax":100,"aria-label":"Loading..."},React__namespace.createElement("div",{"aria-hidden":!0},o))}),Le=Object.assign(oe,{List:Re,Item:me,Input:ve,Group:pe,Separator:ge,Dialog:be,Empty:he,Loading:Ee});function Se(n,a){let r=n.nextElementSibling;for(;r;){if(r.matches(a))return r;r=r.nextElementSibling;}}function Ce(n,a){let r=n.previousElementSibling;for(;r;){if(r.matches(a))return r;r=r.previousElementSibling;}}function ae(n){let a=React__namespace.useRef(n);return L(()=>{a.current=n;}),a}var L=typeof window>"u"?React__namespace.useEffect:React__namespace.useLayoutEffect;function x(n){let a=React__namespace.useRef();return a.current===void 0&&(a.current=n()),a}function H(n){return a=>{n.forEach(r=>{typeof r=="function"?r(a):r!=null&&(r.current=a);});}}function T(n){let a=U(),r=()=>n(a.snapshot());return React__namespace.useSyncExternalStore(a.subscribe,r,r)}function se(n,a,r){let o=React__namespace.useRef(),u=k();return L(()=>{var p;let l=(()=>{var f;for(let d of r){if(typeof d=="string")return d.trim().toLowerCase();if(typeof d=="object"&&"current"in d&&d.current)return (f=d.current.textContent)==null?void 0:f.trim().toLowerCase()}})();u.value(n,l),(p=a.current)==null||p.setAttribute(S,l),o.current=l;}),o}var ye=()=>{let[n,a]=React__namespace.useState(),r=x(()=>new Map);return L(()=>{r.current.forEach(o=>o()),r.current=new Map;},[n]),(o,u)=>{r.current.set(o,u),a({});}},xe={position:"absolute",width:"1px",height:"1px",padding:"0",margin:"-1px",overflow:"hidden",clip:"rect(0, 0, 0, 0)",whiteSpace:"nowrap",borderWidth:"0"};
+var ue='[cmdk-list-sizer=""]',M='[cmdk-group=""]',N='[cmdk-group-items=""]',de='[cmdk-group-heading=""]',ee='[cmdk-item=""]',Z=`${ee}:not([aria-disabled="true"])`,z="cmdk-item-select",S="data-value",fe=(n,a)=>commandScore_1(n,a),te=React__namespace.createContext(void 0),k=()=>React__namespace.useContext(te),re=React__namespace.createContext(void 0),U=()=>React__namespace.useContext(re),ne=React__namespace.createContext(void 0),oe=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useRef(null),o=x(()=>({search:"",value:"",filtered:{count:0,items:new Map,groups:new Set}})),u=x(()=>new Set),l=x(()=>new Map),p=x(()=>new Map),f=x(()=>new Set),d=ae(n),{label:v,children:E,value:R,onValueChange:w,filter:O,shouldFilter:ie,...D}=n,F=React__namespace.useId(),g=React__namespace.useId(),A=React__namespace.useId(),y=ye();L(()=>{if(R!==void 0){let e=R.trim().toLowerCase();o.current.value=e,y(6,W),h.emit();}},[R]);let h=React__namespace.useMemo(()=>({subscribe:e=>(f.current.add(e),()=>f.current.delete(e)),snapshot:()=>o.current,setState:(e,c,i)=>{var s,m,b;if(!Object.is(o.current[e],c)){if(o.current[e]=c,e==="search")j(),G(),y(1,V);else if(e==="value")if(((s=d.current)==null?void 0:s.value)!==void 0){(b=(m=d.current).onValueChange)==null||b.call(m,c);return}else i||y(5,W);h.emit();}},emit:()=>{f.current.forEach(e=>e());}}),[]),K=React__namespace.useMemo(()=>({value:(e,c)=>{c!==p.current.get(e)&&(p.current.set(e,c),o.current.filtered.items.set(e,B(c)),y(2,()=>{G(),h.emit();}));},item:(e,c)=>(u.current.add(e),c&&(l.current.has(c)?l.current.get(c).add(e):l.current.set(c,new Set([e]))),y(3,()=>{j(),G(),o.current.value||V(),h.emit();}),()=>{p.current.delete(e),u.current.delete(e),o.current.filtered.items.delete(e),y(4,()=>{j(),V(),h.emit();});}),group:e=>(l.current.has(e)||l.current.set(e,new Set),()=>{p.current.delete(e),l.current.delete(e);}),filter:()=>d.current.shouldFilter,label:v||n["aria-label"],listId:F,inputId:A,labelId:g}),[]);function B(e){var i;let c=((i=d.current)==null?void 0:i.filter)??fe;return e?c(e,o.current.search):0}function G(){if(!r.current||!o.current.search||d.current.shouldFilter===!1)return;let e=o.current.filtered.items,c=[];o.current.filtered.groups.forEach(s=>{let m=l.current.get(s),b=0;m.forEach(P=>{let ce=e.get(P);b=Math.max(ce,b);}),c.push([s,b]);});let i=r.current.querySelector(ue);I().sort((s,m)=>{let b=s.getAttribute(S),P=m.getAttribute(S);return (e.get(P)??0)-(e.get(b)??0)}).forEach(s=>{let m=s.closest(N);m?m.appendChild(s.parentElement===m?s:s.closest(`${N} > *`)):i.appendChild(s.parentElement===i?s:s.closest(`${N} > *`));}),c.sort((s,m)=>m[1]-s[1]).forEach(s=>{let m=r.current.querySelector(`${M}[${S}="${s[0]}"]`);m==null||m.parentElement.appendChild(m);});}function V(){let e=I().find(i=>!i.ariaDisabled),c=e==null?void 0:e.getAttribute(S);h.setState("value",c||void 0);}function j(){if(!o.current.search||d.current.shouldFilter===!1){o.current.filtered.count=u.current.size;return}o.current.filtered.groups=new Set;let e=0;for(let c of u.current){let i=p.current.get(c),s=B(i);o.current.filtered.items.set(c,s),s>0&&e++;}for(let[c,i]of l.current)for(let s of i)if(o.current.filtered.items.get(s)>0){o.current.filtered.groups.add(c);break}o.current.filtered.count=e;}function W(){var c,i,s;let e=_();e&&(((c=e.parentElement)==null?void 0:c.firstChild)===e&&((s=(i=e.closest(M))==null?void 0:i.querySelector(de))==null||s.scrollIntoView({block:"nearest"})),e.scrollIntoView({block:"nearest"}));}function _(){return r.current.querySelector(`${ee}[aria-selected="true"]`)}function I(){return Array.from(r.current.querySelectorAll(Z))}function q(e){let i=I()[e];i&&h.setState("value",i.getAttribute(S));}function $(e){var b;let c=_(),i=I(),s=i.findIndex(P=>P===c),m=i[s+e];(b=d.current)!=null&&b.loop&&(m=s+e<0?i[i.length-1]:s+e===i.length?i[0]:i[s+e]),m&&h.setState("value",m.getAttribute(S));}function J(e){let c=_(),i=c==null?void 0:c.closest(M),s;for(;i&&!s;)i=e>0?Se(i,M):Ce(i,M),s=i==null?void 0:i.querySelector(Z);s?h.setState("value",s.getAttribute(S)):$(e);}let Q=()=>q(I().length-1),X=e=>{e.preventDefault(),e.metaKey?Q():e.altKey?J(1):$(1);},Y=e=>{e.preventDefault(),e.metaKey?q(0):e.altKey?J(-1):$(-1);};return React__namespace.createElement("div",{ref:H([r,a]),...D,"cmdk-root":"",onKeyDown:e=>{var c;if((c=D.onKeyDown)==null||c.call(D,e),!e.defaultPrevented)switch(e.key){case"n":case"j":{e.ctrlKey&&X(e);break}case"ArrowDown":{X(e);break}case"p":case"k":{e.ctrlKey&&Y(e);break}case"ArrowUp":{Y(e);break}case"Home":{e.preventDefault(),q(0);break}case"End":{e.preventDefault(),Q();break}case"Enter":{e.preventDefault();let i=_();if(i){let s=new Event(z);i.dispatchEvent(s);}}}}},React__namespace.createElement("label",{"cmdk-label":"",htmlFor:K.inputId,id:K.labelId,style:xe},v),React__namespace.createElement(re.Provider,{value:h},React__namespace.createElement(te.Provider,{value:K},E)))}),me=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useId(),o=React__namespace.useRef(null),u=React__namespace.useContext(ne),l=k(),p=ae(n);L(()=>l.item(r,u),[]);let f=se(r,o,[n.value,n.children,o]),d=U(),v=T(g=>g.value&&g.value===f.current),E=T(g=>l.filter()===!1?!0:g.search?g.filtered.items.get(r)>0:!0);React__namespace.useEffect(()=>{let g=o.current;if(!(!g||n.disabled))return g.addEventListener(z,R),()=>g.removeEventListener(z,R)},[E,n.onSelect,n.disabled]);function R(){var g,A;(A=(g=p.current).onSelect)==null||A.call(g,f.current);}function w(){d.setState("value",f.current,!0);}if(!E)return null;let{disabled:O,value:ie,onSelect:D,...F}=n;return React__namespace.createElement("div",{ref:H([o,a]),...F,"cmdk-item":"",role:"option","aria-disabled":O||void 0,"aria-selected":v||void 0,"data-selected":v||void 0,onPointerMove:O?void 0:w,onClick:O?void 0:R},n.children)}),pe=React__namespace.forwardRef((n,a)=>{let{heading:r,children:o,...u}=n,l=React__namespace.useId(),p=React__namespace.useRef(null),f=React__namespace.useRef(null),d=React__namespace.useId(),v=k(),E=T(w=>v.filter()===!1?!0:w.search?w.filtered.groups.has(l):!0);L(()=>v.group(l),[]),se(l,p,[n.value,n.heading,f]);let R=React__namespace.createElement(ne.Provider,{value:l},o);return React__namespace.createElement("div",{ref:H([p,a]),...u,"cmdk-group":"",role:"presentation",hidden:E?void 0:!0},r&&React__namespace.createElement("div",{ref:f,"cmdk-group-heading":"","aria-hidden":!0,id:d},r),React__namespace.createElement("div",{"cmdk-group-items":"",role:"group","aria-labelledby":r?d:void 0},R))}),ge=React__namespace.forwardRef((n,a)=>{let{alwaysRender:r,...o}=n,u=React__namespace.useRef(null),l=T(p=>!p.search);return !r&&!l?null:React__namespace.createElement("div",{ref:H([u,a]),...o,"cmdk-separator":"",role:"separator"})}),ve=React__namespace.forwardRef((n,a)=>{let{onValueChange:r,...o}=n,u=n.value!=null,l=U(),p=T(d=>d.search),f=k();return React__namespace.useEffect(()=>{n.value!=null&&l.setState("search",n.value);},[n.value]),React__namespace.createElement("input",{ref:a,...o,"cmdk-input":"",autoComplete:"off",autoCorrect:"off",spellCheck:!1,"aria-autocomplete":"list",role:"combobox","aria-expanded":!0,"aria-controls":f.listId,"aria-labelledby":f.labelId,id:f.inputId,type:"text",value:u?n.value:p,onChange:d=>{u||l.setState("search",d.target.value),r==null||r(d.target.value);}})}),Re=React__namespace.forwardRef((n,a)=>{let{children:r,...o}=n,u=React__namespace.useRef(null),l=React__namespace.useRef(null),p=k();return React__namespace.useEffect(()=>{if(l.current&&u.current){let f=l.current,d=u.current,v,E=new ResizeObserver(()=>{v=requestAnimationFrame(()=>{let R=f.getBoundingClientRect().height;d.style.setProperty("--cmdk-list-height",R.toFixed(1)+"px");});});return E.observe(f),()=>{cancelAnimationFrame(v),E.unobserve(f);}}},[]),React__namespace.createElement("div",{ref:H([u,a]),...o,"cmdk-list":"",role:"listbox","aria-label":"Suggestions",id:p.listId,"aria-labelledby":p.inputId},React__namespace.createElement("div",{ref:l,"cmdk-list-sizer":""},r))}),be=React__namespace.forwardRef((n,a)=>{let{open:r,onOpenChange:o,container:u,...l}=n;return React__namespace.createElement($5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9,{open:r,onOpenChange:o},React__namespace.createElement($5d3850c4d0b4e6c7$export$602eac185826482c,{container:u},React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff,{"cmdk-overlay":""}),React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2,{"aria-label":n.label,"cmdk-dialog":""},React__namespace.createElement(oe,{ref:a,...l}))))}),he=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useRef(!0),o=T(u=>u.filtered.count===0);return React__namespace.useEffect(()=>{r.current=!1;},[]),r.current||!o?null:React__namespace.createElement("div",{ref:a,...n,"cmdk-empty":"",role:"presentation"})}),Ee=React__namespace.forwardRef((n,a)=>{let{progress:r,children:o,...u}=n;return React__namespace.createElement("div",{ref:a,...u,"cmdk-loading":"",role:"progressbar","aria-valuenow":r,"aria-valuemin":0,"aria-valuemax":100,"aria-label":"Loading..."},React__namespace.createElement("div",{"aria-hidden":!0},o))}),Le=Object.assign(oe,{List:Re,Item:me,Input:ve,Group:pe,Separator:ge,Dialog:be,Empty:he,Loading:Ee});function Se(n,a){let r=n.nextElementSibling;for(;r;){if(r.matches(a))return r;r=r.nextElementSibling;}}function Ce(n,a){let r=n.previousElementSibling;for(;r;){if(r.matches(a))return r;r=r.previousElementSibling;}}function ae(n){let a=React__namespace.useRef(n);return L(()=>{a.current=n;}),a}var L=typeof window>"u"?React__namespace.useEffect:React__namespace.useLayoutEffect;function x(n){let a=React__namespace.useRef();return a.current===void 0&&(a.current=n()),a}function H(n){return a=>{n.forEach(r=>{typeof r=="function"?r(a):r!=null&&(r.current=a);});}}function T(n){let a=U(),r=()=>n(a.snapshot());return React__namespace.useSyncExternalStore(a.subscribe,r,r)}function se(n,a,r){let o=React__namespace.useRef(),u=k();return L(()=>{var p;let l=(()=>{var f;for(let d of r){if(typeof d=="string")return d.trim().toLowerCase();if(typeof d=="object"&&"current"in d&&d.current)return (f=d.current.textContent)==null?void 0:f.trim().toLowerCase()}})();u.value(n,l),(p=a.current)==null||p.setAttribute(S,l),o.current=l;}),o}var ye=()=>{let[n,a]=React__namespace.useState(),r=x(()=>new Map);return L(()=>{r.current.forEach(o=>o()),r.current=new Map;},[n]),(o,u)=>{r.current.set(o,u),a({});}},xe={position:"absolute",width:"1px",height:"1px",padding:"0",margin:"-1px",overflow:"hidden",clip:"rect(0, 0, 0, 0)",whiteSpace:"nowrap",borderWidth:"0"};
 
-/* -------------------------------------------------------------------------------------------------
- * Dialog
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DIALOG_NAME = 'Dialog';
-const [$5d3850c4d0b4e6c7$var$createDialogContext, $5d3850c4d0b4e6c7$export$cc702773b8ea3e41] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($5d3850c4d0b4e6c7$var$DIALOG_NAME);
-const [$5d3850c4d0b4e6c7$var$DialogProvider, $5d3850c4d0b4e6c7$var$useDialogContext] = $5d3850c4d0b4e6c7$var$createDialogContext($5d3850c4d0b4e6c7$var$DIALOG_NAME);
-const $5d3850c4d0b4e6c7$export$3ddf2d174ce01153 = (props)=>{
-    const { __scopeDialog: __scopeDialog , children: children , open: openProp , defaultOpen: defaultOpen , onOpenChange: onOpenChange , modal: modal = true  } = props;
-    const triggerRef = React.useRef(null);
-    const contentRef = React.useRef(null);
-    const [open = false, setOpen] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
-        prop: openProp,
-        defaultProp: defaultOpen,
-        onChange: onOpenChange
-    });
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogProvider, {
-        scope: __scopeDialog,
-        triggerRef: triggerRef,
-        contentRef: contentRef,
-        contentId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
-        titleId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
-        descriptionId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
-        open: open,
-        onOpenChange: setOpen,
-        onOpenToggle: React.useCallback(()=>setOpen((prevOpen)=>!prevOpen
-            )
-        , [
-            setOpen
-        ]),
-        modal: modal
-    }, children);
-};
-/* -------------------------------------------------------------------------------------------------
- * DialogTrigger
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$TRIGGER_NAME = 'DialogTrigger';
-const $5d3850c4d0b4e6c7$export$2e1e1122cf0cba88 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , ...triggerProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$TRIGGER_NAME, __scopeDialog);
-    const composedTriggerRef = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, context.triggerRef);
-    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends({
-        type: "button",
-        "aria-haspopup": "dialog",
-        "aria-expanded": context.open,
-        "aria-controls": context.contentId,
-        "data-state": $5d3850c4d0b4e6c7$var$getState(context.open)
-    }, triggerProps, {
-        ref: composedTriggerRef,
-        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, context.onOpenToggle)
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * DialogPortal
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$PORTAL_NAME = 'DialogPortal';
-const [$5d3850c4d0b4e6c7$var$PortalProvider, $5d3850c4d0b4e6c7$var$usePortalContext] = $5d3850c4d0b4e6c7$var$createDialogContext($5d3850c4d0b4e6c7$var$PORTAL_NAME, {
-    forceMount: undefined
-});
-const $5d3850c4d0b4e6c7$export$dad7c95542bacce0 = (props)=>{
-    const { __scopeDialog: __scopeDialog , forceMount: forceMount , children: children , container: container  } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$PORTAL_NAME, __scopeDialog);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$PortalProvider, {
-        scope: __scopeDialog,
-        forceMount: forceMount
-    }, React.Children.map(children, (child)=>/*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-            present: forceMount || context.open
-        }, /*#__PURE__*/ React.createElement($f1701beae083dbae$export$602eac185826482c$1, {
-            asChild: true,
-            container: container
-        }, child))
-    ));
-};
-/* -------------------------------------------------------------------------------------------------
- * DialogOverlay
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$OVERLAY_NAME = 'DialogOverlay';
-const $5d3850c4d0b4e6c7$export$bd1d06c79be19e17 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext($5d3850c4d0b4e6c7$var$OVERLAY_NAME, props.__scopeDialog);
-    const { forceMount: forceMount = portalContext.forceMount , ...overlayProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$OVERLAY_NAME, props.__scopeDialog);
-    return context.modal ? /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || context.open
-    }, /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogOverlayImpl, _extends({}, overlayProps, {
-        ref: forwardedRef
-    }))) : null;
-});
-const $5d3850c4d0b4e6c7$var$DialogOverlayImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , ...overlayProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$OVERLAY_NAME, __scopeDialog);
-    return(/*#__PURE__*/ // Make sure `Content` is scrollable even when it doesn't live inside `RemoveScroll`
-    // ie. when `Overlay` and `Content` are siblings
-    React.createElement($am6gm$RemoveScroll, {
-        as: $5e63c961fc1ce211$export$8c6ed5c666ac1360$1,
-        allowPinchZoom: true,
-        shards: [
-            context.contentRef
-        ]
-    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
-        "data-state": $5d3850c4d0b4e6c7$var$getState(context.open)
-    }, overlayProps, {
-        ref: forwardedRef // We re-enable pointer-events prevented by `Dialog.Content` to allow scrolling the overlay.
-        ,
-        style: {
-            pointerEvents: 'auto',
-            ...overlayProps.style
-        }
-    }))));
-});
-/* -------------------------------------------------------------------------------------------------
- * DialogContent
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$CONTENT_NAME = 'DialogContent';
-const $5d3850c4d0b4e6c7$export$b6d9565de1e068cf = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
-    const { forceMount: forceMount = portalContext.forceMount , ...contentProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
-    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || context.open
-    }, context.modal ? /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentModal, _extends({}, contentProps, {
-        ref: forwardedRef
-    })) : /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentNonModal, _extends({}, contentProps, {
-        ref: forwardedRef
-    })));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
-    const contentRef = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, context.contentRef, contentRef); // aria-hide everything except the content (better supported equivalent to setting aria-modal)
-    React.useEffect(()=>{
-        const content = contentRef.current;
-        if (content) return hideOthers(content);
-    }, []);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl, _extends({}, props, {
-        ref: composedRefs // we make sure focus isn't trapped once `DialogContent` has been closed
-        ,
-        trapFocus: context.open,
-        disableOutsidePointerEvents: true,
-        onCloseAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onCloseAutoFocus, (event)=>{
-            var _context$triggerRef$c;
-            event.preventDefault();
-            (_context$triggerRef$c = context.triggerRef.current) === null || _context$triggerRef$c === void 0 || _context$triggerRef$c.focus();
-        }),
-        onPointerDownOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDownOutside, (event)=>{
-            const originalEvent = event.detail.originalEvent;
-            const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
-            const isRightClick = originalEvent.button === 2 || ctrlLeftClick; // If the event is a right-click, we shouldn't close because
-            // it is effectively as if we right-clicked the `Overlay`.
-            if (isRightClick) event.preventDefault();
-        }) // When focus is trapped, a `focusout` event may still happen.
-        ,
-        onFocusOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocusOutside, (event)=>event.preventDefault()
-        )
-    }));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentNonModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
-    const hasInteractedOutsideRef = React.useRef(false);
-    const hasPointerDownOutsideRef = React.useRef(false);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl, _extends({}, props, {
-        ref: forwardedRef,
-        trapFocus: false,
-        disableOutsidePointerEvents: false,
-        onCloseAutoFocus: (event)=>{
-            var _props$onCloseAutoFoc;
-            (_props$onCloseAutoFoc = props.onCloseAutoFocus) === null || _props$onCloseAutoFoc === void 0 || _props$onCloseAutoFoc.call(props, event);
-            if (!event.defaultPrevented) {
-                var _context$triggerRef$c2;
-                if (!hasInteractedOutsideRef.current) (_context$triggerRef$c2 = context.triggerRef.current) === null || _context$triggerRef$c2 === void 0 || _context$triggerRef$c2.focus(); // Always prevent auto focus because we either focus manually or want user agent focus
-                event.preventDefault();
-            }
-            hasInteractedOutsideRef.current = false;
-            hasPointerDownOutsideRef.current = false;
-        },
-        onInteractOutside: (event)=>{
-            var _props$onInteractOuts, _context$triggerRef$c3;
-            (_props$onInteractOuts = props.onInteractOutside) === null || _props$onInteractOuts === void 0 || _props$onInteractOuts.call(props, event);
-            if (!event.defaultPrevented) {
-                hasInteractedOutsideRef.current = true;
-                if (event.detail.originalEvent.type === 'pointerdown') hasPointerDownOutsideRef.current = true;
-            } // Prevent dismissing when clicking the trigger.
-            // As the trigger is already setup to close, without doing so would
-            // cause it to close and immediately open.
-            const target = event.target;
-            const targetIsTrigger = (_context$triggerRef$c3 = context.triggerRef.current) === null || _context$triggerRef$c3 === void 0 ? void 0 : _context$triggerRef$c3.contains(target);
-            if (targetIsTrigger) event.preventDefault(); // On Safari if the trigger is inside a container with tabIndex={0}, when clicked
-            // we will get the pointer down outside event on the trigger, but then a subsequent
-            // focus outside event on the container, we ignore any focus outside event when we've
-            // already had a pointer down outside event.
-            if (event.detail.originalEvent.type === 'focusin' && hasPointerDownOutsideRef.current) event.preventDefault();
-        }
-    }));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , trapFocus: trapFocus , onOpenAutoFocus: onOpenAutoFocus , onCloseAutoFocus: onCloseAutoFocus , ...contentProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, __scopeDialog);
-    const contentRef = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, contentRef); // Make sure the whole tree has focus guards as our `Dialog` will be
-    // the last element in the DOM (beacuse of the `Portal`)
-    $3db38b7d1fb3fe6a$export$b7ece24a22aeda8c$1();
-    return /*#__PURE__*/ React.createElement(React.Fragment, null, /*#__PURE__*/ React.createElement($d3863c46a17e8a28$export$20e40289641fbbb6$1, {
-        asChild: true,
-        loop: true,
-        trapped: trapFocus,
-        onMountAutoFocus: onOpenAutoFocus,
-        onUnmountAutoFocus: onCloseAutoFocus
-    }, /*#__PURE__*/ React.createElement($5cb92bef7577960e$export$177fb62ff3ec1f22$1, _extends({
-        role: "dialog",
-        id: context.contentId,
-        "aria-describedby": context.descriptionId,
-        "aria-labelledby": context.titleId,
-        "data-state": $5d3850c4d0b4e6c7$var$getState(context.open)
-    }, contentProps, {
-        ref: composedRefs,
-        onDismiss: ()=>context.onOpenChange(false)
-    }))), false);
-});
-/* -------------------------------------------------------------------------------------------------
- * DialogTitle
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$TITLE_NAME = 'DialogTitle';
-const $5d3850c4d0b4e6c7$export$16f7638e4a34b909 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , ...titleProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$TITLE_NAME, __scopeDialog);
-    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.h2, _extends({
-        id: context.titleId
-    }, titleProps, {
-        ref: forwardedRef
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * DialogDescription
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DESCRIPTION_NAME = 'DialogDescription';
-const $5d3850c4d0b4e6c7$export$94e94c2ec2c954d5 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , ...descriptionProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$DESCRIPTION_NAME, __scopeDialog);
-    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.p, _extends({
-        id: context.descriptionId
-    }, descriptionProps, {
-        ref: forwardedRef
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * DialogClose
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$CLOSE_NAME = 'DialogClose';
-const $5d3850c4d0b4e6c7$export$fba2fb7cd781b7ac = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , ...closeProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CLOSE_NAME, __scopeDialog);
-    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends({
-        type: "button"
-    }, closeProps, {
-        ref: forwardedRef,
-        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, ()=>context.onOpenChange(false)
-        )
-    }));
-});
-/* -----------------------------------------------------------------------------------------------*/ function $5d3850c4d0b4e6c7$var$getState(open) {
-    return open ? 'open' : 'closed';
-}
-const $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9 = $5d3850c4d0b4e6c7$export$3ddf2d174ce01153;
-const $5d3850c4d0b4e6c7$export$41fb9f06171c75f4 = $5d3850c4d0b4e6c7$export$2e1e1122cf0cba88;
-const $5d3850c4d0b4e6c7$export$602eac185826482c = $5d3850c4d0b4e6c7$export$dad7c95542bacce0;
-const $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff = $5d3850c4d0b4e6c7$export$bd1d06c79be19e17;
-const $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2 = $5d3850c4d0b4e6c7$export$b6d9565de1e068cf;
-const $5d3850c4d0b4e6c7$export$f99233281efd08a0 = $5d3850c4d0b4e6c7$export$16f7638e4a34b909;
-const $5d3850c4d0b4e6c7$export$393edc798c47379d = $5d3850c4d0b4e6c7$export$94e94c2ec2c954d5;
-const $5d3850c4d0b4e6c7$export$f39c2d165cd861fe = $5d3850c4d0b4e6c7$export$fba2fb7cd781b7ac;
-
-var DialogPortal = $5d3850c4d0b4e6c7$export$602eac185826482c;
+var DialogPortal = $5d3850c4d0b4e6c7$export$602eac185826482c$1;
 var DialogOverlay = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff, __assign$1({ ref: ref, className: cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1, __assign$2({ ref: ref, className: cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props)));
 });
-DialogOverlay.displayName = $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff.displayName;
+DialogOverlay.displayName = $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1.displayName;
 var DialogContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
+    var className = _a.className, children = _a.children, props = __rest$2(_a, ["className", "children"]);
     return (React__namespace.createElement(DialogPortal, null,
         React__namespace.createElement(DialogOverlay, null),
-        React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2, __assign$1({ ref: ref, className: cn("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg", className) }, props),
+        React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1, __assign$2({ ref: ref, className: cn("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg", className) }, props),
             children,
             React__namespace.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, { className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground" },
                 React__namespace.createElement(Cross2Icon, { className: "h-4 w-4" }),
                 React__namespace.createElement("span", { className: "sr-only" }, "Close")))));
 });
-DialogContent.displayName = $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2.displayName;
+DialogContent.displayName = $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1.displayName;
 var DialogTitle = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$f99233281efd08a0, __assign$1({ ref: ref, className: cn("text-lg font-semibold leading-none tracking-tight", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$f99233281efd08a0, __assign$2({ ref: ref, className: cn("text-lg font-semibold leading-none tracking-tight", className) }, props)));
 });
 DialogTitle.displayName = $5d3850c4d0b4e6c7$export$f99233281efd08a0.displayName;
 var DialogDescription = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$393edc798c47379d, __assign$1({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$393edc798c47379d, __assign$2({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
 });
 DialogDescription.displayName = $5d3850c4d0b4e6c7$export$393edc798c47379d.displayName;
 
 var Command = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__default["default"].createElement(Le, __assign$1({ ref: ref, className: cn("flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__default["default"].createElement(Le, __assign$2({ ref: ref, className: cn("flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground", className) }, props)));
 });
 Command.displayName = Le.displayName;
 var CommandInput = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
+    var className = _a.className, props = __rest$2(_a, ["className"]);
     return (React__default["default"].createElement("div", { className: "flex items-center border-b px-3", "cmdk-input-wrapper": "" },
         React__default["default"].createElement(MagnifyingGlassIcon, { className: "mr-2 h-4 w-4 shrink-0 opacity-50" }),
-        React__default["default"].createElement(Le.Input, __assign$1({ ref: ref, className: cn("flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50", className) }, props))));
+        React__default["default"].createElement(Le.Input, __assign$2({ ref: ref, className: cn("flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50", className) }, props))));
 });
 CommandInput.displayName = Le.Input.displayName;
 var CommandList = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__default["default"].createElement(Le.List, __assign$1({ ref: ref, className: cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__default["default"].createElement(Le.List, __assign$2({ ref: ref, className: cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className) }, props)));
 });
 CommandList.displayName = Le.List.displayName;
-var CommandEmpty = React__default["default"].forwardRef(function (props, ref) { return (React__default["default"].createElement(Le.Empty, __assign$1({ ref: ref, className: "py-6 text-center text-sm" }, props))); });
+var CommandEmpty = React__default["default"].forwardRef(function (props, ref) { return (React__default["default"].createElement(Le.Empty, __assign$2({ ref: ref, className: "py-6 text-center text-sm" }, props))); });
 CommandEmpty.displayName = Le.Empty.displayName;
 var CommandGroup = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__default["default"].createElement(Le.Group, __assign$1({ ref: ref, className: cn("overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__default["default"].createElement(Le.Group, __assign$2({ ref: ref, className: cn("overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground", className) }, props)));
 });
 CommandGroup.displayName = Le.Group.displayName;
 var CommandSeparator = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__default["default"].createElement(Le.Separator, __assign$1({ ref: ref, className: cn("-mx-1 h-px bg-border", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__default["default"].createElement(Le.Separator, __assign$2({ ref: ref, className: cn("-mx-1 h-px bg-border", className) }, props)));
 });
 CommandSeparator.displayName = Le.Separator.displayName;
 var CommandItem = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__default["default"].createElement(Le.Item, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__default["default"].createElement(Le.Item, __assign$2({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props)));
 });
 CommandItem.displayName = Le.Item.displayName;
-
-/* -------------------------------------------------------------------------------------------------
- * Popover
- * -----------------------------------------------------------------------------------------------*/ const $cb5cc270b50c6fcd$var$POPOVER_NAME = 'Popover';
-const [$cb5cc270b50c6fcd$var$createPopoverContext, $cb5cc270b50c6fcd$export$c8393c9e73286932] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($cb5cc270b50c6fcd$var$POPOVER_NAME, [
-    $cf1ac5d9fe0e8206$export$722aac194ae923
-]);
-const $cb5cc270b50c6fcd$var$usePopperScope = $cf1ac5d9fe0e8206$export$722aac194ae923();
-const [$cb5cc270b50c6fcd$var$PopoverProvider, $cb5cc270b50c6fcd$var$usePopoverContext] = $cb5cc270b50c6fcd$var$createPopoverContext($cb5cc270b50c6fcd$var$POPOVER_NAME);
-const $cb5cc270b50c6fcd$export$5b6b19405a83ff9d = (props)=>{
-    const { __scopePopover: __scopePopover , children: children , open: openProp , defaultOpen: defaultOpen , onOpenChange: onOpenChange , modal: modal = false  } = props;
-    const popperScope = $cb5cc270b50c6fcd$var$usePopperScope(__scopePopover);
-    const triggerRef = React.useRef(null);
-    const [hasCustomAnchor, setHasCustomAnchor] = React.useState(false);
-    const [open = false, setOpen] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
-        prop: openProp,
-        defaultProp: defaultOpen,
-        onChange: onOpenChange
-    });
-    return /*#__PURE__*/ React.createElement($cf1ac5d9fe0e8206$export$be92b6f5f03c0fe9, popperScope, /*#__PURE__*/ React.createElement($cb5cc270b50c6fcd$var$PopoverProvider, {
-        scope: __scopePopover,
-        contentId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
-        triggerRef: triggerRef,
-        open: open,
-        onOpenChange: setOpen,
-        onOpenToggle: React.useCallback(()=>setOpen((prevOpen)=>!prevOpen
-            )
-        , [
-            setOpen
-        ]),
-        hasCustomAnchor: hasCustomAnchor,
-        onCustomAnchorAdd: React.useCallback(()=>setHasCustomAnchor(true)
-        , []),
-        onCustomAnchorRemove: React.useCallback(()=>setHasCustomAnchor(false)
-        , []),
-        modal: modal
-    }, children));
-};
-/* -------------------------------------------------------------------------------------------------
- * PopoverTrigger
- * -----------------------------------------------------------------------------------------------*/ const $cb5cc270b50c6fcd$var$TRIGGER_NAME = 'PopoverTrigger';
-const $cb5cc270b50c6fcd$export$7dacb05d26466c3 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopePopover: __scopePopover , ...triggerProps } = props;
-    const context = $cb5cc270b50c6fcd$var$usePopoverContext($cb5cc270b50c6fcd$var$TRIGGER_NAME, __scopePopover);
-    const popperScope = $cb5cc270b50c6fcd$var$usePopperScope(__scopePopover);
-    const composedTriggerRef = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, context.triggerRef);
-    const trigger = /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends({
-        type: "button",
-        "aria-haspopup": "dialog",
-        "aria-expanded": context.open,
-        "aria-controls": context.contentId,
-        "data-state": $cb5cc270b50c6fcd$var$getState(context.open)
-    }, triggerProps, {
-        ref: composedTriggerRef,
-        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, context.onOpenToggle)
-    }));
-    return context.hasCustomAnchor ? trigger : /*#__PURE__*/ React.createElement($cf1ac5d9fe0e8206$export$b688253958b8dfe7, _extends({
-        asChild: true
-    }, popperScope), trigger);
-});
-/* -------------------------------------------------------------------------------------------------
- * PopoverPortal
- * -----------------------------------------------------------------------------------------------*/ const $cb5cc270b50c6fcd$var$PORTAL_NAME = 'PopoverPortal';
-const [$cb5cc270b50c6fcd$var$PortalProvider, $cb5cc270b50c6fcd$var$usePortalContext] = $cb5cc270b50c6fcd$var$createPopoverContext($cb5cc270b50c6fcd$var$PORTAL_NAME, {
-    forceMount: undefined
-});
-const $cb5cc270b50c6fcd$export$dd679ffb4362d2d4 = (props)=>{
-    const { __scopePopover: __scopePopover , forceMount: forceMount , children: children , container: container  } = props;
-    const context = $cb5cc270b50c6fcd$var$usePopoverContext($cb5cc270b50c6fcd$var$PORTAL_NAME, __scopePopover);
-    return /*#__PURE__*/ React.createElement($cb5cc270b50c6fcd$var$PortalProvider, {
-        scope: __scopePopover,
-        forceMount: forceMount
-    }, /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || context.open
-    }, /*#__PURE__*/ React.createElement($f1701beae083dbae$export$602eac185826482c$1, {
-        asChild: true,
-        container: container
-    }, children)));
-};
-/* -------------------------------------------------------------------------------------------------
- * PopoverContent
- * -----------------------------------------------------------------------------------------------*/ const $cb5cc270b50c6fcd$var$CONTENT_NAME = 'PopoverContent';
-const $cb5cc270b50c6fcd$export$d7e1f420b25549ff = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const portalContext = $cb5cc270b50c6fcd$var$usePortalContext($cb5cc270b50c6fcd$var$CONTENT_NAME, props.__scopePopover);
-    const { forceMount: forceMount = portalContext.forceMount , ...contentProps } = props;
-    const context = $cb5cc270b50c6fcd$var$usePopoverContext($cb5cc270b50c6fcd$var$CONTENT_NAME, props.__scopePopover);
-    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || context.open
-    }, context.modal ? /*#__PURE__*/ React.createElement($cb5cc270b50c6fcd$var$PopoverContentModal, _extends({}, contentProps, {
-        ref: forwardedRef
-    })) : /*#__PURE__*/ React.createElement($cb5cc270b50c6fcd$var$PopoverContentNonModal, _extends({}, contentProps, {
-        ref: forwardedRef
-    })));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $cb5cc270b50c6fcd$var$PopoverContentModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $cb5cc270b50c6fcd$var$usePopoverContext($cb5cc270b50c6fcd$var$CONTENT_NAME, props.__scopePopover);
-    const contentRef = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, contentRef);
-    const isRightClickOutsideRef = React.useRef(false); // aria-hide everything except the content (better supported equivalent to setting aria-modal)
-    React.useEffect(()=>{
-        const content = contentRef.current;
-        if (content) return hideOthers(content);
-    }, []);
-    return /*#__PURE__*/ React.createElement($am6gm$RemoveScroll, {
-        as: $5e63c961fc1ce211$export$8c6ed5c666ac1360$1,
-        allowPinchZoom: true
-    }, /*#__PURE__*/ React.createElement($cb5cc270b50c6fcd$var$PopoverContentImpl, _extends({}, props, {
-        ref: composedRefs // we make sure we're not trapping once it's been closed
-        ,
-        trapFocus: context.open,
-        disableOutsidePointerEvents: true,
-        onCloseAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onCloseAutoFocus, (event)=>{
-            var _context$triggerRef$c;
-            event.preventDefault();
-            if (!isRightClickOutsideRef.current) (_context$triggerRef$c = context.triggerRef.current) === null || _context$triggerRef$c === void 0 || _context$triggerRef$c.focus();
-        }),
-        onPointerDownOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDownOutside, (event)=>{
-            const originalEvent = event.detail.originalEvent;
-            const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
-            const isRightClick = originalEvent.button === 2 || ctrlLeftClick;
-            isRightClickOutsideRef.current = isRightClick;
-        }, {
-            checkForDefaultPrevented: false
-        }) // When focus is trapped, a `focusout` event may still happen.
-        ,
-        onFocusOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocusOutside, (event)=>event.preventDefault()
-        , {
-            checkForDefaultPrevented: false
-        })
-    })));
-});
-const $cb5cc270b50c6fcd$var$PopoverContentNonModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $cb5cc270b50c6fcd$var$usePopoverContext($cb5cc270b50c6fcd$var$CONTENT_NAME, props.__scopePopover);
-    const hasInteractedOutsideRef = React.useRef(false);
-    const hasPointerDownOutsideRef = React.useRef(false);
-    return /*#__PURE__*/ React.createElement($cb5cc270b50c6fcd$var$PopoverContentImpl, _extends({}, props, {
-        ref: forwardedRef,
-        trapFocus: false,
-        disableOutsidePointerEvents: false,
-        onCloseAutoFocus: (event)=>{
-            var _props$onCloseAutoFoc;
-            (_props$onCloseAutoFoc = props.onCloseAutoFocus) === null || _props$onCloseAutoFoc === void 0 || _props$onCloseAutoFoc.call(props, event);
-            if (!event.defaultPrevented) {
-                var _context$triggerRef$c2;
-                if (!hasInteractedOutsideRef.current) (_context$triggerRef$c2 = context.triggerRef.current) === null || _context$triggerRef$c2 === void 0 || _context$triggerRef$c2.focus(); // Always prevent auto focus because we either focus manually or want user agent focus
-                event.preventDefault();
-            }
-            hasInteractedOutsideRef.current = false;
-            hasPointerDownOutsideRef.current = false;
-        },
-        onInteractOutside: (event)=>{
-            var _props$onInteractOuts, _context$triggerRef$c3;
-            (_props$onInteractOuts = props.onInteractOutside) === null || _props$onInteractOuts === void 0 || _props$onInteractOuts.call(props, event);
-            if (!event.defaultPrevented) {
-                hasInteractedOutsideRef.current = true;
-                if (event.detail.originalEvent.type === 'pointerdown') hasPointerDownOutsideRef.current = true;
-            } // Prevent dismissing when clicking the trigger.
-            // As the trigger is already setup to close, without doing so would
-            // cause it to close and immediately open.
-            const target = event.target;
-            const targetIsTrigger = (_context$triggerRef$c3 = context.triggerRef.current) === null || _context$triggerRef$c3 === void 0 ? void 0 : _context$triggerRef$c3.contains(target);
-            if (targetIsTrigger) event.preventDefault(); // On Safari if the trigger is inside a container with tabIndex={0}, when clicked
-            // we will get the pointer down outside event on the trigger, but then a subsequent
-            // focus outside event on the container, we ignore any focus outside event when we've
-            // already had a pointer down outside event.
-            if (event.detail.originalEvent.type === 'focusin' && hasPointerDownOutsideRef.current) event.preventDefault();
-        }
-    }));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $cb5cc270b50c6fcd$var$PopoverContentImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopePopover: __scopePopover , trapFocus: trapFocus , onOpenAutoFocus: onOpenAutoFocus , onCloseAutoFocus: onCloseAutoFocus , disableOutsidePointerEvents: disableOutsidePointerEvents , onEscapeKeyDown: onEscapeKeyDown , onPointerDownOutside: onPointerDownOutside , onFocusOutside: onFocusOutside , onInteractOutside: onInteractOutside , ...contentProps } = props;
-    const context = $cb5cc270b50c6fcd$var$usePopoverContext($cb5cc270b50c6fcd$var$CONTENT_NAME, __scopePopover);
-    const popperScope = $cb5cc270b50c6fcd$var$usePopperScope(__scopePopover); // Make sure the whole tree has focus guards as our `Popover` may be
-    // the last element in the DOM (beacuse of the `Portal`)
-    $3db38b7d1fb3fe6a$export$b7ece24a22aeda8c$1();
-    return /*#__PURE__*/ React.createElement($d3863c46a17e8a28$export$20e40289641fbbb6$1, {
-        asChild: true,
-        loop: true,
-        trapped: trapFocus,
-        onMountAutoFocus: onOpenAutoFocus,
-        onUnmountAutoFocus: onCloseAutoFocus
-    }, /*#__PURE__*/ React.createElement($5cb92bef7577960e$export$177fb62ff3ec1f22$1, {
-        asChild: true,
-        disableOutsidePointerEvents: disableOutsidePointerEvents,
-        onInteractOutside: onInteractOutside,
-        onEscapeKeyDown: onEscapeKeyDown,
-        onPointerDownOutside: onPointerDownOutside,
-        onFocusOutside: onFocusOutside,
-        onDismiss: ()=>context.onOpenChange(false)
-    }, /*#__PURE__*/ React.createElement($cf1ac5d9fe0e8206$export$7c6e2c02157bb7d2, _extends({
-        "data-state": $cb5cc270b50c6fcd$var$getState(context.open),
-        role: "dialog",
-        id: context.contentId
-    }, popperScope, contentProps, {
-        ref: forwardedRef,
-        style: {
-            ...contentProps.style,
-            '--radix-popover-content-transform-origin': 'var(--radix-popper-transform-origin)',
-            '--radix-popover-content-available-width': 'var(--radix-popper-available-width)',
-            '--radix-popover-content-available-height': 'var(--radix-popper-available-height)',
-            '--radix-popover-trigger-width': 'var(--radix-popper-anchor-width)',
-            '--radix-popover-trigger-height': 'var(--radix-popper-anchor-height)'
-        }
-    }))));
-});
-/* -----------------------------------------------------------------------------------------------*/ function $cb5cc270b50c6fcd$var$getState(open) {
-    return open ? 'open' : 'closed';
-}
-const $cb5cc270b50c6fcd$export$be92b6f5f03c0fe9 = $cb5cc270b50c6fcd$export$5b6b19405a83ff9d;
-const $cb5cc270b50c6fcd$export$41fb9f06171c75f4 = $cb5cc270b50c6fcd$export$7dacb05d26466c3;
-const $cb5cc270b50c6fcd$export$602eac185826482c = $cb5cc270b50c6fcd$export$dd679ffb4362d2d4;
-const $cb5cc270b50c6fcd$export$7c6e2c02157bb7d2 = $cb5cc270b50c6fcd$export$d7e1f420b25549ff;
-
-var Popover = $cb5cc270b50c6fcd$export$be92b6f5f03c0fe9;
-var PopoverTrigger = $cb5cc270b50c6fcd$export$41fb9f06171c75f4;
-var PopoverContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, _b = _a.align, align = _b === void 0 ? "center" : _b, _c = _a.sideOffset, sideOffset = _c === void 0 ? 4 : _c, props = __rest$1(_a, ["className", "align", "sideOffset"]);
-    return (React__namespace.createElement($cb5cc270b50c6fcd$export$602eac185826482c, null,
-        React__namespace.createElement($cb5cc270b50c6fcd$export$7c6e2c02157bb7d2, __assign$1({ ref: ref, align: align, sideOffset: sideOffset, className: cn("z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props))));
-});
-PopoverContent.displayName = $cb5cc270b50c6fcd$export$7c6e2c02157bb7d2.displayName;
 
 const $89eedd556c436f6a$var$DEFAULT_ORIENTATION = 'horizontal';
 const $89eedd556c436f6a$var$ORIENTATIONS = [
@@ -19061,8 +28361,8 @@ function $89eedd556c436f6a$var$isValidOrientation(orientation) {
 const $89eedd556c436f6a$export$be92b6f5f03c0fe9 = $89eedd556c436f6a$export$1ff3c3f08ae963c0;
 
 var Separator = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, _b = _a.orientation, orientation = _b === void 0 ? "horizontal" : _b, _c = _a.decorative, decorative = _c === void 0 ? true : _c, props = __rest$1(_a, ["className", "orientation", "decorative"]);
-    return (React__namespace.createElement($89eedd556c436f6a$export$be92b6f5f03c0fe9, __assign$1({ ref: ref, decorative: decorative, orientation: orientation, className: cn("shrink-0 bg-border", orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]", className) }, props)));
+    var className = _a.className, _b = _a.orientation, orientation = _b === void 0 ? "horizontal" : _b, _c = _a.decorative, decorative = _c === void 0 ? true : _c, props = __rest$2(_a, ["className", "orientation", "decorative"]);
+    return (React__namespace.createElement($89eedd556c436f6a$export$be92b6f5f03c0fe9, __assign$2({ ref: ref, decorative: decorative, orientation: orientation, className: cn("shrink-0 bg-border", orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]", className) }, props)));
 });
 Separator.displayName = $89eedd556c436f6a$export$be92b6f5f03c0fe9.displayName;
 
@@ -19072,7 +28372,7 @@ function DataTableFacetedFilter(_a) {
     var selectedValues = new Set(column === null || column === void 0 ? void 0 : column.getFilterValue());
     return (React__namespace.createElement(Popover, null,
         React__namespace.createElement(PopoverTrigger, { asChild: true },
-            React__namespace.createElement(Button, { variant: "outline", size: "sm", className: "h-8 border-dashed" },
+            React__namespace.createElement(Button$1, { variant: "outline", size: "sm", className: "h-8 border-dashed" },
                 React__namespace.createElement(PlusCircledIcon, { className: "mr-2 h-4 w-4" }),
                 title,
                 (selectedValues === null || selectedValues === void 0 ? void 0 : selectedValues.size) > 0 && (React__namespace.createElement(React__namespace.Fragment, null,
@@ -19123,7 +28423,7 @@ function DataTableToolbar(_a) {
             React__default["default"].createElement(Input, { placeholder: "Filter rooms...", value: (_c = (_b = table.getColumn("title")) === null || _b === void 0 ? void 0 : _b.getFilterValue()) !== null && _c !== void 0 ? _c : "", onChange: function (event) { var _a; return (_a = table.getColumn("title")) === null || _a === void 0 ? void 0 : _a.setFilterValue(event.target.value); }, className: "h-8 w-[150px] lg:w-[250px]" }),
             table.getColumn("status") && (React__default["default"].createElement(DataTableFacetedFilter, { column: table.getColumn("status"), title: "Status", options: statuses })),
             table.getColumn("priority") && (React__default["default"].createElement(DataTableFacetedFilter, { column: table.getColumn("priority"), title: "Priority", options: priorities })),
-            isFiltered && (React__default["default"].createElement(Button, { variant: "ghost", onClick: function () { return table.resetColumnFilters(); }, className: "h-8 px-2 lg:px-3" },
+            isFiltered && (React__default["default"].createElement(Button$1, { variant: "ghost", onClick: function () { return table.resetColumnFilters(); }, className: "h-8 px-2 lg:px-3" },
                 "Reset",
                 React__default["default"].createElement(Cross2Icon, { className: "ml-2 h-4 w-4" })))),
         React__default["default"].createElement(DataTableViewOptions, { table: table })));
@@ -19160,7 +28460,7 @@ function DataTable(_a) {
     return (React__namespace.createElement("div", { className: "space-y-4" },
         React__namespace.createElement(DataTableToolbar, { table: table }),
         React__namespace.createElement("div", { className: "rounded-md border" },
-            React__namespace.createElement(Table$1, null,
+            React__namespace.createElement(Table, null,
                 React__namespace.createElement(TableHeader, null, table.getHeaderGroups().map(function (headerGroup) { return (React__namespace.createElement(TableRow, { key: headerGroup.id }, headerGroup.headers.map(function (header) {
                     return (React__namespace.createElement(TableHead, { key: header.id }, header.isPlaceholder
                         ? null
@@ -19169,1850 +28469,6 @@ function DataTable(_a) {
                 React__namespace.createElement(TableBody, null, ((_b = table.getRowModel().rows) === null || _b === void 0 ? void 0 : _b.length) ? (table.getRowModel().rows.map(function (row) { return (React__namespace.createElement(TableRow, { key: row.id, "data-state": row.getIsSelected() && "selected" }, row.getVisibleCells().map(function (cell) { return (React__namespace.createElement(TableCell, { key: cell.id }, flexRender(cell.column.columnDef.cell, cell.getContext()))); }))); })) : (React__namespace.createElement(TableRow, null,
                     React__namespace.createElement(TableCell, { colSpan: columns.length, className: "h-24 text-center" }, "No results.")))))),
         React__namespace.createElement(DataTablePagination, { table: table })));
-}
-
-/* -------------------------------------------------------------------------------------------------
- * Checkbox
- * -----------------------------------------------------------------------------------------------*/ const $e698a72e93240346$var$CHECKBOX_NAME = 'Checkbox';
-const [$e698a72e93240346$var$createCheckboxContext, $e698a72e93240346$export$b566c4ff5488ea01] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($e698a72e93240346$var$CHECKBOX_NAME);
-const [$e698a72e93240346$var$CheckboxProvider, $e698a72e93240346$var$useCheckboxContext] = $e698a72e93240346$var$createCheckboxContext($e698a72e93240346$var$CHECKBOX_NAME);
-const $e698a72e93240346$export$48513f6b9f8ce62d = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeCheckbox: __scopeCheckbox , name: name , checked: checkedProp , defaultChecked: defaultChecked , required: required , disabled: disabled , value: value = 'on' , onCheckedChange: onCheckedChange , ...checkboxProps } = props;
-    const [button, setButton] = React.useState(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, (node)=>setButton(node)
-    );
-    const hasConsumerStoppedPropagationRef = React.useRef(false); // We set this to true by default so that events bubble to forms without JS (SSR)
-    const isFormControl = button ? Boolean(button.closest('form')) : true;
-    const [checked = false, setChecked] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
-        prop: checkedProp,
-        defaultProp: defaultChecked,
-        onChange: onCheckedChange
-    });
-    const initialCheckedStateRef = React.useRef(checked);
-    React.useEffect(()=>{
-        const form = button === null || button === void 0 ? void 0 : button.form;
-        if (form) {
-            const reset = ()=>setChecked(initialCheckedStateRef.current)
-            ;
-            form.addEventListener('reset', reset);
-            return ()=>form.removeEventListener('reset', reset)
-            ;
-        }
-    }, [
-        button,
-        setChecked
-    ]);
-    return /*#__PURE__*/ React.createElement($e698a72e93240346$var$CheckboxProvider, {
-        scope: __scopeCheckbox,
-        state: checked,
-        disabled: disabled
-    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends({
-        type: "button",
-        role: "checkbox",
-        "aria-checked": $e698a72e93240346$var$isIndeterminate(checked) ? 'mixed' : checked,
-        "aria-required": required,
-        "data-state": $e698a72e93240346$var$getState(checked),
-        "data-disabled": disabled ? '' : undefined,
-        disabled: disabled,
-        value: value
-    }, checkboxProps, {
-        ref: composedRefs,
-        onKeyDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onKeyDown, (event)=>{
-            // According to WAI ARIA, Checkboxes don't activate on enter keypress
-            if (event.key === 'Enter') event.preventDefault();
-        }),
-        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, (event)=>{
-            setChecked((prevChecked)=>$e698a72e93240346$var$isIndeterminate(prevChecked) ? true : !prevChecked
-            );
-            if (isFormControl) {
-                hasConsumerStoppedPropagationRef.current = event.isPropagationStopped(); // if checkbox is in a form, stop propagation from the button so that we only propagate
-                // one click event (from the input). We propagate changes from an input so that native
-                // form validation works and form events reflect checkbox updates.
-                if (!hasConsumerStoppedPropagationRef.current) event.stopPropagation();
-            }
-        })
-    })), isFormControl && /*#__PURE__*/ React.createElement($e698a72e93240346$var$BubbleInput, {
-        control: button,
-        bubbles: !hasConsumerStoppedPropagationRef.current,
-        name: name,
-        value: value,
-        checked: checked,
-        required: required,
-        disabled: disabled // We transform because the input is absolutely positioned but we have
-        ,
-        style: {
-            transform: 'translateX(-100%)'
-        }
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * CheckboxIndicator
- * -----------------------------------------------------------------------------------------------*/ const $e698a72e93240346$var$INDICATOR_NAME = 'CheckboxIndicator';
-const $e698a72e93240346$export$59aad738f51d1c05 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeCheckbox: __scopeCheckbox , forceMount: forceMount , ...indicatorProps } = props;
-    const context = $e698a72e93240346$var$useCheckboxContext($e698a72e93240346$var$INDICATOR_NAME, __scopeCheckbox);
-    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || $e698a72e93240346$var$isIndeterminate(context.state) || context.state === true
-    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.span, _extends({
-        "data-state": $e698a72e93240346$var$getState(context.state),
-        "data-disabled": context.disabled ? '' : undefined
-    }, indicatorProps, {
-        ref: forwardedRef,
-        style: {
-            pointerEvents: 'none',
-            ...props.style
-        }
-    })));
-});
-/* ---------------------------------------------------------------------------------------------- */ const $e698a72e93240346$var$BubbleInput = (props)=>{
-    const { control: control , checked: checked , bubbles: bubbles = true , ...inputProps } = props;
-    const ref = React.useRef(null);
-    const prevChecked = $010c2913dbd2fe3d$export$5cae361ad82dce8b(checked);
-    const controlSize = $db6c3485150b8e66$export$1ab7ae714698c4b8(control); // Bubble checked change to parents (e.g form change event)
-    React.useEffect(()=>{
-        const input = ref.current;
-        const inputProto = window.HTMLInputElement.prototype;
-        const descriptor = Object.getOwnPropertyDescriptor(inputProto, 'checked');
-        const setChecked = descriptor.set;
-        if (prevChecked !== checked && setChecked) {
-            const event = new Event('click', {
-                bubbles: bubbles
-            });
-            input.indeterminate = $e698a72e93240346$var$isIndeterminate(checked);
-            setChecked.call(input, $e698a72e93240346$var$isIndeterminate(checked) ? false : checked);
-            input.dispatchEvent(event);
-        }
-    }, [
-        prevChecked,
-        checked,
-        bubbles
-    ]);
-    return /*#__PURE__*/ React.createElement("input", _extends({
-        type: "checkbox",
-        "aria-hidden": true,
-        defaultChecked: $e698a72e93240346$var$isIndeterminate(checked) ? false : checked
-    }, inputProps, {
-        tabIndex: -1,
-        ref: ref,
-        style: {
-            ...props.style,
-            ...controlSize,
-            position: 'absolute',
-            pointerEvents: 'none',
-            opacity: 0,
-            margin: 0
-        }
-    }));
-};
-function $e698a72e93240346$var$isIndeterminate(checked) {
-    return checked === 'indeterminate';
-}
-function $e698a72e93240346$var$getState(checked) {
-    return $e698a72e93240346$var$isIndeterminate(checked) ? 'indeterminate' : checked ? 'checked' : 'unchecked';
-}
-const $e698a72e93240346$export$be92b6f5f03c0fe9 = $e698a72e93240346$export$48513f6b9f8ce62d;
-const $e698a72e93240346$export$adb584737d712b70 = $e698a72e93240346$export$59aad738f51d1c05;
-
-var Checkbox = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($e698a72e93240346$export$be92b6f5f03c0fe9, __assign$1({ ref: ref, className: cn("peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground", className) }, props),
-        React__namespace.createElement($e698a72e93240346$export$adb584737d712b70, { className: cn("flex items-center justify-center text-current") },
-            React__namespace.createElement(CheckIcon, { className: "h-4 w-4" }))));
-});
-Checkbox.displayName = $e698a72e93240346$export$be92b6f5f03c0fe9.displayName;
-
-function DataTableColumnHeader(_a) {
-    var column = _a.column, title = _a.title, className = _a.className;
-    if (!column.getCanSort()) {
-        return React__default["default"].createElement("div", { className: cn(className) }, title);
-    }
-    return (React__default["default"].createElement("div", { className: cn("flex items-center space-x-2", className) },
-        React__default["default"].createElement(DropdownMenu, null,
-            React__default["default"].createElement(DropdownMenuTrigger, { asChild: true },
-                React__default["default"].createElement(Button, { variant: "ghost", size: "sm", className: "-ml-3 h-8 data-[state=open]:bg-accent" },
-                    React__default["default"].createElement("span", null, title),
-                    column.getIsSorted() === "desc" ? (React__default["default"].createElement(ArrowDownIcon, { className: "ml-2 h-4 w-4" })) : column.getIsSorted() === "asc" ? (React__default["default"].createElement(ArrowUpIcon, { className: "ml-2 h-4 w-4" })) : (React__default["default"].createElement(CaretSortIcon, { className: "ml-2 h-4 w-4" })))),
-            React__default["default"].createElement(DropdownMenuContent, { align: "start" },
-                React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return column.toggleSorting(false); } },
-                    React__default["default"].createElement(ArrowUpIcon, { className: "mr-2 h-3.5 w-3.5 text-muted-foreground/70" }),
-                    "Asc"),
-                React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return column.toggleSorting(true); } },
-                    React__default["default"].createElement(ArrowDownIcon, { className: "mr-2 h-3.5 w-3.5 text-muted-foreground/70" }),
-                    "Desc"),
-                React__default["default"].createElement(DropdownMenuSeparator, null),
-                React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return column.toggleVisibility(false); } },
-                    React__default["default"].createElement(EyeNoneIcon, { className: "mr-2 h-3.5 w-3.5 text-muted-foreground/70" }),
-                    "Hide")))));
-}
-
-function DataTableRowActions$1(_a) {
-    var row = _a.row;
-    var task = row.original;
-    return (React__default["default"].createElement(DropdownMenu, null,
-        React__default["default"].createElement(DropdownMenuTrigger, { asChild: true },
-            React__default["default"].createElement(Button, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
-                React__default["default"].createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
-                React__default["default"].createElement("span", { className: "sr-only" }, "Open menu"))),
-        React__default["default"].createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
-            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
-            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
-            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
-}
-var columns$1 = [
-    {
-        id: "select",
-        header: function (_a) {
-            var table = _a.table;
-            return (React__default["default"].createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default["default"].createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
-        },
-        enableSorting: false,
-        enableHiding: false,
-    },
-    {
-        accessorKey: "roomName",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Name" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("roomName"));
-        },
-        enableSorting: false,
-        enableHiding: false,
-    },
-    {
-        accessorKey: "roomType",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Type" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
-                React__default["default"].createElement("span", null, row.getValue("roomType"))));
-        },
-    },
-    {
-        accessorKey: "maxPerson",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Max Person (Per Room)" }));
-        },
-        cell: function (_a) {
-            // if (!status) {
-            //     return null
-            // }
-            var row = _a.row;
-            return (React__default["default"].createElement("div", { className: "flex  text-center" }, row.getValue("maxPerson")));
-        },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
-    },
-    {
-        accessorKey: "regularPrice",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Pice (Regular)" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
-                React__default["default"].createElement("span", null,
-                    "$ ",
-                    row.getValue("regularPrice"))));
-        },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
-    },
-    {
-        accessorKey: "singlePrice",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Price (Single use)" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
-                React__default["default"].createElement("span", null,
-                    "$ ",
-                    row.getValue("singlePrice"))));
-        },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
-    },
-    {
-        id: "actions",
-        cell: function (_a) {
-            var row = _a.row;
-            return React__default["default"].createElement(DataTableRowActions$1, { row: row });
-        },
-    },
-];
-
-function RoomTable(_a) {
-    var data = _a.data;
-    return (React__default["default"].createElement("div", null,
-        React__default["default"].createElement(DataTable, { data: data, columns: columns$1 })));
-}
-
-function DataTableRowActions(_a) {
-    var row = _a.row;
-    var task = row.original;
-    return (React__default["default"].createElement(DropdownMenu, null,
-        React__default["default"].createElement(DropdownMenuTrigger, { asChild: true },
-            React__default["default"].createElement(Button, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
-                React__default["default"].createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
-                React__default["default"].createElement("span", { className: "sr-only" }, "Open menu"))),
-        React__default["default"].createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
-            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
-            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
-            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
-}
-var columns = [
-    {
-        id: "select",
-        header: function (_a) {
-            var table = _a.table;
-            return (React__default["default"].createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default["default"].createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
-        },
-        enableSorting: false,
-        enableHiding: false,
-    },
-    {
-        accessorKey: "roomName",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Type Name" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("roomName"));
-        },
-        enableSorting: false,
-        enableHiding: false,
-    },
-    {
-        accessorKey: "maxPerson",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Max Person (Per Room)" }));
-        },
-        cell: function (_a) {
-            // if (!status) {
-            //     return null
-            // }
-            var row = _a.row;
-            return (React__default["default"].createElement("div", { className: "flex  text-center" }, row.getValue("maxPerson")));
-        },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
-    },
-    {
-        accessorKey: "regularPrice",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Pice (Regular)" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
-                React__default["default"].createElement("span", null,
-                    "$ ",
-                    row.getValue("regularPrice"))));
-        },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
-    },
-    {
-        accessorKey: "singlePrice",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Price (Single use)" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
-                React__default["default"].createElement("span", null,
-                    "$ ",
-                    row.getValue("singlePrice"))));
-        },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
-    },
-    {
-        id: "actions",
-        cell: function (_a) {
-            var row = _a.row;
-            return React__default["default"].createElement(DataTableRowActions, { row: row });
-        },
-    },
-];
-
-var Table = {
-    rooms: RoomTable,
-    roomtype: columns
-};
-
-var Textarea = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement("textarea", __assign$1({ className: cn("flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50", className), ref: ref }, props)));
-});
-Textarea.displayName = "Textarea";
-
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-/** Detect free variable `global` from Node.js. */
-
-var freeGlobal = typeof commonjsGlobal == 'object' && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
-
-var _freeGlobal = freeGlobal;
-
-/** Detect free variable `self`. */
-var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
-
-/** Used as a reference to the global object. */
-var root = _freeGlobal || freeSelf || Function('return this')();
-
-var _root = root;
-
-/** Built-in value references. */
-var Symbol$1 = _root.Symbol;
-
-var _Symbol = Symbol$1;
-
-/**
- * A specialized version of `_.map` for arrays without support for iteratee
- * shorthands.
- *
- * @private
- * @param {Array} [array] The array to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Array} Returns the new mapped array.
- */
-function arrayMap(array, iteratee) {
-  var index = -1,
-      length = array == null ? 0 : array.length,
-      result = Array(length);
-
-  while (++index < length) {
-    result[index] = iteratee(array[index], index, array);
-  }
-  return result;
-}
-
-var _arrayMap = arrayMap;
-
-/**
- * Checks if `value` is classified as an `Array` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an array, else `false`.
- * @example
- *
- * _.isArray([1, 2, 3]);
- * // => true
- *
- * _.isArray(document.body.children);
- * // => false
- *
- * _.isArray('abc');
- * // => false
- *
- * _.isArray(_.noop);
- * // => false
- */
-var isArray = Array.isArray;
-
-var isArray_1 = isArray;
-
-/** Used for built-in method references. */
-var objectProto$1 = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto$1.hasOwnProperty;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var nativeObjectToString$1 = objectProto$1.toString;
-
-/** Built-in value references. */
-var symToStringTag$1 = _Symbol ? _Symbol.toStringTag : undefined;
-
-/**
- * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
- *
- * @private
- * @param {*} value The value to query.
- * @returns {string} Returns the raw `toStringTag`.
- */
-function getRawTag(value) {
-  var isOwn = hasOwnProperty.call(value, symToStringTag$1),
-      tag = value[symToStringTag$1];
-
-  try {
-    value[symToStringTag$1] = undefined;
-    var unmasked = true;
-  } catch (e) {}
-
-  var result = nativeObjectToString$1.call(value);
-  if (unmasked) {
-    if (isOwn) {
-      value[symToStringTag$1] = tag;
-    } else {
-      delete value[symToStringTag$1];
-    }
-  }
-  return result;
-}
-
-var _getRawTag = getRawTag;
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var nativeObjectToString = objectProto.toString;
-
-/**
- * Converts `value` to a string using `Object.prototype.toString`.
- *
- * @private
- * @param {*} value The value to convert.
- * @returns {string} Returns the converted string.
- */
-function objectToString(value) {
-  return nativeObjectToString.call(value);
-}
-
-var _objectToString = objectToString;
-
-/** `Object#toString` result references. */
-var nullTag = '[object Null]',
-    undefinedTag = '[object Undefined]';
-
-/** Built-in value references. */
-var symToStringTag = _Symbol ? _Symbol.toStringTag : undefined;
-
-/**
- * The base implementation of `getTag` without fallbacks for buggy environments.
- *
- * @private
- * @param {*} value The value to query.
- * @returns {string} Returns the `toStringTag`.
- */
-function baseGetTag(value) {
-  if (value == null) {
-    return value === undefined ? undefinedTag : nullTag;
-  }
-  return (symToStringTag && symToStringTag in Object(value))
-    ? _getRawTag(value)
-    : _objectToString(value);
-}
-
-var _baseGetTag = baseGetTag;
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return value != null && typeof value == 'object';
-}
-
-var isObjectLike_1 = isObjectLike;
-
-/** `Object#toString` result references. */
-var symbolTag = '[object Symbol]';
-
-/**
- * Checks if `value` is classified as a `Symbol` primitive or object.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
- * @example
- *
- * _.isSymbol(Symbol.iterator);
- * // => true
- *
- * _.isSymbol('abc');
- * // => false
- */
-function isSymbol(value) {
-  return typeof value == 'symbol' ||
-    (isObjectLike_1(value) && _baseGetTag(value) == symbolTag);
-}
-
-var isSymbol_1 = isSymbol;
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0;
-
-/** Used to convert symbols to primitives and strings. */
-var symbolProto = _Symbol ? _Symbol.prototype : undefined,
-    symbolToString = symbolProto ? symbolProto.toString : undefined;
-
-/**
- * The base implementation of `_.toString` which doesn't convert nullish
- * values to empty strings.
- *
- * @private
- * @param {*} value The value to process.
- * @returns {string} Returns the string.
- */
-function baseToString(value) {
-  // Exit early for strings to avoid a performance hit in some environments.
-  if (typeof value == 'string') {
-    return value;
-  }
-  if (isArray_1(value)) {
-    // Recursively convert values (susceptible to call stack limits).
-    return _arrayMap(value, baseToString) + '';
-  }
-  if (isSymbol_1(value)) {
-    return symbolToString ? symbolToString.call(value) : '';
-  }
-  var result = (value + '');
-  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
-}
-
-var _baseToString = baseToString;
-
-/**
- * Converts `value` to a string. An empty string is returned for `null`
- * and `undefined` values. The sign of `-0` is preserved.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {string} Returns the converted string.
- * @example
- *
- * _.toString(null);
- * // => ''
- *
- * _.toString(-0);
- * // => '-0'
- *
- * _.toString([1, 2, 3]);
- * // => '1,2,3'
- */
-function toString(value) {
-  return value == null ? '' : _baseToString(value);
-}
-
-var toString_1 = toString;
-
-/** Used to generate unique IDs. */
-var idCounter = 0;
-
-/**
- * Generates a unique ID. If `prefix` is given, the ID is appended to it.
- *
- * @static
- * @since 0.1.0
- * @memberOf _
- * @category Util
- * @param {string} [prefix=''] The value to prefix the ID with.
- * @returns {string} Returns the unique ID.
- * @example
- *
- * _.uniqueId('contact_');
- * // => 'contact_104'
- *
- * _.uniqueId();
- * // => '105'
- */
-function uniqueId(prefix) {
-  var id = ++idCounter;
-  return toString_1(prefix) + id;
-}
-
-var uniqueId_1 = uniqueId;
-
-var Form$1 = FormProvider;
-var FormFieldContext = React__default["default"].createContext({});
-var FormField = function (_a) {
-    var props = __rest$1(_a, []);
-    return (React__default["default"].createElement(FormFieldContext.Provider, { value: { name: props.name } },
-        React__default["default"].createElement(Controller, __assign$1({}, props))));
-};
-var useFormField = function () {
-    var fieldContext = React__default["default"].useContext(FormFieldContext);
-    var itemContext = React__default["default"].useContext(FormItemContext);
-    var _a = useFormContext(), getFieldState = _a.getFieldState, formState = _a.formState;
-    var fieldState = getFieldState(fieldContext.name, formState);
-    if (!fieldContext) {
-        throw new Error("useFormField should be used within <FormField>");
-    }
-    var id = itemContext.id;
-    return __assign$1({ id: id, name: fieldContext.name, formItemId: "".concat(id, "-form-item"), formDescriptionId: "".concat(id, "-form-item-description"), formMessageId: "".concat(id, "-form-item-message") }, fieldState);
-};
-var FormItemContext = React__default["default"].createContext({});
-var FormItem = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    var u_id = React__default["default"].useState(uniqueId_1('prefix-'))[0];
-    var id = u_id;
-    return (React__default["default"].createElement(FormItemContext.Provider, { value: { id: id } },
-        React__default["default"].createElement("div", __assign$1({ ref: ref, className: cn("space-y-2", className) }, props))));
-});
-FormItem.displayName = "FormItem";
-var FormLabel = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    var _b = useFormField(), error = _b.error, formItemId = _b.formItemId;
-    return (React__default["default"].createElement(Label, __assign$1({ ref: ref, className: cn(error && "text-destructive", className), htmlFor: formItemId }, props)));
-});
-FormLabel.displayName = "FormLabel";
-var FormControl = React__default["default"].forwardRef(function (_a, ref) {
-    var props = __rest$1(_a, []);
-    var _b = useFormField(), error = _b.error, formItemId = _b.formItemId, formDescriptionId = _b.formDescriptionId, formMessageId = _b.formMessageId;
-    return (React__default["default"].createElement($5e63c961fc1ce211$export$8c6ed5c666ac1360$1, __assign$1({ ref: ref, id: formItemId, "aria-describedby": !error
-            ? "".concat(formDescriptionId)
-            : "".concat(formDescriptionId, " ").concat(formMessageId), "aria-invalid": !!error }, props)));
-});
-FormControl.displayName = "FormControl";
-var FormDescription = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    var formDescriptionId = useFormField().formDescriptionId;
-    return (React__default["default"].createElement("p", __assign$1({ ref: ref, id: formDescriptionId, className: cn("text-[0.8rem] text-muted-foreground", className) }, props)));
-});
-FormDescription.displayName = "FormDescription";
-var FormMessage = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
-    var _b = useFormField(), error = _b.error, formMessageId = _b.formMessageId;
-    var body = error ? String(error === null || error === void 0 ? void 0 : error.message) : children;
-    if (!body) {
-        return null;
-    }
-    return (React__default["default"].createElement("p", __assign$1({ ref: ref, id: formMessageId, className: cn("text-[0.8rem] font-medium text-destructive", className) }, props), body));
-});
-FormMessage.displayName = "FormMessage";
-
-function AddPersonForm(_a) {
-    var onSubmit = _a.onSubmit, values = _a.values, type = _a.type;
-    var form = useForm({
-        defaultValues: type === 'create' ? {} : values,
-    });
-    return (React__default["default"].createElement(React__default["default"].Fragment, null,
-        React__default["default"].createElement(Form$1, __assign$1({}, form),
-            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 p-1", id: "addPerson" },
-                React__default["default"].createElement(FormField, { control: form.control, name: "fullName", rules: { required: true }, render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "full name"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$1({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the complete name of the person. This should serve as a distinctive label for convenient and precise identification."),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "companyId", rules: { required: true }, render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "company iD"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$1({}, field))),
-                            React__default["default"].createElement(FormDescription, null,
-                                ' ',
-                                "Enter the unique identification number or code assigned to the company. This serves as a distinct identifier for the company for easy reference and identification."),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "bank", rules: { required: true }, render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "bank"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$1({}, field))),
-                            React__default["default"].createElement(FormDescription, null,
-                                ' ',
-                                "Enter the official name or designation of the bank associated with this account. Provide the full and accurate name for clear identification."),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "accNO", rules: { required: true }, render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "account no"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$1({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the unique account number or identifier associated with this account. It serves as a distinct label for easy identification and reference in the system."),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "email", rules: { required: true }, render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "email"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$1({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the email address associated with your account. Make sure it is a valid and accessible email for communication and account-related notifications."),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "phoneNo", rules: { required: true }, render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "phone no"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$1({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the contact number associated with the person. It should be a valid phone number for communication purposes and should uniquely identify this person in case of any queries or contacts."),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "address", rules: { required: true }, render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "address"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$1({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the physical location details, including street address, city, and postal code, for precise identification of this particular location. Provide a clear and comprehensive address to facilitate accurate location referencing."),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "contactPerson", rules: { required: true }, render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "contact person"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$1({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the name of the primary contact person associated with this person. Provide the full name for clear identification and communication purposes."),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement("div", null,
-                    React__default["default"].createElement(Label, null, "Notes"),
-                    React__default["default"].createElement(Textarea, { placeholder: "Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." }))))));
-}
-
-function AddRooms(onsubmit, defaultValue, type) {
-    var form = useForm({
-        defaultValues: type === "create" ? {} : defaultValue
-    });
-    return (React__default["default"].createElement("div", null,
-        React__default["default"].createElement(Form$1, __assign$1({}, form),
-            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8" },
-                React__default["default"].createElement(FormField, { control: form.control, name: "email", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, null, "Room Types"),
-                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
-                                React__default["default"].createElement(FormControl, null,
-                                    React__default["default"].createElement(SelectTrigger, null,
-                                        React__default["default"].createElement(SelectValue, null))),
-                                React__default["default"].createElement(SelectContent, null,
-                                    React__default["default"].createElement(SelectItem, { value: "m@example.com" }, "Single"),
-                                    React__default["default"].createElement(SelectItem, { value: "m@google.com" }, "Double"),
-                                    React__default["default"].createElement(SelectItem, { value: "m@support.com" }, "other"))),
-                            React__default["default"].createElement(FormDescription, null, "Select the type of room from the options below. Choose the most appropriate category that describes the nature or purpose of the room."),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "username", render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, null, "No of Rooms"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$1({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the total number of rooms available in your property or facility. This should include all types of rooms, such as bedrooms, meeting rooms, and offices."),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement("div", { className: "grid sm:flex w-full max-w-sm items-center gap-1.5" },
-                    React__default["default"].createElement(Label, { htmlFor: "picture" }, "Upload Image"),
-                    React__default["default"].createElement(Input, { id: "picture", type: "file" }),
-                    " \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0",
-                    React__default["default"].createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
-                    React__default["default"].createElement("img", { className: 'w-33 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
-                    React__default["default"].createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }))))));
-}
-
-function AddServicesForm(_a) {
-    var onSubmit = _a.onSubmit, selectValues = _a.selectValues;
-    var form = useForm();
-    return (React__default["default"].createElement(React__default["default"].Fragment, null,
-        React__default["default"].createElement(Form$1, __assign$1({}, form),
-            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 mt-8" },
-                React__default["default"].createElement(FormField, { control: form.control, name: "serviceName", rules: { required: true }, render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "service name"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$1({}, field))),
-                            React__default["default"].createElement(FormDescription, null),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "price", rules: { required: true }, render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "price($)"),
-                            React__default["default"].createElement(FormControl, null,
-                                React__default["default"].createElement(Input, __assign$1({}, field))),
-                            React__default["default"].createElement(FormDescription, null),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "serviceCategory", rules: { required: true }, render: function (_a) {
-                        var field = _a.field;
-                        return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, null, "Service Category"),
-                            React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
-                                React__default["default"].createElement(FormControl, null,
-                                    React__default["default"].createElement(SelectTrigger, null,
-                                        React__default["default"].createElement(SelectValue, { placeholder: "Select preferred service category" }))),
-                                React__default["default"].createElement(SelectContent, null, selectValues.map(function (item, pos) {
-                                    return (React__default["default"].createElement(SelectItem, { key: pos, value: item.value }, item.label));
-                                }))),
-                            React__default["default"].createElement(FormMessage, null)));
-                    } }),
-                React__default["default"].createElement(Button, { className: "capitalize" }, "add service")))));
-}
-
-function AddRoomType(_a) {
-    var onsubmit = _a.onsubmit;
-    var form = useForm({});
-    return (
-    // <div className="hidden h-full flex-1 flex-col space-y-3 p-8 md:flex">
-    //   <div className="flex items-center justify-between space-y-2">
-    //     <div>
-    //       <h2 className="text-2xl font-bold tracking-tight">Add New Type Room Information </h2>
-    //       <p className="text-muted-foreground">
-    //         This form is used to input essential details about the rooms available within your hotel or property. Accurate and complete information is crucial for efficient room management and an improved guest experience. Please fill out the following fields with the relevant information for each room.
-    //       </p>
-    //     </div>
-    //   </div>
-    //   <div>
-    React__default["default"].createElement(Form$1, __assign$1({}, form),
-        React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8" },
-            React__default["default"].createElement(FormField, { control: form.control, name: "room_type_name", rules: { required: true }, render: function (_a) {
-                    var field = _a.field;
-                    return (React__default["default"].createElement(FormItem, null,
-                        React__default["default"].createElement(FormLabel, null, "Name"),
-                        React__default["default"].createElement(FormControl, null,
-                            React__default["default"].createElement(Input, __assign$1({}, field))),
-                        React__default["default"].createElement(FormDescription, null, "Please enter a unique name for the room. It may contain letters, numbers, and spaces. Avoid special characters or symbols.                                            "),
-                        React__default["default"].createElement(FormMessage, null)));
-                } }),
-            React__default["default"].createElement(FormField, { control: form.control, name: "max_person", rules: { required: true }, render: function (_a) {
-                    var field = _a.field;
-                    return (React__default["default"].createElement(FormItem, null,
-                        React__default["default"].createElement(FormLabel, null, "Max. Persons(per rooms)"),
-                        React__default["default"].createElement(FormControl, null,
-                            React__default["default"].createElement(Input, __assign$1({ type: 'number' }, field))),
-                        React__default["default"].createElement(FormDescription, null, "Specify the maximum number of individuals allowed in this room. Please consider factors such as room size, safety regulations, and comfort.                                            "),
-                        React__default["default"].createElement(FormMessage, null)));
-                } }),
-            React__default["default"].createElement(FormField, { control: form.control, name: "regular_price", rules: { required: true }, render: function (_a) {
-                    var field = _a.field;
-                    return (React__default["default"].createElement(FormItem, null,
-                        React__default["default"].createElement(FormLabel, null, "Price(Regular use)"),
-                        React__default["default"].createElement(FormControl, null,
-                            React__default["default"].createElement(Input, __assign$1({ type: 'number' }, field))),
-                        React__default["default"].createElement(FormDescription, null, "Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations."),
-                        React__default["default"].createElement(FormMessage, null)));
-                } }),
-            React__default["default"].createElement(FormField, { control: form.control, name: "sing_price", rules: { required: true }, render: function (_a) {
-                    var field = _a.field;
-                    return (React__default["default"].createElement(FormItem, null,
-                        React__default["default"].createElement(FormLabel, null, "Price(Single use)"),
-                        React__default["default"].createElement(FormControl, null,
-                            React__default["default"].createElement(Input, __assign$1({ type: 'number' }, field))),
-                        React__default["default"].createElement(FormDescription, null, "Specify the standard price for a single use of this room for regular purposes."),
-                        React__default["default"].createElement(FormMessage, null)));
-                } })))
-    //   </div>
-    // </div>
-    );
-}
-
-var Form = {
-    addPerson: AddPersonForm,
-    addRooms: AddRooms,
-    addServices: AddServicesForm,
-    addRoomType: AddRoomType
-};
-
-var Sheet = $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9;
-var SheetTrigger = $5d3850c4d0b4e6c7$export$41fb9f06171c75f4;
-var SheetClose = $5d3850c4d0b4e6c7$export$f39c2d165cd861fe;
-var SheetPortal = $5d3850c4d0b4e6c7$export$602eac185826482c;
-var SheetOverlay = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff, __assign$1({ className: cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props, { ref: ref })));
-});
-SheetOverlay.displayName = $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff.displayName;
-var sheetVariants = cva("fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500", {
-    variants: {
-        side: {
-            top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
-            bottom: "inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
-            left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
-            right: "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
-        },
-    },
-    defaultVariants: {
-        side: "right",
-    },
-});
-var SheetContent = React__namespace.forwardRef(function (_a, ref) {
-    var _b = _a.side, side = _b === void 0 ? "right" : _b, className = _a.className, children = _a.children, props = __rest$1(_a, ["side", "className", "children"]);
-    return (React__namespace.createElement(SheetPortal, null,
-        React__namespace.createElement(SheetOverlay, null),
-        React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2, __assign$1({ ref: ref, className: cn(sheetVariants({ side: side }), className) }, props),
-            children,
-            React__namespace.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, { className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary" },
-                React__namespace.createElement(Cross2Icon, { className: "h-4 w-4" }),
-                React__namespace.createElement("span", { className: "sr-only" }, "Close")))));
-});
-SheetContent.displayName = $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2.displayName;
-var SheetHeader = function (_a) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement("div", __assign$1({ className: cn("flex flex-col space-y-2 text-center sm:text-left", className) }, props)));
-};
-SheetHeader.displayName = "SheetHeader";
-var SheetFooter = function (_a) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement("div", __assign$1({ className: cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className) }, props)));
-};
-SheetFooter.displayName = "SheetFooter";
-var SheetTitle = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$f99233281efd08a0, __assign$1({ ref: ref, className: cn("text-lg font-semibold text-foreground", className) }, props)));
-});
-SheetTitle.displayName = $5d3850c4d0b4e6c7$export$f99233281efd08a0.displayName;
-var SheetDescription = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$393edc798c47379d, __assign$1({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
-});
-SheetDescription.displayName = $5d3850c4d0b4e6c7$export$393edc798c47379d.displayName;
-
-function $6c2e24571c90391f$export$3e6543de14f8614f(initialState, machine) {
-    return React.useReducer((state, event)=>{
-        const nextState = machine[state][event];
-        return nextState !== null && nextState !== void 0 ? nextState : state;
-    }, initialState);
-}
-
-
-/* -------------------------------------------------------------------------------------------------
- * ScrollArea
- * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$SCROLL_AREA_NAME = 'ScrollArea';
-const [$57acba87d6e25586$var$createScrollAreaContext, $57acba87d6e25586$export$488468afe3a6f2b1] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($57acba87d6e25586$var$SCROLL_AREA_NAME);
-const [$57acba87d6e25586$var$ScrollAreaProvider, $57acba87d6e25586$var$useScrollAreaContext] = $57acba87d6e25586$var$createScrollAreaContext($57acba87d6e25586$var$SCROLL_AREA_NAME);
-const $57acba87d6e25586$export$ccf8d8d7bbf3c2cc = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeScrollArea: __scopeScrollArea , type: type = 'hover' , dir: dir , scrollHideDelay: scrollHideDelay = 600 , ...scrollAreaProps } = props;
-    const [scrollArea, setScrollArea] = React.useState(null);
-    const [viewport, setViewport] = React.useState(null);
-    const [content, setContent] = React.useState(null);
-    const [scrollbarX, setScrollbarX] = React.useState(null);
-    const [scrollbarY, setScrollbarY] = React.useState(null);
-    const [cornerWidth, setCornerWidth] = React.useState(0);
-    const [cornerHeight, setCornerHeight] = React.useState(0);
-    const [scrollbarXEnabled, setScrollbarXEnabled] = React.useState(false);
-    const [scrollbarYEnabled, setScrollbarYEnabled] = React.useState(false);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, (node)=>setScrollArea(node)
-    );
-    const direction = $f631663db3294ace$export$b39126d51d94e6f3(dir);
-    return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaProvider, {
-        scope: __scopeScrollArea,
-        type: type,
-        dir: direction,
-        scrollHideDelay: scrollHideDelay,
-        scrollArea: scrollArea,
-        viewport: viewport,
-        onViewportChange: setViewport,
-        content: content,
-        onContentChange: setContent,
-        scrollbarX: scrollbarX,
-        onScrollbarXChange: setScrollbarX,
-        scrollbarXEnabled: scrollbarXEnabled,
-        onScrollbarXEnabledChange: setScrollbarXEnabled,
-        scrollbarY: scrollbarY,
-        onScrollbarYChange: setScrollbarY,
-        scrollbarYEnabled: scrollbarYEnabled,
-        onScrollbarYEnabledChange: setScrollbarYEnabled,
-        onCornerWidthChange: setCornerWidth,
-        onCornerHeightChange: setCornerHeight
-    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
-        dir: direction
-    }, scrollAreaProps, {
-        ref: composedRefs,
-        style: {
-            position: 'relative',
-            // Pass corner sizes as CSS vars to reduce re-renders of context consumers
-            ['--radix-scroll-area-corner-width']: cornerWidth + 'px',
-            ['--radix-scroll-area-corner-height']: cornerHeight + 'px',
-            ...props.style
-        }
-    })));
-});
-/* -------------------------------------------------------------------------------------------------
- * ScrollAreaViewport
- * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$VIEWPORT_NAME = 'ScrollAreaViewport';
-const $57acba87d6e25586$export$a21cbf9f11fca853 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeScrollArea: __scopeScrollArea , children: children , ...viewportProps } = props;
-    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$VIEWPORT_NAME, __scopeScrollArea);
-    const ref = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref, context.onViewportChange);
-    return /*#__PURE__*/ React.createElement(React.Fragment, null, /*#__PURE__*/ React.createElement("style", {
-        dangerouslySetInnerHTML: {
-            __html: `[data-radix-scroll-area-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-scroll-area-viewport]::-webkit-scrollbar{display:none}`
-        }
-    }), /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
-        "data-radix-scroll-area-viewport": ""
-    }, viewportProps, {
-        ref: composedRefs,
-        style: {
-            /**
-       * We don't support `visible` because the intention is to have at least one scrollbar
-       * if this component is used and `visible` will behave like `auto` in that case
-       * https://developer.mozilla.org/en-US/docs/Web/CSS/overflowed#description
-       *
-       * We don't handle `auto` because the intention is for the native implementation
-       * to be hidden if using this component. We just want to ensure the node is scrollable
-       * so could have used either `scroll` or `auto` here. We picked `scroll` to prevent
-       * the browser from having to work out whether to render native scrollbars or not,
-       * we tell it to with the intention of hiding them in CSS.
-       */ overflowX: context.scrollbarXEnabled ? 'scroll' : 'hidden',
-            overflowY: context.scrollbarYEnabled ? 'scroll' : 'hidden',
-            ...props.style
-        }
-    }), /*#__PURE__*/ React.createElement("div", {
-        ref: context.onContentChange,
-        style: {
-            minWidth: '100%',
-            display: 'table'
-        }
-    }, children)));
-});
-/* -------------------------------------------------------------------------------------------------
- * ScrollAreaScrollbar
- * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$SCROLLBAR_NAME = 'ScrollAreaScrollbar';
-const $57acba87d6e25586$export$2fabd85d0eba3c57 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { forceMount: forceMount , ...scrollbarProps } = props;
-    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
-    const { onScrollbarXEnabledChange: onScrollbarXEnabledChange , onScrollbarYEnabledChange: onScrollbarYEnabledChange  } = context;
-    const isHorizontal = props.orientation === 'horizontal';
-    React.useEffect(()=>{
-        isHorizontal ? onScrollbarXEnabledChange(true) : onScrollbarYEnabledChange(true);
-        return ()=>{
-            isHorizontal ? onScrollbarXEnabledChange(false) : onScrollbarYEnabledChange(false);
-        };
-    }, [
-        isHorizontal,
-        onScrollbarXEnabledChange,
-        onScrollbarYEnabledChange
-    ]);
-    return context.type === 'hover' ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarHover, _extends({}, scrollbarProps, {
-        ref: forwardedRef,
-        forceMount: forceMount
-    })) : context.type === 'scroll' ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarScroll, _extends({}, scrollbarProps, {
-        ref: forwardedRef,
-        forceMount: forceMount
-    })) : context.type === 'auto' ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarAuto, _extends({}, scrollbarProps, {
-        ref: forwardedRef,
-        forceMount: forceMount
-    })) : context.type === 'always' ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarVisible, _extends({}, scrollbarProps, {
-        ref: forwardedRef
-    })) : null;
-});
-/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$ScrollAreaScrollbarHover = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { forceMount: forceMount , ...scrollbarProps } = props;
-    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
-    const [visible, setVisible] = React.useState(false);
-    React.useEffect(()=>{
-        const scrollArea = context.scrollArea;
-        let hideTimer = 0;
-        if (scrollArea) {
-            const handlePointerEnter = ()=>{
-                window.clearTimeout(hideTimer);
-                setVisible(true);
-            };
-            const handlePointerLeave = ()=>{
-                hideTimer = window.setTimeout(()=>setVisible(false)
-                , context.scrollHideDelay);
-            };
-            scrollArea.addEventListener('pointerenter', handlePointerEnter);
-            scrollArea.addEventListener('pointerleave', handlePointerLeave);
-            return ()=>{
-                window.clearTimeout(hideTimer);
-                scrollArea.removeEventListener('pointerenter', handlePointerEnter);
-                scrollArea.removeEventListener('pointerleave', handlePointerLeave);
-            };
-        }
-    }, [
-        context.scrollArea,
-        context.scrollHideDelay
-    ]);
-    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || visible
-    }, /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarAuto, _extends({
-        "data-state": visible ? 'visible' : 'hidden'
-    }, scrollbarProps, {
-        ref: forwardedRef
-    })));
-});
-const $57acba87d6e25586$var$ScrollAreaScrollbarScroll = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { forceMount: forceMount , ...scrollbarProps } = props;
-    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
-    const isHorizontal = props.orientation === 'horizontal';
-    const debounceScrollEnd = $57acba87d6e25586$var$useDebounceCallback(()=>send('SCROLL_END')
-    , 100);
-    const [state, send] = $6c2e24571c90391f$export$3e6543de14f8614f('hidden', {
-        hidden: {
-            SCROLL: 'scrolling'
-        },
-        scrolling: {
-            SCROLL_END: 'idle',
-            POINTER_ENTER: 'interacting'
-        },
-        interacting: {
-            SCROLL: 'interacting',
-            POINTER_LEAVE: 'idle'
-        },
-        idle: {
-            HIDE: 'hidden',
-            SCROLL: 'scrolling',
-            POINTER_ENTER: 'interacting'
-        }
-    });
-    React.useEffect(()=>{
-        if (state === 'idle') {
-            const hideTimer = window.setTimeout(()=>send('HIDE')
-            , context.scrollHideDelay);
-            return ()=>window.clearTimeout(hideTimer)
-            ;
-        }
-    }, [
-        state,
-        context.scrollHideDelay,
-        send
-    ]);
-    React.useEffect(()=>{
-        const viewport = context.viewport;
-        const scrollDirection = isHorizontal ? 'scrollLeft' : 'scrollTop';
-        if (viewport) {
-            let prevScrollPos = viewport[scrollDirection];
-            const handleScroll = ()=>{
-                const scrollPos = viewport[scrollDirection];
-                const hasScrollInDirectionChanged = prevScrollPos !== scrollPos;
-                if (hasScrollInDirectionChanged) {
-                    send('SCROLL');
-                    debounceScrollEnd();
-                }
-                prevScrollPos = scrollPos;
-            };
-            viewport.addEventListener('scroll', handleScroll);
-            return ()=>viewport.removeEventListener('scroll', handleScroll)
-            ;
-        }
-    }, [
-        context.viewport,
-        isHorizontal,
-        send,
-        debounceScrollEnd
-    ]);
-    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || state !== 'hidden'
-    }, /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarVisible, _extends({
-        "data-state": state === 'hidden' ? 'hidden' : 'visible'
-    }, scrollbarProps, {
-        ref: forwardedRef,
-        onPointerEnter: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerEnter, ()=>send('POINTER_ENTER')
-        ),
-        onPointerLeave: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerLeave, ()=>send('POINTER_LEAVE')
-        )
-    })));
-});
-const $57acba87d6e25586$var$ScrollAreaScrollbarAuto = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
-    const { forceMount: forceMount , ...scrollbarProps } = props;
-    const [visible, setVisible] = React.useState(false);
-    const isHorizontal = props.orientation === 'horizontal';
-    const handleResize = $57acba87d6e25586$var$useDebounceCallback(()=>{
-        if (context.viewport) {
-            const isOverflowX = context.viewport.offsetWidth < context.viewport.scrollWidth;
-            const isOverflowY = context.viewport.offsetHeight < context.viewport.scrollHeight;
-            setVisible(isHorizontal ? isOverflowX : isOverflowY);
-        }
-    }, 10);
-    $57acba87d6e25586$var$useResizeObserver(context.viewport, handleResize);
-    $57acba87d6e25586$var$useResizeObserver(context.content, handleResize);
-    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || visible
-    }, /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarVisible, _extends({
-        "data-state": visible ? 'visible' : 'hidden'
-    }, scrollbarProps, {
-        ref: forwardedRef
-    })));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$ScrollAreaScrollbarVisible = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { orientation: orientation = 'vertical' , ...scrollbarProps } = props;
-    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
-    const thumbRef = React.useRef(null);
-    const pointerOffsetRef = React.useRef(0);
-    const [sizes, setSizes] = React.useState({
-        content: 0,
-        viewport: 0,
-        scrollbar: {
-            size: 0,
-            paddingStart: 0,
-            paddingEnd: 0
-        }
-    });
-    const thumbRatio = $57acba87d6e25586$var$getThumbRatio(sizes.viewport, sizes.content);
-    const commonProps = {
-        ...scrollbarProps,
-        sizes: sizes,
-        onSizesChange: setSizes,
-        hasThumb: Boolean(thumbRatio > 0 && thumbRatio < 1),
-        onThumbChange: (thumb)=>thumbRef.current = thumb
-        ,
-        onThumbPointerUp: ()=>pointerOffsetRef.current = 0
-        ,
-        onThumbPointerDown: (pointerPos)=>pointerOffsetRef.current = pointerPos
-    };
-    function getScrollPosition(pointerPos, dir) {
-        return $57acba87d6e25586$var$getScrollPositionFromPointer(pointerPos, pointerOffsetRef.current, sizes, dir);
-    }
-    if (orientation === 'horizontal') return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarX, _extends({}, commonProps, {
-        ref: forwardedRef,
-        onThumbPositionChange: ()=>{
-            if (context.viewport && thumbRef.current) {
-                const scrollPos = context.viewport.scrollLeft;
-                const offset = $57acba87d6e25586$var$getThumbOffsetFromScroll(scrollPos, sizes, context.dir);
-                thumbRef.current.style.transform = `translate3d(${offset}px, 0, 0)`;
-            }
-        },
-        onWheelScroll: (scrollPos)=>{
-            if (context.viewport) context.viewport.scrollLeft = scrollPos;
-        },
-        onDragScroll: (pointerPos)=>{
-            if (context.viewport) context.viewport.scrollLeft = getScrollPosition(pointerPos, context.dir);
-        }
-    }));
-    if (orientation === 'vertical') return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarY, _extends({}, commonProps, {
-        ref: forwardedRef,
-        onThumbPositionChange: ()=>{
-            if (context.viewport && thumbRef.current) {
-                const scrollPos = context.viewport.scrollTop;
-                const offset = $57acba87d6e25586$var$getThumbOffsetFromScroll(scrollPos, sizes);
-                thumbRef.current.style.transform = `translate3d(0, ${offset}px, 0)`;
-            }
-        },
-        onWheelScroll: (scrollPos)=>{
-            if (context.viewport) context.viewport.scrollTop = scrollPos;
-        },
-        onDragScroll: (pointerPos)=>{
-            if (context.viewport) context.viewport.scrollTop = getScrollPosition(pointerPos);
-        }
-    }));
-    return null;
-});
-/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$ScrollAreaScrollbarX = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { sizes: sizes , onSizesChange: onSizesChange , ...scrollbarProps } = props;
-    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
-    const [computedStyle, setComputedStyle] = React.useState();
-    const ref = React.useRef(null);
-    const composeRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref, context.onScrollbarXChange);
-    React.useEffect(()=>{
-        if (ref.current) setComputedStyle(getComputedStyle(ref.current));
-    }, [
-        ref
-    ]);
-    return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarImpl, _extends({
-        "data-orientation": "horizontal"
-    }, scrollbarProps, {
-        ref: composeRefs,
-        sizes: sizes,
-        style: {
-            bottom: 0,
-            left: context.dir === 'rtl' ? 'var(--radix-scroll-area-corner-width)' : 0,
-            right: context.dir === 'ltr' ? 'var(--radix-scroll-area-corner-width)' : 0,
-            ['--radix-scroll-area-thumb-width']: $57acba87d6e25586$var$getThumbSize(sizes) + 'px',
-            ...props.style
-        },
-        onThumbPointerDown: (pointerPos)=>props.onThumbPointerDown(pointerPos.x)
-        ,
-        onDragScroll: (pointerPos)=>props.onDragScroll(pointerPos.x)
-        ,
-        onWheelScroll: (event, maxScrollPos)=>{
-            if (context.viewport) {
-                const scrollPos = context.viewport.scrollLeft + event.deltaX;
-                props.onWheelScroll(scrollPos); // prevent window scroll when wheeling on scrollbar
-                if ($57acba87d6e25586$var$isScrollingWithinScrollbarBounds(scrollPos, maxScrollPos)) event.preventDefault();
-            }
-        },
-        onResize: ()=>{
-            if (ref.current && context.viewport && computedStyle) onSizesChange({
-                content: context.viewport.scrollWidth,
-                viewport: context.viewport.offsetWidth,
-                scrollbar: {
-                    size: ref.current.clientWidth,
-                    paddingStart: $57acba87d6e25586$var$toInt(computedStyle.paddingLeft),
-                    paddingEnd: $57acba87d6e25586$var$toInt(computedStyle.paddingRight)
-                }
-            });
-        }
-    }));
-});
-const $57acba87d6e25586$var$ScrollAreaScrollbarY = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { sizes: sizes , onSizesChange: onSizesChange , ...scrollbarProps } = props;
-    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, props.__scopeScrollArea);
-    const [computedStyle, setComputedStyle] = React.useState();
-    const ref = React.useRef(null);
-    const composeRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, ref, context.onScrollbarYChange);
-    React.useEffect(()=>{
-        if (ref.current) setComputedStyle(getComputedStyle(ref.current));
-    }, [
-        ref
-    ]);
-    return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaScrollbarImpl, _extends({
-        "data-orientation": "vertical"
-    }, scrollbarProps, {
-        ref: composeRefs,
-        sizes: sizes,
-        style: {
-            top: 0,
-            right: context.dir === 'ltr' ? 0 : undefined,
-            left: context.dir === 'rtl' ? 0 : undefined,
-            bottom: 'var(--radix-scroll-area-corner-height)',
-            ['--radix-scroll-area-thumb-height']: $57acba87d6e25586$var$getThumbSize(sizes) + 'px',
-            ...props.style
-        },
-        onThumbPointerDown: (pointerPos)=>props.onThumbPointerDown(pointerPos.y)
-        ,
-        onDragScroll: (pointerPos)=>props.onDragScroll(pointerPos.y)
-        ,
-        onWheelScroll: (event, maxScrollPos)=>{
-            if (context.viewport) {
-                const scrollPos = context.viewport.scrollTop + event.deltaY;
-                props.onWheelScroll(scrollPos); // prevent window scroll when wheeling on scrollbar
-                if ($57acba87d6e25586$var$isScrollingWithinScrollbarBounds(scrollPos, maxScrollPos)) event.preventDefault();
-            }
-        },
-        onResize: ()=>{
-            if (ref.current && context.viewport && computedStyle) onSizesChange({
-                content: context.viewport.scrollHeight,
-                viewport: context.viewport.offsetHeight,
-                scrollbar: {
-                    size: ref.current.clientHeight,
-                    paddingStart: $57acba87d6e25586$var$toInt(computedStyle.paddingTop),
-                    paddingEnd: $57acba87d6e25586$var$toInt(computedStyle.paddingBottom)
-                }
-            });
-        }
-    }));
-});
-/* -----------------------------------------------------------------------------------------------*/ const [$57acba87d6e25586$var$ScrollbarProvider, $57acba87d6e25586$var$useScrollbarContext] = $57acba87d6e25586$var$createScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME);
-const $57acba87d6e25586$var$ScrollAreaScrollbarImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeScrollArea: __scopeScrollArea , sizes: sizes , hasThumb: hasThumb , onThumbChange: onThumbChange , onThumbPointerUp: onThumbPointerUp , onThumbPointerDown: onThumbPointerDown , onThumbPositionChange: onThumbPositionChange , onDragScroll: onDragScroll , onWheelScroll: onWheelScroll , onResize: onResize , ...scrollbarProps } = props;
-    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$SCROLLBAR_NAME, __scopeScrollArea);
-    const [scrollbar, setScrollbar] = React.useState(null);
-    const composeRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, (node)=>setScrollbar(node)
-    );
-    const rectRef = React.useRef(null);
-    const prevWebkitUserSelectRef = React.useRef('');
-    const viewport = context.viewport;
-    const maxScrollPos = sizes.content - sizes.viewport;
-    const handleWheelScroll = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onWheelScroll);
-    const handleThumbPositionChange = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onThumbPositionChange);
-    const handleResize = $57acba87d6e25586$var$useDebounceCallback(onResize, 10);
-    function handleDragScroll(event) {
-        if (rectRef.current) {
-            const x = event.clientX - rectRef.current.left;
-            const y = event.clientY - rectRef.current.top;
-            onDragScroll({
-                x: x,
-                y: y
-            });
-        }
-    }
-    /**
-   * We bind wheel event imperatively so we can switch off passive
-   * mode for document wheel event to allow it to be prevented
-   */ React.useEffect(()=>{
-        const handleWheel = (event)=>{
-            const element = event.target;
-            const isScrollbarWheel = scrollbar === null || scrollbar === void 0 ? void 0 : scrollbar.contains(element);
-            if (isScrollbarWheel) handleWheelScroll(event, maxScrollPos);
-        };
-        document.addEventListener('wheel', handleWheel, {
-            passive: false
-        });
-        return ()=>document.removeEventListener('wheel', handleWheel, {
-                passive: false
-            })
-        ;
-    }, [
-        viewport,
-        scrollbar,
-        maxScrollPos,
-        handleWheelScroll
-    ]);
-    /**
-   * Update thumb position on sizes change
-   */ React.useEffect(handleThumbPositionChange, [
-        sizes,
-        handleThumbPositionChange
-    ]);
-    $57acba87d6e25586$var$useResizeObserver(scrollbar, handleResize);
-    $57acba87d6e25586$var$useResizeObserver(context.content, handleResize);
-    return /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollbarProvider, {
-        scope: __scopeScrollArea,
-        scrollbar: scrollbar,
-        hasThumb: hasThumb,
-        onThumbChange: $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onThumbChange),
-        onThumbPointerUp: $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onThumbPointerUp),
-        onThumbPositionChange: handleThumbPositionChange,
-        onThumbPointerDown: $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onThumbPointerDown)
-    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({}, scrollbarProps, {
-        ref: composeRefs,
-        style: {
-            position: 'absolute',
-            ...scrollbarProps.style
-        },
-        onPointerDown: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDown, (event)=>{
-            const mainPointer = 0;
-            if (event.button === mainPointer) {
-                const element = event.target;
-                element.setPointerCapture(event.pointerId);
-                rectRef.current = scrollbar.getBoundingClientRect(); // pointer capture doesn't prevent text selection in Safari
-                // so we remove text selection manually when scrolling
-                prevWebkitUserSelectRef.current = document.body.style.webkitUserSelect;
-                document.body.style.webkitUserSelect = 'none';
-                if (context.viewport) context.viewport.style.scrollBehavior = 'auto';
-                handleDragScroll(event);
-            }
-        }),
-        onPointerMove: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerMove, handleDragScroll),
-        onPointerUp: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerUp, (event)=>{
-            const element = event.target;
-            if (element.hasPointerCapture(event.pointerId)) element.releasePointerCapture(event.pointerId);
-            document.body.style.webkitUserSelect = prevWebkitUserSelectRef.current;
-            if (context.viewport) context.viewport.style.scrollBehavior = '';
-            rectRef.current = null;
-        })
-    })));
-});
-/* -------------------------------------------------------------------------------------------------
- * ScrollAreaThumb
- * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$THUMB_NAME = 'ScrollAreaThumb';
-const $57acba87d6e25586$export$9fba1154677d7cd2 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { forceMount: forceMount , ...thumbProps } = props;
-    const scrollbarContext = $57acba87d6e25586$var$useScrollbarContext($57acba87d6e25586$var$THUMB_NAME, props.__scopeScrollArea);
-    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || scrollbarContext.hasThumb
-    }, /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaThumbImpl, _extends({
-        ref: forwardedRef
-    }, thumbProps)));
-});
-const $57acba87d6e25586$var$ScrollAreaThumbImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeScrollArea: __scopeScrollArea , style: style , ...thumbProps } = props;
-    const scrollAreaContext = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$THUMB_NAME, __scopeScrollArea);
-    const scrollbarContext = $57acba87d6e25586$var$useScrollbarContext($57acba87d6e25586$var$THUMB_NAME, __scopeScrollArea);
-    const { onThumbPositionChange: onThumbPositionChange  } = scrollbarContext;
-    const composedRef = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, (node)=>scrollbarContext.onThumbChange(node)
-    );
-    const removeUnlinkedScrollListenerRef = React.useRef();
-    const debounceScrollEnd = $57acba87d6e25586$var$useDebounceCallback(()=>{
-        if (removeUnlinkedScrollListenerRef.current) {
-            removeUnlinkedScrollListenerRef.current();
-            removeUnlinkedScrollListenerRef.current = undefined;
-        }
-    }, 100);
-    React.useEffect(()=>{
-        const viewport = scrollAreaContext.viewport;
-        if (viewport) {
-            /**
-       * We only bind to native scroll event so we know when scroll starts and ends.
-       * When scroll starts we start a requestAnimationFrame loop that checks for
-       * changes to scroll position. That rAF loop triggers our thumb position change
-       * when relevant to avoid scroll-linked effects. We cancel the loop when scroll ends.
-       * https://developer.mozilla.org/en-US/docs/Mozilla/Performance/Scroll-linked_effects
-       */ const handleScroll = ()=>{
-                debounceScrollEnd();
-                if (!removeUnlinkedScrollListenerRef.current) {
-                    const listener = $57acba87d6e25586$var$addUnlinkedScrollListener(viewport, onThumbPositionChange);
-                    removeUnlinkedScrollListenerRef.current = listener;
-                    onThumbPositionChange();
-                }
-            };
-            onThumbPositionChange();
-            viewport.addEventListener('scroll', handleScroll);
-            return ()=>viewport.removeEventListener('scroll', handleScroll)
-            ;
-        }
-    }, [
-        scrollAreaContext.viewport,
-        debounceScrollEnd,
-        onThumbPositionChange
-    ]);
-    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
-        "data-state": scrollbarContext.hasThumb ? 'visible' : 'hidden'
-    }, thumbProps, {
-        ref: composedRef,
-        style: {
-            width: 'var(--radix-scroll-area-thumb-width)',
-            height: 'var(--radix-scroll-area-thumb-height)',
-            ...style
-        },
-        onPointerDownCapture: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDownCapture, (event)=>{
-            const thumb = event.target;
-            const thumbRect = thumb.getBoundingClientRect();
-            const x = event.clientX - thumbRect.left;
-            const y = event.clientY - thumbRect.top;
-            scrollbarContext.onThumbPointerDown({
-                x: x,
-                y: y
-            });
-        }),
-        onPointerUp: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerUp, scrollbarContext.onThumbPointerUp)
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * ScrollAreaCorner
- * -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$CORNER_NAME = 'ScrollAreaCorner';
-const $57acba87d6e25586$export$56969d565df7cc4b = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$CORNER_NAME, props.__scopeScrollArea);
-    const hasBothScrollbarsVisible = Boolean(context.scrollbarX && context.scrollbarY);
-    const hasCorner = context.type !== 'scroll' && hasBothScrollbarsVisible;
-    return hasCorner ? /*#__PURE__*/ React.createElement($57acba87d6e25586$var$ScrollAreaCornerImpl, _extends({}, props, {
-        ref: forwardedRef
-    })) : null;
-});
-/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$var$ScrollAreaCornerImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeScrollArea: __scopeScrollArea , ...cornerProps } = props;
-    const context = $57acba87d6e25586$var$useScrollAreaContext($57acba87d6e25586$var$CORNER_NAME, __scopeScrollArea);
-    const [width1, setWidth] = React.useState(0);
-    const [height1, setHeight] = React.useState(0);
-    const hasSize = Boolean(width1 && height1);
-    $57acba87d6e25586$var$useResizeObserver(context.scrollbarX, ()=>{
-        var _context$scrollbarX;
-        const height = ((_context$scrollbarX = context.scrollbarX) === null || _context$scrollbarX === void 0 ? void 0 : _context$scrollbarX.offsetHeight) || 0;
-        context.onCornerHeightChange(height);
-        setHeight(height);
-    });
-    $57acba87d6e25586$var$useResizeObserver(context.scrollbarY, ()=>{
-        var _context$scrollbarY;
-        const width = ((_context$scrollbarY = context.scrollbarY) === null || _context$scrollbarY === void 0 ? void 0 : _context$scrollbarY.offsetWidth) || 0;
-        context.onCornerWidthChange(width);
-        setWidth(width);
-    });
-    return hasSize ? /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({}, cornerProps, {
-        ref: forwardedRef,
-        style: {
-            width: width1,
-            height: height1,
-            position: 'absolute',
-            right: context.dir === 'ltr' ? 0 : undefined,
-            left: context.dir === 'rtl' ? 0 : undefined,
-            bottom: 0,
-            ...props.style
-        }
-    })) : null;
-});
-/* -----------------------------------------------------------------------------------------------*/ function $57acba87d6e25586$var$toInt(value) {
-    return value ? parseInt(value, 10) : 0;
-}
-function $57acba87d6e25586$var$getThumbRatio(viewportSize, contentSize) {
-    const ratio = viewportSize / contentSize;
-    return isNaN(ratio) ? 0 : ratio;
-}
-function $57acba87d6e25586$var$getThumbSize(sizes) {
-    const ratio = $57acba87d6e25586$var$getThumbRatio(sizes.viewport, sizes.content);
-    const scrollbarPadding = sizes.scrollbar.paddingStart + sizes.scrollbar.paddingEnd;
-    const thumbSize = (sizes.scrollbar.size - scrollbarPadding) * ratio; // minimum of 18 matches macOS minimum
-    return Math.max(thumbSize, 18);
-}
-function $57acba87d6e25586$var$getScrollPositionFromPointer(pointerPos, pointerOffset, sizes, dir = 'ltr') {
-    const thumbSizePx = $57acba87d6e25586$var$getThumbSize(sizes);
-    const thumbCenter = thumbSizePx / 2;
-    const offset = pointerOffset || thumbCenter;
-    const thumbOffsetFromEnd = thumbSizePx - offset;
-    const minPointerPos = sizes.scrollbar.paddingStart + offset;
-    const maxPointerPos = sizes.scrollbar.size - sizes.scrollbar.paddingEnd - thumbOffsetFromEnd;
-    const maxScrollPos = sizes.content - sizes.viewport;
-    const scrollRange = dir === 'ltr' ? [
-        0,
-        maxScrollPos
-    ] : [
-        maxScrollPos * -1,
-        0
-    ];
-    const interpolate = $57acba87d6e25586$var$linearScale([
-        minPointerPos,
-        maxPointerPos
-    ], scrollRange);
-    return interpolate(pointerPos);
-}
-function $57acba87d6e25586$var$getThumbOffsetFromScroll(scrollPos, sizes, dir = 'ltr') {
-    const thumbSizePx = $57acba87d6e25586$var$getThumbSize(sizes);
-    const scrollbarPadding = sizes.scrollbar.paddingStart + sizes.scrollbar.paddingEnd;
-    const scrollbar = sizes.scrollbar.size - scrollbarPadding;
-    const maxScrollPos = sizes.content - sizes.viewport;
-    const maxThumbPos = scrollbar - thumbSizePx;
-    const scrollClampRange = dir === 'ltr' ? [
-        0,
-        maxScrollPos
-    ] : [
-        maxScrollPos * -1,
-        0
-    ];
-    const scrollWithoutMomentum = $ae6933e535247d3d$export$7d15b64cf5a3a4c4(scrollPos, scrollClampRange);
-    const interpolate = $57acba87d6e25586$var$linearScale([
-        0,
-        maxScrollPos
-    ], [
-        0,
-        maxThumbPos
-    ]);
-    return interpolate(scrollWithoutMomentum);
-} // https://github.com/tmcw-up-for-adoption/simple-linear-scale/blob/master/index.js
-function $57acba87d6e25586$var$linearScale(input, output) {
-    return (value)=>{
-        if (input[0] === input[1] || output[0] === output[1]) return output[0];
-        const ratio = (output[1] - output[0]) / (input[1] - input[0]);
-        return output[0] + ratio * (value - input[0]);
-    };
-}
-function $57acba87d6e25586$var$isScrollingWithinScrollbarBounds(scrollPos, maxScrollPos) {
-    return scrollPos > 0 && scrollPos < maxScrollPos;
-} // Custom scroll handler to avoid scroll-linked effects
-// https://developer.mozilla.org/en-US/docs/Mozilla/Performance/Scroll-linked_effects
-const $57acba87d6e25586$var$addUnlinkedScrollListener = (node, handler = ()=>{})=>{
-    let prevPosition = {
-        left: node.scrollLeft,
-        top: node.scrollTop
-    };
-    let rAF = 0;
-    (function loop() {
-        const position = {
-            left: node.scrollLeft,
-            top: node.scrollTop
-        };
-        const isHorizontalScroll = prevPosition.left !== position.left;
-        const isVerticalScroll = prevPosition.top !== position.top;
-        if (isHorizontalScroll || isVerticalScroll) handler();
-        prevPosition = position;
-        rAF = window.requestAnimationFrame(loop);
-    })();
-    return ()=>window.cancelAnimationFrame(rAF)
-    ;
-};
-function $57acba87d6e25586$var$useDebounceCallback(callback, delay) {
-    const handleCallback = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(callback);
-    const debounceTimerRef = React.useRef(0);
-    React.useEffect(()=>()=>window.clearTimeout(debounceTimerRef.current)
-    , []);
-    return React.useCallback(()=>{
-        window.clearTimeout(debounceTimerRef.current);
-        debounceTimerRef.current = window.setTimeout(handleCallback, delay);
-    }, [
-        handleCallback,
-        delay
-    ]);
-}
-function $57acba87d6e25586$var$useResizeObserver(element, onResize) {
-    const handleResize = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onResize);
-    $9f79659886946c16$export$e5c5a5f917a5871c$1(()=>{
-        let rAF = 0;
-        if (element) {
-            /**
-       * Resize Observer will throw an often benign error that says `ResizeObserver loop
-       * completed with undelivered notifications`. This means that ResizeObserver was not
-       * able to deliver all observations within a single animation frame, so we use
-       * `requestAnimationFrame` to ensure we don't deliver unnecessary observations.
-       * Further reading: https://github.com/WICG/resize-observer/issues/38
-       */ const resizeObserver = new ResizeObserver(()=>{
-                cancelAnimationFrame(rAF);
-                rAF = window.requestAnimationFrame(handleResize);
-            });
-            resizeObserver.observe(element);
-            return ()=>{
-                window.cancelAnimationFrame(rAF);
-                resizeObserver.unobserve(element);
-            };
-        }
-    }, [
-        element,
-        handleResize
-    ]);
-}
-/* -----------------------------------------------------------------------------------------------*/ const $57acba87d6e25586$export$be92b6f5f03c0fe9 = $57acba87d6e25586$export$ccf8d8d7bbf3c2cc;
-const $57acba87d6e25586$export$d5c6c08dc2d3ca7 = $57acba87d6e25586$export$a21cbf9f11fca853;
-const $57acba87d6e25586$export$ac61190d9fc311a9 = $57acba87d6e25586$export$56969d565df7cc4b;
-
-var ScrollArea = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
-    return (React__namespace.createElement($57acba87d6e25586$export$be92b6f5f03c0fe9, __assign$1({ ref: ref, className: cn("relative overflow-hidden", className) }, props),
-        React__namespace.createElement($57acba87d6e25586$export$d5c6c08dc2d3ca7, { className: "h-full w-full rounded-[inherit]" }, children),
-        React__namespace.createElement(ScrollBar, null),
-        React__namespace.createElement($57acba87d6e25586$export$ac61190d9fc311a9, null)));
-});
-ScrollArea.displayName = $57acba87d6e25586$export$be92b6f5f03c0fe9.displayName;
-var ScrollBar = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, _b = _a.orientation, orientation = _b === void 0 ? "vertical" : _b, props = __rest$1(_a, ["className", "orientation"]);
-    return (React__namespace.createElement($57acba87d6e25586$export$2fabd85d0eba3c57, __assign$1({ ref: ref, orientation: orientation, className: cn("flex touch-none select-none transition-colors", orientation === "vertical" &&
-            "h-full w-2.5 border-l border-l-transparent p-[1px]", orientation === "horizontal" &&
-            "h-2.5 flex-col border-t border-t-transparent p-[1px]", className) }, props),
-        React__namespace.createElement($57acba87d6e25586$export$9fba1154677d7cd2, { className: "relative flex-1 rounded-full bg-border" })));
-});
-ScrollBar.displayName = $57acba87d6e25586$export$2fabd85d0eba3c57.displayName;
-
-function Drawer(_a) {
-    var _b = _a.open, open = _b === void 0 ? false : _b; _a.handleFormSubmit; _a.handleTrigger; var children = _a.children, title = _a.title, description = _a.description; _a.isLoading; var Form = _a.Form, SubmitButton = _a.SubmitButton;
-    return (React__default["default"].createElement("div", null,
-        React__default["default"].createElement(Sheet, { open: open },
-            React__default["default"].createElement(SheetTrigger, { asChild: true }, children),
-            React__default["default"].createElement(SheetContent, null,
-                React__default["default"].createElement(ScrollArea, { className: "h-screen pb-10 " },
-                    React__default["default"].createElement(SheetHeader, { className: 'pb-4' },
-                        React__default["default"].createElement(SheetTitle, null, title),
-                        React__default["default"].createElement(SheetDescription, null, description)),
-                    React__default["default"].createElement(Form, null),
-                    React__default["default"].createElement(SheetFooter, null,
-                        React__default["default"].createElement(SheetClose, { asChild: true }, SubmitButton && React__default["default"].createElement(SubmitButton, null))))))));
 }
 
 /* -------------------------------------------------------------------------------------------------
@@ -21365,41 +28821,41 @@ const $0520064cdfc1bd2d$export$6d4de93b380beddf = $0520064cdfc1bd2d$export$1b21e
 
 var MenubarMenu = $0520064cdfc1bd2d$export$d9b273488cd8ce6f;
 var Menubar = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($0520064cdfc1bd2d$export$be92b6f5f03c0fe9, __assign$1({ ref: ref, className: cn("flex h-9 items-center space-x-1 rounded-md border bg-background p-1 shadow-sm", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($0520064cdfc1bd2d$export$be92b6f5f03c0fe9, __assign$2({ ref: ref, className: cn("flex h-9 items-center space-x-1 rounded-md border bg-background p-1 shadow-sm", className) }, props)));
 });
 Menubar.displayName = $0520064cdfc1bd2d$export$be92b6f5f03c0fe9.displayName;
 var MenubarTrigger = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($0520064cdfc1bd2d$export$41fb9f06171c75f4, __assign$1({ ref: ref, className: cn("flex cursor-default select-none items-center rounded-sm px-3 py-1 text-sm font-medium outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($0520064cdfc1bd2d$export$41fb9f06171c75f4, __assign$2({ ref: ref, className: cn("flex cursor-default select-none items-center rounded-sm px-3 py-1 text-sm font-medium outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground", className) }, props)));
 });
 MenubarTrigger.displayName = $0520064cdfc1bd2d$export$41fb9f06171c75f4.displayName;
 var MenubarSubTrigger = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, inset = _a.inset, children = _a.children, props = __rest$1(_a, ["className", "inset", "children"]);
-    return (React__namespace.createElement($0520064cdfc1bd2d$export$2ea8a7a591ac5eac, __assign$1({ ref: ref, className: cn("flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground", inset && "pl-8", className) }, props),
+    var className = _a.className, inset = _a.inset, children = _a.children, props = __rest$2(_a, ["className", "inset", "children"]);
+    return (React__namespace.createElement($0520064cdfc1bd2d$export$2ea8a7a591ac5eac, __assign$2({ ref: ref, className: cn("flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground", inset && "pl-8", className) }, props),
         children,
         React__namespace.createElement(ChevronRightIcon, { className: "ml-auto h-4 w-4" })));
 });
 MenubarSubTrigger.displayName = $0520064cdfc1bd2d$export$2ea8a7a591ac5eac.displayName;
 var MenubarSubContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($0520064cdfc1bd2d$export$6d4de93b380beddf, __assign$1({ ref: ref, className: cn("z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($0520064cdfc1bd2d$export$6d4de93b380beddf, __assign$2({ ref: ref, className: cn("z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props)));
 });
 MenubarSubContent.displayName = $0520064cdfc1bd2d$export$6d4de93b380beddf.displayName;
 var MenubarContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, _b = _a.align, align = _b === void 0 ? "start" : _b, _c = _a.alignOffset, alignOffset = _c === void 0 ? -4 : _c, _d = _a.sideOffset, sideOffset = _d === void 0 ? 8 : _d, props = __rest$1(_a, ["className", "align", "alignOffset", "sideOffset"]);
+    var className = _a.className, _b = _a.align, align = _b === void 0 ? "start" : _b, _c = _a.alignOffset, alignOffset = _c === void 0 ? -4 : _c, _d = _a.sideOffset, sideOffset = _d === void 0 ? 8 : _d, props = __rest$2(_a, ["className", "align", "alignOffset", "sideOffset"]);
     return (React__namespace.createElement($0520064cdfc1bd2d$export$602eac185826482c, null,
-        React__namespace.createElement($0520064cdfc1bd2d$export$7c6e2c02157bb7d2, __assign$1({ ref: ref, align: align, alignOffset: alignOffset, sideOffset: sideOffset, className: cn("z-50 min-w-[12rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props))));
+        React__namespace.createElement($0520064cdfc1bd2d$export$7c6e2c02157bb7d2, __assign$2({ ref: ref, align: align, alignOffset: alignOffset, sideOffset: sideOffset, className: cn("z-50 min-w-[12rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", className) }, props))));
 });
 MenubarContent.displayName = $0520064cdfc1bd2d$export$7c6e2c02157bb7d2.displayName;
 var MenubarItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, inset = _a.inset, props = __rest$1(_a, ["className", "inset"]);
-    return (React__namespace.createElement($0520064cdfc1bd2d$export$6d08773d2e66f8f2, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", inset && "pl-8", className) }, props)));
+    var className = _a.className, inset = _a.inset, props = __rest$2(_a, ["className", "inset"]);
+    return (React__namespace.createElement($0520064cdfc1bd2d$export$6d08773d2e66f8f2, __assign$2({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", inset && "pl-8", className) }, props)));
 });
 MenubarItem.displayName = $0520064cdfc1bd2d$export$6d08773d2e66f8f2.displayName;
 var MenubarCheckboxItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, checked = _a.checked, props = __rest$1(_a, ["className", "children", "checked"]);
-    return (React__namespace.createElement($0520064cdfc1bd2d$export$16ce288f89fa631c, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className), checked: checked }, props),
+    var className = _a.className, children = _a.children, checked = _a.checked, props = __rest$2(_a, ["className", "children", "checked"]);
+    return (React__namespace.createElement($0520064cdfc1bd2d$export$16ce288f89fa631c, __assign$2({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className), checked: checked }, props),
         React__namespace.createElement("span", { className: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" },
             React__namespace.createElement($0520064cdfc1bd2d$export$c3468e2714d175fa, null,
                 React__namespace.createElement(CheckIcon, { className: "h-4 w-4" }))),
@@ -21407,8 +28863,8 @@ var MenubarCheckboxItem = React__namespace.forwardRef(function (_a, ref) {
 });
 MenubarCheckboxItem.displayName = $0520064cdfc1bd2d$export$16ce288f89fa631c.displayName;
 var MenubarRadioItem = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest$1(_a, ["className", "children"]);
-    return (React__namespace.createElement($0520064cdfc1bd2d$export$371ab307eab489c0, __assign$1({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props),
+    var className = _a.className, children = _a.children, props = __rest$2(_a, ["className", "children"]);
+    return (React__namespace.createElement($0520064cdfc1bd2d$export$371ab307eab489c0, __assign$2({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props),
         React__namespace.createElement("span", { className: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" },
             React__namespace.createElement($0520064cdfc1bd2d$export$c3468e2714d175fa, null,
                 React__namespace.createElement(DotFilledIcon, { className: "h-4 w-4 fill-current" }))),
@@ -21416,26 +28872,26 @@ var MenubarRadioItem = React__namespace.forwardRef(function (_a, ref) {
 });
 MenubarRadioItem.displayName = $0520064cdfc1bd2d$export$371ab307eab489c0.displayName;
 var MenubarLabel = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, inset = _a.inset, props = __rest$1(_a, ["className", "inset"]);
-    return (React__namespace.createElement($0520064cdfc1bd2d$export$b04be29aa201d4f5, __assign$1({ ref: ref, className: cn("px-2 py-1.5 text-sm font-semibold", inset && "pl-8", className) }, props)));
+    var className = _a.className, inset = _a.inset, props = __rest$2(_a, ["className", "inset"]);
+    return (React__namespace.createElement($0520064cdfc1bd2d$export$b04be29aa201d4f5, __assign$2({ ref: ref, className: cn("px-2 py-1.5 text-sm font-semibold", inset && "pl-8", className) }, props)));
 });
 MenubarLabel.displayName = $0520064cdfc1bd2d$export$b04be29aa201d4f5.displayName;
 var MenubarSeparator = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$1(_a, ["className"]);
-    return (React__namespace.createElement($0520064cdfc1bd2d$export$1ff3c3f08ae963c0, __assign$1({ ref: ref, className: cn("-mx-1 my-1 h-px bg-muted", className) }, props)));
+    var className = _a.className, props = __rest$2(_a, ["className"]);
+    return (React__namespace.createElement($0520064cdfc1bd2d$export$1ff3c3f08ae963c0, __assign$2({ ref: ref, className: cn("-mx-1 my-1 h-px bg-muted", className) }, props)));
 });
 MenubarSeparator.displayName = $0520064cdfc1bd2d$export$1ff3c3f08ae963c0.displayName;
 
 function Menu(_a) {
-    var menu = _a.menu; __rest$1(_a, ["menu"]);
+    var menu = _a.menu; __rest$2(_a, ["menu"]);
     return (React__default["default"].createElement(Menubar, { className: "rounded-none border-b border-none px-2 lg:px-4" }, menu.map(function (_a) {
         var title = _a.title, content = _a.content, props = _a.props;
         return (React__default["default"].createElement(MenubarMenu, null,
-            React__default["default"].createElement(MenubarTrigger, __assign$1({}, props), title),
+            React__default["default"].createElement(MenubarTrigger, __assign$2({}, props), title),
             React__default["default"].createElement(MenubarContent, null, content.map(function (_a) {
                 var item = _a.item, props = _a.props;
                 return (React__default["default"].createElement(React__default["default"].Fragment, null,
-                    React__default["default"].createElement(MenubarItem, __assign$1({}, props), item)));
+                    React__default["default"].createElement(MenubarItem, __assign$2({}, props), item)));
             }))));
     })));
 }
@@ -21450,7 +28906,7 @@ function Sidebar(_a) {
                     React__default["default"].createElement("h2", { className: "mb-2 px-4 text-lg font-semibold tracking-tight" }, title),
                     React__default["default"].createElement("div", { className: "space-y-1" }, items.map(function (_a) {
                         var name = _a.name, Icon = _a.Icon, onClick = _a.onClick, variant = _a.variant, className = _a.className;
-                        return (React__default["default"].createElement(Button, { variant: variant, className: "w-full justify-start ".concat(className), onClick: onClick },
+                        return (React__default["default"].createElement(Button$1, { variant: variant, className: "w-full justify-start ".concat(className), onClick: onClick },
                             React__default["default"].createElement(Icon, null),
                             name));
                     })))));
@@ -21458,19 +28914,19 @@ function Sidebar(_a) {
 }
 
 function Layout(_a) {
-    var children = _a.children, props = __rest$1(_a, ["children"]);
+    var children = _a.children, props = __rest$2(_a, ["children"]);
     return (React__default["default"].createElement("div", { className: " min-h-screen " },
-        React__default["default"].createElement(Menu, __assign$1({ menu: props.menu }, props)),
+        React__default["default"].createElement(Menu, __assign$2({ menu: props.menu }, props)),
         React__default["default"].createElement("div", { className: "border-t min-h-screen" },
             React__default["default"].createElement("div", { className: "bg-background" },
                 React__default["default"].createElement("div", { className: "grid lg:grid-cols-6" },
-                    React__default["default"].createElement(Sidebar, __assign$1({ className: "", style: { width: 300 } }, props)),
+                    React__default["default"].createElement(Sidebar, __assign$2({ className: "", style: { width: 300 } }, props)),
                     React__default["default"].createElement("div", { className: "col-span-3 min-h-screen lg:col-span-4 lg:border-l" },
                         React__default["default"].createElement("div", { className: "h-full px-4 py-4 lg:px-4" }, children)))))));
 }
 
 exports.AuthenticationPage = AuthenticationPage$1;
-exports.Button = Button;
+exports.Button = Button$1;
 exports.DataTable = DataTable;
 exports.Drawer = Drawer;
 exports.ForgotPasswordPage = ForgotPasswordPage;
@@ -21478,7 +28934,7 @@ exports.Form = Form;
 exports.Icons = Icons;
 exports.Layout = Layout;
 exports.ResetPasswordPage = ResetPasswordPage;
-exports.Table = Table;
+exports.Table = Table$2;
 exports.ToastAction = ToastAction;
 exports.Toaster = Toaster;
 exports.UserSignupPage = AuthenticationPage;

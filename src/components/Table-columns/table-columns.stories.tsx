@@ -1,15 +1,19 @@
 import React from 'react'
-import {columns} from "./room-type-columns"
+import {columns as roomColumns} from "./room-type-columns"
+import { columns as roomTypes } from "./room-type-columns";
+import { columns as serviceCategory } from "./service-category-table-column"
+import {columns as services} from "./services-table-column"
 import Table from "../Data-table/data-table";
 
 export default {
-    title: "hotelierpro/tables/room-type"
+    title: "hotelierpro/tables/columns"
 
 }
 
 export const RoomTableDemo = (args) => <Table {...args} />
 
 RoomTableDemo.args = {
+    columns : roomColumns,
     data: [
         {
             roomName: "delux",
@@ -23,6 +27,9 @@ RoomTableDemo.args = {
             }
         }
     ],
-    columns: columns
+
 }
+export const RoomTypeTableDemo = (args) => <Table columns={roomTypes} data={[]} />
+export const serviceTableDemo = (args) => <Table columns={services} data={[]} />
+export const serviceCategoryDemo = (args) => <Table columns={serviceCategory} data={[]} />
 

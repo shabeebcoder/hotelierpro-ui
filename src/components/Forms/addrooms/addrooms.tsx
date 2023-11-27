@@ -22,7 +22,9 @@ interface AddRoomsProps {
 
 function AddRooms({
   onsubmit,
-  defaultValues = {},
+  defaultValues = {
+    roomTypes: "1"
+  },
   id,
   roomTypes = [],
   fields = {
@@ -68,6 +70,7 @@ function AddRooms({
         >
           <FormField
             control={form.control}
+            
             name="roomTypes"
             render={({ field }) => (
               <FormItem>

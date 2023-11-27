@@ -1,7 +1,5 @@
 import React from 'react';
 import { Input } from '../../../elements/Input/input';
-import { Label } from '../../../elements/Label/label';
-import { Button } from '../../../elements/Buttons/buttons';
 import {
     Form,
     FormControl,
@@ -18,19 +16,38 @@ import {
     SelectTrigger,
     SelectValue,
 } from '../../../elements/Select/select';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useFieldArray, useForm } from 'react-hook-form';
 
-function AddServicesForm({ onSubmit, serviceCategory, id }):any {
-    const form = useForm();
+import { useForm } from 'react-hook-form';
+
+interface addServiceProps {
+    onsubmit: any;
+    serviceCategory?: any;
+    id: string;
+    defaultValues: any;
+    fields?: any
+}
+
+function AddServicesForm({ onsubmit, serviceCategory, id, defaultValues = {}, fields = {
+    serviceName: {
+        label: "service name",
+        description: ""
+    },
+    price: {
+        label: "Price",
+        description: ""
+    },
+    serviceCategory: {
+        label: "Service Category",
+        description: ""
+    }
+} }: addServiceProps): any {
+    const form: any = useForm({ defaultValues });
     return (
         <>
-            {/* <h2 className="text-2xl font-bold tracking-tight capitalize">
-                add services
-            </h2> */}
+
             <Form {...form}>
                 <form
-                    onSubmit={form.handleSubmit(onSubmit)}
+                    onSubmit={form.handleSubmit(onsubmit)}
                     className="space-y-8 mt-8"
                     id={id}
                 >
@@ -41,12 +58,14 @@ function AddServicesForm({ onSubmit, serviceCategory, id }):any {
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
-                                    service name
+                                    {fields.serviceName.label}
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
-                                <FormDescription></FormDescription>
+                                <FormDescription>
+                                    {fields.serviceName.description}
+                                </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -58,12 +77,14 @@ function AddServicesForm({ onSubmit, serviceCategory, id }):any {
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
-                                    price($)
+                                    {fields.price.label}
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
-                                <FormDescription></FormDescription>
+                                <FormDescription>
+                                    {fields.price.description}
+                                </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -74,7 +95,7 @@ function AddServicesForm({ onSubmit, serviceCategory, id }):any {
                         rules={{ required: true }}
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Service Category</FormLabel>
+                                <FormLabel>{fields.serviceCategory.label}</FormLabel>
                                 <Select
                                     onValueChange={field.onChange}
                                     defaultValue={field.value}
@@ -101,7 +122,7 @@ function AddServicesForm({ onSubmit, serviceCategory, id }):any {
                             </FormItem>
                         )}
                     />
-                    {/* <Button className="capitalize">add service</Button> */}
+
                 </form>
             </Form>
         </>

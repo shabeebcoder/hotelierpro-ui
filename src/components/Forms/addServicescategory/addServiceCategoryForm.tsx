@@ -1,7 +1,5 @@
 import React from 'react';
 import { Input } from '../../../elements/Input/input';
-import { Label } from '../../../elements/Label/label';
-import { Button } from '../../../elements/Buttons/buttons';
 import {
     Form,
     FormControl,
@@ -11,26 +9,29 @@ import {
     FormLabel,
     FormMessage,
 } from '../../../elements/Form/form';
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from '../../../elements/Select/select';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useFieldArray, useForm } from 'react-hook-form';
 
-function AddServiceCategoryForm({ onSubmit, serviceCategory, id }):any {
-    const form = useForm();
+import {  useForm } from 'react-hook-form';
+
+interface serviceCategoryProps {
+    onsubmit: any;
+    id: string;
+    fields?: any;
+    defa
+}
+
+function AddServiceCategoryForm({ onsubmit, id, defaultValues = {}, fields = {
+    name: {
+        label: "service name",
+        description: "",
+    }
+} }): any {
+    const form: any = useForm({ defaultValues });
     return (
         <>
-            {/* <h2 className="text-2xl font-bold tracking-tight capitalize">
-                add services
-            </h2> */}
+
             <Form {...form}>
                 <form
-                    onSubmit={form.handleSubmit(onSubmit)}
+                    onSubmit={form.handleSubmit(onsubmit)}
                     className="space-y-8 mt-8"
                     id={id}
                 >
@@ -41,19 +42,18 @@ function AddServiceCategoryForm({ onSubmit, serviceCategory, id }):any {
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
-                                    service name
+                                    {fields.name.label}
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
-                                <FormDescription></FormDescription>
+                                <FormDescription>
+                                    {fields.name.description}
+                                </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-              
-              
-                    {/* <Button className="capitalize">add service</Button> */}
                 </form>
             </Form>
         </>

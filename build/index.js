@@ -13577,14 +13577,14 @@ var columns$2 = [
         enableHiding: false,
     },
     {
-        accessorKey: "roomName",
+        accessorKey: "name",
         header: function (_a) {
             var column = _a.column;
             return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Name" }));
         },
         cell: function (_a) {
             var row = _a.row;
-            return React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("roomName"));
+            return React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("name"));
         },
         enableSorting: false,
         enableHiding: false,
@@ -21689,32 +21689,39 @@ function AddRoomType(_a) {
 }
 
 function AddRooms(_a) {
-    var onSubmit = _a.onSubmit, defaultValue = _a.defaultValue, type = _a.type, id = _a.id, _b = _a.roomTypes, roomTypes = _b === void 0 ? [] : _b;
-    var form = useForm({
-        defaultValues: type === "create" ? {} : defaultValue
-    });
+    var onsubmit = _a.onsubmit, _b = _a.defaultValues, defaultValues = _b === void 0 ? {} : _b, id = _a.id, _c = _a.roomTypes, roomTypes = _c === void 0 ? [] : _c, _d = _a.fields, fields = _d === void 0 ? {
+        roomTypes: {
+            label: "Room Types",
+            description: "Select the type of room from the options below. Choose the most appropriate category that describes the nature or purpose of the room."
+        },
+        name: {
+            label: "Room Name/Number",
+            description: "Enter the total number of rooms available in your property or facility. This should include all types of rooms, such as bedrooms, meeting rooms, and offices."
+        }
+    } : _d;
+    var form = useForm({ defaultValues: defaultValues });
     return (React__default["default"].createElement("div", null,
         React__default["default"].createElement(Form$1, __assign$2({}, form),
-            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8", id: id },
-                React__default["default"].createElement(FormField, { control: form.control, name: "roomType", render: function (_a) {
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8", id: id },
+                React__default["default"].createElement(FormField, { control: form.control, name: "roomTypes", render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, null, "Room Types"),
+                            React__default["default"].createElement(FormLabel, null, fields.roomTypes.label),
                             React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
                                 React__default["default"].createElement(FormControl, null,
                                     React__default["default"].createElement(SelectTrigger, null,
                                         React__default["default"].createElement(SelectValue, null))),
                                 React__default["default"].createElement(SelectContent, null, roomTypes.map(function (item) { return React__default["default"].createElement(SelectItem, { value: item.value }, item.label); }))),
-                            React__default["default"].createElement(FormDescription, null, "Select the type of room from the options below. Choose the most appropriate category that describes the nature or purpose of the room."),
+                            React__default["default"].createElement(FormDescription, null, fields.roomTypes.description),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "numberOfRooms", render: function (_a) {
+                React__default["default"].createElement(FormField, { control: form.control, name: "name", render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, null, "No of Rooms"),
+                            React__default["default"].createElement(FormLabel, null, fields.name.label),
                             React__default["default"].createElement(FormControl, null,
                                 React__default["default"].createElement(Input, __assign$2({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the total number of rooms available in your property or facility. This should include all types of rooms, such as bedrooms, meeting rooms, and offices."),
+                            React__default["default"].createElement(FormDescription, null, fields.name.description),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
                 React__default["default"].createElement("div", { className: "grid sm:flex flex-col w-full max-w-sm  gap-1.5" },
@@ -21725,10 +21732,7 @@ function AddRooms(_a) {
                     React__default["default"].createElement("div", { className: 'flex gap-1.5' },
                         React__default["default"].createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
                         React__default["default"].createElement("img", { className: 'w-33 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }),
-                        React__default["default"].createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" }))),
-                React__default["default"].createElement(Button$1, { type: "submit" }, "Create new room"),
-                "\u00A0\u00A0\u00A0",
-                React__default["default"].createElement(Button$1, { variant: "secondary", type: "submit" }, "Cancel room")))));
+                        React__default["default"].createElement("img", { className: 'w-35 h-11', src: "https://s3-alpha-sig.figma.com/img/51e7/26a4/c5ad5fa89e6eb395e2dfcd3dbfe68a99?Expires=1701043200&Signature=DbL8OxRDOYeZqpSTuNPGgibkUMytgInayNYmeCjEI9I2qiKZ9xvxlY1BcRivK2EKGkq1hb3PSGtOMCWdStGp4AU184PxfEsSACn9ILuiSaiUB01TmRFC0tTcf~Ab754w11t41x0taXlt29UmoSmWx1z3-52eM2JU3mBotaqDNG0Ke2~mKymmTylP0RkiH8ggRd48jx5qMYRTNCBUf2FAd2avezDOwGCwP4jflfDHzZXhZDmb-4iw7TaRrpn2typS1CXaJyys9HIf~JbPHGI~EvlEwrop1aKyER28~hU7AKfIpxjUIp4dWWaqWyrGDwauqzgHtSpW1AiQ60zxYL2OBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4", alt: "" })))))));
 }
 
 function AddServiceCategoryForm(_a) {

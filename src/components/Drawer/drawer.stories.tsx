@@ -31,10 +31,16 @@ export const SheetExample = (args) => {
         description={description}
         open={open}
         onClose={handleOnClose}
-        Form={() => <Form.addPerson
-            onSubmit={(data)=> handleFormSubmit(data)}
-            values=""
-            type=""
+        Form={() => <Form.addroom
+            onsubmit={(data)=> handleFormSubmit(data)}
+            roomTypes={[
+                {
+                    label: "king",
+                    value: "1"
+                }
+            ]}
+            
+           
             id="addperson"
             
         />}

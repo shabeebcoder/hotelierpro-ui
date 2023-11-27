@@ -832,6 +832,10 @@ body {
   margin-left: 1rem;
 }
 
+.ml-8 {
+  margin-left: 2rem;
+}
+
 .ml-auto {
   margin-left: auto;
 }
@@ -977,6 +981,10 @@ body {
 
 .h-9 {
   height: 2.25rem;
+}
+
+.h-\[14rem\] {
+  height: 14rem;
 }
 
 .h-\[150px\] {
@@ -1212,10 +1220,6 @@ body {
   width: max-content;
 }
 
-.w-screen {
-  width: 100vw;
-}
-
 .min-w-\[12rem\] {
   min-width: 12rem;
 }
@@ -1417,6 +1421,10 @@ body {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-12 {
+  gap: 3rem;
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -2403,6 +2411,10 @@ body {
 
 .disabled\:opacity-50:disabled {
   opacity: 0.5;
+}
+
+.group:hover .group-hover\:text-primary {
+  color: hsl(var(--primary));
 }
 
 .group:hover .group-hover\:opacity-100 {

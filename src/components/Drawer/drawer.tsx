@@ -12,9 +12,9 @@ import {
 import { Button } from "../../elements/Buttons/buttons";
 import { Input } from "../../elements/Input/input";
 import { Label } from "../../elements/Label/label";
-import AddPerson from "../Forms/addPerson/addperson"
-import { ScrollArea } from "../../elements/Scroll Area/scrollarea"
-import { Icons } from "../../elements/Icons/icons"
+import AddPerson from "../Forms/addPerson/addperson";
+import { ScrollArea } from "../../elements/Scroll Area/scrollarea";
+import { Icons } from "../../elements/Icons/icons";
 
 interface IDrawer {
     open: boolean;
@@ -22,7 +22,8 @@ interface IDrawer {
     title?: String;
     description?: String;
     Form?: any;
-    SubmitButton?:any
+    SubmitButton?: any;
+    onClose?: any;
 
 }
 
@@ -32,35 +33,39 @@ function Drawer({
     title,
     description,
     Form,
-    SubmitButton
+    SubmitButton,
+    onClose=null
 }: IDrawer) {
 
+
+
     return (
-        <div>
-            <Sheet open={open}>
-                <SheetTrigger asChild>
-                    {children}
-                </SheetTrigger>
-                <SheetContent  >
-                    <ScrollArea className="h-screen pb-10 " >
-                        <SheetHeader className='pb-4'>
-                            <SheetTitle>{title}</SheetTitle>
-                            <SheetDescription>
-                                {description}
-                            </SheetDescription>
-                        </SheetHeader>
+        <Sheet open={open}>
+            <SheetTrigger asChild>
+                {children}
+            </SheetTrigger>
+            <SheetContent onCloseAutoFocus={onClose}  >
+                <ScrollArea className="h-screen pb-10 " >
+                    <SheetHeader className='pb-4'>
+                        <SheetTitle>{title}</SheetTitle>
+                        <SheetDescription>
+                            {description}
+                        </SheetDescription>
+                    </SheetHeader>
 
-                        <Form />
+                    <Form />
 
-                        <SheetFooter >
-                            {/* <SheetClose asChild> */}
-                                {SubmitButton && <SubmitButton />}
-                            {/* </SheetClose> */}
-                        </SheetFooter>
-                    </ScrollArea>
-                </SheetContent>
-            </Sheet>
-        </div>
+                    <SheetFooter >
+                        {/* <SheetClose asChild> */}
+                        {SubmitButton && <SubmitButton />}
+                        {/* </SheetClose> */}
+                    </SheetFooter>
+                </ScrollArea>
+            </SheetContent>
+        </Sheet>
+
+
+
     )
 }
 

@@ -19,6 +19,7 @@ export const SheetExample = (args) => {
         
         alert(JSON.stringify(data))
     }
+    const handleOnClose = () => alert("Closing...")
 
     const handleTrigger = () => {
         setOpen(!open)
@@ -29,14 +30,16 @@ export const SheetExample = (args) => {
         title={title}
         description={description}
         open={open}
+        onClose={handleOnClose}
         Form={() => <Form.addPerson
             onSubmit={(data)=> handleFormSubmit(data)}
             values=""
             type=""
             id="addperson"
+            
         />}
         SubmitButton={() => <div className="flex gap-4 mt-4">
-            <Button form='addPerson' className="capitalize">
+            <Button onClick={()=> setOpen(!open)} form='addPerson' className="capitalize">
                 create new person
             </Button>
         </div>}

@@ -38,7 +38,7 @@ export default function NewBookingForm({
     statusValues,
     id
 }) {
-    const form = useForm({});
+    const form:any = useForm({});
     return (
         <>
             <Form {...form}>

@@ -66,11 +66,11 @@ export const columns: any = [
         enableHiding: false,
     },
     {
-        accessorKey: "roomName",
+        accessorKey: "name",
         header: ({ column }: any) => (
             <DataTableColumnHeader column={column} title="Room Name" />
         ),
-        cell: ({ row }: any) => <div className="w-[150px]">{row.getValue("roomName")}</div>,
+        cell: ({ row }: any) => <div className="w-[150px]">{row.getValue("name")}</div>,
         enableSorting: false,
         enableHiding: false,
     },

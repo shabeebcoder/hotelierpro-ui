@@ -21586,8 +21586,27 @@ function MaintenanceAlertForm(_a) {
 }
 
 function AddRoomType(_a) {
-    var onsubmit = _a.onsubmit, id = _a.id;
-    var form = useForm({});
+    var onsubmit = _a.onsubmit, id = _a.id, _b = _a.defaultValues, defaultValues = _b === void 0 ? {} : _b, _c = _a.fields, fields = _c === void 0 ? {
+        name: {
+            label: "Name",
+            description: "Please enter a unique name for the room. It may contain letters, numbers, and spaces. Avoid special characters or symbols."
+        },
+        maxPerson: {
+            label: "Max. Persons(per rooms)",
+            description: "Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations."
+        },
+        regularPrice: {
+            label: "Price(Regular use)",
+            description: "Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations."
+        },
+        singlePrice: {
+            label: "Price(Single use)",
+            description: "Specify the standard price for a single use of this room for regular purposes."
+        },
+    } : _c;
+    var form = useForm({
+        defaultValues: defaultValues
+    });
     return (
     // <div className="hidden h-full flex-1 flex-col space-y-3 p-8 md:flex">
     //   <div className="flex items-center justify-between space-y-2">
@@ -21601,40 +21620,40 @@ function AddRoomType(_a) {
     //   <div>
     React__default.createElement(Form$1, __assign$2({}, form),
         React__default.createElement("form", { id: id, onSubmit: form.handleSubmit(onsubmit), className: "space-y-8" },
-            React__default.createElement(FormField, { control: form.control, name: "room_type_name", rules: { required: true }, render: function (_a) {
+            React__default.createElement(FormField, { control: form.control, name: "name", rules: { required: true }, render: function (_a) {
                     var field = _a.field;
                     return (React__default.createElement(FormItem, null,
-                        React__default.createElement(FormLabel, null, "Name"),
+                        React__default.createElement(FormLabel, null, fields.name.label),
                         React__default.createElement(FormControl, null,
                             React__default.createElement(Input, __assign$2({}, field))),
                         React__default.createElement(FormDescription, null, "Please enter a unique name for the room. It may contain letters, numbers, and spaces. Avoid special characters or symbols.                                            "),
                         React__default.createElement(FormMessage, null)));
                 } }),
-            React__default.createElement(FormField, { control: form.control, name: "max_person", rules: { required: true }, render: function (_a) {
+            React__default.createElement(FormField, { control: form.control, name: "maxPerson", rules: { required: true }, render: function (_a) {
                     var field = _a.field;
                     return (React__default.createElement(FormItem, null,
-                        React__default.createElement(FormLabel, null, "Max. Persons(per rooms)"),
+                        React__default.createElement(FormLabel, null, fields.maxPerson.label),
                         React__default.createElement(FormControl, null,
                             React__default.createElement(Input, __assign$2({ type: 'number' }, field))),
-                        React__default.createElement(FormDescription, null, "Specify the maximum number of individuals allowed in this room. Please consider factors such as room size, safety regulations, and comfort.                                            "),
+                        React__default.createElement(FormDescription, null, fields.maxPerson.description),
                         React__default.createElement(FormMessage, null)));
                 } }),
-            React__default.createElement(FormField, { control: form.control, name: "regular_price", rules: { required: true }, render: function (_a) {
+            React__default.createElement(FormField, { control: form.control, name: "regularPrice", rules: { required: true }, render: function (_a) {
                     var field = _a.field;
                     return (React__default.createElement(FormItem, null,
-                        React__default.createElement(FormLabel, null, "Price(Regular use)"),
+                        React__default.createElement(FormLabel, null, fields.regularPrice.label),
                         React__default.createElement(FormControl, null,
                             React__default.createElement(Input, __assign$2({ type: 'number' }, field))),
-                        React__default.createElement(FormDescription, null, "Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations."),
+                        React__default.createElement(FormDescription, null, fields.regularPrice.description),
                         React__default.createElement(FormMessage, null)));
                 } }),
-            React__default.createElement(FormField, { control: form.control, name: "sing_price", rules: { required: true }, render: function (_a) {
+            React__default.createElement(FormField, { control: form.control, name: "singlePrice", rules: { required: true }, render: function (_a) {
                     var field = _a.field;
                     return (React__default.createElement(FormItem, null,
-                        React__default.createElement(FormLabel, null, "Price(Single use)"),
+                        React__default.createElement(FormLabel, null, fields.singlePrice.label),
                         React__default.createElement(FormControl, null,
                             React__default.createElement(Input, __assign$2({ type: 'number' }, field))),
-                        React__default.createElement(FormDescription, null, "Specify the standard price for a single use of this room for regular purposes."),
+                        React__default.createElement(FormDescription, null, fields.singlePrice.description),
                         React__default.createElement(FormMessage, null)));
                 } })))
     //   </div>
@@ -22806,17 +22825,16 @@ var ScrollBar = React.forwardRef(function (_a, ref) {
 ScrollBar.displayName = $57acba87d6e25586$export$2fabd85d0eba3c57.displayName;
 
 function Drawer(_a) {
-    var _b = _a.open, open = _b === void 0 ? false : _b, children = _a.children, title = _a.title, description = _a.description, Form = _a.Form, SubmitButton = _a.SubmitButton;
-    return (React__default.createElement("div", null,
-        React__default.createElement(Sheet, { open: open },
-            React__default.createElement(SheetTrigger, { asChild: true }, children),
-            React__default.createElement(SheetContent, null,
-                React__default.createElement(ScrollArea, { className: "h-screen pb-10 " },
-                    React__default.createElement(SheetHeader, { className: 'pb-4' },
-                        React__default.createElement(SheetTitle, null, title),
-                        React__default.createElement(SheetDescription, null, description)),
-                    React__default.createElement(Form, null),
-                    React__default.createElement(SheetFooter, null, SubmitButton && React__default.createElement(SubmitButton, null)))))));
+    var _b = _a.open, open = _b === void 0 ? false : _b, children = _a.children, title = _a.title, description = _a.description, Form = _a.Form, SubmitButton = _a.SubmitButton, _c = _a.onClose, onClose = _c === void 0 ? null : _c;
+    return (React__default.createElement(Sheet, { open: open },
+        React__default.createElement(SheetTrigger, { asChild: true }, children),
+        React__default.createElement(SheetContent, { onCloseAutoFocus: onClose },
+            React__default.createElement(ScrollArea, { className: "h-screen pb-10 " },
+                React__default.createElement(SheetHeader, { className: 'pb-4' },
+                    React__default.createElement(SheetTitle, null, title),
+                    React__default.createElement(SheetDescription, null, description)),
+                React__default.createElement(Form, null),
+                React__default.createElement(SheetFooter, null, SubmitButton && React__default.createElement(SubmitButton, null))))));
 }
 
 /**

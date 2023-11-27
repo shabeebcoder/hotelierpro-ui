@@ -3,7 +3,7 @@ import { Input } from '../../../elements/Input/input'
 import { Label } from '../../../elements/Label/label'
 import { Button } from '../../../elements/Buttons/buttons'
 import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage, Form } from '../../../elements/Form/form'
-import { useFieldArray, useForm } from "react-hook-form"
+import {  useForm } from "react-hook-form"
 
 
 function AddRoomType({
@@ -33,7 +33,7 @@ function AddRoomType({
 }): any {
 
 
-  const form = useForm({
+  const form:any = useForm({
     defaultValues
   })
 
@@ -56,7 +56,6 @@ function AddRoomType({
         <FormField
           control={form.control}
           name="name"
-
           rules={
             { required: true }
           }

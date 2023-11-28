@@ -1,7 +1,15 @@
-declare function AddPersonForm({ onSubmit, values, type, id }: {
-    onSubmit: any;
-    values: any;
-    type: any;
-    id: any;
-}): any;
+interface Field {
+    label: string;
+    description: string;
+}
+interface Fields {
+    [key: string]: Field;
+}
+interface addPersonProps {
+    fields?: Fields;
+    onsubmit: any;
+    defaultValues?: any;
+    id: string;
+}
+declare function AddPersonForm({ onsubmit, defaultValues, id, fields }: addPersonProps): any;
 export default AddPersonForm;

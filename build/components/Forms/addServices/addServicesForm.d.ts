@@ -1,6 +1,9 @@
-declare function AddServicesForm({ onSubmit, serviceCategory, id }: {
-    onSubmit: any;
-    serviceCategory: any;
-    id: any;
-}): any;
+interface addServiceProps {
+    onsubmit: any;
+    serviceCategory?: any;
+    id: string;
+    defaultValues: any;
+    fields?: any;
+}
+declare function AddServicesForm({ onsubmit, serviceCategory, id, defaultValues, fields }: addServiceProps): any;
 export default AddServicesForm;

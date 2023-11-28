@@ -32,9 +32,9 @@ function DataTableRowActions({
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-[160px]">
-                <DropdownMenuItem>Update</DropdownMenuItem>
-                <DropdownMenuItem>Delete</DropdownMenuItem>
-            
+            <DropdownMenuItem onClick={()=>task.actions.handleUpdate(task)}>Update
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={()=>task.actions.handleDelete(task)}>Delete</DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     )
@@ -66,21 +66,21 @@ export const columns: any = [
     {
         accessorKey: "fullName",
         header: ({ column }: any) => (
-            <DataTableColumnHeader column={column} title="Room Name" />
+            <DataTableColumnHeader column={column} title="Guest Name" />
         ),
         cell: ({ row }: any) => <div className="w-[150px]">{row.getValue("fullName")}</div>,
         enableSorting: false,
         enableHiding: false,
     },
     {
-        accessorKey: "passportId",
+        accessorKey: "passportNumber",
         header: ({ column }: any) => (
             <DataTableColumnHeader column={column} title="Passport ID" />
         ),
         cell: ({ row }: any) => {
 
             return (
-                <div className="w-[150px]">{row.getValue("passportId")}</div>
+                <div className="w-[150px]">{row.getValue("passportNumber")}</div>
             )
         },
     },
@@ -128,7 +128,7 @@ export const columns: any = [
 
             return (
                 <div className="flex items-center text-center">
-                    <span>${row.getValue("email")}</span>
+                    <span>{row.getValue("email")}</span>
 
                 </div>
             )
@@ -138,7 +138,7 @@ export const columns: any = [
         },
     },
     {
-        accessorKey: "phone",
+        accessorKey: "contactNumber",
         header: ({ column }:any) => (
             <DataTableColumnHeader column={column} title="Phone Number" />
         ),
@@ -146,7 +146,7 @@ export const columns: any = [
 
             return (
                 <div className="flex items-center text-center">
-                    <span>${row.getValue("phone")}</span>
+                    <span>{row.getValue("contactNumber")}</span>
 
                 </div>
             )

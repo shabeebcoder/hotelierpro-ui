@@ -31,14 +31,9 @@ export const SheetExample = (args) => {
         description={description}
         open={open}
         onClose={handleOnClose}
-        Form={() => <Form.addroom
+        Form={() => <Form.addPerson
             onsubmit={(data)=> handleFormSubmit(data)}
-            roomTypes={[
-                {
-                    label: "king",
-                    value: "1"
-                }
-            ]}
+       
             
            
             id="addperson"

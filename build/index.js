@@ -13457,7 +13457,7 @@ var columns$3 = [
         accessorKey: "fullName",
         header: function (_a) {
             var column = _a.column;
-            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Room Name" }));
+            return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Guest Name" }));
         },
         cell: function (_a) {
             var row = _a.row;
@@ -13467,14 +13467,14 @@ var columns$3 = [
         enableHiding: false,
     },
     {
-        accessorKey: "passportId",
+        accessorKey: "passportNumber",
         header: function (_a) {
             var column = _a.column;
             return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Passport ID" }));
         },
         cell: function (_a) {
             var row = _a.row;
-            return (React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("passportId")));
+            return (React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("passportNumber")));
         },
     },
     {
@@ -13515,16 +13515,14 @@ var columns$3 = [
         cell: function (_a) {
             var row = _a.row;
             return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
-                React__default["default"].createElement("span", null,
-                    "$",
-                    row.getValue("email"))));
+                React__default["default"].createElement("span", null, row.getValue("email"))));
         },
         filterFn: function (row, id, value) {
             return value.includes(row.getValue(id));
         },
     },
     {
-        accessorKey: "phone",
+        accessorKey: "contactNumber",
         header: function (_a) {
             var column = _a.column;
             return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Phone Number" }));
@@ -13532,9 +13530,7 @@ var columns$3 = [
         cell: function (_a) {
             var row = _a.row;
             return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
-                React__default["default"].createElement("span", null,
-                    "$",
-                    row.getValue("phone"))));
+                React__default["default"].createElement("span", null, row.getValue("contactNumber"))));
         },
         filterFn: function (row, id, value) {
             return value.includes(row.getValue(id));
@@ -13671,8 +13667,7 @@ function DataTableRowActions$1(_a) {
                 React__default["default"].createElement("span", { className: "sr-only" }, "Open menu"))),
         React__default["default"].createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
             React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
-            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
-            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"))));
 }
 var columns$1 = [
     {
@@ -13689,14 +13684,14 @@ var columns$1 = [
         enableHiding: false,
     },
     {
-        accessorKey: "serviceName",
+        accessorKey: "name",
         header: function (_a) {
             var column = _a.column;
             return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Service Name" }));
         },
         cell: function (_a) {
             var row = _a.row;
-            return React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("serviceName"));
+            return React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("name"));
         },
         enableSorting: false,
         enableHiding: false,
@@ -13717,7 +13712,7 @@ var columns$1 = [
         },
     },
     {
-        accessorKey: "serviceCategory",
+        accessorKey: "categoryName",
         header: function (_a) {
             var column = _a.column;
             return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Service Category" }));
@@ -13731,7 +13726,7 @@ var columns$1 = [
             //     return null
             // }
             return (React__default["default"].createElement("div", { className: "flex items-center" },
-                React__default["default"].createElement("span", null, row.getValue("serviceCategory"))));
+                React__default["default"].createElement("span", null, row.getValue("categoryName"))));
         },
         // filterFn: (row, id, value) => {
         //     return value.includes(row.getValue(id))
@@ -13756,8 +13751,7 @@ function DataTableRowActions(_a) {
                 React__default["default"].createElement("span", { className: "sr-only" }, "Open menu"))),
         React__default["default"].createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
             React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
-            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
-            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"))));
 }
 var columns = [
     {
@@ -13774,14 +13768,14 @@ var columns = [
         enableHiding: false,
     },
     {
-        accessorKey: "categoryName",
+        accessorKey: "name",
         header: function (_a) {
             var column = _a.column;
             return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Service category Name" }));
         },
         cell: function (_a) {
             var row = _a.row;
-            return React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("categoryName"));
+            return React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("name"));
         },
         enableSorting: false,
         enableHiding: false,
@@ -14175,123 +14169,181 @@ var FormMessage = React__default["default"].forwardRef(function (_a, ref) {
 FormMessage.displayName = "FormMessage";
 
 function AddPersonForm(_a) {
-    var onSubmit = _a.onSubmit, values = _a.values, type = _a.type, id = _a.id;
-    var form = useForm({
-        defaultValues: type === 'create' ? {} : values,
-    });
+    var onsubmit = _a.onsubmit, defaultValues = _a.defaultValues, id = _a.id, _b = _a.fields, fields = _b === void 0 ? {
+        fullName: {
+            label: "full name",
+            description: "Enter the complete name of the person. This should serve as a distinctive label for convenient and precise identification."
+        },
+        companyId: {
+            label: "company ID",
+            description: "Enter the unique identification number or code assigned to the company. This serves as a distinct identifier for the company for easy reference and identification."
+        },
+        bank: {
+            label: "bank",
+            description: "Enter the official name or designation of the bank associated with this account. Provide the full and accurate name for clear identification."
+        },
+        accountNumber: {
+            label: "account no",
+            description: "Enter the unique account number or identifier associated with this account.It serves as a distinct label for easy identification and reference in the system."
+        },
+        email: {
+            label: "email",
+            description: "Enter the email address associated with your account. Make sure it is a valid and accessible email for communication and account-related notifications."
+        },
+        contactNumber: {
+            label: "Phone Number",
+            description: "Enter the contact number associated with the person. It should be a valid phone number for communication purposes and should uniquely identify this person in case of any queries or contacts."
+        },
+        address: {
+            label: "address",
+            description: "Enter the physical location details, including street address, city, and postal code, for precise identification of this particular location. Provide a clear and comprehensive address to facilitate accurate location referencing."
+        },
+        contactPerson: {
+            label: "Contact Person",
+            description: "Enter the name of the primary contact person associated with this person. Provide the full name for clear identification and communication purposes."
+        },
+        passportNumber: {
+            label: "Passport ID",
+            description: "Passport information/ national identitification number"
+        },
+        country: {
+            label: "Country",
+            description: "Provide the country informations"
+        }
+    } : _b;
+    var form = useForm({ defaultValues: defaultValues });
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(Form$1, __assign$2({}, form),
-            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 p-1", id: id },
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8 p-1", id: id },
                 React__default["default"].createElement(FormField, { control: form.control, name: "fullName", rules: { required: true }, render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "full name"),
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, fields.fullName.label),
                             React__default["default"].createElement(FormControl, null,
                                 React__default["default"].createElement(Input, __assign$2({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the complete name of the person. This should serve as a distinctive label for convenient and precise identification."),
+                            React__default["default"].createElement(FormDescription, null, fields.fullName.description),
+                            React__default["default"].createElement(FormMessage, null)));
+                    } }),
+                React__default["default"].createElement(FormField, { control: form.control, name: "passportNumber", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default["default"].createElement(FormItem, null,
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, fields.passportNumber.label),
+                            React__default["default"].createElement(FormControl, null,
+                                React__default["default"].createElement(Input, __assign$2({}, field))),
+                            React__default["default"].createElement(FormDescription, null, fields.passportNumber.description),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
                 React__default["default"].createElement(FormField, { control: form.control, name: "companyId", render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "company iD"),
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, fields.companyId.label),
                             React__default["default"].createElement(FormControl, null,
                                 React__default["default"].createElement(Input, __assign$2({}, field))),
-                            React__default["default"].createElement(FormDescription, null,
-                                ' ',
-                                "Enter the unique identification number or code assigned to the company. This serves as a distinct identifier for the company for easy reference and identification."),
+                            React__default["default"].createElement(FormDescription, null, fields.companyId.description),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
                 React__default["default"].createElement(FormField, { control: form.control, name: "bank", render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "bank"),
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, fields.bank.label),
                             React__default["default"].createElement(FormControl, null,
                                 React__default["default"].createElement(Input, __assign$2({}, field))),
                             React__default["default"].createElement(FormDescription, null,
                                 ' ',
-                                "Enter the official name or designation of the bank associated with this account. Provide the full and accurate name for clear identification."),
+                                fields.bank.description),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
                 React__default["default"].createElement(FormField, { control: form.control, name: "accountNumber", render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "account no"),
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, fields.accountNumber.label),
                             React__default["default"].createElement(FormControl, null,
                                 React__default["default"].createElement(Input, __assign$2({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the unique account number or identifier associated with this account. It serves as a distinct label for easy identification and reference in the system."),
+                            React__default["default"].createElement(FormDescription, null, fields.accountNumber.description),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
                 React__default["default"].createElement(FormField, { control: form.control, name: "email", rules: { required: true }, render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "email"),
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, fields.email.label),
                             React__default["default"].createElement(FormControl, null,
                                 React__default["default"].createElement(Input, __assign$2({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the email address associated with your account. Make sure it is a valid and accessible email for communication and account-related notifications."),
+                            React__default["default"].createElement(FormDescription, null, fields.email.description),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "phoneNumber", rules: { required: true }, render: function (_a) {
+                React__default["default"].createElement(FormField, { control: form.control, name: "contactNumber", rules: { required: true }, render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "phone no"),
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, fields.contactPerson.label),
                             React__default["default"].createElement(FormControl, null,
                                 React__default["default"].createElement(Input, __assign$2({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the contact number associated with the person. It should be a valid phone number for communication purposes and should uniquely identify this person in case of any queries or contacts."),
+                            React__default["default"].createElement(FormDescription, null, fields.contactPerson.description),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
                 React__default["default"].createElement(FormField, { control: form.control, name: "country", render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "address"),
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, fields.country.label),
                             React__default["default"].createElement(FormControl, null,
                                 React__default["default"].createElement(Input, __assign$2({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the physical location details, including street address, city, and postal code, for precise identification of this particular location. Provide a clear and comprehensive address to facilitate accurate location referencing."),
+                            React__default["default"].createElement(FormDescription, null, fields.country.description),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
-                React__default["default"].createElement(FormField, { control: form.control, name: "contactPerson", rules: { required: true }, render: function (_a) {
+                React__default["default"].createElement(FormField, { control: form.control, name: "contactPerson", render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "contact person"),
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, fields.contactPerson.label),
                             React__default["default"].createElement(FormControl, null,
                                 React__default["default"].createElement(Input, __assign$2({}, field))),
-                            React__default["default"].createElement(FormDescription, null, "Enter the name of the primary contact person associated with this person. Provide the full name for clear identification and communication purposes."),
+                            React__default["default"].createElement(FormDescription, null, fields.contactPerson.description),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
                 React__default["default"].createElement("div", null,
                     React__default["default"].createElement(Label, null, "Notes"),
-                    React__default["default"].createElement(Textarea, { placeholder: "Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." })),
-                React__default["default"].createElement(Button$1, null, "submit")))));
+                    React__default["default"].createElement(Textarea, { name: 'note', placeholder: "Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." }))))));
 }
 
 function AddServicesForm(_a) {
-    var onSubmit = _a.onSubmit, serviceCategory = _a.serviceCategory, id = _a.id;
-    var form = useForm();
+    var onsubmit = _a.onsubmit, serviceCategory = _a.serviceCategory, id = _a.id, _b = _a.defaultValues, defaultValues = _b === void 0 ? {} : _b, _c = _a.fields, fields = _c === void 0 ? {
+        serviceName: {
+            label: "service name",
+            description: ""
+        },
+        price: {
+            label: "Price",
+            description: ""
+        },
+        serviceCategory: {
+            label: "Service Category",
+            description: ""
+        }
+    } : _c;
+    var form = useForm({ defaultValues: defaultValues });
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(Form$1, __assign$2({}, form),
-            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 mt-8", id: id },
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8 mt-8", id: id },
                 React__default["default"].createElement(FormField, { control: form.control, name: "serviceName", rules: { required: true }, render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "service name"),
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, fields.serviceName.label),
                             React__default["default"].createElement(FormControl, null,
                                 React__default["default"].createElement(Input, __assign$2({}, field))),
-                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormDescription, null, fields.serviceName.description),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
                 React__default["default"].createElement(FormField, { control: form.control, name: "price", rules: { required: true }, render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "price($)"),
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, fields.price.label),
                             React__default["default"].createElement(FormControl, null,
                                 React__default["default"].createElement(Input, __assign$2({}, field))),
-                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormDescription, null, fields.price.description),
                             React__default["default"].createElement(FormMessage, null)));
                     } }),
                 React__default["default"].createElement(FormField, { control: form.control, name: "serviceCategory", rules: { required: true }, render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, null, "Service Category"),
+                            React__default["default"].createElement(FormLabel, null, fields.serviceCategory.label),
                             React__default["default"].createElement(Select, { onValueChange: field.onChange, defaultValue: field.value },
                                 React__default["default"].createElement(FormControl, null,
                                     React__default["default"].createElement(SelectTrigger, null,
@@ -21689,7 +21741,9 @@ function AddRoomType(_a) {
 }
 
 function AddRooms(_a) {
-    var onsubmit = _a.onsubmit, _b = _a.defaultValues, defaultValues = _b === void 0 ? {} : _b, id = _a.id, _c = _a.roomTypes, roomTypes = _c === void 0 ? [] : _c, _d = _a.fields, fields = _d === void 0 ? {
+    var onsubmit = _a.onsubmit, _b = _a.defaultValues, defaultValues = _b === void 0 ? {
+        roomTypes: "1"
+    } : _b, id = _a.id, _c = _a.roomTypes, roomTypes = _c === void 0 ? [] : _c, _d = _a.fields, fields = _d === void 0 ? {
         roomTypes: {
             label: "Room Types",
             description: "Select the type of room from the options below. Choose the most appropriate category that describes the nature or purpose of the room."
@@ -21736,18 +21790,23 @@ function AddRooms(_a) {
 }
 
 function AddServiceCategoryForm(_a) {
-    var onSubmit = _a.onSubmit; _a.serviceCategory; var id = _a.id;
-    var form = useForm();
+    var onsubmit = _a.onsubmit, id = _a.id, _b = _a.defaultValues, defaultValues = _b === void 0 ? {} : _b, _c = _a.fields, fields = _c === void 0 ? {
+        name: {
+            label: "service name",
+            description: "",
+        }
+    } : _c;
+    var form = useForm({ defaultValues: defaultValues });
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(Form$1, __assign$2({}, form),
-            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 mt-8", id: id },
+            React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8 mt-8", id: id },
                 React__default["default"].createElement(FormField, { control: form.control, name: "serviceCategoryName", rules: { required: true }, render: function (_a) {
                         var field = _a.field;
                         return (React__default["default"].createElement(FormItem, null,
-                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, "service name"),
+                            React__default["default"].createElement(FormLabel, { className: "capitalize" }, fields.name.label),
                             React__default["default"].createElement(FormControl, null,
                                 React__default["default"].createElement(Input, __assign$2({}, field))),
-                            React__default["default"].createElement(FormDescription, null),
+                            React__default["default"].createElement(FormDescription, null, fields.name.description),
                             React__default["default"].createElement(FormMessage, null)));
                     } })))));
 }

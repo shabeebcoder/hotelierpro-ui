@@ -1,20 +1,11 @@
 "use client"
 import React from 'react'
-import { ColumnDef } from "@tanstack/react-table"
 import { Checkbox } from "../../elements/Checkbox/checkbox"
 import { DataTableColumnHeader } from "../Data-table/data-table-column-header";
 import { Button } from "../../elements/Buttons/buttons"
 import { DotsHorizontalIcon } from "@radix-ui/react-icons"
 
-import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-    SelectValue,
-} from "../../elements/Select/select";
+
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -43,7 +34,6 @@ function DataTableRowActions({
                 <DropdownMenuItem onClick={()=>task.actions.handleUpdate(task)}>Update
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={()=>task.actions.handleDelete(task)}>Delete</DropdownMenuItem>
-                <DropdownMenuItem onClick={()=>task.actions.handleMainance(task)}>Maintainance</DropdownMenuItem>
 
             </DropdownMenuContent>
         </DropdownMenu>
@@ -74,11 +64,11 @@ export const columns: any = [
         enableHiding: false,
     },
     {
-        accessorKey: "categoryName",
+        accessorKey: "name",
         header: ({ column }) => (
             <DataTableColumnHeader column={column} title="Service category Name" />
         ),
-        cell: ({ row }) => <div className="w-[150px]">{row.getValue("categoryName")}</div>,
+        cell: ({ row }) => <div className="w-[150px]">{row.getValue("name")}</div>,
         enableSorting: false,
         enableHiding: false,
     },

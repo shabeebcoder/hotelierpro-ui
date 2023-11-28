@@ -12553,6 +12553,14 @@ const $6cc32821e9371a1c$var$MenuRootContentNonModal = /*#__PURE__*/ forwardRef((
         }))
     })))))));
 });
+const $6cc32821e9371a1c$export$22a631d1f72787bb = /*#__PURE__*/ forwardRef((props, forwardedRef)=>{
+    const { __scopeMenu: __scopeMenu , ...groupProps } = props;
+    return /*#__PURE__*/ createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({
+        role: "group"
+    }, groupProps, {
+        ref: forwardedRef
+    }));
+});
 const $6cc32821e9371a1c$export$dd37bec0e8a99143 = /*#__PURE__*/ forwardRef((props, forwardedRef)=>{
     const { __scopeMenu: __scopeMenu , ...labelProps } = props;
     return /*#__PURE__*/ createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends({}, labelProps, {
@@ -12691,6 +12699,17 @@ const [$6cc32821e9371a1c$var$RadioGroupProvider, $6cc32821e9371a1c$var$useRadioG
     value: undefined,
     onValueChange: ()=>{}
 });
+const $6cc32821e9371a1c$export$ea2200c9eee416b3 = /*#__PURE__*/ forwardRef((props, forwardedRef)=>{
+    const { value: value , onValueChange: onValueChange , ...groupProps } = props;
+    const handleValueChange = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onValueChange);
+    return /*#__PURE__*/ createElement($6cc32821e9371a1c$var$RadioGroupProvider, {
+        scope: props.__scopeMenu,
+        value: value,
+        onValueChange: handleValueChange
+    }, /*#__PURE__*/ createElement($6cc32821e9371a1c$export$22a631d1f72787bb, _extends({}, groupProps, {
+        ref: forwardedRef
+    })));
+});
 /* -------------------------------------------------------------------------------------------------
  * MenuRadioItem
  * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$RADIO_ITEM_NAME = 'MenuRadioItem';
@@ -12744,6 +12763,35 @@ const $6cc32821e9371a1c$export$1cec7dcdd713e220 = /*#__PURE__*/ forwardRef((prop
  * MenuSub
  * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$SUB_NAME = 'MenuSub';
 const [$6cc32821e9371a1c$var$MenuSubProvider, $6cc32821e9371a1c$var$useMenuSubContext] = $6cc32821e9371a1c$var$createMenuContext($6cc32821e9371a1c$var$SUB_NAME);
+const $6cc32821e9371a1c$export$71bdb9d1e2909932 = (props)=>{
+    const { __scopeMenu: __scopeMenu , children: children , open: open = false , onOpenChange: onOpenChange  } = props;
+    const parentMenuContext = $6cc32821e9371a1c$var$useMenuContext($6cc32821e9371a1c$var$SUB_NAME, __scopeMenu);
+    const popperScope = $6cc32821e9371a1c$var$usePopperScope(__scopeMenu);
+    const [trigger, setTrigger] = useState(null);
+    const [content, setContent] = useState(null);
+    const handleOpenChange = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a$1(onOpenChange); // Prevent the parent menu from reopening with open submenus.
+    useEffect(()=>{
+        if (parentMenuContext.open === false) handleOpenChange(false);
+        return ()=>handleOpenChange(false)
+        ;
+    }, [
+        parentMenuContext.open,
+        handleOpenChange
+    ]);
+    return /*#__PURE__*/ createElement($cf1ac5d9fe0e8206$export$be92b6f5f03c0fe9, popperScope, /*#__PURE__*/ createElement($6cc32821e9371a1c$var$MenuProvider, {
+        scope: __scopeMenu,
+        open: open,
+        onOpenChange: handleOpenChange,
+        content: content,
+        onContentChange: setContent
+    }, /*#__PURE__*/ createElement($6cc32821e9371a1c$var$MenuSubProvider, {
+        scope: __scopeMenu,
+        contentId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        triggerId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        trigger: trigger,
+        onTriggerChange: setTrigger
+    }, children)));
+};
 /* -------------------------------------------------------------------------------------------------
  * MenuSubTrigger
  * -----------------------------------------------------------------------------------------------*/ const $6cc32821e9371a1c$var$SUB_TRIGGER_NAME = 'MenuSubTrigger';
@@ -13014,9 +13062,11 @@ const $6cc32821e9371a1c$export$7c6e2c02157bb7d2 = $6cc32821e9371a1c$export$479f0
 const $6cc32821e9371a1c$export$b04be29aa201d4f5 = $6cc32821e9371a1c$export$dd37bec0e8a99143;
 const $6cc32821e9371a1c$export$6d08773d2e66f8f2 = $6cc32821e9371a1c$export$2ce376c2cc3355c8;
 const $6cc32821e9371a1c$export$16ce288f89fa631c = $6cc32821e9371a1c$export$f6f243521332502d;
+const $6cc32821e9371a1c$export$a98f0dcb43a68a25 = $6cc32821e9371a1c$export$ea2200c9eee416b3;
 const $6cc32821e9371a1c$export$371ab307eab489c0 = $6cc32821e9371a1c$export$69bd225e9817f6d0;
 const $6cc32821e9371a1c$export$c3468e2714d175fa = $6cc32821e9371a1c$export$a2593e23056970a3;
 const $6cc32821e9371a1c$export$1ff3c3f08ae963c0 = $6cc32821e9371a1c$export$1cec7dcdd713e220;
+const $6cc32821e9371a1c$export$d7a01e11500dfb6f = $6cc32821e9371a1c$export$71bdb9d1e2909932;
 const $6cc32821e9371a1c$export$2ea8a7a591ac5eac = $6cc32821e9371a1c$export$5fbbb3ba7297405f;
 const $6cc32821e9371a1c$export$6d4de93b380beddf = $6cc32821e9371a1c$export$e7142ab31822bde6;
 
@@ -13163,6 +13213,13 @@ const $d08ef79370b62062$export$53a69729da201fa9 = /*#__PURE__*/ forwardRef((prop
         ref: forwardedRef
     }));
 });
+const $d08ef79370b62062$export$3323ad73d55f587e = /*#__PURE__*/ forwardRef((props, forwardedRef)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , ...radioGroupProps } = props;
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    return /*#__PURE__*/ createElement($6cc32821e9371a1c$export$a98f0dcb43a68a25, _extends({}, menuScope, radioGroupProps, {
+        ref: forwardedRef
+    }));
+});
 const $d08ef79370b62062$export$e4f69b41b1637536 = /*#__PURE__*/ forwardRef((props, forwardedRef)=>{
     const { __scopeDropdownMenu: __scopeDropdownMenu , ...radioItemProps } = props;
     const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
@@ -13184,6 +13241,21 @@ const $d08ef79370b62062$export$da160178fd3bc7e9 = /*#__PURE__*/ forwardRef((prop
         ref: forwardedRef
     }));
 });
+/* -------------------------------------------------------------------------------------------------
+ * DropdownMenuSub
+ * -----------------------------------------------------------------------------------------------*/ const $d08ef79370b62062$export$2f307d81a64f5442 = (props)=>{
+    const { __scopeDropdownMenu: __scopeDropdownMenu , children: children , open: openProp , onOpenChange: onOpenChange , defaultOpen: defaultOpen  } = props;
+    const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
+    const [open = false, setOpen] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
+        prop: openProp,
+        defaultProp: defaultOpen,
+        onChange: onOpenChange
+    });
+    return /*#__PURE__*/ createElement($6cc32821e9371a1c$export$d7a01e11500dfb6f, _extends({}, menuScope, {
+        open: open,
+        onOpenChange: setOpen
+    }), children);
+};
 const $d08ef79370b62062$export$21dcb7ec56f874cf = /*#__PURE__*/ forwardRef((props, forwardedRef)=>{
     const { __scopeDropdownMenu: __scopeDropdownMenu , ...subTriggerProps } = props;
     const menuScope = $d08ef79370b62062$var$useMenuScope(__scopeDropdownMenu);
@@ -13213,14 +13285,18 @@ const $d08ef79370b62062$export$7c6e2c02157bb7d2 = $d08ef79370b62062$export$6e76d
 const $d08ef79370b62062$export$b04be29aa201d4f5 = $d08ef79370b62062$export$76e48c5b57f24495;
 const $d08ef79370b62062$export$6d08773d2e66f8f2 = $d08ef79370b62062$export$ed97964d1871885d;
 const $d08ef79370b62062$export$16ce288f89fa631c = $d08ef79370b62062$export$53a69729da201fa9;
+const $d08ef79370b62062$export$a98f0dcb43a68a25 = $d08ef79370b62062$export$3323ad73d55f587e;
 const $d08ef79370b62062$export$371ab307eab489c0 = $d08ef79370b62062$export$e4f69b41b1637536;
 const $d08ef79370b62062$export$c3468e2714d175fa = $d08ef79370b62062$export$42355ae145153fb6;
 const $d08ef79370b62062$export$1ff3c3f08ae963c0 = $d08ef79370b62062$export$da160178fd3bc7e9;
+const $d08ef79370b62062$export$d7a01e11500dfb6f = $d08ef79370b62062$export$2f307d81a64f5442;
 const $d08ef79370b62062$export$2ea8a7a591ac5eac = $d08ef79370b62062$export$21dcb7ec56f874cf;
 const $d08ef79370b62062$export$6d4de93b380beddf = $d08ef79370b62062$export$f34ec8bc2482cc5f;
 
 var DropdownMenu = $d08ef79370b62062$export$be92b6f5f03c0fe9;
 var DropdownMenuTrigger = $d08ef79370b62062$export$41fb9f06171c75f4;
+var DropdownMenuSub = $d08ef79370b62062$export$d7a01e11500dfb6f;
+var DropdownMenuRadioGroup = $d08ef79370b62062$export$a98f0dcb43a68a25;
 var DropdownMenuSubTrigger = React.forwardRef(function (_a, ref) {
     var className = _a.className, inset = _a.inset, children = _a.children, props = __rest$2(_a, ["className", "inset", "children"]);
     return (React.createElement($d08ef79370b62062$export$2ea8a7a591ac5eac, __assign$2({ ref: ref, className: cn("flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent", inset && "pl-8", className) }, props),
@@ -13300,7 +13376,7 @@ function DataTableColumnHeader(_a) {
                     "Hide")))));
 }
 
-function DataTableRowActions$4(_a) {
+function DataTableRowActions$5(_a) {
     var row = _a.row;
     var task = row.original;
     return (React__default.createElement(DropdownMenu, null,
@@ -13313,7 +13389,7 @@ function DataTableRowActions$4(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
 }
-var columns$4 = [
+var columns$5 = [
     {
         id: "select",
         header: function (_a) {
@@ -13395,12 +13471,12 @@ var columns$4 = [
         id: "actions",
         cell: function (_a) {
             var row = _a.row;
-            return React__default.createElement(DataTableRowActions$4, { row: row });
+            return React__default.createElement(DataTableRowActions$5, { row: row });
         },
     },
 ];
 
-function DataTableRowActions$3(_a) {
+function DataTableRowActions$4(_a) {
     var row = _a.row;
     var task = row.original;
     return (React__default.createElement(DropdownMenu, null,
@@ -13412,7 +13488,7 @@ function DataTableRowActions$3(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"))));
 }
-var columns$3 = [
+var columns$4 = [
     {
         id: "select",
         header: function (_a) {
@@ -13513,12 +13589,12 @@ var columns$3 = [
         id: "actions",
         cell: function (_a) {
             var row = _a.row;
-            return React__default.createElement(DataTableRowActions$3, { row: row });
+            return React__default.createElement(DataTableRowActions$4, { row: row });
         },
     },
 ];
 
-function DataTableRowActions$2(_a) {
+function DataTableRowActions$3(_a) {
     var row = _a.row;
     var task = row.original;
     return (React__default.createElement(DropdownMenu, null,
@@ -13531,7 +13607,7 @@ function DataTableRowActions$2(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
 }
-var columns$2 = [
+var columns$3 = [
     {
         id: "select",
         header: function (_a) {
@@ -13625,12 +13701,12 @@ var columns$2 = [
         id: "actions",
         cell: function (_a) {
             var row = _a.row;
-            return React__default.createElement(DataTableRowActions$2, { row: row });
+            return React__default.createElement(DataTableRowActions$3, { row: row });
         },
     },
 ];
 
-function DataTableRowActions$1(_a) {
+function DataTableRowActions$2(_a) {
     var row = _a.row;
     var task = row.original;
     return (React__default.createElement(DropdownMenu, null,
@@ -13642,7 +13718,7 @@ function DataTableRowActions$1(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"))));
 }
-var columns$1 = [
+var columns$2 = [
     {
         id: "select",
         header: function (_a) {
@@ -13709,12 +13785,12 @@ var columns$1 = [
         id: "actions",
         cell: function (_a) {
             var row = _a.row;
-            return React__default.createElement(DataTableRowActions$1, { row: row });
+            return React__default.createElement(DataTableRowActions$2, { row: row });
         },
     },
 ];
 
-function DataTableRowActions(_a) {
+function DataTableRowActions$1(_a) {
     var row = _a.row;
     var task = row.original;
     return (React__default.createElement(DropdownMenu, null,
@@ -13726,7 +13802,7 @@ function DataTableRowActions(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"))));
 }
-var columns = [
+var columns$1 = [
     {
         id: "select",
         header: function (_a) {
@@ -13757,17 +13833,232 @@ var columns = [
         id: "actions",
         cell: function (_a) {
             var row = _a.row;
+            return React__default.createElement(DataTableRowActions$1, { row: row });
+        },
+    },
+];
+
+var badgeVariants = cva("inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2", {
+    variants: {
+        variant: {
+            default: "border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80",
+            secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+            destructive: "border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80",
+            outline: "text-foreground",
+        },
+    },
+    defaultVariants: {
+        variant: "default",
+    },
+});
+function Badge(_a) {
+    var className = _a.className, variant = _a.variant, props = __rest$2(_a, ["className", "variant"]);
+    return (React.createElement("div", __assign$2({ className: cn(badgeVariants({ variant: variant }), className) }, props)));
+}
+
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+function createCommonjsModule(fn) {
+  var module = { exports: {} };
+	return fn(module, module.exports), module.exports;
+}
+
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+var classnames = createCommonjsModule(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+					classes.push(arg.toString());
+					continue;
+				}
+
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
+
+function DataTableRowActions(_a) {
+    var row = _a.row;
+    var invoice = row.original;
+    return (React__default.createElement(DropdownMenu, null,
+        React__default.createElement(DropdownMenuTrigger, { asChild: true },
+            React__default.createElement(Button$1, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
+                React__default.createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
+                React__default.createElement("span", { className: "sr-only" }, "Open menu"))),
+        React__default.createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
+            React__default.createElement(DropdownMenuItem, { onClick: function () { return invoice.actions.handleUpdate(invoice); } }, "Edit"),
+            React__default.createElement(DropdownMenuItem, { onClick: function () { return invoice.actions.handleDelete(invoice); } }, "Delete"),
+            React__default.createElement(DropdownMenuItem, { onClick: function () { return invoice.actions.handlePrint(invoice); } }, "Print"),
+            React__default.createElement(DropdownMenuItem, { onClick: function () { return invoice.actions.handleDownload(invoice); } }, "Download"),
+            React__default.createElement(DropdownMenuItem, { onClick: function () { return invoice.actions.handleSent(invoice); } }, "Sent"),
+            React__default.createElement(DropdownMenuSub, null,
+                React__default.createElement(DropdownMenuSubTrigger, null, "Mark as"),
+                React__default.createElement(DropdownMenuSubContent, null,
+                    React__default.createElement(DropdownMenuRadioGroup, { value: 'markAs' },
+                        React__default.createElement(DropdownMenuRadioItem, { onClick: function () { return invoice.actions.handleMarkAs({ invoice: invoice, status: "draft" }); }, key: 'draft', value: 'draft' }, "Draft"),
+                        React__default.createElement(DropdownMenuRadioItem, { onClick: function () { return invoice.actions.handleMarkAs({ invoice: invoice, status: "paid" }); }, key: 'paid', value: 'paid' }, "Paid"),
+                        React__default.createElement(DropdownMenuRadioItem, { onClick: function () { return invoice.actions.handleMarkAs({ invoice: invoice, status: "sent" }); }, key: 'sent', value: 'sent' }, "Sent")))))));
+}
+var columns = [
+    {
+        id: "select",
+        header: function (_a) {
+            var table = _a.table;
+            return (React__default.createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "invoiceNumber",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Invoice Number" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default.createElement("div", { className: "w-[150px]" }, row.getValue("invoiceNumber"));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "client",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Client Name" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement("div", { className: "w-[150px]" }, row.getValue("client")));
+        },
+    },
+    {
+        accessorKey: "createdAt",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Date" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement("div", { className: "w-[150px]" }, row.getValue("createdAt")));
+        },
+        filterFn: function (row, id, value) {
+            return value.includes(row.getValue(id));
+        },
+    },
+    {
+        accessorKey: "status",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Status" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement("div", { className: "flex items-center text-center" },
+                React__default.createElement(Badge, { className: classnames({
+                        'bg-sky-400 hover:bg-sky-400': row.getValue("status").toLowerCase() === "draft",
+                        'bg-emerald-500 hover:bg-emerald-500': row.getValue("status").toLowerCase() === "paid",
+                        'bg-red-500 hover:bg-red-500': row.getValue("status").toLowerCase() === "sent"
+                    }), variant: "destructive" }, row.getValue("status"))));
+        },
+        filterFn: function (row, id, value) {
+            return value.includes(row.getValue(id));
+        },
+    },
+    {
+        accessorKey: "subTotal",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Total" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement("div", { className: "flex items-center text-center" },
+                React__default.createElement("span", null, row.getValue("subTotal"))));
+        },
+        filterFn: function (row, id, value) {
+            return value.includes(row.getValue(id));
+        },
+    },
+    {
+        accessorKey: "notes",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Notes" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement("div", { className: "flex items-center text-center" },
+                React__default.createElement("span", null, row.getValue("notes"))));
+        },
+        filterFn: function (row, id, value) {
+            return value.includes(row.getValue(id));
+        },
+    },
+    {
+        id: "actions",
+        cell: function (_a) {
+            var row = _a.row;
             return React__default.createElement(DataTableRowActions, { row: row });
         },
     },
 ];
 
 var Table$2 = {
-    roomtypes: columns$4,
-    guests: columns$3,
-    rooms: columns$2,
-    services: columns$1,
-    serviceCategory: columns
+    roomtypes: columns$5,
+    guests: columns$4,
+    rooms: columns$3,
+    services: columns$2,
+    serviceCategory: columns$1,
+    invoices: columns
 };
 
 var Textarea = React.forwardRef(function (_a, ref) {
@@ -13775,8 +14066,6 @@ var Textarea = React.forwardRef(function (_a, ref) {
     return (React.createElement("textarea", __assign$2({ className: cn("flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50", className), ref: ref }, props)));
 });
 Textarea.displayName = "Textarea";
-
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 /** Detect free variable `global` from Node.js. */
 
@@ -26601,24 +26890,6 @@ var priorities = [
         icon: ArrowUpIcon,
     },
 ];
-
-var badgeVariants = cva("inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2", {
-    variants: {
-        variant: {
-            default: "border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80",
-            secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
-            destructive: "border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80",
-            outline: "text-foreground",
-        },
-    },
-    defaultVariants: {
-        variant: "default",
-    },
-});
-function Badge(_a) {
-    var className = _a.className, variant = _a.variant, props = __rest$2(_a, ["className", "variant"]);
-    return (React.createElement("div", __assign$2({ className: cn(badgeVariants({ variant: variant }), className) }, props)));
-}
 
 function $e42e1063c40fb3ef$export$b9ecd428b558ff10(originalEventHandler, ourEventHandler, { checkForDefaultPrevented: checkForDefaultPrevented = true  } = {}) {
     return function handleEvent(event) {

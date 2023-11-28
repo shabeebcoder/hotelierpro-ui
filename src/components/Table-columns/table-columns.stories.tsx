@@ -3,6 +3,7 @@ import { columns as roomColumns } from "./room-type-columns"
 import { columns as roomTypes } from "./room-type-columns";
 import { columns as serviceCategory } from "./service-category-table-column"
 import { columns as services } from "./services-table-column"
+import { columns as billingTable } from "./billing-table-column"
 import Table from "../Data-table/data-table";
 
 export default {
@@ -45,3 +46,17 @@ export const RoomTypeTableDemo = (args) => <Table columns={roomTypes} data={
 export const serviceTableDemo = (args) => <Table columns={services} data={[]} />
 export const serviceCategoryDemo = (args) => <Table columns={serviceCategory} data={[]} />
 
+export const BillingTableDemo = (args) => <Table columns={billingTable} data={
+    [{
+        roomName: "delux",
+        maxPerson: 2,
+        regularPrice: 20,
+        singlePrice: 20,
+        status: "Sent",
+        actions: {
+            handleUpdate: (data: any) => alert(JSON.stringify(data)),
+            handleDelete: (data: any) => alert(JSON.stringify(data)),
+            handleMainance: (data: any) => alert(JSON.stringify(data))
+        }
+    }]
+} />

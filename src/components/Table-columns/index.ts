@@ -3,7 +3,8 @@ import { columns as roomtypes } from "./room-type-columns";
 import { columns as guests } from "./guest-table.column";
 import { columns as rooms } from "./room-table-column"
 import { columns as services } from "./services-table-column"
-import {columns as serviceCategory} from "./service-category-table-column"
+import { columns as serviceCategory } from "./service-category-table-column"
+import {columns as invoices} from "./billing-table-column"
 
 
 export const Table: any = {
@@ -11,5 +12,6 @@ export const Table: any = {
     guests,
     rooms,
     services,
-    serviceCategory
+    serviceCategory,
+    invoices
 }

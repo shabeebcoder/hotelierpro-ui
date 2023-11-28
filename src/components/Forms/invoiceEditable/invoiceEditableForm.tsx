@@ -59,26 +59,26 @@ function InvoiceEditableForm({ onSubmit }) {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                <header className="bg-[#4D6969] flex w-screen text-white">
+                <header className="bg-[#4D6969] flex items-center text-white h-[14rem]">
                     <div className="w-[50%]">
                         <img
                             src="https://hotelierpro.us/Logo/HotelierPro_Logo_white.svg"
                             alt="logo"
+                            className="ml-8 h-8"
                         />
-                        <h2 className="text-2xl font-bold tracking-tight">
-                            Hotelier Pro
-                        </h2>
                     </div>
-                    <ul className="w-[50%]">
-                        <h3 className="text-2xl font-bold tracking-tight">
+                    <ul className="w-[50%] ml-8">
+                        <h3 className="text-2xl font-bold tracking-tight mb-2">
                             Invoice
                         </h3>
-                        <li>
-                            <span className="w-[8rem]">Invoice Number :</span>{' '}
-                            INV-20230723-2
+                        <li className="flex gap-4 items-center">
+                            <span className="w-[8rem]">Invoice Number</span>
+                            <span>:</span>
+                            <span>INV-20230723-2</span>
                         </li>
                         <li className="flex gap-4 items-center">
-                            <span className="w-[8rem]">Invoice Date :</span>
+                            <span className="w-[8rem]">Invoice Date</span>
+                            <span>:</span>
                             <FormField
                                 control={form.control}
                                 rules={{ required: true }}
@@ -91,20 +91,19 @@ function InvoiceEditableForm({ onSubmit }) {
                                                 <Button
                                                     variant={'outline'}
                                                     className={cn(
-                                                        'w-[240px] justify-start text-left font-normal',
+                                                        'w-[240px] justify-start text-left font-normal group',
                                                         !field.value &&
                                                             'text-muted-foreground'
                                                     )}
                                                 >
-                                                    <CalendarIcon className="mr-2 h-4 w-4" />
-
+                                                    <CalendarIcon className="mr-2 h-4 w-4 text-white group-hover:text-primary" />
                                                     {field.value ? (
                                                         format(
                                                             field.value,
                                                             'PPP'
                                                         )
                                                     ) : (
-                                                        <span>
+                                                        <span classname="text-white hover:text-primary">
                                                             billing date
                                                         </span>
                                                     )}
@@ -127,7 +126,8 @@ function InvoiceEditableForm({ onSubmit }) {
                             />
                         </li>
                         <li className="flex gap-4 items-center">
-                            <span className="w-[8rem]">Invoice Due Date :</span>
+                            <span className="w-[8rem]">Invoice Due Date</span>
+                            <span>:</span>
                             <FormField
                                 control={form.control}
                                 rules={{ required: true }}
@@ -140,20 +140,21 @@ function InvoiceEditableForm({ onSubmit }) {
                                                 <Button
                                                     variant={'outline'}
                                                     className={cn(
-                                                        'w-[240px] justify-start text-left font-normal',
+                                                        'w-[240px] justify-start text-left font-normal group',
                                                         !field.value &&
                                                             'text-muted-foreground'
                                                     )}
                                                 >
-                                                    <CalendarIcon className="mr-2 h-4 w-4" />
-
+                                                    <CalendarIcon className="mr-2 h-4 w-4 text-white group-hover:text-primary" />
                                                     {field.value ? (
                                                         format(
                                                             field.value,
                                                             'PPP'
                                                         )
                                                     ) : (
-                                                        <span>due date</span>
+                                                        <span classname="text-white hover:text-primary">
+                                                            due date
+                                                        </span>
                                                     )}
                                                 </Button>
                                             </PopoverTrigger>
@@ -461,7 +462,7 @@ function InvoiceEditableForm({ onSubmit }) {
                                                 <FormLabel></FormLabel>
                                                 <FormControl>
                                                     <Input
-                                                        placeholder=""
+                                                        placeholder="4999"
                                                         {...field}
                                                     />
                                                 </FormControl>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Calendar } from '../../../elements/Calendar/calendar';
 import { Input } from '../../../elements/Input/input';
 import { Textarea } from '../../../elements/TextArea/textarea';
+import { Label } from '../../../elements/Label/label';
 import { Separator } from '../../../elements/Separator/seperator';
 import { Button } from '../../../elements/Buttons/buttons';
 import {
@@ -59,48 +60,55 @@ function Invoice({ onSubmit, invoiceData, billTo, billFrom }) {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                <header className="bg-[#4D6969] flex w-screen text-white">
+                <header className="bg-[#4D6969] flex items-center text-white h-[14rem]">
                     <div className="w-[50%]">
                         <img
                             src="https://hotelierpro.us/Logo/HotelierPro_Logo_white.svg"
                             alt="logo"
+                            className="ml-8 h-8"
                         />
-                        <h2 className="text-2xl font-bold tracking-tight">
-                            Hotelier Pro
-                        </h2>
                     </div>
-                    <ul className="w-[50%]">
-                        <h3 className="text-2xl font-bold tracking-tight">
+                    <ul className="w-[50%] ml-8">
+                        <h3 className="text-2xl font-bold tracking-tight mb-2">
                             Invoice
                         </h3>
-                        <li>
-                            <span className="w-[8rem]">Invoice Number :</span>{' '}
+                        <li className="flex gap-4 items-center">
+                            <span className="w-[8rem]">Invoice Number </span>
+                            <span>:</span>
                             {invoiceData.no}
                         </li>
                         <li className="flex gap-4 items-center">
-                            <span className="w-[8rem]">Invoice Date :</span>
+                            <span className="w-[8rem]">Invoice Date </span>
+                            <span>:</span>
                             {invoiceData.billingDate}
                         </li>
                         <li className="flex gap-4 items-center">
-                            <span className="w-[8rem]">Invoice Due Date :</span>
+                            <span className="w-[8rem]">Invoice Due Date </span>
+                            <span>:</span>
                             {invoiceData.billingDueDate}
                         </li>
                     </ul>
                 </header>
                 <main className="space-y-8">
                     <p className="text-red-700 uppercase text-right">sent</p>
-                    <div className="flex justify-between items-end">
-                        <div>
-                            <p>{billTo.name}</p>
-                            <p>{billTo.address}</p>
+                    <div className="flex w-[50%] gap-12 mx-auto">
+                        <div className="w-[50%] space-y-2">
+                            <Label>Bill To</Label>
+                            <p>
+                                <Input value={billTo.name} />
+                            </p>
+                            <p>
+                                <Input value={billTo.address} />
+                            </p>
                         </div>
-                        <div>
-                            <p>{billFrom.name}</p>
-                            <p>{billFrom.address}</p>
-                        </div>
-                        <div className="space-x-4">
-                            <Button>+ Add Booking</Button>
-                            <Button variant="outline">+ Add Services</Button>
+                        <div className="w-[50%] space-y-2">
+                            <Label>Bill From</Label>
+                            <p>
+                                <Input value={billFrom.name} />
+                            </p>
+                            <p>
+                                <Input value={billFrom.address} />
+                            </p>
                         </div>
                     </div>
                     <Table>
@@ -141,11 +149,6 @@ function Invoice({ onSubmit, invoiceData, billTo, billFrom }) {
                             ))}
                         </TableBody>
                         <TableFooter>
-                            <TableRow className="py-4">
-                                <TableCell>
-                                    <Button>+ Add New Row</Button>
-                                </TableCell>
-                            </TableRow>
                             <TableRow>
                                 <TableCell colSpan={2}></TableCell>
                                 <TableCell colSpan={2}>Subtotal</TableCell>
@@ -206,7 +209,7 @@ function Invoice({ onSubmit, invoiceData, billTo, billFrom }) {
                             <TableRow>
                                 <TableCell colSpan={2}>Paid</TableCell>
                                 <TableCell>
-                                    <Input placeholder="" />
+                                    <Input value="4999" />
                                 </TableCell>
                             </TableRow>
                             <TableRow>

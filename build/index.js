@@ -13429,15 +13429,15 @@ var columns$4 = [
 
 function DataTableRowActions$3(_a) {
     var row = _a.row;
-    row.original;
+    var task = row.original;
     return (React__default["default"].createElement(DropdownMenu, null,
         React__default["default"].createElement(DropdownMenuTrigger, { asChild: true },
             React__default["default"].createElement(Button$1, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
                 React__default["default"].createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
                 React__default["default"].createElement("span", { className: "sr-only" }, "Open menu"))),
         React__default["default"].createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
-            React__default["default"].createElement(DropdownMenuItem, null, "Update"),
-            React__default["default"].createElement(DropdownMenuItem, null, "Delete"))));
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
+            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"))));
 }
 var columns$3 = [
     {

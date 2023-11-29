@@ -14,6 +14,8 @@ import { Form } from "./components/Forms";
 import Drawer from "./components/Drawer/drawer";
 import DataTable from "./components/Data-table/data-table";
 import Confirmation from "./components/Confirmation/alert"
+import Tab from "./components/tab/tab"
+import Calander from "./components/calander/calander"
 // import { Alert } from './Alert';
 // import { Login } from './Login';
 // import { Register } from './Signup';
@@ -157,6 +159,7 @@ export {
     // toolTip,
     // hotelierpro,
     // MaintainanceForm,
+    Tab,
     Table,
     Icons,
     Layout,
@@ -171,7 +174,8 @@ export {
     Form,
     Drawer,
     DataTable,
-    Confirmation
+    Confirmation,
+    Calander
     // Dashboard
 };
 

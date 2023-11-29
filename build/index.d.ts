@@ -14,5 +14,7 @@ import { Form } from "./components/Forms";
 import Drawer from "./components/Drawer/drawer";
 import DataTable from "./components/Data-table/data-table";
 import Confirmation from "./components/Confirmation/alert";
+import Tab from "./components/tab/tab";
+import Calander from "./components/calander/calander";
 import Layout from "./components/Layout/layout";
-export { Button, Table, Icons, Layout, AuthenticationPage, ToastAction, useToast, Toaster, UserSignupPage, VerificationPage, ResetPasswordPage, ForgotPasswordPage, Form, Drawer, DataTable, Confirmation };
+export { Button, Tab, Table, Icons, Layout, AuthenticationPage, ToastAction, useToast, Toaster, UserSignupPage, VerificationPage, ResetPasswordPage, ForgotPasswordPage, Form, Drawer, DataTable, Confirmation, Calander };

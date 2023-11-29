@@ -30,21 +30,73 @@ import {
 import { format } from 'date-fns';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFieldArray, useForm } from 'react-hook-form';
+import SearchUser from "./searchGuests";
+import { DotsHorizontalIcon, PlusCircledIcon } from '@radix-ui/react-icons';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from '../../../elements/Dropdown-menu/dropdownmenu';
 
 export default function NewBookingForm({
     onSubmit,
-    durationValues,
-    roomTypeValues,
-    statusValues,
-    id
+    roomTypes,
+    status,
+    id,
+    NewGuest,
+    guestList,
+    onSelect,
+    isLoading
 }) {
-    const form:any = useForm({});
+    const [guestSelected, setGuestSelected] = React.useState([])
+  
+    const form: any = useForm({
+        defaultValues: {
+            adult: 1,
+            child: 0,
+            guests: []
+        }
+    });
+
+
+    const handleOnSelect = (guest) => {
+
+        setGuestSelected([...guestSelected, guest]);
+        form.setValue("guests", [...form.getValues("guests"), guest])
+
+    }
+
+    function DataTableRowActions({
+        row = {},
+    }: any) {
+ 
+
+        return (
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button
+                        variant="ghost"
+                        className="flex h-8 w-8 p-0 data-[state=open]:bg-muted"
+                    >
+                        <DotsHorizontalIcon className="h-4 w-4" />
+                        <span className="sr-only">Open menu</span>
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-[160px]">
+                    <DropdownMenuItem onClick={() => row.actions.handleUpdate(row)}>Edit
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => row.actions.handleDelete(row)}>Remove</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => row.actions.handleDelete(row)}>Mark as Main Guest</DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
+        )
+    }
+
+
+
     return (
         <>
+
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="grid grid-cols-3 grid-rows-8 gap-8"
+                    className="grid grid-cols-3 grid-rows-8 gap-7"
                     id={id}
                 >
                     <FormField
@@ -59,9 +111,9 @@ export default function NewBookingForm({
                                         <Button
                                             variant={'outline'}
                                             className={cn(
-                                                'w-[240px] justify-start text-left font-normal',
+                                                ' justify-start text-left font-normal',
                                                 !field.value &&
-                                                    'text-muted-foreground'
+                                                'text-muted-foreground'
                                             )}
                                         >
                                             <CalendarIcon className="mr-2 h-4 w-4" />
@@ -92,31 +144,18 @@ export default function NewBookingForm({
                         control={form.control}
                         rules={{ required: true }}
                         name="duration"
+
                         render={({ field }) => (
-                            <FormItem className="w-[15rem]">
+                            <FormItem className="" style={{ marginTop: "-9px" }}>
                                 <FormLabel>Duration</FormLabel>
-                                <Select
-                                    onValueChange={field.onChange}
-                                    defaultValue={field.value}
-                                >
-                                    <FormControl>
-                                        <SelectTrigger>
-                                            <SelectValue />
-                                        </SelectTrigger>
-                                    </FormControl>
-                                    <SelectContent>
-                                        {durationValues.map((item, pos) => {
-                                            return (
-                                                <SelectItem
-                                                    key={pos}
-                                                    value={item}
-                                                >
-                                                    {item}
-                                                </SelectItem>
-                                            );
-                                        })}
-                                    </SelectContent>
-                                </Select>
+                                <FormControl>
+                                    <Input
+                                        type="number"
+                                        placeholder="Duration"
+                                        {...field}
+                                    />
+                                </FormControl>
+                                <FormDescription></FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -133,9 +172,9 @@ export default function NewBookingForm({
                                         <Button
                                             variant={'outline'}
                                             className={cn(
-                                                'w-[240px] justify-start text-left font-normal',
+                                                'justify-start text-left font-normal',
                                                 !field.value &&
-                                                    'text-muted-foreground'
+                                                'text-muted-foreground'
                                             )}
                                         >
                                             <CalendarIcon className="mr-2 h-4 w-4" />
@@ -167,7 +206,7 @@ export default function NewBookingForm({
                         rules={{ required: true }}
                         name="roomtype"
                         render={({ field }) => (
-                            <FormItem className="w-[15rem]">
+                            <FormItem className="">
                                 <FormLabel>Room Type</FormLabel>
                                 <Select
                                     onValueChange={field.onChange}
@@ -179,13 +218,13 @@ export default function NewBookingForm({
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
-                                        {roomTypeValues.map((item, pos) => {
+                                        {roomTypes.map((item, pos) => {
                                             return (
                                                 <SelectItem
-                                                    key={pos}
-                                                    value={item}
+                                                    key={pos + item.value}
+                                                    value={item.value}
                                                 >
-                                                    {item}
+                                                    {item.label}
                                                 </SelectItem>
                                             );
                                         })}
@@ -200,7 +239,7 @@ export default function NewBookingForm({
                         rules={{ required: true }}
                         name="status"
                         render={({ field }) => (
-                            <FormItem className="w-[15rem]">
+                            <FormItem className="">
                                 <FormLabel>Status</FormLabel>
                                 <Select
                                     onValueChange={field.onChange}
@@ -212,13 +251,13 @@ export default function NewBookingForm({
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
-                                        {statusValues.map((item, pos) => {
+                                        {status.map((item, pos) => {
                                             return (
                                                 <SelectItem
-                                                    key={pos}
-                                                    value={item}
+                                                    key={pos + item.value}
+                                                    value={item.value}
                                                 >
-                                                    {item}
+                                                    {item.label}
                                                 </SelectItem>
                                             );
                                         })}
@@ -237,14 +276,24 @@ export default function NewBookingForm({
                                 <FormItem className="w-[7rem]">
                                     <FormLabel>Adult</FormLabel>
                                     <br />
-                                    <FormControl></FormControl>
+                                    <Input type='hidden' {...field} />
                                     <p className="border rounded w-[5rem] flex justify-between px-4">
-                                        <span onClick={() => alert('clicked')}>
+                                        <span onClick={() => {
+
+                                            form.setValue("adult", form.getValues("adult") - 1)
+                                        }}
+                                        >
                                             {' '}
                                             -{' '}
                                         </span>
-                                        0
-                                        <span onClick={() => alert('clicked')}>
+                                        {form.getValues("adult")}
+                                        <span onClick={() => {
+
+
+                                            form.setValue("adult", form.getValues("adult") + 1)
+
+                                        }}
+                                        >
                                             {' '}
                                             +{' '}
                                         </span>
@@ -264,14 +313,21 @@ export default function NewBookingForm({
                                     <FormControl>
                                         <p className="border rounded w-[5rem] flex justify-between px-4">
                                             <span
-                                                onClick={() => alert('clicked')}
+                                                onClick={() => {
+
+                                                    form.setValue("child", form.getValues("child") - 1)
+                                                }}
                                             >
                                                 {' '}
                                                 -{' '}
                                             </span>
-                                            0
+                                            <Input type='hidden' {...field} />
+                                            {form.getValues("child")}
                                             <span
-                                                onClick={() => alert('clicked')}
+                                                onClick={() => {
+
+                                                    form.setValue("child", form.getValues("child") + 1)
+                                                }}
                                             >
                                                 {' '}
                                                 +{' '}
@@ -286,122 +342,46 @@ export default function NewBookingForm({
                     <h3 className="col-span-full text-md font-semibold">
                         Guest Details
                     </h3>{' '}
-                    <FormField
-                        control={form.control}
-                        rules={{ required: true }}
-                        name="firstName"
-                        render={({ field }) => (
-                            <FormItem className="w-[10rem]">
-                                <FormLabel>First Name</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        placeholder="Enter First Name"
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormDescription></FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        rules={{ required: true }}
-                        name="lastName"
-                        render={({ field }) => (
-                            <FormItem className="w-[10rem]">
-                                <FormLabel>Last Name</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        placeholder="Enter Last Name"
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormDescription></FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        rules={{ required: true }}
-                        name="email"
-                        render={({ field }) => (
-                            <FormItem className="w-[10rem]">
-                                <FormLabel>Email</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        type="email"
-                                        placeholder="Enter Email"
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormDescription></FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        rules={{ required: true }}
-                        name="firstName"
-                        render={({ field }) => (
-                            <FormItem className="w-[10rem]">
-                                <FormLabel>First Name</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        placeholder="Enter First Name"
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormDescription></FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        rules={{ required: true }}
-                        name="lastName"
-                        render={({ field }) => (
-                            <FormItem className="w-[10rem]">
-                                <FormLabel>Last Name</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        placeholder="Enter Last Name"
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormDescription></FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        rules={{ required: true }}
-                        name="email"
-                        render={({ field }) => (
-                            <FormItem className="w-[10rem]">
-                                <FormLabel>Email</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        type="email"
-                                        placeholder="Enter Email"
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormDescription></FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
+                    <div className='col-span-full flex flex-wrap'>
+                      
+                        {form.getValues("guests").length !==0 && form.getValues("guests").map((row) => (
+                            <div style={{ width: 350, paddingRight: 10, paddingBottom: 10 }}>
+                                <div className="flex items-center space-x-4 rtl:space-x-reverse">
+                                    <div className="flex-shrink-0">
+                                        <img className="w-8 h-8 rounded-full" src={row.avatar} alt="Neil image" />
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                            {row.name}
+                                        </p>
+                                        <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+                                            {row.email}
+                                        </p>
+                                    </div>
+                                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                        <DataTableRowActions row={row} />
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    
+
+                    <div className="col-span-full ">
+                        <SearchUser guestList={guestList} isLoading={isLoading} onSelect={handleOnSelect} >
+                            <Button className='mr-4' >
+                                <PlusCircledIcon className="mr-2 h-4 w-4" />
+                                Add Guest</Button>
+                        </SearchUser>
+                        <NewGuest />
+                    </div>
                     <FormField
                         control={form.control}
                         rules={{ required: true }}
                         name="price"
                         render={({ field }) => (
-                            <FormItem className="w-[10rem]">
+                            <FormItem className="">
                                 <FormLabel>Price</FormLabel>
                                 <FormControl>
                                     <Input placeholder="0$" {...field} />
@@ -413,10 +393,10 @@ export default function NewBookingForm({
                     />
                     <FormField
                         control={form.control}
-                        rules={{ required: true }}
+
                         name="discount"
                         render={({ field }) => (
-                            <FormItem className="w-[10rem]">
+                            <FormItem className="">
                                 <FormLabel>Discount</FormLabel>
                                 <FormControl>
                                     <Input placeholder="5%" {...field} />
@@ -426,11 +406,8 @@ export default function NewBookingForm({
                             </FormItem>
                         )}
                     />
-                    <div className="flex items-center gap-4">
-                        <Button>+ Add Guest</Button>
-                        <Button variant="outline">+ New Guest</Button>
-                    </div>
-                    <div className="col-span-full">
+
+                    <div className="col-span-full ">
                         <FormField
                             control={form.control}
                             name="notes"
@@ -476,10 +453,12 @@ export default function NewBookingForm({
                             )}
                         />
                     </div>
-                    {/* <div className="flex items-center gap-4 col-span-full">
+                    <Input type='hidden' {...form.register("guests", { required: true })} />
+
+                    <div className="flex items-center gap-4 col-span-full">
                         <Button>Save</Button>
-                        <Button variant="outline">Cancel</Button>
-                    </div> */}
+                        <Button variant="outline" onClick={() => form.setValue("guests", ["guest1", "guests2"])}>Cancel</Button>
+                    </div>
                 </form>
             </Form>
         </>

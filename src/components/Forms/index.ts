@@ -4,6 +4,7 @@ import maintainance from "./maintenanceAlert/maintenanceAlertForm";
 import roomType from "./roomtype/addroomType";
 import addroom from "./addrooms/addrooms";
 import serviceCategory from "./addServicescategory/addServiceCategoryForm"
+import booking from "./newBooking/newBookingForm"
 
 
 
@@ -14,5 +15,6 @@ export const Form =  {
     maintainance,
     roomType,
     addroom,
-    serviceCategory
+    serviceCategory,
+    booking
 }

@@ -1,5 +1,9 @@
 import React from 'react'
+import classNames from 'classnames'
 type IconProps = React.HTMLAttributes<SVGElement>
+interface ExtendedIconProps extends IconProps {
+  active: boolean;
+}
 
 export const Icons = {
   logo: (props: IconProps) => (
@@ -291,6 +295,71 @@ export const Icons = {
     >
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.509 5.75c0-1.493.394-2.96 1.144-4.25h-.081a8.5 8.5 0 1 0 7.356 12.746A8.5 8.5 0 0 1 8.509 5.75Z" />
     </svg>
+  ),
+  roomGuest: (props: ExtendedIconProps) => (
+    <svg
+      className={classNames("w-4 h-4 me-2  group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300", {
+        "text-blue-600": props?.active === true,
+        "text-gray-400": props?.active !== true,
+      })}
+      aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M7 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm2 1H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
+    </svg>
+  ),
+  billingPayments: (props: ExtendedIconProps) => {
+
+
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={classNames("w-4 h-4 me-2  dark:text-blue-500", {
+          "text-blue-600": props.active == true,
+          "text-gray-400": props?.active !== true,
+        })}
+      >
+
+        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 2h4a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4m6 0v3H6V2m6 0a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M5 5h8m-5 5h5m-8 0h.01M5 14h.01M8 14h5" />
+      </svg>
+    )
+  },
+  invoices: (props: ExtendedIconProps) => (
+    <svg
+      className={classNames("w-4 h-4 me-2  dark:text-blue-500", {
+        "text-blue-600": props.active == true,
+        "text-gray-400": props?.active !== true,
+      })}
+      aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M7 11H5v1h2v-1Zm4 3H9v1h2v-1Zm-4 0H5v1h2v-1ZM5 5V.13a2.98 2.98 0 0 0-1.293.749L.88 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
+      <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM13 16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6Zm-1-8H9a1 1 0 0 1 0-2h3a1 1 0 1 1 0 2Zm0-3H9a1 1 0 0 1 0-2h3a1 1 0 1 1 0 2Z" />
+      <path d="M11 11H9v1h2v-1Z" />
+    </svg>
+  ),
+  bookingHistory: (props: ExtendedIconProps) => (
+    <svg
+      className={classNames("w-4 h-4 me-2  dark:text-blue-500", {
+        "text-blue-600": props.active == true,
+        "text-gray-400": props?.active !== true,
+      })}
+      aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+      <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+    </svg>
+  ),
+  clientForm: (props: ExtendedIconProps) => (
+    <svg
+      className={classNames("w-4 h-4 me-2  dark:text-blue-500", {
+        "text-blue-600": props.active == true,
+        "text-gray-400": props?.active !== true,
+      })}
+      aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+      <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
+    </svg>
   )
+
 
 }

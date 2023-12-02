@@ -12,6 +12,7 @@ import {
     FormMessage,
 } from '../../../elements/Form/form';
 import { useForm } from 'react-hook-form';
+import { Button } from '../../../elements/Buttons/buttons';
 
 interface Field {
     label: string;
@@ -72,18 +73,18 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
     }
 } }: addPersonProps): any {
 
-    const form: any = useForm({ defaultValues });
+    const addpersonForm: any = useForm({ defaultValues });
 
     return (
         <>
-            <Form {...form} >
+            <Form {...addpersonForm} >
                 <form
-                    onSubmit={form.handleSubmit(onsubmit)}
+                    onSubmit={addpersonForm.handleSubmit(onsubmit)}
                     className="space-y-8 p-1"
                     id={id}
                 >
                     <FormField
-                        control={form.control}
+                        control={addpersonForm.control}
                         name="fullName"
                         rules={{ required: true }}
                         render={({ field }) => (
@@ -101,8 +102,8 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-                        <FormField
-                        control={form.control}
+                    <FormField
+                        control={addpersonForm.control}
                         name="passportNumber"
                         rules={{ required: true }}
                         render={({ field }) => (
@@ -121,32 +122,32 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                         )}
                     />
                     <FormField
-                        control={form.control}
+                        control={addpersonForm.control}
                         name="companyId"
 
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
-                                  {fields.companyId.label}
+                                    {fields.companyId.label}
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
                                 <FormDescription>
-                                {fields.companyId.description}
+                                    {fields.companyId.description}
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
                     <FormField
-                        control={form.control}
+                        control={addpersonForm.control}
                         name="bank"
 
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
-                                {fields.bank.label}
+                                    {fields.bank.label}
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} />
@@ -161,20 +162,20 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                         )}
                     />
                     <FormField
-                        control={form.control}
+                        control={addpersonForm.control}
                         name="accountNumber"
 
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
-                                {fields.accountNumber.label}
+                                    {fields.accountNumber.label}
 
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
                                 <FormDescription>
-                                {fields.accountNumber.description}
+                                    {fields.accountNumber.description}
 
                                 </FormDescription>
                                 <FormMessage />
@@ -182,76 +183,76 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                         )}
                     />
                     <FormField
-                        control={form.control}
+                        control={addpersonForm.control}
                         name="email"
                         rules={{ required: true }}
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
-                                {fields.email.label}
+                                    {fields.email.label}
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
                                 <FormDescription>
-                                {fields.email.description}
+                                    {fields.email.description}
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
                     <FormField
-                        control={form.control}
+                        control={addpersonForm.control}
                         name="contactNumber"
                         rules={{ required: true }}
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
-                                {fields.contactPerson.label}
+                                    {fields.contactPerson.label}
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
                                 <FormDescription>
-                                {fields.contactPerson.description}
+                                    {fields.contactPerson.description}
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
                     <FormField
-                        control={form.control}
+                        control={addpersonForm.control}
                         name="country"
 
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
-                                {fields.country.label}
+                                    {fields.country.label}
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
                                 <FormDescription>
-                                {fields.country.description}
+                                    {fields.country.description}
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
                     <FormField
-                        control={form.control}
+                        control={addpersonForm.control}
                         name="contactPerson"
-                   
+
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
-                                {fields.contactPerson.label}
+                                    {fields.contactPerson.label}
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
                                 <FormDescription>
-                                {fields.contactPerson.description}
+                                    {fields.contactPerson.description}
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
@@ -261,7 +262,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                         <Label>Notes</Label>
                         <Textarea name='note' placeholder="Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." />
                     </div>
-
+                   
                 </form>
             </Form>
         </>

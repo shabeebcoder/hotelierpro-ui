@@ -10,6 +10,10 @@ export default {
 export const searchUserExample = () => {
 
 
-    return <SearchGuest 
-    children={<Button>add</Button>} />
+    return <SearchGuest
+        guestList={[]}
+        isLoading={false}
+        onSelect={() => alert()}
+        children={<Button>add</Button>}
+    />
 }

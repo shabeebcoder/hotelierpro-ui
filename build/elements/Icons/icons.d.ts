@@ -1,5 +1,8 @@
 import React from 'react';
 type IconProps = React.HTMLAttributes<SVGElement>;
+interface ExtendedIconProps extends IconProps {
+    active: boolean;
+}
 export declare const Icons: {
     logo: (props: IconProps) => React.JSX.Element;
     twitter: (props: IconProps) => React.JSX.Element;
@@ -25,5 +28,10 @@ export declare const Icons: {
     stats: (props: IconProps) => React.JSX.Element;
     hotel: (props: IconProps) => React.JSX.Element;
     moon: (props: IconProps) => React.JSX.Element;
+    roomGuest: (props: ExtendedIconProps) => React.JSX.Element;
+    billingPayments: (props: ExtendedIconProps) => React.JSX.Element;
+    invoices: (props: ExtendedIconProps) => React.JSX.Element;
+    bookingHistory: (props: ExtendedIconProps) => React.JSX.Element;
+    clientForm: (props: ExtendedIconProps) => React.JSX.Element;
 };
 export {};

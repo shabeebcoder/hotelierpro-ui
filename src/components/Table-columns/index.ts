@@ -4,7 +4,8 @@ import { columns as guests } from "./guest-table.column";
 import { columns as rooms } from "./room-table-column"
 import { columns as services } from "./services-table-column"
 import { columns as serviceCategory } from "./service-category-table-column"
-import {columns as invoices} from "./billing-table-column"
+import { columns as invoices } from "./billing-table-column";
+import { columns as bookings } from "./booking-table-column"
 
 
 export const Table: any = {
@@ -13,5 +14,6 @@ export const Table: any = {
     rooms,
     services,
     serviceCategory,
-    invoices
+    invoices,
+    bookings
 }

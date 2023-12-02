@@ -1,8 +1,49 @@
 import React from 'react';
-export default function NewBookingForm({ onSubmit, durationValues, roomTypeValues, statusValues, id }: {
+export default function NewBookingForm({ onSubmit, roomTypes, status, id, NewGuest, guestList, onSelect, isLoading, handleCancel, defaultValues, fields }: {
     onSubmit: any;
-    durationValues: any;
-    roomTypeValues: any;
-    statusValues: any;
+    roomTypes: any;
+    status: any;
     id: any;
+    NewGuest: any;
+    guestList: any;
+    onSelect: any;
+    isLoading: any;
+    handleCancel: any;
+    defaultValues?: {
+        adult: number;
+        child: number;
+        guests: any[];
+    };
+    fields?: {
+        checkInDate: {
+            label: string;
+        };
+        duration: {
+            label: string;
+        };
+        checkOutDate: {
+            label: string;
+        };
+        roomtype: {
+            label: string;
+        };
+        status: {
+            label: string;
+        };
+        adult: {
+            label: string;
+        };
+        child: {
+            label: string;
+        };
+        price: {
+            label: string;
+        };
+        discount: {
+            label: string;
+        };
+        notes: {
+            label: string;
+        };
+    };
 }): React.JSX.Element;

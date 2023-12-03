@@ -13,10 +13,11 @@ function CalendarCard({
 }) {
     return (
         <div
-            className={`text-${textColor} bg-${bgColor} border-l-2 border-${textColor} w-[${width}] h-[${height}] p-2 space-y-1`}
+            style={{position: 'absolute', top: '5px'}}
+            className={`text-${textColor} bg-${bgColor} border-l-2 border-${textColor}  p-2 space-y-1`}
         >
-            <p className="text-lg">{name}</p>
-            <p className="font-semibold flex gap-4">
+            <p className="text-xs " style={{textAlign: 'left'}}>{name}</p>
+            <p style={{fontSize: 10}} className="font-semibold flex gap-4">
                 <span className={`text-${countColor} flex gap-1 items-center`}>
                     <svg
                         className={`w-3 h-3  dark:text-white text-${iconColor}   `}

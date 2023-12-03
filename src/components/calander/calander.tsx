@@ -10,6 +10,8 @@ import {
 
 import moment from 'moment';
 import BookingInfo from "./bookingInfo"
+import CalanderCard from "./../calendarCard/calendarCard"
+import {Badge} from "./../../elements/Badge/badge"
 
 
 
@@ -39,16 +41,31 @@ function calander({
                 cell: info => {
                     const value = info.getValue();
                     if (value.isBooked) {
-                        return <BookingInfo>
-                            <span className="xl:block lg:block md:block sm:block hidden" onClick={() => alert(JSON.stringify(value?.info))}>
+                        return <BookingInfo info={value.info}>
+                            {/* <CalanderCard
+
+
+                                name='Sebastian'
+                                bgColor='yellow-200'
+                                textColor='yellow-600'
+                                countColor='yellow-700'
+                                iconColor='yellow-500'
+                                height='2rem'
+                                width='10rem'
+                                userCount='2'
+                                nightsCount='3'
+
+                            /> */}
+                            <Badge style={{position: 'absolute'}}> Shabeeb ck</Badge>
+                            {/* <span className="xl:block lg:block md:block sm:block hidden" onClick={() => alert(JSON.stringify(value?.info))}>
                                 B
-                            </span>
+                            </span> */}
                         </BookingInfo>
 
 
 
                     } else {
-                        return <span className="xl:block lg:block md:block sm:block hidden" ></span>
+                        return <span></span>;
 
                     }
                 },
@@ -87,7 +104,7 @@ function calander({
                     {table.getRowModel().rows.map((row, index) => (
                         <tr className="text-center" key={row.id}>
                             {row.getVisibleCells().map(cell => (
-                                <td style={{ width: index === 0 ? 100 : 60, height: 60 }} className="border  transition cursor-pointer ease hover:bg-gray-300 " key={cell.id}>
+                                <td style={{ width: index === 0 ? 100 : 60, height: 60, position: 'relative' }} className="border  transition cursor-pointer ease hover:bg-gray-300 " key={cell.id}>
                                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                 </td>
                             ))}

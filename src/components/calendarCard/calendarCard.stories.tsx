@@ -13,7 +13,7 @@ CalendarCardExample.args = {
     textColor: 'yellow-600',
     countColor: 'yellow-700',
     iconColor: 'yellow-500',
-    height: '3rem',
+    height: '2rem',
     width: '10rem',
     userCount: '2',
     nightsCount: '3',

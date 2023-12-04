@@ -16,6 +16,7 @@ import DataTable from "./components/Data-table/data-table";
 import Confirmation from "./components/Confirmation/alert"
 import Tab from "./components/tab/tab"
 import Calander from "./components/calander/calander"
+import {RegistrationForm} from "./registrationForm"
 // import { Alert } from './Alert';
 // import { Login } from './Login';
 // import { Register } from './Signup';
@@ -175,7 +176,8 @@ export {
     Drawer,
     DataTable,
     Confirmation,
-    Calander
+    Calander,
+    RegistrationForm
     // Dashboard
 };
 

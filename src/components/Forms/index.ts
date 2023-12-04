@@ -5,6 +5,7 @@ import roomType from "./roomtype/addroomType";
 import addroom from "./addrooms/addrooms";
 import serviceCategory from "./addServicescategory/addServiceCategoryForm"
 import booking from "./newBooking/newBookingForm"
+import Billing from "./billingComponent/billingComponent"
 
 
 
@@ -16,5 +17,6 @@ export const Form =  {
     roomType,
     addroom,
     serviceCategory,
-    booking
+    booking,
+    Billing
 }

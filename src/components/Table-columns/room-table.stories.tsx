@@ -1,5 +1,7 @@
 import React from 'react'
 import Roomtable from "./room-table"
+import DataTable from '../Data-table/data-table'
+import { columns as historyColumn } from "./history-table-column"
 
 export default {
     title: "hotelierpro/tables/room-table"
@@ -24,4 +26,32 @@ RoomTableDemo.args = {
         }
     ],
 }
+
+
+export const HistorytableDemo = () => {
+
+
+    return <DataTable data={[
+        {
+            user: "shabeeb",
+            room: "Single bed",
+            details: "updated the room price",
+            date: "10/10/2023"
+        },
+        {
+            user: "shabeeb",
+            room: "Single bed",
+            details: "updated the room price",
+            date: "10/10/2023"
+        }
+        ,
+        {
+            user: "shabeeb",
+            room: "Single bed",
+            details: "updated the room price",
+            date: "10/10/2023"
+        }
+    ]} columns={historyColumn} />
+}
+
 

@@ -70,13 +70,13 @@ function BillingComponent({ onSubmit, selectValues }) {
                 >
                     <Card>
                         <CardHeader>
-                            <div className="flex justify-between items-center px-8 w-[30rem]">
+                            <div className="flex justify-between items-end">
                                 <FormField
                                     control={form.control}
                                     name="paymentBy"
                                     rules={{ required: true }}
                                     render={({ field }) => (
-                                        <FormItem className="w-[10rem]">
+                                        <FormItem className="w-[20rem]">
                                             <FormLabel>Payment by</FormLabel>
                                             <Select
                                                 onValueChange={field.onChange}
@@ -113,7 +113,7 @@ function BillingComponent({ onSubmit, selectValues }) {
                                     name="payer"
                                     rules={{ required: true }}
                                     render={({ field }) => (
-                                        <FormItem className="w-[10rem]">
+                                        <FormItem className="w-[20rem]">
                                             <FormLabel>Payer</FormLabel>
                                             <FormControl>
                                                 <Input
@@ -121,7 +121,6 @@ function BillingComponent({ onSubmit, selectValues }) {
                                                     {...field}
                                                 />
                                             </FormControl>
-                                            <FormDescription></FormDescription>
                                             <FormMessage />
                                         </FormItem>
                                     )}
@@ -135,7 +134,7 @@ function BillingComponent({ onSubmit, selectValues }) {
                             <Table>
                                 <TableHeader>
                                     <TableRow>
-                                        <TableHead className="uppercase text-center w-[2rem]">
+                                        <TableHead className="uppercase text-center w-4 max-w-4 min-w-4">
                                             si
                                         </TableHead>
                                         <TableHead>Room 1 Single</TableHead>
@@ -153,15 +152,16 @@ function BillingComponent({ onSubmit, selectValues }) {
                                 <TableBody>
                                     {invoices.map((item, pos) => (
                                         <TableRow key={pos}>
-                                            <TableCell>{pos + 1}</TableCell>
+                                            <TableCell className="w-4 max-w-4 min-w-4 text-center">
+                                                {pos + 1}
+                                            </TableCell>
                                             <TableCell>
                                                 <FormField
                                                     control={form.control}
                                                     rules={{ required: true }}
                                                     name={`${item.invoice}${pos}`}
                                                     render={({ field }) => (
-                                                        <FormItem className="w-[10rem]">
-                                                            <FormLabel></FormLabel>
+                                                        <FormItem>
                                                             <FormControl>
                                                                 <Input
                                                                     placeholder={
@@ -170,7 +170,6 @@ function BillingComponent({ onSubmit, selectValues }) {
                                                                     {...field}
                                                                 />
                                                             </FormControl>
-                                                            <FormDescription></FormDescription>
                                                             <FormMessage />
                                                         </FormItem>
                                                     )}
@@ -182,8 +181,7 @@ function BillingComponent({ onSubmit, selectValues }) {
                                                     rules={{ required: true }}
                                                     name={`${item.paymentMethod}${pos}`}
                                                     render={({ field }) => (
-                                                        <FormItem className="w-[10rem]">
-                                                            <FormLabel></FormLabel>
+                                                        <FormItem className="w-[8rem]">
                                                             <FormControl>
                                                                 <Input
                                                                     placeholder={
@@ -192,7 +190,6 @@ function BillingComponent({ onSubmit, selectValues }) {
                                                                     {...field}
                                                                 />
                                                             </FormControl>
-                                                            <FormDescription></FormDescription>
                                                             <FormMessage />
                                                         </FormItem>
                                                     )}
@@ -204,8 +201,7 @@ function BillingComponent({ onSubmit, selectValues }) {
                                                     rules={{ required: true }}
                                                     name={`${item.paymentMethod}${pos}`}
                                                     render={({ field }) => (
-                                                        <FormItem className="w-[10rem]">
-                                                            <FormLabel></FormLabel>
+                                                        <FormItem className="w-[8rem]">
                                                             <FormControl>
                                                                 <Input
                                                                     placeholder={
@@ -214,7 +210,6 @@ function BillingComponent({ onSubmit, selectValues }) {
                                                                     {...field}
                                                                 />
                                                             </FormControl>
-                                                            <FormDescription></FormDescription>
                                                             <FormMessage />
                                                         </FormItem>
                                                     )}
@@ -226,8 +221,7 @@ function BillingComponent({ onSubmit, selectValues }) {
                                                     rules={{ required: true }}
                                                     name={`${item.totalAmount}${pos}`}
                                                     render={({ field }) => (
-                                                        <FormItem className="w-[10rem]">
-                                                            <FormLabel></FormLabel>
+                                                        <FormItem className="w-[8rem]">
                                                             <FormControl>
                                                                 <Input
                                                                     placeholder={
@@ -236,7 +230,6 @@ function BillingComponent({ onSubmit, selectValues }) {
                                                                     {...field}
                                                                 />
                                                             </FormControl>
-                                                            <FormDescription></FormDescription>
                                                             <FormMessage />
                                                         </FormItem>
                                                     )}
@@ -245,7 +238,7 @@ function BillingComponent({ onSubmit, selectValues }) {
                                         </TableRow>
                                     ))}
                                 </TableBody>
-                                <TableFooter>
+                                <TableFooter className="bg-white">
                                     <TableRow className="py-4">
                                         <TableCell>
                                             <Button>+ Add Service</Button>
@@ -283,7 +276,7 @@ function BillingComponent({ onSubmit, selectValues }) {
                         <CardFooter className="flex justify-between">
                             <div className="space-x-4">
                                 <Button>Save</Button>
-                                <Button>Cancel</Button>
+                                <Button variant="outline">Cancel</Button>
                             </div>
                             <Button>Save & create invoice</Button>
                         </CardFooter>

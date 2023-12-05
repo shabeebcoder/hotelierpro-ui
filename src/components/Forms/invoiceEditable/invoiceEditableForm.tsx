@@ -56,15 +56,19 @@ function InvoiceEditableForm({ onSubmit }) {
             paymentMethod: 'Bank Transfer',
         },
     ];
+
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-8 bg-white"
+            >
                 <header className="bg-[#4D6969] flex items-center text-white h-[14rem]">
                     <div className="w-[50%]">
                         <img
                             src="https://hotelierpro.us/Logo/HotelierPro_Logo_white.svg"
                             alt="logo"
-                            className="ml-8 h-8"
+                            className="ml-8 h-12"
                         />
                     </div>
                     <ul className="w-[50%] ml-8">
@@ -76,7 +80,7 @@ function InvoiceEditableForm({ onSubmit }) {
                             <span>:</span>
                             <span>INV-20230723-2</span>
                         </li>
-                        <li className="flex gap-4 items-center">
+                        <li className="flex gap-4 items-center my-2">
                             <span className="w-[8rem]">Invoice Date</span>
                             <span>:</span>
                             <FormField
@@ -85,7 +89,6 @@ function InvoiceEditableForm({ onSubmit }) {
                                 name="billingDate"
                                 render={({ field }) => (
                                     <FormItem className="flex flex-col">
-                                        <FormLabel></FormLabel>
                                         <Popover>
                                             <PopoverTrigger asChild>
                                                 <Button
@@ -103,7 +106,7 @@ function InvoiceEditableForm({ onSubmit }) {
                                                             'PPP'
                                                         )
                                                     ) : (
-                                                        <span classname="text-white hover:text-primary">
+                                                        <span className="text-white group-hover:text-primary">
                                                             billing date
                                                         </span>
                                                     )}
@@ -125,7 +128,7 @@ function InvoiceEditableForm({ onSubmit }) {
                                 )}
                             />
                         </li>
-                        <li className="flex gap-4 items-center">
+                        <li className="flex gap-4 items-center my-2">
                             <span className="w-[8rem]">Invoice Due Date</span>
                             <span>:</span>
                             <FormField
@@ -134,7 +137,6 @@ function InvoiceEditableForm({ onSubmit }) {
                                 name="dueDate"
                                 render={({ field }) => (
                                     <FormItem className="flex flex-col">
-                                        <FormLabel></FormLabel>
                                         <Popover>
                                             <PopoverTrigger asChild>
                                                 <Button
@@ -152,7 +154,7 @@ function InvoiceEditableForm({ onSubmit }) {
                                                             'PPP'
                                                         )
                                                     ) : (
-                                                        <span classname="text-white hover:text-primary">
+                                                        <span className="text-white group-hover:text-primary">
                                                             due date
                                                         </span>
                                                     )}
@@ -178,14 +180,14 @@ function InvoiceEditableForm({ onSubmit }) {
                 </header>
                 <main className="space-y-8">
                     <p className="text-red-700 uppercase text-right">sent</p>
-                    <div className="flex justify-between items-end">
-                        <div>
+                    <div className="flex justify-between items-end gap-[3rem]">
+                        <div className="space-y-2 w-full">
                             <FormField
                                 control={form.control}
                                 rules={{ required: true }}
                                 name="billToName"
                                 render={({ field }) => (
-                                    <FormItem className="w-[10rem]">
+                                    <FormItem>
                                         <FormLabel>Bill To</FormLabel>
                                         <FormControl>
                                             <Input
@@ -193,7 +195,6 @@ function InvoiceEditableForm({ onSubmit }) {
                                                 {...field}
                                             />
                                         </FormControl>
-                                        <FormDescription></FormDescription>
                                         <FormMessage />
                                     </FormItem>
                                 )}
@@ -203,27 +204,24 @@ function InvoiceEditableForm({ onSubmit }) {
                                 name="billToAddress"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel></FormLabel>
                                         <FormControl>
                                             <Textarea
                                                 placeholder="Address"
-                                                className="resize-none"
                                                 {...field}
                                             />
                                         </FormControl>
-                                        <FormDescription></FormDescription>
                                         <FormMessage />
                                     </FormItem>
                                 )}
                             />
                         </div>
-                        <div>
+                        <div className="space-y-2 w-full">
                             <FormField
                                 control={form.control}
                                 rules={{ required: true }}
                                 name="billFromName"
                                 render={({ field }) => (
-                                    <FormItem className="w-[10rem]">
+                                    <FormItem>
                                         <FormLabel>Bill From</FormLabel>
                                         <FormControl>
                                             <Input
@@ -231,7 +229,6 @@ function InvoiceEditableForm({ onSubmit }) {
                                                 {...field}
                                             />
                                         </FormControl>
-                                        <FormDescription></FormDescription>
                                         <FormMessage />
                                     </FormItem>
                                 )}
@@ -241,21 +238,18 @@ function InvoiceEditableForm({ onSubmit }) {
                                 name="billFromAddress"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel></FormLabel>
                                         <FormControl>
                                             <Textarea
                                                 placeholder="Address"
-                                                className="resize-none"
                                                 {...field}
                                             />
                                         </FormControl>
-                                        <FormDescription></FormDescription>
                                         <FormMessage />
                                     </FormItem>
                                 )}
                             />
                         </div>
-                        <div className="space-x-4">
+                        <div className="flex gap-4">
                             <Button>+ Add Booking</Button>
                             <Button variant="outline">+ Add Services</Button>
                         </div>
@@ -263,7 +257,7 @@ function InvoiceEditableForm({ onSubmit }) {
                     <Table>
                         <TableHeader>
                             <TableRow>
-                                <TableHead className="uppercase text-center w-[2rem]">
+                                <TableHead className="uppercase text-center w-4 max-w-4 min-w-4">
                                     No
                                 </TableHead>
                                 <TableHead>Item</TableHead>
@@ -281,15 +275,16 @@ function InvoiceEditableForm({ onSubmit }) {
                         <TableBody>
                             {invoices.map((item, pos) => (
                                 <TableRow key={pos}>
-                                    <TableCell>{pos + 1}</TableCell>
+                                    <TableCell className="w-4 max-w-4 min-w-4 text-center">
+                                        {pos + 1}
+                                    </TableCell>
                                     <TableCell>
                                         <FormField
                                             control={form.control}
                                             rules={{ required: true }}
                                             name={`${item.invoice}${pos}`}
                                             render={({ field }) => (
-                                                <FormItem className="w-[10rem]">
-                                                    <FormLabel></FormLabel>
+                                                <FormItem>
                                                     <FormControl>
                                                         <Input
                                                             placeholder={
@@ -298,7 +293,6 @@ function InvoiceEditableForm({ onSubmit }) {
                                                             {...field}
                                                         />
                                                     </FormControl>
-                                                    <FormDescription></FormDescription>
                                                     <FormMessage />
                                                 </FormItem>
                                             )}
@@ -310,8 +304,7 @@ function InvoiceEditableForm({ onSubmit }) {
                                             rules={{ required: true }}
                                             name={`${item.paymentMethod}${pos}`}
                                             render={({ field }) => (
-                                                <FormItem className="w-[10rem]">
-                                                    <FormLabel></FormLabel>
+                                                <FormItem className="w-[8rem]">
                                                     <FormControl>
                                                         <Input
                                                             placeholder={
@@ -320,7 +313,6 @@ function InvoiceEditableForm({ onSubmit }) {
                                                             {...field}
                                                         />
                                                     </FormControl>
-                                                    <FormDescription></FormDescription>
                                                     <FormMessage />
                                                 </FormItem>
                                             )}
@@ -332,8 +324,7 @@ function InvoiceEditableForm({ onSubmit }) {
                                             rules={{ required: true }}
                                             name={`${item.paymentMethod}${pos}`}
                                             render={({ field }) => (
-                                                <FormItem className="w-[10rem]">
-                                                    <FormLabel></FormLabel>
+                                                <FormItem className="w-[8rem]">
                                                     <FormControl>
                                                         <Input
                                                             placeholder={
@@ -342,7 +333,6 @@ function InvoiceEditableForm({ onSubmit }) {
                                                             {...field}
                                                         />
                                                     </FormControl>
-                                                    <FormDescription></FormDescription>
                                                     <FormMessage />
                                                 </FormItem>
                                             )}
@@ -354,8 +344,7 @@ function InvoiceEditableForm({ onSubmit }) {
                                             rules={{ required: true }}
                                             name={`${item.totalAmount}${pos}`}
                                             render={({ field }) => (
-                                                <FormItem className="w-[10rem]">
-                                                    <FormLabel></FormLabel>
+                                                <FormItem className="w-[8rem]">
                                                     <FormControl>
                                                         <Input
                                                             placeholder={
@@ -364,7 +353,6 @@ function InvoiceEditableForm({ onSubmit }) {
                                                             {...field}
                                                         />
                                                     </FormControl>
-                                                    <FormDescription></FormDescription>
                                                     <FormMessage />
                                                 </FormItem>
                                             )}
@@ -373,7 +361,7 @@ function InvoiceEditableForm({ onSubmit }) {
                                 </TableRow>
                             ))}
                         </TableBody>
-                        <TableFooter>
+                        <TableFooter className="bg-white">
                             <TableRow className="py-4">
                                 <TableCell>
                                     <Button>+ Add New Row</Button>
@@ -433,7 +421,6 @@ function InvoiceEditableForm({ onSubmit }) {
                                         name="notes"
                                         render={({ field }) => (
                                             <FormItem>
-                                                <FormLabel></FormLabel>
                                                 <FormControl>
                                                     <Textarea
                                                         placeholder="Notes"
@@ -441,7 +428,6 @@ function InvoiceEditableForm({ onSubmit }) {
                                                         {...field}
                                                     />
                                                 </FormControl>
-                                                <FormDescription></FormDescription>
                                                 <FormMessage />
                                             </FormItem>
                                         )}
@@ -459,14 +445,12 @@ function InvoiceEditableForm({ onSubmit }) {
                                         name="paid"
                                         render={({ field }) => (
                                             <FormItem className="w-[10rem]">
-                                                <FormLabel></FormLabel>
                                                 <FormControl>
                                                     <Input
                                                         placeholder="4999"
                                                         {...field}
                                                     />
                                                 </FormControl>
-                                                <FormDescription></FormDescription>
                                                 <FormMessage />
                                             </FormItem>
                                         )}

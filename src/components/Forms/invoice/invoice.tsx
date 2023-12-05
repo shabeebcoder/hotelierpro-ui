@@ -59,13 +59,16 @@ function Invoice({ onSubmit, invoiceData, billTo, billFrom }) {
     ];
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-8 bg-white"
+            >
                 <header className="bg-[#4D6969] flex items-center text-white h-[14rem]">
                     <div className="w-[50%]">
                         <img
                             src="https://hotelierpro.us/Logo/HotelierPro_Logo_white.svg"
                             alt="logo"
-                            className="ml-8 h-8"
+                            className="ml-8 h-12"
                         />
                     </div>
                     <ul className="w-[50%] ml-8">
@@ -91,8 +94,8 @@ function Invoice({ onSubmit, invoiceData, billTo, billFrom }) {
                 </header>
                 <main className="space-y-8">
                     <p className="text-red-700 uppercase text-right">sent</p>
-                    <div className="flex w-[50%] gap-12 mx-auto">
-                        <div className="w-[50%] space-y-2">
+                    <div className="flex justify-between gap-[5rem] mx-auto">
+                        <div className="space-y-2 w-full">
                             <Label>Bill To</Label>
                             <p>
                                 <Input value={billTo.name} />
@@ -101,7 +104,7 @@ function Invoice({ onSubmit, invoiceData, billTo, billFrom }) {
                                 <Input value={billTo.address} />
                             </p>
                         </div>
-                        <div className="w-[50%] space-y-2">
+                        <div className="space-y-2 w-full">
                             <Label>Bill From</Label>
                             <p>
                                 <Input value={billFrom.name} />
@@ -114,17 +117,17 @@ function Invoice({ onSubmit, invoiceData, billTo, billFrom }) {
                     <Table>
                         <TableHeader>
                             <TableRow>
-                                <TableHead className="uppercase text-center w-[2rem]">
+                                <TableHead className="uppercase text-center w-4">
                                     No
                                 </TableHead>
                                 <TableHead>Item</TableHead>
-                                <TableHead className="uppercase text-center w-[7rem]">
+                                <TableHead className="uppercase text-center w-[10rem]">
                                     cost
                                 </TableHead>
-                                <TableHead className="uppercase text-center w-[7rem]">
+                                <TableHead className="uppercase text-center w-[10rem]">
                                     qty
                                 </TableHead>
-                                <TableHead className="uppercase text-center w-[7rem]">
+                                <TableHead className="uppercase text-center w-[10rem]">
                                     price
                                 </TableHead>
                             </TableRow>
@@ -148,7 +151,7 @@ function Invoice({ onSubmit, invoiceData, billTo, billFrom }) {
                                 </TableRow>
                             ))}
                         </TableBody>
-                        <TableFooter>
+                        <TableFooter className="bg-white">
                             <TableRow>
                                 <TableCell colSpan={2}></TableCell>
                                 <TableCell colSpan={2}>Subtotal</TableCell>

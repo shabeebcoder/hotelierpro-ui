@@ -13,6 +13,14 @@ export default function NewBookingForm({ onSubmit, roomTypes, status, id, NewGue
         adult: number;
         child: number;
         guests: any[];
+        checkInDate: Date;
+        duration: string;
+        checkOutDate: string;
+        roomtype: string;
+        status: string;
+        price: string;
+        discount: string;
+        notes: string;
     };
     fields?: {
         checkInDate: {

@@ -59,7 +59,7 @@ import {
     DropdownMenuTrigger,
 } from "../../elements/Dropdown-menu/dropdownmenu"
 
-export default function DropdownMenuDemo({ children, info }: any) {
+export default function DropdownMenuDemo({ children, info, handleEdit }: any) {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -133,7 +133,7 @@ export default function DropdownMenuDemo({ children, info }: any) {
                                     
                                     <span>Create Invoice</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem>
+                                <DropdownMenuItem onClick={()=> handleEdit(info)}>
                                     
                                     <span>Edit</span>
                                 </DropdownMenuItem>

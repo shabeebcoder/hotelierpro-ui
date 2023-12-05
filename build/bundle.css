@@ -800,6 +800,16 @@ body {
   margin-bottom: 1rem;
 }
 
+.-mx-4 {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .-mb-px {
   margin-bottom: -1px;
 }
@@ -1035,10 +1045,6 @@ body {
   height: 100vh;
 }
 
-.h-\[3rem\] {
-  height: 3rem;
-}
-
 .max-h-96 {
   max-height: 24rem;
 }
@@ -1234,6 +1240,10 @@ body {
 .w-max {
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-\[340px\] {
+  width: 340px;
 }
 
 .min-w-0 {
@@ -1535,6 +1545,12 @@ body {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
+.space-y-0\.5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.125rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.125rem * var(--tw-space-y-reverse));
+}
+
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -1786,9 +1802,9 @@ body {
   background-color: transparent;
 }
 
-.bg-yellow-200 {
+.bg-slate-950 {
   --tw-bg-opacity: 1;
-  background-color: rgb(254 240 138 / var(--tw-bg-opacity));
+  background-color: rgb(2 6 23 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-b {
@@ -1997,6 +2013,10 @@ body {
   padding-top: 1.5rem;
 }
 
+.pb-16 {
+  padding-bottom: 4rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2189,26 +2209,6 @@ body {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-yellow-200 {
-  --tw-text-opacity: 1;
-  color: rgb(254 240 138 / var(--tw-text-opacity));
-}
-
-.text-yellow-600 {
-  --tw-text-opacity: 1;
-  color: rgb(202 138 4 / var(--tw-text-opacity));
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1;
-  color: rgb(234 179 8 / var(--tw-text-opacity));
-}
-
-.text-yellow-700 {
-  --tw-text-opacity: 1;
-  color: rgb(161 98 7 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2484,6 +2484,10 @@ body {
 .hover\:bg-sky-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(56 189 248 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-transparent:hover {
+  background-color: transparent;
 }
 
 .hover\:text-accent-foreground:hover {
@@ -3332,8 +3336,16 @@ body {
     width: 600px;
   }
 
+  .lg\:w-1\/5 {
+    width: 20%;
+  }
+
   .lg\:max-w-none {
     max-width: none;
+  }
+
+  .lg\:max-w-2xl {
+    max-width: 42rem;
   }
 
   .lg\:grid-cols-2 {
@@ -3356,10 +3368,42 @@ body {
     grid-template-columns: .75fr 1fr;
   }
 
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:flex-col {
+    flex-direction: column;
+  }
+
   .lg\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(2rem * var(--tw-space-x-reverse));
     margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .lg\:space-x-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0px * var(--tw-space-x-reverse));
+    margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .lg\:space-y-1 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+  }
+
+  .lg\:space-x-12 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(3rem * var(--tw-space-x-reverse));
+    margin-left: calc(3rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
   .lg\:border-l {
@@ -3569,4 +3613,247 @@ body {
 
 .\[\&_tr\]\:border-b tr {
   border-bottom-width: 1px;
+}
+.registrationFormContainer .main {
+    overflow: hidden;
+    background-color: white;
+}
+
+.registrationFormContainer {
+    background-color: white;
+    padding-bottom: 50px;
+}
+
+.registrationFormContainer .header-main {
+    height: 230px;
+    flex-shrink: 0;
+    border-radius: 4px 4px 0px 0px;
+    background: #4D6969;
+    display: flex;
+}
+
+.registrationFormContainer .logo {
+    width: 51.895px;
+    height: 28.544px;
+    flex-shrink: 0;
+    padding-left: 32px;
+}
+
+.registrationFormContainer .logo-text {
+    display: flex;
+    width: 159.263px;
+    height: 34px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-left: 10.73px;
+}
+
+.registrationFormContainer .left-side {
+    width: 50%;
+}
+
+.registrationFormContainer .left-div {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.registrationFormContainer .right-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.registrationFormContainer .right-side h1 {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 115px;
+}
+
+.registrationFormContainer .right-side h3 {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+/* table one  */
+
+
+
+
+
+.registrationFormContainer .table-user-data-head-div {
+    text-align: center;
+    padding: 24px 0px 34px;
+}
+.registrationFormContainer .registrationForButton {
+    display: flex;
+    padding: 15px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 0px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.registrationFormContainer .table-user-data-head {
+    display: flex;
+    width: 184px;
+    padding: 15px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.registrationFormContainer .table-user-data-head h1 {
+    color: #3A7C7C;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+}
+
+.registrationFormContainer .table-user-data {
+    width: 950px;
+    border: 1px solid rgba(161, 161, 161, 0.54);
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registrationFormContainer .table-user-data td {
+    border-bottom: 1px solid rgba(161, 161, 161, 0.54);
+    padding: 13px;
+    padding-left: 54px;
+    color: rgba(0, 0, 0, 0.80);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+/*policy*/
+
+/* .registrationFormContainer .policy-div {
+    margin-left: 107px;
+    margin-top: 63px;
+    background-color: #fff;
+} */
+
+.registrationFormContainer .policy-div {
+    margin-top: 63px;
+}
+
+.registrationFormContainer .policy-text {
+    color: rgba(0, 0, 0, 0.85);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.registrationFormContainer .policy-para {
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.3rem;
+    list-style: none;
+    padding: 0px;
+}
+
+.registrationFormContainer .policy-text-one {
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.registrationFormContainer .signeture-div {
+    width: 228px;
+    height: 71px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid rgba(161, 161, 161, 0.54);
+    background: #FFF;
+    float: right;
+    margin-top: -95px;
+}
+
+.registrationFormContainer .signeture-text {
+    float: right;
+    color: #6D6D6D;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-right: 165px;
+    margin-top: 14px;
+}
+
+
+
+/*table two */
+.registrationFormContainer .table-two-div {
+    margin-left: auto;
+    margin-right: auto;
+}
+.registrationFormContainer .table-two {
+    width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.registrationFormContainer .table-two th {
+    width: 950px;
+    height: 52px;
+    flex-shrink: 0;
+    border: 1px solid rgba(161, 161, 161, 0.54);
+    border-collapse: collapse;
+    background: #FFF;
+}
+
+.registrationFormContainer .table-two td {
+    width: 950px;
+    height: 52px;
+    flex-shrink: 0;
+    border: 1px solid rgba(161, 161, 161, 0.54);
+    border-collapse: collapse;
+    background: #FFF;
+    
+}
+.registrationFormContainer .internalContiner {
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
 }

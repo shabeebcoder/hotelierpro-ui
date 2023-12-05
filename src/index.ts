@@ -16,7 +16,9 @@ import DataTable from "./components/Data-table/data-table";
 import Confirmation from "./components/Confirmation/alert"
 import Tab from "./components/tab/tab"
 import Calander from "./components/calander/calander"
-import {RegistrationForm} from "./registrationForm"
+import { RegistrationForm } from "./registrationForm"
+import Dashboard from "./components/dashboard/dashboard"
+
 // import { Alert } from './Alert';
 // import { Login } from './Login';
 // import { Register } from './Signup';
@@ -160,6 +162,7 @@ export {
     // toolTip,
     // hotelierpro,
     // MaintainanceForm,
+
     Tab,
     Table,
     Icons,
@@ -177,7 +180,7 @@ export {
     DataTable,
     Confirmation,
     Calander,
-    RegistrationForm
-    // Dashboard
+    RegistrationForm,
+    Dashboard
 };
 

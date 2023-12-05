@@ -156,6 +156,7 @@ export const CalanderDemo = () => {
     ]
 
     return <Calander
+        handleEdit={(data)=> alert(JSON.stringify(data))}
         calanderColumns={heading}
         calanderRows={[
             {

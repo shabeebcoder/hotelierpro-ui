@@ -1,3 +1,8 @@
 import React from 'react';
-declare function calander({ calanderColumns, calanderRows }: any): React.JSX.Element;
+interface calanderProps {
+    calanderColumns: any;
+    calanderRows: any;
+    handleEdit: any;
+}
+declare function calander({ calanderColumns, calanderRows, handleEdit }: calanderProps): React.JSX.Element;
 export default calander;

@@ -47,7 +47,16 @@ export default function NewBookingForm({
     defaultValues = {
         adult: 1,
         child: 0,
-        guests: []
+        guests: [],
+        checkInDate: new Date("10/10/2023") ,
+        duration: "",
+        checkOutDate: "",
+        roomtype: "",
+        status: "",
+        price: "",
+        discount: "",
+        notes: ""
+        
     },
     fields = {
         checkInDate: {
@@ -278,7 +287,7 @@ export default function NewBookingForm({
                                 <FormLabel>{fields.status.label}</FormLabel>
                                 <Select
                                     onValueChange={field.onChange}
-                                  
+                                    defaultValue={field.value}
                                 >
                                     <FormControl>
                                         <SelectTrigger>

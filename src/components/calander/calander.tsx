@@ -14,12 +14,18 @@ import CalanderCard from "./../calendarCard/calendarCard"
 import {Badge} from "./../../elements/Badge/badge"
 
 
+interface calanderProps {
+    calanderColumns: any,
+    calanderRows : any,
+    handleEdit : any
+}
 
 
 function calander({
     calanderColumns = [],
-    calanderRows = []
-}: any) {
+    calanderRows = [],
+    handleEdit
+}: calanderProps) {
 
     const columnHelper: any = createColumnHelper();
     const columns = React.useMemo(() => {
@@ -41,7 +47,9 @@ function calander({
                 cell: info => {
                     const value = info.getValue();
                     if (value.isBooked) {
-                        return <BookingInfo info={value.info}>
+                        return <BookingInfo
+                        handleEdit={handleEdit}
+                            info={value.info}>
                             {/* <CalanderCard
 
 

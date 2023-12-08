@@ -33,9 +33,27 @@ import {
     PopoverTrigger,
     PopoverContent,
 } from '../../../elements/Popover/popover';
+import { PlusCircledIcon } from '@radix-ui/react-icons';
 
-function InvoiceEditableForm({ onSubmit }) {
-    const form = useForm({});
+function InvoiceEditableForm({
+
+    onSubmit,
+    invoiceNumber,
+    defaultValues
+
+
+}) {
+
+    const [subTotal, setSubTotal] = React.useState(0)
+    const [amountDue, setAmountDue] = React.useState(0)
+
+    const form = useForm({ defaultValues });
+    const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
+        {
+            control: form.control,
+            name: "services",
+        }
+    )
     const invoices = [
         {
             invoice: 'INV001',
@@ -56,6 +74,45 @@ function InvoiceEditableForm({ onSubmit }) {
             paymentMethod: 'Bank Transfer',
         },
     ];
+
+    React.useEffect(() => {
+        const subscription = form.watch((value, { name, type }) => {
+
+            if (name.includes('qty')) {
+
+                const index = name.split('.')[1].split('.')[0];
+                const qty = value.services[index].qty;
+                const cost = value.services[index].cost; // assuming cost is a constant or another field
+                form.setValue(`services.${index}.total`, Number(qty) * Number(cost));
+                const newSubtotal = form.getValues("services").reduce((acc, curr) => {
+                    return acc + (curr.total || 0);
+                }, 0);
+
+                setSubTotal(newSubtotal);
+
+
+            }
+
+
+        });
+
+
+        return () => subscription.unsubscribe();
+    }, [form.watch, form.setValue]);
+
+
+    React.useEffect(() => {
+
+        const newSubtotal: any = fields.reduce((acc: any, curr: any) => {
+            return acc + (curr.total || 0);
+        }, 0);
+
+        setSubTotal(newSubtotal);
+
+        setAmountDue(Number(newSubtotal) - Number(form.getValues("paid")))
+
+    }, []);
+
 
     return (
         <Form {...form}>
@@ -78,7 +135,7 @@ function InvoiceEditableForm({ onSubmit }) {
                         <li className="flex gap-4 items-center">
                             <span className="w-[8rem]">Invoice Number</span>
                             <span>:</span>
-                            <span>INV-20230723-2</span>
+                            <span>{invoiceNumber}</span>
                         </li>
                         <li className="flex gap-4 items-center my-2">
                             <span className="w-[8rem]">Invoice Date</span>
@@ -96,7 +153,7 @@ function InvoiceEditableForm({ onSubmit }) {
                                                     className={cn(
                                                         'w-[240px] justify-start text-left font-normal group',
                                                         !field.value &&
-                                                            'text-muted-foreground'
+                                                        'text-muted-foreground'
                                                     )}
                                                 >
                                                     <CalendarIcon className="mr-2 h-4 w-4 text-white group-hover:text-primary" />
@@ -144,7 +201,7 @@ function InvoiceEditableForm({ onSubmit }) {
                                                     className={cn(
                                                         'w-[240px] justify-start text-left font-normal group',
                                                         !field.value &&
-                                                            'text-muted-foreground'
+                                                        'text-muted-foreground'
                                                     )}
                                                 >
                                                     <CalendarIcon className="mr-2 h-4 w-4 text-white group-hover:text-primary" />
@@ -249,10 +306,10 @@ function InvoiceEditableForm({ onSubmit }) {
                                 )}
                             />
                         </div>
-                        <div className="flex gap-4">
+                        {/* <div className="flex gap-4">
                             <Button>+ Add Booking</Button>
                             <Button variant="outline">+ Add Services</Button>
-                        </div>
+                        </div> */}
                     </div>
                     <Table>
                         <TableHeader>
@@ -273,23 +330,21 @@ function InvoiceEditableForm({ onSubmit }) {
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {invoices.map((item, pos) => (
-                                <TableRow key={pos}>
+                            {fields.map((item, index) => (
+                                <TableRow key={index}>
                                     <TableCell className="w-4 max-w-4 min-w-4 text-center">
-                                        {pos + 1}
+                                        {index + 1}
                                     </TableCell>
                                     <TableCell>
                                         <FormField
                                             control={form.control}
                                             rules={{ required: true }}
-                                            name={`${item.invoice}${pos}`}
+                                            name={`services.${index}.item`}
                                             render={({ field }) => (
                                                 <FormItem>
                                                     <FormControl>
                                                         <Input
-                                                            placeholder={
-                                                                item.invoice
-                                                            }
+
                                                             {...field}
                                                         />
                                                     </FormControl>
@@ -302,14 +357,12 @@ function InvoiceEditableForm({ onSubmit }) {
                                         <FormField
                                             control={form.control}
                                             rules={{ required: true }}
-                                            name={`${item.paymentMethod}${pos}`}
+                                            name={`services.${index}.cost`}
                                             render={({ field }) => (
                                                 <FormItem className="w-[8rem]">
                                                     <FormControl>
                                                         <Input
-                                                            placeholder={
-                                                                item.paymentStatus
-                                                            }
+                                                            type='number'
                                                             {...field}
                                                         />
                                                     </FormControl>
@@ -322,14 +375,13 @@ function InvoiceEditableForm({ onSubmit }) {
                                         <FormField
                                             control={form.control}
                                             rules={{ required: true }}
-                                            name={`${item.paymentMethod}${pos}`}
+                                            name={`services.${index}.qty`}
                                             render={({ field }) => (
                                                 <FormItem className="w-[8rem]">
                                                     <FormControl>
                                                         <Input
-                                                            placeholder={
-                                                                item.paymentMethod
-                                                            }
+                                                            type='number'
+
                                                             {...field}
                                                         />
                                                     </FormControl>
@@ -342,14 +394,13 @@ function InvoiceEditableForm({ onSubmit }) {
                                         <FormField
                                             control={form.control}
                                             rules={{ required: true }}
-                                            name={`${item.totalAmount}${pos}`}
+                                            name={`services.${index}.total`}
                                             render={({ field }) => (
                                                 <FormItem className="w-[8rem]">
                                                     <FormControl>
                                                         <Input
-                                                            placeholder={
-                                                                item.totalAmount
-                                                            }
+                                                            type='number'
+
                                                             {...field}
                                                         />
                                                     </FormControl>
@@ -364,50 +415,58 @@ function InvoiceEditableForm({ onSubmit }) {
                         <TableFooter className="bg-white">
                             <TableRow className="py-4">
                                 <TableCell>
-                                    <Button>+ Add New Row</Button>
+                                    <Button type='button' onClick={() => append({
+                                        item: "",
+                                        cost: '',
+                                        qty: '',
+                                        total: '',
+                                        type: "service"
+                                    })}>
+                                        <PlusCircledIcon className="mr-2 h-4 w-4" />
+                                        Add New Row</Button>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell colSpan={2}></TableCell>
                                 <TableCell colSpan={2}>Subtotal</TableCell>
-                                <TableCell>$999</TableCell>
+                                <TableCell>{subTotal}</TableCell>
                             </TableRow>
-                            <TableRow>
+                            {/* <TableRow>
                                 <TableCell colSpan={2}></TableCell>
                                 <TableCell>City Tax</TableCell>
                                 <TableCell>
                                     <Input placeholder="000" />
                                 </TableCell>
                                 <TableCell>$235</TableCell>
-                            </TableRow>
-                            <TableRow>
+                            </TableRow> */}
+                            {/* <TableRow>
                                 <TableCell colSpan={2}></TableCell>
                                 <TableCell colSpan={2}>VAT</TableCell>
-                            </TableRow>
-                            <TableRow>
+                            </TableRow> */}
+                            {/* <TableRow>
                                 <TableCell colSpan={2}></TableCell>
                                 <TableCell>Rooms</TableCell>
                                 <TableCell>
                                     <Input placeholder="000" />
                                 </TableCell>
                                 <TableCell>$235</TableCell>
-                            </TableRow>
-                            <TableRow>
+                            </TableRow> */}
+                            {/* <TableRow>
                                 <TableCell colSpan={2}></TableCell>
                                 <TableCell>General Services</TableCell>
                                 <TableCell>
                                     <Input placeholder="000" />
                                 </TableCell>
                                 <TableCell>$235</TableCell>
-                            </TableRow>
-                            <TableRow>
+                            </TableRow> */}
+                            {/* <TableRow>
                                 <TableCell colSpan={2}></TableCell>
                                 <TableCell>Food</TableCell>
                                 <TableCell>
                                     <Input placeholder="000" />
                                 </TableCell>
                                 <TableCell>$235</TableCell>
-                            </TableRow>
+                            </TableRow> */}
                             <TableRow>
                                 <TableCell colSpan={2}></TableCell>
                                 <TableCell colSpan={3}>
@@ -433,8 +492,8 @@ function InvoiceEditableForm({ onSubmit }) {
                                         )}
                                     />
                                 </TableCell>
-                                <TableCell colSpan={2}>Food</TableCell>
-                                <TableCell>$235</TableCell>
+                                {/* <TableCell colSpan={2}>Food</TableCell>
+                                <TableCell>$235</TableCell> */}
                             </TableRow>
                             <TableRow>
                                 <TableCell colSpan={2}>Paid</TableCell>
@@ -447,6 +506,7 @@ function InvoiceEditableForm({ onSubmit }) {
                                             <FormItem className="w-[10rem]">
                                                 <FormControl>
                                                     <Input
+                                                        type='number'
                                                         placeholder="4999"
                                                         {...field}
                                                     />
@@ -465,12 +525,14 @@ function InvoiceEditableForm({ onSubmit }) {
                             <TableRow>
                                 <TableCell colSpan={2}>Amount Due</TableCell>
                                 <TableCell className="text-red-700">
-                                    $1299
+                                    {amountDue}
                                 </TableCell>
                             </TableRow>
                         </TableFooter>
                     </Table>
                 </main>
+                <input type="hidden" {...form.register("amountDue")} value={amountDue} />
+                <input type="hidden" {...form.register("subTotal")} value={subTotal} />
             </form>
         </Form>
     );

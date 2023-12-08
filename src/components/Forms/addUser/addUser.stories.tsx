@@ -22,5 +22,6 @@ export const AddUserExample = () => {
                 label: "Staff"
             }
         ]}
+        
     />
 }

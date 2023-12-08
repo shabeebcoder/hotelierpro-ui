@@ -18,7 +18,5 @@ import Tab from "./components/tab/tab";
 import Calander from "./components/calander/calander";
 import { RegistrationForm } from "./registrationForm";
 import Dashboard from "./components/dashboard/dashboard";
-import SettingsLayout from "./components/settingsLayout/settingsLayout";
-import SampleForm from "./components/settingsLayout/page";
 import Layout from "./components/Layout/layout";
-export { Button, SettingsLayout, SampleForm, Tab, Table, Icons, Layout, AuthenticationPage, ToastAction, useToast, Toaster, UserSignupPage, VerificationPage, ResetPasswordPage, ForgotPasswordPage, Form, Drawer, DataTable, Confirmation, Calander, RegistrationForm, Dashboard };
+export { Button, Tab, Table, Icons, Layout, AuthenticationPage, ToastAction, useToast, Toaster, UserSignupPage, VerificationPage, ResetPasswordPage, ForgotPasswordPage, Form, Drawer, DataTable, Confirmation, Calander, RegistrationForm, Dashboard };

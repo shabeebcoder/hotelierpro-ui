@@ -4,6 +4,7 @@ interface ExtendedIconProps extends IconProps {
     active: boolean;
 }
 export declare const Icons: {
+    trash: (props: IconProps) => React.JSX.Element;
     logo: (props: IconProps) => React.JSX.Element;
     twitter: (props: IconProps) => React.JSX.Element;
     gitHub: (props: IconProps) => React.JSX.Element;

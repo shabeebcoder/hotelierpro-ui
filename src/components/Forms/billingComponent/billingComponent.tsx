@@ -10,6 +10,14 @@ import {
 import { Input } from '../../../elements/Input/input';
 import { Label } from '../../../elements/Label/label';
 import { Button } from '../../../elements/Buttons/buttons';
+import { PlusCircledIcon } from "@radix-ui/react-icons"
+import {
+    Select as ShadSelect,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "../../../elements/Select/select"
 import {
     Form,
     FormControl,
@@ -19,13 +27,7 @@ import {
     FormLabel,
     FormMessage,
 } from '../../../elements/Form/form';
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from '../../../elements/Select/select';
+
 import {
     Table,
     TableBody,
@@ -38,47 +40,106 @@ import {
 } from '../../../elements/Table/table';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFieldArray, useForm } from 'react-hook-form';
+import Select from "react-tailwindcss-select";
+import { Icons } from '../../../elements/Icons/icons';
 
-function BillingComponent({ onSubmit, selectValues }) {
-    const form = useForm();
-    const invoices = [
+
+function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOptions = [], handleCreateInvoice, handleCancel }) {
+
+    const [subTotal, setSubTotal] = React.useState(0)
+    const [amountDue, setAmountDue] = React.useState(0)
+    const form = useForm({defaultValues})
+
+    const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
         {
-            invoice: 'INV001',
-            paymentStatus: 'Paid',
-            totalAmount: '$250.00',
-            paymentMethod: 'Credit Card',
-        },
-        {
-            invoice: 'INV002',
-            paymentStatus: 'Pending',
-            totalAmount: '$150.00',
-            paymentMethod: 'PayPal',
-        },
-        {
-            invoice: 'INV003',
-            paymentStatus: 'Unpaid',
-            totalAmount: '$350.00',
-            paymentMethod: 'Bank Transfer',
-        },
-    ];
+            control: form.control,
+            name: "services",
+        }
+    )
+
+
+
+
+    function handleChange(value) {
+        append({
+            item: value.label,
+            cost: Number(value.price),
+            qty: 1,
+            total: Number(value.price),
+            type: value.type
+        })
+
+        setSubTotal(subTotal + value.price)
+
+    }
+
+
+    React.useEffect(() => {
+        const subscription = form.watch((value, { name, type }) => {
+
+            if (name.includes('qty')) {
+
+                const index = name.split('.')[1].split('.')[0];
+                const qty = value.services[index].qty;
+                const cost = value.services[index].cost; // assuming cost is a constant or another field
+                form.setValue(`services.${index}.total`, Number(qty) * Number(cost));
+                const newSubtotal = form.getValues("services").reduce((acc, curr) => {
+                    return acc + (curr.total || 0);
+                }, 0);
+
+                setSubTotal(newSubtotal);
+
+
+            }
+
+
+        });
+
+
+        return () => subscription.unsubscribe();
+    }, [form.watch, form.setValue]);
+
+
+
+    React.useEffect(() => {
+        setAmountDue(Number(subTotal) - Number(form.getValues("paid")))
+    }, [form.watch("paid"), subTotal])
+
+    React.useEffect(() => {
+
+        const newSubtotal:any = fields.reduce((acc:any, curr:any) => {
+            return acc + (curr.total || 0);
+        }, 0);
+
+        setSubTotal(newSubtotal);
+
+        setAmountDue(Number(newSubtotal) - Number(form.getValues("paid")))
+
+    }, []);
+
+
+
     return (
         <>
+
+
             <Form {...form}>
                 <form
-                    onSubmit={form.handleSubmit(onSubmit)}
+                    onSubmit={form.handleSubmit(onsubmit)}
                     className="space-y-8"
                 >
+                    {/* <input {...form.register("items")} /> */}
                     <Card>
                         <CardHeader>
                             <div className="flex justify-between items-end">
                                 <FormField
                                     control={form.control}
                                     name="paymentBy"
-                                    rules={{ required: true }}
+                                    // rules={{ required: true }}
                                     render={({ field }) => (
                                         <FormItem className="w-[20rem]">
                                             <FormLabel>Payment by</FormLabel>
-                                            <Select
+                                            <ShadSelect
                                                 onValueChange={field.onChange}
                                                 defaultValue={field.value}
                                             >
@@ -103,20 +164,23 @@ function BillingComponent({ onSubmit, selectValues }) {
                                                         }
                                                     )}
                                                 </SelectContent>
-                                            </Select>
-                                            <FormMessage />
+                                            </ShadSelect>
+
                                         </FormItem>
+
                                     )}
                                 />
                                 <FormField
                                     control={form.control}
                                     name="payer"
-                                    rules={{ required: true }}
+
+                                    // rules={{ required: true }}
                                     render={({ field }) => (
                                         <FormItem className="w-[20rem]">
                                             <FormLabel>Payer</FormLabel>
                                             <FormControl>
                                                 <Input
+
                                                     placeholder=""
                                                     {...field}
                                                 />
@@ -125,8 +189,9 @@ function BillingComponent({ onSubmit, selectValues }) {
                                         </FormItem>
                                     )}
                                 />
-                                <Button className="w-[6rem]">
-                                    + Add person
+                                <Button type='button' >
+                                    <PlusCircledIcon className="mr-2 h-4 w-4" />
+                                    Add Guest
                                 </Button>
                             </div>
                         </CardHeader>
@@ -137,7 +202,7 @@ function BillingComponent({ onSubmit, selectValues }) {
                                         <TableHead className="uppercase text-center w-4 max-w-4 min-w-4">
                                             si
                                         </TableHead>
-                                        <TableHead>Room 1 Single</TableHead>
+                                        <TableHead>Item</TableHead>
                                         <TableHead className="uppercase text-center w-[7rem]">
                                             cost
                                         </TableHead>
@@ -150,23 +215,51 @@ function BillingComponent({ onSubmit, selectValues }) {
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
-                                    {invoices.map((item, pos) => (
-                                        <TableRow key={pos}>
-                                            <TableCell className="w-4 max-w-4 min-w-4 text-center">
-                                                {pos + 1}
+                                    {fields.map((row:any, index) => (
+                                        <TableRow key={index}>
+                                            <TableCell className="w-2 max-w-4 min-w-4 text-center">
+                                                {index + 1}
                                             </TableCell>
                                             <TableCell>
                                                 <FormField
                                                     control={form.control}
-                                                    rules={{ required: true }}
-                                                    name={`${item.invoice}${pos}`}
+                                                    // rules={{ required: true }}
+                                                    name={`services.${index}.item`}
+
                                                     render={({ field }) => (
-                                                        <FormItem>
+                                                        <FormItem >
+
                                                             <FormControl>
                                                                 <Input
-                                                                    placeholder={
-                                                                        item.invoice
-                                                                    }
+                                                                    disabled={true}
+                                                                    {...field}
+                                                                    readOnly
+                                                                />
+                                                                {/* <Select
+
+                                                                    value={field.value}
+                                                                    onChange={field.onChange}
+                                                                    options={serviceOptions}
+                                                                    isSearchable={true} */}
+                                                                {/* primaryColor={''} /> */}
+                                                            </FormControl>
+                                                            <FormMessage />
+                                                        </FormItem>
+                                                    )}
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <FormField
+                                                    control={form.control}
+                                                    // rules={{ required: true }}
+                                                    name={`services.${index}.cost`}
+
+                                                    render={({ field, }) => (
+                                                        <FormItem className="w-[8rem]">
+                                                            <FormControl>
+                                                                <Input
+                                                                    readOnly
+                                                                    type='number'
                                                                     {...field}
                                                                 />
                                                             </FormControl>
@@ -178,16 +271,17 @@ function BillingComponent({ onSubmit, selectValues }) {
                                             <TableCell>
                                                 <FormField
                                                     control={form.control}
-                                                    rules={{ required: true }}
-                                                    name={`${item.paymentMethod}${pos}`}
-                                                    render={({ field }) => (
+                                                    // rules={{ required: true }}
+                                                    name={`services.${index}.qty`}
+
+                                                    render={({ field, }) => (
                                                         <FormItem className="w-[8rem]">
                                                             <FormControl>
                                                                 <Input
-                                                                    placeholder={
-                                                                        item.paymentStatus
-                                                                    }
+
+                                                                    type='number'
                                                                     {...field}
+                                                                    readOnly={row.type === "service" ? false : true}
                                                                 />
                                                             </FormControl>
                                                             <FormMessage />
@@ -198,67 +292,83 @@ function BillingComponent({ onSubmit, selectValues }) {
                                             <TableCell>
                                                 <FormField
                                                     control={form.control}
-                                                    rules={{ required: true }}
-                                                    name={`${item.paymentMethod}${pos}`}
-                                                    render={({ field }) => (
+                                                    // rules={{ required: true }}
+                                                    name={`services.${index}.total`}
+
+                                                    render={({ field, }) => (<div className='flex items-center'>
                                                         <FormItem className="w-[8rem]">
                                                             <FormControl>
                                                                 <Input
-                                                                    placeholder={
-                                                                        item.paymentMethod
-                                                                    }
+
+                                                                    type='number'
                                                                     {...field}
+                                                                    readOnly
                                                                 />
                                                             </FormControl>
                                                             <FormMessage />
+
                                                         </FormItem>
-                                                    )}
-                                                />
-                                            </TableCell>
-                                            <TableCell>
-                                                <FormField
-                                                    control={form.control}
-                                                    rules={{ required: true }}
-                                                    name={`${item.totalAmount}${pos}`}
-                                                    render={({ field }) => (
-                                                        <FormItem className="w-[8rem]">
-                                                            <FormControl>
-                                                                <Input
-                                                                    placeholder={
-                                                                        item.totalAmount
-                                                                    }
-                                                                    {...field}
-                                                                />
-                                                            </FormControl>
-                                                            <FormMessage />
-                                                        </FormItem>
-                                                    )}
+                                                        &nbsp;
+
+                                                       {row.type === "service" && (<Icons.trash onClick={()=> remove(index)} />)} 
+
+                                                    </div>)}
                                                 />
                                             </TableCell>
                                         </TableRow>
                                     ))}
+                                    <TableRow key={'index'}>
+                                        <TableCell className="w-4 max-w-4 min-w-4 text-center">
+
+                                        </TableCell>
+                                        <TableCell>
+                                            <FormField
+                                                control={form.control}
+
+                                                name={'item'}
+                                                render={({ field }) => (
+                                                    <FormItem>
+
+                                                        <FormControl>
+
+                                                            <Select
+
+                                                                
+                                                                value={field.value}
+                                                                onChange={handleChange}
+                                                                options={serviceOptions}
+                                                                isSearchable={true}
+                                                                primaryColor={''} />
+                                                        </FormControl>
+                                                        <FormMessage />
+                                                    </FormItem>
+                                                )}
+                                            />
+                                        </TableCell>
+
+                                    </TableRow>
                                 </TableBody>
                                 <TableFooter className="bg-white">
                                     <TableRow className="py-4">
-                                        <TableCell>
-                                            <Button>+ Add Service</Button>
-                                        </TableCell>
+
                                         <TableCell>
                                             <Button variant="outline">
-                                                + New Service
+
+                                                <PlusCircledIcon className="mr-2 h-4 w-4" />
+                                                New Service
                                             </Button>
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell colSpan={2}></TableCell>
                                         <TableCell colSpan={2}>Total</TableCell>
-                                        <TableCell>$999</TableCell>
+                                        <TableCell>{subTotal}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell colSpan={2}></TableCell>
                                         <TableCell colSpan={2}>Paid</TableCell>
                                         <TableCell>
-                                            <Input placeholder="000" />
+                                            <Input  {...form.register("paid")} />
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
@@ -267,7 +377,7 @@ function BillingComponent({ onSubmit, selectValues }) {
                                             Amount Due
                                         </TableCell>
                                         <TableCell className="text-red-500">
-                                            $250.00
+                                            {amountDue}&nbsp; USD
                                         </TableCell>
                                     </TableRow>
                                 </TableFooter>
@@ -275,12 +385,15 @@ function BillingComponent({ onSubmit, selectValues }) {
                         </CardContent>
                         <CardFooter className="flex justify-between">
                             <div className="space-x-4">
-                                <Button>Save</Button>
-                                <Button variant="outline">Cancel</Button>
+                                <Button type='submit' onClick={()=> form.setValue("createInvoice", false)}>Save</Button>
+                                <Button variant="outline" type='button' onClick={handleCancel}>Cancel</Button>
                             </div>
-                            <Button>Save & create invoice</Button>
+                            <Button type='submit' onClick={()=> form.setValue("createInvoice", true)}>Save & Create Invoice</Button>
                         </CardFooter>
                     </Card>
+                    <input type="hidden" {...form.register("subTotal")} value={subTotal} />
+                    <input type="hidden" {...form.register("amountDue")} value={amountDue} />
+                    <input type="hidden" {...form.register("createInvoice")} value={amountDue} />
                 </form>
             </Form>
         </>

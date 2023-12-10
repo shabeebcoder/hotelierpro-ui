@@ -18,14 +18,16 @@ import { Badge } from "./../../elements/Badge/badge"
 interface calanderProps {
     calanderColumns: any,
     calanderRows: any,
-    handleEdit: any
+    handleActions: any,
+    handleStatusChange: any
 }
 
 
 function calander({
     calanderColumns = [],
     calanderRows = [],
-    handleEdit
+    handleActions,
+    handleStatusChange
 }: calanderProps) {
 
     const columnHelper: any = createColumnHelper();
@@ -55,11 +57,7 @@ function calander({
                                 &nbsp;
                                 |
                                 &nbsp;
-
                                 <HomeIcon className="mr-2 h-4 w-4" />
-
-
-
                             </div>
                         </div>
 
@@ -89,9 +87,15 @@ function calander({
 
                     if (value.isBooked) {
                         return <BookingInfo
-                            handleEdit={handleEdit}
+                            handleActions={handleActions}
+                            handleStatusChange={handleStatusChange}
                             info={value.info}>
-                            <Badge className='bg-red-400' style={{ position: 'absolute', fontWeight: 'normal' }}> {value?.info?.guestName || ''}</Badge>
+                            <Badge className={classNames("bg-emerald-600", {
+                                "bg-emerald-600": value?.info.status === "confirmed",
+                                "bg-yellow-600": value?.info.status === "newBooking",
+                                "bg-orange-600": value?.info.status === "checkin",
+                                "bg-red-600": value?.info.status === "checkout",
+                            })} style={{ position: 'absolute', fontWeight: 'normal' }}> {value?.info?.guestName || ''}</Badge>
                         </BookingInfo>
 
 

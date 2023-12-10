@@ -74,10 +74,10 @@ export default function DropdownMenuDemo({ children, info, handleEdit, handleSta
                         <span >&nbsp;<b>{info?.guestName} </b></span>
 
                     </DropdownMenuItem>
-                    {/* <DropdownMenuItem>
-                        <span style={{ color: 'blue' }}>Paid : </span>
-                        <span >&nbsp;<b>{info.price}</b></span>
-                    </DropdownMenuItem> */}
+                    <DropdownMenuItem>
+                        <span style={{ color: 'blue' }}>Status : </span>
+                        <span >&nbsp;<b>{info.status}</b></span>
+                    </DropdownMenuItem>
                     <DropdownMenuItem>
                         <span style={{ color: 'blue' }}>Check-In : </span>
                         <span >&nbsp;<b>{moment(info.checkInDate).format("MMM Do YY")} </b></span>
@@ -86,10 +86,10 @@ export default function DropdownMenuDemo({ children, info, handleEdit, handleSta
                         <span style={{ color: 'blue' }}>Check-Out : </span>
                         <span >&nbsp;<b>{moment(info.checkOutDate).format("MMM Do YY")}</b></span>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
+                    {/* <DropdownMenuItem>
                         <span style={{ color: 'blue' }}>Email : </span>
                         <span style={{fontSize: 12}} >&nbsp;<b>{info.email}</b></span>
-                    </DropdownMenuItem>
+                    </DropdownMenuItem> */}
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
@@ -101,23 +101,23 @@ export default function DropdownMenuDemo({ children, info, handleEdit, handleSta
                         </DropdownMenuSubTrigger>
                         <DropdownMenuPortal>
                             <DropdownMenuSubContent>
-                                <DropdownMenuItem onClick={() => handleStatusChange({state: "confirmed", info})}>
+                                <DropdownMenuItem onClick={() => handleStatusChange({status: "confirmed", booking: info})}>
 
                                     <span>Confirmed</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => handleStatusChange({state: "newbooking", info})}>
+                                <DropdownMenuItem onClick={() => handleStatusChange({status: "newBooking", booking: info})}>
 
                                     <span>New Booking</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => handleStatusChange({state: "checkin", info})}>
+                                <DropdownMenuItem onClick={() => handleStatusChange({status: "checkin", booking: info})}>
 
                                     <span>Check in</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => handleStatusChange({state: "checkout", info})}>
+                                <DropdownMenuItem onClick={() => handleStatusChange({status: "checkout", booking: info})}>
 
                                     <span>Check out</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuSeparator />
+                          
 
                             </DropdownMenuSubContent>
                         </DropdownMenuPortal>
@@ -149,6 +149,10 @@ export default function DropdownMenuDemo({ children, info, handleEdit, handleSta
 
                                     <span>Client Form</span>
                                 </DropdownMenuItem>
+                                <DropdownMenuItem  onClick={() => handleActions({action : "deleteBooking", info})}>
+
+                                    <span>Delete Booking</span>
+                                </DropdownMenuItem>
 
 
                             </DropdownMenuSubContent>
@@ -156,6 +160,7 @@ export default function DropdownMenuDemo({ children, info, handleEdit, handleSta
                     </DropdownMenuSub>
 
                 </DropdownMenuGroup>
+                
 
 
             </DropdownMenuContent>

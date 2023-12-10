@@ -36385,9 +36385,14 @@ function DropdownMenuDemo(_a) {
                     React__default["default"].createElement("span", { style: { color: 'blue' } }, "Guest : "),
                     React__default["default"].createElement("span", null,
                         "\u00A0",
-                        React__default["default"].createElement("b", null,
+                        React__default["default"].createElement("b", null, info === null || info === void 0 ? void 0 :
                             info.guestName,
                             " "))),
+                React__default["default"].createElement(DropdownMenuItem, null,
+                    React__default["default"].createElement("span", { style: { color: 'blue' } }, "Status : "),
+                    React__default["default"].createElement("span", null,
+                        "\u00A0",
+                        React__default["default"].createElement("b", null, info.status))),
                 React__default["default"].createElement(DropdownMenuItem, null,
                     React__default["default"].createElement("span", { style: { color: 'blue' } }, "Check-In : "),
                     React__default["default"].createElement("span", null,
@@ -36399,12 +36404,7 @@ function DropdownMenuDemo(_a) {
                     React__default["default"].createElement("span", { style: { color: 'blue' } }, "Check-Out : "),
                     React__default["default"].createElement("span", null,
                         "\u00A0",
-                        React__default["default"].createElement("b", null, moment(info.checkOutDate).format("MMM Do YY")))),
-                React__default["default"].createElement(DropdownMenuItem, null,
-                    React__default["default"].createElement("span", { style: { color: 'blue' } }, "Email : "),
-                    React__default["default"].createElement("span", null,
-                        "\u00A0",
-                        React__default["default"].createElement("b", null, info.email)))),
+                        React__default["default"].createElement("b", null, moment(info.checkOutDate).format("MMM Do YY"))))),
             React__default["default"].createElement(DropdownMenuSeparator, null),
             React__default["default"].createElement(DropdownMenuGroup, null,
                 React__default["default"].createElement(DropdownMenuSub, null,
@@ -36412,33 +36412,32 @@ function DropdownMenuDemo(_a) {
                         React__default["default"].createElement("span", null, "Mark As")),
                     React__default["default"].createElement(DropdownMenuPortal, null,
                         React__default["default"].createElement(DropdownMenuSubContent, null,
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange("confirmed", info); } },
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange({ status: "confirmed", booking: info }); } },
                                 React__default["default"].createElement("span", null, "Confirmed")),
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange("newbooking", info); } },
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange({ status: "newBooking", booking: info }); } },
                                 React__default["default"].createElement("span", null, "New Booking")),
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange("checkin", info); } },
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange({ status: "checkin", booking: info }); } },
                                 React__default["default"].createElement("span", null, "Check in")),
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange("checkout", info); } },
-                                React__default["default"].createElement("span", null, "Check out")),
-                            React__default["default"].createElement(DropdownMenuSeparator, null))))),
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange({ status: "checkout", booking: info }); } },
+                                React__default["default"].createElement("span", null, "Check out")))))),
             React__default["default"].createElement(DropdownMenuGroup, null,
                 React__default["default"].createElement(DropdownMenuSub, null,
                     React__default["default"].createElement(DropdownMenuSubTrigger, null,
                         React__default["default"].createElement("span", null, "Actions")),
                     React__default["default"].createElement(DropdownMenuPortal, null,
                         React__default["default"].createElement(DropdownMenuSubContent, null,
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions("addService", info); } },
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "addService", info: info }); } },
                                 React__default["default"].createElement("span", null, "Add Services")),
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions("createInvoice", info); } },
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "createInvoice", info: info }); } },
                                 React__default["default"].createElement("span", null, "Create Invoice")),
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions("editBooking", info); } },
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "editBooking", info: info }); } },
                                 React__default["default"].createElement("span", null, "Edit Booking")),
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions("clientForm", info); } },
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "clientForm", info: info }); } },
                                 React__default["default"].createElement("span", null, "Client Form")))))))));
 }
 
 function calander(_a) {
-    var _b = _a.calanderColumns, calanderColumns = _b === void 0 ? [] : _b, _c = _a.calanderRows, calanderRows = _c === void 0 ? [] : _c, handleEdit = _a.handleEdit;
+    var _b = _a.calanderColumns, calanderColumns = _b === void 0 ? [] : _b, _c = _a.calanderRows, calanderRows = _c === void 0 ? [] : _c, handleActions = _a.handleActions, handleStatusChange = _a.handleStatusChange;
     var columnHelper = createColumnHelper();
     var columns = React__default["default"].useMemo(function () {
         var column = calanderColumns.map(function (row, index) {
@@ -36480,8 +36479,13 @@ function calander(_a) {
                         return value || "N/A";
                     }
                     if (value.isBooked) {
-                        return React__default["default"].createElement(DropdownMenuDemo, { handleEdit: handleEdit, info: value.info },
-                            React__default["default"].createElement(Badge, { className: 'bg-red-400', style: { position: 'absolute', fontWeight: 'normal' } },
+                        return React__default["default"].createElement(DropdownMenuDemo, { handleActions: handleActions, handleStatusChange: handleStatusChange, info: value.info },
+                            React__default["default"].createElement(Badge, { className: classnames("bg-emerald-600", {
+                                    "bg-emerald-600": (value === null || value === void 0 ? void 0 : value.info.status) === "confirmed",
+                                    "bg-yellow-600": (value === null || value === void 0 ? void 0 : value.info.status) === "newBooking",
+                                    "bg-orange-600": (value === null || value === void 0 ? void 0 : value.info.status) === "checkin",
+                                    "bg-red-600": (value === null || value === void 0 ? void 0 : value.info.status) === "checkout",
+                                }), style: { position: 'absolute', fontWeight: 'normal' } },
                                 " ",
                                 ((_a = value === null || value === void 0 ? void 0 : value.info) === null || _a === void 0 ? void 0 : _a.guestName) || ''));
                     }

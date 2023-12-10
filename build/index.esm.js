@@ -29263,9 +29263,9 @@ function NewBookingForm(_a) {
         adult: 1,
         child: 0,
         guests: [],
-        checkInDate: new Date("10/10/2023"),
+        checkInDate: new Date(),
         duration: "",
-        checkOutDate: new Date("10/10/2023"),
+        checkOutDate: new Date(),
         roomtype: "",
         status: "",
         price: "",
@@ -36346,7 +36346,7 @@ function Tab(_a) {
 }
 
 function DropdownMenuDemo(_a) {
-    var children = _a.children, info = _a.info, handleEdit = _a.handleEdit;
+    var children = _a.children, info = _a.info; _a.handleEdit; var handleStatusChange = _a.handleStatusChange, handleActions = _a.handleActions;
     return (React__default.createElement(DropdownMenu, null,
         React__default.createElement(DropdownMenuTrigger, { asChild: true },
             React__default.createElement(Button$3, { style: { position: 'absolute', top: 0 }, variant: "ghost" }, children)),
@@ -36362,11 +36362,6 @@ function DropdownMenuDemo(_a) {
                             info.guestName,
                             " "))),
                 React__default.createElement(DropdownMenuItem, null,
-                    React__default.createElement("span", { style: { color: 'blue' } }, "Paid : "),
-                    React__default.createElement("span", null,
-                        "\u00A0",
-                        React__default.createElement("b", null, "500 USD"))),
-                React__default.createElement(DropdownMenuItem, null,
                     React__default.createElement("span", { style: { color: 'blue' } }, "Check-In : "),
                     React__default.createElement("span", null,
                         "\u00A0",
@@ -36379,10 +36374,10 @@ function DropdownMenuDemo(_a) {
                         "\u00A0",
                         React__default.createElement("b", null, moment(info.checkOutDate).format("MMM Do YY")))),
                 React__default.createElement(DropdownMenuItem, null,
-                    React__default.createElement("span", { style: { color: 'blue' } }, "Phone : "),
+                    React__default.createElement("span", { style: { color: 'blue' } }, "Email : "),
                     React__default.createElement("span", null,
                         "\u00A0",
-                        React__default.createElement("b", null, moment(info.checkOutDate).format("MMM Do YY"))))),
+                        React__default.createElement("b", null, info.email)))),
             React__default.createElement(DropdownMenuSeparator, null),
             React__default.createElement(DropdownMenuGroup, null,
                 React__default.createElement(DropdownMenuSub, null,
@@ -36390,10 +36385,14 @@ function DropdownMenuDemo(_a) {
                         React__default.createElement("span", null, "Mark As")),
                     React__default.createElement(DropdownMenuPortal, null,
                         React__default.createElement(DropdownMenuSubContent, null,
-                            React__default.createElement(DropdownMenuItem, null,
-                                React__default.createElement("span", null, "Check-in")),
-                            React__default.createElement(DropdownMenuItem, null,
-                                React__default.createElement("span", null, "Checkout")),
+                            React__default.createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange("confirmed", info); } },
+                                React__default.createElement("span", null, "Confirmed")),
+                            React__default.createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange("newbooking", info); } },
+                                React__default.createElement("span", null, "New Booking")),
+                            React__default.createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange("checkin", info); } },
+                                React__default.createElement("span", null, "Check in")),
+                            React__default.createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange("checkout", info); } },
+                                React__default.createElement("span", null, "Check out")),
                             React__default.createElement(DropdownMenuSeparator, null))))),
             React__default.createElement(DropdownMenuGroup, null,
                 React__default.createElement(DropdownMenuSub, null,
@@ -36401,12 +36400,14 @@ function DropdownMenuDemo(_a) {
                         React__default.createElement("span", null, "Actions")),
                     React__default.createElement(DropdownMenuPortal, null,
                         React__default.createElement(DropdownMenuSubContent, null,
-                            React__default.createElement(DropdownMenuItem, null,
+                            React__default.createElement(DropdownMenuItem, { onClick: function () { return handleActions("addService", info); } },
                                 React__default.createElement("span", null, "Add Services")),
-                            React__default.createElement(DropdownMenuItem, null,
+                            React__default.createElement(DropdownMenuItem, { onClick: function () { return handleActions("createInvoice", info); } },
                                 React__default.createElement("span", null, "Create Invoice")),
-                            React__default.createElement(DropdownMenuItem, { onClick: function () { return handleEdit(info); } },
-                                React__default.createElement("span", null, "Edit")))))))));
+                            React__default.createElement(DropdownMenuItem, { onClick: function () { return handleActions("editBooking", info); } },
+                                React__default.createElement("span", null, "Edit Booking")),
+                            React__default.createElement(DropdownMenuItem, { onClick: function () { return handleActions("clientForm", info); } },
+                                React__default.createElement("span", null, "Client Form")))))))));
 }
 
 function calander(_a) {

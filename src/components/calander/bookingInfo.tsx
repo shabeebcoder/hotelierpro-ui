@@ -71,7 +71,7 @@ export default function DropdownMenuDemo({ children, info, handleEdit, handleSta
                 <DropdownMenuGroup>
                     <DropdownMenuItem>
                         <span style={{ color: 'blue' }}>Guest : </span>
-                        <span >&nbsp;<b>{info.guestName} </b></span>
+                        <span >&nbsp;<b>{info?.guestName} </b></span>
 
                     </DropdownMenuItem>
                     {/* <DropdownMenuItem>
@@ -88,7 +88,7 @@ export default function DropdownMenuDemo({ children, info, handleEdit, handleSta
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                         <span style={{ color: 'blue' }}>Email : </span>
-                        <span >&nbsp;<b>{info.email}</b></span>
+                        <span style={{fontSize: 12}} >&nbsp;<b>{info.email}</b></span>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
@@ -101,19 +101,19 @@ export default function DropdownMenuDemo({ children, info, handleEdit, handleSta
                         </DropdownMenuSubTrigger>
                         <DropdownMenuPortal>
                             <DropdownMenuSubContent>
-                                <DropdownMenuItem onClick={() => handleStatusChange("confirmed", info)}>
+                                <DropdownMenuItem onClick={() => handleStatusChange({state: "confirmed", info})}>
 
                                     <span>Confirmed</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => handleStatusChange("newbooking", info)}>
+                                <DropdownMenuItem onClick={() => handleStatusChange({state: "newbooking", info})}>
 
                                     <span>New Booking</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => handleStatusChange("checkin", info)}>
+                                <DropdownMenuItem onClick={() => handleStatusChange({state: "checkin", info})}>
 
                                     <span>Check in</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => handleStatusChange("checkout", info)}>
+                                <DropdownMenuItem onClick={() => handleStatusChange({state: "checkout", info})}>
 
                                     <span>Check out</span>
                                 </DropdownMenuItem>
@@ -133,19 +133,19 @@ export default function DropdownMenuDemo({ children, info, handleEdit, handleSta
                         </DropdownMenuSubTrigger>
                         <DropdownMenuPortal>
                             <DropdownMenuSubContent>
-                                <DropdownMenuItem onClick={() => handleActions("addService", info)}>
+                                <DropdownMenuItem onClick={() => handleActions({action : "addService", info})}>
 
                                     <span>Add Services</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => handleActions("createInvoice", info)}>
+                                <DropdownMenuItem onClick={() => handleActions({action : "createInvoice", info})}>
 
                                     <span>Create Invoice</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => handleActions("editBooking", info)}>
+                                <DropdownMenuItem onClick={() => handleActions({action: "editBooking", info})}>
 
                                     <span>Edit Booking</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => handleActions("clientForm", info)}>
+                                <DropdownMenuItem onClick={() => handleActions({action : "clientForm", info})}>
 
                                     <span>Client Form</span>
                                 </DropdownMenuItem>

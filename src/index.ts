@@ -18,6 +18,7 @@ import Tab from "./components/tab/tab"
 import Calander from "./components/calander/calander"
 import { RegistrationForm } from "./registrationForm"
 import Dashboard from "./components/dashboard/dashboard"
+import EditInvoice from "./components/Forms/invoiceEditable/invoiceEditableForm"
 
 // import { Alert } from './Alert';
 // import { Login } from './Login';
@@ -162,7 +163,7 @@ export {
     // toolTip,
     // hotelierpro,
     // MaintainanceForm,
-
+    EditInvoice,
     Tab,
     Table,
     Icons,

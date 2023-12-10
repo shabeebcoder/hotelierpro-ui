@@ -55,126 +55,126 @@ export const CalanderDemo = () => {
 
     console.log("data", data)
 
-    const heading = 
+    const heading =
         [
             {
-                date: "All Rooms"  
-              },
-        {
-            "date": "2023-12-01T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-02T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-03T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-04T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-05T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-06T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-07T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-08T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-09T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-10T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-11T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-12T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-13T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-14T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-15T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-16T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-17T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-18T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-19T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-20T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-21T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-22T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-23T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-24T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-25T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-26T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-27T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-28T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-29T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-30T00:00:00+04:00"
-        },
-        {
-            "date": "2023-12-31T00:00:00+04:00"
-        }
-    ]
+                date: "All Rooms"
+            },
+            {
+                "date": "2023-12-01T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-02T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-03T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-04T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-05T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-06T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-07T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-08T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-09T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-10T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-11T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-12T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-13T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-14T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-15T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-16T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-17T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-18T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-19T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-20T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-21T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-22T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-23T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-24T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-25T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-26T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-27T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-28T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-29T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-30T00:00:00+04:00"
+            },
+            {
+                "date": "2023-12-31T00:00:00+04:00"
+            }
+        ]
 
     return <Calander
-        handleEdit={(data)=> alert(JSON.stringify(data))}
+        handleEdit={(data) => alert(JSON.stringify(data))}
         calanderColumns={heading}
         calanderRows={[
             {
-                "roomName": "101",
+                "roomName": "101 - Single",
                 "2023-12-01T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-02T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-03T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-04T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-05T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-06T00:00:00+04:00": {
                     "isBooked": true,
@@ -241,97 +241,97 @@ export const CalanderDemo = () => {
                     }
                 },
                 "2023-12-08T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-09T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-10T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-11T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-12T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-13T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-14T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-15T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-16T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-17T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-18T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-19T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-20T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-21T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-22T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-23T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-24T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-25T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-26T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-27T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-28T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-29T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-30T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-31T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 }
             },
             {
                 "roomName": "202",
                 "2023-12-01T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-02T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-03T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-04T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-05T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-06T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-07T00:00:00+04:00": {
                     "isBooked": true,
@@ -366,19 +366,19 @@ export const CalanderDemo = () => {
                     }
                 },
                 "2023-12-08T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-09T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-10T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-11T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-12T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-13T00:00:00+04:00": {
                     "isBooked": true,
@@ -413,97 +413,98 @@ export const CalanderDemo = () => {
                     }
                 },
                 "2023-12-14T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-15T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-16T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-17T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-18T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-19T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-20T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-21T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-22T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-23T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-24T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-25T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-26T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-27T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-28T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-29T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-30T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-31T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 }
             },
             {
                 "roomName": "501",
                 "2023-12-01T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, 
+                    "roomName": "102 - single"
                 },
                 "2023-12-02T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-03T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-04T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-05T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-06T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-07T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-08T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-09T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-10T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-11T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-12T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-13T00:00:00+04:00": {
                     "isBooked": true,
@@ -538,58 +539,58 @@ export const CalanderDemo = () => {
                     }
                 },
                 "2023-12-14T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-15T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-16T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-17T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-18T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-19T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-20T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-21T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-22T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-23T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-24T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-25T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-26T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-27T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-28T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-29T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-30T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 },
                 "2023-12-31T00:00:00+04:00": {
-                    "isBooked": false
+                    "isBooked": false, "roomName": "102 - single"
                 }
             }
         ]}

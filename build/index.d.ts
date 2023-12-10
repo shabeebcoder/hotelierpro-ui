@@ -18,5 +18,6 @@ import Tab from "./components/tab/tab";
 import Calander from "./components/calander/calander";
 import { RegistrationForm } from "./registrationForm";
 import Dashboard from "./components/dashboard/dashboard";
+import EditInvoice from "./components/Forms/invoiceEditable/invoiceEditableForm";
 import Layout from "./components/Layout/layout";
-export { Button, Tab, Table, Icons, Layout, AuthenticationPage, ToastAction, useToast, Toaster, UserSignupPage, VerificationPage, ResetPasswordPage, ForgotPasswordPage, Form, Drawer, DataTable, Confirmation, Calander, RegistrationForm, Dashboard };
+export { Button, EditInvoice, Tab, Table, Icons, Layout, AuthenticationPage, ToastAction, useToast, Toaster, UserSignupPage, VerificationPage, ResetPasswordPage, ForgotPasswordPage, Form, Drawer, DataTable, Confirmation, Calander, RegistrationForm, Dashboard };

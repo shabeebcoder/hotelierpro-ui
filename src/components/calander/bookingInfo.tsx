@@ -59,7 +59,7 @@ import {
     DropdownMenuTrigger,
 } from "../../elements/Dropdown-menu/dropdownmenu"
 
-export default function DropdownMenuDemo({ children, info, handleEdit }: any) {
+export default function DropdownMenuDemo({ children, info, handleEdit, handleStatusChange, handleActions }: any) {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -70,14 +70,14 @@ export default function DropdownMenuDemo({ children, info, handleEdit }: any) {
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                     <DropdownMenuItem>
-                    <span style={{ color: 'blue' }}>Guest : </span>
+                        <span style={{ color: 'blue' }}>Guest : </span>
                         <span >&nbsp;<b>{info.guestName} </b></span>
-                      
+
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
+                    {/* <DropdownMenuItem>
                         <span style={{ color: 'blue' }}>Paid : </span>
-                        <span >&nbsp;<b>500 USD</b></span>
-                    </DropdownMenuItem>
+                        <span >&nbsp;<b>{info.price}</b></span>
+                    </DropdownMenuItem> */}
                     <DropdownMenuItem>
                         <span style={{ color: 'blue' }}>Check-In : </span>
                         <span >&nbsp;<b>{moment(info.checkInDate).format("MMM Do YY")} </b></span>
@@ -87,65 +87,77 @@ export default function DropdownMenuDemo({ children, info, handleEdit }: any) {
                         <span >&nbsp;<b>{moment(info.checkOutDate).format("MMM Do YY")}</b></span>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
-                        <span style={{ color: 'blue' }}>Phone : </span>
-                        <span >&nbsp;<b>{moment(info.checkOutDate).format("MMM Do YY")}</b></span>
+                        <span style={{ color: 'blue' }}>Email : </span>
+                        <span >&nbsp;<b>{info.email}</b></span>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                 
-                 <DropdownMenuSub>
-                     <DropdownMenuSubTrigger>
-                      
-                         <span>Mark As</span>
-                     </DropdownMenuSubTrigger>
-                     <DropdownMenuPortal>
-                         <DropdownMenuSubContent>
-                             <DropdownMenuItem>
-                                
-                                 <span>Check-in</span>
-                             </DropdownMenuItem>
-                             <DropdownMenuItem>
-                                
-                                 <span>Checkout</span>
-                             </DropdownMenuItem>
-                             <DropdownMenuSeparator />
-                           
-                         </DropdownMenuSubContent>
-                     </DropdownMenuPortal>
-                 </DropdownMenuSub>
-                 
-             </DropdownMenuGroup>
-                <DropdownMenuGroup>
-                 
+
                     <DropdownMenuSub>
                         <DropdownMenuSubTrigger>
-                         
+
+                            <span>Mark As</span>
+                        </DropdownMenuSubTrigger>
+                        <DropdownMenuPortal>
+                            <DropdownMenuSubContent>
+                                <DropdownMenuItem onClick={() => handleStatusChange("confirmed", info)}>
+
+                                    <span>Confirmed</span>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem onClick={() => handleStatusChange("newbooking", info)}>
+
+                                    <span>New Booking</span>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem onClick={() => handleStatusChange("checkin", info)}>
+
+                                    <span>Check in</span>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem onClick={() => handleStatusChange("checkout", info)}>
+
+                                    <span>Check out</span>
+                                </DropdownMenuItem>
+                                <DropdownMenuSeparator />
+
+                            </DropdownMenuSubContent>
+                        </DropdownMenuPortal>
+                    </DropdownMenuSub>
+
+                </DropdownMenuGroup>
+                <DropdownMenuGroup>
+
+                    <DropdownMenuSub>
+                        <DropdownMenuSubTrigger>
+
                             <span>Actions</span>
                         </DropdownMenuSubTrigger>
                         <DropdownMenuPortal>
                             <DropdownMenuSubContent>
-                                <DropdownMenuItem>
-                                  
+                                <DropdownMenuItem onClick={() => handleActions("addService", info)}>
+
                                     <span>Add Services</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem>
-                                    
+                                <DropdownMenuItem onClick={() => handleActions("createInvoice", info)}>
+
                                     <span>Create Invoice</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onClick={()=> handleEdit(info)}>
-                                    
-                                    <span>Edit</span>
+                                <DropdownMenuItem onClick={() => handleActions("editBooking", info)}>
+
+                                    <span>Edit Booking</span>
                                 </DropdownMenuItem>
-                              
-                              
+                                <DropdownMenuItem onClick={() => handleActions("clientForm", info)}>
+
+                                    <span>Client Form</span>
+                                </DropdownMenuItem>
+
+
                             </DropdownMenuSubContent>
                         </DropdownMenuPortal>
                     </DropdownMenuSub>
-                    
+
                 </DropdownMenuGroup>
-             
-               
+
+
             </DropdownMenuContent>
         </DropdownMenu>
     )

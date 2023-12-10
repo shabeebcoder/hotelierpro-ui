@@ -77,7 +77,7 @@ export const NewBookingFormExample = (args) => {
                     New Guest</Button>
             </Drawer>
             <NewBookingForm
-                handleCancel={()=>alert()}
+                handleCancel={() => alert()}
                 id="dadas"
                 isLoading={false}
                 onSubmit={(data) => {
@@ -88,11 +88,47 @@ export const NewBookingFormExample = (args) => {
                 roomTypes={[
                     {
                         value: "single",
-                        label: "Single"
+                        label: "Single",
+                        details: {
+                            "_id": "65688cf1b0cc58740882122b",
+                            "name": "101",
+                            "hotelId": "65658f54b0cc587408820f9c",
+                            "roomType": {
+                                "_id": "65688ca5b0cc587408821220",
+                                "name": "single bed",
+                                "maxPerson": "2",
+                                "singleUsePrice": 150,
+                                "regularUsePrice": 200,
+                                "hotelId": "65658f54b0cc587408820f9c",
+                                "createdAt": "2023-11-28T06:56:46.551Z",
+                                "__v": 0
+                            },
+                            "images": [],
+                            "createdAt": "2023-11-28T06:56:46.519Z",
+                            "__v": 0
+                        }
                     },
                     {
                         value: "double",
-                        label: "Double"
+                        label: "Double",
+                        details: {
+                            "_id": "65688cf1b0cc58740882122b",
+                            "name": "101",
+                            "hotelId": "65658f54b0cc587408820f9c",
+                            "roomType": {
+                                "_id": "65688ca5b0cc587408821220",
+                                "name": "single bed",
+                                "maxPerson": "2",
+                                "singleUsePrice": 150,
+                                "regularUsePrice": 500,
+                                "hotelId": "65658f54b0cc587408820f9c",
+                                "createdAt": "2023-11-28T06:56:46.551Z",
+                                "__v": 0
+                            },
+                            "images": [],
+                            "createdAt": "2023-11-28T06:56:46.519Z",
+                            "__v": 0
+                        }
                     }
                 ]}
                 status={[

@@ -33,6 +33,7 @@ import { useFieldArray, useForm } from 'react-hook-form';
 import SearchUser from "./searchGuests";
 import { DotsHorizontalIcon, PlusCircledIcon } from '@radix-ui/react-icons';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from '../../../elements/Dropdown-menu/dropdownmenu';
+import moment from "moment"
 
 export default function NewBookingForm({
     onSubmit,
@@ -41,22 +42,22 @@ export default function NewBookingForm({
     id,
     NewGuest,
     guestList,
-    onSelect ,
+    onSelect,
     isLoading,
     handleCancel,
     defaultValues = {
         adult: 1,
         child: 0,
         guests: [],
-        checkInDate: new Date("10/10/2023") ,
+        checkInDate: new Date(),
         duration: "",
-        checkOutDate: "",
+        checkOutDate: new Date(),
         roomtype: "",
         status: "",
         price: "",
         discount: "",
         notes: ""
-        
+
     },
     fields = {
         checkInDate: {
@@ -133,6 +134,40 @@ export default function NewBookingForm({
     }
 
 
+    React.useEffect(() => {
+        const subscription = forms.watch((value, { name, type }) => {
+
+            if (name.includes('roomtype') || name.includes('singleUse')) {
+                const roomType = forms.getValues("roomtype")
+                const singleUse = forms.getValues("singleUse")
+                let selectedRoom = roomTypes.find((row: any) => row.value === roomType);
+                let roomPrice = 0;
+                if (singleUse) {
+                    roomPrice = selectedRoom?.details?.roomType?.singleUsePrice || ''
+                } else {
+                    roomPrice = selectedRoom?.details?.roomType?.regularUsePrice || ''
+                }
+
+                forms.setValue("price", roomPrice)
+            }
+
+
+        });
+
+
+        return () => subscription.unsubscribe();
+
+    }, [forms.watch])
+
+    const validateCheckoutDateIsBeforeCheckin = () => {
+        const checkInDate = moment(new Date(forms.getValues("checkInDate")));
+        const checkOutDate = moment(new Date(forms.getValues("checkOutDate")));
+        const diffInDays = checkOutDate.diff(checkInDate, 'days');
+        if (diffInDays < 1) {
+            return false
+        }
+    }
+
 
     return (
         <>
@@ -206,7 +241,7 @@ export default function NewBookingForm({
                     />
                     <FormField
                         control={forms.control}
-                        rules={{ required: true }}
+                        rules={{ required: true, validate: { validateCheckoutDateIsBeforeCheckin } }}
                         name="checkOutDate"
                         render={({ field }) => (
                             <FormItem className="flex flex-col">
@@ -428,7 +463,7 @@ export default function NewBookingForm({
                             <FormItem className="">
                                 <FormLabel>{fields.price.label}</FormLabel>
                                 <FormControl>
-                                  <Input    {...field} />
+                                    <Input    {...field} />
                                 </FormControl>
                                 <FormDescription></FormDescription>
                                 <FormMessage />

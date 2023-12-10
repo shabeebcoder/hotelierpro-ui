@@ -15,7 +15,7 @@ export default function NewBookingForm({ onSubmit, roomTypes, status, id, NewGue
         guests: any[];
         checkInDate: Date;
         duration: string;
-        checkOutDate: string;
+        checkOutDate: Date;
         roomtype: string;
         status: string;
         price: string;

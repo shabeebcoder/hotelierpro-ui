@@ -36433,7 +36433,9 @@ function DropdownMenuDemo(_a) {
                             React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "editBooking", info: info }); } },
                                 React__default["default"].createElement("span", null, "Edit Booking")),
                             React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "clientForm", info: info }); } },
-                                React__default["default"].createElement("span", null, "Client Form")))))))));
+                                React__default["default"].createElement("span", null, "Client Form")),
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "deleteBooking", info: info }); } },
+                                React__default["default"].createElement("span", null, "Delete Booking")))))))));
 }
 
 function calander(_a) {

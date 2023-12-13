@@ -35,6 +35,9 @@ import { DotsHorizontalIcon, PlusCircledIcon } from '@radix-ui/react-icons';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from '../../../elements/Dropdown-menu/dropdownmenu';
 import moment from "moment"
 
+
+
+
 export default function NewBookingForm({
     onSubmit,
     roomTypes,
@@ -91,10 +94,6 @@ export default function NewBookingForm({
         notes: {
             label: "Notes"
         }
-
-
-
-
     }
 }) {
 

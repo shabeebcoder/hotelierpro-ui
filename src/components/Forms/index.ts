@@ -6,11 +6,12 @@ import addroom from "./addrooms/addrooms";
 import serviceCategory from "./addServicescategory/addServiceCategoryForm"
 import booking from "./newBooking/newBookingForm"
 import Billing from "./billingComponent/billingComponent"
+import changePassword from "./change-password/changePassword"
 
 
 
 export const Form =  {
-    
+    changePassword
     addPerson,
     addService,
     maintainance,

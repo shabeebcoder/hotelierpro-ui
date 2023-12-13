@@ -31,7 +31,7 @@ interface addPersonProps {
 }
 function AddPersonForm({ onsubmit, defaultValues, id, fields = {
     fullName: {
-        label: "full name",
+        label: "full name *",
         description: "Enter the complete name of the person. This should serve as a distinctive label for convenient and precise identification."
     },
     companyId: {
@@ -48,11 +48,11 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
         description: "Enter the unique account number or identifier associated with this account.It serves as a distinct label for easy identification and reference in the system."
     },
     email: {
-        label: "email",
+        label: "email *",
         description: "Enter the email address associated with your account. Make sure it is a valid and accessible email for communication and account-related notifications."
     },
     contactNumber: {
-        label: "Phone Number",
+        label: "Phone Number *",
         description: "Enter the contact number associated with the person. It should be a valid phone number for communication purposes and should uniquely identify this person in case of any queries or contacts."
     },
     address: {
@@ -64,11 +64,11 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
         description: "Enter the name of the primary contact person associated with this person. Provide the full name for clear identification and communication purposes."
     },
     passportNumber: {
-        label: "Passport ID",
+        label: "Passport Number / ID *",
         description: "Passport information/ national identitification number"
     },
     country: {
-        label: "Country",
+        label: "Country *",
         description: "Provide the country informations"
     }
 } }: addPersonProps): any {
@@ -102,6 +102,44 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
+                     <FormField
+                        control={addpersonForm.control}
+                        name="email"
+                        rules={{ required: true }}
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel className="capitalize">
+                                    {fields.email.label}
+                                </FormLabel>
+                                <FormControl>
+                                    <Input {...field} />
+                                </FormControl>
+                                <FormDescription>
+                                    {fields.email.description}
+                                </FormDescription>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                     <FormField
+                        control={addpersonForm.control}
+                        name="contactNumber"
+                        rules={{ required: true }}
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel className="capitalize">
+                                    {fields.contactNumber.label}
+                                </FormLabel>
+                                <FormControl>
+                                    <Input {...field} />
+                                </FormControl>
+                                <FormDescription>
+                                    {fields.contactNumber.description}
+                                </FormDescription>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
                     <FormField
                         control={addpersonForm.control}
                         name="passportNumber"
@@ -116,6 +154,25 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                                 </FormControl>
                                 <FormDescription>
                                     {fields.passportNumber.description}
+                                </FormDescription>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                      <FormField
+                        control={addpersonForm.control}
+                        name="country"
+                        rules={{ required: true }}
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel className="capitalize">
+                                    {fields.country.label}
+                                </FormLabel>
+                                <FormControl>
+                                    <Input {...field} />
+                                </FormControl>
+                                <FormDescription>
+                                    {fields.country.description}
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
@@ -182,63 +239,9 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-                    <FormField
-                        control={addpersonForm.control}
-                        name="email"
-                        rules={{ required: true }}
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel className="capitalize">
-                                    {fields.email.label}
-                                </FormLabel>
-                                <FormControl>
-                                    <Input {...field} />
-                                </FormControl>
-                                <FormDescription>
-                                    {fields.email.description}
-                                </FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={addpersonForm.control}
-                        name="contactNumber"
-                        rules={{ required: true }}
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel className="capitalize">
-                                    {fields.contactPerson.label}
-                                </FormLabel>
-                                <FormControl>
-                                    <Input {...field} />
-                                </FormControl>
-                                <FormDescription>
-                                    {fields.contactPerson.description}
-                                </FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={addpersonForm.control}
-                        name="country"
-
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel className="capitalize">
-                                    {fields.country.label}
-                                </FormLabel>
-                                <FormControl>
-                                    <Input {...field} />
-                                </FormControl>
-                                <FormDescription>
-                                    {fields.country.description}
-                                </FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
+                   
+                   
+                  
                     <FormField
                         control={addpersonForm.control}
                         name="contactPerson"
@@ -258,10 +261,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-                    <div>
-                        <Label>Notes</Label>
-                        <Textarea name='note' placeholder="Enter relevant notes or additional information about this room. These notes can include specific details or observations that will assist in understanding or managing this particular room." />
-                    </div>
+                 
                    
                 </form>
             </Form>

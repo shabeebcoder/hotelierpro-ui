@@ -1,17 +1,15 @@
-import addPerson from "./addPerson/addperson";
-import addService from "./addServices/addServicesForm";
-import maintainance from "./maintenanceAlert/maintenanceAlertForm";
-import roomType from "./roomtype/addroomType";
-import addroom from "./addrooms/addrooms";
-import serviceCategory from "./addServicescategory/addServiceCategoryForm"
-import booking from "./newBooking/newBookingForm"
-import Billing from "./billingComponent/billingComponent"
-import changePassword from "./change-password/changePassword"
+import addPerson from './addPerson/addperson';
+import addService from './addServices/addServicesForm';
+import maintainance from './maintenanceAlert/maintenanceAlertForm';
+import roomType from './roomtype/addroomType';
+import addroom from './addrooms/addrooms';
+import serviceCategory from './addServicescategory/addServiceCategoryForm';
+import booking from './newBooking/newBookingForm';
+import Billing from './billingComponent/billingComponent';
+import changePassword from './change-password/changePassword';
 
-
-
-export const Form =  {
-    changePassword
+export const Form = {
+    changePassword,
     addPerson,
     addService,
     maintainance,
@@ -19,5 +17,5 @@ export const Form =  {
     addroom,
     serviceCategory,
     booking,
-    Billing
-}
+    Billing,
+};

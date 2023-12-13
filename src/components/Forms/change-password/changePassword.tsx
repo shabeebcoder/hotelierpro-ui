@@ -23,36 +23,35 @@ interface Fields {
     [key: string]: Field;
 }
 interface addPersonProps {
-    fields?: Fields,
-    onsubmit: any,
-    defaultValues?: any,
-    id: string,
-
+    fields?: Fields;
+    onsubmit: any;
+    defaultValues?: any;
+    id: string;
 }
-function AddPersonForm({ onsubmit, defaultValues, id, fields = {
-    currentPassword: {
-        label: "Current Password",
-        description: ""
+function ChangePassword({
+    onsubmit,
+    defaultValues,
+    id,
+    fields = {
+        currentPassword: {
+            label: 'Current Password',
+            description: '',
+        },
+        newPassword: {
+            label: 'New Password',
+            description: '',
+        },
+        reTypePassword: {
+            label: 'Re-Type Password',
+            description: '',
+        },
     },
-    newPassword: {
-        label: "New Password",
-        description: ""
-
-    },
-    reTypePassword: {
-        label: "Re-Type Password",
-        description: ""
-
-    }
-
-
-} }: addPersonProps): any {
-
+}: addPersonProps): any {
     const addpersonForm: any = useForm({ defaultValues });
 
     return (
         <>
-            <Form {...addpersonForm} >
+            <Form {...addpersonForm}>
                 <form
                     onSubmit={addpersonForm.handleSubmit(onsubmit)}
                     className="space-y-8 p-1"
@@ -68,7 +67,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                                     {fields.currentPassword.label}
                                 </FormLabel>
                                 <FormControl>
-                                    <Input type='password' {...field} />
+                                    <Input type="password" {...field} />
                                 </FormControl>
                                 <FormDescription>
                                     {fields.currentPassword.description}
@@ -87,7 +86,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                                     {fields.newPassword.label}
                                 </FormLabel>
                                 <FormControl>
-                                    <Input type='password' {...field} />
+                                    <Input type="password" {...field} />
                                 </FormControl>
                                 <FormDescription>
                                     {fields.newPassword.description}
@@ -106,7 +105,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                                     {fields.reTypePassword.label}
                                 </FormLabel>
                                 <FormControl>
-                                    <Input type='password' {...field} />
+                                    <Input type="password" {...field} />
                                 </FormControl>
                                 <FormDescription>
                                     {fields.reTypePassword.description}
@@ -122,4 +121,4 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
     );
 }
 
-export default AddPersonForm;
+export default ChangePassword;

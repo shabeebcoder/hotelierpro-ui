@@ -11,5 +11,5 @@ interface addPersonProps {
     defaultValues?: any;
     id: string;
 }
-declare function AddPersonForm({ onsubmit, defaultValues, id, fields }: addPersonProps): any;
-export default AddPersonForm;
+declare function ChangePassword({ onsubmit, defaultValues, id, fields, }: addPersonProps): any;
+export default ChangePassword;

@@ -1,12 +1,14 @@
-import addPerson from "./addPerson/addperson";
-import addService from "./addServices/addServicesForm";
-import maintainance from "./maintenanceAlert/maintenanceAlertForm";
-import roomType from "./roomtype/addroomType";
-import addroom from "./addrooms/addrooms";
-import serviceCategory from "./addServicescategory/addServiceCategoryForm";
-import booking from "./newBooking/newBookingForm";
-import Billing from "./billingComponent/billingComponent";
+import addPerson, { GuestType } from './addPerson/addperson';
+import addService from './addServices/addServicesForm';
+import maintainance from './maintenanceAlert/maintenanceAlertForm';
+import roomType from './roomtype/addroomType';
+import addroom from './addrooms/addrooms';
+import serviceCategory from './addServicescategory/addServiceCategoryForm';
+import booking from './newBooking/newBookingForm';
+import Billing from './billingComponent/billingComponent';
+import changePassword from './change-password/changePassword';
 export declare const Form: {
+    changePassword: typeof changePassword;
     addPerson: typeof addPerson;
     addService: typeof addService;
     maintainance: typeof maintainance;
@@ -16,3 +18,6 @@ export declare const Form: {
     booking: typeof booking;
     Billing: typeof Billing;
 };
+export declare namespace IForm {
+    type addPerson = GuestType;
+}

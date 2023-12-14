@@ -13,17 +13,18 @@ import {
 import { useForm } from 'react-hook-form';
 import { z } from "zod";
 import { zodResolver } from '@hookform/resolvers/zod';
+import {Button} from "../../../elements/Buttons/buttons"
 
 
 const guestSchema = z.object({
     fullName: z.string().min(1, "Name is Required"),
-    companyId: z.string(),
-    bank: z.string(),
-    accountNumber: z.string(),
+    companyId: z.string().optional(),
+    bank: z.string().optional(),
+    accountNumber: z.string().optional(),
     email: z.string().email("Invalid Email Address"),
     contactNumber: z.string().min(1, "Contact Number Required"),
     address: z.string().min(1, "Address is required"),
-    contactPerson: z.string(),
+    contactPerson: z.string().optional(),
     passportNumber: z.string().min(1, "Passport/ID Number Required"),
     country: z.string().min(1, "Country is Required"),
     id: z.string()
@@ -73,7 +74,7 @@ function AddPersonForm({ onSubmit, defaultValues, id, fields = {
         description: "Enter the contact number associated with the person. It should be a valid phone number for communication purposes and should uniquely identify this person in case of any queries or contacts."
     },
     address: {
-        label: "address *",
+        label: "address / City *",
         description: "Enter the physical location details, including street address, city, and postal code, for precise identification of this particular location. Provide a clear and comprehensive address to facilitate accurate location referencing."
     },
     contactPerson: {
@@ -221,7 +222,6 @@ function AddPersonForm({ onSubmit, defaultValues, id, fields = {
                     <FormField
                         control={addpersonForm.control}
                         name="companyId"
-
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
@@ -298,6 +298,7 @@ function AddPersonForm({ onSubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
+                    <Button>submit</Button>
                 </form>
             </Form>
         </>

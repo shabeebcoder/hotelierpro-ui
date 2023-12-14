@@ -20,4 +20,6 @@ import { RegistrationForm } from "./registrationForm";
 import Dashboard from "./components/dashboard/dashboard";
 import EditInvoice from "./components/Forms/invoiceEditable/invoiceEditableForm";
 import Layout from "./components/Layout/layout";
+import { IForm } from "./components/Forms";
+export { IForm };
 export { Button, EditInvoice, Tab, Table, Icons, Layout, AuthenticationPage, ToastAction, useToast, Toaster, UserSignupPage, VerificationPage, ResetPasswordPage, ForgotPasswordPage, Form, Drawer, DataTable, Confirmation, Calander, RegistrationForm, Dashboard };

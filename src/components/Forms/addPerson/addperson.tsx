@@ -1,7 +1,6 @@
 import React from 'react';
 import { Label } from '../../../elements/Label/label';
 import { Input } from '../../../elements/Input/input';
-import { Textarea } from '../../../elements/TextArea/textarea';
 import {
     Form,
     FormControl,
@@ -12,7 +11,6 @@ import {
     FormMessage,
 } from '../../../elements/Form/form';
 import { useForm } from 'react-hook-form';
-import { Button } from '../../../elements/Buttons/buttons';
 import { z } from "zod";
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -27,7 +25,8 @@ const guestSchema = z.object({
     address: z.string().min(1, "Address is required"),
     contactPerson: z.string(),
     passportNumber: z.string().min(1, "Passport/ID Number Required"),
-    country: z.string().min(1, "Country is Required")
+    country: z.string().min(1, "Country is Required"),
+    id: z.string()
 });
 
 export type GuestType = z.infer<typeof guestSchema>;
@@ -97,7 +96,6 @@ function AddPersonForm({ onSubmit, defaultValues, id, fields = {
 
     return (
         <>
-          
             <Form {...addpersonForm} >
                 <form
                     onSubmit={addpersonForm.handleSubmit(onSubmit)}
@@ -119,9 +117,7 @@ function AddPersonForm({ onSubmit, defaultValues, id, fields = {
                                 <FormDescription>
                                     {fields.fullName.description}
                                 </FormDescription>
-
                                 <FormMessage />
-
                             </FormItem>
                         )}
                     />
@@ -283,9 +279,6 @@ function AddPersonForm({ onSubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-
-
-
                     <FormField
                         control={addpersonForm.control}
                         name="contactPerson"
@@ -305,8 +298,6 @@ function AddPersonForm({ onSubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-
-            
                 </form>
             </Form>
         </>

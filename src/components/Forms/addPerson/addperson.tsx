@@ -298,7 +298,7 @@ function AddPersonForm({ onSubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-                    <Button>submit</Button>
+               
                 </form>
             </Form>
         </>

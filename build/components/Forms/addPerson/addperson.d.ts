@@ -1,13 +1,13 @@
 import { z } from "zod";
 declare const guestSchema: z.ZodObject<{
     fullName: z.ZodString;
-    companyId: z.ZodString;
-    bank: z.ZodString;
-    accountNumber: z.ZodString;
+    companyId: z.ZodOptional<z.ZodString>;
+    bank: z.ZodOptional<z.ZodString>;
+    accountNumber: z.ZodOptional<z.ZodString>;
     email: z.ZodString;
     contactNumber: z.ZodString;
     address: z.ZodString;
-    contactPerson: z.ZodString;
+    contactPerson: z.ZodOptional<z.ZodString>;
     passportNumber: z.ZodString;
     country: z.ZodString;
     id: z.ZodString;

@@ -19028,13 +19028,13 @@ var n$2=function(e,o){for(var n={};e.length;){var t=e[0],s=t.code,i=t.message,a=
 
 var guestSchema = z$2.object({
     fullName: z$2.string().min(1, "Name is Required"),
-    companyId: z$2.string(),
-    bank: z$2.string(),
-    accountNumber: z$2.string(),
+    companyId: z$2.string().optional(),
+    bank: z$2.string().optional(),
+    accountNumber: z$2.string().optional(),
     email: z$2.string().email("Invalid Email Address"),
     contactNumber: z$2.string().min(1, "Contact Number Required"),
     address: z$2.string().min(1, "Address is required"),
-    contactPerson: z$2.string(),
+    contactPerson: z$2.string().optional(),
     passportNumber: z$2.string().min(1, "Passport/ID Number Required"),
     country: z$2.string().min(1, "Country is Required"),
     id: z$2.string()
@@ -19066,7 +19066,7 @@ function AddPersonForm(_a) {
             description: "Enter the contact number associated with the person. It should be a valid phone number for communication purposes and should uniquely identify this person in case of any queries or contacts."
         },
         address: {
-            label: "address *",
+            label: "address / City *",
             description: "Enter the physical location details, including street address, city, and postal code, for precise identification of this particular location. Provide a clear and comprehensive address to facilitate accurate location referencing."
         },
         contactPerson: {

@@ -18,17 +18,34 @@ import {
 } from '../../../elements/Select/select';
 
 import { useForm } from 'react-hook-form';
+import { z } from "zod"
+import { zodResolver } from '@hookform/resolvers/zod';
+
+export const serviceSchema = z.object({
+    name: z.string(),
+    price: z.number(),
+    category: z.string(),
+    id: z.string().optional()
+});
+
+export type IService = z.infer<typeof serviceSchema>
+
+type IDropDown = {
+    label: string;
+    value: string
+}
+
 
 interface addServiceProps {
-    onsubmit: any;
-    serviceCategory?: any;
+    onSubmit: (data: IService) => void;
+    serviceCategory?: IDropDown[];
     id: string;
-    defaultValues: any;
+    defaultValues?: IService;
     fields?: any
 }
 
-function AddServicesForm({ onsubmit, serviceCategory, id, defaultValues = {}, fields = {
-    serviceName: {
+function AddServicesForm({ onSubmit, serviceCategory, id, defaultValues = {}, fields = {
+    name: {
         label: "service name *",
         description: ""
     },
@@ -36,35 +53,35 @@ function AddServicesForm({ onsubmit, serviceCategory, id, defaultValues = {}, fi
         label: "Price *",
         description: ""
     },
-    serviceCategory: {
+    category: {
         label: "Service Category *",
         description: ""
     }
 } }: addServiceProps): any {
-    const form: any = useForm({ defaultValues });
+    const form = useForm<IService>({ defaultValues, resolver: zodResolver(serviceSchema) });
     return (
         <>
 
             <Form {...form}>
                 <form
-                    onSubmit={form.handleSubmit(onsubmit)}
+                    onSubmit={form.handleSubmit(onSubmit)}
                     className="space-y-8 mt-8"
                     id={id}
                 >
                     <FormField
                         control={form.control}
-                        name="serviceName"
+                        name="name"
                         rules={{ required: true }}
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
-                                    {fields.serviceName.label}
+                                    {fields.name.label}
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
                                 <FormDescription>
-                                    {fields.serviceName.description}
+                                    {fields.name.description}
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
@@ -80,7 +97,7 @@ function AddServicesForm({ onsubmit, serviceCategory, id, defaultValues = {}, fi
                                     {fields.price.label}
                                 </FormLabel>
                                 <FormControl>
-                                    <Input {...field} />
+                                    <Input type='number' {...field} />
                                 </FormControl>
                                 <FormDescription>
                                     {fields.price.description}
@@ -91,18 +108,18 @@ function AddServicesForm({ onsubmit, serviceCategory, id, defaultValues = {}, fi
                     />
                     <FormField
                         control={form.control}
-                        name="serviceCategory"
+                        name="category"
                         rules={{ required: true }}
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>{fields.serviceCategory.label}</FormLabel>
+                                <FormLabel>{fields.category.label}</FormLabel>
                                 <Select
                                     onValueChange={field.onChange}
                                     defaultValue={field.value}
                                 >
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Select preferred service category" />
+                                            <SelectValue placeholder="Select service category" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -122,7 +139,6 @@ function AddServicesForm({ onsubmit, serviceCategory, id, defaultValues = {}, fi
                             </FormItem>
                         )}
                     />
-
                 </form>
             </Form>
         </>

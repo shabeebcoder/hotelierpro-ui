@@ -19010,7 +19010,7 @@ var guestSchema = z$2.object({
     contactPerson: z$2.string().optional(),
     passportNumber: z$2.string().min(1, "Passport/ID Number Required"),
     country: z$2.string().min(1, "Country is Required"),
-    id: z$2.string()
+    id: z$2.string().optional()
 });
 function AddPersonForm(_a) {
     var onSubmit = _a.onSubmit, defaultValues = _a.defaultValues, id = _a.id, _b = _a.fields, fields = _b === void 0 ? {

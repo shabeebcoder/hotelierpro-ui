@@ -10,21 +10,29 @@ import {
     FormMessage,
 } from '../../../elements/Form/form';
 
-import {  useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
+import { z } from "zod";
+
+const servicecategorySchema = z.object({
+    name: z.string(),
+    id: z.string().optional()
+})
+
+export type IServiceCategory = z.infer<typeof servicecategorySchema>
 
 interface serviceCategoryProps {
-    onsubmit: any;
+    onSubmit: (data: IServiceCategory) => void;
     id: string;
     fields?: any;
-    defa
+    defaultValues?: IServiceCategory
 }
 
-function AddServiceCategoryForm({ onsubmit, id, defaultValues = {}, fields = {
+function AddServiceCategoryForm({ onSubmit, id, defaultValues = {}, fields = {
     name: {
         label: "service name *",
         description: "",
     }
-} }): any {
+} }: serviceCategoryProps): any {
     const form: any = useForm({ defaultValues });
     return (
         <>
@@ -37,7 +45,7 @@ function AddServiceCategoryForm({ onsubmit, id, defaultValues = {}, fields = {
                 >
                     <FormField
                         control={form.control}
-                        name="serviceCategoryName"
+                        name="name"
                         rules={{ required: true }}
                         render={({ field }) => (
                             <FormItem>

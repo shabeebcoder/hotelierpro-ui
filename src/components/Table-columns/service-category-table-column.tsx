@@ -6,12 +6,23 @@ import { Button } from "../../elements/Buttons/buttons"
 import { DotsHorizontalIcon } from "@radix-ui/react-icons"
 
 
+
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "../../elements/Dropdown-menu/dropdownmenu";
+import { z } from "zod";
+import { ColumnDef } from "@tanstack/react-table"
+
+
+export const serviceCategoryTableSchema = z.object({
+    name: z.string(),
+    id: z.string()
+});
+
+type IColum = z.infer<typeof serviceCategoryTableSchema>
 
 function DataTableRowActions({
     row,
@@ -41,7 +52,7 @@ function DataTableRowActions({
 }
 
 
-export const columns: any = [
+export const columns: ColumnDef<IColum>[] = [
     {
         id: "select",
         header: ({ table }) => (

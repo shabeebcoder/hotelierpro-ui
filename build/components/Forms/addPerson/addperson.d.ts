@@ -10,7 +10,7 @@ declare const guestSchema: z.ZodObject<{
     contactPerson: z.ZodOptional<z.ZodString>;
     passportNumber: z.ZodString;
     country: z.ZodString;
-    id: z.ZodString;
+    id: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     fullName?: string;
     companyId?: string;

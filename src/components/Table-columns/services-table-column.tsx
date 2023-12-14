@@ -13,6 +13,22 @@ import {
     DropdownMenuTrigger,
 } from "../../elements/Dropdown-menu/dropdownmenu";
 
+import { z } from "zod";
+import { ColumnDef } from "@tanstack/react-table"
+
+
+export const serviceTableSchema = z.object({
+    name: z.string(),
+    id: z.string(),
+    price: z.number(),
+    category: z.string()
+});
+
+type IColum = z.infer<typeof serviceTableSchema>
+
+
+
+
 function DataTableRowActions({
     row,
 }: any) {
@@ -31,17 +47,16 @@ function DataTableRowActions({
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-[160px]">
-                <DropdownMenuItem onClick={()=>task.actions.handleUpdate(task)}>Update
+                <DropdownMenuItem onClick={() => task.actions.handleUpdate(task)}>Update
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={()=>task.actions.handleDelete(task)}>Delete</DropdownMenuItem>
-
+                <DropdownMenuItem onClick={() => task.actions.handleDelete(task)}>Delete</DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     )
 }
 
 
-export const columns: any = [
+export const columns: ColumnDef<IColum>[] = [
     {
         id: "select",
         header: ({ table }) => (
@@ -78,11 +93,9 @@ export const columns: any = [
             <DataTableColumnHeader column={column} title="Price" />
         ),
         cell: ({ row }) => {
-            // const label = labels.find((label: any) => label.value === row.original.label)
-
             return (
                 <div className="flex items-center text-center">
-                    <span>$ {row.getValue("price")}</span>
+                    <span>{row.getValue("price")}</span>
                 </div>
             )
         },
@@ -93,13 +106,7 @@ export const columns: any = [
             <DataTableColumnHeader column={column} title="Service Category" />
         ),
         cell: ({ row }) => {
-            // const status = statuses.find(
-            //     (status: any) => status.value === row.getValue("status")
-            // )
 
-            // if (!status) {
-            //     return null
-            // }
 
             return (
                 <div className="flex items-center">
@@ -107,13 +114,8 @@ export const columns: any = [
                 </div>
             )
         },
-        // filterFn: (row, id, value) => {
-        //     return value.includes(row.getValue(id))
-        // },
+
     },
-
-
-
     {
         id: "actions",
         cell: ({ row }) => <DataTableRowActions row={row} />,

@@ -27,7 +27,7 @@ const guestSchema = z.object({
     contactPerson: z.string().optional(),
     passportNumber: z.string().min(1, "Passport/ID Number Required"),
     country: z.string().min(1, "Country is Required"),
-    id: z.string()
+    id: z.string().optional()
 });
 
 export type GuestType = z.infer<typeof guestSchema>;
@@ -94,7 +94,7 @@ function AddPersonForm({ onSubmit, defaultValues, id, fields = {
     const addpersonForm = useForm<GuestType>({ defaultValues, resolver: zodResolver(guestSchema) });
 
     const { formState: { errors } } = addpersonForm
-
+    
     return (
         <>
             <Form {...addpersonForm} >
@@ -298,7 +298,7 @@ function AddPersonForm({ onSubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-               
+               <Button>submit</Button>
                 </form>
             </Form>
         </>

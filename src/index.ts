@@ -92,8 +92,9 @@ import EditInvoice from "./components/Forms/invoiceEditable/invoiceEditableForm"
 import Layout from "./components/Layout/layout";
 // import Dashboard from "./components/dashboard/dashboard"
 import { IForm } from "./components/Forms"
+import {ITable} from "./components/Table-columns"
 
-export { IForm }
+export { IForm, ITable }
 
 export {
     Button,

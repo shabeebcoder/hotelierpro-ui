@@ -22,7 +22,7 @@ export const serviceCategoryTableSchema = z.object({
     id: z.string()
 });
 
-type IColum = z.infer<typeof serviceCategoryTableSchema>
+export type IServiceCategoryTable = z.infer<typeof serviceCategoryTableSchema>
 
 function DataTableRowActions({
     row,
@@ -52,7 +52,7 @@ function DataTableRowActions({
 }
 
 
-export const columns: ColumnDef<IColum>[] = [
+export const columns: ColumnDef<IServiceCategoryTable>[] = [
     {
         id: "select",
         header: ({ table }) => (

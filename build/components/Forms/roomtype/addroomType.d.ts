@@ -1,24 +1,30 @@
-declare function AddRoomType({ onsubmit, id, defaultValues, fields }: {
-    onsubmit: any;
-    id: any;
-    defaultValues?: {};
-    fields?: {
-        name: {
-            label: string;
-            description: string;
-        };
-        maxPerson: {
-            label: string;
-            description: string;
-        };
-        regularPrice: {
-            label: string;
-            description: string;
-        };
-        singlePrice: {
-            label: string;
-            description: string;
-        };
-    };
-}): any;
+import React from 'react';
+import { z } from "zod";
+export declare const roomTypeTypeSchema: z.ZodObject<{
+    name: z.ZodString;
+    singleUsePrice: z.ZodNumber;
+    regularUsePrice: z.ZodNumber;
+    maxPerson: z.ZodNumber;
+    id: z.ZodOptional<z.ZodString>;
+}, "strip", z.ZodTypeAny, {
+    name?: string;
+    singleUsePrice?: number;
+    regularUsePrice?: number;
+    maxPerson?: number;
+    id?: string;
+}, {
+    name?: string;
+    singleUsePrice?: number;
+    regularUsePrice?: number;
+    maxPerson?: number;
+    id?: string;
+}>;
+export type IRoomTypeType = z.infer<typeof roomTypeTypeSchema>;
+type IProps = {
+    onSubmit: (data: IRoomTypeType) => void;
+    id: string;
+    defaultValues?: IRoomTypeType;
+    fields?: any;
+};
+declare function AddRoomType({ onSubmit, id, defaultValues, fields }: IProps): React.JSX.Element;
 export default AddRoomType;

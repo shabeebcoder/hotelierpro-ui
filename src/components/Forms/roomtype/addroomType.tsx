@@ -3,11 +3,30 @@ import { Input } from '../../../elements/Input/input'
 import { Label } from '../../../elements/Label/label'
 import { Button } from '../../../elements/Buttons/buttons'
 import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage, Form } from '../../../elements/Form/form'
-import {  useForm } from "react-hook-form"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import { zodResolver } from '@hookform/resolvers/zod';
 
+export const roomTypeTypeSchema = z.object({
+  name: z.string(),
+  singleUsePrice: z.number(),
+  regularUsePrice: z.number(),
+  maxPerson: z.number(),
+  id: z.string().optional()
+});
+
+export type IRoomTypeType = z.infer<typeof roomTypeTypeSchema>
+
+
+type IProps = {
+  onSubmit: (data: IRoomTypeType) => void;
+  id: string;
+  defaultValues?: IRoomTypeType,
+  fields?: any
+}
 
 function AddRoomType({
-  onsubmit,
+  onSubmit,
   id,
   defaultValues = {},
   fields = {
@@ -30,101 +49,99 @@ function AddRoomType({
 
 
   }
-}): any {
+}: IProps) {
 
 
-  const form:any = useForm({
+  const form = useForm<IRoomTypeType>({
     defaultValues
   })
 
 
-  return (
+  return (<Form {...form}>
+    <form id={id} onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <FormField
+        control={form.control}
+        name="name"
+        rules={
+          { required: true }
+        }
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>{fields.name.label}</FormLabel>
+            <FormControl>
+              <Input {...field} />
+            </FormControl>
+            <FormDescription>
+              Please enter a unique name for the room. It may contain letters, numbers, and spaces. Avoid special characters or symbols.                                            </FormDescription>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+      <FormField
+        control={form.control}
+        name="maxPerson"
+        rules={
+          { required: true }
+        }
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>{fields.maxPerson.label}</FormLabel>
+            <FormControl>
+              <Input type='number' {...field} />
+            </FormControl>
+            <FormDescription>
+              {fields.maxPerson.description}
+            </FormDescription>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+      <FormField
+        control={form.control}
+        name="regularUsePrice"
+        rules={
+          { required: true }
+        }
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>{fields.regularPrice.label}</FormLabel>
+            <FormControl>
+              <Input type='number' {...field} />
+            </FormControl>
+            <FormDescription>
+              {fields.regularPrice.description}
+            </FormDescription>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+      <FormField
+        control={form.control}
+        name="singleUsePrice"
+        rules={
+          { required: true }
+        }
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>{
+              fields.singlePrice.label
+            }</FormLabel>
+            <FormControl>
+              <Input type='number' {...field} />
+            </FormControl>
+            <FormDescription>
+              {
+                fields.singlePrice.description
+              }
+            </FormDescription>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
 
-    <Form {...form}>
-      <form id={id} onSubmit={form.handleSubmit(onsubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="name"
-          rules={
-            { required: true }
-          }
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{fields.name.label}</FormLabel>
-              <FormControl>
-                <Input {...field} />
-              </FormControl>
-              <FormDescription>
-                Please enter a unique name for the room. It may contain letters, numbers, and spaces. Avoid special characters or symbols.                                            </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="maxPerson"
-          rules={
-            { required: true }
-          }
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{fields.maxPerson.label}</FormLabel>
-              <FormControl>
-                <Input type='number' {...field} />
-              </FormControl>
-              <FormDescription>
-                {fields.maxPerson.description}
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="regularPrice"
-          rules={
-            { required: true }
-          }
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{fields.regularPrice.label}</FormLabel>
-              <FormControl>
-                <Input type='number' {...field} />
-              </FormControl>
-              <FormDescription>
-                {fields.regularPrice.description}
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="singlePrice"
-          rules={
-            { required: true }
-          }
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{
-                fields.singlePrice.label
-              }</FormLabel>
-              <FormControl>
-                <Input type='number' {...field} />
-              </FormControl>
-              <FormDescription>
-                {
-                  fields.singlePrice.description
-                }
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-       
-      </form>
-    </Form>
-  
+    </form>
+  </Form>
+
   )
 }
 

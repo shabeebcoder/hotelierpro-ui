@@ -11,7 +11,21 @@ import {
     DropdownMenuTrigger,
 } from "../../elements/Dropdown-menu/dropdownmenu";
 
+import { z } from "zod";
+import { ColumnDef } from "@tanstack/react-table"
 
+
+export const serviceTableSchema = z.object({
+    name: z.string(),
+    price: z.number(),
+    roomType: z.string(),
+    image: z.string().array().optional(),
+    maxPerson: z.number(),
+    id: z.string().optional(),
+
+});
+
+type IColum = z.infer<typeof serviceTableSchema>
 
 
 function DataTableRowActions({
@@ -43,7 +57,7 @@ function DataTableRowActions({
 }
 
 
-export const columns: any = [
+export const columns:ColumnDef<IColum>[] = [
     {
         id: "select",
         header: ({ table }: any) => (

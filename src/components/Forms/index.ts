@@ -1,4 +1,4 @@
-import addPerson from './addPerson/addperson';
+import addPerson, { GuestType } from './addPerson/addperson';
 import addService from './addServices/addServicesForm';
 import maintainance from './maintenanceAlert/maintenanceAlertForm';
 import roomType from './roomtype/addroomType';
@@ -7,6 +7,7 @@ import serviceCategory from './addServicescategory/addServiceCategoryForm';
 import booking from './newBooking/newBookingForm';
 import Billing from './billingComponent/billingComponent';
 import changePassword from './change-password/changePassword';
+
 
 export const Form = {
     changePassword,
@@ -19,3 +20,8 @@ export const Form = {
     booking,
     Billing,
 };
+
+
+export namespace IForm {
+    export type addPerson = GuestType 
+}

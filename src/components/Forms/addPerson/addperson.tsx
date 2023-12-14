@@ -13,6 +13,24 @@ import {
 } from '../../../elements/Form/form';
 import { useForm } from 'react-hook-form';
 import { Button } from '../../../elements/Buttons/buttons';
+import { z } from "zod";
+import { zodResolver } from '@hookform/resolvers/zod';
+
+
+const guestSchema = z.object({
+    fullName: z.string().min(1, "Name is Required"),
+    companyId: z.string(),
+    bank: z.string(),
+    accountNumber: z.string(),
+    email: z.string().email("Invalid Email Address"),
+    contactNumber: z.string().min(1, "Contact Number Required"),
+    address: z.string().min(1, "Address is required"),
+    contactPerson: z.string(),
+    passportNumber: z.string().min(1, "Passport/ID Number Required"),
+    country: z.string().min(1, "Country is Required")
+});
+
+export type GuestType = z.infer<typeof guestSchema>;
 
 interface Field {
     label: string;
@@ -24,12 +42,12 @@ interface Fields {
 }
 interface addPersonProps {
     fields?: Fields,
-    onsubmit: any,
-    defaultValues?: any,
+    onSubmit: (data: GuestType) => void,
+    defaultValues?: GuestType,
     id: string,
 
 }
-function AddPersonForm({ onsubmit, defaultValues, id, fields = {
+function AddPersonForm({ onSubmit, defaultValues, id, fields = {
     fullName: {
         label: "full name *",
         description: "Enter the complete name of the person. This should serve as a distinctive label for convenient and precise identification."
@@ -73,13 +91,16 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
     }
 } }: addPersonProps): any {
 
-    const addpersonForm: any = useForm({ defaultValues });
+    const addpersonForm = useForm<GuestType>({ defaultValues, resolver: zodResolver(guestSchema) });
+
+    const { formState: { errors } } = addpersonForm
 
     return (
         <>
+          
             <Form {...addpersonForm} >
                 <form
-                    onSubmit={addpersonForm.handleSubmit(onsubmit)}
+                    onSubmit={addpersonForm.handleSubmit(onSubmit)}
                     className="space-y-8 p-1"
                     id={id}
                 >
@@ -98,11 +119,13 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                                 <FormDescription>
                                     {fields.fullName.description}
                                 </FormDescription>
+
                                 <FormMessage />
+
                             </FormItem>
                         )}
                     />
-                     <FormField
+                    <FormField
                         control={addpersonForm.control}
                         name="email"
                         rules={{ required: true }}
@@ -121,7 +144,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-                     <FormField
+                    <FormField
                         control={addpersonForm.control}
                         name="contactNumber"
                         rules={{ required: true }}
@@ -159,7 +182,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-                      <FormField
+                    <FormField
                         control={addpersonForm.control}
                         name="country"
                         rules={{ required: true }}
@@ -178,7 +201,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-                      <FormField
+                    <FormField
                         control={addpersonForm.control}
                         name="address"
                         rules={{ required: true }}
@@ -260,9 +283,9 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-                   
-                   
-                  
+
+
+
                     <FormField
                         control={addpersonForm.control}
                         name="contactPerson"
@@ -282,8 +305,8 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-                 
-                   
+
+            
                 </form>
             </Form>
         </>

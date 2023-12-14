@@ -91,6 +91,9 @@ import EditInvoice from "./components/Forms/invoiceEditable/invoiceEditableForm"
 // import MaintainanceForm from "./components/Forms/maintenanceAlert/maintenanceAlertForm"
 import Layout from "./components/Layout/layout";
 // import Dashboard from "./components/dashboard/dashboard"
+import { IForm } from "./components/Forms"
+
+export { IForm }
 
 export {
     Button,

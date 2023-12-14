@@ -5,12 +5,16 @@ export default {
     title: 'hotelierPro/Form/AddPersonForm',
 };
 
-export const AddpersonFormSample = (args) => <AddPersonForm {...args} />;
+export const AddpersonFormSample = (args) => {
 
-const sampleData = { fullName: 'Akshay' };
+    const sampleData = { fullName: 'Akshay' };
+    const handle = (data) => {
+        
+    }
 
-AddpersonFormSample.args = {
-    onSubmit: (data) => alert(JSON.stringify(data)),
-    values: sampleData,
-    type: 'create',
+    return <AddPersonForm id="dsa"   onSubmit={handle} 
+ />
 };
+
+
+

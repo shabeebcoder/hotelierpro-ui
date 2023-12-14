@@ -21,7 +21,7 @@ interface serviceCategoryProps {
 
 function AddServiceCategoryForm({ onsubmit, id, defaultValues = {}, fields = {
     name: {
-        label: "service name",
+        label: "service name *",
         description: "",
     }
 } }): any {

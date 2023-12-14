@@ -56,7 +56,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
         description: "Enter the contact number associated with the person. It should be a valid phone number for communication purposes and should uniquely identify this person in case of any queries or contacts."
     },
     address: {
-        label: "address",
+        label: "address *",
         description: "Enter the physical location details, including street address, city, and postal code, for precise identification of this particular location. Provide a clear and comprehensive address to facilitate accurate location referencing."
     },
     contactPerson: {
@@ -173,6 +173,27 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                                 </FormControl>
                                 <FormDescription>
                                     {fields.country.description}
+                                </FormDescription>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                      <FormField
+                        control={addpersonForm.control}
+                        name="address"
+                        rules={{ required: true }}
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel className="capitalize">
+                                    {fields.address.label}
+
+                                </FormLabel>
+                                <FormControl>
+                                    <Input {...field} />
+                                </FormControl>
+                                <FormDescription>
+                                    {fields.address.description}
+
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>

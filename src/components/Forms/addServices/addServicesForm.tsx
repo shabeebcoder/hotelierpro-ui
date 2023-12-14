@@ -29,15 +29,15 @@ interface addServiceProps {
 
 function AddServicesForm({ onsubmit, serviceCategory, id, defaultValues = {}, fields = {
     serviceName: {
-        label: "service name",
+        label: "service name *",
         description: ""
     },
     price: {
-        label: "Price",
+        label: "Price *",
         description: ""
     },
     serviceCategory: {
-        label: "Service Category",
+        label: "Service Category *",
         description: ""
     }
 } }: addServiceProps): any {

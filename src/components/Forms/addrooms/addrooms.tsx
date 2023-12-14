@@ -29,11 +29,11 @@ function AddRooms({
   roomTypes = [],
   fields = {
     roomTypes: {
-      label: "Room Types",
+      label: "Room Types *",
       description: "Select the type of room from the options below. Choose the most appropriate category that describes the nature or purpose of the room."
     },
     name: {
-      label: "Room Name/Number",
+      label: "Room Name/Number *",
       description: "Enter the total number of rooms available in your property or facility. This should include all types of rooms, such as bedrooms, meeting rooms, and offices."
     }
   }
@@ -70,7 +70,7 @@ function AddRooms({
         >
           <FormField
             control={form.control}
-            
+            rules={{ required: true }}
             name="roomTypes"
             render={({ field }) => (
               <FormItem>
@@ -99,6 +99,7 @@ function AddRooms({
           <FormField
             control={form.control}
             name="name"
+            rules={{ required: true }}
             render={({ field }) => (
               <FormItem>
                 <FormLabel>{fields.name.label}</FormLabel>

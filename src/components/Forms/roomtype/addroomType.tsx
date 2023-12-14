@@ -12,19 +12,19 @@ function AddRoomType({
   defaultValues = {},
   fields = {
     name: {
-      label: "Name",
+      label: "Name *",
       description: "Please enter a unique name for the room. It may contain letters, numbers, and spaces. Avoid special characters or symbols."
     },
     maxPerson: {
-      label: "Max. Persons(per rooms)",
+      label: "Max. Persons(per rooms) *",
       description: "Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations."
     },
     regularPrice: {
-      label: "Price(Regular use)",
+      label: "Price(Regular use) *",
       description: "Enter the standard price for using this room for regular purposes. Consider factors such as time duration, amenities included, and any other relevant considerations."
     },
     singlePrice: {
-      label: "Price(Single use)",
+      label: "Price(Single use) *",
       description: "Specify the standard price for a single use of this room for regular purposes."
     },
 
@@ -39,18 +39,7 @@ function AddRoomType({
 
 
   return (
-    // <div className="hidden h-full flex-1 flex-col space-y-3 p-8 md:flex">
-    //   <div className="flex items-center justify-between space-y-2">
-    //     <div>
-    //       <h2 className="text-2xl font-bold tracking-tight">Add New Type Room Information </h2>
-    //       <p className="text-muted-foreground">
 
-    //         This form is used to input essential details about the rooms available within your hotel or property. Accurate and complete information is crucial for efficient room management and an improved guest experience. Please fill out the following fields with the relevant information for each room.
-    //       </p>
-    //     </div>
-
-    //   </div>
-    //   <div>
     <Form {...form}>
       <form id={id} onSubmit={form.handleSubmit(onsubmit)} className="space-y-8">
         <FormField
@@ -132,12 +121,10 @@ function AddRoomType({
             </FormItem>
           )}
         />
-        {/* <Button type="submit">Create new room</Button>&nbsp;&nbsp;&nbsp;
-              <Button variant="secondary" type="submit">Cancel room</Button> */}
+       
       </form>
     </Form>
-    //   </div>
-    // </div>
+  
   )
 }
 

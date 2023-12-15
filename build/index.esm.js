@@ -18180,7 +18180,11 @@ z$2.object({
     name: z$2.string(),
     id: z$2.string(),
     price: z$2.number(),
-    category: z$2.string()
+    category: z$2.string(),
+    actions: z$2.object({
+        handleUpdate: z$2.function(),
+        handleDelete: z$2.function()
+    })
 });
 function DataTableRowActions$3(_a) {
     var row = _a.row;
@@ -18234,7 +18238,7 @@ var columns$4 = [
         },
     },
     {
-        accessorKey: "categoryName",
+        accessorKey: "category",
         header: function (_a) {
             var column = _a.column;
             return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Service Category" }));
@@ -18242,7 +18246,7 @@ var columns$4 = [
         cell: function (_a) {
             var row = _a.row;
             return (React__default.createElement("div", { className: "flex items-center" },
-                React__default.createElement("span", null, row.getValue("categoryName"))));
+                React__default.createElement("span", null, row.getValue("category"))));
         },
     },
     {
@@ -18256,7 +18260,11 @@ var columns$4 = [
 
 z$2.object({
     name: z$2.string(),
-    id: z$2.string()
+    id: z$2.string(),
+    actions: z$2.object({
+        handleUpdate: z$2.function(),
+        handleDelete: z$2.function()
+    })
 });
 function DataTableRowActions$2(_a) {
     var row = _a.row;
@@ -19162,7 +19170,7 @@ function AddPersonForm(_a) {
 
 var serviceSchema = z$2.object({
     name: z$2.string(),
-    price: z$2.number(),
+    price: z$2.coerce.number().min(0, "invalid number"),
     category: z$2.string(),
     id: z$2.string().optional()
 });
@@ -26743,7 +26751,7 @@ function AddRoomType(_a) {
 
 var roomsSchema = z$2.object({
     name: z$2.string(),
-    price: z$2.number(),
+    price: z$2.coerce.number().min(0),
     roomType: z$2.string(),
     image: z$2.string().array().optional(),
     id: z$2.string().optional()
@@ -26801,7 +26809,7 @@ z$2.object({
     id: z$2.string().optional()
 });
 function AddServiceCategoryForm(_a) {
-    _a.onSubmit; var id = _a.id, _b = _a.defaultValues, defaultValues = _b === void 0 ? {} : _b, _c = _a.fields, fields = _c === void 0 ? {
+    var onSubmit = _a.onSubmit, id = _a.id, _b = _a.defaultValues, defaultValues = _b === void 0 ? {} : _b, _c = _a.fields, fields = _c === void 0 ? {
         name: {
             label: "service name *",
             description: "",
@@ -26810,7 +26818,7 @@ function AddServiceCategoryForm(_a) {
     var form = useForm({ defaultValues: defaultValues });
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(Form$1, __assign$2({}, form),
-            React__default.createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8 mt-8", id: id },
+            React__default.createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 mt-8", id: id },
                 React__default.createElement(FormField, { control: form.control, name: "name", rules: { required: true }, render: function (_a) {
                         var field = _a.field;
                         return (React__default.createElement(FormItem, null,
@@ -74823,10 +74831,10 @@ function Menu(_a) {
         var title = _a.title, content = _a.content, props = _a.props;
         return (React__default.createElement(MenubarMenu, null,
             React__default.createElement(MenubarTrigger, __assign$2({}, props), title),
-            React__default.createElement(MenubarContent, null, content.map(function (_a) {
+            React__default.createElement(MenubarContent, null, content.map(function (_a, index) {
                 var item = _a.item, props = _a.props;
                 return (React__default.createElement(React__default.Fragment, null,
-                    React__default.createElement(MenubarItem, __assign$2({}, props), item)));
+                    React__default.createElement(MenubarItem, __assign$2({ key: "menu-".concat(index) }, props), item)));
             }))));
     })));
 }
@@ -74839,9 +74847,9 @@ function Sidebar(_a) {
             return (React__default.createElement(React__default.Fragment, null,
                 React__default.createElement("div", { className: "px-3 py-2" },
                     React__default.createElement("h2", { className: "mb-2 px-4 text-lg font-semibold tracking-tight" }, title),
-                    React__default.createElement("div", { className: "space-y-1" }, items.map(function (_a) {
+                    React__default.createElement("div", { className: "space-y-1" }, items.map(function (_a, index) {
                         var name = _a.name, Icon = _a.Icon, onClick = _a.onClick, variant = _a.variant, className = _a.className;
-                        return (React__default.createElement(Button$3, { variant: variant, className: "w-full justify-start ".concat(className), onClick: onClick },
+                        return (React__default.createElement(Button$3, { key: "button-".concat(index), variant: variant, className: "w-full justify-start ".concat(className), onClick: onClick },
                             React__default.createElement(Icon, null),
                             name));
                     })))));

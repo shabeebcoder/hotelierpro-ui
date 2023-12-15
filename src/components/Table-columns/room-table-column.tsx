@@ -13,19 +13,19 @@ import {
 
 import { z } from "zod";
 import { ColumnDef } from "@tanstack/react-table"
+import {roomTypeTableSchema} from "./room-type-columns"
 
 
-export const serviceTableSchema = z.object({
+export const roomTableSchema = z.object({
     name: z.string(),
-    price: z.number(),
     roomType: z.string(),
-    image: z.string().array().optional(),
     maxPerson: z.number(),
+    singleUsePrice: z.number(),
+    regularUsePrice: z.number(),
     id: z.string().optional(),
+})
 
-});
-
-type IColum = z.infer<typeof serviceTableSchema>
+export type IRoomColum = z.infer<typeof roomTableSchema>
 
 
 function DataTableRowActions({
@@ -57,7 +57,7 @@ function DataTableRowActions({
 }
 
 
-export const columns:ColumnDef<IColum>[] = [
+export const columns:ColumnDef<IRoomColum>[] = [
     {
         id: "select",
         header: ({ table }: any) => (

@@ -20,10 +20,11 @@ import {
 import { useForm } from 'react-hook-form';
 import { z } from "zod"
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '../../../elements/Buttons/buttons';
 
 export const serviceSchema = z.object({
     name: z.string(),
-    price: z.number(),
+    price: z.coerce.number().min(0, "invalid number"),
     category: z.string(),
     id: z.string().optional()
 });
@@ -139,6 +140,7 @@ function AddServicesForm({ onSubmit, serviceCategory, id, defaultValues = {}, fi
                             </FormItem>
                         )}
                     />
+                 
                 </form>
             </Form>
         </>

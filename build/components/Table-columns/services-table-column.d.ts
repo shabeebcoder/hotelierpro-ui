@@ -5,17 +5,34 @@ export declare const serviceTableSchema: z.ZodObject<{
     id: z.ZodString;
     price: z.ZodNumber;
     category: z.ZodString;
+    actions: z.ZodObject<{
+        handleUpdate: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>;
+        handleDelete: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>;
+    }, "strip", z.ZodTypeAny, {
+        handleUpdate?: (...args: unknown[]) => unknown;
+        handleDelete?: (...args: unknown[]) => unknown;
+    }, {
+        handleUpdate?: (...args: unknown[]) => unknown;
+        handleDelete?: (...args: unknown[]) => unknown;
+    }>;
 }, "strip", z.ZodTypeAny, {
     name?: string;
     id?: string;
     price?: number;
     category?: string;
+    actions?: {
+        handleUpdate?: (...args: unknown[]) => unknown;
+        handleDelete?: (...args: unknown[]) => unknown;
+    };
 }, {
     name?: string;
     id?: string;
     price?: number;
     category?: string;
+    actions?: {
+        handleUpdate?: (...args: unknown[]) => unknown;
+        handleDelete?: (...args: unknown[]) => unknown;
+    };
 }>;
-type IColum = z.infer<typeof serviceTableSchema>;
-export declare const columns: ColumnDef<IColum>[];
-export {};
+export type IServiceTable = z.infer<typeof serviceTableSchema>;
+export declare const columns: ColumnDef<IServiceTable>[];

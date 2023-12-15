@@ -25,8 +25,8 @@ export function Sidebar({ className, sidebar, navigate }: any) {
                   </h2>
                   <div className="space-y-1">
                     {
-                      items.map(({ name, Icon, onClick, variant, className }: any) => (
-                        <Button variant={variant} className={`w-full justify-start ${className}`} onClick={onClick}>
+                      items.map(({ name, Icon, onClick, variant, className }: any, index: Number) => (
+                        <Button key={`button-${index}`} variant={variant} className={`w-full justify-start ${className}`} onClick={onClick}>
                           {<Icon />}
                           {name}
                         </Button>

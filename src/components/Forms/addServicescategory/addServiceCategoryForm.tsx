@@ -12,6 +12,7 @@ import {
 
 import { useForm } from 'react-hook-form';
 import { z } from "zod";
+import { Button } from '../../../elements/Buttons/buttons';
 
 const servicecategorySchema = z.object({
     name: z.string(),
@@ -39,7 +40,7 @@ function AddServiceCategoryForm({ onSubmit, id, defaultValues = {}, fields = {
 
             <Form {...form}>
                 <form
-                    onSubmit={form.handleSubmit(onsubmit)}
+                    onSubmit={form.handleSubmit(onSubmit)}
                     className="space-y-8 mt-8"
                     id={id}
                 >
@@ -62,6 +63,7 @@ function AddServiceCategoryForm({ onSubmit, id, defaultValues = {}, fields = {
                             </FormItem>
                         )}
                     />
+              
                 </form>
             </Form>
         </>

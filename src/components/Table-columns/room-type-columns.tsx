@@ -13,6 +13,20 @@ import {
 import Confirmation from '../Confirmation/alert';
 
 
+import { z } from "zod";
+import { ColumnDef } from "@tanstack/react-table"
+
+
+export const roomTypeTableSchema = z.object({
+    name: z.string(),
+    maxPerson: z.number(),
+    singleUsePrice: z.number(),
+    regularUsePrice: z.number(),
+    id: z.string().optional(),
+});
+
+export type IRoomTypeColum = z.infer<typeof roomTypeTableSchema>
+
 
 
 function DataTableRowActions({
@@ -45,7 +59,7 @@ function DataTableRowActions({
 }
 
 
-export const columns: any = [
+export const columns: ColumnDef<IRoomTypeColum>[]  = [
     {
         id: "select",
         header: ({ table }: any) => (

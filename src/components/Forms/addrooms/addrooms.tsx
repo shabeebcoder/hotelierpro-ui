@@ -17,7 +17,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 export const roomsSchema = z.object({
     name: z.string(),
-    price: z.number(),
+    price: z.coerce.number().min(0),
     roomType: z.string(),
     image: z.string().array().optional(),
     id: z.string().optional()

@@ -26,10 +26,10 @@ export function Menu({ menu, ...props }) {
               <MenubarTrigger {...props} >{title}</MenubarTrigger>
               <MenubarContent>
                 {
-                  content.map(({ item, props }) => {
+                  content.map(({ item, props }, index: number) => {
                     return (
                       <>
-                        <MenubarItem {...props}>{item}</MenubarItem>
+                        <MenubarItem key={`menu-${index}`} {...props}>{item}</MenubarItem>
                       </>
                     )
                   })

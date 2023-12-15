@@ -21,7 +21,11 @@ export const serviceTableSchema = z.object({
     name: z.string(),
     id: z.string(),
     price: z.number(),
-    category: z.string()
+    category: z.string(),
+    actions: z.object({
+        handleUpdate: z.function(),
+        handleDelete: z.function()
+    })
 });
 
 export type IServiceTable= z.infer<typeof serviceTableSchema>
@@ -101,7 +105,7 @@ export const columns: ColumnDef<IServiceTable>[] = [
         },
     },
     {
-        accessorKey: "categoryName",
+        accessorKey: "category",
         header: ({ column }) => (
             <DataTableColumnHeader column={column} title="Service Category" />
         ),
@@ -110,7 +114,7 @@ export const columns: ColumnDef<IServiceTable>[] = [
 
             return (
                 <div className="flex items-center">
-                    <span>{row.getValue("categoryName")}</span>
+                    <span>{row.getValue("category")}</span>
                 </div>
             )
         },

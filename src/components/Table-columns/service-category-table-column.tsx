@@ -19,7 +19,11 @@ import { ColumnDef } from "@tanstack/react-table"
 
 export const serviceCategoryTableSchema = z.object({
     name: z.string(),
-    id: z.string()
+    id: z.string(),
+    actions: z.object({
+        handleUpdate: z.function(),
+        handleDelete: z.function()
+    })
 });
 
 export type IServiceCategoryTable = z.infer<typeof serviceCategoryTableSchema>
@@ -42,9 +46,9 @@ function DataTableRowActions({
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-[160px]">
-                <DropdownMenuItem onClick={()=>task.actions.handleUpdate(task)}>Update
+                <DropdownMenuItem onClick={() => task.actions.handleUpdate(task)}>Update
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={()=>task.actions.handleDelete(task)}>Delete</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => task.actions.handleDelete(task)}>Delete</DropdownMenuItem>
 
             </DropdownMenuContent>
         </DropdownMenu>

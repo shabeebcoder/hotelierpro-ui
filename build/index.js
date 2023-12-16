@@ -18366,6 +18366,16 @@ function Badge(_a) {
     return (React__namespace.createElement("div", __assign$2({ className: cn(badgeVariants({ variant: variant }), className) }, props)));
 }
 
+var stringToDate$4 = z$2.string().transform(function (str) { return new Date(str); });
+var dateSchema$4 = z$2.union([stringToDate$4, z$2.date()]);
+z$2.object({
+    invoiceNumber: z$2.string(),
+    name: z$2.string(),
+    date: dateSchema$4,
+    status: z$2.enum(["paid", "draft", "sent"]),
+    total: z$2.coerce.number(),
+    notes: z$2.string().default("-").optional()
+});
 function DataTableRowActions$1(_a) {
     var row = _a.row;
     var invoice = row.original;
@@ -18416,25 +18426,25 @@ var columns$2 = [
         enableHiding: false,
     },
     {
-        accessorKey: "client",
+        accessorKey: "name",
         header: function (_a) {
             var column = _a.column;
             return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Client Name" }));
         },
         cell: function (_a) {
             var row = _a.row;
-            return (React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("client")));
+            return (React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("name")));
         },
     },
     {
-        accessorKey: "createdAt",
+        accessorKey: "date",
         header: function (_a) {
             var column = _a.column;
             return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Date" }));
         },
         cell: function (_a) {
             var row = _a.row;
-            return (React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("createdAt")));
+            return (React__default["default"].createElement("div", { className: "w-[150px]" }, row.getValue("date")));
         },
         filterFn: function (row, id, value) {
             return value.includes(row.getValue(id));
@@ -18460,7 +18470,7 @@ var columns$2 = [
         },
     },
     {
-        accessorKey: "subTotal",
+        accessorKey: "total",
         header: function (_a) {
             var column = _a.column;
             return (React__default["default"].createElement(DataTableColumnHeader, { column: column, title: "Total" }));
@@ -18468,7 +18478,7 @@ var columns$2 = [
         cell: function (_a) {
             var row = _a.row;
             return (React__default["default"].createElement("div", { className: "flex items-center text-center" },
-                React__default["default"].createElement("span", null, row.getValue("subTotal"))));
+                React__default["default"].createElement("span", null, row.getValue("total"))));
         },
         filterFn: function (row, id, value) {
             return value.includes(row.getValue(id));
@@ -18614,6 +18624,14 @@ var columns$1 = [
     },
 ];
 
+var stringToDate$3 = z$2.string().transform(function (str) { return new Date(str); });
+var dateSchema$3 = z$2.union([stringToDate$3, z$2.date()]);
+z$2.object({
+    user: z$2.string(),
+    room: z$2.string().default("-"),
+    details: z$2.string(),
+    date: dateSchema$3
+});
 var columns = [
     {
         accessorKey: "user",
@@ -34240,8 +34258,8 @@ const Select = ({ options = [], value = null, onChange, onSearchInputChange, pla
                 React__default["default"].createElement(Options, { list: list, noOptionsMessage: noOptionsMessage, text: inputValue, isMultiple: isMultiple, value: value, primaryColor: primaryColor || DEFAULT_THEME }))))));
 };
 
-var stringToDate = z$2.string().transform(function (str) { return new Date(str); });
-var dateSchema = z$2.union([stringToDate, z$2.date()]);
+var stringToDate$2 = z$2.string().transform(function (str) { return new Date(str); });
+var dateSchema$2 = z$2.union([stringToDate$2, z$2.date()]);
 var billFormSchema = z$2.object({
     payer: z$2.string(),
     paymentBy: z$2.enum(["person", "company"]),
@@ -34251,7 +34269,7 @@ var billFormSchema = z$2.object({
         qty: z$2.coerce.number(),
         total: z$2.coerce.number(),
         type: z$2.enum(["room", "service"]),
-        date: dateSchema,
+        date: dateSchema$2,
     })),
     total: z$2.coerce.number(),
     paid: z$2.coerce.number(),
@@ -34488,5753 +34506,6 @@ function ChangePassword(_a) {
                 React__default["default"].createElement(Button$3, null, "Update")))));
 }
 
-var Form = {
-    changePassword: ChangePassword,
-    addPerson: AddPersonForm,
-    addService: AddServicesForm,
-    maintainance: MaintenanceAlertForm,
-    roomType: AddRoomType,
-    addroom: AddRooms,
-    serviceCategory: AddServiceCategoryForm,
-    booking: NewBookingForm,
-    Billing: BillingComponent,
-};
-
-/* -------------------------------------------------------------------------------------------------
- * Dialog
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DIALOG_NAME$1 = 'Dialog';
-const [$5d3850c4d0b4e6c7$var$createDialogContext$1, $5d3850c4d0b4e6c7$export$cc702773b8ea3e41$1] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($5d3850c4d0b4e6c7$var$DIALOG_NAME$1);
-const [$5d3850c4d0b4e6c7$var$DialogProvider$1, $5d3850c4d0b4e6c7$var$useDialogContext$1] = $5d3850c4d0b4e6c7$var$createDialogContext$1($5d3850c4d0b4e6c7$var$DIALOG_NAME$1);
-const $5d3850c4d0b4e6c7$export$3ddf2d174ce01153$1 = (props)=>{
-    const { __scopeDialog: __scopeDialog , children: children , open: openProp , defaultOpen: defaultOpen , onOpenChange: onOpenChange , modal: modal = true  } = props;
-    const triggerRef = React.useRef(null);
-    const contentRef = React.useRef(null);
-    const [open = false, setOpen] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
-        prop: openProp,
-        defaultProp: defaultOpen,
-        onChange: onOpenChange
-    });
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogProvider$1, {
-        scope: __scopeDialog,
-        triggerRef: triggerRef,
-        contentRef: contentRef,
-        contentId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
-        titleId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
-        descriptionId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
-        open: open,
-        onOpenChange: setOpen,
-        onOpenToggle: React.useCallback(()=>setOpen((prevOpen)=>!prevOpen
-            )
-        , [
-            setOpen
-        ]),
-        modal: modal
-    }, children);
-};
-/* -------------------------------------------------------------------------------------------------
- * DialogTrigger
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$TRIGGER_NAME = 'DialogTrigger';
-const $5d3850c4d0b4e6c7$export$2e1e1122cf0cba88 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , ...triggerProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$TRIGGER_NAME, __scopeDialog);
-    const composedTriggerRef = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, context.triggerRef);
-    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends$m({
-        type: "button",
-        "aria-haspopup": "dialog",
-        "aria-expanded": context.open,
-        "aria-controls": context.contentId,
-        "data-state": $5d3850c4d0b4e6c7$var$getState$1(context.open)
-    }, triggerProps, {
-        ref: composedTriggerRef,
-        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, context.onOpenToggle)
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * DialogPortal
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$PORTAL_NAME$1 = 'DialogPortal';
-const [$5d3850c4d0b4e6c7$var$PortalProvider$1, $5d3850c4d0b4e6c7$var$usePortalContext$1] = $5d3850c4d0b4e6c7$var$createDialogContext$1($5d3850c4d0b4e6c7$var$PORTAL_NAME$1, {
-    forceMount: undefined
-});
-const $5d3850c4d0b4e6c7$export$dad7c95542bacce0$1 = (props)=>{
-    const { __scopeDialog: __scopeDialog , forceMount: forceMount , children: children , container: container  } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$PORTAL_NAME$1, __scopeDialog);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$PortalProvider$1, {
-        scope: __scopeDialog,
-        forceMount: forceMount
-    }, React.Children.map(children, (child)=>/*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-            present: forceMount || context.open
-        }, /*#__PURE__*/ React.createElement($f1701beae083dbae$export$602eac185826482c$1, {
-            asChild: true,
-            container: container
-        }, child))
-    ));
-};
-/* -------------------------------------------------------------------------------------------------
- * DialogOverlay
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$OVERLAY_NAME$1 = 'DialogOverlay';
-const $5d3850c4d0b4e6c7$export$bd1d06c79be19e17$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext$1($5d3850c4d0b4e6c7$var$OVERLAY_NAME$1, props.__scopeDialog);
-    const { forceMount: forceMount = portalContext.forceMount , ...overlayProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$OVERLAY_NAME$1, props.__scopeDialog);
-    return context.modal ? /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || context.open
-    }, /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogOverlayImpl$1, _extends$m({}, overlayProps, {
-        ref: forwardedRef
-    }))) : null;
-});
-const $5d3850c4d0b4e6c7$var$DialogOverlayImpl$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , ...overlayProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$OVERLAY_NAME$1, __scopeDialog);
-    return(/*#__PURE__*/ // Make sure `Content` is scrollable even when it doesn't live inside `RemoveScroll`
-    // ie. when `Overlay` and `Content` are siblings
-    React.createElement($67UHm$RemoveScroll$1, {
-        as: $5e63c961fc1ce211$export$8c6ed5c666ac1360$1,
-        allowPinchZoom: true,
-        shards: [
-            context.contentRef
-        ]
-    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends$m({
-        "data-state": $5d3850c4d0b4e6c7$var$getState$1(context.open)
-    }, overlayProps, {
-        ref: forwardedRef // We re-enable pointer-events prevented by `Dialog.Content` to allow scrolling the overlay.
-        ,
-        style: {
-            pointerEvents: 'auto',
-            ...overlayProps.style
-        }
-    }))));
-});
-/* -------------------------------------------------------------------------------------------------
- * DialogContent
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$CONTENT_NAME$1 = 'DialogContent';
-const $5d3850c4d0b4e6c7$export$b6d9565de1e068cf$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
-    const { forceMount: forceMount = portalContext.forceMount , ...contentProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
-    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
-        present: forceMount || context.open
-    }, context.modal ? /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentModal$1, _extends$m({}, contentProps, {
-        ref: forwardedRef
-    })) : /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentNonModal$1, _extends$m({}, contentProps, {
-        ref: forwardedRef
-    })));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentModal$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
-    const contentRef = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, context.contentRef, contentRef); // aria-hide everything except the content (better supported equivalent to setting aria-modal)
-    React.useEffect(()=>{
-        const content = contentRef.current;
-        if (content) return hideOthers(content);
-    }, []);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl$1, _extends$m({}, props, {
-        ref: composedRefs // we make sure focus isn't trapped once `DialogContent` has been closed
-        ,
-        trapFocus: context.open,
-        disableOutsidePointerEvents: true,
-        onCloseAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onCloseAutoFocus, (event)=>{
-            var _context$triggerRef$c;
-            event.preventDefault();
-            (_context$triggerRef$c = context.triggerRef.current) === null || _context$triggerRef$c === void 0 || _context$triggerRef$c.focus();
-        }),
-        onPointerDownOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDownOutside, (event)=>{
-            const originalEvent = event.detail.originalEvent;
-            const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
-            const isRightClick = originalEvent.button === 2 || ctrlLeftClick; // If the event is a right-click, we shouldn't close because
-            // it is effectively as if we right-clicked the `Overlay`.
-            if (isRightClick) event.preventDefault();
-        }) // When focus is trapped, a `focusout` event may still happen.
-        ,
-        onFocusOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocusOutside, (event)=>event.preventDefault()
-        )
-    }));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentNonModal$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
-    const hasInteractedOutsideRef = React.useRef(false);
-    const hasPointerDownOutsideRef = React.useRef(false);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl$1, _extends$m({}, props, {
-        ref: forwardedRef,
-        trapFocus: false,
-        disableOutsidePointerEvents: false,
-        onCloseAutoFocus: (event)=>{
-            var _props$onCloseAutoFoc;
-            (_props$onCloseAutoFoc = props.onCloseAutoFocus) === null || _props$onCloseAutoFoc === void 0 || _props$onCloseAutoFoc.call(props, event);
-            if (!event.defaultPrevented) {
-                var _context$triggerRef$c2;
-                if (!hasInteractedOutsideRef.current) (_context$triggerRef$c2 = context.triggerRef.current) === null || _context$triggerRef$c2 === void 0 || _context$triggerRef$c2.focus(); // Always prevent auto focus because we either focus manually or want user agent focus
-                event.preventDefault();
-            }
-            hasInteractedOutsideRef.current = false;
-            hasPointerDownOutsideRef.current = false;
-        },
-        onInteractOutside: (event)=>{
-            var _props$onInteractOuts, _context$triggerRef$c3;
-            (_props$onInteractOuts = props.onInteractOutside) === null || _props$onInteractOuts === void 0 || _props$onInteractOuts.call(props, event);
-            if (!event.defaultPrevented) {
-                hasInteractedOutsideRef.current = true;
-                if (event.detail.originalEvent.type === 'pointerdown') hasPointerDownOutsideRef.current = true;
-            } // Prevent dismissing when clicking the trigger.
-            // As the trigger is already setup to close, without doing so would
-            // cause it to close and immediately open.
-            const target = event.target;
-            const targetIsTrigger = (_context$triggerRef$c3 = context.triggerRef.current) === null || _context$triggerRef$c3 === void 0 ? void 0 : _context$triggerRef$c3.contains(target);
-            if (targetIsTrigger) event.preventDefault(); // On Safari if the trigger is inside a container with tabIndex={0}, when clicked
-            // we will get the pointer down outside event on the trigger, but then a subsequent
-            // focus outside event on the container, we ignore any focus outside event when we've
-            // already had a pointer down outside event.
-            if (event.detail.originalEvent.type === 'focusin' && hasPointerDownOutsideRef.current) event.preventDefault();
-        }
-    }));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentImpl$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , trapFocus: trapFocus , onOpenAutoFocus: onOpenAutoFocus , onCloseAutoFocus: onCloseAutoFocus , ...contentProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, __scopeDialog);
-    const contentRef = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, contentRef); // Make sure the whole tree has focus guards as our `Dialog` will be
-    // the last element in the DOM (beacuse of the `Portal`)
-    $3db38b7d1fb3fe6a$export$b7ece24a22aeda8c$1();
-    return /*#__PURE__*/ React.createElement(React.Fragment, null, /*#__PURE__*/ React.createElement($d3863c46a17e8a28$export$20e40289641fbbb6$1, {
-        asChild: true,
-        loop: true,
-        trapped: trapFocus,
-        onMountAutoFocus: onOpenAutoFocus,
-        onUnmountAutoFocus: onCloseAutoFocus
-    }, /*#__PURE__*/ React.createElement($5cb92bef7577960e$export$177fb62ff3ec1f22$1, _extends$m({
-        role: "dialog",
-        id: context.contentId,
-        "aria-describedby": context.descriptionId,
-        "aria-labelledby": context.titleId,
-        "data-state": $5d3850c4d0b4e6c7$var$getState$1(context.open)
-    }, contentProps, {
-        ref: composedRefs,
-        onDismiss: ()=>context.onOpenChange(false)
-    }))), false);
-});
-/* -------------------------------------------------------------------------------------------------
- * DialogTitle
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$TITLE_NAME = 'DialogTitle';
-const $5d3850c4d0b4e6c7$export$16f7638e4a34b909 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , ...titleProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$TITLE_NAME, __scopeDialog);
-    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.h2, _extends$m({
-        id: context.titleId
-    }, titleProps, {
-        ref: forwardedRef
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * DialogDescription
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DESCRIPTION_NAME = 'DialogDescription';
-const $5d3850c4d0b4e6c7$export$94e94c2ec2c954d5 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , ...descriptionProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$DESCRIPTION_NAME, __scopeDialog);
-    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.p, _extends$m({
-        id: context.descriptionId
-    }, descriptionProps, {
-        ref: forwardedRef
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * DialogClose
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$CLOSE_NAME = 'DialogClose';
-const $5d3850c4d0b4e6c7$export$fba2fb7cd781b7ac = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , ...closeProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CLOSE_NAME, __scopeDialog);
-    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends$m({
-        type: "button"
-    }, closeProps, {
-        ref: forwardedRef,
-        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, ()=>context.onOpenChange(false)
-        )
-    }));
-});
-/* -----------------------------------------------------------------------------------------------*/ function $5d3850c4d0b4e6c7$var$getState$1(open) {
-    return open ? 'open' : 'closed';
-}
-const $5d3850c4d0b4e6c7$var$TITLE_WARNING_NAME = 'DialogTitleWarning';
-const [$5d3850c4d0b4e6c7$export$69b62a49393917d6, $5d3850c4d0b4e6c7$var$useWarningContext] = $c512c27ab02ef895$export$fd42f52fd3ae1109($5d3850c4d0b4e6c7$var$TITLE_WARNING_NAME, {
-    contentName: $5d3850c4d0b4e6c7$var$CONTENT_NAME$1,
-    titleName: $5d3850c4d0b4e6c7$var$TITLE_NAME,
-    docsSlug: 'dialog'
-});
-const $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1 = $5d3850c4d0b4e6c7$export$3ddf2d174ce01153$1;
-const $5d3850c4d0b4e6c7$export$41fb9f06171c75f4 = $5d3850c4d0b4e6c7$export$2e1e1122cf0cba88;
-const $5d3850c4d0b4e6c7$export$602eac185826482c$1 = $5d3850c4d0b4e6c7$export$dad7c95542bacce0$1;
-const $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1 = $5d3850c4d0b4e6c7$export$bd1d06c79be19e17$1;
-const $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1 = $5d3850c4d0b4e6c7$export$b6d9565de1e068cf$1;
-const $5d3850c4d0b4e6c7$export$f99233281efd08a0 = $5d3850c4d0b4e6c7$export$16f7638e4a34b909;
-const $5d3850c4d0b4e6c7$export$393edc798c47379d = $5d3850c4d0b4e6c7$export$94e94c2ec2c954d5;
-const $5d3850c4d0b4e6c7$export$f39c2d165cd861fe = $5d3850c4d0b4e6c7$export$fba2fb7cd781b7ac;
-
-var Sheet = $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1;
-var SheetTrigger = $5d3850c4d0b4e6c7$export$41fb9f06171c75f4;
-var SheetPortal = $5d3850c4d0b4e6c7$export$602eac185826482c$1;
-var SheetOverlay = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1, __assign$2({ className: cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props, { ref: ref })));
-});
-SheetOverlay.displayName = $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1.displayName;
-var sheetVariants = cva("fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500", {
-    variants: {
-        side: {
-            top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
-            bottom: "inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
-            left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
-            right: "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
-        },
-    },
-    defaultVariants: {
-        side: "right",
-    },
-});
-var SheetContent = React__namespace.forwardRef(function (_a, ref) {
-    var _b = _a.side, side = _b === void 0 ? "right" : _b, className = _a.className, children = _a.children, props = __rest$7(_a, ["side", "className", "children"]);
-    return (React__namespace.createElement(SheetPortal, null,
-        React__namespace.createElement(SheetOverlay, null),
-        React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1, __assign$2({ ref: ref, className: cn(sheetVariants({ side: side }), className) }, props),
-            children,
-            React__namespace.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, { className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary" },
-                React__namespace.createElement(Cross2Icon, { className: "h-4 w-4" }),
-                React__namespace.createElement("span", { className: "sr-only" }, "Close")))));
-});
-SheetContent.displayName = $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1.displayName;
-var SheetHeader = function (_a) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement("div", __assign$2({ className: cn("flex flex-col space-y-2 text-center sm:text-left", className) }, props)));
-};
-SheetHeader.displayName = "SheetHeader";
-var SheetFooter = function (_a) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement("div", __assign$2({ className: cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className) }, props)));
-};
-SheetFooter.displayName = "SheetFooter";
-var SheetTitle = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$f99233281efd08a0, __assign$2({ ref: ref, className: cn("text-lg font-semibold text-foreground", className) }, props)));
-});
-SheetTitle.displayName = $5d3850c4d0b4e6c7$export$f99233281efd08a0.displayName;
-var SheetDescription = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$393edc798c47379d, __assign$2({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
-});
-SheetDescription.displayName = $5d3850c4d0b4e6c7$export$393edc798c47379d.displayName;
-
-function Drawer(_a) {
-    var _b = _a.open, open = _b === void 0 ? false : _b, children = _a.children, title = _a.title, description = _a.description, Form = _a.Form, SubmitButton = _a.SubmitButton, _c = _a.onClose, onClose = _c === void 0 ? null : _c;
-    return (React__default["default"].createElement(Sheet, { open: open },
-        React__default["default"].createElement(SheetTrigger, { asChild: true }, children),
-        React__default["default"].createElement(SheetContent, { onCloseAutoFocus: onClose },
-            React__default["default"].createElement(ScrollArea, { className: "h-screen pb-10 " },
-                React__default["default"].createElement(SheetHeader, { className: 'pb-4' },
-                    React__default["default"].createElement(SheetTitle, null, title),
-                    React__default["default"].createElement(SheetDescription, null, description)),
-                React__default["default"].createElement(Form, null),
-                React__default["default"].createElement(SheetFooter, null, SubmitButton && React__default["default"].createElement(SubmitButton, null))))));
-}
-
-/**
- * table-core
- *
- * Copyright (c) TanStack
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.md file in the root directory of this source tree.
- *
- * @license MIT
- */
-// Is this type a tuple?
-
-// If this type is a tuple, what indices are allowed?
-
-///
-
-function functionalUpdate(updater, input) {
-  return typeof updater === 'function' ? updater(input) : updater;
-}
-function makeStateUpdater(key, instance) {
-  return updater => {
-    instance.setState(old => {
-      return {
-        ...old,
-        [key]: functionalUpdate(updater, old[key])
-      };
-    });
-  };
-}
-function isFunction$1(d) {
-  return d instanceof Function;
-}
-function isNumberArray$1(d) {
-  return Array.isArray(d) && d.every(val => typeof val === 'number');
-}
-function flattenBy(arr, getChildren) {
-  const flat = [];
-  const recurse = subArr => {
-    subArr.forEach(item => {
-      flat.push(item);
-      const children = getChildren(item);
-      if (children != null && children.length) {
-        recurse(children);
-      }
-    });
-  };
-  recurse(arr);
-  return flat;
-}
-function memo(getDeps, fn, opts) {
-  let deps = [];
-  let result;
-  return () => {
-    let depTime;
-    if (opts.key && opts.debug) depTime = Date.now();
-    const newDeps = getDeps();
-    const depsChanged = newDeps.length !== deps.length || newDeps.some((dep, index) => deps[index] !== dep);
-    if (!depsChanged) {
-      return result;
-    }
-    deps = newDeps;
-    let resultTime;
-    if (opts.key && opts.debug) resultTime = Date.now();
-    result = fn(...newDeps);
-    opts == null || opts.onChange == null || opts.onChange(result);
-    if (opts.key && opts.debug) {
-      if (opts != null && opts.debug()) {
-        const depEndTime = Math.round((Date.now() - depTime) * 100) / 100;
-        const resultEndTime = Math.round((Date.now() - resultTime) * 100) / 100;
-        const resultFpsPercentage = resultEndTime / 16;
-        const pad = (str, num) => {
-          str = String(str);
-          while (str.length < num) {
-            str = ' ' + str;
-          }
-          return str;
-        };
-        console.info(`%c⏱ ${pad(resultEndTime, 5)} /${pad(depEndTime, 5)} ms`, `
-            font-size: .6rem;
-            font-weight: bold;
-            color: hsl(${Math.max(0, Math.min(120 - 120 * resultFpsPercentage, 120))}deg 100% 31%);`, opts == null ? void 0 : opts.key);
-      }
-    }
-    return result;
-  };
-}
-
-function createColumn(table, columnDef, depth, parent) {
-  var _ref, _resolvedColumnDef$id;
-  const defaultColumn = table._getDefaultColumnDef();
-  const resolvedColumnDef = {
-    ...defaultColumn,
-    ...columnDef
-  };
-  const accessorKey = resolvedColumnDef.accessorKey;
-  let id = (_ref = (_resolvedColumnDef$id = resolvedColumnDef.id) != null ? _resolvedColumnDef$id : accessorKey ? accessorKey.replace('.', '_') : undefined) != null ? _ref : typeof resolvedColumnDef.header === 'string' ? resolvedColumnDef.header : undefined;
-  let accessorFn;
-  if (resolvedColumnDef.accessorFn) {
-    accessorFn = resolvedColumnDef.accessorFn;
-  } else if (accessorKey) {
-    // Support deep accessor keys
-    if (accessorKey.includes('.')) {
-      accessorFn = originalRow => {
-        let result = originalRow;
-        for (const key of accessorKey.split('.')) {
-          var _result;
-          result = (_result = result) == null ? void 0 : _result[key];
-          if (process.env.NODE_ENV !== 'production' && result === undefined) {
-            console.warn(`"${key}" in deeply nested key "${accessorKey}" returned undefined.`);
-          }
-        }
-        return result;
-      };
-    } else {
-      accessorFn = originalRow => originalRow[resolvedColumnDef.accessorKey];
-    }
-  }
-  if (!id) {
-    if (process.env.NODE_ENV !== 'production') {
-      throw new Error(resolvedColumnDef.accessorFn ? `Columns require an id when using an accessorFn` : `Columns require an id when using a non-string header`);
-    }
-    throw new Error();
-  }
-  let column = {
-    id: `${String(id)}`,
-    accessorFn,
-    parent: parent,
-    depth,
-    columnDef: resolvedColumnDef,
-    columns: [],
-    getFlatColumns: memo(() => [true], () => {
-      var _column$columns;
-      return [column, ...((_column$columns = column.columns) == null ? void 0 : _column$columns.flatMap(d => d.getFlatColumns()))];
-    }, {
-      key: process.env.NODE_ENV === 'production' && 'column.getFlatColumns',
-      debug: () => {
-        var _table$options$debugA;
-        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugColumns;
-      }
-    }),
-    getLeafColumns: memo(() => [table._getOrderColumnsFn()], orderColumns => {
-      var _column$columns2;
-      if ((_column$columns2 = column.columns) != null && _column$columns2.length) {
-        let leafColumns = column.columns.flatMap(column => column.getLeafColumns());
-        return orderColumns(leafColumns);
-      }
-      return [column];
-    }, {
-      key: process.env.NODE_ENV === 'production' && 'column.getLeafColumns',
-      debug: () => {
-        var _table$options$debugA2;
-        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugColumns;
-      }
-    })
-  };
-  for (const feature of table._features) {
-    feature.createColumn == null || feature.createColumn(column, table);
-  }
-
-  // Yes, we have to convert table to uknown, because we know more than the compiler here.
-  return column;
-}
-
-//
-
-function createHeader(table, column, options) {
-  var _options$id;
-  const id = (_options$id = options.id) != null ? _options$id : column.id;
-  let header = {
-    id,
-    column,
-    index: options.index,
-    isPlaceholder: !!options.isPlaceholder,
-    placeholderId: options.placeholderId,
-    depth: options.depth,
-    subHeaders: [],
-    colSpan: 0,
-    rowSpan: 0,
-    headerGroup: null,
-    getLeafHeaders: () => {
-      const leafHeaders = [];
-      const recurseHeader = h => {
-        if (h.subHeaders && h.subHeaders.length) {
-          h.subHeaders.map(recurseHeader);
-        }
-        leafHeaders.push(h);
-      };
-      recurseHeader(header);
-      return leafHeaders;
-    },
-    getContext: () => ({
-      table,
-      header: header,
-      column
-    })
-  };
-  table._features.forEach(feature => {
-    feature.createHeader == null || feature.createHeader(header, table);
-  });
-  return header;
-}
-const Headers = {
-  createTable: table => {
-    // Header Groups
-
-    table.getHeaderGroups = memo(() => [table.getAllColumns(), table.getVisibleLeafColumns(), table.getState().columnPinning.left, table.getState().columnPinning.right], (allColumns, leafColumns, left, right) => {
-      var _left$map$filter, _right$map$filter;
-      const leftColumns = (_left$map$filter = left == null ? void 0 : left.map(columnId => leafColumns.find(d => d.id === columnId)).filter(Boolean)) != null ? _left$map$filter : [];
-      const rightColumns = (_right$map$filter = right == null ? void 0 : right.map(columnId => leafColumns.find(d => d.id === columnId)).filter(Boolean)) != null ? _right$map$filter : [];
-      const centerColumns = leafColumns.filter(column => !(left != null && left.includes(column.id)) && !(right != null && right.includes(column.id)));
-      const headerGroups = buildHeaderGroups(allColumns, [...leftColumns, ...centerColumns, ...rightColumns], table);
-      return headerGroups;
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getHeaderGroups',
-      debug: () => {
-        var _table$options$debugA;
-        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugHeaders;
-      }
-    });
-    table.getCenterHeaderGroups = memo(() => [table.getAllColumns(), table.getVisibleLeafColumns(), table.getState().columnPinning.left, table.getState().columnPinning.right], (allColumns, leafColumns, left, right) => {
-      leafColumns = leafColumns.filter(column => !(left != null && left.includes(column.id)) && !(right != null && right.includes(column.id)));
-      return buildHeaderGroups(allColumns, leafColumns, table, 'center');
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getCenterHeaderGroups',
-      debug: () => {
-        var _table$options$debugA2;
-        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugHeaders;
-      }
-    });
-    table.getLeftHeaderGroups = memo(() => [table.getAllColumns(), table.getVisibleLeafColumns(), table.getState().columnPinning.left], (allColumns, leafColumns, left) => {
-      var _left$map$filter2;
-      const orderedLeafColumns = (_left$map$filter2 = left == null ? void 0 : left.map(columnId => leafColumns.find(d => d.id === columnId)).filter(Boolean)) != null ? _left$map$filter2 : [];
-      return buildHeaderGroups(allColumns, orderedLeafColumns, table, 'left');
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getLeftHeaderGroups',
-      debug: () => {
-        var _table$options$debugA3;
-        return (_table$options$debugA3 = table.options.debugAll) != null ? _table$options$debugA3 : table.options.debugHeaders;
-      }
-    });
-    table.getRightHeaderGroups = memo(() => [table.getAllColumns(), table.getVisibleLeafColumns(), table.getState().columnPinning.right], (allColumns, leafColumns, right) => {
-      var _right$map$filter2;
-      const orderedLeafColumns = (_right$map$filter2 = right == null ? void 0 : right.map(columnId => leafColumns.find(d => d.id === columnId)).filter(Boolean)) != null ? _right$map$filter2 : [];
-      return buildHeaderGroups(allColumns, orderedLeafColumns, table, 'right');
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getRightHeaderGroups',
-      debug: () => {
-        var _table$options$debugA4;
-        return (_table$options$debugA4 = table.options.debugAll) != null ? _table$options$debugA4 : table.options.debugHeaders;
-      }
-    });
-
-    // Footer Groups
-
-    table.getFooterGroups = memo(() => [table.getHeaderGroups()], headerGroups => {
-      return [...headerGroups].reverse();
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getFooterGroups',
-      debug: () => {
-        var _table$options$debugA5;
-        return (_table$options$debugA5 = table.options.debugAll) != null ? _table$options$debugA5 : table.options.debugHeaders;
-      }
-    });
-    table.getLeftFooterGroups = memo(() => [table.getLeftHeaderGroups()], headerGroups => {
-      return [...headerGroups].reverse();
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getLeftFooterGroups',
-      debug: () => {
-        var _table$options$debugA6;
-        return (_table$options$debugA6 = table.options.debugAll) != null ? _table$options$debugA6 : table.options.debugHeaders;
-      }
-    });
-    table.getCenterFooterGroups = memo(() => [table.getCenterHeaderGroups()], headerGroups => {
-      return [...headerGroups].reverse();
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getCenterFooterGroups',
-      debug: () => {
-        var _table$options$debugA7;
-        return (_table$options$debugA7 = table.options.debugAll) != null ? _table$options$debugA7 : table.options.debugHeaders;
-      }
-    });
-    table.getRightFooterGroups = memo(() => [table.getRightHeaderGroups()], headerGroups => {
-      return [...headerGroups].reverse();
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getRightFooterGroups',
-      debug: () => {
-        var _table$options$debugA8;
-        return (_table$options$debugA8 = table.options.debugAll) != null ? _table$options$debugA8 : table.options.debugHeaders;
-      }
-    });
-
-    // Flat Headers
-
-    table.getFlatHeaders = memo(() => [table.getHeaderGroups()], headerGroups => {
-      return headerGroups.map(headerGroup => {
-        return headerGroup.headers;
-      }).flat();
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getFlatHeaders',
-      debug: () => {
-        var _table$options$debugA9;
-        return (_table$options$debugA9 = table.options.debugAll) != null ? _table$options$debugA9 : table.options.debugHeaders;
-      }
-    });
-    table.getLeftFlatHeaders = memo(() => [table.getLeftHeaderGroups()], left => {
-      return left.map(headerGroup => {
-        return headerGroup.headers;
-      }).flat();
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getLeftFlatHeaders',
-      debug: () => {
-        var _table$options$debugA10;
-        return (_table$options$debugA10 = table.options.debugAll) != null ? _table$options$debugA10 : table.options.debugHeaders;
-      }
-    });
-    table.getCenterFlatHeaders = memo(() => [table.getCenterHeaderGroups()], left => {
-      return left.map(headerGroup => {
-        return headerGroup.headers;
-      }).flat();
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getCenterFlatHeaders',
-      debug: () => {
-        var _table$options$debugA11;
-        return (_table$options$debugA11 = table.options.debugAll) != null ? _table$options$debugA11 : table.options.debugHeaders;
-      }
-    });
-    table.getRightFlatHeaders = memo(() => [table.getRightHeaderGroups()], left => {
-      return left.map(headerGroup => {
-        return headerGroup.headers;
-      }).flat();
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getRightFlatHeaders',
-      debug: () => {
-        var _table$options$debugA12;
-        return (_table$options$debugA12 = table.options.debugAll) != null ? _table$options$debugA12 : table.options.debugHeaders;
-      }
-    });
-
-    // Leaf Headers
-
-    table.getCenterLeafHeaders = memo(() => [table.getCenterFlatHeaders()], flatHeaders => {
-      return flatHeaders.filter(header => {
-        var _header$subHeaders;
-        return !((_header$subHeaders = header.subHeaders) != null && _header$subHeaders.length);
-      });
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getCenterLeafHeaders',
-      debug: () => {
-        var _table$options$debugA13;
-        return (_table$options$debugA13 = table.options.debugAll) != null ? _table$options$debugA13 : table.options.debugHeaders;
-      }
-    });
-    table.getLeftLeafHeaders = memo(() => [table.getLeftFlatHeaders()], flatHeaders => {
-      return flatHeaders.filter(header => {
-        var _header$subHeaders2;
-        return !((_header$subHeaders2 = header.subHeaders) != null && _header$subHeaders2.length);
-      });
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getLeftLeafHeaders',
-      debug: () => {
-        var _table$options$debugA14;
-        return (_table$options$debugA14 = table.options.debugAll) != null ? _table$options$debugA14 : table.options.debugHeaders;
-      }
-    });
-    table.getRightLeafHeaders = memo(() => [table.getRightFlatHeaders()], flatHeaders => {
-      return flatHeaders.filter(header => {
-        var _header$subHeaders3;
-        return !((_header$subHeaders3 = header.subHeaders) != null && _header$subHeaders3.length);
-      });
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getRightLeafHeaders',
-      debug: () => {
-        var _table$options$debugA15;
-        return (_table$options$debugA15 = table.options.debugAll) != null ? _table$options$debugA15 : table.options.debugHeaders;
-      }
-    });
-    table.getLeafHeaders = memo(() => [table.getLeftHeaderGroups(), table.getCenterHeaderGroups(), table.getRightHeaderGroups()], (left, center, right) => {
-      var _left$0$headers, _left$, _center$0$headers, _center$, _right$0$headers, _right$;
-      return [...((_left$0$headers = (_left$ = left[0]) == null ? void 0 : _left$.headers) != null ? _left$0$headers : []), ...((_center$0$headers = (_center$ = center[0]) == null ? void 0 : _center$.headers) != null ? _center$0$headers : []), ...((_right$0$headers = (_right$ = right[0]) == null ? void 0 : _right$.headers) != null ? _right$0$headers : [])].map(header => {
-        return header.getLeafHeaders();
-      }).flat();
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getLeafHeaders',
-      debug: () => {
-        var _table$options$debugA16;
-        return (_table$options$debugA16 = table.options.debugAll) != null ? _table$options$debugA16 : table.options.debugHeaders;
-      }
-    });
-  }
-};
-function buildHeaderGroups(allColumns, columnsToGroup, table, headerFamily) {
-  var _headerGroups$0$heade, _headerGroups$;
-  // Find the max depth of the columns:
-  // build the leaf column row
-  // build each buffer row going up
-  //    placeholder for non-existent level
-  //    real column for existing level
-
-  let maxDepth = 0;
-  const findMaxDepth = function (columns, depth) {
-    if (depth === void 0) {
-      depth = 1;
-    }
-    maxDepth = Math.max(maxDepth, depth);
-    columns.filter(column => column.getIsVisible()).forEach(column => {
-      var _column$columns;
-      if ((_column$columns = column.columns) != null && _column$columns.length) {
-        findMaxDepth(column.columns, depth + 1);
-      }
-    }, 0);
-  };
-  findMaxDepth(allColumns);
-  let headerGroups = [];
-  const createHeaderGroup = (headersToGroup, depth) => {
-    // The header group we are creating
-    const headerGroup = {
-      depth,
-      id: [headerFamily, `${depth}`].filter(Boolean).join('_'),
-      headers: []
-    };
-
-    // The parent columns we're going to scan next
-    const pendingParentHeaders = [];
-
-    // Scan each column for parents
-    headersToGroup.forEach(headerToGroup => {
-      // What is the latest (last) parent column?
-
-      const latestPendingParentHeader = [...pendingParentHeaders].reverse()[0];
-      const isLeafHeader = headerToGroup.column.depth === headerGroup.depth;
-      let column;
-      let isPlaceholder = false;
-      if (isLeafHeader && headerToGroup.column.parent) {
-        // The parent header is new
-        column = headerToGroup.column.parent;
-      } else {
-        // The parent header is repeated
-        column = headerToGroup.column;
-        isPlaceholder = true;
-      }
-      if (latestPendingParentHeader && (latestPendingParentHeader == null ? void 0 : latestPendingParentHeader.column) === column) {
-        // This column is repeated. Add it as a sub header to the next batch
-        latestPendingParentHeader.subHeaders.push(headerToGroup);
-      } else {
-        // This is a new header. Let's create it
-        const header = createHeader(table, column, {
-          id: [headerFamily, depth, column.id, headerToGroup == null ? void 0 : headerToGroup.id].filter(Boolean).join('_'),
-          isPlaceholder,
-          placeholderId: isPlaceholder ? `${pendingParentHeaders.filter(d => d.column === column).length}` : undefined,
-          depth,
-          index: pendingParentHeaders.length
-        });
-
-        // Add the headerToGroup as a subHeader of the new header
-        header.subHeaders.push(headerToGroup);
-        // Add the new header to the pendingParentHeaders to get grouped
-        // in the next batch
-        pendingParentHeaders.push(header);
-      }
-      headerGroup.headers.push(headerToGroup);
-      headerToGroup.headerGroup = headerGroup;
-    });
-    headerGroups.push(headerGroup);
-    if (depth > 0) {
-      createHeaderGroup(pendingParentHeaders, depth - 1);
-    }
-  };
-  const bottomHeaders = columnsToGroup.map((column, index) => createHeader(table, column, {
-    depth: maxDepth,
-    index
-  }));
-  createHeaderGroup(bottomHeaders, maxDepth - 1);
-  headerGroups.reverse();
-
-  // headerGroups = headerGroups.filter(headerGroup => {
-  //   return !headerGroup.headers.every(header => header.isPlaceholder)
-  // })
-
-  const recurseHeadersForSpans = headers => {
-    const filteredHeaders = headers.filter(header => header.column.getIsVisible());
-    return filteredHeaders.map(header => {
-      let colSpan = 0;
-      let rowSpan = 0;
-      let childRowSpans = [0];
-      if (header.subHeaders && header.subHeaders.length) {
-        childRowSpans = [];
-        recurseHeadersForSpans(header.subHeaders).forEach(_ref => {
-          let {
-            colSpan: childColSpan,
-            rowSpan: childRowSpan
-          } = _ref;
-          colSpan += childColSpan;
-          childRowSpans.push(childRowSpan);
-        });
-      } else {
-        colSpan = 1;
-      }
-      const minChildRowSpan = Math.min(...childRowSpans);
-      rowSpan = rowSpan + minChildRowSpan;
-      header.colSpan = colSpan;
-      header.rowSpan = rowSpan;
-      return {
-        colSpan,
-        rowSpan
-      };
-    });
-  };
-  recurseHeadersForSpans((_headerGroups$0$heade = (_headerGroups$ = headerGroups[0]) == null ? void 0 : _headerGroups$.headers) != null ? _headerGroups$0$heade : []);
-  return headerGroups;
-}
-
-//
-
-//
-
-const defaultColumnSizing = {
-  size: 150,
-  minSize: 20,
-  maxSize: Number.MAX_SAFE_INTEGER
-};
-const getDefaultColumnSizingInfoState = () => ({
-  startOffset: null,
-  startSize: null,
-  deltaOffset: null,
-  deltaPercentage: null,
-  isResizingColumn: false,
-  columnSizingStart: []
-});
-const ColumnSizing = {
-  getDefaultColumnDef: () => {
-    return defaultColumnSizing;
-  },
-  getInitialState: state => {
-    return {
-      columnSizing: {},
-      columnSizingInfo: getDefaultColumnSizingInfoState(),
-      ...state
-    };
-  },
-  getDefaultOptions: table => {
-    return {
-      columnResizeMode: 'onEnd',
-      onColumnSizingChange: makeStateUpdater('columnSizing', table),
-      onColumnSizingInfoChange: makeStateUpdater('columnSizingInfo', table)
-    };
-  },
-  createColumn: (column, table) => {
-    column.getSize = () => {
-      var _column$columnDef$min, _ref, _column$columnDef$max;
-      const columnSize = table.getState().columnSizing[column.id];
-      return Math.min(Math.max((_column$columnDef$min = column.columnDef.minSize) != null ? _column$columnDef$min : defaultColumnSizing.minSize, (_ref = columnSize != null ? columnSize : column.columnDef.size) != null ? _ref : defaultColumnSizing.size), (_column$columnDef$max = column.columnDef.maxSize) != null ? _column$columnDef$max : defaultColumnSizing.maxSize);
-    };
-    column.getStart = position => {
-      const columns = !position ? table.getVisibleLeafColumns() : position === 'left' ? table.getLeftVisibleLeafColumns() : table.getRightVisibleLeafColumns();
-      const index = columns.findIndex(d => d.id === column.id);
-      if (index > 0) {
-        const prevSiblingColumn = columns[index - 1];
-        return prevSiblingColumn.getStart(position) + prevSiblingColumn.getSize();
-      }
-      return 0;
-    };
-    column.resetSize = () => {
-      table.setColumnSizing(_ref2 => {
-        let {
-          [column.id]: _,
-          ...rest
-        } = _ref2;
-        return rest;
-      });
-    };
-    column.getCanResize = () => {
-      var _column$columnDef$ena, _table$options$enable;
-      return ((_column$columnDef$ena = column.columnDef.enableResizing) != null ? _column$columnDef$ena : true) && ((_table$options$enable = table.options.enableColumnResizing) != null ? _table$options$enable : true);
-    };
-    column.getIsResizing = () => {
-      return table.getState().columnSizingInfo.isResizingColumn === column.id;
-    };
-  },
-  createHeader: (header, table) => {
-    header.getSize = () => {
-      let sum = 0;
-      const recurse = header => {
-        if (header.subHeaders.length) {
-          header.subHeaders.forEach(recurse);
-        } else {
-          var _header$column$getSiz;
-          sum += (_header$column$getSiz = header.column.getSize()) != null ? _header$column$getSiz : 0;
-        }
-      };
-      recurse(header);
-      return sum;
-    };
-    header.getStart = () => {
-      if (header.index > 0) {
-        const prevSiblingHeader = header.headerGroup.headers[header.index - 1];
-        return prevSiblingHeader.getStart() + prevSiblingHeader.getSize();
-      }
-      return 0;
-    };
-    header.getResizeHandler = () => {
-      const column = table.getColumn(header.column.id);
-      const canResize = column == null ? void 0 : column.getCanResize();
-      return e => {
-        if (!column || !canResize) {
-          return;
-        }
-        e.persist == null || e.persist();
-        if (isTouchStartEvent(e)) {
-          // lets not respond to multiple touches (e.g. 2 or 3 fingers)
-          if (e.touches && e.touches.length > 1) {
-            return;
-          }
-        }
-        const startSize = header.getSize();
-        const columnSizingStart = header ? header.getLeafHeaders().map(d => [d.column.id, d.column.getSize()]) : [[column.id, column.getSize()]];
-        const clientX = isTouchStartEvent(e) ? Math.round(e.touches[0].clientX) : e.clientX;
-        const newColumnSizing = {};
-        const updateOffset = (eventType, clientXPos) => {
-          if (typeof clientXPos !== 'number') {
-            return;
-          }
-          table.setColumnSizingInfo(old => {
-            var _old$startOffset, _old$startSize;
-            const deltaOffset = clientXPos - ((_old$startOffset = old == null ? void 0 : old.startOffset) != null ? _old$startOffset : 0);
-            const deltaPercentage = Math.max(deltaOffset / ((_old$startSize = old == null ? void 0 : old.startSize) != null ? _old$startSize : 0), -0.999999);
-            old.columnSizingStart.forEach(_ref3 => {
-              let [columnId, headerSize] = _ref3;
-              newColumnSizing[columnId] = Math.round(Math.max(headerSize + headerSize * deltaPercentage, 0) * 100) / 100;
-            });
-            return {
-              ...old,
-              deltaOffset,
-              deltaPercentage
-            };
-          });
-          if (table.options.columnResizeMode === 'onChange' || eventType === 'end') {
-            table.setColumnSizing(old => ({
-              ...old,
-              ...newColumnSizing
-            }));
-          }
-        };
-        const onMove = clientXPos => updateOffset('move', clientXPos);
-        const onEnd = clientXPos => {
-          updateOffset('end', clientXPos);
-          table.setColumnSizingInfo(old => ({
-            ...old,
-            isResizingColumn: false,
-            startOffset: null,
-            startSize: null,
-            deltaOffset: null,
-            deltaPercentage: null,
-            columnSizingStart: []
-          }));
-        };
-        const mouseEvents = {
-          moveHandler: e => onMove(e.clientX),
-          upHandler: e => {
-            document.removeEventListener('mousemove', mouseEvents.moveHandler);
-            document.removeEventListener('mouseup', mouseEvents.upHandler);
-            onEnd(e.clientX);
-          }
-        };
-        const touchEvents = {
-          moveHandler: e => {
-            if (e.cancelable) {
-              e.preventDefault();
-              e.stopPropagation();
-            }
-            onMove(e.touches[0].clientX);
-            return false;
-          },
-          upHandler: e => {
-            var _e$touches$;
-            document.removeEventListener('touchmove', touchEvents.moveHandler);
-            document.removeEventListener('touchend', touchEvents.upHandler);
-            if (e.cancelable) {
-              e.preventDefault();
-              e.stopPropagation();
-            }
-            onEnd((_e$touches$ = e.touches[0]) == null ? void 0 : _e$touches$.clientX);
-          }
-        };
-        const passiveIfSupported = passiveEventSupported() ? {
-          passive: false
-        } : false;
-        if (isTouchStartEvent(e)) {
-          document.addEventListener('touchmove', touchEvents.moveHandler, passiveIfSupported);
-          document.addEventListener('touchend', touchEvents.upHandler, passiveIfSupported);
-        } else {
-          document.addEventListener('mousemove', mouseEvents.moveHandler, passiveIfSupported);
-          document.addEventListener('mouseup', mouseEvents.upHandler, passiveIfSupported);
-        }
-        table.setColumnSizingInfo(old => ({
-          ...old,
-          startOffset: clientX,
-          startSize,
-          deltaOffset: 0,
-          deltaPercentage: 0,
-          columnSizingStart,
-          isResizingColumn: column.id
-        }));
-      };
-    };
-  },
-  createTable: table => {
-    table.setColumnSizing = updater => table.options.onColumnSizingChange == null ? void 0 : table.options.onColumnSizingChange(updater);
-    table.setColumnSizingInfo = updater => table.options.onColumnSizingInfoChange == null ? void 0 : table.options.onColumnSizingInfoChange(updater);
-    table.resetColumnSizing = defaultState => {
-      var _table$initialState$c;
-      table.setColumnSizing(defaultState ? {} : (_table$initialState$c = table.initialState.columnSizing) != null ? _table$initialState$c : {});
-    };
-    table.resetHeaderSizeInfo = defaultState => {
-      var _table$initialState$c2;
-      table.setColumnSizingInfo(defaultState ? getDefaultColumnSizingInfoState() : (_table$initialState$c2 = table.initialState.columnSizingInfo) != null ? _table$initialState$c2 : getDefaultColumnSizingInfoState());
-    };
-    table.getTotalSize = () => {
-      var _table$getHeaderGroup, _table$getHeaderGroup2;
-      return (_table$getHeaderGroup = (_table$getHeaderGroup2 = table.getHeaderGroups()[0]) == null ? void 0 : _table$getHeaderGroup2.headers.reduce((sum, header) => {
-        return sum + header.getSize();
-      }, 0)) != null ? _table$getHeaderGroup : 0;
-    };
-    table.getLeftTotalSize = () => {
-      var _table$getLeftHeaderG, _table$getLeftHeaderG2;
-      return (_table$getLeftHeaderG = (_table$getLeftHeaderG2 = table.getLeftHeaderGroups()[0]) == null ? void 0 : _table$getLeftHeaderG2.headers.reduce((sum, header) => {
-        return sum + header.getSize();
-      }, 0)) != null ? _table$getLeftHeaderG : 0;
-    };
-    table.getCenterTotalSize = () => {
-      var _table$getCenterHeade, _table$getCenterHeade2;
-      return (_table$getCenterHeade = (_table$getCenterHeade2 = table.getCenterHeaderGroups()[0]) == null ? void 0 : _table$getCenterHeade2.headers.reduce((sum, header) => {
-        return sum + header.getSize();
-      }, 0)) != null ? _table$getCenterHeade : 0;
-    };
-    table.getRightTotalSize = () => {
-      var _table$getRightHeader, _table$getRightHeader2;
-      return (_table$getRightHeader = (_table$getRightHeader2 = table.getRightHeaderGroups()[0]) == null ? void 0 : _table$getRightHeader2.headers.reduce((sum, header) => {
-        return sum + header.getSize();
-      }, 0)) != null ? _table$getRightHeader : 0;
-    };
-  }
-};
-let passiveSupported$1 = null;
-function passiveEventSupported() {
-  if (typeof passiveSupported$1 === 'boolean') return passiveSupported$1;
-  let supported = false;
-  try {
-    const options = {
-      get passive() {
-        supported = true;
-        return false;
-      }
-    };
-    const noop = () => {};
-    window.addEventListener('test', noop, options);
-    window.removeEventListener('test', noop);
-  } catch (err) {
-    supported = false;
-  }
-  passiveSupported$1 = supported;
-  return passiveSupported$1;
-}
-function isTouchStartEvent(e) {
-  return e.type === 'touchstart';
-}
-
-//
-
-const Expanding = {
-  getInitialState: state => {
-    return {
-      expanded: {},
-      ...state
-    };
-  },
-  getDefaultOptions: table => {
-    return {
-      onExpandedChange: makeStateUpdater('expanded', table),
-      paginateExpandedRows: true
-    };
-  },
-  createTable: table => {
-    let registered = false;
-    let queued = false;
-    table._autoResetExpanded = () => {
-      var _ref, _table$options$autoRe;
-      if (!registered) {
-        table._queue(() => {
-          registered = true;
-        });
-        return;
-      }
-      if ((_ref = (_table$options$autoRe = table.options.autoResetAll) != null ? _table$options$autoRe : table.options.autoResetExpanded) != null ? _ref : !table.options.manualExpanding) {
-        if (queued) return;
-        queued = true;
-        table._queue(() => {
-          table.resetExpanded();
-          queued = false;
-        });
-      }
-    };
-    table.setExpanded = updater => table.options.onExpandedChange == null ? void 0 : table.options.onExpandedChange(updater);
-    table.toggleAllRowsExpanded = expanded => {
-      if (expanded != null ? expanded : !table.getIsAllRowsExpanded()) {
-        table.setExpanded(true);
-      } else {
-        table.setExpanded({});
-      }
-    };
-    table.resetExpanded = defaultState => {
-      var _table$initialState$e, _table$initialState;
-      table.setExpanded(defaultState ? {} : (_table$initialState$e = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.expanded) != null ? _table$initialState$e : {});
-    };
-    table.getCanSomeRowsExpand = () => {
-      return table.getPrePaginationRowModel().flatRows.some(row => row.getCanExpand());
-    };
-    table.getToggleAllRowsExpandedHandler = () => {
-      return e => {
-        e.persist == null || e.persist();
-        table.toggleAllRowsExpanded();
-      };
-    };
-    table.getIsSomeRowsExpanded = () => {
-      const expanded = table.getState().expanded;
-      return expanded === true || Object.values(expanded).some(Boolean);
-    };
-    table.getIsAllRowsExpanded = () => {
-      const expanded = table.getState().expanded;
-
-      // If expanded is true, save some cycles and return true
-      if (typeof expanded === 'boolean') {
-        return expanded === true;
-      }
-      if (!Object.keys(expanded).length) {
-        return false;
-      }
-
-      // If any row is not expanded, return false
-      if (table.getRowModel().flatRows.some(row => !row.getIsExpanded())) {
-        return false;
-      }
-
-      // They must all be expanded :shrug:
-      return true;
-    };
-    table.getExpandedDepth = () => {
-      let maxDepth = 0;
-      const rowIds = table.getState().expanded === true ? Object.keys(table.getRowModel().rowsById) : Object.keys(table.getState().expanded);
-      rowIds.forEach(id => {
-        const splitId = id.split('.');
-        maxDepth = Math.max(maxDepth, splitId.length);
-      });
-      return maxDepth;
-    };
-    table.getPreExpandedRowModel = () => table.getSortedRowModel();
-    table.getExpandedRowModel = () => {
-      if (!table._getExpandedRowModel && table.options.getExpandedRowModel) {
-        table._getExpandedRowModel = table.options.getExpandedRowModel(table);
-      }
-      if (table.options.manualExpanding || !table._getExpandedRowModel) {
-        return table.getPreExpandedRowModel();
-      }
-      return table._getExpandedRowModel();
-    };
-  },
-  createRow: (row, table) => {
-    row.toggleExpanded = expanded => {
-      table.setExpanded(old => {
-        var _expanded;
-        const exists = old === true ? true : !!(old != null && old[row.id]);
-        let oldExpanded = {};
-        if (old === true) {
-          Object.keys(table.getRowModel().rowsById).forEach(rowId => {
-            oldExpanded[rowId] = true;
-          });
-        } else {
-          oldExpanded = old;
-        }
-        expanded = (_expanded = expanded) != null ? _expanded : !exists;
-        if (!exists && expanded) {
-          return {
-            ...oldExpanded,
-            [row.id]: true
-          };
-        }
-        if (exists && !expanded) {
-          const {
-            [row.id]: _,
-            ...rest
-          } = oldExpanded;
-          return rest;
-        }
-        return old;
-      });
-    };
-    row.getIsExpanded = () => {
-      var _table$options$getIsR;
-      const expanded = table.getState().expanded;
-      return !!((_table$options$getIsR = table.options.getIsRowExpanded == null ? void 0 : table.options.getIsRowExpanded(row)) != null ? _table$options$getIsR : expanded === true || (expanded == null ? void 0 : expanded[row.id]));
-    };
-    row.getCanExpand = () => {
-      var _table$options$getRow, _table$options$enable, _row$subRows;
-      return (_table$options$getRow = table.options.getRowCanExpand == null ? void 0 : table.options.getRowCanExpand(row)) != null ? _table$options$getRow : ((_table$options$enable = table.options.enableExpanding) != null ? _table$options$enable : true) && !!((_row$subRows = row.subRows) != null && _row$subRows.length);
-    };
-    row.getIsAllParentsExpanded = () => {
-      let isFullyExpanded = true;
-      let currentRow = row;
-      while (isFullyExpanded && currentRow.parentId) {
-        currentRow = table.getRow(currentRow.parentId, true);
-        isFullyExpanded = currentRow.getIsExpanded();
-      }
-      return isFullyExpanded;
-    };
-    row.getToggleExpandedHandler = () => {
-      const canExpand = row.getCanExpand();
-      return () => {
-        if (!canExpand) return;
-        row.toggleExpanded();
-      };
-    };
-  }
-};
-
-const includesString = (row, columnId, filterValue) => {
-  var _row$getValue;
-  const search = filterValue.toLowerCase();
-  return Boolean((_row$getValue = row.getValue(columnId)) == null || (_row$getValue = _row$getValue.toString()) == null || (_row$getValue = _row$getValue.toLowerCase()) == null ? void 0 : _row$getValue.includes(search));
-};
-includesString.autoRemove = val => testFalsey(val);
-const includesStringSensitive = (row, columnId, filterValue) => {
-  var _row$getValue2;
-  return Boolean((_row$getValue2 = row.getValue(columnId)) == null || (_row$getValue2 = _row$getValue2.toString()) == null ? void 0 : _row$getValue2.includes(filterValue));
-};
-includesStringSensitive.autoRemove = val => testFalsey(val);
-const equalsString = (row, columnId, filterValue) => {
-  var _row$getValue3;
-  return ((_row$getValue3 = row.getValue(columnId)) == null || (_row$getValue3 = _row$getValue3.toString()) == null ? void 0 : _row$getValue3.toLowerCase()) === (filterValue == null ? void 0 : filterValue.toLowerCase());
-};
-equalsString.autoRemove = val => testFalsey(val);
-const arrIncludes = (row, columnId, filterValue) => {
-  var _row$getValue4;
-  return (_row$getValue4 = row.getValue(columnId)) == null ? void 0 : _row$getValue4.includes(filterValue);
-};
-arrIncludes.autoRemove = val => testFalsey(val) || !(val != null && val.length);
-const arrIncludesAll = (row, columnId, filterValue) => {
-  return !filterValue.some(val => {
-    var _row$getValue5;
-    return !((_row$getValue5 = row.getValue(columnId)) != null && _row$getValue5.includes(val));
-  });
-};
-arrIncludesAll.autoRemove = val => testFalsey(val) || !(val != null && val.length);
-const arrIncludesSome = (row, columnId, filterValue) => {
-  return filterValue.some(val => {
-    var _row$getValue6;
-    return (_row$getValue6 = row.getValue(columnId)) == null ? void 0 : _row$getValue6.includes(val);
-  });
-};
-arrIncludesSome.autoRemove = val => testFalsey(val) || !(val != null && val.length);
-const equals = (row, columnId, filterValue) => {
-  return row.getValue(columnId) === filterValue;
-};
-equals.autoRemove = val => testFalsey(val);
-const weakEquals = (row, columnId, filterValue) => {
-  return row.getValue(columnId) == filterValue;
-};
-weakEquals.autoRemove = val => testFalsey(val);
-const inNumberRange = (row, columnId, filterValue) => {
-  let [min, max] = filterValue;
-  const rowValue = row.getValue(columnId);
-  return rowValue >= min && rowValue <= max;
-};
-inNumberRange.resolveFilterValue = val => {
-  let [unsafeMin, unsafeMax] = val;
-  let parsedMin = typeof unsafeMin !== 'number' ? parseFloat(unsafeMin) : unsafeMin;
-  let parsedMax = typeof unsafeMax !== 'number' ? parseFloat(unsafeMax) : unsafeMax;
-  let min = unsafeMin === null || Number.isNaN(parsedMin) ? -Infinity : parsedMin;
-  let max = unsafeMax === null || Number.isNaN(parsedMax) ? Infinity : parsedMax;
-  if (min > max) {
-    const temp = min;
-    min = max;
-    max = temp;
-  }
-  return [min, max];
-};
-inNumberRange.autoRemove = val => testFalsey(val) || testFalsey(val[0]) && testFalsey(val[1]);
-
-// Export
-
-const filterFns = {
-  includesString,
-  includesStringSensitive,
-  equalsString,
-  arrIncludes,
-  arrIncludesAll,
-  arrIncludesSome,
-  equals,
-  weakEquals,
-  inNumberRange
-};
-// Utils
-
-function testFalsey(val) {
-  return val === undefined || val === null || val === '';
-}
-
-//
-
-const Filters = {
-  getDefaultColumnDef: () => {
-    return {
-      filterFn: 'auto'
-    };
-  },
-  getInitialState: state => {
-    return {
-      columnFilters: [],
-      globalFilter: undefined,
-      // filtersProgress: 1,
-      // facetProgress: {},
-      ...state
-    };
-  },
-  getDefaultOptions: table => {
-    return {
-      onColumnFiltersChange: makeStateUpdater('columnFilters', table),
-      onGlobalFilterChange: makeStateUpdater('globalFilter', table),
-      filterFromLeafRows: false,
-      maxLeafRowFilterDepth: 100,
-      globalFilterFn: 'auto',
-      getColumnCanGlobalFilter: column => {
-        var _table$getCoreRowMode;
-        const value = (_table$getCoreRowMode = table.getCoreRowModel().flatRows[0]) == null || (_table$getCoreRowMode = _table$getCoreRowMode._getAllCellsByColumnId()[column.id]) == null ? void 0 : _table$getCoreRowMode.getValue();
-        return typeof value === 'string' || typeof value === 'number';
-      }
-    };
-  },
-  createColumn: (column, table) => {
-    column.getAutoFilterFn = () => {
-      const firstRow = table.getCoreRowModel().flatRows[0];
-      const value = firstRow == null ? void 0 : firstRow.getValue(column.id);
-      if (typeof value === 'string') {
-        return filterFns.includesString;
-      }
-      if (typeof value === 'number') {
-        return filterFns.inNumberRange;
-      }
-      if (typeof value === 'boolean') {
-        return filterFns.equals;
-      }
-      if (value !== null && typeof value === 'object') {
-        return filterFns.equals;
-      }
-      if (Array.isArray(value)) {
-        return filterFns.arrIncludes;
-      }
-      return filterFns.weakEquals;
-    };
-    column.getFilterFn = () => {
-      var _table$options$filter, _table$options$filter2;
-      return isFunction$1(column.columnDef.filterFn) ? column.columnDef.filterFn : column.columnDef.filterFn === 'auto' ? column.getAutoFilterFn() : // @ts-ignore
-      (_table$options$filter = (_table$options$filter2 = table.options.filterFns) == null ? void 0 : _table$options$filter2[column.columnDef.filterFn]) != null ? _table$options$filter : filterFns[column.columnDef.filterFn];
-    };
-    column.getCanFilter = () => {
-      var _column$columnDef$ena, _table$options$enable, _table$options$enable2;
-      return ((_column$columnDef$ena = column.columnDef.enableColumnFilter) != null ? _column$columnDef$ena : true) && ((_table$options$enable = table.options.enableColumnFilters) != null ? _table$options$enable : true) && ((_table$options$enable2 = table.options.enableFilters) != null ? _table$options$enable2 : true) && !!column.accessorFn;
-    };
-    column.getCanGlobalFilter = () => {
-      var _column$columnDef$ena2, _table$options$enable3, _table$options$enable4, _table$options$getCol;
-      return ((_column$columnDef$ena2 = column.columnDef.enableGlobalFilter) != null ? _column$columnDef$ena2 : true) && ((_table$options$enable3 = table.options.enableGlobalFilter) != null ? _table$options$enable3 : true) && ((_table$options$enable4 = table.options.enableFilters) != null ? _table$options$enable4 : true) && ((_table$options$getCol = table.options.getColumnCanGlobalFilter == null ? void 0 : table.options.getColumnCanGlobalFilter(column)) != null ? _table$options$getCol : true) && !!column.accessorFn;
-    };
-    column.getIsFiltered = () => column.getFilterIndex() > -1;
-    column.getFilterValue = () => {
-      var _table$getState$colum;
-      return (_table$getState$colum = table.getState().columnFilters) == null || (_table$getState$colum = _table$getState$colum.find(d => d.id === column.id)) == null ? void 0 : _table$getState$colum.value;
-    };
-    column.getFilterIndex = () => {
-      var _table$getState$colum2, _table$getState$colum3;
-      return (_table$getState$colum2 = (_table$getState$colum3 = table.getState().columnFilters) == null ? void 0 : _table$getState$colum3.findIndex(d => d.id === column.id)) != null ? _table$getState$colum2 : -1;
-    };
-    column.setFilterValue = value => {
-      table.setColumnFilters(old => {
-        const filterFn = column.getFilterFn();
-        const previousfilter = old == null ? void 0 : old.find(d => d.id === column.id);
-        const newFilter = functionalUpdate(value, previousfilter ? previousfilter.value : undefined);
-
-        //
-        if (shouldAutoRemoveFilter(filterFn, newFilter, column)) {
-          var _old$filter;
-          return (_old$filter = old == null ? void 0 : old.filter(d => d.id !== column.id)) != null ? _old$filter : [];
-        }
-        const newFilterObj = {
-          id: column.id,
-          value: newFilter
-        };
-        if (previousfilter) {
-          var _old$map;
-          return (_old$map = old == null ? void 0 : old.map(d => {
-            if (d.id === column.id) {
-              return newFilterObj;
-            }
-            return d;
-          })) != null ? _old$map : [];
-        }
-        if (old != null && old.length) {
-          return [...old, newFilterObj];
-        }
-        return [newFilterObj];
-      });
-    };
-    column._getFacetedRowModel = table.options.getFacetedRowModel && table.options.getFacetedRowModel(table, column.id);
-    column.getFacetedRowModel = () => {
-      if (!column._getFacetedRowModel) {
-        return table.getPreFilteredRowModel();
-      }
-      return column._getFacetedRowModel();
-    };
-    column._getFacetedUniqueValues = table.options.getFacetedUniqueValues && table.options.getFacetedUniqueValues(table, column.id);
-    column.getFacetedUniqueValues = () => {
-      if (!column._getFacetedUniqueValues) {
-        return new Map();
-      }
-      return column._getFacetedUniqueValues();
-    };
-    column._getFacetedMinMaxValues = table.options.getFacetedMinMaxValues && table.options.getFacetedMinMaxValues(table, column.id);
-    column.getFacetedMinMaxValues = () => {
-      if (!column._getFacetedMinMaxValues) {
-        return undefined;
-      }
-      return column._getFacetedMinMaxValues();
-    };
-    // () => [column.getFacetedRowModel()],
-    // facetedRowModel => getRowModelMinMaxValues(facetedRowModel, column.id),
-  },
-
-  createRow: (row, table) => {
-    row.columnFilters = {};
-    row.columnFiltersMeta = {};
-  },
-  createTable: table => {
-    table.getGlobalAutoFilterFn = () => {
-      return filterFns.includesString;
-    };
-    table.getGlobalFilterFn = () => {
-      var _table$options$filter3, _table$options$filter4;
-      const {
-        globalFilterFn: globalFilterFn
-      } = table.options;
-      return isFunction$1(globalFilterFn) ? globalFilterFn : globalFilterFn === 'auto' ? table.getGlobalAutoFilterFn() : // @ts-ignore
-      (_table$options$filter3 = (_table$options$filter4 = table.options.filterFns) == null ? void 0 : _table$options$filter4[globalFilterFn]) != null ? _table$options$filter3 : filterFns[globalFilterFn];
-    };
-    table.setColumnFilters = updater => {
-      const leafColumns = table.getAllLeafColumns();
-      const updateFn = old => {
-        var _functionalUpdate;
-        return (_functionalUpdate = functionalUpdate(updater, old)) == null ? void 0 : _functionalUpdate.filter(filter => {
-          const column = leafColumns.find(d => d.id === filter.id);
-          if (column) {
-            const filterFn = column.getFilterFn();
-            if (shouldAutoRemoveFilter(filterFn, filter.value, column)) {
-              return false;
-            }
-          }
-          return true;
-        });
-      };
-      table.options.onColumnFiltersChange == null || table.options.onColumnFiltersChange(updateFn);
-    };
-    table.setGlobalFilter = updater => {
-      table.options.onGlobalFilterChange == null || table.options.onGlobalFilterChange(updater);
-    };
-    table.resetGlobalFilter = defaultState => {
-      table.setGlobalFilter(defaultState ? undefined : table.initialState.globalFilter);
-    };
-    table.resetColumnFilters = defaultState => {
-      var _table$initialState$c, _table$initialState;
-      table.setColumnFilters(defaultState ? [] : (_table$initialState$c = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.columnFilters) != null ? _table$initialState$c : []);
-    };
-    table.getPreFilteredRowModel = () => table.getCoreRowModel();
-    table.getFilteredRowModel = () => {
-      if (!table._getFilteredRowModel && table.options.getFilteredRowModel) {
-        table._getFilteredRowModel = table.options.getFilteredRowModel(table);
-      }
-      if (table.options.manualFiltering || !table._getFilteredRowModel) {
-        return table.getPreFilteredRowModel();
-      }
-      return table._getFilteredRowModel();
-    };
-    table._getGlobalFacetedRowModel = table.options.getFacetedRowModel && table.options.getFacetedRowModel(table, '__global__');
-    table.getGlobalFacetedRowModel = () => {
-      if (table.options.manualFiltering || !table._getGlobalFacetedRowModel) {
-        return table.getPreFilteredRowModel();
-      }
-      return table._getGlobalFacetedRowModel();
-    };
-    table._getGlobalFacetedUniqueValues = table.options.getFacetedUniqueValues && table.options.getFacetedUniqueValues(table, '__global__');
-    table.getGlobalFacetedUniqueValues = () => {
-      if (!table._getGlobalFacetedUniqueValues) {
-        return new Map();
-      }
-      return table._getGlobalFacetedUniqueValues();
-    };
-    table._getGlobalFacetedMinMaxValues = table.options.getFacetedMinMaxValues && table.options.getFacetedMinMaxValues(table, '__global__');
-    table.getGlobalFacetedMinMaxValues = () => {
-      if (!table._getGlobalFacetedMinMaxValues) {
-        return;
-      }
-      return table._getGlobalFacetedMinMaxValues();
-    };
-  }
-};
-function shouldAutoRemoveFilter(filterFn, value, column) {
-  return (filterFn && filterFn.autoRemove ? filterFn.autoRemove(value, column) : false) || typeof value === 'undefined' || typeof value === 'string' && !value;
-}
-
-const sum = (columnId, _leafRows, childRows) => {
-  // It's faster to just add the aggregations together instead of
-  // process leaf nodes individually
-  return childRows.reduce((sum, next) => {
-    const nextValue = next.getValue(columnId);
-    return sum + (typeof nextValue === 'number' ? nextValue : 0);
-  }, 0);
-};
-const min$2 = (columnId, _leafRows, childRows) => {
-  let min;
-  childRows.forEach(row => {
-    const value = row.getValue(columnId);
-    if (value != null && (min > value || min === undefined && value >= value)) {
-      min = value;
-    }
-  });
-  return min;
-};
-const max$2 = (columnId, _leafRows, childRows) => {
-  let max;
-  childRows.forEach(row => {
-    const value = row.getValue(columnId);
-    if (value != null && (max < value || max === undefined && value >= value)) {
-      max = value;
-    }
-  });
-  return max;
-};
-const extent = (columnId, _leafRows, childRows) => {
-  let min;
-  let max;
-  childRows.forEach(row => {
-    const value = row.getValue(columnId);
-    if (value != null) {
-      if (min === undefined) {
-        if (value >= value) min = max = value;
-      } else {
-        if (min > value) min = value;
-        if (max < value) max = value;
-      }
-    }
-  });
-  return [min, max];
-};
-const mean = (columnId, leafRows) => {
-  let count = 0;
-  let sum = 0;
-  leafRows.forEach(row => {
-    let value = row.getValue(columnId);
-    if (value != null && (value = +value) >= value) {
-      ++count, sum += value;
-    }
-  });
-  if (count) return sum / count;
-  return;
-};
-const median = (columnId, leafRows) => {
-  if (!leafRows.length) {
-    return;
-  }
-  const values = leafRows.map(row => row.getValue(columnId));
-  if (!isNumberArray$1(values)) {
-    return;
-  }
-  if (values.length === 1) {
-    return values[0];
-  }
-  const mid = Math.floor(values.length / 2);
-  const nums = values.sort((a, b) => a - b);
-  return values.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
-};
-const unique = (columnId, leafRows) => {
-  return Array.from(new Set(leafRows.map(d => d.getValue(columnId))).values());
-};
-const uniqueCount = (columnId, leafRows) => {
-  return new Set(leafRows.map(d => d.getValue(columnId))).size;
-};
-const count = (_columnId, leafRows) => {
-  return leafRows.length;
-};
-const aggregationFns = {
-  sum,
-  min: min$2,
-  max: max$2,
-  extent,
-  mean,
-  median,
-  unique,
-  uniqueCount,
-  count
-};
-
-//
-
-const Grouping = {
-  getDefaultColumnDef: () => {
-    return {
-      aggregatedCell: props => {
-        var _toString, _props$getValue;
-        return (_toString = (_props$getValue = props.getValue()) == null || _props$getValue.toString == null ? void 0 : _props$getValue.toString()) != null ? _toString : null;
-      },
-      aggregationFn: 'auto'
-    };
-  },
-  getInitialState: state => {
-    return {
-      grouping: [],
-      ...state
-    };
-  },
-  getDefaultOptions: table => {
-    return {
-      onGroupingChange: makeStateUpdater('grouping', table),
-      groupedColumnMode: 'reorder'
-    };
-  },
-  createColumn: (column, table) => {
-    column.toggleGrouping = () => {
-      table.setGrouping(old => {
-        // Find any existing grouping for this column
-        if (old != null && old.includes(column.id)) {
-          return old.filter(d => d !== column.id);
-        }
-        return [...(old != null ? old : []), column.id];
-      });
-    };
-    column.getCanGroup = () => {
-      var _ref, _ref2, _ref3, _column$columnDef$ena;
-      return (_ref = (_ref2 = (_ref3 = (_column$columnDef$ena = column.columnDef.enableGrouping) != null ? _column$columnDef$ena : true) != null ? _ref3 : table.options.enableGrouping) != null ? _ref2 : true) != null ? _ref : !!column.accessorFn;
-    };
-    column.getIsGrouped = () => {
-      var _table$getState$group;
-      return (_table$getState$group = table.getState().grouping) == null ? void 0 : _table$getState$group.includes(column.id);
-    };
-    column.getGroupedIndex = () => {
-      var _table$getState$group2;
-      return (_table$getState$group2 = table.getState().grouping) == null ? void 0 : _table$getState$group2.indexOf(column.id);
-    };
-    column.getToggleGroupingHandler = () => {
-      const canGroup = column.getCanGroup();
-      return () => {
-        if (!canGroup) return;
-        column.toggleGrouping();
-      };
-    };
-    column.getAutoAggregationFn = () => {
-      const firstRow = table.getCoreRowModel().flatRows[0];
-      const value = firstRow == null ? void 0 : firstRow.getValue(column.id);
-      if (typeof value === 'number') {
-        return aggregationFns.sum;
-      }
-      if (Object.prototype.toString.call(value) === '[object Date]') {
-        return aggregationFns.extent;
-      }
-    };
-    column.getAggregationFn = () => {
-      var _table$options$aggreg, _table$options$aggreg2;
-      if (!column) {
-        throw new Error();
-      }
-      return isFunction$1(column.columnDef.aggregationFn) ? column.columnDef.aggregationFn : column.columnDef.aggregationFn === 'auto' ? column.getAutoAggregationFn() : (_table$options$aggreg = (_table$options$aggreg2 = table.options.aggregationFns) == null ? void 0 : _table$options$aggreg2[column.columnDef.aggregationFn]) != null ? _table$options$aggreg : aggregationFns[column.columnDef.aggregationFn];
-    };
-  },
-  createTable: table => {
-    table.setGrouping = updater => table.options.onGroupingChange == null ? void 0 : table.options.onGroupingChange(updater);
-    table.resetGrouping = defaultState => {
-      var _table$initialState$g, _table$initialState;
-      table.setGrouping(defaultState ? [] : (_table$initialState$g = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.grouping) != null ? _table$initialState$g : []);
-    };
-    table.getPreGroupedRowModel = () => table.getFilteredRowModel();
-    table.getGroupedRowModel = () => {
-      if (!table._getGroupedRowModel && table.options.getGroupedRowModel) {
-        table._getGroupedRowModel = table.options.getGroupedRowModel(table);
-      }
-      if (table.options.manualGrouping || !table._getGroupedRowModel) {
-        return table.getPreGroupedRowModel();
-      }
-      return table._getGroupedRowModel();
-    };
-  },
-  createRow: (row, table) => {
-    row.getIsGrouped = () => !!row.groupingColumnId;
-    row.getGroupingValue = columnId => {
-      if (row._groupingValuesCache.hasOwnProperty(columnId)) {
-        return row._groupingValuesCache[columnId];
-      }
-      const column = table.getColumn(columnId);
-      if (!(column != null && column.columnDef.getGroupingValue)) {
-        return row.getValue(columnId);
-      }
-      row._groupingValuesCache[columnId] = column.columnDef.getGroupingValue(row.original);
-      return row._groupingValuesCache[columnId];
-    };
-    row._groupingValuesCache = {};
-  },
-  createCell: (cell, column, row, table) => {
-    cell.getIsGrouped = () => column.getIsGrouped() && column.id === row.groupingColumnId;
-    cell.getIsPlaceholder = () => !cell.getIsGrouped() && column.getIsGrouped();
-    cell.getIsAggregated = () => {
-      var _row$subRows;
-      return !cell.getIsGrouped() && !cell.getIsPlaceholder() && !!((_row$subRows = row.subRows) != null && _row$subRows.length);
-    };
-  }
-};
-function orderColumns(leafColumns, grouping, groupedColumnMode) {
-  if (!(grouping != null && grouping.length) || !groupedColumnMode) {
-    return leafColumns;
-  }
-  const nonGroupingColumns = leafColumns.filter(col => !grouping.includes(col.id));
-  if (groupedColumnMode === 'remove') {
-    return nonGroupingColumns;
-  }
-  const groupingColumns = grouping.map(g => leafColumns.find(col => col.id === g)).filter(Boolean);
-  return [...groupingColumns, ...nonGroupingColumns];
-}
-
-//
-
-const Ordering = {
-  getInitialState: state => {
-    return {
-      columnOrder: [],
-      ...state
-    };
-  },
-  getDefaultOptions: table => {
-    return {
-      onColumnOrderChange: makeStateUpdater('columnOrder', table)
-    };
-  },
-  createTable: table => {
-    table.setColumnOrder = updater => table.options.onColumnOrderChange == null ? void 0 : table.options.onColumnOrderChange(updater);
-    table.resetColumnOrder = defaultState => {
-      var _table$initialState$c;
-      table.setColumnOrder(defaultState ? [] : (_table$initialState$c = table.initialState.columnOrder) != null ? _table$initialState$c : []);
-    };
-    table._getOrderColumnsFn = memo(() => [table.getState().columnOrder, table.getState().grouping, table.options.groupedColumnMode], (columnOrder, grouping, groupedColumnMode) => columns => {
-      // Sort grouped columns to the start of the column list
-      // before the headers are built
-      let orderedColumns = [];
-
-      // If there is no order, return the normal columns
-      if (!(columnOrder != null && columnOrder.length)) {
-        orderedColumns = columns;
-      } else {
-        const columnOrderCopy = [...columnOrder];
-
-        // If there is an order, make a copy of the columns
-        const columnsCopy = [...columns];
-
-        // And make a new ordered array of the columns
-
-        // Loop over the columns and place them in order into the new array
-        while (columnsCopy.length && columnOrderCopy.length) {
-          const targetColumnId = columnOrderCopy.shift();
-          const foundIndex = columnsCopy.findIndex(d => d.id === targetColumnId);
-          if (foundIndex > -1) {
-            orderedColumns.push(columnsCopy.splice(foundIndex, 1)[0]);
-          }
-        }
-
-        // If there are any columns left, add them to the end
-        orderedColumns = [...orderedColumns, ...columnsCopy];
-      }
-      return orderColumns(orderedColumns, grouping, groupedColumnMode);
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getOrderColumnsFn'
-      // debug: () => table.options.debugAll ?? table.options.debugTable,
-    });
-  }
-};
-
-//
-
-const defaultPageIndex = 0;
-const defaultPageSize = 10;
-const getDefaultPaginationState = () => ({
-  pageIndex: defaultPageIndex,
-  pageSize: defaultPageSize
-});
-const Pagination = {
-  getInitialState: state => {
-    return {
-      ...state,
-      pagination: {
-        ...getDefaultPaginationState(),
-        ...(state == null ? void 0 : state.pagination)
-      }
-    };
-  },
-  getDefaultOptions: table => {
-    return {
-      onPaginationChange: makeStateUpdater('pagination', table)
-    };
-  },
-  createTable: table => {
-    let registered = false;
-    let queued = false;
-    table._autoResetPageIndex = () => {
-      var _ref, _table$options$autoRe;
-      if (!registered) {
-        table._queue(() => {
-          registered = true;
-        });
-        return;
-      }
-      if ((_ref = (_table$options$autoRe = table.options.autoResetAll) != null ? _table$options$autoRe : table.options.autoResetPageIndex) != null ? _ref : !table.options.manualPagination) {
-        if (queued) return;
-        queued = true;
-        table._queue(() => {
-          table.resetPageIndex();
-          queued = false;
-        });
-      }
-    };
-    table.setPagination = updater => {
-      const safeUpdater = old => {
-        let newState = functionalUpdate(updater, old);
-        return newState;
-      };
-      return table.options.onPaginationChange == null ? void 0 : table.options.onPaginationChange(safeUpdater);
-    };
-    table.resetPagination = defaultState => {
-      var _table$initialState$p;
-      table.setPagination(defaultState ? getDefaultPaginationState() : (_table$initialState$p = table.initialState.pagination) != null ? _table$initialState$p : getDefaultPaginationState());
-    };
-    table.setPageIndex = updater => {
-      table.setPagination(old => {
-        let pageIndex = functionalUpdate(updater, old.pageIndex);
-        const maxPageIndex = typeof table.options.pageCount === 'undefined' || table.options.pageCount === -1 ? Number.MAX_SAFE_INTEGER : table.options.pageCount - 1;
-        pageIndex = Math.max(0, Math.min(pageIndex, maxPageIndex));
-        return {
-          ...old,
-          pageIndex
-        };
-      });
-    };
-    table.resetPageIndex = defaultState => {
-      var _table$initialState$p2, _table$initialState;
-      table.setPageIndex(defaultState ? defaultPageIndex : (_table$initialState$p2 = (_table$initialState = table.initialState) == null || (_table$initialState = _table$initialState.pagination) == null ? void 0 : _table$initialState.pageIndex) != null ? _table$initialState$p2 : defaultPageIndex);
-    };
-    table.resetPageSize = defaultState => {
-      var _table$initialState$p3, _table$initialState2;
-      table.setPageSize(defaultState ? defaultPageSize : (_table$initialState$p3 = (_table$initialState2 = table.initialState) == null || (_table$initialState2 = _table$initialState2.pagination) == null ? void 0 : _table$initialState2.pageSize) != null ? _table$initialState$p3 : defaultPageSize);
-    };
-    table.setPageSize = updater => {
-      table.setPagination(old => {
-        const pageSize = Math.max(1, functionalUpdate(updater, old.pageSize));
-        const topRowIndex = old.pageSize * old.pageIndex;
-        const pageIndex = Math.floor(topRowIndex / pageSize);
-        return {
-          ...old,
-          pageIndex,
-          pageSize
-        };
-      });
-    };
-    table.setPageCount = updater => table.setPagination(old => {
-      var _table$options$pageCo;
-      let newPageCount = functionalUpdate(updater, (_table$options$pageCo = table.options.pageCount) != null ? _table$options$pageCo : -1);
-      if (typeof newPageCount === 'number') {
-        newPageCount = Math.max(-1, newPageCount);
-      }
-      return {
-        ...old,
-        pageCount: newPageCount
-      };
-    });
-    table.getPageOptions = memo(() => [table.getPageCount()], pageCount => {
-      let pageOptions = [];
-      if (pageCount && pageCount > 0) {
-        pageOptions = [...new Array(pageCount)].fill(null).map((_, i) => i);
-      }
-      return pageOptions;
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getPageOptions',
-      debug: () => {
-        var _table$options$debugA;
-        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
-      }
-    });
-    table.getCanPreviousPage = () => table.getState().pagination.pageIndex > 0;
-    table.getCanNextPage = () => {
-      const {
-        pageIndex
-      } = table.getState().pagination;
-      const pageCount = table.getPageCount();
-      if (pageCount === -1) {
-        return true;
-      }
-      if (pageCount === 0) {
-        return false;
-      }
-      return pageIndex < pageCount - 1;
-    };
-    table.previousPage = () => {
-      return table.setPageIndex(old => old - 1);
-    };
-    table.nextPage = () => {
-      return table.setPageIndex(old => {
-        return old + 1;
-      });
-    };
-    table.getPrePaginationRowModel = () => table.getExpandedRowModel();
-    table.getPaginationRowModel = () => {
-      if (!table._getPaginationRowModel && table.options.getPaginationRowModel) {
-        table._getPaginationRowModel = table.options.getPaginationRowModel(table);
-      }
-      if (table.options.manualPagination || !table._getPaginationRowModel) {
-        return table.getPrePaginationRowModel();
-      }
-      return table._getPaginationRowModel();
-    };
-    table.getPageCount = () => {
-      var _table$options$pageCo2;
-      return (_table$options$pageCo2 = table.options.pageCount) != null ? _table$options$pageCo2 : Math.ceil(table.getPrePaginationRowModel().rows.length / table.getState().pagination.pageSize);
-    };
-  }
-};
-
-//
-
-const getDefaultColumnPinningState = () => ({
-  left: [],
-  right: []
-});
-const getDefaultRowPinningState = () => ({
-  top: [],
-  bottom: []
-});
-const Pinning = {
-  getInitialState: state => {
-    return {
-      columnPinning: getDefaultColumnPinningState(),
-      rowPinning: getDefaultRowPinningState(),
-      ...state
-    };
-  },
-  getDefaultOptions: table => {
-    return {
-      onColumnPinningChange: makeStateUpdater('columnPinning', table),
-      onRowPinningChange: makeStateUpdater('rowPinning', table)
-    };
-  },
-  createColumn: (column, table) => {
-    column.pin = position => {
-      const columnIds = column.getLeafColumns().map(d => d.id).filter(Boolean);
-      table.setColumnPinning(old => {
-        var _old$left3, _old$right3;
-        if (position === 'right') {
-          var _old$left, _old$right;
-          return {
-            left: ((_old$left = old == null ? void 0 : old.left) != null ? _old$left : []).filter(d => !(columnIds != null && columnIds.includes(d))),
-            right: [...((_old$right = old == null ? void 0 : old.right) != null ? _old$right : []).filter(d => !(columnIds != null && columnIds.includes(d))), ...columnIds]
-          };
-        }
-        if (position === 'left') {
-          var _old$left2, _old$right2;
-          return {
-            left: [...((_old$left2 = old == null ? void 0 : old.left) != null ? _old$left2 : []).filter(d => !(columnIds != null && columnIds.includes(d))), ...columnIds],
-            right: ((_old$right2 = old == null ? void 0 : old.right) != null ? _old$right2 : []).filter(d => !(columnIds != null && columnIds.includes(d)))
-          };
-        }
-        return {
-          left: ((_old$left3 = old == null ? void 0 : old.left) != null ? _old$left3 : []).filter(d => !(columnIds != null && columnIds.includes(d))),
-          right: ((_old$right3 = old == null ? void 0 : old.right) != null ? _old$right3 : []).filter(d => !(columnIds != null && columnIds.includes(d)))
-        };
-      });
-    };
-    column.getCanPin = () => {
-      const leafColumns = column.getLeafColumns();
-      return leafColumns.some(d => {
-        var _d$columnDef$enablePi, _ref, _table$options$enable;
-        return ((_d$columnDef$enablePi = d.columnDef.enablePinning) != null ? _d$columnDef$enablePi : true) && ((_ref = (_table$options$enable = table.options.enableColumnPinning) != null ? _table$options$enable : table.options.enablePinning) != null ? _ref : true);
-      });
-    };
-    column.getIsPinned = () => {
-      const leafColumnIds = column.getLeafColumns().map(d => d.id);
-      const {
-        left,
-        right
-      } = table.getState().columnPinning;
-      const isLeft = leafColumnIds.some(d => left == null ? void 0 : left.includes(d));
-      const isRight = leafColumnIds.some(d => right == null ? void 0 : right.includes(d));
-      return isLeft ? 'left' : isRight ? 'right' : false;
-    };
-    column.getPinnedIndex = () => {
-      var _table$getState$colum, _table$getState$colum2;
-      const position = column.getIsPinned();
-      return position ? (_table$getState$colum = (_table$getState$colum2 = table.getState().columnPinning) == null || (_table$getState$colum2 = _table$getState$colum2[position]) == null ? void 0 : _table$getState$colum2.indexOf(column.id)) != null ? _table$getState$colum : -1 : 0;
-    };
-  },
-  createRow: (row, table) => {
-    row.pin = (position, includeLeafRows, includeParentRows) => {
-      const leafRowIds = includeLeafRows ? row.getLeafRows().map(_ref2 => {
-        let {
-          id
-        } = _ref2;
-        return id;
-      }) : [];
-      const parentRowIds = includeParentRows ? row.getParentRows().map(_ref3 => {
-        let {
-          id
-        } = _ref3;
-        return id;
-      }) : [];
-      const rowIds = new Set([...parentRowIds, row.id, ...leafRowIds]);
-      table.setRowPinning(old => {
-        var _old$top3, _old$bottom3;
-        if (position === 'bottom') {
-          var _old$top, _old$bottom;
-          return {
-            top: ((_old$top = old == null ? void 0 : old.top) != null ? _old$top : []).filter(d => !(rowIds != null && rowIds.has(d))),
-            bottom: [...((_old$bottom = old == null ? void 0 : old.bottom) != null ? _old$bottom : []).filter(d => !(rowIds != null && rowIds.has(d))), ...Array.from(rowIds)]
-          };
-        }
-        if (position === 'top') {
-          var _old$top2, _old$bottom2;
-          return {
-            top: [...((_old$top2 = old == null ? void 0 : old.top) != null ? _old$top2 : []).filter(d => !(rowIds != null && rowIds.has(d))), ...Array.from(rowIds)],
-            bottom: ((_old$bottom2 = old == null ? void 0 : old.bottom) != null ? _old$bottom2 : []).filter(d => !(rowIds != null && rowIds.has(d)))
-          };
-        }
-        return {
-          top: ((_old$top3 = old == null ? void 0 : old.top) != null ? _old$top3 : []).filter(d => !(rowIds != null && rowIds.has(d))),
-          bottom: ((_old$bottom3 = old == null ? void 0 : old.bottom) != null ? _old$bottom3 : []).filter(d => !(rowIds != null && rowIds.has(d)))
-        };
-      });
-    };
-    row.getCanPin = () => {
-      var _ref4;
-      const {
-        enableRowPinning,
-        enablePinning
-      } = table.options;
-      if (typeof enableRowPinning === 'function') {
-        return enableRowPinning(row);
-      }
-      return (_ref4 = enableRowPinning != null ? enableRowPinning : enablePinning) != null ? _ref4 : true;
-    };
-    row.getIsPinned = () => {
-      const rowIds = [row.id];
-      const {
-        top,
-        bottom
-      } = table.getState().rowPinning;
-      const isTop = rowIds.some(d => top == null ? void 0 : top.includes(d));
-      const isBottom = rowIds.some(d => bottom == null ? void 0 : bottom.includes(d));
-      return isTop ? 'top' : isBottom ? 'bottom' : false;
-    };
-    row.getPinnedIndex = () => {
-      var _table$_getPinnedRows, _visiblePinnedRowIds$;
-      const position = row.getIsPinned();
-      if (!position) return -1;
-      const visiblePinnedRowIds = (_table$_getPinnedRows = table._getPinnedRows(position)) == null ? void 0 : _table$_getPinnedRows.map(_ref5 => {
-        let {
-          id
-        } = _ref5;
-        return id;
-      });
-      return (_visiblePinnedRowIds$ = visiblePinnedRowIds == null ? void 0 : visiblePinnedRowIds.indexOf(row.id)) != null ? _visiblePinnedRowIds$ : -1;
-    };
-    row.getCenterVisibleCells = memo(() => [row._getAllVisibleCells(), table.getState().columnPinning.left, table.getState().columnPinning.right], (allCells, left, right) => {
-      const leftAndRight = [...(left != null ? left : []), ...(right != null ? right : [])];
-      return allCells.filter(d => !leftAndRight.includes(d.column.id));
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'row.getCenterVisibleCells',
-      debug: () => {
-        var _table$options$debugA;
-        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugRows;
-      }
-    });
-    row.getLeftVisibleCells = memo(() => [row._getAllVisibleCells(), table.getState().columnPinning.left,,], (allCells, left) => {
-      const cells = (left != null ? left : []).map(columnId => allCells.find(cell => cell.column.id === columnId)).filter(Boolean).map(d => ({
-        ...d,
-        position: 'left'
-      }));
-      return cells;
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'row.getLeftVisibleCells',
-      debug: () => {
-        var _table$options$debugA2;
-        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugRows;
-      }
-    });
-    row.getRightVisibleCells = memo(() => [row._getAllVisibleCells(), table.getState().columnPinning.right], (allCells, right) => {
-      const cells = (right != null ? right : []).map(columnId => allCells.find(cell => cell.column.id === columnId)).filter(Boolean).map(d => ({
-        ...d,
-        position: 'right'
-      }));
-      return cells;
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'row.getRightVisibleCells',
-      debug: () => {
-        var _table$options$debugA3;
-        return (_table$options$debugA3 = table.options.debugAll) != null ? _table$options$debugA3 : table.options.debugRows;
-      }
-    });
-  },
-  createTable: table => {
-    table.setColumnPinning = updater => table.options.onColumnPinningChange == null ? void 0 : table.options.onColumnPinningChange(updater);
-    table.resetColumnPinning = defaultState => {
-      var _table$initialState$c, _table$initialState;
-      return table.setColumnPinning(defaultState ? getDefaultColumnPinningState() : (_table$initialState$c = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.columnPinning) != null ? _table$initialState$c : getDefaultColumnPinningState());
-    };
-    table.getIsSomeColumnsPinned = position => {
-      var _pinningState$positio;
-      const pinningState = table.getState().columnPinning;
-      if (!position) {
-        var _pinningState$left, _pinningState$right;
-        return Boolean(((_pinningState$left = pinningState.left) == null ? void 0 : _pinningState$left.length) || ((_pinningState$right = pinningState.right) == null ? void 0 : _pinningState$right.length));
-      }
-      return Boolean((_pinningState$positio = pinningState[position]) == null ? void 0 : _pinningState$positio.length);
-    };
-    table.getLeftLeafColumns = memo(() => [table.getAllLeafColumns(), table.getState().columnPinning.left], (allColumns, left) => {
-      return (left != null ? left : []).map(columnId => allColumns.find(column => column.id === columnId)).filter(Boolean);
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getLeftLeafColumns',
-      debug: () => {
-        var _table$options$debugA4;
-        return (_table$options$debugA4 = table.options.debugAll) != null ? _table$options$debugA4 : table.options.debugColumns;
-      }
-    });
-    table.getRightLeafColumns = memo(() => [table.getAllLeafColumns(), table.getState().columnPinning.right], (allColumns, right) => {
-      return (right != null ? right : []).map(columnId => allColumns.find(column => column.id === columnId)).filter(Boolean);
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getRightLeafColumns',
-      debug: () => {
-        var _table$options$debugA5;
-        return (_table$options$debugA5 = table.options.debugAll) != null ? _table$options$debugA5 : table.options.debugColumns;
-      }
-    });
-    table.getCenterLeafColumns = memo(() => [table.getAllLeafColumns(), table.getState().columnPinning.left, table.getState().columnPinning.right], (allColumns, left, right) => {
-      const leftAndRight = [...(left != null ? left : []), ...(right != null ? right : [])];
-      return allColumns.filter(d => !leftAndRight.includes(d.id));
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getCenterLeafColumns',
-      debug: () => {
-        var _table$options$debugA6;
-        return (_table$options$debugA6 = table.options.debugAll) != null ? _table$options$debugA6 : table.options.debugColumns;
-      }
-    });
-    table.setRowPinning = updater => table.options.onRowPinningChange == null ? void 0 : table.options.onRowPinningChange(updater);
-    table.resetRowPinning = defaultState => {
-      var _table$initialState$r, _table$initialState2;
-      return table.setRowPinning(defaultState ? getDefaultRowPinningState() : (_table$initialState$r = (_table$initialState2 = table.initialState) == null ? void 0 : _table$initialState2.rowPinning) != null ? _table$initialState$r : getDefaultRowPinningState());
-    };
-    table.getIsSomeRowsPinned = position => {
-      var _pinningState$positio2;
-      const pinningState = table.getState().rowPinning;
-      if (!position) {
-        var _pinningState$top, _pinningState$bottom;
-        return Boolean(((_pinningState$top = pinningState.top) == null ? void 0 : _pinningState$top.length) || ((_pinningState$bottom = pinningState.bottom) == null ? void 0 : _pinningState$bottom.length));
-      }
-      return Boolean((_pinningState$positio2 = pinningState[position]) == null ? void 0 : _pinningState$positio2.length);
-    };
-    table._getPinnedRows = position => memo(() => [table.getRowModel().rows, table.getState().rowPinning[position]], (visibleRows, pinnedRowIds) => {
-      var _table$options$keepPi;
-      const rows = ((_table$options$keepPi = table.options.keepPinnedRows) != null ? _table$options$keepPi : true) ?
-      //get all rows that are pinned even if they would not be otherwise visible
-      //account for expanded parent rows, but not pagination or filtering
-      (pinnedRowIds != null ? pinnedRowIds : []).map(rowId => {
-        const row = table.getRow(rowId, true);
-        return row.getIsAllParentsExpanded() ? row : null;
-      }) :
-      //else get only visible rows that are pinned
-      (pinnedRowIds != null ? pinnedRowIds : []).map(rowId => visibleRows.find(row => row.id === rowId));
-      return rows.filter(Boolean).map(d => ({
-        ...d,
-        position
-      }));
-    }, {
-      key: process.env.NODE_ENV === 'development' && `row.get${position === 'top' ? 'Top' : 'Bottom'}Rows`,
-      debug: () => {
-        var _table$options$debugA7;
-        return (_table$options$debugA7 = table.options.debugAll) != null ? _table$options$debugA7 : table.options.debugRows;
-      }
-    })();
-    table.getTopRows = () => table._getPinnedRows('top');
-    table.getBottomRows = () => table._getPinnedRows('bottom');
-    table.getCenterRows = memo(() => [table.getRowModel().rows, table.getState().rowPinning.top, table.getState().rowPinning.bottom], (allRows, top, bottom) => {
-      const topAndBottom = new Set([...(top != null ? top : []), ...(bottom != null ? bottom : [])]);
-      return allRows.filter(d => !topAndBottom.has(d.id));
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'row.getCenterRows',
-      debug: () => {
-        var _table$options$debugA8;
-        return (_table$options$debugA8 = table.options.debugAll) != null ? _table$options$debugA8 : table.options.debugRows;
-      }
-    });
-  }
-};
-
-//
-
-const RowSelection = {
-  getInitialState: state => {
-    return {
-      rowSelection: {},
-      ...state
-    };
-  },
-  getDefaultOptions: table => {
-    return {
-      onRowSelectionChange: makeStateUpdater('rowSelection', table),
-      enableRowSelection: true,
-      enableMultiRowSelection: true,
-      enableSubRowSelection: true
-      // enableGroupingRowSelection: false,
-      // isAdditiveSelectEvent: (e: unknown) => !!e.metaKey,
-      // isInclusiveSelectEvent: (e: unknown) => !!e.shiftKey,
-    };
-  },
-
-  createTable: table => {
-    table.setRowSelection = updater => table.options.onRowSelectionChange == null ? void 0 : table.options.onRowSelectionChange(updater);
-    table.resetRowSelection = defaultState => {
-      var _table$initialState$r;
-      return table.setRowSelection(defaultState ? {} : (_table$initialState$r = table.initialState.rowSelection) != null ? _table$initialState$r : {});
-    };
-    table.toggleAllRowsSelected = value => {
-      table.setRowSelection(old => {
-        value = typeof value !== 'undefined' ? value : !table.getIsAllRowsSelected();
-        const rowSelection = {
-          ...old
-        };
-        const preGroupedFlatRows = table.getPreGroupedRowModel().flatRows;
-
-        // We don't use `mutateRowIsSelected` here for performance reasons.
-        // All of the rows are flat already, so it wouldn't be worth it
-        if (value) {
-          preGroupedFlatRows.forEach(row => {
-            if (!row.getCanSelect()) {
-              return;
-            }
-            rowSelection[row.id] = true;
-          });
-        } else {
-          preGroupedFlatRows.forEach(row => {
-            delete rowSelection[row.id];
-          });
-        }
-        return rowSelection;
-      });
-    };
-    table.toggleAllPageRowsSelected = value => table.setRowSelection(old => {
-      const resolvedValue = typeof value !== 'undefined' ? value : !table.getIsAllPageRowsSelected();
-      const rowSelection = {
-        ...old
-      };
-      table.getRowModel().rows.forEach(row => {
-        mutateRowIsSelected(rowSelection, row.id, resolvedValue, true, table);
-      });
-      return rowSelection;
-    });
-
-    // addRowSelectionRange: rowId => {
-    //   const {
-    //     rows,
-    //     rowsById,
-    //     options: { selectGroupingRows, selectSubRows },
-    //   } = table
-
-    //   const findSelectedRow = (rows: Row[]) => {
-    //     let found
-    //     rows.find(d => {
-    //       if (d.getIsSelected()) {
-    //         found = d
-    //         return true
-    //       }
-    //       const subFound = findSelectedRow(d.subRows || [])
-    //       if (subFound) {
-    //         found = subFound
-    //         return true
-    //       }
-    //       return false
-    //     })
-    //     return found
-    //   }
-
-    //   const firstRow = findSelectedRow(rows) || rows[0]
-    //   const lastRow = rowsById[rowId]
-
-    //   let include = false
-    //   const selectedRowIds = {}
-
-    //   const addRow = (row: Row) => {
-    //     mutateRowIsSelected(selectedRowIds, row.id, true, {
-    //       rowsById,
-    //       selectGroupingRows: selectGroupingRows!,
-    //       selectSubRows: selectSubRows!,
-    //     })
-    //   }
-
-    //   table.rows.forEach(row => {
-    //     const isFirstRow = row.id === firstRow.id
-    //     const isLastRow = row.id === lastRow.id
-
-    //     if (isFirstRow || isLastRow) {
-    //       if (!include) {
-    //         include = true
-    //       } else if (include) {
-    //         addRow(row)
-    //         include = false
-    //       }
-    //     }
-
-    //     if (include) {
-    //       addRow(row)
-    //     }
-    //   })
-
-    //   table.setRowSelection(selectedRowIds)
-    // },
-    table.getPreSelectedRowModel = () => table.getCoreRowModel();
-    table.getSelectedRowModel = memo(() => [table.getState().rowSelection, table.getCoreRowModel()], (rowSelection, rowModel) => {
-      if (!Object.keys(rowSelection).length) {
-        return {
-          rows: [],
-          flatRows: [],
-          rowsById: {}
-        };
-      }
-      return selectRowsFn(table, rowModel);
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getSelectedRowModel',
-      debug: () => {
-        var _table$options$debugA;
-        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
-      }
-    });
-    table.getFilteredSelectedRowModel = memo(() => [table.getState().rowSelection, table.getFilteredRowModel()], (rowSelection, rowModel) => {
-      if (!Object.keys(rowSelection).length) {
-        return {
-          rows: [],
-          flatRows: [],
-          rowsById: {}
-        };
-      }
-      return selectRowsFn(table, rowModel);
-    }, {
-      key: process.env.NODE_ENV === 'production' && 'getFilteredSelectedRowModel',
-      debug: () => {
-        var _table$options$debugA2;
-        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugTable;
-      }
-    });
-    table.getGroupedSelectedRowModel = memo(() => [table.getState().rowSelection, table.getSortedRowModel()], (rowSelection, rowModel) => {
-      if (!Object.keys(rowSelection).length) {
-        return {
-          rows: [],
-          flatRows: [],
-          rowsById: {}
-        };
-      }
-      return selectRowsFn(table, rowModel);
-    }, {
-      key: process.env.NODE_ENV === 'production' && 'getGroupedSelectedRowModel',
-      debug: () => {
-        var _table$options$debugA3;
-        return (_table$options$debugA3 = table.options.debugAll) != null ? _table$options$debugA3 : table.options.debugTable;
-      }
-    });
-
-    ///
-
-    // getGroupingRowCanSelect: rowId => {
-    //   const row = table.getRow(rowId)
-
-    //   if (!row) {
-    //     throw new Error()
-    //   }
-
-    //   if (typeof table.options.enableGroupingRowSelection === 'function') {
-    //     return table.options.enableGroupingRowSelection(row)
-    //   }
-
-    //   return table.options.enableGroupingRowSelection ?? false
-    // },
-
-    table.getIsAllRowsSelected = () => {
-      const preGroupedFlatRows = table.getFilteredRowModel().flatRows;
-      const {
-        rowSelection
-      } = table.getState();
-      let isAllRowsSelected = Boolean(preGroupedFlatRows.length && Object.keys(rowSelection).length);
-      if (isAllRowsSelected) {
-        if (preGroupedFlatRows.some(row => row.getCanSelect() && !rowSelection[row.id])) {
-          isAllRowsSelected = false;
-        }
-      }
-      return isAllRowsSelected;
-    };
-    table.getIsAllPageRowsSelected = () => {
-      const paginationFlatRows = table.getPaginationRowModel().flatRows.filter(row => row.getCanSelect());
-      const {
-        rowSelection
-      } = table.getState();
-      let isAllPageRowsSelected = !!paginationFlatRows.length;
-      if (isAllPageRowsSelected && paginationFlatRows.some(row => !rowSelection[row.id])) {
-        isAllPageRowsSelected = false;
-      }
-      return isAllPageRowsSelected;
-    };
-    table.getIsSomeRowsSelected = () => {
-      var _table$getState$rowSe;
-      const totalSelected = Object.keys((_table$getState$rowSe = table.getState().rowSelection) != null ? _table$getState$rowSe : {}).length;
-      return totalSelected > 0 && totalSelected < table.getFilteredRowModel().flatRows.length;
-    };
-    table.getIsSomePageRowsSelected = () => {
-      const paginationFlatRows = table.getPaginationRowModel().flatRows;
-      return table.getIsAllPageRowsSelected() ? false : paginationFlatRows.filter(row => row.getCanSelect()).some(d => d.getIsSelected() || d.getIsSomeSelected());
-    };
-    table.getToggleAllRowsSelectedHandler = () => {
-      return e => {
-        table.toggleAllRowsSelected(e.target.checked);
-      };
-    };
-    table.getToggleAllPageRowsSelectedHandler = () => {
-      return e => {
-        table.toggleAllPageRowsSelected(e.target.checked);
-      };
-    };
-  },
-  createRow: (row, table) => {
-    row.toggleSelected = (value, opts) => {
-      const isSelected = row.getIsSelected();
-      table.setRowSelection(old => {
-        var _opts$selectChildren;
-        value = typeof value !== 'undefined' ? value : !isSelected;
-        if (row.getCanSelect() && isSelected === value) {
-          return old;
-        }
-        const selectedRowIds = {
-          ...old
-        };
-        mutateRowIsSelected(selectedRowIds, row.id, value, (_opts$selectChildren = opts == null ? void 0 : opts.selectChildren) != null ? _opts$selectChildren : true, table);
-        return selectedRowIds;
-      });
-    };
-    row.getIsSelected = () => {
-      const {
-        rowSelection
-      } = table.getState();
-      return isRowSelected(row, rowSelection);
-    };
-    row.getIsSomeSelected = () => {
-      const {
-        rowSelection
-      } = table.getState();
-      return isSubRowSelected(row, rowSelection) === 'some';
-    };
-    row.getIsAllSubRowsSelected = () => {
-      const {
-        rowSelection
-      } = table.getState();
-      return isSubRowSelected(row, rowSelection) === 'all';
-    };
-    row.getCanSelect = () => {
-      var _table$options$enable;
-      if (typeof table.options.enableRowSelection === 'function') {
-        return table.options.enableRowSelection(row);
-      }
-      return (_table$options$enable = table.options.enableRowSelection) != null ? _table$options$enable : true;
-    };
-    row.getCanSelectSubRows = () => {
-      var _table$options$enable2;
-      if (typeof table.options.enableSubRowSelection === 'function') {
-        return table.options.enableSubRowSelection(row);
-      }
-      return (_table$options$enable2 = table.options.enableSubRowSelection) != null ? _table$options$enable2 : true;
-    };
-    row.getCanMultiSelect = () => {
-      var _table$options$enable3;
-      if (typeof table.options.enableMultiRowSelection === 'function') {
-        return table.options.enableMultiRowSelection(row);
-      }
-      return (_table$options$enable3 = table.options.enableMultiRowSelection) != null ? _table$options$enable3 : true;
-    };
-    row.getToggleSelectedHandler = () => {
-      const canSelect = row.getCanSelect();
-      return e => {
-        var _target;
-        if (!canSelect) return;
-        row.toggleSelected((_target = e.target) == null ? void 0 : _target.checked);
-      };
-    };
-  }
-};
-const mutateRowIsSelected = (selectedRowIds, id, value, includeChildren, table) => {
-  var _row$subRows;
-  const row = table.getRow(id);
-
-  // const isGrouped = row.getIsGrouped()
-
-  // if ( // TODO: enforce grouping row selection rules
-  //   !isGrouped ||
-  //   (isGrouped && table.options.enableGroupingRowSelection)
-  // ) {
-  if (value) {
-    if (!row.getCanMultiSelect()) {
-      Object.keys(selectedRowIds).forEach(key => delete selectedRowIds[key]);
-    }
-    if (row.getCanSelect()) {
-      selectedRowIds[id] = true;
-    }
-  } else {
-    delete selectedRowIds[id];
-  }
-  // }
-
-  if (includeChildren && (_row$subRows = row.subRows) != null && _row$subRows.length && row.getCanSelectSubRows()) {
-    row.subRows.forEach(row => mutateRowIsSelected(selectedRowIds, row.id, value, includeChildren, table));
-  }
-};
-function selectRowsFn(table, rowModel) {
-  const rowSelection = table.getState().rowSelection;
-  const newSelectedFlatRows = [];
-  const newSelectedRowsById = {};
-
-  // Filters top level and nested rows
-  const recurseRows = function (rows, depth) {
-    return rows.map(row => {
-      var _row$subRows2;
-      const isSelected = isRowSelected(row, rowSelection);
-      if (isSelected) {
-        newSelectedFlatRows.push(row);
-        newSelectedRowsById[row.id] = row;
-      }
-      if ((_row$subRows2 = row.subRows) != null && _row$subRows2.length) {
-        row = {
-          ...row,
-          subRows: recurseRows(row.subRows)
-        };
-      }
-      if (isSelected) {
-        return row;
-      }
-    }).filter(Boolean);
-  };
-  return {
-    rows: recurseRows(rowModel.rows),
-    flatRows: newSelectedFlatRows,
-    rowsById: newSelectedRowsById
-  };
-}
-function isRowSelected(row, selection) {
-  var _selection$row$id;
-  return (_selection$row$id = selection[row.id]) != null ? _selection$row$id : false;
-}
-function isSubRowSelected(row, selection, table) {
-  var _row$subRows3;
-  if (!((_row$subRows3 = row.subRows) != null && _row$subRows3.length)) return false;
-  let allChildrenSelected = true;
-  let someSelected = false;
-  row.subRows.forEach(subRow => {
-    // Bail out early if we know both of these
-    if (someSelected && !allChildrenSelected) {
-      return;
-    }
-    if (subRow.getCanSelect()) {
-      if (isRowSelected(subRow, selection)) {
-        someSelected = true;
-      } else {
-        allChildrenSelected = false;
-      }
-    }
-
-    // Check row selection of nested subrows
-    if (subRow.subRows && subRow.subRows.length) {
-      const subRowChildrenSelected = isSubRowSelected(subRow, selection);
-      if (subRowChildrenSelected === 'all') {
-        someSelected = true;
-      } else if (subRowChildrenSelected === 'some') {
-        someSelected = true;
-        allChildrenSelected = false;
-      } else {
-        allChildrenSelected = false;
-      }
-    }
-  });
-  return allChildrenSelected ? 'all' : someSelected ? 'some' : false;
-}
-
-const reSplitAlphaNumeric = /([0-9]+)/gm;
-const alphanumeric = (rowA, rowB, columnId) => {
-  return compareAlphanumeric(toString(rowA.getValue(columnId)).toLowerCase(), toString(rowB.getValue(columnId)).toLowerCase());
-};
-const alphanumericCaseSensitive = (rowA, rowB, columnId) => {
-  return compareAlphanumeric(toString(rowA.getValue(columnId)), toString(rowB.getValue(columnId)));
-};
-
-// The text filter is more basic (less numeric support)
-// but is much faster
-const text = (rowA, rowB, columnId) => {
-  return compareBasic(toString(rowA.getValue(columnId)).toLowerCase(), toString(rowB.getValue(columnId)).toLowerCase());
-};
-
-// The text filter is more basic (less numeric support)
-// but is much faster
-const textCaseSensitive = (rowA, rowB, columnId) => {
-  return compareBasic(toString(rowA.getValue(columnId)), toString(rowB.getValue(columnId)));
-};
-const datetime = (rowA, rowB, columnId) => {
-  const a = rowA.getValue(columnId);
-  const b = rowB.getValue(columnId);
-
-  // Can handle nullish values
-  // Use > and < because == (and ===) doesn't work with
-  // Date objects (would require calling getTime()).
-  return a > b ? 1 : a < b ? -1 : 0;
-};
-const basic = (rowA, rowB, columnId) => {
-  return compareBasic(rowA.getValue(columnId), rowB.getValue(columnId));
-};
-
-// Utils
-
-function compareBasic(a, b) {
-  return a === b ? 0 : a > b ? 1 : -1;
-}
-function toString(a) {
-  if (typeof a === 'number') {
-    if (isNaN(a) || a === Infinity || a === -Infinity) {
-      return '';
-    }
-    return String(a);
-  }
-  if (typeof a === 'string') {
-    return a;
-  }
-  return '';
-}
-
-// Mixed sorting is slow, but very inclusive of many edge cases.
-// It handles numbers, mixed alphanumeric combinations, and even
-// null, undefined, and Infinity
-function compareAlphanumeric(aStr, bStr) {
-  // Split on number groups, but keep the delimiter
-  // Then remove falsey split values
-  const a = aStr.split(reSplitAlphaNumeric).filter(Boolean);
-  const b = bStr.split(reSplitAlphaNumeric).filter(Boolean);
-
-  // While
-  while (a.length && b.length) {
-    const aa = a.shift();
-    const bb = b.shift();
-    const an = parseInt(aa, 10);
-    const bn = parseInt(bb, 10);
-    const combo = [an, bn].sort();
-
-    // Both are string
-    if (isNaN(combo[0])) {
-      if (aa > bb) {
-        return 1;
-      }
-      if (bb > aa) {
-        return -1;
-      }
-      continue;
-    }
-
-    // One is a string, one is a number
-    if (isNaN(combo[1])) {
-      return isNaN(an) ? -1 : 1;
-    }
-
-    // Both are numbers
-    if (an > bn) {
-      return 1;
-    }
-    if (bn > an) {
-      return -1;
-    }
-  }
-  return a.length - b.length;
-}
-
-// Exports
-
-const sortingFns = {
-  alphanumeric,
-  alphanumericCaseSensitive,
-  text,
-  textCaseSensitive,
-  datetime,
-  basic
-};
-
-//
-
-const Sorting = {
-  getInitialState: state => {
-    return {
-      sorting: [],
-      ...state
-    };
-  },
-  getDefaultColumnDef: () => {
-    return {
-      sortingFn: 'auto',
-      sortUndefined: 1
-    };
-  },
-  getDefaultOptions: table => {
-    return {
-      onSortingChange: makeStateUpdater('sorting', table),
-      isMultiSortEvent: e => {
-        return e.shiftKey;
-      }
-    };
-  },
-  createColumn: (column, table) => {
-    column.getAutoSortingFn = () => {
-      const firstRows = table.getFilteredRowModel().flatRows.slice(10);
-      let isString = false;
-      for (const row of firstRows) {
-        const value = row == null ? void 0 : row.getValue(column.id);
-        if (Object.prototype.toString.call(value) === '[object Date]') {
-          return sortingFns.datetime;
-        }
-        if (typeof value === 'string') {
-          isString = true;
-          if (value.split(reSplitAlphaNumeric).length > 1) {
-            return sortingFns.alphanumeric;
-          }
-        }
-      }
-      if (isString) {
-        return sortingFns.text;
-      }
-      return sortingFns.basic;
-    };
-    column.getAutoSortDir = () => {
-      const firstRow = table.getFilteredRowModel().flatRows[0];
-      const value = firstRow == null ? void 0 : firstRow.getValue(column.id);
-      if (typeof value === 'string') {
-        return 'asc';
-      }
-      return 'desc';
-    };
-    column.getSortingFn = () => {
-      var _table$options$sortin, _table$options$sortin2;
-      if (!column) {
-        throw new Error();
-      }
-      return isFunction$1(column.columnDef.sortingFn) ? column.columnDef.sortingFn : column.columnDef.sortingFn === 'auto' ? column.getAutoSortingFn() : (_table$options$sortin = (_table$options$sortin2 = table.options.sortingFns) == null ? void 0 : _table$options$sortin2[column.columnDef.sortingFn]) != null ? _table$options$sortin : sortingFns[column.columnDef.sortingFn];
-    };
-    column.toggleSorting = (desc, multi) => {
-      // if (column.columns.length) {
-      //   column.columns.forEach((c, i) => {
-      //     if (c.id) {
-      //       table.toggleColumnSorting(c.id, undefined, multi || !!i)
-      //     }
-      //   })
-      //   return
-      // }
-
-      // this needs to be outside of table.setSorting to be in sync with rerender
-      const nextSortingOrder = column.getNextSortingOrder();
-      const hasManualValue = typeof desc !== 'undefined' && desc !== null;
-      table.setSorting(old => {
-        // Find any existing sorting for this column
-        const existingSorting = old == null ? void 0 : old.find(d => d.id === column.id);
-        const existingIndex = old == null ? void 0 : old.findIndex(d => d.id === column.id);
-        let newSorting = [];
-
-        // What should we do with this sort action?
-        let sortAction;
-        let nextDesc = hasManualValue ? desc : nextSortingOrder === 'desc';
-
-        // Multi-mode
-        if (old != null && old.length && column.getCanMultiSort() && multi) {
-          if (existingSorting) {
-            sortAction = 'toggle';
-          } else {
-            sortAction = 'add';
-          }
-        } else {
-          // Normal mode
-          if (old != null && old.length && existingIndex !== old.length - 1) {
-            sortAction = 'replace';
-          } else if (existingSorting) {
-            sortAction = 'toggle';
-          } else {
-            sortAction = 'replace';
-          }
-        }
-
-        // Handle toggle states that will remove the sorting
-        if (sortAction === 'toggle') {
-          // If we are "actually" toggling (not a manual set value), should we remove the sorting?
-          if (!hasManualValue) {
-            // Is our intention to remove?
-            if (!nextSortingOrder) {
-              sortAction = 'remove';
-            }
-          }
-        }
-        if (sortAction === 'add') {
-          var _table$options$maxMul;
-          newSorting = [...old, {
-            id: column.id,
-            desc: nextDesc
-          }];
-          // Take latest n columns
-          newSorting.splice(0, newSorting.length - ((_table$options$maxMul = table.options.maxMultiSortColCount) != null ? _table$options$maxMul : Number.MAX_SAFE_INTEGER));
-        } else if (sortAction === 'toggle') {
-          // This flips (or sets) the
-          newSorting = old.map(d => {
-            if (d.id === column.id) {
-              return {
-                ...d,
-                desc: nextDesc
-              };
-            }
-            return d;
-          });
-        } else if (sortAction === 'remove') {
-          newSorting = old.filter(d => d.id !== column.id);
-        } else {
-          newSorting = [{
-            id: column.id,
-            desc: nextDesc
-          }];
-        }
-        return newSorting;
-      });
-    };
-    column.getFirstSortDir = () => {
-      var _ref, _column$columnDef$sor;
-      const sortDescFirst = (_ref = (_column$columnDef$sor = column.columnDef.sortDescFirst) != null ? _column$columnDef$sor : table.options.sortDescFirst) != null ? _ref : column.getAutoSortDir() === 'desc';
-      return sortDescFirst ? 'desc' : 'asc';
-    };
-    column.getNextSortingOrder = multi => {
-      var _table$options$enable, _table$options$enable2;
-      const firstSortDirection = column.getFirstSortDir();
-      const isSorted = column.getIsSorted();
-      if (!isSorted) {
-        return firstSortDirection;
-      }
-      if (isSorted !== firstSortDirection && ((_table$options$enable = table.options.enableSortingRemoval) != null ? _table$options$enable : true) && (
-      // If enableSortRemove, enable in general
-      multi ? (_table$options$enable2 = table.options.enableMultiRemove) != null ? _table$options$enable2 : true : true) // If multi, don't allow if enableMultiRemove))
-      ) {
-        return false;
-      }
-      return isSorted === 'desc' ? 'asc' : 'desc';
-    };
-    column.getCanSort = () => {
-      var _column$columnDef$ena, _table$options$enable3;
-      return ((_column$columnDef$ena = column.columnDef.enableSorting) != null ? _column$columnDef$ena : true) && ((_table$options$enable3 = table.options.enableSorting) != null ? _table$options$enable3 : true) && !!column.accessorFn;
-    };
-    column.getCanMultiSort = () => {
-      var _ref2, _column$columnDef$ena2;
-      return (_ref2 = (_column$columnDef$ena2 = column.columnDef.enableMultiSort) != null ? _column$columnDef$ena2 : table.options.enableMultiSort) != null ? _ref2 : !!column.accessorFn;
-    };
-    column.getIsSorted = () => {
-      var _table$getState$sorti;
-      const columnSort = (_table$getState$sorti = table.getState().sorting) == null ? void 0 : _table$getState$sorti.find(d => d.id === column.id);
-      return !columnSort ? false : columnSort.desc ? 'desc' : 'asc';
-    };
-    column.getSortIndex = () => {
-      var _table$getState$sorti2, _table$getState$sorti3;
-      return (_table$getState$sorti2 = (_table$getState$sorti3 = table.getState().sorting) == null ? void 0 : _table$getState$sorti3.findIndex(d => d.id === column.id)) != null ? _table$getState$sorti2 : -1;
-    };
-    column.clearSorting = () => {
-      //clear sorting for just 1 column
-      table.setSorting(old => old != null && old.length ? old.filter(d => d.id !== column.id) : []);
-    };
-    column.getToggleSortingHandler = () => {
-      const canSort = column.getCanSort();
-      return e => {
-        if (!canSort) return;
-        e.persist == null || e.persist();
-        column.toggleSorting == null || column.toggleSorting(undefined, column.getCanMultiSort() ? table.options.isMultiSortEvent == null ? void 0 : table.options.isMultiSortEvent(e) : false);
-      };
-    };
-  },
-  createTable: table => {
-    table.setSorting = updater => table.options.onSortingChange == null ? void 0 : table.options.onSortingChange(updater);
-    table.resetSorting = defaultState => {
-      var _table$initialState$s, _table$initialState;
-      table.setSorting(defaultState ? [] : (_table$initialState$s = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.sorting) != null ? _table$initialState$s : []);
-    };
-    table.getPreSortedRowModel = () => table.getGroupedRowModel();
-    table.getSortedRowModel = () => {
-      if (!table._getSortedRowModel && table.options.getSortedRowModel) {
-        table._getSortedRowModel = table.options.getSortedRowModel(table);
-      }
-      if (table.options.manualSorting || !table._getSortedRowModel) {
-        return table.getPreSortedRowModel();
-      }
-      return table._getSortedRowModel();
-    };
-  }
-};
-
-//
-
-const Visibility = {
-  getInitialState: state => {
-    return {
-      columnVisibility: {},
-      ...state
-    };
-  },
-  getDefaultOptions: table => {
-    return {
-      onColumnVisibilityChange: makeStateUpdater('columnVisibility', table)
-    };
-  },
-  createColumn: (column, table) => {
-    column.toggleVisibility = value => {
-      if (column.getCanHide()) {
-        table.setColumnVisibility(old => ({
-          ...old,
-          [column.id]: value != null ? value : !column.getIsVisible()
-        }));
-      }
-    };
-    column.getIsVisible = () => {
-      var _table$getState$colum, _table$getState$colum2;
-      return (_table$getState$colum = (_table$getState$colum2 = table.getState().columnVisibility) == null ? void 0 : _table$getState$colum2[column.id]) != null ? _table$getState$colum : true;
-    };
-    column.getCanHide = () => {
-      var _column$columnDef$ena, _table$options$enable;
-      return ((_column$columnDef$ena = column.columnDef.enableHiding) != null ? _column$columnDef$ena : true) && ((_table$options$enable = table.options.enableHiding) != null ? _table$options$enable : true);
-    };
-    column.getToggleVisibilityHandler = () => {
-      return e => {
-        column.toggleVisibility == null || column.toggleVisibility(e.target.checked);
-      };
-    };
-  },
-  createRow: (row, table) => {
-    row._getAllVisibleCells = memo(() => [row.getAllCells(), table.getState().columnVisibility], cells => {
-      return cells.filter(cell => cell.column.getIsVisible());
-    }, {
-      key: process.env.NODE_ENV === 'production' && 'row._getAllVisibleCells',
-      debug: () => {
-        var _table$options$debugA;
-        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugRows;
-      }
-    });
-    row.getVisibleCells = memo(() => [row.getLeftVisibleCells(), row.getCenterVisibleCells(), row.getRightVisibleCells()], (left, center, right) => [...left, ...center, ...right], {
-      key: process.env.NODE_ENV === 'development' && 'row.getVisibleCells',
-      debug: () => {
-        var _table$options$debugA2;
-        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugRows;
-      }
-    });
-  },
-  createTable: table => {
-    const makeVisibleColumnsMethod = (key, getColumns) => {
-      return memo(() => [getColumns(), getColumns().filter(d => d.getIsVisible()).map(d => d.id).join('_')], columns => {
-        return columns.filter(d => d.getIsVisible == null ? void 0 : d.getIsVisible());
-      }, {
-        key,
-        debug: () => {
-          var _table$options$debugA3;
-          return (_table$options$debugA3 = table.options.debugAll) != null ? _table$options$debugA3 : table.options.debugColumns;
-        }
-      });
-    };
-    table.getVisibleFlatColumns = makeVisibleColumnsMethod('getVisibleFlatColumns', () => table.getAllFlatColumns());
-    table.getVisibleLeafColumns = makeVisibleColumnsMethod('getVisibleLeafColumns', () => table.getAllLeafColumns());
-    table.getLeftVisibleLeafColumns = makeVisibleColumnsMethod('getLeftVisibleLeafColumns', () => table.getLeftLeafColumns());
-    table.getRightVisibleLeafColumns = makeVisibleColumnsMethod('getRightVisibleLeafColumns', () => table.getRightLeafColumns());
-    table.getCenterVisibleLeafColumns = makeVisibleColumnsMethod('getCenterVisibleLeafColumns', () => table.getCenterLeafColumns());
-    table.setColumnVisibility = updater => table.options.onColumnVisibilityChange == null ? void 0 : table.options.onColumnVisibilityChange(updater);
-    table.resetColumnVisibility = defaultState => {
-      var _table$initialState$c;
-      table.setColumnVisibility(defaultState ? {} : (_table$initialState$c = table.initialState.columnVisibility) != null ? _table$initialState$c : {});
-    };
-    table.toggleAllColumnsVisible = value => {
-      var _value;
-      value = (_value = value) != null ? _value : !table.getIsAllColumnsVisible();
-      table.setColumnVisibility(table.getAllLeafColumns().reduce((obj, column) => ({
-        ...obj,
-        [column.id]: !value ? !(column.getCanHide != null && column.getCanHide()) : value
-      }), {}));
-    };
-    table.getIsAllColumnsVisible = () => !table.getAllLeafColumns().some(column => !(column.getIsVisible != null && column.getIsVisible()));
-    table.getIsSomeColumnsVisible = () => table.getAllLeafColumns().some(column => column.getIsVisible == null ? void 0 : column.getIsVisible());
-    table.getToggleAllColumnsVisibilityHandler = () => {
-      return e => {
-        var _target;
-        table.toggleAllColumnsVisible((_target = e.target) == null ? void 0 : _target.checked);
-      };
-    };
-  }
-};
-
-const features = [Headers, Visibility, Ordering, Pinning, Filters, Sorting, Grouping, Expanding, Pagination, RowSelection, ColumnSizing];
-
-//
-
-function createTable(options) {
-  var _options$initialState;
-  if (options.debugAll || options.debugTable) {
-    console.info('Creating Table Instance...');
-  }
-  let table = {
-    _features: features
-  };
-  const defaultOptions = table._features.reduce((obj, feature) => {
-    return Object.assign(obj, feature.getDefaultOptions == null ? void 0 : feature.getDefaultOptions(table));
-  }, {});
-  const mergeOptions = options => {
-    if (table.options.mergeOptions) {
-      return table.options.mergeOptions(defaultOptions, options);
-    }
-    return {
-      ...defaultOptions,
-      ...options
-    };
-  };
-  const coreInitialState = {};
-  let initialState = {
-    ...coreInitialState,
-    ...((_options$initialState = options.initialState) != null ? _options$initialState : {})
-  };
-  table._features.forEach(feature => {
-    var _feature$getInitialSt;
-    initialState = (_feature$getInitialSt = feature.getInitialState == null ? void 0 : feature.getInitialState(initialState)) != null ? _feature$getInitialSt : initialState;
-  });
-  const queued = [];
-  let queuedTimeout = false;
-  const coreInstance = {
-    _features: features,
-    options: {
-      ...defaultOptions,
-      ...options
-    },
-    initialState,
-    _queue: cb => {
-      queued.push(cb);
-      if (!queuedTimeout) {
-        queuedTimeout = true;
-
-        // Schedule a microtask to run the queued callbacks after
-        // the current call stack (render, etc) has finished.
-        Promise.resolve().then(() => {
-          while (queued.length) {
-            queued.shift()();
-          }
-          queuedTimeout = false;
-        }).catch(error => setTimeout(() => {
-          throw error;
-        }));
-      }
-    },
-    reset: () => {
-      table.setState(table.initialState);
-    },
-    setOptions: updater => {
-      const newOptions = functionalUpdate(updater, table.options);
-      table.options = mergeOptions(newOptions);
-    },
-    getState: () => {
-      return table.options.state;
-    },
-    setState: updater => {
-      table.options.onStateChange == null || table.options.onStateChange(updater);
-    },
-    _getRowId: (row, index, parent) => {
-      var _table$options$getRow;
-      return (_table$options$getRow = table.options.getRowId == null ? void 0 : table.options.getRowId(row, index, parent)) != null ? _table$options$getRow : `${parent ? [parent.id, index].join('.') : index}`;
-    },
-    getCoreRowModel: () => {
-      if (!table._getCoreRowModel) {
-        table._getCoreRowModel = table.options.getCoreRowModel(table);
-      }
-      return table._getCoreRowModel();
-    },
-    // The final calls start at the bottom of the model,
-    // expanded rows, which then work their way up
-
-    getRowModel: () => {
-      return table.getPaginationRowModel();
-    },
-    getRow: (id, searchAll) => {
-      const row = (searchAll ? table.getCoreRowModel() : table.getRowModel()).rowsById[id];
-      if (!row) {
-        if (process.env.NODE_ENV !== 'production') {
-          throw new Error(`getRow expected an ID, but got ${id}`);
-        }
-        throw new Error();
-      }
-      return row;
-    },
-    _getDefaultColumnDef: memo(() => [table.options.defaultColumn], defaultColumn => {
-      var _defaultColumn;
-      defaultColumn = (_defaultColumn = defaultColumn) != null ? _defaultColumn : {};
-      return {
-        header: props => {
-          const resolvedColumnDef = props.header.column.columnDef;
-          if (resolvedColumnDef.accessorKey) {
-            return resolvedColumnDef.accessorKey;
-          }
-          if (resolvedColumnDef.accessorFn) {
-            return resolvedColumnDef.id;
-          }
-          return null;
-        },
-        // footer: props => props.header.column.id,
-        cell: props => {
-          var _props$renderValue$to, _props$renderValue;
-          return (_props$renderValue$to = (_props$renderValue = props.renderValue()) == null || _props$renderValue.toString == null ? void 0 : _props$renderValue.toString()) != null ? _props$renderValue$to : null;
-        },
-        ...table._features.reduce((obj, feature) => {
-          return Object.assign(obj, feature.getDefaultColumnDef == null ? void 0 : feature.getDefaultColumnDef());
-        }, {}),
-        ...defaultColumn
-      };
-    }, {
-      debug: () => {
-        var _table$options$debugA;
-        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugColumns;
-      },
-      key: process.env.NODE_ENV === 'development' && 'getDefaultColumnDef'
-    }),
-    _getColumnDefs: () => table.options.columns,
-    getAllColumns: memo(() => [table._getColumnDefs()], columnDefs => {
-      const recurseColumns = function (columnDefs, parent, depth) {
-        if (depth === void 0) {
-          depth = 0;
-        }
-        return columnDefs.map(columnDef => {
-          const column = createColumn(table, columnDef, depth, parent);
-          const groupingColumnDef = columnDef;
-          column.columns = groupingColumnDef.columns ? recurseColumns(groupingColumnDef.columns, column, depth + 1) : [];
-          return column;
-        });
-      };
-      return recurseColumns(columnDefs);
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getAllColumns',
-      debug: () => {
-        var _table$options$debugA2;
-        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugColumns;
-      }
-    }),
-    getAllFlatColumns: memo(() => [table.getAllColumns()], allColumns => {
-      return allColumns.flatMap(column => {
-        return column.getFlatColumns();
-      });
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getAllFlatColumns',
-      debug: () => {
-        var _table$options$debugA3;
-        return (_table$options$debugA3 = table.options.debugAll) != null ? _table$options$debugA3 : table.options.debugColumns;
-      }
-    }),
-    _getAllFlatColumnsById: memo(() => [table.getAllFlatColumns()], flatColumns => {
-      return flatColumns.reduce((acc, column) => {
-        acc[column.id] = column;
-        return acc;
-      }, {});
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getAllFlatColumnsById',
-      debug: () => {
-        var _table$options$debugA4;
-        return (_table$options$debugA4 = table.options.debugAll) != null ? _table$options$debugA4 : table.options.debugColumns;
-      }
-    }),
-    getAllLeafColumns: memo(() => [table.getAllColumns(), table._getOrderColumnsFn()], (allColumns, orderColumns) => {
-      let leafColumns = allColumns.flatMap(column => column.getLeafColumns());
-      return orderColumns(leafColumns);
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'getAllLeafColumns',
-      debug: () => {
-        var _table$options$debugA5;
-        return (_table$options$debugA5 = table.options.debugAll) != null ? _table$options$debugA5 : table.options.debugColumns;
-      }
-    }),
-    getColumn: columnId => {
-      const column = table._getAllFlatColumnsById()[columnId];
-      if (process.env.NODE_ENV !== 'production' && !column) {
-        console.error(`[Table] Column with id '${columnId}' does not exist.`);
-      }
-      return column;
-    }
-  };
-  Object.assign(table, coreInstance);
-  for (let index = 0; index < table._features.length; index++) {
-    const feature = table._features[index];
-    feature == null || feature.createTable == null || feature.createTable(table);
-  }
-  return table;
-}
-
-function createCell(table, row, column, columnId) {
-  const getRenderValue = () => {
-    var _cell$getValue;
-    return (_cell$getValue = cell.getValue()) != null ? _cell$getValue : table.options.renderFallbackValue;
-  };
-  const cell = {
-    id: `${row.id}_${column.id}`,
-    row,
-    column,
-    getValue: () => row.getValue(columnId),
-    renderValue: getRenderValue,
-    getContext: memo(() => [table, column, row, cell], (table, column, row, cell) => ({
-      table,
-      column,
-      row,
-      cell: cell,
-      getValue: cell.getValue,
-      renderValue: cell.renderValue
-    }), {
-      key: process.env.NODE_ENV === 'development' && 'cell.getContext',
-      debug: () => table.options.debugAll
-    })
-  };
-  table._features.forEach(feature => {
-    feature.createCell == null || feature.createCell(cell, column, row, table);
-  }, {});
-  return cell;
-}
-
-const createRow = (table, id, original, rowIndex, depth, subRows, parentId) => {
-  let row = {
-    id,
-    index: rowIndex,
-    original,
-    depth,
-    parentId,
-    _valuesCache: {},
-    _uniqueValuesCache: {},
-    getValue: columnId => {
-      if (row._valuesCache.hasOwnProperty(columnId)) {
-        return row._valuesCache[columnId];
-      }
-      const column = table.getColumn(columnId);
-      if (!(column != null && column.accessorFn)) {
-        return undefined;
-      }
-      row._valuesCache[columnId] = column.accessorFn(row.original, rowIndex);
-      return row._valuesCache[columnId];
-    },
-    getUniqueValues: columnId => {
-      if (row._uniqueValuesCache.hasOwnProperty(columnId)) {
-        return row._uniqueValuesCache[columnId];
-      }
-      const column = table.getColumn(columnId);
-      if (!(column != null && column.accessorFn)) {
-        return undefined;
-      }
-      if (!column.columnDef.getUniqueValues) {
-        row._uniqueValuesCache[columnId] = [row.getValue(columnId)];
-        return row._uniqueValuesCache[columnId];
-      }
-      row._uniqueValuesCache[columnId] = column.columnDef.getUniqueValues(row.original, rowIndex);
-      return row._uniqueValuesCache[columnId];
-    },
-    renderValue: columnId => {
-      var _row$getValue;
-      return (_row$getValue = row.getValue(columnId)) != null ? _row$getValue : table.options.renderFallbackValue;
-    },
-    subRows: subRows != null ? subRows : [],
-    getLeafRows: () => flattenBy(row.subRows, d => d.subRows),
-    getParentRow: () => row.parentId ? table.getRow(row.parentId, true) : undefined,
-    getParentRows: () => {
-      let parentRows = [];
-      let currentRow = row;
-      while (true) {
-        const parentRow = currentRow.getParentRow();
-        if (!parentRow) break;
-        parentRows.push(parentRow);
-        currentRow = parentRow;
-      }
-      return parentRows.reverse();
-    },
-    getAllCells: memo(() => [table.getAllLeafColumns()], leafColumns => {
-      return leafColumns.map(column => {
-        return createCell(table, row, column, column.id);
-      });
-    }, {
-      key: process.env.NODE_ENV === 'development' && 'row.getAllCells',
-      debug: () => {
-        var _table$options$debugA;
-        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugRows;
-      }
-    }),
-    _getAllCellsByColumnId: memo(() => [row.getAllCells()], allCells => {
-      return allCells.reduce((acc, cell) => {
-        acc[cell.column.id] = cell;
-        return acc;
-      }, {});
-    }, {
-      key: process.env.NODE_ENV === 'production' && 'row.getAllCellsByColumnId',
-      debug: () => {
-        var _table$options$debugA2;
-        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugRows;
-      }
-    })
-  };
-  for (let i = 0; i < table._features.length; i++) {
-    const feature = table._features[i];
-    feature == null || feature.createRow == null || feature.createRow(row, table);
-  }
-  return row;
-};
-
-// type Person = {
-//   firstName: string
-//   lastName: string
-//   age: number
-//   visits: number
-//   status: string
-//   progress: number
-//   createdAt: Date
-//   nested: {
-//     foo: [
-//       {
-//         bar: 'bar'
-//       }
-//     ]
-//     bar: { subBar: boolean }[]
-//     baz: {
-//       foo: 'foo'
-//       bar: {
-//         baz: 'baz'
-//       }
-//     }
-//   }
-// }
-
-// const test: DeepKeys<Person> = 'nested.foo.0.bar'
-// const test2: DeepKeys<Person> = 'nested.bar'
-
-// const helper = createColumnHelper<Person>()
-
-// helper.accessor('nested.foo', {
-//   cell: info => info.getValue(),
-// })
-
-// helper.accessor('nested.foo.0.bar', {
-//   cell: info => info.getValue(),
-// })
-
-// helper.accessor('nested.bar', {
-//   cell: info => info.getValue(),
-// })
-function createColumnHelper() {
-  return {
-    accessor: (accessor, column) => {
-      return typeof accessor === 'function' ? {
-        ...column,
-        accessorFn: accessor
-      } : {
-        ...column,
-        accessorKey: accessor
-      };
-    },
-    display: column => column,
-    group: column => column
-  };
-}
-
-function getCoreRowModel() {
-  return table => memo(() => [table.options.data], data => {
-    const rowModel = {
-      rows: [],
-      flatRows: [],
-      rowsById: {}
-    };
-    const accessRows = function (originalRows, depth, parentRow) {
-      if (depth === void 0) {
-        depth = 0;
-      }
-      const rows = [];
-      for (let i = 0; i < originalRows.length; i++) {
-        // This could be an expensive check at scale, so we should move it somewhere else, but where?
-        // if (!id) {
-        //   if (process.env.NODE_ENV !== 'production') {
-        //     throw new Error(`getRowId expected an ID, but got ${id}`)
-        //   }
-        // }
-
-        // Make the row
-        const row = createRow(table, table._getRowId(originalRows[i], i, parentRow), originalRows[i], i, depth, undefined, parentRow == null ? void 0 : parentRow.id);
-
-        // Keep track of every row in a flat array
-        rowModel.flatRows.push(row);
-        // Also keep track of every row by its ID
-        rowModel.rowsById[row.id] = row;
-        // Push table row into parent
-        rows.push(row);
-
-        // Get the original subrows
-        if (table.options.getSubRows) {
-          var _row$originalSubRows;
-          row.originalSubRows = table.options.getSubRows(originalRows[i], i);
-
-          // Then recursively access them
-          if ((_row$originalSubRows = row.originalSubRows) != null && _row$originalSubRows.length) {
-            row.subRows = accessRows(row.originalSubRows, depth + 1, row);
-          }
-        }
-      }
-      return rows;
-    };
-    rowModel.rows = accessRows(data);
-    return rowModel;
-  }, {
-    key: process.env.NODE_ENV === 'development' && 'getRowModel',
-    debug: () => {
-      var _table$options$debugA;
-      return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
-    },
-    onChange: () => {
-      table._autoResetPageIndex();
-    }
-  });
-}
-
-function filterRows(rows, filterRowImpl, table) {
-  if (table.options.filterFromLeafRows) {
-    return filterRowModelFromLeafs(rows, filterRowImpl, table);
-  }
-  return filterRowModelFromRoot(rows, filterRowImpl, table);
-}
-function filterRowModelFromLeafs(rowsToFilter, filterRow, table) {
-  var _table$options$maxLea;
-  const newFilteredFlatRows = [];
-  const newFilteredRowsById = {};
-  const maxDepth = (_table$options$maxLea = table.options.maxLeafRowFilterDepth) != null ? _table$options$maxLea : 100;
-  const recurseFilterRows = function (rowsToFilter, depth) {
-    if (depth === void 0) {
-      depth = 0;
-    }
-    const rows = [];
-
-    // Filter from children up first
-    for (let i = 0; i < rowsToFilter.length; i++) {
-      var _row$subRows;
-      let row = rowsToFilter[i];
-      const newRow = createRow(table, row.id, row.original, row.index, row.depth, undefined, row.parentId);
-      newRow.columnFilters = row.columnFilters;
-      if ((_row$subRows = row.subRows) != null && _row$subRows.length && depth < maxDepth) {
-        newRow.subRows = recurseFilterRows(row.subRows, depth + 1);
-        row = newRow;
-        if (filterRow(row) && !newRow.subRows.length) {
-          rows.push(row);
-          newFilteredRowsById[row.id] = row;
-          newFilteredFlatRows.push(row);
-          continue;
-        }
-        if (filterRow(row) || newRow.subRows.length) {
-          rows.push(row);
-          newFilteredRowsById[row.id] = row;
-          newFilteredFlatRows.push(row);
-          continue;
-        }
-      } else {
-        row = newRow;
-        if (filterRow(row)) {
-          rows.push(row);
-          newFilteredRowsById[row.id] = row;
-          newFilteredFlatRows.push(row);
-        }
-      }
-    }
-    return rows;
-  };
-  return {
-    rows: recurseFilterRows(rowsToFilter),
-    flatRows: newFilteredFlatRows,
-    rowsById: newFilteredRowsById
-  };
-}
-function filterRowModelFromRoot(rowsToFilter, filterRow, table) {
-  var _table$options$maxLea2;
-  const newFilteredFlatRows = [];
-  const newFilteredRowsById = {};
-  const maxDepth = (_table$options$maxLea2 = table.options.maxLeafRowFilterDepth) != null ? _table$options$maxLea2 : 100;
-
-  // Filters top level and nested rows
-  const recurseFilterRows = function (rowsToFilter, depth) {
-    if (depth === void 0) {
-      depth = 0;
-    }
-    // Filter from parents downward first
-
-    const rows = [];
-
-    // Apply the filter to any subRows
-    for (let i = 0; i < rowsToFilter.length; i++) {
-      let row = rowsToFilter[i];
-      const pass = filterRow(row);
-      if (pass) {
-        var _row$subRows2;
-        if ((_row$subRows2 = row.subRows) != null && _row$subRows2.length && depth < maxDepth) {
-          const newRow = createRow(table, row.id, row.original, row.index, row.depth, undefined, row.parentId);
-          newRow.subRows = recurseFilterRows(row.subRows, depth + 1);
-          row = newRow;
-        }
-        rows.push(row);
-        newFilteredFlatRows.push(row);
-        newFilteredRowsById[row.id] = row;
-      }
-    }
-    return rows;
-  };
-  return {
-    rows: recurseFilterRows(rowsToFilter),
-    flatRows: newFilteredFlatRows,
-    rowsById: newFilteredRowsById
-  };
-}
-
-function getFilteredRowModel() {
-  return table => memo(() => [table.getPreFilteredRowModel(), table.getState().columnFilters, table.getState().globalFilter], (rowModel, columnFilters, globalFilter) => {
-    if (!rowModel.rows.length || !(columnFilters != null && columnFilters.length) && !globalFilter) {
-      for (let i = 0; i < rowModel.flatRows.length; i++) {
-        rowModel.flatRows[i].columnFilters = {};
-        rowModel.flatRows[i].columnFiltersMeta = {};
-      }
-      return rowModel;
-    }
-    const resolvedColumnFilters = [];
-    const resolvedGlobalFilters = [];
-    (columnFilters != null ? columnFilters : []).forEach(d => {
-      var _filterFn$resolveFilt;
-      const column = table.getColumn(d.id);
-      if (!column) {
-        return;
-      }
-      const filterFn = column.getFilterFn();
-      if (!filterFn) {
-        if (process.env.NODE_ENV !== 'production') {
-          console.warn(`Could not find a valid 'column.filterFn' for column with the ID: ${column.id}.`);
-        }
-        return;
-      }
-      resolvedColumnFilters.push({
-        id: d.id,
-        filterFn,
-        resolvedValue: (_filterFn$resolveFilt = filterFn.resolveFilterValue == null ? void 0 : filterFn.resolveFilterValue(d.value)) != null ? _filterFn$resolveFilt : d.value
-      });
-    });
-    const filterableIds = columnFilters.map(d => d.id);
-    const globalFilterFn = table.getGlobalFilterFn();
-    const globallyFilterableColumns = table.getAllLeafColumns().filter(column => column.getCanGlobalFilter());
-    if (globalFilter && globalFilterFn && globallyFilterableColumns.length) {
-      filterableIds.push('__global__');
-      globallyFilterableColumns.forEach(column => {
-        var _globalFilterFn$resol;
-        resolvedGlobalFilters.push({
-          id: column.id,
-          filterFn: globalFilterFn,
-          resolvedValue: (_globalFilterFn$resol = globalFilterFn.resolveFilterValue == null ? void 0 : globalFilterFn.resolveFilterValue(globalFilter)) != null ? _globalFilterFn$resol : globalFilter
-        });
-      });
-    }
-    let currentColumnFilter;
-    let currentGlobalFilter;
-
-    // Flag the prefiltered row model with each filter state
-    for (let j = 0; j < rowModel.flatRows.length; j++) {
-      const row = rowModel.flatRows[j];
-      row.columnFilters = {};
-      if (resolvedColumnFilters.length) {
-        for (let i = 0; i < resolvedColumnFilters.length; i++) {
-          currentColumnFilter = resolvedColumnFilters[i];
-          const id = currentColumnFilter.id;
-
-          // Tag the row with the column filter state
-          row.columnFilters[id] = currentColumnFilter.filterFn(row, id, currentColumnFilter.resolvedValue, filterMeta => {
-            row.columnFiltersMeta[id] = filterMeta;
-          });
-        }
-      }
-      if (resolvedGlobalFilters.length) {
-        for (let i = 0; i < resolvedGlobalFilters.length; i++) {
-          currentGlobalFilter = resolvedGlobalFilters[i];
-          const id = currentGlobalFilter.id;
-          // Tag the row with the first truthy global filter state
-          if (currentGlobalFilter.filterFn(row, id, currentGlobalFilter.resolvedValue, filterMeta => {
-            row.columnFiltersMeta[id] = filterMeta;
-          })) {
-            row.columnFilters.__global__ = true;
-            break;
-          }
-        }
-        if (row.columnFilters.__global__ !== true) {
-          row.columnFilters.__global__ = false;
-        }
-      }
-    }
-    const filterRowsImpl = row => {
-      // Horizontally filter rows through each column
-      for (let i = 0; i < filterableIds.length; i++) {
-        if (row.columnFilters[filterableIds[i]] === false) {
-          return false;
-        }
-      }
-      return true;
-    };
-
-    // Filter final rows using all of the active filters
-    return filterRows(rowModel.rows, filterRowsImpl, table);
-  }, {
-    key: process.env.NODE_ENV === 'development' && 'getFilteredRowModel',
-    debug: () => {
-      var _table$options$debugA;
-      return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
-    },
-    onChange: () => {
-      table._autoResetPageIndex();
-    }
-  });
-}
-
-function getFacetedRowModel() {
-  return (table, columnId) => memo(() => [table.getPreFilteredRowModel(), table.getState().columnFilters, table.getState().globalFilter, table.getFilteredRowModel()], (preRowModel, columnFilters, globalFilter) => {
-    if (!preRowModel.rows.length || !(columnFilters != null && columnFilters.length) && !globalFilter) {
-      return preRowModel;
-    }
-    const filterableIds = [...columnFilters.map(d => d.id).filter(d => d !== columnId), globalFilter ? '__global__' : undefined].filter(Boolean);
-    const filterRowsImpl = row => {
-      // Horizontally filter rows through each column
-      for (let i = 0; i < filterableIds.length; i++) {
-        if (row.columnFilters[filterableIds[i]] === false) {
-          return false;
-        }
-      }
-      return true;
-    };
-    return filterRows(preRowModel.rows, filterRowsImpl, table);
-  }, {
-    key: process.env.NODE_ENV === 'development' && 'getFacetedRowModel_' + columnId,
-    debug: () => {
-      var _table$options$debugA;
-      return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
-    },
-    onChange: () => {}
-  });
-}
-
-function getFacetedUniqueValues() {
-  return (table, columnId) => memo(() => {
-    var _table$getColumn;
-    return [(_table$getColumn = table.getColumn(columnId)) == null ? void 0 : _table$getColumn.getFacetedRowModel()];
-  }, facetedRowModel => {
-    if (!facetedRowModel) return new Map();
-    let facetedUniqueValues = new Map();
-    for (let i = 0; i < facetedRowModel.flatRows.length; i++) {
-      const values = facetedRowModel.flatRows[i].getUniqueValues(columnId);
-      for (let j = 0; j < values.length; j++) {
-        const value = values[j];
-        if (facetedUniqueValues.has(value)) {
-          var _facetedUniqueValues$;
-          facetedUniqueValues.set(value, ((_facetedUniqueValues$ = facetedUniqueValues.get(value)) != null ? _facetedUniqueValues$ : 0) + 1);
-        } else {
-          facetedUniqueValues.set(value, 1);
-        }
-      }
-    }
-    return facetedUniqueValues;
-  }, {
-    key: process.env.NODE_ENV === 'development' && 'getFacetedUniqueValues_' + columnId,
-    debug: () => {
-      var _table$options$debugA;
-      return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
-    },
-    onChange: () => {}
-  });
-}
-
-function getSortedRowModel() {
-  return table => memo(() => [table.getState().sorting, table.getPreSortedRowModel()], (sorting, rowModel) => {
-    if (!rowModel.rows.length || !(sorting != null && sorting.length)) {
-      return rowModel;
-    }
-    const sortingState = table.getState().sorting;
-    const sortedFlatRows = [];
-
-    // Filter out sortings that correspond to non existing columns
-    const availableSorting = sortingState.filter(sort => {
-      var _table$getColumn;
-      return (_table$getColumn = table.getColumn(sort.id)) == null ? void 0 : _table$getColumn.getCanSort();
-    });
-    const columnInfoById = {};
-    availableSorting.forEach(sortEntry => {
-      const column = table.getColumn(sortEntry.id);
-      if (!column) return;
-      columnInfoById[sortEntry.id] = {
-        sortUndefined: column.columnDef.sortUndefined,
-        invertSorting: column.columnDef.invertSorting,
-        sortingFn: column.getSortingFn()
-      };
-    });
-    const sortData = rows => {
-      // This will also perform a stable sorting using the row index
-      // if needed.
-      const sortedData = rows.map(row => ({
-        ...row
-      }));
-      sortedData.sort((rowA, rowB) => {
-        for (let i = 0; i < availableSorting.length; i += 1) {
-          var _sortEntry$desc;
-          const sortEntry = availableSorting[i];
-          const columnInfo = columnInfoById[sortEntry.id];
-          const isDesc = (_sortEntry$desc = sortEntry == null ? void 0 : sortEntry.desc) != null ? _sortEntry$desc : false;
-          let sortInt = 0;
-
-          // All sorting ints should always return in ascending order
-          if (columnInfo.sortUndefined) {
-            const aValue = rowA.getValue(sortEntry.id);
-            const bValue = rowB.getValue(sortEntry.id);
-            const aUndefined = aValue === undefined;
-            const bUndefined = bValue === undefined;
-            if (aUndefined || bUndefined) {
-              sortInt = aUndefined && bUndefined ? 0 : aUndefined ? columnInfo.sortUndefined : -columnInfo.sortUndefined;
-            }
-          }
-          if (sortInt === 0) {
-            sortInt = columnInfo.sortingFn(rowA, rowB, sortEntry.id);
-          }
-
-          // If sorting is non-zero, take care of desc and inversion
-          if (sortInt !== 0) {
-            if (isDesc) {
-              sortInt *= -1;
-            }
-            if (columnInfo.invertSorting) {
-              sortInt *= -1;
-            }
-            return sortInt;
-          }
-        }
-        return rowA.index - rowB.index;
-      });
-
-      // If there are sub-rows, sort them
-      sortedData.forEach(row => {
-        var _row$subRows;
-        sortedFlatRows.push(row);
-        if ((_row$subRows = row.subRows) != null && _row$subRows.length) {
-          row.subRows = sortData(row.subRows);
-        }
-      });
-      return sortedData;
-    };
-    return {
-      rows: sortData(rowModel.rows),
-      flatRows: sortedFlatRows,
-      rowsById: rowModel.rowsById
-    };
-  }, {
-    key: process.env.NODE_ENV === 'development' && 'getSortedRowModel',
-    debug: () => {
-      var _table$options$debugA;
-      return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
-    },
-    onChange: () => {
-      table._autoResetPageIndex();
-    }
-  });
-}
-function expandRows(rowModel) {
-  const expandedRows = [];
-  const handleRow = row => {
-    var _row$subRows;
-    expandedRows.push(row);
-    if ((_row$subRows = row.subRows) != null && _row$subRows.length && row.getIsExpanded()) {
-      row.subRows.forEach(handleRow);
-    }
-  };
-  rowModel.rows.forEach(handleRow);
-  return {
-    rows: expandedRows,
-    flatRows: rowModel.flatRows,
-    rowsById: rowModel.rowsById
-  };
-}
-
-function getPaginationRowModel(opts) {
-  return table => memo(() => [table.getState().pagination, table.getPrePaginationRowModel(), table.options.paginateExpandedRows ? undefined : table.getState().expanded], (pagination, rowModel) => {
-    if (!rowModel.rows.length) {
-      return rowModel;
-    }
-    const {
-      pageSize,
-      pageIndex
-    } = pagination;
-    let {
-      rows,
-      flatRows,
-      rowsById
-    } = rowModel;
-    const pageStart = pageSize * pageIndex;
-    const pageEnd = pageStart + pageSize;
-    rows = rows.slice(pageStart, pageEnd);
-    let paginatedRowModel;
-    if (!table.options.paginateExpandedRows) {
-      paginatedRowModel = expandRows({
-        rows,
-        flatRows,
-        rowsById
-      });
-    } else {
-      paginatedRowModel = {
-        rows,
-        flatRows,
-        rowsById
-      };
-    }
-    paginatedRowModel.flatRows = [];
-    const handleRow = row => {
-      paginatedRowModel.flatRows.push(row);
-      if (row.subRows.length) {
-        row.subRows.forEach(handleRow);
-      }
-    };
-    paginatedRowModel.rows.forEach(handleRow);
-    return paginatedRowModel;
-  }, {
-    key: process.env.NODE_ENV === 'development' && 'getPaginationRowModel',
-    debug: () => {
-      var _table$options$debugA;
-      return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
-    }
-  });
-}
-
-/**
- * react-table
- *
- * Copyright (c) TanStack
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.md file in the root directory of this source tree.
- *
- * @license MIT
- */
-
-//
-/**
- * If rendering headers, cells, or footers with custom markup, use flexRender instead of `cell.getValue()` or `cell.renderValue()`.
- */
-function flexRender(Comp, props) {
-  return !Comp ? null : isReactComponent(Comp) ? /*#__PURE__*/React__namespace.createElement(Comp, props) : Comp;
-}
-function isReactComponent(component) {
-  return isClassComponent(component) || typeof component === 'function' || isExoticComponent(component);
-}
-function isClassComponent(component) {
-  return typeof component === 'function' && (() => {
-    const proto = Object.getPrototypeOf(component);
-    return proto.prototype && proto.prototype.isReactComponent;
-  })();
-}
-function isExoticComponent(component) {
-  return typeof component === 'object' && typeof component.$$typeof === 'symbol' && ['react.memo', 'react.forward_ref'].includes(component.$$typeof.description);
-}
-function useReactTable(options) {
-  // Compose in the generic options to the user options
-  const resolvedOptions = {
-    state: {},
-    // Dummy state
-    onStateChange: () => {},
-    // noop
-    renderFallbackValue: null,
-    ...options
-  };
-
-  // Create a new table and store it in state
-  const [tableRef] = React__namespace.useState(() => ({
-    current: createTable(resolvedOptions)
-  }));
-
-  // By default, manage table state here using the table's initial state
-  const [state, setState] = React__namespace.useState(() => tableRef.current.initialState);
-
-  // Compose the default state above with any user state. This will allow the user
-  // to only control a subset of the state if desired.
-  tableRef.current.setOptions(prev => ({
-    ...prev,
-    ...options,
-    state: {
-      ...state,
-      ...options.state
-    },
-    // Similarly, we'll maintain both our internal state and any user-provided
-    // state.
-    onStateChange: updater => {
-      setState(updater);
-      options.onStateChange == null || options.onStateChange(updater);
-    }
-  }));
-  return tableRef.current;
-}
-
-function DataTablePagination(_a) {
-    var table = _a.table;
-    return (React__default["default"].createElement("div", { className: "flex items-center justify-between px-2" },
-        React__default["default"].createElement("div", { className: "flex-1 text-sm text-muted-foreground" },
-            table.getFilteredSelectedRowModel().rows.length,
-            " of",
-            " ",
-            table.getFilteredRowModel().rows.length,
-            " row(s) selected."),
-        React__default["default"].createElement("div", { className: "flex items-center space-x-6 lg:space-x-8" },
-            React__default["default"].createElement("div", { className: "flex items-center space-x-2" },
-                React__default["default"].createElement("p", { className: "text-sm font-medium" }, "Rows per page"),
-                React__default["default"].createElement(Select$1, { value: "".concat(table.getState().pagination.pageSize), onValueChange: function (value) {
-                        table.setPageSize(Number(value));
-                    } },
-                    React__default["default"].createElement(SelectTrigger, { className: "h-8 w-[70px]" },
-                        React__default["default"].createElement(SelectValue, { placeholder: table.getState().pagination.pageSize })),
-                    React__default["default"].createElement(SelectContent, { side: "top" }, [10, 20, 30, 40, 50].map(function (pageSize) { return (React__default["default"].createElement(SelectItem, { key: pageSize, value: "".concat(pageSize) }, pageSize)); })))),
-            React__default["default"].createElement("div", { className: "flex w-[100px] items-center justify-center text-sm font-medium" },
-                "Page ",
-                table.getState().pagination.pageIndex + 1,
-                " of",
-                " ",
-                table.getPageCount()),
-            React__default["default"].createElement("div", { className: "flex items-center space-x-2" },
-                React__default["default"].createElement(Button$3, { variant: "outline", className: "hidden h-8 w-8 p-0 lg:flex", onClick: function () { return table.setPageIndex(0); }, disabled: !table.getCanPreviousPage() },
-                    React__default["default"].createElement("span", { className: "sr-only" }, "Go to first page"),
-                    React__default["default"].createElement(DoubleArrowLeftIcon, { className: "h-4 w-4" })),
-                React__default["default"].createElement(Button$3, { variant: "outline", className: "h-8 w-8 p-0", onClick: function () { return table.previousPage(); }, disabled: !table.getCanPreviousPage() },
-                    React__default["default"].createElement("span", { className: "sr-only" }, "Go to previous page"),
-                    React__default["default"].createElement(ChevronLeftIcon, { className: "h-4 w-4" })),
-                React__default["default"].createElement(Button$3, { variant: "outline", className: "h-8 w-8 p-0", onClick: function () { return table.nextPage(); }, disabled: !table.getCanNextPage() },
-                    React__default["default"].createElement("span", { className: "sr-only" }, "Go to next page"),
-                    React__default["default"].createElement(ChevronRightIcon, { className: "h-4 w-4" })),
-                React__default["default"].createElement(Button$3, { variant: "outline", className: "hidden h-8 w-8 p-0 lg:flex", onClick: function () { return table.setPageIndex(table.getPageCount() - 1); }, disabled: !table.getCanNextPage() },
-                    React__default["default"].createElement("span", { className: "sr-only" }, "Go to last page"),
-                    React__default["default"].createElement(DoubleArrowRightIcon, { className: "h-4 w-4" }))))));
-}
-
-function DataTableViewOptions(_a) {
-    var table = _a.table;
-    return (React__default["default"].createElement(DropdownMenu, null,
-        React__default["default"].createElement($d08ef79370b62062$export$d2469213b3befba9, { asChild: true },
-            React__default["default"].createElement(Button$3, { variant: "outline", size: "sm", className: "ml-auto hidden h-8 lg:flex" },
-                React__default["default"].createElement(MixerHorizontalIcon, { className: "mr-2 h-4 w-4" }),
-                "View")),
-        React__default["default"].createElement(DropdownMenuContent, { align: "end", className: "w-[150px]" },
-            React__default["default"].createElement(DropdownMenuLabel, null, "Toggle columns"),
-            React__default["default"].createElement(DropdownMenuSeparator, null),
-            table
-                .getAllColumns()
-                .filter(function (column) {
-                return typeof column.accessorFn !== "undefined" && column.getCanHide();
-            })
-                .map(function (column) {
-                return (React__default["default"].createElement(DropdownMenuCheckboxItem, { key: column.id, className: "capitalize", checked: column.getIsVisible(), onCheckedChange: function (value) { return column.toggleVisibility(!!value); } }, column.id));
-            }))));
-}
-
-var statuses = [
-    {
-        value: "backlog",
-        label: "Backlog",
-        icon: QuestionMarkCircledIcon,
-    },
-    {
-        value: "todo",
-        label: "Todo",
-        icon: CircleIcon,
-    },
-    {
-        value: "in progress",
-        label: "In Progress",
-        icon: StopwatchIcon,
-    },
-    {
-        value: "done",
-        label: "Done",
-        icon: CheckCircledIcon,
-    },
-    {
-        value: "canceled",
-        label: "Canceled",
-        icon: CrossCircledIcon,
-    },
-];
-var priorities = [
-    {
-        label: "Low",
-        value: "low",
-        icon: ArrowDownIcon,
-    },
-    {
-        label: "Medium",
-        value: "medium",
-        icon: ArrowRightIcon,
-    },
-    {
-        label: "High",
-        value: "high",
-        icon: ArrowUpIcon,
-    },
-];
-
-function $e42e1063c40fb3ef$export$b9ecd428b558ff10(originalEventHandler, ourEventHandler, { checkForDefaultPrevented: checkForDefaultPrevented = true  } = {}) {
-    return function handleEvent(event) {
-        originalEventHandler === null || originalEventHandler === void 0 || originalEventHandler(event);
-        if (checkForDefaultPrevented === false || !event.defaultPrevented) return ourEventHandler === null || ourEventHandler === void 0 ? void 0 : ourEventHandler(event);
-    };
-}
-
-/**
- * Set a given ref to a given value
- * This utility takes care of different types of refs: callback refs and RefObject(s)
- */ function $6ed0406888f73fc4$var$setRef(ref, value) {
-    if (typeof ref === 'function') ref(value);
-    else if (ref !== null && ref !== undefined) ref.current = value;
-}
-/**
- * A utility to compose multiple refs together
- * Accepts callback refs and RefObject(s)
- */ function $6ed0406888f73fc4$export$43e446d32b3d21af(...refs) {
-    return (node)=>refs.forEach((ref)=>$6ed0406888f73fc4$var$setRef(ref, node)
-        )
-    ;
-}
-/**
- * A custom hook that composes multiple refs
- * Accepts callback refs and RefObject(s)
- */ function $6ed0406888f73fc4$export$c7b2cbe3552a0d05(...refs) {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    return React.useCallback($6ed0406888f73fc4$export$43e446d32b3d21af(...refs), refs);
-}
-
-/* -------------------------------------------------------------------------------------------------
- * createContextScope
- * -----------------------------------------------------------------------------------------------*/ function $c512c27ab02ef895$export$50c7b4e9d9f19c1(scopeName, createContextScopeDeps = []) {
-    let defaultContexts = [];
-    /* -----------------------------------------------------------------------------------------------
-   * createContext
-   * ---------------------------------------------------------------------------------------------*/ function $c512c27ab02ef895$export$fd42f52fd3ae1109(rootComponentName, defaultContext) {
-        const BaseContext = /*#__PURE__*/ React.createContext(defaultContext);
-        const index = defaultContexts.length;
-        defaultContexts = [
-            ...defaultContexts,
-            defaultContext
-        ];
-        function Provider(props) {
-            const { scope: scope , children: children , ...context } = props;
-            const Context = (scope === null || scope === void 0 ? void 0 : scope[scopeName][index]) || BaseContext; // Only re-memoize when prop values change
-            // eslint-disable-next-line react-hooks/exhaustive-deps
-            const value = React.useMemo(()=>context
-            , Object.values(context));
-            return /*#__PURE__*/ React.createElement(Context.Provider, {
-                value: value
-            }, children);
-        }
-        function useContext(consumerName, scope) {
-            const Context = (scope === null || scope === void 0 ? void 0 : scope[scopeName][index]) || BaseContext;
-            const context = React.useContext(Context);
-            if (context) return context;
-            if (defaultContext !== undefined) return defaultContext; // if a defaultContext wasn't specified, it's a required context.
-            throw new Error(`\`${consumerName}\` must be used within \`${rootComponentName}\``);
-        }
-        Provider.displayName = rootComponentName + 'Provider';
-        return [
-            Provider,
-            useContext
-        ];
-    }
-    /* -----------------------------------------------------------------------------------------------
-   * createScope
-   * ---------------------------------------------------------------------------------------------*/ const createScope = ()=>{
-        const scopeContexts = defaultContexts.map((defaultContext)=>{
-            return /*#__PURE__*/ React.createContext(defaultContext);
-        });
-        return function useScope(scope) {
-            const contexts = (scope === null || scope === void 0 ? void 0 : scope[scopeName]) || scopeContexts;
-            return React.useMemo(()=>({
-                    [`__scope${scopeName}`]: {
-                        ...scope,
-                        [scopeName]: contexts
-                    }
-                })
-            , [
-                scope,
-                contexts
-            ]);
-        };
-    };
-    createScope.scopeName = scopeName;
-    return [
-        $c512c27ab02ef895$export$fd42f52fd3ae1109,
-        $c512c27ab02ef895$var$composeContextScopes(createScope, ...createContextScopeDeps)
-    ];
-}
-/* -------------------------------------------------------------------------------------------------
- * composeContextScopes
- * -----------------------------------------------------------------------------------------------*/ function $c512c27ab02ef895$var$composeContextScopes(...scopes) {
-    const baseScope = scopes[0];
-    if (scopes.length === 1) return baseScope;
-    const createScope1 = ()=>{
-        const scopeHooks = scopes.map((createScope)=>({
-                useScope: createScope(),
-                scopeName: createScope.scopeName
-            })
-        );
-        return function useComposedScopes(overrideScopes) {
-            const nextScopes1 = scopeHooks.reduce((nextScopes, { useScope: useScope , scopeName: scopeName  })=>{
-                // We are calling a hook inside a callback which React warns against to avoid inconsistent
-                // renders, however, scoping doesn't have render side effects so we ignore the rule.
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                const scopeProps = useScope(overrideScopes);
-                const currentScope = scopeProps[`__scope${scopeName}`];
-                return {
-                    ...nextScopes,
-                    ...currentScope
-                };
-            }, {});
-            return React.useMemo(()=>({
-                    [`__scope${baseScope.scopeName}`]: nextScopes1
-                })
-            , [
-                nextScopes1
-            ]);
-        };
-    };
-    createScope1.scopeName = baseScope.scopeName;
-    return createScope1;
-}
-
-/**
- * On the server, React emits a warning when calling `useLayoutEffect`.
- * This is because neither `useLayoutEffect` nor `useEffect` run on the server.
- * We use this safe version which suppresses the warning by replacing it with a noop on the server.
- *
- * See: https://reactjs.org/docs/hooks-reference.html#uselayouteffect
- */ const $9f79659886946c16$export$e5c5a5f917a5871c = Boolean(globalThis === null || globalThis === void 0 ? void 0 : globalThis.document) ? React.useLayoutEffect : ()=>{};
-
-const $1746a345f3d73bb7$var$useReactId = React__namespace['useId'.toString()] || (()=>undefined
-);
-let $1746a345f3d73bb7$var$count = 0;
-function $1746a345f3d73bb7$export$f680877a34711e37(deterministicId) {
-    const [id, setId] = React__namespace.useState($1746a345f3d73bb7$var$useReactId()); // React versions older than 18 will have client-side ids only.
-    $9f79659886946c16$export$e5c5a5f917a5871c(()=>{
-        if (!deterministicId) setId((reactId)=>reactId !== null && reactId !== void 0 ? reactId : String($1746a345f3d73bb7$var$count++)
-        );
-    }, [
-        deterministicId
-    ]);
-    return deterministicId || (id ? `radix-${id}` : '');
-}
-
-/**
- * A custom hook that converts a callback to a ref to avoid triggering re-renders when passed as a
- * prop or avoid re-executing effects when passed as a dependency
- */ function $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(callback) {
-    const callbackRef = React.useRef(callback);
-    React.useEffect(()=>{
-        callbackRef.current = callback;
-    }); // https://github.com/facebook/react/issues/19240
-    return React.useMemo(()=>(...args)=>{
-            var _callbackRef$current;
-            return (_callbackRef$current = callbackRef.current) === null || _callbackRef$current === void 0 ? void 0 : _callbackRef$current.call(callbackRef, ...args);
-        }
-    , []);
-}
-
-function $71cd76cc60e0454e$export$6f32135080cb4c3({ prop: prop , defaultProp: defaultProp , onChange: onChange = ()=>{}  }) {
-    const [uncontrolledProp, setUncontrolledProp] = $71cd76cc60e0454e$var$useUncontrolledState({
-        defaultProp: defaultProp,
-        onChange: onChange
-    });
-    const isControlled = prop !== undefined;
-    const value1 = isControlled ? prop : uncontrolledProp;
-    const handleChange = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onChange);
-    const setValue = React.useCallback((nextValue)=>{
-        if (isControlled) {
-            const setter = nextValue;
-            const value = typeof nextValue === 'function' ? setter(prop) : nextValue;
-            if (value !== prop) handleChange(value);
-        } else setUncontrolledProp(nextValue);
-    }, [
-        isControlled,
-        prop,
-        setUncontrolledProp,
-        handleChange
-    ]);
-    return [
-        value1,
-        setValue
-    ];
-}
-function $71cd76cc60e0454e$var$useUncontrolledState({ defaultProp: defaultProp , onChange: onChange  }) {
-    const uncontrolledState = React.useState(defaultProp);
-    const [value] = uncontrolledState;
-    const prevValueRef = React.useRef(value);
-    const handleChange = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onChange);
-    React.useEffect(()=>{
-        if (prevValueRef.current !== value) {
-            handleChange(value);
-            prevValueRef.current = value;
-        }
-    }, [
-        value,
-        prevValueRef,
-        handleChange
-    ]);
-    return uncontrolledState;
-}
-
-/* -------------------------------------------------------------------------------------------------
- * Slot
- * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$export$8c6ed5c666ac1360 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { children: children , ...slotProps } = props;
-    const childrenArray = React.Children.toArray(children);
-    const slottable = childrenArray.find($5e63c961fc1ce211$var$isSlottable);
-    if (slottable) {
-        // the new element to render is the one passed as a child of `Slottable`
-        const newElement = slottable.props.children;
-        const newChildren = childrenArray.map((child)=>{
-            if (child === slottable) {
-                // because the new element will be the one rendered, we are only interested
-                // in grabbing its children (`newElement.props.children`)
-                if (React.Children.count(newElement) > 1) return React.Children.only(null);
-                return /*#__PURE__*/ React.isValidElement(newElement) ? newElement.props.children : null;
-            } else return child;
-        });
-        return /*#__PURE__*/ React.createElement($5e63c961fc1ce211$var$SlotClone, _extends$m({}, slotProps, {
-            ref: forwardedRef
-        }), /*#__PURE__*/ React.isValidElement(newElement) ? /*#__PURE__*/ React.cloneElement(newElement, undefined, newChildren) : null);
-    }
-    return /*#__PURE__*/ React.createElement($5e63c961fc1ce211$var$SlotClone, _extends$m({}, slotProps, {
-        ref: forwardedRef
-    }), children);
-});
-$5e63c961fc1ce211$export$8c6ed5c666ac1360.displayName = 'Slot';
-/* -------------------------------------------------------------------------------------------------
- * SlotClone
- * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$var$SlotClone = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { children: children , ...slotProps } = props;
-    if (/*#__PURE__*/ React.isValidElement(children)) return /*#__PURE__*/ React.cloneElement(children, {
-        ...$5e63c961fc1ce211$var$mergeProps(slotProps, children.props),
-        ref: $6ed0406888f73fc4$export$43e446d32b3d21af(forwardedRef, children.ref)
-    });
-    return React.Children.count(children) > 1 ? React.Children.only(null) : null;
-});
-$5e63c961fc1ce211$var$SlotClone.displayName = 'SlotClone';
-/* -------------------------------------------------------------------------------------------------
- * Slottable
- * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$export$d9f1ccf0bdb05d45 = ({ children: children  })=>{
-    return /*#__PURE__*/ React.createElement(React.Fragment, null, children);
-};
-/* ---------------------------------------------------------------------------------------------- */ function $5e63c961fc1ce211$var$isSlottable(child) {
-    return /*#__PURE__*/ React.isValidElement(child) && child.type === $5e63c961fc1ce211$export$d9f1ccf0bdb05d45;
-}
-function $5e63c961fc1ce211$var$mergeProps(slotProps, childProps) {
-    // all child props should override
-    const overrideProps = {
-        ...childProps
-    };
-    for(const propName in childProps){
-        const slotPropValue = slotProps[propName];
-        const childPropValue = childProps[propName];
-        const isHandler = /^on[A-Z]/.test(propName); // if it's a handler, modify the override by composing the base handler
-        if (isHandler) overrideProps[propName] = (...args)=>{
-            childPropValue === null || childPropValue === void 0 || childPropValue(...args);
-            slotPropValue === null || slotPropValue === void 0 || slotPropValue(...args);
-        };
-        else if (propName === 'style') overrideProps[propName] = {
-            ...slotPropValue,
-            ...childPropValue
-        };
-        else if (propName === 'className') overrideProps[propName] = [
-            slotPropValue,
-            childPropValue
-        ].filter(Boolean).join(' ');
-    }
-    return {
-        ...slotProps,
-        ...overrideProps
-    };
-}
-
-const $8927f6f2acc4f386$var$NODES = [
-    'a',
-    'button',
-    'div',
-    'h2',
-    'h3',
-    'img',
-    'li',
-    'nav',
-    'ol',
-    'p',
-    'span',
-    'svg',
-    'ul'
-]; // Temporary while we await merge of this fix:
-// https://github.com/DefinitelyTyped/DefinitelyTyped/pull/55396
-// prettier-ignore
-/* -------------------------------------------------------------------------------------------------
- * Primitive
- * -----------------------------------------------------------------------------------------------*/ const $8927f6f2acc4f386$export$250ffa63cdc0d034 = $8927f6f2acc4f386$var$NODES.reduce((primitive, node)=>{
-    const Node = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-        const { asChild: asChild , ...primitiveProps } = props;
-        const Comp = asChild ? $5e63c961fc1ce211$export$8c6ed5c666ac1360 : node;
-        React.useEffect(()=>{
-            window[Symbol.for('radix-ui')] = true;
-        }, []);
-        return /*#__PURE__*/ React.createElement(Comp, _extends$m({}, primitiveProps, {
-            ref: forwardedRef
-        }));
-    });
-    Node.displayName = `Primitive.${node}`;
-    return {
-        ...primitive,
-        [node]: Node
-    };
-}, {});
-/* -------------------------------------------------------------------------------------------------
- * Utils
- * -----------------------------------------------------------------------------------------------*/ /**
- * Flush custom event dispatch
- * https://github.com/radix-ui/primitives/pull/1378
- *
- * React batches *all* event handlers since version 18, this introduces certain considerations when using custom event types.
- *
- * Internally, React prioritises events in the following order:
- *  - discrete
- *  - continuous
- *  - default
- *
- * https://github.com/facebook/react/blob/a8a4742f1c54493df00da648a3f9d26e3db9c8b5/packages/react-dom/src/events/ReactDOMEventListener.js#L294-L350
- *
- * `discrete` is an  important distinction as updates within these events are applied immediately.
- * React however, is not able to infer the priority of custom event types due to how they are detected internally.
- * Because of this, it's possible for updates from custom events to be unexpectedly batched when
- * dispatched by another `discrete` event.
- *
- * In order to ensure that updates from custom events are applied predictably, we need to manually flush the batch.
- * This utility should be used when dispatching a custom event from within another `discrete` event, this utility
- * is not nessesary when dispatching known event types, or if dispatching a custom type inside a non-discrete event.
- * For example:
- *
- * dispatching a known click 👎
- * target.dispatchEvent(new Event(‘click’))
- *
- * dispatching a custom type within a non-discrete event 👎
- * onScroll={(event) => event.target.dispatchEvent(new CustomEvent(‘customType’))}
- *
- * dispatching a custom type within a `discrete` event 👍
- * onPointerDown={(event) => dispatchDiscreteCustomEvent(event.target, new CustomEvent(‘customType’))}
- *
- * Note: though React classifies `focus`, `focusin` and `focusout` events as `discrete`, it's  not recommended to use
- * this utility with them. This is because it's possible for those handlers to be called implicitly during render
- * e.g. when focus is within a component as it is unmounted, or when managing focus on mount.
- */ function $8927f6f2acc4f386$export$6d1a0317bde7de7f(target, event) {
-    if (target) ReactDOM.flushSync(()=>target.dispatchEvent(event)
-    );
-}
-
-/**
- * Listens for when the escape key is down
- */ function $addc16e1bbe58fd0$export$3a72a57244d6e765(onEscapeKeyDownProp) {
-    const onEscapeKeyDown = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onEscapeKeyDownProp);
-    React.useEffect(()=>{
-        const handleKeyDown = (event)=>{
-            if (event.key === 'Escape') onEscapeKeyDown(event);
-        };
-        document.addEventListener('keydown', handleKeyDown);
-        return ()=>document.removeEventListener('keydown', handleKeyDown)
-        ;
-    }, [
-        onEscapeKeyDown
-    ]);
-}
-
-const $5cb92bef7577960e$var$CONTEXT_UPDATE = 'dismissableLayer.update';
-const $5cb92bef7577960e$var$POINTER_DOWN_OUTSIDE = 'dismissableLayer.pointerDownOutside';
-const $5cb92bef7577960e$var$FOCUS_OUTSIDE = 'dismissableLayer.focusOutside';
-let $5cb92bef7577960e$var$originalBodyPointerEvents;
-const $5cb92bef7577960e$var$DismissableLayerContext = /*#__PURE__*/ React.createContext({
-    layers: new Set(),
-    layersWithOutsidePointerEventsDisabled: new Set(),
-    branches: new Set()
-});
-const $5cb92bef7577960e$export$177fb62ff3ec1f22 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { disableOutsidePointerEvents: disableOutsidePointerEvents = false , onEscapeKeyDown: onEscapeKeyDown , onPointerDownOutside: onPointerDownOutside , onFocusOutside: onFocusOutside , onInteractOutside: onInteractOutside , onDismiss: onDismiss , ...layerProps } = props;
-    const context = React.useContext($5cb92bef7577960e$var$DismissableLayerContext);
-    const [node1, setNode] = React.useState(null);
-    const [, force] = React.useState({});
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05(forwardedRef, (node)=>setNode(node)
-    );
-    const layers = Array.from(context.layers);
-    const [highestLayerWithOutsidePointerEventsDisabled] = [
-        ...context.layersWithOutsidePointerEventsDisabled
-    ].slice(-1); // prettier-ignore
-    const highestLayerWithOutsidePointerEventsDisabledIndex = layers.indexOf(highestLayerWithOutsidePointerEventsDisabled); // prettier-ignore
-    const index = node1 ? layers.indexOf(node1) : -1;
-    const isBodyPointerEventsDisabled = context.layersWithOutsidePointerEventsDisabled.size > 0;
-    const isPointerEventsEnabled = index >= highestLayerWithOutsidePointerEventsDisabledIndex;
-    const pointerDownOutside = $5cb92bef7577960e$var$usePointerDownOutside((event)=>{
-        const target = event.target;
-        const isPointerDownOnBranch = [
-            ...context.branches
-        ].some((branch)=>branch.contains(target)
-        );
-        if (!isPointerEventsEnabled || isPointerDownOnBranch) return;
-        onPointerDownOutside === null || onPointerDownOutside === void 0 || onPointerDownOutside(event);
-        onInteractOutside === null || onInteractOutside === void 0 || onInteractOutside(event);
-        if (!event.defaultPrevented) onDismiss === null || onDismiss === void 0 || onDismiss();
-    });
-    const focusOutside = $5cb92bef7577960e$var$useFocusOutside((event)=>{
-        const target = event.target;
-        const isFocusInBranch = [
-            ...context.branches
-        ].some((branch)=>branch.contains(target)
-        );
-        if (isFocusInBranch) return;
-        onFocusOutside === null || onFocusOutside === void 0 || onFocusOutside(event);
-        onInteractOutside === null || onInteractOutside === void 0 || onInteractOutside(event);
-        if (!event.defaultPrevented) onDismiss === null || onDismiss === void 0 || onDismiss();
-    });
-    $addc16e1bbe58fd0$export$3a72a57244d6e765((event)=>{
-        const isHighestLayer = index === context.layers.size - 1;
-        if (!isHighestLayer) return;
-        onEscapeKeyDown === null || onEscapeKeyDown === void 0 || onEscapeKeyDown(event);
-        if (!event.defaultPrevented && onDismiss) {
-            event.preventDefault();
-            onDismiss();
-        }
-    });
-    React.useEffect(()=>{
-        if (!node1) return;
-        if (disableOutsidePointerEvents) {
-            if (context.layersWithOutsidePointerEventsDisabled.size === 0) {
-                $5cb92bef7577960e$var$originalBodyPointerEvents = document.body.style.pointerEvents;
-                document.body.style.pointerEvents = 'none';
-            }
-            context.layersWithOutsidePointerEventsDisabled.add(node1);
-        }
-        context.layers.add(node1);
-        $5cb92bef7577960e$var$dispatchUpdate();
-        return ()=>{
-            if (disableOutsidePointerEvents && context.layersWithOutsidePointerEventsDisabled.size === 1) document.body.style.pointerEvents = $5cb92bef7577960e$var$originalBodyPointerEvents;
-        };
-    }, [
-        node1,
-        disableOutsidePointerEvents,
-        context
-    ]);
-    /**
-   * We purposefully prevent combining this effect with the `disableOutsidePointerEvents` effect
-   * because a change to `disableOutsidePointerEvents` would remove this layer from the stack
-   * and add it to the end again so the layering order wouldn't be _creation order_.
-   * We only want them to be removed from context stacks when unmounted.
-   */ React.useEffect(()=>{
-        return ()=>{
-            if (!node1) return;
-            context.layers.delete(node1);
-            context.layersWithOutsidePointerEventsDisabled.delete(node1);
-            $5cb92bef7577960e$var$dispatchUpdate();
-        };
-    }, [
-        node1,
-        context
-    ]);
-    React.useEffect(()=>{
-        const handleUpdate = ()=>force({})
-        ;
-        document.addEventListener($5cb92bef7577960e$var$CONTEXT_UPDATE, handleUpdate);
-        return ()=>document.removeEventListener($5cb92bef7577960e$var$CONTEXT_UPDATE, handleUpdate)
-        ;
-    }, []);
-    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034.div, _extends$m({}, layerProps, {
-        ref: composedRefs,
-        style: {
-            pointerEvents: isBodyPointerEventsDisabled ? isPointerEventsEnabled ? 'auto' : 'none' : undefined,
-            ...props.style
-        },
-        onFocusCapture: $e42e1063c40fb3ef$export$b9ecd428b558ff10(props.onFocusCapture, focusOutside.onFocusCapture),
-        onBlurCapture: $e42e1063c40fb3ef$export$b9ecd428b558ff10(props.onBlurCapture, focusOutside.onBlurCapture),
-        onPointerDownCapture: $e42e1063c40fb3ef$export$b9ecd428b558ff10(props.onPointerDownCapture, pointerDownOutside.onPointerDownCapture)
-    }));
-});
-/* -----------------------------------------------------------------------------------------------*/ /**
- * Listens for `pointerdown` outside a react subtree. We use `pointerdown` rather than `pointerup`
- * to mimic layer dismissing behaviour present in OS.
- * Returns props to pass to the node we want to check for outside events.
- */ function $5cb92bef7577960e$var$usePointerDownOutside(onPointerDownOutside) {
-    const handlePointerDownOutside = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onPointerDownOutside);
-    const isPointerInsideReactTreeRef = React.useRef(false);
-    const handleClickRef = React.useRef(()=>{});
-    React.useEffect(()=>{
-        const handlePointerDown = (event)=>{
-            if (event.target && !isPointerInsideReactTreeRef.current) {
-                const eventDetail = {
-                    originalEvent: event
-                };
-                function handleAndDispatchPointerDownOutsideEvent() {
-                    $5cb92bef7577960e$var$handleAndDispatchCustomEvent($5cb92bef7577960e$var$POINTER_DOWN_OUTSIDE, handlePointerDownOutside, eventDetail, {
-                        discrete: true
-                    });
-                }
-                /**
-         * On touch devices, we need to wait for a click event because browsers implement
-         * a ~350ms delay between the time the user stops touching the display and when the
-         * browser executres events. We need to ensure we don't reactivate pointer-events within
-         * this timeframe otherwise the browser may execute events that should have been prevented.
-         *
-         * Additionally, this also lets us deal automatically with cancellations when a click event
-         * isn't raised because the page was considered scrolled/drag-scrolled, long-pressed, etc.
-         *
-         * This is why we also continuously remove the previous listener, because we cannot be
-         * certain that it was raised, and therefore cleaned-up.
-         */ if (event.pointerType === 'touch') {
-                    document.removeEventListener('click', handleClickRef.current);
-                    handleClickRef.current = handleAndDispatchPointerDownOutsideEvent;
-                    document.addEventListener('click', handleClickRef.current, {
-                        once: true
-                    });
-                } else handleAndDispatchPointerDownOutsideEvent();
-            }
-            isPointerInsideReactTreeRef.current = false;
-        };
-        /**
-     * if this hook executes in a component that mounts via a `pointerdown` event, the event
-     * would bubble up to the document and trigger a `pointerDownOutside` event. We avoid
-     * this by delaying the event listener registration on the document.
-     * This is not React specific, but rather how the DOM works, ie:
-     * ```
-     * button.addEventListener('pointerdown', () => {
-     *   console.log('I will log');
-     *   document.addEventListener('pointerdown', () => {
-     *     console.log('I will also log');
-     *   })
-     * });
-     */ const timerId = window.setTimeout(()=>{
-            document.addEventListener('pointerdown', handlePointerDown);
-        }, 0);
-        return ()=>{
-            window.clearTimeout(timerId);
-            document.removeEventListener('pointerdown', handlePointerDown);
-            document.removeEventListener('click', handleClickRef.current);
-        };
-    }, [
-        handlePointerDownOutside
-    ]);
-    return {
-        // ensures we check React component tree (not just DOM tree)
-        onPointerDownCapture: ()=>isPointerInsideReactTreeRef.current = true
-    };
-}
-/**
- * Listens for when focus happens outside a react subtree.
- * Returns props to pass to the root (node) of the subtree we want to check.
- */ function $5cb92bef7577960e$var$useFocusOutside(onFocusOutside) {
-    const handleFocusOutside = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onFocusOutside);
-    const isFocusInsideReactTreeRef = React.useRef(false);
-    React.useEffect(()=>{
-        const handleFocus = (event)=>{
-            if (event.target && !isFocusInsideReactTreeRef.current) {
-                const eventDetail = {
-                    originalEvent: event
-                };
-                $5cb92bef7577960e$var$handleAndDispatchCustomEvent($5cb92bef7577960e$var$FOCUS_OUTSIDE, handleFocusOutside, eventDetail, {
-                    discrete: false
-                });
-            }
-        };
-        document.addEventListener('focusin', handleFocus);
-        return ()=>document.removeEventListener('focusin', handleFocus)
-        ;
-    }, [
-        handleFocusOutside
-    ]);
-    return {
-        onFocusCapture: ()=>isFocusInsideReactTreeRef.current = true
-        ,
-        onBlurCapture: ()=>isFocusInsideReactTreeRef.current = false
-    };
-}
-function $5cb92bef7577960e$var$dispatchUpdate() {
-    const event = new CustomEvent($5cb92bef7577960e$var$CONTEXT_UPDATE);
-    document.dispatchEvent(event);
-}
-function $5cb92bef7577960e$var$handleAndDispatchCustomEvent(name, handler, detail, { discrete: discrete  }) {
-    const target = detail.originalEvent.target;
-    const event = new CustomEvent(name, {
-        bubbles: false,
-        cancelable: true,
-        detail: detail
-    });
-    if (handler) target.addEventListener(name, handler, {
-        once: true
-    });
-    if (discrete) $8927f6f2acc4f386$export$6d1a0317bde7de7f(target, event);
-    else target.dispatchEvent(event);
-}
-
-const $d3863c46a17e8a28$var$AUTOFOCUS_ON_MOUNT = 'focusScope.autoFocusOnMount';
-const $d3863c46a17e8a28$var$AUTOFOCUS_ON_UNMOUNT = 'focusScope.autoFocusOnUnmount';
-const $d3863c46a17e8a28$var$EVENT_OPTIONS = {
-    bubbles: false,
-    cancelable: true
-};
-const $d3863c46a17e8a28$export$20e40289641fbbb6 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { loop: loop = false , trapped: trapped = false , onMountAutoFocus: onMountAutoFocusProp , onUnmountAutoFocus: onUnmountAutoFocusProp , ...scopeProps } = props;
-    const [container1, setContainer] = React.useState(null);
-    const onMountAutoFocus = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onMountAutoFocusProp);
-    const onUnmountAutoFocus = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onUnmountAutoFocusProp);
-    const lastFocusedElementRef = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05(forwardedRef, (node)=>setContainer(node)
-    );
-    const focusScope = React.useRef({
-        paused: false,
-        pause () {
-            this.paused = true;
-        },
-        resume () {
-            this.paused = false;
-        }
-    }).current; // Takes care of trapping focus if focus is moved outside programmatically for example
-    React.useEffect(()=>{
-        if (trapped) {
-            function handleFocusIn(event) {
-                if (focusScope.paused || !container1) return;
-                const target = event.target;
-                if (container1.contains(target)) lastFocusedElementRef.current = target;
-                else $d3863c46a17e8a28$var$focus(lastFocusedElementRef.current, {
-                    select: true
-                });
-            }
-            function handleFocusOut(event) {
-                if (focusScope.paused || !container1) return;
-                if (!container1.contains(event.relatedTarget)) $d3863c46a17e8a28$var$focus(lastFocusedElementRef.current, {
-                    select: true
-                });
-            }
-            document.addEventListener('focusin', handleFocusIn);
-            document.addEventListener('focusout', handleFocusOut);
-            return ()=>{
-                document.removeEventListener('focusin', handleFocusIn);
-                document.removeEventListener('focusout', handleFocusOut);
-            };
-        }
-    }, [
-        trapped,
-        container1,
-        focusScope.paused
-    ]);
-    React.useEffect(()=>{
-        if (container1) {
-            $d3863c46a17e8a28$var$focusScopesStack.add(focusScope);
-            const previouslyFocusedElement = document.activeElement;
-            const hasFocusedCandidate = container1.contains(previouslyFocusedElement);
-            if (!hasFocusedCandidate) {
-                const mountEvent = new CustomEvent($d3863c46a17e8a28$var$AUTOFOCUS_ON_MOUNT, $d3863c46a17e8a28$var$EVENT_OPTIONS);
-                container1.addEventListener($d3863c46a17e8a28$var$AUTOFOCUS_ON_MOUNT, onMountAutoFocus);
-                container1.dispatchEvent(mountEvent);
-                if (!mountEvent.defaultPrevented) {
-                    $d3863c46a17e8a28$var$focusFirst($d3863c46a17e8a28$var$removeLinks($d3863c46a17e8a28$var$getTabbableCandidates(container1)), {
-                        select: true
-                    });
-                    if (document.activeElement === previouslyFocusedElement) $d3863c46a17e8a28$var$focus(container1);
-                }
-            }
-            return ()=>{
-                container1.removeEventListener($d3863c46a17e8a28$var$AUTOFOCUS_ON_MOUNT, onMountAutoFocus); // We hit a react bug (fixed in v17) with focusing in unmount.
-                // We need to delay the focus a little to get around it for now.
-                // See: https://github.com/facebook/react/issues/17894
-                setTimeout(()=>{
-                    const unmountEvent = new CustomEvent($d3863c46a17e8a28$var$AUTOFOCUS_ON_UNMOUNT, $d3863c46a17e8a28$var$EVENT_OPTIONS);
-                    container1.addEventListener($d3863c46a17e8a28$var$AUTOFOCUS_ON_UNMOUNT, onUnmountAutoFocus);
-                    container1.dispatchEvent(unmountEvent);
-                    if (!unmountEvent.defaultPrevented) $d3863c46a17e8a28$var$focus(previouslyFocusedElement !== null && previouslyFocusedElement !== void 0 ? previouslyFocusedElement : document.body, {
-                        select: true
-                    });
-                     // we need to remove the listener after we `dispatchEvent`
-                    container1.removeEventListener($d3863c46a17e8a28$var$AUTOFOCUS_ON_UNMOUNT, onUnmountAutoFocus);
-                    $d3863c46a17e8a28$var$focusScopesStack.remove(focusScope);
-                }, 0);
-            };
-        }
-    }, [
-        container1,
-        onMountAutoFocus,
-        onUnmountAutoFocus,
-        focusScope
-    ]); // Takes care of looping focus (when tabbing whilst at the edges)
-    const handleKeyDown = React.useCallback((event)=>{
-        if (!loop && !trapped) return;
-        if (focusScope.paused) return;
-        const isTabKey = event.key === 'Tab' && !event.altKey && !event.ctrlKey && !event.metaKey;
-        const focusedElement = document.activeElement;
-        if (isTabKey && focusedElement) {
-            const container = event.currentTarget;
-            const [first, last] = $d3863c46a17e8a28$var$getTabbableEdges(container);
-            const hasTabbableElementsInside = first && last; // we can only wrap focus if we have tabbable edges
-            if (!hasTabbableElementsInside) {
-                if (focusedElement === container) event.preventDefault();
-            } else {
-                if (!event.shiftKey && focusedElement === last) {
-                    event.preventDefault();
-                    if (loop) $d3863c46a17e8a28$var$focus(first, {
-                        select: true
-                    });
-                } else if (event.shiftKey && focusedElement === first) {
-                    event.preventDefault();
-                    if (loop) $d3863c46a17e8a28$var$focus(last, {
-                        select: true
-                    });
-                }
-            }
-        }
-    }, [
-        loop,
-        trapped,
-        focusScope.paused
-    ]);
-    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034.div, _extends$m({
-        tabIndex: -1
-    }, scopeProps, {
-        ref: composedRefs,
-        onKeyDown: handleKeyDown
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * Utils
- * -----------------------------------------------------------------------------------------------*/ /**
- * Attempts focusing the first element in a list of candidates.
- * Stops when focus has actually moved.
- */ function $d3863c46a17e8a28$var$focusFirst(candidates, { select: select = false  } = {}) {
-    const previouslyFocusedElement = document.activeElement;
-    for (const candidate of candidates){
-        $d3863c46a17e8a28$var$focus(candidate, {
-            select: select
-        });
-        if (document.activeElement !== previouslyFocusedElement) return;
-    }
-}
-/**
- * Returns the first and last tabbable elements inside a container.
- */ function $d3863c46a17e8a28$var$getTabbableEdges(container) {
-    const candidates = $d3863c46a17e8a28$var$getTabbableCandidates(container);
-    const first = $d3863c46a17e8a28$var$findVisible(candidates, container);
-    const last = $d3863c46a17e8a28$var$findVisible(candidates.reverse(), container);
-    return [
-        first,
-        last
-    ];
-}
-/**
- * Returns a list of potential tabbable candidates.
- *
- * NOTE: This is only a close approximation. For example it doesn't take into account cases like when
- * elements are not visible. This cannot be worked out easily by just reading a property, but rather
- * necessitate runtime knowledge (computed styles, etc). We deal with these cases separately.
- *
- * See: https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker
- * Credit: https://github.com/discord/focus-layers/blob/master/src/util/wrapFocus.tsx#L1
- */ function $d3863c46a17e8a28$var$getTabbableCandidates(container) {
-    const nodes = [];
-    const walker = document.createTreeWalker(container, NodeFilter.SHOW_ELEMENT, {
-        acceptNode: (node)=>{
-            const isHiddenInput = node.tagName === 'INPUT' && node.type === 'hidden';
-            if (node.disabled || node.hidden || isHiddenInput) return NodeFilter.FILTER_SKIP; // `.tabIndex` is not the same as the `tabindex` attribute. It works on the
-            // runtime's understanding of tabbability, so this automatically accounts
-            // for any kind of element that could be tabbed to.
-            return node.tabIndex >= 0 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
-        }
-    });
-    while(walker.nextNode())nodes.push(walker.currentNode); // we do not take into account the order of nodes with positive `tabIndex` as it
-    // hinders accessibility to have tab order different from visual order.
-    return nodes;
-}
-/**
- * Returns the first visible element in a list.
- * NOTE: Only checks visibility up to the `container`.
- */ function $d3863c46a17e8a28$var$findVisible(elements, container) {
-    for (const element of elements){
-        // we stop checking if it's hidden at the `container` level (excluding)
-        if (!$d3863c46a17e8a28$var$isHidden(element, {
-            upTo: container
-        })) return element;
-    }
-}
-function $d3863c46a17e8a28$var$isHidden(node, { upTo: upTo  }) {
-    if (getComputedStyle(node).visibility === 'hidden') return true;
-    while(node){
-        // we stop at `upTo` (excluding it)
-        if (upTo !== undefined && node === upTo) return false;
-        if (getComputedStyle(node).display === 'none') return true;
-        node = node.parentElement;
-    }
-    return false;
-}
-function $d3863c46a17e8a28$var$isSelectableInput(element) {
-    return element instanceof HTMLInputElement && 'select' in element;
-}
-function $d3863c46a17e8a28$var$focus(element, { select: select = false  } = {}) {
-    // only focus if that element is focusable
-    if (element && element.focus) {
-        const previouslyFocusedElement = document.activeElement; // NOTE: we prevent scrolling on focus, to minimize jarring transitions for users
-        element.focus({
-            preventScroll: true
-        }); // only select if its not the same element, it supports selection and we need to select
-        if (element !== previouslyFocusedElement && $d3863c46a17e8a28$var$isSelectableInput(element) && select) element.select();
-    }
-}
-/* -------------------------------------------------------------------------------------------------
- * FocusScope stack
- * -----------------------------------------------------------------------------------------------*/ const $d3863c46a17e8a28$var$focusScopesStack = $d3863c46a17e8a28$var$createFocusScopesStack();
-function $d3863c46a17e8a28$var$createFocusScopesStack() {
-    /** A stack of focus scopes, with the active one at the top */ let stack = [];
-    return {
-        add (focusScope) {
-            // pause the currently active focus scope (at the top of the stack)
-            const activeFocusScope = stack[0];
-            if (focusScope !== activeFocusScope) activeFocusScope === null || activeFocusScope === void 0 || activeFocusScope.pause();
-             // remove in case it already exists (because we'll re-add it at the top of the stack)
-            stack = $d3863c46a17e8a28$var$arrayRemove(stack, focusScope);
-            stack.unshift(focusScope);
-        },
-        remove (focusScope) {
-            var _stack$;
-            stack = $d3863c46a17e8a28$var$arrayRemove(stack, focusScope);
-            (_stack$ = stack[0]) === null || _stack$ === void 0 || _stack$.resume();
-        }
-    };
-}
-function $d3863c46a17e8a28$var$arrayRemove(array, item) {
-    const updatedArray = [
-        ...array
-    ];
-    const index = updatedArray.indexOf(item);
-    if (index !== -1) updatedArray.splice(index, 1);
-    return updatedArray;
-}
-function $d3863c46a17e8a28$var$removeLinks(items) {
-    return items.filter((item)=>item.tagName !== 'A'
-    );
-}
-
-const $f1701beae083dbae$export$602eac185826482c = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    var _globalThis$document;
-    const { container: container = globalThis === null || globalThis === void 0 ? void 0 : (_globalThis$document = globalThis.document) === null || _globalThis$document === void 0 ? void 0 : _globalThis$document.body , ...portalProps } = props;
-    return container ? /*#__PURE__*/ ReactDOM__default["default"].createPortal(/*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034.div, _extends$m({}, portalProps, {
-        ref: forwardedRef
-    })), container) : null;
-});
-
-function $fe963b355347cc68$export$3e6543de14f8614f(initialState, machine) {
-    return React.useReducer((state, event)=>{
-        const nextState = machine[state][event];
-        return nextState !== null && nextState !== void 0 ? nextState : state;
-    }, initialState);
-}
-
-
-const $921a889cee6df7e8$export$99c2b779aa4e8b8b = (props)=>{
-    const { present: present , children: children  } = props;
-    const presence = $921a889cee6df7e8$var$usePresence(present);
-    const child = typeof children === 'function' ? children({
-        present: presence.isPresent
-    }) : React.Children.only(children);
-    const ref = $6ed0406888f73fc4$export$c7b2cbe3552a0d05(presence.ref, child.ref);
-    const forceMount = typeof children === 'function';
-    return forceMount || presence.isPresent ? /*#__PURE__*/ React.cloneElement(child, {
-        ref: ref
-    }) : null;
-};
-$921a889cee6df7e8$export$99c2b779aa4e8b8b.displayName = 'Presence';
-/* -------------------------------------------------------------------------------------------------
- * usePresence
- * -----------------------------------------------------------------------------------------------*/ function $921a889cee6df7e8$var$usePresence(present) {
-    const [node1, setNode] = React.useState();
-    const stylesRef = React.useRef({});
-    const prevPresentRef = React.useRef(present);
-    const prevAnimationNameRef = React.useRef('none');
-    const initialState = present ? 'mounted' : 'unmounted';
-    const [state, send] = $fe963b355347cc68$export$3e6543de14f8614f(initialState, {
-        mounted: {
-            UNMOUNT: 'unmounted',
-            ANIMATION_OUT: 'unmountSuspended'
-        },
-        unmountSuspended: {
-            MOUNT: 'mounted',
-            ANIMATION_END: 'unmounted'
-        },
-        unmounted: {
-            MOUNT: 'mounted'
-        }
-    });
-    React.useEffect(()=>{
-        const currentAnimationName = $921a889cee6df7e8$var$getAnimationName(stylesRef.current);
-        prevAnimationNameRef.current = state === 'mounted' ? currentAnimationName : 'none';
-    }, [
-        state
-    ]);
-    $9f79659886946c16$export$e5c5a5f917a5871c(()=>{
-        const styles = stylesRef.current;
-        const wasPresent = prevPresentRef.current;
-        const hasPresentChanged = wasPresent !== present;
-        if (hasPresentChanged) {
-            const prevAnimationName = prevAnimationNameRef.current;
-            const currentAnimationName = $921a889cee6df7e8$var$getAnimationName(styles);
-            if (present) send('MOUNT');
-            else if (currentAnimationName === 'none' || (styles === null || styles === void 0 ? void 0 : styles.display) === 'none') // If there is no exit animation or the element is hidden, animations won't run
-            // so we unmount instantly
-            send('UNMOUNT');
-            else {
-                /**
-         * When `present` changes to `false`, we check changes to animation-name to
-         * determine whether an animation has started. We chose this approach (reading
-         * computed styles) because there is no `animationrun` event and `animationstart`
-         * fires after `animation-delay` has expired which would be too late.
-         */ const isAnimating = prevAnimationName !== currentAnimationName;
-                if (wasPresent && isAnimating) send('ANIMATION_OUT');
-                else send('UNMOUNT');
-            }
-            prevPresentRef.current = present;
-        }
-    }, [
-        present,
-        send
-    ]);
-    $9f79659886946c16$export$e5c5a5f917a5871c(()=>{
-        if (node1) {
-            /**
-       * Triggering an ANIMATION_OUT during an ANIMATION_IN will fire an `animationcancel`
-       * event for ANIMATION_IN after we have entered `unmountSuspended` state. So, we
-       * make sure we only trigger ANIMATION_END for the currently active animation.
-       */ const handleAnimationEnd = (event)=>{
-                const currentAnimationName = $921a889cee6df7e8$var$getAnimationName(stylesRef.current);
-                const isCurrentAnimation = currentAnimationName.includes(event.animationName);
-                if (event.target === node1 && isCurrentAnimation) // With React 18 concurrency this update is applied
-                // a frame after the animation ends, creating a flash of visible content.
-                // By manually flushing we ensure they sync within a frame, removing the flash.
-                ReactDOM.flushSync(()=>send('ANIMATION_END')
-                );
-            };
-            const handleAnimationStart = (event)=>{
-                if (event.target === node1) // if animation occurred, store its name as the previous animation.
-                prevAnimationNameRef.current = $921a889cee6df7e8$var$getAnimationName(stylesRef.current);
-            };
-            node1.addEventListener('animationstart', handleAnimationStart);
-            node1.addEventListener('animationcancel', handleAnimationEnd);
-            node1.addEventListener('animationend', handleAnimationEnd);
-            return ()=>{
-                node1.removeEventListener('animationstart', handleAnimationStart);
-                node1.removeEventListener('animationcancel', handleAnimationEnd);
-                node1.removeEventListener('animationend', handleAnimationEnd);
-            };
-        } else // Transition to the unmounted state if the node is removed prematurely.
-        // We avoid doing so during cleanup as the node may change but still exist.
-        send('ANIMATION_END');
-    }, [
-        node1,
-        send
-    ]);
-    return {
-        isPresent: [
-            'mounted',
-            'unmountSuspended'
-        ].includes(state),
-        ref: React.useCallback((node)=>{
-            if (node) stylesRef.current = getComputedStyle(node);
-            setNode(node);
-        }, [])
-    };
-}
-/* -----------------------------------------------------------------------------------------------*/ function $921a889cee6df7e8$var$getAnimationName(styles) {
-    return (styles === null || styles === void 0 ? void 0 : styles.animationName) || 'none';
-}
-
-/** Number of components which have requested interest to have focus guards */ let $3db38b7d1fb3fe6a$var$count = 0;
-/**
- * Injects a pair of focus guards at the edges of the whole DOM tree
- * to ensure `focusin` & `focusout` events can be caught consistently.
- */ function $3db38b7d1fb3fe6a$export$b7ece24a22aeda8c() {
-    React.useEffect(()=>{
-        var _edgeGuards$, _edgeGuards$2;
-        const edgeGuards = document.querySelectorAll('[data-radix-focus-guard]');
-        document.body.insertAdjacentElement('afterbegin', (_edgeGuards$ = edgeGuards[0]) !== null && _edgeGuards$ !== void 0 ? _edgeGuards$ : $3db38b7d1fb3fe6a$var$createFocusGuard());
-        document.body.insertAdjacentElement('beforeend', (_edgeGuards$2 = edgeGuards[1]) !== null && _edgeGuards$2 !== void 0 ? _edgeGuards$2 : $3db38b7d1fb3fe6a$var$createFocusGuard());
-        $3db38b7d1fb3fe6a$var$count++;
-        return ()=>{
-            if ($3db38b7d1fb3fe6a$var$count === 1) document.querySelectorAll('[data-radix-focus-guard]').forEach((node)=>node.remove()
-            );
-            $3db38b7d1fb3fe6a$var$count--;
-        };
-    }, []);
-}
-function $3db38b7d1fb3fe6a$var$createFocusGuard() {
-    const element = document.createElement('span');
-    element.setAttribute('data-radix-focus-guard', '');
-    element.tabIndex = 0;
-    element.style.cssText = 'outline: none; opacity: 0; position: fixed; pointer-events: none';
-    return element;
-}
-
-var effectCar = createSidecarMedium();
-
-var nothing = function () {
-    return;
-};
-/**
- * Removes scrollbar from the page and contain the scroll within the Lock
- */
-var RemoveScroll = React__namespace.forwardRef(function (props, parentRef) {
-    var ref = React__namespace.useRef(null);
-    var _a = React__namespace.useState({
-        onScrollCapture: nothing,
-        onWheelCapture: nothing,
-        onTouchMoveCapture: nothing,
-    }), callbacks = _a[0], setCallbacks = _a[1];
-    var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? 'div' : _b, rest = __rest$7(props, ["forwardProps", "children", "className", "removeScrollBar", "enabled", "shards", "sideCar", "noIsolation", "inert", "allowPinchZoom", "as"]);
-    var SideCar = sideCar;
-    var containerRef = useMergeRefs([ref, parentRef]);
-    var containerProps = __assign$2(__assign$2({}, rest), callbacks);
-    return (React__namespace.createElement(React__namespace.Fragment, null,
-        enabled && (React__namespace.createElement(SideCar, { sideCar: effectCar, removeScrollBar: removeScrollBar, shards: shards, noIsolation: noIsolation, inert: inert, setCallbacks: setCallbacks, allowPinchZoom: !!allowPinchZoom, lockRef: ref })),
-        forwardProps ? (React__namespace.cloneElement(React__namespace.Children.only(children), __assign$2(__assign$2({}, containerProps), { ref: containerRef }))) : (React__namespace.createElement(Container, __assign$2({}, containerProps, { className: className, ref: containerRef }), children))));
-});
-RemoveScroll.defaultProps = {
-    enabled: true,
-    removeScrollBar: true,
-    inert: false,
-};
-RemoveScroll.classNames = {
-    fullWidth: fullWidthClassName,
-    zeroRight: zeroRightClassName,
-};
-
-var passiveSupported = false;
-if (typeof window !== 'undefined') {
-    try {
-        var options = Object.defineProperty({}, 'passive', {
-            get: function () {
-                passiveSupported = true;
-                return true;
-            },
-        });
-        // @ts-ignore
-        window.addEventListener('test', options, options);
-        // @ts-ignore
-        window.removeEventListener('test', options, options);
-    }
-    catch (err) {
-        passiveSupported = false;
-    }
-}
-var nonPassive = passiveSupported ? { passive: false } : false;
-
-var elementCouldBeVScrolled = function (node) {
-    var styles = window.getComputedStyle(node);
-    return (styles.overflowY !== 'hidden' && // not-not-scrollable
-        !(styles.overflowY === styles.overflowX && styles.overflowY === 'visible') // scrollable
-    );
-};
-var elementCouldBeHScrolled = function (node) {
-    var styles = window.getComputedStyle(node);
-    return (styles.overflowX !== 'hidden' && // not-not-scrollable
-        !(styles.overflowY === styles.overflowX && styles.overflowX === 'visible') // scrollable
-    );
-};
-var locationCouldBeScrolled = function (axis, node) {
-    var current = node;
-    do {
-        // Skip over shadow root
-        if (typeof ShadowRoot !== 'undefined' && current instanceof ShadowRoot) {
-            current = current.host;
-        }
-        var isScrollable = elementCouldBeScrolled(axis, current);
-        if (isScrollable) {
-            var _a = getScrollVariables(axis, current), s = _a[1], d = _a[2];
-            if (s > d) {
-                return true;
-            }
-        }
-        current = current.parentNode;
-    } while (current && current !== document.body);
-    return false;
-};
-var getVScrollVariables = function (_a) {
-    var scrollTop = _a.scrollTop, scrollHeight = _a.scrollHeight, clientHeight = _a.clientHeight;
-    return [
-        scrollTop,
-        scrollHeight,
-        clientHeight,
-    ];
-};
-var getHScrollVariables = function (_a) {
-    var scrollLeft = _a.scrollLeft, scrollWidth = _a.scrollWidth, clientWidth = _a.clientWidth;
-    return [
-        scrollLeft,
-        scrollWidth,
-        clientWidth,
-    ];
-};
-var elementCouldBeScrolled = function (axis, node) {
-    return axis === 'v' ? elementCouldBeVScrolled(node) : elementCouldBeHScrolled(node);
-};
-var getScrollVariables = function (axis, node) {
-    return axis === 'v' ? getVScrollVariables(node) : getHScrollVariables(node);
-};
-var getDirectionFactor = function (axis, direction) {
-    /**
-     * If the element's direction is rtl (right-to-left), then scrollLeft is 0 when the scrollbar is at its rightmost position,
-     * and then increasingly negative as you scroll towards the end of the content.
-     * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
-     */
-    return axis === 'h' && direction === 'rtl' ? -1 : 1;
-};
-var handleScroll = function (axis, endTarget, event, sourceDelta, noOverscroll) {
-    var directionFactor = getDirectionFactor(axis, window.getComputedStyle(endTarget).direction);
-    var delta = directionFactor * sourceDelta;
-    // find scrollable target
-    var target = event.target;
-    var targetInLock = endTarget.contains(target);
-    var shouldCancelScroll = false;
-    var isDeltaPositive = delta > 0;
-    var availableScroll = 0;
-    var availableScrollTop = 0;
-    do {
-        var _a = getScrollVariables(axis, target), position = _a[0], scroll_1 = _a[1], capacity = _a[2];
-        var elementScroll = scroll_1 - capacity - directionFactor * position;
-        if (position || elementScroll) {
-            if (elementCouldBeScrolled(axis, target)) {
-                availableScroll += elementScroll;
-                availableScrollTop += position;
-            }
-        }
-        target = target.parentNode;
-    } while (
-    // portaled content
-    (!targetInLock && target !== document.body) ||
-        // self content
-        (targetInLock && (endTarget.contains(target) || endTarget === target)));
-    if (isDeltaPositive && ((noOverscroll && availableScroll === 0) || (!noOverscroll && delta > availableScroll))) {
-        shouldCancelScroll = true;
-    }
-    else if (!isDeltaPositive &&
-        ((noOverscroll && availableScrollTop === 0) || (!noOverscroll && -delta > availableScrollTop))) {
-        shouldCancelScroll = true;
-    }
-    return shouldCancelScroll;
-};
-
-var getTouchXY = function (event) {
-    return 'changedTouches' in event ? [event.changedTouches[0].clientX, event.changedTouches[0].clientY] : [0, 0];
-};
-var getDeltaXY = function (event) { return [event.deltaX, event.deltaY]; };
-var extractRef = function (ref) {
-    return ref && 'current' in ref ? ref.current : ref;
-};
-var deltaCompare = function (x, y) { return x[0] === y[0] && x[1] === y[1]; };
-var generateStyle = function (id) { return "\n  .block-interactivity-".concat(id, " {pointer-events: none;}\n  .allow-interactivity-").concat(id, " {pointer-events: all;}\n"); };
-var idCounter$1 = 0;
-var lockStack = [];
-function RemoveScrollSideCar(props) {
-    var shouldPreventQueue = React__namespace.useRef([]);
-    var touchStartRef = React__namespace.useRef([0, 0]);
-    var activeAxis = React__namespace.useRef();
-    var id = React__namespace.useState(idCounter$1++)[0];
-    var Style = React__namespace.useState(function () { return styleSingleton(); })[0];
-    var lastProps = React__namespace.useRef(props);
-    React__namespace.useEffect(function () {
-        lastProps.current = props;
-    }, [props]);
-    React__namespace.useEffect(function () {
-        if (props.inert) {
-            document.body.classList.add("block-interactivity-".concat(id));
-            var allow_1 = __spreadArray$1([props.lockRef.current], (props.shards || []).map(extractRef), true).filter(Boolean);
-            allow_1.forEach(function (el) { return el.classList.add("allow-interactivity-".concat(id)); });
-            return function () {
-                document.body.classList.remove("block-interactivity-".concat(id));
-                allow_1.forEach(function (el) { return el.classList.remove("allow-interactivity-".concat(id)); });
-            };
-        }
-        return;
-    }, [props.inert, props.lockRef.current, props.shards]);
-    var shouldCancelEvent = React__namespace.useCallback(function (event, parent) {
-        if ('touches' in event && event.touches.length === 2) {
-            return !lastProps.current.allowPinchZoom;
-        }
-        var touch = getTouchXY(event);
-        var touchStart = touchStartRef.current;
-        var deltaX = 'deltaX' in event ? event.deltaX : touchStart[0] - touch[0];
-        var deltaY = 'deltaY' in event ? event.deltaY : touchStart[1] - touch[1];
-        var currentAxis;
-        var target = event.target;
-        var moveDirection = Math.abs(deltaX) > Math.abs(deltaY) ? 'h' : 'v';
-        // allow horizontal touch move on Range inputs. They will not cause any scroll
-        if ('touches' in event && moveDirection === 'h' && target.type === 'range') {
-            return false;
-        }
-        var canBeScrolledInMainDirection = locationCouldBeScrolled(moveDirection, target);
-        if (!canBeScrolledInMainDirection) {
-            return true;
-        }
-        if (canBeScrolledInMainDirection) {
-            currentAxis = moveDirection;
-        }
-        else {
-            currentAxis = moveDirection === 'v' ? 'h' : 'v';
-            canBeScrolledInMainDirection = locationCouldBeScrolled(moveDirection, target);
-            // other axis might be not scrollable
-        }
-        if (!canBeScrolledInMainDirection) {
-            return false;
-        }
-        if (!activeAxis.current && 'changedTouches' in event && (deltaX || deltaY)) {
-            activeAxis.current = currentAxis;
-        }
-        if (!currentAxis) {
-            return true;
-        }
-        var cancelingAxis = activeAxis.current || currentAxis;
-        return handleScroll(cancelingAxis, parent, event, cancelingAxis === 'h' ? deltaX : deltaY, true);
-    }, []);
-    var shouldPrevent = React__namespace.useCallback(function (_event) {
-        var event = _event;
-        if (!lockStack.length || lockStack[lockStack.length - 1] !== Style) {
-            // not the last active
-            return;
-        }
-        var delta = 'deltaY' in event ? getDeltaXY(event) : getTouchXY(event);
-        var sourceEvent = shouldPreventQueue.current.filter(function (e) { return e.name === event.type && e.target === event.target && deltaCompare(e.delta, delta); })[0];
-        // self event, and should be canceled
-        if (sourceEvent && sourceEvent.should) {
-            event.preventDefault();
-            return;
-        }
-        // outside or shard event
-        if (!sourceEvent) {
-            var shardNodes = (lastProps.current.shards || [])
-                .map(extractRef)
-                .filter(Boolean)
-                .filter(function (node) { return node.contains(event.target); });
-            var shouldStop = shardNodes.length > 0 ? shouldCancelEvent(event, shardNodes[0]) : !lastProps.current.noIsolation;
-            if (shouldStop) {
-                event.preventDefault();
-            }
-        }
-    }, []);
-    var shouldCancel = React__namespace.useCallback(function (name, delta, target, should) {
-        var event = { name: name, delta: delta, target: target, should: should };
-        shouldPreventQueue.current.push(event);
-        setTimeout(function () {
-            shouldPreventQueue.current = shouldPreventQueue.current.filter(function (e) { return e !== event; });
-        }, 1);
-    }, []);
-    var scrollTouchStart = React__namespace.useCallback(function (event) {
-        touchStartRef.current = getTouchXY(event);
-        activeAxis.current = undefined;
-    }, []);
-    var scrollWheel = React__namespace.useCallback(function (event) {
-        shouldCancel(event.type, getDeltaXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
-    }, []);
-    var scrollTouchMove = React__namespace.useCallback(function (event) {
-        shouldCancel(event.type, getTouchXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
-    }, []);
-    React__namespace.useEffect(function () {
-        lockStack.push(Style);
-        props.setCallbacks({
-            onScrollCapture: scrollWheel,
-            onWheelCapture: scrollWheel,
-            onTouchMoveCapture: scrollTouchMove,
-        });
-        document.addEventListener('wheel', shouldPrevent, nonPassive);
-        document.addEventListener('touchmove', shouldPrevent, nonPassive);
-        document.addEventListener('touchstart', scrollTouchStart, nonPassive);
-        return function () {
-            lockStack = lockStack.filter(function (inst) { return inst !== Style; });
-            document.removeEventListener('wheel', shouldPrevent, nonPassive);
-            document.removeEventListener('touchmove', shouldPrevent, nonPassive);
-            document.removeEventListener('touchstart', scrollTouchStart, nonPassive);
-        };
-    }, []);
-    var removeScrollBar = props.removeScrollBar, inert = props.inert;
-    return (React__namespace.createElement(React__namespace.Fragment, null,
-        inert ? React__namespace.createElement(Style, { styles: generateStyle(id) }) : null,
-        removeScrollBar ? React__namespace.createElement(RemoveScrollBar, { gapMode: "margin" }) : null));
-}
-
-var SideCar = exportSidecar(effectCar, RemoveScrollSideCar);
-
-var ReactRemoveScroll = React__namespace.forwardRef(function (props, ref) { return (React__namespace.createElement(RemoveScroll, __assign$2({}, props, { ref: ref, sideCar: SideCar }))); });
-ReactRemoveScroll.classNames = RemoveScroll.classNames;
-var $67UHm$RemoveScroll = ReactRemoveScroll;
-
-/* -------------------------------------------------------------------------------------------------
- * Dialog
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DIALOG_NAME = 'Dialog';
-const [$5d3850c4d0b4e6c7$var$createDialogContext, $5d3850c4d0b4e6c7$export$cc702773b8ea3e41] = $c512c27ab02ef895$export$50c7b4e9d9f19c1($5d3850c4d0b4e6c7$var$DIALOG_NAME);
-const [$5d3850c4d0b4e6c7$var$DialogProvider, $5d3850c4d0b4e6c7$var$useDialogContext] = $5d3850c4d0b4e6c7$var$createDialogContext($5d3850c4d0b4e6c7$var$DIALOG_NAME);
-const $5d3850c4d0b4e6c7$export$3ddf2d174ce01153 = (props)=>{
-    const { __scopeDialog: __scopeDialog , children: children , open: openProp , defaultOpen: defaultOpen , onOpenChange: onOpenChange , modal: modal = true  } = props;
-    const triggerRef = React.useRef(null);
-    const contentRef = React.useRef(null);
-    const [open = false, setOpen] = $71cd76cc60e0454e$export$6f32135080cb4c3({
-        prop: openProp,
-        defaultProp: defaultOpen,
-        onChange: onOpenChange
-    });
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogProvider, {
-        scope: __scopeDialog,
-        triggerRef: triggerRef,
-        contentRef: contentRef,
-        contentId: $1746a345f3d73bb7$export$f680877a34711e37(),
-        titleId: $1746a345f3d73bb7$export$f680877a34711e37(),
-        descriptionId: $1746a345f3d73bb7$export$f680877a34711e37(),
-        open: open,
-        onOpenChange: setOpen,
-        onOpenToggle: React.useCallback(()=>setOpen((prevOpen)=>!prevOpen
-            )
-        , [
-            setOpen
-        ]),
-        modal: modal
-    }, children);
-};
-/* -------------------------------------------------------------------------------------------------
- * DialogPortal
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$PORTAL_NAME = 'DialogPortal';
-const [$5d3850c4d0b4e6c7$var$PortalProvider, $5d3850c4d0b4e6c7$var$usePortalContext] = $5d3850c4d0b4e6c7$var$createDialogContext($5d3850c4d0b4e6c7$var$PORTAL_NAME, {
-    forceMount: undefined
-});
-const $5d3850c4d0b4e6c7$export$dad7c95542bacce0 = (props)=>{
-    const { __scopeDialog: __scopeDialog , forceMount: forceMount , children: children , container: container  } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$PORTAL_NAME, __scopeDialog);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$PortalProvider, {
-        scope: __scopeDialog,
-        forceMount: forceMount
-    }, React.Children.map(children, (child)=>/*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b, {
-            present: forceMount || context.open
-        }, /*#__PURE__*/ React.createElement($f1701beae083dbae$export$602eac185826482c, {
-            asChild: true,
-            container: container
-        }, child))
-    ));
-};
-/* -------------------------------------------------------------------------------------------------
- * DialogOverlay
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$OVERLAY_NAME = 'DialogOverlay';
-const $5d3850c4d0b4e6c7$export$bd1d06c79be19e17 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext($5d3850c4d0b4e6c7$var$OVERLAY_NAME, props.__scopeDialog);
-    const { forceMount: forceMount = portalContext.forceMount , ...overlayProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$OVERLAY_NAME, props.__scopeDialog);
-    return context.modal ? /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b, {
-        present: forceMount || context.open
-    }, /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogOverlayImpl, _extends$m({}, overlayProps, {
-        ref: forwardedRef
-    }))) : null;
-});
-const $5d3850c4d0b4e6c7$var$DialogOverlayImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , ...overlayProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$OVERLAY_NAME, __scopeDialog);
-    return(/*#__PURE__*/ // Make sure `Content` is scrollable even when it doesn't live inside `RemoveScroll`
-    // ie. when `Overlay` and `Content` are siblings
-    React.createElement($67UHm$RemoveScroll, {
-        as: $5e63c961fc1ce211$export$8c6ed5c666ac1360,
-        allowPinchZoom: true,
-        shards: [
-            context.contentRef
-        ]
-    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034.div, _extends$m({
-        "data-state": $5d3850c4d0b4e6c7$var$getState(context.open)
-    }, overlayProps, {
-        ref: forwardedRef // We re-enable pointer-events prevented by `Dialog.Content` to allow scrolling the overlay.
-        ,
-        style: {
-            pointerEvents: 'auto',
-            ...overlayProps.style
-        }
-    }))));
-});
-/* -------------------------------------------------------------------------------------------------
- * DialogContent
- * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$CONTENT_NAME = 'DialogContent';
-const $5d3850c4d0b4e6c7$export$b6d9565de1e068cf = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
-    const { forceMount: forceMount = portalContext.forceMount , ...contentProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
-    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b, {
-        present: forceMount || context.open
-    }, context.modal ? /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentModal, _extends$m({}, contentProps, {
-        ref: forwardedRef
-    })) : /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentNonModal, _extends$m({}, contentProps, {
-        ref: forwardedRef
-    })));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
-    const contentRef = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05(forwardedRef, context.contentRef, contentRef); // aria-hide everything except the content (better supported equivalent to setting aria-modal)
-    React.useEffect(()=>{
-        const content = contentRef.current;
-        if (content) return hideOthers(content);
-    }, []);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl, _extends$m({}, props, {
-        ref: composedRefs // we make sure focus isn't trapped once `DialogContent` has been closed
-        ,
-        trapFocus: context.open,
-        disableOutsidePointerEvents: true,
-        onCloseAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10(props.onCloseAutoFocus, (event)=>{
-            var _context$triggerRef$c;
-            event.preventDefault();
-            (_context$triggerRef$c = context.triggerRef.current) === null || _context$triggerRef$c === void 0 || _context$triggerRef$c.focus();
-        }),
-        onPointerDownOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10(props.onPointerDownOutside, (event)=>{
-            const originalEvent = event.detail.originalEvent;
-            const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
-            const isRightClick = originalEvent.button === 2 || ctrlLeftClick; // If the event is a right-click, we shouldn't close because
-            // it is effectively as if we right-clicked the `Overlay`.
-            if (isRightClick) event.preventDefault();
-        }) // When focus is trapped, a `focusout` event may still happen.
-        ,
-        onFocusOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10(props.onFocusOutside, (event)=>event.preventDefault()
-        )
-    }));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentNonModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
-    const hasInteractedOutsideRef = React.useRef(false);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl, _extends$m({}, props, {
-        ref: forwardedRef,
-        trapFocus: false,
-        disableOutsidePointerEvents: false,
-        onCloseAutoFocus: (event)=>{
-            var _props$onCloseAutoFoc;
-            (_props$onCloseAutoFoc = props.onCloseAutoFocus) === null || _props$onCloseAutoFoc === void 0 || _props$onCloseAutoFoc.call(props, event);
-            if (!event.defaultPrevented) {
-                var _context$triggerRef$c2;
-                if (!hasInteractedOutsideRef.current) (_context$triggerRef$c2 = context.triggerRef.current) === null || _context$triggerRef$c2 === void 0 || _context$triggerRef$c2.focus(); // Always prevent auto focus because we either focus manually or want user agent focus
-                event.preventDefault();
-            }
-            hasInteractedOutsideRef.current = false;
-        },
-        onInteractOutside: (event)=>{
-            var _props$onInteractOuts, _context$triggerRef$c3;
-            (_props$onInteractOuts = props.onInteractOutside) === null || _props$onInteractOuts === void 0 || _props$onInteractOuts.call(props, event);
-            if (!event.defaultPrevented) hasInteractedOutsideRef.current = true; // Prevent dismissing when clicking the trigger.
-            // As the trigger is already setup to close, without doing so would
-            // cause it to close and immediately open.
-            //
-            // We use `onInteractOutside` as some browsers also
-            // focus on pointer down, creating the same issue.
-            const target = event.target;
-            const targetIsTrigger = (_context$triggerRef$c3 = context.triggerRef.current) === null || _context$triggerRef$c3 === void 0 ? void 0 : _context$triggerRef$c3.contains(target);
-            if (targetIsTrigger) event.preventDefault();
-        }
-    }));
-});
-/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeDialog: __scopeDialog , trapFocus: trapFocus , onOpenAutoFocus: onOpenAutoFocus , onCloseAutoFocus: onCloseAutoFocus , ...contentProps } = props;
-    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, __scopeDialog);
-    const contentRef = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05(forwardedRef, contentRef); // Make sure the whole tree has focus guards as our `Dialog` will be
-    // the last element in the DOM (beacuse of the `Portal`)
-    $3db38b7d1fb3fe6a$export$b7ece24a22aeda8c();
-    return /*#__PURE__*/ React.createElement(React.Fragment, null, /*#__PURE__*/ React.createElement($d3863c46a17e8a28$export$20e40289641fbbb6, {
-        asChild: true,
-        loop: true,
-        trapped: trapFocus,
-        onMountAutoFocus: onOpenAutoFocus,
-        onUnmountAutoFocus: onCloseAutoFocus
-    }, /*#__PURE__*/ React.createElement($5cb92bef7577960e$export$177fb62ff3ec1f22, _extends$m({
-        role: "dialog",
-        id: context.contentId,
-        "aria-describedby": context.descriptionId,
-        "aria-labelledby": context.titleId,
-        "data-state": $5d3850c4d0b4e6c7$var$getState(context.open)
-    }, contentProps, {
-        ref: composedRefs,
-        onDismiss: ()=>context.onOpenChange(false)
-    }))), false);
-});
-/* -----------------------------------------------------------------------------------------------*/ function $5d3850c4d0b4e6c7$var$getState(open) {
-    return open ? 'open' : 'closed';
-}
-const $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9 = $5d3850c4d0b4e6c7$export$3ddf2d174ce01153;
-const $5d3850c4d0b4e6c7$export$602eac185826482c = $5d3850c4d0b4e6c7$export$dad7c95542bacce0;
-const $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff = $5d3850c4d0b4e6c7$export$bd1d06c79be19e17;
-const $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2 = $5d3850c4d0b4e6c7$export$b6d9565de1e068cf;
-
-// The scores are arranged so that a continuous match of characters will
-// result in a total score of 1.
-//
-// The best case, this character is a match, and either this is the start
-// of the string, or the previous character was also a match.
-var SCORE_CONTINUE_MATCH = 1,
-
-    // A new match at the start of a word scores better than a new match
-    // elsewhere as it's more likely that the user will type the starts
-    // of fragments.
-    // (Our notion of word includes CamelCase and hypen-separated, etc.)
-    SCORE_WORD_JUMP = 0.9,
-
-    // Any other match isn't ideal, but we include it for completeness.
-    SCORE_CHARACTER_JUMP = 0.3,
-
-    // If the user transposed two letters, it should be signficantly penalized.
-    //
-    // i.e. "ouch" is more likely than "curtain" when "uc" is typed.
-    SCORE_TRANSPOSITION = 0.1,
-
-    // If the user jumped to half-way through a subsequent word, it should be
-    // very significantly penalized.
-    //
-    // i.e. "loes" is very unlikely to match "loch ness".
-    // NOTE: this is set to 0 for superhuman right now, but we may want to revisit.
-    SCORE_LONG_JUMP = 0,
-
-    // The goodness of a match should decay slightly with each missing
-    // character.
-    //
-    // i.e. "bad" is more likely than "bard" when "bd" is typed.
-    //
-    // This will not change the order of suggestions based on SCORE_* until
-    // 100 characters are inserted between matches.
-    PENALTY_SKIPPED = 0.999,
-
-    // The goodness of an exact-case match should be higher than a
-    // case-insensitive match by a small amount.
-    //
-    // i.e. "HTML" is more likely than "haml" when "HM" is typed.
-    //
-    // This will not change the order of suggestions based on SCORE_* until
-    // 1000 characters are inserted between matches.
-    PENALTY_CASE_MISMATCH = 0.9999,
-
-    // If the word has more characters than the user typed, it should
-    // be penalised slightly.
-    //
-    // i.e. "html" is more likely than "html5" if I type "html".
-    //
-    // However, it may well be the case that there's a sensible secondary
-    // ordering (like alphabetical) that it makes sense to rely on when
-    // there are many prefix matches, so we don't make the penalty increase
-    // with the number of tokens.
-    PENALTY_NOT_COMPLETE = 0.99;
-
-var IS_GAP_REGEXP = /[\\\/\-_+.# \t"@\[\(\{&]/,
-    COUNT_GAPS_REGEXP = /[\\\/\-_+.# \t"@\[\(\{&]/g;
-
-function commandScoreInner(string, abbreviation, lowerString, lowerAbbreviation, stringIndex, abbreviationIndex) {
-
-    if (abbreviationIndex === abbreviation.length) {
-        if (stringIndex === string.length) {
-            return SCORE_CONTINUE_MATCH;
-
-        }
-        return PENALTY_NOT_COMPLETE;
-    }
-
-    var abbreviationChar = lowerAbbreviation.charAt(abbreviationIndex);
-    var index = lowerString.indexOf(abbreviationChar, stringIndex);
-    var highScore = 0;
-
-    var score, transposedScore, wordBreaks;
-
-    while (index >= 0) {
-
-        score = commandScoreInner(string, abbreviation, lowerString, lowerAbbreviation, index + 1, abbreviationIndex + 1);
-        if (score > highScore) {
-            if (index === stringIndex) {
-                score *= SCORE_CONTINUE_MATCH;
-            } else if (IS_GAP_REGEXP.test(string.charAt(index - 1))) {
-                score *= SCORE_WORD_JUMP;
-                wordBreaks = string.slice(stringIndex, index - 1).match(COUNT_GAPS_REGEXP);
-                if (wordBreaks && stringIndex > 0) {
-                    score *= Math.pow(PENALTY_SKIPPED, wordBreaks.length);
-                }
-            } else if (IS_GAP_REGEXP.test(string.slice(stringIndex, index - 1))) {
-                score *= SCORE_LONG_JUMP;
-                if (stringIndex > 0) {
-                    score *= Math.pow(PENALTY_SKIPPED, index - stringIndex);
-                }
-            } else {
-                score *= SCORE_CHARACTER_JUMP;
-                if (stringIndex > 0) {
-                    score *= Math.pow(PENALTY_SKIPPED, index - stringIndex);
-                }
-            }
-
-            if (string.charAt(index) !== abbreviation.charAt(abbreviationIndex)) {
-                score *= PENALTY_CASE_MISMATCH;
-            }
-
-        }
-
-        if (score < SCORE_TRANSPOSITION &&
-                lowerString.charAt(index - 1) === lowerAbbreviation.charAt(abbreviationIndex + 1) &&
-                lowerString.charAt(index - 1) !== lowerAbbreviation.charAt(abbreviationIndex)) {
-            transposedScore = commandScoreInner(string, abbreviation, lowerString, lowerAbbreviation, index + 1, abbreviationIndex + 2);
-
-            if (transposedScore * SCORE_TRANSPOSITION > score) {
-                score = transposedScore * SCORE_TRANSPOSITION;
-            }
-        }
-
-        if (score > highScore) {
-            highScore = score;
-        }
-
-        index = lowerString.indexOf(abbreviationChar, index + 1);
-    }
-
-    return highScore;
-}
-
-function commandScore(string, abbreviation) {
-    /* NOTE:
-     * in the original, we used to do the lower-casing on each recursive call, but this meant that toLowerCase()
-     * was the dominating cost in the algorithm, passing both is a little ugly, but considerably faster.
-     */
-    return commandScoreInner(string, abbreviation, string.toLowerCase(), abbreviation.toLowerCase(), 0, 0);
-}
-
-var commandScore_1 = commandScore;
-
-var ue='[cmdk-list-sizer=""]',M='[cmdk-group=""]',N='[cmdk-group-items=""]',de='[cmdk-group-heading=""]',ee='[cmdk-item=""]',Z=`${ee}:not([aria-disabled="true"])`,z$1="cmdk-item-select",S="data-value",fe=(n,a)=>commandScore_1(n,a),te=React__namespace.createContext(void 0),k$3=()=>React__namespace.useContext(te),re$1=React__namespace.createContext(void 0),U=()=>React__namespace.useContext(re$1),ne=React__namespace.createContext(void 0),oe=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useRef(null),o=x$2(()=>({search:"",value:"",filtered:{count:0,items:new Map,groups:new Set}})),u=x$2(()=>new Set),l=x$2(()=>new Map),p=x$2(()=>new Map),f=x$2(()=>new Set),d=ae(n),{label:v,children:E,value:R,onValueChange:w,filter:O,shouldFilter:ie,...D}=n,F=React__namespace.useId(),g=React__namespace.useId(),A=React__namespace.useId(),y=ye();L(()=>{if(R!==void 0){let e=R.trim().toLowerCase();o.current.value=e,y(6,W),h.emit();}},[R]);let h=React__namespace.useMemo(()=>({subscribe:e=>(f.current.add(e),()=>f.current.delete(e)),snapshot:()=>o.current,setState:(e,c,i)=>{var s,m,b;if(!Object.is(o.current[e],c)){if(o.current[e]=c,e==="search")j(),G(),y(1,V);else if(e==="value")if(((s=d.current)==null?void 0:s.value)!==void 0){(b=(m=d.current).onValueChange)==null||b.call(m,c);return}else i||y(5,W);h.emit();}},emit:()=>{f.current.forEach(e=>e());}}),[]),K=React__namespace.useMemo(()=>({value:(e,c)=>{c!==p.current.get(e)&&(p.current.set(e,c),o.current.filtered.items.set(e,B(c)),y(2,()=>{G(),h.emit();}));},item:(e,c)=>(u.current.add(e),c&&(l.current.has(c)?l.current.get(c).add(e):l.current.set(c,new Set([e]))),y(3,()=>{j(),G(),o.current.value||V(),h.emit();}),()=>{p.current.delete(e),u.current.delete(e),o.current.filtered.items.delete(e),y(4,()=>{j(),V(),h.emit();});}),group:e=>(l.current.has(e)||l.current.set(e,new Set),()=>{p.current.delete(e),l.current.delete(e);}),filter:()=>d.current.shouldFilter,label:v||n["aria-label"],listId:F,inputId:A,labelId:g}),[]);function B(e){var i;let c=((i=d.current)==null?void 0:i.filter)??fe;return e?c(e,o.current.search):0}function G(){if(!r.current||!o.current.search||d.current.shouldFilter===!1)return;let e=o.current.filtered.items,c=[];o.current.filtered.groups.forEach(s=>{let m=l.current.get(s),b=0;m.forEach(P=>{let ce=e.get(P);b=Math.max(ce,b);}),c.push([s,b]);});let i=r.current.querySelector(ue);I().sort((s,m)=>{let b=s.getAttribute(S),P=m.getAttribute(S);return (e.get(P)??0)-(e.get(b)??0)}).forEach(s=>{let m=s.closest(N);m?m.appendChild(s.parentElement===m?s:s.closest(`${N} > *`)):i.appendChild(s.parentElement===i?s:s.closest(`${N} > *`));}),c.sort((s,m)=>m[1]-s[1]).forEach(s=>{let m=r.current.querySelector(`${M}[${S}="${s[0]}"]`);m==null||m.parentElement.appendChild(m);});}function V(){let e=I().find(i=>!i.ariaDisabled),c=e==null?void 0:e.getAttribute(S);h.setState("value",c||void 0);}function j(){if(!o.current.search||d.current.shouldFilter===!1){o.current.filtered.count=u.current.size;return}o.current.filtered.groups=new Set;let e=0;for(let c of u.current){let i=p.current.get(c),s=B(i);o.current.filtered.items.set(c,s),s>0&&e++;}for(let[c,i]of l.current)for(let s of i)if(o.current.filtered.items.get(s)>0){o.current.filtered.groups.add(c);break}o.current.filtered.count=e;}function W(){var c,i,s;let e=_();e&&(((c=e.parentElement)==null?void 0:c.firstChild)===e&&((s=(i=e.closest(M))==null?void 0:i.querySelector(de))==null||s.scrollIntoView({block:"nearest"})),e.scrollIntoView({block:"nearest"}));}function _(){return r.current.querySelector(`${ee}[aria-selected="true"]`)}function I(){return Array.from(r.current.querySelectorAll(Z))}function q(e){let i=I()[e];i&&h.setState("value",i.getAttribute(S));}function $(e){var b;let c=_(),i=I(),s=i.findIndex(P=>P===c),m=i[s+e];(b=d.current)!=null&&b.loop&&(m=s+e<0?i[i.length-1]:s+e===i.length?i[0]:i[s+e]),m&&h.setState("value",m.getAttribute(S));}function J(e){let c=_(),i=c==null?void 0:c.closest(M),s;for(;i&&!s;)i=e>0?Se(i,M):Ce(i,M),s=i==null?void 0:i.querySelector(Z);s?h.setState("value",s.getAttribute(S)):$(e);}let Q=()=>q(I().length-1),X=e=>{e.preventDefault(),e.metaKey?Q():e.altKey?J(1):$(1);},Y=e=>{e.preventDefault(),e.metaKey?q(0):e.altKey?J(-1):$(-1);};return React__namespace.createElement("div",{ref:H([r,a]),...D,"cmdk-root":"",onKeyDown:e=>{var c;if((c=D.onKeyDown)==null||c.call(D,e),!e.defaultPrevented)switch(e.key){case"n":case"j":{e.ctrlKey&&X(e);break}case"ArrowDown":{X(e);break}case"p":case"k":{e.ctrlKey&&Y(e);break}case"ArrowUp":{Y(e);break}case"Home":{e.preventDefault(),q(0);break}case"End":{e.preventDefault(),Q();break}case"Enter":{e.preventDefault();let i=_();if(i){let s=new Event(z$1);i.dispatchEvent(s);}}}}},React__namespace.createElement("label",{"cmdk-label":"",htmlFor:K.inputId,id:K.labelId,style:xe},v),React__namespace.createElement(re$1.Provider,{value:h},React__namespace.createElement(te.Provider,{value:K},E)))}),me=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useId(),o=React__namespace.useRef(null),u=React__namespace.useContext(ne),l=k$3(),p=ae(n);L(()=>l.item(r,u),[]);let f=se(r,o,[n.value,n.children,o]),d=U(),v=T(g=>g.value&&g.value===f.current),E=T(g=>l.filter()===!1?!0:g.search?g.filtered.items.get(r)>0:!0);React__namespace.useEffect(()=>{let g=o.current;if(!(!g||n.disabled))return g.addEventListener(z$1,R),()=>g.removeEventListener(z$1,R)},[E,n.onSelect,n.disabled]);function R(){var g,A;(A=(g=p.current).onSelect)==null||A.call(g,f.current);}function w(){d.setState("value",f.current,!0);}if(!E)return null;let{disabled:O,value:ie,onSelect:D,...F}=n;return React__namespace.createElement("div",{ref:H([o,a]),...F,"cmdk-item":"",role:"option","aria-disabled":O||void 0,"aria-selected":v||void 0,"data-selected":v||void 0,onPointerMove:O?void 0:w,onClick:O?void 0:R},n.children)}),pe=React__namespace.forwardRef((n,a)=>{let{heading:r,children:o,...u}=n,l=React__namespace.useId(),p=React__namespace.useRef(null),f=React__namespace.useRef(null),d=React__namespace.useId(),v=k$3(),E=T(w=>v.filter()===!1?!0:w.search?w.filtered.groups.has(l):!0);L(()=>v.group(l),[]),se(l,p,[n.value,n.heading,f]);let R=React__namespace.createElement(ne.Provider,{value:l},o);return React__namespace.createElement("div",{ref:H([p,a]),...u,"cmdk-group":"",role:"presentation",hidden:E?void 0:!0},r&&React__namespace.createElement("div",{ref:f,"cmdk-group-heading":"","aria-hidden":!0,id:d},r),React__namespace.createElement("div",{"cmdk-group-items":"",role:"group","aria-labelledby":r?d:void 0},R))}),ge=React__namespace.forwardRef((n,a)=>{let{alwaysRender:r,...o}=n,u=React__namespace.useRef(null),l=T(p=>!p.search);return !r&&!l?null:React__namespace.createElement("div",{ref:H([u,a]),...o,"cmdk-separator":"",role:"separator"})}),ve=React__namespace.forwardRef((n,a)=>{let{onValueChange:r,...o}=n,u=n.value!=null,l=U(),p=T(d=>d.search),f=k$3();return React__namespace.useEffect(()=>{n.value!=null&&l.setState("search",n.value);},[n.value]),React__namespace.createElement("input",{ref:a,...o,"cmdk-input":"",autoComplete:"off",autoCorrect:"off",spellCheck:!1,"aria-autocomplete":"list",role:"combobox","aria-expanded":!0,"aria-controls":f.listId,"aria-labelledby":f.labelId,id:f.inputId,type:"text",value:u?n.value:p,onChange:d=>{u||l.setState("search",d.target.value),r==null||r(d.target.value);}})}),Re=React__namespace.forwardRef((n,a)=>{let{children:r,...o}=n,u=React__namespace.useRef(null),l=React__namespace.useRef(null),p=k$3();return React__namespace.useEffect(()=>{if(l.current&&u.current){let f=l.current,d=u.current,v,E=new ResizeObserver(()=>{v=requestAnimationFrame(()=>{let R=f.getBoundingClientRect().height;d.style.setProperty("--cmdk-list-height",R.toFixed(1)+"px");});});return E.observe(f),()=>{cancelAnimationFrame(v),E.unobserve(f);}}},[]),React__namespace.createElement("div",{ref:H([u,a]),...o,"cmdk-list":"",role:"listbox","aria-label":"Suggestions",id:p.listId,"aria-labelledby":p.inputId},React__namespace.createElement("div",{ref:l,"cmdk-list-sizer":""},r))}),be=React__namespace.forwardRef((n,a)=>{let{open:r,onOpenChange:o,container:u,...l}=n;return React__namespace.createElement($5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9,{open:r,onOpenChange:o},React__namespace.createElement($5d3850c4d0b4e6c7$export$602eac185826482c,{container:u},React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff,{"cmdk-overlay":""}),React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2,{"aria-label":n.label,"cmdk-dialog":""},React__namespace.createElement(oe,{ref:a,...l}))))}),he=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useRef(!0),o=T(u=>u.filtered.count===0);return React__namespace.useEffect(()=>{r.current=!1;},[]),r.current||!o?null:React__namespace.createElement("div",{ref:a,...n,"cmdk-empty":"",role:"presentation"})}),Ee=React__namespace.forwardRef((n,a)=>{let{progress:r,children:o,...u}=n;return React__namespace.createElement("div",{ref:a,...u,"cmdk-loading":"",role:"progressbar","aria-valuenow":r,"aria-valuemin":0,"aria-valuemax":100,"aria-label":"Loading..."},React__namespace.createElement("div",{"aria-hidden":!0},o))}),Le=Object.assign(oe,{List:Re,Item:me,Input:ve,Group:pe,Separator:ge,Dialog:be,Empty:he,Loading:Ee});function Se(n,a){let r=n.nextElementSibling;for(;r;){if(r.matches(a))return r;r=r.nextElementSibling;}}function Ce(n,a){let r=n.previousElementSibling;for(;r;){if(r.matches(a))return r;r=r.previousElementSibling;}}function ae(n){let a=React__namespace.useRef(n);return L(()=>{a.current=n;}),a}var L=typeof window>"u"?React__namespace.useEffect:React__namespace.useLayoutEffect;function x$2(n){let a=React__namespace.useRef();return a.current===void 0&&(a.current=n()),a}function H(n){return a=>{n.forEach(r=>{typeof r=="function"?r(a):r!=null&&(r.current=a);});}}function T(n){let a=U(),r=()=>n(a.snapshot());return React__namespace.useSyncExternalStore(a.subscribe,r,r)}function se(n,a,r){let o=React__namespace.useRef(),u=k$3();return L(()=>{var p;let l=(()=>{var f;for(let d of r){if(typeof d=="string")return d.trim().toLowerCase();if(typeof d=="object"&&"current"in d&&d.current)return (f=d.current.textContent)==null?void 0:f.trim().toLowerCase()}})();u.value(n,l),(p=a.current)==null||p.setAttribute(S,l),o.current=l;}),o}var ye=()=>{let[n,a]=React__namespace.useState(),r=x$2(()=>new Map);return L(()=>{r.current.forEach(o=>o()),r.current=new Map;},[n]),(o,u)=>{r.current.set(o,u),a({});}},xe={position:"absolute",width:"1px",height:"1px",padding:"0",margin:"-1px",overflow:"hidden",clip:"rect(0, 0, 0, 0)",whiteSpace:"nowrap",borderWidth:"0"};
-
-var DialogPortal = $5d3850c4d0b4e6c7$export$602eac185826482c$1;
-var DialogOverlay = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1, __assign$2({ ref: ref, className: cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props)));
-});
-DialogOverlay.displayName = $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1.displayName;
-var DialogContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest$7(_a, ["className", "children"]);
-    return (React__namespace.createElement(DialogPortal, null,
-        React__namespace.createElement(DialogOverlay, null),
-        React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1, __assign$2({ ref: ref, className: cn("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg", className) }, props),
-            children,
-            React__namespace.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, { className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground" },
-                React__namespace.createElement(Cross2Icon, { className: "h-4 w-4" }),
-                React__namespace.createElement("span", { className: "sr-only" }, "Close")))));
-});
-DialogContent.displayName = $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1.displayName;
-var DialogTitle = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$f99233281efd08a0, __assign$2({ ref: ref, className: cn("text-lg font-semibold leading-none tracking-tight", className) }, props)));
-});
-DialogTitle.displayName = $5d3850c4d0b4e6c7$export$f99233281efd08a0.displayName;
-var DialogDescription = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$393edc798c47379d, __assign$2({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
-});
-DialogDescription.displayName = $5d3850c4d0b4e6c7$export$393edc798c47379d.displayName;
-
-var Command = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__default["default"].createElement(Le, __assign$2({ ref: ref, className: cn("flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground", className) }, props)));
-});
-Command.displayName = Le.displayName;
-var CommandInput = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__default["default"].createElement("div", { className: "flex items-center border-b px-3", "cmdk-input-wrapper": "" },
-        React__default["default"].createElement(MagnifyingGlassIcon, { className: "mr-2 h-4 w-4 shrink-0 opacity-50" }),
-        React__default["default"].createElement(Le.Input, __assign$2({ ref: ref, className: cn("flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50", className) }, props))));
-});
-CommandInput.displayName = Le.Input.displayName;
-var CommandList = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__default["default"].createElement(Le.List, __assign$2({ ref: ref, className: cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className) }, props)));
-});
-CommandList.displayName = Le.List.displayName;
-var CommandEmpty = React__default["default"].forwardRef(function (props, ref) { return (React__default["default"].createElement(Le.Empty, __assign$2({ ref: ref, className: "py-6 text-center text-sm" }, props))); });
-CommandEmpty.displayName = Le.Empty.displayName;
-var CommandGroup = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__default["default"].createElement(Le.Group, __assign$2({ ref: ref, className: cn("overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground", className) }, props)));
-});
-CommandGroup.displayName = Le.Group.displayName;
-var CommandSeparator = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__default["default"].createElement(Le.Separator, __assign$2({ ref: ref, className: cn("-mx-1 h-px bg-border", className) }, props)));
-});
-CommandSeparator.displayName = Le.Separator.displayName;
-var CommandItem = React__default["default"].forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__default["default"].createElement(Le.Item, __assign$2({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props)));
-});
-CommandItem.displayName = Le.Item.displayName;
-
 const $89eedd556c436f6a$var$DEFAULT_ORIENTATION = 'horizontal';
 const $89eedd556c436f6a$var$ORIENTATIONS = [
     'horizontal',
@@ -40283,462 +34554,238 @@ var Separator = React__namespace.forwardRef(function (_a, ref) {
 });
 Separator.displayName = $89eedd556c436f6a$export$be92b6f5f03c0fe9.displayName;
 
-function DataTableFacetedFilter(_a) {
-    var column = _a.column, title = _a.title, options = _a.options;
-    var facets = column === null || column === void 0 ? void 0 : column.getFacetedUniqueValues();
-    var selectedValues = new Set(column === null || column === void 0 ? void 0 : column.getFilterValue());
-    return (React__namespace.createElement(Popover, null,
-        React__namespace.createElement(PopoverTrigger, { asChild: true },
-            React__namespace.createElement(Button$3, { variant: "outline", size: "sm", className: "h-8 border-dashed" },
-                React__namespace.createElement(PlusCircledIcon, { className: "mr-2 h-4 w-4" }),
-                title,
-                (selectedValues === null || selectedValues === void 0 ? void 0 : selectedValues.size) > 0 && (React__namespace.createElement(React__namespace.Fragment, null,
-                    React__namespace.createElement(Separator, { orientation: "vertical", className: "mx-2 h-4" }),
-                    React__namespace.createElement(Badge, { variant: "secondary", className: "rounded-sm px-1 font-normal lg:hidden" }, selectedValues.size),
-                    React__namespace.createElement("div", { className: "hidden space-x-1 lg:flex" }, selectedValues.size > 2 ? (React__namespace.createElement(Badge, { variant: "secondary", className: "rounded-sm px-1 font-normal" },
-                        selectedValues.size,
-                        " selected")) : (options
-                        .filter(function (option) { return selectedValues.has(option.value); })
-                        .map(function (option) { return (React__namespace.createElement(Badge, { variant: "secondary", key: option.value, className: "rounded-sm px-1 font-normal" }, option.label)); }))))))),
-        React__namespace.createElement(PopoverContent, { className: "w-[200px] p-0", align: "start" },
-            React__namespace.createElement(Command, null,
-                React__namespace.createElement(CommandInput, { placeholder: title }),
-                React__namespace.createElement(CommandList, null,
-                    React__namespace.createElement(CommandEmpty, null, "No results found."),
-                    React__namespace.createElement(CommandGroup, null, options.map(function (option) {
-                        var isSelected = selectedValues.has(option.value);
-                        return (React__namespace.createElement(CommandItem, { key: option.value, onSelect: function () {
-                                if (isSelected) {
-                                    selectedValues.delete(option.value);
-                                }
-                                else {
-                                    selectedValues.add(option.value);
-                                }
-                                var filterValues = Array.from(selectedValues);
-                                column === null || column === void 0 ? void 0 : column.setFilterValue(filterValues.length ? filterValues : undefined);
-                            } },
-                            React__namespace.createElement("div", { className: cn("mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary", isSelected
-                                    ? "bg-primary text-primary-foreground"
-                                    : "opacity-50 [&_svg]:invisible") },
-                                React__namespace.createElement(CheckIcon, { className: cn("h-4 w-4") })),
-                            option.icon && (React__namespace.createElement(option.icon, { className: "mr-2 h-4 w-4 text-muted-foreground" })),
-                            React__namespace.createElement("span", null, option.label),
-                            (facets === null || facets === void 0 ? void 0 : facets.get(option.value)) && (React__namespace.createElement("span", { className: "ml-auto flex h-4 w-4 items-center justify-center font-mono text-xs" }, facets.get(option.value)))));
-                    })),
-                    selectedValues.size > 0 && (React__namespace.createElement(React__namespace.Fragment, null,
-                        React__namespace.createElement(CommandSeparator, null),
-                        React__namespace.createElement(CommandGroup, null,
-                            React__namespace.createElement(CommandItem, { onSelect: function () { return column === null || column === void 0 ? void 0 : column.setFilterValue(undefined); }, className: "justify-center text-center" }, "Clear filters")))))))));
-}
-
-function DataTableToolbar(_a) {
-    var _b, _c;
-    var table = _a.table;
-    var isFiltered = table.getState().columnFilters.length > 0;
-    return (React__default["default"].createElement("div", { className: "flex items-center justify-between" },
-        React__default["default"].createElement("div", { className: "flex flex-1 items-center space-x-2" },
-            React__default["default"].createElement(Input, { placeholder: "Filter rooms...", value: (_c = (_b = table.getColumn("title")) === null || _b === void 0 ? void 0 : _b.getFilterValue()) !== null && _c !== void 0 ? _c : "", onChange: function (event) { var _a; return (_a = table.getColumn("title")) === null || _a === void 0 ? void 0 : _a.setFilterValue(event.target.value); }, className: "h-8 w-[150px] lg:w-[250px]" }),
-            table.getColumn("status") && (React__default["default"].createElement(DataTableFacetedFilter, { column: table.getColumn("status"), title: "Status", options: statuses })),
-            table.getColumn("priority") && (React__default["default"].createElement(DataTableFacetedFilter, { column: table.getColumn("priority"), title: "Priority", options: priorities })),
-            isFiltered && (React__default["default"].createElement(Button$3, { variant: "ghost", onClick: function () { return table.resetColumnFilters(); }, className: "h-8 px-2 lg:px-3" },
-                "Reset",
-                React__default["default"].createElement(Cross2Icon, { className: "ml-2 h-4 w-4" })))),
-        React__default["default"].createElement(DataTableViewOptions, { table: table })));
-}
-
-function DataTable(_a) {
-    var _b;
-    var columns = _a.columns, data = _a.data;
-    var _c = React__namespace.useState({}), rowSelection = _c[0], setRowSelection = _c[1];
-    var _d = React__namespace.useState({}), columnVisibility = _d[0], setColumnVisibility = _d[1];
-    var _e = React__namespace.useState([]), columnFilters = _e[0], setColumnFilters = _e[1];
-    var _f = React__namespace.useState([]), sorting = _f[0], setSorting = _f[1];
-    var table = useReactTable({
-        data: data,
-        columns: columns,
-        state: {
-            sorting: sorting,
-            columnVisibility: columnVisibility,
-            rowSelection: rowSelection,
-            columnFilters: columnFilters,
-        },
-        enableRowSelection: true,
-        onRowSelectionChange: setRowSelection,
-        onSortingChange: setSorting,
-        onColumnFiltersChange: setColumnFilters,
-        onColumnVisibilityChange: setColumnVisibility,
-        getCoreRowModel: getCoreRowModel(),
-        getFilteredRowModel: getFilteredRowModel(),
-        getPaginationRowModel: getPaginationRowModel(),
-        getSortedRowModel: getSortedRowModel(),
-        getFacetedRowModel: getFacetedRowModel(),
-        getFacetedUniqueValues: getFacetedUniqueValues(),
-    });
-    return (React__namespace.createElement("div", { className: "space-y-4" },
-        React__namespace.createElement(DataTableToolbar, { table: table }),
-        React__namespace.createElement("div", { className: "rounded-md border" },
-            React__namespace.createElement(Table, null,
-                React__namespace.createElement(TableHeader, null, table.getHeaderGroups().map(function (headerGroup) { return (React__namespace.createElement(TableRow, { key: headerGroup.id }, headerGroup.headers.map(function (header) {
-                    return (React__namespace.createElement(TableHead, { key: header.id }, header.isPlaceholder
-                        ? null
-                        : flexRender(header.column.columnDef.header, header.getContext())));
-                }))); })),
-                React__namespace.createElement(TableBody, null, ((_b = table.getRowModel().rows) === null || _b === void 0 ? void 0 : _b.length) ? (table.getRowModel().rows.map(function (row) { return (React__namespace.createElement(TableRow, { key: row.id, "data-state": row.getIsSelected() && "selected" }, row.getVisibleCells().map(function (cell) { return (React__namespace.createElement(TableCell, { key: cell.id }, flexRender(cell.column.columnDef.cell, cell.getContext()))); }))); })) : (React__namespace.createElement(TableRow, null,
-                    React__namespace.createElement(TableCell, { colSpan: columns.length, className: "h-24 text-center" }, "No results.")))))),
-        React__namespace.createElement(DataTablePagination, { table: table })));
-}
-
-/* -------------------------------------------------------------------------------------------------
- * AlertDialog
- * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$ROOT_NAME = 'AlertDialog';
-const [$905f4ae918aab1aa$var$createAlertDialogContext, $905f4ae918aab1aa$export$b8891880751c2c5b] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($905f4ae918aab1aa$var$ROOT_NAME, [
-    $5d3850c4d0b4e6c7$export$cc702773b8ea3e41$1
-]);
-const $905f4ae918aab1aa$var$useDialogScope = $5d3850c4d0b4e6c7$export$cc702773b8ea3e41$1();
-const $905f4ae918aab1aa$export$de466dd8317b0b75 = (props)=>{
-    const { __scopeAlertDialog: __scopeAlertDialog , ...alertDialogProps } = props;
-    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1, _extends$m({}, dialogScope, alertDialogProps, {
-        modal: true
-    }));
-};
-const $905f4ae918aab1aa$export$6edd7a623ef0f40b = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeAlertDialog: __scopeAlertDialog , ...triggerProps } = props;
-    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$41fb9f06171c75f4, _extends$m({}, dialogScope, triggerProps, {
-        ref: forwardedRef
-    }));
+var stringToDate$1 = z$2.string().transform(function (str) { return new Date(str); });
+var dateSchema$1 = z$2.union([stringToDate$1, z$2.date()]);
+// {
+//     name: z.string(),
+//     contact: z.string(),
+//     email: z.string(),
+//     id: z.string().optional()
+// }
+// notes: z.array(z.object({
+//     staffName: z.string(),
+//     createdAt: z.date(),
+//     note: z.string()
+// })).optional()
+var invoiceFormSchema = z$2.object({
+    customer: z$2.string(),
+    customerAddress: z$2.string(),
+    hotelName: z$2.string(),
+    hotelAddress: z$2.string(),
+    invoiceNumber: z$2.string(),
+    invoiceDate: dateSchema$1,
+    invoiceDueDate: dateSchema$1,
+    services: z$2.array(z$2.object({
+        name: z$2.string(),
+        price: z$2.coerce.number(),
+        quantity: z$2.coerce.number(),
+        totalAmount: z$2.coerce.number(),
+        date: dateSchema$1.optional()
+    })),
+    total: z$2.coerce.number(),
+    subTotal: z$2.coerce.number(),
+    paid: z$2.coerce.number(),
+    amountDue: z$2.coerce.number(),
+    status: z$2.enum(["paid", "draft", "sent"]),
+    notes: z$2.string().optional()
 });
-const $905f4ae918aab1aa$export$660f2bfdb986706c = (props)=>{
-    const { __scopeAlertDialog: __scopeAlertDialog , ...portalProps } = props;
-    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$602eac185826482c$1, _extends$m({}, dialogScope, portalProps));
-};
-const $905f4ae918aab1aa$export$a707a4895ce23256 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeAlertDialog: __scopeAlertDialog , ...overlayProps } = props;
-    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1, _extends$m({}, dialogScope, overlayProps, {
-        ref: forwardedRef
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * AlertDialogContent
- * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$CONTENT_NAME = 'AlertDialogContent';
-const [$905f4ae918aab1aa$var$AlertDialogContentProvider, $905f4ae918aab1aa$var$useAlertDialogContentContext] = $905f4ae918aab1aa$var$createAlertDialogContext($905f4ae918aab1aa$var$CONTENT_NAME);
-const $905f4ae918aab1aa$export$94e6af45f0af4efd = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeAlertDialog: __scopeAlertDialog , children: children , ...contentProps } = props;
-    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
-    const contentRef = React.useRef(null);
-    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, contentRef);
-    const cancelRef = React.useRef(null);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$69b62a49393917d6, {
-        contentName: $905f4ae918aab1aa$var$CONTENT_NAME,
-        titleName: $905f4ae918aab1aa$var$TITLE_NAME,
-        docsSlug: "alert-dialog"
-    }, /*#__PURE__*/ React.createElement($905f4ae918aab1aa$var$AlertDialogContentProvider, {
-        scope: __scopeAlertDialog,
-        cancelRef: cancelRef
-    }, /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1, _extends$m({
-        role: "alertdialog"
-    }, dialogScope, contentProps, {
-        ref: composedRefs,
-        onOpenAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(contentProps.onOpenAutoFocus, (event)=>{
-            var _cancelRef$current;
-            event.preventDefault();
-            (_cancelRef$current = cancelRef.current) === null || _cancelRef$current === void 0 || _cancelRef$current.focus({
-                preventScroll: true
-            });
-        }),
-        onPointerDownOutside: (event)=>event.preventDefault()
-        ,
-        onInteractOutside: (event)=>event.preventDefault()
-    }), /*#__PURE__*/ React.createElement($5e63c961fc1ce211$export$d9f1ccf0bdb05d45$1, null, children), false)));
-});
-/* -------------------------------------------------------------------------------------------------
- * AlertDialogTitle
- * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$TITLE_NAME = 'AlertDialogTitle';
-const $905f4ae918aab1aa$export$225e0da62d314b7 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeAlertDialog: __scopeAlertDialog , ...titleProps } = props;
-    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$f99233281efd08a0, _extends$m({}, dialogScope, titleProps, {
-        ref: forwardedRef
-    }));
-});
-const $905f4ae918aab1aa$export$a23b55cde55ad9a5 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeAlertDialog: __scopeAlertDialog , ...descriptionProps } = props;
-    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$393edc798c47379d, _extends$m({}, dialogScope, descriptionProps, {
-        ref: forwardedRef
-    }));
-});
-const $905f4ae918aab1aa$export$b454f818c58ee85d = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeAlertDialog: __scopeAlertDialog , ...actionProps } = props;
-    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, _extends$m({}, dialogScope, actionProps, {
-        ref: forwardedRef
-    }));
-});
-/* -------------------------------------------------------------------------------------------------
- * AlertDialogCancel
- * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$CANCEL_NAME = 'AlertDialogCancel';
-const $905f4ae918aab1aa$export$2f67a923571aaea0 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
-    const { __scopeAlertDialog: __scopeAlertDialog , ...cancelProps } = props;
-    const { cancelRef: cancelRef  } = $905f4ae918aab1aa$var$useAlertDialogContentContext($905f4ae918aab1aa$var$CANCEL_NAME, __scopeAlertDialog);
-    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
-    const ref = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, cancelRef);
-    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, _extends$m({}, dialogScope, cancelProps, {
-        ref: ref
-    }));
-});
-const $905f4ae918aab1aa$export$be92b6f5f03c0fe9 = $905f4ae918aab1aa$export$de466dd8317b0b75;
-const $905f4ae918aab1aa$export$41fb9f06171c75f4 = $905f4ae918aab1aa$export$6edd7a623ef0f40b;
-const $905f4ae918aab1aa$export$602eac185826482c = $905f4ae918aab1aa$export$660f2bfdb986706c;
-const $905f4ae918aab1aa$export$c6fdb837b070b4ff = $905f4ae918aab1aa$export$a707a4895ce23256;
-const $905f4ae918aab1aa$export$7c6e2c02157bb7d2 = $905f4ae918aab1aa$export$94e6af45f0af4efd;
-const $905f4ae918aab1aa$export$e19cd5f9376f8cee = $905f4ae918aab1aa$export$b454f818c58ee85d;
-const $905f4ae918aab1aa$export$848c9b7ead0df967 = $905f4ae918aab1aa$export$2f67a923571aaea0;
-const $905f4ae918aab1aa$export$f99233281efd08a0 = $905f4ae918aab1aa$export$225e0da62d314b7;
-const $905f4ae918aab1aa$export$393edc798c47379d = $905f4ae918aab1aa$export$a23b55cde55ad9a5;
-
-var AlertDialog = $905f4ae918aab1aa$export$be92b6f5f03c0fe9;
-var AlertDialogTrigger = $905f4ae918aab1aa$export$41fb9f06171c75f4;
-var AlertDialogPortal = $905f4ae918aab1aa$export$602eac185826482c;
-var AlertDialogOverlay = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement($905f4ae918aab1aa$export$c6fdb837b070b4ff, __assign$2({ className: cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props, { ref: ref })));
-});
-AlertDialogOverlay.displayName = $905f4ae918aab1aa$export$c6fdb837b070b4ff.displayName;
-var AlertDialogContent = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement(AlertDialogPortal, null,
-        React__namespace.createElement(AlertDialogOverlay, null),
-        React__namespace.createElement($905f4ae918aab1aa$export$7c6e2c02157bb7d2, __assign$2({ ref: ref, className: cn("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg", className) }, props))));
-});
-AlertDialogContent.displayName = $905f4ae918aab1aa$export$7c6e2c02157bb7d2.displayName;
-var AlertDialogHeader = function (_a) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement("div", __assign$2({ className: cn("flex flex-col space-y-2 text-center sm:text-left", className) }, props)));
-};
-AlertDialogHeader.displayName = "AlertDialogHeader";
-var AlertDialogFooter = function (_a) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement("div", __assign$2({ className: cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className) }, props)));
-};
-AlertDialogFooter.displayName = "AlertDialogFooter";
-var AlertDialogTitle = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement($905f4ae918aab1aa$export$f99233281efd08a0, __assign$2({ ref: ref, className: cn("text-lg font-semibold", className) }, props)));
-});
-AlertDialogTitle.displayName = $905f4ae918aab1aa$export$f99233281efd08a0.displayName;
-var AlertDialogDescription = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement($905f4ae918aab1aa$export$393edc798c47379d, __assign$2({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
-});
-AlertDialogDescription.displayName =
-    $905f4ae918aab1aa$export$393edc798c47379d.displayName;
-var AlertDialogAction = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement($905f4ae918aab1aa$export$e19cd5f9376f8cee, __assign$2({ ref: ref, className: cn(buttonVariants(), className) }, props)));
-});
-AlertDialogAction.displayName = $905f4ae918aab1aa$export$e19cd5f9376f8cee.displayName;
-var AlertDialogCancel = React__namespace.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest$7(_a, ["className"]);
-    return (React__namespace.createElement($905f4ae918aab1aa$export$848c9b7ead0df967, __assign$2({ ref: ref, className: cn(buttonVariants({ variant: "outline" }), "mt-2 sm:mt-0", className) }, props)));
-});
-AlertDialogCancel.displayName = $905f4ae918aab1aa$export$848c9b7ead0df967.displayName;
-
-function Confirmation(_a) {
-    var children = _a.children, _b = _a.loading, loading = _b === void 0 ? false : _b, title = _a.title, description = _a.description, onCancel = _a.onCancel, onConfirm = _a.onConfirm, _c = _a.cancelBtn, cancelBtn = _c === void 0 ? "Cancel" : _c, _d = _a.open, open = _d === void 0 ? false : _d, _e = _a.continueBtn, continueBtn = _e === void 0 ? "Continue" : _e, _f = _a.loadingBtnText, loadingBtnText = _f === void 0 ? "Deleting..." : _f;
-    return (React__default["default"].createElement(AlertDialog, { open: open },
-        React__default["default"].createElement(AlertDialogTrigger, { asChild: true }, children || ''),
-        React__default["default"].createElement(AlertDialogContent, null,
-            React__default["default"].createElement(AlertDialogHeader, null,
-                React__default["default"].createElement(AlertDialogTitle, null, title),
-                React__default["default"].createElement(AlertDialogDescription, null, description)),
-            React__default["default"].createElement(AlertDialogFooter, null,
-                React__default["default"].createElement(AlertDialogCancel, { disabled: loading, onClick: onCancel }, cancelBtn),
-                React__default["default"].createElement(AlertDialogAction, { disabled: loading, onClick: onConfirm }, loading ? (React__default["default"].createElement(React__default["default"].Fragment, null,
-                    React__default["default"].createElement(Icons.spinner, { className: "mr-2 h-4 w-4 animate-spin" }),
-                    loadingBtnText)) : continueBtn)))));
-}
-
-function Tab(_a) {
-    var items = _a.items;
-    return (React__default["default"].createElement(React__default["default"].Fragment, null,
-        React__default["default"].createElement("div", null,
-            React__default["default"].createElement("div", { className: "border-b border-gray-200 dark:border-gray-700" },
-                React__default["default"].createElement("ul", { className: "flex cursor-pointer flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400" }, items.map(function (_a) {
-                    var Icon = _a.Icon, row = __rest$7(_a, ["Icon"]);
-                    return (React__default["default"].createElement("li", { className: "me-2" },
-                        React__default["default"].createElement("a", { onClick: row.onClick, className: classnames("inline-flex  items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg   dark:hover:text-gray-300 group", {
-                                "text-blue-600": row.active == true,
-                                "border-blue-600": row.active === true,
-                                "active": row.active === true,
-                                "hover:text-gray-600": row.active !== true,
-                                "hover:border-gray-300": row.active !== true,
-                            }) },
-                            React__default["default"].createElement(Icon, null),
-                            row.label)));
-                })))),
-        React__default["default"].createElement("div", null)));
-}
-
-function DropdownMenuDemo(_a) {
-    var children = _a.children, info = _a.info; _a.handleEdit; var handleStatusChange = _a.handleStatusChange, handleActions = _a.handleActions;
-    return (React__default["default"].createElement(DropdownMenu, null,
-        React__default["default"].createElement(DropdownMenuTrigger, { asChild: true },
-            React__default["default"].createElement(Button$3, { style: { position: 'absolute', top: 0 }, variant: "ghost" }, children)),
-        React__default["default"].createElement(DropdownMenuContent, { className: "w-56" },
-            React__default["default"].createElement(DropdownMenuLabel, null, "Booking Info - [BLK-13232]"),
-            React__default["default"].createElement(DropdownMenuSeparator, null),
-            React__default["default"].createElement(DropdownMenuGroup, null,
-                React__default["default"].createElement(DropdownMenuItem, null,
-                    React__default["default"].createElement("span", { style: { color: 'blue' } }, "Guest : "),
-                    React__default["default"].createElement("span", null,
-                        "\u00A0",
-                        React__default["default"].createElement("b", null, info === null || info === void 0 ? void 0 :
-                            info.guestName,
-                            " "))),
-                React__default["default"].createElement(DropdownMenuItem, null,
-                    React__default["default"].createElement("span", { style: { color: 'blue' } }, "Status : "),
-                    React__default["default"].createElement("span", null,
-                        "\u00A0",
-                        React__default["default"].createElement("b", null, info.status))),
-                React__default["default"].createElement(DropdownMenuItem, null,
-                    React__default["default"].createElement("span", { style: { color: 'blue' } }, "Check-In : "),
-                    React__default["default"].createElement("span", null,
-                        "\u00A0",
-                        React__default["default"].createElement("b", null,
-                            moment(info.checkInDate).format("MMM Do YY"),
-                            " "))),
-                React__default["default"].createElement(DropdownMenuItem, null,
-                    React__default["default"].createElement("span", { style: { color: 'blue' } }, "Check-Out : "),
-                    React__default["default"].createElement("span", null,
-                        "\u00A0",
-                        React__default["default"].createElement("b", null, moment(info.checkOutDate).format("MMM Do YY"))))),
-            React__default["default"].createElement(DropdownMenuSeparator, null),
-            React__default["default"].createElement(DropdownMenuGroup, null,
-                React__default["default"].createElement(DropdownMenuSub, null,
-                    React__default["default"].createElement(DropdownMenuSubTrigger, null,
-                        React__default["default"].createElement("span", null, "Mark As")),
-                    React__default["default"].createElement(DropdownMenuPortal, null,
-                        React__default["default"].createElement(DropdownMenuSubContent, null,
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange({ status: "confirmed", booking: info }); } },
-                                React__default["default"].createElement("span", null, "Confirmed")),
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange({ status: "newBooking", booking: info }); } },
-                                React__default["default"].createElement("span", null, "New Booking")),
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange({ status: "checkin", booking: info }); } },
-                                React__default["default"].createElement("span", null, "Check in")),
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange({ status: "checkout", booking: info }); } },
-                                React__default["default"].createElement("span", null, "Check out")))))),
-            React__default["default"].createElement(DropdownMenuGroup, null,
-                React__default["default"].createElement(DropdownMenuSub, null,
-                    React__default["default"].createElement(DropdownMenuSubTrigger, null,
-                        React__default["default"].createElement("span", null, "Actions")),
-                    React__default["default"].createElement(DropdownMenuPortal, null,
-                        React__default["default"].createElement(DropdownMenuSubContent, null,
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "addService", info: info }); } },
-                                React__default["default"].createElement("span", null, "Add Services")),
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "createInvoice", info: info }); } },
-                                React__default["default"].createElement("span", null, "Create Invoice")),
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "editBooking", info: info }); } },
-                                React__default["default"].createElement("span", null, "Edit Booking")),
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "clientForm", info: info }); } },
-                                React__default["default"].createElement("span", null, "Client Form")),
-                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "deleteBooking", info: info }); } },
-                                React__default["default"].createElement("span", null, "Delete Booking")))))))));
-}
-
-function calander(_a) {
-    var _b = _a.calanderColumns, calanderColumns = _b === void 0 ? [] : _b, _c = _a.calanderRows, calanderRows = _c === void 0 ? [] : _c, handleActions = _a.handleActions, handleStatusChange = _a.handleStatusChange;
-    var columnHelper = createColumnHelper();
-    var columns = React__default["default"].useMemo(function () {
-        var column = calanderColumns.map(function (row, index) {
-            return (columnHelper.accessor(String(index === 0 ? 'roomName' : row.date), {
-                header: function (info) {
-                    var heading;
-                    var isSameDay = moment(row.date).isSame(new Date(), 'day');
-                    if (index !== 0) {
-                        heading = moment(row.date).format("DD");
-                    }
-                    else {
-                        return React__default["default"].createElement("div", { style: { display: 'flex', justifyContent: 'center' } },
-                            React__default["default"].createElement("div", { className: 'flex ', style: {
-                                    backgroundColor: '#3A7C7C',
-                                    color: 'white',
-                                    borderRadius: 6,
-                                    padding: 8,
-                                    // maxWidth: 120,
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center'
-                                } },
-                                row.date,
-                                "\u00A0 | \u00A0",
-                                React__default["default"].createElement(HomeIcon, { className: "mr-2 h-4 w-4" })));
-                    }
-                    return React__default["default"].createElement("div", { style: isSameDay ?
-                            {
-                                backgroundColor: '#3A7C7C',
-                                color: 'white', borderRadius: 6
-                            } : {} },
-                        moment(row.date).format("ddd").toUpperCase(),
-                        React__default["default"].createElement("br", null),
-                        heading);
-                },
-                cell: function (info) {
-                    var _a;
-                    var value = info.getValue();
-                    if (index === 0) {
-                        return value || "N/A";
-                    }
-                    if (value.isBooked) {
-                        return React__default["default"].createElement(DropdownMenuDemo, { handleActions: handleActions, handleStatusChange: handleStatusChange, info: value.info },
-                            React__default["default"].createElement(Badge, { className: classnames("bg-emerald-600", {
-                                    "bg-emerald-600": (value === null || value === void 0 ? void 0 : value.info.status) === "confirmed",
-                                    "bg-yellow-600": (value === null || value === void 0 ? void 0 : value.info.status) === "newBooking",
-                                    "bg-orange-600": (value === null || value === void 0 ? void 0 : value.info.status) === "checkin",
-                                    "bg-red-600": (value === null || value === void 0 ? void 0 : value.info.status) === "checkout",
-                                }), style: { position: 'absolute', fontWeight: 'normal' } },
-                                " ",
-                                ((_a = value === null || value === void 0 ? void 0 : value.info) === null || _a === void 0 ? void 0 : _a.guestName) || ''));
-                    }
-                    else {
-                        return React__default["default"].createElement("span", null);
-                    }
-                },
-            }));
+function InvoiceEditableForm(_a) {
+    var onSubmit = _a.onSubmit, invoiceNumber = _a.invoiceNumber, defaultValues = _a.defaultValues;
+    var _b = React__default["default"].useState(0), subTotal = _b[0], setSubTotal = _b[1];
+    var _c = React__default["default"].useState(0), amountDue = _c[0], setAmountDue = _c[1];
+    var form = useForm({ defaultValues: defaultValues, resolver: t$2(invoiceFormSchema) });
+    var _d = useFieldArray({
+        control: form.control,
+        name: "services",
+    }), fields = _d.fields, append = _d.append;
+    React__default["default"].useEffect(function () {
+        var subscription = form.watch(function (value, _a) {
+            var name = _a.name; _a.type;
+            if (name.includes('qty')) {
+                var index = name.split('.')[1].split('.')[0];
+                var qty = value.services[index].qty;
+                var cost = value.services[index].cost;
+                var field = "services.".concat(index, ".total");
+                form.setValue(field, Number(qty) * Number(cost));
+                var newSubtotal = form.getValues("services").reduce(function (acc, curr) {
+                    return acc + (curr.totalAmount || 0);
+                }, 0);
+                setSubTotal(newSubtotal);
+            }
         });
-        return column;
+        return function () { return subscription.unsubscribe(); };
+    }, [form.watch, form.setValue]);
+    React__default["default"].useEffect(function () {
+        var newSubtotal = fields.reduce(function (acc, curr) {
+            return acc + (curr.total || 0);
+        }, 0);
+        setSubTotal(newSubtotal);
+        setAmountDue(Number(newSubtotal) - Number(form.getValues("paid")));
     }, []);
-    var table = useReactTable({
-        data: calanderRows,
-        columns: columns,
-        getCoreRowModel: getCoreRowModel(),
-    });
-    return (React__default["default"].createElement("div", { style: { width: '100%', overflowX: 'scroll' } },
-        React__default["default"].createElement("table", { className: "", style: { width: "100%", tableLayout: 'fixed' } },
-            React__default["default"].createElement("thead", null, table.getHeaderGroups().map(function (headerGroup) { return (React__default["default"].createElement("tr", { key: headerGroup.id }, headerGroup.headers.map(function (header, index) { return (React__default["default"].createElement("th", { style: { width: index === 0 ? 200 : 60, height: 60 }, className: "p-2 border h-10  xl:text-sm text-xs", key: header.id }, header.isPlaceholder
-                ? null
-                : flexRender(header.column.columnDef.header, header.getContext()))); }))); })),
-            React__default["default"].createElement("tbody", null, table.getRowModel().rows.map(function (row, index) { return (React__default["default"].createElement("tr", { className: "text-center", key: row.id }, row.getVisibleCells().map(function (cell) { return (React__default["default"].createElement("td", { style: { width: index === 0 ? 100 : 60, height: 60, position: 'relative' }, className: "border  transition cursor-pointer ease  ", key: cell.id }, flexRender(cell.column.columnDef.cell, cell.getContext()))); }))); })))));
-}
-
-function Header(props) {
-    return (React__default["default"].createElement("div", { className: 'main' },
-        React__default["default"].createElement("div", { className: 'header-main' },
-            React__default["default"].createElement("div", { className: 'left-side' },
-                React__default["default"].createElement("div", { className: 'left-div' },
-                    React__default["default"].createElement("svg", { className: 'logo', xmlns: "http://www.w3.org/2000/svg", width: "52", height: "29", viewBox: "0 0 52 29", fill: "none" },
-                        React__default["default"].createElement("path", { d: "M9.0811 1.78388C9.0811 0.797172 9.76957 0 10.6217 0H32.1905C33.0426 0 33.7311 0.797172 33.7311 1.78388C33.7311 2.77059 33.0426 3.56776 32.1905 3.56776V24.9743C33.0426 24.9743 33.7311 25.7715 33.7311 26.7582C33.7311 27.7449 33.0426 28.5421 32.1905 28.5421H23.717V25.8663C23.717 24.389 22.6819 23.1905 21.4061 23.1905C20.1303 23.1905 19.0952 24.389 19.0952 25.8663V28.5421H10.6217C9.76957 28.5421 9.0811 27.7449 9.0811 26.7582C9.0811 25.7715 9.76957 24.9743 10.6217 24.9743V3.56776C9.76957 3.56776 9.0811 2.77059 9.0811 1.78388ZM13.703 6.24359V8.02747C13.703 8.51803 14.0496 8.91941 14.4733 8.91941H16.0139C16.4376 8.91941 16.7842 8.51803 16.7842 8.02747V6.24359C16.7842 5.75302 16.4376 5.35164 16.0139 5.35164H14.4733C14.0496 5.35164 13.703 5.75302 13.703 6.24359ZM20.6358 5.35164C20.2121 5.35164 19.8655 5.75302 19.8655 6.24359V8.02747C19.8655 8.51803 20.2121 8.91941 20.6358 8.91941H22.1764C22.6001 8.91941 22.9467 8.51803 22.9467 8.02747V6.24359C22.9467 5.75302 22.6001 5.35164 22.1764 5.35164H20.6358ZM26.028 6.24359V8.02747C26.028 8.51803 26.3746 8.91941 26.7983 8.91941H28.3389C28.7626 8.91941 29.1092 8.51803 29.1092 8.02747V6.24359C29.1092 5.75302 28.7626 5.35164 28.3389 5.35164H26.7983C26.3746 5.35164 26.028 5.75302 26.028 6.24359ZM14.4733 10.7033C14.0496 10.7033 13.703 11.1047 13.703 11.5952V13.3791C13.703 13.8697 14.0496 14.2711 14.4733 14.2711H16.0139C16.4376 14.2711 16.7842 13.8697 16.7842 13.3791V11.5952C16.7842 11.1047 16.4376 10.7033 16.0139 10.7033H14.4733ZM19.8655 11.5952V13.3791C19.8655 13.8697 20.2121 14.2711 20.6358 14.2711H22.1764C22.6001 14.2711 22.9467 13.8697 22.9467 13.3791V11.5952C22.9467 11.1047 22.6001 10.7033 22.1764 10.7033H20.6358C20.2121 10.7033 19.8655 11.1047 19.8655 11.5952ZM26.7983 10.7033C26.3746 10.7033 26.028 11.1047 26.028 11.5952V13.3791C26.028 13.8697 26.3746 14.2711 26.7983 14.2711H28.3389C28.7626 14.2711 29.1092 13.8697 29.1092 13.3791V11.5952C29.1092 11.1047 28.7626 10.7033 28.3389 10.7033H26.7983ZM24.8725 21.4066C25.5128 21.4066 26.0424 20.7989 25.8835 20.0798C25.3732 17.7663 23.563 16.0549 21.4061 16.0549C19.2492 16.0549 17.4342 17.7663 16.9287 20.0798C16.7698 20.7934 17.3042 21.4066 17.9397 21.4066H24.8725Z", fill: "white" }),
-                        React__default["default"].createElement("path", { d: "M36.5486 2.5938C35.0412 2.60038 33.6444 2.91273 32.9633 3.13038C32.9633 3.13038 39.1413 4.2008 39.6552 8.55523C34.9606 1.64436 29.8399 10.0023 29.8399 10.0023C30.9075 9.71639 33.9647 8.86763 36.0062 9.22568C37.4029 9.47065 38.7644 10.7635 38.7057 10.7473C35.3771 11.5834 30.089 26.7086 30.9869 27.9369C31.7876 28.8762 32.5892 28.5558 33.3899 28.0793C33.7863 24.8738 36.8795 10.8097 40.6645 11.945C40.665 11.9452 40.6656 11.9448 40.6661 11.945C40.9848 12.0564 41.2862 12.2517 41.3026 12.5502C41.3337 13.1187 40.9742 14.048 41.0592 14.6934C41.2559 16.191 41.5432 16.7119 41.9608 17.2343C42.9584 16.6618 43.9129 14.5977 44.1103 13.5274C45.0042 13.9271 46.441 14.8527 47.6132 18.2904C48.226 15.069 47.3423 12.528 44.4412 11.3997C45.6975 10.8452 51.1659 13.6508 51.8333 15.2144C52.4827 12.3949 47.8893 8.9446 44.065 9.12796C44.7982 8.93264 45.6039 9.16088 46.3706 8.58441C47.3995 7.81093 48.5993 7.14475 49.7173 6.4292C45.9573 4.75938 42.4874 5.58389 42.243 7.31226C42.051 3.4763 39.1354 2.58266 36.5486 2.59385L36.5486 2.5938Z", fill: "white" }),
-                        React__default["default"].createElement("path", { d: "M8.12512 14.2735C8.92317 14.2771 9.66266 14.4489 10.0232 14.5686C10.0232 14.5686 6.75253 15.1573 6.48045 17.5522C8.96584 13.7513 11.6768 18.3482 11.6768 18.3482C11.1116 18.1909 9.49308 17.7241 8.41231 17.921C7.67287 18.0557 6.95204 18.7668 6.98316 18.7579C8.74536 19.2177 11.5449 27.5366 11.0695 28.2122C10.6457 28.7288 10.2213 28.5526 9.79737 28.2905C9.58753 26.5275 7.94996 18.7922 5.94612 19.4166C5.94584 19.4167 5.94555 19.4165 5.94527 19.4166C5.77657 19.4779 5.61697 19.5853 5.60832 19.7495C5.59182 20.0622 5.78214 20.5733 5.73719 20.9282C5.63302 21.7519 5.48096 22.0384 5.25982 22.3258C4.7317 22.0109 4.2264 20.8756 4.12188 20.287C3.64866 20.5068 2.88797 21.0159 2.26739 22.9066C1.94296 21.1348 2.41083 19.7373 3.94672 19.1167C3.28159 18.8118 0.386587 20.3548 0.033226 21.2148C-0.310577 19.664 2.12125 17.7664 4.14586 17.8673C3.7577 17.7598 3.33114 17.8854 2.92524 17.5683C2.38056 17.1429 1.74535 16.7765 1.15345 16.3829C3.14406 15.4645 4.98108 15.918 5.11044 16.8686C5.21209 14.7588 6.75563 14.2673 8.12515 14.2735L8.12512 14.2735Z", fill: "white" })),
-                    React__default["default"].createElement("h1", { className: 'logo-text' }, props.HeaderInfo.name))),
-            React__default["default"].createElement("div", { className: 'right-side' },
-                React__default["default"].createElement("h1", null, props.HeaderInfo.name),
-                React__default["default"].createElement("h3", null, props.HeaderInfo.address),
-                React__default["default"].createElement("h3", null,
-                    "phone: ",
-                    props.HeaderInfo.number)))));
+    return (React__default["default"].createElement(Form$1, __assign$2({}, form),
+        React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 bg-white" },
+            React__default["default"].createElement("header", { className: "bg-[#4D6969] flex items-center text-white h-[14rem]" },
+                React__default["default"].createElement("div", { className: "w-[50%]" },
+                    React__default["default"].createElement("img", { src: "https://hotelierpro.us/Logo/HotelierPro_Logo_white.svg", alt: "logo", className: "ml-8 h-12" })),
+                React__default["default"].createElement("ul", { className: "w-[50%] ml-8" },
+                    React__default["default"].createElement("h3", { className: "text-2xl font-bold tracking-tight mb-2" }, "Invoice"),
+                    React__default["default"].createElement("li", { className: "flex gap-4 items-center" },
+                        React__default["default"].createElement("span", { className: "w-[8rem]" }, "Invoice Number"),
+                        React__default["default"].createElement("span", null, ":"),
+                        React__default["default"].createElement("span", null, invoiceNumber)),
+                    React__default["default"].createElement("li", { className: "flex gap-4 items-center my-2" },
+                        React__default["default"].createElement("span", { className: "w-[8rem]" }, "Invoice Date"),
+                        React__default["default"].createElement("span", null, ":"),
+                        React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "invoiceDate", render: function (_a) {
+                                var field = _a.field;
+                                return (React__default["default"].createElement(FormItem, { className: "flex flex-col" },
+                                    React__default["default"].createElement(Popover, null,
+                                        React__default["default"].createElement(PopoverTrigger, { asChild: true },
+                                            React__default["default"].createElement(Button$3, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal group', !field.value &&
+                                                    'text-muted-foreground') },
+                                                React__default["default"].createElement(Calendar, { className: "mr-2 h-4 w-4 text-white group-hover:text-primary" }),
+                                                field.value ? (format$1(field.value, 'PPP')) : (React__default["default"].createElement("span", { className: "text-white group-hover:text-primary" }, "billing date")))),
+                                        React__default["default"].createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
+                                            React__default["default"].createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
+                            } })),
+                    React__default["default"].createElement("li", { className: "flex gap-4 items-center my-2" },
+                        React__default["default"].createElement("span", { className: "w-[8rem]" }, "Invoice Due Date"),
+                        React__default["default"].createElement("span", null, ":"),
+                        React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "invoiceDueDate", render: function (_a) {
+                                var field = _a.field;
+                                return (React__default["default"].createElement(FormItem, { className: "flex flex-col" },
+                                    React__default["default"].createElement(Popover, null,
+                                        React__default["default"].createElement(PopoverTrigger, { asChild: true },
+                                            React__default["default"].createElement(Button$3, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal group', !field.value &&
+                                                    'text-muted-foreground') },
+                                                React__default["default"].createElement(Calendar, { className: "mr-2 h-4 w-4 text-white group-hover:text-primary" }),
+                                                field.value ? (format$1(field.value, 'PPP')) : (React__default["default"].createElement("span", { className: "text-white group-hover:text-primary" }, "due date")))),
+                                        React__default["default"].createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
+                                            React__default["default"].createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
+                            } })))),
+            React__default["default"].createElement("main", { className: "space-y-8" },
+                React__default["default"].createElement("p", { className: "text-red-700 uppercase text-right" }, "sent"),
+                React__default["default"].createElement("div", { className: "flex justify-between items-end gap-[3rem]" },
+                    React__default["default"].createElement("div", { className: "space-y-2 w-full" },
+                        React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "customer", render: function (_a) {
+                                var field = _a.field;
+                                return (React__default["default"].createElement(FormItem, null,
+                                    React__default["default"].createElement(FormLabel, null, "Bill To"),
+                                    React__default["default"].createElement(FormControl, null,
+                                        React__default["default"].createElement(Input, __assign$2({ placeholder: "Enter Name" }, field))),
+                                    React__default["default"].createElement(FormMessage, null)));
+                            } }),
+                        React__default["default"].createElement(FormField, { control: form.control, name: "customerAddress", render: function (_a) {
+                                var field = _a.field;
+                                return (React__default["default"].createElement(FormItem, null,
+                                    React__default["default"].createElement(FormControl, null,
+                                        React__default["default"].createElement(Textarea, __assign$2({ placeholder: "Address" }, field))),
+                                    React__default["default"].createElement(FormMessage, null)));
+                            } })),
+                    React__default["default"].createElement("div", { className: "space-y-2 w-full" },
+                        React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "hotelName", render: function (_a) {
+                                var field = _a.field;
+                                return (React__default["default"].createElement(FormItem, null,
+                                    React__default["default"].createElement(FormLabel, null, "Bill From"),
+                                    React__default["default"].createElement(FormControl, null,
+                                        React__default["default"].createElement(Input, __assign$2({ placeholder: "Enter Name" }, field))),
+                                    React__default["default"].createElement(FormMessage, null)));
+                            } }),
+                        React__default["default"].createElement(FormField, { control: form.control, name: "hotelAddress", render: function (_a) {
+                                var field = _a.field;
+                                return (React__default["default"].createElement(FormItem, null,
+                                    React__default["default"].createElement(FormControl, null,
+                                        React__default["default"].createElement(Textarea, __assign$2({ placeholder: "Address" }, field))),
+                                    React__default["default"].createElement(FormMessage, null)));
+                            } }))),
+                React__default["default"].createElement(Table, null,
+                    React__default["default"].createElement(TableHeader, null,
+                        React__default["default"].createElement(TableRow, null,
+                            React__default["default"].createElement(TableHead, { className: "uppercase text-center w-4 max-w-4 min-w-4" }, "No"),
+                            React__default["default"].createElement(TableHead, null, "Item"),
+                            React__default["default"].createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "cost"),
+                            React__default["default"].createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "qty"),
+                            React__default["default"].createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "price"))),
+                    React__default["default"].createElement(TableBody, null, fields.map(function (item, index) { return (React__default["default"].createElement(TableRow, { key: index },
+                        React__default["default"].createElement(TableCell, { className: "w-4 max-w-4 min-w-4 text-center" }, index + 1),
+                        React__default["default"].createElement(TableCell, null,
+                            React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".name"), render: function (_a) {
+                                    var field = _a.field;
+                                    return (React__default["default"].createElement(FormItem, null,
+                                        React__default["default"].createElement(FormControl, null,
+                                            React__default["default"].createElement(Input, __assign$2({}, field))),
+                                        React__default["default"].createElement(FormMessage, null)));
+                                } })),
+                        React__default["default"].createElement(TableCell, null,
+                            React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".price"), render: function (_a) {
+                                    var field = _a.field;
+                                    return (React__default["default"].createElement(FormItem, { className: "w-[8rem]" },
+                                        React__default["default"].createElement(FormControl, null,
+                                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
+                                        React__default["default"].createElement(FormMessage, null)));
+                                } })),
+                        React__default["default"].createElement(TableCell, null,
+                            React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".quantity"), render: function (_a) {
+                                    var field = _a.field;
+                                    return (React__default["default"].createElement(FormItem, { className: "w-[8rem]" },
+                                        React__default["default"].createElement(FormControl, null,
+                                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
+                                        React__default["default"].createElement(FormMessage, null)));
+                                } })),
+                        React__default["default"].createElement(TableCell, null,
+                            React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".totalAmount"), render: function (_a) {
+                                    var field = _a.field;
+                                    return (React__default["default"].createElement(FormItem, { className: "w-[8rem]" },
+                                        React__default["default"].createElement(FormControl, null,
+                                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
+                                        React__default["default"].createElement(FormMessage, null)));
+                                } })))); })),
+                    React__default["default"].createElement(TableFooter, { className: "bg-white" },
+                        React__default["default"].createElement(TableRow, { className: "py-4" },
+                            React__default["default"].createElement(TableCell, null,
+                                React__default["default"].createElement(Button$3, { type: 'button', onClick: function () { return append({
+                                        name: "",
+                                        price: 0,
+                                        quantity: 1,
+                                        totalAmount: 0,
+                                    }); } },
+                                    React__default["default"].createElement(PlusCircledIcon, { className: "mr-2 h-4 w-4" }),
+                                    "Add New Row"))),
+                        React__default["default"].createElement(TableRow, null,
+                            React__default["default"].createElement(TableCell, { colSpan: 2 }),
+                            React__default["default"].createElement(TableCell, { colSpan: 2 }, "Subtotal"),
+                            React__default["default"].createElement(TableCell, null, subTotal)),
+                        React__default["default"].createElement(TableRow, null,
+                            React__default["default"].createElement(TableCell, { colSpan: 2 }),
+                            React__default["default"].createElement(TableCell, { colSpan: 3 },
+                                React__default["default"].createElement(Separator, null))),
+                        React__default["default"].createElement(TableRow, null,
+                            React__default["default"].createElement(TableCell, { colSpan: 2, rowSpan: 5 },
+                                React__default["default"].createElement(FormField, { control: form.control, name: "notes", render: function (_a) {
+                                        var field = _a.field;
+                                        return (React__default["default"].createElement(FormItem, null,
+                                            React__default["default"].createElement(FormControl, null,
+                                                React__default["default"].createElement(Textarea, __assign$2({ placeholder: "Notes", className: "resize-none h-[15rem]" }, field))),
+                                            React__default["default"].createElement(FormMessage, null)));
+                                    } }))),
+                        React__default["default"].createElement(TableRow, null,
+                            React__default["default"].createElement(TableCell, { colSpan: 2 }, "Paid"),
+                            React__default["default"].createElement(TableCell, null,
+                                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "paid", render: function (_a) {
+                                        var field = _a.field;
+                                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
+                                            React__default["default"].createElement(FormControl, null,
+                                                React__default["default"].createElement(Input, __assign$2({ type: 'number', placeholder: "4999" }, field))),
+                                            React__default["default"].createElement(FormMessage, null)));
+                                    } }))),
+                        React__default["default"].createElement(TableRow, null,
+                            React__default["default"].createElement(TableCell, { colSpan: 3 },
+                                React__default["default"].createElement(Separator, null))),
+                        React__default["default"].createElement(TableRow, null,
+                            React__default["default"].createElement(TableCell, { colSpan: 2 }, "Amount Due"),
+                            React__default["default"].createElement(TableCell, { className: "text-red-700" }, amountDue))))),
+            React__default["default"].createElement("input", __assign$2({ type: "hidden" }, form.register("amountDue"), { value: amountDue })),
+            React__default["default"].createElement("input", __assign$2({ type: "hidden" }, form.register("subTotal"), { value: subTotal })))));
 }
 
 /**
@@ -40750,8 +34797,8 @@ function Header(props) {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var b$1=Symbol.for("react.element"),c$2=Symbol.for("react.portal"),d$1=Symbol.for("react.fragment"),e$1=Symbol.for("react.strict_mode"),f$1=Symbol.for("react.profiler"),g$1=Symbol.for("react.provider"),h$1=Symbol.for("react.context"),k$2=Symbol.for("react.server_context"),l$1=Symbol.for("react.forward_ref"),m$1=Symbol.for("react.suspense"),n$1=Symbol.for("react.suspense_list"),p$1=Symbol.for("react.memo"),q$1=Symbol.for("react.lazy"),t$1=Symbol.for("react.offscreen"),u;u=Symbol.for("react.module.reference");
-function v$1(a){if("object"===typeof a&&null!==a){var r=a.$$typeof;switch(r){case b$1:switch(a=a.type,a){case d$1:case f$1:case e$1:case m$1:case n$1:return a;default:switch(a=a&&a.$$typeof,a){case k$2:case h$1:case l$1:case q$1:case p$1:case g$1:return a;default:return r}}case c$2:return r}}}var ContextConsumer$1=h$1;var ContextProvider$1=g$1;var Element$2=b$1;var ForwardRef$1=l$1;var Fragment$1=d$1;var Lazy$1=q$1;var Memo$1=p$1;var Portal$1=c$2;var Profiler$1=f$1;var StrictMode$1=e$1;var Suspense$1=m$1;
+var b$1=Symbol.for("react.element"),c$2=Symbol.for("react.portal"),d$1=Symbol.for("react.fragment"),e$1=Symbol.for("react.strict_mode"),f$1=Symbol.for("react.profiler"),g$1=Symbol.for("react.provider"),h$1=Symbol.for("react.context"),k$3=Symbol.for("react.server_context"),l$1=Symbol.for("react.forward_ref"),m$1=Symbol.for("react.suspense"),n$1=Symbol.for("react.suspense_list"),p$1=Symbol.for("react.memo"),q$1=Symbol.for("react.lazy"),t$1=Symbol.for("react.offscreen"),u;u=Symbol.for("react.module.reference");
+function v$1(a){if("object"===typeof a&&null!==a){var r=a.$$typeof;switch(r){case b$1:switch(a=a.type,a){case d$1:case f$1:case e$1:case m$1:case n$1:return a;default:switch(a=a&&a.$$typeof,a){case k$3:case h$1:case l$1:case q$1:case p$1:case g$1:return a;default:return r}}case c$2:return r}}}var ContextConsumer$1=h$1;var ContextProvider$1=g$1;var Element$2=b$1;var ForwardRef$1=l$1;var Fragment$1=d$1;var Lazy$1=q$1;var Memo$1=p$1;var Portal$1=c$2;var Profiler$1=f$1;var StrictMode$1=e$1;var Suspense$1=m$1;
 var SuspenseList=n$1;var isAsyncMode$1=function(){return !1};var isConcurrentMode$1=function(){return !1};var isContextConsumer$1=function(a){return v$1(a)===h$1};var isContextProvider$1=function(a){return v$1(a)===g$1};var isElement$1=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===b$1};var isForwardRef$1=function(a){return v$1(a)===l$1};var isFragment$2=function(a){return v$1(a)===d$1};var isLazy$1=function(a){return v$1(a)===q$1};var isMemo$1=function(a){return v$1(a)===p$1};
 var isPortal$1=function(a){return v$1(a)===c$2};var isProfiler$1=function(a){return v$1(a)===f$1};var isStrictMode$1=function(a){return v$1(a)===e$1};var isSuspense$1=function(a){return v$1(a)===m$1};var isSuspenseList=function(a){return v$1(a)===n$1};
 var isValidElementType$1=function(a){return "string"===typeof a||"function"===typeof a||a===d$1||a===f$1||a===e$1||a===m$1||a===n$1||a===t$1||"object"===typeof a&&null!==a&&(a.$$typeof===q$1||a.$$typeof===p$1||a.$$typeof===g$1||a.$$typeof===h$1||a.$$typeof===l$1||a.$$typeof===u||void 0!==a.getModuleId)?!0:!1};var typeOf$1=v$1;
@@ -49294,85 +43341,6324 @@ Button.Group = Group;
 Button.__ANT_BUTTON = true;
 var Button$1 = Button;
 
-function InfoTable(props) {
-    return (React__default["default"].createElement(React__default["default"].Fragment, null,
-        React__default["default"].createElement("div", { className: 'table-main-div' },
-            React__default["default"].createElement("div", { className: 'table-user-data-head-div' },
-                React__default["default"].createElement(Button$1, { className: 'registrationForButton' }, "Registation Form"))),
-        React__default["default"].createElement("div", { className: 'table-user-data-div' },
-            React__default["default"].createElement("table", { className: 'table-user-data' }, props.infoTableData.map(function (obj, index) {
-                var tableRowCount = props.infoTableData.length;
-                if (index + 1 === tableRowCount) {
-                    return (React__default["default"].createElement(React__default["default"].Fragment, null,
+var stringToDate = z$2.string().transform(function (str) { return new Date(str); });
+var dateSchema = z$2.union([stringToDate, z$2.date()]);
+z$2.object({
+    hotelName: z$2.string(),
+    hotelAddres: z$2.string(),
+    arrival: dateSchema,
+    departure: dateSchema,
+    name: z$2.string(),
+    stayLength: z$2.coerce.number(),
+    roomType: z$2.string(),
+    email: z$2.string(),
+    roomAmount: z$2.coerce.number(),
+    checkIn: dateSchema,
+    checkInTime: dateSchema,
+    nationality: z$2.string(),
+    numberOfPerson: z$2.coerce.number(),
+    passport: z$2.string(),
+    deposit: z$2.coerce.number(),
+    dueAmount: z$2.coerce.number(),
+    services: z$2.array(z$2.object({
+        item: z$2.string(),
+        cost: z$2.coerce.number(),
+        qty: z$2.coerce.number(),
+        total: z$2.coerce.number(),
+        date: dateSchema.optional(),
+    })),
+    policies: z$2.array(z$2.object({
+        policy: z$2.string()
+    }))
+});
+function RegistrationForm(props) {
+    var _a;
+    return (React__default["default"].createElement("div", { className: 'registrationFormContainer' },
+        React__default["default"].createElement("div", { className: 'main' },
+            React__default["default"].createElement("div", { className: 'header-main' },
+                React__default["default"].createElement("div", { className: 'left-side' },
+                    React__default["default"].createElement("div", { className: 'left-div' },
+                        React__default["default"].createElement("svg", { className: 'logo', xmlns: "http://www.w3.org/2000/svg", width: "52", height: "29", viewBox: "0 0 52 29", fill: "none" },
+                            React__default["default"].createElement("path", { d: "M9.0811 1.78388C9.0811 0.797172 9.76957 0 10.6217 0H32.1905C33.0426 0 33.7311 0.797172 33.7311 1.78388C33.7311 2.77059 33.0426 3.56776 32.1905 3.56776V24.9743C33.0426 24.9743 33.7311 25.7715 33.7311 26.7582C33.7311 27.7449 33.0426 28.5421 32.1905 28.5421H23.717V25.8663C23.717 24.389 22.6819 23.1905 21.4061 23.1905C20.1303 23.1905 19.0952 24.389 19.0952 25.8663V28.5421H10.6217C9.76957 28.5421 9.0811 27.7449 9.0811 26.7582C9.0811 25.7715 9.76957 24.9743 10.6217 24.9743V3.56776C9.76957 3.56776 9.0811 2.77059 9.0811 1.78388ZM13.703 6.24359V8.02747C13.703 8.51803 14.0496 8.91941 14.4733 8.91941H16.0139C16.4376 8.91941 16.7842 8.51803 16.7842 8.02747V6.24359C16.7842 5.75302 16.4376 5.35164 16.0139 5.35164H14.4733C14.0496 5.35164 13.703 5.75302 13.703 6.24359ZM20.6358 5.35164C20.2121 5.35164 19.8655 5.75302 19.8655 6.24359V8.02747C19.8655 8.51803 20.2121 8.91941 20.6358 8.91941H22.1764C22.6001 8.91941 22.9467 8.51803 22.9467 8.02747V6.24359C22.9467 5.75302 22.6001 5.35164 22.1764 5.35164H20.6358ZM26.028 6.24359V8.02747C26.028 8.51803 26.3746 8.91941 26.7983 8.91941H28.3389C28.7626 8.91941 29.1092 8.51803 29.1092 8.02747V6.24359C29.1092 5.75302 28.7626 5.35164 28.3389 5.35164H26.7983C26.3746 5.35164 26.028 5.75302 26.028 6.24359ZM14.4733 10.7033C14.0496 10.7033 13.703 11.1047 13.703 11.5952V13.3791C13.703 13.8697 14.0496 14.2711 14.4733 14.2711H16.0139C16.4376 14.2711 16.7842 13.8697 16.7842 13.3791V11.5952C16.7842 11.1047 16.4376 10.7033 16.0139 10.7033H14.4733ZM19.8655 11.5952V13.3791C19.8655 13.8697 20.2121 14.2711 20.6358 14.2711H22.1764C22.6001 14.2711 22.9467 13.8697 22.9467 13.3791V11.5952C22.9467 11.1047 22.6001 10.7033 22.1764 10.7033H20.6358C20.2121 10.7033 19.8655 11.1047 19.8655 11.5952ZM26.7983 10.7033C26.3746 10.7033 26.028 11.1047 26.028 11.5952V13.3791C26.028 13.8697 26.3746 14.2711 26.7983 14.2711H28.3389C28.7626 14.2711 29.1092 13.8697 29.1092 13.3791V11.5952C29.1092 11.1047 28.7626 10.7033 28.3389 10.7033H26.7983ZM24.8725 21.4066C25.5128 21.4066 26.0424 20.7989 25.8835 20.0798C25.3732 17.7663 23.563 16.0549 21.4061 16.0549C19.2492 16.0549 17.4342 17.7663 16.9287 20.0798C16.7698 20.7934 17.3042 21.4066 17.9397 21.4066H24.8725Z", fill: "white" }),
+                            React__default["default"].createElement("path", { d: "M36.5486 2.5938C35.0412 2.60038 33.6444 2.91273 32.9633 3.13038C32.9633 3.13038 39.1413 4.2008 39.6552 8.55523C34.9606 1.64436 29.8399 10.0023 29.8399 10.0023C30.9075 9.71639 33.9647 8.86763 36.0062 9.22568C37.4029 9.47065 38.7644 10.7635 38.7057 10.7473C35.3771 11.5834 30.089 26.7086 30.9869 27.9369C31.7876 28.8762 32.5892 28.5558 33.3899 28.0793C33.7863 24.8738 36.8795 10.8097 40.6645 11.945C40.665 11.9452 40.6656 11.9448 40.6661 11.945C40.9848 12.0564 41.2862 12.2517 41.3026 12.5502C41.3337 13.1187 40.9742 14.048 41.0592 14.6934C41.2559 16.191 41.5432 16.7119 41.9608 17.2343C42.9584 16.6618 43.9129 14.5977 44.1103 13.5274C45.0042 13.9271 46.441 14.8527 47.6132 18.2904C48.226 15.069 47.3423 12.528 44.4412 11.3997C45.6975 10.8452 51.1659 13.6508 51.8333 15.2144C52.4827 12.3949 47.8893 8.9446 44.065 9.12796C44.7982 8.93264 45.6039 9.16088 46.3706 8.58441C47.3995 7.81093 48.5993 7.14475 49.7173 6.4292C45.9573 4.75938 42.4874 5.58389 42.243 7.31226C42.051 3.4763 39.1354 2.58266 36.5486 2.59385L36.5486 2.5938Z", fill: "white" }),
+                            React__default["default"].createElement("path", { d: "M8.12512 14.2735C8.92317 14.2771 9.66266 14.4489 10.0232 14.5686C10.0232 14.5686 6.75253 15.1573 6.48045 17.5522C8.96584 13.7513 11.6768 18.3482 11.6768 18.3482C11.1116 18.1909 9.49308 17.7241 8.41231 17.921C7.67287 18.0557 6.95204 18.7668 6.98316 18.7579C8.74536 19.2177 11.5449 27.5366 11.0695 28.2122C10.6457 28.7288 10.2213 28.5526 9.79737 28.2905C9.58753 26.5275 7.94996 18.7922 5.94612 19.4166C5.94584 19.4167 5.94555 19.4165 5.94527 19.4166C5.77657 19.4779 5.61697 19.5853 5.60832 19.7495C5.59182 20.0622 5.78214 20.5733 5.73719 20.9282C5.63302 21.7519 5.48096 22.0384 5.25982 22.3258C4.7317 22.0109 4.2264 20.8756 4.12188 20.287C3.64866 20.5068 2.88797 21.0159 2.26739 22.9066C1.94296 21.1348 2.41083 19.7373 3.94672 19.1167C3.28159 18.8118 0.386587 20.3548 0.033226 21.2148C-0.310577 19.664 2.12125 17.7664 4.14586 17.8673C3.7577 17.7598 3.33114 17.8854 2.92524 17.5683C2.38056 17.1429 1.74535 16.7765 1.15345 16.3829C3.14406 15.4645 4.98108 15.918 5.11044 16.8686C5.21209 14.7588 6.75563 14.2673 8.12515 14.2735L8.12512 14.2735Z", fill: "white" })),
+                        React__default["default"].createElement("h1", { className: 'logo-text' }, "HotelierPro"))),
+                React__default["default"].createElement("div", { className: 'right-side' },
+                    React__default["default"].createElement("h1", null, props.hotelName),
+                    React__default["default"].createElement("h3", null, props.hotelAddres)))),
+        React__default["default"].createElement("div", { className: 'internalContiner' },
+            React__default["default"].createElement("div", { className: 'table-main-div' },
+                React__default["default"].createElement("div", { className: 'table-user-data-head-div' },
+                    React__default["default"].createElement(Button$1, { className: 'registrationForButton' }, "Registation Form"))),
+            React__default["default"].createElement("div", { className: 'table-user-data-div' },
+                React__default["default"].createElement("table", { className: 'table-user-data' },
+                    React__default["default"].createElement("tbody", null,
                         React__default["default"].createElement("tr", null,
                             React__default["default"].createElement("td", null,
-                                obj.label,
-                                "\u00A0:\u00A0",
-                                obj.value),
+                                "Arrival Date\u00A0:\u00A0",
+                                moment(new Date(props.arrival)).format("DD/MM/YYYY")),
+                            React__default["default"].createElement("td", null),
                             React__default["default"].createElement("td", null,
-                                obj.label1,
-                                "\u00A0:\u00A0",
-                                obj.value1),
+                                "Departure  Date\u00A0:\u00A0",
+                                moment(new Date(props.departure)).format("DD/MM/YYYY"))),
+                        React__default["default"].createElement("tr", null,
                             React__default["default"].createElement("td", null,
-                                obj.label2,
-                                "\u00A0:\u00A0",
-                                obj.value2))));
+                                "Name\u00A0:\u00A0",
+                                props.name),
+                            React__default["default"].createElement("td", null),
+                            React__default["default"].createElement("td", null,
+                                "Check In Time\u00A0:\u00A0",
+                                moment(new Date(props.checkInTime)).format("DD/MM/YYYY"))),
+                        React__default["default"].createElement("tr", null,
+                            React__default["default"].createElement("td", null,
+                                "Nationality\u00A0:\u00A0",
+                                props.nationality),
+                            React__default["default"].createElement("td", null),
+                            React__default["default"].createElement("td", null,
+                                "Length of stay\u00A0:\u00A0",
+                                props.stayLength)),
+                        React__default["default"].createElement("tr", null,
+                            React__default["default"].createElement("td", null,
+                                "Room Type\u00A0:\u00A0",
+                                props.roomType),
+                            React__default["default"].createElement("td", null),
+                            React__default["default"].createElement("td", null,
+                                "No of Person\u00A0:\u00A0",
+                                props.numberOfPerson)),
+                        React__default["default"].createElement("tr", null,
+                            React__default["default"].createElement("td", null,
+                                "Email/Phone\u00A0:\u00A0",
+                                props.email),
+                            React__default["default"].createElement("td", null),
+                            React__default["default"].createElement("td", null,
+                                "Passport No\u00A0:\u00A0",
+                                props.passport)),
+                        React__default["default"].createElement("tr", null,
+                            React__default["default"].createElement("td", null,
+                                "Room Amount\u00A0:\u00A0",
+                                props.roomAmount),
+                            React__default["default"].createElement("td", null,
+                                "Deposit  Amount\u00A0:\u00A0",
+                                props.deposit),
+                            React__default["default"].createElement("td", null,
+                                "Due Amount\u00A0:\u00A0",
+                                props.dueAmount))))),
+            React__default["default"].createElement("div", { className: 'policy-div' },
+                React__default["default"].createElement("div", null,
+                    React__default["default"].createElement("h2", { className: 'policy-text mb-2' }, "Terms & Conditions")),
+                React__default["default"].createElement("div", null,
+                    React__default["default"].createElement("ul", { className: 'policy-para' }, props.policies.map(function (value) {
+                        return (React__default["default"].createElement("li", null, value.policy));
+                    }))),
+                React__default["default"].createElement("h5", { className: 'policy-text-one' }, "Check by:"),
+                React__default["default"].createElement("div", { className: 'signeture-div' }),
+                React__default["default"].createElement("h5", { className: 'signeture-text' }, "Signature")),
+            React__default["default"].createElement("div", null,
+                React__default["default"].createElement("div", { className: 'table-two-div' },
+                    React__default["default"].createElement("table", { className: 'table-two' },
+                        React__default["default"].createElement("tr", null,
+                            React__default["default"].createElement("th", null, "DATE"),
+                            React__default["default"].createElement("th", null, "TYPE"),
+                            React__default["default"].createElement("th", null, "QY"),
+                            React__default["default"].createElement("th", null, "AMOUNT"),
+                            React__default["default"].createElement("th", null, "TOTAL")), (_a = props.services) === null || _a === void 0 ? void 0 :
+                        _a.map(function (value) {
+                            return (React__default["default"].createElement("tr", null,
+                                React__default["default"].createElement("td", null, moment(new Date(value.date)).format("DD/MM/YYYY")),
+                                React__default["default"].createElement("td", null, value.item),
+                                React__default["default"].createElement("td", null, value.qty),
+                                React__default["default"].createElement("td", null, value.cost),
+                                React__default["default"].createElement("td", null, value.total)));
+                        })))))));
+}
+
+var Form = {
+    changePassword: ChangePassword,
+    addPerson: AddPersonForm,
+    addService: AddServicesForm,
+    maintainance: MaintenanceAlertForm,
+    roomType: AddRoomType,
+    addroom: AddRooms,
+    serviceCategory: AddServiceCategoryForm,
+    booking: NewBookingForm,
+    Billing: BillingComponent,
+    invoice: InvoiceEditableForm,
+    registrationForm: RegistrationForm
+};
+
+/* -------------------------------------------------------------------------------------------------
+ * Dialog
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DIALOG_NAME$1 = 'Dialog';
+const [$5d3850c4d0b4e6c7$var$createDialogContext$1, $5d3850c4d0b4e6c7$export$cc702773b8ea3e41$1] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($5d3850c4d0b4e6c7$var$DIALOG_NAME$1);
+const [$5d3850c4d0b4e6c7$var$DialogProvider$1, $5d3850c4d0b4e6c7$var$useDialogContext$1] = $5d3850c4d0b4e6c7$var$createDialogContext$1($5d3850c4d0b4e6c7$var$DIALOG_NAME$1);
+const $5d3850c4d0b4e6c7$export$3ddf2d174ce01153$1 = (props)=>{
+    const { __scopeDialog: __scopeDialog , children: children , open: openProp , defaultOpen: defaultOpen , onOpenChange: onOpenChange , modal: modal = true  } = props;
+    const triggerRef = React.useRef(null);
+    const contentRef = React.useRef(null);
+    const [open = false, setOpen] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
+        prop: openProp,
+        defaultProp: defaultOpen,
+        onChange: onOpenChange
+    });
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogProvider$1, {
+        scope: __scopeDialog,
+        triggerRef: triggerRef,
+        contentRef: contentRef,
+        contentId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        titleId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        descriptionId: $1746a345f3d73bb7$export$f680877a34711e37$1(),
+        open: open,
+        onOpenChange: setOpen,
+        onOpenToggle: React.useCallback(()=>setOpen((prevOpen)=>!prevOpen
+            )
+        , [
+            setOpen
+        ]),
+        modal: modal
+    }, children);
+};
+/* -------------------------------------------------------------------------------------------------
+ * DialogTrigger
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$TRIGGER_NAME = 'DialogTrigger';
+const $5d3850c4d0b4e6c7$export$2e1e1122cf0cba88 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , ...triggerProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$TRIGGER_NAME, __scopeDialog);
+    const composedTriggerRef = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, context.triggerRef);
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends$m({
+        type: "button",
+        "aria-haspopup": "dialog",
+        "aria-expanded": context.open,
+        "aria-controls": context.contentId,
+        "data-state": $5d3850c4d0b4e6c7$var$getState$1(context.open)
+    }, triggerProps, {
+        ref: composedTriggerRef,
+        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, context.onOpenToggle)
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * DialogPortal
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$PORTAL_NAME$1 = 'DialogPortal';
+const [$5d3850c4d0b4e6c7$var$PortalProvider$1, $5d3850c4d0b4e6c7$var$usePortalContext$1] = $5d3850c4d0b4e6c7$var$createDialogContext$1($5d3850c4d0b4e6c7$var$PORTAL_NAME$1, {
+    forceMount: undefined
+});
+const $5d3850c4d0b4e6c7$export$dad7c95542bacce0$1 = (props)=>{
+    const { __scopeDialog: __scopeDialog , forceMount: forceMount , children: children , container: container  } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$PORTAL_NAME$1, __scopeDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$PortalProvider$1, {
+        scope: __scopeDialog,
+        forceMount: forceMount
+    }, React.Children.map(children, (child)=>/*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+            present: forceMount || context.open
+        }, /*#__PURE__*/ React.createElement($f1701beae083dbae$export$602eac185826482c$1, {
+            asChild: true,
+            container: container
+        }, child))
+    ));
+};
+/* -------------------------------------------------------------------------------------------------
+ * DialogOverlay
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$OVERLAY_NAME$1 = 'DialogOverlay';
+const $5d3850c4d0b4e6c7$export$bd1d06c79be19e17$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext$1($5d3850c4d0b4e6c7$var$OVERLAY_NAME$1, props.__scopeDialog);
+    const { forceMount: forceMount = portalContext.forceMount , ...overlayProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$OVERLAY_NAME$1, props.__scopeDialog);
+    return context.modal ? /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || context.open
+    }, /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogOverlayImpl$1, _extends$m({}, overlayProps, {
+        ref: forwardedRef
+    }))) : null;
+});
+const $5d3850c4d0b4e6c7$var$DialogOverlayImpl$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , ...overlayProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$OVERLAY_NAME$1, __scopeDialog);
+    return(/*#__PURE__*/ // Make sure `Content` is scrollable even when it doesn't live inside `RemoveScroll`
+    // ie. when `Overlay` and `Content` are siblings
+    React.createElement($67UHm$RemoveScroll$1, {
+        as: $5e63c961fc1ce211$export$8c6ed5c666ac1360$1,
+        allowPinchZoom: true,
+        shards: [
+            context.contentRef
+        ]
+    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.div, _extends$m({
+        "data-state": $5d3850c4d0b4e6c7$var$getState$1(context.open)
+    }, overlayProps, {
+        ref: forwardedRef // We re-enable pointer-events prevented by `Dialog.Content` to allow scrolling the overlay.
+        ,
+        style: {
+            pointerEvents: 'auto',
+            ...overlayProps.style
+        }
+    }))));
+});
+/* -------------------------------------------------------------------------------------------------
+ * DialogContent
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$CONTENT_NAME$1 = 'DialogContent';
+const $5d3850c4d0b4e6c7$export$b6d9565de1e068cf$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
+    const { forceMount: forceMount = portalContext.forceMount , ...contentProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b$1, {
+        present: forceMount || context.open
+    }, context.modal ? /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentModal$1, _extends$m({}, contentProps, {
+        ref: forwardedRef
+    })) : /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentNonModal$1, _extends$m({}, contentProps, {
+        ref: forwardedRef
+    })));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentModal$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
+    const contentRef = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, context.contentRef, contentRef); // aria-hide everything except the content (better supported equivalent to setting aria-modal)
+    React.useEffect(()=>{
+        const content = contentRef.current;
+        if (content) return hideOthers(content);
+    }, []);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl$1, _extends$m({}, props, {
+        ref: composedRefs // we make sure focus isn't trapped once `DialogContent` has been closed
+        ,
+        trapFocus: context.open,
+        disableOutsidePointerEvents: true,
+        onCloseAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onCloseAutoFocus, (event)=>{
+            var _context$triggerRef$c;
+            event.preventDefault();
+            (_context$triggerRef$c = context.triggerRef.current) === null || _context$triggerRef$c === void 0 || _context$triggerRef$c.focus();
+        }),
+        onPointerDownOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onPointerDownOutside, (event)=>{
+            const originalEvent = event.detail.originalEvent;
+            const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
+            const isRightClick = originalEvent.button === 2 || ctrlLeftClick; // If the event is a right-click, we shouldn't close because
+            // it is effectively as if we right-clicked the `Overlay`.
+            if (isRightClick) event.preventDefault();
+        }) // When focus is trapped, a `focusout` event may still happen.
+        ,
+        onFocusOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onFocusOutside, (event)=>event.preventDefault()
+        )
+    }));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentNonModal$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, props.__scopeDialog);
+    const hasInteractedOutsideRef = React.useRef(false);
+    const hasPointerDownOutsideRef = React.useRef(false);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl$1, _extends$m({}, props, {
+        ref: forwardedRef,
+        trapFocus: false,
+        disableOutsidePointerEvents: false,
+        onCloseAutoFocus: (event)=>{
+            var _props$onCloseAutoFoc;
+            (_props$onCloseAutoFoc = props.onCloseAutoFocus) === null || _props$onCloseAutoFoc === void 0 || _props$onCloseAutoFoc.call(props, event);
+            if (!event.defaultPrevented) {
+                var _context$triggerRef$c2;
+                if (!hasInteractedOutsideRef.current) (_context$triggerRef$c2 = context.triggerRef.current) === null || _context$triggerRef$c2 === void 0 || _context$triggerRef$c2.focus(); // Always prevent auto focus because we either focus manually or want user agent focus
+                event.preventDefault();
+            }
+            hasInteractedOutsideRef.current = false;
+            hasPointerDownOutsideRef.current = false;
+        },
+        onInteractOutside: (event)=>{
+            var _props$onInteractOuts, _context$triggerRef$c3;
+            (_props$onInteractOuts = props.onInteractOutside) === null || _props$onInteractOuts === void 0 || _props$onInteractOuts.call(props, event);
+            if (!event.defaultPrevented) {
+                hasInteractedOutsideRef.current = true;
+                if (event.detail.originalEvent.type === 'pointerdown') hasPointerDownOutsideRef.current = true;
+            } // Prevent dismissing when clicking the trigger.
+            // As the trigger is already setup to close, without doing so would
+            // cause it to close and immediately open.
+            const target = event.target;
+            const targetIsTrigger = (_context$triggerRef$c3 = context.triggerRef.current) === null || _context$triggerRef$c3 === void 0 ? void 0 : _context$triggerRef$c3.contains(target);
+            if (targetIsTrigger) event.preventDefault(); // On Safari if the trigger is inside a container with tabIndex={0}, when clicked
+            // we will get the pointer down outside event on the trigger, but then a subsequent
+            // focus outside event on the container, we ignore any focus outside event when we've
+            // already had a pointer down outside event.
+            if (event.detail.originalEvent.type === 'focusin' && hasPointerDownOutsideRef.current) event.preventDefault();
+        }
+    }));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentImpl$1 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , trapFocus: trapFocus , onOpenAutoFocus: onOpenAutoFocus , onCloseAutoFocus: onCloseAutoFocus , ...contentProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CONTENT_NAME$1, __scopeDialog);
+    const contentRef = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, contentRef); // Make sure the whole tree has focus guards as our `Dialog` will be
+    // the last element in the DOM (beacuse of the `Portal`)
+    $3db38b7d1fb3fe6a$export$b7ece24a22aeda8c$1();
+    return /*#__PURE__*/ React.createElement(React.Fragment, null, /*#__PURE__*/ React.createElement($d3863c46a17e8a28$export$20e40289641fbbb6$1, {
+        asChild: true,
+        loop: true,
+        trapped: trapFocus,
+        onMountAutoFocus: onOpenAutoFocus,
+        onUnmountAutoFocus: onCloseAutoFocus
+    }, /*#__PURE__*/ React.createElement($5cb92bef7577960e$export$177fb62ff3ec1f22$1, _extends$m({
+        role: "dialog",
+        id: context.contentId,
+        "aria-describedby": context.descriptionId,
+        "aria-labelledby": context.titleId,
+        "data-state": $5d3850c4d0b4e6c7$var$getState$1(context.open)
+    }, contentProps, {
+        ref: composedRefs,
+        onDismiss: ()=>context.onOpenChange(false)
+    }))), false);
+});
+/* -------------------------------------------------------------------------------------------------
+ * DialogTitle
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$TITLE_NAME = 'DialogTitle';
+const $5d3850c4d0b4e6c7$export$16f7638e4a34b909 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , ...titleProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$TITLE_NAME, __scopeDialog);
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.h2, _extends$m({
+        id: context.titleId
+    }, titleProps, {
+        ref: forwardedRef
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * DialogDescription
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DESCRIPTION_NAME = 'DialogDescription';
+const $5d3850c4d0b4e6c7$export$94e94c2ec2c954d5 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , ...descriptionProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$DESCRIPTION_NAME, __scopeDialog);
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.p, _extends$m({
+        id: context.descriptionId
+    }, descriptionProps, {
+        ref: forwardedRef
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * DialogClose
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$CLOSE_NAME = 'DialogClose';
+const $5d3850c4d0b4e6c7$export$fba2fb7cd781b7ac = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , ...closeProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext$1($5d3850c4d0b4e6c7$var$CLOSE_NAME, __scopeDialog);
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends$m({
+        type: "button"
+    }, closeProps, {
+        ref: forwardedRef,
+        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, ()=>context.onOpenChange(false)
+        )
+    }));
+});
+/* -----------------------------------------------------------------------------------------------*/ function $5d3850c4d0b4e6c7$var$getState$1(open) {
+    return open ? 'open' : 'closed';
+}
+const $5d3850c4d0b4e6c7$var$TITLE_WARNING_NAME = 'DialogTitleWarning';
+const [$5d3850c4d0b4e6c7$export$69b62a49393917d6, $5d3850c4d0b4e6c7$var$useWarningContext] = $c512c27ab02ef895$export$fd42f52fd3ae1109($5d3850c4d0b4e6c7$var$TITLE_WARNING_NAME, {
+    contentName: $5d3850c4d0b4e6c7$var$CONTENT_NAME$1,
+    titleName: $5d3850c4d0b4e6c7$var$TITLE_NAME,
+    docsSlug: 'dialog'
+});
+const $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1 = $5d3850c4d0b4e6c7$export$3ddf2d174ce01153$1;
+const $5d3850c4d0b4e6c7$export$41fb9f06171c75f4 = $5d3850c4d0b4e6c7$export$2e1e1122cf0cba88;
+const $5d3850c4d0b4e6c7$export$602eac185826482c$1 = $5d3850c4d0b4e6c7$export$dad7c95542bacce0$1;
+const $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1 = $5d3850c4d0b4e6c7$export$bd1d06c79be19e17$1;
+const $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1 = $5d3850c4d0b4e6c7$export$b6d9565de1e068cf$1;
+const $5d3850c4d0b4e6c7$export$f99233281efd08a0 = $5d3850c4d0b4e6c7$export$16f7638e4a34b909;
+const $5d3850c4d0b4e6c7$export$393edc798c47379d = $5d3850c4d0b4e6c7$export$94e94c2ec2c954d5;
+const $5d3850c4d0b4e6c7$export$f39c2d165cd861fe = $5d3850c4d0b4e6c7$export$fba2fb7cd781b7ac;
+
+var Sheet = $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1;
+var SheetTrigger = $5d3850c4d0b4e6c7$export$41fb9f06171c75f4;
+var SheetPortal = $5d3850c4d0b4e6c7$export$602eac185826482c$1;
+var SheetOverlay = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1, __assign$2({ className: cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props, { ref: ref })));
+});
+SheetOverlay.displayName = $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1.displayName;
+var sheetVariants = cva("fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500", {
+    variants: {
+        side: {
+            top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
+            bottom: "inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
+            left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
+            right: "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+        },
+    },
+    defaultVariants: {
+        side: "right",
+    },
+});
+var SheetContent = React__namespace.forwardRef(function (_a, ref) {
+    var _b = _a.side, side = _b === void 0 ? "right" : _b, className = _a.className, children = _a.children, props = __rest$7(_a, ["side", "className", "children"]);
+    return (React__namespace.createElement(SheetPortal, null,
+        React__namespace.createElement(SheetOverlay, null),
+        React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1, __assign$2({ ref: ref, className: cn(sheetVariants({ side: side }), className) }, props),
+            children,
+            React__namespace.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, { className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary" },
+                React__namespace.createElement(Cross2Icon, { className: "h-4 w-4" }),
+                React__namespace.createElement("span", { className: "sr-only" }, "Close")))));
+});
+SheetContent.displayName = $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1.displayName;
+var SheetHeader = function (_a) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement("div", __assign$2({ className: cn("flex flex-col space-y-2 text-center sm:text-left", className) }, props)));
+};
+SheetHeader.displayName = "SheetHeader";
+var SheetFooter = function (_a) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement("div", __assign$2({ className: cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className) }, props)));
+};
+SheetFooter.displayName = "SheetFooter";
+var SheetTitle = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$f99233281efd08a0, __assign$2({ ref: ref, className: cn("text-lg font-semibold text-foreground", className) }, props)));
+});
+SheetTitle.displayName = $5d3850c4d0b4e6c7$export$f99233281efd08a0.displayName;
+var SheetDescription = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$393edc798c47379d, __assign$2({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
+});
+SheetDescription.displayName = $5d3850c4d0b4e6c7$export$393edc798c47379d.displayName;
+
+function Drawer(_a) {
+    var _b = _a.open, open = _b === void 0 ? false : _b, children = _a.children, title = _a.title, description = _a.description, Form = _a.Form, SubmitButton = _a.SubmitButton, _c = _a.onClose, onClose = _c === void 0 ? null : _c;
+    return (React__default["default"].createElement(Sheet, { open: open },
+        React__default["default"].createElement(SheetTrigger, { asChild: true }, children),
+        React__default["default"].createElement(SheetContent, { onCloseAutoFocus: onClose },
+            React__default["default"].createElement(ScrollArea, { className: "h-screen pb-10 " },
+                React__default["default"].createElement(SheetHeader, { className: 'pb-4' },
+                    React__default["default"].createElement(SheetTitle, null, title),
+                    React__default["default"].createElement(SheetDescription, null, description)),
+                React__default["default"].createElement(Form, null),
+                React__default["default"].createElement(SheetFooter, null, SubmitButton && React__default["default"].createElement(SubmitButton, null))))));
+}
+
+/**
+ * table-core
+ *
+ * Copyright (c) TanStack
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+// Is this type a tuple?
+
+// If this type is a tuple, what indices are allowed?
+
+///
+
+function functionalUpdate(updater, input) {
+  return typeof updater === 'function' ? updater(input) : updater;
+}
+function makeStateUpdater(key, instance) {
+  return updater => {
+    instance.setState(old => {
+      return {
+        ...old,
+        [key]: functionalUpdate(updater, old[key])
+      };
+    });
+  };
+}
+function isFunction$1(d) {
+  return d instanceof Function;
+}
+function isNumberArray$1(d) {
+  return Array.isArray(d) && d.every(val => typeof val === 'number');
+}
+function flattenBy(arr, getChildren) {
+  const flat = [];
+  const recurse = subArr => {
+    subArr.forEach(item => {
+      flat.push(item);
+      const children = getChildren(item);
+      if (children != null && children.length) {
+        recurse(children);
+      }
+    });
+  };
+  recurse(arr);
+  return flat;
+}
+function memo(getDeps, fn, opts) {
+  let deps = [];
+  let result;
+  return () => {
+    let depTime;
+    if (opts.key && opts.debug) depTime = Date.now();
+    const newDeps = getDeps();
+    const depsChanged = newDeps.length !== deps.length || newDeps.some((dep, index) => deps[index] !== dep);
+    if (!depsChanged) {
+      return result;
+    }
+    deps = newDeps;
+    let resultTime;
+    if (opts.key && opts.debug) resultTime = Date.now();
+    result = fn(...newDeps);
+    opts == null || opts.onChange == null || opts.onChange(result);
+    if (opts.key && opts.debug) {
+      if (opts != null && opts.debug()) {
+        const depEndTime = Math.round((Date.now() - depTime) * 100) / 100;
+        const resultEndTime = Math.round((Date.now() - resultTime) * 100) / 100;
+        const resultFpsPercentage = resultEndTime / 16;
+        const pad = (str, num) => {
+          str = String(str);
+          while (str.length < num) {
+            str = ' ' + str;
+          }
+          return str;
+        };
+        console.info(`%c⏱ ${pad(resultEndTime, 5)} /${pad(depEndTime, 5)} ms`, `
+            font-size: .6rem;
+            font-weight: bold;
+            color: hsl(${Math.max(0, Math.min(120 - 120 * resultFpsPercentage, 120))}deg 100% 31%);`, opts == null ? void 0 : opts.key);
+      }
+    }
+    return result;
+  };
+}
+
+function createColumn(table, columnDef, depth, parent) {
+  var _ref, _resolvedColumnDef$id;
+  const defaultColumn = table._getDefaultColumnDef();
+  const resolvedColumnDef = {
+    ...defaultColumn,
+    ...columnDef
+  };
+  const accessorKey = resolvedColumnDef.accessorKey;
+  let id = (_ref = (_resolvedColumnDef$id = resolvedColumnDef.id) != null ? _resolvedColumnDef$id : accessorKey ? accessorKey.replace('.', '_') : undefined) != null ? _ref : typeof resolvedColumnDef.header === 'string' ? resolvedColumnDef.header : undefined;
+  let accessorFn;
+  if (resolvedColumnDef.accessorFn) {
+    accessorFn = resolvedColumnDef.accessorFn;
+  } else if (accessorKey) {
+    // Support deep accessor keys
+    if (accessorKey.includes('.')) {
+      accessorFn = originalRow => {
+        let result = originalRow;
+        for (const key of accessorKey.split('.')) {
+          var _result;
+          result = (_result = result) == null ? void 0 : _result[key];
+          if (process.env.NODE_ENV !== 'production' && result === undefined) {
+            console.warn(`"${key}" in deeply nested key "${accessorKey}" returned undefined.`);
+          }
+        }
+        return result;
+      };
+    } else {
+      accessorFn = originalRow => originalRow[resolvedColumnDef.accessorKey];
+    }
+  }
+  if (!id) {
+    if (process.env.NODE_ENV !== 'production') {
+      throw new Error(resolvedColumnDef.accessorFn ? `Columns require an id when using an accessorFn` : `Columns require an id when using a non-string header`);
+    }
+    throw new Error();
+  }
+  let column = {
+    id: `${String(id)}`,
+    accessorFn,
+    parent: parent,
+    depth,
+    columnDef: resolvedColumnDef,
+    columns: [],
+    getFlatColumns: memo(() => [true], () => {
+      var _column$columns;
+      return [column, ...((_column$columns = column.columns) == null ? void 0 : _column$columns.flatMap(d => d.getFlatColumns()))];
+    }, {
+      key: process.env.NODE_ENV === 'production' && 'column.getFlatColumns',
+      debug: () => {
+        var _table$options$debugA;
+        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugColumns;
+      }
+    }),
+    getLeafColumns: memo(() => [table._getOrderColumnsFn()], orderColumns => {
+      var _column$columns2;
+      if ((_column$columns2 = column.columns) != null && _column$columns2.length) {
+        let leafColumns = column.columns.flatMap(column => column.getLeafColumns());
+        return orderColumns(leafColumns);
+      }
+      return [column];
+    }, {
+      key: process.env.NODE_ENV === 'production' && 'column.getLeafColumns',
+      debug: () => {
+        var _table$options$debugA2;
+        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugColumns;
+      }
+    })
+  };
+  for (const feature of table._features) {
+    feature.createColumn == null || feature.createColumn(column, table);
+  }
+
+  // Yes, we have to convert table to uknown, because we know more than the compiler here.
+  return column;
+}
+
+//
+
+function createHeader(table, column, options) {
+  var _options$id;
+  const id = (_options$id = options.id) != null ? _options$id : column.id;
+  let header = {
+    id,
+    column,
+    index: options.index,
+    isPlaceholder: !!options.isPlaceholder,
+    placeholderId: options.placeholderId,
+    depth: options.depth,
+    subHeaders: [],
+    colSpan: 0,
+    rowSpan: 0,
+    headerGroup: null,
+    getLeafHeaders: () => {
+      const leafHeaders = [];
+      const recurseHeader = h => {
+        if (h.subHeaders && h.subHeaders.length) {
+          h.subHeaders.map(recurseHeader);
+        }
+        leafHeaders.push(h);
+      };
+      recurseHeader(header);
+      return leafHeaders;
+    },
+    getContext: () => ({
+      table,
+      header: header,
+      column
+    })
+  };
+  table._features.forEach(feature => {
+    feature.createHeader == null || feature.createHeader(header, table);
+  });
+  return header;
+}
+const Headers = {
+  createTable: table => {
+    // Header Groups
+
+    table.getHeaderGroups = memo(() => [table.getAllColumns(), table.getVisibleLeafColumns(), table.getState().columnPinning.left, table.getState().columnPinning.right], (allColumns, leafColumns, left, right) => {
+      var _left$map$filter, _right$map$filter;
+      const leftColumns = (_left$map$filter = left == null ? void 0 : left.map(columnId => leafColumns.find(d => d.id === columnId)).filter(Boolean)) != null ? _left$map$filter : [];
+      const rightColumns = (_right$map$filter = right == null ? void 0 : right.map(columnId => leafColumns.find(d => d.id === columnId)).filter(Boolean)) != null ? _right$map$filter : [];
+      const centerColumns = leafColumns.filter(column => !(left != null && left.includes(column.id)) && !(right != null && right.includes(column.id)));
+      const headerGroups = buildHeaderGroups(allColumns, [...leftColumns, ...centerColumns, ...rightColumns], table);
+      return headerGroups;
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getHeaderGroups',
+      debug: () => {
+        var _table$options$debugA;
+        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugHeaders;
+      }
+    });
+    table.getCenterHeaderGroups = memo(() => [table.getAllColumns(), table.getVisibleLeafColumns(), table.getState().columnPinning.left, table.getState().columnPinning.right], (allColumns, leafColumns, left, right) => {
+      leafColumns = leafColumns.filter(column => !(left != null && left.includes(column.id)) && !(right != null && right.includes(column.id)));
+      return buildHeaderGroups(allColumns, leafColumns, table, 'center');
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getCenterHeaderGroups',
+      debug: () => {
+        var _table$options$debugA2;
+        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugHeaders;
+      }
+    });
+    table.getLeftHeaderGroups = memo(() => [table.getAllColumns(), table.getVisibleLeafColumns(), table.getState().columnPinning.left], (allColumns, leafColumns, left) => {
+      var _left$map$filter2;
+      const orderedLeafColumns = (_left$map$filter2 = left == null ? void 0 : left.map(columnId => leafColumns.find(d => d.id === columnId)).filter(Boolean)) != null ? _left$map$filter2 : [];
+      return buildHeaderGroups(allColumns, orderedLeafColumns, table, 'left');
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getLeftHeaderGroups',
+      debug: () => {
+        var _table$options$debugA3;
+        return (_table$options$debugA3 = table.options.debugAll) != null ? _table$options$debugA3 : table.options.debugHeaders;
+      }
+    });
+    table.getRightHeaderGroups = memo(() => [table.getAllColumns(), table.getVisibleLeafColumns(), table.getState().columnPinning.right], (allColumns, leafColumns, right) => {
+      var _right$map$filter2;
+      const orderedLeafColumns = (_right$map$filter2 = right == null ? void 0 : right.map(columnId => leafColumns.find(d => d.id === columnId)).filter(Boolean)) != null ? _right$map$filter2 : [];
+      return buildHeaderGroups(allColumns, orderedLeafColumns, table, 'right');
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getRightHeaderGroups',
+      debug: () => {
+        var _table$options$debugA4;
+        return (_table$options$debugA4 = table.options.debugAll) != null ? _table$options$debugA4 : table.options.debugHeaders;
+      }
+    });
+
+    // Footer Groups
+
+    table.getFooterGroups = memo(() => [table.getHeaderGroups()], headerGroups => {
+      return [...headerGroups].reverse();
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getFooterGroups',
+      debug: () => {
+        var _table$options$debugA5;
+        return (_table$options$debugA5 = table.options.debugAll) != null ? _table$options$debugA5 : table.options.debugHeaders;
+      }
+    });
+    table.getLeftFooterGroups = memo(() => [table.getLeftHeaderGroups()], headerGroups => {
+      return [...headerGroups].reverse();
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getLeftFooterGroups',
+      debug: () => {
+        var _table$options$debugA6;
+        return (_table$options$debugA6 = table.options.debugAll) != null ? _table$options$debugA6 : table.options.debugHeaders;
+      }
+    });
+    table.getCenterFooterGroups = memo(() => [table.getCenterHeaderGroups()], headerGroups => {
+      return [...headerGroups].reverse();
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getCenterFooterGroups',
+      debug: () => {
+        var _table$options$debugA7;
+        return (_table$options$debugA7 = table.options.debugAll) != null ? _table$options$debugA7 : table.options.debugHeaders;
+      }
+    });
+    table.getRightFooterGroups = memo(() => [table.getRightHeaderGroups()], headerGroups => {
+      return [...headerGroups].reverse();
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getRightFooterGroups',
+      debug: () => {
+        var _table$options$debugA8;
+        return (_table$options$debugA8 = table.options.debugAll) != null ? _table$options$debugA8 : table.options.debugHeaders;
+      }
+    });
+
+    // Flat Headers
+
+    table.getFlatHeaders = memo(() => [table.getHeaderGroups()], headerGroups => {
+      return headerGroups.map(headerGroup => {
+        return headerGroup.headers;
+      }).flat();
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getFlatHeaders',
+      debug: () => {
+        var _table$options$debugA9;
+        return (_table$options$debugA9 = table.options.debugAll) != null ? _table$options$debugA9 : table.options.debugHeaders;
+      }
+    });
+    table.getLeftFlatHeaders = memo(() => [table.getLeftHeaderGroups()], left => {
+      return left.map(headerGroup => {
+        return headerGroup.headers;
+      }).flat();
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getLeftFlatHeaders',
+      debug: () => {
+        var _table$options$debugA10;
+        return (_table$options$debugA10 = table.options.debugAll) != null ? _table$options$debugA10 : table.options.debugHeaders;
+      }
+    });
+    table.getCenterFlatHeaders = memo(() => [table.getCenterHeaderGroups()], left => {
+      return left.map(headerGroup => {
+        return headerGroup.headers;
+      }).flat();
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getCenterFlatHeaders',
+      debug: () => {
+        var _table$options$debugA11;
+        return (_table$options$debugA11 = table.options.debugAll) != null ? _table$options$debugA11 : table.options.debugHeaders;
+      }
+    });
+    table.getRightFlatHeaders = memo(() => [table.getRightHeaderGroups()], left => {
+      return left.map(headerGroup => {
+        return headerGroup.headers;
+      }).flat();
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getRightFlatHeaders',
+      debug: () => {
+        var _table$options$debugA12;
+        return (_table$options$debugA12 = table.options.debugAll) != null ? _table$options$debugA12 : table.options.debugHeaders;
+      }
+    });
+
+    // Leaf Headers
+
+    table.getCenterLeafHeaders = memo(() => [table.getCenterFlatHeaders()], flatHeaders => {
+      return flatHeaders.filter(header => {
+        var _header$subHeaders;
+        return !((_header$subHeaders = header.subHeaders) != null && _header$subHeaders.length);
+      });
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getCenterLeafHeaders',
+      debug: () => {
+        var _table$options$debugA13;
+        return (_table$options$debugA13 = table.options.debugAll) != null ? _table$options$debugA13 : table.options.debugHeaders;
+      }
+    });
+    table.getLeftLeafHeaders = memo(() => [table.getLeftFlatHeaders()], flatHeaders => {
+      return flatHeaders.filter(header => {
+        var _header$subHeaders2;
+        return !((_header$subHeaders2 = header.subHeaders) != null && _header$subHeaders2.length);
+      });
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getLeftLeafHeaders',
+      debug: () => {
+        var _table$options$debugA14;
+        return (_table$options$debugA14 = table.options.debugAll) != null ? _table$options$debugA14 : table.options.debugHeaders;
+      }
+    });
+    table.getRightLeafHeaders = memo(() => [table.getRightFlatHeaders()], flatHeaders => {
+      return flatHeaders.filter(header => {
+        var _header$subHeaders3;
+        return !((_header$subHeaders3 = header.subHeaders) != null && _header$subHeaders3.length);
+      });
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getRightLeafHeaders',
+      debug: () => {
+        var _table$options$debugA15;
+        return (_table$options$debugA15 = table.options.debugAll) != null ? _table$options$debugA15 : table.options.debugHeaders;
+      }
+    });
+    table.getLeafHeaders = memo(() => [table.getLeftHeaderGroups(), table.getCenterHeaderGroups(), table.getRightHeaderGroups()], (left, center, right) => {
+      var _left$0$headers, _left$, _center$0$headers, _center$, _right$0$headers, _right$;
+      return [...((_left$0$headers = (_left$ = left[0]) == null ? void 0 : _left$.headers) != null ? _left$0$headers : []), ...((_center$0$headers = (_center$ = center[0]) == null ? void 0 : _center$.headers) != null ? _center$0$headers : []), ...((_right$0$headers = (_right$ = right[0]) == null ? void 0 : _right$.headers) != null ? _right$0$headers : [])].map(header => {
+        return header.getLeafHeaders();
+      }).flat();
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getLeafHeaders',
+      debug: () => {
+        var _table$options$debugA16;
+        return (_table$options$debugA16 = table.options.debugAll) != null ? _table$options$debugA16 : table.options.debugHeaders;
+      }
+    });
+  }
+};
+function buildHeaderGroups(allColumns, columnsToGroup, table, headerFamily) {
+  var _headerGroups$0$heade, _headerGroups$;
+  // Find the max depth of the columns:
+  // build the leaf column row
+  // build each buffer row going up
+  //    placeholder for non-existent level
+  //    real column for existing level
+
+  let maxDepth = 0;
+  const findMaxDepth = function (columns, depth) {
+    if (depth === void 0) {
+      depth = 1;
+    }
+    maxDepth = Math.max(maxDepth, depth);
+    columns.filter(column => column.getIsVisible()).forEach(column => {
+      var _column$columns;
+      if ((_column$columns = column.columns) != null && _column$columns.length) {
+        findMaxDepth(column.columns, depth + 1);
+      }
+    }, 0);
+  };
+  findMaxDepth(allColumns);
+  let headerGroups = [];
+  const createHeaderGroup = (headersToGroup, depth) => {
+    // The header group we are creating
+    const headerGroup = {
+      depth,
+      id: [headerFamily, `${depth}`].filter(Boolean).join('_'),
+      headers: []
+    };
+
+    // The parent columns we're going to scan next
+    const pendingParentHeaders = [];
+
+    // Scan each column for parents
+    headersToGroup.forEach(headerToGroup => {
+      // What is the latest (last) parent column?
+
+      const latestPendingParentHeader = [...pendingParentHeaders].reverse()[0];
+      const isLeafHeader = headerToGroup.column.depth === headerGroup.depth;
+      let column;
+      let isPlaceholder = false;
+      if (isLeafHeader && headerToGroup.column.parent) {
+        // The parent header is new
+        column = headerToGroup.column.parent;
+      } else {
+        // The parent header is repeated
+        column = headerToGroup.column;
+        isPlaceholder = true;
+      }
+      if (latestPendingParentHeader && (latestPendingParentHeader == null ? void 0 : latestPendingParentHeader.column) === column) {
+        // This column is repeated. Add it as a sub header to the next batch
+        latestPendingParentHeader.subHeaders.push(headerToGroup);
+      } else {
+        // This is a new header. Let's create it
+        const header = createHeader(table, column, {
+          id: [headerFamily, depth, column.id, headerToGroup == null ? void 0 : headerToGroup.id].filter(Boolean).join('_'),
+          isPlaceholder,
+          placeholderId: isPlaceholder ? `${pendingParentHeaders.filter(d => d.column === column).length}` : undefined,
+          depth,
+          index: pendingParentHeaders.length
+        });
+
+        // Add the headerToGroup as a subHeader of the new header
+        header.subHeaders.push(headerToGroup);
+        // Add the new header to the pendingParentHeaders to get grouped
+        // in the next batch
+        pendingParentHeaders.push(header);
+      }
+      headerGroup.headers.push(headerToGroup);
+      headerToGroup.headerGroup = headerGroup;
+    });
+    headerGroups.push(headerGroup);
+    if (depth > 0) {
+      createHeaderGroup(pendingParentHeaders, depth - 1);
+    }
+  };
+  const bottomHeaders = columnsToGroup.map((column, index) => createHeader(table, column, {
+    depth: maxDepth,
+    index
+  }));
+  createHeaderGroup(bottomHeaders, maxDepth - 1);
+  headerGroups.reverse();
+
+  // headerGroups = headerGroups.filter(headerGroup => {
+  //   return !headerGroup.headers.every(header => header.isPlaceholder)
+  // })
+
+  const recurseHeadersForSpans = headers => {
+    const filteredHeaders = headers.filter(header => header.column.getIsVisible());
+    return filteredHeaders.map(header => {
+      let colSpan = 0;
+      let rowSpan = 0;
+      let childRowSpans = [0];
+      if (header.subHeaders && header.subHeaders.length) {
+        childRowSpans = [];
+        recurseHeadersForSpans(header.subHeaders).forEach(_ref => {
+          let {
+            colSpan: childColSpan,
+            rowSpan: childRowSpan
+          } = _ref;
+          colSpan += childColSpan;
+          childRowSpans.push(childRowSpan);
+        });
+      } else {
+        colSpan = 1;
+      }
+      const minChildRowSpan = Math.min(...childRowSpans);
+      rowSpan = rowSpan + minChildRowSpan;
+      header.colSpan = colSpan;
+      header.rowSpan = rowSpan;
+      return {
+        colSpan,
+        rowSpan
+      };
+    });
+  };
+  recurseHeadersForSpans((_headerGroups$0$heade = (_headerGroups$ = headerGroups[0]) == null ? void 0 : _headerGroups$.headers) != null ? _headerGroups$0$heade : []);
+  return headerGroups;
+}
+
+//
+
+//
+
+const defaultColumnSizing = {
+  size: 150,
+  minSize: 20,
+  maxSize: Number.MAX_SAFE_INTEGER
+};
+const getDefaultColumnSizingInfoState = () => ({
+  startOffset: null,
+  startSize: null,
+  deltaOffset: null,
+  deltaPercentage: null,
+  isResizingColumn: false,
+  columnSizingStart: []
+});
+const ColumnSizing = {
+  getDefaultColumnDef: () => {
+    return defaultColumnSizing;
+  },
+  getInitialState: state => {
+    return {
+      columnSizing: {},
+      columnSizingInfo: getDefaultColumnSizingInfoState(),
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      columnResizeMode: 'onEnd',
+      onColumnSizingChange: makeStateUpdater('columnSizing', table),
+      onColumnSizingInfoChange: makeStateUpdater('columnSizingInfo', table)
+    };
+  },
+  createColumn: (column, table) => {
+    column.getSize = () => {
+      var _column$columnDef$min, _ref, _column$columnDef$max;
+      const columnSize = table.getState().columnSizing[column.id];
+      return Math.min(Math.max((_column$columnDef$min = column.columnDef.minSize) != null ? _column$columnDef$min : defaultColumnSizing.minSize, (_ref = columnSize != null ? columnSize : column.columnDef.size) != null ? _ref : defaultColumnSizing.size), (_column$columnDef$max = column.columnDef.maxSize) != null ? _column$columnDef$max : defaultColumnSizing.maxSize);
+    };
+    column.getStart = position => {
+      const columns = !position ? table.getVisibleLeafColumns() : position === 'left' ? table.getLeftVisibleLeafColumns() : table.getRightVisibleLeafColumns();
+      const index = columns.findIndex(d => d.id === column.id);
+      if (index > 0) {
+        const prevSiblingColumn = columns[index - 1];
+        return prevSiblingColumn.getStart(position) + prevSiblingColumn.getSize();
+      }
+      return 0;
+    };
+    column.resetSize = () => {
+      table.setColumnSizing(_ref2 => {
+        let {
+          [column.id]: _,
+          ...rest
+        } = _ref2;
+        return rest;
+      });
+    };
+    column.getCanResize = () => {
+      var _column$columnDef$ena, _table$options$enable;
+      return ((_column$columnDef$ena = column.columnDef.enableResizing) != null ? _column$columnDef$ena : true) && ((_table$options$enable = table.options.enableColumnResizing) != null ? _table$options$enable : true);
+    };
+    column.getIsResizing = () => {
+      return table.getState().columnSizingInfo.isResizingColumn === column.id;
+    };
+  },
+  createHeader: (header, table) => {
+    header.getSize = () => {
+      let sum = 0;
+      const recurse = header => {
+        if (header.subHeaders.length) {
+          header.subHeaders.forEach(recurse);
+        } else {
+          var _header$column$getSiz;
+          sum += (_header$column$getSiz = header.column.getSize()) != null ? _header$column$getSiz : 0;
+        }
+      };
+      recurse(header);
+      return sum;
+    };
+    header.getStart = () => {
+      if (header.index > 0) {
+        const prevSiblingHeader = header.headerGroup.headers[header.index - 1];
+        return prevSiblingHeader.getStart() + prevSiblingHeader.getSize();
+      }
+      return 0;
+    };
+    header.getResizeHandler = () => {
+      const column = table.getColumn(header.column.id);
+      const canResize = column == null ? void 0 : column.getCanResize();
+      return e => {
+        if (!column || !canResize) {
+          return;
+        }
+        e.persist == null || e.persist();
+        if (isTouchStartEvent(e)) {
+          // lets not respond to multiple touches (e.g. 2 or 3 fingers)
+          if (e.touches && e.touches.length > 1) {
+            return;
+          }
+        }
+        const startSize = header.getSize();
+        const columnSizingStart = header ? header.getLeafHeaders().map(d => [d.column.id, d.column.getSize()]) : [[column.id, column.getSize()]];
+        const clientX = isTouchStartEvent(e) ? Math.round(e.touches[0].clientX) : e.clientX;
+        const newColumnSizing = {};
+        const updateOffset = (eventType, clientXPos) => {
+          if (typeof clientXPos !== 'number') {
+            return;
+          }
+          table.setColumnSizingInfo(old => {
+            var _old$startOffset, _old$startSize;
+            const deltaOffset = clientXPos - ((_old$startOffset = old == null ? void 0 : old.startOffset) != null ? _old$startOffset : 0);
+            const deltaPercentage = Math.max(deltaOffset / ((_old$startSize = old == null ? void 0 : old.startSize) != null ? _old$startSize : 0), -0.999999);
+            old.columnSizingStart.forEach(_ref3 => {
+              let [columnId, headerSize] = _ref3;
+              newColumnSizing[columnId] = Math.round(Math.max(headerSize + headerSize * deltaPercentage, 0) * 100) / 100;
+            });
+            return {
+              ...old,
+              deltaOffset,
+              deltaPercentage
+            };
+          });
+          if (table.options.columnResizeMode === 'onChange' || eventType === 'end') {
+            table.setColumnSizing(old => ({
+              ...old,
+              ...newColumnSizing
+            }));
+          }
+        };
+        const onMove = clientXPos => updateOffset('move', clientXPos);
+        const onEnd = clientXPos => {
+          updateOffset('end', clientXPos);
+          table.setColumnSizingInfo(old => ({
+            ...old,
+            isResizingColumn: false,
+            startOffset: null,
+            startSize: null,
+            deltaOffset: null,
+            deltaPercentage: null,
+            columnSizingStart: []
+          }));
+        };
+        const mouseEvents = {
+          moveHandler: e => onMove(e.clientX),
+          upHandler: e => {
+            document.removeEventListener('mousemove', mouseEvents.moveHandler);
+            document.removeEventListener('mouseup', mouseEvents.upHandler);
+            onEnd(e.clientX);
+          }
+        };
+        const touchEvents = {
+          moveHandler: e => {
+            if (e.cancelable) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+            onMove(e.touches[0].clientX);
+            return false;
+          },
+          upHandler: e => {
+            var _e$touches$;
+            document.removeEventListener('touchmove', touchEvents.moveHandler);
+            document.removeEventListener('touchend', touchEvents.upHandler);
+            if (e.cancelable) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+            onEnd((_e$touches$ = e.touches[0]) == null ? void 0 : _e$touches$.clientX);
+          }
+        };
+        const passiveIfSupported = passiveEventSupported() ? {
+          passive: false
+        } : false;
+        if (isTouchStartEvent(e)) {
+          document.addEventListener('touchmove', touchEvents.moveHandler, passiveIfSupported);
+          document.addEventListener('touchend', touchEvents.upHandler, passiveIfSupported);
+        } else {
+          document.addEventListener('mousemove', mouseEvents.moveHandler, passiveIfSupported);
+          document.addEventListener('mouseup', mouseEvents.upHandler, passiveIfSupported);
+        }
+        table.setColumnSizingInfo(old => ({
+          ...old,
+          startOffset: clientX,
+          startSize,
+          deltaOffset: 0,
+          deltaPercentage: 0,
+          columnSizingStart,
+          isResizingColumn: column.id
+        }));
+      };
+    };
+  },
+  createTable: table => {
+    table.setColumnSizing = updater => table.options.onColumnSizingChange == null ? void 0 : table.options.onColumnSizingChange(updater);
+    table.setColumnSizingInfo = updater => table.options.onColumnSizingInfoChange == null ? void 0 : table.options.onColumnSizingInfoChange(updater);
+    table.resetColumnSizing = defaultState => {
+      var _table$initialState$c;
+      table.setColumnSizing(defaultState ? {} : (_table$initialState$c = table.initialState.columnSizing) != null ? _table$initialState$c : {});
+    };
+    table.resetHeaderSizeInfo = defaultState => {
+      var _table$initialState$c2;
+      table.setColumnSizingInfo(defaultState ? getDefaultColumnSizingInfoState() : (_table$initialState$c2 = table.initialState.columnSizingInfo) != null ? _table$initialState$c2 : getDefaultColumnSizingInfoState());
+    };
+    table.getTotalSize = () => {
+      var _table$getHeaderGroup, _table$getHeaderGroup2;
+      return (_table$getHeaderGroup = (_table$getHeaderGroup2 = table.getHeaderGroups()[0]) == null ? void 0 : _table$getHeaderGroup2.headers.reduce((sum, header) => {
+        return sum + header.getSize();
+      }, 0)) != null ? _table$getHeaderGroup : 0;
+    };
+    table.getLeftTotalSize = () => {
+      var _table$getLeftHeaderG, _table$getLeftHeaderG2;
+      return (_table$getLeftHeaderG = (_table$getLeftHeaderG2 = table.getLeftHeaderGroups()[0]) == null ? void 0 : _table$getLeftHeaderG2.headers.reduce((sum, header) => {
+        return sum + header.getSize();
+      }, 0)) != null ? _table$getLeftHeaderG : 0;
+    };
+    table.getCenterTotalSize = () => {
+      var _table$getCenterHeade, _table$getCenterHeade2;
+      return (_table$getCenterHeade = (_table$getCenterHeade2 = table.getCenterHeaderGroups()[0]) == null ? void 0 : _table$getCenterHeade2.headers.reduce((sum, header) => {
+        return sum + header.getSize();
+      }, 0)) != null ? _table$getCenterHeade : 0;
+    };
+    table.getRightTotalSize = () => {
+      var _table$getRightHeader, _table$getRightHeader2;
+      return (_table$getRightHeader = (_table$getRightHeader2 = table.getRightHeaderGroups()[0]) == null ? void 0 : _table$getRightHeader2.headers.reduce((sum, header) => {
+        return sum + header.getSize();
+      }, 0)) != null ? _table$getRightHeader : 0;
+    };
+  }
+};
+let passiveSupported$1 = null;
+function passiveEventSupported() {
+  if (typeof passiveSupported$1 === 'boolean') return passiveSupported$1;
+  let supported = false;
+  try {
+    const options = {
+      get passive() {
+        supported = true;
+        return false;
+      }
+    };
+    const noop = () => {};
+    window.addEventListener('test', noop, options);
+    window.removeEventListener('test', noop);
+  } catch (err) {
+    supported = false;
+  }
+  passiveSupported$1 = supported;
+  return passiveSupported$1;
+}
+function isTouchStartEvent(e) {
+  return e.type === 'touchstart';
+}
+
+//
+
+const Expanding = {
+  getInitialState: state => {
+    return {
+      expanded: {},
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onExpandedChange: makeStateUpdater('expanded', table),
+      paginateExpandedRows: true
+    };
+  },
+  createTable: table => {
+    let registered = false;
+    let queued = false;
+    table._autoResetExpanded = () => {
+      var _ref, _table$options$autoRe;
+      if (!registered) {
+        table._queue(() => {
+          registered = true;
+        });
+        return;
+      }
+      if ((_ref = (_table$options$autoRe = table.options.autoResetAll) != null ? _table$options$autoRe : table.options.autoResetExpanded) != null ? _ref : !table.options.manualExpanding) {
+        if (queued) return;
+        queued = true;
+        table._queue(() => {
+          table.resetExpanded();
+          queued = false;
+        });
+      }
+    };
+    table.setExpanded = updater => table.options.onExpandedChange == null ? void 0 : table.options.onExpandedChange(updater);
+    table.toggleAllRowsExpanded = expanded => {
+      if (expanded != null ? expanded : !table.getIsAllRowsExpanded()) {
+        table.setExpanded(true);
+      } else {
+        table.setExpanded({});
+      }
+    };
+    table.resetExpanded = defaultState => {
+      var _table$initialState$e, _table$initialState;
+      table.setExpanded(defaultState ? {} : (_table$initialState$e = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.expanded) != null ? _table$initialState$e : {});
+    };
+    table.getCanSomeRowsExpand = () => {
+      return table.getPrePaginationRowModel().flatRows.some(row => row.getCanExpand());
+    };
+    table.getToggleAllRowsExpandedHandler = () => {
+      return e => {
+        e.persist == null || e.persist();
+        table.toggleAllRowsExpanded();
+      };
+    };
+    table.getIsSomeRowsExpanded = () => {
+      const expanded = table.getState().expanded;
+      return expanded === true || Object.values(expanded).some(Boolean);
+    };
+    table.getIsAllRowsExpanded = () => {
+      const expanded = table.getState().expanded;
+
+      // If expanded is true, save some cycles and return true
+      if (typeof expanded === 'boolean') {
+        return expanded === true;
+      }
+      if (!Object.keys(expanded).length) {
+        return false;
+      }
+
+      // If any row is not expanded, return false
+      if (table.getRowModel().flatRows.some(row => !row.getIsExpanded())) {
+        return false;
+      }
+
+      // They must all be expanded :shrug:
+      return true;
+    };
+    table.getExpandedDepth = () => {
+      let maxDepth = 0;
+      const rowIds = table.getState().expanded === true ? Object.keys(table.getRowModel().rowsById) : Object.keys(table.getState().expanded);
+      rowIds.forEach(id => {
+        const splitId = id.split('.');
+        maxDepth = Math.max(maxDepth, splitId.length);
+      });
+      return maxDepth;
+    };
+    table.getPreExpandedRowModel = () => table.getSortedRowModel();
+    table.getExpandedRowModel = () => {
+      if (!table._getExpandedRowModel && table.options.getExpandedRowModel) {
+        table._getExpandedRowModel = table.options.getExpandedRowModel(table);
+      }
+      if (table.options.manualExpanding || !table._getExpandedRowModel) {
+        return table.getPreExpandedRowModel();
+      }
+      return table._getExpandedRowModel();
+    };
+  },
+  createRow: (row, table) => {
+    row.toggleExpanded = expanded => {
+      table.setExpanded(old => {
+        var _expanded;
+        const exists = old === true ? true : !!(old != null && old[row.id]);
+        let oldExpanded = {};
+        if (old === true) {
+          Object.keys(table.getRowModel().rowsById).forEach(rowId => {
+            oldExpanded[rowId] = true;
+          });
+        } else {
+          oldExpanded = old;
+        }
+        expanded = (_expanded = expanded) != null ? _expanded : !exists;
+        if (!exists && expanded) {
+          return {
+            ...oldExpanded,
+            [row.id]: true
+          };
+        }
+        if (exists && !expanded) {
+          const {
+            [row.id]: _,
+            ...rest
+          } = oldExpanded;
+          return rest;
+        }
+        return old;
+      });
+    };
+    row.getIsExpanded = () => {
+      var _table$options$getIsR;
+      const expanded = table.getState().expanded;
+      return !!((_table$options$getIsR = table.options.getIsRowExpanded == null ? void 0 : table.options.getIsRowExpanded(row)) != null ? _table$options$getIsR : expanded === true || (expanded == null ? void 0 : expanded[row.id]));
+    };
+    row.getCanExpand = () => {
+      var _table$options$getRow, _table$options$enable, _row$subRows;
+      return (_table$options$getRow = table.options.getRowCanExpand == null ? void 0 : table.options.getRowCanExpand(row)) != null ? _table$options$getRow : ((_table$options$enable = table.options.enableExpanding) != null ? _table$options$enable : true) && !!((_row$subRows = row.subRows) != null && _row$subRows.length);
+    };
+    row.getIsAllParentsExpanded = () => {
+      let isFullyExpanded = true;
+      let currentRow = row;
+      while (isFullyExpanded && currentRow.parentId) {
+        currentRow = table.getRow(currentRow.parentId, true);
+        isFullyExpanded = currentRow.getIsExpanded();
+      }
+      return isFullyExpanded;
+    };
+    row.getToggleExpandedHandler = () => {
+      const canExpand = row.getCanExpand();
+      return () => {
+        if (!canExpand) return;
+        row.toggleExpanded();
+      };
+    };
+  }
+};
+
+const includesString = (row, columnId, filterValue) => {
+  var _row$getValue;
+  const search = filterValue.toLowerCase();
+  return Boolean((_row$getValue = row.getValue(columnId)) == null || (_row$getValue = _row$getValue.toString()) == null || (_row$getValue = _row$getValue.toLowerCase()) == null ? void 0 : _row$getValue.includes(search));
+};
+includesString.autoRemove = val => testFalsey(val);
+const includesStringSensitive = (row, columnId, filterValue) => {
+  var _row$getValue2;
+  return Boolean((_row$getValue2 = row.getValue(columnId)) == null || (_row$getValue2 = _row$getValue2.toString()) == null ? void 0 : _row$getValue2.includes(filterValue));
+};
+includesStringSensitive.autoRemove = val => testFalsey(val);
+const equalsString = (row, columnId, filterValue) => {
+  var _row$getValue3;
+  return ((_row$getValue3 = row.getValue(columnId)) == null || (_row$getValue3 = _row$getValue3.toString()) == null ? void 0 : _row$getValue3.toLowerCase()) === (filterValue == null ? void 0 : filterValue.toLowerCase());
+};
+equalsString.autoRemove = val => testFalsey(val);
+const arrIncludes = (row, columnId, filterValue) => {
+  var _row$getValue4;
+  return (_row$getValue4 = row.getValue(columnId)) == null ? void 0 : _row$getValue4.includes(filterValue);
+};
+arrIncludes.autoRemove = val => testFalsey(val) || !(val != null && val.length);
+const arrIncludesAll = (row, columnId, filterValue) => {
+  return !filterValue.some(val => {
+    var _row$getValue5;
+    return !((_row$getValue5 = row.getValue(columnId)) != null && _row$getValue5.includes(val));
+  });
+};
+arrIncludesAll.autoRemove = val => testFalsey(val) || !(val != null && val.length);
+const arrIncludesSome = (row, columnId, filterValue) => {
+  return filterValue.some(val => {
+    var _row$getValue6;
+    return (_row$getValue6 = row.getValue(columnId)) == null ? void 0 : _row$getValue6.includes(val);
+  });
+};
+arrIncludesSome.autoRemove = val => testFalsey(val) || !(val != null && val.length);
+const equals = (row, columnId, filterValue) => {
+  return row.getValue(columnId) === filterValue;
+};
+equals.autoRemove = val => testFalsey(val);
+const weakEquals = (row, columnId, filterValue) => {
+  return row.getValue(columnId) == filterValue;
+};
+weakEquals.autoRemove = val => testFalsey(val);
+const inNumberRange = (row, columnId, filterValue) => {
+  let [min, max] = filterValue;
+  const rowValue = row.getValue(columnId);
+  return rowValue >= min && rowValue <= max;
+};
+inNumberRange.resolveFilterValue = val => {
+  let [unsafeMin, unsafeMax] = val;
+  let parsedMin = typeof unsafeMin !== 'number' ? parseFloat(unsafeMin) : unsafeMin;
+  let parsedMax = typeof unsafeMax !== 'number' ? parseFloat(unsafeMax) : unsafeMax;
+  let min = unsafeMin === null || Number.isNaN(parsedMin) ? -Infinity : parsedMin;
+  let max = unsafeMax === null || Number.isNaN(parsedMax) ? Infinity : parsedMax;
+  if (min > max) {
+    const temp = min;
+    min = max;
+    max = temp;
+  }
+  return [min, max];
+};
+inNumberRange.autoRemove = val => testFalsey(val) || testFalsey(val[0]) && testFalsey(val[1]);
+
+// Export
+
+const filterFns = {
+  includesString,
+  includesStringSensitive,
+  equalsString,
+  arrIncludes,
+  arrIncludesAll,
+  arrIncludesSome,
+  equals,
+  weakEquals,
+  inNumberRange
+};
+// Utils
+
+function testFalsey(val) {
+  return val === undefined || val === null || val === '';
+}
+
+//
+
+const Filters = {
+  getDefaultColumnDef: () => {
+    return {
+      filterFn: 'auto'
+    };
+  },
+  getInitialState: state => {
+    return {
+      columnFilters: [],
+      globalFilter: undefined,
+      // filtersProgress: 1,
+      // facetProgress: {},
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onColumnFiltersChange: makeStateUpdater('columnFilters', table),
+      onGlobalFilterChange: makeStateUpdater('globalFilter', table),
+      filterFromLeafRows: false,
+      maxLeafRowFilterDepth: 100,
+      globalFilterFn: 'auto',
+      getColumnCanGlobalFilter: column => {
+        var _table$getCoreRowMode;
+        const value = (_table$getCoreRowMode = table.getCoreRowModel().flatRows[0]) == null || (_table$getCoreRowMode = _table$getCoreRowMode._getAllCellsByColumnId()[column.id]) == null ? void 0 : _table$getCoreRowMode.getValue();
+        return typeof value === 'string' || typeof value === 'number';
+      }
+    };
+  },
+  createColumn: (column, table) => {
+    column.getAutoFilterFn = () => {
+      const firstRow = table.getCoreRowModel().flatRows[0];
+      const value = firstRow == null ? void 0 : firstRow.getValue(column.id);
+      if (typeof value === 'string') {
+        return filterFns.includesString;
+      }
+      if (typeof value === 'number') {
+        return filterFns.inNumberRange;
+      }
+      if (typeof value === 'boolean') {
+        return filterFns.equals;
+      }
+      if (value !== null && typeof value === 'object') {
+        return filterFns.equals;
+      }
+      if (Array.isArray(value)) {
+        return filterFns.arrIncludes;
+      }
+      return filterFns.weakEquals;
+    };
+    column.getFilterFn = () => {
+      var _table$options$filter, _table$options$filter2;
+      return isFunction$1(column.columnDef.filterFn) ? column.columnDef.filterFn : column.columnDef.filterFn === 'auto' ? column.getAutoFilterFn() : // @ts-ignore
+      (_table$options$filter = (_table$options$filter2 = table.options.filterFns) == null ? void 0 : _table$options$filter2[column.columnDef.filterFn]) != null ? _table$options$filter : filterFns[column.columnDef.filterFn];
+    };
+    column.getCanFilter = () => {
+      var _column$columnDef$ena, _table$options$enable, _table$options$enable2;
+      return ((_column$columnDef$ena = column.columnDef.enableColumnFilter) != null ? _column$columnDef$ena : true) && ((_table$options$enable = table.options.enableColumnFilters) != null ? _table$options$enable : true) && ((_table$options$enable2 = table.options.enableFilters) != null ? _table$options$enable2 : true) && !!column.accessorFn;
+    };
+    column.getCanGlobalFilter = () => {
+      var _column$columnDef$ena2, _table$options$enable3, _table$options$enable4, _table$options$getCol;
+      return ((_column$columnDef$ena2 = column.columnDef.enableGlobalFilter) != null ? _column$columnDef$ena2 : true) && ((_table$options$enable3 = table.options.enableGlobalFilter) != null ? _table$options$enable3 : true) && ((_table$options$enable4 = table.options.enableFilters) != null ? _table$options$enable4 : true) && ((_table$options$getCol = table.options.getColumnCanGlobalFilter == null ? void 0 : table.options.getColumnCanGlobalFilter(column)) != null ? _table$options$getCol : true) && !!column.accessorFn;
+    };
+    column.getIsFiltered = () => column.getFilterIndex() > -1;
+    column.getFilterValue = () => {
+      var _table$getState$colum;
+      return (_table$getState$colum = table.getState().columnFilters) == null || (_table$getState$colum = _table$getState$colum.find(d => d.id === column.id)) == null ? void 0 : _table$getState$colum.value;
+    };
+    column.getFilterIndex = () => {
+      var _table$getState$colum2, _table$getState$colum3;
+      return (_table$getState$colum2 = (_table$getState$colum3 = table.getState().columnFilters) == null ? void 0 : _table$getState$colum3.findIndex(d => d.id === column.id)) != null ? _table$getState$colum2 : -1;
+    };
+    column.setFilterValue = value => {
+      table.setColumnFilters(old => {
+        const filterFn = column.getFilterFn();
+        const previousfilter = old == null ? void 0 : old.find(d => d.id === column.id);
+        const newFilter = functionalUpdate(value, previousfilter ? previousfilter.value : undefined);
+
+        //
+        if (shouldAutoRemoveFilter(filterFn, newFilter, column)) {
+          var _old$filter;
+          return (_old$filter = old == null ? void 0 : old.filter(d => d.id !== column.id)) != null ? _old$filter : [];
+        }
+        const newFilterObj = {
+          id: column.id,
+          value: newFilter
+        };
+        if (previousfilter) {
+          var _old$map;
+          return (_old$map = old == null ? void 0 : old.map(d => {
+            if (d.id === column.id) {
+              return newFilterObj;
+            }
+            return d;
+          })) != null ? _old$map : [];
+        }
+        if (old != null && old.length) {
+          return [...old, newFilterObj];
+        }
+        return [newFilterObj];
+      });
+    };
+    column._getFacetedRowModel = table.options.getFacetedRowModel && table.options.getFacetedRowModel(table, column.id);
+    column.getFacetedRowModel = () => {
+      if (!column._getFacetedRowModel) {
+        return table.getPreFilteredRowModel();
+      }
+      return column._getFacetedRowModel();
+    };
+    column._getFacetedUniqueValues = table.options.getFacetedUniqueValues && table.options.getFacetedUniqueValues(table, column.id);
+    column.getFacetedUniqueValues = () => {
+      if (!column._getFacetedUniqueValues) {
+        return new Map();
+      }
+      return column._getFacetedUniqueValues();
+    };
+    column._getFacetedMinMaxValues = table.options.getFacetedMinMaxValues && table.options.getFacetedMinMaxValues(table, column.id);
+    column.getFacetedMinMaxValues = () => {
+      if (!column._getFacetedMinMaxValues) {
+        return undefined;
+      }
+      return column._getFacetedMinMaxValues();
+    };
+    // () => [column.getFacetedRowModel()],
+    // facetedRowModel => getRowModelMinMaxValues(facetedRowModel, column.id),
+  },
+
+  createRow: (row, table) => {
+    row.columnFilters = {};
+    row.columnFiltersMeta = {};
+  },
+  createTable: table => {
+    table.getGlobalAutoFilterFn = () => {
+      return filterFns.includesString;
+    };
+    table.getGlobalFilterFn = () => {
+      var _table$options$filter3, _table$options$filter4;
+      const {
+        globalFilterFn: globalFilterFn
+      } = table.options;
+      return isFunction$1(globalFilterFn) ? globalFilterFn : globalFilterFn === 'auto' ? table.getGlobalAutoFilterFn() : // @ts-ignore
+      (_table$options$filter3 = (_table$options$filter4 = table.options.filterFns) == null ? void 0 : _table$options$filter4[globalFilterFn]) != null ? _table$options$filter3 : filterFns[globalFilterFn];
+    };
+    table.setColumnFilters = updater => {
+      const leafColumns = table.getAllLeafColumns();
+      const updateFn = old => {
+        var _functionalUpdate;
+        return (_functionalUpdate = functionalUpdate(updater, old)) == null ? void 0 : _functionalUpdate.filter(filter => {
+          const column = leafColumns.find(d => d.id === filter.id);
+          if (column) {
+            const filterFn = column.getFilterFn();
+            if (shouldAutoRemoveFilter(filterFn, filter.value, column)) {
+              return false;
+            }
+          }
+          return true;
+        });
+      };
+      table.options.onColumnFiltersChange == null || table.options.onColumnFiltersChange(updateFn);
+    };
+    table.setGlobalFilter = updater => {
+      table.options.onGlobalFilterChange == null || table.options.onGlobalFilterChange(updater);
+    };
+    table.resetGlobalFilter = defaultState => {
+      table.setGlobalFilter(defaultState ? undefined : table.initialState.globalFilter);
+    };
+    table.resetColumnFilters = defaultState => {
+      var _table$initialState$c, _table$initialState;
+      table.setColumnFilters(defaultState ? [] : (_table$initialState$c = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.columnFilters) != null ? _table$initialState$c : []);
+    };
+    table.getPreFilteredRowModel = () => table.getCoreRowModel();
+    table.getFilteredRowModel = () => {
+      if (!table._getFilteredRowModel && table.options.getFilteredRowModel) {
+        table._getFilteredRowModel = table.options.getFilteredRowModel(table);
+      }
+      if (table.options.manualFiltering || !table._getFilteredRowModel) {
+        return table.getPreFilteredRowModel();
+      }
+      return table._getFilteredRowModel();
+    };
+    table._getGlobalFacetedRowModel = table.options.getFacetedRowModel && table.options.getFacetedRowModel(table, '__global__');
+    table.getGlobalFacetedRowModel = () => {
+      if (table.options.manualFiltering || !table._getGlobalFacetedRowModel) {
+        return table.getPreFilteredRowModel();
+      }
+      return table._getGlobalFacetedRowModel();
+    };
+    table._getGlobalFacetedUniqueValues = table.options.getFacetedUniqueValues && table.options.getFacetedUniqueValues(table, '__global__');
+    table.getGlobalFacetedUniqueValues = () => {
+      if (!table._getGlobalFacetedUniqueValues) {
+        return new Map();
+      }
+      return table._getGlobalFacetedUniqueValues();
+    };
+    table._getGlobalFacetedMinMaxValues = table.options.getFacetedMinMaxValues && table.options.getFacetedMinMaxValues(table, '__global__');
+    table.getGlobalFacetedMinMaxValues = () => {
+      if (!table._getGlobalFacetedMinMaxValues) {
+        return;
+      }
+      return table._getGlobalFacetedMinMaxValues();
+    };
+  }
+};
+function shouldAutoRemoveFilter(filterFn, value, column) {
+  return (filterFn && filterFn.autoRemove ? filterFn.autoRemove(value, column) : false) || typeof value === 'undefined' || typeof value === 'string' && !value;
+}
+
+const sum = (columnId, _leafRows, childRows) => {
+  // It's faster to just add the aggregations together instead of
+  // process leaf nodes individually
+  return childRows.reduce((sum, next) => {
+    const nextValue = next.getValue(columnId);
+    return sum + (typeof nextValue === 'number' ? nextValue : 0);
+  }, 0);
+};
+const min$2 = (columnId, _leafRows, childRows) => {
+  let min;
+  childRows.forEach(row => {
+    const value = row.getValue(columnId);
+    if (value != null && (min > value || min === undefined && value >= value)) {
+      min = value;
+    }
+  });
+  return min;
+};
+const max$2 = (columnId, _leafRows, childRows) => {
+  let max;
+  childRows.forEach(row => {
+    const value = row.getValue(columnId);
+    if (value != null && (max < value || max === undefined && value >= value)) {
+      max = value;
+    }
+  });
+  return max;
+};
+const extent = (columnId, _leafRows, childRows) => {
+  let min;
+  let max;
+  childRows.forEach(row => {
+    const value = row.getValue(columnId);
+    if (value != null) {
+      if (min === undefined) {
+        if (value >= value) min = max = value;
+      } else {
+        if (min > value) min = value;
+        if (max < value) max = value;
+      }
+    }
+  });
+  return [min, max];
+};
+const mean = (columnId, leafRows) => {
+  let count = 0;
+  let sum = 0;
+  leafRows.forEach(row => {
+    let value = row.getValue(columnId);
+    if (value != null && (value = +value) >= value) {
+      ++count, sum += value;
+    }
+  });
+  if (count) return sum / count;
+  return;
+};
+const median = (columnId, leafRows) => {
+  if (!leafRows.length) {
+    return;
+  }
+  const values = leafRows.map(row => row.getValue(columnId));
+  if (!isNumberArray$1(values)) {
+    return;
+  }
+  if (values.length === 1) {
+    return values[0];
+  }
+  const mid = Math.floor(values.length / 2);
+  const nums = values.sort((a, b) => a - b);
+  return values.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+};
+const unique = (columnId, leafRows) => {
+  return Array.from(new Set(leafRows.map(d => d.getValue(columnId))).values());
+};
+const uniqueCount = (columnId, leafRows) => {
+  return new Set(leafRows.map(d => d.getValue(columnId))).size;
+};
+const count = (_columnId, leafRows) => {
+  return leafRows.length;
+};
+const aggregationFns = {
+  sum,
+  min: min$2,
+  max: max$2,
+  extent,
+  mean,
+  median,
+  unique,
+  uniqueCount,
+  count
+};
+
+//
+
+const Grouping = {
+  getDefaultColumnDef: () => {
+    return {
+      aggregatedCell: props => {
+        var _toString, _props$getValue;
+        return (_toString = (_props$getValue = props.getValue()) == null || _props$getValue.toString == null ? void 0 : _props$getValue.toString()) != null ? _toString : null;
+      },
+      aggregationFn: 'auto'
+    };
+  },
+  getInitialState: state => {
+    return {
+      grouping: [],
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onGroupingChange: makeStateUpdater('grouping', table),
+      groupedColumnMode: 'reorder'
+    };
+  },
+  createColumn: (column, table) => {
+    column.toggleGrouping = () => {
+      table.setGrouping(old => {
+        // Find any existing grouping for this column
+        if (old != null && old.includes(column.id)) {
+          return old.filter(d => d !== column.id);
+        }
+        return [...(old != null ? old : []), column.id];
+      });
+    };
+    column.getCanGroup = () => {
+      var _ref, _ref2, _ref3, _column$columnDef$ena;
+      return (_ref = (_ref2 = (_ref3 = (_column$columnDef$ena = column.columnDef.enableGrouping) != null ? _column$columnDef$ena : true) != null ? _ref3 : table.options.enableGrouping) != null ? _ref2 : true) != null ? _ref : !!column.accessorFn;
+    };
+    column.getIsGrouped = () => {
+      var _table$getState$group;
+      return (_table$getState$group = table.getState().grouping) == null ? void 0 : _table$getState$group.includes(column.id);
+    };
+    column.getGroupedIndex = () => {
+      var _table$getState$group2;
+      return (_table$getState$group2 = table.getState().grouping) == null ? void 0 : _table$getState$group2.indexOf(column.id);
+    };
+    column.getToggleGroupingHandler = () => {
+      const canGroup = column.getCanGroup();
+      return () => {
+        if (!canGroup) return;
+        column.toggleGrouping();
+      };
+    };
+    column.getAutoAggregationFn = () => {
+      const firstRow = table.getCoreRowModel().flatRows[0];
+      const value = firstRow == null ? void 0 : firstRow.getValue(column.id);
+      if (typeof value === 'number') {
+        return aggregationFns.sum;
+      }
+      if (Object.prototype.toString.call(value) === '[object Date]') {
+        return aggregationFns.extent;
+      }
+    };
+    column.getAggregationFn = () => {
+      var _table$options$aggreg, _table$options$aggreg2;
+      if (!column) {
+        throw new Error();
+      }
+      return isFunction$1(column.columnDef.aggregationFn) ? column.columnDef.aggregationFn : column.columnDef.aggregationFn === 'auto' ? column.getAutoAggregationFn() : (_table$options$aggreg = (_table$options$aggreg2 = table.options.aggregationFns) == null ? void 0 : _table$options$aggreg2[column.columnDef.aggregationFn]) != null ? _table$options$aggreg : aggregationFns[column.columnDef.aggregationFn];
+    };
+  },
+  createTable: table => {
+    table.setGrouping = updater => table.options.onGroupingChange == null ? void 0 : table.options.onGroupingChange(updater);
+    table.resetGrouping = defaultState => {
+      var _table$initialState$g, _table$initialState;
+      table.setGrouping(defaultState ? [] : (_table$initialState$g = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.grouping) != null ? _table$initialState$g : []);
+    };
+    table.getPreGroupedRowModel = () => table.getFilteredRowModel();
+    table.getGroupedRowModel = () => {
+      if (!table._getGroupedRowModel && table.options.getGroupedRowModel) {
+        table._getGroupedRowModel = table.options.getGroupedRowModel(table);
+      }
+      if (table.options.manualGrouping || !table._getGroupedRowModel) {
+        return table.getPreGroupedRowModel();
+      }
+      return table._getGroupedRowModel();
+    };
+  },
+  createRow: (row, table) => {
+    row.getIsGrouped = () => !!row.groupingColumnId;
+    row.getGroupingValue = columnId => {
+      if (row._groupingValuesCache.hasOwnProperty(columnId)) {
+        return row._groupingValuesCache[columnId];
+      }
+      const column = table.getColumn(columnId);
+      if (!(column != null && column.columnDef.getGroupingValue)) {
+        return row.getValue(columnId);
+      }
+      row._groupingValuesCache[columnId] = column.columnDef.getGroupingValue(row.original);
+      return row._groupingValuesCache[columnId];
+    };
+    row._groupingValuesCache = {};
+  },
+  createCell: (cell, column, row, table) => {
+    cell.getIsGrouped = () => column.getIsGrouped() && column.id === row.groupingColumnId;
+    cell.getIsPlaceholder = () => !cell.getIsGrouped() && column.getIsGrouped();
+    cell.getIsAggregated = () => {
+      var _row$subRows;
+      return !cell.getIsGrouped() && !cell.getIsPlaceholder() && !!((_row$subRows = row.subRows) != null && _row$subRows.length);
+    };
+  }
+};
+function orderColumns(leafColumns, grouping, groupedColumnMode) {
+  if (!(grouping != null && grouping.length) || !groupedColumnMode) {
+    return leafColumns;
+  }
+  const nonGroupingColumns = leafColumns.filter(col => !grouping.includes(col.id));
+  if (groupedColumnMode === 'remove') {
+    return nonGroupingColumns;
+  }
+  const groupingColumns = grouping.map(g => leafColumns.find(col => col.id === g)).filter(Boolean);
+  return [...groupingColumns, ...nonGroupingColumns];
+}
+
+//
+
+const Ordering = {
+  getInitialState: state => {
+    return {
+      columnOrder: [],
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onColumnOrderChange: makeStateUpdater('columnOrder', table)
+    };
+  },
+  createTable: table => {
+    table.setColumnOrder = updater => table.options.onColumnOrderChange == null ? void 0 : table.options.onColumnOrderChange(updater);
+    table.resetColumnOrder = defaultState => {
+      var _table$initialState$c;
+      table.setColumnOrder(defaultState ? [] : (_table$initialState$c = table.initialState.columnOrder) != null ? _table$initialState$c : []);
+    };
+    table._getOrderColumnsFn = memo(() => [table.getState().columnOrder, table.getState().grouping, table.options.groupedColumnMode], (columnOrder, grouping, groupedColumnMode) => columns => {
+      // Sort grouped columns to the start of the column list
+      // before the headers are built
+      let orderedColumns = [];
+
+      // If there is no order, return the normal columns
+      if (!(columnOrder != null && columnOrder.length)) {
+        orderedColumns = columns;
+      } else {
+        const columnOrderCopy = [...columnOrder];
+
+        // If there is an order, make a copy of the columns
+        const columnsCopy = [...columns];
+
+        // And make a new ordered array of the columns
+
+        // Loop over the columns and place them in order into the new array
+        while (columnsCopy.length && columnOrderCopy.length) {
+          const targetColumnId = columnOrderCopy.shift();
+          const foundIndex = columnsCopy.findIndex(d => d.id === targetColumnId);
+          if (foundIndex > -1) {
+            orderedColumns.push(columnsCopy.splice(foundIndex, 1)[0]);
+          }
+        }
+
+        // If there are any columns left, add them to the end
+        orderedColumns = [...orderedColumns, ...columnsCopy];
+      }
+      return orderColumns(orderedColumns, grouping, groupedColumnMode);
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getOrderColumnsFn'
+      // debug: () => table.options.debugAll ?? table.options.debugTable,
+    });
+  }
+};
+
+//
+
+const defaultPageIndex = 0;
+const defaultPageSize = 10;
+const getDefaultPaginationState = () => ({
+  pageIndex: defaultPageIndex,
+  pageSize: defaultPageSize
+});
+const Pagination = {
+  getInitialState: state => {
+    return {
+      ...state,
+      pagination: {
+        ...getDefaultPaginationState(),
+        ...(state == null ? void 0 : state.pagination)
+      }
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onPaginationChange: makeStateUpdater('pagination', table)
+    };
+  },
+  createTable: table => {
+    let registered = false;
+    let queued = false;
+    table._autoResetPageIndex = () => {
+      var _ref, _table$options$autoRe;
+      if (!registered) {
+        table._queue(() => {
+          registered = true;
+        });
+        return;
+      }
+      if ((_ref = (_table$options$autoRe = table.options.autoResetAll) != null ? _table$options$autoRe : table.options.autoResetPageIndex) != null ? _ref : !table.options.manualPagination) {
+        if (queued) return;
+        queued = true;
+        table._queue(() => {
+          table.resetPageIndex();
+          queued = false;
+        });
+      }
+    };
+    table.setPagination = updater => {
+      const safeUpdater = old => {
+        let newState = functionalUpdate(updater, old);
+        return newState;
+      };
+      return table.options.onPaginationChange == null ? void 0 : table.options.onPaginationChange(safeUpdater);
+    };
+    table.resetPagination = defaultState => {
+      var _table$initialState$p;
+      table.setPagination(defaultState ? getDefaultPaginationState() : (_table$initialState$p = table.initialState.pagination) != null ? _table$initialState$p : getDefaultPaginationState());
+    };
+    table.setPageIndex = updater => {
+      table.setPagination(old => {
+        let pageIndex = functionalUpdate(updater, old.pageIndex);
+        const maxPageIndex = typeof table.options.pageCount === 'undefined' || table.options.pageCount === -1 ? Number.MAX_SAFE_INTEGER : table.options.pageCount - 1;
+        pageIndex = Math.max(0, Math.min(pageIndex, maxPageIndex));
+        return {
+          ...old,
+          pageIndex
+        };
+      });
+    };
+    table.resetPageIndex = defaultState => {
+      var _table$initialState$p2, _table$initialState;
+      table.setPageIndex(defaultState ? defaultPageIndex : (_table$initialState$p2 = (_table$initialState = table.initialState) == null || (_table$initialState = _table$initialState.pagination) == null ? void 0 : _table$initialState.pageIndex) != null ? _table$initialState$p2 : defaultPageIndex);
+    };
+    table.resetPageSize = defaultState => {
+      var _table$initialState$p3, _table$initialState2;
+      table.setPageSize(defaultState ? defaultPageSize : (_table$initialState$p3 = (_table$initialState2 = table.initialState) == null || (_table$initialState2 = _table$initialState2.pagination) == null ? void 0 : _table$initialState2.pageSize) != null ? _table$initialState$p3 : defaultPageSize);
+    };
+    table.setPageSize = updater => {
+      table.setPagination(old => {
+        const pageSize = Math.max(1, functionalUpdate(updater, old.pageSize));
+        const topRowIndex = old.pageSize * old.pageIndex;
+        const pageIndex = Math.floor(topRowIndex / pageSize);
+        return {
+          ...old,
+          pageIndex,
+          pageSize
+        };
+      });
+    };
+    table.setPageCount = updater => table.setPagination(old => {
+      var _table$options$pageCo;
+      let newPageCount = functionalUpdate(updater, (_table$options$pageCo = table.options.pageCount) != null ? _table$options$pageCo : -1);
+      if (typeof newPageCount === 'number') {
+        newPageCount = Math.max(-1, newPageCount);
+      }
+      return {
+        ...old,
+        pageCount: newPageCount
+      };
+    });
+    table.getPageOptions = memo(() => [table.getPageCount()], pageCount => {
+      let pageOptions = [];
+      if (pageCount && pageCount > 0) {
+        pageOptions = [...new Array(pageCount)].fill(null).map((_, i) => i);
+      }
+      return pageOptions;
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getPageOptions',
+      debug: () => {
+        var _table$options$debugA;
+        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
+      }
+    });
+    table.getCanPreviousPage = () => table.getState().pagination.pageIndex > 0;
+    table.getCanNextPage = () => {
+      const {
+        pageIndex
+      } = table.getState().pagination;
+      const pageCount = table.getPageCount();
+      if (pageCount === -1) {
+        return true;
+      }
+      if (pageCount === 0) {
+        return false;
+      }
+      return pageIndex < pageCount - 1;
+    };
+    table.previousPage = () => {
+      return table.setPageIndex(old => old - 1);
+    };
+    table.nextPage = () => {
+      return table.setPageIndex(old => {
+        return old + 1;
+      });
+    };
+    table.getPrePaginationRowModel = () => table.getExpandedRowModel();
+    table.getPaginationRowModel = () => {
+      if (!table._getPaginationRowModel && table.options.getPaginationRowModel) {
+        table._getPaginationRowModel = table.options.getPaginationRowModel(table);
+      }
+      if (table.options.manualPagination || !table._getPaginationRowModel) {
+        return table.getPrePaginationRowModel();
+      }
+      return table._getPaginationRowModel();
+    };
+    table.getPageCount = () => {
+      var _table$options$pageCo2;
+      return (_table$options$pageCo2 = table.options.pageCount) != null ? _table$options$pageCo2 : Math.ceil(table.getPrePaginationRowModel().rows.length / table.getState().pagination.pageSize);
+    };
+  }
+};
+
+//
+
+const getDefaultColumnPinningState = () => ({
+  left: [],
+  right: []
+});
+const getDefaultRowPinningState = () => ({
+  top: [],
+  bottom: []
+});
+const Pinning = {
+  getInitialState: state => {
+    return {
+      columnPinning: getDefaultColumnPinningState(),
+      rowPinning: getDefaultRowPinningState(),
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onColumnPinningChange: makeStateUpdater('columnPinning', table),
+      onRowPinningChange: makeStateUpdater('rowPinning', table)
+    };
+  },
+  createColumn: (column, table) => {
+    column.pin = position => {
+      const columnIds = column.getLeafColumns().map(d => d.id).filter(Boolean);
+      table.setColumnPinning(old => {
+        var _old$left3, _old$right3;
+        if (position === 'right') {
+          var _old$left, _old$right;
+          return {
+            left: ((_old$left = old == null ? void 0 : old.left) != null ? _old$left : []).filter(d => !(columnIds != null && columnIds.includes(d))),
+            right: [...((_old$right = old == null ? void 0 : old.right) != null ? _old$right : []).filter(d => !(columnIds != null && columnIds.includes(d))), ...columnIds]
+          };
+        }
+        if (position === 'left') {
+          var _old$left2, _old$right2;
+          return {
+            left: [...((_old$left2 = old == null ? void 0 : old.left) != null ? _old$left2 : []).filter(d => !(columnIds != null && columnIds.includes(d))), ...columnIds],
+            right: ((_old$right2 = old == null ? void 0 : old.right) != null ? _old$right2 : []).filter(d => !(columnIds != null && columnIds.includes(d)))
+          };
+        }
+        return {
+          left: ((_old$left3 = old == null ? void 0 : old.left) != null ? _old$left3 : []).filter(d => !(columnIds != null && columnIds.includes(d))),
+          right: ((_old$right3 = old == null ? void 0 : old.right) != null ? _old$right3 : []).filter(d => !(columnIds != null && columnIds.includes(d)))
+        };
+      });
+    };
+    column.getCanPin = () => {
+      const leafColumns = column.getLeafColumns();
+      return leafColumns.some(d => {
+        var _d$columnDef$enablePi, _ref, _table$options$enable;
+        return ((_d$columnDef$enablePi = d.columnDef.enablePinning) != null ? _d$columnDef$enablePi : true) && ((_ref = (_table$options$enable = table.options.enableColumnPinning) != null ? _table$options$enable : table.options.enablePinning) != null ? _ref : true);
+      });
+    };
+    column.getIsPinned = () => {
+      const leafColumnIds = column.getLeafColumns().map(d => d.id);
+      const {
+        left,
+        right
+      } = table.getState().columnPinning;
+      const isLeft = leafColumnIds.some(d => left == null ? void 0 : left.includes(d));
+      const isRight = leafColumnIds.some(d => right == null ? void 0 : right.includes(d));
+      return isLeft ? 'left' : isRight ? 'right' : false;
+    };
+    column.getPinnedIndex = () => {
+      var _table$getState$colum, _table$getState$colum2;
+      const position = column.getIsPinned();
+      return position ? (_table$getState$colum = (_table$getState$colum2 = table.getState().columnPinning) == null || (_table$getState$colum2 = _table$getState$colum2[position]) == null ? void 0 : _table$getState$colum2.indexOf(column.id)) != null ? _table$getState$colum : -1 : 0;
+    };
+  },
+  createRow: (row, table) => {
+    row.pin = (position, includeLeafRows, includeParentRows) => {
+      const leafRowIds = includeLeafRows ? row.getLeafRows().map(_ref2 => {
+        let {
+          id
+        } = _ref2;
+        return id;
+      }) : [];
+      const parentRowIds = includeParentRows ? row.getParentRows().map(_ref3 => {
+        let {
+          id
+        } = _ref3;
+        return id;
+      }) : [];
+      const rowIds = new Set([...parentRowIds, row.id, ...leafRowIds]);
+      table.setRowPinning(old => {
+        var _old$top3, _old$bottom3;
+        if (position === 'bottom') {
+          var _old$top, _old$bottom;
+          return {
+            top: ((_old$top = old == null ? void 0 : old.top) != null ? _old$top : []).filter(d => !(rowIds != null && rowIds.has(d))),
+            bottom: [...((_old$bottom = old == null ? void 0 : old.bottom) != null ? _old$bottom : []).filter(d => !(rowIds != null && rowIds.has(d))), ...Array.from(rowIds)]
+          };
+        }
+        if (position === 'top') {
+          var _old$top2, _old$bottom2;
+          return {
+            top: [...((_old$top2 = old == null ? void 0 : old.top) != null ? _old$top2 : []).filter(d => !(rowIds != null && rowIds.has(d))), ...Array.from(rowIds)],
+            bottom: ((_old$bottom2 = old == null ? void 0 : old.bottom) != null ? _old$bottom2 : []).filter(d => !(rowIds != null && rowIds.has(d)))
+          };
+        }
+        return {
+          top: ((_old$top3 = old == null ? void 0 : old.top) != null ? _old$top3 : []).filter(d => !(rowIds != null && rowIds.has(d))),
+          bottom: ((_old$bottom3 = old == null ? void 0 : old.bottom) != null ? _old$bottom3 : []).filter(d => !(rowIds != null && rowIds.has(d)))
+        };
+      });
+    };
+    row.getCanPin = () => {
+      var _ref4;
+      const {
+        enableRowPinning,
+        enablePinning
+      } = table.options;
+      if (typeof enableRowPinning === 'function') {
+        return enableRowPinning(row);
+      }
+      return (_ref4 = enableRowPinning != null ? enableRowPinning : enablePinning) != null ? _ref4 : true;
+    };
+    row.getIsPinned = () => {
+      const rowIds = [row.id];
+      const {
+        top,
+        bottom
+      } = table.getState().rowPinning;
+      const isTop = rowIds.some(d => top == null ? void 0 : top.includes(d));
+      const isBottom = rowIds.some(d => bottom == null ? void 0 : bottom.includes(d));
+      return isTop ? 'top' : isBottom ? 'bottom' : false;
+    };
+    row.getPinnedIndex = () => {
+      var _table$_getPinnedRows, _visiblePinnedRowIds$;
+      const position = row.getIsPinned();
+      if (!position) return -1;
+      const visiblePinnedRowIds = (_table$_getPinnedRows = table._getPinnedRows(position)) == null ? void 0 : _table$_getPinnedRows.map(_ref5 => {
+        let {
+          id
+        } = _ref5;
+        return id;
+      });
+      return (_visiblePinnedRowIds$ = visiblePinnedRowIds == null ? void 0 : visiblePinnedRowIds.indexOf(row.id)) != null ? _visiblePinnedRowIds$ : -1;
+    };
+    row.getCenterVisibleCells = memo(() => [row._getAllVisibleCells(), table.getState().columnPinning.left, table.getState().columnPinning.right], (allCells, left, right) => {
+      const leftAndRight = [...(left != null ? left : []), ...(right != null ? right : [])];
+      return allCells.filter(d => !leftAndRight.includes(d.column.id));
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'row.getCenterVisibleCells',
+      debug: () => {
+        var _table$options$debugA;
+        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugRows;
+      }
+    });
+    row.getLeftVisibleCells = memo(() => [row._getAllVisibleCells(), table.getState().columnPinning.left,,], (allCells, left) => {
+      const cells = (left != null ? left : []).map(columnId => allCells.find(cell => cell.column.id === columnId)).filter(Boolean).map(d => ({
+        ...d,
+        position: 'left'
+      }));
+      return cells;
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'row.getLeftVisibleCells',
+      debug: () => {
+        var _table$options$debugA2;
+        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugRows;
+      }
+    });
+    row.getRightVisibleCells = memo(() => [row._getAllVisibleCells(), table.getState().columnPinning.right], (allCells, right) => {
+      const cells = (right != null ? right : []).map(columnId => allCells.find(cell => cell.column.id === columnId)).filter(Boolean).map(d => ({
+        ...d,
+        position: 'right'
+      }));
+      return cells;
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'row.getRightVisibleCells',
+      debug: () => {
+        var _table$options$debugA3;
+        return (_table$options$debugA3 = table.options.debugAll) != null ? _table$options$debugA3 : table.options.debugRows;
+      }
+    });
+  },
+  createTable: table => {
+    table.setColumnPinning = updater => table.options.onColumnPinningChange == null ? void 0 : table.options.onColumnPinningChange(updater);
+    table.resetColumnPinning = defaultState => {
+      var _table$initialState$c, _table$initialState;
+      return table.setColumnPinning(defaultState ? getDefaultColumnPinningState() : (_table$initialState$c = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.columnPinning) != null ? _table$initialState$c : getDefaultColumnPinningState());
+    };
+    table.getIsSomeColumnsPinned = position => {
+      var _pinningState$positio;
+      const pinningState = table.getState().columnPinning;
+      if (!position) {
+        var _pinningState$left, _pinningState$right;
+        return Boolean(((_pinningState$left = pinningState.left) == null ? void 0 : _pinningState$left.length) || ((_pinningState$right = pinningState.right) == null ? void 0 : _pinningState$right.length));
+      }
+      return Boolean((_pinningState$positio = pinningState[position]) == null ? void 0 : _pinningState$positio.length);
+    };
+    table.getLeftLeafColumns = memo(() => [table.getAllLeafColumns(), table.getState().columnPinning.left], (allColumns, left) => {
+      return (left != null ? left : []).map(columnId => allColumns.find(column => column.id === columnId)).filter(Boolean);
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getLeftLeafColumns',
+      debug: () => {
+        var _table$options$debugA4;
+        return (_table$options$debugA4 = table.options.debugAll) != null ? _table$options$debugA4 : table.options.debugColumns;
+      }
+    });
+    table.getRightLeafColumns = memo(() => [table.getAllLeafColumns(), table.getState().columnPinning.right], (allColumns, right) => {
+      return (right != null ? right : []).map(columnId => allColumns.find(column => column.id === columnId)).filter(Boolean);
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getRightLeafColumns',
+      debug: () => {
+        var _table$options$debugA5;
+        return (_table$options$debugA5 = table.options.debugAll) != null ? _table$options$debugA5 : table.options.debugColumns;
+      }
+    });
+    table.getCenterLeafColumns = memo(() => [table.getAllLeafColumns(), table.getState().columnPinning.left, table.getState().columnPinning.right], (allColumns, left, right) => {
+      const leftAndRight = [...(left != null ? left : []), ...(right != null ? right : [])];
+      return allColumns.filter(d => !leftAndRight.includes(d.id));
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getCenterLeafColumns',
+      debug: () => {
+        var _table$options$debugA6;
+        return (_table$options$debugA6 = table.options.debugAll) != null ? _table$options$debugA6 : table.options.debugColumns;
+      }
+    });
+    table.setRowPinning = updater => table.options.onRowPinningChange == null ? void 0 : table.options.onRowPinningChange(updater);
+    table.resetRowPinning = defaultState => {
+      var _table$initialState$r, _table$initialState2;
+      return table.setRowPinning(defaultState ? getDefaultRowPinningState() : (_table$initialState$r = (_table$initialState2 = table.initialState) == null ? void 0 : _table$initialState2.rowPinning) != null ? _table$initialState$r : getDefaultRowPinningState());
+    };
+    table.getIsSomeRowsPinned = position => {
+      var _pinningState$positio2;
+      const pinningState = table.getState().rowPinning;
+      if (!position) {
+        var _pinningState$top, _pinningState$bottom;
+        return Boolean(((_pinningState$top = pinningState.top) == null ? void 0 : _pinningState$top.length) || ((_pinningState$bottom = pinningState.bottom) == null ? void 0 : _pinningState$bottom.length));
+      }
+      return Boolean((_pinningState$positio2 = pinningState[position]) == null ? void 0 : _pinningState$positio2.length);
+    };
+    table._getPinnedRows = position => memo(() => [table.getRowModel().rows, table.getState().rowPinning[position]], (visibleRows, pinnedRowIds) => {
+      var _table$options$keepPi;
+      const rows = ((_table$options$keepPi = table.options.keepPinnedRows) != null ? _table$options$keepPi : true) ?
+      //get all rows that are pinned even if they would not be otherwise visible
+      //account for expanded parent rows, but not pagination or filtering
+      (pinnedRowIds != null ? pinnedRowIds : []).map(rowId => {
+        const row = table.getRow(rowId, true);
+        return row.getIsAllParentsExpanded() ? row : null;
+      }) :
+      //else get only visible rows that are pinned
+      (pinnedRowIds != null ? pinnedRowIds : []).map(rowId => visibleRows.find(row => row.id === rowId));
+      return rows.filter(Boolean).map(d => ({
+        ...d,
+        position
+      }));
+    }, {
+      key: process.env.NODE_ENV === 'development' && `row.get${position === 'top' ? 'Top' : 'Bottom'}Rows`,
+      debug: () => {
+        var _table$options$debugA7;
+        return (_table$options$debugA7 = table.options.debugAll) != null ? _table$options$debugA7 : table.options.debugRows;
+      }
+    })();
+    table.getTopRows = () => table._getPinnedRows('top');
+    table.getBottomRows = () => table._getPinnedRows('bottom');
+    table.getCenterRows = memo(() => [table.getRowModel().rows, table.getState().rowPinning.top, table.getState().rowPinning.bottom], (allRows, top, bottom) => {
+      const topAndBottom = new Set([...(top != null ? top : []), ...(bottom != null ? bottom : [])]);
+      return allRows.filter(d => !topAndBottom.has(d.id));
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'row.getCenterRows',
+      debug: () => {
+        var _table$options$debugA8;
+        return (_table$options$debugA8 = table.options.debugAll) != null ? _table$options$debugA8 : table.options.debugRows;
+      }
+    });
+  }
+};
+
+//
+
+const RowSelection = {
+  getInitialState: state => {
+    return {
+      rowSelection: {},
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onRowSelectionChange: makeStateUpdater('rowSelection', table),
+      enableRowSelection: true,
+      enableMultiRowSelection: true,
+      enableSubRowSelection: true
+      // enableGroupingRowSelection: false,
+      // isAdditiveSelectEvent: (e: unknown) => !!e.metaKey,
+      // isInclusiveSelectEvent: (e: unknown) => !!e.shiftKey,
+    };
+  },
+
+  createTable: table => {
+    table.setRowSelection = updater => table.options.onRowSelectionChange == null ? void 0 : table.options.onRowSelectionChange(updater);
+    table.resetRowSelection = defaultState => {
+      var _table$initialState$r;
+      return table.setRowSelection(defaultState ? {} : (_table$initialState$r = table.initialState.rowSelection) != null ? _table$initialState$r : {});
+    };
+    table.toggleAllRowsSelected = value => {
+      table.setRowSelection(old => {
+        value = typeof value !== 'undefined' ? value : !table.getIsAllRowsSelected();
+        const rowSelection = {
+          ...old
+        };
+        const preGroupedFlatRows = table.getPreGroupedRowModel().flatRows;
+
+        // We don't use `mutateRowIsSelected` here for performance reasons.
+        // All of the rows are flat already, so it wouldn't be worth it
+        if (value) {
+          preGroupedFlatRows.forEach(row => {
+            if (!row.getCanSelect()) {
+              return;
+            }
+            rowSelection[row.id] = true;
+          });
+        } else {
+          preGroupedFlatRows.forEach(row => {
+            delete rowSelection[row.id];
+          });
+        }
+        return rowSelection;
+      });
+    };
+    table.toggleAllPageRowsSelected = value => table.setRowSelection(old => {
+      const resolvedValue = typeof value !== 'undefined' ? value : !table.getIsAllPageRowsSelected();
+      const rowSelection = {
+        ...old
+      };
+      table.getRowModel().rows.forEach(row => {
+        mutateRowIsSelected(rowSelection, row.id, resolvedValue, true, table);
+      });
+      return rowSelection;
+    });
+
+    // addRowSelectionRange: rowId => {
+    //   const {
+    //     rows,
+    //     rowsById,
+    //     options: { selectGroupingRows, selectSubRows },
+    //   } = table
+
+    //   const findSelectedRow = (rows: Row[]) => {
+    //     let found
+    //     rows.find(d => {
+    //       if (d.getIsSelected()) {
+    //         found = d
+    //         return true
+    //       }
+    //       const subFound = findSelectedRow(d.subRows || [])
+    //       if (subFound) {
+    //         found = subFound
+    //         return true
+    //       }
+    //       return false
+    //     })
+    //     return found
+    //   }
+
+    //   const firstRow = findSelectedRow(rows) || rows[0]
+    //   const lastRow = rowsById[rowId]
+
+    //   let include = false
+    //   const selectedRowIds = {}
+
+    //   const addRow = (row: Row) => {
+    //     mutateRowIsSelected(selectedRowIds, row.id, true, {
+    //       rowsById,
+    //       selectGroupingRows: selectGroupingRows!,
+    //       selectSubRows: selectSubRows!,
+    //     })
+    //   }
+
+    //   table.rows.forEach(row => {
+    //     const isFirstRow = row.id === firstRow.id
+    //     const isLastRow = row.id === lastRow.id
+
+    //     if (isFirstRow || isLastRow) {
+    //       if (!include) {
+    //         include = true
+    //       } else if (include) {
+    //         addRow(row)
+    //         include = false
+    //       }
+    //     }
+
+    //     if (include) {
+    //       addRow(row)
+    //     }
+    //   })
+
+    //   table.setRowSelection(selectedRowIds)
+    // },
+    table.getPreSelectedRowModel = () => table.getCoreRowModel();
+    table.getSelectedRowModel = memo(() => [table.getState().rowSelection, table.getCoreRowModel()], (rowSelection, rowModel) => {
+      if (!Object.keys(rowSelection).length) {
+        return {
+          rows: [],
+          flatRows: [],
+          rowsById: {}
+        };
+      }
+      return selectRowsFn(table, rowModel);
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getSelectedRowModel',
+      debug: () => {
+        var _table$options$debugA;
+        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
+      }
+    });
+    table.getFilteredSelectedRowModel = memo(() => [table.getState().rowSelection, table.getFilteredRowModel()], (rowSelection, rowModel) => {
+      if (!Object.keys(rowSelection).length) {
+        return {
+          rows: [],
+          flatRows: [],
+          rowsById: {}
+        };
+      }
+      return selectRowsFn(table, rowModel);
+    }, {
+      key: process.env.NODE_ENV === 'production' && 'getFilteredSelectedRowModel',
+      debug: () => {
+        var _table$options$debugA2;
+        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugTable;
+      }
+    });
+    table.getGroupedSelectedRowModel = memo(() => [table.getState().rowSelection, table.getSortedRowModel()], (rowSelection, rowModel) => {
+      if (!Object.keys(rowSelection).length) {
+        return {
+          rows: [],
+          flatRows: [],
+          rowsById: {}
+        };
+      }
+      return selectRowsFn(table, rowModel);
+    }, {
+      key: process.env.NODE_ENV === 'production' && 'getGroupedSelectedRowModel',
+      debug: () => {
+        var _table$options$debugA3;
+        return (_table$options$debugA3 = table.options.debugAll) != null ? _table$options$debugA3 : table.options.debugTable;
+      }
+    });
+
+    ///
+
+    // getGroupingRowCanSelect: rowId => {
+    //   const row = table.getRow(rowId)
+
+    //   if (!row) {
+    //     throw new Error()
+    //   }
+
+    //   if (typeof table.options.enableGroupingRowSelection === 'function') {
+    //     return table.options.enableGroupingRowSelection(row)
+    //   }
+
+    //   return table.options.enableGroupingRowSelection ?? false
+    // },
+
+    table.getIsAllRowsSelected = () => {
+      const preGroupedFlatRows = table.getFilteredRowModel().flatRows;
+      const {
+        rowSelection
+      } = table.getState();
+      let isAllRowsSelected = Boolean(preGroupedFlatRows.length && Object.keys(rowSelection).length);
+      if (isAllRowsSelected) {
+        if (preGroupedFlatRows.some(row => row.getCanSelect() && !rowSelection[row.id])) {
+          isAllRowsSelected = false;
+        }
+      }
+      return isAllRowsSelected;
+    };
+    table.getIsAllPageRowsSelected = () => {
+      const paginationFlatRows = table.getPaginationRowModel().flatRows.filter(row => row.getCanSelect());
+      const {
+        rowSelection
+      } = table.getState();
+      let isAllPageRowsSelected = !!paginationFlatRows.length;
+      if (isAllPageRowsSelected && paginationFlatRows.some(row => !rowSelection[row.id])) {
+        isAllPageRowsSelected = false;
+      }
+      return isAllPageRowsSelected;
+    };
+    table.getIsSomeRowsSelected = () => {
+      var _table$getState$rowSe;
+      const totalSelected = Object.keys((_table$getState$rowSe = table.getState().rowSelection) != null ? _table$getState$rowSe : {}).length;
+      return totalSelected > 0 && totalSelected < table.getFilteredRowModel().flatRows.length;
+    };
+    table.getIsSomePageRowsSelected = () => {
+      const paginationFlatRows = table.getPaginationRowModel().flatRows;
+      return table.getIsAllPageRowsSelected() ? false : paginationFlatRows.filter(row => row.getCanSelect()).some(d => d.getIsSelected() || d.getIsSomeSelected());
+    };
+    table.getToggleAllRowsSelectedHandler = () => {
+      return e => {
+        table.toggleAllRowsSelected(e.target.checked);
+      };
+    };
+    table.getToggleAllPageRowsSelectedHandler = () => {
+      return e => {
+        table.toggleAllPageRowsSelected(e.target.checked);
+      };
+    };
+  },
+  createRow: (row, table) => {
+    row.toggleSelected = (value, opts) => {
+      const isSelected = row.getIsSelected();
+      table.setRowSelection(old => {
+        var _opts$selectChildren;
+        value = typeof value !== 'undefined' ? value : !isSelected;
+        if (row.getCanSelect() && isSelected === value) {
+          return old;
+        }
+        const selectedRowIds = {
+          ...old
+        };
+        mutateRowIsSelected(selectedRowIds, row.id, value, (_opts$selectChildren = opts == null ? void 0 : opts.selectChildren) != null ? _opts$selectChildren : true, table);
+        return selectedRowIds;
+      });
+    };
+    row.getIsSelected = () => {
+      const {
+        rowSelection
+      } = table.getState();
+      return isRowSelected(row, rowSelection);
+    };
+    row.getIsSomeSelected = () => {
+      const {
+        rowSelection
+      } = table.getState();
+      return isSubRowSelected(row, rowSelection) === 'some';
+    };
+    row.getIsAllSubRowsSelected = () => {
+      const {
+        rowSelection
+      } = table.getState();
+      return isSubRowSelected(row, rowSelection) === 'all';
+    };
+    row.getCanSelect = () => {
+      var _table$options$enable;
+      if (typeof table.options.enableRowSelection === 'function') {
+        return table.options.enableRowSelection(row);
+      }
+      return (_table$options$enable = table.options.enableRowSelection) != null ? _table$options$enable : true;
+    };
+    row.getCanSelectSubRows = () => {
+      var _table$options$enable2;
+      if (typeof table.options.enableSubRowSelection === 'function') {
+        return table.options.enableSubRowSelection(row);
+      }
+      return (_table$options$enable2 = table.options.enableSubRowSelection) != null ? _table$options$enable2 : true;
+    };
+    row.getCanMultiSelect = () => {
+      var _table$options$enable3;
+      if (typeof table.options.enableMultiRowSelection === 'function') {
+        return table.options.enableMultiRowSelection(row);
+      }
+      return (_table$options$enable3 = table.options.enableMultiRowSelection) != null ? _table$options$enable3 : true;
+    };
+    row.getToggleSelectedHandler = () => {
+      const canSelect = row.getCanSelect();
+      return e => {
+        var _target;
+        if (!canSelect) return;
+        row.toggleSelected((_target = e.target) == null ? void 0 : _target.checked);
+      };
+    };
+  }
+};
+const mutateRowIsSelected = (selectedRowIds, id, value, includeChildren, table) => {
+  var _row$subRows;
+  const row = table.getRow(id);
+
+  // const isGrouped = row.getIsGrouped()
+
+  // if ( // TODO: enforce grouping row selection rules
+  //   !isGrouped ||
+  //   (isGrouped && table.options.enableGroupingRowSelection)
+  // ) {
+  if (value) {
+    if (!row.getCanMultiSelect()) {
+      Object.keys(selectedRowIds).forEach(key => delete selectedRowIds[key]);
+    }
+    if (row.getCanSelect()) {
+      selectedRowIds[id] = true;
+    }
+  } else {
+    delete selectedRowIds[id];
+  }
+  // }
+
+  if (includeChildren && (_row$subRows = row.subRows) != null && _row$subRows.length && row.getCanSelectSubRows()) {
+    row.subRows.forEach(row => mutateRowIsSelected(selectedRowIds, row.id, value, includeChildren, table));
+  }
+};
+function selectRowsFn(table, rowModel) {
+  const rowSelection = table.getState().rowSelection;
+  const newSelectedFlatRows = [];
+  const newSelectedRowsById = {};
+
+  // Filters top level and nested rows
+  const recurseRows = function (rows, depth) {
+    return rows.map(row => {
+      var _row$subRows2;
+      const isSelected = isRowSelected(row, rowSelection);
+      if (isSelected) {
+        newSelectedFlatRows.push(row);
+        newSelectedRowsById[row.id] = row;
+      }
+      if ((_row$subRows2 = row.subRows) != null && _row$subRows2.length) {
+        row = {
+          ...row,
+          subRows: recurseRows(row.subRows)
+        };
+      }
+      if (isSelected) {
+        return row;
+      }
+    }).filter(Boolean);
+  };
+  return {
+    rows: recurseRows(rowModel.rows),
+    flatRows: newSelectedFlatRows,
+    rowsById: newSelectedRowsById
+  };
+}
+function isRowSelected(row, selection) {
+  var _selection$row$id;
+  return (_selection$row$id = selection[row.id]) != null ? _selection$row$id : false;
+}
+function isSubRowSelected(row, selection, table) {
+  var _row$subRows3;
+  if (!((_row$subRows3 = row.subRows) != null && _row$subRows3.length)) return false;
+  let allChildrenSelected = true;
+  let someSelected = false;
+  row.subRows.forEach(subRow => {
+    // Bail out early if we know both of these
+    if (someSelected && !allChildrenSelected) {
+      return;
+    }
+    if (subRow.getCanSelect()) {
+      if (isRowSelected(subRow, selection)) {
+        someSelected = true;
+      } else {
+        allChildrenSelected = false;
+      }
+    }
+
+    // Check row selection of nested subrows
+    if (subRow.subRows && subRow.subRows.length) {
+      const subRowChildrenSelected = isSubRowSelected(subRow, selection);
+      if (subRowChildrenSelected === 'all') {
+        someSelected = true;
+      } else if (subRowChildrenSelected === 'some') {
+        someSelected = true;
+        allChildrenSelected = false;
+      } else {
+        allChildrenSelected = false;
+      }
+    }
+  });
+  return allChildrenSelected ? 'all' : someSelected ? 'some' : false;
+}
+
+const reSplitAlphaNumeric = /([0-9]+)/gm;
+const alphanumeric = (rowA, rowB, columnId) => {
+  return compareAlphanumeric(toString(rowA.getValue(columnId)).toLowerCase(), toString(rowB.getValue(columnId)).toLowerCase());
+};
+const alphanumericCaseSensitive = (rowA, rowB, columnId) => {
+  return compareAlphanumeric(toString(rowA.getValue(columnId)), toString(rowB.getValue(columnId)));
+};
+
+// The text filter is more basic (less numeric support)
+// but is much faster
+const text = (rowA, rowB, columnId) => {
+  return compareBasic(toString(rowA.getValue(columnId)).toLowerCase(), toString(rowB.getValue(columnId)).toLowerCase());
+};
+
+// The text filter is more basic (less numeric support)
+// but is much faster
+const textCaseSensitive = (rowA, rowB, columnId) => {
+  return compareBasic(toString(rowA.getValue(columnId)), toString(rowB.getValue(columnId)));
+};
+const datetime = (rowA, rowB, columnId) => {
+  const a = rowA.getValue(columnId);
+  const b = rowB.getValue(columnId);
+
+  // Can handle nullish values
+  // Use > and < because == (and ===) doesn't work with
+  // Date objects (would require calling getTime()).
+  return a > b ? 1 : a < b ? -1 : 0;
+};
+const basic = (rowA, rowB, columnId) => {
+  return compareBasic(rowA.getValue(columnId), rowB.getValue(columnId));
+};
+
+// Utils
+
+function compareBasic(a, b) {
+  return a === b ? 0 : a > b ? 1 : -1;
+}
+function toString(a) {
+  if (typeof a === 'number') {
+    if (isNaN(a) || a === Infinity || a === -Infinity) {
+      return '';
+    }
+    return String(a);
+  }
+  if (typeof a === 'string') {
+    return a;
+  }
+  return '';
+}
+
+// Mixed sorting is slow, but very inclusive of many edge cases.
+// It handles numbers, mixed alphanumeric combinations, and even
+// null, undefined, and Infinity
+function compareAlphanumeric(aStr, bStr) {
+  // Split on number groups, but keep the delimiter
+  // Then remove falsey split values
+  const a = aStr.split(reSplitAlphaNumeric).filter(Boolean);
+  const b = bStr.split(reSplitAlphaNumeric).filter(Boolean);
+
+  // While
+  while (a.length && b.length) {
+    const aa = a.shift();
+    const bb = b.shift();
+    const an = parseInt(aa, 10);
+    const bn = parseInt(bb, 10);
+    const combo = [an, bn].sort();
+
+    // Both are string
+    if (isNaN(combo[0])) {
+      if (aa > bb) {
+        return 1;
+      }
+      if (bb > aa) {
+        return -1;
+      }
+      continue;
+    }
+
+    // One is a string, one is a number
+    if (isNaN(combo[1])) {
+      return isNaN(an) ? -1 : 1;
+    }
+
+    // Both are numbers
+    if (an > bn) {
+      return 1;
+    }
+    if (bn > an) {
+      return -1;
+    }
+  }
+  return a.length - b.length;
+}
+
+// Exports
+
+const sortingFns = {
+  alphanumeric,
+  alphanumericCaseSensitive,
+  text,
+  textCaseSensitive,
+  datetime,
+  basic
+};
+
+//
+
+const Sorting = {
+  getInitialState: state => {
+    return {
+      sorting: [],
+      ...state
+    };
+  },
+  getDefaultColumnDef: () => {
+    return {
+      sortingFn: 'auto',
+      sortUndefined: 1
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onSortingChange: makeStateUpdater('sorting', table),
+      isMultiSortEvent: e => {
+        return e.shiftKey;
+      }
+    };
+  },
+  createColumn: (column, table) => {
+    column.getAutoSortingFn = () => {
+      const firstRows = table.getFilteredRowModel().flatRows.slice(10);
+      let isString = false;
+      for (const row of firstRows) {
+        const value = row == null ? void 0 : row.getValue(column.id);
+        if (Object.prototype.toString.call(value) === '[object Date]') {
+          return sortingFns.datetime;
+        }
+        if (typeof value === 'string') {
+          isString = true;
+          if (value.split(reSplitAlphaNumeric).length > 1) {
+            return sortingFns.alphanumeric;
+          }
+        }
+      }
+      if (isString) {
+        return sortingFns.text;
+      }
+      return sortingFns.basic;
+    };
+    column.getAutoSortDir = () => {
+      const firstRow = table.getFilteredRowModel().flatRows[0];
+      const value = firstRow == null ? void 0 : firstRow.getValue(column.id);
+      if (typeof value === 'string') {
+        return 'asc';
+      }
+      return 'desc';
+    };
+    column.getSortingFn = () => {
+      var _table$options$sortin, _table$options$sortin2;
+      if (!column) {
+        throw new Error();
+      }
+      return isFunction$1(column.columnDef.sortingFn) ? column.columnDef.sortingFn : column.columnDef.sortingFn === 'auto' ? column.getAutoSortingFn() : (_table$options$sortin = (_table$options$sortin2 = table.options.sortingFns) == null ? void 0 : _table$options$sortin2[column.columnDef.sortingFn]) != null ? _table$options$sortin : sortingFns[column.columnDef.sortingFn];
+    };
+    column.toggleSorting = (desc, multi) => {
+      // if (column.columns.length) {
+      //   column.columns.forEach((c, i) => {
+      //     if (c.id) {
+      //       table.toggleColumnSorting(c.id, undefined, multi || !!i)
+      //     }
+      //   })
+      //   return
+      // }
+
+      // this needs to be outside of table.setSorting to be in sync with rerender
+      const nextSortingOrder = column.getNextSortingOrder();
+      const hasManualValue = typeof desc !== 'undefined' && desc !== null;
+      table.setSorting(old => {
+        // Find any existing sorting for this column
+        const existingSorting = old == null ? void 0 : old.find(d => d.id === column.id);
+        const existingIndex = old == null ? void 0 : old.findIndex(d => d.id === column.id);
+        let newSorting = [];
+
+        // What should we do with this sort action?
+        let sortAction;
+        let nextDesc = hasManualValue ? desc : nextSortingOrder === 'desc';
+
+        // Multi-mode
+        if (old != null && old.length && column.getCanMultiSort() && multi) {
+          if (existingSorting) {
+            sortAction = 'toggle';
+          } else {
+            sortAction = 'add';
+          }
+        } else {
+          // Normal mode
+          if (old != null && old.length && existingIndex !== old.length - 1) {
+            sortAction = 'replace';
+          } else if (existingSorting) {
+            sortAction = 'toggle';
+          } else {
+            sortAction = 'replace';
+          }
+        }
+
+        // Handle toggle states that will remove the sorting
+        if (sortAction === 'toggle') {
+          // If we are "actually" toggling (not a manual set value), should we remove the sorting?
+          if (!hasManualValue) {
+            // Is our intention to remove?
+            if (!nextSortingOrder) {
+              sortAction = 'remove';
+            }
+          }
+        }
+        if (sortAction === 'add') {
+          var _table$options$maxMul;
+          newSorting = [...old, {
+            id: column.id,
+            desc: nextDesc
+          }];
+          // Take latest n columns
+          newSorting.splice(0, newSorting.length - ((_table$options$maxMul = table.options.maxMultiSortColCount) != null ? _table$options$maxMul : Number.MAX_SAFE_INTEGER));
+        } else if (sortAction === 'toggle') {
+          // This flips (or sets) the
+          newSorting = old.map(d => {
+            if (d.id === column.id) {
+              return {
+                ...d,
+                desc: nextDesc
+              };
+            }
+            return d;
+          });
+        } else if (sortAction === 'remove') {
+          newSorting = old.filter(d => d.id !== column.id);
+        } else {
+          newSorting = [{
+            id: column.id,
+            desc: nextDesc
+          }];
+        }
+        return newSorting;
+      });
+    };
+    column.getFirstSortDir = () => {
+      var _ref, _column$columnDef$sor;
+      const sortDescFirst = (_ref = (_column$columnDef$sor = column.columnDef.sortDescFirst) != null ? _column$columnDef$sor : table.options.sortDescFirst) != null ? _ref : column.getAutoSortDir() === 'desc';
+      return sortDescFirst ? 'desc' : 'asc';
+    };
+    column.getNextSortingOrder = multi => {
+      var _table$options$enable, _table$options$enable2;
+      const firstSortDirection = column.getFirstSortDir();
+      const isSorted = column.getIsSorted();
+      if (!isSorted) {
+        return firstSortDirection;
+      }
+      if (isSorted !== firstSortDirection && ((_table$options$enable = table.options.enableSortingRemoval) != null ? _table$options$enable : true) && (
+      // If enableSortRemove, enable in general
+      multi ? (_table$options$enable2 = table.options.enableMultiRemove) != null ? _table$options$enable2 : true : true) // If multi, don't allow if enableMultiRemove))
+      ) {
+        return false;
+      }
+      return isSorted === 'desc' ? 'asc' : 'desc';
+    };
+    column.getCanSort = () => {
+      var _column$columnDef$ena, _table$options$enable3;
+      return ((_column$columnDef$ena = column.columnDef.enableSorting) != null ? _column$columnDef$ena : true) && ((_table$options$enable3 = table.options.enableSorting) != null ? _table$options$enable3 : true) && !!column.accessorFn;
+    };
+    column.getCanMultiSort = () => {
+      var _ref2, _column$columnDef$ena2;
+      return (_ref2 = (_column$columnDef$ena2 = column.columnDef.enableMultiSort) != null ? _column$columnDef$ena2 : table.options.enableMultiSort) != null ? _ref2 : !!column.accessorFn;
+    };
+    column.getIsSorted = () => {
+      var _table$getState$sorti;
+      const columnSort = (_table$getState$sorti = table.getState().sorting) == null ? void 0 : _table$getState$sorti.find(d => d.id === column.id);
+      return !columnSort ? false : columnSort.desc ? 'desc' : 'asc';
+    };
+    column.getSortIndex = () => {
+      var _table$getState$sorti2, _table$getState$sorti3;
+      return (_table$getState$sorti2 = (_table$getState$sorti3 = table.getState().sorting) == null ? void 0 : _table$getState$sorti3.findIndex(d => d.id === column.id)) != null ? _table$getState$sorti2 : -1;
+    };
+    column.clearSorting = () => {
+      //clear sorting for just 1 column
+      table.setSorting(old => old != null && old.length ? old.filter(d => d.id !== column.id) : []);
+    };
+    column.getToggleSortingHandler = () => {
+      const canSort = column.getCanSort();
+      return e => {
+        if (!canSort) return;
+        e.persist == null || e.persist();
+        column.toggleSorting == null || column.toggleSorting(undefined, column.getCanMultiSort() ? table.options.isMultiSortEvent == null ? void 0 : table.options.isMultiSortEvent(e) : false);
+      };
+    };
+  },
+  createTable: table => {
+    table.setSorting = updater => table.options.onSortingChange == null ? void 0 : table.options.onSortingChange(updater);
+    table.resetSorting = defaultState => {
+      var _table$initialState$s, _table$initialState;
+      table.setSorting(defaultState ? [] : (_table$initialState$s = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.sorting) != null ? _table$initialState$s : []);
+    };
+    table.getPreSortedRowModel = () => table.getGroupedRowModel();
+    table.getSortedRowModel = () => {
+      if (!table._getSortedRowModel && table.options.getSortedRowModel) {
+        table._getSortedRowModel = table.options.getSortedRowModel(table);
+      }
+      if (table.options.manualSorting || !table._getSortedRowModel) {
+        return table.getPreSortedRowModel();
+      }
+      return table._getSortedRowModel();
+    };
+  }
+};
+
+//
+
+const Visibility = {
+  getInitialState: state => {
+    return {
+      columnVisibility: {},
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onColumnVisibilityChange: makeStateUpdater('columnVisibility', table)
+    };
+  },
+  createColumn: (column, table) => {
+    column.toggleVisibility = value => {
+      if (column.getCanHide()) {
+        table.setColumnVisibility(old => ({
+          ...old,
+          [column.id]: value != null ? value : !column.getIsVisible()
+        }));
+      }
+    };
+    column.getIsVisible = () => {
+      var _table$getState$colum, _table$getState$colum2;
+      return (_table$getState$colum = (_table$getState$colum2 = table.getState().columnVisibility) == null ? void 0 : _table$getState$colum2[column.id]) != null ? _table$getState$colum : true;
+    };
+    column.getCanHide = () => {
+      var _column$columnDef$ena, _table$options$enable;
+      return ((_column$columnDef$ena = column.columnDef.enableHiding) != null ? _column$columnDef$ena : true) && ((_table$options$enable = table.options.enableHiding) != null ? _table$options$enable : true);
+    };
+    column.getToggleVisibilityHandler = () => {
+      return e => {
+        column.toggleVisibility == null || column.toggleVisibility(e.target.checked);
+      };
+    };
+  },
+  createRow: (row, table) => {
+    row._getAllVisibleCells = memo(() => [row.getAllCells(), table.getState().columnVisibility], cells => {
+      return cells.filter(cell => cell.column.getIsVisible());
+    }, {
+      key: process.env.NODE_ENV === 'production' && 'row._getAllVisibleCells',
+      debug: () => {
+        var _table$options$debugA;
+        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugRows;
+      }
+    });
+    row.getVisibleCells = memo(() => [row.getLeftVisibleCells(), row.getCenterVisibleCells(), row.getRightVisibleCells()], (left, center, right) => [...left, ...center, ...right], {
+      key: process.env.NODE_ENV === 'development' && 'row.getVisibleCells',
+      debug: () => {
+        var _table$options$debugA2;
+        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugRows;
+      }
+    });
+  },
+  createTable: table => {
+    const makeVisibleColumnsMethod = (key, getColumns) => {
+      return memo(() => [getColumns(), getColumns().filter(d => d.getIsVisible()).map(d => d.id).join('_')], columns => {
+        return columns.filter(d => d.getIsVisible == null ? void 0 : d.getIsVisible());
+      }, {
+        key,
+        debug: () => {
+          var _table$options$debugA3;
+          return (_table$options$debugA3 = table.options.debugAll) != null ? _table$options$debugA3 : table.options.debugColumns;
+        }
+      });
+    };
+    table.getVisibleFlatColumns = makeVisibleColumnsMethod('getVisibleFlatColumns', () => table.getAllFlatColumns());
+    table.getVisibleLeafColumns = makeVisibleColumnsMethod('getVisibleLeafColumns', () => table.getAllLeafColumns());
+    table.getLeftVisibleLeafColumns = makeVisibleColumnsMethod('getLeftVisibleLeafColumns', () => table.getLeftLeafColumns());
+    table.getRightVisibleLeafColumns = makeVisibleColumnsMethod('getRightVisibleLeafColumns', () => table.getRightLeafColumns());
+    table.getCenterVisibleLeafColumns = makeVisibleColumnsMethod('getCenterVisibleLeafColumns', () => table.getCenterLeafColumns());
+    table.setColumnVisibility = updater => table.options.onColumnVisibilityChange == null ? void 0 : table.options.onColumnVisibilityChange(updater);
+    table.resetColumnVisibility = defaultState => {
+      var _table$initialState$c;
+      table.setColumnVisibility(defaultState ? {} : (_table$initialState$c = table.initialState.columnVisibility) != null ? _table$initialState$c : {});
+    };
+    table.toggleAllColumnsVisible = value => {
+      var _value;
+      value = (_value = value) != null ? _value : !table.getIsAllColumnsVisible();
+      table.setColumnVisibility(table.getAllLeafColumns().reduce((obj, column) => ({
+        ...obj,
+        [column.id]: !value ? !(column.getCanHide != null && column.getCanHide()) : value
+      }), {}));
+    };
+    table.getIsAllColumnsVisible = () => !table.getAllLeafColumns().some(column => !(column.getIsVisible != null && column.getIsVisible()));
+    table.getIsSomeColumnsVisible = () => table.getAllLeafColumns().some(column => column.getIsVisible == null ? void 0 : column.getIsVisible());
+    table.getToggleAllColumnsVisibilityHandler = () => {
+      return e => {
+        var _target;
+        table.toggleAllColumnsVisible((_target = e.target) == null ? void 0 : _target.checked);
+      };
+    };
+  }
+};
+
+const features = [Headers, Visibility, Ordering, Pinning, Filters, Sorting, Grouping, Expanding, Pagination, RowSelection, ColumnSizing];
+
+//
+
+function createTable(options) {
+  var _options$initialState;
+  if (options.debugAll || options.debugTable) {
+    console.info('Creating Table Instance...');
+  }
+  let table = {
+    _features: features
+  };
+  const defaultOptions = table._features.reduce((obj, feature) => {
+    return Object.assign(obj, feature.getDefaultOptions == null ? void 0 : feature.getDefaultOptions(table));
+  }, {});
+  const mergeOptions = options => {
+    if (table.options.mergeOptions) {
+      return table.options.mergeOptions(defaultOptions, options);
+    }
+    return {
+      ...defaultOptions,
+      ...options
+    };
+  };
+  const coreInitialState = {};
+  let initialState = {
+    ...coreInitialState,
+    ...((_options$initialState = options.initialState) != null ? _options$initialState : {})
+  };
+  table._features.forEach(feature => {
+    var _feature$getInitialSt;
+    initialState = (_feature$getInitialSt = feature.getInitialState == null ? void 0 : feature.getInitialState(initialState)) != null ? _feature$getInitialSt : initialState;
+  });
+  const queued = [];
+  let queuedTimeout = false;
+  const coreInstance = {
+    _features: features,
+    options: {
+      ...defaultOptions,
+      ...options
+    },
+    initialState,
+    _queue: cb => {
+      queued.push(cb);
+      if (!queuedTimeout) {
+        queuedTimeout = true;
+
+        // Schedule a microtask to run the queued callbacks after
+        // the current call stack (render, etc) has finished.
+        Promise.resolve().then(() => {
+          while (queued.length) {
+            queued.shift()();
+          }
+          queuedTimeout = false;
+        }).catch(error => setTimeout(() => {
+          throw error;
+        }));
+      }
+    },
+    reset: () => {
+      table.setState(table.initialState);
+    },
+    setOptions: updater => {
+      const newOptions = functionalUpdate(updater, table.options);
+      table.options = mergeOptions(newOptions);
+    },
+    getState: () => {
+      return table.options.state;
+    },
+    setState: updater => {
+      table.options.onStateChange == null || table.options.onStateChange(updater);
+    },
+    _getRowId: (row, index, parent) => {
+      var _table$options$getRow;
+      return (_table$options$getRow = table.options.getRowId == null ? void 0 : table.options.getRowId(row, index, parent)) != null ? _table$options$getRow : `${parent ? [parent.id, index].join('.') : index}`;
+    },
+    getCoreRowModel: () => {
+      if (!table._getCoreRowModel) {
+        table._getCoreRowModel = table.options.getCoreRowModel(table);
+      }
+      return table._getCoreRowModel();
+    },
+    // The final calls start at the bottom of the model,
+    // expanded rows, which then work their way up
+
+    getRowModel: () => {
+      return table.getPaginationRowModel();
+    },
+    getRow: (id, searchAll) => {
+      const row = (searchAll ? table.getCoreRowModel() : table.getRowModel()).rowsById[id];
+      if (!row) {
+        if (process.env.NODE_ENV !== 'production') {
+          throw new Error(`getRow expected an ID, but got ${id}`);
+        }
+        throw new Error();
+      }
+      return row;
+    },
+    _getDefaultColumnDef: memo(() => [table.options.defaultColumn], defaultColumn => {
+      var _defaultColumn;
+      defaultColumn = (_defaultColumn = defaultColumn) != null ? _defaultColumn : {};
+      return {
+        header: props => {
+          const resolvedColumnDef = props.header.column.columnDef;
+          if (resolvedColumnDef.accessorKey) {
+            return resolvedColumnDef.accessorKey;
+          }
+          if (resolvedColumnDef.accessorFn) {
+            return resolvedColumnDef.id;
+          }
+          return null;
+        },
+        // footer: props => props.header.column.id,
+        cell: props => {
+          var _props$renderValue$to, _props$renderValue;
+          return (_props$renderValue$to = (_props$renderValue = props.renderValue()) == null || _props$renderValue.toString == null ? void 0 : _props$renderValue.toString()) != null ? _props$renderValue$to : null;
+        },
+        ...table._features.reduce((obj, feature) => {
+          return Object.assign(obj, feature.getDefaultColumnDef == null ? void 0 : feature.getDefaultColumnDef());
+        }, {}),
+        ...defaultColumn
+      };
+    }, {
+      debug: () => {
+        var _table$options$debugA;
+        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugColumns;
+      },
+      key: process.env.NODE_ENV === 'development' && 'getDefaultColumnDef'
+    }),
+    _getColumnDefs: () => table.options.columns,
+    getAllColumns: memo(() => [table._getColumnDefs()], columnDefs => {
+      const recurseColumns = function (columnDefs, parent, depth) {
+        if (depth === void 0) {
+          depth = 0;
+        }
+        return columnDefs.map(columnDef => {
+          const column = createColumn(table, columnDef, depth, parent);
+          const groupingColumnDef = columnDef;
+          column.columns = groupingColumnDef.columns ? recurseColumns(groupingColumnDef.columns, column, depth + 1) : [];
+          return column;
+        });
+      };
+      return recurseColumns(columnDefs);
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getAllColumns',
+      debug: () => {
+        var _table$options$debugA2;
+        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugColumns;
+      }
+    }),
+    getAllFlatColumns: memo(() => [table.getAllColumns()], allColumns => {
+      return allColumns.flatMap(column => {
+        return column.getFlatColumns();
+      });
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getAllFlatColumns',
+      debug: () => {
+        var _table$options$debugA3;
+        return (_table$options$debugA3 = table.options.debugAll) != null ? _table$options$debugA3 : table.options.debugColumns;
+      }
+    }),
+    _getAllFlatColumnsById: memo(() => [table.getAllFlatColumns()], flatColumns => {
+      return flatColumns.reduce((acc, column) => {
+        acc[column.id] = column;
+        return acc;
+      }, {});
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getAllFlatColumnsById',
+      debug: () => {
+        var _table$options$debugA4;
+        return (_table$options$debugA4 = table.options.debugAll) != null ? _table$options$debugA4 : table.options.debugColumns;
+      }
+    }),
+    getAllLeafColumns: memo(() => [table.getAllColumns(), table._getOrderColumnsFn()], (allColumns, orderColumns) => {
+      let leafColumns = allColumns.flatMap(column => column.getLeafColumns());
+      return orderColumns(leafColumns);
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'getAllLeafColumns',
+      debug: () => {
+        var _table$options$debugA5;
+        return (_table$options$debugA5 = table.options.debugAll) != null ? _table$options$debugA5 : table.options.debugColumns;
+      }
+    }),
+    getColumn: columnId => {
+      const column = table._getAllFlatColumnsById()[columnId];
+      if (process.env.NODE_ENV !== 'production' && !column) {
+        console.error(`[Table] Column with id '${columnId}' does not exist.`);
+      }
+      return column;
+    }
+  };
+  Object.assign(table, coreInstance);
+  for (let index = 0; index < table._features.length; index++) {
+    const feature = table._features[index];
+    feature == null || feature.createTable == null || feature.createTable(table);
+  }
+  return table;
+}
+
+function createCell(table, row, column, columnId) {
+  const getRenderValue = () => {
+    var _cell$getValue;
+    return (_cell$getValue = cell.getValue()) != null ? _cell$getValue : table.options.renderFallbackValue;
+  };
+  const cell = {
+    id: `${row.id}_${column.id}`,
+    row,
+    column,
+    getValue: () => row.getValue(columnId),
+    renderValue: getRenderValue,
+    getContext: memo(() => [table, column, row, cell], (table, column, row, cell) => ({
+      table,
+      column,
+      row,
+      cell: cell,
+      getValue: cell.getValue,
+      renderValue: cell.renderValue
+    }), {
+      key: process.env.NODE_ENV === 'development' && 'cell.getContext',
+      debug: () => table.options.debugAll
+    })
+  };
+  table._features.forEach(feature => {
+    feature.createCell == null || feature.createCell(cell, column, row, table);
+  }, {});
+  return cell;
+}
+
+const createRow = (table, id, original, rowIndex, depth, subRows, parentId) => {
+  let row = {
+    id,
+    index: rowIndex,
+    original,
+    depth,
+    parentId,
+    _valuesCache: {},
+    _uniqueValuesCache: {},
+    getValue: columnId => {
+      if (row._valuesCache.hasOwnProperty(columnId)) {
+        return row._valuesCache[columnId];
+      }
+      const column = table.getColumn(columnId);
+      if (!(column != null && column.accessorFn)) {
+        return undefined;
+      }
+      row._valuesCache[columnId] = column.accessorFn(row.original, rowIndex);
+      return row._valuesCache[columnId];
+    },
+    getUniqueValues: columnId => {
+      if (row._uniqueValuesCache.hasOwnProperty(columnId)) {
+        return row._uniqueValuesCache[columnId];
+      }
+      const column = table.getColumn(columnId);
+      if (!(column != null && column.accessorFn)) {
+        return undefined;
+      }
+      if (!column.columnDef.getUniqueValues) {
+        row._uniqueValuesCache[columnId] = [row.getValue(columnId)];
+        return row._uniqueValuesCache[columnId];
+      }
+      row._uniqueValuesCache[columnId] = column.columnDef.getUniqueValues(row.original, rowIndex);
+      return row._uniqueValuesCache[columnId];
+    },
+    renderValue: columnId => {
+      var _row$getValue;
+      return (_row$getValue = row.getValue(columnId)) != null ? _row$getValue : table.options.renderFallbackValue;
+    },
+    subRows: subRows != null ? subRows : [],
+    getLeafRows: () => flattenBy(row.subRows, d => d.subRows),
+    getParentRow: () => row.parentId ? table.getRow(row.parentId, true) : undefined,
+    getParentRows: () => {
+      let parentRows = [];
+      let currentRow = row;
+      while (true) {
+        const parentRow = currentRow.getParentRow();
+        if (!parentRow) break;
+        parentRows.push(parentRow);
+        currentRow = parentRow;
+      }
+      return parentRows.reverse();
+    },
+    getAllCells: memo(() => [table.getAllLeafColumns()], leafColumns => {
+      return leafColumns.map(column => {
+        return createCell(table, row, column, column.id);
+      });
+    }, {
+      key: process.env.NODE_ENV === 'development' && 'row.getAllCells',
+      debug: () => {
+        var _table$options$debugA;
+        return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugRows;
+      }
+    }),
+    _getAllCellsByColumnId: memo(() => [row.getAllCells()], allCells => {
+      return allCells.reduce((acc, cell) => {
+        acc[cell.column.id] = cell;
+        return acc;
+      }, {});
+    }, {
+      key: process.env.NODE_ENV === 'production' && 'row.getAllCellsByColumnId',
+      debug: () => {
+        var _table$options$debugA2;
+        return (_table$options$debugA2 = table.options.debugAll) != null ? _table$options$debugA2 : table.options.debugRows;
+      }
+    })
+  };
+  for (let i = 0; i < table._features.length; i++) {
+    const feature = table._features[i];
+    feature == null || feature.createRow == null || feature.createRow(row, table);
+  }
+  return row;
+};
+
+// type Person = {
+//   firstName: string
+//   lastName: string
+//   age: number
+//   visits: number
+//   status: string
+//   progress: number
+//   createdAt: Date
+//   nested: {
+//     foo: [
+//       {
+//         bar: 'bar'
+//       }
+//     ]
+//     bar: { subBar: boolean }[]
+//     baz: {
+//       foo: 'foo'
+//       bar: {
+//         baz: 'baz'
+//       }
+//     }
+//   }
+// }
+
+// const test: DeepKeys<Person> = 'nested.foo.0.bar'
+// const test2: DeepKeys<Person> = 'nested.bar'
+
+// const helper = createColumnHelper<Person>()
+
+// helper.accessor('nested.foo', {
+//   cell: info => info.getValue(),
+// })
+
+// helper.accessor('nested.foo.0.bar', {
+//   cell: info => info.getValue(),
+// })
+
+// helper.accessor('nested.bar', {
+//   cell: info => info.getValue(),
+// })
+function createColumnHelper() {
+  return {
+    accessor: (accessor, column) => {
+      return typeof accessor === 'function' ? {
+        ...column,
+        accessorFn: accessor
+      } : {
+        ...column,
+        accessorKey: accessor
+      };
+    },
+    display: column => column,
+    group: column => column
+  };
+}
+
+function getCoreRowModel() {
+  return table => memo(() => [table.options.data], data => {
+    const rowModel = {
+      rows: [],
+      flatRows: [],
+      rowsById: {}
+    };
+    const accessRows = function (originalRows, depth, parentRow) {
+      if (depth === void 0) {
+        depth = 0;
+      }
+      const rows = [];
+      for (let i = 0; i < originalRows.length; i++) {
+        // This could be an expensive check at scale, so we should move it somewhere else, but where?
+        // if (!id) {
+        //   if (process.env.NODE_ENV !== 'production') {
+        //     throw new Error(`getRowId expected an ID, but got ${id}`)
+        //   }
+        // }
+
+        // Make the row
+        const row = createRow(table, table._getRowId(originalRows[i], i, parentRow), originalRows[i], i, depth, undefined, parentRow == null ? void 0 : parentRow.id);
+
+        // Keep track of every row in a flat array
+        rowModel.flatRows.push(row);
+        // Also keep track of every row by its ID
+        rowModel.rowsById[row.id] = row;
+        // Push table row into parent
+        rows.push(row);
+
+        // Get the original subrows
+        if (table.options.getSubRows) {
+          var _row$originalSubRows;
+          row.originalSubRows = table.options.getSubRows(originalRows[i], i);
+
+          // Then recursively access them
+          if ((_row$originalSubRows = row.originalSubRows) != null && _row$originalSubRows.length) {
+            row.subRows = accessRows(row.originalSubRows, depth + 1, row);
+          }
+        }
+      }
+      return rows;
+    };
+    rowModel.rows = accessRows(data);
+    return rowModel;
+  }, {
+    key: process.env.NODE_ENV === 'development' && 'getRowModel',
+    debug: () => {
+      var _table$options$debugA;
+      return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
+    },
+    onChange: () => {
+      table._autoResetPageIndex();
+    }
+  });
+}
+
+function filterRows(rows, filterRowImpl, table) {
+  if (table.options.filterFromLeafRows) {
+    return filterRowModelFromLeafs(rows, filterRowImpl, table);
+  }
+  return filterRowModelFromRoot(rows, filterRowImpl, table);
+}
+function filterRowModelFromLeafs(rowsToFilter, filterRow, table) {
+  var _table$options$maxLea;
+  const newFilteredFlatRows = [];
+  const newFilteredRowsById = {};
+  const maxDepth = (_table$options$maxLea = table.options.maxLeafRowFilterDepth) != null ? _table$options$maxLea : 100;
+  const recurseFilterRows = function (rowsToFilter, depth) {
+    if (depth === void 0) {
+      depth = 0;
+    }
+    const rows = [];
+
+    // Filter from children up first
+    for (let i = 0; i < rowsToFilter.length; i++) {
+      var _row$subRows;
+      let row = rowsToFilter[i];
+      const newRow = createRow(table, row.id, row.original, row.index, row.depth, undefined, row.parentId);
+      newRow.columnFilters = row.columnFilters;
+      if ((_row$subRows = row.subRows) != null && _row$subRows.length && depth < maxDepth) {
+        newRow.subRows = recurseFilterRows(row.subRows, depth + 1);
+        row = newRow;
+        if (filterRow(row) && !newRow.subRows.length) {
+          rows.push(row);
+          newFilteredRowsById[row.id] = row;
+          newFilteredFlatRows.push(row);
+          continue;
+        }
+        if (filterRow(row) || newRow.subRows.length) {
+          rows.push(row);
+          newFilteredRowsById[row.id] = row;
+          newFilteredFlatRows.push(row);
+          continue;
+        }
+      } else {
+        row = newRow;
+        if (filterRow(row)) {
+          rows.push(row);
+          newFilteredRowsById[row.id] = row;
+          newFilteredFlatRows.push(row);
+        }
+      }
+    }
+    return rows;
+  };
+  return {
+    rows: recurseFilterRows(rowsToFilter),
+    flatRows: newFilteredFlatRows,
+    rowsById: newFilteredRowsById
+  };
+}
+function filterRowModelFromRoot(rowsToFilter, filterRow, table) {
+  var _table$options$maxLea2;
+  const newFilteredFlatRows = [];
+  const newFilteredRowsById = {};
+  const maxDepth = (_table$options$maxLea2 = table.options.maxLeafRowFilterDepth) != null ? _table$options$maxLea2 : 100;
+
+  // Filters top level and nested rows
+  const recurseFilterRows = function (rowsToFilter, depth) {
+    if (depth === void 0) {
+      depth = 0;
+    }
+    // Filter from parents downward first
+
+    const rows = [];
+
+    // Apply the filter to any subRows
+    for (let i = 0; i < rowsToFilter.length; i++) {
+      let row = rowsToFilter[i];
+      const pass = filterRow(row);
+      if (pass) {
+        var _row$subRows2;
+        if ((_row$subRows2 = row.subRows) != null && _row$subRows2.length && depth < maxDepth) {
+          const newRow = createRow(table, row.id, row.original, row.index, row.depth, undefined, row.parentId);
+          newRow.subRows = recurseFilterRows(row.subRows, depth + 1);
+          row = newRow;
+        }
+        rows.push(row);
+        newFilteredFlatRows.push(row);
+        newFilteredRowsById[row.id] = row;
+      }
+    }
+    return rows;
+  };
+  return {
+    rows: recurseFilterRows(rowsToFilter),
+    flatRows: newFilteredFlatRows,
+    rowsById: newFilteredRowsById
+  };
+}
+
+function getFilteredRowModel() {
+  return table => memo(() => [table.getPreFilteredRowModel(), table.getState().columnFilters, table.getState().globalFilter], (rowModel, columnFilters, globalFilter) => {
+    if (!rowModel.rows.length || !(columnFilters != null && columnFilters.length) && !globalFilter) {
+      for (let i = 0; i < rowModel.flatRows.length; i++) {
+        rowModel.flatRows[i].columnFilters = {};
+        rowModel.flatRows[i].columnFiltersMeta = {};
+      }
+      return rowModel;
+    }
+    const resolvedColumnFilters = [];
+    const resolvedGlobalFilters = [];
+    (columnFilters != null ? columnFilters : []).forEach(d => {
+      var _filterFn$resolveFilt;
+      const column = table.getColumn(d.id);
+      if (!column) {
+        return;
+      }
+      const filterFn = column.getFilterFn();
+      if (!filterFn) {
+        if (process.env.NODE_ENV !== 'production') {
+          console.warn(`Could not find a valid 'column.filterFn' for column with the ID: ${column.id}.`);
+        }
+        return;
+      }
+      resolvedColumnFilters.push({
+        id: d.id,
+        filterFn,
+        resolvedValue: (_filterFn$resolveFilt = filterFn.resolveFilterValue == null ? void 0 : filterFn.resolveFilterValue(d.value)) != null ? _filterFn$resolveFilt : d.value
+      });
+    });
+    const filterableIds = columnFilters.map(d => d.id);
+    const globalFilterFn = table.getGlobalFilterFn();
+    const globallyFilterableColumns = table.getAllLeafColumns().filter(column => column.getCanGlobalFilter());
+    if (globalFilter && globalFilterFn && globallyFilterableColumns.length) {
+      filterableIds.push('__global__');
+      globallyFilterableColumns.forEach(column => {
+        var _globalFilterFn$resol;
+        resolvedGlobalFilters.push({
+          id: column.id,
+          filterFn: globalFilterFn,
+          resolvedValue: (_globalFilterFn$resol = globalFilterFn.resolveFilterValue == null ? void 0 : globalFilterFn.resolveFilterValue(globalFilter)) != null ? _globalFilterFn$resol : globalFilter
+        });
+      });
+    }
+    let currentColumnFilter;
+    let currentGlobalFilter;
+
+    // Flag the prefiltered row model with each filter state
+    for (let j = 0; j < rowModel.flatRows.length; j++) {
+      const row = rowModel.flatRows[j];
+      row.columnFilters = {};
+      if (resolvedColumnFilters.length) {
+        for (let i = 0; i < resolvedColumnFilters.length; i++) {
+          currentColumnFilter = resolvedColumnFilters[i];
+          const id = currentColumnFilter.id;
+
+          // Tag the row with the column filter state
+          row.columnFilters[id] = currentColumnFilter.filterFn(row, id, currentColumnFilter.resolvedValue, filterMeta => {
+            row.columnFiltersMeta[id] = filterMeta;
+          });
+        }
+      }
+      if (resolvedGlobalFilters.length) {
+        for (let i = 0; i < resolvedGlobalFilters.length; i++) {
+          currentGlobalFilter = resolvedGlobalFilters[i];
+          const id = currentGlobalFilter.id;
+          // Tag the row with the first truthy global filter state
+          if (currentGlobalFilter.filterFn(row, id, currentGlobalFilter.resolvedValue, filterMeta => {
+            row.columnFiltersMeta[id] = filterMeta;
+          })) {
+            row.columnFilters.__global__ = true;
+            break;
+          }
+        }
+        if (row.columnFilters.__global__ !== true) {
+          row.columnFilters.__global__ = false;
+        }
+      }
+    }
+    const filterRowsImpl = row => {
+      // Horizontally filter rows through each column
+      for (let i = 0; i < filterableIds.length; i++) {
+        if (row.columnFilters[filterableIds[i]] === false) {
+          return false;
+        }
+      }
+      return true;
+    };
+
+    // Filter final rows using all of the active filters
+    return filterRows(rowModel.rows, filterRowsImpl, table);
+  }, {
+    key: process.env.NODE_ENV === 'development' && 'getFilteredRowModel',
+    debug: () => {
+      var _table$options$debugA;
+      return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
+    },
+    onChange: () => {
+      table._autoResetPageIndex();
+    }
+  });
+}
+
+function getFacetedRowModel() {
+  return (table, columnId) => memo(() => [table.getPreFilteredRowModel(), table.getState().columnFilters, table.getState().globalFilter, table.getFilteredRowModel()], (preRowModel, columnFilters, globalFilter) => {
+    if (!preRowModel.rows.length || !(columnFilters != null && columnFilters.length) && !globalFilter) {
+      return preRowModel;
+    }
+    const filterableIds = [...columnFilters.map(d => d.id).filter(d => d !== columnId), globalFilter ? '__global__' : undefined].filter(Boolean);
+    const filterRowsImpl = row => {
+      // Horizontally filter rows through each column
+      for (let i = 0; i < filterableIds.length; i++) {
+        if (row.columnFilters[filterableIds[i]] === false) {
+          return false;
+        }
+      }
+      return true;
+    };
+    return filterRows(preRowModel.rows, filterRowsImpl, table);
+  }, {
+    key: process.env.NODE_ENV === 'development' && 'getFacetedRowModel_' + columnId,
+    debug: () => {
+      var _table$options$debugA;
+      return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
+    },
+    onChange: () => {}
+  });
+}
+
+function getFacetedUniqueValues() {
+  return (table, columnId) => memo(() => {
+    var _table$getColumn;
+    return [(_table$getColumn = table.getColumn(columnId)) == null ? void 0 : _table$getColumn.getFacetedRowModel()];
+  }, facetedRowModel => {
+    if (!facetedRowModel) return new Map();
+    let facetedUniqueValues = new Map();
+    for (let i = 0; i < facetedRowModel.flatRows.length; i++) {
+      const values = facetedRowModel.flatRows[i].getUniqueValues(columnId);
+      for (let j = 0; j < values.length; j++) {
+        const value = values[j];
+        if (facetedUniqueValues.has(value)) {
+          var _facetedUniqueValues$;
+          facetedUniqueValues.set(value, ((_facetedUniqueValues$ = facetedUniqueValues.get(value)) != null ? _facetedUniqueValues$ : 0) + 1);
+        } else {
+          facetedUniqueValues.set(value, 1);
+        }
+      }
+    }
+    return facetedUniqueValues;
+  }, {
+    key: process.env.NODE_ENV === 'development' && 'getFacetedUniqueValues_' + columnId,
+    debug: () => {
+      var _table$options$debugA;
+      return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
+    },
+    onChange: () => {}
+  });
+}
+
+function getSortedRowModel() {
+  return table => memo(() => [table.getState().sorting, table.getPreSortedRowModel()], (sorting, rowModel) => {
+    if (!rowModel.rows.length || !(sorting != null && sorting.length)) {
+      return rowModel;
+    }
+    const sortingState = table.getState().sorting;
+    const sortedFlatRows = [];
+
+    // Filter out sortings that correspond to non existing columns
+    const availableSorting = sortingState.filter(sort => {
+      var _table$getColumn;
+      return (_table$getColumn = table.getColumn(sort.id)) == null ? void 0 : _table$getColumn.getCanSort();
+    });
+    const columnInfoById = {};
+    availableSorting.forEach(sortEntry => {
+      const column = table.getColumn(sortEntry.id);
+      if (!column) return;
+      columnInfoById[sortEntry.id] = {
+        sortUndefined: column.columnDef.sortUndefined,
+        invertSorting: column.columnDef.invertSorting,
+        sortingFn: column.getSortingFn()
+      };
+    });
+    const sortData = rows => {
+      // This will also perform a stable sorting using the row index
+      // if needed.
+      const sortedData = rows.map(row => ({
+        ...row
+      }));
+      sortedData.sort((rowA, rowB) => {
+        for (let i = 0; i < availableSorting.length; i += 1) {
+          var _sortEntry$desc;
+          const sortEntry = availableSorting[i];
+          const columnInfo = columnInfoById[sortEntry.id];
+          const isDesc = (_sortEntry$desc = sortEntry == null ? void 0 : sortEntry.desc) != null ? _sortEntry$desc : false;
+          let sortInt = 0;
+
+          // All sorting ints should always return in ascending order
+          if (columnInfo.sortUndefined) {
+            const aValue = rowA.getValue(sortEntry.id);
+            const bValue = rowB.getValue(sortEntry.id);
+            const aUndefined = aValue === undefined;
+            const bUndefined = bValue === undefined;
+            if (aUndefined || bUndefined) {
+              sortInt = aUndefined && bUndefined ? 0 : aUndefined ? columnInfo.sortUndefined : -columnInfo.sortUndefined;
+            }
+          }
+          if (sortInt === 0) {
+            sortInt = columnInfo.sortingFn(rowA, rowB, sortEntry.id);
+          }
+
+          // If sorting is non-zero, take care of desc and inversion
+          if (sortInt !== 0) {
+            if (isDesc) {
+              sortInt *= -1;
+            }
+            if (columnInfo.invertSorting) {
+              sortInt *= -1;
+            }
+            return sortInt;
+          }
+        }
+        return rowA.index - rowB.index;
+      });
+
+      // If there are sub-rows, sort them
+      sortedData.forEach(row => {
+        var _row$subRows;
+        sortedFlatRows.push(row);
+        if ((_row$subRows = row.subRows) != null && _row$subRows.length) {
+          row.subRows = sortData(row.subRows);
+        }
+      });
+      return sortedData;
+    };
+    return {
+      rows: sortData(rowModel.rows),
+      flatRows: sortedFlatRows,
+      rowsById: rowModel.rowsById
+    };
+  }, {
+    key: process.env.NODE_ENV === 'development' && 'getSortedRowModel',
+    debug: () => {
+      var _table$options$debugA;
+      return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
+    },
+    onChange: () => {
+      table._autoResetPageIndex();
+    }
+  });
+}
+function expandRows(rowModel) {
+  const expandedRows = [];
+  const handleRow = row => {
+    var _row$subRows;
+    expandedRows.push(row);
+    if ((_row$subRows = row.subRows) != null && _row$subRows.length && row.getIsExpanded()) {
+      row.subRows.forEach(handleRow);
+    }
+  };
+  rowModel.rows.forEach(handleRow);
+  return {
+    rows: expandedRows,
+    flatRows: rowModel.flatRows,
+    rowsById: rowModel.rowsById
+  };
+}
+
+function getPaginationRowModel(opts) {
+  return table => memo(() => [table.getState().pagination, table.getPrePaginationRowModel(), table.options.paginateExpandedRows ? undefined : table.getState().expanded], (pagination, rowModel) => {
+    if (!rowModel.rows.length) {
+      return rowModel;
+    }
+    const {
+      pageSize,
+      pageIndex
+    } = pagination;
+    let {
+      rows,
+      flatRows,
+      rowsById
+    } = rowModel;
+    const pageStart = pageSize * pageIndex;
+    const pageEnd = pageStart + pageSize;
+    rows = rows.slice(pageStart, pageEnd);
+    let paginatedRowModel;
+    if (!table.options.paginateExpandedRows) {
+      paginatedRowModel = expandRows({
+        rows,
+        flatRows,
+        rowsById
+      });
+    } else {
+      paginatedRowModel = {
+        rows,
+        flatRows,
+        rowsById
+      };
+    }
+    paginatedRowModel.flatRows = [];
+    const handleRow = row => {
+      paginatedRowModel.flatRows.push(row);
+      if (row.subRows.length) {
+        row.subRows.forEach(handleRow);
+      }
+    };
+    paginatedRowModel.rows.forEach(handleRow);
+    return paginatedRowModel;
+  }, {
+    key: process.env.NODE_ENV === 'development' && 'getPaginationRowModel',
+    debug: () => {
+      var _table$options$debugA;
+      return (_table$options$debugA = table.options.debugAll) != null ? _table$options$debugA : table.options.debugTable;
+    }
+  });
+}
+
+/**
+ * react-table
+ *
+ * Copyright (c) TanStack
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+//
+/**
+ * If rendering headers, cells, or footers with custom markup, use flexRender instead of `cell.getValue()` or `cell.renderValue()`.
+ */
+function flexRender(Comp, props) {
+  return !Comp ? null : isReactComponent(Comp) ? /*#__PURE__*/React__namespace.createElement(Comp, props) : Comp;
+}
+function isReactComponent(component) {
+  return isClassComponent(component) || typeof component === 'function' || isExoticComponent(component);
+}
+function isClassComponent(component) {
+  return typeof component === 'function' && (() => {
+    const proto = Object.getPrototypeOf(component);
+    return proto.prototype && proto.prototype.isReactComponent;
+  })();
+}
+function isExoticComponent(component) {
+  return typeof component === 'object' && typeof component.$$typeof === 'symbol' && ['react.memo', 'react.forward_ref'].includes(component.$$typeof.description);
+}
+function useReactTable(options) {
+  // Compose in the generic options to the user options
+  const resolvedOptions = {
+    state: {},
+    // Dummy state
+    onStateChange: () => {},
+    // noop
+    renderFallbackValue: null,
+    ...options
+  };
+
+  // Create a new table and store it in state
+  const [tableRef] = React__namespace.useState(() => ({
+    current: createTable(resolvedOptions)
+  }));
+
+  // By default, manage table state here using the table's initial state
+  const [state, setState] = React__namespace.useState(() => tableRef.current.initialState);
+
+  // Compose the default state above with any user state. This will allow the user
+  // to only control a subset of the state if desired.
+  tableRef.current.setOptions(prev => ({
+    ...prev,
+    ...options,
+    state: {
+      ...state,
+      ...options.state
+    },
+    // Similarly, we'll maintain both our internal state and any user-provided
+    // state.
+    onStateChange: updater => {
+      setState(updater);
+      options.onStateChange == null || options.onStateChange(updater);
+    }
+  }));
+  return tableRef.current;
+}
+
+function DataTablePagination(_a) {
+    var table = _a.table;
+    return (React__default["default"].createElement("div", { className: "flex items-center justify-between px-2" },
+        React__default["default"].createElement("div", { className: "flex-1 text-sm text-muted-foreground" },
+            table.getFilteredSelectedRowModel().rows.length,
+            " of",
+            " ",
+            table.getFilteredRowModel().rows.length,
+            " row(s) selected."),
+        React__default["default"].createElement("div", { className: "flex items-center space-x-6 lg:space-x-8" },
+            React__default["default"].createElement("div", { className: "flex items-center space-x-2" },
+                React__default["default"].createElement("p", { className: "text-sm font-medium" }, "Rows per page"),
+                React__default["default"].createElement(Select$1, { value: "".concat(table.getState().pagination.pageSize), onValueChange: function (value) {
+                        table.setPageSize(Number(value));
+                    } },
+                    React__default["default"].createElement(SelectTrigger, { className: "h-8 w-[70px]" },
+                        React__default["default"].createElement(SelectValue, { placeholder: table.getState().pagination.pageSize })),
+                    React__default["default"].createElement(SelectContent, { side: "top" }, [10, 20, 30, 40, 50].map(function (pageSize) { return (React__default["default"].createElement(SelectItem, { key: pageSize, value: "".concat(pageSize) }, pageSize)); })))),
+            React__default["default"].createElement("div", { className: "flex w-[100px] items-center justify-center text-sm font-medium" },
+                "Page ",
+                table.getState().pagination.pageIndex + 1,
+                " of",
+                " ",
+                table.getPageCount()),
+            React__default["default"].createElement("div", { className: "flex items-center space-x-2" },
+                React__default["default"].createElement(Button$3, { variant: "outline", className: "hidden h-8 w-8 p-0 lg:flex", onClick: function () { return table.setPageIndex(0); }, disabled: !table.getCanPreviousPage() },
+                    React__default["default"].createElement("span", { className: "sr-only" }, "Go to first page"),
+                    React__default["default"].createElement(DoubleArrowLeftIcon, { className: "h-4 w-4" })),
+                React__default["default"].createElement(Button$3, { variant: "outline", className: "h-8 w-8 p-0", onClick: function () { return table.previousPage(); }, disabled: !table.getCanPreviousPage() },
+                    React__default["default"].createElement("span", { className: "sr-only" }, "Go to previous page"),
+                    React__default["default"].createElement(ChevronLeftIcon, { className: "h-4 w-4" })),
+                React__default["default"].createElement(Button$3, { variant: "outline", className: "h-8 w-8 p-0", onClick: function () { return table.nextPage(); }, disabled: !table.getCanNextPage() },
+                    React__default["default"].createElement("span", { className: "sr-only" }, "Go to next page"),
+                    React__default["default"].createElement(ChevronRightIcon, { className: "h-4 w-4" })),
+                React__default["default"].createElement(Button$3, { variant: "outline", className: "hidden h-8 w-8 p-0 lg:flex", onClick: function () { return table.setPageIndex(table.getPageCount() - 1); }, disabled: !table.getCanNextPage() },
+                    React__default["default"].createElement("span", { className: "sr-only" }, "Go to last page"),
+                    React__default["default"].createElement(DoubleArrowRightIcon, { className: "h-4 w-4" }))))));
+}
+
+function DataTableViewOptions(_a) {
+    var table = _a.table;
+    return (React__default["default"].createElement(DropdownMenu, null,
+        React__default["default"].createElement($d08ef79370b62062$export$d2469213b3befba9, { asChild: true },
+            React__default["default"].createElement(Button$3, { variant: "outline", size: "sm", className: "ml-auto hidden h-8 lg:flex" },
+                React__default["default"].createElement(MixerHorizontalIcon, { className: "mr-2 h-4 w-4" }),
+                "View")),
+        React__default["default"].createElement(DropdownMenuContent, { align: "end", className: "w-[150px]" },
+            React__default["default"].createElement(DropdownMenuLabel, null, "Toggle columns"),
+            React__default["default"].createElement(DropdownMenuSeparator, null),
+            table
+                .getAllColumns()
+                .filter(function (column) {
+                return typeof column.accessorFn !== "undefined" && column.getCanHide();
+            })
+                .map(function (column) {
+                return (React__default["default"].createElement(DropdownMenuCheckboxItem, { key: column.id, className: "capitalize", checked: column.getIsVisible(), onCheckedChange: function (value) { return column.toggleVisibility(!!value); } }, column.id));
+            }))));
+}
+
+var statuses = [
+    {
+        value: "backlog",
+        label: "Backlog",
+        icon: QuestionMarkCircledIcon,
+    },
+    {
+        value: "todo",
+        label: "Todo",
+        icon: CircleIcon,
+    },
+    {
+        value: "in progress",
+        label: "In Progress",
+        icon: StopwatchIcon,
+    },
+    {
+        value: "done",
+        label: "Done",
+        icon: CheckCircledIcon,
+    },
+    {
+        value: "canceled",
+        label: "Canceled",
+        icon: CrossCircledIcon,
+    },
+];
+var priorities = [
+    {
+        label: "Low",
+        value: "low",
+        icon: ArrowDownIcon,
+    },
+    {
+        label: "Medium",
+        value: "medium",
+        icon: ArrowRightIcon,
+    },
+    {
+        label: "High",
+        value: "high",
+        icon: ArrowUpIcon,
+    },
+];
+
+function $e42e1063c40fb3ef$export$b9ecd428b558ff10(originalEventHandler, ourEventHandler, { checkForDefaultPrevented: checkForDefaultPrevented = true  } = {}) {
+    return function handleEvent(event) {
+        originalEventHandler === null || originalEventHandler === void 0 || originalEventHandler(event);
+        if (checkForDefaultPrevented === false || !event.defaultPrevented) return ourEventHandler === null || ourEventHandler === void 0 ? void 0 : ourEventHandler(event);
+    };
+}
+
+/**
+ * Set a given ref to a given value
+ * This utility takes care of different types of refs: callback refs and RefObject(s)
+ */ function $6ed0406888f73fc4$var$setRef(ref, value) {
+    if (typeof ref === 'function') ref(value);
+    else if (ref !== null && ref !== undefined) ref.current = value;
+}
+/**
+ * A utility to compose multiple refs together
+ * Accepts callback refs and RefObject(s)
+ */ function $6ed0406888f73fc4$export$43e446d32b3d21af(...refs) {
+    return (node)=>refs.forEach((ref)=>$6ed0406888f73fc4$var$setRef(ref, node)
+        )
+    ;
+}
+/**
+ * A custom hook that composes multiple refs
+ * Accepts callback refs and RefObject(s)
+ */ function $6ed0406888f73fc4$export$c7b2cbe3552a0d05(...refs) {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return React.useCallback($6ed0406888f73fc4$export$43e446d32b3d21af(...refs), refs);
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * createContextScope
+ * -----------------------------------------------------------------------------------------------*/ function $c512c27ab02ef895$export$50c7b4e9d9f19c1(scopeName, createContextScopeDeps = []) {
+    let defaultContexts = [];
+    /* -----------------------------------------------------------------------------------------------
+   * createContext
+   * ---------------------------------------------------------------------------------------------*/ function $c512c27ab02ef895$export$fd42f52fd3ae1109(rootComponentName, defaultContext) {
+        const BaseContext = /*#__PURE__*/ React.createContext(defaultContext);
+        const index = defaultContexts.length;
+        defaultContexts = [
+            ...defaultContexts,
+            defaultContext
+        ];
+        function Provider(props) {
+            const { scope: scope , children: children , ...context } = props;
+            const Context = (scope === null || scope === void 0 ? void 0 : scope[scopeName][index]) || BaseContext; // Only re-memoize when prop values change
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            const value = React.useMemo(()=>context
+            , Object.values(context));
+            return /*#__PURE__*/ React.createElement(Context.Provider, {
+                value: value
+            }, children);
+        }
+        function useContext(consumerName, scope) {
+            const Context = (scope === null || scope === void 0 ? void 0 : scope[scopeName][index]) || BaseContext;
+            const context = React.useContext(Context);
+            if (context) return context;
+            if (defaultContext !== undefined) return defaultContext; // if a defaultContext wasn't specified, it's a required context.
+            throw new Error(`\`${consumerName}\` must be used within \`${rootComponentName}\``);
+        }
+        Provider.displayName = rootComponentName + 'Provider';
+        return [
+            Provider,
+            useContext
+        ];
+    }
+    /* -----------------------------------------------------------------------------------------------
+   * createScope
+   * ---------------------------------------------------------------------------------------------*/ const createScope = ()=>{
+        const scopeContexts = defaultContexts.map((defaultContext)=>{
+            return /*#__PURE__*/ React.createContext(defaultContext);
+        });
+        return function useScope(scope) {
+            const contexts = (scope === null || scope === void 0 ? void 0 : scope[scopeName]) || scopeContexts;
+            return React.useMemo(()=>({
+                    [`__scope${scopeName}`]: {
+                        ...scope,
+                        [scopeName]: contexts
+                    }
+                })
+            , [
+                scope,
+                contexts
+            ]);
+        };
+    };
+    createScope.scopeName = scopeName;
+    return [
+        $c512c27ab02ef895$export$fd42f52fd3ae1109,
+        $c512c27ab02ef895$var$composeContextScopes(createScope, ...createContextScopeDeps)
+    ];
+}
+/* -------------------------------------------------------------------------------------------------
+ * composeContextScopes
+ * -----------------------------------------------------------------------------------------------*/ function $c512c27ab02ef895$var$composeContextScopes(...scopes) {
+    const baseScope = scopes[0];
+    if (scopes.length === 1) return baseScope;
+    const createScope1 = ()=>{
+        const scopeHooks = scopes.map((createScope)=>({
+                useScope: createScope(),
+                scopeName: createScope.scopeName
+            })
+        );
+        return function useComposedScopes(overrideScopes) {
+            const nextScopes1 = scopeHooks.reduce((nextScopes, { useScope: useScope , scopeName: scopeName  })=>{
+                // We are calling a hook inside a callback which React warns against to avoid inconsistent
+                // renders, however, scoping doesn't have render side effects so we ignore the rule.
+                // eslint-disable-next-line react-hooks/rules-of-hooks
+                const scopeProps = useScope(overrideScopes);
+                const currentScope = scopeProps[`__scope${scopeName}`];
+                return {
+                    ...nextScopes,
+                    ...currentScope
+                };
+            }, {});
+            return React.useMemo(()=>({
+                    [`__scope${baseScope.scopeName}`]: nextScopes1
+                })
+            , [
+                nextScopes1
+            ]);
+        };
+    };
+    createScope1.scopeName = baseScope.scopeName;
+    return createScope1;
+}
+
+/**
+ * On the server, React emits a warning when calling `useLayoutEffect`.
+ * This is because neither `useLayoutEffect` nor `useEffect` run on the server.
+ * We use this safe version which suppresses the warning by replacing it with a noop on the server.
+ *
+ * See: https://reactjs.org/docs/hooks-reference.html#uselayouteffect
+ */ const $9f79659886946c16$export$e5c5a5f917a5871c = Boolean(globalThis === null || globalThis === void 0 ? void 0 : globalThis.document) ? React.useLayoutEffect : ()=>{};
+
+const $1746a345f3d73bb7$var$useReactId = React__namespace['useId'.toString()] || (()=>undefined
+);
+let $1746a345f3d73bb7$var$count = 0;
+function $1746a345f3d73bb7$export$f680877a34711e37(deterministicId) {
+    const [id, setId] = React__namespace.useState($1746a345f3d73bb7$var$useReactId()); // React versions older than 18 will have client-side ids only.
+    $9f79659886946c16$export$e5c5a5f917a5871c(()=>{
+        if (!deterministicId) setId((reactId)=>reactId !== null && reactId !== void 0 ? reactId : String($1746a345f3d73bb7$var$count++)
+        );
+    }, [
+        deterministicId
+    ]);
+    return deterministicId || (id ? `radix-${id}` : '');
+}
+
+/**
+ * A custom hook that converts a callback to a ref to avoid triggering re-renders when passed as a
+ * prop or avoid re-executing effects when passed as a dependency
+ */ function $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(callback) {
+    const callbackRef = React.useRef(callback);
+    React.useEffect(()=>{
+        callbackRef.current = callback;
+    }); // https://github.com/facebook/react/issues/19240
+    return React.useMemo(()=>(...args)=>{
+            var _callbackRef$current;
+            return (_callbackRef$current = callbackRef.current) === null || _callbackRef$current === void 0 ? void 0 : _callbackRef$current.call(callbackRef, ...args);
+        }
+    , []);
+}
+
+function $71cd76cc60e0454e$export$6f32135080cb4c3({ prop: prop , defaultProp: defaultProp , onChange: onChange = ()=>{}  }) {
+    const [uncontrolledProp, setUncontrolledProp] = $71cd76cc60e0454e$var$useUncontrolledState({
+        defaultProp: defaultProp,
+        onChange: onChange
+    });
+    const isControlled = prop !== undefined;
+    const value1 = isControlled ? prop : uncontrolledProp;
+    const handleChange = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onChange);
+    const setValue = React.useCallback((nextValue)=>{
+        if (isControlled) {
+            const setter = nextValue;
+            const value = typeof nextValue === 'function' ? setter(prop) : nextValue;
+            if (value !== prop) handleChange(value);
+        } else setUncontrolledProp(nextValue);
+    }, [
+        isControlled,
+        prop,
+        setUncontrolledProp,
+        handleChange
+    ]);
+    return [
+        value1,
+        setValue
+    ];
+}
+function $71cd76cc60e0454e$var$useUncontrolledState({ defaultProp: defaultProp , onChange: onChange  }) {
+    const uncontrolledState = React.useState(defaultProp);
+    const [value] = uncontrolledState;
+    const prevValueRef = React.useRef(value);
+    const handleChange = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onChange);
+    React.useEffect(()=>{
+        if (prevValueRef.current !== value) {
+            handleChange(value);
+            prevValueRef.current = value;
+        }
+    }, [
+        value,
+        prevValueRef,
+        handleChange
+    ]);
+    return uncontrolledState;
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * Slot
+ * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$export$8c6ed5c666ac1360 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { children: children , ...slotProps } = props;
+    const childrenArray = React.Children.toArray(children);
+    const slottable = childrenArray.find($5e63c961fc1ce211$var$isSlottable);
+    if (slottable) {
+        // the new element to render is the one passed as a child of `Slottable`
+        const newElement = slottable.props.children;
+        const newChildren = childrenArray.map((child)=>{
+            if (child === slottable) {
+                // because the new element will be the one rendered, we are only interested
+                // in grabbing its children (`newElement.props.children`)
+                if (React.Children.count(newElement) > 1) return React.Children.only(null);
+                return /*#__PURE__*/ React.isValidElement(newElement) ? newElement.props.children : null;
+            } else return child;
+        });
+        return /*#__PURE__*/ React.createElement($5e63c961fc1ce211$var$SlotClone, _extends$m({}, slotProps, {
+            ref: forwardedRef
+        }), /*#__PURE__*/ React.isValidElement(newElement) ? /*#__PURE__*/ React.cloneElement(newElement, undefined, newChildren) : null);
+    }
+    return /*#__PURE__*/ React.createElement($5e63c961fc1ce211$var$SlotClone, _extends$m({}, slotProps, {
+        ref: forwardedRef
+    }), children);
+});
+$5e63c961fc1ce211$export$8c6ed5c666ac1360.displayName = 'Slot';
+/* -------------------------------------------------------------------------------------------------
+ * SlotClone
+ * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$var$SlotClone = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { children: children , ...slotProps } = props;
+    if (/*#__PURE__*/ React.isValidElement(children)) return /*#__PURE__*/ React.cloneElement(children, {
+        ...$5e63c961fc1ce211$var$mergeProps(slotProps, children.props),
+        ref: $6ed0406888f73fc4$export$43e446d32b3d21af(forwardedRef, children.ref)
+    });
+    return React.Children.count(children) > 1 ? React.Children.only(null) : null;
+});
+$5e63c961fc1ce211$var$SlotClone.displayName = 'SlotClone';
+/* -------------------------------------------------------------------------------------------------
+ * Slottable
+ * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$export$d9f1ccf0bdb05d45 = ({ children: children  })=>{
+    return /*#__PURE__*/ React.createElement(React.Fragment, null, children);
+};
+/* ---------------------------------------------------------------------------------------------- */ function $5e63c961fc1ce211$var$isSlottable(child) {
+    return /*#__PURE__*/ React.isValidElement(child) && child.type === $5e63c961fc1ce211$export$d9f1ccf0bdb05d45;
+}
+function $5e63c961fc1ce211$var$mergeProps(slotProps, childProps) {
+    // all child props should override
+    const overrideProps = {
+        ...childProps
+    };
+    for(const propName in childProps){
+        const slotPropValue = slotProps[propName];
+        const childPropValue = childProps[propName];
+        const isHandler = /^on[A-Z]/.test(propName); // if it's a handler, modify the override by composing the base handler
+        if (isHandler) overrideProps[propName] = (...args)=>{
+            childPropValue === null || childPropValue === void 0 || childPropValue(...args);
+            slotPropValue === null || slotPropValue === void 0 || slotPropValue(...args);
+        };
+        else if (propName === 'style') overrideProps[propName] = {
+            ...slotPropValue,
+            ...childPropValue
+        };
+        else if (propName === 'className') overrideProps[propName] = [
+            slotPropValue,
+            childPropValue
+        ].filter(Boolean).join(' ');
+    }
+    return {
+        ...slotProps,
+        ...overrideProps
+    };
+}
+
+const $8927f6f2acc4f386$var$NODES = [
+    'a',
+    'button',
+    'div',
+    'h2',
+    'h3',
+    'img',
+    'li',
+    'nav',
+    'ol',
+    'p',
+    'span',
+    'svg',
+    'ul'
+]; // Temporary while we await merge of this fix:
+// https://github.com/DefinitelyTyped/DefinitelyTyped/pull/55396
+// prettier-ignore
+/* -------------------------------------------------------------------------------------------------
+ * Primitive
+ * -----------------------------------------------------------------------------------------------*/ const $8927f6f2acc4f386$export$250ffa63cdc0d034 = $8927f6f2acc4f386$var$NODES.reduce((primitive, node)=>{
+    const Node = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+        const { asChild: asChild , ...primitiveProps } = props;
+        const Comp = asChild ? $5e63c961fc1ce211$export$8c6ed5c666ac1360 : node;
+        React.useEffect(()=>{
+            window[Symbol.for('radix-ui')] = true;
+        }, []);
+        return /*#__PURE__*/ React.createElement(Comp, _extends$m({}, primitiveProps, {
+            ref: forwardedRef
+        }));
+    });
+    Node.displayName = `Primitive.${node}`;
+    return {
+        ...primitive,
+        [node]: Node
+    };
+}, {});
+/* -------------------------------------------------------------------------------------------------
+ * Utils
+ * -----------------------------------------------------------------------------------------------*/ /**
+ * Flush custom event dispatch
+ * https://github.com/radix-ui/primitives/pull/1378
+ *
+ * React batches *all* event handlers since version 18, this introduces certain considerations when using custom event types.
+ *
+ * Internally, React prioritises events in the following order:
+ *  - discrete
+ *  - continuous
+ *  - default
+ *
+ * https://github.com/facebook/react/blob/a8a4742f1c54493df00da648a3f9d26e3db9c8b5/packages/react-dom/src/events/ReactDOMEventListener.js#L294-L350
+ *
+ * `discrete` is an  important distinction as updates within these events are applied immediately.
+ * React however, is not able to infer the priority of custom event types due to how they are detected internally.
+ * Because of this, it's possible for updates from custom events to be unexpectedly batched when
+ * dispatched by another `discrete` event.
+ *
+ * In order to ensure that updates from custom events are applied predictably, we need to manually flush the batch.
+ * This utility should be used when dispatching a custom event from within another `discrete` event, this utility
+ * is not nessesary when dispatching known event types, or if dispatching a custom type inside a non-discrete event.
+ * For example:
+ *
+ * dispatching a known click 👎
+ * target.dispatchEvent(new Event(‘click’))
+ *
+ * dispatching a custom type within a non-discrete event 👎
+ * onScroll={(event) => event.target.dispatchEvent(new CustomEvent(‘customType’))}
+ *
+ * dispatching a custom type within a `discrete` event 👍
+ * onPointerDown={(event) => dispatchDiscreteCustomEvent(event.target, new CustomEvent(‘customType’))}
+ *
+ * Note: though React classifies `focus`, `focusin` and `focusout` events as `discrete`, it's  not recommended to use
+ * this utility with them. This is because it's possible for those handlers to be called implicitly during render
+ * e.g. when focus is within a component as it is unmounted, or when managing focus on mount.
+ */ function $8927f6f2acc4f386$export$6d1a0317bde7de7f(target, event) {
+    if (target) ReactDOM.flushSync(()=>target.dispatchEvent(event)
+    );
+}
+
+/**
+ * Listens for when the escape key is down
+ */ function $addc16e1bbe58fd0$export$3a72a57244d6e765(onEscapeKeyDownProp) {
+    const onEscapeKeyDown = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onEscapeKeyDownProp);
+    React.useEffect(()=>{
+        const handleKeyDown = (event)=>{
+            if (event.key === 'Escape') onEscapeKeyDown(event);
+        };
+        document.addEventListener('keydown', handleKeyDown);
+        return ()=>document.removeEventListener('keydown', handleKeyDown)
+        ;
+    }, [
+        onEscapeKeyDown
+    ]);
+}
+
+const $5cb92bef7577960e$var$CONTEXT_UPDATE = 'dismissableLayer.update';
+const $5cb92bef7577960e$var$POINTER_DOWN_OUTSIDE = 'dismissableLayer.pointerDownOutside';
+const $5cb92bef7577960e$var$FOCUS_OUTSIDE = 'dismissableLayer.focusOutside';
+let $5cb92bef7577960e$var$originalBodyPointerEvents;
+const $5cb92bef7577960e$var$DismissableLayerContext = /*#__PURE__*/ React.createContext({
+    layers: new Set(),
+    layersWithOutsidePointerEventsDisabled: new Set(),
+    branches: new Set()
+});
+const $5cb92bef7577960e$export$177fb62ff3ec1f22 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { disableOutsidePointerEvents: disableOutsidePointerEvents = false , onEscapeKeyDown: onEscapeKeyDown , onPointerDownOutside: onPointerDownOutside , onFocusOutside: onFocusOutside , onInteractOutside: onInteractOutside , onDismiss: onDismiss , ...layerProps } = props;
+    const context = React.useContext($5cb92bef7577960e$var$DismissableLayerContext);
+    const [node1, setNode] = React.useState(null);
+    const [, force] = React.useState({});
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05(forwardedRef, (node)=>setNode(node)
+    );
+    const layers = Array.from(context.layers);
+    const [highestLayerWithOutsidePointerEventsDisabled] = [
+        ...context.layersWithOutsidePointerEventsDisabled
+    ].slice(-1); // prettier-ignore
+    const highestLayerWithOutsidePointerEventsDisabledIndex = layers.indexOf(highestLayerWithOutsidePointerEventsDisabled); // prettier-ignore
+    const index = node1 ? layers.indexOf(node1) : -1;
+    const isBodyPointerEventsDisabled = context.layersWithOutsidePointerEventsDisabled.size > 0;
+    const isPointerEventsEnabled = index >= highestLayerWithOutsidePointerEventsDisabledIndex;
+    const pointerDownOutside = $5cb92bef7577960e$var$usePointerDownOutside((event)=>{
+        const target = event.target;
+        const isPointerDownOnBranch = [
+            ...context.branches
+        ].some((branch)=>branch.contains(target)
+        );
+        if (!isPointerEventsEnabled || isPointerDownOnBranch) return;
+        onPointerDownOutside === null || onPointerDownOutside === void 0 || onPointerDownOutside(event);
+        onInteractOutside === null || onInteractOutside === void 0 || onInteractOutside(event);
+        if (!event.defaultPrevented) onDismiss === null || onDismiss === void 0 || onDismiss();
+    });
+    const focusOutside = $5cb92bef7577960e$var$useFocusOutside((event)=>{
+        const target = event.target;
+        const isFocusInBranch = [
+            ...context.branches
+        ].some((branch)=>branch.contains(target)
+        );
+        if (isFocusInBranch) return;
+        onFocusOutside === null || onFocusOutside === void 0 || onFocusOutside(event);
+        onInteractOutside === null || onInteractOutside === void 0 || onInteractOutside(event);
+        if (!event.defaultPrevented) onDismiss === null || onDismiss === void 0 || onDismiss();
+    });
+    $addc16e1bbe58fd0$export$3a72a57244d6e765((event)=>{
+        const isHighestLayer = index === context.layers.size - 1;
+        if (!isHighestLayer) return;
+        onEscapeKeyDown === null || onEscapeKeyDown === void 0 || onEscapeKeyDown(event);
+        if (!event.defaultPrevented && onDismiss) {
+            event.preventDefault();
+            onDismiss();
+        }
+    });
+    React.useEffect(()=>{
+        if (!node1) return;
+        if (disableOutsidePointerEvents) {
+            if (context.layersWithOutsidePointerEventsDisabled.size === 0) {
+                $5cb92bef7577960e$var$originalBodyPointerEvents = document.body.style.pointerEvents;
+                document.body.style.pointerEvents = 'none';
+            }
+            context.layersWithOutsidePointerEventsDisabled.add(node1);
+        }
+        context.layers.add(node1);
+        $5cb92bef7577960e$var$dispatchUpdate();
+        return ()=>{
+            if (disableOutsidePointerEvents && context.layersWithOutsidePointerEventsDisabled.size === 1) document.body.style.pointerEvents = $5cb92bef7577960e$var$originalBodyPointerEvents;
+        };
+    }, [
+        node1,
+        disableOutsidePointerEvents,
+        context
+    ]);
+    /**
+   * We purposefully prevent combining this effect with the `disableOutsidePointerEvents` effect
+   * because a change to `disableOutsidePointerEvents` would remove this layer from the stack
+   * and add it to the end again so the layering order wouldn't be _creation order_.
+   * We only want them to be removed from context stacks when unmounted.
+   */ React.useEffect(()=>{
+        return ()=>{
+            if (!node1) return;
+            context.layers.delete(node1);
+            context.layersWithOutsidePointerEventsDisabled.delete(node1);
+            $5cb92bef7577960e$var$dispatchUpdate();
+        };
+    }, [
+        node1,
+        context
+    ]);
+    React.useEffect(()=>{
+        const handleUpdate = ()=>force({})
+        ;
+        document.addEventListener($5cb92bef7577960e$var$CONTEXT_UPDATE, handleUpdate);
+        return ()=>document.removeEventListener($5cb92bef7577960e$var$CONTEXT_UPDATE, handleUpdate)
+        ;
+    }, []);
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034.div, _extends$m({}, layerProps, {
+        ref: composedRefs,
+        style: {
+            pointerEvents: isBodyPointerEventsDisabled ? isPointerEventsEnabled ? 'auto' : 'none' : undefined,
+            ...props.style
+        },
+        onFocusCapture: $e42e1063c40fb3ef$export$b9ecd428b558ff10(props.onFocusCapture, focusOutside.onFocusCapture),
+        onBlurCapture: $e42e1063c40fb3ef$export$b9ecd428b558ff10(props.onBlurCapture, focusOutside.onBlurCapture),
+        onPointerDownCapture: $e42e1063c40fb3ef$export$b9ecd428b558ff10(props.onPointerDownCapture, pointerDownOutside.onPointerDownCapture)
+    }));
+});
+/* -----------------------------------------------------------------------------------------------*/ /**
+ * Listens for `pointerdown` outside a react subtree. We use `pointerdown` rather than `pointerup`
+ * to mimic layer dismissing behaviour present in OS.
+ * Returns props to pass to the node we want to check for outside events.
+ */ function $5cb92bef7577960e$var$usePointerDownOutside(onPointerDownOutside) {
+    const handlePointerDownOutside = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onPointerDownOutside);
+    const isPointerInsideReactTreeRef = React.useRef(false);
+    const handleClickRef = React.useRef(()=>{});
+    React.useEffect(()=>{
+        const handlePointerDown = (event)=>{
+            if (event.target && !isPointerInsideReactTreeRef.current) {
+                const eventDetail = {
+                    originalEvent: event
+                };
+                function handleAndDispatchPointerDownOutsideEvent() {
+                    $5cb92bef7577960e$var$handleAndDispatchCustomEvent($5cb92bef7577960e$var$POINTER_DOWN_OUTSIDE, handlePointerDownOutside, eventDetail, {
+                        discrete: true
+                    });
                 }
-                return (React__default["default"].createElement(React__default["default"].Fragment, null,
-                    React__default["default"].createElement("tr", null,
-                        React__default["default"].createElement("td", null,
-                            obj.label,
-                            "\u00A0:\u00A0",
-                            obj.value),
-                        React__default["default"].createElement("td", null),
-                        React__default["default"].createElement("td", null,
-                            obj.label1,
-                            "\u00A0:\u00A0",
-                            obj.value1))));
-            })))));
+                /**
+         * On touch devices, we need to wait for a click event because browsers implement
+         * a ~350ms delay between the time the user stops touching the display and when the
+         * browser executres events. We need to ensure we don't reactivate pointer-events within
+         * this timeframe otherwise the browser may execute events that should have been prevented.
+         *
+         * Additionally, this also lets us deal automatically with cancellations when a click event
+         * isn't raised because the page was considered scrolled/drag-scrolled, long-pressed, etc.
+         *
+         * This is why we also continuously remove the previous listener, because we cannot be
+         * certain that it was raised, and therefore cleaned-up.
+         */ if (event.pointerType === 'touch') {
+                    document.removeEventListener('click', handleClickRef.current);
+                    handleClickRef.current = handleAndDispatchPointerDownOutsideEvent;
+                    document.addEventListener('click', handleClickRef.current, {
+                        once: true
+                    });
+                } else handleAndDispatchPointerDownOutsideEvent();
+            }
+            isPointerInsideReactTreeRef.current = false;
+        };
+        /**
+     * if this hook executes in a component that mounts via a `pointerdown` event, the event
+     * would bubble up to the document and trigger a `pointerDownOutside` event. We avoid
+     * this by delaying the event listener registration on the document.
+     * This is not React specific, but rather how the DOM works, ie:
+     * ```
+     * button.addEventListener('pointerdown', () => {
+     *   console.log('I will log');
+     *   document.addEventListener('pointerdown', () => {
+     *     console.log('I will also log');
+     *   })
+     * });
+     */ const timerId = window.setTimeout(()=>{
+            document.addEventListener('pointerdown', handlePointerDown);
+        }, 0);
+        return ()=>{
+            window.clearTimeout(timerId);
+            document.removeEventListener('pointerdown', handlePointerDown);
+            document.removeEventListener('click', handleClickRef.current);
+        };
+    }, [
+        handlePointerDownOutside
+    ]);
+    return {
+        // ensures we check React component tree (not just DOM tree)
+        onPointerDownCapture: ()=>isPointerInsideReactTreeRef.current = true
+    };
+}
+/**
+ * Listens for when focus happens outside a react subtree.
+ * Returns props to pass to the root (node) of the subtree we want to check.
+ */ function $5cb92bef7577960e$var$useFocusOutside(onFocusOutside) {
+    const handleFocusOutside = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onFocusOutside);
+    const isFocusInsideReactTreeRef = React.useRef(false);
+    React.useEffect(()=>{
+        const handleFocus = (event)=>{
+            if (event.target && !isFocusInsideReactTreeRef.current) {
+                const eventDetail = {
+                    originalEvent: event
+                };
+                $5cb92bef7577960e$var$handleAndDispatchCustomEvent($5cb92bef7577960e$var$FOCUS_OUTSIDE, handleFocusOutside, eventDetail, {
+                    discrete: false
+                });
+            }
+        };
+        document.addEventListener('focusin', handleFocus);
+        return ()=>document.removeEventListener('focusin', handleFocus)
+        ;
+    }, [
+        handleFocusOutside
+    ]);
+    return {
+        onFocusCapture: ()=>isFocusInsideReactTreeRef.current = true
+        ,
+        onBlurCapture: ()=>isFocusInsideReactTreeRef.current = false
+    };
+}
+function $5cb92bef7577960e$var$dispatchUpdate() {
+    const event = new CustomEvent($5cb92bef7577960e$var$CONTEXT_UPDATE);
+    document.dispatchEvent(event);
+}
+function $5cb92bef7577960e$var$handleAndDispatchCustomEvent(name, handler, detail, { discrete: discrete  }) {
+    const target = detail.originalEvent.target;
+    const event = new CustomEvent(name, {
+        bubbles: false,
+        cancelable: true,
+        detail: detail
+    });
+    if (handler) target.addEventListener(name, handler, {
+        once: true
+    });
+    if (discrete) $8927f6f2acc4f386$export$6d1a0317bde7de7f(target, event);
+    else target.dispatchEvent(event);
 }
 
-function PoliciesInfo(props) {
-    return (React__default["default"].createElement("div", { className: 'policy-div' },
+const $d3863c46a17e8a28$var$AUTOFOCUS_ON_MOUNT = 'focusScope.autoFocusOnMount';
+const $d3863c46a17e8a28$var$AUTOFOCUS_ON_UNMOUNT = 'focusScope.autoFocusOnUnmount';
+const $d3863c46a17e8a28$var$EVENT_OPTIONS = {
+    bubbles: false,
+    cancelable: true
+};
+const $d3863c46a17e8a28$export$20e40289641fbbb6 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { loop: loop = false , trapped: trapped = false , onMountAutoFocus: onMountAutoFocusProp , onUnmountAutoFocus: onUnmountAutoFocusProp , ...scopeProps } = props;
+    const [container1, setContainer] = React.useState(null);
+    const onMountAutoFocus = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onMountAutoFocusProp);
+    const onUnmountAutoFocus = $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(onUnmountAutoFocusProp);
+    const lastFocusedElementRef = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05(forwardedRef, (node)=>setContainer(node)
+    );
+    const focusScope = React.useRef({
+        paused: false,
+        pause () {
+            this.paused = true;
+        },
+        resume () {
+            this.paused = false;
+        }
+    }).current; // Takes care of trapping focus if focus is moved outside programmatically for example
+    React.useEffect(()=>{
+        if (trapped) {
+            function handleFocusIn(event) {
+                if (focusScope.paused || !container1) return;
+                const target = event.target;
+                if (container1.contains(target)) lastFocusedElementRef.current = target;
+                else $d3863c46a17e8a28$var$focus(lastFocusedElementRef.current, {
+                    select: true
+                });
+            }
+            function handleFocusOut(event) {
+                if (focusScope.paused || !container1) return;
+                if (!container1.contains(event.relatedTarget)) $d3863c46a17e8a28$var$focus(lastFocusedElementRef.current, {
+                    select: true
+                });
+            }
+            document.addEventListener('focusin', handleFocusIn);
+            document.addEventListener('focusout', handleFocusOut);
+            return ()=>{
+                document.removeEventListener('focusin', handleFocusIn);
+                document.removeEventListener('focusout', handleFocusOut);
+            };
+        }
+    }, [
+        trapped,
+        container1,
+        focusScope.paused
+    ]);
+    React.useEffect(()=>{
+        if (container1) {
+            $d3863c46a17e8a28$var$focusScopesStack.add(focusScope);
+            const previouslyFocusedElement = document.activeElement;
+            const hasFocusedCandidate = container1.contains(previouslyFocusedElement);
+            if (!hasFocusedCandidate) {
+                const mountEvent = new CustomEvent($d3863c46a17e8a28$var$AUTOFOCUS_ON_MOUNT, $d3863c46a17e8a28$var$EVENT_OPTIONS);
+                container1.addEventListener($d3863c46a17e8a28$var$AUTOFOCUS_ON_MOUNT, onMountAutoFocus);
+                container1.dispatchEvent(mountEvent);
+                if (!mountEvent.defaultPrevented) {
+                    $d3863c46a17e8a28$var$focusFirst($d3863c46a17e8a28$var$removeLinks($d3863c46a17e8a28$var$getTabbableCandidates(container1)), {
+                        select: true
+                    });
+                    if (document.activeElement === previouslyFocusedElement) $d3863c46a17e8a28$var$focus(container1);
+                }
+            }
+            return ()=>{
+                container1.removeEventListener($d3863c46a17e8a28$var$AUTOFOCUS_ON_MOUNT, onMountAutoFocus); // We hit a react bug (fixed in v17) with focusing in unmount.
+                // We need to delay the focus a little to get around it for now.
+                // See: https://github.com/facebook/react/issues/17894
+                setTimeout(()=>{
+                    const unmountEvent = new CustomEvent($d3863c46a17e8a28$var$AUTOFOCUS_ON_UNMOUNT, $d3863c46a17e8a28$var$EVENT_OPTIONS);
+                    container1.addEventListener($d3863c46a17e8a28$var$AUTOFOCUS_ON_UNMOUNT, onUnmountAutoFocus);
+                    container1.dispatchEvent(unmountEvent);
+                    if (!unmountEvent.defaultPrevented) $d3863c46a17e8a28$var$focus(previouslyFocusedElement !== null && previouslyFocusedElement !== void 0 ? previouslyFocusedElement : document.body, {
+                        select: true
+                    });
+                     // we need to remove the listener after we `dispatchEvent`
+                    container1.removeEventListener($d3863c46a17e8a28$var$AUTOFOCUS_ON_UNMOUNT, onUnmountAutoFocus);
+                    $d3863c46a17e8a28$var$focusScopesStack.remove(focusScope);
+                }, 0);
+            };
+        }
+    }, [
+        container1,
+        onMountAutoFocus,
+        onUnmountAutoFocus,
+        focusScope
+    ]); // Takes care of looping focus (when tabbing whilst at the edges)
+    const handleKeyDown = React.useCallback((event)=>{
+        if (!loop && !trapped) return;
+        if (focusScope.paused) return;
+        const isTabKey = event.key === 'Tab' && !event.altKey && !event.ctrlKey && !event.metaKey;
+        const focusedElement = document.activeElement;
+        if (isTabKey && focusedElement) {
+            const container = event.currentTarget;
+            const [first, last] = $d3863c46a17e8a28$var$getTabbableEdges(container);
+            const hasTabbableElementsInside = first && last; // we can only wrap focus if we have tabbable edges
+            if (!hasTabbableElementsInside) {
+                if (focusedElement === container) event.preventDefault();
+            } else {
+                if (!event.shiftKey && focusedElement === last) {
+                    event.preventDefault();
+                    if (loop) $d3863c46a17e8a28$var$focus(first, {
+                        select: true
+                    });
+                } else if (event.shiftKey && focusedElement === first) {
+                    event.preventDefault();
+                    if (loop) $d3863c46a17e8a28$var$focus(last, {
+                        select: true
+                    });
+                }
+            }
+        }
+    }, [
+        loop,
+        trapped,
+        focusScope.paused
+    ]);
+    return /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034.div, _extends$m({
+        tabIndex: -1
+    }, scopeProps, {
+        ref: composedRefs,
+        onKeyDown: handleKeyDown
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * Utils
+ * -----------------------------------------------------------------------------------------------*/ /**
+ * Attempts focusing the first element in a list of candidates.
+ * Stops when focus has actually moved.
+ */ function $d3863c46a17e8a28$var$focusFirst(candidates, { select: select = false  } = {}) {
+    const previouslyFocusedElement = document.activeElement;
+    for (const candidate of candidates){
+        $d3863c46a17e8a28$var$focus(candidate, {
+            select: select
+        });
+        if (document.activeElement !== previouslyFocusedElement) return;
+    }
+}
+/**
+ * Returns the first and last tabbable elements inside a container.
+ */ function $d3863c46a17e8a28$var$getTabbableEdges(container) {
+    const candidates = $d3863c46a17e8a28$var$getTabbableCandidates(container);
+    const first = $d3863c46a17e8a28$var$findVisible(candidates, container);
+    const last = $d3863c46a17e8a28$var$findVisible(candidates.reverse(), container);
+    return [
+        first,
+        last
+    ];
+}
+/**
+ * Returns a list of potential tabbable candidates.
+ *
+ * NOTE: This is only a close approximation. For example it doesn't take into account cases like when
+ * elements are not visible. This cannot be worked out easily by just reading a property, but rather
+ * necessitate runtime knowledge (computed styles, etc). We deal with these cases separately.
+ *
+ * See: https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker
+ * Credit: https://github.com/discord/focus-layers/blob/master/src/util/wrapFocus.tsx#L1
+ */ function $d3863c46a17e8a28$var$getTabbableCandidates(container) {
+    const nodes = [];
+    const walker = document.createTreeWalker(container, NodeFilter.SHOW_ELEMENT, {
+        acceptNode: (node)=>{
+            const isHiddenInput = node.tagName === 'INPUT' && node.type === 'hidden';
+            if (node.disabled || node.hidden || isHiddenInput) return NodeFilter.FILTER_SKIP; // `.tabIndex` is not the same as the `tabindex` attribute. It works on the
+            // runtime's understanding of tabbability, so this automatically accounts
+            // for any kind of element that could be tabbed to.
+            return node.tabIndex >= 0 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+        }
+    });
+    while(walker.nextNode())nodes.push(walker.currentNode); // we do not take into account the order of nodes with positive `tabIndex` as it
+    // hinders accessibility to have tab order different from visual order.
+    return nodes;
+}
+/**
+ * Returns the first visible element in a list.
+ * NOTE: Only checks visibility up to the `container`.
+ */ function $d3863c46a17e8a28$var$findVisible(elements, container) {
+    for (const element of elements){
+        // we stop checking if it's hidden at the `container` level (excluding)
+        if (!$d3863c46a17e8a28$var$isHidden(element, {
+            upTo: container
+        })) return element;
+    }
+}
+function $d3863c46a17e8a28$var$isHidden(node, { upTo: upTo  }) {
+    if (getComputedStyle(node).visibility === 'hidden') return true;
+    while(node){
+        // we stop at `upTo` (excluding it)
+        if (upTo !== undefined && node === upTo) return false;
+        if (getComputedStyle(node).display === 'none') return true;
+        node = node.parentElement;
+    }
+    return false;
+}
+function $d3863c46a17e8a28$var$isSelectableInput(element) {
+    return element instanceof HTMLInputElement && 'select' in element;
+}
+function $d3863c46a17e8a28$var$focus(element, { select: select = false  } = {}) {
+    // only focus if that element is focusable
+    if (element && element.focus) {
+        const previouslyFocusedElement = document.activeElement; // NOTE: we prevent scrolling on focus, to minimize jarring transitions for users
+        element.focus({
+            preventScroll: true
+        }); // only select if its not the same element, it supports selection and we need to select
+        if (element !== previouslyFocusedElement && $d3863c46a17e8a28$var$isSelectableInput(element) && select) element.select();
+    }
+}
+/* -------------------------------------------------------------------------------------------------
+ * FocusScope stack
+ * -----------------------------------------------------------------------------------------------*/ const $d3863c46a17e8a28$var$focusScopesStack = $d3863c46a17e8a28$var$createFocusScopesStack();
+function $d3863c46a17e8a28$var$createFocusScopesStack() {
+    /** A stack of focus scopes, with the active one at the top */ let stack = [];
+    return {
+        add (focusScope) {
+            // pause the currently active focus scope (at the top of the stack)
+            const activeFocusScope = stack[0];
+            if (focusScope !== activeFocusScope) activeFocusScope === null || activeFocusScope === void 0 || activeFocusScope.pause();
+             // remove in case it already exists (because we'll re-add it at the top of the stack)
+            stack = $d3863c46a17e8a28$var$arrayRemove(stack, focusScope);
+            stack.unshift(focusScope);
+        },
+        remove (focusScope) {
+            var _stack$;
+            stack = $d3863c46a17e8a28$var$arrayRemove(stack, focusScope);
+            (_stack$ = stack[0]) === null || _stack$ === void 0 || _stack$.resume();
+        }
+    };
+}
+function $d3863c46a17e8a28$var$arrayRemove(array, item) {
+    const updatedArray = [
+        ...array
+    ];
+    const index = updatedArray.indexOf(item);
+    if (index !== -1) updatedArray.splice(index, 1);
+    return updatedArray;
+}
+function $d3863c46a17e8a28$var$removeLinks(items) {
+    return items.filter((item)=>item.tagName !== 'A'
+    );
+}
+
+const $f1701beae083dbae$export$602eac185826482c = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    var _globalThis$document;
+    const { container: container = globalThis === null || globalThis === void 0 ? void 0 : (_globalThis$document = globalThis.document) === null || _globalThis$document === void 0 ? void 0 : _globalThis$document.body , ...portalProps } = props;
+    return container ? /*#__PURE__*/ ReactDOM__default["default"].createPortal(/*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034.div, _extends$m({}, portalProps, {
+        ref: forwardedRef
+    })), container) : null;
+});
+
+function $fe963b355347cc68$export$3e6543de14f8614f(initialState, machine) {
+    return React.useReducer((state, event)=>{
+        const nextState = machine[state][event];
+        return nextState !== null && nextState !== void 0 ? nextState : state;
+    }, initialState);
+}
+
+
+const $921a889cee6df7e8$export$99c2b779aa4e8b8b = (props)=>{
+    const { present: present , children: children  } = props;
+    const presence = $921a889cee6df7e8$var$usePresence(present);
+    const child = typeof children === 'function' ? children({
+        present: presence.isPresent
+    }) : React.Children.only(children);
+    const ref = $6ed0406888f73fc4$export$c7b2cbe3552a0d05(presence.ref, child.ref);
+    const forceMount = typeof children === 'function';
+    return forceMount || presence.isPresent ? /*#__PURE__*/ React.cloneElement(child, {
+        ref: ref
+    }) : null;
+};
+$921a889cee6df7e8$export$99c2b779aa4e8b8b.displayName = 'Presence';
+/* -------------------------------------------------------------------------------------------------
+ * usePresence
+ * -----------------------------------------------------------------------------------------------*/ function $921a889cee6df7e8$var$usePresence(present) {
+    const [node1, setNode] = React.useState();
+    const stylesRef = React.useRef({});
+    const prevPresentRef = React.useRef(present);
+    const prevAnimationNameRef = React.useRef('none');
+    const initialState = present ? 'mounted' : 'unmounted';
+    const [state, send] = $fe963b355347cc68$export$3e6543de14f8614f(initialState, {
+        mounted: {
+            UNMOUNT: 'unmounted',
+            ANIMATION_OUT: 'unmountSuspended'
+        },
+        unmountSuspended: {
+            MOUNT: 'mounted',
+            ANIMATION_END: 'unmounted'
+        },
+        unmounted: {
+            MOUNT: 'mounted'
+        }
+    });
+    React.useEffect(()=>{
+        const currentAnimationName = $921a889cee6df7e8$var$getAnimationName(stylesRef.current);
+        prevAnimationNameRef.current = state === 'mounted' ? currentAnimationName : 'none';
+    }, [
+        state
+    ]);
+    $9f79659886946c16$export$e5c5a5f917a5871c(()=>{
+        const styles = stylesRef.current;
+        const wasPresent = prevPresentRef.current;
+        const hasPresentChanged = wasPresent !== present;
+        if (hasPresentChanged) {
+            const prevAnimationName = prevAnimationNameRef.current;
+            const currentAnimationName = $921a889cee6df7e8$var$getAnimationName(styles);
+            if (present) send('MOUNT');
+            else if (currentAnimationName === 'none' || (styles === null || styles === void 0 ? void 0 : styles.display) === 'none') // If there is no exit animation or the element is hidden, animations won't run
+            // so we unmount instantly
+            send('UNMOUNT');
+            else {
+                /**
+         * When `present` changes to `false`, we check changes to animation-name to
+         * determine whether an animation has started. We chose this approach (reading
+         * computed styles) because there is no `animationrun` event and `animationstart`
+         * fires after `animation-delay` has expired which would be too late.
+         */ const isAnimating = prevAnimationName !== currentAnimationName;
+                if (wasPresent && isAnimating) send('ANIMATION_OUT');
+                else send('UNMOUNT');
+            }
+            prevPresentRef.current = present;
+        }
+    }, [
+        present,
+        send
+    ]);
+    $9f79659886946c16$export$e5c5a5f917a5871c(()=>{
+        if (node1) {
+            /**
+       * Triggering an ANIMATION_OUT during an ANIMATION_IN will fire an `animationcancel`
+       * event for ANIMATION_IN after we have entered `unmountSuspended` state. So, we
+       * make sure we only trigger ANIMATION_END for the currently active animation.
+       */ const handleAnimationEnd = (event)=>{
+                const currentAnimationName = $921a889cee6df7e8$var$getAnimationName(stylesRef.current);
+                const isCurrentAnimation = currentAnimationName.includes(event.animationName);
+                if (event.target === node1 && isCurrentAnimation) // With React 18 concurrency this update is applied
+                // a frame after the animation ends, creating a flash of visible content.
+                // By manually flushing we ensure they sync within a frame, removing the flash.
+                ReactDOM.flushSync(()=>send('ANIMATION_END')
+                );
+            };
+            const handleAnimationStart = (event)=>{
+                if (event.target === node1) // if animation occurred, store its name as the previous animation.
+                prevAnimationNameRef.current = $921a889cee6df7e8$var$getAnimationName(stylesRef.current);
+            };
+            node1.addEventListener('animationstart', handleAnimationStart);
+            node1.addEventListener('animationcancel', handleAnimationEnd);
+            node1.addEventListener('animationend', handleAnimationEnd);
+            return ()=>{
+                node1.removeEventListener('animationstart', handleAnimationStart);
+                node1.removeEventListener('animationcancel', handleAnimationEnd);
+                node1.removeEventListener('animationend', handleAnimationEnd);
+            };
+        } else // Transition to the unmounted state if the node is removed prematurely.
+        // We avoid doing so during cleanup as the node may change but still exist.
+        send('ANIMATION_END');
+    }, [
+        node1,
+        send
+    ]);
+    return {
+        isPresent: [
+            'mounted',
+            'unmountSuspended'
+        ].includes(state),
+        ref: React.useCallback((node)=>{
+            if (node) stylesRef.current = getComputedStyle(node);
+            setNode(node);
+        }, [])
+    };
+}
+/* -----------------------------------------------------------------------------------------------*/ function $921a889cee6df7e8$var$getAnimationName(styles) {
+    return (styles === null || styles === void 0 ? void 0 : styles.animationName) || 'none';
+}
+
+/** Number of components which have requested interest to have focus guards */ let $3db38b7d1fb3fe6a$var$count = 0;
+/**
+ * Injects a pair of focus guards at the edges of the whole DOM tree
+ * to ensure `focusin` & `focusout` events can be caught consistently.
+ */ function $3db38b7d1fb3fe6a$export$b7ece24a22aeda8c() {
+    React.useEffect(()=>{
+        var _edgeGuards$, _edgeGuards$2;
+        const edgeGuards = document.querySelectorAll('[data-radix-focus-guard]');
+        document.body.insertAdjacentElement('afterbegin', (_edgeGuards$ = edgeGuards[0]) !== null && _edgeGuards$ !== void 0 ? _edgeGuards$ : $3db38b7d1fb3fe6a$var$createFocusGuard());
+        document.body.insertAdjacentElement('beforeend', (_edgeGuards$2 = edgeGuards[1]) !== null && _edgeGuards$2 !== void 0 ? _edgeGuards$2 : $3db38b7d1fb3fe6a$var$createFocusGuard());
+        $3db38b7d1fb3fe6a$var$count++;
+        return ()=>{
+            if ($3db38b7d1fb3fe6a$var$count === 1) document.querySelectorAll('[data-radix-focus-guard]').forEach((node)=>node.remove()
+            );
+            $3db38b7d1fb3fe6a$var$count--;
+        };
+    }, []);
+}
+function $3db38b7d1fb3fe6a$var$createFocusGuard() {
+    const element = document.createElement('span');
+    element.setAttribute('data-radix-focus-guard', '');
+    element.tabIndex = 0;
+    element.style.cssText = 'outline: none; opacity: 0; position: fixed; pointer-events: none';
+    return element;
+}
+
+var effectCar = createSidecarMedium();
+
+var nothing = function () {
+    return;
+};
+/**
+ * Removes scrollbar from the page and contain the scroll within the Lock
+ */
+var RemoveScroll = React__namespace.forwardRef(function (props, parentRef) {
+    var ref = React__namespace.useRef(null);
+    var _a = React__namespace.useState({
+        onScrollCapture: nothing,
+        onWheelCapture: nothing,
+        onTouchMoveCapture: nothing,
+    }), callbacks = _a[0], setCallbacks = _a[1];
+    var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? 'div' : _b, rest = __rest$7(props, ["forwardProps", "children", "className", "removeScrollBar", "enabled", "shards", "sideCar", "noIsolation", "inert", "allowPinchZoom", "as"]);
+    var SideCar = sideCar;
+    var containerRef = useMergeRefs([ref, parentRef]);
+    var containerProps = __assign$2(__assign$2({}, rest), callbacks);
+    return (React__namespace.createElement(React__namespace.Fragment, null,
+        enabled && (React__namespace.createElement(SideCar, { sideCar: effectCar, removeScrollBar: removeScrollBar, shards: shards, noIsolation: noIsolation, inert: inert, setCallbacks: setCallbacks, allowPinchZoom: !!allowPinchZoom, lockRef: ref })),
+        forwardProps ? (React__namespace.cloneElement(React__namespace.Children.only(children), __assign$2(__assign$2({}, containerProps), { ref: containerRef }))) : (React__namespace.createElement(Container, __assign$2({}, containerProps, { className: className, ref: containerRef }), children))));
+});
+RemoveScroll.defaultProps = {
+    enabled: true,
+    removeScrollBar: true,
+    inert: false,
+};
+RemoveScroll.classNames = {
+    fullWidth: fullWidthClassName,
+    zeroRight: zeroRightClassName,
+};
+
+var passiveSupported = false;
+if (typeof window !== 'undefined') {
+    try {
+        var options = Object.defineProperty({}, 'passive', {
+            get: function () {
+                passiveSupported = true;
+                return true;
+            },
+        });
+        // @ts-ignore
+        window.addEventListener('test', options, options);
+        // @ts-ignore
+        window.removeEventListener('test', options, options);
+    }
+    catch (err) {
+        passiveSupported = false;
+    }
+}
+var nonPassive = passiveSupported ? { passive: false } : false;
+
+var elementCouldBeVScrolled = function (node) {
+    var styles = window.getComputedStyle(node);
+    return (styles.overflowY !== 'hidden' && // not-not-scrollable
+        !(styles.overflowY === styles.overflowX && styles.overflowY === 'visible') // scrollable
+    );
+};
+var elementCouldBeHScrolled = function (node) {
+    var styles = window.getComputedStyle(node);
+    return (styles.overflowX !== 'hidden' && // not-not-scrollable
+        !(styles.overflowY === styles.overflowX && styles.overflowX === 'visible') // scrollable
+    );
+};
+var locationCouldBeScrolled = function (axis, node) {
+    var current = node;
+    do {
+        // Skip over shadow root
+        if (typeof ShadowRoot !== 'undefined' && current instanceof ShadowRoot) {
+            current = current.host;
+        }
+        var isScrollable = elementCouldBeScrolled(axis, current);
+        if (isScrollable) {
+            var _a = getScrollVariables(axis, current), s = _a[1], d = _a[2];
+            if (s > d) {
+                return true;
+            }
+        }
+        current = current.parentNode;
+    } while (current && current !== document.body);
+    return false;
+};
+var getVScrollVariables = function (_a) {
+    var scrollTop = _a.scrollTop, scrollHeight = _a.scrollHeight, clientHeight = _a.clientHeight;
+    return [
+        scrollTop,
+        scrollHeight,
+        clientHeight,
+    ];
+};
+var getHScrollVariables = function (_a) {
+    var scrollLeft = _a.scrollLeft, scrollWidth = _a.scrollWidth, clientWidth = _a.clientWidth;
+    return [
+        scrollLeft,
+        scrollWidth,
+        clientWidth,
+    ];
+};
+var elementCouldBeScrolled = function (axis, node) {
+    return axis === 'v' ? elementCouldBeVScrolled(node) : elementCouldBeHScrolled(node);
+};
+var getScrollVariables = function (axis, node) {
+    return axis === 'v' ? getVScrollVariables(node) : getHScrollVariables(node);
+};
+var getDirectionFactor = function (axis, direction) {
+    /**
+     * If the element's direction is rtl (right-to-left), then scrollLeft is 0 when the scrollbar is at its rightmost position,
+     * and then increasingly negative as you scroll towards the end of the content.
+     * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
+     */
+    return axis === 'h' && direction === 'rtl' ? -1 : 1;
+};
+var handleScroll = function (axis, endTarget, event, sourceDelta, noOverscroll) {
+    var directionFactor = getDirectionFactor(axis, window.getComputedStyle(endTarget).direction);
+    var delta = directionFactor * sourceDelta;
+    // find scrollable target
+    var target = event.target;
+    var targetInLock = endTarget.contains(target);
+    var shouldCancelScroll = false;
+    var isDeltaPositive = delta > 0;
+    var availableScroll = 0;
+    var availableScrollTop = 0;
+    do {
+        var _a = getScrollVariables(axis, target), position = _a[0], scroll_1 = _a[1], capacity = _a[2];
+        var elementScroll = scroll_1 - capacity - directionFactor * position;
+        if (position || elementScroll) {
+            if (elementCouldBeScrolled(axis, target)) {
+                availableScroll += elementScroll;
+                availableScrollTop += position;
+            }
+        }
+        target = target.parentNode;
+    } while (
+    // portaled content
+    (!targetInLock && target !== document.body) ||
+        // self content
+        (targetInLock && (endTarget.contains(target) || endTarget === target)));
+    if (isDeltaPositive && ((noOverscroll && availableScroll === 0) || (!noOverscroll && delta > availableScroll))) {
+        shouldCancelScroll = true;
+    }
+    else if (!isDeltaPositive &&
+        ((noOverscroll && availableScrollTop === 0) || (!noOverscroll && -delta > availableScrollTop))) {
+        shouldCancelScroll = true;
+    }
+    return shouldCancelScroll;
+};
+
+var getTouchXY = function (event) {
+    return 'changedTouches' in event ? [event.changedTouches[0].clientX, event.changedTouches[0].clientY] : [0, 0];
+};
+var getDeltaXY = function (event) { return [event.deltaX, event.deltaY]; };
+var extractRef = function (ref) {
+    return ref && 'current' in ref ? ref.current : ref;
+};
+var deltaCompare = function (x, y) { return x[0] === y[0] && x[1] === y[1]; };
+var generateStyle = function (id) { return "\n  .block-interactivity-".concat(id, " {pointer-events: none;}\n  .allow-interactivity-").concat(id, " {pointer-events: all;}\n"); };
+var idCounter$1 = 0;
+var lockStack = [];
+function RemoveScrollSideCar(props) {
+    var shouldPreventQueue = React__namespace.useRef([]);
+    var touchStartRef = React__namespace.useRef([0, 0]);
+    var activeAxis = React__namespace.useRef();
+    var id = React__namespace.useState(idCounter$1++)[0];
+    var Style = React__namespace.useState(function () { return styleSingleton(); })[0];
+    var lastProps = React__namespace.useRef(props);
+    React__namespace.useEffect(function () {
+        lastProps.current = props;
+    }, [props]);
+    React__namespace.useEffect(function () {
+        if (props.inert) {
+            document.body.classList.add("block-interactivity-".concat(id));
+            var allow_1 = __spreadArray$1([props.lockRef.current], (props.shards || []).map(extractRef), true).filter(Boolean);
+            allow_1.forEach(function (el) { return el.classList.add("allow-interactivity-".concat(id)); });
+            return function () {
+                document.body.classList.remove("block-interactivity-".concat(id));
+                allow_1.forEach(function (el) { return el.classList.remove("allow-interactivity-".concat(id)); });
+            };
+        }
+        return;
+    }, [props.inert, props.lockRef.current, props.shards]);
+    var shouldCancelEvent = React__namespace.useCallback(function (event, parent) {
+        if ('touches' in event && event.touches.length === 2) {
+            return !lastProps.current.allowPinchZoom;
+        }
+        var touch = getTouchXY(event);
+        var touchStart = touchStartRef.current;
+        var deltaX = 'deltaX' in event ? event.deltaX : touchStart[0] - touch[0];
+        var deltaY = 'deltaY' in event ? event.deltaY : touchStart[1] - touch[1];
+        var currentAxis;
+        var target = event.target;
+        var moveDirection = Math.abs(deltaX) > Math.abs(deltaY) ? 'h' : 'v';
+        // allow horizontal touch move on Range inputs. They will not cause any scroll
+        if ('touches' in event && moveDirection === 'h' && target.type === 'range') {
+            return false;
+        }
+        var canBeScrolledInMainDirection = locationCouldBeScrolled(moveDirection, target);
+        if (!canBeScrolledInMainDirection) {
+            return true;
+        }
+        if (canBeScrolledInMainDirection) {
+            currentAxis = moveDirection;
+        }
+        else {
+            currentAxis = moveDirection === 'v' ? 'h' : 'v';
+            canBeScrolledInMainDirection = locationCouldBeScrolled(moveDirection, target);
+            // other axis might be not scrollable
+        }
+        if (!canBeScrolledInMainDirection) {
+            return false;
+        }
+        if (!activeAxis.current && 'changedTouches' in event && (deltaX || deltaY)) {
+            activeAxis.current = currentAxis;
+        }
+        if (!currentAxis) {
+            return true;
+        }
+        var cancelingAxis = activeAxis.current || currentAxis;
+        return handleScroll(cancelingAxis, parent, event, cancelingAxis === 'h' ? deltaX : deltaY, true);
+    }, []);
+    var shouldPrevent = React__namespace.useCallback(function (_event) {
+        var event = _event;
+        if (!lockStack.length || lockStack[lockStack.length - 1] !== Style) {
+            // not the last active
+            return;
+        }
+        var delta = 'deltaY' in event ? getDeltaXY(event) : getTouchXY(event);
+        var sourceEvent = shouldPreventQueue.current.filter(function (e) { return e.name === event.type && e.target === event.target && deltaCompare(e.delta, delta); })[0];
+        // self event, and should be canceled
+        if (sourceEvent && sourceEvent.should) {
+            event.preventDefault();
+            return;
+        }
+        // outside or shard event
+        if (!sourceEvent) {
+            var shardNodes = (lastProps.current.shards || [])
+                .map(extractRef)
+                .filter(Boolean)
+                .filter(function (node) { return node.contains(event.target); });
+            var shouldStop = shardNodes.length > 0 ? shouldCancelEvent(event, shardNodes[0]) : !lastProps.current.noIsolation;
+            if (shouldStop) {
+                event.preventDefault();
+            }
+        }
+    }, []);
+    var shouldCancel = React__namespace.useCallback(function (name, delta, target, should) {
+        var event = { name: name, delta: delta, target: target, should: should };
+        shouldPreventQueue.current.push(event);
+        setTimeout(function () {
+            shouldPreventQueue.current = shouldPreventQueue.current.filter(function (e) { return e !== event; });
+        }, 1);
+    }, []);
+    var scrollTouchStart = React__namespace.useCallback(function (event) {
+        touchStartRef.current = getTouchXY(event);
+        activeAxis.current = undefined;
+    }, []);
+    var scrollWheel = React__namespace.useCallback(function (event) {
+        shouldCancel(event.type, getDeltaXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
+    }, []);
+    var scrollTouchMove = React__namespace.useCallback(function (event) {
+        shouldCancel(event.type, getTouchXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
+    }, []);
+    React__namespace.useEffect(function () {
+        lockStack.push(Style);
+        props.setCallbacks({
+            onScrollCapture: scrollWheel,
+            onWheelCapture: scrollWheel,
+            onTouchMoveCapture: scrollTouchMove,
+        });
+        document.addEventListener('wheel', shouldPrevent, nonPassive);
+        document.addEventListener('touchmove', shouldPrevent, nonPassive);
+        document.addEventListener('touchstart', scrollTouchStart, nonPassive);
+        return function () {
+            lockStack = lockStack.filter(function (inst) { return inst !== Style; });
+            document.removeEventListener('wheel', shouldPrevent, nonPassive);
+            document.removeEventListener('touchmove', shouldPrevent, nonPassive);
+            document.removeEventListener('touchstart', scrollTouchStart, nonPassive);
+        };
+    }, []);
+    var removeScrollBar = props.removeScrollBar, inert = props.inert;
+    return (React__namespace.createElement(React__namespace.Fragment, null,
+        inert ? React__namespace.createElement(Style, { styles: generateStyle(id) }) : null,
+        removeScrollBar ? React__namespace.createElement(RemoveScrollBar, { gapMode: "margin" }) : null));
+}
+
+var SideCar = exportSidecar(effectCar, RemoveScrollSideCar);
+
+var ReactRemoveScroll = React__namespace.forwardRef(function (props, ref) { return (React__namespace.createElement(RemoveScroll, __assign$2({}, props, { ref: ref, sideCar: SideCar }))); });
+ReactRemoveScroll.classNames = RemoveScroll.classNames;
+var $67UHm$RemoveScroll = ReactRemoveScroll;
+
+/* -------------------------------------------------------------------------------------------------
+ * Dialog
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DIALOG_NAME = 'Dialog';
+const [$5d3850c4d0b4e6c7$var$createDialogContext, $5d3850c4d0b4e6c7$export$cc702773b8ea3e41] = $c512c27ab02ef895$export$50c7b4e9d9f19c1($5d3850c4d0b4e6c7$var$DIALOG_NAME);
+const [$5d3850c4d0b4e6c7$var$DialogProvider, $5d3850c4d0b4e6c7$var$useDialogContext] = $5d3850c4d0b4e6c7$var$createDialogContext($5d3850c4d0b4e6c7$var$DIALOG_NAME);
+const $5d3850c4d0b4e6c7$export$3ddf2d174ce01153 = (props)=>{
+    const { __scopeDialog: __scopeDialog , children: children , open: openProp , defaultOpen: defaultOpen , onOpenChange: onOpenChange , modal: modal = true  } = props;
+    const triggerRef = React.useRef(null);
+    const contentRef = React.useRef(null);
+    const [open = false, setOpen] = $71cd76cc60e0454e$export$6f32135080cb4c3({
+        prop: openProp,
+        defaultProp: defaultOpen,
+        onChange: onOpenChange
+    });
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogProvider, {
+        scope: __scopeDialog,
+        triggerRef: triggerRef,
+        contentRef: contentRef,
+        contentId: $1746a345f3d73bb7$export$f680877a34711e37(),
+        titleId: $1746a345f3d73bb7$export$f680877a34711e37(),
+        descriptionId: $1746a345f3d73bb7$export$f680877a34711e37(),
+        open: open,
+        onOpenChange: setOpen,
+        onOpenToggle: React.useCallback(()=>setOpen((prevOpen)=>!prevOpen
+            )
+        , [
+            setOpen
+        ]),
+        modal: modal
+    }, children);
+};
+/* -------------------------------------------------------------------------------------------------
+ * DialogPortal
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$PORTAL_NAME = 'DialogPortal';
+const [$5d3850c4d0b4e6c7$var$PortalProvider, $5d3850c4d0b4e6c7$var$usePortalContext] = $5d3850c4d0b4e6c7$var$createDialogContext($5d3850c4d0b4e6c7$var$PORTAL_NAME, {
+    forceMount: undefined
+});
+const $5d3850c4d0b4e6c7$export$dad7c95542bacce0 = (props)=>{
+    const { __scopeDialog: __scopeDialog , forceMount: forceMount , children: children , container: container  } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$PORTAL_NAME, __scopeDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$PortalProvider, {
+        scope: __scopeDialog,
+        forceMount: forceMount
+    }, React.Children.map(children, (child)=>/*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b, {
+            present: forceMount || context.open
+        }, /*#__PURE__*/ React.createElement($f1701beae083dbae$export$602eac185826482c, {
+            asChild: true,
+            container: container
+        }, child))
+    ));
+};
+/* -------------------------------------------------------------------------------------------------
+ * DialogOverlay
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$OVERLAY_NAME = 'DialogOverlay';
+const $5d3850c4d0b4e6c7$export$bd1d06c79be19e17 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext($5d3850c4d0b4e6c7$var$OVERLAY_NAME, props.__scopeDialog);
+    const { forceMount: forceMount = portalContext.forceMount , ...overlayProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$OVERLAY_NAME, props.__scopeDialog);
+    return context.modal ? /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b, {
+        present: forceMount || context.open
+    }, /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogOverlayImpl, _extends$m({}, overlayProps, {
+        ref: forwardedRef
+    }))) : null;
+});
+const $5d3850c4d0b4e6c7$var$DialogOverlayImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , ...overlayProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$OVERLAY_NAME, __scopeDialog);
+    return(/*#__PURE__*/ // Make sure `Content` is scrollable even when it doesn't live inside `RemoveScroll`
+    // ie. when `Overlay` and `Content` are siblings
+    React.createElement($67UHm$RemoveScroll, {
+        as: $5e63c961fc1ce211$export$8c6ed5c666ac1360,
+        allowPinchZoom: true,
+        shards: [
+            context.contentRef
+        ]
+    }, /*#__PURE__*/ React.createElement($8927f6f2acc4f386$export$250ffa63cdc0d034.div, _extends$m({
+        "data-state": $5d3850c4d0b4e6c7$var$getState(context.open)
+    }, overlayProps, {
+        ref: forwardedRef // We re-enable pointer-events prevented by `Dialog.Content` to allow scrolling the overlay.
+        ,
+        style: {
+            pointerEvents: 'auto',
+            ...overlayProps.style
+        }
+    }))));
+});
+/* -------------------------------------------------------------------------------------------------
+ * DialogContent
+ * -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$CONTENT_NAME = 'DialogContent';
+const $5d3850c4d0b4e6c7$export$b6d9565de1e068cf = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const portalContext = $5d3850c4d0b4e6c7$var$usePortalContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
+    const { forceMount: forceMount = portalContext.forceMount , ...contentProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
+    return /*#__PURE__*/ React.createElement($921a889cee6df7e8$export$99c2b779aa4e8b8b, {
+        present: forceMount || context.open
+    }, context.modal ? /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentModal, _extends$m({}, contentProps, {
+        ref: forwardedRef
+    })) : /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentNonModal, _extends$m({}, contentProps, {
+        ref: forwardedRef
+    })));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
+    const contentRef = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05(forwardedRef, context.contentRef, contentRef); // aria-hide everything except the content (better supported equivalent to setting aria-modal)
+    React.useEffect(()=>{
+        const content = contentRef.current;
+        if (content) return hideOthers(content);
+    }, []);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl, _extends$m({}, props, {
+        ref: composedRefs // we make sure focus isn't trapped once `DialogContent` has been closed
+        ,
+        trapFocus: context.open,
+        disableOutsidePointerEvents: true,
+        onCloseAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10(props.onCloseAutoFocus, (event)=>{
+            var _context$triggerRef$c;
+            event.preventDefault();
+            (_context$triggerRef$c = context.triggerRef.current) === null || _context$triggerRef$c === void 0 || _context$triggerRef$c.focus();
+        }),
+        onPointerDownOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10(props.onPointerDownOutside, (event)=>{
+            const originalEvent = event.detail.originalEvent;
+            const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
+            const isRightClick = originalEvent.button === 2 || ctrlLeftClick; // If the event is a right-click, we shouldn't close because
+            // it is effectively as if we right-clicked the `Overlay`.
+            if (isRightClick) event.preventDefault();
+        }) // When focus is trapped, a `focusout` event may still happen.
+        ,
+        onFocusOutside: $e42e1063c40fb3ef$export$b9ecd428b558ff10(props.onFocusOutside, (event)=>event.preventDefault()
+        )
+    }));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentNonModal = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, props.__scopeDialog);
+    const hasInteractedOutsideRef = React.useRef(false);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$var$DialogContentImpl, _extends$m({}, props, {
+        ref: forwardedRef,
+        trapFocus: false,
+        disableOutsidePointerEvents: false,
+        onCloseAutoFocus: (event)=>{
+            var _props$onCloseAutoFoc;
+            (_props$onCloseAutoFoc = props.onCloseAutoFocus) === null || _props$onCloseAutoFoc === void 0 || _props$onCloseAutoFoc.call(props, event);
+            if (!event.defaultPrevented) {
+                var _context$triggerRef$c2;
+                if (!hasInteractedOutsideRef.current) (_context$triggerRef$c2 = context.triggerRef.current) === null || _context$triggerRef$c2 === void 0 || _context$triggerRef$c2.focus(); // Always prevent auto focus because we either focus manually or want user agent focus
+                event.preventDefault();
+            }
+            hasInteractedOutsideRef.current = false;
+        },
+        onInteractOutside: (event)=>{
+            var _props$onInteractOuts, _context$triggerRef$c3;
+            (_props$onInteractOuts = props.onInteractOutside) === null || _props$onInteractOuts === void 0 || _props$onInteractOuts.call(props, event);
+            if (!event.defaultPrevented) hasInteractedOutsideRef.current = true; // Prevent dismissing when clicking the trigger.
+            // As the trigger is already setup to close, without doing so would
+            // cause it to close and immediately open.
+            //
+            // We use `onInteractOutside` as some browsers also
+            // focus on pointer down, creating the same issue.
+            const target = event.target;
+            const targetIsTrigger = (_context$triggerRef$c3 = context.triggerRef.current) === null || _context$triggerRef$c3 === void 0 ? void 0 : _context$triggerRef$c3.contains(target);
+            if (targetIsTrigger) event.preventDefault();
+        }
+    }));
+});
+/* -----------------------------------------------------------------------------------------------*/ const $5d3850c4d0b4e6c7$var$DialogContentImpl = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeDialog: __scopeDialog , trapFocus: trapFocus , onOpenAutoFocus: onOpenAutoFocus , onCloseAutoFocus: onCloseAutoFocus , ...contentProps } = props;
+    const context = $5d3850c4d0b4e6c7$var$useDialogContext($5d3850c4d0b4e6c7$var$CONTENT_NAME, __scopeDialog);
+    const contentRef = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05(forwardedRef, contentRef); // Make sure the whole tree has focus guards as our `Dialog` will be
+    // the last element in the DOM (beacuse of the `Portal`)
+    $3db38b7d1fb3fe6a$export$b7ece24a22aeda8c();
+    return /*#__PURE__*/ React.createElement(React.Fragment, null, /*#__PURE__*/ React.createElement($d3863c46a17e8a28$export$20e40289641fbbb6, {
+        asChild: true,
+        loop: true,
+        trapped: trapFocus,
+        onMountAutoFocus: onOpenAutoFocus,
+        onUnmountAutoFocus: onCloseAutoFocus
+    }, /*#__PURE__*/ React.createElement($5cb92bef7577960e$export$177fb62ff3ec1f22, _extends$m({
+        role: "dialog",
+        id: context.contentId,
+        "aria-describedby": context.descriptionId,
+        "aria-labelledby": context.titleId,
+        "data-state": $5d3850c4d0b4e6c7$var$getState(context.open)
+    }, contentProps, {
+        ref: composedRefs,
+        onDismiss: ()=>context.onOpenChange(false)
+    }))), false);
+});
+/* -----------------------------------------------------------------------------------------------*/ function $5d3850c4d0b4e6c7$var$getState(open) {
+    return open ? 'open' : 'closed';
+}
+const $5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9 = $5d3850c4d0b4e6c7$export$3ddf2d174ce01153;
+const $5d3850c4d0b4e6c7$export$602eac185826482c = $5d3850c4d0b4e6c7$export$dad7c95542bacce0;
+const $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff = $5d3850c4d0b4e6c7$export$bd1d06c79be19e17;
+const $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2 = $5d3850c4d0b4e6c7$export$b6d9565de1e068cf;
+
+// The scores are arranged so that a continuous match of characters will
+// result in a total score of 1.
+//
+// The best case, this character is a match, and either this is the start
+// of the string, or the previous character was also a match.
+var SCORE_CONTINUE_MATCH = 1,
+
+    // A new match at the start of a word scores better than a new match
+    // elsewhere as it's more likely that the user will type the starts
+    // of fragments.
+    // (Our notion of word includes CamelCase and hypen-separated, etc.)
+    SCORE_WORD_JUMP = 0.9,
+
+    // Any other match isn't ideal, but we include it for completeness.
+    SCORE_CHARACTER_JUMP = 0.3,
+
+    // If the user transposed two letters, it should be signficantly penalized.
+    //
+    // i.e. "ouch" is more likely than "curtain" when "uc" is typed.
+    SCORE_TRANSPOSITION = 0.1,
+
+    // If the user jumped to half-way through a subsequent word, it should be
+    // very significantly penalized.
+    //
+    // i.e. "loes" is very unlikely to match "loch ness".
+    // NOTE: this is set to 0 for superhuman right now, but we may want to revisit.
+    SCORE_LONG_JUMP = 0,
+
+    // The goodness of a match should decay slightly with each missing
+    // character.
+    //
+    // i.e. "bad" is more likely than "bard" when "bd" is typed.
+    //
+    // This will not change the order of suggestions based on SCORE_* until
+    // 100 characters are inserted between matches.
+    PENALTY_SKIPPED = 0.999,
+
+    // The goodness of an exact-case match should be higher than a
+    // case-insensitive match by a small amount.
+    //
+    // i.e. "HTML" is more likely than "haml" when "HM" is typed.
+    //
+    // This will not change the order of suggestions based on SCORE_* until
+    // 1000 characters are inserted between matches.
+    PENALTY_CASE_MISMATCH = 0.9999,
+
+    // If the word has more characters than the user typed, it should
+    // be penalised slightly.
+    //
+    // i.e. "html" is more likely than "html5" if I type "html".
+    //
+    // However, it may well be the case that there's a sensible secondary
+    // ordering (like alphabetical) that it makes sense to rely on when
+    // there are many prefix matches, so we don't make the penalty increase
+    // with the number of tokens.
+    PENALTY_NOT_COMPLETE = 0.99;
+
+var IS_GAP_REGEXP = /[\\\/\-_+.# \t"@\[\(\{&]/,
+    COUNT_GAPS_REGEXP = /[\\\/\-_+.# \t"@\[\(\{&]/g;
+
+function commandScoreInner(string, abbreviation, lowerString, lowerAbbreviation, stringIndex, abbreviationIndex) {
+
+    if (abbreviationIndex === abbreviation.length) {
+        if (stringIndex === string.length) {
+            return SCORE_CONTINUE_MATCH;
+
+        }
+        return PENALTY_NOT_COMPLETE;
+    }
+
+    var abbreviationChar = lowerAbbreviation.charAt(abbreviationIndex);
+    var index = lowerString.indexOf(abbreviationChar, stringIndex);
+    var highScore = 0;
+
+    var score, transposedScore, wordBreaks;
+
+    while (index >= 0) {
+
+        score = commandScoreInner(string, abbreviation, lowerString, lowerAbbreviation, index + 1, abbreviationIndex + 1);
+        if (score > highScore) {
+            if (index === stringIndex) {
+                score *= SCORE_CONTINUE_MATCH;
+            } else if (IS_GAP_REGEXP.test(string.charAt(index - 1))) {
+                score *= SCORE_WORD_JUMP;
+                wordBreaks = string.slice(stringIndex, index - 1).match(COUNT_GAPS_REGEXP);
+                if (wordBreaks && stringIndex > 0) {
+                    score *= Math.pow(PENALTY_SKIPPED, wordBreaks.length);
+                }
+            } else if (IS_GAP_REGEXP.test(string.slice(stringIndex, index - 1))) {
+                score *= SCORE_LONG_JUMP;
+                if (stringIndex > 0) {
+                    score *= Math.pow(PENALTY_SKIPPED, index - stringIndex);
+                }
+            } else {
+                score *= SCORE_CHARACTER_JUMP;
+                if (stringIndex > 0) {
+                    score *= Math.pow(PENALTY_SKIPPED, index - stringIndex);
+                }
+            }
+
+            if (string.charAt(index) !== abbreviation.charAt(abbreviationIndex)) {
+                score *= PENALTY_CASE_MISMATCH;
+            }
+
+        }
+
+        if (score < SCORE_TRANSPOSITION &&
+                lowerString.charAt(index - 1) === lowerAbbreviation.charAt(abbreviationIndex + 1) &&
+                lowerString.charAt(index - 1) !== lowerAbbreviation.charAt(abbreviationIndex)) {
+            transposedScore = commandScoreInner(string, abbreviation, lowerString, lowerAbbreviation, index + 1, abbreviationIndex + 2);
+
+            if (transposedScore * SCORE_TRANSPOSITION > score) {
+                score = transposedScore * SCORE_TRANSPOSITION;
+            }
+        }
+
+        if (score > highScore) {
+            highScore = score;
+        }
+
+        index = lowerString.indexOf(abbreviationChar, index + 1);
+    }
+
+    return highScore;
+}
+
+function commandScore(string, abbreviation) {
+    /* NOTE:
+     * in the original, we used to do the lower-casing on each recursive call, but this meant that toLowerCase()
+     * was the dominating cost in the algorithm, passing both is a little ugly, but considerably faster.
+     */
+    return commandScoreInner(string, abbreviation, string.toLowerCase(), abbreviation.toLowerCase(), 0, 0);
+}
+
+var commandScore_1 = commandScore;
+
+var ue='[cmdk-list-sizer=""]',M='[cmdk-group=""]',N='[cmdk-group-items=""]',de='[cmdk-group-heading=""]',ee='[cmdk-item=""]',Z=`${ee}:not([aria-disabled="true"])`,z$1="cmdk-item-select",S="data-value",fe=(n,a)=>commandScore_1(n,a),te=React__namespace.createContext(void 0),k$2=()=>React__namespace.useContext(te),re$1=React__namespace.createContext(void 0),U=()=>React__namespace.useContext(re$1),ne=React__namespace.createContext(void 0),oe=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useRef(null),o=x$2(()=>({search:"",value:"",filtered:{count:0,items:new Map,groups:new Set}})),u=x$2(()=>new Set),l=x$2(()=>new Map),p=x$2(()=>new Map),f=x$2(()=>new Set),d=ae(n),{label:v,children:E,value:R,onValueChange:w,filter:O,shouldFilter:ie,...D}=n,F=React__namespace.useId(),g=React__namespace.useId(),A=React__namespace.useId(),y=ye();L(()=>{if(R!==void 0){let e=R.trim().toLowerCase();o.current.value=e,y(6,W),h.emit();}},[R]);let h=React__namespace.useMemo(()=>({subscribe:e=>(f.current.add(e),()=>f.current.delete(e)),snapshot:()=>o.current,setState:(e,c,i)=>{var s,m,b;if(!Object.is(o.current[e],c)){if(o.current[e]=c,e==="search")j(),G(),y(1,V);else if(e==="value")if(((s=d.current)==null?void 0:s.value)!==void 0){(b=(m=d.current).onValueChange)==null||b.call(m,c);return}else i||y(5,W);h.emit();}},emit:()=>{f.current.forEach(e=>e());}}),[]),K=React__namespace.useMemo(()=>({value:(e,c)=>{c!==p.current.get(e)&&(p.current.set(e,c),o.current.filtered.items.set(e,B(c)),y(2,()=>{G(),h.emit();}));},item:(e,c)=>(u.current.add(e),c&&(l.current.has(c)?l.current.get(c).add(e):l.current.set(c,new Set([e]))),y(3,()=>{j(),G(),o.current.value||V(),h.emit();}),()=>{p.current.delete(e),u.current.delete(e),o.current.filtered.items.delete(e),y(4,()=>{j(),V(),h.emit();});}),group:e=>(l.current.has(e)||l.current.set(e,new Set),()=>{p.current.delete(e),l.current.delete(e);}),filter:()=>d.current.shouldFilter,label:v||n["aria-label"],listId:F,inputId:A,labelId:g}),[]);function B(e){var i;let c=((i=d.current)==null?void 0:i.filter)??fe;return e?c(e,o.current.search):0}function G(){if(!r.current||!o.current.search||d.current.shouldFilter===!1)return;let e=o.current.filtered.items,c=[];o.current.filtered.groups.forEach(s=>{let m=l.current.get(s),b=0;m.forEach(P=>{let ce=e.get(P);b=Math.max(ce,b);}),c.push([s,b]);});let i=r.current.querySelector(ue);I().sort((s,m)=>{let b=s.getAttribute(S),P=m.getAttribute(S);return (e.get(P)??0)-(e.get(b)??0)}).forEach(s=>{let m=s.closest(N);m?m.appendChild(s.parentElement===m?s:s.closest(`${N} > *`)):i.appendChild(s.parentElement===i?s:s.closest(`${N} > *`));}),c.sort((s,m)=>m[1]-s[1]).forEach(s=>{let m=r.current.querySelector(`${M}[${S}="${s[0]}"]`);m==null||m.parentElement.appendChild(m);});}function V(){let e=I().find(i=>!i.ariaDisabled),c=e==null?void 0:e.getAttribute(S);h.setState("value",c||void 0);}function j(){if(!o.current.search||d.current.shouldFilter===!1){o.current.filtered.count=u.current.size;return}o.current.filtered.groups=new Set;let e=0;for(let c of u.current){let i=p.current.get(c),s=B(i);o.current.filtered.items.set(c,s),s>0&&e++;}for(let[c,i]of l.current)for(let s of i)if(o.current.filtered.items.get(s)>0){o.current.filtered.groups.add(c);break}o.current.filtered.count=e;}function W(){var c,i,s;let e=_();e&&(((c=e.parentElement)==null?void 0:c.firstChild)===e&&((s=(i=e.closest(M))==null?void 0:i.querySelector(de))==null||s.scrollIntoView({block:"nearest"})),e.scrollIntoView({block:"nearest"}));}function _(){return r.current.querySelector(`${ee}[aria-selected="true"]`)}function I(){return Array.from(r.current.querySelectorAll(Z))}function q(e){let i=I()[e];i&&h.setState("value",i.getAttribute(S));}function $(e){var b;let c=_(),i=I(),s=i.findIndex(P=>P===c),m=i[s+e];(b=d.current)!=null&&b.loop&&(m=s+e<0?i[i.length-1]:s+e===i.length?i[0]:i[s+e]),m&&h.setState("value",m.getAttribute(S));}function J(e){let c=_(),i=c==null?void 0:c.closest(M),s;for(;i&&!s;)i=e>0?Se(i,M):Ce(i,M),s=i==null?void 0:i.querySelector(Z);s?h.setState("value",s.getAttribute(S)):$(e);}let Q=()=>q(I().length-1),X=e=>{e.preventDefault(),e.metaKey?Q():e.altKey?J(1):$(1);},Y=e=>{e.preventDefault(),e.metaKey?q(0):e.altKey?J(-1):$(-1);};return React__namespace.createElement("div",{ref:H([r,a]),...D,"cmdk-root":"",onKeyDown:e=>{var c;if((c=D.onKeyDown)==null||c.call(D,e),!e.defaultPrevented)switch(e.key){case"n":case"j":{e.ctrlKey&&X(e);break}case"ArrowDown":{X(e);break}case"p":case"k":{e.ctrlKey&&Y(e);break}case"ArrowUp":{Y(e);break}case"Home":{e.preventDefault(),q(0);break}case"End":{e.preventDefault(),Q();break}case"Enter":{e.preventDefault();let i=_();if(i){let s=new Event(z$1);i.dispatchEvent(s);}}}}},React__namespace.createElement("label",{"cmdk-label":"",htmlFor:K.inputId,id:K.labelId,style:xe},v),React__namespace.createElement(re$1.Provider,{value:h},React__namespace.createElement(te.Provider,{value:K},E)))}),me=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useId(),o=React__namespace.useRef(null),u=React__namespace.useContext(ne),l=k$2(),p=ae(n);L(()=>l.item(r,u),[]);let f=se(r,o,[n.value,n.children,o]),d=U(),v=T(g=>g.value&&g.value===f.current),E=T(g=>l.filter()===!1?!0:g.search?g.filtered.items.get(r)>0:!0);React__namespace.useEffect(()=>{let g=o.current;if(!(!g||n.disabled))return g.addEventListener(z$1,R),()=>g.removeEventListener(z$1,R)},[E,n.onSelect,n.disabled]);function R(){var g,A;(A=(g=p.current).onSelect)==null||A.call(g,f.current);}function w(){d.setState("value",f.current,!0);}if(!E)return null;let{disabled:O,value:ie,onSelect:D,...F}=n;return React__namespace.createElement("div",{ref:H([o,a]),...F,"cmdk-item":"",role:"option","aria-disabled":O||void 0,"aria-selected":v||void 0,"data-selected":v||void 0,onPointerMove:O?void 0:w,onClick:O?void 0:R},n.children)}),pe=React__namespace.forwardRef((n,a)=>{let{heading:r,children:o,...u}=n,l=React__namespace.useId(),p=React__namespace.useRef(null),f=React__namespace.useRef(null),d=React__namespace.useId(),v=k$2(),E=T(w=>v.filter()===!1?!0:w.search?w.filtered.groups.has(l):!0);L(()=>v.group(l),[]),se(l,p,[n.value,n.heading,f]);let R=React__namespace.createElement(ne.Provider,{value:l},o);return React__namespace.createElement("div",{ref:H([p,a]),...u,"cmdk-group":"",role:"presentation",hidden:E?void 0:!0},r&&React__namespace.createElement("div",{ref:f,"cmdk-group-heading":"","aria-hidden":!0,id:d},r),React__namespace.createElement("div",{"cmdk-group-items":"",role:"group","aria-labelledby":r?d:void 0},R))}),ge=React__namespace.forwardRef((n,a)=>{let{alwaysRender:r,...o}=n,u=React__namespace.useRef(null),l=T(p=>!p.search);return !r&&!l?null:React__namespace.createElement("div",{ref:H([u,a]),...o,"cmdk-separator":"",role:"separator"})}),ve=React__namespace.forwardRef((n,a)=>{let{onValueChange:r,...o}=n,u=n.value!=null,l=U(),p=T(d=>d.search),f=k$2();return React__namespace.useEffect(()=>{n.value!=null&&l.setState("search",n.value);},[n.value]),React__namespace.createElement("input",{ref:a,...o,"cmdk-input":"",autoComplete:"off",autoCorrect:"off",spellCheck:!1,"aria-autocomplete":"list",role:"combobox","aria-expanded":!0,"aria-controls":f.listId,"aria-labelledby":f.labelId,id:f.inputId,type:"text",value:u?n.value:p,onChange:d=>{u||l.setState("search",d.target.value),r==null||r(d.target.value);}})}),Re=React__namespace.forwardRef((n,a)=>{let{children:r,...o}=n,u=React__namespace.useRef(null),l=React__namespace.useRef(null),p=k$2();return React__namespace.useEffect(()=>{if(l.current&&u.current){let f=l.current,d=u.current,v,E=new ResizeObserver(()=>{v=requestAnimationFrame(()=>{let R=f.getBoundingClientRect().height;d.style.setProperty("--cmdk-list-height",R.toFixed(1)+"px");});});return E.observe(f),()=>{cancelAnimationFrame(v),E.unobserve(f);}}},[]),React__namespace.createElement("div",{ref:H([u,a]),...o,"cmdk-list":"",role:"listbox","aria-label":"Suggestions",id:p.listId,"aria-labelledby":p.inputId},React__namespace.createElement("div",{ref:l,"cmdk-list-sizer":""},r))}),be=React__namespace.forwardRef((n,a)=>{let{open:r,onOpenChange:o,container:u,...l}=n;return React__namespace.createElement($5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9,{open:r,onOpenChange:o},React__namespace.createElement($5d3850c4d0b4e6c7$export$602eac185826482c,{container:u},React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff,{"cmdk-overlay":""}),React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2,{"aria-label":n.label,"cmdk-dialog":""},React__namespace.createElement(oe,{ref:a,...l}))))}),he=React__namespace.forwardRef((n,a)=>{let r=React__namespace.useRef(!0),o=T(u=>u.filtered.count===0);return React__namespace.useEffect(()=>{r.current=!1;},[]),r.current||!o?null:React__namespace.createElement("div",{ref:a,...n,"cmdk-empty":"",role:"presentation"})}),Ee=React__namespace.forwardRef((n,a)=>{let{progress:r,children:o,...u}=n;return React__namespace.createElement("div",{ref:a,...u,"cmdk-loading":"",role:"progressbar","aria-valuenow":r,"aria-valuemin":0,"aria-valuemax":100,"aria-label":"Loading..."},React__namespace.createElement("div",{"aria-hidden":!0},o))}),Le=Object.assign(oe,{List:Re,Item:me,Input:ve,Group:pe,Separator:ge,Dialog:be,Empty:he,Loading:Ee});function Se(n,a){let r=n.nextElementSibling;for(;r;){if(r.matches(a))return r;r=r.nextElementSibling;}}function Ce(n,a){let r=n.previousElementSibling;for(;r;){if(r.matches(a))return r;r=r.previousElementSibling;}}function ae(n){let a=React__namespace.useRef(n);return L(()=>{a.current=n;}),a}var L=typeof window>"u"?React__namespace.useEffect:React__namespace.useLayoutEffect;function x$2(n){let a=React__namespace.useRef();return a.current===void 0&&(a.current=n()),a}function H(n){return a=>{n.forEach(r=>{typeof r=="function"?r(a):r!=null&&(r.current=a);});}}function T(n){let a=U(),r=()=>n(a.snapshot());return React__namespace.useSyncExternalStore(a.subscribe,r,r)}function se(n,a,r){let o=React__namespace.useRef(),u=k$2();return L(()=>{var p;let l=(()=>{var f;for(let d of r){if(typeof d=="string")return d.trim().toLowerCase();if(typeof d=="object"&&"current"in d&&d.current)return (f=d.current.textContent)==null?void 0:f.trim().toLowerCase()}})();u.value(n,l),(p=a.current)==null||p.setAttribute(S,l),o.current=l;}),o}var ye=()=>{let[n,a]=React__namespace.useState(),r=x$2(()=>new Map);return L(()=>{r.current.forEach(o=>o()),r.current=new Map;},[n]),(o,u)=>{r.current.set(o,u),a({});}},xe={position:"absolute",width:"1px",height:"1px",padding:"0",margin:"-1px",overflow:"hidden",clip:"rect(0, 0, 0, 0)",whiteSpace:"nowrap",borderWidth:"0"};
+
+var DialogPortal = $5d3850c4d0b4e6c7$export$602eac185826482c$1;
+var DialogOverlay = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1, __assign$2({ ref: ref, className: cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props)));
+});
+DialogOverlay.displayName = $5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1.displayName;
+var DialogContent = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, children = _a.children, props = __rest$7(_a, ["className", "children"]);
+    return (React__namespace.createElement(DialogPortal, null,
+        React__namespace.createElement(DialogOverlay, null),
+        React__namespace.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1, __assign$2({ ref: ref, className: cn("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg", className) }, props),
+            children,
+            React__namespace.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, { className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground" },
+                React__namespace.createElement(Cross2Icon, { className: "h-4 w-4" }),
+                React__namespace.createElement("span", { className: "sr-only" }, "Close")))));
+});
+DialogContent.displayName = $5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1.displayName;
+var DialogTitle = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$f99233281efd08a0, __assign$2({ ref: ref, className: cn("text-lg font-semibold leading-none tracking-tight", className) }, props)));
+});
+DialogTitle.displayName = $5d3850c4d0b4e6c7$export$f99233281efd08a0.displayName;
+var DialogDescription = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement($5d3850c4d0b4e6c7$export$393edc798c47379d, __assign$2({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
+});
+DialogDescription.displayName = $5d3850c4d0b4e6c7$export$393edc798c47379d.displayName;
+
+var Command = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__default["default"].createElement(Le, __assign$2({ ref: ref, className: cn("flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground", className) }, props)));
+});
+Command.displayName = Le.displayName;
+var CommandInput = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__default["default"].createElement("div", { className: "flex items-center border-b px-3", "cmdk-input-wrapper": "" },
+        React__default["default"].createElement(MagnifyingGlassIcon, { className: "mr-2 h-4 w-4 shrink-0 opacity-50" }),
+        React__default["default"].createElement(Le.Input, __assign$2({ ref: ref, className: cn("flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50", className) }, props))));
+});
+CommandInput.displayName = Le.Input.displayName;
+var CommandList = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__default["default"].createElement(Le.List, __assign$2({ ref: ref, className: cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className) }, props)));
+});
+CommandList.displayName = Le.List.displayName;
+var CommandEmpty = React__default["default"].forwardRef(function (props, ref) { return (React__default["default"].createElement(Le.Empty, __assign$2({ ref: ref, className: "py-6 text-center text-sm" }, props))); });
+CommandEmpty.displayName = Le.Empty.displayName;
+var CommandGroup = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__default["default"].createElement(Le.Group, __assign$2({ ref: ref, className: cn("overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground", className) }, props)));
+});
+CommandGroup.displayName = Le.Group.displayName;
+var CommandSeparator = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__default["default"].createElement(Le.Separator, __assign$2({ ref: ref, className: cn("-mx-1 h-px bg-border", className) }, props)));
+});
+CommandSeparator.displayName = Le.Separator.displayName;
+var CommandItem = React__default["default"].forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__default["default"].createElement(Le.Item, __assign$2({ ref: ref, className: cn("relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className) }, props)));
+});
+CommandItem.displayName = Le.Item.displayName;
+
+function DataTableFacetedFilter(_a) {
+    var column = _a.column, title = _a.title, options = _a.options;
+    var facets = column === null || column === void 0 ? void 0 : column.getFacetedUniqueValues();
+    var selectedValues = new Set(column === null || column === void 0 ? void 0 : column.getFilterValue());
+    return (React__namespace.createElement(Popover, null,
+        React__namespace.createElement(PopoverTrigger, { asChild: true },
+            React__namespace.createElement(Button$3, { variant: "outline", size: "sm", className: "h-8 border-dashed" },
+                React__namespace.createElement(PlusCircledIcon, { className: "mr-2 h-4 w-4" }),
+                title,
+                (selectedValues === null || selectedValues === void 0 ? void 0 : selectedValues.size) > 0 && (React__namespace.createElement(React__namespace.Fragment, null,
+                    React__namespace.createElement(Separator, { orientation: "vertical", className: "mx-2 h-4" }),
+                    React__namespace.createElement(Badge, { variant: "secondary", className: "rounded-sm px-1 font-normal lg:hidden" }, selectedValues.size),
+                    React__namespace.createElement("div", { className: "hidden space-x-1 lg:flex" }, selectedValues.size > 2 ? (React__namespace.createElement(Badge, { variant: "secondary", className: "rounded-sm px-1 font-normal" },
+                        selectedValues.size,
+                        " selected")) : (options
+                        .filter(function (option) { return selectedValues.has(option.value); })
+                        .map(function (option) { return (React__namespace.createElement(Badge, { variant: "secondary", key: option.value, className: "rounded-sm px-1 font-normal" }, option.label)); }))))))),
+        React__namespace.createElement(PopoverContent, { className: "w-[200px] p-0", align: "start" },
+            React__namespace.createElement(Command, null,
+                React__namespace.createElement(CommandInput, { placeholder: title }),
+                React__namespace.createElement(CommandList, null,
+                    React__namespace.createElement(CommandEmpty, null, "No results found."),
+                    React__namespace.createElement(CommandGroup, null, options.map(function (option) {
+                        var isSelected = selectedValues.has(option.value);
+                        return (React__namespace.createElement(CommandItem, { key: option.value, onSelect: function () {
+                                if (isSelected) {
+                                    selectedValues.delete(option.value);
+                                }
+                                else {
+                                    selectedValues.add(option.value);
+                                }
+                                var filterValues = Array.from(selectedValues);
+                                column === null || column === void 0 ? void 0 : column.setFilterValue(filterValues.length ? filterValues : undefined);
+                            } },
+                            React__namespace.createElement("div", { className: cn("mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary", isSelected
+                                    ? "bg-primary text-primary-foreground"
+                                    : "opacity-50 [&_svg]:invisible") },
+                                React__namespace.createElement(CheckIcon, { className: cn("h-4 w-4") })),
+                            option.icon && (React__namespace.createElement(option.icon, { className: "mr-2 h-4 w-4 text-muted-foreground" })),
+                            React__namespace.createElement("span", null, option.label),
+                            (facets === null || facets === void 0 ? void 0 : facets.get(option.value)) && (React__namespace.createElement("span", { className: "ml-auto flex h-4 w-4 items-center justify-center font-mono text-xs" }, facets.get(option.value)))));
+                    })),
+                    selectedValues.size > 0 && (React__namespace.createElement(React__namespace.Fragment, null,
+                        React__namespace.createElement(CommandSeparator, null),
+                        React__namespace.createElement(CommandGroup, null,
+                            React__namespace.createElement(CommandItem, { onSelect: function () { return column === null || column === void 0 ? void 0 : column.setFilterValue(undefined); }, className: "justify-center text-center" }, "Clear filters")))))))));
+}
+
+function DataTableToolbar(_a) {
+    var _b, _c;
+    var table = _a.table;
+    var isFiltered = table.getState().columnFilters.length > 0;
+    return (React__default["default"].createElement("div", { className: "flex items-center justify-between" },
+        React__default["default"].createElement("div", { className: "flex flex-1 items-center space-x-2" },
+            React__default["default"].createElement(Input, { placeholder: "Filter rooms...", value: (_c = (_b = table.getColumn("title")) === null || _b === void 0 ? void 0 : _b.getFilterValue()) !== null && _c !== void 0 ? _c : "", onChange: function (event) { var _a; return (_a = table.getColumn("title")) === null || _a === void 0 ? void 0 : _a.setFilterValue(event.target.value); }, className: "h-8 w-[150px] lg:w-[250px]" }),
+            table.getColumn("status") && (React__default["default"].createElement(DataTableFacetedFilter, { column: table.getColumn("status"), title: "Status", options: statuses })),
+            table.getColumn("priority") && (React__default["default"].createElement(DataTableFacetedFilter, { column: table.getColumn("priority"), title: "Priority", options: priorities })),
+            isFiltered && (React__default["default"].createElement(Button$3, { variant: "ghost", onClick: function () { return table.resetColumnFilters(); }, className: "h-8 px-2 lg:px-3" },
+                "Reset",
+                React__default["default"].createElement(Cross2Icon, { className: "ml-2 h-4 w-4" })))),
+        React__default["default"].createElement(DataTableViewOptions, { table: table })));
+}
+
+function DataTable(_a) {
+    var _b;
+    var columns = _a.columns, data = _a.data;
+    var _c = React__namespace.useState({}), rowSelection = _c[0], setRowSelection = _c[1];
+    var _d = React__namespace.useState({}), columnVisibility = _d[0], setColumnVisibility = _d[1];
+    var _e = React__namespace.useState([]), columnFilters = _e[0], setColumnFilters = _e[1];
+    var _f = React__namespace.useState([]), sorting = _f[0], setSorting = _f[1];
+    var table = useReactTable({
+        data: data,
+        columns: columns,
+        state: {
+            sorting: sorting,
+            columnVisibility: columnVisibility,
+            rowSelection: rowSelection,
+            columnFilters: columnFilters,
+        },
+        enableRowSelection: true,
+        onRowSelectionChange: setRowSelection,
+        onSortingChange: setSorting,
+        onColumnFiltersChange: setColumnFilters,
+        onColumnVisibilityChange: setColumnVisibility,
+        getCoreRowModel: getCoreRowModel(),
+        getFilteredRowModel: getFilteredRowModel(),
+        getPaginationRowModel: getPaginationRowModel(),
+        getSortedRowModel: getSortedRowModel(),
+        getFacetedRowModel: getFacetedRowModel(),
+        getFacetedUniqueValues: getFacetedUniqueValues(),
+    });
+    return (React__namespace.createElement("div", { className: "space-y-4" },
+        React__namespace.createElement(DataTableToolbar, { table: table }),
+        React__namespace.createElement("div", { className: "rounded-md border" },
+            React__namespace.createElement(Table, null,
+                React__namespace.createElement(TableHeader, null, table.getHeaderGroups().map(function (headerGroup) { return (React__namespace.createElement(TableRow, { key: headerGroup.id }, headerGroup.headers.map(function (header) {
+                    return (React__namespace.createElement(TableHead, { key: header.id }, header.isPlaceholder
+                        ? null
+                        : flexRender(header.column.columnDef.header, header.getContext())));
+                }))); })),
+                React__namespace.createElement(TableBody, null, ((_b = table.getRowModel().rows) === null || _b === void 0 ? void 0 : _b.length) ? (table.getRowModel().rows.map(function (row) { return (React__namespace.createElement(TableRow, { key: row.id, "data-state": row.getIsSelected() && "selected" }, row.getVisibleCells().map(function (cell) { return (React__namespace.createElement(TableCell, { key: cell.id }, flexRender(cell.column.columnDef.cell, cell.getContext()))); }))); })) : (React__namespace.createElement(TableRow, null,
+                    React__namespace.createElement(TableCell, { colSpan: columns.length, className: "h-24 text-center" }, "No results.")))))),
+        React__namespace.createElement(DataTablePagination, { table: table })));
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialog
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$ROOT_NAME = 'AlertDialog';
+const [$905f4ae918aab1aa$var$createAlertDialogContext, $905f4ae918aab1aa$export$b8891880751c2c5b] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($905f4ae918aab1aa$var$ROOT_NAME, [
+    $5d3850c4d0b4e6c7$export$cc702773b8ea3e41$1
+]);
+const $905f4ae918aab1aa$var$useDialogScope = $5d3850c4d0b4e6c7$export$cc702773b8ea3e41$1();
+const $905f4ae918aab1aa$export$de466dd8317b0b75 = (props)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...alertDialogProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$be92b6f5f03c0fe9$1, _extends$m({}, dialogScope, alertDialogProps, {
+        modal: true
+    }));
+};
+const $905f4ae918aab1aa$export$6edd7a623ef0f40b = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...triggerProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$41fb9f06171c75f4, _extends$m({}, dialogScope, triggerProps, {
+        ref: forwardedRef
+    }));
+});
+const $905f4ae918aab1aa$export$660f2bfdb986706c = (props)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...portalProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$602eac185826482c$1, _extends$m({}, dialogScope, portalProps));
+};
+const $905f4ae918aab1aa$export$a707a4895ce23256 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...overlayProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$c6fdb837b070b4ff$1, _extends$m({}, dialogScope, overlayProps, {
+        ref: forwardedRef
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogContent
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$CONTENT_NAME = 'AlertDialogContent';
+const [$905f4ae918aab1aa$var$AlertDialogContentProvider, $905f4ae918aab1aa$var$useAlertDialogContentContext] = $905f4ae918aab1aa$var$createAlertDialogContext($905f4ae918aab1aa$var$CONTENT_NAME);
+const $905f4ae918aab1aa$export$94e6af45f0af4efd = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , children: children , ...contentProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    const contentRef = React.useRef(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, contentRef);
+    const cancelRef = React.useRef(null);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$69b62a49393917d6, {
+        contentName: $905f4ae918aab1aa$var$CONTENT_NAME,
+        titleName: $905f4ae918aab1aa$var$TITLE_NAME,
+        docsSlug: "alert-dialog"
+    }, /*#__PURE__*/ React.createElement($905f4ae918aab1aa$var$AlertDialogContentProvider, {
+        scope: __scopeAlertDialog,
+        cancelRef: cancelRef
+    }, /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$7c6e2c02157bb7d2$1, _extends$m({
+        role: "alertdialog"
+    }, dialogScope, contentProps, {
+        ref: composedRefs,
+        onOpenAutoFocus: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(contentProps.onOpenAutoFocus, (event)=>{
+            var _cancelRef$current;
+            event.preventDefault();
+            (_cancelRef$current = cancelRef.current) === null || _cancelRef$current === void 0 || _cancelRef$current.focus({
+                preventScroll: true
+            });
+        }),
+        onPointerDownOutside: (event)=>event.preventDefault()
+        ,
+        onInteractOutside: (event)=>event.preventDefault()
+    }), /*#__PURE__*/ React.createElement($5e63c961fc1ce211$export$d9f1ccf0bdb05d45$1, null, children), false)));
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogTitle
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$TITLE_NAME = 'AlertDialogTitle';
+const $905f4ae918aab1aa$export$225e0da62d314b7 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...titleProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$f99233281efd08a0, _extends$m({}, dialogScope, titleProps, {
+        ref: forwardedRef
+    }));
+});
+const $905f4ae918aab1aa$export$a23b55cde55ad9a5 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...descriptionProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$393edc798c47379d, _extends$m({}, dialogScope, descriptionProps, {
+        ref: forwardedRef
+    }));
+});
+const $905f4ae918aab1aa$export$b454f818c58ee85d = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...actionProps } = props;
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, _extends$m({}, dialogScope, actionProps, {
+        ref: forwardedRef
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * AlertDialogCancel
+ * -----------------------------------------------------------------------------------------------*/ const $905f4ae918aab1aa$var$CANCEL_NAME = 'AlertDialogCancel';
+const $905f4ae918aab1aa$export$2f67a923571aaea0 = /*#__PURE__*/ React.forwardRef((props, forwardedRef)=>{
+    const { __scopeAlertDialog: __scopeAlertDialog , ...cancelProps } = props;
+    const { cancelRef: cancelRef  } = $905f4ae918aab1aa$var$useAlertDialogContentContext($905f4ae918aab1aa$var$CANCEL_NAME, __scopeAlertDialog);
+    const dialogScope = $905f4ae918aab1aa$var$useDialogScope(__scopeAlertDialog);
+    const ref = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, cancelRef);
+    return /*#__PURE__*/ React.createElement($5d3850c4d0b4e6c7$export$f39c2d165cd861fe, _extends$m({}, dialogScope, cancelProps, {
+        ref: ref
+    }));
+});
+const $905f4ae918aab1aa$export$be92b6f5f03c0fe9 = $905f4ae918aab1aa$export$de466dd8317b0b75;
+const $905f4ae918aab1aa$export$41fb9f06171c75f4 = $905f4ae918aab1aa$export$6edd7a623ef0f40b;
+const $905f4ae918aab1aa$export$602eac185826482c = $905f4ae918aab1aa$export$660f2bfdb986706c;
+const $905f4ae918aab1aa$export$c6fdb837b070b4ff = $905f4ae918aab1aa$export$a707a4895ce23256;
+const $905f4ae918aab1aa$export$7c6e2c02157bb7d2 = $905f4ae918aab1aa$export$94e6af45f0af4efd;
+const $905f4ae918aab1aa$export$e19cd5f9376f8cee = $905f4ae918aab1aa$export$b454f818c58ee85d;
+const $905f4ae918aab1aa$export$848c9b7ead0df967 = $905f4ae918aab1aa$export$2f67a923571aaea0;
+const $905f4ae918aab1aa$export$f99233281efd08a0 = $905f4ae918aab1aa$export$225e0da62d314b7;
+const $905f4ae918aab1aa$export$393edc798c47379d = $905f4ae918aab1aa$export$a23b55cde55ad9a5;
+
+var AlertDialog = $905f4ae918aab1aa$export$be92b6f5f03c0fe9;
+var AlertDialogTrigger = $905f4ae918aab1aa$export$41fb9f06171c75f4;
+var AlertDialogPortal = $905f4ae918aab1aa$export$602eac185826482c;
+var AlertDialogOverlay = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement($905f4ae918aab1aa$export$c6fdb837b070b4ff, __assign$2({ className: cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props, { ref: ref })));
+});
+AlertDialogOverlay.displayName = $905f4ae918aab1aa$export$c6fdb837b070b4ff.displayName;
+var AlertDialogContent = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement(AlertDialogPortal, null,
+        React__namespace.createElement(AlertDialogOverlay, null),
+        React__namespace.createElement($905f4ae918aab1aa$export$7c6e2c02157bb7d2, __assign$2({ ref: ref, className: cn("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg", className) }, props))));
+});
+AlertDialogContent.displayName = $905f4ae918aab1aa$export$7c6e2c02157bb7d2.displayName;
+var AlertDialogHeader = function (_a) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement("div", __assign$2({ className: cn("flex flex-col space-y-2 text-center sm:text-left", className) }, props)));
+};
+AlertDialogHeader.displayName = "AlertDialogHeader";
+var AlertDialogFooter = function (_a) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement("div", __assign$2({ className: cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className) }, props)));
+};
+AlertDialogFooter.displayName = "AlertDialogFooter";
+var AlertDialogTitle = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement($905f4ae918aab1aa$export$f99233281efd08a0, __assign$2({ ref: ref, className: cn("text-lg font-semibold", className) }, props)));
+});
+AlertDialogTitle.displayName = $905f4ae918aab1aa$export$f99233281efd08a0.displayName;
+var AlertDialogDescription = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement($905f4ae918aab1aa$export$393edc798c47379d, __assign$2({ ref: ref, className: cn("text-sm text-muted-foreground", className) }, props)));
+});
+AlertDialogDescription.displayName =
+    $905f4ae918aab1aa$export$393edc798c47379d.displayName;
+var AlertDialogAction = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement($905f4ae918aab1aa$export$e19cd5f9376f8cee, __assign$2({ ref: ref, className: cn(buttonVariants(), className) }, props)));
+});
+AlertDialogAction.displayName = $905f4ae918aab1aa$export$e19cd5f9376f8cee.displayName;
+var AlertDialogCancel = React__namespace.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React__namespace.createElement($905f4ae918aab1aa$export$848c9b7ead0df967, __assign$2({ ref: ref, className: cn(buttonVariants({ variant: "outline" }), "mt-2 sm:mt-0", className) }, props)));
+});
+AlertDialogCancel.displayName = $905f4ae918aab1aa$export$848c9b7ead0df967.displayName;
+
+function Confirmation(_a) {
+    var children = _a.children, _b = _a.loading, loading = _b === void 0 ? false : _b, title = _a.title, description = _a.description, onCancel = _a.onCancel, onConfirm = _a.onConfirm, _c = _a.cancelBtn, cancelBtn = _c === void 0 ? "Cancel" : _c, _d = _a.open, open = _d === void 0 ? false : _d, _e = _a.continueBtn, continueBtn = _e === void 0 ? "Continue" : _e, _f = _a.loadingBtnText, loadingBtnText = _f === void 0 ? "Deleting..." : _f;
+    return (React__default["default"].createElement(AlertDialog, { open: open },
+        React__default["default"].createElement(AlertDialogTrigger, { asChild: true }, children || ''),
+        React__default["default"].createElement(AlertDialogContent, null,
+            React__default["default"].createElement(AlertDialogHeader, null,
+                React__default["default"].createElement(AlertDialogTitle, null, title),
+                React__default["default"].createElement(AlertDialogDescription, null, description)),
+            React__default["default"].createElement(AlertDialogFooter, null,
+                React__default["default"].createElement(AlertDialogCancel, { disabled: loading, onClick: onCancel }, cancelBtn),
+                React__default["default"].createElement(AlertDialogAction, { disabled: loading, onClick: onConfirm }, loading ? (React__default["default"].createElement(React__default["default"].Fragment, null,
+                    React__default["default"].createElement(Icons.spinner, { className: "mr-2 h-4 w-4 animate-spin" }),
+                    loadingBtnText)) : continueBtn)))));
+}
+
+function Tab(_a) {
+    var items = _a.items;
+    return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement("div", null,
-            React__default["default"].createElement("h2", { className: 'policy-text' }, "Terms & Conditions")),
-        React__default["default"].createElement("div", null,
-            React__default["default"].createElement("ul", { className: 'policy-para' }, props.policyInfoData.map(function (value) {
-                return (React__default["default"].createElement("li", null, value.data));
-            }))),
-        React__default["default"].createElement("h5", { className: 'policy-text-one' }, "Check by:"),
-        React__default["default"].createElement("div", { className: 'signeture-div' }),
-        React__default["default"].createElement("h5", { className: 'signeture-text' }, "Signature")));
+            React__default["default"].createElement("div", { className: "border-b border-gray-200 dark:border-gray-700" },
+                React__default["default"].createElement("ul", { className: "flex cursor-pointer flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400" }, items.map(function (_a) {
+                    var Icon = _a.Icon, row = __rest$7(_a, ["Icon"]);
+                    return (React__default["default"].createElement("li", { className: "me-2" },
+                        React__default["default"].createElement("a", { onClick: row.onClick, className: classnames("inline-flex  items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg   dark:hover:text-gray-300 group", {
+                                "text-blue-600": row.active == true,
+                                "border-blue-600": row.active === true,
+                                "active": row.active === true,
+                                "hover:text-gray-600": row.active !== true,
+                                "hover:border-gray-300": row.active !== true,
+                            }) },
+                            React__default["default"].createElement(Icon, null),
+                            row.label)));
+                })))),
+        React__default["default"].createElement("div", null)));
 }
 
-function ServicesTable(props) {
-    var _a;
-    return (React__default["default"].createElement("div", null,
-        React__default["default"].createElement("div", { className: 'table-two-div' },
-            React__default["default"].createElement("table", { className: 'table-two' },
-                React__default["default"].createElement("tr", null,
-                    React__default["default"].createElement("th", null, "DATE"),
-                    React__default["default"].createElement("th", null, "TYPE"),
-                    React__default["default"].createElement("th", null, "QY"),
-                    React__default["default"].createElement("th", null, "AMOUNT"),
-                    React__default["default"].createElement("th", null, "TOTAL")), (_a = props.serviceData) === null || _a === void 0 ? void 0 :
-                _a.map(function (value) {
-                    return (React__default["default"].createElement("tr", null,
-                        React__default["default"].createElement("td", null, value.date),
-                        React__default["default"].createElement("td", null, value.type),
-                        React__default["default"].createElement("td", null, value.qty),
-                        React__default["default"].createElement("td", null, value.amount),
-                        React__default["default"].createElement("td", null, value.total)));
-                })))));
+function DropdownMenuDemo(_a) {
+    var children = _a.children, info = _a.info; _a.handleEdit; var handleStatusChange = _a.handleStatusChange, handleActions = _a.handleActions;
+    return (React__default["default"].createElement(DropdownMenu, null,
+        React__default["default"].createElement(DropdownMenuTrigger, { asChild: true },
+            React__default["default"].createElement(Button$3, { style: { position: 'absolute', top: 0 }, variant: "ghost" }, children)),
+        React__default["default"].createElement(DropdownMenuContent, { className: "w-56" },
+            React__default["default"].createElement(DropdownMenuLabel, null, "Booking Info - [BLK-13232]"),
+            React__default["default"].createElement(DropdownMenuSeparator, null),
+            React__default["default"].createElement(DropdownMenuGroup, null,
+                React__default["default"].createElement(DropdownMenuItem, null,
+                    React__default["default"].createElement("span", { style: { color: 'blue' } }, "Guest : "),
+                    React__default["default"].createElement("span", null,
+                        "\u00A0",
+                        React__default["default"].createElement("b", null, info === null || info === void 0 ? void 0 :
+                            info.guestName,
+                            " "))),
+                React__default["default"].createElement(DropdownMenuItem, null,
+                    React__default["default"].createElement("span", { style: { color: 'blue' } }, "Status : "),
+                    React__default["default"].createElement("span", null,
+                        "\u00A0",
+                        React__default["default"].createElement("b", null, info.status))),
+                React__default["default"].createElement(DropdownMenuItem, null,
+                    React__default["default"].createElement("span", { style: { color: 'blue' } }, "Check-In : "),
+                    React__default["default"].createElement("span", null,
+                        "\u00A0",
+                        React__default["default"].createElement("b", null,
+                            moment(info.checkInDate).format("MMM Do YY"),
+                            " "))),
+                React__default["default"].createElement(DropdownMenuItem, null,
+                    React__default["default"].createElement("span", { style: { color: 'blue' } }, "Check-Out : "),
+                    React__default["default"].createElement("span", null,
+                        "\u00A0",
+                        React__default["default"].createElement("b", null, moment(info.checkOutDate).format("MMM Do YY"))))),
+            React__default["default"].createElement(DropdownMenuSeparator, null),
+            React__default["default"].createElement(DropdownMenuGroup, null,
+                React__default["default"].createElement(DropdownMenuSub, null,
+                    React__default["default"].createElement(DropdownMenuSubTrigger, null,
+                        React__default["default"].createElement("span", null, "Mark As")),
+                    React__default["default"].createElement(DropdownMenuPortal, null,
+                        React__default["default"].createElement(DropdownMenuSubContent, null,
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange({ status: "confirmed", booking: info }); } },
+                                React__default["default"].createElement("span", null, "Confirmed")),
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange({ status: "newBooking", booking: info }); } },
+                                React__default["default"].createElement("span", null, "New Booking")),
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange({ status: "checkin", booking: info }); } },
+                                React__default["default"].createElement("span", null, "Check in")),
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleStatusChange({ status: "checkout", booking: info }); } },
+                                React__default["default"].createElement("span", null, "Check out")))))),
+            React__default["default"].createElement(DropdownMenuGroup, null,
+                React__default["default"].createElement(DropdownMenuSub, null,
+                    React__default["default"].createElement(DropdownMenuSubTrigger, null,
+                        React__default["default"].createElement("span", null, "Actions")),
+                    React__default["default"].createElement(DropdownMenuPortal, null,
+                        React__default["default"].createElement(DropdownMenuSubContent, null,
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "addService", info: info }); } },
+                                React__default["default"].createElement("span", null, "Add Services")),
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "createInvoice", info: info }); } },
+                                React__default["default"].createElement("span", null, "Create Invoice")),
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "editBooking", info: info }); } },
+                                React__default["default"].createElement("span", null, "Edit Booking")),
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "clientForm", info: info }); } },
+                                React__default["default"].createElement("span", null, "Client Form")),
+                            React__default["default"].createElement(DropdownMenuItem, { onClick: function () { return handleActions({ action: "deleteBooking", info: info }); } },
+                                React__default["default"].createElement("span", null, "Delete Booking")))))))));
 }
 
-function RegistrationForm(props) {
-    return (React__default["default"].createElement("div", { className: 'registrationFormContainer' },
-        React__default["default"].createElement(Header, __assign$2({}, props)),
-        React__default["default"].createElement("div", { className: 'internalContiner' },
-            React__default["default"].createElement(InfoTable, __assign$2({}, props)),
-            React__default["default"].createElement(PoliciesInfo, __assign$2({}, props)),
-            React__default["default"].createElement(ServicesTable, __assign$2({}, props)))));
+function calander(_a) {
+    var _b = _a.calanderColumns, calanderColumns = _b === void 0 ? [] : _b, _c = _a.calanderRows, calanderRows = _c === void 0 ? [] : _c, handleActions = _a.handleActions, handleStatusChange = _a.handleStatusChange;
+    var columnHelper = createColumnHelper();
+    var columns = React__default["default"].useMemo(function () {
+        var column = calanderColumns.map(function (row, index) {
+            return (columnHelper.accessor(String(index === 0 ? 'roomName' : row.date), {
+                header: function (info) {
+                    var heading;
+                    var isSameDay = moment(row.date).isSame(new Date(), 'day');
+                    if (index !== 0) {
+                        heading = moment(row.date).format("DD");
+                    }
+                    else {
+                        return React__default["default"].createElement("div", { style: { display: 'flex', justifyContent: 'center' } },
+                            React__default["default"].createElement("div", { className: 'flex ', style: {
+                                    backgroundColor: '#3A7C7C',
+                                    color: 'white',
+                                    borderRadius: 6,
+                                    padding: 8,
+                                    // maxWidth: 120,
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center'
+                                } },
+                                row.date,
+                                "\u00A0 | \u00A0",
+                                React__default["default"].createElement(HomeIcon, { className: "mr-2 h-4 w-4" })));
+                    }
+                    return React__default["default"].createElement("div", { style: isSameDay ?
+                            {
+                                backgroundColor: '#3A7C7C',
+                                color: 'white', borderRadius: 6
+                            } : {} },
+                        moment(row.date).format("ddd").toUpperCase(),
+                        React__default["default"].createElement("br", null),
+                        heading);
+                },
+                cell: function (info) {
+                    var _a;
+                    var value = info.getValue();
+                    if (index === 0) {
+                        return value || "N/A";
+                    }
+                    if (value.isBooked) {
+                        return React__default["default"].createElement(DropdownMenuDemo, { handleActions: handleActions, handleStatusChange: handleStatusChange, info: value.info },
+                            React__default["default"].createElement(Badge, { className: classnames("bg-emerald-600", {
+                                    "bg-emerald-600": (value === null || value === void 0 ? void 0 : value.info.status) === "confirmed",
+                                    "bg-yellow-600": (value === null || value === void 0 ? void 0 : value.info.status) === "newBooking",
+                                    "bg-orange-600": (value === null || value === void 0 ? void 0 : value.info.status) === "checkin",
+                                    "bg-red-600": (value === null || value === void 0 ? void 0 : value.info.status) === "checkout",
+                                }), style: { position: 'absolute', fontWeight: 'normal' } },
+                                " ",
+                                ((_a = value === null || value === void 0 ? void 0 : value.info) === null || _a === void 0 ? void 0 : _a.guestName) || ''));
+                    }
+                    else {
+                        return React__default["default"].createElement("span", null);
+                    }
+                },
+            }));
+        });
+        return column;
+    }, []);
+    var table = useReactTable({
+        data: calanderRows,
+        columns: columns,
+        getCoreRowModel: getCoreRowModel(),
+    });
+    return (React__default["default"].createElement("div", { style: { width: '100%', overflowX: 'scroll' } },
+        React__default["default"].createElement("table", { className: "", style: { width: "100%", tableLayout: 'fixed' } },
+            React__default["default"].createElement("thead", null, table.getHeaderGroups().map(function (headerGroup) { return (React__default["default"].createElement("tr", { key: headerGroup.id }, headerGroup.headers.map(function (header, index) { return (React__default["default"].createElement("th", { style: { width: index === 0 ? 200 : 60, height: 60 }, className: "p-2 border h-10  xl:text-sm text-xs", key: header.id }, header.isPlaceholder
+                ? null
+                : flexRender(header.column.columnDef.header, header.getContext()))); }))); })),
+            React__default["default"].createElement("tbody", null, table.getRowModel().rows.map(function (row, index) { return (React__default["default"].createElement("tr", { className: "text-center", key: row.id }, row.getVisibleCells().map(function (cell) { return (React__default["default"].createElement("td", { style: { width: index === 0 ? 100 : 60, height: 60, position: 'relative' }, className: "border  transition cursor-pointer ease  ", key: cell.id }, flexRender(cell.column.columnDef.cell, cell.getContext()))); }))); })))));
 }
 
 /* -------------------------------------------------------------------------------------------------
@@ -74338,205 +74624,6 @@ function Dashboard(_a) {
                             React__default["default"].createElement(CardDescription, null, "You made 265 sales this month.")),
                         React__default["default"].createElement(CardContent, null,
                             React__default["default"].createElement(RecentSales, { data: dashboardData && (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.recentBookings) || '' }))))))));
-}
-
-function InvoiceEditableForm(_a) {
-    var onSubmit = _a.onSubmit, invoiceNumber = _a.invoiceNumber, defaultValues = _a.defaultValues;
-    var _b = React__default["default"].useState(0), subTotal = _b[0], setSubTotal = _b[1];
-    var _c = React__default["default"].useState(0), amountDue = _c[0], setAmountDue = _c[1];
-    var form = useForm({ defaultValues: defaultValues });
-    var _d = useFieldArray({
-        control: form.control,
-        name: "services",
-    }), fields = _d.fields, append = _d.append;
-    React__default["default"].useEffect(function () {
-        var subscription = form.watch(function (value, _a) {
-            var name = _a.name; _a.type;
-            if (name.includes('qty')) {
-                var index = name.split('.')[1].split('.')[0];
-                var qty = value.services[index].qty;
-                var cost = value.services[index].cost; // assuming cost is a constant or another field
-                form.setValue("services.".concat(index, ".total"), Number(qty) * Number(cost));
-                var newSubtotal = form.getValues("services").reduce(function (acc, curr) {
-                    return acc + (curr.total || 0);
-                }, 0);
-                setSubTotal(newSubtotal);
-            }
-        });
-        return function () { return subscription.unsubscribe(); };
-    }, [form.watch, form.setValue]);
-    React__default["default"].useEffect(function () {
-        var newSubtotal = fields.reduce(function (acc, curr) {
-            return acc + (curr.total || 0);
-        }, 0);
-        setSubTotal(newSubtotal);
-        setAmountDue(Number(newSubtotal) - Number(form.getValues("paid")));
-    }, []);
-    return (React__default["default"].createElement(Form$1, __assign$2({}, form),
-        React__default["default"].createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 bg-white" },
-            React__default["default"].createElement("header", { className: "bg-[#4D6969] flex items-center text-white h-[14rem]" },
-                React__default["default"].createElement("div", { className: "w-[50%]" },
-                    React__default["default"].createElement("img", { src: "https://hotelierpro.us/Logo/HotelierPro_Logo_white.svg", alt: "logo", className: "ml-8 h-12" })),
-                React__default["default"].createElement("ul", { className: "w-[50%] ml-8" },
-                    React__default["default"].createElement("h3", { className: "text-2xl font-bold tracking-tight mb-2" }, "Invoice"),
-                    React__default["default"].createElement("li", { className: "flex gap-4 items-center" },
-                        React__default["default"].createElement("span", { className: "w-[8rem]" }, "Invoice Number"),
-                        React__default["default"].createElement("span", null, ":"),
-                        React__default["default"].createElement("span", null, invoiceNumber)),
-                    React__default["default"].createElement("li", { className: "flex gap-4 items-center my-2" },
-                        React__default["default"].createElement("span", { className: "w-[8rem]" }, "Invoice Date"),
-                        React__default["default"].createElement("span", null, ":"),
-                        React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "billingDate", render: function (_a) {
-                                var field = _a.field;
-                                return (React__default["default"].createElement(FormItem, { className: "flex flex-col" },
-                                    React__default["default"].createElement(Popover, null,
-                                        React__default["default"].createElement(PopoverTrigger, { asChild: true },
-                                            React__default["default"].createElement(Button$3, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal group', !field.value &&
-                                                    'text-muted-foreground') },
-                                                React__default["default"].createElement(Calendar, { className: "mr-2 h-4 w-4 text-white group-hover:text-primary" }),
-                                                field.value ? (format$1(field.value, 'PPP')) : (React__default["default"].createElement("span", { className: "text-white group-hover:text-primary" }, "billing date")))),
-                                        React__default["default"].createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
-                                            React__default["default"].createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
-                            } })),
-                    React__default["default"].createElement("li", { className: "flex gap-4 items-center my-2" },
-                        React__default["default"].createElement("span", { className: "w-[8rem]" }, "Invoice Due Date"),
-                        React__default["default"].createElement("span", null, ":"),
-                        React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "dueDate", render: function (_a) {
-                                var field = _a.field;
-                                return (React__default["default"].createElement(FormItem, { className: "flex flex-col" },
-                                    React__default["default"].createElement(Popover, null,
-                                        React__default["default"].createElement(PopoverTrigger, { asChild: true },
-                                            React__default["default"].createElement(Button$3, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal group', !field.value &&
-                                                    'text-muted-foreground') },
-                                                React__default["default"].createElement(Calendar, { className: "mr-2 h-4 w-4 text-white group-hover:text-primary" }),
-                                                field.value ? (format$1(field.value, 'PPP')) : (React__default["default"].createElement("span", { className: "text-white group-hover:text-primary" }, "due date")))),
-                                        React__default["default"].createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
-                                            React__default["default"].createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
-                            } })))),
-            React__default["default"].createElement("main", { className: "space-y-8" },
-                React__default["default"].createElement("p", { className: "text-red-700 uppercase text-right" }, "sent"),
-                React__default["default"].createElement("div", { className: "flex justify-between items-end gap-[3rem]" },
-                    React__default["default"].createElement("div", { className: "space-y-2 w-full" },
-                        React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "billToName", render: function (_a) {
-                                var field = _a.field;
-                                return (React__default["default"].createElement(FormItem, null,
-                                    React__default["default"].createElement(FormLabel, null, "Bill To"),
-                                    React__default["default"].createElement(FormControl, null,
-                                        React__default["default"].createElement(Input, __assign$2({ placeholder: "Enter Name" }, field))),
-                                    React__default["default"].createElement(FormMessage, null)));
-                            } }),
-                        React__default["default"].createElement(FormField, { control: form.control, name: "billToAddress", render: function (_a) {
-                                var field = _a.field;
-                                return (React__default["default"].createElement(FormItem, null,
-                                    React__default["default"].createElement(FormControl, null,
-                                        React__default["default"].createElement(Textarea, __assign$2({ placeholder: "Address" }, field))),
-                                    React__default["default"].createElement(FormMessage, null)));
-                            } })),
-                    React__default["default"].createElement("div", { className: "space-y-2 w-full" },
-                        React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "billFromName", render: function (_a) {
-                                var field = _a.field;
-                                return (React__default["default"].createElement(FormItem, null,
-                                    React__default["default"].createElement(FormLabel, null, "Bill From"),
-                                    React__default["default"].createElement(FormControl, null,
-                                        React__default["default"].createElement(Input, __assign$2({ placeholder: "Enter Name" }, field))),
-                                    React__default["default"].createElement(FormMessage, null)));
-                            } }),
-                        React__default["default"].createElement(FormField, { control: form.control, name: "billFromAddress", render: function (_a) {
-                                var field = _a.field;
-                                return (React__default["default"].createElement(FormItem, null,
-                                    React__default["default"].createElement(FormControl, null,
-                                        React__default["default"].createElement(Textarea, __assign$2({ placeholder: "Address" }, field))),
-                                    React__default["default"].createElement(FormMessage, null)));
-                            } }))),
-                React__default["default"].createElement(Table, null,
-                    React__default["default"].createElement(TableHeader, null,
-                        React__default["default"].createElement(TableRow, null,
-                            React__default["default"].createElement(TableHead, { className: "uppercase text-center w-4 max-w-4 min-w-4" }, "No"),
-                            React__default["default"].createElement(TableHead, null, "Item"),
-                            React__default["default"].createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "cost"),
-                            React__default["default"].createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "qty"),
-                            React__default["default"].createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "price"))),
-                    React__default["default"].createElement(TableBody, null, fields.map(function (item, index) { return (React__default["default"].createElement(TableRow, { key: index },
-                        React__default["default"].createElement(TableCell, { className: "w-4 max-w-4 min-w-4 text-center" }, index + 1),
-                        React__default["default"].createElement(TableCell, null,
-                            React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".item"), render: function (_a) {
-                                    var field = _a.field;
-                                    return (React__default["default"].createElement(FormItem, null,
-                                        React__default["default"].createElement(FormControl, null,
-                                            React__default["default"].createElement(Input, __assign$2({}, field))),
-                                        React__default["default"].createElement(FormMessage, null)));
-                                } })),
-                        React__default["default"].createElement(TableCell, null,
-                            React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".cost"), render: function (_a) {
-                                    var field = _a.field;
-                                    return (React__default["default"].createElement(FormItem, { className: "w-[8rem]" },
-                                        React__default["default"].createElement(FormControl, null,
-                                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
-                                        React__default["default"].createElement(FormMessage, null)));
-                                } })),
-                        React__default["default"].createElement(TableCell, null,
-                            React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".qty"), render: function (_a) {
-                                    var field = _a.field;
-                                    return (React__default["default"].createElement(FormItem, { className: "w-[8rem]" },
-                                        React__default["default"].createElement(FormControl, null,
-                                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
-                                        React__default["default"].createElement(FormMessage, null)));
-                                } })),
-                        React__default["default"].createElement(TableCell, null,
-                            React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".total"), render: function (_a) {
-                                    var field = _a.field;
-                                    return (React__default["default"].createElement(FormItem, { className: "w-[8rem]" },
-                                        React__default["default"].createElement(FormControl, null,
-                                            React__default["default"].createElement(Input, __assign$2({ type: 'number' }, field))),
-                                        React__default["default"].createElement(FormMessage, null)));
-                                } })))); })),
-                    React__default["default"].createElement(TableFooter, { className: "bg-white" },
-                        React__default["default"].createElement(TableRow, { className: "py-4" },
-                            React__default["default"].createElement(TableCell, null,
-                                React__default["default"].createElement(Button$3, { type: 'button', onClick: function () { return append({
-                                        item: "",
-                                        cost: '',
-                                        qty: '',
-                                        total: '',
-                                        type: "service"
-                                    }); } },
-                                    React__default["default"].createElement(PlusCircledIcon, { className: "mr-2 h-4 w-4" }),
-                                    "Add New Row"))),
-                        React__default["default"].createElement(TableRow, null,
-                            React__default["default"].createElement(TableCell, { colSpan: 2 }),
-                            React__default["default"].createElement(TableCell, { colSpan: 2 }, "Subtotal"),
-                            React__default["default"].createElement(TableCell, null, subTotal)),
-                        React__default["default"].createElement(TableRow, null,
-                            React__default["default"].createElement(TableCell, { colSpan: 2 }),
-                            React__default["default"].createElement(TableCell, { colSpan: 3 },
-                                React__default["default"].createElement(Separator, null))),
-                        React__default["default"].createElement(TableRow, null,
-                            React__default["default"].createElement(TableCell, { colSpan: 2, rowSpan: 5 },
-                                React__default["default"].createElement(FormField, { control: form.control, name: "notes", render: function (_a) {
-                                        var field = _a.field;
-                                        return (React__default["default"].createElement(FormItem, null,
-                                            React__default["default"].createElement(FormControl, null,
-                                                React__default["default"].createElement(Textarea, __assign$2({ placeholder: "Notes", className: "resize-none h-[15rem]" }, field))),
-                                            React__default["default"].createElement(FormMessage, null)));
-                                    } }))),
-                        React__default["default"].createElement(TableRow, null,
-                            React__default["default"].createElement(TableCell, { colSpan: 2 }, "Paid"),
-                            React__default["default"].createElement(TableCell, null,
-                                React__default["default"].createElement(FormField, { control: form.control, rules: { required: true }, name: "paid", render: function (_a) {
-                                        var field = _a.field;
-                                        return (React__default["default"].createElement(FormItem, { className: "w-[10rem]" },
-                                            React__default["default"].createElement(FormControl, null,
-                                                React__default["default"].createElement(Input, __assign$2({ type: 'number', placeholder: "4999" }, field))),
-                                            React__default["default"].createElement(FormMessage, null)));
-                                    } }))),
-                        React__default["default"].createElement(TableRow, null,
-                            React__default["default"].createElement(TableCell, { colSpan: 3 },
-                                React__default["default"].createElement(Separator, null))),
-                        React__default["default"].createElement(TableRow, null,
-                            React__default["default"].createElement(TableCell, { colSpan: 2 }, "Amount Due"),
-                            React__default["default"].createElement(TableCell, { className: "text-red-700" }, amountDue))))),
-            React__default["default"].createElement("input", __assign$2({ type: "hidden" }, form.register("amountDue"), { value: amountDue })),
-            React__default["default"].createElement("input", __assign$2({ type: "hidden" }, form.register("subTotal"), { value: subTotal })))));
 }
 
 /* -------------------------------------------------------------------------------------------------

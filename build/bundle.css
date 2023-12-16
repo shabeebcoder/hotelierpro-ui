@@ -1251,10 +1251,6 @@ body {
   width: max-content;
 }
 
-.w-1 {
-  width: 0.25rem;
-}
-
 .min-w-0 {
   min-width: 0px;
 }

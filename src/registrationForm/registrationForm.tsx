@@ -132,27 +132,31 @@ function RegistrationForm(props: IRegistrationForm) {
                 <div>
                     <div className='table-two-div'>
                         <table className='table-two'>
-                            <tr>
-                                <th>DATE</th>
-                                <th>TYPE</th>
-                                <th>QY</th>
-                                <th>AMOUNT</th>
-                                <th>TOTAL</th>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th>DATE</th>
+                                    <th>TYPE</th>
+                                    <th>QY</th>
+                                    <th>AMOUNT</th>
+                                    <th>TOTAL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                            {
-                                props.services?.map((value) => {
-                                    return (
-                                        <tr>
-                                            <td>{moment(new Date(value.date)).format("DD/MM/YYYY")}</td>
-                                            <td>{value.item}</td>
-                                            <td>{value.qty}</td>
-                                            <td>{value.cost}</td>
-                                            <td>{value.total}</td>
-                                        </tr>
-                                    )
-                                })
-                            }
+                                {
+                                    props.services?.map((value) => {
+                                        return (
+                                            <tr>
+                                                <td>{moment(new Date(value.date)).format("DD/MM/YYYY")}</td>
+                                                <td>{value.item}</td>
+                                                <td>{value.qty}</td>
+                                                <td>{value.cost}</td>
+                                                <td>{value.total}</td>
+                                            </tr>
+                                        )
+                                    })
+                                }
+                            </tbody>
 
                         </table>
                     </div>

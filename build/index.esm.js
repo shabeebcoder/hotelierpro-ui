@@ -18347,7 +18347,8 @@ z$2.object({
     date: dateSchema$4,
     status: z$2.enum(["paid", "draft", "sent"]),
     total: z$2.coerce.number(),
-    notes: z$2.string().default("-").optional()
+    notes: z$2.string().default("-").optional(),
+    id: z$2.string()
 });
 function DataTableRowActions$1(_a) {
     var row = _a.row;
@@ -34595,170 +34596,171 @@ function InvoiceEditableForm(_a) {
         setSubTotal(newSubtotal);
         setAmountDue(Number(newSubtotal) - Number(form.getValues("paid")));
     }, []);
-    return (React__default.createElement(Form$1, __assign$2({}, form),
-        React__default.createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 bg-white" },
-            React__default.createElement("header", { className: "bg-[#4D6969] flex items-center text-white h-[14rem]" },
-                React__default.createElement("div", { className: "w-[50%]" },
-                    React__default.createElement("img", { src: "https://hotelierpro.us/Logo/HotelierPro_Logo_white.svg", alt: "logo", className: "ml-8 h-12" })),
-                React__default.createElement("ul", { className: "w-[50%] ml-8" },
-                    React__default.createElement("h3", { className: "text-2xl font-bold tracking-tight mb-2" }, "Invoice"),
-                    React__default.createElement("li", { className: "flex gap-4 items-center" },
-                        React__default.createElement("span", { className: "w-[8rem]" }, "Invoice Number"),
-                        React__default.createElement("span", null, ":"),
-                        React__default.createElement("span", null, invoiceNumber)),
-                    React__default.createElement("li", { className: "flex gap-4 items-center my-2" },
-                        React__default.createElement("span", { className: "w-[8rem]" }, "Invoice Date"),
-                        React__default.createElement("span", null, ":"),
-                        React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "invoiceDate", render: function (_a) {
-                                var field = _a.field;
-                                return (React__default.createElement(FormItem, { className: "flex flex-col" },
-                                    React__default.createElement(Popover, null,
-                                        React__default.createElement(PopoverTrigger, { asChild: true },
-                                            React__default.createElement(Button$3, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal group', !field.value &&
-                                                    'text-muted-foreground') },
-                                                React__default.createElement(Calendar, { className: "mr-2 h-4 w-4 text-white group-hover:text-primary" }),
-                                                field.value ? (format$1(field.value, 'PPP')) : (React__default.createElement("span", { className: "text-white group-hover:text-primary" }, "billing date")))),
-                                        React__default.createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
-                                            React__default.createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
-                            } })),
-                    React__default.createElement("li", { className: "flex gap-4 items-center my-2" },
-                        React__default.createElement("span", { className: "w-[8rem]" }, "Invoice Due Date"),
-                        React__default.createElement("span", null, ":"),
-                        React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "invoiceDueDate", render: function (_a) {
-                                var field = _a.field;
-                                return (React__default.createElement(FormItem, { className: "flex flex-col" },
-                                    React__default.createElement(Popover, null,
-                                        React__default.createElement(PopoverTrigger, { asChild: true },
-                                            React__default.createElement(Button$3, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal group', !field.value &&
-                                                    'text-muted-foreground') },
-                                                React__default.createElement(Calendar, { className: "mr-2 h-4 w-4 text-white group-hover:text-primary" }),
-                                                field.value ? (format$1(field.value, 'PPP')) : (React__default.createElement("span", { className: "text-white group-hover:text-primary" }, "due date")))),
-                                        React__default.createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
-                                            React__default.createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
-                            } })))),
-            React__default.createElement("main", { className: "space-y-8" },
-                React__default.createElement("p", { className: "text-red-700 uppercase text-right" }, "sent"),
-                React__default.createElement("div", { className: "flex justify-between items-end gap-[3rem]" },
-                    React__default.createElement("div", { className: "space-y-2 w-full" },
-                        React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "customer", render: function (_a) {
-                                var field = _a.field;
-                                return (React__default.createElement(FormItem, null,
-                                    React__default.createElement(FormLabel, null, "Bill To"),
-                                    React__default.createElement(FormControl, null,
-                                        React__default.createElement(Input, __assign$2({ placeholder: "Enter Name" }, field))),
-                                    React__default.createElement(FormMessage, null)));
-                            } }),
-                        React__default.createElement(FormField, { control: form.control, name: "customerAddress", render: function (_a) {
-                                var field = _a.field;
-                                return (React__default.createElement(FormItem, null,
-                                    React__default.createElement(FormControl, null,
-                                        React__default.createElement(Textarea, __assign$2({ placeholder: "Address" }, field))),
-                                    React__default.createElement(FormMessage, null)));
-                            } })),
-                    React__default.createElement("div", { className: "space-y-2 w-full" },
-                        React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "hotelName", render: function (_a) {
-                                var field = _a.field;
-                                return (React__default.createElement(FormItem, null,
-                                    React__default.createElement(FormLabel, null, "Bill From"),
-                                    React__default.createElement(FormControl, null,
-                                        React__default.createElement(Input, __assign$2({ placeholder: "Enter Name" }, field))),
-                                    React__default.createElement(FormMessage, null)));
-                            } }),
-                        React__default.createElement(FormField, { control: form.control, name: "hotelAddress", render: function (_a) {
-                                var field = _a.field;
-                                return (React__default.createElement(FormItem, null,
-                                    React__default.createElement(FormControl, null,
-                                        React__default.createElement(Textarea, __assign$2({ placeholder: "Address" }, field))),
-                                    React__default.createElement(FormMessage, null)));
-                            } }))),
-                React__default.createElement(Table, null,
-                    React__default.createElement(TableHeader, null,
-                        React__default.createElement(TableRow, null,
-                            React__default.createElement(TableHead, { className: "uppercase text-center w-4 max-w-4 min-w-4" }, "No"),
-                            React__default.createElement(TableHead, null, "Item"),
-                            React__default.createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "cost"),
-                            React__default.createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "qty"),
-                            React__default.createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "price"))),
-                    React__default.createElement(TableBody, null, fields.map(function (item, index) { return (React__default.createElement(TableRow, { key: index },
-                        React__default.createElement(TableCell, { className: "w-4 max-w-4 min-w-4 text-center" }, index + 1),
-                        React__default.createElement(TableCell, null,
-                            React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".name"), render: function (_a) {
+    return (React__default.createElement(React__default.Fragment, null,
+        React__default.createElement(Form$1, __assign$2({}, form),
+            React__default.createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 bg-white", id: "invoiceEdit" },
+                React__default.createElement("header", { className: "bg-[#4D6969] flex items-center text-white h-[14rem]" },
+                    React__default.createElement("div", { className: "w-[50%]" },
+                        React__default.createElement("img", { src: "https://hotelierpro.us/Logo/HotelierPro_Logo_white.svg", alt: "logo", className: "ml-8 h-12" })),
+                    React__default.createElement("ul", { className: "w-[50%] ml-8" },
+                        React__default.createElement("h3", { className: "text-2xl font-bold tracking-tight mb-2" }, "Invoice"),
+                        React__default.createElement("li", { className: "flex gap-4 items-center" },
+                            React__default.createElement("span", { className: "w-[8rem]" }, "Invoice Number"),
+                            React__default.createElement("span", null, ":"),
+                            React__default.createElement("span", null, invoiceNumber)),
+                        React__default.createElement("li", { className: "flex gap-4 items-center my-2" },
+                            React__default.createElement("span", { className: "w-[8rem]" }, "Invoice Date"),
+                            React__default.createElement("span", null, ":"),
+                            React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "invoiceDate", render: function (_a) {
+                                    var field = _a.field;
+                                    return (React__default.createElement(FormItem, { className: "flex flex-col" },
+                                        React__default.createElement(Popover, null,
+                                            React__default.createElement(PopoverTrigger, { asChild: true },
+                                                React__default.createElement(Button$3, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal group', !field.value &&
+                                                        'text-muted-foreground') },
+                                                    React__default.createElement(Calendar, { className: "mr-2 h-4 w-4 text-white group-hover:text-primary" }),
+                                                    field.value ? (format$1(field.value, 'PPP')) : (React__default.createElement("span", { className: "text-white group-hover:text-primary" }, "billing date")))),
+                                            React__default.createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
+                                                React__default.createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
+                                } })),
+                        React__default.createElement("li", { className: "flex gap-4 items-center my-2" },
+                            React__default.createElement("span", { className: "w-[8rem]" }, "Invoice Due Date"),
+                            React__default.createElement("span", null, ":"),
+                            React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "invoiceDueDate", render: function (_a) {
+                                    var field = _a.field;
+                                    return (React__default.createElement(FormItem, { className: "flex flex-col" },
+                                        React__default.createElement(Popover, null,
+                                            React__default.createElement(PopoverTrigger, { asChild: true },
+                                                React__default.createElement(Button$3, { variant: 'outline', className: cn('w-[240px] justify-start text-left font-normal group', !field.value &&
+                                                        'text-muted-foreground') },
+                                                    React__default.createElement(Calendar, { className: "mr-2 h-4 w-4 text-white group-hover:text-primary" }),
+                                                    field.value ? (format$1(field.value, 'PPP')) : (React__default.createElement("span", { className: "text-white group-hover:text-primary" }, "due date")))),
+                                            React__default.createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
+                                                React__default.createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
+                                } })))),
+                React__default.createElement("main", { className: "space-y-8" },
+                    React__default.createElement("p", { className: "text-red-700 uppercase text-right" }, "sent"),
+                    React__default.createElement("div", { className: "flex justify-between items-end gap-[3rem]" },
+                        React__default.createElement("div", { className: "space-y-2 w-full" },
+                            React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "customer", render: function (_a) {
+                                    var field = _a.field;
+                                    return (React__default.createElement(FormItem, null,
+                                        React__default.createElement(FormLabel, null, "Bill To"),
+                                        React__default.createElement(FormControl, null,
+                                            React__default.createElement(Input, __assign$2({ placeholder: "Enter Name" }, field))),
+                                        React__default.createElement(FormMessage, null)));
+                                } }),
+                            React__default.createElement(FormField, { control: form.control, name: "customerAddress", render: function (_a) {
                                     var field = _a.field;
                                     return (React__default.createElement(FormItem, null,
                                         React__default.createElement(FormControl, null,
-                                            React__default.createElement(Input, __assign$2({}, field))),
+                                            React__default.createElement(Textarea, __assign$2({ placeholder: "Address" }, field))),
                                         React__default.createElement(FormMessage, null)));
                                 } })),
-                        React__default.createElement(TableCell, null,
-                            React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".price"), render: function (_a) {
+                        React__default.createElement("div", { className: "space-y-2 w-full" },
+                            React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "hotelName", render: function (_a) {
                                     var field = _a.field;
-                                    return (React__default.createElement(FormItem, { className: "w-[8rem]" },
+                                    return (React__default.createElement(FormItem, null,
+                                        React__default.createElement(FormLabel, null, "Bill From"),
                                         React__default.createElement(FormControl, null,
-                                            React__default.createElement(Input, __assign$2({ type: 'number' }, field))),
+                                            React__default.createElement(Input, __assign$2({ placeholder: "Enter Name" }, field))),
                                         React__default.createElement(FormMessage, null)));
-                                } })),
-                        React__default.createElement(TableCell, null,
-                            React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".quantity"), render: function (_a) {
+                                } }),
+                            React__default.createElement(FormField, { control: form.control, name: "hotelAddress", render: function (_a) {
                                     var field = _a.field;
-                                    return (React__default.createElement(FormItem, { className: "w-[8rem]" },
+                                    return (React__default.createElement(FormItem, null,
                                         React__default.createElement(FormControl, null,
-                                            React__default.createElement(Input, __assign$2({ type: 'number' }, field))),
+                                            React__default.createElement(Textarea, __assign$2({ placeholder: "Address" }, field))),
                                         React__default.createElement(FormMessage, null)));
-                                } })),
-                        React__default.createElement(TableCell, null,
-                            React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".totalAmount"), render: function (_a) {
-                                    var field = _a.field;
-                                    return (React__default.createElement(FormItem, { className: "w-[8rem]" },
-                                        React__default.createElement(FormControl, null,
-                                            React__default.createElement(Input, __assign$2({ type: 'number' }, field))),
-                                        React__default.createElement(FormMessage, null)));
-                                } })))); })),
-                    React__default.createElement(TableFooter, { className: "bg-white" },
-                        React__default.createElement(TableRow, { className: "py-4" },
+                                } }))),
+                    React__default.createElement(Table, null,
+                        React__default.createElement(TableHeader, null,
+                            React__default.createElement(TableRow, null,
+                                React__default.createElement(TableHead, { className: "uppercase text-center w-4 max-w-4 min-w-4" }, "No"),
+                                React__default.createElement(TableHead, null, "Item"),
+                                React__default.createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "cost"),
+                                React__default.createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "qty"),
+                                React__default.createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "price"))),
+                        React__default.createElement(TableBody, null, fields.map(function (item, index) { return (React__default.createElement(TableRow, { key: index },
+                            React__default.createElement(TableCell, { className: "w-4 max-w-4 min-w-4 text-center" }, index + 1),
                             React__default.createElement(TableCell, null,
-                                React__default.createElement(Button$3, { type: 'button', onClick: function () { return append({
-                                        name: "",
-                                        price: 0,
-                                        quantity: 1,
-                                        totalAmount: 0,
-                                    }); } },
-                                    React__default.createElement(PlusCircledIcon, { className: "mr-2 h-4 w-4" }),
-                                    "Add New Row"))),
-                        React__default.createElement(TableRow, null,
-                            React__default.createElement(TableCell, { colSpan: 2 }),
-                            React__default.createElement(TableCell, { colSpan: 2 }, "Subtotal"),
-                            React__default.createElement(TableCell, null, subTotal)),
-                        React__default.createElement(TableRow, null,
-                            React__default.createElement(TableCell, { colSpan: 2 }),
-                            React__default.createElement(TableCell, { colSpan: 3 },
-                                React__default.createElement(Separator, null))),
-                        React__default.createElement(TableRow, null,
-                            React__default.createElement(TableCell, { colSpan: 2, rowSpan: 5 },
-                                React__default.createElement(FormField, { control: form.control, name: "notes", render: function (_a) {
+                                React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".name"), render: function (_a) {
                                         var field = _a.field;
                                         return (React__default.createElement(FormItem, null,
                                             React__default.createElement(FormControl, null,
-                                                React__default.createElement(Textarea, __assign$2({ placeholder: "Notes", className: "resize-none h-[15rem]" }, field))),
+                                                React__default.createElement(Input, __assign$2({}, field))),
                                             React__default.createElement(FormMessage, null)));
-                                    } }))),
-                        React__default.createElement(TableRow, null,
-                            React__default.createElement(TableCell, { colSpan: 2 }, "Paid"),
+                                    } })),
                             React__default.createElement(TableCell, null,
-                                React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "paid", render: function (_a) {
+                                React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".price"), render: function (_a) {
                                         var field = _a.field;
-                                        return (React__default.createElement(FormItem, { className: "w-[10rem]" },
+                                        return (React__default.createElement(FormItem, { className: "w-[8rem]" },
                                             React__default.createElement(FormControl, null,
-                                                React__default.createElement(Input, __assign$2({ type: 'number', placeholder: "4999" }, field))),
+                                                React__default.createElement(Input, __assign$2({ type: 'number' }, field))),
                                             React__default.createElement(FormMessage, null)));
-                                    } }))),
-                        React__default.createElement(TableRow, null,
-                            React__default.createElement(TableCell, { colSpan: 3 },
-                                React__default.createElement(Separator, null))),
-                        React__default.createElement(TableRow, null,
-                            React__default.createElement(TableCell, { colSpan: 2 }, "Amount Due"),
-                            React__default.createElement(TableCell, { className: "text-red-700" }, amountDue))))),
-            React__default.createElement("input", __assign$2({ type: "hidden" }, form.register("amountDue"), { value: amountDue })),
-            React__default.createElement("input", __assign$2({ type: "hidden" }, form.register("subTotal"), { value: subTotal })))));
+                                    } })),
+                            React__default.createElement(TableCell, null,
+                                React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".quantity"), render: function (_a) {
+                                        var field = _a.field;
+                                        return (React__default.createElement(FormItem, { className: "w-[8rem]" },
+                                            React__default.createElement(FormControl, null,
+                                                React__default.createElement(Input, __assign$2({ type: 'number' }, field))),
+                                            React__default.createElement(FormMessage, null)));
+                                    } })),
+                            React__default.createElement(TableCell, null,
+                                React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "services.".concat(index, ".totalAmount"), render: function (_a) {
+                                        var field = _a.field;
+                                        return (React__default.createElement(FormItem, { className: "w-[8rem]" },
+                                            React__default.createElement(FormControl, null,
+                                                React__default.createElement(Input, __assign$2({ type: 'number' }, field))),
+                                            React__default.createElement(FormMessage, null)));
+                                    } })))); })),
+                        React__default.createElement(TableFooter, { className: "bg-white" },
+                            React__default.createElement(TableRow, { className: "py-4" },
+                                React__default.createElement(TableCell, null,
+                                    React__default.createElement(Button$3, { type: 'button', onClick: function () { return append({
+                                            name: "",
+                                            price: 0,
+                                            quantity: 1,
+                                            totalAmount: 0,
+                                        }); } },
+                                        React__default.createElement(PlusCircledIcon, { className: "mr-2 h-4 w-4" }),
+                                        "Add New Row"))),
+                            React__default.createElement(TableRow, null,
+                                React__default.createElement(TableCell, { colSpan: 2 }),
+                                React__default.createElement(TableCell, { colSpan: 2 }, "Subtotal"),
+                                React__default.createElement(TableCell, null, subTotal)),
+                            React__default.createElement(TableRow, null,
+                                React__default.createElement(TableCell, { colSpan: 2 }),
+                                React__default.createElement(TableCell, { colSpan: 3 },
+                                    React__default.createElement(Separator, null))),
+                            React__default.createElement(TableRow, null,
+                                React__default.createElement(TableCell, { colSpan: 2, rowSpan: 5 },
+                                    React__default.createElement(FormField, { control: form.control, name: "notes", render: function (_a) {
+                                            var field = _a.field;
+                                            return (React__default.createElement(FormItem, null,
+                                                React__default.createElement(FormControl, null,
+                                                    React__default.createElement(Textarea, __assign$2({ placeholder: "Notes", className: "resize-none h-[15rem]" }, field))),
+                                                React__default.createElement(FormMessage, null)));
+                                        } }))),
+                            React__default.createElement(TableRow, null,
+                                React__default.createElement(TableCell, { colSpan: 2 }, "Paid"),
+                                React__default.createElement(TableCell, null,
+                                    React__default.createElement(FormField, { control: form.control, rules: { required: true }, name: "paid", render: function (_a) {
+                                            var field = _a.field;
+                                            return (React__default.createElement(FormItem, { className: "w-[10rem]" },
+                                                React__default.createElement(FormControl, null,
+                                                    React__default.createElement(Input, __assign$2({ type: 'number', placeholder: "4999" }, field))),
+                                                React__default.createElement(FormMessage, null)));
+                                        } }))),
+                            React__default.createElement(TableRow, null,
+                                React__default.createElement(TableCell, { colSpan: 3 },
+                                    React__default.createElement(Separator, null))),
+                            React__default.createElement(TableRow, null,
+                                React__default.createElement(TableCell, { colSpan: 2 }, "Amount Due"),
+                                React__default.createElement(TableCell, { className: "text-red-700" }, amountDue))))),
+                React__default.createElement("input", __assign$2({ type: "hidden" }, form.register("amountDue"), { value: amountDue })),
+                React__default.createElement("input", __assign$2({ type: "hidden" }, form.register("subTotal"), { value: subTotal }))))));
 }
 
 /**

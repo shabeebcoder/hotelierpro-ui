@@ -7,6 +7,7 @@ export declare const invoicetableSchema: z.ZodObject<{
     status: z.ZodEnum<["paid", "draft", "sent"]>;
     total: z.ZodNumber;
     notes: z.ZodOptional<z.ZodDefault<z.ZodString>>;
+    id: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     invoiceNumber?: string;
     name?: string;
@@ -14,6 +15,7 @@ export declare const invoicetableSchema: z.ZodObject<{
     status?: "paid" | "draft" | "sent";
     total?: number;
     notes?: string;
+    id?: string;
 }, {
     invoiceNumber?: string;
     name?: string;
@@ -21,6 +23,7 @@ export declare const invoicetableSchema: z.ZodObject<{
     status?: "paid" | "draft" | "sent";
     total?: number;
     notes?: string;
+    id?: string;
 }>;
 export type IInvoiceTable = z.infer<typeof invoicetableSchema>;
 export declare const columns: ColumnDef<IInvoiceTable>[];

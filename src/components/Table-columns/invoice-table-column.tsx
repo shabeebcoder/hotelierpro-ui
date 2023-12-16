@@ -8,7 +8,7 @@ import { Badge } from "../../elements/Badge/badge"
 import { DotsHorizontalIcon } from "@radix-ui/react-icons"
 import { Button } from "../../elements/Buttons/buttons"
 import classNames from 'classnames';
-import {z} from "zod"
+import { z } from "zod"
 
 import {
     DropdownMenu,
@@ -26,12 +26,14 @@ import { ColumnDef } from '@tanstack/react-table';
 const stringToDate = z.string().transform((str) => new Date(str));
 const dateSchema = z.union([stringToDate, z.date()]);
 export const invoicetableSchema = z.object({
-    invoiceNumber : z.string(),
+    invoiceNumber: z.string(),
     name: z.string(),
     date: dateSchema,
     status: z.enum(["paid", "draft", "sent"]),
     total: z.coerce.number(),
-    notes: z.string().default("-").optional()
+    notes: z.string().default("-").optional(),
+    id: z.string()
+
 })
 
 export type IInvoiceTable = z.infer<typeof invoicetableSchema>
@@ -63,13 +65,13 @@ function DataTableRowActions({
                     <DropdownMenuSubTrigger>Mark as</DropdownMenuSubTrigger>
                     <DropdownMenuSubContent>
                         <DropdownMenuRadioGroup value={'markAs'}>
-                            <DropdownMenuRadioItem onClick={() => invoice.actions.handleMarkAs({invoice, status: "draft"})} key={'draft'} value={'draft'}>
+                            <DropdownMenuRadioItem onClick={() => invoice.actions.handleMarkAs({ invoice, status: "draft" })} key={'draft'} value={'draft'}>
                                 Draft
                             </DropdownMenuRadioItem>
-                            <DropdownMenuRadioItem onClick={() => invoice.actions.handleMarkAs({invoice, status: "paid"})} key={'paid'} value={'paid'}>
+                            <DropdownMenuRadioItem onClick={() => invoice.actions.handleMarkAs({ invoice, status: "paid" })} key={'paid'} value={'paid'}>
                                 Paid
                             </DropdownMenuRadioItem>
-                            <DropdownMenuRadioItem onClick={() => invoice.actions.handleMarkAs({invoice, status: "sent"})} key={'sent'} value={'sent'}>
+                            <DropdownMenuRadioItem onClick={() => invoice.actions.handleMarkAs({ invoice, status: "sent" })} key={'sent'} value={'sent'}>
                                 Sent
                             </DropdownMenuRadioItem>
                         </DropdownMenuRadioGroup>
@@ -164,9 +166,9 @@ export const columns: ColumnDef<IInvoiceTable>[] = [
             return (
                 <div className="flex items-center text-center">
                     <Badge className={classNames({
-                        'bg-sky-400 hover:bg-sky-400' : row.getValue("status").toLowerCase() === "draft",
-                        'bg-emerald-500 hover:bg-emerald-500' : row.getValue("status").toLowerCase() === "paid",
-                        'bg-red-500 hover:bg-red-500' : row.getValue("status").toLowerCase() === "sent"
+                        'bg-sky-400 hover:bg-sky-400': row.getValue("status").toLowerCase() === "draft",
+                        'bg-emerald-500 hover:bg-emerald-500': row.getValue("status").toLowerCase() === "paid",
+                        'bg-red-500 hover:bg-red-500': row.getValue("status").toLowerCase() === "sent"
                     })} variant="destructive">{row.getValue("status")}</Badge>
                 </div>
             )

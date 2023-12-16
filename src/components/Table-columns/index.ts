@@ -4,9 +4,9 @@ import { columns as guests } from "./guest-table.column";
 import { columns as rooms, IRoomColum } from "./room-table-column"
 import { columns as services, IServiceTable } from "./services-table-column"
 import { columns as serviceCategory, IServiceCategoryTable } from "./service-category-table-column"
-import { columns as invoices } from "./billing-table-column";
+import { IInvoiceTable, columns as invoices } from "./invoice-table-column";
 import { columns as bookings } from "./booking-table-column"
-import { columns as history } from "./history-table-column"
+import { IBookingHistoryTable, columns as history } from "./history-table-column"
 
 
 export const Table: any = {
@@ -25,4 +25,6 @@ export namespace ITable {
     export type serviceCategories = IServiceCategoryTable
     export type roomtypes = IRoomTypeColum
     export type rooms = IRoomColum
+    export type history = IBookingHistoryTable
+    export type invoices = IInvoiceTable
 }

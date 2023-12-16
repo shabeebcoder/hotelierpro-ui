@@ -31,11 +31,54 @@ import { format } from 'date-fns';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFieldArray, useForm } from 'react-hook-form';
 import SearchUser from "./searchGuests";
-import { DotsHorizontalIcon, PlusCircledIcon } from '@radix-ui/react-icons';
+import { DotsHorizontalIcon, PersonIcon } from '@radix-ui/react-icons';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from '../../../elements/Dropdown-menu/dropdownmenu';
 import moment from "moment"
 
 
+import { z } from "zod"
+
+
+export const bookingFormSchema = z.object({
+    checkInDate: z.date({
+        required_error: "Check-in Date Required"
+    }),
+    checkOutDate: z.date({
+        required_error: "Check-out Date Required"
+    }),
+    nights: z.coerce.number().min(1, "Number of Nights Required").default(0),
+    roomType: z.string({
+        required_error: "Please select a room type"
+    }),
+    status: z.string({
+        required_error: "Please select a booking status"
+    }),
+    adults: z.coerce.number().min(1, "Adults Number Required").default(1),
+    child: z.coerce.number().min(0, "Child is required").default(0),
+    guests: z.array(z.object({
+        name: z.string().min(1, "Guest Name Required"),
+        email: z.string().email().min(1, "Guest Email Required"),
+        avatar: z.string().optional(),
+        isMain: z.boolean().default(false),
+        id: z.string().min(1, "Guest ID Missing")
+    })).refine(
+        (guests) => guests.length !== 0, { message: "Please select guest" },
+    ).refine(guests => guests.some(guest => guest.isMain),
+        {
+            message: "At least one guest must be marked as the main guest"
+        }),
+    price: z.coerce.number().min(1, "Price is required").default(0),
+    discount: z.coerce.number().optional(),
+    singleUse: z.boolean().default(false),
+
+    notes: z.object({
+        staffName: z.string(),
+        note: z.string()
+    }).array().optional(),
+    id: z.string().optional()
+});
+
+export type IbookingForm = z.infer<typeof bookingFormSchema>
 
 
 export default function NewBookingForm({
@@ -48,20 +91,7 @@ export default function NewBookingForm({
     onSelect,
     isLoading,
     handleCancel,
-    defaultValues = {
-        adult: 1,
-        child: 0,
-        guests: [],
-        checkInDate: new Date(),
-        duration: "",
-        checkOutDate: new Date(),
-        roomtype: "",
-        status: "",
-        price: "",
-        discount: "",
-        notes: ""
-
-    },
+    defaultValues,
     fields = {
         checkInDate: {
             label: "Check in Date"
@@ -98,19 +128,30 @@ export default function NewBookingForm({
 }) {
 
     const [guestSelected, setGuestSelected] = React.useState([])
-    const forms: any = useForm({ defaultValues });
-
+    const forms = useForm<IbookingForm>({ defaultValues, resolver: zodResolver(bookingFormSchema) });
+    const { formState: { errors } } = forms
 
     const handleOnSelect = (guest) => {
         setGuestSelected([...guestSelected, guest]);
         forms.setValue("guests", [...forms.getValues("guests"), guest])
     }
 
+
+
     function DataTableRowActions({
         row = {},
     }: any) {
 
+        function updateMainGuest(mainGuestId) {
+            const guests = forms.getValues("guests") || []
+            const updatedGuests: any = guests.map(guest => ({
+                ...guest,
+                isMain: guest.id === mainGuestId
+            }));
 
+
+            forms.setValue("guests", updatedGuests || [])
+        }
         return (
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -126,7 +167,7 @@ export default function NewBookingForm({
                     <DropdownMenuItem onClick={() => row.actions.handleUpdate(row)}>Edit
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => row.actions.handleDelete(row)}>Remove</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => row.actions.handleDelete(row)}>Mark as Main Guest</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => updateMainGuest(row.id)}>Mark as Main Guest</DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
         )
@@ -137,7 +178,7 @@ export default function NewBookingForm({
         const subscription = forms.watch((value, { name, type }) => {
 
             if (name.includes('roomtype') || name.includes('singleUse')) {
-                const roomType = forms.getValues("roomtype")
+                const roomType = forms.getValues("roomType")
                 const singleUse = forms.getValues("singleUse")
                 let selectedRoom = roomTypes.find((row: any) => row.value === roomType);
                 let roomPrice = 0;
@@ -167,9 +208,57 @@ export default function NewBookingForm({
         }
     }
 
+    const handlAdultCount = (actions: "increment" | "decrement") => {
+        const adultsCounts = forms.getValues("adults")
+        if (actions === "decrement") {
+            if (adultsCounts) {
+                if (adultsCounts !== 1) {
+                    forms.setValue("adults", Number(forms.getValues("adults") - 1))
+                }
+            }
+        }
+        if (actions === "increment") {
+            if (adultsCounts && forms.getValues("adults") > 0) {
+                forms.setValue("adults", Number(forms.getValues("adults")) + 1)
+            }
+        }
+    }
+
+    const handleChildCount = (actions: "increment" | "decrement") => {
+        const childCount = forms.getValues("child")
+        if (actions === "decrement") {
+            if (childCount) {
+
+                forms.setValue("child", Number(forms.getValues("child") - 1))
+
+            }
+        }
+        if (actions === "increment") {
+            if (childCount && forms.getValues("child") > 0) {
+                forms.setValue("child", Number(forms.getValues("child")) + 1)
+            }
+            if (childCount === 0) {
+                forms.setValue("child", 1)
+            }
+        }
+    }
+
+    React.useEffect(() => {
+        if (!forms.getValues("adults")) {
+            forms.setValue("adults", 1)
+        }
+        if (!forms.getValues("child")) {
+            forms.setValue("child", 0)
+        }
+        if (!forms.getValues("guests")) {
+            forms.setValue("guests", [])
+        }
+    }, [])
+
 
     return (
         <>
+
 
             <Form {...forms}>
                 <form
@@ -181,7 +270,7 @@ export default function NewBookingForm({
                         control={forms.control}
                         rules={{ required: true }}
                         name="checkInDate"
-                        render={({ field }) => (
+                        render={({ field }: any) => (
                             <FormItem className="flex flex-col">
                                 <FormLabel>{fields.checkInDate.label}</FormLabel>
                                 <Popover>
@@ -215,13 +304,14 @@ export default function NewBookingForm({
                                         />
                                     </PopoverContent>
                                 </Popover>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
                     <FormField
                         control={forms.control}
                         rules={{ required: true }}
-                        name="duration"
+                        name="nights"
 
                         render={({ field }) => (
                             <FormItem className="" style={{ marginTop: "-9px" }}>
@@ -242,7 +332,7 @@ export default function NewBookingForm({
                         control={forms.control}
                         rules={{ required: true, validate: { validateCheckoutDateIsBeforeCheckin } }}
                         name="checkOutDate"
-                        render={({ field }) => (
+                        render={({ field }: any) => (
                             <FormItem className="flex flex-col">
                                 <FormLabel>{fields.checkOutDate.label}</FormLabel>
                                 <Popover>
@@ -276,13 +366,14 @@ export default function NewBookingForm({
                                         />
                                     </PopoverContent>
                                 </Popover>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
                     <FormField
                         control={forms.control}
                         rules={{ required: true }}
-                        name="roomtype"
+                        name="roomType"
                         render={({ field }) => (
                             <FormItem className="">
                                 <FormLabel>{fields.roomtype.label}</FormLabel>
@@ -349,28 +440,20 @@ export default function NewBookingForm({
                         <FormField
                             control={forms.control}
                             rules={{ required: true }}
-                            name="adult"
+                            name="adults"
                             render={({ field }) => (
                                 <FormItem className="w-[7rem]">
                                     <FormLabel>{fields.adult.label}</FormLabel>
                                     <br />
                                     <Input type='hidden' {...field} />
                                     <p className="border rounded w-[5rem] flex justify-between px-4">
-                                        <span onClick={() => {
-
-                                            forms.setValue("adult", forms.getValues("adult") - 1)
-                                        }}
+                                        <span onClick={() => handlAdultCount("decrement")}
                                         >
                                             {' '}
                                             -{' '}
                                         </span>
-                                        {forms.getValues("adult")}
-                                        <span onClick={() => {
-
-
-                                            forms.setValue("adult", forms.getValues("adult") + 1)
-
-                                        }}
+                                        {forms.getValues("adults") && Number(forms.getValues("adults"))}
+                                        <span onClick={() => handlAdultCount("increment")}
                                         >
                                             {' '}
                                             +{' '}
@@ -391,21 +474,15 @@ export default function NewBookingForm({
                                     <FormControl>
                                         <p className="border rounded w-[5rem] flex justify-between px-4">
                                             <span
-                                                onClick={() => {
-
-                                                    forms.setValue("child", forms.getValues("child") - 1)
-                                                }}
+                                                onClick={() => handleChildCount("decrement")}
                                             >
                                                 {' '}
                                                 -{' '}
                                             </span>
                                             <Input type='hidden' {...field} />
-                                            {forms.getValues("child")}
+                                            {forms.getValues("child") && Number(forms.getValues("child"))}
                                             <span
-                                                onClick={() => {
-
-                                                    forms.setValue("child", forms.getValues("child") + 1)
-                                                }}
+                                                onClick={() => handleChildCount("increment")}
                                             >
                                                 {' '}
                                                 +{' '}
@@ -422,7 +499,7 @@ export default function NewBookingForm({
                     </h3>{' '}
                     <div className='col-span-full flex flex-wrap'>
 
-                        {forms.getValues("guests").length !== 0 && forms.getValues("guests").map((row) => (
+                        {forms.getValues("guests") && forms.getValues("guests").length !== 0 && forms.getValues("guests").map((row) => (
                             <div style={{ width: 350, paddingRight: 10, paddingBottom: 10 }}>
                                 <div className="flex items-center space-x-4 rtl:space-x-reverse">
                                     <div className="flex-shrink-0">
@@ -447,12 +524,29 @@ export default function NewBookingForm({
 
 
                     <div className="col-span-full ">
-                        <SearchUser guestList={guestList} isLoading={isLoading} onSelect={handleOnSelect} >
-                            <Button className='mr-4' >
-                                <PlusCircledIcon className="mr-2 h-4 w-4" />
-                                Add Guest</Button>
-                        </SearchUser>
-                        {NewGuest && <NewGuest />}
+                        <>
+
+
+                            <SearchUser guestList={guestList} isLoading={isLoading} onSelect={handleOnSelect} >
+
+                                <Button className='mr-4' >
+                                    <PersonIcon className="mr-2 h-4 w-4" />
+                                    Add Guest</Button>
+
+
+                            </SearchUser>
+                            {NewGuest && <NewGuest />}
+                            <br />
+                            <span className='mt-1'>
+
+                                {errors.guests && errors.guests.message}
+                            </span>
+
+
+
+
+                        </>
+
                     </div>
                     <FormField
                         control={forms.control}
@@ -523,7 +617,7 @@ export default function NewBookingForm({
                                             placeholder="Notes"
                                             className="resize-none"
 
-                                            {...field}
+
                                         />
                                     </FormControl>
                                     <FormDescription></FormDescription>
@@ -532,7 +626,7 @@ export default function NewBookingForm({
                             )}
                         />
                     </div>
-                    <Input type='hidden' {...forms.register("guests", { required: true })} />
+                    <Input type='hidden'  {...forms.register("guests", { required: true })} />
 
                     <div className="flex items-center gap-4 col-span-full">
                         <Button>Create booking</Button>

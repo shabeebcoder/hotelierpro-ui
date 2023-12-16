@@ -23,6 +23,11 @@ export const roomTypeTableSchema = z.object({
     singleUsePrice: z.number(),
     regularUsePrice: z.number(),
     id: z.string().optional(),
+    actions: z.object({
+        handleUpdate: z.function(),
+        handleDelete: z.function(),
+        handleMainance: z.function()
+    })
 });
 
 export type IRoomTypeColum = z.infer<typeof roomTypeTableSchema>
@@ -59,7 +64,7 @@ function DataTableRowActions({
 }
 
 
-export const columns: ColumnDef<IRoomTypeColum>[]  = [
+export const columns: ColumnDef<IRoomTypeColum>[] = [
     {
         id: "select",
         header: ({ table }: any) => (
@@ -82,11 +87,11 @@ export const columns: ColumnDef<IRoomTypeColum>[]  = [
         enableHiding: false,
     },
     {
-        accessorKey: "roomName",
+        accessorKey: "name",
         header: ({ column }: any) => (
             <DataTableColumnHeader column={column} title="Room Type Name" />
         ),
-        cell: ({ row }: any) => <div className="w-[150px]">{row.getValue("roomName")}</div>,
+        cell: ({ row }: any) => <div className="w-[150px]">{row.getValue("name")}</div>,
         enableSorting: false,
         enableHiding: false,
     },
@@ -99,10 +104,6 @@ export const columns: ColumnDef<IRoomTypeColum>[]  = [
         cell: ({ row }: any) => {
 
 
-            // if (!status) {
-            //     return null
-            // }
-
             return (
                 <div className="flex  text-center">
                     {row.getValue("maxPerson")}
@@ -110,13 +111,11 @@ export const columns: ColumnDef<IRoomTypeColum>[]  = [
 
             )
         },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
+
     },
 
     {
-        accessorKey: "regularPrice",
+        accessorKey: "regularUsePrice",
         header: ({ column }: any) => (
             <DataTableColumnHeader column={column} title="Room Pice (Regular)" />
         ),
@@ -125,16 +124,14 @@ export const columns: ColumnDef<IRoomTypeColum>[]  = [
 
             return (
                 <div className="flex items-center text-center">
-                    <span>$ {row.getValue("regularPrice")}</span>
+                    <span>{row.getValue("regularUsePrice")}</span>
                 </div>
             )
         },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
+
     },
     {
-        accessorKey: "singlePrice",
+        accessorKey: "singleUsePrice",
         header: ({ column }: any) => (
             <DataTableColumnHeader column={column} title="Room Price (Single use)" />
         ),
@@ -143,13 +140,11 @@ export const columns: ColumnDef<IRoomTypeColum>[]  = [
 
             return (
                 <div className="flex items-center text-center">
-                    <span>$ {row.getValue("singlePrice")}</span>
+                    <span>{row.getValue("singleUsePrice")}</span>
                 </div>
             )
         },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
+
     },
 
 

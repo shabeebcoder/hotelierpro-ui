@@ -21,46 +21,25 @@ import {
     DropdownMenuRadioItem
 } from "../../elements/Dropdown-menu/dropdownmenu";
 
+import { z } from "zod"
+import moment from "moment"
+import { ColumnDef } from '@tanstack/react-table';
 
-function DataTableRowActions({
-    row = {},
-}: any) {
-  
+const stringToDate = z.string().transform((str) => new Date(str));
+const dateSchema = z.union([stringToDate, z.date()]);
 
-    return (
-        <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-                <Button
-                    variant="ghost"
-                    className="flex h-8 w-8 p-0 data-[state=open]:bg-muted"
-                >
-                    <DotsHorizontalIcon className="h-4 w-4" />
-                    <span className="sr-only">Open menu</span>
-                </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-[160px]">
-                <DropdownMenuItem onClick={() => row.actions.handleExportPdf()}>Export PDF
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => row.actions.handleExportXlx()}>Export XLX</DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
-    )
-}
+export const bookingHistoryTableSchema = z.object({
+    user: z.string(),
+    room: z.string().default("-"),
+    details: z.string(),
+    date: dateSchema
+});
+
+export type IBookingHistoryTable = z.infer<typeof bookingHistoryTableSchema>
 
 
-function statusBadge(status) {
-    if (status === "paid") {
-        return "destructive"
-    }
-    if (status === "paid") {
-        return "destructive"
-    }
-    if (status === "draft") {
-        return "destructive"
-    }
-}
 
-export const columns: any = [
+export const columns: ColumnDef<IBookingHistoryTable>[] = [
 
     {
         accessorKey: "user",

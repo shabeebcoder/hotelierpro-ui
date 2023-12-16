@@ -1,7 +1,7 @@
 import React from 'react';
 import NewBookingForm from './newBookingForm';
 import { Button } from '../../../elements/Buttons/buttons';
-import { PlusCircledIcon } from '@radix-ui/react-icons';
+import { PlusCircledIcon, PersonIcon } from '@radix-ui/react-icons';
 import Drawer from '../../Drawer/drawer';
 import { Form } from '../../Forms';
 
@@ -14,15 +14,15 @@ export const NewBookingFormExample = (args) => {
 
         return (
             <Drawer
-
+            
                 title={'Add new Guests'}
                 description={'Add new guests'}
                 open={open}
                 onClose={() => null}
                 Form={() => <><Form.addPerson
                     id="addGuest"
-                    onsubmit={(data: any) => { alert(JSON.stringify(data)) }}
-                    defaultValues={{}}
+                    onSubmit={(data: any) => { alert(JSON.stringify(data)) }}
+            
                 />
                     <Button form='addGuest' type='submit'>das</Button>
                 </>}
@@ -56,8 +56,8 @@ export const NewBookingFormExample = (args) => {
                 onClose={() => null}
                 Form={() => <><Form.addPerson
                     id="addGuest"
-                    onsubmit={(data: any) => { alert(JSON.stringify(data)) }}
-                    defaultValues={{}}
+                    onSubmit={(data: any) => { alert(JSON.stringify(data)) }}
+                   
                 />
                     <Button form='addGuest' type='submit'>das</Button>
                 </>}
@@ -84,6 +84,7 @@ export const NewBookingFormExample = (args) => {
                     alert(JSON.stringify(data))
                     console.log("form", data)
                 }}
+                defaultValues={{}}
 
                 roomTypes={[
                     {
@@ -146,22 +147,19 @@ export const NewBookingFormExample = (args) => {
                         name: "shabeeb ck",
                         email: "shabeebcoder@gmail.com",
                         id: "4335345345",
-                        avatar: "https://flowbite.com/docs/images/people/profile-picture-3.jpg"
+                        avatar: "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
+                      
                     }
                     ,
                     {
                         name: "Bonnie Green",
                         email: "email@flowbite.com",
                         id: "4335ds345345",
-                        avatar: "https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                        avatar: "https://flowbite.com/docs/images/people/profile-picture-2.jpg",
+                       
                     }
                 ]}
-                NewGuest={() => {
-                    return (<Button onClick={() => setOpen(!open)} type='button'>
-                        <PlusCircledIcon className="mr-2 h-4 w-4" />
-
-                        New Guest</Button>)
-                }}
+                NewGuest={null}
                 onSelect={(data) => alert(JSON.stringify(data))}
 
             />

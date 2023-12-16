@@ -42,13 +42,39 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useFieldArray, useForm } from 'react-hook-form';
 import Select from "react-tailwindcss-select";
 import { Icons } from '../../../elements/Icons/icons';
+import { z } from "zod"
+import moment from "moment"
 
+const stringToDate = z.string().transform((str) => new Date(str));
+const dateSchema = z.union([stringToDate, z.date()]);
+
+export const billFormSchema = z.object({
+    payer: z.string(),
+    paymentBy: z.enum(["person", "company"]),
+    services: z.array(z.object({
+        item: z.string(),
+        cost: z.coerce.number(),
+        qty: z.coerce.number(),
+        total: z.coerce.number(),
+        type: z.enum(["room", "service"]),
+        date: dateSchema,
+    })),
+    total: z.coerce.number(),
+    paid: z.coerce.number(),
+    amountDue: z.coerce.number(),
+    subTotal: z.coerce.number().optional(),
+    createInvoice: z.boolean().default(false).optional(),
+    serviceList: z.string().optional()
+
+});
+
+export type IBillForm = z.infer<typeof billFormSchema>
 
 function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOptions = [], handleCreateInvoice, handleCancel }) {
 
     const [subTotal, setSubTotal] = React.useState(0)
     const [amountDue, setAmountDue] = React.useState(0)
-    const form = useForm({defaultValues})
+    const form = useForm<IBillForm>({ defaultValues, resolver: zodResolver(billFormSchema) })
 
     const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
         {
@@ -65,8 +91,9 @@ function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOption
             item: value.label,
             cost: Number(value.price),
             qty: 1,
+            date: new Date(),
             total: Number(value.price),
-            type: value.type
+            type: "service"
         })
 
         setSubTotal(subTotal + value.price)
@@ -78,11 +105,11 @@ function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOption
         const subscription = form.watch((value, { name, type }) => {
 
             if (name.includes('qty')) {
-
                 const index = name.split('.')[1].split('.')[0];
                 const qty = value.services[index].qty;
-                const cost = value.services[index].cost; // assuming cost is a constant or another field
-                form.setValue(`services.${index}.total`, Number(qty) * Number(cost));
+                const cost = value.services[index].cost;
+                const field: any = `services.${index}.total`;
+                form.setValue(field, Number(qty) * Number(cost));
                 const newSubtotal = form.getValues("services").reduce((acc, curr) => {
                     return acc + (curr.total || 0);
                 }, 0);
@@ -107,7 +134,7 @@ function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOption
 
     React.useEffect(() => {
 
-        const newSubtotal:any = fields.reduce((acc:any, curr:any) => {
+        const newSubtotal: any = fields.reduce((acc: any, curr: any) => {
             return acc + (curr.total || 0);
         }, 0);
 
@@ -121,7 +148,10 @@ function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOption
 
     return (
         <>
+            {/* <pre>
 
+                {JSON.stringify(defaultValues, null, 2)}
+            </pre> */}
 
             <Form {...form}>
                 <form
@@ -173,14 +203,13 @@ function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOption
                                 <FormField
                                     control={form.control}
                                     name="payer"
-
                                     // rules={{ required: true }}
                                     render={({ field }) => (
                                         <FormItem className="w-[20rem]">
                                             <FormLabel>Payer</FormLabel>
                                             <FormControl>
                                                 <Input
-
+                                                    readOnly={true}
                                                     placeholder=""
                                                     {...field}
                                                 />
@@ -200,7 +229,10 @@ function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOption
                                 <TableHeader>
                                     <TableRow>
                                         <TableHead className="uppercase text-center w-4 max-w-4 min-w-4">
-                                            si
+                                            Sl
+                                        </TableHead>
+                                        <TableHead className="uppercase text-center w-4 max-w-4 min-w-4">
+                                            Date
                                         </TableHead>
                                         <TableHead>Item</TableHead>
                                         <TableHead className="uppercase text-center w-[7rem]">
@@ -215,10 +247,13 @@ function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOption
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
-                                    {fields.map((row:any, index) => (
+                                    {fields.map((row: any, index) => (
                                         <TableRow key={index}>
-                                            <TableCell className="w-2 max-w-4 min-w-4 text-center">
+                                            <TableCell className="w-2 max-w-2 min-w-2 text-center">
                                                 {index + 1}
+                                            </TableCell>
+                                            <TableCell >
+                                                {moment(new Date(row.date)).format("DD-MMM-YYYY")}
                                             </TableCell>
                                             <TableCell>
                                                 <FormField
@@ -235,13 +270,7 @@ function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOption
                                                                     {...field}
                                                                     readOnly
                                                                 />
-                                                                {/* <Select
 
-                                                                    value={field.value}
-                                                                    onChange={field.onChange}
-                                                                    options={serviceOptions}
-                                                                    isSearchable={true} */}
-                                                                {/* primaryColor={''} /> */}
                                                             </FormControl>
                                                             <FormMessage />
                                                         </FormItem>
@@ -310,7 +339,7 @@ function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOption
                                                         </FormItem>
                                                         &nbsp;
 
-                                                       {row.type === "service" && (<Icons.trash onClick={()=> remove(index)} />)} 
+                                                        {row.type === "service" && (<Icons.trash onClick={() => remove(index)} />)}
 
                                                     </div>)}
                                                 />
@@ -318,22 +347,20 @@ function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOption
                                         </TableRow>
                                     ))}
                                     <TableRow key={'index'}>
-                                        <TableCell className="w-4 max-w-4 min-w-4 text-center">
+                                        <TableCell className="w-2 max-w-2 min-w-2 text-center">
+
+                                        </TableCell>
+                                        <TableCell >
 
                                         </TableCell>
                                         <TableCell>
                                             <FormField
                                                 control={form.control}
-
-                                                name={'item'}
-                                                render={({ field }) => (
+                                                name='serviceList'
+                                                render={({ field }: any) => (
                                                     <FormItem>
-
                                                         <FormControl>
-
                                                             <Select
-
-                                                                
                                                                 value={field.value}
                                                                 onChange={handleChange}
                                                                 options={serviceOptions}
@@ -345,6 +372,7 @@ function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOption
                                                 )}
                                             />
                                         </TableCell>
+
 
                                     </TableRow>
                                 </TableBody>
@@ -377,7 +405,7 @@ function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOption
                                             Amount Due
                                         </TableCell>
                                         <TableCell className="text-red-500">
-                                            {amountDue}&nbsp; USD
+                                            {amountDue}&nbsp;
                                         </TableCell>
                                     </TableRow>
                                 </TableFooter>
@@ -385,10 +413,10 @@ function BillingComponent({ onsubmit, selectValues, defaultValues, serviceOption
                         </CardContent>
                         <CardFooter className="flex justify-between">
                             <div className="space-x-4">
-                                <Button type='submit' onClick={()=> form.setValue("createInvoice", false)}>Save</Button>
+                                <Button type='submit' onClick={() => form.setValue("createInvoice", false)}>Save</Button>
                                 <Button variant="outline" type='button' onClick={handleCancel}>Cancel</Button>
                             </div>
-                            <Button type='submit' onClick={()=> form.setValue("createInvoice", true)}>Save & Create Invoice</Button>
+                            <Button type='submit' onClick={() => form.setValue("createInvoice", true)}>Save & Create Invoice</Button>
                         </CardFooter>
                     </Card>
                     <input type="hidden" {...form.register("subTotal")} value={subTotal} />

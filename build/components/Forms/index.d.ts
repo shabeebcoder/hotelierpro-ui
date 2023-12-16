@@ -4,8 +4,8 @@ import maintainance from './maintenanceAlert/maintenanceAlertForm';
 import roomType, { IRoomTypeType } from './roomtype/addroomType';
 import addroom, { IRoom } from './addrooms/addrooms';
 import serviceCategory, { IServiceCategory } from './addServicescategory/addServiceCategoryForm';
-import booking from './newBooking/newBookingForm';
-import Billing from './billingComponent/billingComponent';
+import booking, { IbookingForm } from './newBooking/newBookingForm';
+import Billing, { IBillForm } from './billingComponent/billingComponent';
 import changePassword from './change-password/changePassword';
 export declare const Form: {
     changePassword: typeof changePassword;
@@ -24,4 +24,6 @@ export declare namespace IForm {
     type serviceCategory = IServiceCategory;
     type addroom = IRoom;
     type roomType = IRoomTypeType;
+    type bookingForm = IbookingForm;
+    type billing = IBillForm;
 }

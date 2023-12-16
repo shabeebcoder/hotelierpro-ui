@@ -34,6 +34,48 @@ import {
     PopoverContent,
 } from '../../../elements/Popover/popover';
 import { PlusCircledIcon } from '@radix-ui/react-icons';
+import { z } from "zod"
+import moment from "moment"
+
+const stringToDate = z.string().transform((str) => new Date(str));
+const dateSchema = z.union([stringToDate, z.date()]);
+// {
+//     name: z.string(),
+//     contact: z.string(),
+//     email: z.string(),
+//     id: z.string().optional()
+// }
+// notes: z.array(z.object({
+//     staffName: z.string(),
+//     createdAt: z.date(),
+//     note: z.string()
+// })).optional()
+
+const invoiceFormSchema = z.object({
+    customer: z.string(),
+    customerAddress: z.string(),
+    hotelName: z.string(),
+    hotelAddress: z.string(),
+    invoiceNumber: z.string(),
+    invoiceDate: dateSchema,
+    invoiceDueDate: dateSchema,
+    services: z.array(z.object({
+        name: z.string(),
+        price: z.coerce.number(),
+        quantity: z.coerce.number(),
+        totalAmount: z.coerce.number(),
+        date: dateSchema.optional()
+    })),
+    total: z.coerce.number(),
+    subTotal: z.coerce.number(),
+    paid: z.coerce.number(),
+    amountDue: z.coerce.number(),
+    status: z.enum(["paid", "draft", "sent"]),
+    notes: z.string().optional()
+
+});
+
+export type IInvoiceForm = z.infer<typeof invoiceFormSchema>
 
 function InvoiceEditableForm({
 
@@ -47,7 +89,7 @@ function InvoiceEditableForm({
     const [subTotal, setSubTotal] = React.useState(0)
     const [amountDue, setAmountDue] = React.useState(0)
 
-    const form = useForm({ defaultValues });
+    const form = useForm<IInvoiceForm>({ defaultValues, resolver: zodResolver(invoiceFormSchema) });
     const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
         {
             control: form.control,
@@ -82,10 +124,11 @@ function InvoiceEditableForm({
 
                 const index = name.split('.')[1].split('.')[0];
                 const qty = value.services[index].qty;
-                const cost = value.services[index].cost; // assuming cost is a constant or another field
-                form.setValue(`services.${index}.total`, Number(qty) * Number(cost));
+                const cost = value.services[index].cost;
+                const field: any = `services.${index}.total`;
+                form.setValue(field, Number(qty) * Number(cost));
                 const newSubtotal = form.getValues("services").reduce((acc, curr) => {
-                    return acc + (curr.total || 0);
+                    return acc + (curr.totalAmount || 0);
                 }, 0);
 
                 setSubTotal(newSubtotal);
@@ -143,7 +186,7 @@ function InvoiceEditableForm({
                             <FormField
                                 control={form.control}
                                 rules={{ required: true }}
-                                name="billingDate"
+                                name="invoiceDate"
                                 render={({ field }) => (
                                     <FormItem className="flex flex-col">
                                         <Popover>
@@ -191,7 +234,7 @@ function InvoiceEditableForm({
                             <FormField
                                 control={form.control}
                                 rules={{ required: true }}
-                                name="dueDate"
+                                name="invoiceDueDate"
                                 render={({ field }) => (
                                     <FormItem className="flex flex-col">
                                         <Popover>
@@ -242,7 +285,7 @@ function InvoiceEditableForm({
                             <FormField
                                 control={form.control}
                                 rules={{ required: true }}
-                                name="billToName"
+                                name="customer"
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Bill To</FormLabel>
@@ -258,7 +301,7 @@ function InvoiceEditableForm({
                             />
                             <FormField
                                 control={form.control}
-                                name="billToAddress"
+                                name="customerAddress"
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormControl>
@@ -276,7 +319,7 @@ function InvoiceEditableForm({
                             <FormField
                                 control={form.control}
                                 rules={{ required: true }}
-                                name="billFromName"
+                                name="hotelName"
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Bill From</FormLabel>
@@ -292,7 +335,7 @@ function InvoiceEditableForm({
                             />
                             <FormField
                                 control={form.control}
-                                name="billFromAddress"
+                                name="hotelAddress"
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormControl>
@@ -339,7 +382,7 @@ function InvoiceEditableForm({
                                         <FormField
                                             control={form.control}
                                             rules={{ required: true }}
-                                            name={`services.${index}.item`}
+                                            name={`services.${index}.name`}
                                             render={({ field }) => (
                                                 <FormItem>
                                                     <FormControl>
@@ -357,7 +400,7 @@ function InvoiceEditableForm({
                                         <FormField
                                             control={form.control}
                                             rules={{ required: true }}
-                                            name={`services.${index}.cost`}
+                                            name={`services.${index}.price`}
                                             render={({ field }) => (
                                                 <FormItem className="w-[8rem]">
                                                     <FormControl>
@@ -375,7 +418,7 @@ function InvoiceEditableForm({
                                         <FormField
                                             control={form.control}
                                             rules={{ required: true }}
-                                            name={`services.${index}.qty`}
+                                            name={`services.${index}.quantity`}
                                             render={({ field }) => (
                                                 <FormItem className="w-[8rem]">
                                                     <FormControl>
@@ -394,7 +437,7 @@ function InvoiceEditableForm({
                                         <FormField
                                             control={form.control}
                                             rules={{ required: true }}
-                                            name={`services.${index}.total`}
+                                            name={`services.${index}.totalAmount`}
                                             render={({ field }) => (
                                                 <FormItem className="w-[8rem]">
                                                     <FormControl>
@@ -416,11 +459,11 @@ function InvoiceEditableForm({
                             <TableRow className="py-4">
                                 <TableCell>
                                     <Button type='button' onClick={() => append({
-                                        item: "",
-                                        cost: '',
-                                        qty: '',
-                                        total: '',
-                                        type: "service"
+                                        name: "",
+                                        price: 0,
+                                        quantity: 1,
+                                        totalAmount: 0,
+
                                     })}>
                                         <PlusCircledIcon className="mr-2 h-4 w-4" />
                                         Add New Row</Button>
@@ -431,42 +474,7 @@ function InvoiceEditableForm({
                                 <TableCell colSpan={2}>Subtotal</TableCell>
                                 <TableCell>{subTotal}</TableCell>
                             </TableRow>
-                            {/* <TableRow>
-                                <TableCell colSpan={2}></TableCell>
-                                <TableCell>City Tax</TableCell>
-                                <TableCell>
-                                    <Input placeholder="000" />
-                                </TableCell>
-                                <TableCell>$235</TableCell>
-                            </TableRow> */}
-                            {/* <TableRow>
-                                <TableCell colSpan={2}></TableCell>
-                                <TableCell colSpan={2}>VAT</TableCell>
-                            </TableRow> */}
-                            {/* <TableRow>
-                                <TableCell colSpan={2}></TableCell>
-                                <TableCell>Rooms</TableCell>
-                                <TableCell>
-                                    <Input placeholder="000" />
-                                </TableCell>
-                                <TableCell>$235</TableCell>
-                            </TableRow> */}
-                            {/* <TableRow>
-                                <TableCell colSpan={2}></TableCell>
-                                <TableCell>General Services</TableCell>
-                                <TableCell>
-                                    <Input placeholder="000" />
-                                </TableCell>
-                                <TableCell>$235</TableCell>
-                            </TableRow> */}
-                            {/* <TableRow>
-                                <TableCell colSpan={2}></TableCell>
-                                <TableCell>Food</TableCell>
-                                <TableCell>
-                                    <Input placeholder="000" />
-                                </TableCell>
-                                <TableCell>$235</TableCell>
-                            </TableRow> */}
+
                             <TableRow>
                                 <TableCell colSpan={2}></TableCell>
                                 <TableCell colSpan={3}>

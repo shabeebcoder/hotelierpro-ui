@@ -3,7 +3,7 @@ import { columns as roomColumns } from "./room-type-columns"
 import { columns as roomTypes } from "./room-type-columns";
 import { columns as serviceCategory } from "./service-category-table-column"
 import { columns as services } from "./services-table-column"
-import { columns as billingTable } from "./billing-table-column"
+import { columns as billingTable } from "./invoice-table-column"
 import Table from "../Data-table/data-table";
 
 export default {

@@ -8,6 +8,7 @@ import { Badge } from "../../elements/Badge/badge"
 import { DotsHorizontalIcon } from "@radix-ui/react-icons"
 import { Button } from "../../elements/Buttons/buttons"
 import classNames from 'classnames';
+import {z} from "zod"
 
 import {
     DropdownMenu,
@@ -20,7 +21,20 @@ import {
     DropdownMenuSubContent,
     DropdownMenuRadioItem
 } from "../../elements/Dropdown-menu/dropdownmenu";
+import { ColumnDef } from '@tanstack/react-table';
 
+const stringToDate = z.string().transform((str) => new Date(str));
+const dateSchema = z.union([stringToDate, z.date()]);
+export const invoicetableSchema = z.object({
+    invoiceNumber : z.string(),
+    name: z.string(),
+    date: dateSchema,
+    status: z.enum(["paid", "draft", "sent"]),
+    total: z.coerce.number(),
+    notes: z.string().default("-").optional()
+})
+
+export type IInvoiceTable = z.infer<typeof invoicetableSchema>
 
 function DataTableRowActions({
     row,
@@ -79,7 +93,7 @@ function statusBadge(status) {
     }
 }
 
-export const columns: any = [
+export const columns: ColumnDef<IInvoiceTable>[] = [
     {
         id: "select",
         header: ({ table }: any) => (
@@ -111,26 +125,26 @@ export const columns: any = [
         enableHiding: false,
     },
     {
-        accessorKey: "client",
+        accessorKey: "name",
         header: ({ column }: any) => (
             <DataTableColumnHeader column={column} title="Client Name" />
         ),
         cell: ({ row }: any) => {
 
             return (
-                <div className="w-[150px]">{row.getValue("client")}</div>
+                <div className="w-[150px]">{row.getValue("name")}</div>
             )
         },
     },
     {
-        accessorKey: "createdAt",
+        accessorKey: "date",
         header: ({ column }: any) => (
             <DataTableColumnHeader column={column} title="Date" />
         ),
         cell: ({ row }: any) => {
 
             return (
-                <div className="w-[150px]">{row.getValue("createdAt")}</div>
+                <div className="w-[150px]">{row.getValue("date")}</div>
 
             )
         },
@@ -162,7 +176,7 @@ export const columns: any = [
         },
     },
     {
-        accessorKey: "subTotal",
+        accessorKey: "total",
         header: ({ column }: any) => (
             <DataTableColumnHeader column={column} title="Total" />
         ),
@@ -170,7 +184,7 @@ export const columns: any = [
 
             return (
                 <div className="flex items-center text-center">
-                    <span>{row.getValue("subTotal")}</span>
+                    <span>{row.getValue("total")}</span>
 
                 </div>
             )

@@ -23,6 +23,11 @@ export const roomTableSchema = z.object({
     singleUsePrice: z.number(),
     regularUsePrice: z.number(),
     id: z.string().optional(),
+    actions: z.object({
+        handleUpdate: z.function(),
+        handleDelete: z.function(),
+        handleMainance: z.function()
+    })
 })
 
 export type IRoomColum = z.infer<typeof roomTableSchema>
@@ -110,9 +115,7 @@ export const columns:ColumnDef<IRoomColum>[] = [
         cell: ({ row }: any) => {
 
 
-            // if (!status) {
-            //     return null
-            // }
+     
 
             return (
                 <div className="flex  text-center">
@@ -121,13 +124,11 @@ export const columns:ColumnDef<IRoomColum>[] = [
 
             )
         },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
+     
     },
 
     {
-        accessorKey: "regularPrice",
+        accessorKey: "regularUsePrice",
         header: ({ column }: any) => (
             <DataTableColumnHeader column={column} title="Room Pice (Regular)" />
         ),
@@ -136,16 +137,14 @@ export const columns:ColumnDef<IRoomColum>[] = [
 
             return (
                 <div className="flex items-center text-center">
-                    <span>$ {row.getValue("regularPrice")}</span>
+                    <span>{row.getValue("regularUsePrice")}</span>
                 </div>
             )
         },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
+    
     },
     {
-        accessorKey: "singlePrice",
+        accessorKey: "singleUsePrice",
         header: ({ column }: any) => (
             <DataTableColumnHeader column={column} title="Room Price (Single use)" />
         ),
@@ -154,13 +153,11 @@ export const columns:ColumnDef<IRoomColum>[] = [
 
             return (
                 <div className="flex items-center text-center">
-                    <span>$ {row.getValue("singlePrice")}</span>
+                    <span>{row.getValue("singleUsePrice")}</span>
                 </div>
             )
         },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
+  
     },
 
 

@@ -119,8 +119,8 @@ export const billingComponentExample = (args) => {
             console.log("data", data)
             alert(JSON.stringify(data))
         }}
-        handleCreateInvoice = {()=> alert("")}
-        handleCancel = {() => alert()}
+        handleCreateInvoice={() => alert("")}
+        handleCancel={() => alert()}
         selectValues={[
             { label: 'Person', value: 'person' },
             { label: 'Owner', value: 'owner' },
@@ -133,21 +133,24 @@ export const billingComponentExample = (args) => {
                     cost: 200,
                     qty: 3,
                     total: 300,
-                    type:"room"
+                    type: "room",
+                    date: "2023-12-16T07:38:23.214Z",
                 },
                 {
                     item: "Americano",
                     cost: 10,
                     qty: 3,
                     total: 300,
-                    type: "service"
+                    type: "service",
+                    date: "2023-12-16T07:38:23.214Z",
                 },
                 {
                     item: "rangrover",
                     cost: 100,
                     qty: 3,
                     total: 600,
-                    type: "service"
+                    type: "service",
+                    date: "2023-12-16T07:38:23.214Z",
                 }
             ],
             subTotal: 0,

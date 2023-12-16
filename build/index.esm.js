@@ -5973,6 +5973,28 @@ var MixerHorizontalIcon = /*#__PURE__*/forwardRef(function (_ref, forwardedRef) 
   }));
 });
 
+var _excluded$3p = ["color"];
+var PersonIcon = /*#__PURE__*/forwardRef(function (_ref, forwardedRef) {
+  var _ref$color = _ref.color,
+      color = _ref$color === void 0 ? 'currentColor' : _ref$color,
+      props = _objectWithoutPropertiesLoose$h(_ref, _excluded$3p);
+
+  return createElement("svg", Object.assign({
+    width: "15",
+    height: "15",
+    viewBox: "0 0 15 15",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props, {
+    ref: forwardedRef
+  }), createElement("path", {
+    d: "M7.5 0.875C5.49797 0.875 3.875 2.49797 3.875 4.5C3.875 6.15288 4.98124 7.54738 6.49373 7.98351C5.2997 8.12901 4.27557 8.55134 3.50407 9.31167C2.52216 10.2794 2.02502 11.72 2.02502 13.5999C2.02502 13.8623 2.23769 14.0749 2.50002 14.0749C2.76236 14.0749 2.97502 13.8623 2.97502 13.5999C2.97502 11.8799 3.42786 10.7206 4.17091 9.9883C4.91536 9.25463 6.02674 8.87499 7.49995 8.87499C8.97317 8.87499 10.0846 9.25463 10.8291 9.98831C11.5721 10.7206 12.025 11.8799 12.025 13.5999C12.025 13.8623 12.2376 14.0749 12.5 14.0749C12.7623 14.075 12.975 13.8623 12.975 13.6C12.975 11.72 12.4778 10.2794 11.4959 9.31166C10.7244 8.55135 9.70025 8.12903 8.50625 7.98352C10.0187 7.5474 11.125 6.15289 11.125 4.5C11.125 2.49797 9.50203 0.875 7.5 0.875ZM4.825 4.5C4.825 3.02264 6.02264 1.825 7.5 1.825C8.97736 1.825 10.175 3.02264 10.175 4.5C10.175 5.97736 8.97736 7.175 7.5 7.175C6.02264 7.175 4.825 5.97736 4.825 4.5Z",
+    fill: color,
+    fillRule: "evenodd",
+    clipRule: "evenodd"
+  }));
+});
+
 var _excluded$3y = ["color"];
 var PlusCircledIcon = /*#__PURE__*/forwardRef(function (_ref, forwardedRef) {
   var _ref$color = _ref.color,
@@ -13822,224 +13844,6 @@ function DataTableColumnHeader(_a) {
                     "Hide")))));
 }
 
-function DataTableRowActions$6(_a) {
-    var row = _a.row;
-    var task = row.original;
-    return (React__default.createElement(DropdownMenu, null,
-        React__default.createElement(DropdownMenuTrigger, { asChild: true },
-            React__default.createElement(Button$3, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
-                React__default.createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
-                React__default.createElement("span", { className: "sr-only" }, "Open menu"))),
-        React__default.createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
-            React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
-            React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
-            React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
-}
-var columns$7 = [
-    {
-        id: "select",
-        header: function (_a) {
-            var table = _a.table;
-            return (React__default.createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default.createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
-        },
-        enableSorting: false,
-        enableHiding: false,
-    },
-    {
-        accessorKey: "roomName",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Room Type Name" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return React__default.createElement("div", { className: "w-[150px]" }, row.getValue("roomName"));
-        },
-        enableSorting: false,
-        enableHiding: false,
-    },
-    {
-        accessorKey: "maxPerson",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Max Person (Per Room)" }));
-        },
-        cell: function (_a) {
-            // if (!status) {
-            //     return null
-            // }
-            var row = _a.row;
-            return (React__default.createElement("div", { className: "flex  text-center" }, row.getValue("maxPerson")));
-        },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
-    },
-    {
-        accessorKey: "regularPrice",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Room Pice (Regular)" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default.createElement("div", { className: "flex items-center text-center" },
-                React__default.createElement("span", null,
-                    "$ ",
-                    row.getValue("regularPrice"))));
-        },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
-    },
-    {
-        accessorKey: "singlePrice",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Room Price (Single use)" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default.createElement("div", { className: "flex items-center text-center" },
-                React__default.createElement("span", null,
-                    "$ ",
-                    row.getValue("singlePrice"))));
-        },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
-    },
-    {
-        id: "actions",
-        cell: function (_a) {
-            var row = _a.row;
-            return React__default.createElement(DataTableRowActions$6, { row: row });
-        },
-    },
-];
-
-function DataTableRowActions$5(_a) {
-    var row = _a.row;
-    var task = row.original;
-    return (React__default.createElement(DropdownMenu, null,
-        React__default.createElement(DropdownMenuTrigger, { asChild: true },
-            React__default.createElement(Button$3, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
-                React__default.createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
-                React__default.createElement("span", { className: "sr-only" }, "Open menu"))),
-        React__default.createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
-            React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
-            React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"))));
-}
-var columns$6 = [
-    {
-        id: "select",
-        header: function (_a) {
-            var table = _a.table;
-            return (React__default.createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default.createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
-        },
-        enableSorting: false,
-        enableHiding: false,
-    },
-    {
-        accessorKey: "fullName",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Guest Name" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return React__default.createElement("div", { className: "w-[150px]" }, row.getValue("fullName"));
-        },
-        enableSorting: false,
-        enableHiding: false,
-    },
-    {
-        accessorKey: "passportNumber",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Passport ID" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default.createElement("div", { className: "w-[150px]" }, row.getValue("passportNumber")));
-        },
-    },
-    {
-        accessorKey: "country",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Country" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default.createElement("div", { className: "w-[150px]" }, row.getValue("country")));
-        },
-        filterFn: function (row, id, value) {
-            return value.includes(row.getValue(id));
-        },
-    },
-    {
-        accessorKey: "address",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Address" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default.createElement("div", { className: "flex items-center text-center" },
-                React__default.createElement("span", null, row.getValue("address"))));
-        },
-        filterFn: function (row, id, value) {
-            return value.includes(row.getValue(id));
-        },
-    },
-    {
-        accessorKey: "email",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "E-mail" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default.createElement("div", { className: "flex items-center text-center" },
-                React__default.createElement("span", null, row.getValue("email"))));
-        },
-        filterFn: function (row, id, value) {
-            return value.includes(row.getValue(id));
-        },
-    },
-    {
-        accessorKey: "contactNumber",
-        header: function (_a) {
-            var column = _a.column;
-            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Phone Number" }));
-        },
-        cell: function (_a) {
-            var row = _a.row;
-            return (React__default.createElement("div", { className: "flex items-center text-center" },
-                React__default.createElement("span", null, row.getValue("contactNumber"))));
-        },
-        filterFn: function (row, id, value) {
-            return value.includes(row.getValue(id));
-        },
-    },
-    {
-        id: "actions",
-        cell: function (_a) {
-            var row = _a.row;
-            return React__default.createElement(DataTableRowActions$5, { row: row });
-        },
-    },
-];
-
 var util;
 (function (util) {
     util.assertEqual = (val) => val;
@@ -18058,11 +17862,230 @@ var z$2 = /*#__PURE__*/Object.freeze({
 
 z$2.object({
     name: z$2.string(),
-    price: z$2.number(),
-    roomType: z$2.string(),
-    image: z$2.string().array().optional(),
     maxPerson: z$2.number(),
+    singleUsePrice: z$2.number(),
+    regularUsePrice: z$2.number(),
     id: z$2.string().optional(),
+    actions: z$2.object({
+        handleUpdate: z$2.function(),
+        handleDelete: z$2.function(),
+        handleMainance: z$2.function()
+    })
+});
+function DataTableRowActions$6(_a) {
+    var row = _a.row;
+    var task = row.original;
+    return (React__default.createElement(DropdownMenu, null,
+        React__default.createElement(DropdownMenuTrigger, { asChild: true },
+            React__default.createElement(Button$3, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
+                React__default.createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
+                React__default.createElement("span", { className: "sr-only" }, "Open menu"))),
+        React__default.createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
+            React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
+            React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
+            React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
+}
+var columns$7 = [
+    {
+        id: "select",
+        header: function (_a) {
+            var table = _a.table;
+            return (React__default.createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "name",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Room Type Name" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default.createElement("div", { className: "w-[150px]" }, row.getValue("name"));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "maxPerson",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Max Person (Per Room)" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement("div", { className: "flex  text-center" }, row.getValue("maxPerson")));
+        },
+    },
+    {
+        accessorKey: "regularUsePrice",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Room Pice (Regular)" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement("div", { className: "flex items-center text-center" },
+                React__default.createElement("span", null, row.getValue("regularUsePrice"))));
+        },
+    },
+    {
+        accessorKey: "singleUsePrice",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Room Price (Single use)" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement("div", { className: "flex items-center text-center" },
+                React__default.createElement("span", null, row.getValue("singleUsePrice"))));
+        },
+    },
+    {
+        id: "actions",
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default.createElement(DataTableRowActions$6, { row: row });
+        },
+    },
+];
+
+function DataTableRowActions$5(_a) {
+    var row = _a.row;
+    var task = row.original;
+    return (React__default.createElement(DropdownMenu, null,
+        React__default.createElement(DropdownMenuTrigger, { asChild: true },
+            React__default.createElement(Button$3, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
+                React__default.createElement(DotsHorizontalIcon, { className: "h-4 w-4" }),
+                React__default.createElement("span", { className: "sr-only" }, "Open menu"))),
+        React__default.createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
+            React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
+            React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"))));
+}
+var columns$6 = [
+    {
+        id: "select",
+        header: function (_a) {
+            var table = _a.table;
+            return (React__default.createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "fullName",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Guest Name" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default.createElement("div", { className: "w-[150px]" }, row.getValue("fullName"));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "passportNumber",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Passport ID" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement("div", { className: "w-[150px]" }, row.getValue("passportNumber")));
+        },
+    },
+    {
+        accessorKey: "country",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Country" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement("div", { className: "w-[150px]" }, row.getValue("country")));
+        },
+        filterFn: function (row, id, value) {
+            return value.includes(row.getValue(id));
+        },
+    },
+    {
+        accessorKey: "address",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Address" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement("div", { className: "flex items-center text-center" },
+                React__default.createElement("span", null, row.getValue("address"))));
+        },
+        filterFn: function (row, id, value) {
+            return value.includes(row.getValue(id));
+        },
+    },
+    {
+        accessorKey: "email",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "E-mail" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement("div", { className: "flex items-center text-center" },
+                React__default.createElement("span", null, row.getValue("email"))));
+        },
+        filterFn: function (row, id, value) {
+            return value.includes(row.getValue(id));
+        },
+    },
+    {
+        accessorKey: "contactNumber",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Phone Number" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement("div", { className: "flex items-center text-center" },
+                React__default.createElement("span", null, row.getValue("contactNumber"))));
+        },
+        filterFn: function (row, id, value) {
+            return value.includes(row.getValue(id));
+        },
+    },
+    {
+        id: "actions",
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default.createElement(DataTableRowActions$5, { row: row });
+        },
+    },
+];
+
+z$2.object({
+    name: z$2.string(),
+    roomType: z$2.string(),
+    maxPerson: z$2.number(),
+    singleUsePrice: z$2.number(),
+    regularUsePrice: z$2.number(),
+    id: z$2.string().optional(),
+    actions: z$2.object({
+        handleUpdate: z$2.function(),
+        handleDelete: z$2.function(),
+        handleMainance: z$2.function()
+    })
 });
 function DataTableRowActions$4(_a) {
     var row = _a.row;
@@ -18123,18 +18146,12 @@ var columns$5 = [
             return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Max Person (Per Room)" }));
         },
         cell: function (_a) {
-            // if (!status) {
-            //     return null
-            // }
             var row = _a.row;
             return (React__default.createElement("div", { className: "flex  text-center" }, row.getValue("maxPerson")));
         },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
     },
     {
-        accessorKey: "regularPrice",
+        accessorKey: "regularUsePrice",
         header: function (_a) {
             var column = _a.column;
             return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Room Pice (Regular)" }));
@@ -18142,16 +18159,11 @@ var columns$5 = [
         cell: function (_a) {
             var row = _a.row;
             return (React__default.createElement("div", { className: "flex items-center text-center" },
-                React__default.createElement("span", null,
-                    "$ ",
-                    row.getValue("regularPrice"))));
+                React__default.createElement("span", null, row.getValue("regularUsePrice"))));
         },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
     },
     {
-        accessorKey: "singlePrice",
+        accessorKey: "singleUsePrice",
         header: function (_a) {
             var column = _a.column;
             return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Room Price (Single use)" }));
@@ -18159,13 +18171,8 @@ var columns$5 = [
         cell: function (_a) {
             var row = _a.row;
             return (React__default.createElement("div", { className: "flex items-center text-center" },
-                React__default.createElement("span", null,
-                    "$ ",
-                    row.getValue("singlePrice"))));
+                React__default.createElement("span", null, row.getValue("singleUsePrice"))));
         },
-        // filterFn: (row:any, id:any, value:any) => {
-        //     return value.includes(row.getValue(id))
-        // },
     },
     {
         id: "actions",
@@ -26750,16 +26757,15 @@ function AddRoomType(_a) {
 }
 
 var roomsSchema = z$2.object({
-    name: z$2.string(),
-    price: z$2.coerce.number().min(0),
-    roomType: z$2.string(),
-    image: z$2.string().array().optional(),
+    name: z$2.string().min(1, "Room Name Required"),
+    roomType: z$2.string().min(1, "Room Type Required"),
+    images: z$2.string().array().optional(),
     id: z$2.string().optional()
 });
 function AddRooms(_a) {
     var onsubmit = _a.onsubmit, _b = _a.defaultValues, defaultValues = _b === void 0 ? {
         roomTypes: "1"
-    } : _b, id = _a.id, _c = _a.roomTypes, roomTypes = _c === void 0 ? [] : _c, _d = _a.fields, fields = _d === void 0 ? {
+    } : _b, _c = _a.id, id = _c === void 0 ? "addRooms" : _c, _d = _a.roomTypes, roomTypes = _d === void 0 ? [] : _d, _e = _a.fields, fields = _e === void 0 ? {
         roomTypes: {
             label: "Room Types *",
             description: "Select the type of room from the options below. Choose the most appropriate category that describes the nature or purpose of the room."
@@ -26768,7 +26774,7 @@ function AddRooms(_a) {
             label: "Room Name/Number *",
             description: "Enter the total number of rooms available in your property or facility. This should include all types of rooms, such as bedrooms, meeting rooms, and offices."
         }
-    } : _d;
+    } : _e;
     var form = useForm({ defaultValues: defaultValues, resolver: t$2(roomsSchema) });
     return (React__default.createElement(Form$1, __assign$2({}, form),
         React__default.createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8", id: id },
@@ -33321,20 +33327,42 @@ var moment = createCommonjsModule(function (module, exports) {
 })));
 });
 
+var bookingFormSchema = z$2.object({
+    checkInDate: z$2.date({
+        required_error: "Check-in Date Required"
+    }),
+    checkOutDate: z$2.date({
+        required_error: "Check-out Date Required"
+    }),
+    nights: z$2.coerce.number().min(1, "Number of Nights Required").default(0),
+    roomType: z$2.string({
+        required_error: "Please select a room type"
+    }),
+    status: z$2.string({
+        required_error: "Please select a booking status"
+    }),
+    adults: z$2.coerce.number().min(1, "Adults Number Required").default(1),
+    child: z$2.coerce.number().min(0, "Child is required").default(0),
+    guests: z$2.array(z$2.object({
+        name: z$2.string().min(1, "Guest Name Required"),
+        email: z$2.string().email().min(1, "Guest Email Required"),
+        avatar: z$2.string().optional(),
+        isMain: z$2.boolean().default(false),
+        id: z$2.string().min(1, "Guest ID Missing")
+    })).refine(function (guests) { return guests.length !== 0; }, { message: "Please select guest" }).refine(function (guests) { return guests.some(function (guest) { return guest.isMain; }); }, {
+        message: "At least one guest must be marked as the main guest"
+    }),
+    price: z$2.coerce.number().min(1, "Price is required").default(0),
+    discount: z$2.coerce.number().optional(),
+    singleUse: z$2.boolean().default(false),
+    notes: z$2.object({
+        staffName: z$2.string(),
+        note: z$2.string()
+    }).array().optional(),
+    id: z$2.string().optional()
+});
 function NewBookingForm(_a) {
-    var onSubmit = _a.onSubmit, roomTypes = _a.roomTypes, status = _a.status, id = _a.id, NewGuest = _a.NewGuest, guestList = _a.guestList; _a.onSelect; var isLoading = _a.isLoading, handleCancel = _a.handleCancel, _b = _a.defaultValues, defaultValues = _b === void 0 ? {
-        adult: 1,
-        child: 0,
-        guests: [],
-        checkInDate: new Date(),
-        duration: "",
-        checkOutDate: new Date(),
-        roomtype: "",
-        status: "",
-        price: "",
-        discount: "",
-        notes: ""
-    } : _b, _c = _a.fields, fields = _c === void 0 ? {
+    var onSubmit = _a.onSubmit, roomTypes = _a.roomTypes, status = _a.status, id = _a.id, NewGuest = _a.NewGuest, guestList = _a.guestList; _a.onSelect; var isLoading = _a.isLoading, handleCancel = _a.handleCancel, defaultValues = _a.defaultValues, _b = _a.fields, fields = _b === void 0 ? {
         checkInDate: {
             label: "Check in Date"
         },
@@ -33365,15 +33393,21 @@ function NewBookingForm(_a) {
         notes: {
             label: "Notes"
         }
-    } : _c;
-    var _d = React__default.useState([]), guestSelected = _d[0], setGuestSelected = _d[1];
-    var forms = useForm({ defaultValues: defaultValues });
+    } : _b;
+    var _c = React__default.useState([]), guestSelected = _c[0], setGuestSelected = _c[1];
+    var forms = useForm({ defaultValues: defaultValues, resolver: t$2(bookingFormSchema) });
+    var errors = forms.formState.errors;
     var handleOnSelect = function (guest) {
         setGuestSelected(__spreadArray$1(__spreadArray$1([], guestSelected, true), [guest], false));
         forms.setValue("guests", __spreadArray$1(__spreadArray$1([], forms.getValues("guests"), true), [guest], false));
     };
     function DataTableRowActions(_a) {
         var _b = _a.row, row = _b === void 0 ? {} : _b;
+        function updateMainGuest(mainGuestId) {
+            var guests = forms.getValues("guests") || [];
+            var updatedGuests = guests.map(function (guest) { return (__assign$2(__assign$2({}, guest), { isMain: guest.id === mainGuestId })); });
+            forms.setValue("guests", updatedGuests || []);
+        }
         return (React__default.createElement(DropdownMenu, null,
             React__default.createElement(DropdownMenuTrigger, { asChild: true },
                 React__default.createElement(Button$3, { variant: "ghost", className: "flex h-8 w-8 p-0 data-[state=open]:bg-muted" },
@@ -33382,14 +33416,14 @@ function NewBookingForm(_a) {
             React__default.createElement(DropdownMenuContent, { align: "end", className: "w-[160px]" },
                 React__default.createElement(DropdownMenuItem, { onClick: function () { return row.actions.handleUpdate(row); } }, "Edit"),
                 React__default.createElement(DropdownMenuItem, { onClick: function () { return row.actions.handleDelete(row); } }, "Remove"),
-                React__default.createElement(DropdownMenuItem, { onClick: function () { return row.actions.handleDelete(row); } }, "Mark as Main Guest"))));
+                React__default.createElement(DropdownMenuItem, { onClick: function () { return updateMainGuest(row.id); } }, "Mark as Main Guest"))));
     }
     React__default.useEffect(function () {
         var subscription = forms.watch(function (value, _a) {
             var _b, _c, _d, _e;
             var name = _a.name; _a.type;
             if (name.includes('roomtype') || name.includes('singleUse')) {
-                var roomType_1 = forms.getValues("roomtype");
+                var roomType_1 = forms.getValues("roomType");
                 var singleUse = forms.getValues("singleUse");
                 var selectedRoom = roomTypes.find(function (row) { return row.value === roomType_1; });
                 var roomPrice = 0;
@@ -33412,6 +33446,48 @@ function NewBookingForm(_a) {
             return false;
         }
     };
+    var handlAdultCount = function (actions) {
+        var adultsCounts = forms.getValues("adults");
+        if (actions === "decrement") {
+            if (adultsCounts) {
+                if (adultsCounts !== 1) {
+                    forms.setValue("adults", Number(forms.getValues("adults") - 1));
+                }
+            }
+        }
+        if (actions === "increment") {
+            if (adultsCounts && forms.getValues("adults") > 0) {
+                forms.setValue("adults", Number(forms.getValues("adults")) + 1);
+            }
+        }
+    };
+    var handleChildCount = function (actions) {
+        var childCount = forms.getValues("child");
+        if (actions === "decrement") {
+            if (childCount) {
+                forms.setValue("child", Number(forms.getValues("child") - 1));
+            }
+        }
+        if (actions === "increment") {
+            if (childCount && forms.getValues("child") > 0) {
+                forms.setValue("child", Number(forms.getValues("child")) + 1);
+            }
+            if (childCount === 0) {
+                forms.setValue("child", 1);
+            }
+        }
+    };
+    React__default.useEffect(function () {
+        if (!forms.getValues("adults")) {
+            forms.setValue("adults", 1);
+        }
+        if (!forms.getValues("child")) {
+            forms.setValue("child", 0);
+        }
+        if (!forms.getValues("guests")) {
+            forms.setValue("guests", []);
+        }
+    }, []);
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(Form$1, __assign$2({}, forms),
             React__default.createElement("form", { onSubmit: forms.handleSubmit(onSubmit), className: "grid grid-cols-3 grid-rows-8 gap-7", id: id },
@@ -33426,9 +33502,10 @@ function NewBookingForm(_a) {
                                         React__default.createElement(Calendar, { className: "mr-2 h-4 w-4" }),
                                         field.value ? (format$1(field.value, 'PPP')) : (React__default.createElement("span", null, "select date")))),
                                 React__default.createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
-                                    React__default.createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
+                                    React__default.createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true }))),
+                            React__default.createElement(FormMessage, null)));
                     } }),
-                React__default.createElement(FormField, { control: forms.control, rules: { required: true }, name: "duration", render: function (_a) {
+                React__default.createElement(FormField, { control: forms.control, rules: { required: true }, name: "nights", render: function (_a) {
                         var field = _a.field;
                         return (React__default.createElement(FormItem, { className: "", style: { marginTop: "-9px" } },
                             React__default.createElement(FormLabel, null, fields.duration.label),
@@ -33448,9 +33525,10 @@ function NewBookingForm(_a) {
                                         React__default.createElement(Calendar, { className: "mr-2 h-4 w-4" }),
                                         field.value ? (format$1(field.value, 'PPP')) : (React__default.createElement("span", null, "select date")))),
                                 React__default.createElement(PopoverContent, { className: "w-auto p-0", align: "start" },
-                                    React__default.createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true })))));
+                                    React__default.createElement(Calendar$1, { mode: "single", selected: field.value, onSelect: field.onChange, initialFocus: true }))),
+                            React__default.createElement(FormMessage, null)));
                     } }),
-                React__default.createElement(FormField, { control: forms.control, rules: { required: true }, name: "roomtype", render: function (_a) {
+                React__default.createElement(FormField, { control: forms.control, rules: { required: true }, name: "roomType", render: function (_a) {
                         var field = _a.field;
                         return (React__default.createElement(FormItem, { className: "" },
                             React__default.createElement(FormLabel, null, fields.roomtype.label),
@@ -33477,23 +33555,19 @@ function NewBookingForm(_a) {
                             React__default.createElement(FormMessage, null)));
                     } }),
                 React__default.createElement("div", { className: "flex items-center" },
-                    React__default.createElement(FormField, { control: forms.control, rules: { required: true }, name: "adult", render: function (_a) {
+                    React__default.createElement(FormField, { control: forms.control, rules: { required: true }, name: "adults", render: function (_a) {
                             var field = _a.field;
                             return (React__default.createElement(FormItem, { className: "w-[7rem]" },
                                 React__default.createElement(FormLabel, null, fields.adult.label),
                                 React__default.createElement("br", null),
                                 React__default.createElement(Input, __assign$2({ type: 'hidden' }, field)),
                                 React__default.createElement("p", { className: "border rounded w-[5rem] flex justify-between px-4" },
-                                    React__default.createElement("span", { onClick: function () {
-                                            forms.setValue("adult", forms.getValues("adult") - 1);
-                                        } },
+                                    React__default.createElement("span", { onClick: function () { return handlAdultCount("decrement"); } },
                                         ' ',
                                         "-",
                                         ' '),
-                                    forms.getValues("adult"),
-                                    React__default.createElement("span", { onClick: function () {
-                                            forms.setValue("adult", forms.getValues("adult") + 1);
-                                        } },
+                                    forms.getValues("adults") && Number(forms.getValues("adults")),
+                                    React__default.createElement("span", { onClick: function () { return handlAdultCount("increment"); } },
                                         ' ',
                                         "+",
                                         ' ')),
@@ -33506,17 +33580,13 @@ function NewBookingForm(_a) {
                                 React__default.createElement("br", null),
                                 React__default.createElement(FormControl, null,
                                     React__default.createElement("p", { className: "border rounded w-[5rem] flex justify-between px-4" },
-                                        React__default.createElement("span", { onClick: function () {
-                                                forms.setValue("child", forms.getValues("child") - 1);
-                                            } },
+                                        React__default.createElement("span", { onClick: function () { return handleChildCount("decrement"); } },
                                             ' ',
                                             "-",
                                             ' '),
                                         React__default.createElement(Input, __assign$2({ type: 'hidden' }, field)),
-                                        forms.getValues("child"),
-                                        React__default.createElement("span", { onClick: function () {
-                                                forms.setValue("child", forms.getValues("child") + 1);
-                                            } },
+                                        forms.getValues("child") && Number(forms.getValues("child")),
+                                        React__default.createElement("span", { onClick: function () { return handleChildCount("increment"); } },
                                             ' ',
                                             "+",
                                             ' '))),
@@ -33524,7 +33594,7 @@ function NewBookingForm(_a) {
                         } })),
                 React__default.createElement("h3", { className: "col-span-full text-md font-semibold" }, "Guest Details"),
                 ' ',
-                React__default.createElement("div", { className: 'col-span-full flex flex-wrap' }, forms.getValues("guests").length !== 0 && forms.getValues("guests").map(function (row) { return (React__default.createElement("div", { style: { width: 350, paddingRight: 10, paddingBottom: 10 } },
+                React__default.createElement("div", { className: 'col-span-full flex flex-wrap' }, forms.getValues("guests") && forms.getValues("guests").length !== 0 && forms.getValues("guests").map(function (row) { return (React__default.createElement("div", { style: { width: 350, paddingRight: 10, paddingBottom: 10 } },
                     React__default.createElement("div", { className: "flex items-center space-x-4 rtl:space-x-reverse" },
                         React__default.createElement("div", { className: "flex-shrink-0" },
                             React__default.createElement("img", { className: "w-8 h-8 rounded-full", src: row.avatar, alt: "Neil image" })),
@@ -33534,11 +33604,14 @@ function NewBookingForm(_a) {
                         React__default.createElement("div", { className: "inline-flex items-center text-base font-semibold text-gray-900 dark:text-white" },
                             React__default.createElement(DataTableRowActions, { row: row }))))); })),
                 React__default.createElement("div", { className: "col-span-full " },
-                    React__default.createElement(SearchGuest, { guestList: guestList, isLoading: isLoading, onSelect: handleOnSelect },
-                        React__default.createElement(Button$3, { className: 'mr-4' },
-                            React__default.createElement(PlusCircledIcon, { className: "mr-2 h-4 w-4" }),
-                            "Add Guest")),
-                    NewGuest && React__default.createElement(NewGuest, null)),
+                    React__default.createElement(React__default.Fragment, null,
+                        React__default.createElement(SearchGuest, { guestList: guestList, isLoading: isLoading, onSelect: handleOnSelect },
+                            React__default.createElement(Button$3, { className: 'mr-4' },
+                                React__default.createElement(PersonIcon, { className: "mr-2 h-4 w-4" }),
+                                "Add Guest")),
+                        NewGuest && React__default.createElement(NewGuest, null),
+                        React__default.createElement("br", null),
+                        React__default.createElement("span", { className: 'mt-1' }, errors.guests && errors.guests.message))),
                 React__default.createElement(FormField, { control: forms.control, rules: { required: true }, name: "price", render: function (_a) {
                         var field = _a.field;
                         return (React__default.createElement(FormItem, { className: "" },
@@ -33559,7 +33632,7 @@ function NewBookingForm(_a) {
                     } }),
                 React__default.createElement("div", { className: "col-span-full " },
                     React__default.createElement(FormField, { control: forms.control, name: "notes", render: function (_a) {
-                            var field = _a.field;
+                            _a.field;
                             return (React__default.createElement(FormItem, null,
                                 React__default.createElement(FormLabel, { className: "flex justify-between items-center" },
                                     React__default.createElement("p", null, "Notes"),
@@ -33573,7 +33646,7 @@ function NewBookingForm(_a) {
                                                     React__default.createElement(FormDescription, null))));
                                         } })),
                                 React__default.createElement(FormControl, null,
-                                    React__default.createElement(Textarea, __assign$2({ placeholder: "Notes", className: "resize-none" }, field))),
+                                    React__default.createElement(Textarea, { placeholder: "Notes", className: "resize-none" })),
                                 React__default.createElement(FormDescription, null),
                                 React__default.createElement(FormMessage, null)));
                         } })),
@@ -34140,11 +34213,31 @@ const Select = ({ options = [], value = null, onChange, onSearchInputChange, pla
                 React__default.createElement(Options, { list: list, noOptionsMessage: noOptionsMessage, text: inputValue, isMultiple: isMultiple, value: value, primaryColor: primaryColor || DEFAULT_THEME }))))));
 };
 
+var stringToDate = z$2.string().transform(function (str) { return new Date(str); });
+var dateSchema = z$2.union([stringToDate, z$2.date()]);
+var billFormSchema = z$2.object({
+    payer: z$2.string(),
+    paymentBy: z$2.enum(["person", "company"]),
+    services: z$2.array(z$2.object({
+        item: z$2.string(),
+        cost: z$2.coerce.number(),
+        qty: z$2.coerce.number(),
+        total: z$2.coerce.number(),
+        type: z$2.enum(["room", "service"]),
+        date: dateSchema,
+    })),
+    total: z$2.coerce.number(),
+    paid: z$2.coerce.number(),
+    amountDue: z$2.coerce.number(),
+    subTotal: z$2.coerce.number().optional(),
+    createInvoice: z$2.boolean().default(false).optional(),
+    serviceList: z$2.string().optional()
+});
 function BillingComponent(_a) {
     var onsubmit = _a.onsubmit, selectValues = _a.selectValues, defaultValues = _a.defaultValues, _b = _a.serviceOptions, serviceOptions = _b === void 0 ? [] : _b; _a.handleCreateInvoice; var handleCancel = _a.handleCancel;
     var _c = React__default.useState(0), subTotal = _c[0], setSubTotal = _c[1];
     var _d = React__default.useState(0), amountDue = _d[0], setAmountDue = _d[1];
-    var form = useForm({ defaultValues: defaultValues });
+    var form = useForm({ defaultValues: defaultValues, resolver: t$2(billFormSchema) });
     var _e = useFieldArray({
         control: form.control,
         name: "services",
@@ -34154,8 +34247,9 @@ function BillingComponent(_a) {
             item: value.label,
             cost: Number(value.price),
             qty: 1,
+            date: new Date(),
             total: Number(value.price),
-            type: value.type
+            type: "service"
         });
         setSubTotal(subTotal + value.price);
     }
@@ -34165,8 +34259,9 @@ function BillingComponent(_a) {
             if (name.includes('qty')) {
                 var index = name.split('.')[1].split('.')[0];
                 var qty = value.services[index].qty;
-                var cost = value.services[index].cost; // assuming cost is a constant or another field
-                form.setValue("services.".concat(index, ".total"), Number(qty) * Number(cost));
+                var cost = value.services[index].cost;
+                var field = "services.".concat(index, ".total");
+                form.setValue(field, Number(qty) * Number(cost));
                 var newSubtotal = form.getValues("services").reduce(function (acc, curr) {
                     return acc + (curr.total || 0);
                 }, 0);
@@ -34212,7 +34307,7 @@ function BillingComponent(_a) {
                                     return (React__default.createElement(FormItem, { className: "w-[20rem]" },
                                         React__default.createElement(FormLabel, null, "Payer"),
                                         React__default.createElement(FormControl, null,
-                                            React__default.createElement(Input, __assign$2({ placeholder: "" }, field))),
+                                            React__default.createElement(Input, __assign$2({ readOnly: true, placeholder: "" }, field))),
                                         React__default.createElement(FormMessage, null)));
                                 } }),
                             React__default.createElement(Button$3, { type: 'button' },
@@ -34222,14 +34317,16 @@ function BillingComponent(_a) {
                         React__default.createElement(Table, null,
                             React__default.createElement(TableHeader, null,
                                 React__default.createElement(TableRow, null,
-                                    React__default.createElement(TableHead, { className: "uppercase text-center w-4 max-w-4 min-w-4" }, "si"),
+                                    React__default.createElement(TableHead, { className: "uppercase text-center w-4 max-w-4 min-w-4" }, "Sl"),
+                                    React__default.createElement(TableHead, { className: "uppercase text-center w-4 max-w-4 min-w-4" }, "Date"),
                                     React__default.createElement(TableHead, null, "Item"),
                                     React__default.createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "cost"),
                                     React__default.createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "qty"),
                                     React__default.createElement(TableHead, { className: "uppercase text-center w-[7rem]" }, "price"))),
                             React__default.createElement(TableBody, null,
                                 fields.map(function (row, index) { return (React__default.createElement(TableRow, { key: index },
-                                    React__default.createElement(TableCell, { className: "w-2 max-w-4 min-w-4 text-center" }, index + 1),
+                                    React__default.createElement(TableCell, { className: "w-2 max-w-2 min-w-2 text-center" }, index + 1),
+                                    React__default.createElement(TableCell, null, moment(new Date(row.date)).format("DD-MMM-YYYY")),
                                     React__default.createElement(TableCell, null,
                                         React__default.createElement(FormField, { control: form.control, 
                                             // rules={{ required: true }}
@@ -34274,9 +34371,10 @@ function BillingComponent(_a) {
                                                     row.type === "service" && (React__default.createElement(Icons.trash, { onClick: function () { return remove(index); } }))));
                                             } })))); }),
                                 React__default.createElement(TableRow, { key: 'index' },
-                                    React__default.createElement(TableCell, { className: "w-4 max-w-4 min-w-4 text-center" }),
+                                    React__default.createElement(TableCell, { className: "w-2 max-w-2 min-w-2 text-center" }),
+                                    React__default.createElement(TableCell, null),
                                     React__default.createElement(TableCell, null,
-                                        React__default.createElement(FormField, { control: form.control, name: 'item', render: function (_a) {
+                                        React__default.createElement(FormField, { control: form.control, name: 'serviceList', render: function (_a) {
                                                 var field = _a.field;
                                                 return (React__default.createElement(FormItem, null,
                                                     React__default.createElement(FormControl, null,
@@ -34303,7 +34401,7 @@ function BillingComponent(_a) {
                                     React__default.createElement(TableCell, { colSpan: 2 }, "Amount Due"),
                                     React__default.createElement(TableCell, { className: "text-red-500" },
                                         amountDue,
-                                        "\u00A0 USD"))))),
+                                        "\u00A0"))))),
                     React__default.createElement(CardFooter, { className: "flex justify-between" },
                         React__default.createElement("div", { className: "space-x-4" },
                             React__default.createElement(Button$3, { type: 'submit', onClick: function () { return form.setValue("createInvoice", false); } }, "Save"),

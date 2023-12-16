@@ -43429,20 +43429,21 @@ function RegistrationForm(props) {
             React__default.createElement("div", null,
                 React__default.createElement("div", { className: 'table-two-div' },
                     React__default.createElement("table", { className: 'table-two' },
-                        React__default.createElement("tr", null,
-                            React__default.createElement("th", null, "DATE"),
-                            React__default.createElement("th", null, "TYPE"),
-                            React__default.createElement("th", null, "QY"),
-                            React__default.createElement("th", null, "AMOUNT"),
-                            React__default.createElement("th", null, "TOTAL")), (_a = props.services) === null || _a === void 0 ? void 0 :
-                        _a.map(function (value) {
+                        React__default.createElement("thead", null,
+                            React__default.createElement("tr", null,
+                                React__default.createElement("th", null, "DATE"),
+                                React__default.createElement("th", null, "TYPE"),
+                                React__default.createElement("th", null, "QY"),
+                                React__default.createElement("th", null, "AMOUNT"),
+                                React__default.createElement("th", null, "TOTAL"))),
+                        React__default.createElement("tbody", null, (_a = props.services) === null || _a === void 0 ? void 0 : _a.map(function (value) {
                             return (React__default.createElement("tr", null,
                                 React__default.createElement("td", null, moment(new Date(value.date)).format("DD/MM/YYYY")),
                                 React__default.createElement("td", null, value.item),
                                 React__default.createElement("td", null, value.qty),
                                 React__default.createElement("td", null, value.cost),
                                 React__default.createElement("td", null, value.total)));
-                        })))))));
+                        }))))))));
 }
 
 var Form = {

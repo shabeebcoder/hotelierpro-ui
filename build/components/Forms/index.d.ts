@@ -9,6 +9,7 @@ import Billing, { IBillForm } from './billingComponent/billingComponent';
 import changePassword from './change-password/changePassword';
 import invoice, { IInvoiceForm } from './invoiceEditable/invoiceEditableForm';
 import registrationForm, { IRegistrationForm } from "../../registrationForm/registrationForm";
+import pilicyForm, { IPolicyForm } from "./policy/policy";
 export declare const Form: {
     changePassword: typeof changePassword;
     addPerson: typeof addPerson;
@@ -21,6 +22,7 @@ export declare const Form: {
     Billing: typeof Billing;
     invoice: typeof invoice;
     registrationForm: typeof registrationForm;
+    pilicyForm: typeof pilicyForm;
 };
 export declare namespace IForm {
     type addPerson = GuestType;
@@ -32,4 +34,5 @@ export declare namespace IForm {
     type billing = IBillForm;
     type invoice = IInvoiceForm;
     type registrationForm = IRegistrationForm;
+    type policy = IPolicyForm;
 }

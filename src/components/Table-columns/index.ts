@@ -7,6 +7,8 @@ import { columns as serviceCategory, IServiceCategoryTable } from "./service-cat
 import { IInvoiceTable, columns as invoices } from "./invoice-table-column";
 import { columns as bookings } from "./booking-table-column"
 import { IBookingHistoryTable, columns as history } from "./history-table-column"
+import { columns as policy,  IPolicyTable } from "./policy-table-column"
+
 
 
 export const Table: any = {
@@ -17,7 +19,8 @@ export const Table: any = {
     serviceCategory,
     invoices,
     bookings,
-    history
+    history,
+    policy
 }
 
 export namespace ITable {
@@ -27,4 +30,5 @@ export namespace ITable {
     export type rooms = IRoomColum
     export type history = IBookingHistoryTable
     export type invoices = IInvoiceTable
+    export type policy =  IPolicyTable
 }

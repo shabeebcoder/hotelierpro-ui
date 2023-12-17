@@ -15,13 +15,28 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-  } from "../../../elements/Select/select"
+} from "../../../elements/Select/select"
 import { useForm } from 'react-hook-form';
 import { Button } from '../../../elements/Buttons/buttons';
+import { z } from "zod"
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const regionalSchema = z.object({
+    language: z.string(),
+    invoiceLanguage: z.string(),
+    timeZone: z.string(),
+    weekStartsOn: z.string(),
+    currencyPostion: z.string(),
+    dataFormat: z.string(),
+    id: z.string().optional()
+})
+
+export type IRegionalForm = z.infer<typeof regionalSchema>
 
 
 
-function AddServiceCategoryForm({ onsubmit, id, defaultValues = {}, currencyPostion, weekStartsOn, dataFormat, timeZone, invoiceLanguage, language , fields = {
+
+function RegionalSettings({ onsubmit, id, defaultValues = {}, currencyPostion, weekStartsOn, dataFormat, timeZone, invoiceLanguage, language, fields = {
     language: {
         label: "Language",
         description: "",
@@ -47,7 +62,7 @@ function AddServiceCategoryForm({ onsubmit, id, defaultValues = {}, currencyPost
         description: "",
     }
 } }): any {
-    const form: any = useForm({ defaultValues,  });
+    const form = useForm<IRegionalForm>({ defaultValues, resolver: zodResolver(regionalSchema) });
     return (
         <>
 
@@ -85,7 +100,7 @@ function AddServiceCategoryForm({ onsubmit, id, defaultValues = {}, currencyPost
                             </FormItem>
                         )}
                     />
-                     <FormField
+                    <FormField
                         control={form.control}
 
                         name="timeZone"
@@ -113,7 +128,7 @@ function AddServiceCategoryForm({ onsubmit, id, defaultValues = {}, currencyPost
                             </FormItem>
                         )}
                     />
-                     <FormField
+                    <FormField
                         control={form.control}
 
                         name="weekStartsOn"
@@ -135,13 +150,13 @@ function AddServiceCategoryForm({ onsubmit, id, defaultValues = {}, currencyPost
                                     </SelectContent>
                                 </Select>
                                 <FormDescription>
-                                 
+
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-                     <FormField
+                    <FormField
                         control={form.control}
 
                         name="currencyPostion"
@@ -163,13 +178,13 @@ function AddServiceCategoryForm({ onsubmit, id, defaultValues = {}, currencyPost
                                     </SelectContent>
                                 </Select>
                                 <FormDescription>
-                                   
+
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-                     <FormField
+                    <FormField
                         control={form.control}
 
                         name="dataFormat"
@@ -191,13 +206,13 @@ function AddServiceCategoryForm({ onsubmit, id, defaultValues = {}, currencyPost
                                     </SelectContent>
                                 </Select>
                                 <FormDescription>
-                                   
+
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-                                    <FormField
+                    <FormField
                         control={form.control}
 
                         name="invoiceLanguage"
@@ -219,18 +234,18 @@ function AddServiceCategoryForm({ onsubmit, id, defaultValues = {}, currencyPost
                                     </SelectContent>
                                 </Select>
                                 <FormDescription>
-                                   
+
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-                   <Button type='submit'>Update</Button>
-               
+                    <Button type='submit'>Update</Button>
+
                 </form>
             </Form>
         </>
     );
 }
 
-export default AddServiceCategoryForm;
+export default RegionalSettings;

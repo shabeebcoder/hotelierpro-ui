@@ -13,6 +13,23 @@ import {
 } from '../../../elements/Form/form';
 import { useForm } from 'react-hook-form';
 import { Button } from '../../../elements/Buttons/buttons';
+import { z } from "zod"
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const hotelInformationSchema = z.object({
+    hotelName: z.string(),
+    country: z.string(),
+    state: z.string().optional(),
+    address: z.string().optional(),
+    postlCode: z.string().optional(),
+    email: z.string().optional(),
+    website: z.string().optional(),
+    phone: z.string().optional(),
+    id: z.string().optional()
+
+})
+
+export type IHotelInformationForm = z.infer<typeof hotelInformationSchema>
 
 interface Field {
     label: string;
@@ -29,9 +46,9 @@ interface addPersonProps {
     id: string,
 
 }
-function AddPersonForm({ onsubmit, defaultValues, id, fields = {
+function hotelInformationForm({ onsubmit, defaultValues, id, fields = {
     companyName: {
-        label: "Company Name",
+        label: "Hotel Name",
         description: ""
     },
     country: {
@@ -43,10 +60,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
         label: "State",
         description: ""
     },
-    bank: {
-        label: "Bank",
-        description: ""
-    },
+  
     address: {
         label: "Address",
         description: ""
@@ -67,22 +81,24 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
         label: "Phone Number",
         description: ""
     },
- 
+
 } }: addPersonProps): any {
 
-    const addpersonForm: any = useForm({ defaultValues });
+    const hotelInformationForm = useForm<IHotelInformationForm>({
+        defaultValues, resolver: zodResolver(hotelInformationSchema)
+    });
 
     return (
         <>
-            <Form {...addpersonForm} >
+            <Form {...hotelInformationForm} >
                 <form
-                    onSubmit={addpersonForm.handleSubmit(onsubmit)}
+                    onSubmit={hotelInformationForm.handleSubmit(onsubmit)}
                     className="space-y-8 p-1"
                     id={id}
                 >
                     <FormField
-                        control={addpersonForm.control}
-                        name="companyName"
+                        control={hotelInformationForm.control}
+                        name="hotelName"
                         rules={{ required: true }}
                         render={({ field }) => (
                             <FormItem>
@@ -100,7 +116,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                         )}
                     />
                     <FormField
-                        control={addpersonForm.control}
+                        control={hotelInformationForm.control}
                         name="country"
                         rules={{ required: true }}
                         render={({ field }) => (
@@ -119,7 +135,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                         )}
                     />
                     <FormField
-                        control={addpersonForm.control}
+                        control={hotelInformationForm.control}
                         name="state"
 
                         render={({ field }) => (
@@ -137,29 +153,9 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
+                    
                     <FormField
-                        control={addpersonForm.control}
-                        name="bank"
-
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel className="capitalize">
-                                    {fields.bank.label}
-                                </FormLabel>
-                                <FormControl>
-                                    <Input {...field} />
-                                </FormControl>
-                                <FormDescription>
-                                    {' '}
-                                    {fields.bank.description}
-
-                                </FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={addpersonForm.control}
+                        control={hotelInformationForm.control}
                         name="address"
 
                         render={({ field }) => (
@@ -180,7 +176,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                         )}
                     />
                     <FormField
-                        control={addpersonForm.control}
+                        control={hotelInformationForm.control}
                         name="postlCode"
                         rules={{ required: true }}
                         render={({ field }) => (
@@ -199,7 +195,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                         )}
                     />
                     <FormField
-                        control={addpersonForm.control}
+                        control={hotelInformationForm.control}
                         name="email"
                         rules={{ required: true }}
                         render={({ field }) => (
@@ -218,7 +214,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                         )}
                     />
                     <FormField
-                        control={addpersonForm.control}
+                        control={hotelInformationForm.control}
                         name="website"
 
                         render={({ field }) => (
@@ -237,7 +233,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                         )}
                     />
                     <FormField
-                        control={addpersonForm.control}
+                        control={hotelInformationForm.control}
                         name="phone"
 
                         render={({ field }) => (
@@ -255,12 +251,12 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-                   
-                   <Button>Update</Button>
+
+                    <Button>Update</Button>
                 </form>
             </Form>
         </>
     );
 }
 
-export default AddPersonForm;
+export default hotelInformationForm;

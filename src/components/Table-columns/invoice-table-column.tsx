@@ -32,7 +32,15 @@ export const invoicetableSchema = z.object({
     status: z.enum(["paid", "draft", "sent"]),
     total: z.coerce.number(),
     notes: z.string().default("-").optional(),
-    id: z.string()
+    id: z.string(),
+    actions: z.object({
+        handleUpdate: z.function().optional(),
+        handleDelete: z.function().optional(),
+        handlePrint: z.function().optional(),
+        handleDownload: z.function().optional(),
+        handleSent: z.function().optional(),
+        handleMarkAs: z.function().optional(),
+    }).optional()
 
 })
 

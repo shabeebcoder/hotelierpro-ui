@@ -78,12 +78,9 @@ const invoiceFormSchema = z.object({
 export type IInvoiceForm = z.infer<typeof invoiceFormSchema>
 
 function InvoiceEditableForm({
-
     onSubmit,
     invoiceNumber,
     defaultValues
-
-
 }) {
 
     const [subTotal, setSubTotal] = React.useState(0)

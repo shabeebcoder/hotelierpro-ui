@@ -9,6 +9,11 @@ import Billing, { IBillForm } from './billingComponent/billingComponent';
 import changePassword from './change-password/changePassword';
 import invoice, { IInvoiceForm } from './invoiceEditable/invoiceEditableForm';
 import registrationForm, { IRegistrationForm } from "../../registrationForm/registrationForm"
+import pilicyForm, { IPolicyForm } from "./policy/policy"
+import hotelInformation, { IHotelInformationForm } from "./hotel-informations/hotel-informations"
+import notificationSettings, { IEmailConfigForm } from './emailConfig/emailConfig';
+import regionalSettings, {IRegionalForm} from './regional/regional';
+ 
 
 
 export const Form = {
@@ -22,7 +27,13 @@ export const Form = {
     booking,
     Billing,
     invoice,
-    registrationForm
+    registrationForm,
+    pilicyForm,
+    hotelInformation,
+    notificationSettings,
+    regionalSettings
+
+
 };
 
 
@@ -36,4 +47,8 @@ export namespace IForm {
     export type billing = IBillForm
     export type invoice = IInvoiceForm
     export type registrationForm = IRegistrationForm
+    export type policy = IPolicyForm
+    export type hotelInformation = IHotelInformationForm
+    export type notificationSettings = IEmailConfigForm
+    export type regionalSettings = IRegionalForm
 }

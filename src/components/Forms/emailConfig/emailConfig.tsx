@@ -23,10 +23,24 @@ import {
     FormMessage,
 } from '../../../elements/Form/form';
 import { useForm } from 'react-hook-form';
+import { z } from "zod"
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const emailConfigSchema = z.object({
+    bookingNotification: z.boolean(),
+    bookingModification: z.boolean(),
+    guestCheckout: z.boolean(),
+    guestWelcoming: z.boolean(),
+    notifyMeNewReservation: z.boolean(),
+    notiyMeReservationCanceled: z.boolean()
+})
+
+export type IEmailConfigForm = z.infer<typeof emailConfigSchema>
 
 
-export default function DemoCookieSettings({ defaultValues, id = "email", template = true }) {
-    const form: any = useForm({ defaultValues, });
+
+export default function NotificationSettings({ defaultValues, id = "email", template = false }) {
+    const form = useForm<IEmailConfigForm>({ defaultValues, resolver: zodResolver(emailConfigSchema) });
 
     return (
         <Card style={{ maxWidth: 800 }}>
@@ -90,32 +104,7 @@ export default function DemoCookieSettings({ defaultValues, id = "email", templa
                                 />
                             </div>
                         </div>
-                        {/* <div className="flex items-center justify-between space-x-2">
-                            <Label htmlFor="performance" className="flex flex-col space-y-1">
-                                <span>Booking Cancellation</span>
-                                <span className="font-normal leading-snug text-muted-foreground">
-                                    An email is sent when a booking is deleted
-                                </span>
-                            </Label>
-                            <div className='flex items-center'>
-                                {template && <Button size='sm' variant='secondary' >Template</Button>}&nbsp;
-                                <FormField
-                                    control={form.control}
-                                    name="guestCheckout"
-                                    render={({ field }) => (
-                                        <FormItem className="">
-
-                                            <FormControl>
-                                                <Switch
-                                                    checked={field.value}
-                                                    onCheckedChange={field.onChange}
-                                                />
-                                            </FormControl>
-                                        </FormItem>
-                                    )}
-                                />
-                            </div>
-                        </div> */}
+                       
                         <div className="flex items-center justify-between space-x-2">
                             <Label htmlFor="performance" className="flex flex-col space-y-1">
                                 <span>Guest Welcoming</span>

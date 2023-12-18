@@ -6,13 +6,15 @@ import addroom, { IRoom } from './addrooms/addrooms';
 import serviceCategory, { IServiceCategory } from './addServicescategory/addServiceCategoryForm';
 import booking, { IbookingForm } from './newBooking/newBookingForm';
 import Billing, { IBillForm } from './billingComponent/billingComponent';
-import changePassword from './change-password/changePassword';
+import changePassword, { IChangePassword } from './change-password/changePassword';
 import invoice, { IInvoiceForm } from './invoiceEditable/invoiceEditableForm';
 import registrationForm, { IRegistrationForm } from "../../registrationForm/registrationForm";
 import pilicyForm, { IPolicyForm } from "./policy/policy";
 import hotelInformation, { IHotelInformationForm } from "./hotel-informations/hotel-informations";
 import notificationSettings, { IEmailConfigForm } from './emailConfig/emailConfig';
 import regionalSettings, { IRegionalForm } from './regional/regional';
+import myProfile, { IMyProfile } from './my-profile/my-profile';
+import addUser, { IAddUser } from "./addUser/addUser";
 export declare const Form: {
     changePassword: typeof changePassword;
     addPerson: typeof addPerson;
@@ -29,6 +31,8 @@ export declare const Form: {
     hotelInformation: typeof hotelInformation;
     notificationSettings: typeof notificationSettings;
     regionalSettings: typeof regionalSettings;
+    myProfile: typeof myProfile;
+    addUser: typeof addUser;
 };
 export declare namespace IForm {
     type addPerson = GuestType;
@@ -44,4 +48,7 @@ export declare namespace IForm {
     type hotelInformation = IHotelInformationForm;
     type notificationSettings = IEmailConfigForm;
     type regionalSettings = IRegionalForm;
+    type myProfile = IMyProfile;
+    type changePassword = IChangePassword;
+    type addUser = IAddUser;
 }

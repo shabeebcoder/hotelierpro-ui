@@ -18,9 +18,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 const myProfileSchema = z.object({
     fullName: z.string(),
-    email: z.string(),
+    email: z.string().email(),
     phoneNumber: z.string(),
-    id: z.string(),
+  
 });
 export type IMyProfile = z.infer<typeof myProfileSchema>
 
@@ -125,7 +125,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                             </FormItem>
                         )}
                     />
-                    <Button>Update</Button>
+                    <Button type='submit'>Update</Button>
                 </form>
             </Form>
         </>

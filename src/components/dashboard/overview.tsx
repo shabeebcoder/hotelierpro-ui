@@ -52,7 +52,7 @@ const data = [
   },
 ]
 
-export default function Overview({data}:any) {
+export default function Overview({data=[]}:any) {
   return (
     <ResponsiveContainer width="100%" height={350}>
       <BarChart data={data}>

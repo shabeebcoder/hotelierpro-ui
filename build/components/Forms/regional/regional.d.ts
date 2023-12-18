@@ -33,7 +33,7 @@ declare function RegionalSettings({ onsubmit, currency, id, defaultValues, curre
     currency?: any[];
     id: any;
     defaultValues?: {};
-    currencyPosition: any;
+    currencyPosition?: any[];
     weekStartsOn?: any[];
     dateFormat?: any[];
     timeZone?: any[];

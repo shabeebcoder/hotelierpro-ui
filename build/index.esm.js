@@ -5557,28 +5557,6 @@ var ArrowUpIcon = /*#__PURE__*/forwardRef(function (_ref, forwardedRef) {
   }));
 });
 
-var _excluded$I = ["color"];
-var CalendarIcon = /*#__PURE__*/forwardRef(function (_ref, forwardedRef) {
-  var _ref$color = _ref.color,
-      color = _ref$color === void 0 ? 'currentColor' : _ref$color,
-      props = _objectWithoutPropertiesLoose$h(_ref, _excluded$I);
-
-  return createElement("svg", Object.assign({
-    width: "15",
-    height: "15",
-    viewBox: "0 0 15 15",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, props, {
-    ref: forwardedRef
-  }), createElement("path", {
-    d: "M4.5 1C4.77614 1 5 1.22386 5 1.5V2H10V1.5C10 1.22386 10.2239 1 10.5 1C10.7761 1 11 1.22386 11 1.5V2H12.5C13.3284 2 14 2.67157 14 3.5V12.5C14 13.3284 13.3284 14 12.5 14H2.5C1.67157 14 1 13.3284 1 12.5V3.5C1 2.67157 1.67157 2 2.5 2H4V1.5C4 1.22386 4.22386 1 4.5 1ZM10 3V3.5C10 3.77614 10.2239 4 10.5 4C10.7761 4 11 3.77614 11 3.5V3H12.5C12.7761 3 13 3.22386 13 3.5V5H2V3.5C2 3.22386 2.22386 3 2.5 3H4V3.5C4 3.77614 4.22386 4 4.5 4C4.77614 4 5 3.77614 5 3.5V3H10ZM2 6V12.5C2 12.7761 2.22386 13 2.5 13H12.5C12.7761 13 13 12.7761 13 12.5V6H2ZM7 7.5C7 7.22386 7.22386 7 7.5 7C7.77614 7 8 7.22386 8 7.5C8 7.77614 7.77614 8 7.5 8C7.22386 8 7 7.77614 7 7.5ZM9.5 7C9.22386 7 9 7.22386 9 7.5C9 7.77614 9.22386 8 9.5 8C9.77614 8 10 7.77614 10 7.5C10 7.22386 9.77614 7 9.5 7ZM11 7.5C11 7.22386 11.2239 7 11.5 7C11.7761 7 12 7.22386 12 7.5C12 7.77614 11.7761 8 11.5 8C11.2239 8 11 7.77614 11 7.5ZM11.5 9C11.2239 9 11 9.22386 11 9.5C11 9.77614 11.2239 10 11.5 10C11.7761 10 12 9.77614 12 9.5C12 9.22386 11.7761 9 11.5 9ZM9 9.5C9 9.22386 9.22386 9 9.5 9C9.77614 9 10 9.22386 10 9.5C10 9.77614 9.77614 10 9.5 10C9.22386 10 9 9.77614 9 9.5ZM7.5 9C7.22386 9 7 9.22386 7 9.5C7 9.77614 7.22386 10 7.5 10C7.77614 10 8 9.77614 8 9.5C8 9.22386 7.77614 9 7.5 9ZM5 9.5C5 9.22386 5.22386 9 5.5 9C5.77614 9 6 9.22386 6 9.5C6 9.77614 5.77614 10 5.5 10C5.22386 10 5 9.77614 5 9.5ZM3.5 9C3.22386 9 3 9.22386 3 9.5C3 9.77614 3.22386 10 3.5 10C3.77614 10 4 9.77614 4 9.5C4 9.22386 3.77614 9 3.5 9ZM3 11.5C3 11.2239 3.22386 11 3.5 11C3.77614 11 4 11.2239 4 11.5C4 11.7761 3.77614 12 3.5 12C3.22386 12 3 11.7761 3 11.5ZM5.5 11C5.22386 11 5 11.2239 5 11.5C5 11.7761 5.22386 12 5.5 12C5.77614 12 6 11.7761 6 11.5C6 11.2239 5.77614 11 5.5 11ZM7 11.5C7 11.2239 7.22386 11 7.5 11C7.77614 11 8 11.2239 8 11.5C8 11.7761 7.77614 12 7.5 12C7.22386 12 7 11.7761 7 11.5ZM9.5 11C9.22386 11 9 11.2239 9 11.5C9 11.7761 9.22386 12 9.5 12C9.77614 12 10 11.7761 10 11.5C10 11.2239 9.77614 11 9.5 11Z",
-    fill: color,
-    fillRule: "evenodd",
-    clipRule: "evenodd"
-  }));
-});
-
 var _excluded$Q = ["color"];
 var CaretSortIcon = /*#__PURE__*/forwardRef(function (_ref, forwardedRef) {
   var _ref$color = _ref.color,
@@ -17885,7 +17863,7 @@ function DataTableRowActions$7(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
 }
-var columns$8 = [
+var columns$9 = [
     {
         id: "select",
         header: function (_a) {
@@ -17968,7 +17946,7 @@ function DataTableRowActions$6(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"))));
 }
-var columns$7 = [
+var columns$8 = [
     {
         id: "select",
         header: function (_a) {
@@ -18100,7 +18078,7 @@ function DataTableRowActions$5(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleMainance(task); } }, "Maintainance"))));
 }
-var columns$6 = [
+var columns$7 = [
     {
         id: "select",
         header: function (_a) {
@@ -18205,7 +18183,7 @@ function DataTableRowActions$4(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"))));
 }
-var columns$5 = [
+var columns$6 = [
     {
         id: "select",
         header: function (_a) {
@@ -18285,7 +18263,7 @@ function DataTableRowActions$3(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"))));
 }
-var columns$4 = [
+var columns$5 = [
     {
         id: "select",
         header: function (_a) {
@@ -18339,8 +18317,8 @@ function Badge(_a) {
     return (React.createElement("div", __assign$2({ className: cn(badgeVariants({ variant: variant }), className) }, props)));
 }
 
-var stringToDate$5 = z$2.string().transform(function (str) { return new Date(str); });
-var dateSchema$4 = z$2.union([stringToDate$5, z$2.date()]);
+var stringToDate$6 = z$2.string().transform(function (str) { return new Date(str); });
+var dateSchema$4 = z$2.union([stringToDate$6, z$2.date()]);
 z$2.object({
     invoiceNumber: z$2.string(),
     name: z$2.string(),
@@ -18380,7 +18358,7 @@ function DataTableRowActions$2(_a) {
                         React__default.createElement(DropdownMenuRadioItem, { onClick: function () { return invoice.actions.handleMarkAs({ invoice: invoice, status: "paid" }); }, key: 'paid', value: 'paid' }, "Paid"),
                         React__default.createElement(DropdownMenuRadioItem, { onClick: function () { return invoice.actions.handleMarkAs({ invoice: invoice, status: "sent" }); }, key: 'sent', value: 'sent' }, "Sent")))))));
 }
-var columns$3 = [
+var columns$4 = [
     {
         id: "select",
         header: function (_a) {
@@ -18501,7 +18479,7 @@ function DataTableRowActions$1(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return row.actions.handleExportPdf(); } }, "Export PDF"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return row.actions.handleExportXlx(); } }, "Export XLX"))));
 }
-var columns$2 = [
+var columns$3 = [
     {
         id: "select",
         header: function (_a) {
@@ -18606,15 +18584,15 @@ var columns$2 = [
     },
 ];
 
-var stringToDate$4 = z$2.string().transform(function (str) { return new Date(str); });
-var dateSchema$3 = z$2.union([stringToDate$4, z$2.date()]);
+var stringToDate$5 = z$2.string().transform(function (str) { return new Date(str); });
+var dateSchema$3 = z$2.union([stringToDate$5, z$2.date()]);
 z$2.object({
     user: z$2.string(),
     room: z$2.string().default("-"),
     details: z$2.string(),
     date: dateSchema$3
 });
-var columns$1 = [
+var columns$2 = [
     {
         accessorKey: "user",
         header: function (_a) {
@@ -18669,8 +18647,8 @@ var columns$1 = [
     },
 ];
 
-var stringToDate$3 = z$2.string().transform(function (str) { return new Date(str); });
-z$2.union([stringToDate$3, z$2.date()]);
+var stringToDate$4 = z$2.string().transform(function (str) { return new Date(str); });
+z$2.union([stringToDate$4, z$2.date()]);
 z$2.object({
     name: z$2.string(),
     createdAt: z$2.string(),
@@ -18692,7 +18670,7 @@ function DataTableRowActions(_a) {
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleUpdate(task); } }, "Update"),
             React__default.createElement(DropdownMenuItem, { onClick: function () { return task.actions.handleDelete(task); } }, "Delete"))));
 }
-var columns = [
+var columns$1 = [
     {
         id: "select",
         header: function (_a) {
@@ -18710,7 +18688,7 @@ var columns = [
         accessorKey: "name",
         header: function (_a) {
             var column = _a.column;
-            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Policy Name" }));
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Policy" }));
         },
         cell: function (_a) {
             var row = _a.row;
@@ -18741,16 +18719,94 @@ var columns = [
     },
 ];
 
+var stringToDate$3 = z$2.string().transform(function (str) { return new Date(str); });
+z$2.union([stringToDate$3, z$2.date()]);
+z$2.object({
+    name: z$2.string(),
+    type: z$2.string(),
+    details: z$2.string(),
+    createdAt: z$2.string(),
+    id: z$2.string(),
+});
+var columns = [
+    {
+        id: "select",
+        header: function (_a) {
+            var table = _a.table;
+            return (React__default.createElement(Checkbox, { checked: table.getIsAllPageRowsSelected(), onCheckedChange: function (value) { return table.toggleAllPageRowsSelected(!!value); }, "aria-label": "Select all", className: "translate-y-[2px]" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return (React__default.createElement(Checkbox, { checked: row.getIsSelected(), onCheckedChange: function (value) { return row.toggleSelected(!!value); }, "aria-label": "Select row", className: "translate-y-[2px]" }));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "name",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "User" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default.createElement("div", null, row.getValue("name"));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "type",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Type" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default.createElement("div", null, row.getValue("type"));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "details",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Details" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default.createElement("div", null, row.getValue("details"));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
+        accessorKey: "createdAt",
+        header: function (_a) {
+            var column = _a.column;
+            return (React__default.createElement(DataTableColumnHeader, { column: column, title: "Created At" }));
+        },
+        cell: function (_a) {
+            var row = _a.row;
+            return React__default.createElement("div", { className: "w-[150px]" }, row.getValue("createdAt"));
+        },
+        enableSorting: false,
+        enableHiding: false,
+    },
+];
+
 var Table$2 = {
-    roomtypes: columns$8,
-    guests: columns$7,
-    rooms: columns$6,
-    services: columns$5,
-    serviceCategory: columns$4,
-    invoices: columns$3,
-    bookings: columns$2,
-    history: columns$1,
-    policy: columns
+    roomtypes: columns$9,
+    guests: columns$8,
+    rooms: columns$7,
+    services: columns$6,
+    serviceCategory: columns$5,
+    invoices: columns$4,
+    bookings: columns$3,
+    history: columns$2,
+    policy: columns$1,
+    userLogs: columns
 };
 
 /** Detect free variable `global` from Node.js. */
@@ -19133,7 +19189,7 @@ var guestSchema = z$2.object({
     country: z$2.string().min(1, "Country is Required"),
     id: z$2.string().optional()
 });
-function AddPersonForm(_a) {
+function AddPersonForm$2(_a) {
     var onSubmit = _a.onSubmit, defaultValues = _a.defaultValues, id = _a.id, _b = _a.fields, fields = _b === void 0 ? {
         fullName: {
             label: "full name *",
@@ -34512,8 +34568,16 @@ function BillingComponent(_a) {
                 React__default.createElement("input", __assign$2({ type: "hidden" }, form.register("createInvoice"), { value: amountDue }))))));
 }
 
+var changePasswordSchema = z$2.object({
+    currentPassword: z$2.string().min(1, "Current password is required"),
+    newPassword: z$2.string().min(6, "New password must be at least 6 characters long"),
+    reTypePassword: z$2.string().min(6, "Password confirmation is required")
+}).refine(function (data) { return data.newPassword === data.reTypePassword; }, {
+    message: "New passwords must match",
+    path: ["reTypePassword"], // This specifies that the error should be attached to the reTypePassword field
+});
 function ChangePassword(_a) {
-    var onsubmit = _a.onsubmit, defaultValues = _a.defaultValues, id = _a.id, _b = _a.fields, fields = _b === void 0 ? {
+    var onsubmit = _a.onsubmit, id = _a.id, _b = _a.fields, fields = _b === void 0 ? {
         currentPassword: {
             label: 'Current Password',
             description: '',
@@ -34527,7 +34591,7 @@ function ChangePassword(_a) {
             description: '',
         },
     } : _b;
-    var addpersonForm = useForm({ defaultValues: defaultValues });
+    var addpersonForm = useForm({ resolver: t$2(changePasswordSchema) });
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(Form$1, __assign$2({}, addpersonForm),
             React__default.createElement("form", { onSubmit: addpersonForm.handleSubmit(onsubmit), className: "space-y-8 p-1", id: id },
@@ -43909,7 +43973,7 @@ var regionalSchema = z$2.object({
     id: z$2.string().optional()
 });
 function RegionalSettings(_a) {
-    var onsubmit = _a.onsubmit, _b = _a.currency, currency = _b === void 0 ? [] : _b, id = _a.id, _c = _a.defaultValues, defaultValues = _c === void 0 ? {} : _c, currencyPosition = _a.currencyPosition, _d = _a.weekStartsOn, weekStartsOn = _d === void 0 ? [] : _d, _e = _a.dateFormat, dateFormat = _e === void 0 ? [] : _e, _f = _a.timeZone, timeZone = _f === void 0 ? [] : _f, _g = _a.invoiceLanguage, invoiceLanguage = _g === void 0 ? [] : _g, _h = _a.language, language = _h === void 0 ? [] : _h, _j = _a.fields, fields = _j === void 0 ? {
+    var onsubmit = _a.onsubmit, _b = _a.currency, currency = _b === void 0 ? [] : _b, id = _a.id, _c = _a.defaultValues, defaultValues = _c === void 0 ? {} : _c, _d = _a.currencyPosition, currencyPosition = _d === void 0 ? [] : _d, _e = _a.weekStartsOn, weekStartsOn = _e === void 0 ? [] : _e, _f = _a.dateFormat, dateFormat = _f === void 0 ? [] : _f, _g = _a.timeZone, timeZone = _g === void 0 ? [] : _g, _h = _a.invoiceLanguage, invoiceLanguage = _h === void 0 ? [] : _h, _j = _a.language, language = _j === void 0 ? [] : _j, _k = _a.fields, fields = _k === void 0 ? {
         language: {
             label: "Language",
             description: "",
@@ -43938,7 +44002,7 @@ function RegionalSettings(_a) {
             label: "Currency",
             description: "",
         }
-    } : _j;
+    } : _k;
     var form = useForm({ defaultValues: defaultValues, resolver: t$2(regionalSchema) });
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(Form$1, __assign$2({}, form),
@@ -44030,9 +44094,152 @@ function RegionalSettings(_a) {
                 React__default.createElement(Button$3, { type: 'submit' }, "Update")))));
 }
 
+var myProfileSchema = z$2.object({
+    fullName: z$2.string(),
+    email: z$2.string(),
+    phoneNumber: z$2.string(),
+    id: z$2.string(),
+});
+function AddPersonForm$1(_a) {
+    var onsubmit = _a.onsubmit, defaultValues = _a.defaultValues, id = _a.id, _b = _a.fields, fields = _b === void 0 ? {
+        fullName: {
+            label: "Full Name",
+            description: ""
+        },
+        email: {
+            label: "Email",
+            description: ""
+        },
+        phoneNumber: {
+            label: "Phone Number",
+            description: ""
+        },
+    } : _b;
+    var addpersonForm = useForm({ defaultValues: defaultValues, resolver: t$2(myProfileSchema) });
+    return (React__default.createElement(React__default.Fragment, null,
+        React__default.createElement(Form$1, __assign$2({}, addpersonForm),
+            React__default.createElement("form", { onSubmit: addpersonForm.handleSubmit(onsubmit), className: "space-y-8 p-1", id: id },
+                React__default.createElement(FormField, { control: addpersonForm.control, name: "fullName", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.fullName.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({}, field))),
+                            React__default.createElement(FormDescription, null, fields.fullName.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: addpersonForm.control, name: "email", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.email.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({}, field))),
+                            React__default.createElement(FormDescription, null, fields.email.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: addpersonForm.control, name: "phoneNumber", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.phoneNumber.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({}, field))),
+                            React__default.createElement(FormDescription, null, fields.phoneNumber.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(Button$3, null, "Update")))));
+}
+
+z$2.object({
+    fullName: z$2.string(),
+    email: z$2.string().email("Invalid email address"),
+    password: z$2.string().min(6, "Password must be at least 6 characters long"),
+    retypepassword: z$2.string(),
+    roles: z$2.enum(["admin", "staff"])
+}).refine(function (data) { return data.password === data.retypepassword; }, {
+    message: "Passwords do not match",
+    path: ["retypepassword"], // Indicates that the error message should be attached to the retypepassword field
+});
+function AddPersonForm(_a) {
+    var onsubmit = _a.onsubmit, defaultValues = _a.defaultValues, id = _a.id, roles = _a.roles, _b = _a.fields, fields = _b === void 0 ? {
+        fullName: {
+            label: "Full Name",
+            description: ""
+        },
+        email: {
+            label: "E-mail",
+            description: ""
+        },
+        password: {
+            label: "Password",
+            description: ""
+        },
+        retypepassword: {
+            label: "Repeat Password",
+            description: ""
+        },
+        roles: {
+            label: "Role",
+            description: ""
+        }
+    } : _b;
+    var addpersonForm = useForm({ defaultValues: defaultValues });
+    return (React__default.createElement(React__default.Fragment, null,
+        React__default.createElement(Form$1, __assign$2({}, addpersonForm),
+            React__default.createElement("form", { onSubmit: addpersonForm.handleSubmit(onsubmit), className: "space-y-8 p-1", id: id },
+                React__default.createElement(FormField, { control: addpersonForm.control, name: "roles", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, null, fields.roles.label),
+                            React__default.createElement(Select$1, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default.createElement(FormControl, null,
+                                    React__default.createElement(SelectTrigger, null,
+                                        React__default.createElement(SelectValue, null))),
+                                React__default.createElement(SelectContent, null, roles.map(function (item) { return React__default.createElement(SelectItem, { value: item.value }, item.label); }))),
+                            React__default.createElement(FormDescription, null, fields.roles.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: addpersonForm.control, name: "fullName", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.fullName.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({}, field))),
+                            React__default.createElement(FormDescription, null, fields.fullName.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: addpersonForm.control, name: "email", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.email.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({ type: 'email' }, field))),
+                            React__default.createElement(FormDescription, null, fields.email.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: addpersonForm.control, name: "password", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.password.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({ type: 'password' }, field))),
+                            React__default.createElement(FormDescription, null, fields.password.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: addpersonForm.control, name: "retypepassword", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.retypepassword.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({ type: 'password' }, field))),
+                            React__default.createElement(FormDescription, null, fields.retypepassword.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(Button$3, null, "Update")))));
+}
+
 var Form = {
     changePassword: ChangePassword,
-    addPerson: AddPersonForm,
+    addPerson: AddPersonForm$2,
     addService: AddServicesForm,
     maintainance: MaintenanceAlertForm,
     roomType: AddRoomType,
@@ -44045,7 +44252,9 @@ var Form = {
     pilicyForm: PolicyForm,
     hotelInformation: hotelInformationForm,
     notificationSettings: NotificationSettings,
-    regionalSettings: RegionalSettings
+    regionalSettings: RegionalSettings,
+    myProfile: AddPersonForm$1,
+    addUser: AddPersonForm
 };
 
 /* -------------------------------------------------------------------------------------------------
@@ -50383,26 +50592,6 @@ var TabsContent = React.forwardRef(function (_a, ref) {
     return (React.createElement($69cb30bb0017df05$export$7c6e2c02157bb7d2, __assign$2({ ref: ref, className: cn("mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2", className) }, props)));
 });
 TabsContent.displayName = $69cb30bb0017df05$export$7c6e2c02157bb7d2.displayName;
-
-function CalendarDateRangePicker(_a) {
-    var className = _a.className;
-    var _b = React.useState({
-        from: new Date(2023, 0, 20),
-        to: addDays(new Date(2023, 0, 20), 20),
-    }), date = _b[0], setDate = _b[1];
-    return (React.createElement("div", { className: cn("grid gap-2", className) },
-        React.createElement(Popover, null,
-            React.createElement(PopoverTrigger, { asChild: true },
-                React.createElement(Button$3, { id: "date", variant: "outline", className: cn("w-[260px] justify-start text-left font-normal", !date && "text-muted-foreground") },
-                    React.createElement(CalendarIcon, { className: "mr-2 h-4 w-4" }),
-                    (date === null || date === void 0 ? void 0 : date.from) ? (date.to ? (React.createElement(React.Fragment, null,
-                        format$1(date.from, "LLL dd, y"),
-                        " -",
-                        " ",
-                        format$1(date.to, "LLL dd, y"))) : (format$1(date.from, "LLL dd, y"))) : (React.createElement("span", null, "Pick a date")))),
-            React.createElement(PopoverContent, { className: "w-auto p-0", align: "end" },
-                React.createElement(Calendar$1, { initialFocus: true, mode: "range", defaultMonth: date === null || date === void 0 ? void 0 : date.from, selected: date, onSelect: setDate, numberOfMonths: 2 })))));
-}
 
 /** Used to match property names within property paths. */
 var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
@@ -74956,7 +75145,7 @@ var BarChart = generateCategoricalChart({
 });
 
 function Overview(_a) {
-    var data = _a.data;
+    var _b = _a.data, data = _b === void 0 ? [] : _b;
     return (React__default.createElement(ResponsiveContainer, { width: "100%", height: 350 },
         React__default.createElement(BarChart, { data: data },
             React__default.createElement(XAxis, { dataKey: "name", stroke: "#888888", fontSize: 12, tickLine: false, axisLine: false }),
@@ -75070,64 +75259,64 @@ var AvatarFallback = React.forwardRef(function (_a, ref) {
 AvatarFallback.displayName = $cddcb0b647441e34$export$fb8d7f40caaeea67.displayName;
 
 function RecentSales(_a) {
-    _a.data;
-    return (React__default.createElement("div", { className: "space-y-8" },
-        React__default.createElement("div", { className: "flex items-center" },
+    var _b = _a.data, data = _b === void 0 ? [] : _b;
+    return (React__default.createElement("div", { className: "space-y-8" }, data.map(function (item) {
+        return (React__default.createElement("div", { className: "flex items-center" },
             React__default.createElement(Avatar, { className: "h-9 w-9" },
-                React__default.createElement(AvatarImage, { src: "/avatars/01.png", alt: "Avatar" }),
-                React__default.createElement(AvatarFallback, null, "OM")),
+                React__default.createElement(AvatarImage, { src: item.avatar, alt: "Avatar" }),
+                React__default.createElement(AvatarFallback, null, item.name)),
             React__default.createElement("div", { className: "ml-4 space-y-1" },
-                React__default.createElement("p", { className: "text-sm font-medium leading-none" }, "Olivia Martin"),
-                React__default.createElement("p", { className: "text-sm text-muted-foreground" }, "olivia.martin@email.com")),
-            React__default.createElement("div", { className: "ml-auto font-medium" }, "+$1,999.00")),
-        React__default.createElement("div", { className: "flex items-center" },
-            React__default.createElement(Avatar, { className: "flex h-9 w-9 items-center justify-center space-y-0 border" },
-                React__default.createElement(AvatarImage, { src: "/avatars/02.png", alt: "Avatar" }),
-                React__default.createElement(AvatarFallback, null, "JL")),
-            React__default.createElement("div", { className: "ml-4 space-y-1" },
-                React__default.createElement("p", { className: "text-sm font-medium leading-none" }, "Jackson Lee"),
-                React__default.createElement("p", { className: "text-sm text-muted-foreground" }, "jackson.lee@email.com")),
-            React__default.createElement("div", { className: "ml-auto font-medium" }, "+$39.00")),
-        React__default.createElement("div", { className: "flex items-center" },
-            React__default.createElement(Avatar, { className: "h-9 w-9" },
-                React__default.createElement(AvatarImage, { src: "/avatars/03.png", alt: "Avatar" }),
-                React__default.createElement(AvatarFallback, null, "IN")),
-            React__default.createElement("div", { className: "ml-4 space-y-1" },
-                React__default.createElement("p", { className: "text-sm font-medium leading-none" }, "Isabella Nguyen"),
-                React__default.createElement("p", { className: "text-sm text-muted-foreground" }, "isabella.nguyen@email.com")),
-            React__default.createElement("div", { className: "ml-auto font-medium" }, "+$299.00")),
-        React__default.createElement("div", { className: "flex items-center" },
-            React__default.createElement(Avatar, { className: "h-9 w-9" },
-                React__default.createElement(AvatarImage, { src: "/avatars/04.png", alt: "Avatar" }),
-                React__default.createElement(AvatarFallback, null, "WK")),
-            React__default.createElement("div", { className: "ml-4 space-y-1" },
-                React__default.createElement("p", { className: "text-sm font-medium leading-none" }, "William Kim"),
-                React__default.createElement("p", { className: "text-sm text-muted-foreground" }, "will@email.com")),
-            React__default.createElement("div", { className: "ml-auto font-medium" }, "+$99.00")),
-        React__default.createElement("div", { className: "flex items-center" },
-            React__default.createElement(Avatar, { className: "h-9 w-9" },
-                React__default.createElement(AvatarImage, { src: "/avatars/05.png", alt: "Avatar" }),
-                React__default.createElement(AvatarFallback, null, "SD")),
-            React__default.createElement("div", { className: "ml-4 space-y-1" },
-                React__default.createElement("p", { className: "text-sm font-medium leading-none" }, "Sofia Davis"),
-                React__default.createElement("p", { className: "text-sm text-muted-foreground" }, "sofia.davis@email.com")),
-            React__default.createElement("div", { className: "ml-auto font-medium" }, "+$39.00"))));
+                React__default.createElement("p", { className: "text-sm font-medium leading-none" }, item.name),
+                React__default.createElement("p", { className: "text-sm text-muted-foreground" }, item.email)),
+            React__default.createElement("div", { className: "ml-auto font-medium" }, item.price)));
+    })));
 }
 
-function Dashboard(_a) {
-    var dashboardData = _a.dashboardData;
+var revenueInfoSchema = z$2.object({
+    total: z$2.number(),
+    currency: z$2.string(),
+    percentageHike: z$2.number(),
+});
+var bookingsInfoSchema = z$2.object({
+    total: z$2.number(),
+    percentageHike: z$2.number(),
+});
+var barChartItemSchema = z$2.object({
+    name: z$2.string(),
+    total: z$2.number(),
+});
+var recentBookingSchema = z$2.object({
+    avatar: z$2.string(),
+    name: z$2.string(),
+    email: z$2.string().email(),
+    price: z$2.string(),
+});
+var mainSchema = z$2.object({
+    handleBooking: z$2.function(),
+    totalRevenue: revenueInfoSchema,
+    numberOfbookings: bookingsInfoSchema,
+    guests: bookingsInfoSchema,
+    currentMonthRevenue: revenueInfoSchema,
+    barChart: z$2.array(barChartItemSchema),
+    recentBookings: z$2.array(recentBookingSchema),
+});
+function Dashboard(props) {
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+    try {
+        mainSchema.parse(props); // Replace 'data' with the actual data object you want to validate
+        console.log("Validation successful");
+    }
+    catch (error) {
+        console.error("Validation failed:", error.errors);
+    }
     return (React__default.createElement("div", { className: "flex-1 space-y-4 p-8 pt-6" },
         React__default.createElement("div", { className: "flex items-center justify-between space-y-2" },
             React__default.createElement("h2", { className: "text-3xl font-bold tracking-tight" }, "Dashboard"),
             React__default.createElement("div", { className: "flex items-center space-x-2" },
-                React__default.createElement(CalendarDateRangePicker, null),
-                React__default.createElement(Button$3, null, "Download"))),
+                React__default.createElement(Button$3, { onClick: props === null || props === void 0 ? void 0 : props.handleBooking },
+                    React__default.createElement(PlusCircledIcon, { className: "mr-2 h-4 w-4" }),
+                    "New Booking"))),
         React__default.createElement(Tabs, { defaultValue: "overview", className: "space-y-4" },
-            React__default.createElement(TabsList, null,
-                React__default.createElement(TabsTrigger, { value: "overview" }, "Overview"),
-                React__default.createElement(TabsTrigger, { value: "analytics", disabled: true }, "Analytics"),
-                React__default.createElement(TabsTrigger, { value: "reports", disabled: true }, "Reports"),
-                React__default.createElement(TabsTrigger, { value: "notifications", disabled: true }, "Notifications")),
             React__default.createElement(TabsContent, { value: "overview", className: "space-y-4" },
                 React__default.createElement("div", { className: "grid gap-4 md:grid-cols-2 lg:grid-cols-4" },
                     React__default.createElement(Card, null,
@@ -75136,10 +75325,11 @@ function Dashboard(_a) {
                             React__default.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", className: "h-4 w-4 text-muted-foreground" },
                                 React__default.createElement("path", { d: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" }))),
                         React__default.createElement(CardContent, null,
-                            React__default.createElement("div", { className: "text-2xl font-bold" },
-                                "$",
-                                dashboardData && (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.totalRevenue) || ''),
-                            React__default.createElement("p", { className: "text-xs text-muted-foreground" }, "+20.1% from last month"))),
+                            React__default.createElement("div", { className: "text-2xl font-bold" }, (_a = props === null || props === void 0 ? void 0 : props.totalRevenue) === null || _a === void 0 ? void 0 :
+                                _a.total,
+                                "\u00A0",
+                                ((_b = props === null || props === void 0 ? void 0 : props.totalRevenue) === null || _b === void 0 ? void 0 : _b.currency) || ''),
+                            React__default.createElement("p", { className: "text-xs text-muted-foreground" }, "".concat(((_c = props === null || props === void 0 ? void 0 : props.totalRevenue) === null || _c === void 0 ? void 0 : _c.percentageHike) || '', ".1% from last month")))),
                     React__default.createElement(Card, null,
                         React__default.createElement(CardHeader, { className: "flex flex-row items-center justify-between space-y-0 pb-2" },
                             React__default.createElement(CardTitle, { className: "text-sm font-medium" }, "Number of bookings"),
@@ -75150,8 +75340,8 @@ function Dashboard(_a) {
                         React__default.createElement(CardContent, null,
                             React__default.createElement("div", { className: "text-2xl font-bold" },
                                 "+",
-                                dashboardData && (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.numberOfBookings) || ''),
-                            React__default.createElement("p", { className: "text-xs text-muted-foreground" }, "+180.1% from last month"))),
+                                ((_d = props === null || props === void 0 ? void 0 : props.numberOfbookings) === null || _d === void 0 ? void 0 : _d.total) || ''),
+                            React__default.createElement("p", { className: "text-xs text-muted-foreground" }, "+".concat(((_e = props === null || props === void 0 ? void 0 : props.numberOfbookings) === null || _e === void 0 ? void 0 : _e.percentageHike) || '', "% from last month")))),
                     React__default.createElement(Card, null,
                         React__default.createElement(CardHeader, { className: "flex flex-row items-center justify-between space-y-0 pb-2" },
                             React__default.createElement(CardTitle, { className: "text-sm font-medium" }, "Guests"),
@@ -75162,30 +75352,28 @@ function Dashboard(_a) {
                         React__default.createElement(CardContent, null,
                             React__default.createElement("div", { className: "text-2xl font-bold" },
                                 "+",
-                                dashboardData && (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.totalGuests) || ''),
-                            React__default.createElement("p", { className: "text-xs text-muted-foreground" }, "+19% from last month"))),
+                                ((_f = props === null || props === void 0 ? void 0 : props.guests) === null || _f === void 0 ? void 0 : _f.total) || ''),
+                            React__default.createElement("p", { className: "text-xs text-muted-foreground" }, "+".concat(((_g = props === null || props === void 0 ? void 0 : props.guests) === null || _g === void 0 ? void 0 : _g.percentageHike) || '', "% from last month")))),
                     React__default.createElement(Card, null,
                         React__default.createElement(CardHeader, { className: "flex flex-row items-center justify-between space-y-0 pb-2" },
                             React__default.createElement(CardTitle, { className: "text-sm font-medium" }, "Current Month Revenue"),
                             React__default.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", className: "h-4 w-4 text-muted-foreground" },
                                 React__default.createElement("path", { d: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" }))),
                         React__default.createElement(CardContent, null,
-                            React__default.createElement("div", { className: "text-2xl font-bold" }, "+573"),
-                            React__default.createElement("p", { className: "text-xs text-muted-foreground" },
-                                "+",
-                                dashboardData && (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.oneMonthrevenue) || '')))),
+                            React__default.createElement("div", { className: "text-2xl font-bold" }, ((_h = props === null || props === void 0 ? void 0 : props.currentMonthRevenue) === null || _h === void 0 ? void 0 : _h.total) + ' ' + (props === null || props === void 0 ? void 0 : props.currentMonthRevenue.currency)),
+                            React__default.createElement("p", { className: "text-xs text-muted-foreground" }, "+".concat(((_j = props === null || props === void 0 ? void 0 : props.currentMonthRevenue) === null || _j === void 0 ? void 0 : _j.percentageHike) || '', "% from last month"))))),
                 React__default.createElement("div", { className: "grid gap-4 md:grid-cols-2 lg:grid-cols-7" },
                     React__default.createElement(Card, { className: "col-span-4" },
                         React__default.createElement(CardHeader, null,
                             React__default.createElement(CardTitle, null, "Overview")),
                         React__default.createElement(CardContent, { className: "pl-2" },
-                            React__default.createElement(Overview, { data: dashboardData && (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.barChart) || '' }))),
+                            React__default.createElement(Overview, { data: props && (props === null || props === void 0 ? void 0 : props.barChart) || [] }))),
                     React__default.createElement(Card, { className: "col-span-3" },
                         React__default.createElement(CardHeader, null,
                             React__default.createElement(CardTitle, null, "Recent Bookings"),
                             React__default.createElement(CardDescription, null, "You made 265 sales this month.")),
                         React__default.createElement(CardContent, null,
-                            React__default.createElement(RecentSales, { data: dashboardData && (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.recentBookings) || '' }))))))));
+                            React__default.createElement(RecentSales, { data: (props === null || props === void 0 ? void 0 : props.recentBookings) || [] }))))))));
 }
 
 /* -------------------------------------------------------------------------------------------------

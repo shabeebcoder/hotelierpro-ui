@@ -26,8 +26,9 @@ const regionalSchema = z.object({
     invoiceLanguage: z.string(),
     timeZone: z.string(),
     weekStartsOn: z.string(),
-    currencyPostion: z.string(),
-    dataFormat: z.string(),
+    currencyPosition: z.string(),
+    currency: z.string(),
+    dateFormat: z.string(),
     id: z.string().optional()
 })
 
@@ -36,7 +37,7 @@ export type IRegionalForm = z.infer<typeof regionalSchema>
 
 
 
-function RegionalSettings({ onsubmit, id, defaultValues = {}, currencyPostion, weekStartsOn, dataFormat, timeZone, invoiceLanguage, language, fields = {
+function RegionalSettings({ onsubmit, currency=[], id, defaultValues = {}, currencyPosition=[], weekStartsOn=[], dateFormat=[], timeZone=[], invoiceLanguage=[], language=[], fields = {
     language: {
         label: "Language",
         description: "",
@@ -49,7 +50,7 @@ function RegionalSettings({ onsubmit, id, defaultValues = {}, currencyPostion, w
         label: "Time Zone",
         description: "",
     },
-    dataFormat: {
+    dateFormat: {
         label: "Date Format",
         description: "",
     },
@@ -59,6 +60,10 @@ function RegionalSettings({ onsubmit, id, defaultValues = {}, currencyPostion, w
     },
     currencyPostion: {
         label: "Currency Postion",
+        description: "",
+    },
+    currency: {
+        label: "Currency",
         description: "",
     }
 } }): any {
@@ -122,7 +127,7 @@ function RegionalSettings({ onsubmit, id, defaultValues = {}, currencyPostion, w
                                     </SelectContent>
                                 </Select>
                                 <FormDescription>
-                                    {fields.dataFormat.description}
+                                    {fields.dateFormat.description}
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
@@ -159,7 +164,7 @@ function RegionalSettings({ onsubmit, id, defaultValues = {}, currencyPostion, w
                     <FormField
                         control={form.control}
 
-                        name="currencyPostion"
+                        name="currencyPosition"
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>{fields.currencyPostion.label}</FormLabel>
@@ -171,7 +176,34 @@ function RegionalSettings({ onsubmit, id, defaultValues = {}, currencyPostion, w
                                     </FormControl>
                                     <SelectContent>
                                         {
-                                            currencyPostion.map((item: any) => <SelectItem value={item.value}>{item.label}</SelectItem>)
+                                            currencyPosition.map((item: any) => <SelectItem value={item.value}>{item.label}</SelectItem>)
+                                        }
+
+
+                                    </SelectContent>
+                                </Select>
+                                <FormDescription>
+
+                                </FormDescription>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="currency"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>{fields.currency.label}</FormLabel>
+                                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <FormControl>
+                                        <SelectTrigger>
+                                            <SelectValue />
+                                        </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent>
+                                        {
+                                            currency.map((item: any) => <SelectItem value={item.value}>{item.label}</SelectItem>)
                                         }
 
 
@@ -187,10 +219,10 @@ function RegionalSettings({ onsubmit, id, defaultValues = {}, currencyPostion, w
                     <FormField
                         control={form.control}
 
-                        name="dataFormat"
+                        name="dateFormat"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>{fields.dataFormat.label}</FormLabel>
+                                <FormLabel>{fields.dateFormat.label}</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
@@ -199,7 +231,7 @@ function RegionalSettings({ onsubmit, id, defaultValues = {}, currencyPostion, w
                                     </FormControl>
                                     <SelectContent>
                                         {
-                                            dataFormat.map((item: any) => <SelectItem value={item.value}>{item.label}</SelectItem>)
+                                            dateFormat.map((item: any) => <SelectItem value={item.value}>{item.label}</SelectItem>)
                                         }
 
 

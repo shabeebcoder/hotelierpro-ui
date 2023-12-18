@@ -13,6 +13,16 @@ import {
 } from '../../../elements/Form/form';
 import { useForm } from 'react-hook-form';
 import { Button } from '../../../elements/Buttons/buttons';
+import {z} from "zod"
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const myProfileSchema = z.object({
+    fullName: z.string(),
+    email: z.string(),
+    phoneNumber: z.string(),
+    id: z.string(),
+});
+export type IMyProfile = z.infer<typeof myProfileSchema>
 
 interface Field {
     label: string;
@@ -35,7 +45,12 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
         description: ""
     },
     email: {
-        label: "email",
+        label: "Email",
+        description: ""
+
+    },
+    phoneNumber: {
+        label: "Phone Number",
         description: ""
 
     },
@@ -43,7 +58,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
 
 } }: addPersonProps): any {
 
-    const addpersonForm: any = useForm({ defaultValues });
+    const addpersonForm = useForm<IMyProfile>({ defaultValues, resolver: zodResolver(myProfileSchema) });
 
     return (
         <>
@@ -86,6 +101,25 @@ function AddPersonForm({ onsubmit, defaultValues, id, fields = {
                                 </FormControl>
                                 <FormDescription>
                                     {fields.email.description}
+                                </FormDescription>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={addpersonForm.control}
+                        name="phoneNumber"
+                        rules={{ required: true }}
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel className="capitalize">
+                                    {fields.phoneNumber.label}
+                                </FormLabel>
+                                <FormControl>
+                                    <Input {...field} />
+                                </FormControl>
+                                <FormDescription>
+                                    {fields.phoneNumber.description}
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>

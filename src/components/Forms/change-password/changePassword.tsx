@@ -13,6 +13,20 @@ import {
 } from '../../../elements/Form/form';
 import { useForm } from 'react-hook-form';
 import { Button } from '../../../elements/Buttons/buttons';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const changePasswordSchema = z.object({
+    currentPassword: z.string().min(1, "Current password is required"),
+    newPassword: z.string().min(6, "New password must be at least 6 characters long"),
+    reTypePassword: z.string().min(6, "Password confirmation is required")
+  }).refine((data) => data.newPassword === data.reTypePassword, {
+    message: "New passwords must match",
+    path: ["reTypePassword"], // This specifies that the error should be attached to the reTypePassword field
+  });
+
+  export type IChangePassword = z.infer<typeof changePasswordSchema>
+
 
 interface Field {
     label: string;
@@ -25,12 +39,10 @@ interface Fields {
 interface addPersonProps {
     fields?: Fields;
     onsubmit: any;
-    defaultValues?: any;
     id: string;
 }
 function ChangePassword({
     onsubmit,
-    defaultValues,
     id,
     fields = {
         currentPassword: {
@@ -47,7 +59,7 @@ function ChangePassword({
         },
     },
 }: addPersonProps): any {
-    const addpersonForm: any = useForm({ defaultValues });
+    const addpersonForm = useForm<IChangePassword>({ resolver: zodResolver(changePasswordSchema) });
 
     return (
         <>

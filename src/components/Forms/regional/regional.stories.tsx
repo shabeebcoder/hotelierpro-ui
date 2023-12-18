@@ -9,6 +9,7 @@ export const addServiceCategoryFormExample = (args) => <AddServicesForm {...args
 
 addServiceCategoryFormExample.args = {
     onsubmit: (data) => alert(JSON.stringify(data)),
+    currency: [],
     currencyPostion: [
         {
             value: "left",

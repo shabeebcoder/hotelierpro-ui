@@ -6,13 +6,16 @@ import addroom, { IRoom } from './addrooms/addrooms';
 import serviceCategory, { IServiceCategory } from './addServicescategory/addServiceCategoryForm';
 import booking, { IbookingForm } from './newBooking/newBookingForm';
 import Billing, { IBillForm } from './billingComponent/billingComponent';
-import changePassword from './change-password/changePassword';
+import changePassword, {IChangePassword} from './change-password/changePassword';
 import invoice, { IInvoiceForm } from './invoiceEditable/invoiceEditableForm';
 import registrationForm, { IRegistrationForm } from "../../registrationForm/registrationForm"
 import pilicyForm, { IPolicyForm } from "./policy/policy"
 import hotelInformation, { IHotelInformationForm } from "./hotel-informations/hotel-informations"
 import notificationSettings, { IEmailConfigForm } from './emailConfig/emailConfig';
-import regionalSettings, {IRegionalForm} from './regional/regional';
+import regionalSettings, { IRegionalForm } from './regional/regional';
+import myProfile, { IMyProfile } from './my-profile/my-profile';
+import addUser, {IAddUser} from "./addUser/addUser"
+
  
 
 
@@ -31,9 +34,9 @@ export const Form = {
     pilicyForm,
     hotelInformation,
     notificationSettings,
-    regionalSettings
-
-
+    regionalSettings,
+    myProfile,
+    addUser
 };
 
 
@@ -51,4 +54,7 @@ export namespace IForm {
     export type hotelInformation = IHotelInformationForm
     export type notificationSettings = IEmailConfigForm
     export type regionalSettings = IRegionalForm
+    export type myProfile = IMyProfile
+    export type changePassword = IChangePassword
+    export type addUser = IAddUser
 }

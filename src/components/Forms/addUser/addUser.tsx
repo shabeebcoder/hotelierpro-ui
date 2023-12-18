@@ -21,6 +21,21 @@ import {
     SelectValue,
 } from "../../../elements/Select/select"
 
+import { z } from "zod"
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const addUserSchema = z.object({
+    fullName: z.string(),
+    email: z.string().email("Invalid email address"), // Optionally, validate email format
+    password: z.string().min(6, "Password must be at least 6 characters long"), // Optionally, enforce a minimum length
+    retypepassword: z.string(),
+    roles: z.enum(["admin", "staff"])
+}).refine((data) => data.password === data.retypepassword, {
+    message: "Passwords do not match",
+    path: ["retypepassword"], // Indicates that the error message should be attached to the retypepassword field
+});
+
+export type IAddUser = z.infer<typeof addUserSchema>
 
 function AddPersonForm({ onsubmit, defaultValues, id, roles, fields = {
     fullName: {
@@ -50,7 +65,7 @@ function AddPersonForm({ onsubmit, defaultValues, id, roles, fields = {
 
 } }): any {
 
-    const addpersonForm: any = useForm({ defaultValues });
+    const addpersonForm = useForm<IAddUser>({ defaultValues });
 
     return (
         <>

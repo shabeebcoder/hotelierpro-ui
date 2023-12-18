@@ -18714,7 +18714,7 @@ var columns = [
         },
         cell: function (_a) {
             var row = _a.row;
-            return React__default.createElement("div", { className: "w-[150px]" }, row.getValue("name"));
+            return React__default.createElement("div", null, row.getValue("name"));
         },
         enableSorting: false,
         enableHiding: false,
@@ -43555,6 +43555,481 @@ function PolicyForm(_a) {
                     } })))));
 }
 
+var hotelInformationSchema = z$2.object({
+    hotelName: z$2.string(),
+    country: z$2.string(),
+    state: z$2.string().optional(),
+    address: z$2.string().optional(),
+    postlCode: z$2.string().optional(),
+    email: z$2.string().optional(),
+    website: z$2.string().optional(),
+    phone: z$2.string().optional(),
+    id: z$2.string().optional()
+});
+function hotelInformationForm(_a) {
+    var onsubmit = _a.onsubmit, defaultValues = _a.defaultValues, id = _a.id, _b = _a.fields, fields = _b === void 0 ? {
+        companyName: {
+            label: "Hotel Name",
+            description: ""
+        },
+        country: {
+            label: "Country",
+            description: ""
+        },
+        state: {
+            label: "State",
+            description: ""
+        },
+        address: {
+            label: "Address",
+            description: ""
+        },
+        postlCode: {
+            label: "Postal Code",
+            description: ""
+        },
+        email: {
+            label: "E-mail",
+            description: ""
+        },
+        website: {
+            label: "Website",
+            description: ""
+        },
+        phone: {
+            label: "Phone Number",
+            description: ""
+        },
+    } : _b;
+    var hotelInformationForm = useForm({
+        defaultValues: defaultValues,
+        resolver: t$2(hotelInformationSchema)
+    });
+    return (React__default.createElement(React__default.Fragment, null,
+        React__default.createElement(Form$1, __assign$2({}, hotelInformationForm),
+            React__default.createElement("form", { onSubmit: hotelInformationForm.handleSubmit(onsubmit), className: "space-y-8 p-1", id: id },
+                React__default.createElement(FormField, { control: hotelInformationForm.control, name: "hotelName", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.companyName.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({}, field))),
+                            React__default.createElement(FormDescription, null, fields.companyName.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: hotelInformationForm.control, name: "country", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.country.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({}, field))),
+                            React__default.createElement(FormDescription, null, fields.country.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: hotelInformationForm.control, name: "state", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.state.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({}, field))),
+                            React__default.createElement(FormDescription, null, fields.state.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: hotelInformationForm.control, name: "address", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.address.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({}, field))),
+                            React__default.createElement(FormDescription, null, fields.address.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: hotelInformationForm.control, name: "postlCode", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.postlCode.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({}, field))),
+                            React__default.createElement(FormDescription, null, fields.postlCode.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: hotelInformationForm.control, name: "email", rules: { required: true }, render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.email.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({}, field))),
+                            React__default.createElement(FormDescription, null, fields.email.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: hotelInformationForm.control, name: "website", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.website.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({}, field))),
+                            React__default.createElement(FormDescription, null, fields.website.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: hotelInformationForm.control, name: "phone", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, { className: "capitalize" }, fields.phone.label),
+                            React__default.createElement(FormControl, null,
+                                React__default.createElement(Input, __assign$2({}, field))),
+                            React__default.createElement(FormDescription, null, fields.phone.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(Button$3, null, "Update")))));
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * Switch
+ * -----------------------------------------------------------------------------------------------*/ const $6be4966fd9bbc698$var$SWITCH_NAME = 'Switch';
+const [$6be4966fd9bbc698$var$createSwitchContext, $6be4966fd9bbc698$export$cf7f5f17f69cbd43] = $c512c27ab02ef895$export$50c7b4e9d9f19c1$1($6be4966fd9bbc698$var$SWITCH_NAME);
+const [$6be4966fd9bbc698$var$SwitchProvider, $6be4966fd9bbc698$var$useSwitchContext] = $6be4966fd9bbc698$var$createSwitchContext($6be4966fd9bbc698$var$SWITCH_NAME);
+const $6be4966fd9bbc698$export$b5d5cf8927ab7262 = /*#__PURE__*/ forwardRef((props, forwardedRef)=>{
+    const { __scopeSwitch: __scopeSwitch , name: name , checked: checkedProp , defaultChecked: defaultChecked , required: required , disabled: disabled , value: value = 'on' , onCheckedChange: onCheckedChange , ...switchProps } = props;
+    const [button, setButton] = useState(null);
+    const composedRefs = $6ed0406888f73fc4$export$c7b2cbe3552a0d05$1(forwardedRef, (node)=>setButton(node)
+    );
+    const hasConsumerStoppedPropagationRef = useRef(false); // We set this to true by default so that events bubble to forms without JS (SSR)
+    const isFormControl = button ? Boolean(button.closest('form')) : true;
+    const [checked = false, setChecked] = $71cd76cc60e0454e$export$6f32135080cb4c3$1({
+        prop: checkedProp,
+        defaultProp: defaultChecked,
+        onChange: onCheckedChange
+    });
+    return /*#__PURE__*/ createElement($6be4966fd9bbc698$var$SwitchProvider, {
+        scope: __scopeSwitch,
+        checked: checked,
+        disabled: disabled
+    }, /*#__PURE__*/ createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.button, _extends$m({
+        type: "button",
+        role: "switch",
+        "aria-checked": checked,
+        "aria-required": required,
+        "data-state": $6be4966fd9bbc698$var$getState(checked),
+        "data-disabled": disabled ? '' : undefined,
+        disabled: disabled,
+        value: value
+    }, switchProps, {
+        ref: composedRefs,
+        onClick: $e42e1063c40fb3ef$export$b9ecd428b558ff10$1(props.onClick, (event)=>{
+            setChecked((prevChecked)=>!prevChecked
+            );
+            if (isFormControl) {
+                hasConsumerStoppedPropagationRef.current = event.isPropagationStopped(); // if switch is in a form, stop propagation from the button so that we only propagate
+                // one click event (from the input). We propagate changes from an input so that native
+                // form validation works and form events reflect switch updates.
+                if (!hasConsumerStoppedPropagationRef.current) event.stopPropagation();
+            }
+        })
+    })), isFormControl && /*#__PURE__*/ createElement($6be4966fd9bbc698$var$BubbleInput, {
+        control: button,
+        bubbles: !hasConsumerStoppedPropagationRef.current,
+        name: name,
+        value: value,
+        checked: checked,
+        required: required,
+        disabled: disabled // We transform because the input is absolutely positioned but we have
+        ,
+        style: {
+            transform: 'translateX(-100%)'
+        }
+    }));
+});
+/* -------------------------------------------------------------------------------------------------
+ * SwitchThumb
+ * -----------------------------------------------------------------------------------------------*/ const $6be4966fd9bbc698$var$THUMB_NAME = 'SwitchThumb';
+const $6be4966fd9bbc698$export$4d07bf653ea69106 = /*#__PURE__*/ forwardRef((props, forwardedRef)=>{
+    const { __scopeSwitch: __scopeSwitch , ...thumbProps } = props;
+    const context = $6be4966fd9bbc698$var$useSwitchContext($6be4966fd9bbc698$var$THUMB_NAME, __scopeSwitch);
+    return /*#__PURE__*/ createElement($8927f6f2acc4f386$export$250ffa63cdc0d034$1.span, _extends$m({
+        "data-state": $6be4966fd9bbc698$var$getState(context.checked),
+        "data-disabled": context.disabled ? '' : undefined
+    }, thumbProps, {
+        ref: forwardedRef
+    }));
+});
+/* ---------------------------------------------------------------------------------------------- */ const $6be4966fd9bbc698$var$BubbleInput = (props)=>{
+    const { control: control , checked: checked , bubbles: bubbles = true , ...inputProps } = props;
+    const ref = useRef(null);
+    const prevChecked = $010c2913dbd2fe3d$export$5cae361ad82dce8b(checked);
+    const controlSize = $db6c3485150b8e66$export$1ab7ae714698c4b8(control); // Bubble checked change to parents (e.g form change event)
+    useEffect(()=>{
+        const input = ref.current;
+        const inputProto = window.HTMLInputElement.prototype;
+        const descriptor = Object.getOwnPropertyDescriptor(inputProto, 'checked');
+        const setChecked = descriptor.set;
+        if (prevChecked !== checked && setChecked) {
+            const event = new Event('click', {
+                bubbles: bubbles
+            });
+            setChecked.call(input, checked);
+            input.dispatchEvent(event);
+        }
+    }, [
+        prevChecked,
+        checked,
+        bubbles
+    ]);
+    return /*#__PURE__*/ createElement("input", _extends$m({
+        type: "checkbox",
+        "aria-hidden": true,
+        defaultChecked: checked
+    }, inputProps, {
+        tabIndex: -1,
+        ref: ref,
+        style: {
+            ...props.style,
+            ...controlSize,
+            position: 'absolute',
+            pointerEvents: 'none',
+            opacity: 0,
+            margin: 0
+        }
+    }));
+};
+function $6be4966fd9bbc698$var$getState(checked) {
+    return checked ? 'checked' : 'unchecked';
+}
+const $6be4966fd9bbc698$export$be92b6f5f03c0fe9 = $6be4966fd9bbc698$export$b5d5cf8927ab7262;
+const $6be4966fd9bbc698$export$6521433ed15a34db = $6be4966fd9bbc698$export$4d07bf653ea69106;
+
+var Switch = React.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest$7(_a, ["className"]);
+    return (React.createElement($6be4966fd9bbc698$export$be92b6f5f03c0fe9, __assign$2({ className: cn("peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input", className) }, props, { ref: ref }),
+        React.createElement($6be4966fd9bbc698$export$6521433ed15a34db, { className: cn("pointer-events-none block h-4 w-4 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0") })));
+});
+Switch.displayName = $6be4966fd9bbc698$export$be92b6f5f03c0fe9.displayName;
+
+var emailConfigSchema = z$2.object({
+    bookingNotification: z$2.boolean(),
+    bookingModification: z$2.boolean(),
+    guestCheckout: z$2.boolean(),
+    guestWelcoming: z$2.boolean(),
+    notifyMeNewReservation: z$2.boolean(),
+    notiyMeReservationCanceled: z$2.boolean()
+});
+function NotificationSettings(_a) {
+    var defaultValues = _a.defaultValues, onSubmit = _a.onSubmit, _b = _a.id, id = _b === void 0 ? "email" : _b, _c = _a.template, template = _c === void 0 ? false : _c;
+    var form = useForm({ defaultValues: defaultValues, resolver: t$2(emailConfigSchema) });
+    return (React__default.createElement(Card, { style: { maxWidth: 800 } },
+        React__default.createElement(CardContent, { className: "grid gap-6" },
+            React__default.createElement(Form$1, __assign$2({}, form),
+                React__default.createElement("form", { onSubmit: form.handleSubmit(onSubmit), className: "space-y-8 mt-8", id: id },
+                    React__default.createElement("div", { className: "flex items-center justify-between space-x-2" },
+                        React__default.createElement(Label$1, { htmlFor: "necessary", className: "flex flex-col space-y-1" },
+                            React__default.createElement("span", null, "Booking Confirmation"),
+                            React__default.createElement("span", { className: "font-normal leading-snug text-muted-foreground" }, "An email is sent when a booking is confirmed")),
+                        React__default.createElement("div", { className: 'flex items-center' },
+                            template && React__default.createElement(Button$3, { type: "button", size: 'sm', variant: 'secondary' }, "Template"),
+                            "\u00A0",
+                            React__default.createElement(FormField, { control: form.control, name: "bookingNotification", render: function (_a) {
+                                    var field = _a.field;
+                                    return (React__default.createElement(FormItem, { className: "" },
+                                        React__default.createElement(FormControl, null,
+                                            React__default.createElement(Switch, { checked: field.value, onCheckedChange: field.onChange }))));
+                                } }))),
+                    React__default.createElement("div", { className: "flex items-center justify-between space-x-2" },
+                        React__default.createElement(Label$1, { htmlFor: "functional", className: "flex flex-col space-y-1" },
+                            React__default.createElement("span", null, "Booking Modification"),
+                            React__default.createElement("span", { className: "font-normal leading-snug text-muted-foreground" }, "An email is sent when a booking is changed")),
+                        React__default.createElement("div", { className: 'flex items-center' },
+                            template && React__default.createElement(Button$3, { type: "button", size: 'sm', variant: 'secondary' }, "Template"),
+                            "\u00A0",
+                            React__default.createElement(FormField, { control: form.control, name: "bookingModification", render: function (_a) {
+                                    var field = _a.field;
+                                    return (React__default.createElement(FormItem, { className: "" },
+                                        React__default.createElement(FormControl, null,
+                                            React__default.createElement(Switch, { checked: field.value, onCheckedChange: field.onChange }))));
+                                } }))),
+                    React__default.createElement("div", { className: "flex items-center justify-between space-x-2" },
+                        React__default.createElement(Label$1, { htmlFor: "performance", className: "flex flex-col space-y-1" },
+                            React__default.createElement("span", null, "Guest Welcoming"),
+                            React__default.createElement("span", { className: "font-normal leading-snug text-muted-foreground" }, "An email is sent when the reservation is changed to check-in")),
+                        React__default.createElement("div", { className: 'flex items-center' },
+                            template && React__default.createElement(Button$3, { type: "button", size: 'sm', variant: 'secondary' }, "Template"),
+                            "\u00A0",
+                            React__default.createElement(FormField, { control: form.control, name: "guestWelcoming", render: function (_a) {
+                                    var field = _a.field;
+                                    return (React__default.createElement(FormItem, { className: "" },
+                                        React__default.createElement(FormControl, null,
+                                            React__default.createElement(Switch, { checked: field.value, onCheckedChange: field.onChange }))));
+                                } }))),
+                    React__default.createElement("div", { className: "flex items-center justify-between space-x-2" },
+                        React__default.createElement(Label$1, { htmlFor: "performance", className: "flex flex-col space-y-1" },
+                            React__default.createElement("span", null, "Guest Checkout"),
+                            React__default.createElement("span", { className: "font-normal leading-snug text-muted-foreground" }, "An email is sent when a booking is changed to checkout")),
+                        React__default.createElement("div", { className: 'flex items-center' },
+                            template && React__default.createElement(Button$3, { type: "button", size: 'sm', variant: 'secondary' }, "Template"),
+                            "\u00A0",
+                            React__default.createElement(FormField, { control: form.control, name: "guestCheckout", render: function (_a) {
+                                    var field = _a.field;
+                                    return (React__default.createElement(FormItem, { className: "" },
+                                        React__default.createElement(FormControl, null,
+                                            React__default.createElement(Switch, { checked: field.value, onCheckedChange: field.onChange }))));
+                                } }))),
+                    React__default.createElement(Separator, null),
+                    React__default.createElement("div", { className: "flex items-center justify-between space-x-2" },
+                        React__default.createElement(Label$1, { htmlFor: "performance", className: "flex flex-col space-y-1" },
+                            React__default.createElement("span", null, "Notify me when a new reservation is made")),
+                        React__default.createElement("div", null,
+                            React__default.createElement("div", { className: 'flex items-center' },
+                                React__default.createElement(FormField, { control: form.control, name: "notifyMeNewReservation", render: function (_a) {
+                                        var field = _a.field;
+                                        return (React__default.createElement(FormItem, { className: "" },
+                                            React__default.createElement(FormControl, null,
+                                                React__default.createElement(Switch, { checked: field.value, onCheckedChange: field.onChange }))));
+                                    } })))),
+                    React__default.createElement("div", { className: "flex items-center justify-between space-x-2" },
+                        React__default.createElement(Label$1, { htmlFor: "performance", className: "flex flex-col space-y-1" },
+                            React__default.createElement("span", null, "Notify me when a new reservation is deleted")),
+                        React__default.createElement("div", null,
+                            React__default.createElement("div", { className: 'flex items-center' },
+                                React__default.createElement(FormField, { control: form.control, name: "notiyMeReservationCanceled", render: function (_a) {
+                                        var field = _a.field;
+                                        return (React__default.createElement(FormItem, { className: "" },
+                                            React__default.createElement(FormControl, null,
+                                                React__default.createElement(Switch, { checked: field.value, onCheckedChange: field.onChange }))));
+                                    } }))))))),
+        React__default.createElement(CardFooter, null,
+            React__default.createElement(Button$3, { form: id, variant: "outline", className: "w-full" }, "Save preferences"))));
+}
+
+var regionalSchema = z$2.object({
+    language: z$2.string(),
+    invoiceLanguage: z$2.string(),
+    timeZone: z$2.string(),
+    weekStartsOn: z$2.string(),
+    currencyPosition: z$2.string(),
+    currency: z$2.string(),
+    dateFormat: z$2.string(),
+    id: z$2.string().optional()
+});
+function RegionalSettings(_a) {
+    var onsubmit = _a.onsubmit, _b = _a.currency, currency = _b === void 0 ? [] : _b, id = _a.id, _c = _a.defaultValues, defaultValues = _c === void 0 ? {} : _c, currencyPosition = _a.currencyPosition, _d = _a.weekStartsOn, weekStartsOn = _d === void 0 ? [] : _d, _e = _a.dateFormat, dateFormat = _e === void 0 ? [] : _e, _f = _a.timeZone, timeZone = _f === void 0 ? [] : _f, _g = _a.invoiceLanguage, invoiceLanguage = _g === void 0 ? [] : _g, _h = _a.language, language = _h === void 0 ? [] : _h, _j = _a.fields, fields = _j === void 0 ? {
+        language: {
+            label: "Language",
+            description: "",
+        },
+        invoiceLanguage: {
+            label: "Invoice Language",
+            description: "",
+        },
+        timeZone: {
+            label: "Time Zone",
+            description: "",
+        },
+        dateFormat: {
+            label: "Date Format",
+            description: "",
+        },
+        weekStartsOn: {
+            label: "Week Starts On",
+            description: "",
+        },
+        currencyPostion: {
+            label: "Currency Postion",
+            description: "",
+        },
+        currency: {
+            label: "Currency",
+            description: "",
+        }
+    } : _j;
+    var form = useForm({ defaultValues: defaultValues, resolver: t$2(regionalSchema) });
+    return (React__default.createElement(React__default.Fragment, null,
+        React__default.createElement(Form$1, __assign$2({}, form),
+            React__default.createElement("form", { onSubmit: form.handleSubmit(onsubmit), className: "space-y-8 mt-8", id: id },
+                React__default.createElement(FormField, { control: form.control, name: "language", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, null, fields.language.label),
+                            React__default.createElement(Select$1, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default.createElement(FormControl, null,
+                                    React__default.createElement(SelectTrigger, null,
+                                        React__default.createElement(SelectValue, null))),
+                                React__default.createElement(SelectContent, null, language.map(function (item) { return React__default.createElement(SelectItem, { value: item.value }, item.label); }))),
+                            React__default.createElement(FormDescription, null, fields.invoiceLanguage.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: form.control, name: "timeZone", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, null, fields.timeZone.label),
+                            React__default.createElement(Select$1, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default.createElement(FormControl, null,
+                                    React__default.createElement(SelectTrigger, null,
+                                        React__default.createElement(SelectValue, null))),
+                                React__default.createElement(SelectContent, null, timeZone.map(function (item) { return React__default.createElement(SelectItem, { value: item.value }, item.label); }))),
+                            React__default.createElement(FormDescription, null, fields.dateFormat.description),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: form.control, name: "weekStartsOn", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, null, fields.weekStartsOn.label),
+                            React__default.createElement(Select$1, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default.createElement(FormControl, null,
+                                    React__default.createElement(SelectTrigger, null,
+                                        React__default.createElement(SelectValue, null))),
+                                React__default.createElement(SelectContent, null, weekStartsOn.map(function (item) { return React__default.createElement(SelectItem, { value: item.value }, item.label); }))),
+                            React__default.createElement(FormDescription, null),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: form.control, name: "currencyPosition", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, null, fields.currencyPostion.label),
+                            React__default.createElement(Select$1, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default.createElement(FormControl, null,
+                                    React__default.createElement(SelectTrigger, null,
+                                        React__default.createElement(SelectValue, null))),
+                                React__default.createElement(SelectContent, null, currencyPosition.map(function (item) { return React__default.createElement(SelectItem, { value: item.value }, item.label); }))),
+                            React__default.createElement(FormDescription, null),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: form.control, name: "currency", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, null, fields.currency.label),
+                            React__default.createElement(Select$1, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default.createElement(FormControl, null,
+                                    React__default.createElement(SelectTrigger, null,
+                                        React__default.createElement(SelectValue, null))),
+                                React__default.createElement(SelectContent, null, currency.map(function (item) { return React__default.createElement(SelectItem, { value: item.value }, item.label); }))),
+                            React__default.createElement(FormDescription, null),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: form.control, name: "dateFormat", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, null, fields.dateFormat.label),
+                            React__default.createElement(Select$1, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default.createElement(FormControl, null,
+                                    React__default.createElement(SelectTrigger, null,
+                                        React__default.createElement(SelectValue, null))),
+                                React__default.createElement(SelectContent, null, dateFormat.map(function (item) { return React__default.createElement(SelectItem, { value: item.value }, item.label); }))),
+                            React__default.createElement(FormDescription, null),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(FormField, { control: form.control, name: "invoiceLanguage", render: function (_a) {
+                        var field = _a.field;
+                        return (React__default.createElement(FormItem, null,
+                            React__default.createElement(FormLabel, null, fields.invoiceLanguage.label),
+                            React__default.createElement(Select$1, { onValueChange: field.onChange, defaultValue: field.value },
+                                React__default.createElement(FormControl, null,
+                                    React__default.createElement(SelectTrigger, null,
+                                        React__default.createElement(SelectValue, null))),
+                                React__default.createElement(SelectContent, null, invoiceLanguage.map(function (item) { return React__default.createElement(SelectItem, { value: item.value }, item.label); }))),
+                            React__default.createElement(FormDescription, null),
+                            React__default.createElement(FormMessage, null)));
+                    } }),
+                React__default.createElement(Button$3, { type: 'submit' }, "Update")))));
+}
+
 var Form = {
     changePassword: ChangePassword,
     addPerson: AddPersonForm,
@@ -43567,7 +44042,10 @@ var Form = {
     Billing: BillingComponent,
     invoice: InvoiceEditableForm,
     registrationForm: RegistrationForm,
-    pilicyForm: PolicyForm
+    pilicyForm: PolicyForm,
+    hotelInformation: hotelInformationForm,
+    notificationSettings: NotificationSettings,
+    regionalSettings: RegionalSettings
 };
 
 /* -------------------------------------------------------------------------------------------------

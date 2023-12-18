@@ -39,7 +39,7 @@ export type IEmailConfigForm = z.infer<typeof emailConfigSchema>
 
 
 
-export default function NotificationSettings({ defaultValues, id = "email", template = false }) {
+export default function NotificationSettings({ defaultValues, onSubmit, id = "email", template = false }) {
     const form = useForm<IEmailConfigForm>({ defaultValues, resolver: zodResolver(emailConfigSchema) });
 
     return (
@@ -48,7 +48,7 @@ export default function NotificationSettings({ defaultValues, id = "email", temp
             <CardContent className="grid gap-6">
                 <Form {...form}>
                     <form
-                        onSubmit={form.handleSubmit((data) => alert(JSON.stringify(data)))}
+                        onSubmit={form.handleSubmit(onSubmit)}
                         className="space-y-8 mt-8"
                         id={id}
                     >

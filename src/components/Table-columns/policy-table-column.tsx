@@ -83,9 +83,9 @@ export const columns: ColumnDef<IPolicyTable>[] = [
     {
         accessorKey: "name",
         header: ({ column }) => (
-            <DataTableColumnHeader column={column} title="Policy Name" />
+            <DataTableColumnHeader column={column} title="Policy" />
         ),
-        cell: ({ row }) => <div className="w-[150px]">{row.getValue("name")}</div>,
+        cell: ({ row }) => <div >{row.getValue("name")}</div>,
         enableSorting: false,
         enableHiding: false,
     },

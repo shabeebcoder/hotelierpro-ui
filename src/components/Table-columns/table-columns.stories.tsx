@@ -4,6 +4,7 @@ import { columns as roomTypes } from "./room-type-columns";
 import { columns as serviceCategory } from "./service-category-table-column"
 import { columns as services } from "./services-table-column"
 import { columns as billingTable } from "./invoice-table-column"
+import { columns as userTable } from "./users-table-column"
 import Table from "../Data-table/data-table";
 
 export default {
@@ -45,6 +46,7 @@ export const RoomTypeTableDemo = (args) => <Table columns={roomTypes} data={
 } />
 export const serviceTableDemo = (args) => <Table columns={services} data={[]} />
 export const serviceCategoryDemo = (args) => <Table columns={serviceCategory} data={[]} />
+export const userTableDemo = (args) => <Table columns={userTable} data={[]} />
 
 export const BillingTableDemo = (args) => <Table columns={billingTable} data={
     [{

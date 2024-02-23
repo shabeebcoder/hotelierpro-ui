@@ -9,6 +9,9 @@ import { columns as bookings } from "./booking-table-column"
 import { IBookingHistoryTable, columns as history } from "./history-table-column"
 import { columns as policy,  IPolicyTable } from "./policy-table-column"
 import { columns as userLogs,  IUserLogs } from "./user-logs-table-column"
+import { columns as usersTable,  IUsersTable } from "./users-table-column"
+import { columns as nightAuditTable,  INightAudit } from "./night-audit"
+import { columns as houseKeepingTable,  IHouseKeepingTableSchema } from "./house-keeping"
 
 
 
@@ -22,7 +25,10 @@ export const Table: any = {
     bookings,
     history,
     policy,
-    userLogs
+    userLogs,
+    usersTable,
+    houseKeepingTable,
+    nightAuditTable
 }
 
 export namespace ITable {
@@ -34,4 +40,7 @@ export namespace ITable {
     export type invoices = IInvoiceTable
     export type policy = IPolicyTable
     export type userLogs = IUserLogs
+    export type usersTable = IUsersTable
+    export type nightAuditTable = INightAudit
+    export type houseKeepingTable = IHouseKeepingTableSchema
 }

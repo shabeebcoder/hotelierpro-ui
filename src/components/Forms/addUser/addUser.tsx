@@ -27,8 +27,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 const addUserSchema = z.object({
     fullName: z.string(),
     email: z.string().email("Invalid email address"), // Optionally, validate email format
-    password: z.string().min(6, "Password must be at least 6 characters long"), // Optionally, enforce a minimum length
-    retypepassword: z.string(),
+    password: z.string().min(6, "Password must be at least 6 characters long").optional(), // Optionally, enforce a minimum length
+    retypepassword: z.string().optional(),
+    phoneNumber: z.string(),
+    id: z.string().optional(),
     roles: z.enum(["admin", "staff"])
 }).refine((data) => data.password === data.retypepassword, {
     message: "Passwords do not match",
@@ -37,13 +39,18 @@ const addUserSchema = z.object({
 
 export type IAddUser = z.infer<typeof addUserSchema>
 
-function AddPersonForm({ onsubmit, defaultValues, id, roles, fields = {
+function AddPersonForm({ onsubmit, isUpdate = false, defaultValues, id, roles, fields = {
     fullName: {
         label: "Full Name",
         description: ""
     },
     email: {
         label: "E-mail",
+        description: ""
+
+    },
+    phoneNumber: {
+        label: "Phone Number",
         description: ""
 
     },
@@ -65,10 +72,11 @@ function AddPersonForm({ onsubmit, defaultValues, id, roles, fields = {
 
 } }): any {
 
-    const addpersonForm = useForm<IAddUser>({ defaultValues });
+    const addpersonForm = useForm<IAddUser>({ defaultValues, resolver: zodResolver(addUserSchema) });
 
     return (
         <>
+     
             <Form {...addpersonForm} >
                 <form
                     onSubmit={addpersonForm.handleSubmit(onsubmit)}
@@ -143,43 +151,66 @@ function AddPersonForm({ onsubmit, defaultValues, id, roles, fields = {
                     />
                     <FormField
                         control={addpersonForm.control}
-                        name="password"
+                        name="phoneNumber"
                         rules={{ required: true }}
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel className="capitalize">
-                                    {fields.password.label}
+                                    {fields.phoneNumber.label}
                                 </FormLabel>
                                 <FormControl>
-                                    <Input type='password' {...field} />
+                                    <Input  {...field} />
                                 </FormControl>
                                 <FormDescription>
-                                    {fields.password.description}
+                                    {fields.phoneNumber.description}
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-                    <FormField
-                        control={addpersonForm.control}
-                        name="retypepassword"
-                        rules={{ required: true }}
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel className="capitalize">
-                                    {fields.retypepassword.label}
-                                </FormLabel>
-                                <FormControl>
-                                    <Input type='password' {...field} />
-                                </FormControl>
-                                <FormDescription>
-                                    {fields.retypepassword.description}
-                                </FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <Button>Update</Button>
+                    {isUpdate === false && (<>
+
+                        <FormField
+                            control={addpersonForm.control}
+                            name="password"
+                            rules={{ required: true }}
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="capitalize">
+                                        {fields.password.label}
+                                    </FormLabel>
+                                    <FormControl>
+                                        <Input type='password' {...field} />
+                                    </FormControl>
+                                    <FormDescription>
+                                        {fields.password.description}
+                                    </FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={addpersonForm.control}
+                            name="retypepassword"
+                            rules={{ required: true }}
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="capitalize">
+                                        {fields.retypepassword.label}
+                                    </FormLabel>
+                                    <FormControl>
+                                        <Input type='password' {...field} />
+                                    </FormControl>
+                                    <FormDescription>
+                                        {fields.retypepassword.description}
+                                    </FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </>)}
+
+                   
                 </form>
             </Form>
         </>

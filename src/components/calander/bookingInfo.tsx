@@ -60,18 +60,19 @@ import {
 } from "../../elements/Dropdown-menu/dropdownmenu"
 
 export default function DropdownMenuDemo({ children, info, handleEdit, handleStatusChange, handleActions }: any) {
+    const guest = info?.guests?.find((guest) => guest.isMain === true)
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button style={{ position: 'absolute', top: 0 }} variant="ghost">{children}</Button>
+               <button>{children}</button> 
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
+            <DropdownMenuContent className="w-56" style={{marginTop: 20}}>
                 <DropdownMenuLabel>Booking Info - [BLK-13232]</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                     <DropdownMenuItem>
                         <span style={{ color: 'blue' }}>Guest : </span>
-                        <span >&nbsp;<b>{info?.guestName} </b></span>
+                        <span >&nbsp;<b>{guest?.name || ''} </b></span>
 
                     </DropdownMenuItem>
                     <DropdownMenuItem>

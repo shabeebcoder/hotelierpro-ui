@@ -22,5 +22,7 @@ import EditInvoice from "./components/Forms/invoiceEditable/invoiceEditableForm"
 import Layout from "./components/Layout/layout";
 import { IForm } from "./components/Forms";
 import { ITable } from "./components/Table-columns";
-export { IForm, ITable };
-export { Button, EditInvoice, Tab, Table, Icons, Layout, AuthenticationPage, ToastAction, useToast, Toaster, UserSignupPage, VerificationPage, ResetPasswordPage, ForgotPasswordPage, Form, Drawer, DataTable, Confirmation, Calander, RegistrationForm, Dashboard };
+import LineChart, { IFinancialChart } from "./components/Financials/financials";
+import BarChart from "./components/BarChart/barChart";
+export { IForm, ITable, IFinancialChart };
+export { Button, BarChart, LineChart, EditInvoice, Tab, Table, Icons, Layout, AuthenticationPage, ToastAction, useToast, Toaster, UserSignupPage, VerificationPage, ResetPasswordPage, ForgotPasswordPage, Form, Drawer, DataTable, Confirmation, Calander, RegistrationForm, Dashboard };

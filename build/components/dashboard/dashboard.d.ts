@@ -4,15 +4,12 @@ declare const mainSchema: z.ZodObject<{
     handleBooking: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>;
     totalRevenue: z.ZodObject<{
         total: z.ZodNumber;
-        currency: z.ZodString;
         percentageHike: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
         total?: number;
-        currency?: string;
         percentageHike?: number;
     }, {
         total?: number;
-        currency?: string;
         percentageHike?: number;
     }>;
     numberOfbookings: z.ZodObject<{
@@ -37,15 +34,12 @@ declare const mainSchema: z.ZodObject<{
     }>;
     currentMonthRevenue: z.ZodObject<{
         total: z.ZodNumber;
-        currency: z.ZodString;
         percentageHike: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
         total?: number;
-        currency?: string;
         percentageHike?: number;
     }, {
         total?: number;
-        currency?: string;
         percentageHike?: number;
     }>;
     barChart: z.ZodArray<z.ZodObject<{
@@ -78,7 +72,6 @@ declare const mainSchema: z.ZodObject<{
     handleBooking?: (...args: unknown[]) => unknown;
     totalRevenue?: {
         total?: number;
-        currency?: string;
         percentageHike?: number;
     };
     numberOfbookings?: {
@@ -91,7 +84,6 @@ declare const mainSchema: z.ZodObject<{
     };
     currentMonthRevenue?: {
         total?: number;
-        currency?: string;
         percentageHike?: number;
     };
     barChart?: {
@@ -108,7 +100,6 @@ declare const mainSchema: z.ZodObject<{
     handleBooking?: (...args: unknown[]) => unknown;
     totalRevenue?: {
         total?: number;
-        currency?: string;
         percentageHike?: number;
     };
     numberOfbookings?: {
@@ -121,7 +112,6 @@ declare const mainSchema: z.ZodObject<{
     };
     currentMonthRevenue?: {
         total?: number;
-        currency?: string;
         percentageHike?: number;
     };
     barChart?: {

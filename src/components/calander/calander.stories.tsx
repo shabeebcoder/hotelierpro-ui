@@ -55,545 +55,444 @@ export const CalanderDemo = () => {
 
     console.log("data", data)
 
-    const heading =
-        [
-            {
-                date: "All Rooms"
+    const heading = [
+        {
+            "date": "All Rooms"
+        },
+        {
+            "date": "2023-12-01T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-02T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-03T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-04T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-05T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-06T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-07T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-08T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-09T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-10T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-11T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-12T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-13T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-14T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-15T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-16T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-17T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-18T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-19T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-20T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-21T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-22T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-23T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-24T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-25T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-26T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-27T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-28T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-29T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-30T00:00:00+04:00"
+        },
+        {
+            "date": "2023-12-31T00:00:00+04:00"
+        }
+    ];
+
+    const rows =  [
+        {
+            "roomName": "mount everest",
+            "2023-12-01T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-01T00:00:00+04:00"
+            "2023-12-02T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-02T00:00:00+04:00"
+            "2023-12-03T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-03T00:00:00+04:00"
+            "2023-12-04T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-04T00:00:00+04:00"
+            "2023-12-05T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-05T00:00:00+04:00"
+            "2023-12-06T00:00:00+04:00": {
+                "isBooked": true,
+                "info": {
+                    "room": {
+                        "roomType": {
+                            "name": "single",
+                            "id": "65799d80e2dd826ebacb2de5"
+                        },
+                        "name": "mount everest",
+                        "id": "657c6e7cc3f72e06caaa3bb9"
+                    },
+                    "_id": "657d49400c9ce8581ddc54ab",
+                    "hotelId": "6577286af8c20983103bd239",
+                    "status": "confirmed",
+                    "adults": 1,
+                    "child": 0,
+                    "checkInDate": "2023-12-05T20:00:00.000Z",
+                    "checkOutDate": "2023-12-12T20:00:00.000Z",
+                    "nights": 8,
+                    "price": 3000,
+                    "discount": 0,
+                    "singleUse": true,
+                    "guests": [
+                        {
+                            "name": "shabeeb",
+                            "email": "shabeebcoder@gmail.com",
+                            "avatar": "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
+                            "id": "657b1bada54954052f14dc16",
+                            "isMain": true,
+                            "_id": "657d49400c9ce8581ddc54ac"
+                        }
+                    ],
+                    "createdAt": "2023-12-16T06:08:22.699Z",
+                    "updatedAt": "2023-12-16T06:52:48.129Z",
+                    "notes": [],
+                    "__v": 0
+                }
             },
-            {
-                "date": "2023-12-06T00:00:00+04:00"
+            "2023-12-07T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-07T00:00:00+04:00"
+            "2023-12-08T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-08T00:00:00+04:00"
+            "2023-12-09T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-09T00:00:00+04:00"
+            "2023-12-10T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-10T00:00:00+04:00"
+            "2023-12-11T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-11T00:00:00+04:00"
+            "2023-12-12T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-12T00:00:00+04:00"
+            "2023-12-13T00:00:00+04:00": {
+                "isBooked": true,
+                "info": {
+                    "room": {
+                        "roomType": {
+                            "name": "single",
+                            "id": "65799d80e2dd826ebacb2de5"
+                        },
+                        "name": "mount everest",
+                        "id": "657c6e7cc3f72e06caaa3bb9"
+                    },
+                    "_id": "6583df8f6715a1beac16b3f1",
+                    "hotelId": "6577286af8c20983103bd239",
+                    "status": "confirmed",
+                    "adults": 1,
+                    "child": 0,
+                    "checkInDate": "2023-12-12T20:00:00.000Z",
+                    "checkOutDate": "2023-12-27T20:00:00.000Z",
+                    "nights": 4,
+                    "price": 3500,
+                    "discount": 0,
+                    "singleUse": true,
+                    "guests": [
+                        {
+                            "name": "shabeeb xx",
+                            "email": "shabeebcoder@gmail.com",
+                            "avatar": "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
+                            "id": "657b1bada54954052f14dc16",
+                            "isMain": true,
+                            "_id": "6583df8f6715a1beac16b3f2"
+                        }
+                    ],
+                    "createdAt": "2023-12-21T06:43:50.117Z",
+                    "updatedAt": "2023-12-21T06:47:43.394Z",
+                    "notes": [],
+                    "__v": 0
+                }
             },
-            {
-                "date": "2023-12-13T00:00:00+04:00"
+            "2023-12-14T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-14T00:00:00+04:00"
+            "2023-12-15T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-15T00:00:00+04:00"
+            "2023-12-16T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-16T00:00:00+04:00"
+            "2023-12-17T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-17T00:00:00+04:00"
+            "2023-12-18T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-18T00:00:00+04:00"
+            "2023-12-19T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-19T00:00:00+04:00"
+            "2023-12-20T00:00:00+04:00": {
+                "isBooked": true,
+                "info": {
+                    "room": {
+                        "roomType": {
+                            "name": "single",
+                            "id": "65799d80e2dd826ebacb2de5"
+                        },
+                        "name": "mount everest",
+                        "id": "657c6e7cc3f72e06caaa3bb9"
+                    },
+                    "_id": "6584660ea727697a409624f7",
+                    "hotelId": "6577286af8c20983103bd239",
+                    "status": "newBooking",
+                    "adults": 1,
+                    "child": 0,
+                    "checkInDate": "2023-12-19T20:00:00.000Z",
+                    "checkOutDate": "2023-12-19T20:00:00.000Z",
+                    "nights": 2,
+                    "price": 4546,
+                    "discount": 0,
+                    "singleUse": true,
+                    "guests": [
+                        {
+                            "name": "shabeeb",
+                            "email": "shabeebcoder@gmail.com",
+                            "avatar": "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
+                            "id": "657b1bada54954052f14dc16",
+                            "isMain": true,
+                            "_id": "6584660ea727697a409624f8"
+                        }
+                    ],
+                    "createdAt": "2023-12-21T15:44:08.076Z",
+                    "updatedAt": "2023-12-21T16:21:34.269Z",
+                    "notes": [],
+                    "__v": 0
+                }
             },
-            {
-                "date": "2023-12-20T00:00:00+04:00"
+            "2023-12-21T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-21T00:00:00+04:00"
+            "2023-12-22T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-22T00:00:00+04:00"
+            "2023-12-23T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-23T00:00:00+04:00"
+            "2023-12-24T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-24T00:00:00+04:00"
+            "2023-12-25T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-25T00:00:00+04:00"
+            "2023-12-26T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-26T00:00:00+04:00"
+            "2023-12-27T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-27T00:00:00+04:00"
+            "2023-12-28T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-28T00:00:00+04:00"
+            "2023-12-29T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-29T00:00:00+04:00"
+            "2023-12-30T00:00:00+04:00": {
+                "isBooked": false
             },
-            {
-                "date": "2023-12-30T00:00:00+04:00"
-            },
-            {
-                "date": "2023-12-31T00:00:00+04:00"
+            "2023-12-31T00:00:00+04:00": {
+                "isBooked": false
             }
-        ]
+        },
+        {
+            "roomName": "makalu",
+            "2023-12-01T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-02T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-03T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-04T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-05T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-06T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-07T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-08T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-09T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-10T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-11T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-12T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-13T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-14T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-15T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-16T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-17T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-18T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-19T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-20T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-21T00:00:00+04:00": {
+                "isBooked": true,
+                "info": {
+                    "room": {
+                        "roomType": {
+                            "name": "single",
+                            "id": "65799d80e2dd826ebacb2de5"
+                        },
+                        "name": "makalu",
+                        "id": "657c7185c3f72e06caaa3c3b"
+                    },
+                    "_id": "658465cea727697a409624b4",
+                    "hotelId": "6577286af8c20983103bd239",
+                    "status": "newBooking",
+                    "adults": 1,
+                    "child": 0,
+                    "checkInDate": "2023-12-20T20:00:00.000Z",
+                    "checkOutDate": "2023-12-21T20:00:00.000Z",
+                    "nights": 4,
+                    "price": 3000,
+                    "discount": 0,
+                    "singleUse": true,
+                    "guests": [
+                        {
+                            "name": "shabeeb yy",
+                            "email": "shabeebcoder@gmail.com",
+                            "avatar": "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
+                            "id": "657b1bada54954052f14dc16",
+                            "isMain": true,
+                            "_id": "658465cea727697a409624b5"
+                        }
+                    ],
+                    "createdAt": "2023-12-21T15:44:08.076Z",
+                    "updatedAt": "2023-12-21T16:20:30.724Z",
+                    "notes": [],
+                    "__v": 0
+                }
+            },
+            "2023-12-22T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-23T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-24T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-25T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-26T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-27T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-28T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-29T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-30T00:00:00+04:00": {
+                "isBooked": false
+            },
+            "2023-12-31T00:00:00+04:00": {
+                "isBooked": false
+            }
+        }
+    ]
 
     return <Calander
         handleEdit={(data) => alert(JSON.stringify(data))}
         calanderColumns={heading}
-        calanderRows={[
-            {
-                "roomName": "101 - Single",
-                "2023-12-01T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-02T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-03T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-04T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-05T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-06T00:00:00+04:00": {
-                    "isBooked": true,
-                    "info": {
-                        "roomType": {
-                            "name": "single bed",
-                            "maxPersons": 2,
-                            "singleUsePrice": 150,
-                            "regularUsePrice": 200
-                        },
-                        "room": {
-                            "name": "101"
-                        },
-                        "_id": "65697443477c8bdf8d831d83",
-                        "hotelId": "65658f54b0cc587408820f9c",
-                        "status": "confirmed",
-                        "numberOfPersons": 1,
-                        "adults": 1,
-                        "child": 0,
-                        "checkInDate": "2023-12-05T20:00:00.000Z",
-                        "checkOutDate": "2023-12-08T20:00:00.000Z",
-                        "nights": 3,
-                        "price": 400,
-                        "discount": 0,
-                        "notes": "",
-                        "singleUse": true,
-                        "guestName": "shabeeb ck",
-                        "email": "shabeebcoder@gmail.com",
-                        "createdAt": "2023-12-01T05:49:42.854Z",
-                        "updatedAt": "2023-12-01T05:50:59.728Z",
-                        "__v": 0
-                    }
-                },
-                "2023-12-07T00:00:00+04:00": {
-                    "isBooked": true,
-                    "info": {
-                        "roomType": {
-                            "name": "single bed",
-                            "maxPersons": 2,
-                            "singleUsePrice": 150,
-                            "regularUsePrice": 200
-                        },
-                        "room": {
-                            "name": "101"
-                        },
-                        "_id": "65695624b0cc5874088212d0",
-                        "hotelId": "65658f54b0cc587408820f9c",
-                        "status": "newBooking",
-                        "numberOfPersons": 2,
-                        "adults": 2,
-                        "child": 0,
-                        "checkInDate": "2023-12-06T20:00:00.000Z",
-                        "checkOutDate": "2023-12-12T20:00:00.000Z",
-                        "nights": 20,
-                        "price": 100,
-                        "discount": 0,
-                        "notes": "",
-                        "singleUse": true,
-                        "guestName": "shabeeb ck",
-                        "email": "shabeebcoder@gmail.com",
-                        "createdAt": "2023-11-28T06:56:46.561Z",
-                        "updatedAt": "2023-12-01T03:42:28.700Z",
-                        "__v": 0
-                    }
-                },
-                "2023-12-08T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-09T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-10T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-11T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-12T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-13T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-14T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-15T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-16T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-17T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-18T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-19T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-20T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-21T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-22T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-23T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-24T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-25T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-26T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-27T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-28T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-29T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-30T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-31T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                }
-            },
-            {
-                "roomName": "202",
-                "2023-12-01T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-02T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-03T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-04T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-05T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-06T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-07T00:00:00+04:00": {
-                    "isBooked": true,
-                    "info": {
-                        "roomType": {
-                            "name": "doube bed",
-                            "maxPersons": 4,
-                            "singleUsePrice": 250,
-                            "regularUsePrice": 300
-                        },
-                        "room": {
-                            "name": "202"
-                        },
-                        "_id": "656956c5b0cc5874088212ea",
-                        "hotelId": "65658f54b0cc587408820f9c",
-                        "status": "checkin",
-                        "numberOfPersons": 1,
-                        "adults": 1,
-                        "child": 0,
-                        "checkInDate": "2023-12-06T20:00:00.000Z",
-                        "checkOutDate": "2023-12-12T20:00:00.000Z",
-                        "nights": 2,
-                        "price": 200,
-                        "discount": 0,
-                        "notes": "",
-                        "singleUse": true,
-                        "guestName": "shabeeb ck",
-                        "email": "shabeebcoder@gmail.com",
-                        "createdAt": "2023-11-28T06:56:46.561Z",
-                        "updatedAt": "2023-12-01T03:45:09.270Z",
-                        "__v": 0
-                    }
-                },
-                "2023-12-08T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-09T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-10T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-11T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-12T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-13T00:00:00+04:00": {
-                    "isBooked": true,
-                    "info": {
-                        "roomType": {
-                            "name": "doube bed",
-                            "maxPersons": 4,
-                            "singleUsePrice": 250,
-                            "regularUsePrice": 300
-                        },
-                        "room": {
-                            "name": "202"
-                        },
-                        "_id": "65697451477c8bdf8d831d85",
-                        "hotelId": "65658f54b0cc587408820f9c",
-                        "status": "confirmed",
-                        "numberOfPersons": 1,
-                        "adults": 1,
-                        "child": 0,
-                        "checkInDate": "2023-12-12T20:00:00.000Z",
-                        "checkOutDate": "2023-12-15T20:00:00.000Z",
-                        "nights": 3,
-                        "price": 400,
-                        "discount": 0,
-                        "notes": "",
-                        "singleUse": true,
-                        "guestName": "shabeeb ck",
-                        "email": "shabeebcoder@gmail.com",
-                        "createdAt": "2023-12-01T05:49:42.854Z",
-                        "updatedAt": "2023-12-01T05:51:13.191Z",
-                        "__v": 0
-                    }
-                },
-                "2023-12-14T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-15T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-16T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-17T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-18T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-19T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-20T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-21T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-22T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-23T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-24T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-25T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-26T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-27T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-28T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-29T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-30T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-31T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                }
-            },
-            {
-                "roomName": "501",
-                "2023-12-01T00:00:00+04:00": {
-                    "isBooked": false, 
-                    "roomName": "102 - single"
-                },
-                "2023-12-02T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-03T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-04T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-05T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-06T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-07T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-08T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-09T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-10T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-11T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-12T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-13T00:00:00+04:00": {
-                    "isBooked": true,
-                    "info": {
-                        "roomType": {
-                            "name": "dorm",
-                            "maxPersons": 1,
-                            "singleUsePrice": 200,
-                            "regularUsePrice": 200
-                        },
-                        "room": {
-                            "name": "501"
-                        },
-                        "_id": "65697456477c8bdf8d831d87",
-                        "hotelId": "65658f54b0cc587408820f9c",
-                        "status": "confirmed",
-                        "numberOfPersons": 1,
-                        "adults": 1,
-                        "child": 0,
-                        "checkInDate": "2023-12-12T20:00:00.000Z",
-                        "checkOutDate": "2023-12-15T20:00:00.000Z",
-                        "nights": 3,
-                        "price": 400,
-                        "discount": 0,
-                        "notes": "",
-                        "singleUse": true,
-                        "guestName": "shabeeb ck",
-                        "email": "shabeebcoder@gmail.com",
-                        "createdAt": "2023-12-01T05:49:42.854Z",
-                        "updatedAt": "2023-12-01T05:51:18.052Z",
-                        "__v": 0
-                    }
-                },
-                "2023-12-14T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-15T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-16T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-17T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-18T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-19T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-20T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-21T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-22T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-23T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-24T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-25T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-26T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-27T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-28T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-29T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-30T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                },
-                "2023-12-31T00:00:00+04:00": {
-                    "isBooked": false, "roomName": "102 - single"
-                }
-            }
-        ]}
+        calanderRows={rows}
 
 
     />

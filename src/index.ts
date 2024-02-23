@@ -92,9 +92,11 @@ import EditInvoice from "./components/Forms/invoiceEditable/invoiceEditableForm"
 import Layout from "./components/Layout/layout";
 // import Dashboard from "./components/dashboard/dashboard"
 import { IForm } from "./components/Forms"
-import {ITable} from "./components/Table-columns"
+import { ITable } from "./components/Table-columns"
+import LineChart, { IFinancialChart } from "./components/Financials/financials"
+import BarChart from "./components/BarChart/barChart"
 
-export { IForm, ITable }
+export { IForm, ITable, IFinancialChart }
 
 export {
     Button,
@@ -167,6 +169,8 @@ export {
     // toolTip,
     // hotelierpro,
     // MaintainanceForm,
+    BarChart,
+    LineChart,
     EditInvoice,
     Tab,
     Table,

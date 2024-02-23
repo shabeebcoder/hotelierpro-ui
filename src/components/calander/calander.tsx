@@ -30,6 +30,7 @@ function calander({
     handleStatusChange
 }: calanderProps) {
 
+
     const columnHelper: any = createColumnHelper();
     const columns = React.useMemo(() => {
         const column = calanderColumns.map((row: any, index) =>
@@ -85,7 +86,10 @@ function calander({
 
 
 
-                    if (value.isBooked) {
+                    if (value?.isBooked) {
+
+                        const guest = value?.info.guests?.find((guest: any) => guest.isMain === true)
+
                         return <BookingInfo
                             handleActions={handleActions}
                             handleStatusChange={handleStatusChange}
@@ -95,7 +99,7 @@ function calander({
                                 "bg-yellow-600": value?.info.status === "newBooking",
                                 "bg-orange-600": value?.info.status === "checkin",
                                 "bg-red-600": value?.info.status === "checkout",
-                            })} style={{ position: 'absolute', fontWeight: 'normal' }}> {value?.info?.guestName || ''}</Badge>
+                            })} style={{ position: 'absolute', fontWeight: 'normal', left: 0, width: value?.info?.nights * 60 + 60 - 20 || 60 }}> {guest?.name || ''}</Badge>
                         </BookingInfo>
 
 
@@ -116,6 +120,13 @@ function calander({
         getCoreRowModel: getCoreRowModel(),
     })
 
+    const tdRef = React.useRef(null);
+
+    React.useEffect(() => {
+        if (tdRef.current) {
+            console.log('Width of td:', tdRef.current.offsetWidth);
+        }
+    }, []);
 
     return (
         <div style={{ width: '100%', overflowX: 'scroll' }}>
@@ -136,7 +147,7 @@ function calander({
                         </tr>
                     ))}
                 </thead>
-                <tbody>
+                <tbody >
                     {table.getRowModel().rows.map((row, index) => (
                         <tr className="text-center" key={row.id}>
                             {row.getVisibleCells().map(cell => (
@@ -146,6 +157,7 @@ function calander({
                             ))}
                         </tr>
                     ))}
+                    <br/>
                 </tbody>
             </table>
 

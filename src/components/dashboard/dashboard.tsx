@@ -26,7 +26,6 @@ import { PlusCircledIcon } from "@radix-ui/react-icons"
 
 const revenueInfoSchema = z.object({
     total: z.number(),
-    currency: z.string(),
     percentageHike: z.number(),
 });
 
@@ -106,7 +105,7 @@ function Dashboard(props: IDashboard) {
                                 </svg>
                             </CardHeader>
                             <CardContent>
-                                <div className="text-2xl font-bold">{props?.totalRevenue?.total}&nbsp;{props?.totalRevenue?.currency || ''}</div>
+                                <div className="text-2xl font-bold">{props?.totalRevenue?.total || ''}</div>
                                 <p className="text-xs text-muted-foreground">
                                     {`${props?.totalRevenue?.percentageHike || ''}.1% from last month`}
                                 </p>
@@ -183,7 +182,7 @@ function Dashboard(props: IDashboard) {
                                 </svg>
                             </CardHeader>
                             <CardContent>
-                                <div className="text-2xl font-bold">{props?.currentMonthRevenue?.total  + ' ' + props?.currentMonthRevenue.currency}</div>
+                                <div className="text-2xl font-bold">{props?.currentMonthRevenue?.total || ''}</div>
                                 <p className="text-xs text-muted-foreground">
                                     {`+${props?.currentMonthRevenue?.percentageHike || ''}% from last month`}
                                 </p>
